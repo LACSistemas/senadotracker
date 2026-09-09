@@ -1,0 +1,1453 @@
+{
+  "files": [
+    {
+      "file": "consulta_cand_2022_BRASIL.csv",
+      "bytes": 15769035,
+      "sha256": "67a3d672ef45780e9ad8ef6fbd86b03f44296b29fde02e980f091e30e2065eed",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "rows": 29322,
+      "columns": 50,
+      "headers": [
+        "DT_GERACAO",
+        "HH_GERACAO",
+        "ANO_ELEICAO",
+        "CD_TIPO_ELEICAO",
+        "NM_TIPO_ELEICAO",
+        "NR_TURNO",
+        "CD_ELEICAO",
+        "DS_ELEICAO",
+        "DT_ELEICAO",
+        "TP_ABRANGENCIA",
+        "SG_UF",
+        "SG_UE",
+        "NM_UE",
+        "CD_CARGO",
+        "DS_CARGO",
+        "SQ_CANDIDATO",
+        "NR_CANDIDATO",
+        "NM_CANDIDATO",
+        "NM_URNA_CANDIDATO",
+        "NM_SOCIAL_CANDIDATO",
+        "NR_CPF_CANDIDATO",
+        "DS_EMAIL",
+        "CD_SITUACAO_CANDIDATURA",
+        "DS_SITUACAO_CANDIDATURA",
+        "TP_AGREMIACAO",
+        "NR_PARTIDO",
+        "SG_PARTIDO",
+        "NM_PARTIDO",
+        "NR_FEDERACAO",
+        "NM_FEDERACAO",
+        "SG_FEDERACAO",
+        "DS_COMPOSICAO_FEDERACAO",
+        "SQ_COLIGACAO",
+        "NM_COLIGACAO",
+        "DS_COMPOSICAO_COLIGACAO",
+        "SG_UF_NASCIMENTO",
+        "DT_NASCIMENTO",
+        "NR_TITULO_ELEITORAL_CANDIDATO",
+        "CD_GENERO",
+        "DS_GENERO",
+        "CD_GRAU_INSTRUCAO",
+        "DS_GRAU_INSTRUCAO",
+        "CD_ESTADO_CIVIL",
+        "DS_ESTADO_CIVIL",
+        "CD_COR_RACA",
+        "DS_COR_RACA",
+        "CD_OCUPACAO",
+        "DS_OCUPACAO",
+        "CD_SIT_TOT_TURNO",
+        "DS_SIT_TOT_TURNO"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "SQ_CANDIDATO": {
+          "distinct": 29270,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "ANO_ELEICAO": [
+          {
+            "value": "2022",
+            "count": 29322
+          }
+        ],
+        "NR_TURNO": [
+          {
+            "value": "1",
+            "count": 29270
+          },
+          {
+            "value": "2",
+            "count": 52
+          }
+        ],
+        "DS_CARGO": [
+          {
+            "value": "DEPUTADO ESTADUAL",
+            "count": 16737
+          },
+          {
+            "value": "DEPUTADO FEDERAL",
+            "count": 10630
+          },
+          {
+            "value": "DEPUTADO DISTRITAL",
+            "count": 610
+          },
+          {
+            "value": "2º SUPLENTE",
+            "count": 276
+          },
+          {
+            "value": "1º SUPLENTE",
+            "count": 274
+          },
+          {
+            "value": "VICE-GOVERNADOR",
+            "count": 270
+          },
+          {
+            "value": "GOVERNADOR",
+            "count": 252
+          },
+          {
+            "value": "SENADOR",
+            "count": 243
+          },
+          {
+            "value": "PRESIDENTE",
+            "count": 15
+          },
+          {
+            "value": "VICE-PRESIDENTE",
+            "count": 15
+          }
+        ],
+        "SG_UF": [
+          {
+            "value": "SP",
+            "count": 3659
+          },
+          {
+            "value": "RJ",
+            "count": 2785
+          },
+          {
+            "value": "MG",
+            "count": 2562
+          },
+          {
+            "value": "BA",
+            "count": 1723
+          },
+          {
+            "value": "PR",
+            "count": 1583
+          },
+          {
+            "value": "RS",
+            "count": 1437
+          },
+          {
+            "value": "GO",
+            "count": 1243
+          },
+          {
+            "value": "PE",
+            "count": 1142
+          },
+          {
+            "value": "PA",
+            "count": 1043
+          },
+          {
+            "value": "CE",
+            "count": 1018
+          },
+          {
+            "value": "SC",
+            "count": 996
+          },
+          {
+            "value": "MA",
+            "count": 959
+          },
+          {
+            "value": "DF",
+            "count": 896
+          },
+          {
+            "value": "ES",
+            "count": 782
+          },
+          {
+            "value": "PB",
+            "count": 756
+          },
+          {
+            "value": "AM",
+            "count": 664
+          },
+          {
+            "value": "RO",
+            "count": 633
+          },
+          {
+            "value": "RR",
+            "count": 620
+          },
+          {
+            "value": "MS",
+            "count": 598
+          },
+          {
+            "value": "RN",
+            "count": 557
+          },
+          {
+            "value": "AP",
+            "count": 557
+          },
+          {
+            "value": "SE",
+            "count": 545
+          },
+          {
+            "value": "AC",
+            "count": 542
+          },
+          {
+            "value": "TO",
+            "count": 531
+          },
+          {
+            "value": "MT",
+            "count": 525
+          },
+          {
+            "value": "AL",
+            "count": 503
+          },
+          {
+            "value": "PI",
+            "count": 433
+          },
+          {
+            "value": "BR",
+            "count": 30
+          }
+        ],
+        "SG_PARTIDO": [
+          {
+            "value": "PL",
+            "count": 1629
+          },
+          {
+            "value": "UNIÃO",
+            "count": 1551
+          },
+          {
+            "value": "REPUBLICANOS",
+            "count": 1465
+          },
+          {
+            "value": "MDB",
+            "count": 1406
+          },
+          {
+            "value": "PDT",
+            "count": 1371
+          },
+          {
+            "value": "PP",
+            "count": 1360
+          },
+          {
+            "value": "PTB",
+            "count": 1358
+          },
+          {
+            "value": "PSB",
+            "count": 1313
+          },
+          {
+            "value": "PATRIOTA",
+            "count": 1247
+          },
+          {
+            "value": "PODE",
+            "count": 1198
+          },
+          {
+            "value": "PSD",
+            "count": 1194
+          },
+          {
+            "value": "PT",
+            "count": 1128
+          },
+          {
+            "value": "SOLIDARIEDADE",
+            "count": 1114
+          },
+          {
+            "value": "PSC",
+            "count": 1078
+          },
+          {
+            "value": "PROS",
+            "count": 1074
+          },
+          {
+            "value": "AVANTE",
+            "count": 1068
+          },
+          {
+            "value": "PSDB",
+            "count": 981
+          },
+          {
+            "value": "AGIR",
+            "count": 958
+          },
+          {
+            "value": "PRTB",
+            "count": 939
+          },
+          {
+            "value": "PSOL",
+            "count": 931
+          },
+          {
+            "value": "PMB",
+            "count": 854
+          },
+          {
+            "value": "PMN",
+            "count": 812
+          },
+          {
+            "value": "DC",
+            "count": 807
+          },
+          {
+            "value": "CIDADANIA",
+            "count": 500
+          },
+          {
+            "value": "REDE",
+            "count": 491
+          },
+          {
+            "value": "NOVO",
+            "count": 479
+          },
+          {
+            "value": "PV",
+            "count": 311
+          },
+          {
+            "value": "PC do B",
+            "count": 223
+          },
+          {
+            "value": "PCO",
+            "count": 166
+          },
+          {
+            "value": "PSTU",
+            "count": 163
+          }
+        ],
+        "DS_SIT_TOT_TURNO": [
+          {
+            "value": "SUPLENTE",
+            "count": 14623
+          },
+          {
+            "value": "NÃO ELEITO",
+            "count": 11276
+          },
+          {
+            "value": "#NULO",
+            "count": 1662
+          },
+          {
+            "value": "ELEITO POR QP",
+            "count": 1182
+          },
+          {
+            "value": "ELEITO POR MÉDIA",
+            "count": 390
+          },
+          {
+            "value": "ELEITO",
+            "count": 137
+          },
+          {
+            "value": "2º TURNO",
+            "count": 52
+          }
+        ],
+        "DS_SITUACAO_CANDIDATURA": [
+          {
+            "value": "APTO",
+            "count": 26410
+          },
+          {
+            "value": "INAPTO",
+            "count": 2912
+          }
+        ]
+      }
+    },
+    {
+      "file": "bem_candidato_2022_BRASIL.csv",
+      "bytes": 23475306,
+      "sha256": "5ecdff4c756c4a7542b3ae0b9c57d3301e42c515674bf1da9d79fc81d50e1164",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "rows": 92559,
+      "columns": 19,
+      "headers": [
+        "DT_GERACAO",
+        "HH_GERACAO",
+        "ANO_ELEICAO",
+        "CD_TIPO_ELEICAO",
+        "NM_TIPO_ELEICAO",
+        "CD_ELEICAO",
+        "DS_ELEICAO",
+        "DT_ELEICAO",
+        "SG_UF",
+        "SG_UE",
+        "NM_UE",
+        "SQ_CANDIDATO",
+        "NR_ORDEM_BEM_CANDIDATO",
+        "CD_TIPO_BEM_CANDIDATO",
+        "DS_TIPO_BEM_CANDIDATO",
+        "DS_BEM_CANDIDATO",
+        "VR_BEM_CANDIDATO",
+        "DT_ULT_ATUAL_BEM_CANDIDATO",
+        "HH_ULT_ATUAL_BEM_CANDIDATO"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "SQ_CANDIDATO": {
+          "distinct": 18249,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "ANO_ELEICAO": [
+          {
+            "value": "2022",
+            "count": 92559
+          }
+        ],
+        "SG_UF": [
+          {
+            "value": "SP",
+            "count": 13931
+          },
+          {
+            "value": "MG",
+            "count": 8548
+          },
+          {
+            "value": "RJ",
+            "count": 6659
+          },
+          {
+            "value": "PR",
+            "count": 6328
+          },
+          {
+            "value": "RS",
+            "count": 5358
+          },
+          {
+            "value": "SC",
+            "count": 4354
+          },
+          {
+            "value": "BA",
+            "count": 4323
+          },
+          {
+            "value": "GO",
+            "count": 4204
+          },
+          {
+            "value": "PE",
+            "count": 2803
+          },
+          {
+            "value": "MA",
+            "count": 2796
+          },
+          {
+            "value": "CE",
+            "count": 2780
+          },
+          {
+            "value": "DF",
+            "count": 2711
+          },
+          {
+            "value": "MS",
+            "count": 2678
+          },
+          {
+            "value": "PA",
+            "count": 2628
+          },
+          {
+            "value": "MT",
+            "count": 2616
+          },
+          {
+            "value": "RO",
+            "count": 2324
+          },
+          {
+            "value": "TO",
+            "count": 2204
+          },
+          {
+            "value": "ES",
+            "count": 2169
+          },
+          {
+            "value": "RN",
+            "count": 2161
+          },
+          {
+            "value": "PB",
+            "count": 1827
+          },
+          {
+            "value": "AM",
+            "count": 1628
+          },
+          {
+            "value": "SE",
+            "count": 1460
+          },
+          {
+            "value": "PI",
+            "count": 1400
+          },
+          {
+            "value": "RR",
+            "count": 1325
+          },
+          {
+            "value": "AL",
+            "count": 1196
+          },
+          {
+            "value": "AC",
+            "count": 1137
+          },
+          {
+            "value": "AP",
+            "count": 771
+          },
+          {
+            "value": "BR",
+            "count": 240
+          }
+        ],
+        "DS_TIPO_BEM_CANDIDATO": [
+          {
+            "value": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "count": 17315
+          },
+          {
+            "value": "Terreno",
+            "count": 9180
+          },
+          {
+            "value": "Casa",
+            "count": 8863
+          },
+          {
+            "value": "Depósito bancário em conta corrente no País",
+            "count": 8506
+          },
+          {
+            "value": "Apartamento",
+            "count": 6869
+          },
+          {
+            "value": "Quotas ou quinhões de capital",
+            "count": 6094
+          },
+          {
+            "value": "OUTROS BENS E DIREITOS",
+            "count": 4690
+          },
+          {
+            "value": "Outros bens imóveis",
+            "count": 4373
+          },
+          {
+            "value": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "count": 4203
+          },
+          {
+            "value": "Caderneta de poupança",
+            "count": 3250
+          },
+          {
+            "value": "Outras aplicações e Investimentos",
+            "count": 2672
+          },
+          {
+            "value": "Ações (inclusive as provenientes de linha telefônica)",
+            "count": 2377
+          },
+          {
+            "value": "Dinheiro em espécie - moeda nacional",
+            "count": 2341
+          },
+          {
+            "value": "Outras participações societárias",
+            "count": 1589
+          },
+          {
+            "value": "Outros bens móveis",
+            "count": 998
+          },
+          {
+            "value": "Outros fundos",
+            "count": 896
+          },
+          {
+            "value": "Terra nua",
+            "count": 832
+          },
+          {
+            "value": "Sala ou conjunto",
+            "count": 787
+          },
+          {
+            "value": "Consórcio não contemplado",
+            "count": 766
+          },
+          {
+            "value": "VGBL - Vida Gerador de Benefício Livre",
+            "count": 766
+          },
+          {
+            "value": "Fundos: Ações, Mútuos de Privatização, Invest. Empresas Emergentes, Invest.Participação e Invest. Índice Mercado",
+            "count": 655
+          },
+          {
+            "value": "Crédito decorrente de empréstimo",
+            "count": 611
+          },
+          {
+            "value": "Outros créditos e poupança vinculados",
+            "count": 570
+          },
+          {
+            "value": "Prédio comercial",
+            "count": 430
+          },
+          {
+            "value": "Loja",
+            "count": 299
+          },
+          {
+            "value": "Fundo de Longo Prazo e Fundo de Investimentos em Direitos Creditórios (FIDC)",
+            "count": 256
+          },
+          {
+            "value": "Jóia, quadro, objeto de arte, de coleção, antiguidade, etc.",
+            "count": 224
+          },
+          {
+            "value": "Fundo de Investimento Imobiliário",
+            "count": 217
+          },
+          {
+            "value": "Construção",
+            "count": 213
+          },
+          {
+            "value": "Benfeitorias",
+            "count": 172
+          }
+        ]
+      }
+    },
+    {
+      "file": "consulta_cand_complementar_2022_BRASIL.csv",
+      "bytes": 9910371,
+      "sha256": "fb2340382a066be5a28a0dce2dd6fc62577b08b5d5ba853adc84587667deb3bf",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "rows": 29322,
+      "columns": 49,
+      "headers": [
+        "DT_GERACAO",
+        "HH_GERACAO",
+        "ANO_ELEICAO",
+        "CD_ELEICAO",
+        "SQ_CANDIDATO",
+        "CD_DETALHE_SITUACAO_CAND",
+        "DS_DETALHE_SITUACAO_CAND",
+        "CD_NACIONALIDADE",
+        "DS_NACIONALIDADE",
+        "CD_MUNICIPIO_NASCIMENTO",
+        "NM_MUNICIPIO_NASCIMENTO",
+        "NR_IDADE_DATA_POSSE",
+        "ST_QUILOMBOLA",
+        "CD_ETNIA_INDIGENA",
+        "DS_ETNIA_INDIGENA",
+        "VR_DESPESA_MAX_CAMPANHA",
+        "ST_REELEICAO",
+        "ST_DECLARAR_BENS",
+        "NR_PROTOCOLO_CANDIDATURA",
+        "NR_PROCESSO",
+        "CD_SITUACAO_CANDIDATO_PLEITO",
+        "DS_SITUACAO_CANDIDATO_PLEITO",
+        "CD_SITUACAO_CANDIDATO_URNA",
+        "DS_SITUACAO_CANDIDATO_URNA",
+        "ST_CANDIDATO_INSERIDO_URNA",
+        "NM_TIPO_DESTINACAO_VOTOS",
+        "CD_SITUACAO_CANDIDATO_TOT",
+        "DS_SITUACAO_CANDIDATO_TOT",
+        "ST_PREST_CONTAS",
+        "ST_SUBSTITUIDO",
+        "SQ_SUBSTITUIDO",
+        "SQ_ORDEM_SUPLENCIA",
+        "DT_ACEITE_CANDIDATURA",
+        "CD_SITUACAO_JULGAMENTO",
+        "DS_SITUACAO_JULGAMENTO",
+        "CD_SITUACAO_JULGAMENTO_PLEITO",
+        "DS_SITUACAO_JULGAMENTO_PLEITO",
+        "CD_SITUACAO_JULGAMENTO_URNA",
+        "DS_SITUACAO_JULGAMENTO_URNA",
+        "CD_SITUACAO_CASSACAO",
+        "DS_SITUACAO_CASSACAO",
+        "CD_SITUACAO_CASSACAO_MIDIA",
+        "DS_SITUACAO_CASSACAO_MIDIA",
+        "CD_SITUACAO_DIPLOMA",
+        "DS_SITUACAO_DIPLOMA",
+        "CD_GENERO_FEFC",
+        "DS_GENERO_FEFC",
+        "CD_COR_RACA_FEFC",
+        "DS_COR_RACA_FEFC"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "SQ_CANDIDATO": {
+          "distinct": 29270,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "ANO_ELEICAO": [
+          {
+            "value": "2022",
+            "count": 29322
+          }
+        ]
+      }
+    },
+    {
+      "file": "consulta_cand_2018_BRASIL.csv",
+      "bytes": 15929977,
+      "sha256": "5824f5d362eb7f05238a21ea02eee14e1a95b491658b4e5aaa1bf8fb6271f95e",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "rows": 29287,
+      "columns": 50,
+      "headers": [
+        "DT_GERACAO",
+        "HH_GERACAO",
+        "ANO_ELEICAO",
+        "CD_TIPO_ELEICAO",
+        "NM_TIPO_ELEICAO",
+        "NR_TURNO",
+        "CD_ELEICAO",
+        "DS_ELEICAO",
+        "DT_ELEICAO",
+        "TP_ABRANGENCIA",
+        "SG_UF",
+        "SG_UE",
+        "NM_UE",
+        "CD_CARGO",
+        "DS_CARGO",
+        "SQ_CANDIDATO",
+        "NR_CANDIDATO",
+        "NM_CANDIDATO",
+        "NM_URNA_CANDIDATO",
+        "NM_SOCIAL_CANDIDATO",
+        "NR_CPF_CANDIDATO",
+        "DS_EMAIL",
+        "CD_SITUACAO_CANDIDATURA",
+        "DS_SITUACAO_CANDIDATURA",
+        "TP_AGREMIACAO",
+        "NR_PARTIDO",
+        "SG_PARTIDO",
+        "NM_PARTIDO",
+        "NR_FEDERACAO",
+        "NM_FEDERACAO",
+        "SG_FEDERACAO",
+        "DS_COMPOSICAO_FEDERACAO",
+        "SQ_COLIGACAO",
+        "NM_COLIGACAO",
+        "DS_COMPOSICAO_COLIGACAO",
+        "SG_UF_NASCIMENTO",
+        "DT_NASCIMENTO",
+        "NR_TITULO_ELEITORAL_CANDIDATO",
+        "CD_GENERO",
+        "DS_GENERO",
+        "CD_GRAU_INSTRUCAO",
+        "DS_GRAU_INSTRUCAO",
+        "CD_ESTADO_CIVIL",
+        "DS_ESTADO_CIVIL",
+        "CD_COR_RACA",
+        "DS_COR_RACA",
+        "CD_OCUPACAO",
+        "DS_OCUPACAO",
+        "CD_SIT_TOT_TURNO",
+        "DS_SIT_TOT_TURNO"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "SQ_CANDIDATO": {
+          "distinct": 29227,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "ANO_ELEICAO": [
+          {
+            "value": "2018",
+            "count": 29287
+          }
+        ],
+        "NR_TURNO": [
+          {
+            "value": "1",
+            "count": 29227
+          },
+          {
+            "value": "2",
+            "count": 60
+          }
+        ],
+        "DS_CARGO": [
+          {
+            "value": "DEPUTADO ESTADUAL",
+            "count": 17973
+          },
+          {
+            "value": "DEPUTADO FEDERAL",
+            "count": 8607
+          },
+          {
+            "value": "DEPUTADO DISTRITAL",
+            "count": 981
+          },
+          {
+            "value": "2º SUPLENTE",
+            "count": 424
+          },
+          {
+            "value": "1º SUPLENTE",
+            "count": 414
+          },
+          {
+            "value": "SENADOR",
+            "count": 385
+          },
+          {
+            "value": "VICE-GOVERNADOR",
+            "count": 239
+          },
+          {
+            "value": "GOVERNADOR",
+            "count": 232
+          },
+          {
+            "value": "PRESIDENTE",
+            "count": 16
+          },
+          {
+            "value": "VICE-PRESIDENTE",
+            "count": 16
+          }
+        ],
+        "SG_UF": [
+          {
+            "value": "SP",
+            "count": 3952
+          },
+          {
+            "value": "RJ",
+            "count": 3699
+          },
+          {
+            "value": "MG",
+            "count": 2429
+          },
+          {
+            "value": "RS",
+            "count": 1344
+          },
+          {
+            "value": "PR",
+            "count": 1288
+          },
+          {
+            "value": "DF",
+            "count": 1262
+          },
+          {
+            "value": "BA",
+            "count": 1196
+          },
+          {
+            "value": "GO",
+            "count": 1194
+          },
+          {
+            "value": "PE",
+            "count": 1095
+          },
+          {
+            "value": "CE",
+            "count": 915
+          },
+          {
+            "value": "PA",
+            "count": 903
+          },
+          {
+            "value": "AM",
+            "count": 859
+          },
+          {
+            "value": "ES",
+            "count": 833
+          },
+          {
+            "value": "MA",
+            "count": 796
+          },
+          {
+            "value": "SC",
+            "count": 788
+          },
+          {
+            "value": "RR",
+            "count": 687
+          },
+          {
+            "value": "AP",
+            "count": 668
+          },
+          {
+            "value": "RO",
+            "count": 659
+          },
+          {
+            "value": "PB",
+            "count": 621
+          },
+          {
+            "value": "MT",
+            "count": 615
+          },
+          {
+            "value": "AC",
+            "count": 597
+          },
+          {
+            "value": "MS",
+            "count": 545
+          },
+          {
+            "value": "SE",
+            "count": 530
+          },
+          {
+            "value": "RN",
+            "count": 516
+          },
+          {
+            "value": "AL",
+            "count": 461
+          },
+          {
+            "value": "PI",
+            "count": 439
+          },
+          {
+            "value": "TO",
+            "count": 364
+          },
+          {
+            "value": "BR",
+            "count": 32
+          }
+        ],
+        "SG_PARTIDO": [
+          {
+            "value": "PSL",
+            "count": 1553
+          },
+          {
+            "value": "PSOL",
+            "count": 1353
+          },
+          {
+            "value": "PT",
+            "count": 1324
+          },
+          {
+            "value": "PATRIOTA",
+            "count": 1240
+          },
+          {
+            "value": "MDB",
+            "count": 1135
+          },
+          {
+            "value": "PROS",
+            "count": 1099
+          },
+          {
+            "value": "AVANTE",
+            "count": 1063
+          },
+          {
+            "value": "PRTB",
+            "count": 1023
+          },
+          {
+            "value": "PHS",
+            "count": 998
+          },
+          {
+            "value": "PSB",
+            "count": 977
+          },
+          {
+            "value": "PRP",
+            "count": 968
+          },
+          {
+            "value": "PSDB",
+            "count": 964
+          },
+          {
+            "value": "PDT",
+            "count": 964
+          },
+          {
+            "value": "PODE",
+            "count": 942
+          },
+          {
+            "value": "PV",
+            "count": 912
+          },
+          {
+            "value": "PSC",
+            "count": 879
+          },
+          {
+            "value": "REDE",
+            "count": 858
+          },
+          {
+            "value": "PRB",
+            "count": 858
+          },
+          {
+            "value": "PTC",
+            "count": 852
+          },
+          {
+            "value": "PC do B",
+            "count": 823
+          },
+          {
+            "value": "DC",
+            "count": 796
+          },
+          {
+            "value": "SOLIDARIEDADE",
+            "count": 788
+          },
+          {
+            "value": "PMN",
+            "count": 771
+          },
+          {
+            "value": "PP",
+            "count": 764
+          },
+          {
+            "value": "PR",
+            "count": 723
+          },
+          {
+            "value": "PSD",
+            "count": 704
+          },
+          {
+            "value": "DEM",
+            "count": 701
+          },
+          {
+            "value": "PPS",
+            "count": 675
+          },
+          {
+            "value": "PTB",
+            "count": 652
+          },
+          {
+            "value": "PPL",
+            "count": 600
+          }
+        ],
+        "DS_SIT_TOT_TURNO": [
+          {
+            "value": "SUPLENTE",
+            "count": 18544
+          },
+          {
+            "value": "NÃO ELEITO",
+            "count": 7085
+          },
+          {
+            "value": "#NULO#",
+            "count": 1808
+          },
+          {
+            "value": "ELEITO POR QP",
+            "count": 1273
+          },
+          {
+            "value": "ELEITO POR MÉDIA",
+            "count": 299
+          },
+          {
+            "value": "ELEITO",
+            "count": 218
+          },
+          {
+            "value": "2º TURNO",
+            "count": 60
+          }
+        ],
+        "DS_SITUACAO_CANDIDATURA": [
+          {
+            "value": "APTO",
+            "count": 26045
+          },
+          {
+            "value": "INAPTO",
+            "count": 3203
+          },
+          {
+            "value": "CADASTRADO",
+            "count": 39
+          }
+        ]
+      }
+    },
+    {
+      "file": "bem_candidato_2018_BRASIL.csv",
+      "bytes": 23257575,
+      "sha256": "90ff90b308a9dacbb57722dd4eac17b53befb796bc94409756fc211a26a3e93c",
+      "encoding": "windows-1252",
+      "delimiter": ";",
+      "rows": 93527,
+      "columns": 19,
+      "headers": [
+        "DT_GERACAO",
+        "HH_GERACAO",
+        "ANO_ELEICAO",
+        "CD_TIPO_ELEICAO",
+        "NM_TIPO_ELEICAO",
+        "CD_ELEICAO",
+        "DS_ELEICAO",
+        "DT_ELEICAO",
+        "SG_UF",
+        "SG_UE",
+        "NM_UE",
+        "SQ_CANDIDATO",
+        "NR_ORDEM_BEM_CANDIDATO",
+        "CD_TIPO_BEM_CANDIDATO",
+        "DS_TIPO_BEM_CANDIDATO",
+        "DS_BEM_CANDIDATO",
+        "VR_BEM_CANDIDATO",
+        "DT_ULT_ATUAL_BEM_CANDIDATO",
+        "HH_ULT_ATUAL_BEM_CANDIDATO"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "SQ_CANDIDATO": {
+          "distinct": 17646,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "ANO_ELEICAO": [
+          {
+            "value": "2018",
+            "count": 93527
+          }
+        ],
+        "SG_UF": [
+          {
+            "value": "SP",
+            "count": 13651
+          },
+          {
+            "value": "MG",
+            "count": 8518
+          },
+          {
+            "value": "RJ",
+            "count": 7963
+          },
+          {
+            "value": "PR",
+            "count": 5998
+          },
+          {
+            "value": "RS",
+            "count": 5266
+          },
+          {
+            "value": "GO",
+            "count": 4382
+          },
+          {
+            "value": "SC",
+            "count": 4253
+          },
+          {
+            "value": "BA",
+            "count": 3882
+          },
+          {
+            "value": "DF",
+            "count": 3536
+          },
+          {
+            "value": "PE",
+            "count": 3101
+          },
+          {
+            "value": "CE",
+            "count": 2982
+          },
+          {
+            "value": "MT",
+            "count": 2964
+          },
+          {
+            "value": "MA",
+            "count": 2625
+          },
+          {
+            "value": "ES",
+            "count": 2544
+          },
+          {
+            "value": "PA",
+            "count": 2473
+          },
+          {
+            "value": "MS",
+            "count": 2465
+          },
+          {
+            "value": "RO",
+            "count": 2019
+          },
+          {
+            "value": "RN",
+            "count": 1914
+          },
+          {
+            "value": "RR",
+            "count": 1685
+          },
+          {
+            "value": "TO",
+            "count": 1674
+          },
+          {
+            "value": "PB",
+            "count": 1660
+          },
+          {
+            "value": "PI",
+            "count": 1582
+          },
+          {
+            "value": "AM",
+            "count": 1563
+          },
+          {
+            "value": "SE",
+            "count": 1355
+          },
+          {
+            "value": "AL",
+            "count": 1166
+          },
+          {
+            "value": "AC",
+            "count": 1082
+          },
+          {
+            "value": "AP",
+            "count": 909
+          },
+          {
+            "value": "BR",
+            "count": 315
+          }
+        ],
+        "DS_TIPO_BEM_CANDIDATO": [
+          {
+            "value": "Veículo automotor terrestre: caminhão, automóvel, moto, etc.",
+            "count": 18514
+          },
+          {
+            "value": "Terreno",
+            "count": 10779
+          },
+          {
+            "value": "Casa",
+            "count": 9195
+          },
+          {
+            "value": "Depósito bancário em conta corrente no País",
+            "count": 8126
+          },
+          {
+            "value": "Apartamento",
+            "count": 6942
+          },
+          {
+            "value": "Quotas ou quinhões de capital",
+            "count": 6409
+          },
+          {
+            "value": "Caderneta de poupança",
+            "count": 3734
+          },
+          {
+            "value": "Aplicação de renda fixa (CDB, RDB e outros)",
+            "count": 3513
+          },
+          {
+            "value": "Outros bens imóveis",
+            "count": 3263
+          },
+          {
+            "value": "OUTROS BENS E DIREITOS",
+            "count": 2668
+          },
+          {
+            "value": "Dinheiro em espécie - moeda nacional",
+            "count": 2606
+          },
+          {
+            "value": "Outras aplicações e Investimentos",
+            "count": 2177
+          },
+          {
+            "value": "Terra nua",
+            "count": 1566
+          },
+          {
+            "value": "Outras participações societárias",
+            "count": 1538
+          },
+          {
+            "value": "Ações (inclusive as provenientes de linha telefônica)",
+            "count": 1273
+          },
+          {
+            "value": "Sala ou conjunto",
+            "count": 944
+          },
+          {
+            "value": "Outros fundos",
+            "count": 921
+          },
+          {
+            "value": "VGBL - Vida Gerador de Benefício Livre",
+            "count": 916
+          },
+          {
+            "value": "Crédito decorrente de empréstimo",
+            "count": 827
+          },
+          {
+            "value": "Consórcio não contemplado",
+            "count": 820
+          },
+          {
+            "value": "Outros bens móveis",
+            "count": 745
+          },
+          {
+            "value": "Outros créditos e poupança vinculados",
+            "count": 699
+          },
+          {
+            "value": "Fundos: Ações, Mútuos de Privatização, Invest. Empresas Emergentes, Invest.Participação e Invest. Índice Mercado",
+            "count": 608
+          },
+          {
+            "value": "Prédio comercial",
+            "count": 558
+          },
+          {
+            "value": "Loja",
+            "count": 372
+          },
+          {
+            "value": "Linha telefônica",
+            "count": 362
+          },
+          {
+            "value": "Prédio residencial",
+            "count": 337
+          },
+          {
+            "value": "Jóia, quadro, objeto de arte, de coleção, antiguidade, etc.",
+            "count": 299
+          },
+          {
+            "value": "Construção",
+            "count": 295
+          },
+          {
+            "value": "Embarcação",
+            "count": 253
+          }
+        ]
+      }
+    }
+  ]
+}

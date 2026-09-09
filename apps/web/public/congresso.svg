@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração do Congresso Nacional</title><desc id="desc">Silhueta geométrica do Congresso Nacional em Brasília.</desc>
+  <rect width="1600" height="900" fill="#174535"/><circle cx="1270" cy="170" r="105" fill="#dce9e2" opacity=".18"/>
+  <path d="M0 690h1600v210H0z" fill="#0b3026"/><path d="M130 690c150-180 350-180 500 0z" fill="#f3f1eb" opacity=".72"/><path d="M970 690c150-180 350-180 500 0z" fill="#f3f1eb" opacity=".72"/>
+  <path d="M705 190h72v500h-72zM823 240h72v450h-72z" fill="#faf9f5"/><path d="M670 690h260v28H670zM565 718h470v22H565z" fill="#dce9e2"/>
+  <g fill="none" stroke="#faf9f5" stroke-width="3" opacity=".18"><path d="M0 120h1600M0 300h1600M0 480h1600"/><path d="M180 0v900M430 0v900M1180 0v900M1430 0v900"/></g>
+</svg>

@@ -1,0 +1,31 @@
+{
+  "name": "senadotracker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": ">=22.15.0 <23",
+    "npm": ">=10 <11"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@senadotracker/web",
+    "build": "npm run build --workspace=@senadotracker/web",
+    "start": "npm run start --workspace=@senadotracker/web",
+    "collector": "npm run cli --workspace=@senadotracker/collector --",
+    "typecheck": "npm run typecheck --workspaces --if-present && tsc --noEmit -p tsconfig.tests.json",
+    "test": "node --import tsx --test tests/contracts/sources.test.ts tests/contracts/votes.test.ts tests/contracts/elections.test.ts tests/contracts/tse-import.test.ts tests/contracts/camara-cabinet.test.ts tests/unit/cli.test.ts tests/unit/http.test.ts tests/unit/expenses.test.ts tests/unit/expense-intelligence.test.ts tests/unit/comparisons.test.ts tests/unit/cabinet.test.ts tests/unit/cabinet-data.test.ts tests/unit/panorama.test.ts tests/unit/parties.test.ts tests/unit/propositions.test.ts tests/unit/states.test.ts tests/integration/cadastro.test.ts tests/integration/ui-reconciliation.test.ts",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.1",
+    "tsx": "4.23.13",
+    "typescript": "5.9.3"
+  }
+}

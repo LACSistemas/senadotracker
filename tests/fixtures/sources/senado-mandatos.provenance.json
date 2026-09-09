@@ -1,0 +1,11 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5672/mandatos.json",
+  "fetchedAt": "2026-09-08T12:21:19.322Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 1244,
+  "rawResponseSha256": "c868d812a067b9a65ad46ac068229550afb74aa5d92b74578a1558b122b6c65a",
+  "fixtureSha256": "d6c74a8614e1086656b9e9e17d7af4d63974afe2d36659c5b777af2f6eca9ffc",
+  "selection": "Todos os registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

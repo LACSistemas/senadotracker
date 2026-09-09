@@ -1,0 +1,12 @@
+{
+  "sourceUrls": [
+    "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31",
+    "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31/votos"
+  ],
+  "fetchedAt": "2026-09-08T19:03:00-03:00",
+  "fullResponseSha256": [
+    "ec484a8276a42c31ec10cdcee53144735cdf1a57bf8699491549e9fc23837d9f",
+    "d0738d583dbba62a5c5918ab18b93031149ecac03db6d0888eaad2366d111a48"
+  ],
+  "scope": "detail and first two of 396 votes"
+}

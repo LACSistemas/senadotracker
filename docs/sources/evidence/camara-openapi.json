@@ -1,0 +1,198 @@
+{
+  "provenance": {
+    "url": "https://dadosabertos.camara.leg.br/api/v2/api-docs",
+    "fetchedAt": "2026-09-08T12:23:34.515Z",
+    "status": 200,
+    "contentType": "application/json",
+    "sha256": "549aac83a59fdc18ae1aec43ef2b78f288b0599bea369934bdcd86fca7ac2927",
+    "bytes": 196213
+  },
+  "openapi": "3.0.1",
+  "paths": {
+    "/deputados": {
+      "parameters": [
+        {
+          "description": "Número(s) identificador(es) de um deputado, separados por vírgulas.",
+          "explode": false,
+          "in": "query",
+          "name": "id",
+          "required": false,
+          "schema": {
+            "type": "array"
+          },
+          "style": "form"
+        },
+        {
+          "description": "Parte nome parlamentar.",
+          "in": "query",
+          "name": "nome",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "description": "Número(s) identificador(es) de uma ou mais legislatura(s) de que os parlamentares tenham participado, separados por vírgulas.",
+          "explode": false,
+          "in": "query",
+          "name": "idLegislatura",
+          "required": false,
+          "schema": {
+            "type": "array"
+          },
+          "style": "form"
+        },
+        {
+          "description": "Uma ou mais sigla(s) de unidades federativas (estados e Distrito Federal). Uma lista de siglas válidas pode ser obtida em `/referencias/deputados/siglaUf`. Se ausente, serão retornados deputados de todos os estados.",
+          "explode": false,
+          "in": "query",
+          "name": "siglaUf",
+          "required": false,
+          "schema": {
+            "type": "array"
+          },
+          "style": "form"
+        },
+        {
+          "description": "Uma ou mais sigla(s) de partidos aos quais sejam filiados os deputados. Para obter as siglas válidas, consulte `/partidos`. __Atenção:__ partidos diferentes podem usar a mesma sigla em diferentes legislaturas!",
+          "explode": false,
+          "in": "query",
+          "name": "siglaPartido",
+          "required": false,
+          "schema": {
+            "type": "array"
+          },
+          "style": "form"
+        },
+        {
+          "description": "Letra que designe o gênero dos parlamentares que se deseja buscar, sendo M para masculino e F para feminino",
+          "in": "query",
+          "name": "siglaSexo",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "description": "Número da página de resultados, a partir de 1, que se deseja obter com a requisição, contendo o número de itens definido pelo parâmetro itens. Se omitido, assume o valor 1.",
+          "in": "query",
+          "name": "pagina",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        {
+          "description": "Número máximo de itens na página que se deseja obter com esta requisição.",
+          "in": "query",
+          "name": "itens",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        {
+          "description": "Data de início de um intervalo de tempo, no formato `AAAA-MM-DD`.",
+          "in": "query",
+          "name": "dataInicio",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "description": "Data de término de um intervalo de tempo, no formato `AAAA-MM-DD`.",
+          "in": "query",
+          "name": "dataFim",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "description": "O sentido da ordenação: `asc` para A a Z ou 0 a 9, e `desc` para Z a A ou 9 a 0.",
+          "in": "query",
+          "name": "ordem",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "default": "ASC"
+          }
+        },
+        {
+          "description": "Nome do campo pelo qual a lista deve ser ordenada: `id`, `idLegislatura`, `nome`, `siglaUF` ou `siglaPartido`",
+          "in": "query",
+          "name": "ordenarPor",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "default": "nome"
+          }
+        },
+        {
+          "in": "header",
+          "name": "Accept",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "application/json, application/xml"
+            ]
+          }
+        }
+      ],
+      "summary": "Listagem e busca de deputados, segundo critérios"
+    },
+    "/deputados/{id}": {
+      "parameters": [
+        {
+          "description": "Identificador numérico do parlamentar.",
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        {
+          "in": "header",
+          "name": "Accept",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "application/json, application/xml"
+            ]
+          }
+        }
+      ],
+      "summary": "Informações detalhadas sobre um deputado específico"
+    },
+    "/deputados/{id}/historico": {
+      "parameters": [
+        {
+          "description": "Identificador numérico do parlamentar.",
+          "in": "path",
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        {
+          "in": "header",
+          "name": "Accept",
+          "schema": {
+            "type": "string",
+            "enum": [
+              "application/json, application/xml"
+            ]
+          }
+        }
+      ],
+      "summary": "Lista de mudanças no exercício parlamentar de um deputado (versão GraphQL otimizada)"
+    }
+  }
+}

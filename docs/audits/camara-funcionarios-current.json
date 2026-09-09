@@ -1,0 +1,420 @@
+{
+  "files": [
+    {
+      "file": "funcionarios-camara-audit.csv",
+      "bytes": 3537410,
+      "sha256": "732e292a054a9a4fe9bf77b26a4a14f742598005ea7b5eac827ff2953a47ba16",
+      "encoding": "utf-8-sig",
+      "delimiter": ";",
+      "rows": 15506,
+      "columns": 12,
+      "headers": [
+        "ponto",
+        "codGrupo",
+        "grupo",
+        "nome",
+        "cargo",
+        "lotacao",
+        "atoNomeacao",
+        "dataNomeacao",
+        "dataInicioHistorico",
+        "dataPubNomeacao",
+        "funcao",
+        "uriLotacao"
+      ],
+      "malformed_rows": 0,
+      "keys": {
+        "ponto": {
+          "distinct": 15501,
+          "blank": 0
+        }
+      },
+      "distributions": {
+        "grupo": [
+          {
+            "value": "Secretário Parlamentar",
+            "count": 10605
+          },
+          {
+            "value": "Quadro Efetivo - RJU",
+            "count": 2659
+          },
+          {
+            "value": "Cargo de Natureza Especial",
+            "count": 1714
+          },
+          {
+            "value": "Parlamentar",
+            "count": 528
+          }
+        ],
+        "cargo": [
+          {
+            "value": "SP02S",
+            "count": 835
+          },
+          {
+            "value": "Analista Legislativo/Processo Legislativo e Gestão",
+            "count": 710
+          },
+          {
+            "value": "",
+            "count": 528
+          },
+          {
+            "value": "Técnico Legislativo/Assistente Legislativo e Administrativo",
+            "count": 437
+          },
+          {
+            "value": "SP01S",
+            "count": 405
+          },
+          {
+            "value": "SP25C",
+            "count": 358
+          },
+          {
+            "value": "CNE09",
+            "count": 350
+          },
+          {
+            "value": "SP23C",
+            "count": 341
+          },
+          {
+            "value": "SP12S",
+            "count": 293
+          },
+          {
+            "value": "SP14S",
+            "count": 266
+          },
+          {
+            "value": "SP11S",
+            "count": 265
+          },
+          {
+            "value": "SP06S",
+            "count": 256
+          },
+          {
+            "value": "Analista Legislativo/Consultoria",
+            "count": 248
+          },
+          {
+            "value": "SP08S",
+            "count": 245
+          },
+          {
+            "value": "SP17S",
+            "count": 245
+          },
+          {
+            "value": "Técnico Legislativo/Policial Legislativo Federal",
+            "count": 242
+          },
+          {
+            "value": "SP05S",
+            "count": 241
+          },
+          {
+            "value": "CNE15",
+            "count": 235
+          },
+          {
+            "value": "CNE10",
+            "count": 231
+          },
+          {
+            "value": "SP13S",
+            "count": 231
+          },
+          {
+            "value": "CNE13",
+            "count": 228
+          },
+          {
+            "value": "SP16C",
+            "count": 224
+          },
+          {
+            "value": "SP10S",
+            "count": 224
+          },
+          {
+            "value": "SP09S",
+            "count": 222
+          },
+          {
+            "value": "SP07S",
+            "count": 221
+          },
+          {
+            "value": "SP20S",
+            "count": 218
+          },
+          {
+            "value": "CNE11",
+            "count": 216
+          },
+          {
+            "value": "SP17C",
+            "count": 212
+          },
+          {
+            "value": "SP16S",
+            "count": 203
+          },
+          {
+            "value": "SP15S",
+            "count": 202
+          }
+        ],
+        "lotacao": [
+          {
+            "value": "CONLE/CONLE - CONSULTORIA LEGISLATIVA",
+            "count": 207
+          },
+          {
+            "value": "DEPOL/COPOL - COORDENAÇÃO DE POLICIAMENTO INSTITUCIONAL",
+            "count": 108
+          },
+          {
+            "value": "PT/PT - LIDERANÇA DO PT",
+            "count": 92
+          },
+          {
+            "value": "PL/PL - LIDERANÇA DO PL",
+            "count": 75
+          },
+          {
+            "value": "UNIÃO/UNIÃO - LIDERANÇA DO UNIÃO BRASIL",
+            "count": 70
+          },
+          {
+            "value": "DAS/COMED - COORDENAÇÃO MÉDICA",
+            "count": 66
+          },
+          {
+            "value": "DEPOL/COESP - COORDENAÇÃO ESPECIAL DE SEGURANÇA DO PRESIDENTE E DE AUTORIDADES",
+            "count": 65
+          },
+          {
+            "value": "DEREP/COREG/DEREP - COORDENAÇÃO DE REGISTRO OFICIAL",
+            "count": 60
+          },
+          {
+            "value": "REPUBLICANOS/REPUBLICANOS - LIDERANÇA DO REPUBLICANOS",
+            "count": 57
+          },
+          {
+            "value": "PSD/PSD - LIDERANÇA DO PSD",
+            "count": 51
+          },
+          {
+            "value": "PP/PP - LIDERANÇA DO PROGRESSISTAS",
+            "count": 47
+          },
+          {
+            "value": "MDB/MDB - LIDERANÇA DO MDB",
+            "count": 40
+          },
+          {
+            "value": "PDT/PDT - LIDERANÇA DO PDT",
+            "count": 39
+          },
+          {
+            "value": "PSDB/PSDB - LIDERANÇA DO PSDB",
+            "count": 39
+          },
+          {
+            "value": "DIREX/CJOR - COORDENAÇÃO DE JORNALISMO",
+            "count": 38
+          },
+          {
+            "value": "DIREX/COTRA - COORDENAÇÃO DE TRANSMISSÃO EM TEMPO REAL",
+            "count": 34
+          },
+          {
+            "value": "GAB. 4/450 - ANDRÉ FERREIRA",
+            "count": 34
+          },
+          {
+            "value": "ADVCD/ADVCD - ADVOCACIA DA CÂMARA DOS DEPUTADOS",
+            "count": 33
+          },
+          {
+            "value": "CONOF/CONOF - CONSULTORIA DE ORÇAMENTO E FISCALIZAÇÃO FINANCEIRA",
+            "count": 33
+          },
+          {
+            "value": "PSOL/PSOL - LIDERANÇA DO PSOL",
+            "count": 33
+          },
+          {
+            "value": "GAB. 4/707 - KENISTON BRAGA",
+            "count": 33
+          },
+          {
+            "value": "GAB. 3/490 - DELEGADO MARCELO FREITAS",
+            "count": 32
+          },
+          {
+            "value": "GAB. 4/852 - VINICIUS GURGEL",
+            "count": 32
+          },
+          {
+            "value": "GAB. 4/525 - ZÉ VITOR",
+            "count": 32
+          },
+          {
+            "value": "DETEC/COAUD - COORDENAÇÃO DE ENGENHARIA DE TELECOMUNICAÇÕES E AUDIOVISUAL",
+            "count": 31
+          },
+          {
+            "value": "GAB. 4/214 - CARLOS HENRIQUE GAGUIM",
+            "count": 31
+          },
+          {
+            "value": "GAB. 4/226 - RAIMUNDO COSTA",
+            "count": 31
+          },
+          {
+            "value": "GAB. EDP/017 - ARTHUR LIRA",
+            "count": 31
+          },
+          {
+            "value": "GAB. 4/537 - MARRECA FILHO",
+            "count": 31
+          },
+          {
+            "value": "GAB. 4/624 - MERLONG SOLANO",
+            "count": 31
+          }
+        ],
+        "funcao": [
+          {
+            "value": "",
+            "count": 12092
+          },
+          {
+            "value": "CNE09 - ASSISTENTE TÉCNICO DE GABINETE",
+            "count": 305
+          },
+          {
+            "value": "FC-1 - ASSESSOR TÉCNICO I",
+            "count": 235
+          },
+          {
+            "value": "CNE10 - ASSESSOR TÉCNICO ADJUNTO B",
+            "count": 226
+          },
+          {
+            "value": "CNE13 - ASSISTENTE TÉCNICO DE GABINETE ADJUNTO C",
+            "count": 214
+          },
+          {
+            "value": "CNE15 - ASSISTENTE TÉCNICO DE GABINETE ADJUNTO D",
+            "count": 211
+          },
+          {
+            "value": "CNE11 - ASSISTENTE TÉCNICO DE GABINETE ADJUNTO B",
+            "count": 181
+          },
+          {
+            "value": "CNE14 - ASSESSOR TÉCNICO ADJUNTO D",
+            "count": 167
+          },
+          {
+            "value": "CNE07 - ASSESSOR TÉCNICO",
+            "count": 150
+          },
+          {
+            "value": "FC-1 - ASSISTENTE DE GABINETE",
+            "count": 137
+          },
+          {
+            "value": "CNE12 - ASSESSOR TÉCNICO ADJUNTO C",
+            "count": 115
+          },
+          {
+            "value": "FC-3 - ASSESSOR TÉCNICO",
+            "count": 99
+          },
+          {
+            "value": "FC-2 - ASSISTENTE TÉCNICO",
+            "count": 55
+          },
+          {
+            "value": "FC-2 - ASSESSOR TÉCNICO II",
+            "count": 38
+          },
+          {
+            "value": "CNE11 - ASSISTENTE TÉCNICO DE COMISSÃO ADJUNTO B",
+            "count": 35
+          },
+          {
+            "value": "FC-3 - CONSULTOR DE ORÇAMENTO E FISCALIZAÇÃO FINANCEIRA",
+            "count": 30
+          },
+          {
+            "value": "FC-3 - ASSESSOR JURÍDICO III",
+            "count": 26
+          },
+          {
+            "value": "FC-3 - ASSESSOR TÉCNICO III",
+            "count": 26
+          },
+          {
+            "value": "CNE15 - ASSISTENTE TÉCNICO DE COMISSÃO ADJUNTO D",
+            "count": 24
+          },
+          {
+            "value": "FC-3 - ASSESSOR TÉCNICO DE PLENÁRIO",
+            "count": 23
+          },
+          {
+            "value": "CNE09 - SECRETÁRIO PARTICULAR",
+            "count": 23
+          },
+          {
+            "value": "CNE09 - ASSISTENTE TÉCNICO DE COMISSÃO",
+            "count": 20
+          },
+          {
+            "value": "FC-3 - CONSULTOR LEGISLATIVO - ÁREA I",
+            "count": 16
+          },
+          {
+            "value": "FC-3 - CONSULTOR LEGISLATIVO - ÁREA XV",
+            "count": 14
+          },
+          {
+            "value": "CNE13 - ASSISTENTE TÉCNICO DE COMISSÃO ADJUNTO C",
+            "count": 14
+          },
+          {
+            "value": "FC-3 - CONSULTOR LEGISLATIVO - ÁREA XX",
+            "count": 13
+          },
+          {
+            "value": "FC-1 - ASSISTENTE DE COMISSÃO",
+            "count": 13
+          },
+          {
+            "value": "FC-3 - CONSULTOR LEGISLATIVO - ÁREA XXII",
+            "count": 13
+          },
+          {
+            "value": "FC-3 - CONSULTOR LEGISLATIVO - ÁREA III",
+            "count": 12
+          },
+          {
+            "value": "FC-2 - ASSISTENTE DE CONTROLE INTERNO",
+            "count": 12
+          }
+        ]
+      }
+    }
+  ]
+}

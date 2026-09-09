@@ -1,0 +1,33 @@
+'use client';
+import { useMemo,useState } from 'react';
+import { BriefcaseBusiness,Search,Users } from 'lucide-react';
+import type { publishedCabinetProfile } from '@senadotracker/db';
+import { BarChart,LineChart } from '@/components/charts';
+import { DataTable,type DataColumn } from '@/components/data-table';
+import { EmptyState } from '@/components/empty-state';
+import { CoverageBadge,KpiCard,KpiGrid } from '@/components/metrics';
+import { SectionHeader } from '@/components/section-navigation';
+import { Card,CardContent,CardHeader } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+
+type Cabinet=ReturnType<typeof publishedCabinetProfile>;
+type Staff=Cabinet['staff']['items'][number];
+const money=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const reais=(cents:number)=>money.format(cents/100);
+const month=(value:number)=>new Intl.DateTimeFormat('pt-BR',{month:'short',timeZone:'UTC'}).format(new Date(Date.UTC(2026,value-1,1))).replace('.','');
+const normalize=(value:string)=>value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');
+const rubric:Record<string,string>={cabinet_payroll_gross:'Proventos brutos',cabinet_allowances:'Auxílios',cabinet_daily_allowances:'Diárias',cabinet_indemnities:'Vantagens indenizatórias'};
+
+export function CabinetBreakdown({data}:{data:Cabinet|null}){
+  const [query,setQuery]=useState('');
+  const filtered=useMemo(()=>data?.staff.items.filter(item=>normalize([item.name,item.relationship,item.position,item.role].filter(Boolean).join(' ')).includes(normalize(query)))??[],[data,query]);
+  if(!data)return <section><SectionHeader number={5} id="gabinete" title="Equipe e recursos do gabinete" description="Composição e valores publicados por Casa."/><div className="mt-6"><EmptyState title="Gabinete indisponível" description="Não foi possível consultar o lote publicado."/></div></section>;
+  const columns:DataColumn<Staff>[]=[{key:'name',header:'Nome',render:item=><strong>{item.name}</strong>},{key:'relationship',header:'Vínculo',render:item=>item.relationship},{key:'position',header:'Cargo/código',render:item=>item.position??'não informado'},{key:'role',header:'Função',render:item=>item.role??'não informada'},{key:'source',header:'Fonte',render:item=><a className="font-bold text-primary underline" href={item.origin.url} target="_blank" rel="noreferrer">Oficial ↗</a>}];
+  const financial=data.financial;
+  return <section><SectionHeader number={5} id="gabinete" title="Equipe e recursos do gabinete" description={data.source==='camara'?'Composição atual e execução mensal da verba de gabinete.':'Composição atual e parcelas identificadas da folha por lotação.'}/>
+    <KpiGrid className="mt-6 xl:grid-cols-3"><KpiCard label="Pessoas no snapshot" value={data.staff.items.length} coverage={data.staff.coverage} comparison={null} icon={Users}/>{data.staff.categories.slice(0,2).map(item=><KpiCard key={item.label} label={item.label} value={item.count} coverage={data.staff.coverage} comparison={null}/>)}</KpiGrid>
+    <div className="mt-8 grid gap-6 lg:grid-cols-[1.15fr_.85fr]"><Card><CardHeader><div className="flex flex-wrap items-center justify-between gap-3"><div><h3 className="font-bold">Composição do gabinete</h3><p className="mt-1 text-sm text-muted-foreground">{data.staff.categories.map(item=>`${item.label}: ${item.count}`).join(' · ')||'Sem categorias publicadas'}</p></div><CoverageBadge coverage={data.staff.coverage}/></div></CardHeader><CardContent>{data.staff.items.length?<><label className="relative mb-5 block"><span className="sr-only">Buscar na equipe</span><Search aria-hidden="true" className="pointer-events-none absolute left-3 top-3 text-muted-foreground" size={17}/><Input value={query} onChange={event=>setQuery(event.target.value)} className="pl-10" placeholder="Buscar por nome, vínculo, cargo ou função"/></label><p className="mb-3 text-xs text-muted-foreground" aria-live="polite">{filtered.length} {filtered.length===1?'pessoa encontrada':'pessoas encontradas'}</p><DataTable caption="Equipe atual do gabinete" columns={columns} rows={filtered} rowKey={item=>item.key} coverage={data.staff.coverage}/></>:<EmptyState title="Equipe não vinculada" description={data.staff.coverage.note}/>}</CardContent></Card>
+      <Card><CardHeader><h3 className="flex items-center gap-2 font-bold"><BriefcaseBusiness size={18}/>{financial.kind==='budget'?'Verba de gabinete':'Folha identificada'}</h3></CardHeader><CardContent>{financial.kind==='budget'?<dl className="space-y-4"><div><dt className="text-sm text-muted-foreground">Ano</dt><dd className="text-xl font-bold">{financial.year}</dd></div><div><dt className="text-sm text-muted-foreground">Limite publicado</dt><dd className="text-xl font-bold">{financial.totalAvailableCents===null?'—':reais(financial.totalAvailableCents)}</dd></div><div><dt className="text-sm text-muted-foreground">Gasto publicado</dt><dd className="text-xl font-bold">{financial.totalSpentCents===null?'—':reais(financial.totalSpentCents)}</dd></div><div><dt className="text-sm text-muted-foreground">Utilização</dt><dd className="font-bold">{financial.utilization===null?'—':new Intl.NumberFormat('pt-BR',{style:'percent',maximumFractionDigits:1}).format(financial.utilization)}</dd></div></dl>:<dl className="space-y-4"><div><dt className="text-sm text-muted-foreground">Competência</dt><dd className="text-xl font-bold">{financial.competence??'—'}</dd></div><div><dt className="text-sm text-muted-foreground">Parcelas identificadas</dt><dd className="text-xl font-bold">{reais(financial.totalCents)}</dd></div><div><dt className="text-sm text-muted-foreground">Linhas de folha normal</dt><dd className="font-bold">{financial.items.find(item=>item.nature==='headcount')?.count??'—'}</dd></div></dl>}<p className="mt-5 text-xs leading-5 text-muted-foreground">{financial.coverage.note}</p></CardContent></Card></div>
+    {financial.kind==='budget'?<div className="mt-8 grid gap-6 lg:grid-cols-2"><LineChart title="Limite mensal da verba (R$)" data={financial.items.map(item=>({label:month(item.month),value:item.availableCents===null?null:item.availableCents/100}))} coverage={financial.coverage}/><LineChart title="Gasto mensal da verba (R$)" data={financial.items.map(item=>({label:month(item.month),value:item.spentCents===null?null:item.spentCents/100}))} coverage={financial.coverage}/></div>:<div className="mt-8"><BarChart title={`Rubricas da folha — ${financial.competence??'competência indisponível'} (R$)`} data={financial.items.filter(item=>item.nature==='expense').map(item=>({label:rubric[item.rubric]??item.label,value:item.valueCents===null?null:item.valueCents/100}))} coverage={financial.coverage}/></div>}
+  </section>;
+}

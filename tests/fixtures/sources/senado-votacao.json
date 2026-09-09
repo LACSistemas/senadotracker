@@ -1,0 +1,65 @@
+{
+  "VotacaoParlamentar": {
+    "Parlamentar": {
+      "Codigo": "5672",
+      "Nome": "Alan Rick",
+      "Votacoes": {
+        "Votacao": [
+          {
+            "SessaoPlenaria": {
+              "CodigoSessao": "581816",
+              "SiglaCasaSessao": "SF",
+              "CodigoSessaoLegislativa": "874",
+              "SiglaTipoSessao": "DOR",
+              "NumeroSessao": "113",
+              "DataSessao": "2026-08-12",
+              "HoraInicioSessao": "14:00:00"
+            },
+            "Materia": {
+              "Codigo": "171682",
+              "IdentificacaoProcesso": "8957659",
+              "DescricaoIdentificacao": "PLP 124/2022 (Substitutivo-CD)",
+              "Sigla": "PLP",
+              "Numero": "124",
+              "Ano": "2022",
+              "Ementa": "Altera a Lei nº 5.172, de 25 de outubro de 1966 (Código Tributário Nacional), a fim de estabelecer normas gerais sobre solução de controvérsias, consensualidade e processo administrativo em matéria tributária e aduaneira; e altera a Lei nº 9.430, de 27 de dezembro de 1996.",
+              "Data": "2025-11-17"
+            },
+            "Tramitacao": {
+              "IdentificacaoTramitacao": {
+                "CodigoTramitacao": "11366137",
+                "NumeroAutuacao": "1",
+                "DataTramitacao": "2026-08-12",
+                "TextoTramitacao": "(Sessão Deliberativa Ordinária - semipresencial - de 12 de agosto de 2026) \nAprovado o Requerimento nº 467, de 2026, por meio do qual se solicita urgência para a matéria. \nEncaminhado à publicação o Parecer nº 138, de 2026-Plen/SF, proferido pelo Senador Efraim Filho, no qual se acolhe parte das alterações feitas pelo substitutivo da Câmara, na forma do texto consolidado que apresenta, com adequação redacional de Plenário. \nEncerrada a discussão da matéria. \nAprovado o substitutivo da Câmara dos Deputados, nos termos do texto consolidado, com adequação redacional de Plenário.  \nResultado da votação: sim – 69; Presidente – 1; total – 70.  \nEncaminhado à publicação o Parecer nº 139, de 2026-Plen/SF, da Comissão Diretora, no qual consta a redação final da matéria.  \nAprovada a redação final.  \nA matéria vai à sanção. \nSerá feita a devida comunicação à Câmara dos Deputados. ",
+                "OrigemTramitacao": {
+                  "Local": {
+                    "CodigoLocal": "1998",
+                    "TipoLocal": "C",
+                    "SiglaCasaLocal": "SF",
+                    "SiglaLocal": "PLEN",
+                    "NomeLocal": "Plenário do Senado Federal"
+                  }
+                },
+                "DestinoTramitacao": {
+                  "Local": {
+                    "CodigoLocal": "1998",
+                    "TipoLocal": "C",
+                    "SiglaCasaLocal": "SF",
+                    "SiglaLocal": "PLEN",
+                    "NomeLocal": "Plenário do Senado Federal"
+                  }
+                }
+              }
+            },
+            "CodigoSessaoVotacao": "7101",
+            "Sequencial": "1",
+            "IndicadorVotacaoSecreta": "Não",
+            "DescricaoVotacao": "Votação nominal do Substitutivo da Câmara dos Deputados ao Projeto de Lei Complementar nº 124, de 2022, na forma do texto consolidado apresentado pelo parecer.",
+            "DescricaoResultado": "Aprovado",
+            "SiglaDescricaoVoto": "Sim"
+          }
+        ]
+      }
+    }
+  }
+}

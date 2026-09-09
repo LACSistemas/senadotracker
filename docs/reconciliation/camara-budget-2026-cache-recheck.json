@@ -1,0 +1,13 @@
+{
+  "year": 2026,
+  "dryRun": true,
+  "runId": null,
+  "deputiesRequested": 513,
+  "deputiesCovered": 513,
+  "months": 3543,
+  "availableCents": 56112102609,
+  "spentCents": 50632820252,
+  "cacheHits": 513,
+  "failures": [],
+  "published": false
+}

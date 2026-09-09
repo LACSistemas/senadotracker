@@ -1,0 +1,35 @@
+{
+    "year":  2018,
+    "dryRun":  true,
+    "input":  {
+                  "candidates":  29287,
+                  "assets":  93527,
+                  "complement":  0
+              },
+    "selected":  {
+                     "candidacies":  8992,
+                     "assets":  34216,
+                     "complements":  0,
+                     "orphanAssets":  59311
+                 },
+    "links":  {
+                  "confirmed":  158,
+                  "pending":  8834,
+                  "ambiguous":  0,
+                  "notFound":  8834,
+                  "evidence":  [
+                                   "nome oficial ou nome de urna",
+                                   "UF",
+                                   "cargo e Casa",
+                                   "partido na data da eleição"
+                               ]
+              },
+    "coverage":  {
+                     "candidacies":  "available",
+                     "assets":  "available",
+                     "complement":  "unavailable",
+                     "campaignAccounts":  "unavailable"
+                 },
+    "published":  false,
+    "runId":  null
+}

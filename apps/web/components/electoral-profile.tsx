@@ -1,0 +1,42 @@
+'use client';
+import { useState } from 'react';
+import { Landmark, Vote, WalletCards } from 'lucide-react';
+import type { publishedPersonElectoralProfile } from '@senadotracker/db';
+import type { DataCoverage } from '@senadotracker/domain';
+import { LineChart } from '@/components/charts';
+import { EmptyState } from '@/components/empty-state';
+import { KpiCard, KpiGrid } from '@/components/metrics';
+import { SectionHeader } from '@/components/section-navigation';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { NativeSelect } from '@/components/ui/native-select';
+
+type ElectoralProfile=ReturnType<typeof publishedPersonElectoralProfile>;
+const money=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+const reais=(cents:number)=>money.format(cents/100);
+const date=(value:string|null)=>value?new Intl.DateTimeFormat('pt-BR',{timeZone:'UTC'}).format(new Date(`${value.slice(0,10)}T00:00:00Z`)):'não informada';
+
+export function ElectoralProfileSection({data}:{data:ElectoralProfile|null}){
+  const [year,setYear]=useState('all'),[office,setOffice]=useState('all'),[result,setResult]=useState('all');
+  if(!data||!data.elections.length)return <section><SectionHeader number={7} id="eleicoes" title="Eleições e patrimônio" description="Candidaturas, votos, campanha e bens dependem de vínculo seguro com os lotes do TSE."/><div className="mt-6"><EmptyState title="Nenhuma candidatura vinculada" description={data?.coverage.note??'Não foi possível consultar os lotes eleitorais publicados.'}/></div></section>;
+  const years=[...new Set(data.elections.map(item=>String(item.candidacy.year)))].sort((a,b)=>Number(b)-Number(a));
+  const offices=[...new Set(data.elections.map(item=>item.candidacy.office))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  const results=[...new Set(data.elections.flatMap(item=>item.candidacy.result?[item.candidacy.result]:[]))].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  const filtered=data.elections.filter(item=>(year==='all'||String(item.candidacy.year)===year)&&(office==='all'||item.candidacy.office===office)&&(result==='all'||item.candidacy.result===result));
+  const latest=filtered[0]??data.elections[0]!,series=data.patrimony.filter(item=>year==='all'||String(item.year)===year).map(item=>({label:String(item.year),value:item.valueCents/100}));
+  return <section><SectionHeader number={7} id="eleicoes" title="Eleições e patrimônio" description="Valores declarados em cada eleição; não representam patrimônio atual."/>
+    <div className="mt-6 grid gap-4 rounded-2xl border bg-card p-5 md:grid-cols-3"><label className="text-sm font-bold">Ano<NativeSelect className="mt-2" value={year} onChange={event=>setYear(event.target.value)}><option value="all">Todos os anos</option>{years.map(value=><option key={value}>{value}</option>)}</NativeSelect></label><label className="text-sm font-bold">Cargo<NativeSelect className="mt-2" value={office} onChange={event=>setOffice(event.target.value)}><option value="all">Todos os cargos</option>{offices.map(value=><option key={value}>{value}</option>)}</NativeSelect></label><label className="text-sm font-bold">Resultado oficial<NativeSelect className="mt-2" value={result} onChange={event=>setResult(event.target.value)}><option value="all">Todos os resultados</option>{results.map(value=><option key={value}>{value}</option>)}</NativeSelect></label></div>
+    <KpiGrid className="mt-6 xl:grid-cols-3">
+      <KpiCard label="Última candidatura" value={`${latest.candidacy.office} · ${latest.candidacy.year}`} coverage={latest.coverage.election as DataCoverage} comparison={latest.candidacy.result}/>
+      <KpiCard label="Votos recebidos" value={latest.candidacy.votes?.toLocaleString('pt-BR')??'—'} coverage={latest.coverage.election as DataCoverage} comparison={latest.candidacy.details?.ballotStatus??latest.candidacy.details?.candidacyStatus??null} icon={Vote}/>
+      <KpiCard label="Bens declarados no pleito" value={latest.assets.length?reais(latest.assetTotalCents):'—'} coverage={latest.coverage.assets as DataCoverage} comparison={latest.assets.length?`${latest.assets.length} ${latest.assets.length===1?'bem':'bens'}`:null} icon={Landmark}/>
+    </KpiGrid>
+    {series.length?<div className="mt-8"><LineChart title="Total de bens declarados por eleição (R$)" data={series} coverage={data.coverage}/><p className="mt-3 text-xs text-muted-foreground">Comparação nominal em reais entre declarações de pleitos distintos. A série não mede enriquecimento, valorização nem patrimônio atual.</p></div>:null}
+    <div className="mt-8 space-y-6">{filtered.length?filtered.map(item=><Card key={`${item.candidacy.electionId}:${item.candidacy.sequenceId}`}>
+      <CardHeader><div className="flex flex-wrap items-start justify-between gap-3"><div><h3 className="text-xl font-bold">{item.candidacy.office} — {item.candidacy.year}</h3><p className="mt-1 text-sm text-muted-foreground">{item.candidacy.party??'Partido não informado'} · candidatura {item.candidacy.ballotName}</p></div><Badge>{item.candidacy.result??'Resultado não informado'}</Badge></div></CardHeader>
+      <CardContent className="space-y-6"><dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"><div><dt className="text-sm text-muted-foreground">Data da eleição</dt><dd className="mt-1 font-bold">{date(item.candidacy.electionDate??null)}</dd></div><div><dt className="text-sm text-muted-foreground">Votos</dt><dd className="mt-1 font-bold">{item.candidacy.votes?.toLocaleString('pt-BR')??'Não informado'}</dd></div><div><dt className="text-sm text-muted-foreground">Receitas de campanha</dt><dd className="mt-1 font-bold">{item.revenues.length?reais(item.revenueTotalCents):'Indisponíveis'}</dd></div><div><dt className="text-sm text-muted-foreground">Despesas de campanha</dt><dd className="mt-1 font-bold">{item.expenses.length?reais(item.expenseTotalCents):'Indisponíveis'}</dd></div></dl>
+        <div><h4 className="flex items-center gap-2 font-bold"><WalletCards size={17}/>Bens declarados</h4>{item.assets.length?<div className="mt-3 overflow-x-auto"><table className="w-full min-w-[620px] text-left text-sm"><caption className="sr-only">Bens declarados na eleição de {item.candidacy.year}</caption><thead><tr className="border-b"><th className="p-3">Tipo</th><th className="p-3">Descrição</th><th className="p-3 text-right">Valor declarado</th></tr></thead><tbody>{item.assets.map(asset=><tr className="border-b" key={`${asset.assetId}:${asset.version}`}><td className="p-3">{asset.kind??'Não informado'}</td><td className="p-3">{asset.description}</td><td className="p-3 text-right font-bold">{reais(asset.valueCents)}</td></tr>)}</tbody><tfoot><tr><th className="p-3" colSpan={2}>Total declarado</th><td className="p-3 text-right font-bold">{reais(item.assetTotalCents)}</td></tr></tfoot></table></div>:<p className="mt-2 text-sm text-muted-foreground">{item.coverage.assets.note}</p>}</div>
+        {!item.revenues.length&&!item.expenses.length?<p className="rounded-xl border bg-muted/30 p-4 text-sm"><strong>Contas de campanha indisponíveis.</strong> {item.coverage.campaign.note}</p>:null}
+      </CardContent></Card>):<EmptyState title="Nenhuma candidatura neste recorte" description="Os filtros usam apenas ano, cargo e resultado publicados pelo TSE. Cobertura ausente de campanha não exclui candidaturas nem bens."/>}</div>
+  </section>;
+}

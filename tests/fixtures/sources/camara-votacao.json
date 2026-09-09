@@ -1,0 +1,325 @@
+{
+  "detail": {
+    "dados": {
+      "id": "2611313-31",
+      "uri": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31",
+      "data": "2026-09-03",
+      "dataHoraRegistro": "2026-09-03T17:28:34",
+      "siglaOrgao": "PLEN",
+      "uriOrgao": "https://dadosabertos.camara.leg.br/api/v2/orgaos/180",
+      "idOrgao": 180,
+      "uriEvento": "https://dadosabertos.camara.leg.br/api/v2/eventos/82965",
+      "idEvento": 82965,
+      "descricao": "Aprovada a Subemenda Substitutiva ao Projeto de Lei Complementar nº 74, de 2026, adotada pelo relator da Comissão de Finanças e Tributação. Sim: 346; Não: 46; Abstenção: 3; Total: 395.",
+      "aprovacao": 1,
+      "descUltimaAberturaVotacao": "Votação em turno único.",
+      "dataHoraUltimaAberturaVotacao": "2026-09-03T17:18:17",
+      "ultimaApresentacaoProposicao": {
+        "dataHoraRegistro": "2026-09-03T17:15:13",
+        "descricao": "Parecer às Emendas de Plenário proferido pelo Relator Dep. Isnaldo Bulhões Jr. (MDB/AL) pela:\r\nâ¢ Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária das Emendas de Plenário; e, no mérito, pela aprovação da Emenda nº 1, na forma da Subemenda Substitutiva adotada, e pela rejeição da Emenda nº 2.\r\nâ¢ Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa das Emendas de Plenário nºs 1 e 2, e da Subemenda Substitutiva adotada pelo relator da Comissão de Finanças e Tributação.",
+        "uriProposicaoCitada": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645884"
+      },
+      "efeitosRegistrados": [],
+      "objetosPossiveis": [
+        {
+          "id": 2645883,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645883",
+          "siglaTipo": "SSP",
+          "codTipo": 509,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T17:15"
+        },
+        {
+          "id": 2645880,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645880",
+          "siglaTipo": "PRLE",
+          "codTipo": 1001,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T17:11"
+        },
+        {
+          "id": 2645878,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645878",
+          "siglaTipo": "PRLE",
+          "codTipo": 1001,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T16:59"
+        },
+        {
+          "id": 2645912,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645912",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a    benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T16:57"
+        },
+        {
+          "id": 2645876,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645876",
+          "siglaTipo": "SBT",
+          "codTipo": 255,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T16:53"
+        },
+        {
+          "id": 2645873,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645873",
+          "siglaTipo": "RPD",
+          "codTipo": 890,
+          "numero": 10,
+          "ano": 0,
+          "ementa": "Requerimento Procedimental Genérico - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T16:22"
+        },
+        {
+          "id": 2645872,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645872",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T16:17"
+        },
+        {
+          "id": 2645851,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645851",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 8,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T15:45"
+        },
+        {
+          "id": 2645853,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645853",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 9,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 74/2026-Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T15:45"
+        },
+        {
+          "id": 2645730,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645730",
+          "siglaTipo": "DTQ",
+          "codTipo": 1011,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Destaque de Emenda - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T15:13"
+        },
+        {
+          "id": 2645731,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645731",
+          "siglaTipo": "RPD",
+          "codTipo": 1054,
+          "numero": 7,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque de Emenda - PLP 74/2026-Destaque de Emenda - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T15:13"
+        },
+        {
+          "id": 2645727,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645727",
+          "siglaTipo": "EMP",
+          "codTipo": 870,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-03T15:04"
+        },
+        {
+          "id": 2645877,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645877",
+          "siglaTipo": "PPP",
+          "codTipo": 192,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer proferido em Plenário pelo Relator Dep. Isnaldo Bulhões Jr. (MDB/AL) pela: â¢ Comissão de Finanças e Tributação, que conclui pela compatibilidade e adequação financeira e orçamentária; e, no mérito, pela aprovação do Projeto de Lei Complementar nº 74, de 2026, na forma do Substitutivo adotado. â¢ Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa do Projeto de Lei Complementar nº 74, de 2026, e do Substitutivo adotado pelo relator da Comissão de Finanças e Tributação.",
+          "dataApresentacao": "2026-09-03T13:55"
+        },
+        {
+          "id": 2645884,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645884",
+          "siglaTipo": "PEP",
+          "codTipo": 442,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Parecer às Emendas de Plenário proferido pelo Relator Dep. Isnaldo Bulhões Jr. (MDB/AL) pela: â¢ Comissão de Finanças e Tributação, que conclui pela adequação financeira e orçamentária das Emendas de Plenário; e, no mérito, pela aprovação da Emenda nº 1, na forma da Subemenda Substitutiva adotada, e pela rejeição da Emenda nº 2. â¢ Comissão de Constituição e Justiça e de Cidadania, que conclui pela constitucionalidade, juridicidade e boa técnica legislativa das Emendas de Plenário nºs 1 e 2, e da Subemenda Substitutiva adotada pelo relator da Comissão de Finanças e Tributação.",
+          "dataApresentacao": "2026-09-03T13:55"
+        },
+        {
+          "id": 2645707,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645707",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 6,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 74/2026-Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T12:38"
+        },
+        {
+          "id": 2645706,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645706",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 5,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-03T12:36"
+        },
+        {
+          "id": 2645628,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645628",
+          "siglaTipo": "DTQ",
+          "codTipo": 846,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Destaque para Votação em Separado - PLP 74/2026",
+          "dataApresentacao": "2026-09-02T18:20"
+        },
+        {
+          "id": 2645629,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645629",
+          "siglaTipo": "RPD",
+          "codTipo": 1053,
+          "numero": 4,
+          "ano": 0,
+          "ementa": "Votação Nominal do Destaque para Votação em Separado - PLP 74/2026-Destaque para Votação em Separado - PLP 74/2026",
+          "dataApresentacao": "2026-09-02T18:20"
+        },
+        {
+          "id": 2645614,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645614",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-02T17:30"
+        },
+        {
+          "id": 2645522,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645522",
+          "siglaTipo": "PRLP",
+          "codTipo": 891,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-09-02T12:04"
+        },
+        {
+          "id": 2645500,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645500",
+          "siglaTipo": "RPD",
+          "codTipo": 328,
+          "numero": 1,
+          "ano": 0,
+          "ementa": "Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-02T10:38"
+        },
+        {
+          "id": 2645501,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645501",
+          "siglaTipo": "RPD",
+          "codTipo": 1051,
+          "numero": 2,
+          "ano": 0,
+          "ementa": "Votação Nominal do Requerimento de Retirada de Pauta - PLP 74/2026-Requerimento de Retirada de Matéria da Pauta - PLP 74/2026",
+          "dataApresentacao": "2026-09-02T10:38"
+        },
+        {
+          "id": 2645502,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2645502",
+          "siglaTipo": "RPD",
+          "codTipo": 332,
+          "numero": 3,
+          "ano": 0,
+          "ementa": "Requerimento de Votação Nominal - PLP 74/2026",
+          "dataApresentacao": "2026-09-02T10:38"
+        },
+        {
+          "id": 2644910,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2644910",
+          "siglaTipo": "REQ",
+          "codTipo": 392,
+          "numero": 4140,
+          "ano": 2026,
+          "ementa": "Requer, nos termos do artigo 155 do Regimento Interno, tramitação sob o regime de urgência do Projeto de Lei Complementar nº 74, de 2026.",
+          "dataApresentacao": "2026-08-31T12:35"
+        }
+      ],
+      "proposicoesAfetadas": [
+        {
+          "id": 2611313,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/proposicoes/2611313",
+          "siglaTipo": "PLP",
+          "codTipo": 140,
+          "numero": 74,
+          "ano": 2026,
+          "ementa": "Dispõe sobre regras relativas a benefícios tributários e despesas obrigatórias no exercício de 2026.",
+          "dataApresentacao": "2026-03-23T17:21"
+        }
+      ]
+    },
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31"
+      }
+    ]
+  },
+  "votes": {
+    "dados": [
+      {
+        "tipoVoto": "Sim",
+        "dataRegistroVoto": "2026-09-03T17:28:19",
+        "deputado_": {
+          "id": 160561,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160561",
+          "nome": "Missionário José Olimpio",
+          "siglaPartido": "PL",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/37906",
+          "siglaUf": "SP",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160561.jpg",
+          "email": "dep.missionariojoseolimpio@camara.leg.br"
+        }
+      },
+      {
+        "tipoVoto": "Sim",
+        "dataRegistroVoto": "2026-09-03T17:28:18",
+        "deputado_": {
+          "id": 160559,
+          "uri": "https://dadosabertos.camara.leg.br/api/v2/deputados/160559",
+          "nome": "Alceu Moreira",
+          "siglaPartido": "MDB",
+          "uriPartido": "https://dadosabertos.camara.leg.br/api/v2/partidos/36899",
+          "siglaUf": "RS",
+          "idLegislatura": 57,
+          "urlFoto": "https://www.camara.leg.br/internet/deputado/bandep/160559.jpg",
+          "email": "dep.alceumoreira@camara.leg.br"
+        }
+      }
+    ],
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://dadosabertos.camara.leg.br/api/v2/votacoes/2611313-31/votos"
+      }
+    ]
+  }
+}

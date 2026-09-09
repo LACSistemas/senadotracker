@@ -1,0 +1,11 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/deputados?itens=2&pagina=1&ordem=ASC&ordenarPor=nome",
+  "fetchedAt": "2026-09-08T12:21:21.734Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 1191,
+  "rawResponseSha256": "4d87298acfe00abab7a20f9914ba1de3e9db0251365a9bb5b9e76682f3fe7f6d",
+  "fixtureSha256": "35dca9834ea496f580c158de9a0d10e7fe5a654173fdcc7a72a0129eed9653ea",
+  "selection": "Todos os registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

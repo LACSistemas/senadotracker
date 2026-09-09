@@ -1,0 +1,11 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5936/mandatos.json",
+  "fetchedAt": "2026-09-08T12:22:27.598Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 1264,
+  "rawResponseSha256": "bfe5e64fb2561e28338820762d5b82ffcb2c3e407d5423c8fa18d0a16f119799",
+  "fixtureSha256": "5df2c2c0c701407d6edf84d506dc2d413e09e8d10d5cf05e1dea604fa5409390",
+  "selection": "Todos os registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

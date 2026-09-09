@@ -1,0 +1,422 @@
+{
+  "year": 2026,
+  "dryRun": false,
+  "runId": "205c883b-817b-4abf-88bc-3a1dbccb1ced",
+  "senatorsRequested": 81,
+  "senatorsCovered": 81,
+  "records": 2026,
+  "categories": {
+    "Efetivo": 139,
+    "Comissionado": 1584,
+    "Terceirizado": 298,
+    "Estagiário": 5
+  },
+  "cacheHits": 81,
+  "failures": [],
+  "perSenator": {
+    "22": {
+      "Efetivo": 1,
+      "Comissionado": 14,
+      "Terceirizado": 4
+    },
+    "35": {
+      "Comissionado": 12,
+      "Terceirizado": 2
+    },
+    "70": {
+      "Efetivo": 6,
+      "Comissionado": 21,
+      "Terceirizado": 4
+    },
+    "285": {
+      "Efetivo": 2,
+      "Comissionado": 24,
+      "Terceirizado": 4
+    },
+    "345": {
+      "Efetivo": 2,
+      "Comissionado": 11,
+      "Terceirizado": 4
+    },
+    "470": {
+      "Comissionado": 15,
+      "Terceirizado": 4
+    },
+    "475": {
+      "Efetivo": 2,
+      "Comissionado": 13,
+      "Terceirizado": 4
+    },
+    "581": {
+      "Efetivo": 2,
+      "Comissionado": 20,
+      "Terceirizado": 5
+    },
+    "631": {
+      "Comissionado": 14,
+      "Terceirizado": 4
+    },
+    "739": {
+      "Efetivo": 3,
+      "Comissionado": 35,
+      "Terceirizado": 4
+    },
+    "742": {
+      "Efetivo": 3,
+      "Comissionado": 28,
+      "Terceirizado": 4
+    },
+    "825": {
+      "Comissionado": 17,
+      "Terceirizado": 4
+    },
+    "1173": {
+      "Efetivo": 3,
+      "Comissionado": 24,
+      "Terceirizado": 4
+    },
+    "1186": {
+      "Efetivo": 2,
+      "Comissionado": 14,
+      "Terceirizado": 4
+    },
+    "3777": {
+      "Efetivo": 5,
+      "Comissionado": 42,
+      "Terceirizado": 4
+    },
+    "3806": {
+      "Efetivo": 2,
+      "Comissionado": 24,
+      "Terceirizado": 4
+    },
+    "3830": {
+      "Comissionado": 9,
+      "Terceirizado": 2
+    },
+    "4531": {
+      "Efetivo": 3,
+      "Comissionado": 24,
+      "Terceirizado": 4
+    },
+    "4560": {
+      "Efetivo": 3,
+      "Comissionado": 16,
+      "Terceirizado": 4
+    },
+    "4639": {
+      "Efetivo": 2,
+      "Comissionado": 67,
+      "Terceirizado": 4
+    },
+    "4642": {
+      "Efetivo": 1,
+      "Comissionado": 21,
+      "Terceirizado": 4
+    },
+    "4694": {
+      "Comissionado": 16,
+      "Terceirizado": 4
+    },
+    "4770": {
+      "Efetivo": 3,
+      "Comissionado": 26,
+      "Terceirizado": 4
+    },
+    "4811": {
+      "Comissionado": 15,
+      "Terceirizado": 3
+    },
+    "4994": {
+      "Efetivo": 1,
+      "Comissionado": 17,
+      "Terceirizado": 4
+    },
+    "5008": {
+      "Efetivo": 1,
+      "Comissionado": 13,
+      "Terceirizado": 4
+    },
+    "5012": {
+      "Efetivo": 3,
+      "Comissionado": 21,
+      "Terceirizado": 4
+    },
+    "5070": {
+      "Efetivo": 2,
+      "Comissionado": 7,
+      "Terceirizado": 4
+    },
+    "5207": {
+      "Comissionado": 10,
+      "Terceirizado": 3
+    },
+    "5322": {
+      "Efetivo": 3,
+      "Comissionado": 14,
+      "Terceirizado": 4
+    },
+    "5352": {
+      "Efetivo": 5,
+      "Comissionado": 41,
+      "Terceirizado": 4
+    },
+    "5376": {
+      "Efetivo": 2,
+      "Comissionado": 13,
+      "Terceirizado": 4
+    },
+    "5385": {
+      "Efetivo": 3,
+      "Comissionado": 17,
+      "Terceirizado": 4
+    },
+    "5386": {
+      "Efetivo": 2,
+      "Comissionado": 22,
+      "Terceirizado": 4
+    },
+    "5411": {
+      "Efetivo": 3,
+      "Comissionado": 43,
+      "Terceirizado": 4
+    },
+    "5422": {
+      "Efetivo": 1,
+      "Comissionado": 24,
+      "Terceirizado": 4
+    },
+    "5502": {
+      "Efetivo": 4,
+      "Comissionado": 8,
+      "Terceirizado": 5
+    },
+    "5523": {
+      "Comissionado": 13,
+      "Terceirizado": 4
+    },
+    "5525": {
+      "Efetivo": 3,
+      "Comissionado": 26,
+      "Terceirizado": 4
+    },
+    "5672": {
+      "Efetivo": 3,
+      "Comissionado": 15,
+      "Terceirizado": 4,
+      "Estagiário": 1
+    },
+    "5718": {
+      "Efetivo": 2,
+      "Comissionado": 29,
+      "Terceirizado": 4
+    },
+    "5732": {
+      "Efetivo": 2,
+      "Comissionado": 22,
+      "Terceirizado": 4
+    },
+    "5736": {
+      "Comissionado": 15,
+      "Terceirizado": 4
+    },
+    "5748": {
+      "Efetivo": 3,
+      "Comissionado": 50,
+      "Terceirizado": 3
+    },
+    "5783": {
+      "Efetivo": 3,
+      "Comissionado": 10,
+      "Terceirizado": 4
+    },
+    "5793": {
+      "Efetivo": 1,
+      "Comissionado": 9,
+      "Terceirizado": 4
+    },
+    "5894": {
+      "Efetivo": 1,
+      "Comissionado": 15,
+      "Terceirizado": 4
+    },
+    "5895": {
+      "Comissionado": 22,
+      "Terceirizado": 4
+    },
+    "5899": {
+      "Comissionado": 12,
+      "Terceirizado": 2
+    },
+    "5906": {
+      "Efetivo": 2,
+      "Comissionado": 18,
+      "Terceirizado": 3
+    },
+    "5917": {
+      "Efetivo": 2,
+      "Comissionado": 11,
+      "Terceirizado": 4
+    },
+    "5924": {
+      "Comissionado": 12,
+      "Terceirizado": 4
+    },
+    "5926": {
+      "Efetivo": 2,
+      "Comissionado": 33,
+      "Terceirizado": 4
+    },
+    "5936": {
+      "Comissionado": 11,
+      "Terceirizado": 3
+    },
+    "5942": {
+      "Comissionado": 9,
+      "Terceirizado": 4
+    },
+    "5953": {
+      "Comissionado": 16,
+      "Terceirizado": 4
+    },
+    "5959": {
+      "Efetivo": 2,
+      "Comissionado": 7,
+      "Terceirizado": 4
+    },
+    "5967": {
+      "Efetivo": 2,
+      "Comissionado": 40,
+      "Terceirizado": 4
+    },
+    "5973": {
+      "Efetivo": 4,
+      "Comissionado": 21,
+      "Terceirizado": 4
+    },
+    "5974": {
+      "Efetivo": 1,
+      "Comissionado": 8
+    },
+    "5979": {
+      "Efetivo": 3,
+      "Comissionado": 40,
+      "Terceirizado": 4
+    },
+    "5982": {
+      "Efetivo": 1,
+      "Comissionado": 15,
+      "Terceirizado": 4
+    },
+    "5985": {
+      "Efetivo": 2,
+      "Comissionado": 57,
+      "Terceirizado": 4,
+      "Estagiário": 1
+    },
+    "5988": {
+      "Efetivo": 3,
+      "Comissionado": 17,
+      "Terceirizado": 4,
+      "Estagiário": 2
+    },
+    "5990": {
+      "Efetivo": 1,
+      "Comissionado": 15,
+      "Terceirizado": 2
+    },
+    "5998": {
+      "Comissionado": 13,
+      "Terceirizado": 3
+    },
+    "6008": {
+      "Efetivo": 2,
+      "Comissionado": 6,
+      "Terceirizado": 4
+    },
+    "6009": {
+      "Efetivo": 1,
+      "Comissionado": 20,
+      "Terceirizado": 4
+    },
+    "6010": {
+      "Efetivo": 2,
+      "Comissionado": 11,
+      "Terceirizado": 4
+    },
+    "6025": {
+      "Comissionado": 14,
+      "Terceirizado": 4
+    },
+    "6295": {
+      "Comissionado": 10,
+      "Terceirizado": 4
+    },
+    "6331": {
+      "Efetivo": 2,
+      "Comissionado": 10,
+      "Terceirizado": 4
+    },
+    "6335": {
+      "Comissionado": 25,
+      "Terceirizado": 2
+    },
+    "6336": {
+      "Comissionado": 27
+    },
+    "6337": {
+      "Comissionado": 20,
+      "Terceirizado": 5
+    },
+    "6338": {
+      "Efetivo": 3,
+      "Comissionado": 13,
+      "Terceirizado": 4
+    },
+    "6340": {
+      "Efetivo": 1,
+      "Comissionado": 8,
+      "Terceirizado": 4,
+      "Estagiário": 1
+    },
+    "6341": {
+      "Efetivo": 2,
+      "Comissionado": 19,
+      "Terceirizado": 4
+    },
+    "6342": {
+      "Efetivo": 4,
+      "Comissionado": 19,
+      "Terceirizado": 2
+    },
+    "6359": {
+      "Efetivo": 1,
+      "Comissionado": 13,
+      "Terceirizado": 2
+    },
+    "6369": {
+      "Efetivo": 3,
+      "Comissionado": 16,
+      "Terceirizado": 3
+    }
+  },
+  "reconciliation": {
+    "sourceRows": 6663,
+    "unitKinds": {
+      "cabinet": 1725,
+      "support_office": 1586,
+      "leadership": 409,
+      "commission": 110,
+      "administrative": 2833
+    },
+    "mappedToRequested": 3301,
+    "unresolvedParliamentaryUnits": [
+      "E1JBAR - ESCRITÓRIO DE APOIO Nº 01  DO SENADOR JADER BABALHO"
+    ],
+    "sharedNames": 1718,
+    "onlyIndividual": 308,
+    "onlyConsolidated": 1583,
+    "note": "A base consolidada não fornece fcodigo. Nome é usado somente na reconciliação diagnóstica e nunca confirma vínculo funcional; variações de nome só resolvem quando produzem um único senador candidato."
+  },
+  "published": true
+}

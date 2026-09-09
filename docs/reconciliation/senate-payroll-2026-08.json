@@ -1,0 +1,23 @@
+{
+  "runId": "479a745c-4f37-4bba-b0ca-0c39c96f9a5b",
+  "dryRun": false,
+  "competence": "2026-08",
+  "matchedOffices": 80,
+  "unmatched": [
+    "Gabinete da Senadora Ana Paula Lobato",
+    "Gabinete do Senador Eduardo Girão",
+    "Gabinete do Senador Hermes Klann"
+  ],
+  "costRecords": 400,
+  "inputRows": 7201,
+  "cabinetRows": 1880,
+  "otherUnits": 5321,
+  "payrollTypes": {
+    "Normal": 6620,
+    "Suplementar": 581
+  },
+  "repeatedSignatures": 333,
+  "personLinkAvailability": "unavailable",
+  "personLinkNote": "O CSV não contém nome, matrícula ou fcodigo; remuneração não é atribuída individualmente.",
+  "published": true
+}

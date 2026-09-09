@@ -1,0 +1,11 @@
+{
+  "url": "https://dadosabertos.camara.leg.br/api/v2/deputados/204554/historico",
+  "fetchedAt": "2026-09-08T12:21:22.074Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 4140,
+  "rawResponseSha256": "f32a2ed28ac453172829087168df60f40f87167d38665735dba9896dc1f5fc36",
+  "fixtureSha256": "47d7ec6a37ad9fa4853e6c9c91c768802d08109ef8459830ea33ea2663ce53c1",
+  "selection": "Todos os registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

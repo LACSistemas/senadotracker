@@ -1,0 +1,45 @@
+{
+  "year": 2026,
+  "dryRun": true,
+  "runId": null,
+  "senatorsRequested": 1,
+  "senatorsCovered": 1,
+  "records": 23,
+  "categories": {
+    "Efetivo": 3,
+    "Comissionado": 16,
+    "Terceirizado": 4,
+    "Estagiário": 0
+  },
+  "cacheHits": 0,
+  "failures": [],
+  "perSenator": {
+    "4560": {
+      "Efetivo": 3,
+      "Comissionado": 16,
+      "Terceirizado": 4
+    }
+  },
+  "reconciliation": {
+    "sourceRows": 6663,
+    "unitKinds": {
+      "cabinet": 1725,
+      "support_office": 1586,
+      "leadership": 409,
+      "commission": 110,
+      "administrative": 2833
+    },
+    "mappedToRequested": 34,
+    "unresolvedParliamentaryUnits": [
+      "E1CMOURA - ESCRITÓRIO DE APOIO Nº 01 DO SENADOR SENADOR CONFÚCIO MOURA",
+      "E1JBAR - ESCRITÓRIO DE APOIO Nº 01  DO SENADOR JADER BABALHO",
+      "E1WEVERT - ESCRITÓRIO DE APOIO Nº 01 DO SENADOR WEVERTON ROCHA",
+      "GSWEVERT - GABINETE DO SENADOR WEVERTON ROCHA"
+    ],
+    "sharedNames": 19,
+    "onlyIndividual": 4,
+    "onlyConsolidated": 15,
+    "note": "A base consolidada não fornece fcodigo. Nome é usado somente na reconciliação diagnóstica e nunca confirma vínculo funcional."
+  },
+  "published": false
+}

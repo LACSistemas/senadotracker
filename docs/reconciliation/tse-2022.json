@@ -1,0 +1,36 @@
+{
+    "year":  2022,
+    "dryRun":  false,
+    "input":  {
+                  "candidates":  29322,
+                  "assets":  92559,
+                  "complement":  29322
+              },
+    "selected":  {
+                     "candidacies":  10873,
+                     "assets":  38117,
+                     "complements":  10873,
+                     "excludedAssets":  54442,
+                     "orphanAssets":  0
+                 },
+    "links":  {
+                  "confirmed":  277,
+                  "pending":  10596,
+                  "ambiguous":  0,
+                  "notFound":  10596,
+                  "evidence":  [
+                                   "nome oficial ou nome de urna",
+                                   "UF",
+                                   "cargo e Casa",
+                                   "partido na data da eleição"
+                               ]
+              },
+    "coverage":  {
+                     "candidacies":  "available",
+                     "assets":  "available",
+                     "complement":  "available",
+                     "campaignAccounts":  "unavailable"
+                 },
+    "published":  true,
+    "runId":  "f673a903-93e7-4497-8973-a8aabe63f3e8"
+}

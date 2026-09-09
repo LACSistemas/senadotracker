@@ -1,0 +1,109 @@
+{
+  "provenance": {
+    "url": "https://legis.senado.leg.br/dadosabertos/v3/api-docs",
+    "fetchedAt": "2026-09-08T12:21:19.588Z",
+    "status": 200,
+    "contentType": "application/json",
+    "sha256": "8e5b23c13a0137b4248626ba33376989e45d80340a78fa75ded6f2383f14e0a5",
+    "bytes": 172752
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/dadosabertos/senador/lista/atual": {
+      "parameters": [
+        {
+          "name": "uf",
+          "in": "query",
+          "description": "UF de mandato do Senador - sigla com dois caracteres",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "example": "DF"
+        },
+        {
+          "name": "participacao",
+          "in": "query",
+          "description": "Tipo de participação no mandato: (T)itular ou (S)uplente",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "enum": [
+              "T",
+              "S"
+            ]
+          },
+          "example": "T"
+        },
+        {
+          "name": "v",
+          "in": "query",
+          "description": "Versão do serviço. Exemplificada a última disponível.",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "example": 4
+        }
+      ],
+      "summary": "Senadores em Exercício"
+    },
+    "/dadosabertos/senador/{codigo}/mandatos": {
+      "parameters": [
+        {
+          "name": "codigo",
+          "in": "path",
+          "description": "Código do Senador",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "example": 5322
+        },
+        {
+          "name": "v",
+          "in": "query",
+          "description": "Versão do serviço. Exemplificada a última disponível.",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 5
+          },
+          "example": 5
+        }
+      ],
+      "summary": "Obtém os Mandatos Parlamentares de um Senador"
+    },
+    "/dadosabertos/senador/{codigo}/filiacoes": {
+      "parameters": [
+        {
+          "name": "codigo",
+          "in": "path",
+          "description": "Código do Senador",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "example": 5322
+        },
+        {
+          "name": "v",
+          "in": "query",
+          "description": "Versão do serviço. Exemplificada a última disponível.",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "format": "int32",
+            "default": 5
+          },
+          "example": 5
+        }
+      ],
+      "summary": "Obtém as Filiações Partidárias de um Senador"
+    }
+  }
+}

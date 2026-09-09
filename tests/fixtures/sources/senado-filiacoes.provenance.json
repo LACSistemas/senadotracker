@@ -1,0 +1,11 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/5672/filiacoes.json",
+  "fetchedAt": "2026-09-08T12:21:19.379Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 978,
+  "rawResponseSha256": "4949dea9241cdb6eccde306e48b0d49dcf4fd38271cd3d3b60b37e6943f32a2a",
+  "fixtureSha256": "a9855a4ab1833a476e1f66c7fc847122720298fc5a34530f517b50205908a500",
+  "selection": "Todos os registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

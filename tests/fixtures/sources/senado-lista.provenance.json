@@ -1,0 +1,11 @@
+{
+  "url": "https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json",
+  "fetchedAt": "2026-09-08T12:21:19.202Z",
+  "status": 200,
+  "contentType": "application/json",
+  "bytes": 129367,
+  "rawResponseSha256": "798d876787f7529fc0c5506253f84150b52f344484baa887897ec5e7eec4d070",
+  "fixtureSha256": "005bf82872585688fade72ad2ed78ee3b12b75c3f8baef557718117d669e7f45",
+  "selection": "Somente CodigoParlamentar 5672, 5936 e 6336 de 81 registros; projeção de campos conforme README.md.",
+  "isCompleteDataset": false
+}

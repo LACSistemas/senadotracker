@@ -1,0 +1,40 @@
+{
+  "dryRun": true,
+  "runId": null,
+  "observedAt": "2026-09-09T17:22:08.397Z",
+  "availability": "partial",
+  "records": 15506,
+  "input": 15506,
+  "confirmed": 11990,
+  "pending": 197,
+  "ambiguous": 0,
+  "ignoredUnits": 3319,
+  "examples": {
+    "pending": [
+      "GAB. 4/541 - ALEX SANTANA -> 204571",
+      "GAB. 4/956 - ALEXANDRE PADILHA -> 204503",
+      "GAB. 4/815 - MURILO GALDINO -> 220584",
+      "GAB. 4/629 - GIACOBO -> 74383",
+      "GAB. 4/935 - GUILHERME BOULOS -> 220639",
+      "GAB. 4/320 - JOÃO LEÃO -> 74550",
+      "GAB. 4/306 - JOSÉ GUIMARÃES -> 141470",
+      "GAB. 4/534 - WILSON SANTIAGO -> 74044",
+      "GAB. 4/646 - LEO PRATES -> 80815",
+      "GAB. 4/329 - LUCIANO VIEIRA -> 220616"
+    ],
+    "ambiguous": [],
+    "ignored": [
+      "DETEC/CAEDI - COORDENAÇÃO DE ADMINISTRAÇÃO DE EDIFÍCIOS",
+      "CEDI/SEADE - SEÇÃO DE ATENDIMENTO E DISSEMINAÇÃO EDITORIAL",
+      "CORREGEDORIA/CORREGEDORIA - CORREGEDORIA PARLAMENTAR",
+      "DETEC/COAUD - COORDENAÇÃO DE ENGENHARIA DE TELECOMUNICAÇÕES E AUDIOVISUAL",
+      "CONLE/CONLE - CONSULTORIA LEGISLATIVA",
+      "DEFIN/COGEA/DEFIN - COORDENAÇÃO DE GESTÃO ADMINISTRATIVA / DEFIN",
+      "PP/PP - LIDERANÇA DO PROGRESSISTAS",
+      "DEPES/CGERP/DEPES - COORDENAÇÃO DE GESTÃO DE REGISTRO E SEGURIDADE PARLAMENTAR",
+      "DEFIN/CODESP - COORDENAÇÃO DE REGISTRO DAS DESPESAS",
+      "DEFIN/COGEP - COORDENAÇÃO DE GESTÃO DE COTA PARLAMENTAR"
+    ]
+  },
+  "published": false
+}
