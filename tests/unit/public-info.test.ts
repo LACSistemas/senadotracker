@@ -1,0 +1,6 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {openDatabase,publishedParliamentarySubsidy,publishedSourceFreshness} from '@senadotracker/db';
+
+test('subsídio normativo respeita vigência e preserva a base legal',()=>{const db=openDatabase(':memory:');try{assert.equal(publishedParliamentarySubsidy(db,'2024-06-01')?.valueCents,4400852);const current=publishedParliamentarySubsidy(db,'2026-09-09');assert.equal(current?.valueCents,4636619);assert.match(current?.legalBasis??'',/172\/2022/)}finally{db.close()}});
+test('frescor cadastral expõe estado desatualizado',()=>{const db=openDatabase(':memory:');try{db.prepare("INSERT INTO ingestion_runs(id,source,started_at,status,parser_version,roster_complete) VALUES ('r','senado','2026-01-01','published','test',1)").run();db.prepare("INSERT INTO publication_batches VALUES ('r','senado','2026-01-01')").run();db.prepare("INSERT INTO active_publications VALUES ('senado','r')").run();const result=publishedSourceFreshness(db,new Date('2026-01-20T00:00:00Z'));assert.equal(result.find(item=>item.source==='senado')?.availability,'stale');assert.equal(result.find(item=>item.source==='camara')?.availability,'unavailable')}finally{db.close()}});

@@ -14,6 +14,7 @@ import { OfficialSourcesStrip } from '@/components/official-sources';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { NativeSelect } from '@/components/ui/native-select';
+import { BrazilStateMap } from '@/components/brazil-state-map';
 
 type Params = Record<string, string | string[] | undefined>;
 const scalar = (value: string | string[] | undefined) => typeof value === 'string' ? value : undefined;
@@ -29,7 +30,7 @@ export default async function StatePage({searchParams}:{searchParams:Promise<Par
   const requestedCompare=scalar(params.comparar)?.toUpperCase();
   const compareUf=requestedCompare&&ufs.has(requestedCompare)?requestedCompare:undefined;
   const subject=scalar(params.assunto)?.trim();
-  if(!uf) return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1}><div className="page-shell py-8"><InstitutionHero context="Representação por estado" title="Quem me representa?" description="Escolha uma UF para consultar senadores e deputados federais nos cadastros oficiais ativos." imageUrl="/congresso.svg" location="Congresso Nacional" actions={<StateSelector/>}/></div><section className="page-shell py-14"><EmptyState title="Selecione seu estado" description="A consulta começa pela UF. A plataforma ainda não promete identificação por cidade porque não há base eleitoral adequada publicada para esse vínculo."/></section></main></>;
+  if(!uf) return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1}><div className="page-shell py-8"><InstitutionHero context="Representação por estado" title="Quem me representa?" description="Escolha uma UF para consultar senadores e deputados federais nos cadastros oficiais ativos." imageUrl="/congresso.svg" location="Congresso Nacional" actions={<StateSelector/>}/></div><section className="page-shell py-10"><h2 className="text-center text-3xl font-bold">Escolha seu estado no mapa</h2><p className="mx-auto mt-2 max-w-2xl text-center text-muted-foreground">Cada ponto abre a bancada federal da UF. A busca por cidade não é inferida sem uma base eleitoral adequada.</p><div className="mt-6"><BrazilStateMap/></div></section></main></>;
   const data=stateRepresentation(uf,compareUf);
   if(data.status==='unavailable') return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Representação indisponível" description={data.message}/></main></>;
   const {representation,comparison}=data.data;

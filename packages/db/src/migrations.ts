@@ -172,4 +172,17 @@ export const migrations = [
     CREATE INDEX proposals_listing ON proposals(source,json_extract(payload,'$.type'),CAST(json_extract(payload,'$.year') AS INTEGER),batch_id);
     CREATE INDEX deliberations_proposal ON deliberations(source,json_extract(payload,'$.proposalId'),batch_id);
   ` },
+  { version: 12, sql: `
+    CREATE TABLE normative_values (
+      key TEXT PRIMARY KEY,kind TEXT NOT NULL,applies_to TEXT NOT NULL,valid_from TEXT NOT NULL,valid_to TEXT,
+      value_cents INTEGER NOT NULL CHECK(value_cents>=0),unit TEXT NOT NULL,legal_basis TEXT NOT NULL,
+      official_url TEXT NOT NULL,published_at TEXT NOT NULL,note TEXT NOT NULL,CHECK(valid_to IS NULL OR valid_to>=valid_from)
+    ) STRICT;
+    INSERT INTO normative_values VALUES
+      ('congress-subsidy-2023-01','parliamentary_subsidy','congress','2023-01-01','2023-03-31',3929332,'month','Decreto Legislativo nº 172/2022','https://www2.camara.leg.br/legin/fed/decleg/2022/decretolegislativo-172-21-dezembro-2022-793529-norma-pl.html','2022-12-22','Valor bruto normativo mensal dos membros do Congresso Nacional.'),
+      ('congress-subsidy-2023-04','parliamentary_subsidy','congress','2023-04-01','2024-01-31',4165092,'month','Decreto Legislativo nº 172/2022','https://www2.camara.leg.br/legin/fed/decleg/2022/decretolegislativo-172-21-dezembro-2022-793529-norma-pl.html','2022-12-22','Valor bruto normativo mensal dos membros do Congresso Nacional.'),
+      ('congress-subsidy-2024-02','parliamentary_subsidy','congress','2024-02-01','2025-01-31',4400852,'month','Decreto Legislativo nº 172/2022','https://www2.camara.leg.br/legin/fed/decleg/2022/decretolegislativo-172-21-dezembro-2022-793529-norma-pl.html','2022-12-22','Valor bruto normativo mensal dos membros do Congresso Nacional.'),
+      ('congress-subsidy-2025-02','parliamentary_subsidy','congress','2025-02-01',NULL,4636619,'month','Decreto Legislativo nº 172/2022','https://www2.camara.leg.br/legin/fed/decleg/2022/decretolegislativo-172-21-dezembro-2022-793529-norma-pl.html','2022-12-22','Valor bruto normativo mensal; descontos e pagamentos eventuais não estão incluídos.');
+    CREATE INDEX normative_values_period ON normative_values(kind,applies_to,valid_from,valid_to);
+  ` },
 ];

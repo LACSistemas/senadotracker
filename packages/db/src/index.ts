@@ -211,5 +211,8 @@ export { comparisonDimensions, publishedComparisonOptions, publishedComparisonYe
 export { partyAtDate, groupRecordedPartyVotes, publishedPartyPanorama, publishedVoteOptions, publishedPartyVote, publishedOfficialTopics, type PartyHouse, type PartyRow } from './parties.ts';
 export { publishStaffSnapshot, publishedStaffSnapshot, snapshotAvailability, publishCabinetBudgets, publishedCabinetBudgets } from './cabinet-data.ts';
 export { publishedPersonElectoralProfile, publishedCabinetProfile, publishedCabinetPanorama } from './frontend-data.ts';
+export { publishedRankings, type RankingDimension, type RankingQuery } from './rankings.ts';
+export { publishedParliamentarySubsidy, publishedExpenseCoverage, publishedSourceFreshness } from './public-info.ts';
 export { publishedPropositionCoverage, publishedPropositions, publishedProposition, type PropositionQuery } from './propositions.ts';
 export { publishedExpenseDetail } from './expense-intelligence.ts';
+export { publishedSupplierRadar, publishedPatrimonyRanking, type SupplierRadarQuery } from './investigative.ts';
