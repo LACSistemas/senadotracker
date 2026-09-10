@@ -1,4 +1,4 @@
-import type { DatabaseSync } from 'node:sqlite';
+﻿import type { DatabaseSync } from 'node:sqlite';
 import { distribution, type DataCoverage, type Profile, type Source } from '@senadotracker/domain';
 import { publishedExpenseYears, publishedParticipationRows } from './panorama.ts';
 import { publishedCabinetPanorama, publishedCabinetProfile } from './frontend-data.ts';
@@ -33,7 +33,7 @@ function valuesFor(db:DatabaseSync,source:Source,year:number,dimension:Compariso
 export function publishedPersonComparison(db:DatabaseSync,source:Source,year:number,externalIds:string[],dimension:ComparisonDimension){
   if(!comparisonDimensions.includes(dimension))throw new Error('Dimensão inválida');
   if(!Number.isInteger(year)||year<2008||year>2100)throw new Error('Ano inválido');
-  if(externalIds.length<2||externalIds.length>3||new Set(externalIds).size!==externalIds.length)throw new Error('Selecione duas ou três pessoas diferentes');
+  if(externalIds.length<2||externalIds.length>4||new Set(externalIds).size!==externalIds.length)throw new Error('Selecione de duas a quatro pessoas diferentes');
   const population=profiles(db,source),byId=new Map(population.map(item=>[item.externalId,item]));
   const selected=externalIds.map(id=>byId.get(id));
   if(selected.some(item=>!item))throw new Error('Parlamentar incompatível com a Casa selecionada');
@@ -57,3 +57,4 @@ export function publishedPersonComparison(db:DatabaseSync,source:Source,year:num
 
 export function publishedComparisonOptions(db:DatabaseSync,source:Source){return profiles(db,source)}
 export function publishedComparisonYears(db:DatabaseSync,source:Source){const years=new Set(publishedExpenseYears(db,source));for(const table of ['active_presence_publications','active_legislative_publications','active_expanded_cost_publications'])for(const row of db.prepare(`SELECT year FROM ${table} WHERE source=?`).all(source))years.add(Number(row.year));return[...years].sort((a,b)=>b-a)}
+

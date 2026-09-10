@@ -13,6 +13,7 @@ export function transaction<T>(db: DatabaseSync, work: () => T): T {
 export function openDatabase(path: string, readOnly = false): DatabaseSync {
   if (!readOnly && path !== ':memory:') mkdirSync(dirname(path), { recursive: true });
   const db = new DatabaseSync(path, { readOnly, enableForeignKeyConstraints: true });
+  db.function('search_text',{deterministic:true},value=>searchText(String(value??'')));
   db.exec('PRAGMA busy_timeout=5000');
   if (!readOnly) {
     db.exec('PRAGMA journal_mode=WAL; CREATE TABLE IF NOT EXISTS schema_migrations(version INTEGER PRIMARY KEY,sha256 TEXT NOT NULL) STRICT');
@@ -208,7 +209,8 @@ export { publishExpandedCosts, publishedExpandedCosts } from './costs.ts';
 export { publishedExpenseYears, publishedHousePanorama, publishedParticipationRows, type HousePanorama } from './panorama.ts';
 export { publishedStateComparison, publishedStateRepresentation, publishedStateTopics, type StateRepresentative, type StateSummary } from './states.ts';
 export { comparisonDimensions, publishedComparisonOptions, publishedComparisonYears, publishedPersonComparison, type ComparisonDimension, type PersonComparison } from './comparisons.ts';
-export { partyAtDate, groupRecordedPartyVotes, publishedPartyPanorama, publishedVoteOptions, publishedPartyVote, publishedOfficialTopics, type PartyHouse, type PartyRow } from './parties.ts';
+export { calculateVoteAgreement, normalizedComparableVote, publishedPartyComparison, publishedPersonComparisonDashboard, publishedStatesComparison } from './comparison-dashboard.ts';
+export { partyAtDate, groupRecordedPartyVotes, publishedPartyPanorama, publishedVoteOptions, publishedPartyVote, publishedOfficialTopics, publishedPartyDetail, type PartyHouse, type PartyRow } from './parties.ts';
 export { publishStaffSnapshot, publishedStaffSnapshot, snapshotAvailability, publishCabinetBudgets, publishedCabinetBudgets } from './cabinet-data.ts';
 export { publishedPersonElectoralProfile, publishedCabinetProfile, publishedCabinetPanorama } from './frontend-data.ts';
 export { publishedRankings, type RankingDimension, type RankingQuery } from './rankings.ts';

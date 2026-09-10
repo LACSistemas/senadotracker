@@ -1,0 +1,54 @@
+import type { DatabaseSync } from 'node:sqlite';
+import { distribution, searchText, type DataCoverage, type LegislativeComplement, type LegislativeVote, type Profile, type Source } from '@senadotracker/domain';
+import { publishedCabinetProfile, publishedPersonElectoralProfile } from './frontend-data.ts';
+import { publishedParticipationRows } from './panorama.ts';
+import { partyAtDate, publishedPartyPanorama } from './parties.ts';
+import { publishedStateComparison } from './states.ts';
+
+const months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
+const annual=(year:number)=>({from:`${year}-01-01`,to:`${year}-12-31`,grain:'year' as const});
+const cov=(source:Source,year:number,batchId:string|null,note:string,n:number):DataCoverage=>({availability:n?'available':'unavailable',source,period:annual(year),batchId,note,sampleSize:n});
+
+export function normalizedComparableVote(value:string|null|undefined){
+  if(!value)return null;
+  const normalized=searchText(value).replace(/\s+/g,' ').trim();
+  if(!normalized||['ausente','nao votou','obstrucao','presidente','art 17','licenca','missao'].some(item=>normalized.includes(item)))return null;
+  return normalized;
+}
+
+export function calculateVoteAgreement(a:LegislativeVote[],b:LegislativeVote[]){
+  const right=new Map(b.map(item=>[item.deliberationId,item]));
+  const items=a.flatMap(left=>{const other=right.get(left.deliberationId),lv=normalizedComparableVote(left.vote),rv=normalizedComparableVote(other?.vote);return other&&lv&&rv?[{deliberationId:left.deliberationId,leftVote:left.vote,rightVote:other.vote,equal:lv===rv}]:[]});
+  const equal=items.filter(item=>item.equal).length;
+  return{equal,total:items.length,ratio:items.length?equal/items.length:null,items};
+}
+
+function profiles(db:DatabaseSync,source:Source){return db.prepare(`SELECT p.person_id,p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=? ORDER BY p.search_name,p.external_id`).all(source).map(row=>({personId:String(row.person_id),profile:JSON.parse(String(row.payload)) as Profile}))}
+
+export function publishedPersonComparisonDashboard(db:DatabaseSync,source:Source,year:number,externalIds:string[]){
+  if(!Number.isInteger(year)||year<2008||year>2100)throw new Error('Ano inválido');
+  if(externalIds.length<2||externalIds.length>4||new Set(externalIds).size!==externalIds.length)throw new Error('Selecione de duas a quatro pessoas diferentes');
+  const population=profiles(db,source),byId=new Map(population.map(item=>[item.profile.externalId,item])),selected=externalIds.map(id=>byId.get(id));
+  if(selected.some(item=>!item))throw new Error('Parlamentar incompatível com a Casa selecionada');
+  const people=selected.map(item=>item!),marks=externalIds.map(()=>'?').join(',');
+  const expenseBatch=db.prepare('SELECT batch_id FROM active_expense_publications WHERE source=? AND year=?').get(source,year);
+  const expenseRows=expenseBatch?db.prepare(`SELECT external_id,category,month,net_cents,refund_cents FROM expenses WHERE batch_id=? AND external_id IN (${marks})`).all(String(expenseBatch.batch_id),...externalIds).map(row=>({externalId:String(row.external_id),category:String(row.category),month:Number(row.month),netCents:Number(row.net_cents),refundCents:Number(row.refund_cents)})):[];
+  const totalRows=expenseBatch?db.prepare('SELECT external_id,sum(net_cents-refund_cents) value FROM expenses WHERE batch_id=? GROUP BY external_id').all(String(expenseBatch.batch_id)):[];
+  const totalMap=new Map(totalRows.map(row=>[String(row.external_id),Number(row.value)])),ranked=[...totalMap.entries()].sort((a,b)=>b[1]-a[1]);
+  const expenses=people.map(({profile})=>{const rows=expenseRows.filter(item=>item.externalId===profile.externalId),categories=new Map<string,number>(),monthly=new Map<number,number>();for(const row of rows){const value=row.netCents-row.refundCents;categories.set(row.category,(categories.get(row.category)??0)+value);monthly.set(row.month,(monthly.get(row.month)??0)+value)}const total=totalMap.get(profile.externalId)??null,rank=ranked.findIndex(([id])=>id===profile.externalId);return{externalId:profile.externalId,totalCents:total,rank:rank<0?null:rank+1,percentile:rank<0||ranked.length<2?null:1-rank/(ranked.length-1),categories:[...categories].map(([label,valueCents])=>({label,valueCents})).sort((a,b)=>b.valueCents-a.valueCents),months:months.map((label,index)=>({label,valueCents:monthly.get(index+1)??null}))}});
+  const participation=publishedParticipationRows(db,source,year,population.map(item=>item.profile.externalId));
+  const observed=(key:'presence'|'participation')=>population.flatMap(item=>{const metric=participation[item.profile.externalId]?.[key];return metric?.numerator!==null&&metric?.denominator?[metric.numerator/metric.denominator]:[]});
+  const productionRows=db.prepare(`SELECT x.person_external_id external_id,count(DISTINCT x.proposal_id) proposals,count(DISTINCT CASE WHEN l.proposal_id IS NOT NULL THEN x.proposal_id END) laws FROM proposal_authors x JOIN proposals p ON p.batch_id=x.batch_id AND p.external_id=x.proposal_id JOIN active_activity_publications a ON a.batch_id=x.batch_id LEFT JOIN law_links l ON l.batch_id=x.batch_id AND l.proposal_id=x.proposal_id WHERE a.source=? AND x.person_external_id IN (${marks}) AND COALESCE(json_extract(p.payload,'$.year'),CAST(substr(json_extract(p.payload,'$.presentedAt'),1,4) AS INTEGER))=? GROUP BY x.person_external_id`).all(source,...externalIds,year);
+  const productionMap=new Map(productionRows.map(row=>[String(row.external_id),{proposals:Number(row.proposals),laws:Number(row.laws)}]));
+  const rapporteurMap=new Map(db.prepare(`SELECT person_external_id external_id,count(*) value FROM legislative_appointments x JOIN active_activity_publications a ON a.batch_id=x.batch_id WHERE a.source=? AND x.kind='rapporteurship' AND x.person_external_id IN (${marks}) AND substr(COALESCE(json_extract(x.payload,'$.start'),''),1,4)=? GROUP BY person_external_id`).all(source,...externalIds,String(year)).map(row=>[String(row.external_id),Number(row.value)]));
+  const cabinet=people.map(({profile})=>{const value=publishedCabinetProfile(db,source,profile.externalId);return{externalId:profile.externalId,staff:value.staff.items.length||value.staff.coverage.availability!=='unavailable'?value.staff.items.length:null,financialCents:value.financial.kind==='budget'?value.financial.totalSpentCents:(value.financial.coverage.availability==='unavailable'?null:value.financial.totalCents),period:value.financial.kind==='budget'?String(value.financial.year):value.financial.competence,kind:value.financial.kind}});
+  const legislativeBatch=db.prepare('SELECT batch_id FROM active_legislative_publications WHERE source=? AND year=?').get(source,year),votes=legislativeBatch?db.prepare(`SELECT payload FROM legislative_votes WHERE batch_id=? AND external_id IN (${marks})`).all(String(legislativeBatch.batch_id),...externalIds).map(row=>JSON.parse(String(row.payload)) as LegislativeVote):[];
+  const deliberations=legislativeBatch?new Map(db.prepare('SELECT external_id,payload FROM deliberations WHERE batch_id=?').all(String(legislativeBatch.batch_id)).map(row=>[String(row.external_id),JSON.parse(String(row.payload)) as {description:string;proposalLabel:string|null;date:string;officialUrl:string}])):new Map<string,{description:string;proposalLabel:string|null;date:string;officialUrl:string}>();
+  const agreements=[];for(let i=0;i<people.length;i++)for(let j=i+1;j<people.length;j++){const left=people[i]!,right=people[j]!,result=calculateVoteAgreement(votes.filter(v=>v.externalId===left.profile.externalId),votes.filter(v=>v.externalId===right.profile.externalId));agreements.push({leftId:left.profile.externalId,rightId:right.profile.externalId,...result,items:result.items.slice(0,20).map(item=>({...item,deliberation:deliberations.get(item.deliberationId)??null}))})}
+  const orientations=db.prepare(`SELECT c.payload FROM legislative_complements c JOIN active_complement_publications a ON a.batch_id=c.batch_id WHERE a.source=? AND c.kind='orientation'`).all(source).map(row=>JSON.parse(String(row.payload)) as LegislativeComplement),orientationMap=new Map(orientations.flatMap(item=>item.deliberationId&&item.value?[[`${item.deliberationId}:${searchText(item.label)}`,item.value] as const]:[]));
+  const fidelity=people.map(({profile})=>{let aligned=0,total=0,excluded=0;for(const vote of votes.filter(item=>item.externalId===profile.externalId)){const date=deliberations.get(vote.deliberationId)?.date??`${year}-12-31`,party=partyAtDate(profile,date),orientation=party?orientationMap.get(`${vote.deliberationId}:${searchText(party)}`):null,vv=normalizedComparableVote(vote.vote),ov=normalizedComparableVote(orientation);if(!vv||!ov||ov.includes('liberado')||ov.includes('livre')){excluded++;continue}total++;if(vv===ov)aligned++}return{externalId:profile.externalId,aligned,total,excluded,ratio:total?aligned/total:null}});
+  return{source,year,people:people.map(({personId,profile})=>({personId,profile,participation:participation[profile.externalId]!,production:{...(productionMap.get(profile.externalId)??{proposals:0,laws:0}),rapporteurships:rapporteurMap.get(profile.externalId)??0},electoral:publishedPersonElectoralProfile(db,personId)})),expenses,cabinet,agreements,fidelity,benchmarks:{expenses:distribution([...totalMap.values()]),presence:distribution(observed('presence')),participation:distribution(observed('participation'))},coverage:{expenses:cov(source,year,expenseBatch?.batch_id?String(expenseBatch.batch_id):null,'Cota líquida identificada no lote anual ativo.',totalMap.size),votes:cov(source,year,legislativeBatch?.batch_id?String(legislativeBatch.batch_id):null,'Votações nominais comparáveis; registros de ausência e não voto são excluídos.',votes.length),production:cov(source,year,null,'Autoria, relatoria e vínculo com lei permanecem métricas separadas.',productionRows.length),cabinet:cov(source,year,null,source==='senado'?'Folha identificada por competência.':'Verba utilizada no ano.',cabinet.filter(item=>item.financialCents!==null).length)}};
+}
+
+export function publishedPartyComparison(db:DatabaseSync,year:number,parties:string[]){if(parties.length<2||parties.length>10||new Set(parties).size!==parties.length)throw new Error('Selecione de dois a dez partidos diferentes');const panorama=publishedPartyPanorama(db,'all',year),byParty=new Map(panorama.rows.map(item=>[item.party,item])),rows=parties.map(item=>byParty.get(item));if(rows.some(item=>!item))throw new Error('Partido não publicado');return{year,rows:rows.map(item=>item!),coverage:panorama.coverage}}
+export function publishedStatesComparison(db:DatabaseSync,year:number,ufs:string[]){if(ufs.length<2||ufs.length>10||new Set(ufs).size!==ufs.length)throw new Error('Selecione de dois a dez estados diferentes');return{year,rows:publishedStateComparison(db,year,ufs)}}

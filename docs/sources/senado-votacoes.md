@@ -2,6 +2,10 @@
 
 Validado em 08/09/2026 por OpenAPI e requisição HTTPS real, sem autenticação.
 
+## Vocabulário de voto
+
+O valor literal de `SiglaDescricaoVoto` é preservado. `Sim`, `Não` e `Abstenção` têm leitura direta. Um relatório oficial de atendimento da LAI do Senado registra `NCom` como “não compareceu” e `P-NRV` como “presente, não registrou voto”: `https://www12.senado.leg.br/transparencia/lai/relatorios-lai-11/Relatorio%20Mensal%20SICLAI%2011%20NOV%202018.pdf`. Outros códigos, entre eles `AP` e `LP`, permanecem apresentados literalmente enquanto a expansão oficial não estiver publicada no contrato consultado; a interface não os converte em presença, ausência ou sentido de voto.
+
 - OpenAPI: `https://legis.senado.leg.br/dadosabertos/v3/api-docs`.
 - Votos por senador: `GET /senador/{codigo}/votacoes.json`.
 - Votações nominais do Plenário: `GET /plenario/votacao/nominal/{ano}`.
