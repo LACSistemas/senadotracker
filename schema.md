@@ -80,7 +80,7 @@ Registra avisos e erros encontrados durante uma execução, incluindo código, m
 
 ### `schema_migrations`
 
-Criada pelo mecanismo de abertura do banco. Guarda versão, hash e data de aplicação de cada migração. O schema atual está na versão **12**.
+Criada pelo mecanismo de abertura do banco. Guarda versão, hash e data de aplicação de cada migração. O schema atual está na versão **13**.
 
 ## Pessoas e cadastro parlamentar
 
@@ -153,8 +153,9 @@ O vínculo bicameral de uma proposição não depende de os IDs internos das Cas
 | `active_presence_publications` | Lote ativo por `(source, year)`. |
 | `legislative_sessions` | Sessões e indicação de elegibilidade para o denominador. |
 | `attendance` | Estado de presença do parlamentar em uma sessão. |
+| `chamber_official_presence` | Resumo anual oficial da Câmara por deputado, medido em dias de Plenário, com totais e detalhamento diário em `days_json`. |
 
-Presença em sessão e participação em votação são calculadas separadamente. A inexistência de voto não cria automaticamente uma ausência.
+Presença em sessão e participação em votação são calculadas separadamente. A inexistência de voto não cria automaticamente uma ausência. Para deputados, `chamber_official_presence` prevalece nas consultas quando existe; os eventos anuais servem apenas como fallback explicitamente rotulado.
 
 ## Proposições e atividade legislativa
 
@@ -412,6 +413,7 @@ Participação em votação nominal não substitui presença. A futura coleta de
 | --- | --- | --- |
 | Eventos anuais | `https://dadosabertos.camara.leg.br/arquivos/eventos/json/eventos-{ano}.json` | Universo de sessões e classificação das sessões deliberativas encerradas. |
 | Presença em eventos | `https://dadosabertos.camara.leg.br/arquivos/eventosPresencaDeputados/json/eventosPresencaDeputados-{ano}.json` | Presença individual dos deputados. |
+| Presença oficial em Plenário por deputado | `https://www.camara.leg.br/deputados/{id}/presenca-plenario/{ano}` | Frequência anual por dia, faltas justificadas e não justificadas; fonte preferencial dos indicadores e da série mensal desde 2018. |
 | Cota parlamentar — CEAP | `https://www.camara.leg.br/cotas/Ano-{ano}.json.zip` | Despesas, fornecedores, documentos, categorias, valores e estornos. |
 | Funcionários | [Arquivo consolidado](https://dadosabertos.camara.leg.br/arquivos/funcionarios/csv/funcionarios.csv) | Equipe e lotação publicadas pela Câmara. |
 | Verba de gabinete | `https://www.camara.leg.br/deputados/{id}/verba-gabinete?ano={ano}` | Limite e utilização mensal da verba por deputado. |

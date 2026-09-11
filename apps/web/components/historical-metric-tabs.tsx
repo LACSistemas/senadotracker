@@ -52,7 +52,7 @@ export function HistoricalMetricTabs({ metrics }: { metrics: HistoricalMetric[] 
       tabIndex={0}
       className="focus-ring"
     >
-      <LineChart title={metric.label} data={metric.data} coverage={metric.coverage}/>
+      <LineChart title={metric.label} data={metric.data} coverage={metric.coverage} {...(metric.label.includes('(%)') ? { min: 0, max: 100, suffix: '%' } : {})}/>
     </div>
   </div>;
 }

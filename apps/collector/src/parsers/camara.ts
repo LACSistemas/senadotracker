@@ -48,11 +48,18 @@ export function parseChamberHistory(response: JsonResponse, expectedId: string) 
   const mandates: Mandate[] = []; const exercises: Exercise[] = []; const parties: PartyMembership[] = [];
   const sameParty = (membership: PartyMembership | null, event: HistoryEvent): boolean => membership !== null && membership.party === event.party && membership.partyId === event.partyId;
   const rawRows = array(object(response.data, 'root').dados, 'dados');
+  const legislaturePeriod = (value: string) => {
+    const number = Number(value);
+    if (!Number.isInteger(number)) return { start: null, end: null };
+    const startYear = 2019 + (number - 56) * 4;
+    return { start: `${startYear}-02-01`, end: `${startYear + 4}-01-31` };
+  };
   for (const legislature of new Set(events.map(e => e.legislature))) {
     const group = events.filter(e => e.legislature === legislature).sort((a, b) => a.at.localeCompare(b.at));
     const key = `legislatura:${legislature}`;
     const rawFirst = object(rawRows.find(row => id(object(row, 'row').idLegislatura) === legislature), 'row');
-    mandates.push({ key, officialId: null, legislature, uf: text(rawFirst.siglaUf, 'UF histórica'), role: group.at(-1)!.role, titularId: null, start: null, end: null, rawId: response.rawId });
+    const dates = legislaturePeriod(legislature);
+    mandates.push({ key, officialId: null, legislature, uf: text(rawFirst.siglaUf, 'UF histórica'), role: group.at(-1)!.role, titularId: null, start: dates.start, end: dates.end, rawId: response.rawId });
     let open: Exercise | null = null;
     let affiliation: PartyMembership | null = null;
     let ended = false;

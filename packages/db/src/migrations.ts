@@ -185,4 +185,15 @@ export const migrations = [
       ('congress-subsidy-2025-02','parliamentary_subsidy','congress','2025-02-01',NULL,4636619,'month','Decreto Legislativo nº 172/2022','https://www2.camara.leg.br/legin/fed/decleg/2022/decretolegislativo-172-21-dezembro-2022-793529-norma-pl.html','2022-12-22','Valor bruto normativo mensal; descontos e pagamentos eventuais não estão incluídos.');
     CREATE INDEX normative_values_period ON normative_values(kind,applies_to,valid_from,valid_to);
   ` },
+  { version: 13, sql: `
+    CREATE TABLE chamber_official_presence (
+      external_id TEXT NOT NULL,year INTEGER NOT NULL CHECK(year BETWEEN 2000 AND 2100),
+      session_count INTEGER NOT NULL CHECK(session_count>=0),days_total INTEGER NOT NULL CHECK(days_total>=0),
+      days_present INTEGER NOT NULL CHECK(days_present>=0),days_justified INTEGER NOT NULL CHECK(days_justified>=0),
+      days_unjustified INTEGER NOT NULL CHECK(days_unjustified>=0),days_json TEXT NOT NULL CHECK(json_valid(days_json)),
+      official_url TEXT NOT NULL,fetched_at TEXT NOT NULL,sha256 TEXT NOT NULL,
+      PRIMARY KEY(external_id,year)
+    ) STRICT;
+    CREATE INDEX chamber_official_presence_year ON chamber_official_presence(year,external_id);
+  ` },
 ];

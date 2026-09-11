@@ -1,4 +1,5 @@
 ﻿import type { DatabaseSync } from 'node:sqlite';
+import { annualReportingPeriod } from './reporting-period.ts';
 import { distribution, type DataCoverage, type Profile, type Source } from '@senadotracker/domain';
 import { publishedExpenseYears, publishedParticipationRows } from './panorama.ts';
 import { publishedCabinetPanorama, publishedCabinetProfile } from './frontend-data.ts';
@@ -14,7 +15,7 @@ const metadata:Record<ComparisonDimension,{label:string;unit:'cents'|'ratio'|'co
   production:{label:'Propostas apresentadas',unit:'count',note:'Propostas com autoria oficial no ano; relatorias e leis não são somadas a esta métrica.'},
   cabinet:{label:'Folha bruta de gabinete identificada',unit:'cents',note:'Rubrica administrativa publicada no ano; cobertura pode ser parcial e não equivale ao custo total.'},
 };
-const annualPeriod=(year:number)=>({from:`${year}-01-01`,to:`${year}-12-31`,grain:'year' as const});
+const annualPeriod=annualReportingPeriod;
 
 function profiles(db:DatabaseSync,source:Source){return db.prepare(`SELECT p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=? ORDER BY p.search_name,p.external_id`).all(source).map(row=>JSON.parse(String(row.payload)) as Profile)}
 
