@@ -1,4 +1,4 @@
-# SenadoTracker
+﻿# Cívica
 
 Tracker de senadores e deputados federais com fontes oficiais e metodologia rastreável. [Intenção](intention.md), [plano](plan.md) e [tarefas](tasks.md).
 
@@ -48,3 +48,4 @@ npm run collector -- collect-activity --source all
 npm run collector -- collect-presence --source all --year 2026
 npm run collector -- collect-complement --source all
 ```
+

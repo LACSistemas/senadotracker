@@ -1,4 +1,4 @@
-import type { Source } from '@senadotracker/domain';
+﻿import type { Source } from '@senadotracker/domain';
 import type { RawResponse } from './raw.ts';
 
 const bases: Record<Source, string> = { senado: 'https://legis.senado.leg.br/dadosabertos/', camara: 'https://dadosabertos.camara.leg.br/api/v2/' };
@@ -33,7 +33,7 @@ export class OfficialHttp {
       const timer = setTimeout(() => controller.abort(), this.options.timeoutMs ?? 20_000);
       let response: Response; let bytes: Uint8Array;
       try {
-        response = await (this.options.fetch ?? fetch)(url, { headers: { Accept: 'application/json', 'User-Agent': 'SenadoTracker/0.1 (official-data-research)' }, signal: controller.signal, redirect: 'error' });
+        response = await (this.options.fetch ?? fetch)(url, { headers: { Accept: 'application/json', 'User-Agent': 'Cívica/0.1 (official-data-research)' }, signal: controller.signal, redirect: 'error' });
         const reader = response.body?.getReader();
         const chunks: Uint8Array[] = []; let size = 0;
         if (reader) while (true) {
@@ -69,3 +69,4 @@ export class OfficialHttp {
     throw new Error('Tentativas esgotadas');
   }
 }
+

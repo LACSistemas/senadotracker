@@ -1,6 +1,6 @@
-# Schema do banco de dados
+﻿# Schema do banco de dados
 
-Este documento descreve o banco atualmente usado pelo SenadoTracker. A implementação está em SQLite, no arquivo `data/senadotracker.sqlite`, e sua definição canônica está nas migrações de `packages/db/src/migrations.ts`.
+Este documento descreve o banco atualmente usado pelo Cívica. A implementação está em SQLite, no arquivo `data/senadotracker.sqlite`, e sua definição canônica está nas migrações de `packages/db/src/migrations.ts`.
 
 ## Visão geral
 
@@ -453,3 +453,4 @@ Os vínculos entre candidatura e parlamentar só são publicados quando `match_s
 - Não substituir ausência de presença por ausência de voto, nem ausência de registro financeiro por valor zero.
 - Publicar um novo lote somente após validação e reconciliação; em falha, manter o lote ativo anterior.
 - Exibir período, cobertura, tamanho da amostra e origem junto às métricas derivadas.
+

@@ -23,7 +23,7 @@ export default async function SuppliersPage({searchParams}:{searchParams:Promise
   const result=supplierRadar({page,pageSize:25,...(source?{source}:{}),...(year?{year}:{}),...(search?{search}:{})});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Radar indisponível" description={result.message}/></main></>;
   const data=result.data;type Item=(typeof data.items)[number];const columns:DataColumn<Item>[]=[
-    {key:'supplier',header:'Fornecedor',render:item=><div><strong>{item.supplier}</strong><small className="block text-muted-foreground">{doc(item.document)}</small></div>},
+    {key:'supplier',header:'Fornecedor',render:item=><div><Link className="font-bold text-primary underline" href={`/legislativo/fornecedores/${item.document}?${new URLSearchParams({...(source?{casa:source}:{}),...(data.year?{ano:String(data.year)}:{})})}`}>{item.supplier}</Link><small className="block text-muted-foreground">{doc(item.document)}</small></div>},
     {key:'parliamentarians',header:'Parlamentares',align:'right',render:item=><strong>{item.parliamentarians}</strong>},
     {key:'houses',header:'Casas',align:'right',render:item=>item.houses===2?'Senado e Câmara':source==='senado'?'Senado':source==='camara'?'Câmara':'1 Casa'},
     {key:'records',header:'Lançamentos',align:'right',render:item=>item.records.toLocaleString('pt-BR')},

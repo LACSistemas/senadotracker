@@ -1,4 +1,4 @@
-export const help = `SenadoTracker — coletor
+﻿export const help = `Cívica — coletor
 
 Uso:
   npm run collector -- --help
@@ -41,3 +41,4 @@ export function runCli(args: readonly string[]): CliResult {
     stderr: 'Entrada inválida. Use --help para consultar as opções disponíveis.\n',
   };
 }
+

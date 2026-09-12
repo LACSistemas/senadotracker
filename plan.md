@@ -1,4 +1,4 @@
-# Plano do SenadoTracker
+﻿# Plano do Cívica
 
 Documento criado em 08/09/2026 a partir de `intention.md`. Execução e estado das entregas: [tasks.md](tasks.md).
 
@@ -168,3 +168,4 @@ Migração para PostgreSQL requer comparar contagens, centavos, chaves e resulta
 Começar pelo inventário verificável das fontes de cadastro e exercício, antes de criar dependências do produto. Construir a primeira jornada completa com dados reais: coleta → validação → banco → listagem → perfil → fonte. Repetir esse padrão em cada domínio, preservando as diferenças entre Casas.
 
 Os blocos A–F e o complemento F2 estão concluídos. O próximo passo executável é T086 em `tasks.md`, que inicia o bloco eleitoral G; deploy permanece no bloco I.
+

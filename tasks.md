@@ -1,4 +1,4 @@
-# Tarefas do SenadoTracker
+﻿# Tarefas do Cívica
 
 Referência: [plan.md](plan.md). Atualizado em 08/09/2026.
 
@@ -258,6 +258,7 @@ Sanções e CNPJ: investigar apenas após as entregas principais. Criar tarefas 
 
 | 08/09/2026 | T085a–T085k | Matriz de cobertura, migração 007, `collect-complement`, reconciliação e interface | Senado: 59/59 votações plenárias sem divergência e 3.067 complementos; Câmara: 64 complementos. Amostras declaradas, sem duplicar fatos canônicos |
 Ao retomar: ler este estado, inspecionar as mudanças locais e iniciar T108 no bloco I.
+
 
 
 

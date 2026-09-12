@@ -221,4 +221,4 @@ export { publishedRankings, type RankingDimension, type RankingQuery } from './r
 export { publishedParliamentarySubsidy, publishedExpenseCoverage, publishedSourceFreshness } from './public-info.ts';
 export { publishedPropositionCoverage, publishedPropositions, publishedProposition, type PropositionQuery } from './propositions.ts';
 export { publishedExpenseDetail } from './expense-intelligence.ts';
-export { publishedSupplierRadar, publishedPatrimonyRanking, type SupplierRadarQuery } from './investigative.ts';
+export { publishedSupplierRadar, publishedSupplierDetail, publishedPatrimonyRanking, validCnpj, type SupplierRadarQuery, type SupplierDetailQuery } from './investigative.ts';

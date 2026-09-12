@@ -1,8 +1,8 @@
-# SenadoTracker — resumo executivo
+﻿# Cívica — resumo executivo
 
 ## 1. O que é o sistema
 
-O SenadoTracker é uma aplicação de transparência legislativa que reúne dados públicos do Senado Federal, da Câmara dos Deputados e do Tribunal Superior Eleitoral em uma experiência única de consulta. O produto permite pesquisar parlamentares, partidos, estados, proposições, votações, despesas, gabinetes, fornecedores, eleições e patrimônio declarado.
+O Cívica é uma aplicação de transparência legislativa que reúne dados públicos do Senado Federal, da Câmara dos Deputados e do Tribunal Superior Eleitoral em uma experiência única de consulta. O produto permite pesquisar parlamentares, partidos, estados, proposições, votações, despesas, gabinetes, fornecedores, eleições e patrimônio declarado.
 
 O sistema não cria nota geral de desempenho nem transforma ausência de informação em zero. Cada indicador mantém sua unidade, período, universo, tamanho da amostra, estado de disponibilidade e origem oficial. Presença, voto, autoria, relatoria, gasto de cota, verba de gabinete, folha e patrimônio são conceitos distintos.
 
@@ -210,6 +210,10 @@ Rankings navegáveis por dimensão: maiores e menores gastos de cota, faltas/pre
 ### `/legislativo/fornecedores`
 
 Radar de fornecedores cruzados. Agrupa despesas por documento de fornecedor e mostra valor recebido, quantidade de parlamentares e vínculos observados. Serve para identificar concentração e relações que merecem investigação; não classifica automaticamente irregularidade.
+
+### `/legislativo/fornecedores/{documento}`
+
+Detalhe de um fornecedor com CNPJ válido. Mostra nome mais recorrente e variações publicadas, total líquido, lançamentos, ticket médio, alcance, concentração nos maiores pagadores, categorias, evolução mensal e distribuição por UF, partido e Casa. A tabela nominal liga cada agregado ao perfil parlamentar. Não infere CNAE, sócios, endereço ou situação cadastral.
 
 ### `/legislativo/patrimonio`
 
@@ -455,6 +459,8 @@ Cinco cards funcionam como abas: **Maiores gastos de cota**, **Menores gastos de
 
 A busca aceita nome ou CNPJ e os filtros são Casa e ano. Os KPIs mostram **Fornecedores com documento**, **Maior alcance no recorte** e **Período**. A tabela ordena por número de parlamentares distintos e depois por valor, mostrando fornecedor, documento formatado, parlamentares, Casas, lançamentos e total líquido. Homônimos sem documento não são cruzados e concentração não é rotulada como irregularidade.
 
+O nome de cada fornecedor abre `/legislativo/fornecedores/{documento}`. A página individual possui seis KPIs: total líquido, parlamentares pagadores, ticket médio, concentração no maior pagador, concentração nos cinco maiores e quantidade de Casas. O bloco de identidade mostra o CNPJ, o nome mais recorrente e todas as grafias distintas encontradas nos lançamentos. Gráficos apresentam categoria, partido, Casa e evolução mensal. Um mapa coroplético do Brasil mostra a distribuição financeira por UF. A tabela final ranqueia parlamentares por valor, participação e lançamentos, com acesso direto a cada perfil. Apenas CNPJs com dígitos verificadores válidos recebem página; CPF permanece fora.
+
 ### Patrimônio declarado
 
 O hero deixa explícito o par de eleições comparado. Os cards mostram **Parlamentares comparáveis** e **Maior variação percentual**. A tabela de ranking traz posição, parlamentar, partido/UF, total no pleito inicial, total no pleito final, variação percentual e variação nominal. Só entram pessoas com candidaturas seguramente vinculadas e valores nos dois pleitos. Os números não são corrigidos pela inflação.
@@ -642,3 +648,4 @@ As principais limitações são:
 - [`docs/methodology`](docs/methodology): definições técnicas dos indicadores.
 - [`docs/reconciliation`](docs/reconciliation): verificações contra as fontes oficiais.
 - [`taskfase3.md`](taskfase3.md): tarefas e entregas da fase 3.
+
