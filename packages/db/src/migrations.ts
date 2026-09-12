@@ -196,4 +196,13 @@ export const migrations = [
     ) STRICT;
     CREATE INDEX chamber_official_presence_year ON chamber_official_presence(year,external_id);
   ` },
+  { version: 14, sql: `
+    CREATE INDEX complements_deliberation ON legislative_complements(source,deliberation_id,batch_id,kind);
+    CREATE INDEX proposal_authors_proposal ON proposal_authors(proposal_id,batch_id,person_external_id);
+    CREATE INDEX legislative_votes_deliberation ON legislative_votes(deliberation_id,batch_id,external_id);
+    CREATE INDEX legislative_votes_choice ON legislative_votes(batch_id,search_text(json_extract(payload,'$.vote')),deliberation_id,external_id);
+    CREATE INDEX expanded_costs_listing ON expanded_costs(batch_id,external_id,competence,nature);
+    CREATE INDEX cabinet_budget_batch_profile ON cabinet_monthly_budgets(batch_id,external_id);
+    CREATE INDEX functional_staff_batch_profile ON functional_staff_assignments(batch_id,source,external_id,match_status);
+  ` },
 ];

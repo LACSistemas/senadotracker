@@ -42,6 +42,47 @@ export function publishedCabinetProfile(db:DatabaseSync,source:Source,externalId
   return{source,staff:{...staff,categories},financial:{kind:'payroll' as const,competence,coverage,items,totalCents}};
 }
 
+export interface CabinetSummary {
+  staff:number|null;
+  financialCents:number|null;
+  period:string|null;
+  kind:'budget_spent'|'identified_payroll';
+}
+
+/** Returns the listing-level cabinet metrics with three grouped queries at most. */
+export function publishedCabinetSummaries(db:DatabaseSync,source:Source,externalIds:string[]){
+  const result:Record<string,CabinetSummary>={};
+  if(!externalIds.length)return result;
+  const marks=externalIds.map(()=>'?').join(',');
+  const kind=source==='camara'?'budget_spent' as const:'identified_payroll' as const;
+  for(const externalId of externalIds)result[externalId]={staff:null,financialCents:null,period:null,kind};
+  const staffBatch=db.prepare('SELECT batch_id FROM active_staff_snapshot_publications WHERE source=?').get(source);
+  if(staffBatch){
+    for(const row of db.prepare(`SELECT external_id,count(*) value FROM functional_staff_assignments WHERE batch_id=? AND source=? AND match_status='confirmed' AND external_id IN (${marks}) GROUP BY external_id`).all(String(staffBatch.batch_id),source,...externalIds)){
+      result[String(row.external_id)]!.staff=Number(row.value);
+    }
+    // An active, available snapshot means a missing row is a measured zero.
+    const availability=db.prepare('SELECT availability FROM staff_snapshot_batches WHERE id=?').get(String(staffBatch.batch_id));
+    if(availability&&String(availability.availability)!=='unavailable')for(const item of Object.values(result))item.staff??=0;
+  }
+  if(source==='camara'){
+    const active=db.prepare("SELECT year,batch_id FROM active_cabinet_budget_publications WHERE source='camara' ORDER BY year DESC LIMIT 1").get();
+    if(active)for(const row of db.prepare(`SELECT external_id,sum(spent_cents) value FROM cabinet_monthly_budgets WHERE batch_id=? AND external_id IN (${marks}) GROUP BY external_id`).all(String(active.batch_id),...externalIds)){
+      const item=result[String(row.external_id)];if(item){item.financialCents=row.value===null?null:Number(row.value);item.period=String(active.year)}
+    }
+  }else{
+    const active=db.prepare("SELECT batch_id FROM active_expanded_cost_publications WHERE source='senado' ORDER BY year DESC LIMIT 1").get();
+    if(active){
+      const latest=db.prepare(`SELECT max(competence) competence FROM expanded_costs WHERE batch_id=? AND external_id IN (${marks})`).get(String(active.batch_id),...externalIds);
+      const competence=latest?.competence?String(latest.competence):null;
+      if(competence)for(const row of db.prepare(`SELECT external_id,sum(value_cents) value FROM expanded_costs WHERE batch_id=? AND competence=? AND nature='expense' AND external_id IN (${marks}) GROUP BY external_id`).all(String(active.batch_id),competence,...externalIds)){
+        const item=result[String(row.external_id)];if(item){item.financialCents=row.value===null?null:Number(row.value);item.period=competence}
+      }
+    }
+  }
+  return result;
+}
+
 export function publishedCabinetPanorama(db:DatabaseSync,source:Source){
   const staff=publishedStaffSnapshot(db,source),staffCounts=new Map<string,number>();for(const item of staff.items)if(item.externalId)staffCounts.set(item.externalId,(staffCounts.get(item.externalId)??0)+1);
   if(source==='camara'){

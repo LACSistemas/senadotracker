@@ -20,11 +20,11 @@ const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL
 const percent = new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 });
 const ratio = (value: number | null) => value === null ? '—' : percent.format(value);
 
-function pageUrl(params: Record<string, string | undefined>, page: number) {
+function pageUrl(params: Record<string, string | undefined>, page: number, anchor?: string) {
   const query = new URLSearchParams();
   Object.entries(params).forEach(([key, value]) => { if (value) query.set(key, value); });
   if (page > 1) query.set('pagina', String(page));
-  return `/legislativo?${query}`;
+  return `/legislativo?${query}${anchor ? `#${anchor}` : ''}`;
 }
 
 const discovery: Array<[string, string, string, LucideIcon, string]> = [
@@ -52,7 +52,7 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
   const data = legislativeOverview({ page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}) });
   if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Entrada legislativa indisponível" description={data.message} /></main>;
 
-  const { panoramas, years, result, facets } = data.data;
+  const { panoramas, years, result, facets, monthlyCosts } = data.data;
   const selected = { casa: source, uf, partido: party, busca: search };
   const mixedCoverage: DataCoverage = { availability: 'available', source: 'multiple', period: { from: null, to: null, grain: 'snapshot' }, batchId: null, note: 'Cadastro ativo; cada métrica conserva período e cobertura próprios.', sampleSize: result.items.length };
   type Item = (typeof result.items)[number];
@@ -97,8 +97,8 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
       <section className="border-y bg-card"><div className="page-shell py-10">
         <SectionTitle title="Congresso em números" subtitle={`Um panorama do Senado Federal e da Câmara dos Deputados, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
         <div className="mt-5 space-y-3">
-          <HousePanorama source="senado" year={years.senado} data={panoramas.senado} />
-          <HousePanorama source="camara" year={years.camara} data={panoramas.camara} />
+          <HousePanorama source="senado" year={years.senado} data={panoramas.senado} monthlyCost={monthlyCosts.senado} />
+          <HousePanorama source="camara" year={years.camara} data={panoramas.camara} monthlyCost={monthlyCosts.camara} />
         </div>
       </div></section>
 
@@ -109,8 +109,8 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{discovery.slice(4).map(([title, text, href, Icon, tone]) => <QuickPath key={title} title={title} text={text} href={href} icon={Icon} tone={tone} compact />)}</div>
       </section>
 
-      <section className="border-y bg-card"><div className="page-shell py-12">
-        <div className="flex flex-wrap items-end justify-between gap-4"><SectionTitle title="Explore os dados" subtitle="Acesse perfis completos de parlamentares do Congresso." /><div className="flex rounded-xl bg-muted p-1">{[[undefined, 'Todos'], ['senado', 'Senado'], ['camara', 'Câmara']].map(([value, label]) => <Link key={label} href={pageUrl({ ...selected, casa: value }, 1)} className={cn('rounded-lg px-4 py-2 text-sm font-bold', source === value || (!source && !value) ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')}>{label}</Link>)}</div></div>
+      <section id="explore-dados" className="scroll-mt-6 border-y bg-card"><div className="page-shell py-12">
+        <div className="flex flex-wrap items-end justify-between gap-4"><SectionTitle title="Explore os dados" subtitle="Acesse perfis completos de parlamentares do Congresso." /><div className="flex rounded-xl bg-muted p-1">{[[undefined, 'Todos'], ['senado', 'Senado'], ['camara', 'Câmara']].map(([value, label]) => <Link key={label} href={pageUrl({ ...selected, casa: value }, 1, 'explore-dados')} className={cn('rounded-lg px-4 py-2 text-sm font-bold', source === value || (!source && !value) ? 'bg-primary text-primary-foreground shadow-sm' : 'text-muted-foreground')}>{label}</Link>)}</div></div>
         <div className="mt-6"><FilterBar action="/legislativo" fields={[{ name: 'uf', label: 'Estado', value: uf ?? '', options: [{ value: '', label: 'Todos' }, ...facets.ufs.map(item => ({ value: item.value, label: `${item.value} · ${item.count}` }))] }, { name: 'partido', label: 'Partido', value: party ?? '', options: [{ value: '', label: 'Todos' }, ...facets.parties.map(item => ({ value: item.value, label: `${item.value} · ${item.count}` }))] }]}><input type="hidden" name="casa" value={source ?? ''} /><input type="hidden" name="busca" value={search ?? ''} /></FilterBar></div>
         <div className="mt-5"><DataTable caption="Parlamentares do Congresso" columns={columns} rows={result.items} rowKey={item => `${item.source}:${item.externalId}`} coverage={mixedCoverage} page={page} pageCount={Math.max(1, Math.ceil(result.total / 5))} pageHref={next => pageUrl(selected, next)} /></div>
         <Link href={source === 'camara' ? '/legislativo/deputados' : source === 'senado' ? '/legislativo/senadores' : '/legislativo/senadores'} className="mt-5 inline-flex items-center gap-2 font-bold text-primary underline">Ver mais parlamentares <ArrowRight size={15} /></Link>
@@ -129,13 +129,13 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) 
 
 function QuickPath({ title, text, href, icon: Icon, tone, compact = false }: { title: string; text: string; href: string; icon: LucideIcon; tone: string; compact?: boolean }) { return <Link href={href} className={cn('focus-ring group flex rounded-2xl border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary hover:shadow-sm', compact ? 'min-h-32 flex-col' : 'min-h-28 items-start gap-3')}><span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', tone)}><Icon size={19} /></span><span className="min-w-0 flex-1"><strong className="block leading-tight">{title}</strong><small className="mt-1.5 block leading-5 text-muted-foreground">{text}</small></span><ArrowRight size={16} className={cn('shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary', compact && 'mt-auto self-end')} /></Link>; }
 
-function HousePanorama({ source, year, data }: { source: Source; year: number; data: HousePanoramaData }) {
+function HousePanorama({ source, year, data, monthlyCost }: { source: Source; year: number; data: HousePanoramaData; monthlyCost: { meanCents: number | null; sampleSize: number } }) {
   const senate = source === 'senado';
   const cells = [
     { icon: Users, value: data.roster.parliamentarians.toLocaleString('pt-BR'), label: senate ? 'senadores' : 'deputados federais', detail: senate ? 'representação dos estados e do DF' : 'representando todo o país' },
     { icon: MapPin, value: data.roster.states.toLocaleString('pt-BR'), label: 'UFs representadas', detail: 'estados e Distrito Federal' },
-    { icon: ReceiptText, value: data.expenses.distributionCents.median === null ? '—' : money.format(data.expenses.distributionCents.median / 100), label: 'cota mediana', detail: `parcela identificada em ${year}` },
-    { icon: BarChart3, value: ratio(data.presence.distributionRatio.median), label: 'presença mediana', detail: `universo publicado de ${year}` },
+    { icon: ReceiptText, value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents / 100), label: 'custo médio mensal', detail: `subsídio + cota + gabinete · n=${monthlyCost.sampleSize}` },
+    { icon: BarChart3, value: ratio(senate ? data.participation.meanRatio : data.presence.distributionRatio.median), label: senate ? 'participação média em votações nominais' : 'presença mediana', detail: `universo publicado de ${year}` },
   ];
   return <article className="overflow-x-auto rounded-2xl border bg-background p-2 shadow-sm"><div className="grid min-w-[860px] grid-cols-[230px_repeat(4,minmax(135px,1fr))] gap-2"><div className={cn('flex min-h-28 flex-col justify-between rounded-xl p-4 text-white', senate ? 'bg-[#1554a2]' : 'bg-[#08783e]')}><div className="flex items-center gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/15"><Landmark size={20} /></span><div><h3 className="font-black leading-tight">{senate ? 'Senado Federal' : 'Câmara dos Deputados'}</h3><p className="mt-0.5 text-xs text-white/70">{senate ? 'A Casa da Federação' : 'A voz do povo brasileiro'}</p></div></div><Link className="inline-flex items-center gap-1 text-xs font-bold underline" href={senate ? '/legislativo/senadores' : '/legislativo/deputados'}>Ver {senate ? 'senadores' : 'deputados'} <ArrowRight size={12} /></Link></div>{cells.map(({ icon: Icon, value, label, detail }) => <div key={label} className={cn('flex min-h-28 flex-col justify-center rounded-xl border px-4 py-3', senate ? 'border-blue-100 bg-blue-50/65' : 'border-emerald-100 bg-emerald-50/65')}><div className="flex items-center gap-2"><Icon size={16} className={senate ? 'text-blue-700' : 'text-emerald-700'} /><span className="text-xs font-bold text-muted-foreground">{label}</span></div><strong className="mt-2 block text-xl leading-none tracking-tight">{value}</strong><small className="mt-2 block leading-4 text-muted-foreground">{detail}</small></div>)}</div></article>;
 }

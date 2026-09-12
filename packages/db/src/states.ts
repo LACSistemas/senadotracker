@@ -8,7 +8,7 @@ import {
   type Source,
 } from '@senadotracker/domain';
 import { publishedExpenseYears, publishedParticipationRows } from './panorama.ts';
-import { publishedCabinetProfile } from './frontend-data.ts';
+import { publishedCabinetSummaries } from './frontend-data.ts';
 
 export interface StateRepresentative extends Profile {
   expenseCents: number | null;
@@ -61,21 +61,24 @@ function representatives(db: DatabaseSync, uf: string, year: number) {
       }
     }
   }
+  const cabinets=new Map<string,ReturnType<typeof publishedCabinetSummaries>[string]>();
+  for(const source of ['senado','camara'] as const){
+    const ids=profiles.filter(item=>item.source===source).map(item=>item.externalId);
+    for(const [id,item] of Object.entries(publishedCabinetSummaries(db,source,ids)))cabinets.set(`${source}:${id}`,item);
+  }
   return profiles.map(profile => {
     const key = `${profile.source}:${profile.externalId}`;
     const metric = participation.get(key);
-    const cabinet=publishedCabinetProfile(db,profile.source,profile.externalId);
-    const staff=cabinet.staff.items.length||cabinet.staff.coverage.availability!=='unavailable'?cabinet.staff.items.length:null;
-    const cabinetFinancialCents=cabinet.financial.kind==='budget'?cabinet.financial.totalSpentCents:(cabinet.financial.coverage.availability==='unavailable'?null:cabinet.financial.totalCents);
+    const cabinet=cabinets.get(key)!;
     return {
       ...profile,
       expenseCents: expenses.get(key) ?? null,
       presence: metric?.presence.numerator !== null && metric?.presence.denominator ? metric.presence.numerator / metric.presence.denominator : null,
       participation: metric?.participation.numerator !== null && metric?.participation.denominator ? metric.participation.numerator / metric.participation.denominator : null,
-      staff,
-      cabinetFinancialCents,
-      cabinetPeriod:cabinet.financial.kind==='budget'?String(cabinet.financial.year):cabinet.financial.competence,
-      cabinetKind:cabinet.financial.kind==='budget'?'budget_spent':'identified_payroll',
+      staff:cabinet.staff,
+      cabinetFinancialCents:cabinet.financialCents,
+      cabinetPeriod:cabinet.period,
+      cabinetKind:cabinet.kind,
     } satisfies StateRepresentative;
   });
 }
@@ -118,15 +121,15 @@ export function publishedStateComparison(db: DatabaseSync, year: number, ufs: st
 export function publishedStateTopics(db: DatabaseSync, uf: string) {
   const topics = new Map<string, { label: string; proposals: Set<string>; votes: Set<string> }>();
   for (const source of ['senado', 'camara'] as const) {
-    const complements = db.prepare(`SELECT c.payload FROM legislative_complements c JOIN active_complement_publications a ON a.batch_id=c.batch_id WHERE a.source=? AND c.kind='theme'`).all(source);
-    for (const row of complements) {
+    const ids=profilesForState(db,uf).filter(item=>item.source===source).map(item=>item.externalId);
+    if(!ids.length)continue;
+    const marks=ids.map(()=>'?').join(',');
+    const proposalThemes=db.prepare(`SELECT DISTINCT c.payload FROM proposal_authors x JOIN active_activity_publications aa ON aa.batch_id=x.batch_id JOIN legislative_complements c ON c.source=aa.source AND c.proposal_id=x.proposal_id JOIN active_complement_publications ac ON ac.batch_id=c.batch_id WHERE aa.source=? AND x.person_external_id IN (${marks}) AND c.kind='theme'`).all(source,...ids);
+    const voteThemes=db.prepare(`SELECT DISTINCT c.payload FROM legislative_votes v JOIN active_legislative_publications al ON al.batch_id=v.batch_id JOIN legislative_complements c ON c.source=al.source AND c.deliberation_id=v.deliberation_id JOIN active_complement_publications ac ON ac.batch_id=c.batch_id WHERE al.source=? AND v.external_id IN (${marks}) AND c.kind='theme'`).all(source,...ids);
+    for (const row of [...proposalThemes,...voteThemes]) {
       const item = JSON.parse(String(row.payload)) as LegislativeComplement;
       const label = item.value ?? item.label;
       if (!label) continue;
-      let represented = false;
-      if (item.proposalId) represented = Boolean(db.prepare(`SELECT 1 FROM proposal_authors x JOIN active_activity_publications a ON a.batch_id=x.batch_id JOIN active_publications p ON p.source=a.source JOIN profiles r ON r.batch_id=p.batch_id AND r.external_id=x.person_external_id WHERE a.source=? AND x.proposal_id=? AND r.uf=? LIMIT 1`).get(source, item.proposalId, uf));
-      if (item.deliberationId) represented ||= Boolean(db.prepare(`SELECT 1 FROM legislative_votes v JOIN active_legislative_publications a ON a.batch_id=v.batch_id JOIN active_publications p ON p.source=a.source JOIN profiles r ON r.batch_id=p.batch_id AND r.external_id=v.external_id WHERE a.source=? AND v.deliberation_id=? AND r.uf=? LIMIT 1`).get(source, item.deliberationId, uf));
-      if (!represented) continue;
       const topic = topics.get(label) ?? { label, proposals: new Set<string>(), votes: new Set<string>() };
       if (item.proposalId) topic.proposals.add(`${source}:${item.proposalId}`);
       if (item.deliberationId) topic.votes.add(`${source}:${item.deliberationId}`);
