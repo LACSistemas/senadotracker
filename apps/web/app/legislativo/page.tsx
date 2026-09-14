@@ -133,7 +133,7 @@ function HousePanorama({ source, year, data, monthlyCost }: { source: Source; ye
   const senate = source === 'senado';
   const cells = [
     { icon: Users, value: data.roster.parliamentarians.toLocaleString('pt-BR'), label: senate ? 'senadores' : 'deputados federais', detail: senate ? 'representação dos estados e do DF' : 'representando todo o país' },
-    { icon: MapPin, value: data.roster.states.toLocaleString('pt-BR'), label: 'UFs representadas', detail: 'estados e Distrito Federal' },
+    { icon: ReceiptText, value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents * data.roster.parliamentarians / 100), label: 'custo mensal da Casa', detail: `média mensal × ${data.roster.parliamentarians.toLocaleString('pt-BR')} parlamentares` },
     { icon: ReceiptText, value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents / 100), label: 'custo médio mensal', detail: `subsídio + cota + gabinete · n=${monthlyCost.sampleSize}` },
     { icon: BarChart3, value: ratio(senate ? data.participation.meanRatio : data.presence.distributionRatio.median), label: senate ? 'participação média em votações nominais' : 'presença mediana', detail: `universo publicado de ${year}` },
   ];

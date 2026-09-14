@@ -212,8 +212,8 @@ Executar depois do grupo F. Este bloco amplia e reconcilia fontes que se sobrep�
 | [ ] | T111 | T110 | Criar status de atualização por fonte | Última tentativa, sucesso, cobertura e atraso distinguíveis |
 | [ ] | T112 | T053, T089 | Medir armazenamento e duração representativos | Registrar volume bruto, banco, tempo e custo estimado por domínio |
 | [ ] | T113 | T112 | Comparar hospedagem e limites atuais | Decisão documentada com links oficiais, data e orçamento; sem presumir gratuidade |
-| [ ] | T114 | T113 | Preparar migrações PostgreSQL | Schema e restrições sobem em ambiente de teste |
-| [ ] | T115 | T114 | Validar migração SQLite → PostgreSQL | Contagens, valores em centavos e consultas equivalentes conciliados |
+| [x] | T114 | T113 | Preparar migrações PostgreSQL | Schema `civica`, chaves estrangeiras e índices publicados no PostgreSQL 17 local |
+| [x] | T115 | T114 | Validar migração SQLite → PostgreSQL | 57 tabelas, 2.614.569 linhas e somatórios em centavos conciliados em 14/09/2026 |
 | [ ] | T116 | T115 | Configurar credenciais e acesso mínimo | Frontend não escreve; coletor escreve; segredos ausentes de bundle/logs |
 | [ ] | T117 | T116 | Configurar executor agendado independente | Job executa sem requisição web; concorrência e falha observáveis |
 | [ ] | T118 | T117 | Configurar armazenamento bruto e backup | Objetos referenciados recuperáveis; retenção e custo documentados |

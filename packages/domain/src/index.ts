@@ -55,7 +55,18 @@ export interface LegislativeAppointment { source:Source; externalId:string; pers
 export interface LawLink { proposalId:string; lawId:string; lawLabel:string; officialUrl:string; relationship:string; rawId:string }
 export interface LegislativeSession { source:Source; externalId:string; date:string; startedAt:string|null; endedAt:string|null; kind:string; status:string; body:string; eligible:boolean; officialUrl:string; rawId:string }
 export interface Attendance { source:Source; sessionId:string; externalId:string; state:string; justification:string|null; rawId:string }
-export interface LegislativeComplement { source:Source; externalKey:string; kind:'reconciliation'|'matter_detail'|'author_detail'|'rapporteur_detail'|'amendment'|'situation'|'commission_vote'|'orientation'|'proposal_detail'|'theme'|'movement'|'body_member'|'leadership'; personExternalId:string|null; proposalId:string|null; deliberationId:string|null; bodyId:string|null; occurredAt:string|null; label:string; value:string|null; officialUrl:string; rawId:string }
+export type LegislativeComplementKind =
+  |'reconciliation'|'matter_detail'|'proposal_detail'|'author_detail'|'rapporteur_detail'
+  |'theme'|'movement'|'situation'|'relationship'|'document'|'resulting_norm'
+  |'amendment'|'deadline'|'agenda_item'|'vote_effect'|'commission_vote'|'orientation'
+  |'body'|'body_member'|'leadership';
+export interface LegislativeComplement { source:Source; externalKey:string; kind:LegislativeComplementKind; personExternalId:string|null; proposalId:string|null; deliberationId:string|null; bodyId:string|null; occurredAt:string|null; label:string; value:string|null; officialUrl:string; rawId:string }
+export interface PropositionEnrichment {
+  source:Source; proposalId:string; kind:LegislativeComplementKind; externalKey:string;
+  relatedProposalId:string|null; deliberationId:string|null; personExternalId:string|null; bodyId:string|null;
+  occurredAt:string|null; code:string|null; label:string; description:string|null; officialUrl:string; rawId:string;
+  payload:Record<string,unknown>; inheritedFromProposalId:string|null;
+}
 export interface LegislativeVote { source:Source; deliberationId:string; externalId:string; vote:string; description:string|null; party:string|null; uf:string|null; recordedAt:string|null; rawId:string }
 export type ElectoralAvailability = 'available'|'partial'|'unavailable';
 export type ElectoralMatchStatus = 'pending'|'confirmed'|'ambiguous'|'rejected';
@@ -155,5 +166,3 @@ export function validateProfile(profile: Profile): Issue[] {
   }
   return issues;
 }
-
-

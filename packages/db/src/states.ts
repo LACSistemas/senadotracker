@@ -128,7 +128,7 @@ export function publishedStateTopics(db: DatabaseSync, uf: string) {
     const voteThemes=db.prepare(`SELECT DISTINCT c.payload FROM legislative_votes v JOIN active_legislative_publications al ON al.batch_id=v.batch_id JOIN legislative_complements c ON c.source=al.source AND c.deliberation_id=v.deliberation_id JOIN active_complement_publications ac ON ac.batch_id=c.batch_id WHERE al.source=? AND v.external_id IN (${marks}) AND c.kind='theme'`).all(source,...ids);
     for (const row of [...proposalThemes,...voteThemes]) {
       const item = JSON.parse(String(row.payload)) as LegislativeComplement;
-      const label = item.value ?? item.label;
+      const label = item.label;
       if (!label) continue;
       const topic = topics.get(label) ?? { label, proposals: new Set<string>(), votes: new Set<string>() };
       if (item.proposalId) topic.proposals.add(`${source}:${item.proposalId}`);

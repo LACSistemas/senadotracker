@@ -205,4 +205,46 @@ export const migrations = [
     CREATE INDEX cabinet_budget_batch_profile ON cabinet_monthly_budgets(batch_id,external_id);
     CREATE INDEX functional_staff_batch_profile ON functional_staff_assignments(batch_id,source,external_id,match_status);
   ` },
+  { version: 15, sql: `
+    CREATE TABLE nominal_deliberations (
+      batch_id TEXT NOT NULL,deliberation_id TEXT NOT NULL,
+      PRIMARY KEY(batch_id,deliberation_id),
+      FOREIGN KEY(batch_id,deliberation_id) REFERENCES deliberations(batch_id,external_id)
+    ) STRICT;
+    INSERT INTO nominal_deliberations
+    SELECT DISTINCT batch_id,deliberation_id FROM legislative_votes
+    WHERE search_text(json_extract(payload,'$.vote')) IN ('sim','nao','abstencao','votou','secreto')
+       OR (source='camara' AND search_text(json_extract(payload,'$.vote'))='obstrucao');
+  ` },
+  { version: 16, sql: `
+    CREATE INDEX deliberations_proposal_label ON deliberations(upper(trim(json_extract(payload,'$.proposalLabel'))),batch_id);
+  ` },
+  { version: 17, sql: `
+    CREATE TABLE proposal_enrichment_items (
+      batch_id TEXT NOT NULL REFERENCES complement_batches(id),source TEXT NOT NULL REFERENCES sources(id),
+      proposal_id TEXT NOT NULL,kind TEXT NOT NULL,external_key TEXT NOT NULL,
+      related_proposal_id TEXT,deliberation_id TEXT,person_external_id TEXT,body_id TEXT,occurred_at TEXT,
+      code TEXT,label TEXT NOT NULL,description TEXT,official_url TEXT NOT NULL,
+      inherited_from_proposal_id TEXT,raw_id TEXT NOT NULL REFERENCES raw_objects(id),
+      payload TEXT NOT NULL CHECK(json_valid(payload)),PRIMARY KEY(batch_id,external_key)
+    ) STRICT;
+    CREATE INDEX proposal_enrichment_lookup ON proposal_enrichment_items(source,proposal_id,kind,batch_id);
+    CREATE INDEX proposal_enrichment_relation ON proposal_enrichment_items(source,related_proposal_id,kind,batch_id);
+    CREATE INDEX proposal_enrichment_vote ON proposal_enrichment_items(source,deliberation_id,kind,batch_id);
+    CREATE INDEX proposal_enrichment_search ON proposal_enrichment_items(kind,search_text(label),source,proposal_id);
+  ` },
+  { version: 18, sql: `
+    CREATE TABLE active_proposal_enrichment_publications (
+      source TEXT NOT NULL REFERENCES sources(id),proposal_id TEXT NOT NULL,kind TEXT NOT NULL,
+      batch_id TEXT NOT NULL REFERENCES complement_batches(id),published_at TEXT NOT NULL,
+      PRIMARY KEY(source,proposal_id,kind)
+    ) STRICT;
+    CREATE INDEX active_proposal_enrichment_batch ON active_proposal_enrichment_publications(batch_id,source,proposal_id);
+  ` },
+  { version: 19, sql: `
+    CREATE INDEX expenses_batch_period ON expenses(batch_id,year,month,external_id);
+    CREATE INDEX proposals_batch_presented ON proposals(batch_id,substr(json_extract(payload,'$.presentedAt'),1,4));
+    CREATE INDEX proposals_batch_status ON proposals(batch_id,search_text(COALESCE(json_extract(payload,'$.status'),'')));
+    CREATE INDEX deliberations_batch_date_proposal ON deliberations(batch_id,date,json_extract(payload,'$.proposalId'));
+  ` },
 ];

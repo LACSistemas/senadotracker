@@ -12,12 +12,12 @@ export function publishedMonthlyParticipation(db: DatabaseSync, source: Source, 
   const officialPresence = source === 'camara' ? db.prepare('SELECT days_json FROM chamber_official_presence WHERE external_id=? AND year=?').get(externalId, year) : null;
   const cutoff = reportingCutoff(year);
   const presenceBatch = db.prepare(`SELECT b.* FROM presence_batches b JOIN active_presence_publications a ON a.batch_id=b.id WHERE a.source=? AND a.year=?`).get(source, year);
-  const sessions = presenceBatch ? db.prepare(`SELECT payload FROM legislative_sessions WHERE batch_id=? AND eligible=1 AND substr(date,1,10)<=?`).all(String(presenceBatch.id), cutoff).map(row => JSON.parse(String(row.payload)) as LegislativeSession).filter(item => within(item.date, profile)) : [];
-  const attended = presenceBatch ? new Set(db.prepare(`SELECT session_id FROM attendance WHERE batch_id=? AND external_id=?`).all(String(presenceBatch.id), externalId).map(row => String(row.session_id))) : new Set<string>();
+  const sessions = presenceBatch && !officialPresence ? db.prepare(`SELECT payload FROM legislative_sessions WHERE batch_id=? AND eligible=1 AND substr(date,1,10)<=?`).all(String(presenceBatch.id), cutoff).map(row => JSON.parse(String(row.payload)) as LegislativeSession).filter(item => within(item.date, profile)) : [];
+  const attended = presenceBatch && !officialPresence ? new Set(db.prepare(`SELECT session_id FROM attendance WHERE batch_id=? AND external_id=?`).all(String(presenceBatch.id), externalId).map(row => String(row.session_id))) : new Set<string>();
   const legislativeBatch = db.prepare(`SELECT b.id FROM legislative_batches b JOIN active_legislative_publications a ON a.batch_id=b.id WHERE a.source=? AND a.year=?`).get(source, year);
   const deliberations = legislativeBatch ? db.prepare(`SELECT external_id,date FROM deliberations WHERE batch_id=? AND json_extract(payload,'$.chamberBody')='PLEN' AND substr(date,1,10)<=?`).all(String(legislativeBatch.id), cutoff).map(row => ({ externalId: String(row.external_id), date: String(row.date) })).filter(item => within(item.date, profile)) : [];
   const accepted=source==='camara'?"'sim','nao','abstencao','votou','secreto','obstrucao'":"'sim','nao','abstencao','votou','secreto'";
-  const nominal = new Set(legislativeBatch ? db.prepare(`SELECT DISTINCT deliberation_id FROM legislative_votes WHERE batch_id=? AND search_text(json_extract(payload,'$.vote')) IN (${accepted})`).all(String(legislativeBatch.id)).map(row=>String(row.deliberation_id)) : []);
+  const nominal = new Set(legislativeBatch ? db.prepare(`SELECT deliberation_id FROM nominal_deliberations WHERE batch_id=?`).all(String(legislativeBatch.id)).map(row=>String(row.deliberation_id)) : []);
   const voted = new Set(legislativeBatch ? db.prepare(`SELECT deliberation_id FROM legislative_votes WHERE batch_id=? AND external_id=? AND search_text(json_extract(payload,'$.vote')) IN (${accepted})`).all(String(legislativeBatch.id),externalId).map(row=>String(row.deliberation_id)) : []);
   return Array.from({ length: Number(cutoff.slice(5, 7)) }, (_, index) => {
     const month = index + 1;

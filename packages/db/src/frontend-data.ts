@@ -84,13 +84,13 @@ export function publishedCabinetSummaries(db:DatabaseSync,source:Source,external
 }
 
 export function publishedCabinetPanorama(db:DatabaseSync,source:Source){
-  const staff=publishedStaffSnapshot(db,source),staffCounts=new Map<string,number>();for(const item of staff.items)if(item.externalId)staffCounts.set(item.externalId,(staffCounts.get(item.externalId)??0)+1);
+  const staffBatch=db.prepare('SELECT batch_id FROM active_staff_snapshot_publications WHERE source=?').get(source),staffCounts=staffBatch?db.prepare(`SELECT count(*) value FROM functional_staff_assignments WHERE batch_id=? AND source=? AND match_status='confirmed' AND external_id IS NOT NULL GROUP BY external_id`).all(String(staffBatch.batch_id),source).map(row=>Number(row.value)):[];
   if(source==='camara'){
     const year=Number(db.prepare("SELECT max(year) year FROM active_cabinet_budget_publications WHERE source='camara'").get()?.year??new Date().getFullYear()),batch=db.prepare("SELECT batch_id FROM active_cabinet_budget_publications WHERE source='camara' AND year=?").get(year);
     const totals=batch?db.prepare('SELECT external_id,sum(spent_cents) value FROM cabinet_monthly_budgets WHERE batch_id=? GROUP BY external_id').all(String(batch.batch_id)).map(row=>({externalId:String(row.external_id),value:Number(row.value)})):[];
-    return{source,period:String(year),staff:distribution([...staffCounts.values()]),financial:distribution(totals.map(item=>item.value)),financialMean:totals.length?totals.reduce((sum,item)=>sum+item.value,0)/totals.length:null,sampleSize:totals.length,kind:'budget_spent' as const};
+    return{source,period:String(year),staff:distribution(staffCounts),financial:distribution(totals.map(item=>item.value)),financialMean:totals.length?totals.reduce((sum,item)=>sum+item.value,0)/totals.length:null,sampleSize:totals.length,kind:'budget_spent' as const};
   }
   const batch=db.prepare("SELECT batch_id FROM active_expanded_cost_publications WHERE source='senado' ORDER BY year DESC LIMIT 1").get(),rows=batch?db.prepare("SELECT external_id,payload FROM expanded_costs WHERE batch_id=?").all(String(batch.batch_id)).map(row=>JSON.parse(String(row.payload)) as ExpandedCost):[],competence=rows.map(item=>item.competence).sort().at(-1)??null,totals=new Map<string,number>();
   for(const item of rows)if(item.competence===competence&&item.nature==='expense')totals.set(item.externalId,(totals.get(item.externalId)??0)+(item.valueCents??0));
-  return{source,period:competence,staff:distribution([...staffCounts.values()]),financial:distribution([...totals.values()]),financialMean:totals.size?[...totals.values()].reduce((sum,value)=>sum+value,0)/totals.size:null,sampleSize:totals.size,kind:'identified_payroll' as const};
+  return{source,period:competence,staff:distribution(staffCounts),financial:distribution([...totals.values()]),financialMean:totals.size?[...totals.values()].reduce((sum,value)=>sum+value,0)/totals.size:null,sampleSize:totals.size,kind:'identified_payroll' as const};
 }

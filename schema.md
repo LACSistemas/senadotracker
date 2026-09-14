@@ -1,6 +1,6 @@
 ﻿# Schema do banco de dados
 
-Este documento descreve o banco atualmente usado pelo Cívica. A implementação está em SQLite, no arquivo `data/senadotracker.sqlite`, e sua definição canônica está nas migrações de `packages/db/src/migrations.ts`.
+Este documento descreve o banco do Cívica. O runtime atual ainda lê o SQLite em `data/senadotracker.sqlite`; em 14/09/2026 seu conteúdo integral foi migrado e conciliado no schema `civica` do PostgreSQL 17. A troca do runtime aguarda a conversão das consultas síncronas para o driver assíncrono `pg`. A definição SQLite permanece nas migrações de `packages/db/src/migrations.ts`, e a carga PostgreSQL reproduzível está em `scripts/migrate-sqlite-to-postgres.ts`.
 
 ## Visão geral
 
@@ -80,7 +80,7 @@ Registra avisos e erros encontrados durante uma execução, incluindo código, m
 
 ### `schema_migrations`
 
-Criada pelo mecanismo de abertura do banco. Guarda versão, hash e data de aplicação de cada migração. O schema atual está na versão **13**.
+Criada pelo mecanismo de abertura do banco. Guarda versão, hash e data de aplicação de cada migração. O schema SQLite atual está na versão **16**.
 
 ## Pessoas e cadastro parlamentar
 
@@ -179,6 +179,8 @@ Os índices `proposals_listing` e `deliberations_proposal` usam `json_extract` p
 | `complement_batches` | Lote complementar por fonte e escopo, com reconciliação em JSON. |
 | `active_complement_publications` | Lote complementar ativo por `(source, scope)`. |
 | `legislative_complements` | Temas, tramitações, situações, orientações, emendas, detalhes e outros fatos complementares. |
+| `proposal_enrichment_items` | Projeção relacional e indexada dos complementos: proposição, tipo, relação, votação, pessoa, órgão, data, código, rótulo, descrição, fonte e herança. O payload bruto normalizado continua preservado para auditoria. |
+| `active_proposal_enrichment_publications` | Ponte ativa granular por Casa, proposição e tipo de complemento. Uma atualização parcial não apaga o último lote válido de outro tipo. |
 
 Cada complemento pode apontar para uma pessoa, proposição, deliberação ou órgão usando `person_external_id`, `proposal_id`, `deliberation_id` e `body_id`. O campo `kind` determina sua semântica.
 

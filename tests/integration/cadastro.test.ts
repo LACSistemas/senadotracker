@@ -113,7 +113,7 @@ test('migrações são repetíveis e chaves estrangeiras/identidades duplicadas 
     db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('senado', '1', 'p');
     assert.throws(() => db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('senado', '1', 'p'));
     assert.throws(() => db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('camara', '1', 'missing'));
-    assert.equal(db.prepare('SELECT count(*) AS n FROM schema_migrations').get()!.n, 14);
+    assert.equal(db.prepare('SELECT count(*) AS n FROM schema_migrations').get()!.n, 19);
   } finally { db.close(); }
   const reopened = openDatabase(join(directory, 'test.sqlite'));
   assert.equal(reopened.prepare('SELECT count(*) AS n FROM people').get()!.n, 1); reopened.close();
