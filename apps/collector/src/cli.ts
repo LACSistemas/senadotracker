@@ -11,6 +11,10 @@ Uso:
   npm run collector -- collect-themes --year YYYY [--file ARQUIVO] [--dry-run]
   npm run collector -- collect-camara-propositions --ids ID,ID
   npm run collector -- collect-senate-processes --year YYYY [--ids ID,ID] [--dry-run]
+  npm run collector -- collect-senate-agenda --year YYYY [--dry-run]
+  npm run collector -- collect-camara-agenda --year YYYY [--dry-run]
+  npm run collector -- collect-house-operations --source senado|camara|all --year YYYY [--dry-run]
+  npm run collector -- collect-house-operations senado|camara|all YYYY [--dry-run]
   npm run collector -- import-elections --year 2018|2022 --candidates ARQUIVO --assets ARQUIVO [--complement ARQUIVO] [--dry-run] [--report ARQUIVO]
   npm run collector -- collect-camara-staff [--file ARQUIVO] [--dry-run] [--report ARQUIVO]
   npm run collector -- collect-camara-budget --year YYYY [--ids ID,ID] [--dry-run] [--report ARQUIVO]
@@ -26,6 +30,9 @@ collect consulta e publica cadastro; collect-expenses importa um arquivo anual d
 collect-themes importa a classificação temática anual oficial da Câmara e a vincula às proposições ativas.
 collect-camara-propositions importa detalhe, temas, tramitação e relações oficiais de proposições específicas.
 collect-senate-processes importa assuntos, situações e tramitação dos processos oficiais do Senado.
+collect-senate-agenda importa itens das pautas mensais de comissões do Senado e deduplica matérias no período.
+collect-camara-agenda importa pautas de reuniões e sessões deliberativas da Câmara.
+collect-house-operations publica backlog institucional e duração até desfecho terminal como agregado pronto para leitura.
 import-elections lê CSVs locais do TSE em Windows-1252; 2022 exige --complement. --dry-run não altera o banco.
 SENADOTRACKER_DATA_DIR pode definir o diretório de dados.
 `;
