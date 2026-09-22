@@ -8,6 +8,7 @@ import { saveRaw } from './raw.ts';
 export type ProcessingMatter = { id:string; presentedAt:string|null; status:string|null };
 export type ProcessingSummary={meanDays:number|null;medianDays:number|null;sampleSize:number;eligible:number;coverage:number;terminalDefinition:string};
 const terminal=/(transformad[ao].*norma|transforma[cç][aã]o.*norma|convertid[ao].*norma|promulgad[ao]|sancionad[ao]|vetad[ao]|veto (?:total|parcial))/i;
+const terminalStatus=/(tramita[cç][aã]o (?:finalizada|encerrada)|arquivad[ao]|rejeitad[ao]|retirad[ao] pel[oa] autor|prejudicad[ao]|perda de objeto)/i;
 const day=(value:string|null|undefined)=>{if(!value)return null;const match=value.match(/^(\d{4})-(\d{2})-(\d{2})/);if(!match)return null;const time=Date.UTC(Number(match[1]),Number(match[2])-1,Number(match[3]));return Number.isFinite(time)?time:null};
 type ProcessingEvent={proposalId:string;date:string|null;label:string;value:string|null;kind?:string};
 const isTerminalEvent=(event:ProcessingEvent)=>event.kind==='resulting_norm'||terminal.test(event.label);
@@ -16,14 +17,16 @@ export function processingObservations(matters:ProcessingMatter[],events:Process
   // Câmara repeats the current situation in historical rows. Only the event
   // description itself can establish when the terminal transition occurred.
   for(const event of events){if(!isTerminalEvent(event)||year&&event.date?.slice(0,4)!==String(year))continue;const value=day(event.date);if(value===null)continue;const current=ends.get(event.proposalId);if(current===undefined||value<current)ends.set(event.proposalId,value)}
-  for(const item of matters){if(!terminal.test(item.status??''))continue;/* Status sem data terminal não entra na amostra. */}
+  // A Câmara repete a situação atual em todas as linhas do histórico. Quando
+  // o cadastro está terminal, usamos a última movimentação oficial datada.
+  for(const item of matters){if(!terminalStatus.test(item.status??''))continue;const dated=events.filter(event=>event.proposalId===item.id&&(!year||event.date?.slice(0,4)===String(year))).map(event=>day(event.date)).filter((value):value is number=>value!==null);if(dated.length&&!ends.has(item.id))ends.set(item.id,Math.max(...dated))}
   const eligible=new Set(ends.keys());
   return[...ends].flatMap(([id,end])=>{const start=starts.get(id);return start!==undefined&&end>=start?[{proposalId:id,start:new Date(start).toISOString().slice(0,10),end:new Date(end).toISOString().slice(0,10),days:(end-start)/86_400_000}]:[]}).sort((a,b)=>a.days-b.days||a.proposalId.localeCompare(b.proposalId));
 }
 export function summarizeProcessing(matters:ProcessingMatter[],events:ProcessingEvent[],year?:number):ProcessingSummary{
-  const values=processingObservations(matters,events,year).map(item=>item.days),eligible=new Set(events.filter(event=>isTerminalEvent(event)&&(!year||event.date?.slice(0,4)===String(year))).map(event=>event.proposalId));
+  const values=processingObservations(matters,events,year).map(item=>item.days),eligible=new Set([...events.filter(event=>isTerminalEvent(event)&&(!year||event.date?.slice(0,4)===String(year))).map(event=>event.proposalId),...matters.filter(item=>terminalStatus.test(item.status??'')).map(item=>item.id)]);
   const mean=values.length?values.reduce((sum,value)=>sum+value,0)/values.length:null,index=Math.floor(values.length/2),median=values.length?(values.length%2?values[index]!:(values[index-1]!+values[index]!)/2):null;
-  return{meanDays:mean,medianDays:median,sampleSize:values.length,eligible:eligible.size,coverage:eligible.size?values.length/eligible.size:0,terminalDefinition:'Primeiro evento datado de sanção, promulgação, transformação/conversão em norma ou veto após a apresentação.'};
+  return{meanDays:mean,medianDays:median,sampleSize:values.length,eligible:eligible.size,coverage:eligible.size?values.length/eligible.size:0,terminalDefinition:'Primeiro desfecho normativo datado ou, para situação final, a última movimentação oficial datada após a apresentação.'};
 }
 
 function activeSenate(data:unknown):ProcessingMatter[]{const root=data as {PesquisaBasicaMateria?:{Materias?:{Materia?:unknown}}},raw=root.PesquisaBasicaMateria?.Materias?.Materia,list=Array.isArray(raw)?raw:raw?[raw]:[];return list.flatMap(value=>{const x=value as Record<string,unknown>,id=String(x.Codigo??'').trim();return id?[{id,presentedAt:typeof x.Data==='string'?x.Data:null,status:'Em tramitação'}]:[]})}

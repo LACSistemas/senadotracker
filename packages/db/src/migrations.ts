@@ -247,4 +247,28 @@ export const migrations = [
     CREATE INDEX proposals_batch_status ON proposals(batch_id,search_text(COALESCE(json_extract(payload,'$.status'),'')));
     CREATE INDEX deliberations_batch_date_proposal ON deliberations(batch_id,date,json_extract(payload,'$.proposalId'));
   ` },
+  { version: 20, sql: `
+    ALTER TABLE proposals ADD COLUMN grupo_atribuido TEXT NOT NULL DEFAULT 'atos_documentos_especiais'
+      CHECK(grupo_atribuido IN (
+        'proposicoes_legislativas_principais','requerimentos','emendas_substitutivos','pareceres_relatorios',
+        'instrumentos_votacao_tramitacao','indicacoes_sugestoes','mensagens_comunicacoes_institucionais',
+        'oficios_documentos','recursos_representacoes_peticoes','atos_documentos_especiais'
+      ));
+    UPDATE proposals SET grupo_atribuido=CASE
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('PL','PLP','PEC','PDL','PLN','MPV','PRC','PRS','PLS','PDS','PLC','PLV') THEN 'proposicoes_legislativas_principais'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('REQ','RIC','RQS','RQI','RQE','RQN') THEN 'requerimentos'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('EMC','EMA','EMS','EMR','EMP','EMC-A','SBT','SBT-A','SBR','SBE-A','ESB') THEN 'emendas_substitutivos'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('PRL','PAR','PARF','REL','REL-A','RLP','PRLP','PRLE') THEN 'pareceres_relatorios'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('DTQ','RPD','RPDR','VTS') THEN 'instrumentos_votacao_tramitacao'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('INC','SUG') THEN 'indicacoes_sugestoes'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('MSC','MSG','MSF','MCN') THEN 'mensagens_comunicacoes_institucionais'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('DOC','OF','OFN','OFS','OFTFC') THEN 'oficios_documentos'
+      WHEN upper(trim(json_extract(payload,'$.type'))) IN ('REC','REP','PET') THEN 'recursos_representacoes_peticoes'
+      ELSE 'atos_documentos_especiais' END;
+    UPDATE proposals SET payload=json_set(payload,'$.functionalGroup',grupo_atribuido);
+    CREATE INDEX proposals_functional_group ON proposals(source,grupo_atribuido,batch_id);
+  ` },
+  { version: 21, sql: `
+    CREATE INDEX expenses_batch_person_month_category ON expenses(batch_id,external_id,month,category_code);
+  ` },
 ];

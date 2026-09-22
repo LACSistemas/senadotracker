@@ -1,7 +1,7 @@
 import type { DataCoverage } from '@senadotracker/domain';
 import { CoverageBadge } from '@/components/metrics';
 
-export interface ChartDatum {label:string;value:number|null}
+export interface ChartDatum {label:string;value:number|null;color?:string}
 export interface MultiLineDatum {label:string;values:{label:string;value:number|null;color:string}[]}
 export interface GroupedDatum {label:string;values:{label:string;value:number|null;color:string}[]}
 const number=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2});
@@ -17,7 +17,7 @@ function Frame({title,coverage,children,data}:{title:string;coverage:DataCoverag
 
 export function BarChart({title,data,coverage}:{title:string;data:ChartDatum[];coverage:DataCoverage}){
   const max=Math.max(...data.map(item=>item.value??0),1);
-  return <Frame title={title} data={data} coverage={coverage}><div className="space-y-4" aria-label={`Gráfico de barras: ${title}`}>{data.map(item=><div key={item.label} title={`${item.label}: ${formatted(item.value)}`}><div className="mb-1 flex items-end justify-between gap-3 text-sm"><span className="font-medium">{item.label}</span><strong className="tabular-nums">{formatted(item.value)}</strong></div><div className="h-5 overflow-hidden rounded-full border bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*(item.value??0)/max}%`}}/></div></div>)}</div></Frame>;
+  return <Frame title={title} data={data} coverage={coverage}><div className="space-y-4" aria-label={`Gráfico de barras: ${title}`}>{data.map(item=><div key={item.label} title={`${item.label}: ${formatted(item.value)}`}><div className="mb-1 flex items-end justify-between gap-3 text-sm"><span className="font-medium">{item.label}</span><strong className="tabular-nums">{formatted(item.value)}</strong></div><div className="h-5 overflow-hidden rounded-full border bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*(item.value??0)/max}%`,...(item.color?{backgroundColor:item.color}:{})}}/></div></div>)}</div></Frame>;
 }
 
 export function HistogramChart({title,data,coverage}:{title:string;data:ChartDatum[];coverage:DataCoverage}){

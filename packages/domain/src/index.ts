@@ -49,7 +49,36 @@ export interface Expense {
   installment: number | null; detail: string | null; rawId: string;
 }
 export interface Deliberation { source:Source; externalId:string; year:number; date:string; recordedAt:string|null; chamberBody:string; description:string; result:string|null; approved:boolean|null; secret:boolean; proposalId:string|null; proposalLabel:string|null; proposalSummary:string|null; officialUrl:string; rawId:string }
-export interface Proposal { source:Source; externalId:string; type:string; number:string|null; year:number|null; label:string; summary:string|null; presentedAt:string|null; status:string|null; officialUrl:string; rawId:string }
+export const proposalFunctionalGroups = {
+  proposicoes_legislativas_principais: { order:1, label:'Proposições legislativas principais' },
+  requerimentos: { order:2, label:'Requerimentos' },
+  emendas_substitutivos: { order:3, label:'Emendas e substitutivos' },
+  pareceres_relatorios: { order:4, label:'Pareceres e relatórios' },
+  instrumentos_votacao_tramitacao: { order:5, label:'Instrumentos de votação/tramitação' },
+  indicacoes_sugestoes: { order:6, label:'Indicações e sugestões' },
+  mensagens_comunicacoes_institucionais: { order:7, label:'Mensagens e comunicações institucionais' },
+  oficios_documentos: { order:8, label:'Ofícios e documentos' },
+  recursos_representacoes_peticoes: { order:9, label:'Recursos, representações e petições' },
+  atos_documentos_especiais: { order:10, label:'Atos/documentos especiais' },
+} as const;
+export type ProposalFunctionalGroup = keyof typeof proposalFunctionalGroups;
+const proposalTypesByFunctionalGroup:Record<Exclude<ProposalFunctionalGroup,'atos_documentos_especiais'>,ReadonlySet<string>>={
+  proposicoes_legislativas_principais:new Set(['PL','PLP','PEC','PDL','PLN','MPV','PRC','PRS','PLS','PDS','PLC','PLV']),
+  requerimentos:new Set(['REQ','RIC','RQS','RQI','RQE','RQN']),
+  emendas_substitutivos:new Set(['EMC','EMA','EMS','EMR','EMP','EMC-A','SBT','SBT-A','SBR','SBE-A','ESB']),
+  pareceres_relatorios:new Set(['PRL','PAR','PARF','REL','REL-A','RLP','PRLP','PRLE']),
+  instrumentos_votacao_tramitacao:new Set(['DTQ','RPD','RPDR','VTS']),
+  indicacoes_sugestoes:new Set(['INC','SUG']),
+  mensagens_comunicacoes_institucionais:new Set(['MSC','MSG','MSF','MCN']),
+  oficios_documentos:new Set(['DOC','OF','OFN','OFS','OFTFC']),
+  recursos_representacoes_peticoes:new Set(['REC','REP','PET']),
+};
+export function proposalFunctionalGroup(type:string):ProposalFunctionalGroup{
+  const normalized=type.trim().toLocaleUpperCase('pt-BR');
+  for(const [group,types] of Object.entries(proposalTypesByFunctionalGroup) as [Exclude<ProposalFunctionalGroup,'atos_documentos_especiais'>,ReadonlySet<string>][])if(types.has(normalized))return group;
+  return 'atos_documentos_especiais';
+}
+export interface Proposal { source:Source; externalId:string; type:string; functionalGroup:ProposalFunctionalGroup; number:string|null; year:number|null; label:string; summary:string|null; presentedAt:string|null; status:string|null; officialUrl:string; rawId:string }
 export interface ProposalAuthor { proposalId:string; externalId:string|null; name:string; party:string|null; uf:string|null; kind:string; primary:boolean|null; order:number|null; rawId:string }
 export interface LegislativeAppointment { source:Source; externalId:string; personExternalId:string; kind:'rapporteurship'|'commission'|'office'; bodyId:string|null; bodyLabel:string|null; role:string; start:string|null; end:string|null; status:string|null; proposalId:string|null; officialUrl:string; rawId:string }
 export interface LawLink { proposalId:string; lawId:string; lawLabel:string; officialUrl:string; relationship:string; rawId:string }

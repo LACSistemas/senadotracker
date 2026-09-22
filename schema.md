@@ -163,14 +163,16 @@ Presença em sessão e participação em votação são calculadas separadamente
 | --- | --- |
 | `activity_batches` | Lote de atividade por fonte e escopo, com contagens de proposições, autores, nomeações e leis. |
 | `active_activity_publications` | Lote ativo por `(source, scope)`. |
-| `proposals` | Identificação e dados da proposição em `payload`. |
+| `proposals` | Identificação, grupo funcional em `grupo_atribuido` e dados da proposição em `payload`. |
 | `proposal_authors` | Autores e coautores, incluindo possível ID parlamentar na fonte. |
 | `legislative_appointments` | Relatorias, comissões e cargos, diferenciados por `kind`. |
 | `law_links` | Relação explícita entre proposição e norma jurídica. |
 
 Uma proposição é identificada no lote por `(batch_id, external_id)`. Autores usam `(batch_id, proposal_id, author_key)`. Relações com lei não são inferidas a partir da situação textual: precisam existir em `law_links`.
 
-Os índices `proposals_listing` e `deliberations_proposal` usam `json_extract` para acelerar tipo, ano e identificador da matéria sem duplicar esses campos do contrato JSON.
+`grupo_atribuido` é uma classificação derivada da sigla oficial no momento da coleta. Seus valores estáveis são `proposicoes_legislativas_principais`, `requerimentos`, `emendas_substitutivos`, `pareceres_relatorios`, `instrumentos_votacao_tramitacao`, `indicacoes_sugestoes`, `mensagens_comunicacoes_institucionais`, `oficios_documentos`, `recursos_representacoes_peticoes` e `atos_documentos_especiais`. O último grupo funciona como fallback explícito para siglas especiais ou ainda não mapeadas. O mesmo valor é preservado em `payload.functionalGroup`.
+
+Os índices `proposals_listing` e `deliberations_proposal` usam `json_extract` para acelerar tipo, ano e identificador da matéria. `proposals_functional_group` acelera filtros por Casa e grupo funcional sem depender da leitura do JSON.
 
 ## Complementos legislativos
 

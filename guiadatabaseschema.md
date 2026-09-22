@@ -257,7 +257,9 @@ Tabela materializada na migração 15 e mantida na publicação. PK/FK `(batch_i
 
 ### 7.2 `proposals`
 
-PK `(batch_id, external_id)`; contém fonte, `raw_id` e JSON `Proposal`. O payload guarda tipo, número, ano, label, ementa/resumo, apresentação, situação e URL oficial.
+PK `(batch_id, external_id)`; contém fonte, `raw_id`, `grupo_atribuido` e JSON `Proposal`. O payload guarda tipo, grupo funcional em `functionalGroup`, número, ano, label, ementa/resumo, apresentação, situação e URL oficial.
+
+`grupo_atribuido` é calculado deterministicamente a partir da sigla oficial. Ele usa dez chaves estáveis: `proposicoes_legislativas_principais`, `requerimentos`, `emendas_substitutivos`, `pareceres_relatorios`, `instrumentos_votacao_tramitacao`, `indicacoes_sugestoes`, `mensagens_comunicacoes_institucionais`, `oficios_documentos`, `recursos_representacoes_peticoes` e `atos_documentos_especiais`. Siglas não reconhecidas entram no último grupo para nunca deixar o campo nulo. A migração 20 preencheu o acervo anterior; novos lotes são classificados antes da publicação.
 
 Não existe FK global de proposição porque o mesmo ID pode existir em lotes e Casas diferentes. A identidade operacional é fonte + lote + ID.
 

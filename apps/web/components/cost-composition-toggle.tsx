@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import type { Source } from '@senadotracker/domain';
 import { cn } from '@/lib/utils';
 
 type Entry={label:string;value:number|null;tone:string};
 const money=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
 const percent=new Intl.NumberFormat('pt-BR',{style:'percent',maximumFractionDigits:1});
 
-export function CostCompositionToggle({entries,total,roster,cabinetStaffTotal,cabinetStaffMean}:{entries:Entry[];total:number|null;roster:number;cabinetStaffTotal:number;cabinetStaffMean:number|null}){
+export function CostCompositionToggle({source,entries,total,roster,cabinetStaffTotal,cabinetStaffMean}:{source:Source;entries:Entry[];total:number|null;roster:number;cabinetStaffTotal:number;cabinetStaffMean:number|null}){
   const [mode,setMode]=useState<'total'|'average'>('total');
   const divisor=mode==='average'&&roster>0?roster:1;
   return <div className="mt-8">
@@ -19,9 +20,9 @@ export function CostCompositionToggle({entries,total,roster,cabinetStaffTotal,ca
     </div>
     <div className="mt-4 grid gap-5 lg:grid-cols-[.27fr_.55fr_.18fr]">
       <div className="rounded-2xl bg-primary p-6 text-primary-foreground">
-        <p className="text-sm font-bold">{mode==='total'?'Custo mensal identificado da Casa':'Custo médio mensal por parlamentar'}</p>
+        <p className="text-sm font-bold">{mode==='total'?'Custo mensal identificado':'Custo médio mensal por parlamentar'}</p>
         <strong className="mt-2 block text-3xl">{total===null?'—':money.format(total/divisor/100)}</strong>
-        <small className="mt-2 block opacity-75">{mode==='total'?'média mensal no período publicado':`total mensal ÷ ${roster} parlamentares`}</small>
+        <small className="mt-2 block opacity-75">{mode==='total'?'média mensal das parcelas identificadas no período':`total mensal ÷ ${roster} parlamentares`}</small>
       </div>
       <div className="rounded-2xl border bg-background p-5">
         <div><h3 className="font-black">Composição do custo mensal</h3><p className="mt-1 text-xs text-muted-foreground">{mode==='total'?`Total identificado da Casa · ${roster} parlamentares`:'Média por parlamentar do cadastro publicado'}</p></div>
@@ -29,7 +30,7 @@ export function CostCompositionToggle({entries,total,roster,cabinetStaffTotal,ca
         <div className="mt-5 grid gap-3 sm:grid-cols-3">{entries.map(({label,value,tone})=><div className="rounded-xl border p-4" key={label}><span className={`inline-block size-2.5 rounded-full ${tone}`}/><p className="mt-2 text-xs font-bold text-muted-foreground">{label}</p><strong className="mt-1 block text-lg">{value===null?'—':money.format(value/divisor/100)}</strong><small>{value!==null&&total?percent.format(value/total):'cobertura indisponível'}</small></div>)}</div>
       </div>
       <div className="flex min-h-40 flex-col justify-center rounded-2xl border bg-background p-5">
-        <p className="text-xs font-bold text-muted-foreground">{mode==='total'?'Pessoas nos gabinetes':'Média de pessoas por gabinete'}</p>
+        <p className="text-xs font-bold text-muted-foreground">{mode==='total'?'Membros dos gabinetes':`Média de membros por gabinete de ${source==='senado'?'senador':'deputado'}`}</p>
         <strong className="mt-2 block text-2xl text-primary">{mode==='total'?cabinetStaffTotal.toLocaleString('pt-BR'):cabinetStaffMean===null?'—':new Intl.NumberFormat('pt-BR',{maximumFractionDigits:1}).format(cabinetStaffMean)}</strong>
         <small className="mt-1 text-muted-foreground">vínculos confirmados</small>
       </div>

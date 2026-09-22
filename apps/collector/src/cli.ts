@@ -10,6 +10,7 @@ Uso:
   npm run collector -- collect-complement --source senado|camara|all
   npm run collector -- collect-themes --year YYYY [--file ARQUIVO] [--dry-run]
   npm run collector -- collect-camara-propositions --ids ID,ID
+  npm run collector -- collect-camara-tramitacoes --year YYYY [--types REQ,RIC,INC,DOC,EMC,PL] [--ids ID,ID] [--limit N]
   npm run collector -- collect-senate-processes --year YYYY [--ids ID,ID] [--dry-run]
   npm run collector -- collect-senate-agenda --year YYYY [--dry-run]
   npm run collector -- collect-camara-agenda --year YYYY [--dry-run]
@@ -29,6 +30,7 @@ Opções:
 collect consulta e publica cadastro; collect-expenses importa um arquivo anual de cota.
 collect-themes importa a classificação temática anual oficial da Câmara e a vincula às proposições ativas.
 collect-camara-propositions importa detalhe, temas, tramitação e relações oficiais de proposições específicas.
+collect-camara-tramitacoes importa o histórico paginado das proposições da Câmara com situação terminal, usando cache local e lotes concorrentes.
 collect-senate-processes importa assuntos, situações e tramitação dos processos oficiais do Senado.
 collect-senate-agenda importa itens das pautas mensais de comissões do Senado e deduplica matérias no período.
 collect-camara-agenda importa pautas de reuniões e sessões deliberativas da Câmara.
