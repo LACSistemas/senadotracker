@@ -16,3 +16,4 @@ test('classifica siglas em grupos funcionais e usa grupo especial como fallback'
   assert.equal(proposalFunctionalGroup('PET'),'recursos_representacoes_peticoes');
   assert.equal(proposalFunctionalGroup('TIPO-NOVO'),'atos_documentos_especiais');
 });
+test('busca por identificador usa tipo, numero e ano da proposicao',()=>{const db=seed();try{assert.equal(publishedPropositions(db,{search:'PL 10/2026'}).total,1);assert.equal(publishedPropositions(db,{search:'pl 10'}).total,1);assert.equal(publishedPropositions(db,{search:'PL 10/2025'}).total,0)}finally{db.close()}});

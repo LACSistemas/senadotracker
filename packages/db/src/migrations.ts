@@ -271,4 +271,16 @@ export const migrations = [
   { version: 21, sql: `
     CREATE INDEX expenses_batch_person_month_category ON expenses(batch_id,external_id,month,category_code);
   ` },
+  { version: 22, sql: `
+    CREATE INDEX proposals_batch_presented_day ON proposals(batch_id,substr(json_extract(payload,'$.presentedAt'),1,10));
+    CREATE INDEX appointments_batch_kind_start ON legislative_appointments(batch_id,kind,substr(json_extract(payload,'$.start'),1,10));
+    CREATE INDEX complements_batch_kind_occurred ON legislative_complements(batch_id,kind,occurred_at,proposal_id);
+  ` },
+  { version: 23, sql: `
+    CREATE INDEX proposals_batch_effective_year ON proposals(batch_id,COALESCE(json_extract(payload,'$.year'),CAST(substr(json_extract(payload,'$.presentedAt'),1,4) AS INTEGER)));
+  ` },
+  { version: 24, sql: `
+    CREATE INDEX proposals_batch_type_number ON proposals(batch_id,json_extract(payload,'$.type'),CAST(json_extract(payload,'$.number') AS INTEGER));
+  ` },
+
 ];
