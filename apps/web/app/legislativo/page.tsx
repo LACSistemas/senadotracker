@@ -33,7 +33,7 @@ const discovery: Array<[string, string, string, LucideIcon, string]> = [
   ['Quem trabalha no gabinete?', 'Vínculos e custos publicados de cada gabinete.', '/legislativo/senadores', Users, 'text-orange-700 bg-orange-50'],
   ['Proposições', 'Busque projetos, PECs e outras matérias legislativas.', '/legislativo/proposicoes', FileText, 'text-sky-700 bg-sky-50'],
   ['Rankings', 'Compare gastos, faltas, propostas e relatorias.', '/legislativo/rankings', BarChart3, 'text-indigo-700 bg-indigo-50'],
-  ['Fornecedores', 'Veja CNPJs pagos por vários parlamentares.', '/legislativo/fornecedores', Store, 'text-rose-700 bg-rose-50'],
+  ['Fornecedores', 'Veja quem recebe recursos públicos do Congresso, em contratos e em gabinetes.', '/legislativo/fornecedores', Store, 'text-rose-700 bg-rose-50'],
   ['Patrimônio', 'Compare declarações eleitorais de 2018 e 2022.', '/legislativo/patrimonio', TrendingUp, 'text-amber-700 bg-amber-50'],
   ['Comparações', 'Compare parlamentares, partidos ou estados em dimensões equivalentes.', '/comparar', Scale, 'text-cyan-700 bg-cyan-50'],
 ];

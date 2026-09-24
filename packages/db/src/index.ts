@@ -238,5 +238,5 @@ export { backfillExpenseSupplierIdentities, resolveStrongSupplier, supplierIdent
 export { institutionalContractFinancialSummary, institutionalFinancialReconciliation, reconcileFinancialSeries, type FinancialFact, type FinancialPhase, type FinancialReconciliation } from './financial-reconciliation.ts';
 export { publishSupplierAggregates } from './supplier-aggregates.ts';
 export { publishedSupplierExplorer, publishedSupplierGlobalDetail, publishedSupplierNetwork, publishedParliamentarianSupplierNetwork, type SupplierActivity, type SupplierExplorerItem, type SupplierExplorerQuery, type SupplierExplorerSort, type SupplierHouse } from './supplier-market.ts';
-export { publishedSupplierMarket, publishedInstitutionalSupplierOverview, type SupplierMarketQuery } from './supplier-market-analytics.ts';
+export { publishedSupplierMarket, publishedInstitutionalSupplierOverview, publishedCongressSupplierOverview, type SupplierMarketQuery } from './supplier-market-analytics.ts';
 export { openPostgres, postgresConfigFromEnv } from './postgres.ts';
