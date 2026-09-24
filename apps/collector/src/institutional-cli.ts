@@ -1,4 +1,4 @@
-export const institutionalCommands=['collect-institutional-suppliers','collect-chamber-procurement','collect-chamber-contract-details','collect-chamber-financial-execution','collect-senate-procurement','collect-senate-contract-details','collect-senate-financial-execution','collect-pncp-enrichment','rebuild-supplier-aggregates'] as const;
+export const institutionalCommands=['collect-institutional-suppliers','collect-chamber-procurement','collect-chamber-contract-details','collect-chamber-financial-execution','collect-chamber-financial-year','collect-senate-procurement','collect-senate-contract-details','collect-senate-financial-execution','collect-senate-financial-year','collect-pncp-enrichment','rebuild-supplier-aggregates'] as const;
 export type InstitutionalCommand=typeof institutionalCommands[number];
 export interface InstitutionalCliOptions{command:InstitutionalCommand;year:number;from:string;to:string;resume:boolean;dryRun:boolean;force:boolean;limit:number|null;concurrency:number;ids:string[]}
 const value=(args:string[],name:string)=>{const i=args.indexOf(name);return i<0?undefined:args[i+1]};

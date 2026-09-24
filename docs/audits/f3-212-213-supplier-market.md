@@ -2,7 +2,7 @@
 
 Implementação atual: `publishedSupplierMarket` consulta os agregados publicados por fornecedor, ano e Casa. A consulta retorna total líquido, número de lançamentos e parlamentares, UFs, partidos, participação dos cinco maiores, fornecedores compartilhados por cinco ou mais parlamentares e fornecedores novos no recorte.
 
-Para os 500 maiores fornecedores por valor, a consulta de despesas confirmadas agrega o valor líquido por fornecedor e parlamentar. `dependency_share` é a participação do maior parlamentar no total observado daquele fornecedor. Essa métrica é descritiva: não é classificação de risco, influência ou irregularidade.
+Para os 100 maiores fornecedores por valor, a relação materializada `supplier_parliamentary_clients` agrega o valor líquido por fornecedor e parlamentar. `dependency_share` é a participação do maior parlamentar no total observado daquele fornecedor. Essa métrica é descritiva: não é classificação de risco, influência ou irregularidade.
 
 A recorrência é calculada somente na série histórica publicada: fornecedores observados em um ano, em três ou mais anos e em todos os anos disponíveis. Um fornecedor “novo” significa primeiro ano observado na base coberta, nunca data de abertura empresarial.
 
@@ -27,11 +27,13 @@ O script `scripts/benchmark-supplier-market.ts` mede as consultas do mercado, fi
 ## Desempenho e limites
 
 - A página lê `supplier_global_yearly`/`supplier_global_house_yearly` e não revarre todo o histórico para os KPIs.
-- A consulta de dependência é limitada aos 500 maiores fornecedores para manter o payload previsível; fornecedores fora desse conjunto não recebem `dependency_share` no primeiro carregamento.
+- A consulta de dependência é limitada aos 100 maiores fornecedores para manter o payload previsível; fornecedores fora desse conjunto não recebem `dependency_share` no primeiro carregamento.
 - O scatter continua limitado a 2.500 pontos e oferece tabela/links como alternativa acessível.
 - Estornos permanecem com sinal no valor líquido.
 - Ausência de série histórica suficiente mantém a métrica indisponível.
 
 ## Validação
 
-`npm.cmd test` passou com 183 testes; os typechecks de `@senadotracker/web` e `@senadotracker/db` também passaram após a inclusão dos painéis de concentração e recorrência.
+Após a materialização da relação cliente, o benchmark local ficou: mercado p50 347,6 ms/p95 436,6 ms/cold 297,6 ms; mercado filtrado p50 335,7 ms/p95 384,7 ms; explorador p50 9,6 ms/p95 16,6 ms. A migration 37 cria `supplier_parliamentary_clients` e seu índice de consulta.
+
+`npm.cmd test` passou com 183 testes; os typechecks de `@senadotracker/web`, `@senadotracker/db` e `@senadotracker/collector` também passaram após a inclusão dos painéis de concentração e recorrência.

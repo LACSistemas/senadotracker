@@ -641,5 +641,14 @@ export const migrations = [
     CREATE INDEX IF NOT EXISTS expenses_market_lookup ON expenses(year,source,batch_id,record_key,external_id);
     CREATE INDEX IF NOT EXISTS supplier_names_search_lookup ON supplier_names(search_name,supplier_id);
   ` },
+  { version: 37, sql: `
+    CREATE TABLE supplier_parliamentary_clients (
+      revision_id TEXT NOT NULL REFERENCES supplier_aggregate_revisions(id),supplier_id TEXT NOT NULL REFERENCES suppliers(id),year INTEGER NOT NULL,
+      institution TEXT NOT NULL CHECK(institution IN ('CAMARA','SENADO')),client_source TEXT NOT NULL,client_external_id TEXT NOT NULL,
+      net_value_scaled INTEGER NOT NULL,value_scale INTEGER NOT NULL DEFAULT 2,records INTEGER NOT NULL,
+      PRIMARY KEY(revision_id,supplier_id,year,institution,client_source,client_external_id)
+    ) STRICT;
+    CREATE INDEX supplier_parliamentary_clients_lookup ON supplier_parliamentary_clients(revision_id,year,institution,supplier_id,net_value_scaled DESC);
+  ` },
 
 ];

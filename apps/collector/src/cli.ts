@@ -21,6 +21,8 @@ Uso:
   npm run collector -- collect-chamber-procurement --year YYYY [--limit N] [--resume] [--dry-run]
   npm run collector -- collect-chamber-contract-details --year YYYY [--ids ID,ID] [--limit N] [--dry-run]
   npm run collector -- collect-chamber-financial-execution --year YYYY [--limit N] [--dry-run]
+  npm run collector -- collect-chamber-financial-year --year YYYY [--limit N] [--dry-run]
+  npm run collector -- collect-senate-financial-year --year YYYY [--limit N] [--dry-run]
   npm run collector -- collect-senate-procurement --year YYYY [--limit N] [--resume] [--dry-run]
   npm run collector -- collect-senate-contract-details --year YYYY [--ids ID,ID] [--limit N] [--dry-run]
   npm run collector -- collect-senate-financial-execution --year YYYY [--ids ID,ID] [--limit N] [--dry-run]

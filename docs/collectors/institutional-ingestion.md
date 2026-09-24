@@ -55,3 +55,28 @@ O PNCP é não bloqueante. Na amostra real de 20 a 24/09/2026 executada em 24/09
 ## Reconcilia??o documental SIAFI do Senado
 
 Linhas anuais s?o consolidadas pelo n?mero completo da NE antes do v?nculo. O coletor abre a NE e cada documento relacionado, valida a liga??o reversa e compara a soma l?quida por fase ao total oficial. S? substitui um agregado por movimentos datados quando a rela??o ? inequ?voca e a soma fecha exatamente; diverg?ncias incrementam `value_conflicts` e permanecem no raw. Agregados n?o recebem data, exerc?cio do movimento ou flag de restos a pagar inventados.
+
+## Backfill financeiro por exercicio
+
+O fluxo anual parte da evidencia financeira do exercicio e somente depois tenta
+resolver favorecido, nota de empenho e contrato. Assim, uma execucao de 2026
+continua publicada quando o contrato ou a NE nasceu em outro ano.
+
+```powershell
+npm run collector -- collect-chamber-financial-year --year 2026 --resume
+npm run collector -- collect-senate-financial-year --year 2026 --resume
+npm run collector -- rebuild-supplier-aggregates
+```
+
+Os dois comandos aceitam `--dry-run`, `--force`, `--limit` e `--ids`. Cada
+execucao grava raw antes da normalizacao, hash do payload, checkpoint por Casa
+e exercicio e metricas de requests, bytes, erros, registros descobertos e
+registros publicados. Repeticoes usam chaves oficiais e upsert idempotente;
+`--resume` somente pula um escopo com checkpoint `complete`.
+
+`occurred_at` e `movement_year` vem da linha de pagamento. `commitment_year`
+vem do ano da NE; `restos_a_pagar` so e marcado quando a fonte explicita isso.
+Estorno e anulacao mantem sinal negativo. Contrato, empenho, liquidacao,
+cobranca e pagamento continuam fases distintas. O resultado de 2026 pode ser
+reexecutado para outros anos sem alterar a semantica, mas o historico completo
+deve ser planejado por volume antes de ser executado.
