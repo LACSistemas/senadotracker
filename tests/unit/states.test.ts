@@ -30,12 +30,15 @@ test('consulta por UF separa Casas e não transforma métricas ausentes em zero'
     assert.equal(result.summary.representatives,3);
     assert.equal(result.senators.length,2);
     assert.equal(result.deputies.length,1);
-    assert.equal(result.summary.expenseCents.median,null);
-    assert.equal(result.summary.presence.median,null);
-    assert.equal(result.summary.cabinetByHouse.senado.staff.median,null);
-    assert.equal(result.summary.cabinetByHouse.camara.financialCents.median,null);
-    assert.equal(result.summary.cabinetByHouse.senado.kind,'identified_payroll');
-    assert.equal(result.summary.cabinetByHouse.camara.kind,'budget_spent');
+    assert.equal(result.summary.byHouse.senado.representatives,2);
+    assert.equal(result.summary.byHouse.camara.representatives,1);
+    assert.equal(result.summary.byHouse.senado.expenseCents.median,null);
+    assert.equal(result.summary.byHouse.camara.expenseCents.median,null);
+    assert.equal(result.summary.byHouse.senado.presence.median,null);
+    assert.equal(result.summary.byHouse.senado.cabinet.staff.median,null);
+    assert.equal(result.summary.byHouse.camara.cabinet.financialCents.median,null);
+    assert.equal(result.summary.byHouse.senado.cabinet.kind,'identified_payroll');
+    assert.equal(result.summary.byHouse.camara.cabinet.kind,'budget_spent');
     assert.equal(result.coverage.sampleSize,3);
   } finally { db.close(); }
 });

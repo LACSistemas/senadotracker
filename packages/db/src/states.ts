@@ -22,16 +22,22 @@ export interface StateRepresentative extends Profile {
 
 export interface StateCabinetSummary { staff: Distribution; financialCents: Distribution; period: string | null; kind: 'budget_spent' | 'identified_payroll' }
 
+/** Métricas de uma UF dentro de uma Casa. Nunca agregadas entre Casas: cota, presença, votações e
+    gabinete têm rubrica, população e competência distintas no Senado e na Câmara. */
+export interface StateHouseMetrics {
+  representatives: number;
+  expenseCents: Distribution;
+  presence: Distribution;
+  participation: Distribution;
+  cabinet: StateCabinetSummary;
+}
+
 export interface StateSummary {
   uf: string;
   senators: number;
   deputies: number;
   representatives: number;
-  expenseCents: Distribution;
-  presence: Distribution;
-  participation: Distribution;
-  staff: Distribution;
-  cabinetByHouse: { senado: StateCabinetSummary; camara: StateCabinetSummary };
+  byHouse: Record<Source, StateHouseMetrics>;
 }
 
 const period = (year: number) => ({ from: `${year}-01-01`, to: `${year}-12-31`, grain: 'year' as const });
@@ -84,18 +90,24 @@ function representatives(db: DatabaseSync, uf: string, year: number) {
 }
 
 function summarize(uf: string, rows: StateRepresentative[]): StateSummary {
-  const values = <K extends keyof StateRepresentative>(key: K) => rows.flatMap(row => typeof row[key] === 'number' ? [row[key] as number] : []);
-  const cabinet=(source:Source):StateCabinetSummary=>{const house=rows.filter(item=>item.source===source),periods=[...new Set(house.flatMap(item=>item.cabinetPeriod?[item.cabinetPeriod]:[]))];return{staff:distribution(house.flatMap(item=>item.staff===null?[]:[item.staff])),financialCents:distribution(house.flatMap(item=>item.cabinetFinancialCents===null?[]:[item.cabinetFinancialCents])),period:periods.length===1?periods[0]!:null,kind:source==='camara'?'budget_spent':'identified_payroll'}};
+  const house=(source:Source):StateHouseMetrics=>{
+    const subset=rows.filter(item=>item.source===source);
+    const values=<K extends keyof StateRepresentative>(key:K)=>subset.flatMap(row=>typeof row[key]==='number'?[row[key] as number]:[]);
+    const periods=[...new Set(subset.flatMap(item=>item.cabinetPeriod?[item.cabinetPeriod]:[]))];
+    return {
+      representatives:subset.length,
+      expenseCents:distribution(values('expenseCents')),
+      presence:distribution(values('presence')),
+      participation:distribution(values('participation')),
+      cabinet:{staff:distribution(values('staff')),financialCents:distribution(values('cabinetFinancialCents')),period:periods.length===1?periods[0]!:null,kind:source==='camara'?'budget_spent':'identified_payroll'},
+    };
+  };
   return {
     uf,
     senators: rows.filter(item => item.source === 'senado').length,
     deputies: rows.filter(item => item.source === 'camara').length,
     representatives: rows.length,
-    expenseCents: distribution(values('expenseCents')),
-    presence: distribution(values('presence')),
-    participation: distribution(values('participation')),
-    staff: distribution(values('staff')),
-    cabinetByHouse:{senado:cabinet('senado'),camara:cabinet('camara')},
+    byHouse:{senado:house('senado'),camara:house('camara')},
   };
 }
 

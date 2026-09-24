@@ -16,7 +16,8 @@ const principalRoutes = [
 ];
 
 test('abas históricas seguem o padrão ARIA e funcionam com teclado', async ({ page }) => {
-  await page.goto('/legislativo/senadores/5672');
+  // O tablist vive na rota de carreira política ("Como isso mudou ao longo do tempo?"), não na visão geral.
+  await page.goto('/legislativo/senadores/5672/carreira-politica');
   const tabs = page.getByRole('tablist', { name: 'Métrica histórica' }).getByRole('tab');
   const first = tabs.first();
   await first.focus();
@@ -101,4 +102,24 @@ test('gera capturas de revisão desktop e mobile', async ({ page }) => {
     await page.goto(route, { waitUntil: 'networkidle' });
     await page.screenshot({ path: `docs/review/screenshots/${name}-${viewport.label}.png`, fullPage: true });
   }
+});
+
+test('rankings mantém contexto ao rolar e o pódio ordena a mesma métrica', async ({ page }) => {
+  await page.goto('/legislativo/rankings');
+  // Pódio: posições reais de uma métrica só, com o rótulo dizendo qual é.
+  await expect(page.getByText(/Pódio ·/)).toBeVisible();
+  await expect(page.getByText('Extremos por dimensão')).toBeVisible();
+  // As três primeiras colunas acompanham o scroll horizontal de uma tabela de 1400px.
+  const sticky = page.locator('thead th.sticky');
+  await expect(sticky).toHaveCount(3);
+  // `Cargo` saiu da tabela por repetir `Casa`; o filtro por cargo continua.
+  await expect(page.locator('thead th', { hasText: /^Cargo$/ })).toHaveCount(0);
+  await expect(page.locator('thead th', { hasText: /^Casa$/ })).toHaveCount(1);
+});
+
+test('filtrar preserva a ordenação e o ano escolhidos', async ({ page }) => {
+  await page.goto('/legislativo/rankings?ordem=cost_desc&ano=2026');
+  await page.getByRole('button', { name: 'Aplicar filtros' }).click();
+  await expect(page).toHaveURL(/ordem=cost_desc/);
+  await expect(page).toHaveURL(/ano=2026/);
 });

@@ -1,11 +1,17 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { ArrowRight, Building2, Check, FileSearch, Gavel, Landmark, MapPinned, Scale, Users } from 'lucide-react';
+import { ArrowRight, Building2, Check, FileSearch, FileText, Gavel, Landmark, MapPinned, Scale, UserMinus, Users, Wallet } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { InstitutionHero } from '@/components/heroes';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { homeOverview } from '@/lib/data';
+import { homeHighlights, homeOverview } from '@/lib/data';
+import type { DashboardRow } from '@senadotracker/db';
+import type { Source } from '@senadotracker/domain';
+import { HighlightCard } from '@/components/highlight-card';
+import { LedeLine } from '@/components/lede';
+import { houseLede, humanAnchor } from '@/lib/lede';
+import { absent, brl, count, percent } from '@/lib/format';
 
 const legislativeDetails = [
   'Senadores e deputados federais, com perfis e histórico de atuação',
@@ -28,11 +34,26 @@ const judiciaryItems: Array<[string, string, LucideIcon]> = [
   ['Processos', 'Tempo de tramitação e indicadores', FileSearch],
 ];
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   const overview = homeOverview();
   const counts = overview.status === 'available'
     ? overview.data.counts
     : { senators: 81, deputies: 513, parties: 0 };
+  const live = homeHighlights();
+  const data = live.status === 'available' ? live.data : null;
+  // O número da primeira dobra é o custo mensal mediano da Câmara — a Casa com universo maior — e a
+  // frase que o acompanha sai da mesma função que gera a lede do perfil.
+  const headlineHouse: Source = 'camara';
+  const summary = data?.summaries[headlineHouse] ?? null;
+  const headline = summary ? houseLede(summary, 'monthlyCostCents', { href: '/legislativo/rankings', universeLabel: 'deputados' }) : null;
+  const anchor = humanAnchor(headline?.value ?? null, data?.minimumWage?.valueCents, 'salários mínimos');
+  const featured = data
+    ? ([['Maior custo médio mensal', data.highlights.cost, (row: DashboardRow) => brl(row.monthlyCostCents), data.coverage.cost, Wallet, `Cota + gabinete + subsídio · ${data.year}.`],
+        ['Menor presença em Plenário', data.highlights.presence, (row: DashboardRow) => percent(row.presence), data.coverage.presence, UserMinus, 'Presença oficial; não é voto nominal.'],
+        ['Maior autoria + relatorias', data.highlights.activity, (row: DashboardRow) => `${count((row.proposals ?? 0) + (row.rapporteurships ?? 0))} registros`, data.coverage.activity, FileText, 'Duas contagens distintas, somadas só neste destaque.']] as const)
+    : [];
   const legislativeItems = [
     ['Senadores', `${counts.senators} senadores`, '/legislativo/senadores', Landmark],
     ['Deputados Federais', `${counts.deputies} deputados`, '/legislativo/deputados', Users],
@@ -52,8 +73,38 @@ export default async function HomePage() {
         />
       </div>
 
+      {headline && (
+        <section className="border-y bg-card">
+          <div className="page-shell grid gap-8 py-10 lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:items-center">
+            <div>
+              <p className="eyebrow">Congresso agora</p>
+              {/* Não é `h1`: o herói acima já emite o único da rota. */}
+              <p className="display-title mt-3 text-4xl tabular-nums sm:text-5xl">{brl(headline.value)}</p>
+              <p className="mt-2 text-sm font-semibold text-muted-foreground">custo mensal mediano por deputado</p>
+              {anchor && <p className="mt-3 text-sm text-muted-foreground">equivale a <strong className="text-foreground">{anchor}</strong> por mês{data?.minimumWage ? ` (${data.minimumWage.legalBasis})` : ''}.</p>}
+            </div>
+            <div className="min-w-0">
+              <LedeLine lede={headline} />
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">Cota parlamentar, gabinete e subsídio normativo somados apenas nos meses em que as três parcelas foram observadas. Cada número do site carrega período, universo e cobertura próprios.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {featured.length > 0 && (
+        <section className="page-shell py-12">
+          <h2 className="text-2xl font-bold tracking-tight">Extremos observados no período</h2>
+          <p className="mt-1 text-sm text-muted-foreground">Cada destaque tem métrica, universo e cobertura próprios — não formam nota de mérito.</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {featured.map(([label, row, metric, sample, Icon, note]) => (
+              <HighlightCard key={label} label={label} value={row ? metric(row) : absent} person={row ? { name: row.name, uf: row.uf, party: row.party, photoUrl: row.photoUrl, href: `/legislativo/${row.source === 'senado' ? 'senadores' : 'deputados'}/${row.externalId}`, source: row.source } : null} sample={sample} icon={Icon} note={note} />
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="page-shell pb-14 pt-3">
-        <div className="grid gap-4 xl:grid-cols-2">
+        <div className="grid gap-4">
           <InstitutionPortal
             kind="legislative"
             title="Poder Legislativo"
@@ -71,23 +122,14 @@ export default async function HomePage() {
             </div>
           </InstitutionPortal>
 
-          <InstitutionPortal
-            kind="judiciary"
-            title="Poder Judiciário"
-            description="Tribunais, magistrados, custos da Justiça, processos, tempo de tramitação e estrutura."
-            action={<span className="inline-flex cursor-not-allowed items-center gap-2 rounded-lg border bg-muted px-4 py-2 text-sm font-bold text-muted-foreground" aria-disabled="true">Explorar Judiciário <ArrowRight size={15} /></span>}
-          >
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {judiciaryItems.map(([title, subtitle, Icon]) => (
-                <div key={String(title)} className="min-h-24 rounded-xl border border-dashed bg-muted/35 p-3">
-                  <Icon size={17} className="text-muted-foreground" />
-                  <strong className="mt-2 block text-sm leading-tight">{title}</strong>
-                  <span className="mt-1 block text-xs leading-4 text-muted-foreground">{subtitle}</span>
-                </div>
-              ))}
-            </div>
-          </InstitutionPortal>
         </div>
+        {/* Faixa fina no lugar dos quatro cartões tracejados: não há dado judicial publicado, então a
+            área não disputa a primeira dobra com o que já existe. */}
+        <aside className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-dashed bg-muted/35 px-5 py-4">
+          <Scale size={17} className="text-muted-foreground" aria-hidden="true" />
+          <strong className="text-sm">Judiciário — em breve</strong>
+          <span className="text-xs leading-5 text-muted-foreground">{judiciaryItems.map(([title]) => title).join(' · ')}. Ainda não há dados judiciais publicados neste produto.</span>
+        </aside>
       </section>
 
       <section className="border-y bg-card">
@@ -96,7 +138,7 @@ export default async function HomePage() {
           <h2 className="mt-3 text-3xl font-bold tracking-tight">O que você encontra em cada área?</h2>
           <div className="mt-8 grid gap-10 md:grid-cols-2 md:divide-x">
             <AreaDetails title="No Poder Legislativo, você encontra dados oficiais sobre:" items={legislativeDetails} />
-            <AreaDetails className="md:pl-10" title="No Poder Judiciário, você encontrará dados oficiais sobre:" items={judiciaryDetails} future />
+            <AreaDetails className="md:pl-10" title="No Judiciário, você encontrará dados oficiais sobre:" items={judiciaryDetails} future />
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {validCnpj} from '@senadotracker/db';
+import {validCnpj} from '@senadotracker/domain';
 
 test('supplier detail accepts only CNPJ with valid check digits',()=>{
   assert.equal(validCnpj('02.558.157/0001-62'),true);

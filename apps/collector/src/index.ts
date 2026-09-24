@@ -1,8 +1,10 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { runCli } from './cli.ts';
+import { parseInstitutionalCli } from './institutional-cli.ts';
 
 const args = process.argv.slice(2);
+const institutionalOptions=parseInstitutionalCli(args);
 const isCollect = args.length === 3 && args[0] === 'collect' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!);
 const isStatus = args.length === 1 && args[0] === 'status';
 const isExpense = args.length === 5 && args[0] === 'collect-expenses' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!) && args[3] === '--year' && /^20\d{2}$/.test(args[4]!);
@@ -16,6 +18,7 @@ const isElection=args[0]==='import-elections'&&/^20(18|22)$/.test(option('--year
 const isCamaraStaff=args[0]==='collect-camara-staff';
 const isCamaraBudget=args[0]==='collect-camara-budget'&&/^20\d{2}$/.test(option('--year')??'');
 const isSenateStaff=args[0]==='collect-senate-staff'&&/^20\d{2}$/.test(option('--year')??'');
+const isPriceIndex=args[0]==='collect-price-index'&&['ipca'].includes(option('--index')??'');
 const isThemes=args[0]==='collect-themes'&&/^20\d{2}$/.test(option('--year')??'');
 const isCamaraPropositions=args[0]==='collect-camara-propositions'&&Boolean(option('--ids'));
 const isCamaraMovements=args[0]==='collect-camara-tramitacoes'&&/^20\d{2}$/.test(option('--year')??'');
@@ -29,7 +32,7 @@ const isPropositionEnrichment=args[0]==='collect-proposition-enrichment'&&['sena
 const houseOperationsSource=option('--source')??(args[0]==='collect-house-operations'?args[1]:undefined);
 const houseOperationsYear=option('--year')??(args[0]==='collect-house-operations'?args[2]:undefined);
 const isHouseOperations=args[0]==='collect-house-operations'&&['senado','camara','all'].includes(houseOperationsSource??'')&&/^20\d{2}$/.test(houseOperationsYear??'');
-if (!isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isThemes && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations) {
+if (!institutionalOptions && !isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isThemes && !isPriceIndex && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations) {
   const result = runCli(args);
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);
@@ -41,8 +44,34 @@ if (!isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPrese
   const directory = resolve(process.env.SENADOTRACKER_DATA_DIR ?? resolve(projectDirectory,'data'));
   let db: ReturnType<typeof openDatabase> | undefined;
   try {
-    db = openDatabase(resolve(directory, 'senadotracker.sqlite'), isStatus || ((isElection||isCamaraStaff||isCamaraBudget||isCabinet||isSenateStaff||isThemes||isSenateProcesses||isSenateAgenda||isCamaraAgenda)&&args.includes('--dry-run')));
-    if (isStatus) {
+    db = openDatabase(resolve(directory, 'senadotracker.sqlite'), isStatus);
+    if (institutionalOptions) {
+      if(institutionalOptions.command==='collect-chamber-procurement'){
+        const {collectChamberProcurement,reconcileChamberProcurementRelationships}=await import('./chamber-procurement.ts');
+        const results=[];for(let year=Number(institutionalOptions.from.slice(0,4));year<=Number(institutionalOptions.to.slice(0,4));year++)results.push(await collectChamberProcurement(db,{...institutionalOptions,year,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(`${year}: ${message}`)}));const changed=results.some(year=>year.results.some(result=>!('skipped'in result)));const relationships=institutionalOptions.dryRun||!changed?null:reconcileChamberProcurementRelationships(db);console.log(JSON.stringify({results,relationships},null,2));
+      }else if(institutionalOptions.command==='collect-chamber-contract-details'){
+        const {collectChamberContractDetails}=await import('./chamber-contract-details.ts');const ids=institutionalOptions.ids.map(value=>String(db!.prepare("SELECT id FROM institutional_contracts WHERE source_system='camara_arquivos' AND (id=? OR source_contract_id=?)").get(value,value)?.id??value));console.log(JSON.stringify(await collectChamberContractDetails(db,{...institutionalOptions,ids,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(message)}),null,2));
+      }else if(institutionalOptions.command==='collect-chamber-financial-execution'){
+        const {collectChamberFinancialExecution}=await import('./chamber-financial-execution.ts');console.log(JSON.stringify(await collectChamberFinancialExecution(db,{...institutionalOptions,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(message)}),null,2));
+      }else if(institutionalOptions.command==='collect-senate-procurement'){
+        const {collectSenateProcurement}=await import('./senate-procurement.ts');
+        console.log(JSON.stringify(await collectSenateProcurement(db,{...institutionalOptions,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(message)}),null,2));
+      }else if(institutionalOptions.command==='collect-senate-contract-details'){
+        const {collectSenateContractDetails}=await import('./senate-contract-details.ts');const {collectSenateInstrumentDetails}=await import('./senate-instrument-details.ts');
+        const detailOptions={...institutionalOptions,ids:institutionalOptions.ids,rawDirectory:resolve(directory,'raw'),progress:(message:string)=>console.error(message)};const contracts=await collectSenateContractDetails(db,detailOptions),instruments=institutionalOptions.ids.length?{skipped:true,reason:'ids-applied-to-contracts'}:await collectSenateInstrumentDetails(db,detailOptions);console.log(JSON.stringify({contracts,instruments},null,2));
+      }else if(institutionalOptions.command==='collect-senate-financial-execution'){
+        const {collectSenateFinancialExecution}=await import('./senate-financial-execution.ts');
+        console.log(JSON.stringify(await collectSenateFinancialExecution(db,{...institutionalOptions,ids:institutionalOptions.ids,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(message)}),null,2));
+      }else if(institutionalOptions.command==='collect-pncp-enrichment'){
+        const {collectPncpEnrichment}=await import('./pncp-enrichment.ts');
+        console.log(JSON.stringify(await collectPncpEnrichment(db,{...institutionalOptions,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(message)}),null,2));
+      }else if(institutionalOptions.command==='rebuild-supplier-aggregates'){
+        const {publishSupplierAggregates}=await import('@senadotracker/db');console.log(JSON.stringify(publishSupplierAggregates(db),null,2));
+      }else if(institutionalOptions.command==='collect-institutional-suppliers'){
+        const {collectChamberProcurement}=await import('./chamber-procurement.ts');const {collectSenateProcurement}=await import('./senate-procurement.ts');
+        const results:{source:string;result?:unknown;error?:string}[]=[];for(const[source,collector]of[['camara',collectChamberProcurement],['senado',collectSenateProcurement]]as const)try{results.push({source,result:await collector(db,{...institutionalOptions,rawDirectory:resolve(directory,'raw'),progress:message=>console.error(`${source}: ${message}`)})})}catch(error){results.push({source,error:error instanceof Error?error.message:String(error)})}console.log(JSON.stringify({results},null,2));if(results.every(result=>result.error))process.exitCode=1;
+      }else throw new Error(`Comando ${institutionalOptions.command} ainda não possui coletor conectado`);
+    } else if (isStatus) {
       console.log(JSON.stringify({ publishedCount: listPublished(db, { pageSize: 1 }).total, runs: db.prepare('SELECT id,source,status,started_at,finished_at,expected_count,error FROM ingestion_runs ORDER BY started_at DESC LIMIT 10').all() }, null, 2));
     } else if (isCollect) {
       const { collectSource } = await import('./collect.ts');
@@ -60,6 +89,7 @@ if (!isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPrese
     } else if(isCamaraStaff){const {collectCamaraStaff}=await import('./camara-cabinet.ts');const file=option('--file'),report=option('--report');const result=await collectCamaraStaff(db,{rawDirectory:resolve(directory,'raw'),dryRun:args.includes('--dry-run'),...(file?{file:resolve(projectDirectory,file)}:{}),...(report?{reportFile:resolve(projectDirectory,report)}:{})});console.log(JSON.stringify(result,null,2));
     } else if(isCamaraBudget){const {collectCamaraBudgets}=await import('./camara-cabinet.ts');const report=option('--report'),ids=option('--ids')?.split(',').map(x=>x.trim()).filter(Boolean);const result=await collectCamaraBudgets(db,{year:Number(option('--year')),rawDirectory:resolve(directory,'raw'),cacheDirectory:resolve(directory,'cache','camara-budget'),dryRun:args.includes('--dry-run'),...(report?{reportFile:resolve(projectDirectory,report)}:{}),...(ids?.length?{ids}:{}),progress:message=>console.error(message)});console.log(JSON.stringify(result,null,2));
     } else if(isSenateStaff){const {collectSenateStaff}=await import('./senate-staff.ts');const report=option('--report'),consolidated=option('--consolidated'),ids=option('--ids')?.split(',').map(x=>x.trim()).filter(Boolean);const result=await collectSenateStaff(db,{year:Number(option('--year')),rawDirectory:resolve(directory,'raw'),cacheDirectory:resolve(directory,'cache','senate-staff'),dryRun:args.includes('--dry-run'),...(report?{reportFile:resolve(projectDirectory,report)}:{}),...(consolidated?{consolidatedFile:resolve(projectDirectory,consolidated)}:{}),...(ids?.length?{ids}:{}),progress:message=>console.error(message)});console.log(JSON.stringify(result,null,2));
+    } else if(isPriceIndex){const {collectPriceIndex}=await import('./price-index.ts');const result=await collectPriceIndex(db,{code:option('--index') as 'ipca',rawDirectory:resolve(directory,'raw'),dryRun:args.includes('--dry-run')});console.log(JSON.stringify(result,null,2));
     } else if(isThemes){const {collectCamaraThemes}=await import('./themes.ts');const file=option('--file');const result=await collectCamaraThemes(db,{year:Number(option('--year')),rawDirectory:resolve(directory,'raw'),dryRun:args.includes('--dry-run'),...(file?{file:resolve(projectDirectory,file)}:{})});console.log(JSON.stringify(result,null,2));
     } else if(isCamaraPropositions){const {collectCamaraPropositionDetails}=await import('./camara-proposition-details.ts');const ids=option('--ids')!.split(',').map(value=>value.trim()).filter(Boolean);console.log(JSON.stringify(await collectCamaraPropositionDetails(db,{ids,rawDirectory:resolve(directory,'raw')}),null,2));
     } else if(isCamaraMovements){const {collectCamaraPropositionMovements}=await import('./camara-proposition-movements.ts');const ids=option('--ids')?.split(',').map(value=>value.trim()).filter(Boolean),types=option('--types')?.split(',').map(value=>value.trim()).filter(Boolean),limitValue=Number(option('--limit'));const result=await collectCamaraPropositionMovements(db,{year:Number(option('--year')),rawDirectory:resolve(directory,'raw'),cacheDirectory:resolve(directory,'cache','camara-tramitacoes'),...(ids?.length?{ids}:{}),...(types?.length?{types}:{}),...(Number.isSafeInteger(limitValue)&&limitValue>0?{limit:limitValue}:{}),progress:message=>console.error(message)});console.log(JSON.stringify(result,null,2));

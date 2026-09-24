@@ -20,6 +20,6 @@ function seedHouse(source:Source, values:readonly number[]) {
   return db;
 }
 
-test('distribuição usa interpolação linear e vazio permanece nulo',()=>{assert.deepEqual(distribution([]),{count:0,min:null,p25:null,median:null,p75:null,max:null});assert.deepEqual(distribution([10,20,30,40]),{count:4,min:10,p25:17.5,median:25,p75:32.5,max:40})});
+test('distribuição usa interpolação linear e vazio permanece nulo',()=>{assert.deepEqual(distribution([]),{count:0,min:null,p10:null,p25:null,median:null,p75:null,p90:null,max:null});assert.deepEqual(distribution([10,20,30,40]),{count:4,min:10,p10:13,p25:17.5,median:25,p75:32.5,p90:37,max:40})});
 test('série histórica preserva lacuna como null',()=>{const rows=historicalSeries(['2024','2025','2026'],new Map([['2024',7],['2026',9]]),(p,a)=>coverage('senado',p,a));assert.deepEqual(rows.map(x=>x.value),[7,null,9]);assert.equal(rows[1]!.coverage.availability,'unavailable')});
 for(const [source,values] of [['senado',[100,300]],['camara',[20,40,60]]] as const)test(`panorama de ${source} limita o universo a observações compatíveis`,()=>{const db=seedHouse(source,values);try{const result=publishedHousePanorama(db,source,2026);assert.equal(result.roster.parliamentarians,values.length);assert.equal(result.expenses.distributionCents.count,values.length);assert.equal(result.expenses.distributionCents.median,source==='senado'?200:40);assert.equal(result.expenses.coverage.sampleSize,values.length);assert.equal(result.cabinetPayroll.distributionCents.median,null)}finally{db.close()}});

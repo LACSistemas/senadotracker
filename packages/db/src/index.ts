@@ -29,7 +29,8 @@ export function openDatabase(path: string, readOnly = false): DatabaseSync {
   }
   return db;
 }
-export function startRun(db: DatabaseSync, source: Source|'tse', now = Date.now(), leaseMs = 120_000): string {
+export type IngestionSource=Source|'tse'|'ibge'|'pncp'|'siafi'|'civica';
+export function startRun(db: DatabaseSync, source: IngestionSource, now = Date.now(), leaseMs = 120_000): string {
   return transaction(db, () => {
     const lock = db.prepare('SELECT * FROM job_locks WHERE source=?').get(source);
     if (lock && Number(lock.expires_at) > now) throw new Error(`Job ${source} já está em execução`);
@@ -217,17 +218,25 @@ export function publishedVotesPage(db:DatabaseSync,source:Source,externalId:stri
 export { publishExpandedCosts, publishedExpandedCosts } from './costs.ts';
 export { publishedRankingsDashboard, type DashboardQuery, type DashboardRow, type DashboardSort } from './rankings-dashboard.ts';
 export { publishedExpenseYears, publishedHousePanorama, publishedHouseOperations, publishedHouseOperationSummary, publishedParticipationRows, publishedHouseTopics, type HousePanorama, type HouseTopicDistribution } from './panorama.ts';
-export { countsAsParticipation } from './vote-participation.ts';
+export { countsAsParticipation, directionalVote } from './vote-participation.ts';
+export { legislatureYears, publishedCurrentVoteAxis, publishedVoteAxis, type AxisPoint, type VoteAxis } from './ideology.ts';
+export { indexScale, publishPriceIndex, publishedDeflator, publishedPriceIndex, type PriceIndexPoint } from './price-index.ts';
 export { publishedMonthlyParticipation } from './participation-series.ts';
-export { publishedStateComparison, publishedStateRepresentation, publishedStateTopics, type StateRepresentative, type StateSummary } from './states.ts';
+export { publishedStateComparison, publishedStateRepresentation, publishedStateTopics, type StateCabinetSummary, type StateHouseMetrics, type StateRepresentative, type StateSummary } from './states.ts';
+export { groupDistribution, houseMetrics, houseMetricKeys, publishedCabinetCompetenceBenchmark, publishedHouseMetricSummary, stateChoropleth, type ChoroplethBucket, type ChoroplethItem, type HouseMetricKey, type HouseMetricSummary, type MetricBenchmark, type MetricMeta, type GroupMetrics, type PartyMetrics, type StateMetric, type StateMetrics } from './benchmarks.ts';
 export { comparisonDimensions, publishedComparisonOptions, publishedComparisonYears, publishedPersonComparison, type ComparisonDimension, type PersonComparison } from './comparisons.ts';
-export { calculateVoteAgreement, normalizedComparableVote, publishedPartyComparison, publishedPersonComparisonDashboard, publishedStatesComparison } from './comparison-dashboard.ts';
+export { calculateVoteAgreement, publishedPartyComparison, publishedPersonComparisonDashboard, publishedStatesComparison } from './comparison-dashboard.ts';
 export { partyAtDate, groupRecordedPartyVotes, publishedPartyPanorama, publishedVoteOptions, publishedPartyVote, publishedOfficialTopics, publishedPartyDetail, type PartyHouse, type PartyRow } from './parties.ts';
 export { publishStaffSnapshot, publishedStaffSnapshot, snapshotAvailability, publishCabinetBudgets, publishedCabinetBudgets } from './cabinet-data.ts';
 export { publishedPersonElectoralProfile, publishedCabinetProfile, publishedCabinetSummaries, publishedCabinetPanorama, type CabinetSummary } from './frontend-data.ts';
 export { publishedRankings, type RankingDimension, type RankingQuery } from './rankings.ts';
-export { publishedParliamentarySubsidy, publishedExpenseCoverage, publishedSourceFreshness } from './public-info.ts';
+export { publishedParliamentarySubsidy, publishedMinimumWage, publishedNormativeValue, publishedExpenseCoverage, publishedSourceFreshness, type NormativeValue } from './public-info.ts';
 export { publishedPropositionCoverage, publishedPropositionDashboard, publishedPropositions, publishedProposition, type PropositionDashboardQuery, type PropositionQuery } from './propositions.ts';
 export { publishedExpenseDetail } from './expense-intelligence.ts';
-export { publishedSupplierRadar, publishedSupplierDetail, publishedPatrimonyRanking, validCnpj, type SupplierRadarQuery, type SupplierDetailQuery } from './investigative.ts';
+export { publishedSupplierRadar, publishedSupplierDetail, publishedPatrimonyRanking, publishedElectionMonths, validCnpj, type PatrimonyDeflator, type SupplierRadarQuery, type SupplierDetailQuery } from './investigative.ts';
+export { backfillExpenseSupplierIdentities, resolveStrongSupplier, supplierIdentitySummary, type ResolveSupplierInput, type SupplierIdentityBackfillOptions, type SupplierIdentityBackfillResult } from './suppliers.ts';
+export { institutionalContractFinancialSummary, institutionalFinancialReconciliation, reconcileFinancialSeries, type FinancialFact, type FinancialPhase, type FinancialReconciliation } from './financial-reconciliation.ts';
+export { publishSupplierAggregates } from './supplier-aggregates.ts';
+export { publishedSupplierExplorer, publishedSupplierGlobalDetail, publishedSupplierNetwork, publishedParliamentarianSupplierNetwork, type SupplierActivity, type SupplierExplorerItem, type SupplierExplorerQuery, type SupplierExplorerSort, type SupplierHouse } from './supplier-market.ts';
+export { publishedSupplierMarket, publishedInstitutionalSupplierOverview, type SupplierMarketQuery } from './supplier-market-analytics.ts';
 export { openPostgres, postgresConfigFromEnv } from './postgres.ts';

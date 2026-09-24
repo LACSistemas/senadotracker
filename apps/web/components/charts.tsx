@@ -2,6 +2,9 @@ import type { DataCoverage } from '@senadotracker/domain';
 import { CoverageBadge } from '@/components/metrics';
 
 export interface ChartDatum {label:string;value:number|null;color?:string}
+/** Cor que codifica avaliação, não série. O objeto — e não um callback solto — obriga a legenda:
+    sem ela a cor vira ruído. `of` devolve valor CSS; StackedBarChart fica fora porque lá `color` é classe. */
+export interface ChartTone {of:(datum:ChartDatum)=>string;legend:{label:string;color:string}[]}
 export interface MultiLineDatum {label:string;values:{label:string;value:number|null;color:string}[]}
 export interface GroupedDatum {label:string;values:{label:string;value:number|null;color:string}[]}
 const number=new Intl.NumberFormat('pt-BR',{maximumFractionDigits:2});
@@ -9,23 +12,26 @@ const compact=new Intl.NumberFormat('pt-BR',{notation:'compact',maximumFractionD
 const formatted=(value:number|null)=>value===null?'Indisponível':number.format(value);
 const short=(value:number)=>Math.abs(value)>=10_000?compact.format(value):number.format(value);
 
-function Frame({title,coverage,children,data}:{title:string;coverage:DataCoverage;children:React.ReactNode;data:ChartDatum[]}){
+function Frame({title,coverage,children,data,legend}:{title:string;coverage:DataCoverage;children:React.ReactNode;data:ChartDatum[];legend?:{label:string;color:string}[]}){
   const valid=data.filter(item=>item.value!==null);
-  if(!valid.length)return <div className="grid min-h-64 place-items-center rounded-2xl border bg-card p-6 text-center"><div><p className="font-bold">{title}</p><p className="mt-2 text-sm text-muted-foreground">{coverage.note}</p><div className="mt-3"><CoverageBadge coverage={coverage}/></div></div></div>;
-  return <figure className="rounded-2xl border bg-card p-5"><figcaption className="flex flex-wrap items-center justify-between gap-2 font-bold">{title}<CoverageBadge coverage={coverage}/></figcaption><div className="mt-5">{children}</div><details className="mt-4 text-sm"><summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver dados do gráfico</summary><div className="mt-3 overflow-x-auto"><table className="w-full text-left"><caption className="sr-only">Dados de {title}</caption><thead><tr className="border-b"><th className="p-2">Categoria</th><th className="p-2 text-right">Valor</th></tr></thead><tbody>{data.map(item=><tr className="border-b" key={item.label}><th className="p-2 font-normal">{item.label}</th><td className="p-2 text-right tabular-nums">{formatted(item.value)}</td></tr>)}</tbody></table></div></details></figure>;
+  if(!valid.length)return <div className="grid min-h-64 min-w-0 place-items-center rounded-2xl border bg-card p-6 text-center"><div><p className="font-bold">{title}</p><p className="mt-2 text-sm text-muted-foreground">{coverage.note}</p><div className="mt-3"><CoverageBadge coverage={coverage}/></div></div></div>;
+  return <figure className="min-w-0 rounded-2xl border bg-card p-5"><figcaption className="flex flex-wrap items-center justify-between gap-2 font-bold">{title}<CoverageBadge coverage={coverage}/></figcaption>{legend&&<ul className="mt-4 flex flex-wrap gap-4 text-xs text-muted-foreground">{legend.map(item=><li className="flex items-center gap-2" key={item.label}><i className="size-3 rounded-sm" style={{background:item.color}}/>{item.label}</li>)}</ul>}<div className="mt-5">{children}</div><details className="mt-4 text-sm"><summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver dados do gráfico</summary><div className="mt-3 overflow-x-auto"><table className="w-full text-left"><caption className="sr-only">Dados de {title}</caption><thead><tr className="border-b"><th className="p-2">Categoria</th><th className="p-2 text-right">Valor</th></tr></thead><tbody>{data.map(item=><tr className="border-b" key={item.label}><th className="p-2 font-normal">{item.label}</th><td className="p-2 text-right tabular-nums">{formatted(item.value)}</td></tr>)}</tbody></table></div></details></figure>;
 }
 
-export function BarChart({title,data,coverage}:{title:string;data:ChartDatum[];coverage:DataCoverage}){
+const fillOf=(item:ChartDatum,tone?:ChartTone)=>tone?tone.of(item):item.color;
+export function BarChart({title,data,coverage,tone}:{title:string;data:ChartDatum[];coverage:DataCoverage;tone?:ChartTone}){
   const max=Math.max(...data.map(item=>item.value??0),1);
-  return <Frame title={title} data={data} coverage={coverage}><div className="space-y-4" aria-label={`Gráfico de barras: ${title}`}>{data.map(item=><div key={item.label} title={`${item.label}: ${formatted(item.value)}`}><div className="mb-1 flex items-end justify-between gap-3 text-sm"><span className="font-medium">{item.label}</span><strong className="tabular-nums">{formatted(item.value)}</strong></div><div className="h-5 overflow-hidden rounded-full border bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*(item.value??0)/max}%`,...(item.color?{backgroundColor:item.color}:{})}}/></div></div>)}</div></Frame>;
+  return <Frame title={title} data={data} coverage={coverage} {...(tone?{legend:tone.legend}:{})}><div className="space-y-4" aria-label={`Gráfico de barras: ${title}`}>{data.map(item=>{const fill=fillOf(item,tone);return <div key={item.label} title={`${item.label}: ${formatted(item.value)}`}><div className="mb-1 flex items-end justify-between gap-3 text-sm"><span className="font-medium">{item.label}</span><strong className="tabular-nums">{formatted(item.value)}</strong></div><div className="h-5 overflow-hidden rounded-full border bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*(item.value??0)/max}%`,...(fill?{backgroundColor:fill}:{})}}/></div></div>})}</div></Frame>;
 }
 
-export function HistogramChart({title,data,coverage}:{title:string;data:ChartDatum[];coverage:DataCoverage}){
+export function HistogramChart({title,data,coverage,tone}:{title:string;data:ChartDatum[];coverage:DataCoverage;tone?:ChartTone}){
   const max=Math.max(...data.map(item=>item.value??0),1);
-  return <Frame title={title} data={data} coverage={coverage}><div className="flex h-64 items-end gap-2 border-b border-l px-3 pt-8" aria-label={`Histograma: ${title}`}>{data.map(item=><div key={item.label} title={`${item.label}: ${formatted(item.value)}`} className="flex h-full min-w-0 flex-1 flex-col justify-end text-center"><strong className="mb-2 truncate text-xs tabular-nums">{item.value===null?'—':short(item.value)}</strong><div className="min-h-px rounded-t bg-chart-1" style={{height:`${100*(item.value??0)/max}%`}}/><span className="mt-2 truncate text-xs text-muted-foreground">{item.label}</span></div>)}</div></Frame>;
+  return <Frame title={title} data={data} coverage={coverage} {...(tone?{legend:tone.legend}:{})}><div className="flex h-64 items-end gap-2 border-b border-l px-3 pt-8" aria-label={`Histograma: ${title}`}>{data.map(item=>{const fill=fillOf(item,tone);return <div key={item.label} title={`${item.label}: ${formatted(item.value)}`} className="flex h-full min-w-0 flex-1 flex-col justify-end text-center"><strong className="mb-2 truncate text-xs tabular-nums">{item.value===null?'—':short(item.value)}</strong><div className="min-h-px rounded-t bg-chart-1" style={{height:`${100*(item.value??0)/max}%`,...(fill?{backgroundColor:fill}:{})}}/><span className="mt-2 truncate text-xs text-muted-foreground">{item.label}</span></div>})}</div></Frame>;
 }
 
 export interface StackedDatum {label:string;segments:{label:string;value:number;color?:string}[]}
+// Atenção: aqui `color` é CLASSE Tailwind, não valor CSS como nos demais gráficos. Por isso este
+// componente não aceita `tone` — unificar o contrato seria refactor sem ganho para os importadores.
 const colors=['bg-chart-1','bg-chart-2','bg-chart-3','bg-chart-4'];
 export function StackedBarChart({title,data,coverage}:{title:string;data:StackedDatum[];coverage:DataCoverage}){
   const flattened=data.map(item=>({label:item.label,value:item.segments.reduce((total,segment)=>total+segment.value,0)})),legend=[...new Map(data.flatMap(item=>item.segments).map(segment=>[segment.label,segment])).values()];

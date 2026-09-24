@@ -1,9 +1,9 @@
 import type {DatabaseSync} from 'node:sqlite';
-import {type DataCoverage,type Profile,type Source} from '@senadotracker/domain';
+import {type DataCoverage,type Profile,type Source,validCnpj} from '@senadotracker/domain';
 import {partyAtDate} from './parties.ts';
 
 export interface SupplierRadarQuery {source?:Source;year?:number;search?:string;page?:number;pageSize?:number}
-export const validCnpj=(value:string)=>{const digits=value.replace(/\D/g,'');if(!/^\d{14}$/.test(digits)||/^(\d)\1+$/.test(digits))return false;const digit=(base:string,weights:number[])=>{const sum=[...base].reduce((total,n,index)=>total+Number(n)*weights[index]!,0),rest=sum%11;return rest<2?0:11-rest};return digit(digits.slice(0,12),[5,4,3,2,9,8,7,6,5,4,3,2])===Number(digits[12])&&digit(digits.slice(0,13),[6,5,4,3,2,9,8,7,6,5,4,3,2])===Number(digits[13])};
+export {validCnpj};
 
 export function publishedSupplierRadar(db:DatabaseSync,query:SupplierRadarQuery={}){
   const page=query.page??1,pageSize=query.pageSize??25;
@@ -37,14 +37,46 @@ export function publishedSupplierDetail(db:DatabaseSync,query:SupplierDetailQuer
   return{document,name:aliases[0]?.name??'Fornecedor sem nome',aliases:aliases.map(item=>item.name),year,years,totalCents,records:rows.length,ticketAverageCents:rows.length?totalCents/rows.length:null,parliamentarians:people.length,ufs:states.size,parties:parties.size,top1Share:people[0]?.share??null,top5Share:totalCents?people.slice(0,5).reduce((sum,item)=>sum+item.valueCents,0)/totalCents:null,people:people.slice(start,start+pageSize),peopleTotal:people.length,page,pageSize,states:grouped(states),partyGroups:grouped(parties),categories:grouped(categories),houses:grouped(houses),months:Array.from({length:12},(_,index)=>({month:index+1,valueCents:observedMonths.includes(index+1)?months.get(index+1)??0:null})),coverage};
 }
 
-export function publishedPatrimonyRanking(db:DatabaseSync,fromYear=2018,toYear=2022){
+/** Fator de correção monetária entre os dois pleitos, quando o índice de preços está publicado. */
+export interface PatrimonyDeflator{indexCode:string;fromMonth:string;toMonth:string;factor:number}
+
+export function publishedPatrimonyRanking(db:DatabaseSync,fromYear=2018,toYear=2022,deflator?:PatrimonyDeflator|null){
   const profiles=new Map<string,{source:Source;externalId:string;profile:Profile}>();
   for(const row of db.prepare(`SELECT a.source,p.person_id,p.external_id,p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id`).all())profiles.set(String(row.person_id),{source:String(row.source) as Source,externalId:String(row.external_id),profile:JSON.parse(String(row.payload)) as Profile});
-  const totals=new Map<string,Map<number,number>>();
-  for(const row of db.prepare(`SELECT c.person_id,c.year,a.asset_id,count(*) versions,sum(a.value_cents) value FROM candidacies c JOIN active_electoral_publications x ON x.batch_id=c.batch_id JOIN electoral_assets a ON a.batch_id=c.batch_id AND a.sequence_id=c.sequence_id WHERE c.match_status='confirmed' AND c.person_id IS NOT NULL AND c.year IN (?,?) GROUP BY c.person_id,c.year,a.asset_id HAVING count(*)=1`).all(fromYear,toYear)){
+  const totals=new Map<string,Map<number,number>>();let conflicts=0;
+  // Bem com mais de uma versão no lote é descartado, e agora contado: silenciar a exclusão fazia o total
+  // parecer completo. Mesmo tratamento que `publishedPersonElectoralProfile` já dá.
+  for(const row of db.prepare(`SELECT c.person_id,c.year,a.asset_id,count(*) versions,sum(a.value_cents) value FROM candidacies c JOIN active_electoral_publications x ON x.batch_id=c.batch_id JOIN electoral_assets a ON a.batch_id=c.batch_id AND a.sequence_id=c.sequence_id WHERE c.match_status='confirmed' AND c.person_id IS NOT NULL AND c.year IN (?,?) GROUP BY c.person_id,c.year,a.asset_id`).all(fromYear,toYear)){
+    if(Number(row.versions)!==1){conflicts++;continue}
     const byYear=totals.get(String(row.person_id))??new Map<number,number>();byYear.set(Number(row.year),(byYear.get(Number(row.year))??0)+Number(row.value));totals.set(String(row.person_id),byYear);
   }
-  const items=[...totals].flatMap(([personId,byYear])=>{const profile=profiles.get(personId),from=byYear.get(fromYear),to=byYear.get(toYear);if(!profile||from===undefined||to===undefined)return[];return[{...profile,fromCents:from,toCents:to,changeCents:to-from,changeRate:from?to/from-1:null}]}).sort((a,b)=>(b.changeRate??-Infinity)-(a.changeRate??-Infinity)||b.changeCents-a.changeCents);
-  const coverage:DataCoverage={availability:items.length?'available':'partial',source:'tse',period:{from:String(fromYear),to:String(toYear),grain:'year'},batchId:null,note:'Compara valores nominais declarados em eleições distintas e apenas vínculos confirmados. Não mede enriquecimento, valorização, renda ou patrimônio atual.',sampleSize:items.length};
-  return{fromYear,toYear,items:items.map((item,index)=>({...item,rank:index+1})),coverage};
+  const declared=new Set<string>();for(const [personId,byYear] of totals)if(byYear.size)declared.add(personId);
+  const items=[...totals].flatMap(([personId,byYear])=>{
+    const profile=profiles.get(personId),from=byYear.get(fromYear),to=byYear.get(toYear);
+    if(!profile||from===undefined||to===undefined)return[];
+    // Corrigir o valor antigo por um fator constante não reordena o ranking — `(1+r)/k-1` é monótono em
+    // `r`. O que muda é o sinal: quem cresceu menos que o índice passa a mostrar perda real.
+    const fromCorrectedCents=deflator?Math.round(from*deflator.factor):null;
+    return[{...profile,fromCents:from,toCents:to,changeCents:to-from,changeRate:from?to/from-1:null,
+      fromCorrectedCents,changeRealCents:fromCorrectedCents===null?null:to-fromCorrectedCents,
+      changeRealRate:fromCorrectedCents?to/fromCorrectedCents-1:null}];
+  }).sort((a,b)=>(b.changeRate??-Infinity)-(a.changeRate??-Infinity)||b.changeCents-a.changeCents);
+  const batches=db.prepare('SELECT group_concat(batch_id) ids FROM active_electoral_publications').get();
+  const partialBatch=db.prepare("SELECT 1 FROM active_electoral_publications a JOIN electoral_batches b ON b.id=a.batch_id WHERE b.availability<>'available' LIMIT 1").get()!==undefined;
+  const note=[`Compara valores declarados em eleições distintas e apenas vínculos confirmados. Não mede enriquecimento, valorização, renda ou patrimônio atual.`,
+    `${items.length} de ${declared.size} pessoas com declaração vinculada têm os dois pleitos.`,
+    conflicts?`${conflicts} bens com versões conflitantes ficaram fora dos totais.`:'',
+    deflator?`Valores de ${fromYear} corrigidos pelo ${deflator.indexCode.toLocaleUpperCase('pt-BR')} de ${deflator.fromMonth} para ${deflator.toMonth}.`:'Os valores não são corrigidos pela inflação.'].filter(Boolean).join(' ');
+  const coverage:DataCoverage={availability:!items.length?'unavailable':partialBatch||conflicts||items.length<declared.size?'partial':'available',source:'tse',period:{from:String(fromYear),to:String(toYear),grain:'year'},batchId:batches?.ids?String(batches.ids):null,note,sampleSize:items.length};
+  return{fromYear,toYear,deflator:deflator??null,conflicts,declared:declared.size,items:items.map((item,index)=>({...item,rank:index+1})),coverage};
+}
+
+/** Mês de referência de cada pleito, do próprio dado: a data da eleição mais frequente no ano. */
+export function publishedElectionMonths(db:DatabaseSync,years:number[]):Record<number,string|null>{
+  const result:Record<number,string|null>={};
+  for(const year of years){
+    const row=db.prepare(`SELECT substr(json_extract(c.payload,'$.electionDate'),1,7) month,count(*) n FROM candidacies c JOIN active_electoral_publications x ON x.batch_id=c.batch_id WHERE c.year=? AND json_extract(c.payload,'$.electionDate') IS NOT NULL GROUP BY month ORDER BY n DESC LIMIT 1`).get(year);
+    result[year]=row?.month?String(row.month):null;
+  }
+  return result;
 }

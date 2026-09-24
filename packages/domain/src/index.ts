@@ -1,18 +1,22 @@
 ﻿export const sources = ['senado', 'camara'] as const;
 export type Source = typeof sources[number];
+export * from './supplier-identity.ts';
 export type Availability = 'available' | 'partial' | 'unavailable' | 'stale' | 'not_applicable';
 export type PeriodGrain = 'snapshot' | 'month' | 'year' | 'term' | 'unknown';
 export interface DataPeriod { from: string | null; to: string | null; grain: PeriodGrain }
 export interface DataCoverage {
-  availability: Availability; source: Source | 'tse' | 'multiple'; period: DataPeriod;
+  availability: Availability; source: Source | 'tse' | 'ibge' | 'multiple'; period: DataPeriod;
   batchId: string | null; note: string; sampleSize: number | null;
 }
 export interface Metric<T> { value: T | null; coverage: DataCoverage }
 export interface SeriesPoint<T = number> { period: string; value: T | null; coverage: DataCoverage }
 export interface Distribution {
-  count: number; min: number | null; p25: number | null; median: number | null;
-  p75: number | null; max: number | null;
+  count: number; min: number | null; p10: number | null; p25: number | null; median: number | null;
+  p75: number | null; p90: number | null; max: number | null;
 }
+/** Sentido da leitura de uma métrica: gasto alto é pior, presença alta é melhor. Declarado por métrica, nunca no call site. */
+export type MetricDirection = 'higher-is-worse' | 'higher-is-better';
+export type MetricUnit = 'cents' | 'ratio' | 'count';
 export const ufs = new Set('AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split(' '));
 export interface Issue { severity: 'error' | 'warning'; code: string; message: string; externalId: string | null; rawId: string | null }
 export interface Origin { rawId: string }
@@ -48,7 +52,9 @@ export interface Expense {
   grossCents: number | null; deductionCents: number; netCents: number; refundCents: number;
   installment: number | null; detail: string | null; rawId: string;
 }
-export interface Deliberation { source:Source; externalId:string; year:number; date:string; recordedAt:string|null; chamberBody:string; description:string; result:string|null; approved:boolean|null; secret:boolean; proposalId:string|null; proposalLabel:string|null; proposalSummary:string|null; officialUrl:string; rawId:string }
+export type ChamberVoteAssociationStatus='actual_object_identified'|'candidates_only'|'affected_only'|'anchor_only'|'undetermined';
+export type ChamberActualObjectEvidence='official_description_exact'|'official_effect_exact'|'manual_verified'|null;
+export interface Deliberation { source:Source; externalId:string; year:number; date:string; recordedAt:string|null; chamberBody:string; description:string; result:string|null; approved:boolean|null; secret:boolean; proposalId:string|null; proposalLabel:string|null; proposalSummary:string|null; officialUrl:string; rawId:string; anchorProposalId?:string|null; anchorProposalLabel?:string|null; possibleObjectIds?:string[]; affectedProposalIds?:string[]; lastPresentationProposalId?:string|null; lastPresentationLabel?:string|null; actualVotedProposalId?:string|null; actualObjectEvidence?:ChamberActualObjectEvidence; actualObjectConfidence?:'high'|'medium'|'undetermined'; associationStatus?:ChamberVoteAssociationStatus }
 export const proposalFunctionalGroups = {
   proposicoes_legislativas_principais: { order:1, label:'Proposições legislativas principais' },
   requerimentos: { order:2, label:'Requerimentos' },
@@ -78,7 +84,7 @@ export function proposalFunctionalGroup(type:string):ProposalFunctionalGroup{
   for(const [group,types] of Object.entries(proposalTypesByFunctionalGroup) as [Exclude<ProposalFunctionalGroup,'atos_documentos_especiais'>,ReadonlySet<string>][])if(types.has(normalized))return group;
   return 'atos_documentos_especiais';
 }
-export interface Proposal { source:Source; externalId:string; type:string; functionalGroup:ProposalFunctionalGroup; number:string|null; year:number|null; label:string; summary:string|null; presentedAt:string|null; status:string|null; officialUrl:string; rawId:string }
+export interface Proposal { source:Source; externalId:string; type:string; functionalGroup:ProposalFunctionalGroup; number:string|null; year:number|null; label:string; summary:string|null; presentedAt:string|null; status:string|null; officialUrl:string; rawId:string; principalProposalId?:string|null; previousProposalId?:string|null; nextProposalId?:string|null; relationshipEvidence?:'official_uri'|null; catalogRole?:'catalog'|'relationship_support'; discoveredByProposalId?:string|null }
 export interface ProposalAuthor { proposalId:string; externalId:string|null; name:string; party:string|null; uf:string|null; kind:string; primary:boolean|null; order:number|null; rawId:string }
 export interface LegislativeAppointment { source:Source; externalId:string; personExternalId:string; kind:'rapporteurship'|'commission'|'office'; bodyId:string|null; bodyLabel:string|null; role:string; start:string|null; end:string|null; status:string|null; proposalId:string|null; officialUrl:string; rawId:string }
 export interface LawLink { proposalId:string; lawId:string; lawLabel:string; officialUrl:string; relationship:string; rawId:string }
@@ -119,7 +125,15 @@ export function quantile(values: number[], probability: number): number | null {
   return sorted[lower]! + (sorted[upper]! - sorted[lower]!) * (index - lower);
 }
 export function distribution(values: number[]): Distribution {
-  return { count: values.length, min: quantile(values, 0), p25: quantile(values, .25), median: quantile(values, .5), p75: quantile(values, .75), max: quantile(values, 1) };
+  return { count: values.length, min: quantile(values, 0), p10: quantile(values, .1), p25: quantile(values, .25), median: quantile(values, .5), p75: quantile(values, .75), p90: quantile(values, .9), max: quantile(values, 1) };
+}
+/** Fração das observações compatíveis estritamente abaixo do valor (0..1); empates não contam.
+    `values` é payload de servidor: nunca serializar para componente cliente, rota ou CSV. */
+export function percentileOf(values: number[], value: number | null): number | null {
+  if (!values.length || value === null || !Number.isFinite(value)) return null;
+  let below = 0;
+  for (const item of values) { if (!Number.isFinite(item)) throw new Error('Distribuição contém valor inválido'); if (item < value) below++; }
+  return below / values.length;
 }
 /** Builds an explicit series; absent observations remain null and are never inferred. */
 export function historicalSeries<T>(periods: string[], observations: ReadonlyMap<string, T>, coverage: (period: string, available: boolean) => DataCoverage): SeriesPoint<T>[] {

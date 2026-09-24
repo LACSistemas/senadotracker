@@ -3,12 +3,34 @@ import assert from 'node:assert/strict';
 import { mkdtemp } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { calculateVoteAgreement, normalizedComparableVote, openDatabase, publishedExpenseComparison, publishedPersonComparison, publishedPersonComparisonDashboard } from '@senadotracker/db';
+import { calculateVoteAgreement, directionalVote, openDatabase, publishedExpenseComparison, publishedPersonComparison, publishedPersonComparisonDashboard } from '@senadotracker/db';
 import type { LegislativeVote } from '@senadotracker/domain';
 
 test('comparação vazia não fabrica média zero e valida recorte',async()=>{const dir=await mkdtemp(join(tmpdir(),'compare-'));const db=openDatabase(join(dir,'db.sqlite'));try{const result=publishedExpenseComparison(db,'senado',2026);assert.equal(result.meanCents,null);assert.deepEqual(result.items,[]);assert.throws(()=>publishedExpenseComparison(db,'senado',2026,{uf:'XX'}),/UF/)}finally{db.close()}});
 test('comparação nominal exige de duas a quatro pessoas distintas',()=>{const db=openDatabase(':memory:');try{assert.throws(()=>publishedPersonComparison(db,'senado',2026,['1'],'expenses'),/duas a quatro/);assert.throws(()=>publishedPersonComparison(db,'senado',2026,['1','1'],'expenses'),/diferentes/);assert.throws(()=>publishedPersonComparison(db,'senado',2026,['1','2','3','4','5'],'expenses'),/duas a quatro/)}finally{db.close()}});
-test('concordância exclui ausência e não voto do denominador',()=>{const vote=(deliberationId:string,externalId:string,value:string)=>({source:'senado',deliberationId,externalId,vote:value,description:null,party:'P',uf:'DF',recordedAt:null,rawId:'r'} satisfies LegislativeVote);const result=calculateVoteAgreement([vote('a','1','Sim'),vote('b','1','Não'),vote('c','1','Ausente')],[vote('a','2','SIM'),vote('b','2','Sim'),vote('c','2','Não')]);assert.equal(result.total,2);assert.equal(result.equal,1);assert.equal(result.ratio,.5);assert.equal(normalizedComparableVote('Obstrução'),null)});
+const vote=(source:'senado'|'camara',deliberationId:string,externalId:string,value:string)=>({source,deliberationId,externalId,vote:value,description:null,party:'P',uf:'DF',recordedAt:null,rawId:'r'} satisfies LegislativeVote);
+test('concordância exclui ausência e não voto do denominador',()=>{const senado=(d:string,id:string,v:string)=>vote('senado',d,id,v);const result=calculateVoteAgreement([senado('a','1','Sim'),senado('b','1','Não'),senado('c','1','Ausente')],[senado('a','2','SIM'),senado('b','2','Sim'),senado('c','2','Não')]);assert.equal(result.total,2);assert.equal(result.equal,1);assert.equal(result.ratio,.5)});
+// O Senado publica abreviações que a antiga deny-list por substring deixava passar: 16,8% das linhas do
+// lote entravam no denominador, e dois ausentes contavam como concordância.
+test('abreviações de ausência do Senado ficam fora do voto direcional',()=>{
+  for(const literal of ['AP','P-NRV','LS','MIS','NCom','LP','LAP','NA','P-OD','MERC','Impedido (art.306 RISF)','Presidente (art. 51 RISF)','Ausente',''])assert.equal(directionalVote('senado',literal),null,literal);
+  for(const literal of ['Artigo 17','Obstrução'])assert.equal(directionalVote('senado',literal),null,literal);
+  assert.equal(directionalVote('senado','Sim'),'sim');
+  assert.equal(directionalVote('senado','Não'),'nao');
+  assert.equal(directionalVote('senado','Abstenção'),'abstencao');
+  assert.equal(directionalVote('camara','Artigo 17'),null);
+});
+test('obstrução é posição na Câmara e não no Senado',()=>{
+  assert.equal(directionalVote('camara','Obstrução'),'obstrucao');
+  assert.equal(directionalVote('senado','Obstrução'),null);
+});
+test('votos sem direção observável não sustentam concordância',()=>{
+  // `votou` e `secreto` contam como participação, mas não revelam a posição: dois "secreto" não concordam.
+  for(const literal of ['votou','Secreto'])assert.equal(directionalVote('camara',literal),null,literal);
+  const result=calculateVoteAgreement([vote('senado','a','1','AP'),vote('senado','b','1','Secreto')],[vote('senado','a','2','AP'),vote('senado','b','2','Secreto')]);
+  assert.equal(result.total,0);
+  assert.equal(result.ratio,null);
+});
 
 test('comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez',()=>{const db=openDatabase(':memory:');try{
   db.prepare("INSERT INTO people VALUES ('p1','now'),('p2','now')").run();db.prepare("INSERT INTO external_identifiers VALUES ('senado','1','p1'),('senado','2','p2')").run();db.prepare("INSERT INTO ingestion_runs(id,source,started_at,status,parser_version,roster_complete) VALUES ('roster','senado','now','published','test',1),('expense','senado','now','published','test',1),('cabinet','senado','now','published','test',1)").run();db.prepare("INSERT INTO raw_objects VALUES ('raw-roster','roster','https://example.test','now',200,'application/json',?,'raw',1),('raw-expense','expense','https://example.test','now',200,'application/json',?,'raw',1),('raw-cabinet','cabinet','https://example.test','now',200,'application/json',?,'raw',1)").run('0'.repeat(64),'1'.repeat(64),'2'.repeat(64));db.prepare("INSERT INTO publication_batches VALUES ('roster','senado','now')").run();db.prepare("INSERT INTO active_publications VALUES ('senado','roster')").run();

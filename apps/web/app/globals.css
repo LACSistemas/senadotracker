@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @theme inline {
-  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--danger); --color-chart-1: var(--chart-1); --color-chart-2: var(--chart-2); --color-chart-3: var(--chart-3); --color-chart-4: var(--chart-4); --font-sans: var(--font-sans); --font-serif: var(--font-serif);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--danger); --color-chart-1: var(--chart-1); --color-chart-2: var(--chart-2); --color-chart-3: var(--chart-3); --color-chart-4: var(--chart-4); --color-eval-good: var(--eval-good); --color-eval-typical: var(--eval-typical); --color-eval-watch: var(--eval-watch); --color-eval-alert: var(--eval-alert); --color-eval-unknown: var(--eval-unknown); --font-sans: var(--font-sans); --font-serif: var(--font-serif);
 }
 
 /* As rotas do perfil compartilham o mesmo documento de dados, mas publicam apenas
@@ -19,7 +19,12 @@
 .profile-section-content[data-profile-section="overview"] .career-only {
   display: none;
 }
-:root { color-scheme: light; --background:#f3f1eb; --foreground:#172c27; --card:#faf9f5; --card-foreground:#172c27; --primary:#115b45; --primary-foreground:#f9fcfa; --secondary:#dce9e2; --secondary-foreground:#174535; --muted:#e9e7e0; --muted-foreground:#60706a; --border:#d6d9d2; --input:#c8cec7; --ring:#17785b; --success:#157f58; --warning:#a65d08; --danger:#a33a3a; --chart-1:#115b45; --chart-2:#2d7f93; --chart-3:#d39a3c; --chart-4:#8b6aa8; --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem); --font-sans:Arial,Helvetica,sans-serif; --font-serif:Georgia,'Times New Roman',serif; }
+:root { color-scheme: light; --background:#f3f1eb; --foreground:#172c27; --card:#faf9f5; --card-foreground:#172c27; --primary:#115b45; --primary-foreground:#f9fcfa; --secondary:#dce9e2; --secondary-foreground:#174535; --muted:#e9e7e0; --muted-foreground:#60706a; --border:#d6d9d2; --input:#c8cec7; --ring:#17785b; --success:#157f58; --warning:#a65d08; --danger:#a33a3a; --chart-1:#115b45; --chart-2:#2d7f93; --chart-3:#d39a3c; --chart-4:#8b6aa8;
+  /* Escala de avaliação: relação com um referencial, não identidade de série. Mesma paleta da marca, significado novo. */
+  --eval-good:#157f58; --eval-typical:#60706a; --eval-watch:#a65d08; --eval-alert:#a33a3a; --eval-unknown:#c8cec7;
+  /* Rampa sequencial do mapa (magnitude) com tons fixos, e cinza quente fora do matiz para "sem dado". */
+  --map-1:hsl(159 54% 88%); --map-2:hsl(159 54% 74%); --map-3:hsl(159 54% 60%); --map-4:hsl(159 54% 46%); --map-5:hsl(159 54% 33%); --map-empty:#e9e7e0;
+  --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem); --font-sans:Arial,Helvetica,sans-serif; --font-serif:Georgia,'Times New Roman',serif; }
 * { border-color:var(--border); }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--background); color:var(--foreground); font-family:var(--font-sans); text-rendering:optimizeLegibility; }
