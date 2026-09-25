@@ -43,10 +43,46 @@ export function publishedSupplierGlobalDetail(db: DatabaseSync, supplierId: stri
   const parliamentary = db.prepare(`SELECT year,institution,net_value_scaled,records,parliamentarians,ufs,parties,first_observed_at,last_observed_at FROM supplier_parliamentary_yearly WHERE revision_id=? AND supplier_id=?${yearClause} ORDER BY year DESC,institution`).all(revisionId, ...params).map(row => row as Record<string, unknown>);
   const institutional = db.prepare(`SELECT year,institution,committed_scaled,liquidated_scaled,paid_scaled,contracts,commitments,period_semantics FROM supplier_institutional_yearly WHERE revision_id=? AND supplier_id=?${yearClause} ORDER BY year DESC,institution`).all(revisionId, ...params).map(row => row as Record<string, unknown>);
   const contractParams:Array<string|number>=[supplierId]; let contractYear=''; if(year!==undefined){contractYear=' AND c.contract_year=?';contractParams.push(year)}
-  const contracts=db.prepare(`SELECT c.id,c.institution,c.contract_number,c.contract_year,c.instrument_type,c.status,c.object,c.signed_at,c.original_value_scaled,c.current_published_value_scaled,c.current_value_semantics,c.source_system,c.source_contract_id FROM institutional_contracts c WHERE c.supplier_id=?${contractYear} ORDER BY c.contract_year DESC,c.institution,c.contract_number`).all(...contractParams).map(row=>row as Record<string,unknown>);
+  const contracts=db.prepare(`SELECT c.id,c.institution,c.contract_number,c.contract_year,c.instrument_type,c.status,c.object,c.signed_at,c.original_value_scaled,c.current_published_value_scaled,c.current_value_semantics,c.source_system,c.source_contract_id,c.tender_id FROM institutional_contracts c WHERE c.supplier_id=?${contractYear} ORDER BY c.contract_year DESC,c.institution,c.contract_number`).all(...contractParams).map(row=>row as Record<string,unknown>);
   const movementParams:Array<string|number>=[supplierId]; let movementYear=''; if(year!==undefined){movementYear=' AND fm.movement_year=?';movementParams.push(year)}
-  const movements=db.prepare(`SELECT c.institution,fm.phase,sum(fm.amount_signed_scaled) amount,count(*) records FROM financial_movements fm JOIN commitments cm ON cm.id=fm.commitment_id JOIN institutional_contracts c ON c.id=cm.contract_id WHERE cm.supplier_id=?${movementYear} GROUP BY c.institution,fm.phase ORDER BY c.institution,fm.phase`).all(...movementParams).map(row=>row as Record<string,unknown>);
+  const movements=db.prepare(`SELECT cm.institution,fm.phase,sum(fm.amount_signed_scaled) amount,count(*) records FROM financial_movements fm JOIN commitments cm ON cm.id=fm.commitment_id WHERE cm.supplier_id=?${movementYear} GROUP BY cm.institution,fm.phase ORDER BY cm.institution,fm.phase`).all(...movementParams).map(row=>row as Record<string,unknown>);
   return { supplier: { id: String(supplier.id), name: supplier.canonical_name ? String(supplier.canonical_name) : null, entityKind: String(supplier.entity_kind), identityStatus: String(supplier.identity_status), createdAt: String(supplier.created_at), updatedAt: String(supplier.updated_at) }, identifiers, names, roles, parliamentary, institutional, contracts, movements, revision: revision ? { id: String(revision.revision_id), publishedAt: String(revision.published_at) } : null };
+}
+
+export function publishedSupplierGlobalStory(db: DatabaseSync, supplierId: string, year: number | null) {
+  const revision = db.prepare('SELECT revision_id FROM active_supplier_aggregate_revision ar JOIN supplier_aggregate_revisions r ON r.id=ar.revision_id WHERE singleton=1').get() as Record<string, unknown> | undefined;
+  const revisionId = revision?.revision_id ? String(revision.revision_id) : '';
+
+  const parliamentaryMonthly = db.prepare('SELECT year,month,institution,net_value_scaled value FROM supplier_parliamentary_monthly WHERE revision_id=? AND supplier_id=? ORDER BY year,month').all(revisionId, supplierId).map(row => row as Record<string, unknown>);
+  const institutionalMonthly = db.prepare(`SELECT fm.movement_year year,CAST(substr(fm.occurred_at,6,2) AS INTEGER) month,cm.institution,sum(fm.amount_signed_scaled) value FROM financial_movements fm JOIN commitments cm ON cm.id=fm.commitment_id WHERE fm.phase='payment' AND cm.supplier_id=? GROUP BY year,month,cm.institution ORDER BY year,month`).all(supplierId).map(row => row as Record<string, unknown>);
+
+  const categories = db.prepare('SELECT institution,category,sum(net_value_scaled) value,sum(records) records FROM supplier_parliamentary_categories WHERE revision_id=? AND supplier_id=? GROUP BY institution,category ORDER BY institution,value DESC').all(revisionId, supplierId).map(row => row as Record<string, unknown>);
+
+  const tenderIds = [...new Set((db.prepare('SELECT tender_id FROM institutional_contracts WHERE supplier_id=? AND tender_id IS NOT NULL').all(supplierId) as Record<string, unknown>[]).map(row => String(row.tender_id)))];
+  let proposals: Record<string, unknown>[] = [], awards: Record<string, unknown>[] = [];
+  if (tenderIds.length) {
+    const placeholders = tenderIds.map(() => '?').join(',');
+    proposals = db.prepare(`SELECT sp.tender_id,sp.supplier_id,coalesce(s.canonical_name,'Fornecedor não identificado') name,sp.proposed_total_value_scaled value,sp.status,sp.submitted_at FROM supplier_proposals sp LEFT JOIN suppliers s ON s.id=sp.supplier_id WHERE sp.tender_id IN (${placeholders}) ORDER BY sp.tender_id,value ASC`).all(...tenderIds).map(row => row as Record<string, unknown>);
+    awards = db.prepare(`SELECT ti.tender_id,ia.supplier_id,ia.awarded_value_scaled value,ia.awarded_at FROM item_awards ia JOIN tender_items ti ON ti.id=ia.tender_item_id WHERE ti.tender_id IN (${placeholders})`).all(...tenderIds).map(row => row as Record<string, unknown>);
+  }
+
+  const contractIds = (db.prepare('SELECT id FROM institutional_contracts WHERE supplier_id=?').all(supplierId) as Record<string, unknown>[]).map(row => String(row.id));
+  let amendments: Record<string, unknown>[] = [];
+  if (contractIds.length) {
+    const placeholders = contractIds.map(() => '?').join(',');
+    amendments = db.prepare(`SELECT contract_id,amendment_number,kind,description,signed_at,added_value_scaled,suppressed_value_scaled,resulting_value_scaled FROM contract_amendments WHERE contract_id IN (${placeholders}) ORDER BY signed_at DESC`).all(...contractIds).map(row => row as Record<string, unknown>);
+  }
+
+  const median = (field: 'parliamentarians' | 'parliamentary_net_scaled' | 'institutional_paid_scaled', filterYear: number) => {
+    const count = Number((db.prepare(`SELECT count(*) n FROM supplier_global_yearly WHERE revision_id=? AND year=? AND ${field} IS NOT NULL`).get(revisionId, filterYear) as Record<string, unknown> | undefined)?.n ?? 0);
+    if (!count) return null;
+    const row = db.prepare(`SELECT ${field} value FROM supplier_global_yearly WHERE revision_id=? AND year=? AND ${field} IS NOT NULL ORDER BY ${field} LIMIT 1 OFFSET ?`).get(revisionId, filterYear, Math.floor((count - 1) / 2)) as Record<string, unknown> | undefined;
+    return row ? Number(row.value) : null;
+  };
+  const benchmarkYear = year ?? new Date().getUTCFullYear();
+  const benchmark = { year: benchmarkYear, medianParliamentarians: median('parliamentarians', benchmarkYear), medianParliamentaryCents: median('parliamentary_net_scaled', benchmarkYear), medianInstitutionalPaidCents: median('institutional_paid_scaled', benchmarkYear) };
+
+  return { monthly: { parliamentary: parliamentaryMonthly, institutional: institutionalMonthly }, categories, procurement: { proposals, awards }, amendments, benchmark };
 }
 
 const sortExpressions: Record<SupplierExplorerSort, string> = {
@@ -55,6 +91,19 @@ const sortExpressions: Record<SupplierExplorerSort, string> = {
   institutional_paid: 'institutional_paid',
   reach: 'parliamentarians',
 };
+const activityExpression = `CASE WHEN g.parliamentary_net_scaled IS NOT NULL AND g.institutional_paid_scaled IS NOT NULL THEN 'both' WHEN g.institutional_paid_scaled IS NOT NULL THEN 'institutional' ELSE 'parliamentary' END`;
+
+export interface SupplierExplorerFacets { total: number; parliamentary: number; institutional: number; both: number }
+export function publishedSupplierExplorerFacets(db: DatabaseSync, query: { year?: number; house?: SupplierHouse } = {}): SupplierExplorerFacets {
+  const year = query.year ?? new Date().getUTCFullYear(), house = query.house ?? 'all';
+  const table = house === 'all' ? 'supplier_global_yearly' : 'supplier_global_house_yearly';
+  const houseWhere = house === 'all' ? '' : ' AND g.institution=?';
+  const params: Array<string | number> = house === 'all' ? [year] : [year, house];
+  const rows = db.prepare(`SELECT ${activityExpression} activity,count(*) n FROM ${table} g JOIN active_supplier_aggregate_revision ar ON ar.revision_id=g.revision_id AND ar.singleton=1 WHERE g.year=?${houseWhere} GROUP BY activity`).all(...params) as Record<string, unknown>[];
+  const counts = { parliamentary: 0, institutional: 0, both: 0 };
+  for (const row of rows) { const key = String(row.activity) as keyof typeof counts; if (key in counts) counts[key] = Number(row.n) }
+  return { total: counts.parliamentary + counts.institutional + counts.both, ...counts };
+}
 
 export function publishedSupplierExplorer(db: DatabaseSync, query: SupplierExplorerQuery = {}) {
   const page = query.page ?? 1;
@@ -74,7 +123,6 @@ export function publishedSupplierExplorer(db: DatabaseSync, query: SupplierExplo
   const table = house === 'all' ? 'supplier_global_yearly' : 'supplier_global_house_yearly';
   const houseWhere = house === 'all' ? '' : ' AND g.institution=?';
   const searchJoin = normalizedSearch ? ` JOIN (SELECT supplier_id FROM supplier_names WHERE search_name GLOB ?||'*' UNION SELECT supplier_id FROM supplier_identifiers WHERE identifier_type='cnpj' AND validation_status='valid' AND is_masked=0 AND normalized_value GLOB ?||'*') matched ON matched.supplier_id=s.id` : '';
-  const activityExpression = `CASE WHEN g.parliamentary_net_scaled IS NOT NULL AND g.institutional_paid_scaled IS NOT NULL THEN 'both' WHEN g.institutional_paid_scaled IS NOT NULL THEN 'institutional' ELSE 'parliamentary' END`;
   const activityWhere = activity === 'all' ? '' : ` AND ${activityExpression}=?`;
   const base = `FROM ${table} g JOIN active_supplier_aggregate_revision ar ON ar.revision_id=g.revision_id AND ar.singleton=1 JOIN suppliers s ON s.id=g.supplier_id${searchJoin} WHERE g.year=?${houseWhere}${activityWhere}`;
   const baseParams: Array<string | number> = normalizedSearch ? [normalizedSearch, normalizedSearch.replace(/\D/g,'') || '__no_document__'] : [];
@@ -119,7 +167,7 @@ export function publishedSupplierNetwork(db: DatabaseSync, supplierId:string, op
   const houseWhere=house==='all'?'':' AND e.source=?', params:Array<string|number>=house==='all'?[year,supplierId]:[year,house.toLowerCase(),supplierId];
   const supplier=db.prepare('SELECT id,canonical_name FROM suppliers WHERE id=?').get(supplierId) as Record<string,unknown>|undefined;
   if(!supplier)return null;
-  const rows=db.prepare(`SELECT e.source,e.external_id,coalesce(p.name,e.external_id) name,p.uf,p.party,sum(e.net_cents-e.refund_cents) value,count(*) records FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id JOIN expense_supplier_links l ON l.batch_id=e.batch_id AND l.record_key=e.record_key AND l.match_status='confirmed' LEFT JOIN profiles p ON p.source=e.source AND p.external_id=e.external_id WHERE e.year=?${houseWhere} AND l.supplier_id=? GROUP BY e.source,e.external_id,p.name,p.uf,p.party ORDER BY value DESC,e.external_id LIMIT ?`).all(...params,limit) as Record<string,unknown>[];
+  const rows=db.prepare(`SELECT e.source,e.external_id,coalesce(p.name,e.external_id) name,p.uf,p.party,sum(e.net_cents-e.refund_cents) value,count(*) records FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id JOIN expense_supplier_links l ON l.batch_id=e.batch_id AND l.record_key=e.record_key AND l.match_status='confirmed' JOIN active_publications ap ON ap.source=e.source LEFT JOIN profiles p ON p.batch_id=ap.batch_id AND p.external_id=e.external_id WHERE e.year=?${houseWhere} AND l.supplier_id=? GROUP BY e.source,e.external_id,p.name,p.uf,p.party ORDER BY value DESC,e.external_id LIMIT ?`).all(...params,limit) as Record<string,unknown>[];
   const total=rows.reduce((sum,row)=>sum+Number(row.value??0),0);
   const supplierRows=options.parliamentarian?db.prepare(`SELECT l.supplier_id,s.canonical_name name,sum(e.net_cents-e.refund_cents) value,count(*) records FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id JOIN expense_supplier_links l ON l.batch_id=e.batch_id AND l.record_key=e.record_key AND l.match_status='confirmed' JOIN suppliers s ON s.id=l.supplier_id WHERE e.year=?${houseWhere} AND e.source=? AND e.external_id=? GROUP BY l.supplier_id,s.canonical_name ORDER BY value DESC LIMIT ?`).all(year,...(house==='all'?[]:[house.toLowerCase()]),options.parliamentarian.source,options.parliamentarian.externalId,limit) as Record<string,unknown>[]:[];
   return {supplier:{id:String(supplier.id),name:String(supplier.canonical_name??'Fornecedor sem nome')},year,house,totalCents:total,parliamentarians:rows.map(row=>({source:String(row.source),externalId:String(row.external_id),name:String(row.name),uf:row.uf?String(row.uf):null,party:row.party?String(row.party):null,valueCents:Number(row.value??0),records:Number(row.records??0)})),suppliers:supplierRows.map(row=>({id:String(row.supplier_id),name:String(row.name),valueCents:Number(row.value??0),records:Number(row.records??0)}))};

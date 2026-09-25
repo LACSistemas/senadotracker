@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+import Link from 'next/link';
 import type { DataCoverage } from '@senadotracker/domain';
 import { CoverageBadge } from '@/components/metrics';
 
@@ -58,4 +60,50 @@ export function GroupedBarChart({title,data,coverage}:{title:string;data:Grouped
 export function BulletChart({title,data,benchmark,coverage}:{title:string;data:{label:string;value:number|null;color:string}[];benchmark:number|null;coverage:DataCoverage}){
   const flat=data.map(item=>({label:item.label,value:item.value===null?null:item.value*100})),reference=benchmark===null?null:benchmark*100;
   return <Frame title={title} data={flat} coverage={coverage}><div className="space-y-5">{data.map(item=><div key={item.label}><div className="mb-1 flex justify-between text-sm"><strong>{item.label}</strong><span>{item.value===null?'Indisponível':`${number.format(item.value*100)}%`}</span></div><div className="relative h-6 rounded-full bg-muted"><div className="h-full rounded-full" style={{width:`${Math.min(100,(item.value??0)*100)}%`,background:item.color}}/>{reference!==null&&<i className="absolute inset-y-[-4px] w-0.5 bg-foreground" style={{left:`${Math.min(100,reference)}%`}} title={`Mediana: ${number.format(reference)}%`}/>}</div></div>)}{reference!==null&&<p className="text-xs text-muted-foreground">A linha vertical marca a mediana do universo: {number.format(reference)}%.</p>}</div></Frame>;
+}
+
+const rampVars=['var(--map-5)','var(--map-4)','var(--map-3)','var(--map-2)','var(--map-1)'];
+export interface ConcentrationBucket {label:string;value:number}
+export function ConcentrationCurve({title,buckets,coverage,note}:{title:string;buckets:ConcentrationBucket[];coverage:DataCoverage;note?:string}){
+  const total=buckets.reduce((sum,b)=>sum+b.value,0),flat=buckets.map(b=>({label:b.label,value:b.value}));
+  return <Frame title={title} data={flat} coverage={coverage}>
+    {note&&<p className="mb-4 text-sm leading-6 text-muted-foreground">{note}</p>}
+    <div className="flex h-8 overflow-hidden rounded-full border bg-muted" role="img" aria-label={`Composição do total por faixa: ${buckets.map(b=>`${b.label} ${total?(100*b.value/total).toFixed(1):0}%`).join(', ')}`}>{buckets.map((b,i)=><div key={b.label} title={`${b.label}: ${formatted(b.value)}`} style={{width:`${total?100*b.value/total:0}%`,background:rampVars[i%rampVars.length]}}/>)}</div>
+    <div className="mt-4 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">{buckets.map((b,i)=><div key={b.label}><span className="flex items-center gap-1.5 text-xs font-semibold text-muted-foreground"><i className="size-2.5 shrink-0 rounded-sm" style={{background:rampVars[i%rampVars.length]}}/>{b.label}</span><strong className="mt-1 block tabular-nums">{total?`${(100*b.value/total).toFixed(1)}%`:'—'}</strong><small className="text-muted-foreground">{formatted(b.value)}</small></div>)}</div>
+  </Frame>;
+}
+
+export function AreaTrend({title,data,coverage,badge}:{title:string;data:ChartDatum[];coverage:DataCoverage;badge?:string|undefined}){
+  const valid=data.map((item,index)=>({...item,index})).filter(item=>item.value!==null),rawMax=Math.max(...valid.map(item=>item.value!),0),max=rawMax*1.12||1,x=(index:number)=>data.length===1?360:70+580*index/(data.length-1),y=(value:number)=>215-165*value/max,segments:typeof valid[]=[];let segment:typeof valid=[];
+  data.forEach((item,index)=>{if(item.value===null){if(segment.length)segments.push(segment);segment=[]}else segment.push({...item,index})});if(segment.length)segments.push(segment);
+  const ticks=[max,max/2,0],labelStep=Math.max(1,Math.ceil(data.length/10)),showLabel=(index:number)=>index%labelStep===0||index===data.length-1;
+  return <Frame title={title} data={data} coverage={coverage}>
+    {badge&&<span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-secondary-foreground">{badge}</span>}
+    <div className="overflow-x-auto"><svg role="img" aria-label={`Gráfico de área: ${title}`} viewBox="0 0 720 275" className="h-auto min-w-[620px] w-full">
+      <defs><linearGradient id="area-trend-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="var(--chart-1)" stopOpacity=".32"/><stop offset="100%" stopColor="var(--chart-1)" stopOpacity="0"/></linearGradient></defs>
+      <g stroke="var(--border)" strokeWidth="1">{ticks.map((tick,index)=><line key={index} x1="68" x2="660" y1={y(tick)} y2={y(tick)}/>)}</g>
+      <g fill="var(--muted-foreground)" fontSize="11">{ticks.map((tick,index)=><text key={index} x="60" y={y(tick)+4} textAnchor="end">{short(tick)}</text>)}</g>
+      {segments.map((items,index)=>{const line=items.map(item=>`${x(item.index)},${y(item.value!)}`).join(' L '),areaPath=`M ${x(items[0]!.index)},${y(0)} L ${line} L ${x(items[items.length-1]!.index)},${y(0)} Z`;return <g key={index}><path d={areaPath} fill="url(#area-trend-fill)"/><polyline fill="none" stroke="var(--chart-1)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points={items.map(item=>`${x(item.index)},${y(item.value!)}`).join(' ')}/></g>})}
+      {valid.map(item=><circle key={`${item.label}:${item.index}`} cx={x(item.index)} cy={y(item.value!)} r="5" fill="var(--card)" stroke="var(--chart-1)" strokeWidth="3"><title>{item.label}: {formatted(item.value)}</title></circle>)}
+      <g fill="var(--muted-foreground)" fontSize="11">{data.map((item,index)=>showLabel(index)&&<text key={`${item.label}:${index}`} x={x(index)} y="250" textAnchor="middle">{item.label}{item.value===null?' · sem dado':''}<title>{item.label}: {formatted(item.value)}</title></text>)}</g>
+    </svg></div>
+    <p className="mt-2 text-xs text-muted-foreground">Passe o mouse sobre um ponto para ver o valor exato. Meses sem observação aparecem como lacuna, nunca como zero.</p>
+  </Frame>;
+}
+
+export interface ReachCell {ufs:number;parties:number;suppliers:number}
+export function ReachMatrix({title,data,coverage}:{title:string;data:ReachCell[];coverage:DataCoverage}){
+  const flat=data.map(item=>({label:`${item.ufs} UF · ${item.parties} partido(s)`,value:item.suppliers})),ufsAxis=[...new Set(data.map(item=>item.ufs))].sort((a,b)=>a-b),partiesAxis=[...new Set(data.map(item=>item.parties))].sort((a,b)=>a-b),max=Math.max(...data.map(item=>item.suppliers),1);
+  const find=(ufs:number,parties:number)=>data.find(item=>item.ufs===ufs&&item.parties===parties)?.suppliers??0;
+  const cellColor=(value:number)=>value===0?'var(--map-empty)':value/max>.75?'var(--map-5)':value/max>.5?'var(--map-4)':value/max>.25?'var(--map-3)':'var(--map-2)';
+  return <Frame title={title} data={flat} coverage={coverage}>
+    <div className="overflow-x-auto"><table role="img" aria-label={`Mapa de calor de ${title}: linhas por UFs pagadoras, colunas por partidos pagadores`} className="border-separate border-spacing-1"><thead><tr><th className="p-1"/>{partiesAxis.map(parties=><th key={parties} className="p-1 text-center text-[11px] font-semibold text-muted-foreground">{parties}p</th>)}</tr></thead><tbody>{ufsAxis.map(ufs=><tr key={ufs}><th className="pr-2 text-right text-[11px] font-semibold text-muted-foreground">{ufs}UF</th>{partiesAxis.map(parties=>{const value=find(ufs,parties);return <td key={parties}><div className="grid size-9 place-items-center rounded-md text-[11px] font-bold" style={{background:cellColor(value),color:value/max>.5?'#fff':'var(--foreground)'}} title={`${ufs} UFs · ${parties} partido(s): ${value} fornecedor(es)`}>{value||''}</div></td>})}</tr>)}</tbody></table></div>
+    <p className="mt-3 text-xs text-muted-foreground">Linhas: UFs pagadoras distintas. Colunas: partidos pagadores distintos. Célula: fornecedores observados nessa combinação.</p>
+  </Frame>;
+}
+
+export interface RankedBarItem {key:string;label:string;value:number;href?:string;meta?:string;chip?:ReactNode}
+export function RankedBars({title,items,coverage,formatValue}:{title:string;items:RankedBarItem[];coverage:DataCoverage;formatValue?:(value:number)=>string}){
+  const max=Math.max(...items.map(item=>item.value),1),flat=items.map(item=>({label:item.label,value:item.value})),format=formatValue??formatted;
+  return <Frame title={title} data={flat} coverage={coverage}><div className="space-y-3">{items.map((item,index)=><div key={item.key} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-center gap-3"><span className="text-xs font-bold text-muted-foreground">{index+1}</span><div className="min-w-0"><div className="flex min-w-0 items-center gap-2"><span className="min-w-0 truncate font-semibold" title={item.label}>{item.href?<Link className="text-primary underline-offset-2 hover:underline" href={item.href}>{item.label}</Link>:item.label}</span>{item.chip}</div>{item.meta&&<small className="block truncate text-muted-foreground">{item.meta}</small>}<div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*item.value/max}%`}}/></div></div><strong className="whitespace-nowrap text-right text-sm tabular-nums">{format(item.value)}</strong></div>)}</div></Frame>;
 }

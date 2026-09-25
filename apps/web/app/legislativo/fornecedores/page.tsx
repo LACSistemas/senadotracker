@@ -1,7 +1,7 @@
 import type { ComponentType, ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Building2, Network, Search, Store, Users, Wallet } from 'lucide-react';
-import { congressSupplierOverview } from '@/lib/data';
+import { congressSupplierCategoryMix, congressSupplierOverview } from '@/lib/data';
 import { LegislativeSubnav } from '@/components/legislative-subnav';
 import { EmptyState } from '@/components/empty-state';
 import { Input } from '@/components/ui/input';
@@ -27,6 +27,8 @@ export default async function CongressSuppliersHub({searchParams}:{searchParams:
   const result=congressSupplierOverview({year,house});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12">{result.message}</main></>;
   const data=result.data;
+  const mixResult=congressSupplierCategoryMix({year:data.year,house});
+  const mix=mixResult.status==='available'?mixResult.data:null;
   const houseLabel=house==='all'?'Senado e Câmara':house==='CAMARA'?'Câmara dos Deputados':'Senado Federal';
 
   const dimensionValue=(row:{parliamentary:number;institutional:number;total:number})=>lens==='parlamentar'?row.parliamentary:lens==='institucional'?row.institutional:row.total;
@@ -43,20 +45,23 @@ export default async function CongressSuppliersHub({searchParams}:{searchParams:
   const noteBase=lens==='parlamentar'?'Despesas líquidas de gabinete (cota parlamentar), com estornos já descontados.':lens==='institucional'?'Pagamentos institucionais comprovados por movimentos financeiros publicados; contrato, empenho e liquidação são dimensões separadas.':'Soma de duas dimensões observadas — institucional (pago) e parlamentar (líquido) — sem reconciliação nem deduplicação por valor entre elas.';
   const coverageNote=`${noteBase} Cobertura observada: ${lensSuppliers.toLocaleString('pt-BR')} fornecedor(es) em ${houseLabel}; ausência de fornecedor não significa ausência de contratação ou de gasto.`;
 
-  const houseTotal=(institution:'CAMARA'|'SENADO')=>{const row=data.houseBreakdown.find(item=>item.institution===institution);const value=row?dimensionValue(row):0;return{value,share:lensTotalCents?value/lensTotalCents:null}};
-  const houseRows=(['CAMARA','SENADO'] as const).map(institution=>({institution,...houseTotal(institution)})).sort((a,b)=>order==='asc'?a.value-b.value:b.value-a.value);
-
   const monthKeys=[...new Set(data.monthly.map(row=>row.month))].sort((a,b)=>a-b);
   const monthlyRows=monthKeys.map(month=>{
     const camara=data.monthly.find(row=>row.institution==='CAMARA'&&row.month===month), senado=data.monthly.find(row=>row.institution==='SENADO'&&row.month===month);
     return{month,camaraValue:camara?dimensionValue(camara):0,senadoValue:senado?dimensionValue(senado):0};
   });
+  // Os cards-resumo derivam da mesma série mensal exibida no gráfico.
+  const monthlyTotals={CAMARA:monthlyRows.reduce((sum,row)=>sum+row.camaraValue,0),SENADO:monthlyRows.reduce((sum,row)=>sum+row.senadoValue,0)};
+  const monthlyOverall=monthlyTotals.CAMARA+monthlyTotals.SENADO;
+  const houseRows=(['CAMARA','SENADO'] as const).map(institution=>({institution,value:monthlyTotals[institution],share:monthlyOverall?monthlyTotals[institution]/monthlyOverall:null})).sort((a,b)=>order==='asc'?a.value-b.value:b.value-a.value);
 
-  const categoryLimit=6;
-  const topCategories=data.categories.slice(0,categoryLimit).map(row=>({label:row.category,valueCents:row.value}));
-  const shownCents=topCategories.reduce((sum,row)=>sum+row.valueCents,0);
-  const othersCents=Math.max(0,data.parliamentaryCents-shownCents);
-  const categoryRows=othersCents>0?[...topCategories,{label:'Outros',valueCents:othersCents}]:topCategories;
+  // Seção 2 ignora a lente: representa sempre o universo único de pagamentos observados (parlamentar + institucional, Câmara + Senado no filtro ativo).
+  const mixRows=mix?[
+    ...mix.top.map(row=>({universe:row.universe as 'parlamentar'|'institucional'|null,institution:row.institution as 'CAMARA'|'SENADO'|null,label:row.category,value:row.value})),
+    ...mix.unclassified.map(row=>({universe:row.universe as 'parlamentar'|'institucional'|null,institution:row.institution as 'CAMARA'|'SENADO'|null,label:row.category,value:row.value})),
+    ...(mix.othersCents>0?[{universe:null,institution:null,label:'Outros',value:mix.othersCents}]:[]),
+  ].sort((a,b)=>b.value-a.value):[];
+  const mixMaxCents=Math.max(...mixRows.map(row=>row.value),1);
 
   const withParams=(overrides:Record<string,string|number|undefined>)=>{const merged:Record<string,string|number|undefined>={casa:house==='all'?undefined:house,ano:data.year,ordem:order==='asc'?'asc':undefined,lente:lens==='tudo'?undefined:lens,...overrides};const query=new URLSearchParams();for(const [key,value] of Object.entries(merged))if(value!==undefined&&value!=='')query.set(key,String(value));return `/legislativo/fornecedores?${query}`};
 
@@ -80,24 +85,11 @@ export default async function CongressSuppliersHub({searchParams}:{searchParams:
   </section>
 
   <section className="mt-6 rounded-lg border border-border/70 bg-card p-5">
-    <SectionHeading n={2} title="Como os pagamentos se distribuem" subtitle="Distribuição dos valores pagos a fornecedores, segundo as classificações disponíveis de despesa."/>
-
-    {lens==='tudo'&&<div className="mt-4 space-y-2 border-b border-border/60 pb-4">
-      <SummaryRow label="Despesas parlamentares (gabinetes)" valueCents={data.parliamentaryCents} share={data.totalObservedCents?data.parliamentaryCents/data.totalObservedCents:null} colorClass="bg-chart-1"/>
-      <SummaryRow label="Contratos institucionais" valueCents={data.institutionalCents} share={data.totalObservedCents?data.institutionalCents/data.totalObservedCents:null} colorClass="bg-chart-2"/>
-    </div>}
-
-    {lens==='institucional'
-      ? <div className="mt-4"><EmptyState title="Categorias institucionais indisponíveis" description="As categorias institucionais dependem de uma classificação orçamentária oficial (natureza/elemento de despesa) que ainda não é publicada com granularidade suficiente na fonte. Quando disponível, seguirá a classificação contábil oficial — não equivalente às categorias de despesa parlamentar."/></div>
-      : <div className="mt-4">
-          {lens==='tudo'&&<p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Categorias · parcela parlamentar</p>}
-          <div className="space-y-1.5">
-            {categoryRows.map((row,index)=><CategoryRow key={row.label} label={row.label} valueCents={row.valueCents} totalCents={data.parliamentaryCents} colorClass={row.label==='Outros'?'bg-muted-foreground/40':categoryPalette[index%categoryPalette.length]!}/>)}
-          </div>
-          {lens==='tudo'&&<p className="mt-3 text-[11px] text-muted-foreground">A parcela institucional ainda não tem abertura por categoria.</p>}
-        </div>}
-
-    <p className="mt-4 border-t border-border/60 pt-3 text-[11px] leading-snug text-muted-foreground">As categorias institucionais seguem classificações contábeis oficiais e não são diretamente equivalentes às categorias de despesa parlamentar.</p>
+    <SectionHeading n={2} title="Como os pagamentos se distribuem" subtitle="Todo pagamento a fornecedores ligado ao Congresso — despesas de gabinete e contratos institucionais, Câmara e Senado — numa única classificação, sem dividir por universo primeiro."/>
+    <div className="mt-4 space-y-2">
+      {mixRows.length?mixRows.map((row,index)=><CategoryMixRow key={`${row.universe}-${row.institution}-${row.label}`} label={row.label} valueCents={row.value} maxCents={mixMaxCents} totalCents={mix!.totalCents} badge={row.universe==='parlamentar'?'Parlamentar':row.universe==='institucional'?'Institucional':undefined} tooltip={row.universe&&row.institution?`${row.universe==='parlamentar'?'Parlamentar':'Institucional'} · ${row.institution==='CAMARA'?'Câmara':'Senado'}`:undefined} colorClass={row.label==='Outros'||row.label==='Sem classificação disponível'?'bg-muted-foreground/40':categoryPalette[index%categoryPalette.length]!}/>):<EmptyState title="Sem pagamentos classificáveis" description="Não há despesa parlamentar nem pagamento institucional publicado para este recorte."/>}
+    </div>
+    <p className="mt-4 border-t border-border/60 pt-3 text-[11px] leading-snug text-muted-foreground">Categorias de Câmara e Senado, e de despesa parlamentar e contrato institucional, nunca são fundidas por nome parecido — cada linha preserva sua classificação oficial e Casa de origem. "Sem classificação disponível" mostra, sem esconder, o valor institucional que a fonte ainda não publica com natureza de despesa; esse valor nunca é distribuído entre as demais categorias.</p>
   </section>
 
   <section className="mt-6 rounded-lg border border-border/70 bg-card p-5">
@@ -138,13 +130,17 @@ function HubKpi({label,value,detail,icon:Icon,valueTitle,nameStyle}:{label:strin
   </div>;
 }
 
-function SummaryRow({label,valueCents,share,colorClass}:{label:string;valueCents:number;share:number|null;colorClass:string}){
-  return <div className="flex items-center gap-3"><span className={cn('size-2 shrink-0 rounded-full',colorClass)}/><span className="w-44 shrink-0 truncate text-sm font-medium">{label}</span><div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted"><div className={cn('h-full rounded-full',colorClass)} style={{width:`${share===null?0:Math.min(100,share*100)}%`}}/></div><strong className="w-24 shrink-0 text-right text-sm tabular-nums">{money.format(valueCents/100)}</strong><span className="w-10 shrink-0 text-right text-xs text-muted-foreground tabular-nums">{pct(share)}</span></div>;
-}
-
-function CategoryRow({label,valueCents,totalCents,colorClass}:{label:string;valueCents:number;totalCents:number;colorClass:string}){
-  const share=totalCents?valueCents/totalCents:null;
-  return <div className="flex items-center gap-3" title={label}><span className={cn('size-2 shrink-0 rounded-full',colorClass)}/><span className="w-32 shrink-0 truncate text-sm sm:w-44">{label}</span><div className="h-1.5 min-w-0 flex-1 overflow-hidden rounded-full bg-muted"><div className={cn('h-full rounded-full',colorClass)} style={{width:`${share===null?0:Math.min(100,share*100)}%`}}/></div><strong className="w-20 shrink-0 text-right text-sm tabular-nums sm:w-24">{money.format(valueCents/100)}</strong><span className="w-10 shrink-0 text-right text-xs text-muted-foreground tabular-nums">{pct(share)}</span></div>;
+function CategoryMixRow({label,valueCents,maxCents,totalCents,colorClass,badge,tooltip}:{label:string;valueCents:number;maxCents:number;totalCents:number;colorClass:string;badge?:string|undefined;tooltip?:string|undefined}){
+  const share=totalCents?valueCents/totalCents:null,width=maxCents?Math.min(100,valueCents/maxCents*100):0;
+  return <div className="flex items-center gap-3" title={tooltip??label}>
+    <span className={cn('size-2 shrink-0 rounded-full',colorClass)}/>
+    <div className="min-w-0 flex-1">
+      <div className="flex min-w-0 items-center gap-2"><span className="truncate text-sm">{label}</span>{badge&&<span className="shrink-0 rounded-full border px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-muted-foreground">{badge}</span>}</div>
+      <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted"><div className={cn('h-full rounded-full',colorClass)} style={{width:`${width}%`}}/></div>
+    </div>
+    <strong className="shrink-0 whitespace-nowrap text-right text-sm tabular-nums">{money.format(valueCents/100)}</strong>
+    <span className="w-12 shrink-0 text-right text-xs text-muted-foreground tabular-nums">{pct(share)}</span>
+  </div>;
 }
 
 function MonthlyStackedChart({rows,year}:{rows:{month:number;camaraValue:number;senadoValue:number}[];year:number}){
