@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowDown, ArrowUp, ArrowUpDown, Download, Search } from 'lucide-react';
+import { ArrowDown, ArrowLeft, ArrowUp, ArrowUpDown, Download, Search } from 'lucide-react';
 import type { DataCoverage } from '@senadotracker/domain';
 import type { SupplierExplorerQuery, SupplierExplorerSort } from '@senadotracker/db';
 import { congressSupplierOverview, supplierExplorer, supplierExplorerFacets } from '@/lib/data';
@@ -65,6 +65,8 @@ export default async function SupplierExplorerPage({searchParams}:{searchParams:
   const podiumFormat=(value:number)=>sort==='reach'?`${value.toLocaleString('pt-BR')} parlamentares`:money.format(value/100);
 
   return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-8 space-y-8">
+
+  <Link className="focus-ring inline-flex items-center gap-2 text-sm font-bold text-primary" href="/legislativo/fornecedores"><ArrowLeft size={16}/>Voltar a fornecedores</Link>
 
   <header className="rounded-3xl border bg-card p-7 lg:p-10"><p className="eyebrow">Fornecedores · Congresso Nacional</p><h1 className="display-title mt-3 text-[clamp(2rem,4vw,3rem)]">Explorar fornecedores</h1><p className="text-balance mt-3 max-w-2xl text-base leading-7 text-muted-foreground">Busque empresas e organizações observadas em despesas parlamentares e pagamentos institucionais, sem misturar os dois universos.</p><form action="/legislativo/fornecedores/explorar" className="mt-6 flex max-w-xl gap-3"><Input name="busca" defaultValue={search} placeholder="Buscar por nome ou CNPJ" aria-label="Buscar fornecedor"/><Button><Search size={16}/>Buscar</Button></form></header>
 

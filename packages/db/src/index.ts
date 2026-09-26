@@ -237,6 +237,9 @@ export { publishedSupplierRadar, publishedSupplierDetail, publishedPatrimonyRank
 export { backfillExpenseSupplierIdentities, resolveStrongSupplier, supplierIdentitySummary, type ResolveSupplierInput, type SupplierIdentityBackfillOptions, type SupplierIdentityBackfillResult } from './suppliers.ts';
 export { institutionalContractFinancialSummary, institutionalFinancialReconciliation, reconcileFinancialSeries, type FinancialFact, type FinancialPhase, type FinancialReconciliation } from './financial-reconciliation.ts';
 export { publishSupplierAggregates } from './supplier-aggregates.ts';
+export { rebuildSupplierCategorySnapshot } from './supplier-category-publication.ts';
 export { publishedSupplierExplorer, publishedSupplierExplorerFacets, publishedSupplierGlobalDetail, publishedSupplierGlobalStory, publishedSupplierNetwork, publishedParliamentarianSupplierNetwork, type SupplierActivity, type SupplierExplorerFacets, type SupplierExplorerItem, type SupplierExplorerQuery, type SupplierExplorerSort, type SupplierHouse } from './supplier-market.ts';
 export { publishedSupplierMarket, publishedInstitutionalSupplierOverview, publishedCongressSupplierOverview, publishedCongressSupplierCategoryMix, type SupplierMarketQuery, type CategoryMixRow } from './supplier-market-analytics.ts';
 export { openPostgres, postgresConfigFromEnv } from './postgres.ts';
+
+export {publishedCommissionAgenda,commissionMeetingChanges,publishedCommissionDetail,commissionComposition,reconcileCommissionMembershipKeys,commissionRapporteurships,commissionMatters,publishedCommissionDirectory,publishedCommissionOverview,type CommissionAgendaQuery,type CommissionDirectoryQuery,type CommissionMeetingChange,type CommissionComposition,type CommissionRapporteurship,type CommissionRapporteurshipGroup} from './commissions.ts';
