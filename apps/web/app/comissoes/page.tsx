@@ -26,7 +26,7 @@ function CommissionCard({ item }: { item: Directory['items'][number] }) {
     <article className="card-elevated group flex flex-col rounded-2xl border bg-card p-5 transition hover:-translate-y-0.5 hover:border-primary/40">
       <div className="flex items-center justify-between gap-3">
         <span className={cn('grid size-9 place-items-center rounded-xl', info.soft)}>
-          <Icon size={17} className={info.text} />
+          <Icon size={17} className={info.text} aria-hidden="true" />
         </span>
         <ArrowUpRight size={18} className="text-primary opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
       </div>
@@ -93,7 +93,7 @@ export default async function CommissionsPage({ searchParams }: { searchParams?:
                 iconClassName={cn(info.soft, info.text)}
                 value={dir.counts[h]}
                 label={info.label}
-                action={<Link href={href(h, '')} className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-bold text-primary hover:underline">Explorar {info.short} <ArrowRight size={13} /></Link>}
+                action={<Link href={href(h, '')} className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-xs font-bold text-primary hover:underline">Explorar {info.short} <ArrowRight size={13} aria-hidden="true" /></Link>}
               />
             );
           })}
@@ -126,7 +126,7 @@ export default async function CommissionsPage({ searchParams }: { searchParams?:
             {overview.status === 'unavailable' ? 'Não foi possível carregar as reuniões neste momento.' : 'Nenhuma reunião publicada na cobertura atual.'}
           </CoverageNote>
         )}
-        <Link href="/comissoes/agenda" className="focus-ring mt-4 inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver agenda completa <ArrowRight size={14} /></Link>
+        <Link href="/comissoes/agenda" className="focus-ring mt-4 inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver agenda completa <ArrowRight size={14} aria-hidden="true" /></Link>
       </section>
 
       <section id="explorar" className="page-shell scroll-mt-6 py-8">
@@ -149,7 +149,7 @@ export default async function CommissionsPage({ searchParams }: { searchParams?:
                 aria-current={active ? 'page' : undefined}
                 className={cn('focus-ring inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold', active ? 'border-primary bg-primary text-primary-foreground' : 'hover:border-primary/50')}
               >
-                {h !== 'ALL' && <Icon size={13} className={active ? 'text-primary-foreground' : info!.text} />}
+                {h !== 'ALL' && <Icon size={13} className={active ? 'text-primary-foreground' : info!.text} aria-hidden="true" />}
                 {h === 'ALL' ? 'Todas' : info!.short}
                 <Badge className={cn('border-0 px-1.5 py-0 text-[10px]', active ? 'bg-white/20 text-primary-foreground' : 'bg-muted')}>{count}</Badge>
               </Link>
@@ -197,8 +197,8 @@ export default async function CommissionsPage({ searchParams }: { searchParams?:
             <ExplainerCard icon={CalendarDays} title="Reunião">Encontro do colegiado em que os itens publicados podem ser tratados.</ExplainerCard>
           </div>
           <div className="mt-6 flex flex-wrap gap-5 text-sm font-semibold text-primary">
-            <Link href="/legislativo/proposicoes" className="focus-ring inline-flex items-center gap-1.5 rounded-sm hover:underline">Explorar proposições <ArrowRight size={14} /></Link>
-            <Link href="/comissoes/agenda" className="focus-ring inline-flex items-center gap-1.5 rounded-sm hover:underline">Ver agenda <ArrowRight size={14} /></Link>
+            <Link href="/legislativo/proposicoes" className="focus-ring inline-flex items-center gap-1.5 rounded-sm hover:underline">Explorar proposições <ArrowRight size={14} aria-hidden="true" /></Link>
+            <Link href="/comissoes/agenda" className="focus-ring inline-flex items-center gap-1.5 rounded-sm hover:underline">Ver agenda <ArrowRight size={14} aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

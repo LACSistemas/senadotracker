@@ -73,8 +73,8 @@ export default async function CommissionPage({ params, searchParams }: { params:
           <h1 className="display-title mt-4 max-w-3xl text-balance text-4xl sm:text-6xl">{b.name}</h1>
           <p className="mt-3 text-white/80">{b.sigla || 'Sigla não informada'} · {info.label}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <Link href={agendaHref} className={cn(buttonVariants(), 'bg-white text-foreground hover:bg-white/90')}>Ver agenda completa <ArrowRight size={15} /></Link>
-            {b.source_url && <a href={b.source_url} className={cn(buttonVariants({ variant: 'outline' }), 'border-white/30 bg-transparent text-white hover:bg-white/10')}>Fonte oficial <ExternalLink size={14} /></a>}
+            <Link href={agendaHref} className={cn(buttonVariants(), 'bg-white text-foreground hover:bg-white/90')}>Ver agenda completa <ArrowRight size={15} aria-hidden="true" /></Link>
+            {b.source_url && <a href={b.source_url} className={cn(buttonVariants({ variant: 'outline' }), 'border-white/30 bg-transparent text-white hover:bg-white/10')}>Fonte oficial <ExternalLink size={14} aria-hidden="true" /></a>}
           </div>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default async function CommissionPage({ params, searchParams }: { params:
               </div>
               <div className="mt-4">
                 {next
-                  ? <Meeting m={next} highlight footer={<Link href={`/comissoes/agenda?body=${encodeURIComponent(b.external_id)}&from=${next.scheduled_date}&to=${next.scheduled_date}`} className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver pauta completa <ArrowRight size={14} /></Link>} />
+                  ? <Meeting m={next} highlight footer={<Link href={`/comissoes/agenda?body=${encodeURIComponent(b.external_id)}&from=${next.scheduled_date}&to=${next.scheduled_date}`} className="focus-ring inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver pauta completa <ArrowRight size={14} aria-hidden="true" /></Link>} />
                   : <CoverageNote icon={CalendarClock}>Nenhuma próxima reunião publicada na cobertura atual.</CoverageNote>}
               </div>
             </section>
@@ -115,7 +115,7 @@ export default async function CommissionPage({ params, searchParams }: { params:
               ) : (
                 <CoverageNote className="mt-4">Nenhuma reunião identificada na cobertura atual.</CoverageNote>
               )}
-              {data.recent.length > 2 && <Link href={agendaHref} className="focus-ring mt-4 inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver todas as reuniões <ArrowRight size={14} /></Link>}
+              {data.recent.length > 2 && <Link href={agendaHref} className="focus-ring mt-4 inline-flex items-center gap-1.5 rounded-sm text-sm font-bold text-primary hover:underline">Ver todas as reuniões <ArrowRight size={14} aria-hidden="true" /></Link>}
             </section>
           </>
         )}
@@ -131,7 +131,7 @@ export default async function CommissionPage({ params, searchParams }: { params:
             <ul className="mt-5 space-y-3">
               {data.matters.map((i: any) => (
                 <li key={i.proposalId} className="card-elevated flex gap-3 rounded-2xl border bg-card p-4 transition hover:border-primary/30">
-                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-primary"><FileText size={15} /></span>
+                  <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-primary"><FileText size={15} aria-hidden="true" /></span>
                   <div className="min-w-0">
                     <Link href={`/legislativo/proposicoes/${i.proposalSource}/${i.proposalId}`} className="focus-ring inline-block rounded-full">
                       <Badge className="border-0 bg-secondary font-mono text-xs normal-case tracking-normal text-primary transition-colors hover:bg-primary hover:text-primary-foreground">{i.proposalLabel || i.proposalId}</Badge>

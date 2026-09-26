@@ -38,7 +38,7 @@ function RapporteurRow({ x }: { x: any }) {
 function RapporteurshipGroup({ g, source }: { g: any; source: string }) {
   return (
     <article className="card-elevated flex gap-3 rounded-2xl border bg-card p-4 transition hover:border-primary/30">
-      <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-primary"><FileText size={15} /></span>
+      <span className="mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg bg-secondary text-primary"><FileText size={15} aria-hidden="true" /></span>
       <div className="min-w-0 flex-1">
         <Link href={`/legislativo/proposicoes/${source}/${g.proposalId}`} className="focus-ring inline-block rounded-full">
           <Badge className="border-0 bg-secondary font-mono text-xs normal-case tracking-normal text-primary transition-colors hover:bg-primary hover:text-primary-foreground">{g.proposalLabel || g.proposalId}</Badge>

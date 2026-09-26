@@ -18,7 +18,7 @@ export function StatTile({ icon: Icon, iconClassName, value, valueClassName, lab
     <div className={cn('card-elevated flex flex-col rounded-2xl border bg-card p-5', className)}>
       {Icon && (
         <span className={cn('grid size-9 place-items-center rounded-xl bg-secondary text-primary', iconClassName)}>
-          <Icon size={17} />
+          <Icon size={17} aria-hidden="true" />
         </span>
       )}
       <strong className={cn('display-title mt-4 text-4xl leading-none tabular-nums', valueClassName)}>{value}</strong>

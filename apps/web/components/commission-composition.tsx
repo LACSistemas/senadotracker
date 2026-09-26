@@ -25,10 +25,10 @@ function Avatar({ p, featured }: { p: any; featured?: boolean | undefined }) {
   const name = p.name || p.personName || 'Pessoa não identificada';
   return (
     <span className={cn('relative grid size-9 shrink-0 place-items-center overflow-hidden rounded-full bg-muted text-muted-foreground', featured && 'ring-2 ring-primary')}>
-      {p.photoUrl ? <OfficialPortrait src={p.photoUrl} name={name} sizes="36px" /> : <User size={15} />}
+      {p.photoUrl ? <OfficialPortrait src={p.photoUrl} name={name} sizes="36px" /> : <User size={15} aria-hidden="true" />}
       {featured && (
         <span className="absolute -bottom-0.5 -right-0.5 grid size-4 place-items-center rounded-full bg-primary text-primary-foreground ring-2 ring-card">
-          <Crown size={9} />
+          <Crown size={9} aria-hidden="true" />
         </span>
       )}
     </span>
