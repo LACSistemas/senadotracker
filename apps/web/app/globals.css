@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @theme inline {
-  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--danger); --color-chart-1: var(--chart-1); --color-chart-2: var(--chart-2); --color-chart-3: var(--chart-3); --color-chart-4: var(--chart-4); --color-eval-good: var(--eval-good); --color-eval-typical: var(--eval-typical); --color-eval-watch: var(--eval-watch); --color-eval-alert: var(--eval-alert); --color-eval-unknown: var(--eval-unknown); --font-sans: var(--font-sans); --font-serif: var(--font-serif);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-card: var(--card); --color-card-foreground: var(--card-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-success: var(--success); --color-warning: var(--warning); --color-danger: var(--danger); --color-chart-1: var(--chart-1); --color-chart-2: var(--chart-2); --color-chart-3: var(--chart-3); --color-chart-4: var(--chart-4); --color-eval-good: var(--eval-good); --color-eval-typical: var(--eval-typical); --color-eval-watch: var(--eval-watch); --color-eval-alert: var(--eval-alert); --color-eval-unknown: var(--eval-unknown); --font-sans: var(--font-sans); --font-serif: var(--font-serif); --font-display: var(--font-display);
 }
 
 /* As rotas do perfil compartilham o mesmo documento de dados, mas publicam apenas
@@ -24,7 +24,17 @@
   --eval-good:#157f58; --eval-typical:#60706a; --eval-watch:#a65d08; --eval-alert:#a33a3a; --eval-unknown:#c8cec7;
   /* Rampa sequencial do mapa (magnitude) com tons fixos, e cinza quente fora do matiz para "sem dado". */
   --map-1:hsl(159 54% 88%); --map-2:hsl(159 54% 74%); --map-3:hsl(159 54% 60%); --map-4:hsl(159 54% 46%); --map-5:hsl(159 54% 33%); --map-empty:#e9e7e0;
-  --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem); --font-sans:Arial,Helvetica,sans-serif; --font-serif:Georgia,'Times New Roman',serif; }
+  --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem);
+  /* Tipografia: Inter para corpo e números, Fraunces (serifa com eixo óptico) para títulos editoriais. As variáveis
+     --font-inter/--font-fraunces são injetadas por next/font no <html>; a pilha abaixo é o fallback sem rede. */
+  --font-sans:var(--font-inter),Inter,Arial,Helvetica,sans-serif; --font-display:var(--font-fraunces),Georgia,'Times New Roman',serif; --font-serif:var(--font-display);
+  /* Grupos funcionais das proposições: 7 matizes categóricos + cinza "Outras formas".
+     Validados com o validador de paleta (superfície #faf9f5): ΔE adjacente ≥ 13,6 (CVD) e ≥ 22,8 (visão normal), contraste ≥ 3:1.
+     A ordem é fixa e taxonômica — ver apps/web/lib/proposicoes/taxonomy.ts. */
+  --group-1:#158458; --group-2:#74478e; --group-3:#a77612; --group-4:#9c2a67; --group-5:#3263c3; --group-6:#944126; --group-7:#208ea8; --group-other:#8b877c;
+  /* Rampa ordinal (recente → antigo): um matiz, luminosidade monótona, extremo claro ≥ 2:1 sobre a superfície. */
+  --stale-1:#004d28; --stale-2:#00643d; --stale-3:#247b54; --stale-4:#44926c; --stale-5:#60aa84;
+  --surface-strip:#faf9f5; --ink-soft:#3f5049; }
 * { border-color:var(--border); }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--background); color:var(--foreground); font-family:var(--font-sans); text-rendering:optimizeLegibility; }
@@ -32,7 +42,7 @@ a { text-underline-offset:4px; }
 button,input,select { font:inherit; }
 ::selection { background:#bfdbc9; color:#0c3026; }
 .page-shell { width:min(1200px,calc(100% - 48px)); margin-inline:auto; }
-.display-title { font-family:var(--font-serif); font-weight:400; letter-spacing:-.035em; line-height:.98; }
+.display-title { font-family:var(--font-display); font-weight:400; letter-spacing:-.035em; line-height:.98; font-optical-sizing:auto; text-wrap:balance; }
 .eyebrow { color:var(--primary); font-size:.72rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
 .focus-ring:focus-visible { outline:2px solid var(--ring); outline-offset:4px; border-radius:.35rem; }
 .surface-grid { background-image:linear-gradient(rgba(23,44,39,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,44,39,.035) 1px,transparent 1px); background-size:32px 32px; }
@@ -42,3 +52,33 @@ button,input,select { font:inherit; }
 @media (max-width:640px) { .page-shell { width:min(100% - 28px,1200px); } }
 @media (max-width:420px) { .brand-label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; } }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { scroll-behavior:auto!important; transition-duration:.01ms!important; } }
+
+/* ── Proposições: editorial, textura e movimento ────────────────────────────────────────────────────── */
+.font-display { font-family:var(--font-display); font-optical-sizing:auto; }
+.prop-thesis { font-family:var(--font-display); font-weight:380; letter-spacing:-.028em; line-height:1.03; text-wrap:balance; font-optical-sizing:auto; }
+.prop-thesis em { font-style:italic; font-weight:300; color:var(--primary); }
+.prop-h2 { font-family:var(--font-display); font-weight:420; letter-spacing:-.02em; line-height:1.08; text-wrap:balance; font-optical-sizing:auto; }
+/* Números grandes usam figuras proporcionais; tabular só em colunas que precisam alinhar (skill dataviz). */
+.hero-figure { font-family:var(--font-sans); font-weight:700; letter-spacing:-.03em; line-height:1; font-variant-numeric:proportional-nums; }
+.tnum { font-variant-numeric:tabular-nums; }
+.hero-wash { background:radial-gradient(58rem 26rem at 82% -10%,rgba(23,137,91,.11),transparent 62%),radial-gradient(38rem 22rem at -4% 4%,rgba(211,154,60,.11),transparent 58%),var(--background); }
+.band-gradient { background:linear-gradient(135deg,#0a3528 0%,#115b45 58%,#177a5a 100%); }
+.section-hairline { border-top:3px solid var(--hairline,var(--primary)); }
+.card-lift { transition:transform .22s cubic-bezier(.2,.7,.2,1),box-shadow .22s cubic-bezier(.2,.7,.2,1),border-color .22s; }
+.card-lift:hover { transform:translateY(-2px); box-shadow:0 1px 0 rgba(20,35,30,.04),0 20px 44px rgba(20,35,30,.10); border-color:color-mix(in srgb,var(--primary) 32%,var(--border)); }
+.strip-seg { transition:filter .16s ease,opacity .16s ease; }
+.strip-seg:hover,.strip-seg:focus-visible { filter:brightness(1.1) saturate(1.05); }
+.strip-dim .strip-seg:not([data-active="true"]) { opacity:.42; }
+/* Revelação: o estado inicial só existe com JavaScript armado; sem ele, a animação de segurança revela sozinha em 2,2 s. */
+@keyframes prop-rise-force { to { opacity:1; transform:none; } }
+@keyframes prop-wipe-force { to { clip-path:inset(0 0 0 0 round var(--wipe-r,8px)); } }
+.prop-rise { opacity:0; transform:translateY(14px); transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1); animation:prop-rise-force 0s 2.2s forwards; }
+.prop-rise[data-in="true"] { opacity:1; transform:none; animation:none; }
+.prop-wipe { clip-path:inset(0 100% 0 0 round var(--wipe-r,8px)); transition:clip-path 1.05s cubic-bezier(.2,.7,.2,1); animation:prop-wipe-force 0s 2.2s forwards; }
+.prop-wipe[data-in="true"] { clip-path:inset(0 0 0 0 round var(--wipe-r,8px)); animation:none; }
+.prop-fade-in { animation:prop-fade .5s ease both; }
+@keyframes prop-fade { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce) {
+  .prop-rise,.prop-wipe,.prop-fade-in { opacity:1; transform:none; clip-path:inset(0 0 0 0 round var(--wipe-r,8px)); transition:none; animation:none; }
+  .card-lift:hover { transform:none; }
+}

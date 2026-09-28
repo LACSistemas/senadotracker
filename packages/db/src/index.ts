@@ -1,5 +1,6 @@
 import { DatabaseSync } from 'node:sqlite';
 export { proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry } from './proposition-analytics.ts';
+export { proposalFunctionalOverview, principalStageFlow, principalStaleness, activityDnaByAuthor, activityRhythm, activityCalendar, recentLegislativeEvents, proposalObservedState, buildEditorialFacts, editorialFacts, loadUniverse, loadEvents, loadAuthorLinks, latestEventDay, collectEvidence, PROPOSITION_GROUP_ORDER, PRINCIPAL_GROUP, RECENT_EVENT_TYPES, type PropositionHouse, type StageKey, type FunctionalOverview, type HouseFunctionalView, type FunctionalGroupCount, type StageFlow, type StageFlowStage, type PrincipalStaleness, type StalenessBucket, type StalenessPoint, type ActivityDna, type DnaRow, type ActivityRhythm, type HouseRhythm, type RhythmMonth, type ActivityCalendar, type CalendarDay, type RecentEvents, type RecentEventItem, type RecentEventType, type ObservedState, type EditorialFact, type EditorialFactsInput, type UniverseItem, type EventRecord, type AuthorLink, type Evidence } from './proposition-operations.ts';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { randomUUID, createHash } from 'node:crypto';
@@ -232,7 +233,7 @@ export { publishStaffSnapshot, publishedStaffSnapshot, snapshotAvailability, pub
 export { publishedPersonElectoralProfile, publishedCabinetProfile, publishedCabinetSummaries, publishedCabinetPanorama, type CabinetSummary } from './frontend-data.ts';
 export { publishedRankings, type RankingDimension, type RankingQuery } from './rankings.ts';
 export { publishedParliamentarySubsidy, publishedMinimumWage, publishedNormativeValue, publishedExpenseCoverage, publishedSourceFreshness, type NormativeValue } from './public-info.ts';
-export { publishedPropositionCoverage, publishedPropositionDashboard, publishedPropositions, publishedProposition, type PropositionDashboardQuery, type PropositionQuery } from './propositions.ts';
+export { publishedPropositionCoverage, publishedPropositionDashboard, publishedPropositions, publishedPropositionComposition, publishedProposition, type PropositionDashboardQuery, type PropositionQuery } from './propositions.ts';
 export { publishedExpenseDetail } from './expense-intelligence.ts';
 export { publishedSupplierRadar, publishedSupplierDetail, publishedPatrimonyRanking, publishedElectionMonths, validCnpj, type PatrimonyDeflator, type SupplierRadarQuery, type SupplierDetailQuery } from './investigative.ts';
 export { backfillExpenseSupplierIdentities, resolveStrongSupplier, supplierIdentitySummary, type ResolveSupplierInput, type SupplierIdentityBackfillOptions, type SupplierIdentityBackfillResult } from './suppliers.ts';

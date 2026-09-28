@@ -71,15 +71,30 @@ export function publishedPropositionDashboard(db:DatabaseSync,query:PropositionD
   return{year,sources,presented,backlog,norms,conversionRate:presented?norms/presented:null,processing:{medianDays:selectedProcessing?.medianDays??null,sampleSize:selectedProcessing?.sampleSize??0},types,houses,updatedAt:houses.map(item=>item.updatedAt).sort().at(-1)??null};
 }
 
-export function publishedPropositions(db:DatabaseSync,query:PropositionQuery={}){
-  const page=query.page??1,pageSize=query.pageSize??20;if(!Number.isSafeInteger(page)||page<1||!Number.isSafeInteger(pageSize)||pageSize<1||pageSize>100)throw new Error('Paginação inválida');if(query.year!==undefined&&(!Number.isInteger(query.year)||query.year<1800||query.year>2100))throw new Error('Ano inválido');
+/** Cláusula de filtros compartilhada entre a listagem e a composição do resultado (uma única definição de "o que a busca encontra"). */
+function propositionFilter(query:PropositionQuery,options:{ignoreGroup?:boolean}={}){
   const where:string[]=[],params:Array<string|number>=[];
   if(query.source){where.push('a.source=?');params.push(query.source)}if(query.type){where.push("json_extract(p.payload,'$.type')=?");params.push(query.type)}if(query.year!==undefined){where.push("CAST(json_extract(p.payload,'$.year') AS INTEGER)=?");params.push(query.year)}
   if(query.search){const identifier=/^([A-Za-z][A-Za-z-]{0,12})\s+(\d{1,8})(?:\s*\/\s*(\d{4}))?$/.exec(query.search.trim());if(identifier){where.push("json_extract(p.payload,'$.type')=? AND CAST(json_extract(p.payload,'$.number') AS INTEGER)=?");params.push(identifier[1]!.toUpperCase(),Number(identifier[2]));if(identifier[3]){where.push("CAST(json_extract(p.payload,'$.year') AS INTEGER)=?");params.push(Number(identifier[3]))}}else{const value=`%${searchText(query.search)}%`;where.push(`(search_text(COALESCE(json_extract(p.payload,'$.label'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.summary'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.type'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.number'),'')) LIKE ? OR EXISTS(SELECT 1 FROM proposal_authors x WHERE x.batch_id=p.batch_id AND x.proposal_id=p.external_id AND search_text(COALESCE(json_extract(x.payload,'$.name'),'')) LIKE ?))`);params.push(value,value,value,value,value)}}
   if(query.author){where.push(`EXISTS(SELECT 1 FROM proposal_authors x WHERE x.batch_id=p.batch_id AND x.proposal_id=p.external_id AND search_text(COALESCE(json_extract(x.payload,'$.name'),'')) LIKE ?)`);params.push(`%${searchText(query.author)}%`)}
   if(query.theme){where.push(`EXISTS(SELECT 1 FROM legislative_complements c JOIN active_complement_publications ac ON ac.batch_id=c.batch_id WHERE c.source=p.source AND c.proposal_id=p.external_id AND c.kind='theme' AND search_text(COALESCE(json_extract(c.payload,'$.label'),'')) LIKE ?)`);params.push(`%${searchText(query.theme)}%`)}
-  if(query.group){where.push(`json_extract(p.payload,'$.functionalGroup')=?`);params.push(query.group)}
+  if(query.group&&!options.ignoreGroup){where.push(`json_extract(p.payload,'$.functionalGroup')=?`);params.push(query.group)}
   const clause=where.length?`WHERE ${where.join(' AND ')}`:'',from=`FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id JOIN activity_batches b ON b.id=p.batch_id JOIN raw_objects r ON r.id=p.raw_id`;
+  return{params,clause,from};
+}
+
+/** Composição por grupo funcional do resultado da busca, sem o filtro de grupo: mostra o que a consulta encontra em cada grupo. */
+export function publishedPropositionComposition(db:DatabaseSync,query:PropositionQuery={}){
+  if(query.year!==undefined&&(!Number.isInteger(query.year)||query.year<1800||query.year>2100))throw new Error('Ano inválido');
+  const {params,clause,from}=propositionFilter(query,{ignoreGroup:true});
+  const rows=db.prepare(`SELECT p.grupo_atribuido g,count(*) n ${from} ${clause} GROUP BY g`).all(...params);
+  const total=rows.reduce((sum,row)=>sum+Number(row.n),0);
+  return{total,groups:rows.map(row=>({group:String(row.g),count:Number(row.n),share:total?Number(row.n)/total:0})).sort((a,b)=>b.count-a.count)};
+}
+
+export function publishedPropositions(db:DatabaseSync,query:PropositionQuery={}){
+  const page=query.page??1,pageSize=query.pageSize??20;if(!Number.isSafeInteger(page)||page<1||!Number.isSafeInteger(pageSize)||pageSize<1||pageSize>100)throw new Error('Paginação inválida');if(query.year!==undefined&&(!Number.isInteger(query.year)||query.year<1800||query.year>2100))throw new Error('Ano inválido');
+  const {params,clause,from}=propositionFilter(query);
   const total=Number(db.prepare(`SELECT count(*) value ${from} ${clause}`).get(...params)?.value??0),offset=(page-1)*pageSize;
   const pageRows=db.prepare(`SELECT p.batch_id,p.payload,b.scope,b.published_at,r.url,r.fetched_at,r.sha256 ${from} ${clause} ORDER BY CAST(COALESCE(json_extract(p.payload,'$.year'),0) AS INTEGER) DESC,json_extract(p.payload,'$.type'),CAST(COALESCE(json_extract(p.payload,'$.number'),0) AS INTEGER),p.source,p.external_id LIMIT ? OFFSET ?`).all(...params,pageSize,offset) as unknown as ProposalRow[];
   const items=hydrateProposals(db,pageRows);
