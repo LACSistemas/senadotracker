@@ -1,0 +1,1 @@
+import {DatabaseSync} from 'node:sqlite'; const d=new DatabaseSync('data/senadotracker.sqlite',{readOnly:true}); console.log(d.prepare(`select kind,count(*) n from proposal_enrichment_items group by kind`).all()); console.log(d.prepare(`select * from proposal_enrichment_items limit 2`).all()); d.close();

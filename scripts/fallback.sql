@@ -1,0 +1,2 @@
+﻿CREATE TABLE IF NOT EXISTS civica_poc.proposal_parent_context(child_source text NOT NULL,child_external_id text NOT NULL,parent_source text NOT NULL,parent_external_id text NOT NULL,parent_type text,parent_number bigint,parent_year int,parent_label text,parent_summary text,PRIMARY KEY(child_source,child_external_id));
+CREATE INDEX IF NOT EXISTS proposal_parent_context_child_idx ON civica_poc.proposal_parent_context(child_source,child_external_id);

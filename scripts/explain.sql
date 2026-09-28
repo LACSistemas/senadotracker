@@ -1,0 +1,3 @@
+﻿EXPLAIN (ANALYZE,BUFFERS) SELECT p.external_id FROM civica_poc.proposals p JOIN civica_poc.active_publications ap ON ap.source=p.source AND ap.batch_id=p.batch_id WHERE p.search_vector @@ websearch_to_tsquery('portuguese','saúde') LIMIT 21;
+EXPLAIN (ANALYZE,BUFFERS) SELECT p.external_id FROM civica_poc.proposals p JOIN civica_poc.active_publications ap ON ap.source=p.source AND ap.batch_id=p.batch_id WHERE EXISTS (SELECT 1 FROM civica_poc.proposal_authors a WHERE a.source=p.source AND a.proposal_id=p.external_id AND a.person_external_id='999') LIMIT 21;
+EXPLAIN (ANALYZE,BUFFERS) SELECT p.external_id FROM civica_poc.proposals p JOIN civica_poc.active_publications ap ON ap.source=p.source AND ap.batch_id=p.batch_id WHERE p.type='PL' AND p.year=2026 LIMIT 21;
