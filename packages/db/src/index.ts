@@ -1,4 +1,5 @@
 import { DatabaseSync } from 'node:sqlite';
+export { proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry } from './proposition-analytics.ts';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { randomUUID, createHash } from 'node:crypto';
@@ -241,5 +242,6 @@ export { rebuildSupplierCategorySnapshot } from './supplier-category-publication
 export { publishedSupplierExplorer, publishedSupplierExplorerFacets, publishedSupplierGlobalDetail, publishedSupplierGlobalStory, publishedSupplierNetwork, publishedParliamentarianSupplierNetwork, type SupplierActivity, type SupplierExplorerFacets, type SupplierExplorerItem, type SupplierExplorerQuery, type SupplierExplorerSort, type SupplierHouse } from './supplier-market.ts';
 export { publishedSupplierMarket, publishedInstitutionalSupplierOverview, publishedCongressSupplierOverview, publishedCongressSupplierCategoryMix, type SupplierMarketQuery, type CategoryMixRow } from './supplier-market-analytics.ts';
 export { openPostgres, postgresConfigFromEnv } from './postgres.ts';
+export { postgresPropositionRepository, activatePropositionBatch, type PropositionRepository, type PropositionSearchQuery } from './postgres-propositions.ts';
 
 export {publishedCommissionAgenda,commissionMeetingChanges,publishedCommissionDetail,commissionComposition,reconcileCommissionMembershipKeys,commissionRapporteurships,commissionMatters,publishedCommissionDirectory,publishedCommissionOverview,type CommissionAgendaQuery,type CommissionDirectoryQuery,type CommissionMeetingChange,type CommissionComposition,type CommissionRapporteurship,type CommissionRapporteurshipGroup} from './commissions.ts';

@@ -3,7 +3,7 @@ import { proposalFunctionalGroup, searchText, type DataCoverage, type Deliberati
 import { groupRecordedPartyVotes } from './parties.ts';
 import { publishedHouseOperations } from './panorama.ts';
 
-export interface PropositionQuery { source?:Source; type?:string; year?:number; search?:string; author?:string; theme?:string; page?:number; pageSize?:number }
+export interface PropositionQuery { source?:Source; type?:string; year?:number; search?:string; author?:string; theme?:string; group?:string; page?:number; pageSize?:number }
 export interface PropositionDashboardQuery { source?:Source; year?:number }
 interface ProposalRow { batch_id:unknown; payload:unknown; scope:unknown; published_at:unknown; url:unknown; fetched_at:unknown; sha256:unknown }
 interface ComplementRow { payload:unknown; batch_id:unknown; published_at:unknown }
@@ -40,10 +40,18 @@ function hydrateProposals(db:DatabaseSync,rows:ProposalRow[]){
       const mapKey=`${item.source}\u0000${item.proposalId}`,items=complementMap.get(mapKey)??[];items.push(item);complementMap.set(mapKey,items);
     }
   }
+  const parentMap=new Map<string,Proposal>();
+  const parentPairs=parsed.map(value=>value.proposal.principalProposalId?{source:value.proposal.source,id:value.proposal.principalProposalId}:null).filter((value):value is {source:Source;id:string}=>Boolean(value));
+  if(parentPairs.length){
+    const unique=[...new Map(parentPairs.map(value=>[`${value.source}\u0000${value.id}`,value])).values()];
+    const clauses=unique.map(()=>'(p.source=? AND p.external_id=?)').join(' OR '),params=unique.flatMap(value=>[value.source,value.id]);
+    for(const row of db.prepare(`SELECT p.source,p.external_id,p.payload FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE ${clauses} ORDER BY a.batch_id DESC`).all(...params)) parentMap.set(`${String(row.source)}\u0000${String(row.external_id)}`,JSON.parse(String(row.payload)) as Proposal);
+  }
   return parsed.map(({row,proposal,batchId})=>{
     const authors=authorMap.get(key(batchId,proposal.externalId))??[];
     const themes=[...new Set((complementMap.get(`${proposal.source}\u0000${proposal.externalId}`)??[]).filter(item=>item.kind==='theme').map(item=>item.label))];
-    return {proposal,authors,themes,scope:String(row.scope),publishedAt:String(row.published_at),origin:{url:String(row.url),fetchedAt:String(row.fetched_at),sha256:String(row.sha256),batchId},search:[proposal.type,proposal.number,proposal.year,proposal.label,proposal.summary,proposal.status,...authors.map(author=>author.name),...themes].filter(Boolean).map(String).join(' ')};
+    const principalProposal=proposal.principalProposalId?parentMap.get(`${proposal.source}\u0000${proposal.principalProposalId}`)??null:null;
+    return {proposal,authors,themes,principalProposal,scope:String(row.scope),publishedAt:String(row.published_at),origin:{url:String(row.url),fetchedAt:String(row.fetched_at),sha256:String(row.sha256),batchId},search:[proposal.type,proposal.number,proposal.year,proposal.label,proposal.summary,proposal.status,...authors.map(author=>author.name),...themes].filter(Boolean).map(String).join(' ')};
   });
 }
 
@@ -70,9 +78,11 @@ export function publishedPropositions(db:DatabaseSync,query:PropositionQuery={})
   if(query.search){const identifier=/^([A-Za-z][A-Za-z-]{0,12})\s+(\d{1,8})(?:\s*\/\s*(\d{4}))?$/.exec(query.search.trim());if(identifier){where.push("json_extract(p.payload,'$.type')=? AND CAST(json_extract(p.payload,'$.number') AS INTEGER)=?");params.push(identifier[1]!.toUpperCase(),Number(identifier[2]));if(identifier[3]){where.push("CAST(json_extract(p.payload,'$.year') AS INTEGER)=?");params.push(Number(identifier[3]))}}else{const value=`%${searchText(query.search)}%`;where.push(`(search_text(COALESCE(json_extract(p.payload,'$.label'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.summary'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.type'),'')) LIKE ? OR search_text(COALESCE(json_extract(p.payload,'$.number'),'')) LIKE ? OR EXISTS(SELECT 1 FROM proposal_authors x WHERE x.batch_id=p.batch_id AND x.proposal_id=p.external_id AND search_text(COALESCE(json_extract(x.payload,'$.name'),'')) LIKE ?))`);params.push(value,value,value,value,value)}}
   if(query.author){where.push(`EXISTS(SELECT 1 FROM proposal_authors x WHERE x.batch_id=p.batch_id AND x.proposal_id=p.external_id AND search_text(COALESCE(json_extract(x.payload,'$.name'),'')) LIKE ?)`);params.push(`%${searchText(query.author)}%`)}
   if(query.theme){where.push(`EXISTS(SELECT 1 FROM legislative_complements c JOIN active_complement_publications ac ON ac.batch_id=c.batch_id WHERE c.source=p.source AND c.proposal_id=p.external_id AND c.kind='theme' AND search_text(COALESCE(json_extract(c.payload,'$.label'),'')) LIKE ?)`);params.push(`%${searchText(query.theme)}%`)}
+  if(query.group){where.push(`json_extract(p.payload,'$.functionalGroup')=?`);params.push(query.group)}
   const clause=where.length?`WHERE ${where.join(' AND ')}`:'',from=`FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id JOIN activity_batches b ON b.id=p.batch_id JOIN raw_objects r ON r.id=p.raw_id`;
   const total=Number(db.prepare(`SELECT count(*) value ${from} ${clause}`).get(...params)?.value??0),offset=(page-1)*pageSize;
-  const pageRows=db.prepare(`SELECT p.batch_id,p.payload,b.scope,b.published_at,r.url,r.fetched_at,r.sha256 ${from} ${clause} ORDER BY CAST(COALESCE(json_extract(p.payload,'$.year'),0) AS INTEGER) DESC,json_extract(p.payload,'$.type'),CAST(COALESCE(json_extract(p.payload,'$.number'),0) AS INTEGER),p.source,p.external_id LIMIT ? OFFSET ?`).all(...params,pageSize,offset) as unknown as ProposalRow[],items=hydrateProposals(db,pageRows);
+  const pageRows=db.prepare(`SELECT p.batch_id,p.payload,b.scope,b.published_at,r.url,r.fetched_at,r.sha256 ${from} ${clause} ORDER BY CAST(COALESCE(json_extract(p.payload,'$.year'),0) AS INTEGER) DESC,json_extract(p.payload,'$.type'),CAST(COALESCE(json_extract(p.payload,'$.number'),0) AS INTEGER),p.source,p.external_id LIMIT ? OFFSET ?`).all(...params,pageSize,offset) as unknown as ProposalRow[];
+  const items=hydrateProposals(db,pageRows);
   const facetWhere=query.source?'WHERE a.source=?':'',facetParams=query.source?[query.source]:[],facetRows=db.prepare(`SELECT DISTINCT json_extract(p.payload,'$.type') type,CAST(json_extract(p.payload,'$.year') AS INTEGER) year FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id ${facetWhere}`).all(...facetParams),types=[...new Set(facetRows.flatMap(row=>row.type?[String(row.type)]:[]))].sort(),years=[...new Set(facetRows.flatMap(row=>row.year?[Number(row.year)]:[]))].sort((a,b)=>b-a);
   const coverage:DataCoverage={availability:total?'available':'unavailable',source:query.source??'multiple',period:{from:years.at(-1)?String(years.at(-1)):null,to:years[0]?String(years[0]):null,grain:'year'},batchId:[...new Set(items.map(row=>row.origin.batchId))].join(',')||null,note:'Proposições dos lotes de atividade ativos; tema, autoria e tramitação só aparecem quando publicados.',sampleSize:total};return{total,page,pageSize,items,facets:{types,years},coverage};
 }
