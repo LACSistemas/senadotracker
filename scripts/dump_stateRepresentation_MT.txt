@@ -1,0 +1,40 @@
+$.representation.coverage.batchId	'929b1f6c-889a-45db-beec-15e88f19f6d4,e4543a76-ee63-4b6b-8c5f-faadc2f5479e'	None
+$.representation.coverage.note	'Representantes dos cadastros ativos do Senado e da Câmara.'	'Observações publicadas no PostgreSQL.'
+$.representation.coverage.period.from	'2026-09-11T12:26:53.177Z'	'2026-01-01'
+$.representation.coverage.period.grain	'snapshot'	'year'
+$.representation.coverage.period.to	'2026-09-11T12:26:53.177Z'	'2026-12-31'
+$.representation.deputies[0].annualCabinetCents	'$missing'	109680749
+$.representation.deputies[0].assetYear	'$missing'	None
+$.representation.deputies[0].assetsCents	'$missing'	None
+$.representation.deputies[0].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.representation.deputies[0].cabinetCents	'$missing'	109680749
+$.representation.deputies[0].cabinetKind	'budget_spent'	'$missing'
+$.representation.deputies[0].costMonths	'$missing'	7
+$.representation.deputies[0].costPeriod	'$missing'	'2026'
+$.representation.deputies[0].expenseYear	'$missing'	2026
+$.representation.deputies[0].fullName	None	'Coronel Assis'
+$.representation.deputies[0].monthlyCostCents	'$missing'	18124223
+$.representation.deputies[0].participation	0.8360655737704918	{'participation': {'availability': 'available', 'denominator': 122, 'note': 'Votações nominais plenárias durante períodos de exercício; não mede presença.', 'numerator': 102}, 'presence': {'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 65}}
+$.representation.deputies[0].personId	'$missing'	'd14c0300-0bcd-49c3-af78-f951f2eb5893'
+$.representation.deputies[0].presence	0.9420289855072463	{'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 65}
+$.representation.deputies[0].proposalCount	'$missing'	65
+$.representation.deputies[0].proposals	'$missing'	65
+$.representation.deputies[0].publishedAt	'$missing'	'2026-09-11T12:26:53.177Z'
+$.representation.deputies[0].rapporteurships	'$missing'	0
+$.representation.deputies[0].role	'$missing'	'Deputado(a) federal'
+$.representation.deputies[0].salaryCents	'$missing'	None
+$.representation.deputies[0].salaryMonths	'$missing'	None
+$.representation.deputies[0].situation	'$missing'	'Cadastro atual'
+$.representation.deputies[0].totalCostCents	'$missing'	126869560
+$.representation.deputies[1].annualCabinetCents	'$missing'	108909942
+$.representation.deputies[1].assetYear	'$missing'	None
+$.representation.deputies[1].assetsCents	'$missing'	None
+$.representation.deputies[1].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.representation.deputies[1].cabinetCents	'$missing'	108909942
+$.representation.deputies[1].cabinetKind	'budget_spent'	'$missing'
+$.representation.deputies[1].costMonths	'$missing'	7
+$.representation.deputies[1].costPeriod	'$missing'	'2026'
+$.representation.deputies[1].expenseYear	'$missing'	2026
+$.representation.deputies[1].fullName	None	'Coronel Fernanda'
+$.representation.deputies[1].monthlyCostCents	'$missing'	17795196
+$.representation.deputies[1].participation	0.9098360655737705	{'participation': {'availability': 'available', 'denominator': 122, 'note': 'Votações nominais plenárias durante períodos de exercício; não mede presença.', 'numerator': 111}, 'presence': {'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 68}}

@@ -17,6 +17,12 @@ data/
 .env.*
 !.env.example
 *.log
+*.err
+*.out
+*.outt
+*.err.log
+*.out.log
 .vercel/
 .DS_Store
 Thumbs.db
+artifacts/

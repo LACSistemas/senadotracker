@@ -1,0 +1,1 @@
+import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'civica_postgres_lab',user:'projetoeleitor_user',password:'projetoeleitorsenha'}); console.log((await p.query("select tablename from pg_tables where schemaname='civica_poc' and tablename like 'proposal_detail_cache%'")).rows); await p.end();

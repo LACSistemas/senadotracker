@@ -1,0 +1,11 @@
+import { DatabaseSync } from 'node:sqlite';
+import pg from 'pg';
+import { writeFile } from 'node:fs/promises';
+const ids=['171682','172696','173235','173649','173694','175446'];
+const sqlite=new DatabaseSync('data/senadotracker.sqlite');
+const pool=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});
+const rows=sqlite.prepare("SELECT proposal_id,external_key,kind,occurred_at,raw_id,payload FROM legislative_complements WHERE source='senado' AND kind='resulting_norm' AND proposal_id=? ORDER BY rowid DESC");
+const canonical=ids.map(id=>{const all=rows.all(id);const row=all[0]??null;let payload={};try{payload=JSON.parse(row?.payload??'{}')}catch{} let value={};try{value=JSON.parse(String(payload.value??'{}'))}catch{} return {proposalId:id,sqliteRows:all.length,externalKey:row?.external_key??null,occurredAt:row?.occurred_at??null,label:payload.label??null,officialUrl:payload.officialUrl??null,norm:{type:value.siglaTipo??null,typeLabel:value.tipo??null,number:value.numero??null,year:value.anoAssinatura??null,description:value.descricao??null,publicationDate:value.dataPublicacao??null},rawIds:[...new Set(all.map(x=>x.raw_id))]}});
+const pgRows=(await pool.query("SELECT proposal_id::text,external_key,kind,occurred_at,payload FROM civica_poc.proposal_detail_atoms WHERE source='senado' AND kind='resulting_norm' AND proposal_id::text = ANY($1)",[ids])).rows; await pool.end();
+const out={generatedAt:new Date().toISOString(),status:'SEPARATE_RESULTING_NORM_RELATION_GAP',source:'SQLite canonical baseline; no PG base proposal/atom relation',ids,sqlite:{distinctIds:canonical.length,rows:canonical},postgres:{rows:pgRows,distinctIds:new Set(pgRows.map(r=>r.proposal_id)).size},onlySqlite:canonical.map(r=>r.proposalId),onlyPg:[...new Set(pgRows.map(r=>r.proposal_id))].filter(id=>!ids.includes(id)),classification:'RAW_EVIDENCE_ONLY_NO_PG_BASE_OR_RELATION',action:'OFFICIAL_SOURCE_REQUIRED_OR_RESULTING_NORM_COLLECTOR_BACKFILL; no manual insertion'};
+await writeFile('artifacts/r1_7_resulting_norm_reconciliation.json',JSON.stringify(out,null,2)); console.log(JSON.stringify({generatedAt:out.generatedAt,status:out.status,sqliteDistinctIds:canonical.length,pgRows:pgRows.length,onlySqlite:out.onlySqlite},null,2));

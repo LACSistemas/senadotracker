@@ -1,0 +1,1 @@
+import {DatabaseSync} from 'node:sqlite'; const d=new DatabaseSync('artifacts/postgres-parity/senadotracker-parity.sqlite',{readOnly:true}); console.log(d.prepare("select name from sqlite_master where type='table'").all().filter((x:any)=>/people|profile|party|mandate|roster|proposal_authors/.test(x.name)));

@@ -24,10 +24,10 @@ export default async function CongressSuppliersHub({searchParams}:{searchParams:
   const house=scalar(p.casa)==='CAMARA'||scalar(p.casa)==='SENADO'?(scalar(p.casa) as 'CAMARA'|'SENADO'):'all';
   const order=scalar(p.ordem)==='asc'?'asc':'desc';
   const lensValue=scalar(p.lente), lens:Lens=lensValue==='parlamentar'||lensValue==='institucional'?lensValue:'tudo';
-  const result=congressSupplierOverview({year,house});
+  const result=await congressSupplierOverview({year,house});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12">{result.message}</main></>;
   const data=result.data;
-  const mixResult=congressSupplierCategoryMix({year:data.year,house});
+  const mixResult=await congressSupplierCategoryMix({year:data.year,house});
   const mix=mixResult.status==='available'?mixResult.data:null;
   const houseLabel=house==='all'?'Senado e Câmara':house==='CAMARA'?'Câmara dos Deputados':'Senado Federal';
 

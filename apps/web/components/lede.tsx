@@ -1,8 +1,8 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import type { Lede } from '@/lib/lede';
 import { CoverageBadge } from '@/components/metrics';
 import { evalArrow, evalTextClass } from '@/lib/eval-color';
-import { houseMetrics } from '@senadotracker/db';
+import { houseMetrics } from '../../../packages/db/src/benchmarks.ts';
 import { cn } from '@/lib/utils';
 
 /** Manchete de uma linha gerada por regra, nunca adjetivada: o fato e o universo, com o selo de
@@ -17,3 +17,4 @@ export function LedeLine({lede,className}:{lede:Lede;className?:string}){
     <CoverageBadge coverage={{...lede.coverage,note:`${lede.coverage.note} n=${lede.sampleSize}.`}}/>
   </p>;
 }
+

@@ -1,0 +1,40 @@
+$.coverage.batchId	'a7b63d5e-4411-472e-8b23-3a2b54c931e2'	None
+$.coverage.note	'Cota líquida identificada no lote anual ativo; parlamentares sem lançamento não entram como gasto zero.'	'Observações publicadas no PostgreSQL.'
+$.facets.parties[0]	'AVANTE'	'MDB'
+$.facets.parties[1]	'CIDADANIA'	'PL'
+$.facets.parties[2]	'DC'	'PSDB'
+$.facets.ufs[0]	'AC'	'AP'
+$.facets.ufs[1]	'AL'	'AM'
+$.facets.ufs[2]	'AM'	'SP'
+$.items[0].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.items[0].events	'$missing'	{'length': 5, 'first': [{'at': '2023-02-01T00:00', 'description': 'Nome no início da legislatura / Partido no início da legislatura', 'key': 'a87e38d6ac2814dbdfeb394fd5276a81ea6d213146e9ef3e4b0097be20de9dab', 'legislature': '57', 'party': 'PT', 'partyId': '36844', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'role': None, 'state': None}, {'at': '2023-02-01T12:05', 'description': 'Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória', 'key': 'db5b3d152367349aaf9ecbb88fc6b447f41b822b21e2fce4693644c3227641f9', 'legislature': '57', 'party': 'PT', 'partyId': '36844', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'role': 'Titular', 'state': 'Exercício'}]}
+$.items[0].exercises	'$missing'	{'length': 2, 'first': [{'basis': 'derived', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:db5b3d152367349aaf9ecbb88fc6b447f41b822b21e2fce4693644c3227641f9', 'mandateKey': 'legislatura:57', 'precision': 'local_datetime', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'start': '2023-02-01T12:05', 'state': 'Exercício'}, {'basis': 'derived', 'cause': 'FIM_MANDATO', 'end': '2023-01-31T23:59', 'endReason': 'next_event', 'key': 'legislatura:56:453f656b9d5e3428b39245689eda657a69d2792b4140bb516583e124b1a83161', 'mandateKey': 'legislatura:56', 'precision': 'local_datetime', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'start': '2019-02-01T11:45', 'state': 'Exercício'}]}
+$.items[0].fullName	'$missing'	None
+$.items[0].historyAvailability	'$missing'	'available'
+$.items[0].mandates	'$missing'	{'length': 2, 'first': [{'end': '2027-01-31', 'key': 'legislatura:57', 'legislature': '57', 'officialId': None, 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'role': 'Titular', 'start': '2023-02-01', 'titularId': None, 'uf': 'PE'}, {'end': '2023-01-31', 'key': 'legislatura:56', 'legislature': '56', 'officialId': None, 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'role': None, 'start': '2019-02-01', 'titularId': None, 'uf': 'PE'}]}
+$.items[0].name	'$missing'	'Carlos Veras'
+$.items[0].observedAt	'$missing'	'2026-09-11T12:24:46.199Z'
+$.items[0].officialUrl	'$missing'	'https://www.camara.leg.br/deputados/204426'
+$.items[0].parties	'$missing'	{'length': 2, 'first': [{'basis': 'derived', 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:a87e38d6ac2814dbdfeb394fd5276a81ea6d213146e9ef3e4b0097be20de9dab:party', 'mandateKey': 'legislatura:57', 'party': 'PT', 'partyId': '36844', 'precision': 'local_datetime', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'start': '2023-02-01T00:00'}, {'basis': 'derived', 'end': '2023-01-31T23:59', 'endReason': 'next_event', 'key': 'legislatura:56:453f656b9d5e3428b39245689eda657a69d2792b4140bb516583e124b1a83161:party', 'mandateKey': 'legislatura:56', 'party': 'PT', 'partyId': '36844', 'precision': 'local_datetime', 'rawId': '196fadfc-348f-4c0a-bb33-b2b949fd0f89', 'start': '2019-02-01T11:45'}]}
+$.items[0].party	'$missing'	'PT'
+$.items[0].personId	'$missing'	'74107f65-c850-420c-bdd8-b6fab862f2b0'
+$.items[0].photoUrl	'$missing'	'https://www.camara.leg.br/internet/deputado/bandep/204426.jpg'
+$.items[0].profile.batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.items[0].profile.personId	'$missing'	'74107f65-c850-420c-bdd8-b6fab862f2b0'
+$.items[0].profile.publishedAt	'$missing'	'2026-09-11T12:26:53.177Z'
+$.items[0].publishedAt	'$missing'	'2026-09-11T12:26:53.177Z'
+$.items[0].rawId	'$missing'	'746921a0-2b42-4183-88d1-11b163982cc7'
+$.items[0].source	'$missing'	'camara'
+$.items[0].uf	'$missing'	'PE'
+$.items[1].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.items[1].events	'$missing'	{'length': 39, 'first': [{'at': '2023-02-01T00:00', 'description': 'Nome no início da legislatura / Partido no início da legislatura', 'key': '4f32d8d980558170b872c75f094e9881b77ddb2d2081a66038520226ecc31053', 'legislature': '57', 'party': 'PSDB', 'partyId': '36835', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'role': None, 'state': None}, {'at': '2023-02-01T12:05', 'description': 'Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória', 'key': '39e9b1f0e01c7cfe7b966a5f30734f48b7ab07c74dbc2b74c91e658631b64d1e', 'legislature': '57', 'party': 'PSDB', 'partyId': '36835', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'role': 'Titular', 'state': 'Exercício'}]}
+$.items[1].exercises	'$missing'	{'length': 9, 'first': [{'basis': 'derived', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:39e9b1f0e01c7cfe7b966a5f30734f48b7ab07c74dbc2b74c91e658631b64d1e', 'mandateKey': 'legislatura:57', 'precision': 'local_datetime', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'start': '2023-02-01T12:05', 'state': 'Exercício'}, {'basis': 'derived', 'cause': 'Licença', 'end': '2019-02-06T14:00', 'endReason': 'next_event', 'key': 'legislatura:56:1a1d4b155f11d65d77de9a47cf861513dcb41ed99181f9a2bf9c72e78bccbd9c', 'mandateKey': 'legislatura:56', 'precision': 'local_datetime', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'start': '2019-02-05T15:15', 'state': 'Exercício'}]}
+$.items[1].fullName	'$missing'	None
+$.items[1].historyAvailability	'$missing'	'available'
+$.items[1].mandates	'$missing'	{'length': 6, 'first': [{'end': '2027-01-31', 'key': 'legislatura:57', 'legislature': '57', 'officialId': None, 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'role': 'Titular', 'start': '2023-02-01', 'titularId': None, 'uf': 'MS'}, {'end': '2023-01-31', 'key': 'legislatura:56', 'legislature': '56', 'officialId': None, 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'role': None, 'start': '2019-02-01', 'titularId': None, 'uf': 'MS'}]}
+$.items[1].name	'$missing'	'Geraldo Resende'
+$.items[1].observedAt	'$missing'	'2026-09-11T12:24:43.529Z'
+$.items[1].officialUrl	'$missing'	'https://www.camara.leg.br/deputados/74374'
+$.items[1].parties	'$missing'	{'length': 9, 'first': [{'basis': 'derived', 'end': '2026-04-29T22:10', 'endReason': 'next_event', 'key': 'legislatura:57:4f32d8d980558170b872c75f094e9881b77ddb2d2081a66038520226ecc31053:party', 'mandateKey': 'legislatura:57', 'party': 'PSDB', 'partyId': '36835', 'precision': 'local_datetime', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'start': '2023-02-01T00:00'}, {'basis': 'derived', 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:9095e7443f72103f0dae86e4d245d188b085a2a252254017c571bf57b83a87c9:party', 'mandateKey': 'legislatura:57', 'party': 'UNIÃO', 'partyId': '38009', 'precision': 'local_datetime', 'rawId': '738b60c6-0293-43f6-90fe-3fdfaf707307', 'start': '2026-04-29T22:10'}]}
+$.items[1].party	'$missing'	'UNIÃO'
+$.items[1].personId	'$missing'	'32c4fa7d-b67c-4afe-8946-0aaada2a74bd'

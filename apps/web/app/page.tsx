@@ -37,11 +37,11 @@ const judiciaryItems: Array<[string, string, LucideIcon]> = [
 export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
-  const overview = homeOverview();
+  const overview = await Promise.resolve(homeOverview());
   const counts = overview.status === 'available'
     ? overview.data.counts
     : { senators: 81, deputies: 513, parties: 0 };
-  const live = homeHighlights();
+  const live = await Promise.resolve(homeHighlights());
   const data = live.status === 'available' ? live.data : null;
   // O número da primeira dobra é o custo mensal mediano da Câmara — a Casa com universo maior — e a
   // frase que o acompanha sai da mesma função que gera a lede do perfil.

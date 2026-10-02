@@ -1,0 +1,40 @@
+$.activity.appointments[0].rawId	'989723e8-6a17-456e-b36a-c276c27b5ef6'	'1431a140-4d46-4763-b483-98792e132570'
+$.activity.appointments[1].rawId	'77c98a54-93c6-4095-90fc-5f6e906b4561'	'a17ef68b-26ab-4d1d-ada7-f75ff174b461'
+$.activity.appointments[2].rawId	'77c98a54-93c6-4095-90fc-5f6e906b4561'	'a17ef68b-26ab-4d1d-ada7-f75ff174b461'
+$.complement.summaries[0].occurredAt	'2026-09-18'	'2026-09-30'
+$.complement.summaries[0].personExternalId	None	'107283'
+$.complement.summaries[0].rawId	'7bd02ee6-bc26-4259-bd40-1926b09190e0'	'pgraw:8ee295e3380764e613f2b7fee006175a933dd8a9706d74c299143fe2dea5299e'
+$.complement.summaries[0].value	'{"source":"camara","year":2026,"observedAt":"2026-09-18T20:01:56.290Z","backlog":3137,"backlogUniverse":"Proposições distintas com situação de tramitação no catálogo ativo publicado da Câmara.","processing":{"meanDays":29.953931203931205,"medianDays":19,"sampleSize":3256,"eligible":4306,"coverage":0.7561542034370645,"terminalDefinition":"Primeiro desfecho normativo datado ou, para situação final, a última movimentação oficial datada após a apresentação."}}'	'{"norm":0,"year":2026,"agenda":7124,"source":"camara","backlog":44356,"decision":0,"received":43971,"observedAt":"2026-09-30T21:21:04.696Z","processing":{"coverage":1,"eligible":27,"meanDays":62.74074074074074,"medianDays":42,"sampleSize":27,"terminalDefinition":"Primeiro evento datado de sanção, promulgação, transformação/conversão em norma ou veto após a apresentação."},"voteEvents":0,"deliberated":0,"agendaCoverage":{"to":"2026-09-03","from":"2026-01-01","year":2026,"items":10028,"source":"GET /eventos/{id}/pauta","matters":7124,"published":false},"backlogUniverse":"Proposições distintas do catálogo ativo publicado.","deliberatedReceived":0}'
+$.complement.summaries[1].personExternalId	None	'107283'
+$.profile.assetYear	'$missing'	None
+$.profile.assetsCents	'$missing'	None
+$.profile.cabinetCents	'$missing'	None
+$.profile.costMonths	'$missing'	None
+$.profile.costPeriod	'$missing'	None
+$.profile.expenseCents	'$missing'	None
+$.profile.fullName	None	'Gleisi Hoffmann'
+$.profile.monthlyCostCents	'$missing'	None
+$.profile.participation	'$missing'	{'keys': ['availability', 'denominator', 'note', 'numerator'], 'counts': {}}
+$.profile.presence	'$missing'	{'keys': ['availability', 'denominator', 'note', 'numerator'], 'counts': {}}
+$.profile.proposalCount	'$missing'	None
+$.profile.proposals	'$missing'	None
+$.profile.rapporteurships	'$missing'	0
+$.profile.role	'$missing'	'Deputado(a) federal'
+$.profile.situation	'$missing'	'Cadastro atual'
+$.profile.staff	'$missing'	None
+$.profile.totalCostCents	'$missing'	None
+$.source.contentType	'application/json'	'$missing'
+$.source.fetchedAt	'2026-09-11T12:24:43.529Z'	'$missing'
+$.source.sha256	'bdbb54ebefc150c7f8317cf38ffedaf873fc0dd66c3606402866b1e3a8f3e3c7'	''
+$.source.url	'https://dadosabertos.camara.leg.br/api/v2/deputados?itens=100&pagina=1&ordem=ASC&ordenarPor=id'	''
+$.subsidy.note	'Valor bruto normativo mensal; descontos e pagamentos eventuais não estão incluídos.'	'$missing'
+$.subsidy.publishedAt	'2022-12-22'	'$missing'
+$.subsidy.unit	'month'	'$missing'
+$.votes[0].internalProposal	{'keys': ['id', 'source'], 'counts': {}}	'$missing'
+$.votes[0].origin.fetchedAt	'2026-09-23T20:04:13.559Z'	''
+$.votes[0].origin.publishedAt	'2026-09-23T20:04:16.029Z'	''
+$.votes[0].origin.sha256	'7f6f2d8ffcb1d22dce23a61fcf3e05a8fad2ed3630f48dc7fc9b8a579741e005'	''
+$.votes[0].origin.url	'https://dadosabertos.camara.leg.br/arquivos/votacoesVotos/json/votacoesVotos-2026.json'	''
+$.votes[1].internalProposal	{'keys': ['id', 'source'], 'counts': {}}	'$missing'
+$.votes[1].origin.fetchedAt	'2026-09-23T20:04:13.559Z'	''
+$.votes[1].origin.publishedAt	'2026-09-23T20:04:16.029Z'	''

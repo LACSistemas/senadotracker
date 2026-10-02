@@ -1,0 +1,26 @@
+$.cabinetPanorama.financial.median	42401338	41982187
+$.cabinetPanorama.financial.p10	26595935.6	24788660
+$.cabinetPanorama.financial.p25	32075791	31958569
+$.cabinetPanorama.financial.p75	52966971	52761632
+$.cabinetPanorama.financial.p90	70032879.50000006	69381025
+$.operations.processingTime.note	'Média observada em n=11; cobertura parcial, não representa ainda todas as matérias concluídas pela Casa. Primeiro evento datado de sanção, promulgação, transformação/conversão em norma ou veto após a apresentação. Cobertura: 100% do universo terminal identificado.'	'Média observada em n=11; cobertura parcial, ainda não representa todas as matérias concluídas. Primeiro evento datado de sanção, promulgação, transformação/conversão em norma ou veto após a apresentação.'
+$.operations.stages.agendaCoverage.to	'2026-09-25'	'2026-09-02'
+$.operations.updatedAt	'2026-09-15T18:48:40.890Z'	'2026-09-30T22:45:40.038Z'
+$.panorama.activity.coverage.availability	'partial'	'available'
+$.panorama.activity.coverage.batchId	'b6f0735b-9c37-4a3c-9611-f8779c14e414'	'ca5b4bb4-f6c4-4528-b0ef-db84163a80fe'
+$.panorama.activity.coverage.note	'Atividade dos parlamentares do cadastro atual (current-roster-person-activity); cobre os perfis, mas não equivale ao catálogo integral de matérias recebidas pela Casa.'	'Autoria, relatoria e vínculo com lei permanecem métricas separadas.'
+$.panorama.presence.coverage.batchId	'c33634bb-bae2-495d-92a5-b8cd1ca72541'	'7c73fa09-5a52-4d5e-b25f-b7e9ae64c4a2'
+$.result.items[0].cabinetFinancialCents	49625460	45294353
+$.result.items[1].cabinetFinancialCents	31958569	28747403
+$.result.items[2].cabinetFinancialCents	93670730	84076930
+$.topics.classified	864	857
+$.topics.coverage.batchId	'b6f0735b-9c37-4a3c-9611-f8779c14e414'	'senado:current-roster-person-activity:b6f0735b-9c37-4a3c-9611-f8779c14e414'
+$.topics.coverage.sampleSize	864	857
+$.topics.items[0].count	478	472
+$.topics.items[0].share	0.5532407407407407	0.5507584597432905
+$.topics.items[1].share	0.3055555555555556	0.3080513418903151
+$.topics.items[2].share	0.034722222222222224	0.03500583430571762
+$.topics.leading.share	0.3055555555555556	0.3080513418903151
+$.topics.least.count	1	19
+$.topics.least.label	'Política Social / Trabalho e Emprego / Remuneração'	'Economia e Desenvolvimento / Finanças Públicas / Operação Financeira'
+$.topics.least.share	0.0011574074074074073	0.022170361726954493

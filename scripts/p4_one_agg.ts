@@ -1,0 +1,2 @@
+import {openDatabase,publishedParticipation,getPublished} from '../packages/db/src/index.ts';const d=openDatabase('artifacts/postgres-parity/senadotracker-parity.sqlite',true);const x:any=d.prepare("select p.external_id from profiles p join active_publications a on a.batch_id=p.batch_id where a.source='camara' limit 1").get();console.log(x,getPublished(d,'camara',x.external_id));try{console.log(publishedParticipation(d,'camara',x.external_id,2026))}catch(e){console.error(e)}
+

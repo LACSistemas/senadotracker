@@ -1,8 +1,9 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import type {ReactNode} from 'react';
 import {Download,FileText,Gem,Info,Search,UserMinus,Users} from 'lucide-react';
 import {quantile,type Source} from '@senadotracker/domain';
-import {houseMetrics,type DashboardQuery,type DashboardRow,type DashboardSort,type HouseMetricKey,type HouseMetricSummary} from '@senadotracker/db';
+import {houseMetrics,type HouseMetricKey,type HouseMetricSummary} from '../../../../../packages/db/src/benchmarks.ts';
+import type {DashboardQuery,DashboardRow,DashboardSort} from '@senadotracker/db';
 import {houseMetricSummary,rankingsDashboard} from '@/lib/data';
 import {groupRankings,type GroupRow} from '@/lib/group-rankings';
 import {LegislativeSubnav} from '@/components/legislative-subnav';
@@ -52,7 +53,7 @@ export default async function RankingsPage({searchParams}:{searchParams:Promise<
     return <div className="mt-6 border-y bg-white"><div className="page-shell py-3 text-right text-xs text-slate-500">{date?`Dados atualizados em ${date}.`:'Data de atualização não disponível.'} <span className="ml-2">Período de gastos: {year}.</span></div></div>};
 
   if(mode!=='parlamentares'){
-    const result=groupRankings(mode,groupHouse(query.source),query.year);
+    const result=await groupRankings(mode,groupHouse(query.source),query.year);
     if(result.status==='unavailable')return unavailable(result.message);
     const data=result.data,isParty=mode==='partidos';
     // Cada grupo abre a lista de gente por trás da mediana: o clique cai no modo Parlamentares já filtrado,
@@ -71,14 +72,15 @@ export default async function RankingsPage({searchParams}:{searchParams:Promise<
     </section></div>);
   }
 
-  const result=rankingsDashboard(query);
+  const result=await Promise.resolve(rankingsDashboard(query));
   if(result.status==='unavailable')return unavailable(result.message);
   const data=result.data,from=(data.page-1)*data.pageSize+1,to=Math.min(data.page*data.pageSize,data.total),pages=Math.max(1,Math.ceil(data.total/data.pageSize)),pageNumbers=[...new Set([1,data.page-1,data.page,data.page+1,pages].filter(x=>x>=1&&x<=pages))].sort((a,b)=>a-b);
   // Escala da Casa inteira, nunca do recorte filtrado: "cota alta para a Câmara", não "alta entre os 8
   // do Acre". Filtrar não muda barra nem cor, e o piso de amostra nunca colapsa. Cota de senador e de
   // deputado não são comparáveis, então cada Casa tem a sua — uma escala única achataria a outra.
   const houses=[...new Set(data.allItems.map(row=>row.source))];
-  const scales=Object.fromEntries(houses.flatMap(house=>{const summary=houseMetricSummary(house,data.year);return summary.status==='available'?[[house,summary.data.metrics] as const]:[]})) as Partial<Record<Source,HouseMetricSummary['metrics']>>;
+  const summaries=await Promise.all(houses.map(async house=>[house,await houseMetricSummary(house,data.year)] as const));
+  const scales=Object.fromEntries(summaries.flatMap(([house,summary])=>summary.status==='available'?[[house,summary.data.metrics] as const]:[])) as Partial<Record<Source,HouseMetricSummary['metrics']>>;
   const cell=(row:DashboardRow,key:HouseMetricKey)=>{
     const metric=scales[row.source]?.[key],value=row[key];
     if(!metric||typeof value!=='number')return{tone:'unknown' as EvalTone,max:0,outlier:false};
@@ -106,7 +108,7 @@ export default async function RankingsPage({searchParams}:{searchParams:Promise<
     {key:'rank',label:'#',sticky:0,render:(_row,index)=><span className="text-slate-500">{(data.page-1)*data.pageSize+index+1}</span>},
     {key:'name',label:'Nome',sticky:1,...sortable('Nome','name'),render:row=><Link href={profile(row)} className="flex items-center gap-2 font-semibold text-slate-900 hover:underline"><span className="relative size-8 shrink-0 overflow-hidden rounded-full bg-muted"><OfficialPortrait src={row.photoUrl} name={row.name} sizes="32px"/></span><span className="truncate">{row.name}</span></Link>},
     {key:'party',label:'Partido',sticky:2,render:row=><span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-1"><PartyLogo party={row.party} size={16}/>{row.party}</span>},
-    // `Cargo` saiu: repetia `Casa` ("Senador(a)" ↔ Senado) e era a primeira a ser comprimida ao lado das
+    // `Cargo` saiu: repetia `Casa` ("Senador(a)" â†” Senado) e era a primeira a ser comprimida ao lado das
     // três colunas fixas. O CSV segue exportando o campo, porque lá não há disputa de largura.
     {key:'house',label:'Casa',render:houseBadge},
     {key:'uf',label:'UF',render:row=>row.uf},
@@ -127,3 +129,4 @@ export default async function RankingsPage({searchParams}:{searchParams:Promise<
   <StickyTable caption="Parlamentares filtrados e seus indicadores" columns={columns} rows={data.items} rowKey={row=>`${row.source}:${row.externalId}`} widths={stickyWidths} minWidth={1400}/>{!data.items.length?<p className="py-10 text-center text-sm text-slate-500">Nenhum parlamentar encontrado para estes filtros.</p>:null}
   <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-sm text-slate-600"><span>{data.total?`Mostrando ${Math.min(from,data.total)} a ${to} de ${data.total} parlamentares`:'Nenhum parlamentar encontrado'}</span><nav aria-label="Paginação dos parlamentares" className="flex items-center gap-1"><Link aria-disabled={data.page<=1} className="rounded-lg border px-3 py-2 aria-disabled:pointer-events-none aria-disabled:opacity-40" href={href({page:data.page-1})}>‹</Link>{pageNumbers.map((page,index)=><span key={page} className="flex items-center gap-1">{index>0&&page-pageNumbers[index-1]!>1?<span className="px-1">…</span>:null}<Link aria-current={page===data.page?'page':undefined} className={`rounded-lg border px-3 py-2 ${page===data.page?'border-emerald-800 bg-emerald-800 text-white':''}`} href={href({page})}>{page}</Link></span>)}<Link aria-disabled={data.page>=pages} className="rounded-lg border px-3 py-2 aria-disabled:pointer-events-none aria-disabled:opacity-40" href={href({page:data.page+1})}>›</Link></nav></div></section></div>);
 }
+

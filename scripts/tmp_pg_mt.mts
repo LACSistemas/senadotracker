@@ -1,0 +1,1 @@
+﻿import { stateRepresentation } from '../apps/web/lib/data-postgres-wave4.ts'; const x=await stateRepresentation('MT'); console.log(x.data.representation.deputies.map((p:any)=>[p.externalId,p.name])); process.exit(0);

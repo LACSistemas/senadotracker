@@ -18,7 +18,7 @@ const scalar=(v:string|string[]|undefined)=>typeof v==='string'?v:undefined;
 const houseName=(institution:string)=>institution==='CAMARA'?'Câmara dos Deputados':institution==='SENADO'?'Senado Federal':institution;
 
 export default async function GlobalSupplierPage({params,searchParams}:{params:Promise<{id:string}>;searchParams:Promise<Params>}){
-  const {id}=await params,p=await searchParams,data=supplierGlobalDetail(id);
+  const {id}=await params,p=await searchParams,data=await supplierGlobalDetail(id);
   if(data.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor indisponível" description={data.message}/></main></>;
   if(!data.data)return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor não encontrado" description="Não há uma identidade pública compatível com este identificador."/></main></>;
   const detail=data.data;
@@ -67,9 +67,9 @@ export default async function GlobalSupplierPage({params,searchParams}:{params:P
   const contractCards:ContractCardData[]=contracts.map(row=>({id:String(row.id),institution:houseName(String(row.institution)),number:`${row.contract_number??'Nº não publicado'}${row.contract_year?`/${row.contract_year}`:''}`,object:row.object??'',originalCents:row.original_value_scaled,currentCents:row.current_published_value_scaled,semantics:row.current_value_semantics,signedAt:row.signed_at}));
 
   // Enriquecimento (antes classificado como Tier B): as tabelas abaixo já são chaveadas pelo supplier_id global, sem precisar de bridge por CNPJ+fonte.
-  const storyResult=supplierGlobalStory(id,selectedYear);
+  const storyResult=await supplierGlobalStory(id,selectedYear);
   const story=storyResult.status==='available'?storyResult.data:null;
-  const networkResult=supplierNetwork(id,{...(selectedYear!==null?{year:selectedYear}:{}),house:'all',limit:100});
+  const networkResult=await supplierNetwork(id,{...(selectedYear!==null?{year:selectedYear}:{}),house:'all',limit:100});
   const payers=networkResult.status==='available'&&networkResult.data?networkResult.data.parliamentarians:[];
   const payersTotalCents=networkResult.status==='available'&&networkResult.data?networkResult.data.totalCents:0;
   const top1Share=payers.length&&payersTotalCents?payers[0]!.valueCents/payersTotalCents:null;

@@ -1,0 +1,40 @@
+$.costs.median	22950000.5	22559169
+$.costs.p10	11822407.8	11803930
+$.costs.p25	16622653	16679220
+$.costs.p75	28243811.5	28424482
+$.costs.p90	31018061.900000002	31086012
+$.coverage.note	'Representação usa cadastro ativo; métricas anuais usam apenas observações disponíveis no mesmo ano e preservam diferenças entre Casas.'	'Observações publicadas no PostgreSQL.'
+$.coverage.period.to	'2026-09-30'	'2026-12-31'
+$.financial.camara.cabinetCents	6722259480	0
+$.financial.camara.expenseCents	1415582073	1638719199
+$.financial.camara.months.length	7	0
+$.financial.camara.people	76	98
+$.financial.camara.personMonths	461	0
+$.financial.camara.salaryCents	2137481359	0
+$.financial.camara.staff	0	2162
+$.financial.camara.staffObserved	0	98
+$.financial.camara.totalCents	10275322912	1638719199
+$.financial.senado.cabinetCents	513343025	0
+$.financial.senado.expenseCents	22170072	384781680
+$.financial.senado.months.length	1	0
+$.financial.senado.people	12	16
+$.financial.senado.personMonths	12	0
+$.financial.senado.salaryCents	55639428	0
+$.financial.senado.staff	0	386
+$.financial.senado.staffObserved	0	16
+$.financial.senado.totalCents	591152525	384781680
+$.panorama.expenseMedianCents	22950000.5	22559169
+$.panorama.participationMedian	0.8565573770491803	0.8524590163934426
+$.panorama.proposals	11612	23436
+$.panorama.rapporteurships	3040	0
+$.people[0].costMonths	7	263
+$.people[0].costTotalCents	164662336	27674014
+$.people[0].expenseCents	27674014	'$missing'
+$.people[0].participation	0.8934426229508197	{'availability': 'available', 'denominator': 122, 'note': 'Votações nominais plenárias durante períodos de exercício; não mede presença.', 'numerator': 109}
+$.people[0].presence	0.9710144927536232	{'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 67}
+$.people[0].profile.batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.people[0].profile.personId	'$missing'	'f4b1a97e-34ad-4268-aad8-77e2cbf19ca3'
+$.people[0].profile.publishedAt	'$missing'	'2026-09-11T12:26:53.177Z'
+$.people[0].staff	None	18
+$.people[1].costMonths	7	17
+$.people[1].costTotalCents	154802774	16967350

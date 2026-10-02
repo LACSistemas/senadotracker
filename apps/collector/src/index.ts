@@ -5,16 +5,17 @@ import { parseInstitutionalCli } from './institutional-cli.ts';
 
 const args = process.argv.slice(2);
 const institutionalOptions=parseInstitutionalCli(args);
-const isCollect = args.length === 3 && args[0] === 'collect' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!);
-const isStatus = args.length === 1 && args[0] === 'status';
-const isExpense = args.length === 5 && args[0] === 'collect-expenses' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!) && args[3] === '--year' && /^20\d{2}$/.test(args[4]!);
-const isVotes = args.length === 5 && args[0] === 'collect-votes' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!) && args[3] === '--year' && /^20\d{2}$/.test(args[4]!);
-const isActivity = args.length === 3 && args[0] === 'collect-activity' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!);
-const isPresence = args.length === 5 && args[0] === 'collect-presence' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!) && args[3] === '--year' && /^20\d{2}$/.test(args[4]!);
-const isComplement = args.length === 3 && args[0] === 'collect-complement' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!);
 const option=(name:string)=>{const index=args.indexOf(name);return index>=0?args[index+1]:undefined};
+const sourceArg = option('--source') ?? (args[1] === '--source' ? args[2] : undefined);
+const isCollect = args[0] === 'collect' && ['senado','camara','all'].includes(sourceArg ?? '');
+const isStatus = args.length === 1 && args[0] === 'status';
+const isExpense = args[0] === 'collect-expenses' && ['senado','camara','all'].includes(option('--source') ?? args[2] ?? '') && /^20\d{2}$/.test(option('--year') ?? args[4] ?? '');
+const isVotes = args[0] === 'collect-votes' && ['senado','camara','all'].includes(sourceArg ?? '') && /^20\d{2}$/.test((option('--year') ?? (args[3] === '--year' ? args[4] : '')) ?? '');
+const isActivity = args[0] === 'collect-activity' && ['senado','camara','all'].includes(sourceArg ?? '');
+const isPresence = args[0] === 'collect-presence' && ['senado','camara','all'].includes(sourceArg ?? '') && /^20\d{2}$/.test((option('--year') ?? (args[3] === '--year' ? args[4] : '')) ?? '');
+const isComplement = args.length === 3 && args[0] === 'collect-complement' && args[1] === '--source' && ['senado','camara','all'].includes(args[2]!);
 const isCabinet = args[0] === 'import-cabinet' && option('--source')==='senado' && /^20\d{2}-(0[1-9]|1[0-2])$/.test(option('--competence')??'') && Boolean(option('--file'));
-const isElection=args[0]==='import-elections'&&/^20(18|22)$/.test(option('--year')??'')&&Boolean(option('--candidates'))&&Boolean(option('--assets'));
+const isElection=args[0]==='import-elections'&&/^20(18|22)$/.test(option('--year')??'');
 const isCamaraStaff=args[0]==='collect-camara-staff';
 const isCamaraBudget=args[0]==='collect-camara-budget'&&/^20\d{2}$/.test(option('--year')??'');
 const isSenateStaff=args[0]==='collect-senate-staff'&&/^20\d{2}$/.test(option('--year')??'');
@@ -32,12 +33,56 @@ const isPropositionEnrichment=args[0]==='collect-proposition-enrichment'&&['sena
 const houseOperationsSource=option('--source')??(args[0]==='collect-house-operations'?args[1]:undefined);
 const houseOperationsYear=option('--year')??(args[0]==='collect-house-operations'?args[2]:undefined);
 const isHouseOperations=args[0]==='collect-house-operations'&&['senado','camara','all'].includes(houseOperationsSource??'')&&/^20\d{2}$/.test(houseOperationsYear??'');
-if (!institutionalOptions && !isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isThemes && !isPriceIndex && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations) {
+const postgresHouseSource=option('--source')??(args[0]==='collect-house-operations-pg'?args[1]:undefined);
+const postgresHouseYear=option('--year')??(args[0]==='collect-house-operations-pg'?args[2]:undefined);
+const isPostgresHouseOperations=args[0]==='collect-house-operations-pg'&&['senado','camara','all'].includes(postgresHouseSource??'')&&/^20\d{2}$/.test(postgresHouseYear??'');
+const isPostgresCollectorCommand = isCollect || isActivity || isExpense || isElection || isComplement || isPropositionEnrichment || isThemes || isVotes || isPresence || isSenateAgenda || isCamaraAgenda || isHouseOperations || isPostgresHouseOperations || isCamaraPropositions || isCamaraMovements || isSenateProcesses || args[0] === 'refresh-proposition-operational' || ['rebuild-supplier-aggregates','collect-institutional-suppliers','sync-institutional-suppliers'].includes(institutionalOptions?.command ?? '');
+if (isPostgresCollectorCommand) {
+  const { collectSourcePostgres, collectActivityPostgres, refreshPropositionOperationalComponentsPostgres, refreshPropositionEnrichmentPostgres, collectCommitteesPostgres, collectVotesPresencePostgres, collectExpensesPostgres, refreshSupplierDerivedPostgres, collectElectionsPostgres, collectInstitutionalSuppliersPostgres } = await import('./postgres-collector.ts');
+  const selected = (option('--source') ?? (args[0] === 'collect-themes' ? 'camara' : (args[2] === 'all' ? 'all' : args[2]))) as 'senado'|'camara'|'all'|undefined;
+  if (args[0] === 'collect-expenses') {
+    const requested = (option('--source') ?? args[2]) as 'senado'|'camara'|'all'; const year = Number(option('--year') ?? args[4]);
+    for (const source of (requested === 'all' ? ['senado','camara'] : [requested]) as ('senado'|'camara')[]) console.log(JSON.stringify(await collectExpensesPostgres(source, year, { limit: Number(option('--limit')) || 100, smoke: args.includes('--smoke') }), null, 2));
+  } else if (args[0] === 'import-elections') {
+    console.log(JSON.stringify(await collectElectionsPostgres(Number(option('--year')), { limit: Number(option('--limit')) || 100, smoke: args.includes('--smoke') }), null, 2));
+  } else if (institutionalOptions?.command === 'collect-institutional-suppliers' || institutionalOptions?.command === 'sync-institutional-suppliers') {
+    const supplierYear = Number(option('--year')); console.log(JSON.stringify({ suppliers: await collectInstitutionalSuppliersPostgres({ ...(supplierYear > 0 ? { year: supplierYear } : {}), smoke: args.includes('--smoke') }), derived: await refreshSupplierDerivedPostgres(supplierYear > 0 ? supplierYear : undefined) }, null, 2));
+  } else if (institutionalOptions?.command === 'rebuild-supplier-aggregates') {
+    console.log(JSON.stringify(await refreshSupplierDerivedPostgres(Number(option('--year')) || undefined), null, 2));
+  } else if (isPostgresHouseOperations) {
+    const { rebuildHouseOperationsPostgres } = await import('./postgres-house-operations.ts');
+    const requested = postgresHouseSource as 'senado'|'camara'|'all'; const year = Number(postgresHouseYear);
+    const cacheFile = option('--cache-file');
+    for (const source of (requested === 'all' ? ['senado','camara'] : [requested]) as ('senado'|'camara')[]) console.log(JSON.stringify(await rebuildHouseOperationsPostgres(source, year, { ...(cacheFile ? { cacheFile } : {}), publish: args.includes('--publish') }), null, 2));
+  } else if (args[0] === 'collect') {
+    for (const source of (selected === 'all' ? ['senado','camara'] : [selected]) as ('senado'|'camara')[]) if (source) { const limit = Number(option('--limit')); console.log(JSON.stringify(await collectSourcePostgres({ source, ...(Number.isFinite(limit) && limit > 0 ? { limit } : {}), smoke: args.includes('--smoke'), progress: message => console.error(message) }), null, 2)); }
+  } else if (args[0] === 'collect-activity') {
+    for (const source of (selected === 'all' ? ['senado','camara'] : [selected]) as ('senado'|'camara')[]) if (source) { const scope = option('--scope'); console.log(JSON.stringify(await collectActivityPostgres(source, { ...(scope ? { scope } : {}), smoke: args.includes('--smoke') }), null, 2)); }
+  } else if (args[0] === 'collect-votes' || args[0] === 'collect-presence') {
+    const year = Number(option('--year') ?? args[4]); for (const source of (selected === 'all' ? ['senado','camara'] : [selected]) as ('senado'|'camara')[]) if (source) console.log(JSON.stringify(await collectVotesPresencePostgres(source, year, { limit: Number(option('--limit')) || 100, smoke: args.includes('--smoke') }), null, 2));
+  } else if (args[0] === 'collect-senate-agenda' || args[0] === 'collect-camara-agenda') {
+    const source = args[0] === 'collect-senate-agenda' ? 'senado' : 'camara'; console.log(JSON.stringify(await collectCommitteesPostgres(source, { limit: Number(option('--limit')) || 50, smoke: args.includes('--smoke') }), null, 2));
+  } else if (args[0] === 'refresh-proposition-operational') {
+    console.log(JSON.stringify(await refreshPropositionOperationalComponentsPostgres(Number(option('--year')) || new Date().getUTCFullYear()), null, 2));
+  } else if (isComplement || isCamaraPropositions || isCamaraMovements || isSenateProcesses || isHouseOperations) {
+    const requested = (option('--source') ?? (isSenateProcesses ? 'senado' : isHouseOperations ? houseOperationsSource : 'camara')) as 'senado'|'camara'|'all';
+    const sources = (requested === 'all' ? ['senado','camara'] : [requested]) as ('senado'|'camara')[];
+    const limit = Number(option('--limit')) || 100;
+    for (const source of sources) if (source) console.log(JSON.stringify(await refreshPropositionEnrichmentPostgres(source, limit), null, 2));
+  } else {
+    const sources = (selected === 'all' ? ['senado','camara'] : [selected]) as ('senado'|'camara')[];
+    const limit = Number(option('--limit')) || 100;
+    for (const source of sources) if (source) console.log(JSON.stringify(await refreshPropositionEnrichmentPostgres(source, limit), null, 2));
+  }
+} else if (!institutionalOptions && !isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isThemes && !isPriceIndex && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations) {
   const result = runCli(args);
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);
   process.exitCode = result.exitCode;
 } else {
+  if (process.env.CIVICA_ALLOW_LEGACY_SQLITE_RUNTIME !== 'true') {
+    throw new Error('SQLite runtime is disabled. Use a PostgreSQL collector command or explicitly set CIVICA_ALLOW_LEGACY_SQLITE_RUNTIME=true only for migration/test tooling.');
+  }
   // Delay SQLite import so help/errors are side-effect free.
   const { openDatabase, listPublished } = await import('@senadotracker/db');
   const projectDirectory=resolve(fileURLToPath(new URL('../../../',import.meta.url)));

@@ -1,0 +1,1 @@
+import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'}); console.log((await p.query("select source,scope,batch_id from civica.active_complement_publications where source in ('senado','camara') order by source,scope")).rows); await p.end();

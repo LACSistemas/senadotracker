@@ -16,7 +16,7 @@ const fullMoney=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'})
 const months=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 
 export default async function ParliamentarySupplierMarket({searchParams}:{searchParams:Promise<Params>}){
-  const p=await searchParams,year=Number(scalar(p.ano)??new Date().getFullYear()),house:'all'|'CAMARA'|'SENADO'=scalar(p.casa)==='CAMARA'||scalar(p.casa)==='SENADO'?(scalar(p.casa) as 'CAMARA'|'SENADO'):'all',search=scalar(p.busca)?.trim()??'',category=scalar(p.categoria)?.trim()??'',result=supplierMarket({year:Number.isInteger(year)?year:new Date().getFullYear(),house,search,category,limit:1000});
+  const p=await searchParams,year=Number(scalar(p.ano)??new Date().getFullYear()),house:'all'|'CAMARA'|'SENADO'=scalar(p.casa)==='CAMARA'||scalar(p.casa)==='SENADO'?(scalar(p.casa) as 'CAMARA'|'SENADO'):'all',search=scalar(p.busca)?.trim()??'',category=scalar(p.categoria)?.trim()??'',result=await supplierMarket({year:Number.isInteger(year)?year:new Date().getFullYear(),house,search,category,limit:1000});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12">{result.message}</main></>;
   const data=result.data;
   const houseLabel=house==='CAMARA'?'Câmara':house==='SENADO'?'Senado':'Congresso';

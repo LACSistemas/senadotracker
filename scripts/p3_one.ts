@@ -1,0 +1,1 @@
+import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'civica_postgres_lab',user:'projetoeleitor_user',password:'projetoeleitorsenha'}); console.log((await p.query('select * from civica_committees_poc.agenda_items limit 1')).rows[0]); await p.end();

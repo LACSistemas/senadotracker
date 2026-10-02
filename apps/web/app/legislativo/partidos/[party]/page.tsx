@@ -30,7 +30,7 @@ export default async function PartyPage({params,searchParams}:{params:Promise<{p
   const party=decodeURIComponent(segment).toUpperCase();
   if(!/^[\p{L}\d.-]{1,24}$/u.test(party))notFound();
   const rawYear=Number(scalar(p.ano)),year=Number.isInteger(rawYear)&&rawYear>2000?rawYear:undefined;
-  const result=partyDetail(party,year,scalar(p.votacao));
+  const result=await Promise.resolve(partyDetail(party,year,scalar(p.votacao)));
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Partido indisponível" description={result.message}/></main></>;
   if(!result.data)notFound();
   const data=result.data,people=data.people;

@@ -1,0 +1,1 @@
+﻿import {DatabaseSync} from 'node:sqlite'; import {publishedHouseOperations} from '../packages/db/src/panorama.ts'; const db=new DatabaseSync('data/senadotracker.sqlite',{readOnly:true}); const x=publishedHouseOperations(db,'senado',2026); console.log(JSON.stringify({backlog:x.backlog,processing:x.processingTime,norm:x.stages.norm,agenda:x.agendaCoverage},null,2));db.close();

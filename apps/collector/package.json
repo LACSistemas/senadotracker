@@ -6,7 +6,8 @@
   "dependencies": {
     "@senadotracker/db": "0.1.0",
     "@senadotracker/domain": "0.1.0",
-    "fflate": "0.8.3"
+    "fflate": "0.8.3",
+    "pg": "8.16.3"
   },
   "scripts": {
     "cli": "tsx src/index.ts",

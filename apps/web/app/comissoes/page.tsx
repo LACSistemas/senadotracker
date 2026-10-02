@@ -17,7 +17,7 @@ const houses = ['SENADO', 'CAMARA', 'CONGRESSO'] as const;
 const dateLabel = (date: string) => new Intl.DateTimeFormat('pt-BR', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${date.slice(0, 10)}T12:00:00Z`));
 const timeLabel = (date: string | null) => date ? new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(new Date(/(?:Z|[+-]\d{2}:?\d{2})$/.test(date) ? date : `${date}-03:00`)) : null;
 
-type Directory = Extract<ReturnType<typeof commissionDirectory>, { status: 'available' }>['data'];
+type Directory = Extract<Awaited<ReturnType<typeof commissionDirectory>>, { status: 'available' }>['data'];
 
 function CommissionCard({ item }: { item: Directory['items'][number] }) {
   const info = houseOf(item.body.house);
@@ -51,8 +51,7 @@ export default async function CommissionsPage({ searchParams }: { searchParams?:
   const scalar = (value: string | string[] | undefined) => Array.isArray(value) ? value[0] ?? '' : value ?? '';
   const query = scalar(params.q ?? params.busca).trim(), houseParam = scalar(params.house ?? params.casa).toUpperCase();
   const house = houses.find(h => h === houseParam) ?? 'ALL';
-  const result = commissionDirectory({ house, query, page: Number(scalar(params.page)) || 1, pageSize: 24 });
-  const overview = commissionOverview(3);
+  const [result, overview] = await Promise.all([commissionDirectory({ house, query, page: Number(scalar(params.page)) || 1, pageSize: 24 }), commissionOverview(3)]);
   if (result.status === 'unavailable') {
     return (
       <main className="page-shell py-12">

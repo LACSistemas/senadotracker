@@ -11,7 +11,7 @@ const money=new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
 export default async function SupplierNetworkPage({searchParams}:{searchParams:Promise<Params>}){
   const p=await searchParams,id=scalar(p.fornecedor),year=Number(scalar(p.ano)??new Date().getFullYear()),house=scalar(p.casa)==='CAMARA'||scalar(p.casa)==='SENADO'?(scalar(p.casa) as 'CAMARA'|'SENADO'):'all';
   if(!id)return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor não informado" description="Escolha um fornecedor no mercado parlamentar para abrir a rede observada."/></main></>;
-  const loaded=supplierNetwork(id,{year,house,limit:50});
+  const loaded=await supplierNetwork(id,{year,house,limit:50});
   if(loaded.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Rede indisponível" description={loaded.message}/></main></>;
   const result=loaded.data;
   if(!result)return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor não encontrado" description="Não há identidade global compatível com este identificador."/></main></>;

@@ -17,7 +17,7 @@ const humanType: Record<string, string> = { PL: 'Projeto de lei', PEC: 'Proposta
 export async function generateMetadata({ params }: { params: Promise<{ source: string; id: string }> }): Promise<Metadata> {
   const route = await params;
   if (!['senado', 'camara'].includes(route.source)) return { title: 'Proposição' };
-  const result = propositionDetail(route.source as Source, decodeURIComponent(route.id));
+  const result = await propositionDetail(route.source as Source, decodeURIComponent(route.id));
   const proposal = result.status === 'available' ? (result.data as { proposal?: { label?: string; summary?: string | null } } | null)?.proposal : null;
   return { title: proposal?.label ?? 'Proposição', ...(proposal?.summary ? { description: proposal.summary.slice(0, 200) } : {}) };
 }
@@ -26,12 +26,12 @@ export default async function PropositionPage({ params }: { params: Promise<{ so
   const route = await params;
   if (!['senado', 'camara'].includes(route.source)) notFound();
   const source = route.source as Source, id = decodeURIComponent(route.id);
-  const result = propositionDetail(source, id);
+  const result = await propositionDetail(source, id);
   if (result.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Proposição indisponível" description={result.message} /></main></>;
   if (!result.data) notFound();
   const item = result.data as any;
   const proposal = item.proposal;
-  const observedResult = propositionObservedState(source, id), observed = observedResult.status === 'available' ? observedResult.data : null;
+  const observedResult = await propositionObservedState(source, id), observed = observedResult.status === 'available' ? observedResult.data : null;
   const typeLabel = humanType[proposal.type] ?? proposal.type;
   const code = `${proposal.type} ${proposal.number ?? ''}${proposal.year ? `/${proposal.year}` : ''}`.trim();
   const rawTitle = String(proposal.summary ?? proposal.label);

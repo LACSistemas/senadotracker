@@ -1,0 +1,40 @@
+$.coverage.activity	594	588
+$.coverage.cost	457	594
+$.coverage.participation	593	'$missing'
+$.coverage.staff	594	593
+$.highlights.activity.annualCabinetCents	'$missing'	30396587
+$.highlights.activity.batchId	'$missing'	'929b1f6c-889a-45db-beec-15e88f19f6d4'
+$.highlights.activity.cabinetFinancialCents	'$missing'	30396587
+$.highlights.activity.cabinetPeriod	'$missing'	'2026'
+$.highlights.activity.costPeriod	'2026-08 a 2026-08'	'2026'
+$.highlights.activity.events	'$missing'	{'length': 0, 'first': []}
+$.highlights.activity.exercises	'$missing'	{'length': 3, 'first': [{'basis': 'official', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': '2929', 'mandateKey': '523', 'precision': 'date', 'rawId': '5c991557-b96e-4f44-b399-bd59e19f6925', 'start': '2019-02-01', 'state': 'Exercício'}, {'basis': 'official', 'cause': 'Término do mandato', 'end': '2019-01-31', 'endReason': 'reported', 'key': '2616', 'mandateKey': '449', 'precision': 'date', 'rawId': '5c991557-b96e-4f44-b399-bd59e19f6925', 'start': '2011-02-01', 'state': 'Exercício'}]}
+$.highlights.activity.expenseYear	'$missing'	2026
+$.highlights.activity.fullName	'$missing'	'Paulo Renato Paim'
+$.highlights.activity.historyAvailability	'$missing'	'available'
+$.highlights.activity.mandates	3	[{'end': '2027-01-31', 'key': '523', 'legislature': '56', 'officialId': '523', 'rawId': '5c991557-b96e-4f44-b399-bd59e19f6925', 'role': 'Titular', 'start': '2019-02-01', 'titularId': None, 'uf': 'RS'}, {'end': '2019-01-31', 'key': '449', 'legislature': '54', 'officialId': '449', 'rawId': '5c991557-b96e-4f44-b399-bd59e19f6925', 'role': 'Titular', 'start': '2011-02-01', 'titularId': None, 'uf': 'RS'}, {'end': '2011-01-31', 'key': '314', 'legislature': '52', 'officialId': '314', 'rawId': '5c991557-b96e-4f44-b399-bd59e19f6925', 'role': 'Titular', 'start': '2003-02-01', 'titularId': None, 'uf': 'RS'}]
+$.highlights.activity.monthlyCostCents	39217048	69225257
+$.highlights.activity.observedAt	'$missing'	'2026-09-08T16:06:02.821Z'
+$.highlights.activity.officialUrl	'$missing'	'http://www25.senado.leg.br/web/senadores/senador/-/perfil/825'
+$.highlights.activity.participation	1	{'participation': {'availability': 'available', 'denominator': 19, 'note': 'Votações nominais plenárias durante períodos de exercício; não mede presença.', 'numerator': 19}, 'presence': {'availability': 'unavailable', 'denominator': None, 'note': 'Presença oficial publicada.', 'numerator': None}}
+$.highlights.activity.parties	'$missing'	{'length': 1, 'first': [{'basis': 'official', 'end': None, 'endReason': 'not_reported', 'key': '71:1999-02-01', 'mandateKey': None, 'party': 'PT', 'partyId': '71', 'precision': 'date', 'rawId': 'd217629f-5764-4ac3-8568-26cb7ad67c5f', 'start': '1999-02-01'}]}
+$.highlights.activity.personId	'$missing'	'fa332300-0e82-4380-9434-a182874ee305'
+$.highlights.activity.presence	None	{'availability': 'unavailable', 'denominator': None, 'note': 'Presença oficial publicada.', 'numerator': None}
+$.highlights.activity.proposalCount	'$missing'	4299
+$.highlights.activity.publishedAt	'$missing'	'2026-09-08T16:06:35.861Z'
+$.highlights.activity.rapporteurships	1201	0
+$.highlights.activity.rawId	'$missing'	'c7337ff8-ed67-4bd0-acf6-0546860f642e'
+$.highlights.activity.salaryCents	'$missing'	None
+$.highlights.activity.salaryMonths	'$missing'	None
+$.highlights.activity.situation	'Em exercício'	'Cadastro atual'
+$.highlights.activity.totalCostCents	39217048	69225257
+$.highlights.cost.annualCabinetCents	'$missing'	110246040
+$.highlights.cost.batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.highlights.cost.cabinetCents	73144924	110246040
+$.highlights.cost.cabinetFinancialCents	'$missing'	110246040
+$.highlights.cost.cabinetPeriod	'$missing'	'2026'
+$.highlights.cost.costMonths	1	7
+$.highlights.cost.costPeriod	'2026-08 a 2026-08'	'2026'
+$.highlights.cost.events	'$missing'	{'length': 2, 'first': [{'at': '2023-02-01T00:00', 'description': 'Nome no início da legislatura / Partido no início da legislatura', 'key': 'a7041018383a6708e1a8ba58401f3d79ed12aeb62caffd8335b4af39c84b8ff4', 'legislature': '57', 'party': 'REPUBLICANOS', 'partyId': '37908', 'rawId': '9ef740c2-8891-4593-8111-16fead8adfd0', 'role': None, 'state': None}, {'at': '2023-02-01T12:05', 'description': 'Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória', 'key': 'b6415694c045ec15f3c3fd3d63c15e834017e6fe94cac4df458d11d834983b2e', 'legislature': '57', 'party': 'REPUBLICANOS', 'partyId': '37908', 'rawId': '9ef740c2-8891-4593-8111-16fead8adfd0', 'role': 'Titular', 'state': 'Exercício'}]}
+$.highlights.cost.exercises	'$missing'	{'length': 1, 'first': [{'basis': 'derived', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:b6415694c045ec15f3c3fd3d63c15e834017e6fe94cac4df458d11d834983b2e', 'mandateKey': 'legislatura:57', 'precision': 'local_datetime', 'rawId': '9ef740c2-8891-4593-8111-16fead8adfd0', 'start': '2023-02-01T12:05', 'state': 'Exercício'}]}
+$.highlights.cost.expenseCents	40708636	38708027

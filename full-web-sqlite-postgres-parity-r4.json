@@ -1,0 +1,128 @@
+{
+  "comparatorRunId": "2026-10-01T17:08:03.787Z-6b8c7ba8-4202-48a3-a4f6-a7fde32e4219",
+  "comparatorGeneratedAt": "2026-10-01T17:08:03.787Z",
+  "gitCommitOrWorktreeFingerprint": "d16404e3be5f08a15e11fd9fd8dfaa17f5deccd7",
+  "generatedAt": "2026-10-01T17:08:03.787Z",
+  "database": "projetoeleitor_db",
+  "sqlite": "C:\\Projetos\\senadotracker\\data\\senadotracker.sqlite",
+  "summary": {
+    "total": 2,
+    "exact": 2,
+    "mismatches": 0,
+    "errors": 0,
+    "routes": 2
+  },
+  "cases": [
+    {
+      "route": "/legislativo/patrimonio",
+      "name": "patrimonyRanking",
+      "input": [
+        false,
+        2018,
+        2022
+      ],
+      "sqliteStatus": "available",
+      "postgresStatus": "available",
+      "exact": true,
+      "sqliteHash": "fcce6bfb54dca794aef1e66dc119cadf60b79315c4611828c6fb746c688e1889",
+      "postgresHash": "fcce6bfb54dca794aef1e66dc119cadf60b79315c4611828c6fb746c688e1889",
+      "sqlitePreview": {
+        "keys": [
+          "conflicts",
+          "coverage",
+          "declared",
+          "deflator",
+          "deflatorAvailable",
+          "fromYear",
+          "items",
+          "toYear"
+        ],
+        "counts": {
+          "items": 247
+        }
+      },
+      "postgresPreview": {
+        "keys": [
+          "conflicts",
+          "coverage",
+          "declared",
+          "deflator",
+          "deflatorAvailable",
+          "fromYear",
+          "items",
+          "toYear"
+        ],
+        "counts": {
+          "items": 247
+        }
+      },
+      "rootKeyDiff": {
+        "sqliteOnly": [],
+        "postgresOnly": []
+      },
+      "fieldDiff": [],
+      "encodingHits": [],
+      "elapsedMs": 901
+    },
+    {
+      "route": "/comissoes/[id]",
+      "name": "commissionDetail",
+      "input": [
+        "body_0d0220ee927baae05a4a0f65",
+        2026
+      ],
+      "sqliteStatus": "available",
+      "postgresStatus": "available",
+      "exact": true,
+      "sqliteHash": "0eef193c03677d2731adfc50a30f8c7782effaa8443da243f12b9eb0313ffb54",
+      "postgresHash": "0eef193c03677d2731adfc50a30f8c7782effaa8443da243f12b9eb0313ffb54",
+      "sqlitePreview": {
+        "keys": [
+          "activity",
+          "agendaCoverage",
+          "body",
+          "composition",
+          "matters",
+          "mattersCoverage",
+          "mattersTotal",
+          "members",
+          "nextMeeting",
+          "rapporteurships",
+          "recent"
+        ],
+        "counts": {
+          "recent": 1,
+          "members": 1,
+          "matters": 1
+        }
+      },
+      "postgresPreview": {
+        "keys": [
+          "activity",
+          "agendaCoverage",
+          "body",
+          "composition",
+          "matters",
+          "mattersCoverage",
+          "mattersTotal",
+          "members",
+          "nextMeeting",
+          "rapporteurships",
+          "recent"
+        ],
+        "counts": {
+          "recent": 1,
+          "members": 1,
+          "matters": 1
+        }
+      },
+      "rootKeyDiff": {
+        "sqliteOnly": [],
+        "postgresOnly": []
+      },
+      "fieldDiff": [],
+      "encodingHits": [],
+      "elapsedMs": 518
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+$.panorama.coverage.period.to	'2026-09-30'	'2026-10-01'
+$.panorama.coverage.sampleSize	28	27
+$.panorama.rows.length	28	27
+$.panorama.rows[0].expenseMedianCents	17862728.5	22950000.5
+$.panorama.rows[0].expenseSample	102	92
+$.panorama.rows[0].participationMedian	0.8565573770491803	0.0803834808259587
+$.panorama.rows[0].proposals	13565	6244
+$.panorama.rows[0].rapporteurships	3028	3040
+$.panorama.rows[1].expenseMedianCents	25989766	26020051
+$.panorama.rows[1].expenseSample	60	59
+$.panorama.rows[1].participationMedian	0.8852459016393442	0.08112094395280237
+$.panorama.rows[1].proposals	7480	4629
+$.panorama.rows[2].expenseMedianCents	17868018	23588717
+$.panorama.rows[2].expenseSample	62	49
+$.panorama.rows[2].participationMedian	0.8032786885245902	0.07558997050147492
+$.panorama.rows[2].proposals	4679	3522
+$.panorama.rows[2].rapporteurships	373	380
+$.topics.length	179	74
+$.topics[1].proposals	2469	2468
+$.vote.deliberation.approved	True	None
+$.vote.deliberation.description	'Votação nominal do Projeto de Lei Complementar nº 74, de 2026, nos termos do parecer.'	'Mantido o texto.'
+$.vote.deliberation.externalId	'7105'	'2624161-27'
+$.vote.deliberation.officialUrl	'https://legis.senado.leg.br/dadosabertos/materia/175732'	'https://dadosabertos.camara.leg.br/api/v2/votacoes/2624161-27'
+$.vote.deliberation.proposalId	'175732'	None
+$.vote.deliberation.proposalLabel	'PLP 74/2026'	None
+$.vote.deliberation.rawId	'ad914abf-adf7-428a-82f0-588d58421d5c'	'6d63ddb0-3172-440c-a44c-2e1c6df5d711'
+$.vote.deliberation.recordedAt	'2026-09-03T14:00:00'	'2026-09-03T16:00:43'
+$.vote.deliberation.result	'A'	None
+$.vote.deliberation.source	'senado'	'camara'
+$.vote.key	'senado:7105'	'camara:2624161-27'
+$.vote.parties.length	12	0
+$.vote.source	'senado'	'camara'
+$.vote.votes.length	81	0
+$.voteOptions[0].key	'senado:7105'	'camara:2624161-27'
+$.voteOptions[0].label	'PLP 74/2026'	'Mantido o texto.'
+$.voteOptions[0].source	'senado'	'camara'
+$.voteOptions[1].key	'camara:2624161-22'	'senado:7105'
+$.voteOptions[1].label	'Aprovada a Medida Provisória nº 1.357, de 2026, na forma do Projeto de Lei de Conversão, r'	'PLP 74/2026'
+$.voteOptions[1].source	'camara'	'senado'

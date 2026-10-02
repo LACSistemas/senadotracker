@@ -1,7 +1,7 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import {ArrowLeft,Building2,ExternalLink,MapPin,ReceiptText,Store,Users} from 'lucide-react';
-import {validCnpj} from '@senadotracker/db';
+import {validCnpj} from '@senadotracker/domain';
 import type {DataCoverage,Source} from '@senadotracker/domain';
 import {supplierDetail} from '@/lib/data';
 import {LegislativeSubnav} from '@/components/legislative-subnav';
@@ -24,7 +24,7 @@ function href(document:string,values:Record<string,string|number|undefined>){con
 
 export default async function SupplierDetailPage({params,searchParams}:{params:Promise<{documento:string}>;searchParams:Promise<Params>}){
   const route=await params,query=await searchParams,document=route.documento.replace(/\D/g,'');if(!validCnpj(document))notFound();
-  const sourceValue=scalar(query.casa),source:Source|undefined=sourceValue==='senado'||sourceValue==='camara'?sourceValue:undefined,requestedYear=Number(scalar(query.ano)),year=Number.isInteger(requestedYear)?requestedYear:undefined,rawPage=Number(scalar(query.pagina)??1),page=Number.isSafeInteger(rawPage)&&rawPage>0?rawPage:1,result=supplierDetail({document,page,pageSize:25,...(source?{source}:{}),...(year?{year}:{})});
+  const sourceValue=scalar(query.casa),source:Source|undefined=sourceValue==='senado'||sourceValue==='camara'?sourceValue:undefined,requestedYear=Number(scalar(query.ano)),year=Number.isInteger(requestedYear)?requestedYear:undefined,rawPage=Number(scalar(query.pagina)??1),page=Number.isSafeInteger(rawPage)&&rawPage>0?rawPage:1,result=await supplierDetail({document,page,pageSize:25,...(source?{source}:{}),...(year?{year}:{})});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor indisponível" description={result.message}/></main></>;if(!result.data)notFound();const data=result.data;
   type Person=(typeof data.people)[number];const columns:DataColumn<Person>[]=[{key:'rank',header:'Posição',align:'right',render:item=><strong>{item.rank}º</strong>},{key:'person',header:'Parlamentar',render:item=><div><Link className="font-bold text-primary underline" href={`/parlamentares/${item.source}/${item.externalId}`}>{item.profile.name}</Link><small className="mt-1 flex items-center gap-1.5 text-muted-foreground"><PartyLogo party={item.profile.party} size={20}/>{item.profile.party}/{item.profile.uf} · {item.source==='senado'?'Senado':'Câmara'}</small></div>},{key:'value',header:'Valor líquido',align:'right',render:item=><strong>{money.format(item.valueCents/100)}</strong>},{key:'share',header:'Participação',align:'right',render:item=>item.share===null?'—':percent.format(item.share)},{key:'records',header:'Lançamentos',align:'right',render:item=>item.records}];
   const aliases=data.aliases.filter(name=>name!==data.name),base={casa:source,ano:data.year};
@@ -38,3 +38,4 @@ export default async function SupplierDetailPage({params,searchParams}:{params:P
   <section id="parlamentares"><h2 className="text-3xl font-bold">Quem pagou este fornecedor?</h2><p className="mt-2 text-sm text-muted-foreground">Ranking pelo valor líquido identificado no mesmo recorte. Cada linha abre o perfil parlamentar.</p><div className="mt-5"><DataTable caption="Parlamentares pagadores" rows={data.people} columns={columns} rowKey={item=>`${item.source}:${item.externalId}`} coverage={{...data.coverage,sampleSize:data.peopleTotal}} page={page} pageCount={Math.max(1,Math.ceil(data.peopleTotal/data.pageSize))} pageHref={next=>href(document,{...base,pagina:next>1?next:undefined})}/></div></section>
   <Card><CardHeader><h2 className="flex items-center gap-2 text-xl font-bold"><MapPin size={19}/>Como ler esta página</h2></CardHeader><CardContent className="space-y-2 text-sm leading-6 text-muted-foreground"><p>Valores representam pagamentos líquidos registrados nas cotas parlamentares, preservando estornos publicados.</p><p>Categorias funcionam como contexto do gasto; não afirmam CNAE, ramo empresarial, endereço, sócios ou situação cadastral.</p><p>Páginas são criadas somente para CNPJ com dígitos verificadores válidos. CPF e fornecedor sem documento ficam fora deste detalhamento público.</p><p>Concentração é uma pista para consulta dos documentos oficiais e não indica, isoladamente, irregularidade.</p></CardContent></Card></section></main></>;
 }
+

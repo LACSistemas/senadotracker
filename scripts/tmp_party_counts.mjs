@@ -1,0 +1,4 @@
+import fs from 'node:fs'; import pg from 'pg'; import {DatabaseSync} from 'node:sqlite';
+for(const l of fs.readFileSync('.env','utf8').split(/\r?\n/)){const m=l.match(/^([A-Z0-9_]+)=(.*)$/);if(m)process.env[m[1]]=m[2];}
+const s=new DatabaseSync('data/senadotracker.sqlite',{readOnly:true}); console.log('sqlite',s.prepare("select json_extract(payload,'$.party') party,count(*) n from profiles p join active_publications a on a.batch_id=p.batch_id group by 1 order by n desc").all());
+const p=new pg.Pool({host:process.env.DB_HOST,port:+process.env.DB_PORT,database:process.env.DB_NAME,user:process.env.DB_USER,password:process.env.DB_PASSWORD}); console.log('pg',(await p.query("select party,count(*)::int n from civica_people_poc.profiles group by 1 order by n desc")).rows); await p.end(); s.close();

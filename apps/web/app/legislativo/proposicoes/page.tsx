@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { propositionOperationalBundle } from '@/lib/data';
-import { MPV_CASE } from '@/lib/proposicoes/compose';
+import { MPV_CASE } from '@/lib/proposicoes/compose-types';
 import type { ScopeKey } from '@/lib/proposicoes/taxonomy';
 import { LegislativeSubnav } from '@/components/legislative-subnav';
 import { EmptyState } from '@/components/empty-state';
@@ -32,14 +32,14 @@ export default async function PropositionsPage({ searchParams }: { searchParams:
   const query = await searchParams, yearValue = Number(scalar(query.ano));
   const year = Number.isInteger(yearValue) && yearValue >= 1900 && yearValue <= 2100 ? yearValue : undefined;
   const casa = scalar(query.casa), initialScope: ScopeKey = casa === 'camara' || casa === 'senado' ? casa : 'congresso';
-  const result = propositionOperationalBundle(year);
+  const result = await propositionOperationalBundle(year);
   if (result.status === 'unavailable') return <><LegislativeSubnav /><main id="conteudo" tabIndex={-1} className="page-shell py-16"><EmptyState title="Proposições indisponíveis" description={result.message} /></main></>;
   const bundle = result.data;
   return <>
     <LegislativeSubnav />
     <main id="conteudo" tabIndex={-1}>
       <PropositionSearchBar />
-      <ScopeProvider initialScope={initialScope} year={bundle.year} comparable={bundle.overview.congress.comparable} years={bundle.years.map(item => item.year)} updatedThrough={bundle.updatedThrough}>
+      <ScopeProvider initialScope={initialScope} year={bundle.year} comparable={bundle.overview.congress.comparable} years={bundle.years.map((item: any) => item.year)} updatedThrough={bundle.updatedThrough}>
         <Hero facts={bundle.facts} overview={bundle.overview} />
         <CompositionSection overview={bundle.overview} facts={bundle.facts} />
         <StageSection flow={bundle.flow} staleness={bundle.staleness} facts={bundle.facts} />
@@ -52,3 +52,5 @@ export default async function PropositionsPage({ searchParams }: { searchParams:
     </main>
   </>;
 }
+
+

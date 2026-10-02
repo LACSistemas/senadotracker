@@ -59,7 +59,7 @@ export default async function AgendaPage({ searchParams }: { searchParams: Promi
   const q = await searchParams;
   const today = new Date().toISOString().slice(0, 10);
   const from = one(q.from) || today, to = one(q.to) || from, house = one(q.house), body = one(q.body);
-  const result = commissionAgenda({ from, to, ...(house === 'senado' || house === 'camara' ? { source: house } : {}), ...(body ? { body } : {}) });
+  const result = await commissionAgenda({ from, to, ...(house === 'senado' || house === 'camara' ? { source: house } : {}), ...(body ? { body } : {}) });
 
   if (result.status === 'unavailable') {
     return <main className="page-shell py-12"><h1 className="text-3xl font-bold">Agenda das comissões</h1><CoverageNote className="mt-4">{result.message}</CoverageNote></main>;

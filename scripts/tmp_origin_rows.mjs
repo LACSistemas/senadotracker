@@ -1,0 +1,1 @@
+import pg from 'pg';const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});console.log((await p.query("select id,url,fetched_at,sha256 from civica.raw_objects where url like '%proposicoes-2026%' order by fetched_at desc limit 5")).rows);await p.end();

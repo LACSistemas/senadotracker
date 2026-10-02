@@ -51,7 +51,7 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
   const sort=sortValue&&validSorts.has(sortValue as LegislativeOverviewSort)?sortValue as LegislativeOverviewSort:undefined;
   const rawPage = Number(scalar(params.pagina) ?? 1);
   const page = Number.isSafeInteger(rawPage) && rawPage > 0 ? rawPage : 1;
-  const data = legislativeOverview({ page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}), ...(sort?{sort}:{}) });
+  const data = await Promise.resolve(legislativeOverview({ page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}), ...(sort?{sort}:{}) }));
   if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Entrada legislativa indisponível" description={data.message} /></main>;
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;

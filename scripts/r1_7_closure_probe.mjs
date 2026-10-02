@@ -1,0 +1,11 @@
+import pg from 'pg';
+const {Pool}=pg;
+const pool=new Pool({host:process.env.DB_HOST??'localhost',port:Number(process.env.DB_PORT??5432),database:process.env.DB_NAME??'projetoeleitor_db',user:process.env.DB_USER??'projetoeleitor_user',password:process.env.DB_PASSWORD??'projetoeleitorsenha'});
+const q=async(sql,params=[])=>{const r=await pool.query(sql,params); console.log(JSON.stringify(r.rows,null,2)); return r.rows;};
+console.log('DB'); await q('select current_database(), current_schema()');
+console.log('tables raw-like'); await q(`select table_schema,table_name from information_schema.tables where table_schema in ('civica','civica_poc','civica_people_poc') and (table_name ilike '%raw%' or table_name ilike '%norm%' or table_name ilike '%ingest%' or table_name ilike '%complement%' or table_name ilike '%bridge%') order by 1,2`);
+console.log('norm ids in atoms'); await q(`select p.external_id,p.source,a.kind,a.payload->>'officialUrl' official_url,a.payload->>'label' label,a.payload->>'number' norm_number,a.payload->>'year' norm_year from civica_poc.proposals p left join civica_poc.proposal_detail_atoms a on a.source=p.source and a.proposal_id=p.external_id where p.external_id = any($1)`,[['171682','172696','173235','173649','173694','175446']]);
+console.log('norm ids raw references'); await q(`select c.source,c.proposal_id,c.kind,c.external_key,c.raw_id,c.payload from civica.legislative_complements c where c.proposal_id = any($1)`,[['171682','172696','173235','173649','173694','175446']]);
+console.log('ingestion relevant'); await q(`select id,source,scope,status,published_at,reconciliation_json from civica.ingestion_runs where scope ilike '%operation%' or scope ilike '%complement%' order by started_at desc nulls last limit 20`);
+console.log('bridge terminal candidates'); await q(`select b.* from civica_poc.proposal_identity_bridge b where b.source='senado' and (b.official_matter_id = any($1) or b.pg_proposal_id = any($1))`,[['171682','172696','173235','173649','173694','175446']]);
+await pool.end();

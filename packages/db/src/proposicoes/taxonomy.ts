@@ -1,0 +1,1 @@
+export const GROUPS = ["proposicoes_legislativas_principais","requerimentos","emendas_substitutivos","pareceres_relatorios","instrumentos_votacao_tramitacao","indicacoes_sugestoes","oficios_documentos","mensagens_comunicacoes_institucionais","recursos_representacoes_peticoes","atos_documentos_especiais"].map(key=>({key,label:key}));

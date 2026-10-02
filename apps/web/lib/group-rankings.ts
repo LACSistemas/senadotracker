@@ -1,4 +1,4 @@
-import { groupDistribution, houseMetrics, type GroupMetrics, type HouseMetricKey, type HouseMetricSummary } from '@senadotracker/db';
+﻿import { groupDistribution, houseMetrics, type GroupMetrics, type HouseMetricKey, type HouseMetricSummary } from '../../../packages/db/src/benchmarks.ts';
 import type { DataCoverage, Distribution, Source } from '@senadotracker/domain';
 import { houseMetricSummary, type DataResult } from '@/lib/data';
 
@@ -33,8 +33,8 @@ const eligible=(group:GroupMetrics|undefined,key:GroupMetricKey,floor:number)=>{
 };
 const groupsOf=(mode:GroupMode,summary:HouseMetricSummary|undefined):Record<string,GroupMetrics>|undefined=>mode==='partidos'?summary?.parties:summary?.states;
 
-export function groupRankings(mode:GroupMode,house:Source,year?:number):DataResult<GroupRankings>{
-  const sources:Source[]=['senado','camara'],results=sources.map(source=>[source,houseMetricSummary(source,year)] as const);
+export async function groupRankings(mode:GroupMode,house:Source,year?:number):Promise<DataResult<GroupRankings>>{
+  const sources:Source[]=['senado','camara'],results=await Promise.all(sources.map(async source=>[source,await houseMetricSummary(source,year)] as const));
   const selected=results.find(([source])=>source===house)![1];
   if(selected.status==='unavailable')return selected;
   const summaries=Object.fromEntries(results.flatMap(([source,result])=>result.status==='available'?[[source,result.data] as const]:[])) as Partial<Record<Source,HouseMetricSummary>>;
@@ -65,3 +65,4 @@ export function groupRankings(mode:GroupMode,house:Source,year?:number):DataResu
     scale:Object.fromEntries(groupMetricKeys.map(metric=>[metric,groupDistribution(groups,metric,floorFor(mode,metric)).distribution])) as Record<GroupMetricKey,Distribution>,
     rows,houses:Object.fromEntries(sources.flatMap(source=>{const summary=summaries[source];return summary?[[source,summary.roster] as const]:[]}))}};
 }
+

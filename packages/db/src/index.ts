@@ -1,4 +1,4 @@
-import { DatabaseSync } from 'node:sqlite';
+﻿import { DatabaseSync } from 'node:sqlite';
 export { proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry } from './proposition-analytics.ts';
 export { proposalFunctionalOverview, principalStageFlow, principalStaleness, activityDnaByAuthor, activityRhythm, activityCalendar, recentLegislativeEvents, proposalObservedState, buildEditorialFacts, editorialFacts, loadUniverse, loadEvents, loadAuthorLinks, latestEventDay, collectEvidence, PROPOSITION_GROUP_ORDER, PRINCIPAL_GROUP, RECENT_EVENT_TYPES, type PropositionHouse, type StageKey, type FunctionalOverview, type HouseFunctionalView, type FunctionalGroupCount, type StageFlow, type StageFlowStage, type PrincipalStaleness, type StalenessBucket, type StalenessPoint, type ActivityDna, type DnaRow, type ActivityRhythm, type HouseRhythm, type RhythmMonth, type ActivityCalendar, type CalendarDay, type RecentEvents, type RecentEventItem, type RecentEventType, type ObservedState, type EditorialFact, type EditorialFactsInput, type UniverseItem, type EventRecord, type AuthorLink, type Evidence } from './proposition-operations.ts';
 import { mkdirSync } from 'node:fs';
@@ -246,3 +246,9 @@ export { openPostgres, postgresConfigFromEnv } from './postgres.ts';
 export { postgresPropositionRepository, activatePropositionBatch, type PropositionRepository, type PropositionSearchQuery } from './postgres-propositions.ts';
 
 export {publishedCommissionAgenda,commissionMeetingChanges,publishedCommissionDetail,commissionComposition,reconcileCommissionMembershipKeys,commissionRapporteurships,commissionMatters,publishedCommissionDirectory,publishedCommissionOverview,type CommissionAgendaQuery,type CommissionDirectoryQuery,type CommissionMeetingChange,type CommissionComposition,type CommissionRapporteurship,type CommissionRapporteurshipGroup} from './commissions.ts';
+
+export * from './postgres-people.ts';
+
+
+export * from './postgres-committees.ts';
+export * from './postgres-votes-presence.ts';

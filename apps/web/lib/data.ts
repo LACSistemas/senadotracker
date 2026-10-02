@@ -1,289 +1,73 @@
-import 'server-only';
-import { existsSync } from 'node:fs';
-import { resolve } from 'node:path';
-import { openDatabase, getPublished, listPublished, proposalObservedState, proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry, publishedActivity, publishedComplement, publishedCabinetCompetenceBenchmark, publishedCurrentVoteAxis, publishedHouseMetricSummary, publishedHousePanorama, publishedHouseOperations, publishedHouseOperationSummary, publishedHouseTopics, publishedParticipation, publishedMonthlyParticipation, publishedParticipationRows, publishedPartyPanorama, publishedPartyDetail, publishedPartyVote, publishedOfficialTopics, publishedVoteOptions, publishedStateComparison, publishedStateRepresentation, publishedStateTopics, publishedComparisonOptions, publishedComparisonYears, publishedPersonComparison, publishedPersonComparisonDashboard, publishedStatesComparison, publishedElections, publishedElectoralCoverage, publishedPersonElectoralProfile, publishedCabinetProfile, publishedCabinetSummaries, publishedCabinetPanorama, publishedPropositionCoverage, publishedPropositionDashboard, publishedPropositions, publishedPropositionComposition, publishedProposition, publishedExpenseCoverage, publishedExpenseDetail, publishedExpenseComparison, publishedExpenseYears, publishedExpandedCosts, publishedExpenses, publishedFacets, publishedParliamentarySubsidy, publishedMinimumWage, publishedRankings, publishedRankingsDashboard, publishedSourceFreshness, publishedSourceInfo, publishedVotesPage, publishedSupplierRadar, publishedSupplierExplorer, publishedSupplierExplorerFacets, publishedSupplierNetwork, publishedParliamentarianSupplierNetwork, publishedSupplierGlobalDetail, publishedSupplierMarket, publishedInstitutionalSupplierOverview, publishedCongressSupplierOverview, publishedCongressSupplierCategoryMix, publishedSupplierGlobalStory, publishedSupplierDetail, publishedCommissionAgenda, publishedCommissionDetail, publishedCommissionDirectory, publishedCommissionOverview, publishedPatrimonyRanking, publishedElectionMonths, publishedDeflator, publishedVotes, partyAtDate, type ComparisonDimension, type DashboardQuery, type PartyHouse, type ProfileQuery, type PropositionQuery, type RankingQuery, type SupplierRadarQuery, type SupplierExplorerQuery, type SupplierMarketQuery, type SupplierDetailQuery } from '@senadotracker/db';
-import { distribution,searchText,type Profile,type Source } from '@senadotracker/domain';
-import { runPropositionShadow } from './proposition-shadow';
-import { composeOperationalBundle } from './proposicoes/compose';
-import { GROUPS } from './proposicoes/taxonomy';
-const defaultPath=resolve(process.cwd(),'../../data/senadotracker.sqlite');
-const databasePath=()=>process.env.SENADOTRACKER_DB_PATH??defaultPath;
-export type DataResult<T>={ status:'available'; data:T }|{ status:'unavailable'; message:string };
-const shared=globalThis as typeof globalThis&{senadoTrackerReadDb?:ReturnType<typeof openDatabase>;senadoTrackerReadDbPath?:string;senadoTrackerPropositionCache?:Map<string,ReturnType<typeof publishedPropositions>>;senadoTrackerPropositionDashboardCache?:Map<string,ReturnType<typeof publishedPropositionDashboard>>;senadoTrackerReadCache?:Map<string,{expires:number;value:unknown}>};
-function reader(path:string){if(shared.senadoTrackerReadDb&&shared.senadoTrackerReadDbPath===path)return shared.senadoTrackerReadDb;shared.senadoTrackerReadDb?.close();const db=openDatabase(path,true);db.exec('PRAGMA cache_size=-32768; PRAGMA mmap_size=268435456; PRAGMA temp_store=MEMORY;');shared.senadoTrackerReadDb=db;shared.senadoTrackerReadDbPath=path;return db}
-function read<T>(operation:(db:ReturnType<typeof openDatabase>)=>T):DataResult<T>{const path=databasePath();if(!existsSync(/* turbopackIgnore: true */ path))return{status:'unavailable',message:'O banco publicado ainda não está disponível neste ambiente.'};try{return{status:'available',data:operation(reader(path))}}catch{return{status:'unavailable',message:'Não foi possível ler o lote publicado. Tente novamente mais tarde.'}}}
-function cachedRead<T>(key:string,operation:(db:ReturnType<typeof openDatabase>)=>T,ttl=30_000):DataResult<T>{const cache=shared.senadoTrackerReadCache??=new Map(),now=Date.now(),hit=cache.get(key);if(hit&&hit.expires>now){cache.delete(key);cache.set(key,hit);return hit.value as DataResult<T>}cache.delete(key);const value=read(operation);if(cache.size>=1000){for(const [candidate,entry] of cache)if(entry.expires<=now)cache.delete(candidate);while(cache.size>=1000)cache.delete(cache.keys().next().value!)}cache.set(key,{expires:now+(value.status==='available'?ttl:5000),value});return value}
-function cachedValue<T>(key:string,operation:(db:ReturnType<typeof openDatabase>)=>T,ttl=60_000):T{const result=cachedRead(key,operation,ttl);if(result.status==='unavailable')throw new Error(result.message);return result.data}
-const publicationRevision=(db:ReturnType<typeof openDatabase>)=>String(db.prepare('PRAGMA data_version').get()?.data_version??0);
-export function roster(query:ProfileQuery){return read(db=>({result:listPublished(db,query),facets:publishedFacets(db,query.source),publishedTotal:listPublished(db,{pageSize:1}).total}))}
-export function profileIdentity(source:Source,externalId:string){return cachedRead(`profile-identity:${source}:${externalId}`,db=>getPublished(db,source,externalId),60_000)}
-export type DataProfileSection='overview'|'costs'|'activity'|'career';
-const participationProfileCache=new Map<string,{expires:number;value:{current:ReturnType<typeof publishedParticipation>;monthly:ReturnType<typeof publishedMonthlyParticipation>;history:ReturnType<typeof publishedParticipation>[]}}>();
-function profileParticipation(db:ReturnType<typeof openDatabase>,source:Source,externalId:string,years:number[]){const key=`${source}:${externalId}:${years.join(',')}`,cached=participationProfileCache.get(key);if(cached&&cached.expires>Date.now())return cached.value;const latest=years.at(-1)??new Date().getFullYear(),history=years.map(year=>publishedParticipation(db,source,externalId,year)),value={current:history.find(item=>item.year===new Date().getFullYear())??publishedParticipation(db,source,externalId),monthly:publishedMonthlyParticipation(db,source,externalId,latest),history};participationProfileCache.set(key,{expires:Date.now()+60_000,value});return value}
-function loadProfile(source:Source,externalId:string,section:DataProfileSection,votePage=1){return read(db=>{const needsCosts=section==='overview'||section==='costs',needsActivity=section==='overview'||section==='activity',needsVotes=section==='activity',needsCareer=section==='career';const p=getPublished(db,source,externalId);const activityBatches=db.prepare(`SELECT a.batch_id,a.scope,b.published_at FROM active_activity_publications a JOIN activity_batches b ON b.id=a.batch_id WHERE a.source=?`).all(source).map(row=>({batchId:String(row.batch_id),scope:String(row.scope),publishedAt:String(row.published_at)}));const participationYears=db.prepare(`SELECT year FROM active_presence_publications WHERE source=? UNION SELECT year FROM active_legislative_publications WHERE source=? ORDER BY year`).all(source,source).map(row=>Number(row.year)),participationData=needsActivity?profileParticipation(db,source,externalId,participationYears):null;const voteResult=needsVotes?publishedVotesPage(db,source,externalId,votePage,10):{items:[],total:0},votes=voteResult.items,proposalIds=[...new Set(votes.flatMap(item=>{const id=item.deliberation.source==='camara'?item.deliberation.actualVotedProposalId:item.deliberation.proposalId;return id?[id]:[]}))],proposalLabels=[...new Set(votes.flatMap(item=>item.deliberation.source==='senado'&&item.deliberation.proposalLabel?[item.deliberation.proposalLabel.trim().toLocaleUpperCase('pt-BR')]:[]))],linkWhere:string[]=[],linkParams:string[]=[];if(proposalIds.length){linkWhere.push(`(p.source=? AND p.external_id IN (${proposalIds.map(()=>'?').join(',')}))`);linkParams.push(source,...proposalIds)}if(proposalLabels.length){linkWhere.push(`upper(trim(json_extract(p.payload,'$.label'))) IN (${proposalLabels.map(()=>'?').join(',')})`);linkParams.push(...proposalLabels)}const proposalRows=linkWhere.length?db.prepare(`SELECT DISTINCT p.source,p.external_id,p.payload FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE ${linkWhere.join(' OR ')}`).all(...linkParams):[],proposalLinks=proposalRows.map(row=>{const payload=JSON.parse(String(row.payload)) as {label:string};return{source:String(row.source) as Source,id:String(row.external_id),label:payload.label.trim().toLocaleUpperCase('pt-BR')}}),direct=new Map(proposalLinks.map(item=>[`${item.source}:${item.id}`,item])),byLabel=new Map<string,typeof proposalLinks>();for(const item of proposalLinks){const list=byLabel.get(item.label)??[];list.push(item);byLabel.set(item.label,list)}const linkedVotes=votes.map(item=>{const targetId=item.deliberation.source==='camara'?item.deliberation.actualVotedProposalId:item.deliberation.proposalId,directLink=targetId?direct.get(`${item.deliberation.source}:${targetId}`):null,candidates=item.deliberation.proposalLabel?byLabel.get(item.deliberation.proposalLabel.trim().toLocaleUpperCase('pt-BR'))??[]:[],resolved=directLink??(candidates.length===1?candidates[0]:null);return{...item,internalProposal:resolved?{source:resolved.source,id:resolved.id}:null}});return{profile:p,source:publishedSourceInfo(db,source,externalId),subsidy:publishedParliamentarySubsidy(db),expenseCoverage:section==='costs'?publishedExpenseCoverage(db,source):[],expenses:needsCosts?publishedExpenses(db,source,externalId):{coverage:[],items:[]},votes:linkedVotes,voteTotal:voteResult.total,activity:needsActivity?publishedActivity(db,source,externalId):{proposals:[],appointments:[],laws:[],proposalTotal:0,appointmentTotal:0,lawTotal:0},activityBatches:needsActivity?activityBatches:[],complement:needsVotes?publishedComplement(db,source,externalId):{personal:[],summaries:[]},participation:participationData?.current??{year:new Date().getFullYear(),presence:{availability:'unavailable',numerator:null,denominator:null,note:'Abra a secao Atuação parlamentar para consultar.'},participation:{availability:'unavailable',numerator:null,denominator:null,note:'Abra a secao Atuação parlamentar para consultar.'}},participationMonthly:section==='activity'?(participationData?.monthly??[]):[],participationHistory:section==='activity'?(participationData?.history??[]):[],elections:needsCareer&&p?publishedElections(db,p.personId):[],electoralCoverage:needsCareer?publishedElectoralCoverage(db):[],electoralProfile:needsCareer&&p?publishedPersonElectoralProfile(db,p.personId):null,cabinet:needsCosts&&p?publishedCabinetProfile(db,source,externalId):null,cabinetPanorama:null,expandedCosts:needsCosts&&p?publishedExpandedCosts(db,source,externalId):[]}})}
-const profileCache=new Map<string,{expires:number;value:ReturnType<typeof loadProfile>}>();
-export function profile(source:Source,externalId:string,section:DataProfileSection='overview',votePage=1){const key=`${source}:${externalId}:${section}:${votePage}`;const cached=profileCache.get(key);if(cached&&cached.expires>Date.now())return cached.value;const value=loadProfile(source,externalId,section,votePage);profileCache.set(key,{expires:Date.now()+60_000,value});return value}
-export function comparison(source:Source,year:number,filters:{uf?:string;party?:string}){return read(db=>publishedExpenseComparison(db,source,year,filters))}
-export function comparisonYears(source:Source){return read(db=>publishedExpenseYears(db,source))}
-export type LegislativeOverviewSort='uf_asc'|'uf_desc'|'party_asc'|'party_desc'|'cost_asc'|'cost_desc'|'presence_asc'|'presence_desc';
-export function legislativeOverview(query:ProfileQuery&{sort?:LegislativeOverviewSort}){return cachedRead(`legislative:${JSON.stringify(query)}`,db=>{
-  const sources:Source[]=['senado','camara'];
-  const revision=publicationRevision(db);
-  const years=Object.fromEntries(sources.map(source=>[source,publishedExpenseYears(db,source)[0]??new Date().getFullYear()])) as Record<Source,number>;
-  const profilesBySource=Object.fromEntries(sources.map(source=>[source,db.prepare(`SELECT p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=?`).all(source).map(row=>JSON.parse(String(row.payload)) as Profile)])) as Record<Source,Profile[]>;
-  const participationBySource=Object.fromEntries(sources.map(source=>[source,cachedValue(`overview-participation:${revision}:${source}:${years[source]}`,current=>publishedParticipationRows(current,source,years[source],profilesBySource[source].map(item=>item.externalId)),1_800_000)])) as Record<Source,ReturnType<typeof publishedParticipationRows>>;
-  const panoramas=Object.fromEntries(sources.map(source=>[source,cachedValue(`overview-panorama:${revision}:${source}:${years[source]}`,current=>listingPanorama(current,source,years[source],profilesBySource[source],[],participationBySource[source]),1_800_000)])) as Record<Source,ReturnType<typeof publishedHousePanorama>>;
-  const operations=Object.fromEntries(sources.map(source=>[source,cachedValue(`overview-operations:${revision}:${source}:${years[source]}`,current=>publishedHouseOperations(current,source,years[source]),1_800_000)])) as Record<Source,ReturnType<typeof publishedHouseOperations>>;
-  const processingTimes=Object.fromEntries(sources.map(source=>{const value=publishedHouseOperationSummary(db,source,years[source]);return[source,value?.processing.sampleSize?{...value.processing,note:`Média observada em n=${value.processing.sampleSize}; cobertura parcial, ainda não representa todas as matérias concluídas. ${value.processing.terminalDefinition}`}:{meanDays:null,medianDays:null,sampleSize:0,note:'Ainda não há matérias com datas inicial e terminal compatíveis.'}]})) as Record<Source,{meanDays:number|null;medianDays:number|null;sampleSize:number;note:string}>;
-  const requestedPage=query.page??1,pageSize=query.pageSize??10;
-  let result=listPublished(db,{...query,page:requestedPage,pageSize});
-  if(query.sort){
-    const first=listPublished(db,{...query,page:1,pageSize:100}),all=[...first.items];
-    for(let page=2;all.length<first.total;page++)all.push(...listPublished(db,{...query,page,pageSize:100}).items);
-    result={...first,page:requestedPage,pageSize,items:all};
-  }
-  const expenseMaps=Object.fromEntries(sources.map(source=>{const rows=db.prepare(`SELECT e.external_id,sum(e.net_cents-e.refund_cents) value,count(DISTINCT e.month) months FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id WHERE e.source=? AND e.year=? GROUP BY e.external_id`).all(source,years[source]);return[source,new Map(rows.map(row=>[String(row.external_id),{valueCents:Number(row.value),months:Number(row.months)}]))]})) as Record<Source,Map<string,{valueCents:number;months:number}>>;
-  const cabinetSummaries=Object.fromEntries(sources.map(source=>[source,publishedCabinetSummaries(db,source,result.items.filter(item=>item.source===source).map(item=>item.externalId))])) as Record<Source,ReturnType<typeof publishedCabinetSummaries>>;
-  const proposalCounts=new Map<string,number>();
-  for(const source of sources){const ids=result.items.filter(item=>item.source===source).map(item=>item.externalId),batches=db.prepare('SELECT batch_id FROM active_activity_publications WHERE source=?').all(source).map(row=>String(row.batch_id));if(!ids.length||!batches.length)continue;const rows=db.prepare(`SELECT person_external_id,count(DISTINCT proposal_id) value FROM proposal_authors WHERE batch_id IN (${batches.map(()=>'?').join(',')}) AND person_external_id IN (${ids.map(()=>'?').join(',')}) GROUP BY person_external_id`).all(...batches,...ids);for(const row of rows)proposalCounts.set(`${source}:${row.person_external_id}`,Number(row.value))}
-  const today=new Date();
-  const cabinetMaps=Object.fromEntries(sources.map(source=>{
-    const year=years[source];
-    const rows=source==='senado'
-      ? db.prepare(`SELECT c.external_id,sum(c.value_cents) value,count(DISTINCT c.competence) months FROM expanded_costs c JOIN active_expanded_cost_publications a ON a.batch_id=c.batch_id WHERE c.source='senado' AND a.year=? AND c.rubric='cabinet_payroll_gross' AND c.value_cents IS NOT NULL GROUP BY c.external_id`).all(year)
-      : db.prepare(`SELECT c.external_id,sum(c.spent_cents) value,count(DISTINCT c.month) months FROM cabinet_monthly_budgets c JOIN active_cabinet_budget_publications a ON a.batch_id=c.batch_id WHERE c.source='camara' AND a.year=? AND c.spent_cents IS NOT NULL GROUP BY c.external_id`).all(year);
-    return[source,new Map(rows.map(row=>[String(row.external_id),{valueCents:Number(row.value),months:Number(row.months)}]))];
-  })) as Record<Source,Map<string,{valueCents:number;months:number}>>;
-  const salaryByYear=new Map<number,{monthlyCents:number;months:number}>();
-  for(const year of new Set(Object.values(years))){
-    const months=year===today.getFullYear()?today.getMonth()+1:year<today.getFullYear()?12:0;
-    const at=`${year}-${String(Math.max(1,months)).padStart(2,'0')}-01`;
-    const row=db.prepare(`SELECT value_cents FROM normative_values WHERE kind='parliamentary_subsidy' AND applies_to='congress' AND valid_from<=? AND (valid_to IS NULL OR valid_to>=?) ORDER BY valid_from DESC LIMIT 1`).get(at,at);
-    if(row&&months)salaryByYear.set(year,{monthlyCents:Number(row.value_cents),months});
-  }
-  const monthlyCosts=Object.fromEntries(sources.map(source=>{const total=operations[source].costs.totalMonthly,roster=operations[source].costs.roster;return[source,{meanCents:total!==null&&roster?total/roster:null,totalCents:total,sampleSize:roster}]})) as Record<Source,{meanCents:number|null;totalCents:number|null;sampleSize:number}>;
-  let items=result.items.map(item=>{
-    const expense=expenseMaps[item.source].get(item.externalId);
-    const expenseCents=expense?.valueCents??null;
-    const cabinetCents=cabinetMaps[item.source].get(item.externalId)?.valueCents??null;
-    const salary=salaryByYear.get(years[item.source]);
-    const salaryCents=salary?salary.monthlyCents*salary.months:null;
-    const totalCostCents=expenseCents!==null&&cabinetCents!==null&&salaryCents!==null?expenseCents+cabinetCents+salaryCents:null;
-    const participation=participationBySource[item.source][item.externalId]?.participation??{availability:'unavailable',numerator:null,denominator:null,note:'Sem observação publicada.'};
-    const presence=participationBySource[item.source][item.externalId]?.presence??{availability:'unavailable',numerator:null,denominator:null,note:'Sem observação publicada.'};
-    const cabinet=cabinetSummaries[item.source][item.externalId];
-    return{...item,expenseCents,expenseYear:expense?years[item.source]:null,cabinetCents,salaryCents,salaryMonths:salary?.months??null,totalCostCents,participation,presence,staff:cabinet?.staff??null,cabinetFinancialCents:cabinet?.financialCents??null,cabinetPeriod:cabinet?.period??null,proposalCount:proposalCounts.get(`${item.source}:${item.externalId}`)??0};
-  });
-  if(query.sort){
-    const direction=query.sort.endsWith('_desc')?-1:1,key=query.sort.replace(/_(asc|desc)$/,'');
-    const text=(a:string,b:string)=>a.localeCompare(b,'pt-BR',{sensitivity:'base'});
-    const number=(a:number|null,b:number|null)=>a===null&&b===null?0:a===null?1:b===null?-1:(a-b)*direction;
-    items.sort((a,b)=>{
-      let compared=0;
-      if(key==='uf')compared=text(a.uf,b.uf)*direction;
-      else if(key==='party')compared=text(a.party,b.party)*direction;
-      else if(key==='cost')compared=number(a.totalCostCents,b.totalCostCents);
-      else{const left=a.presence.numerator!==null&&a.presence.denominator?a.presence.numerator/a.presence.denominator:null,right=b.presence.numerator!==null&&b.presence.denominator?b.presence.numerator/b.presence.denominator:null;compared=number(left,right)}
-      return compared||text(a.name,b.name);
-    });
-    items=items.slice((requestedPage-1)*pageSize,requestedPage*pageSize);
-  }
-  return{result:{...result,items},facets:publishedFacets(db,query.source),panoramas,processingTimes,years,monthlyCosts};
-})}
-export type HouseSort='name'|'expense_desc'|'expense_asc';
-function listingPanorama(db:ReturnType<typeof openDatabase>,source:Source,year:number,profiles:Array<{externalId:string;uf:string;party:string}>,expenseValues:number[],metrics:ReturnType<typeof publishedParticipationRows>){
-  const roster=db.prepare(`SELECT a.batch_id,b.published_at FROM active_publications a JOIN publication_batches b ON b.id=a.batch_id WHERE a.source=?`).get(source),expenseBatch=db.prepare(`SELECT a.batch_id,b.published_at,b.record_count FROM active_expense_publications a JOIN expense_batches b ON b.id=a.batch_id WHERE a.source=? AND a.year=?`).get(source,year),presenceBatch=db.prepare(`SELECT b.id,b.availability,b.note FROM presence_batches b JOIN active_presence_publications a ON a.batch_id=b.id WHERE a.source=? AND a.year=?`).get(source,year),legislativeBatch=db.prepare(`SELECT b.id FROM legislative_batches b JOIN active_legislative_publications a ON a.batch_id=b.id WHERE a.source=? AND a.year=?`).get(source,year);
-  const activityPublications=db.prepare('SELECT scope,batch_id FROM active_activity_publications WHERE source=?').all(source),activityBatches=activityPublications.map(row=>String(row.batch_id)),activityIsSample=activityPublications.some(row=>String(row.scope).startsWith('amostra-')),activityIsHousePartial=activityPublications.some(row=>['amostra-','current-roster-person-activity'].some(prefix=>String(row.scope).startsWith(prefix))),marks=activityBatches.map(()=>'?').join(','),activity=activityBatches.length?{proposals:Number(db.prepare(`SELECT count(DISTINCT proposal_id||':'||person_external_id) n FROM proposal_authors WHERE batch_id IN (${marks}) AND person_external_id IS NOT NULL`).get(...activityBatches)!.n),rapporteurships:Number(db.prepare(`SELECT count(*) n FROM legislative_appointments WHERE batch_id IN (${marks}) AND kind='rapporteurship'`).get(...activityBatches)!.n),laws:Number(db.prepare(`SELECT count(DISTINCT l.proposal_id||':'||a.person_external_id) n FROM law_links l JOIN proposal_authors a ON a.batch_id=l.batch_id AND a.proposal_id=l.proposal_id WHERE l.batch_id IN (${marks}) AND a.person_external_id IS NOT NULL`).get(...activityBatches)!.n)}:null;
-  const observed=(kind:'presence'|'participation')=>Object.values(metrics).flatMap(item=>{const value=item[kind];if(value.numerator===null||!value.denominator)return[];if(kind==='participation'&&(value.numerator===0||(source==='camara'&&(item.presence.numerator===null||!item.presence.denominator))))return[];return[value.numerator/value.denominator]}),annual={from:`${year}-01-01`,to:`${year}-12-31`,grain:'year' as const},empty=(note:string)=>({availability:'unavailable' as const,source,period:annual,batchId:null,note,sampleSize:0}),presenceValues=observed('presence'),participationValues=observed('participation');
-  return{source,year,roster:{parliamentarians:profiles.length,states:new Set(profiles.map(item=>item.uf)).size,parties:new Set(profiles.map(item=>item.party)).size,coverage:roster?{availability:'available' as const,source,period:{from:String(roster.published_at),to:String(roster.published_at),grain:'snapshot' as const},batchId:String(roster.batch_id),note:'Cadastro publicado ativo.',sampleSize:profiles.length}:empty('Não há cadastro publicado ativo.')},expenses:{distributionCents:distribution(expenseValues),coverage:expenseBatch?{availability:'available' as const,source,period:annual,batchId:String(expenseBatch.batch_id),note:'Lote anual publicado; a distribuição individual não é recalculada nesta listagem.',sampleSize:Number(expenseBatch.record_count??0)}:empty('Não há lote anual de cota publicado.')},cabinetPayroll:{distributionCents:distribution([]),coverage:empty('Não usado nesta listagem.')},presence:{distributionRatio:distribution(presenceValues),coverage:presenceBatch?{availability:String(presenceBatch.availability) as 'available'|'partial'|'unavailable',source,period:annual,batchId:String(presenceBatch.id),note:String(presenceBatch.note),sampleSize:presenceValues.length}:empty('Não há lote de presença publicado.')},participation:{distributionRatio:distribution(participationValues),meanRatio:participationValues.length?participationValues.reduce((sum,value)=>sum+value,0)/participationValues.length:null,coverage:legislativeBatch?{availability:participationValues.length?'available' as const:'partial' as const,source,period:annual,batchId:String(legislativeBatch.id),note:source==='camara'?'Média entre deputados com presença oficial disponível e ao menos um voto nominal registrado; ausência de cobertura não vira zero.':'Média entre parlamentares com ao menos um voto nominal registrado; ausência de cobertura não vira zero.',sampleSize:participationValues.length}:empty('Não há lote de votações nominais publicado.')},activity:{proposals:activity?.proposals??null,rapporteurships:activity?.rapporteurships??null,laws:activity?.laws??null,coverage:activity?{availability:activityIsHousePartial?'partial' as const:'available' as const,source,period:{from:null,to:null,grain:'unknown' as const},batchId:activityBatches.join(','),note:activityIsHousePartial?`Atividade dos parlamentares do cadastro atual (${activityPublications.map(row=>String(row.scope)).join(', ')}); cobre os perfis, mas não equivale ao catálogo integral de matérias recebidas pela Casa.`:'Autoria, relatoria e vínculo com lei permanecem métricas separadas.',sampleSize:activityIsSample?1:profiles.length}:empty('Não há lote de atividade legislativa publicado.')},cabinet:{staffDistribution:distribution([]),officeDistribution:distribution([]),coverage:empty('Não usado nesta listagem.')}};
+﻿import type { Source } from '@senadotracker/domain';
+import * as pgData from './data-postgres.ts';
+import type * as Legacy from '../../../packages/db/src/web-legacy-contract.ts';
+
+export type DataResult<T> = { status: 'available'; data: T } | { status: 'unavailable'; message: string };
+export type DataProfileSection = 'overview' | 'costs' | 'activity' | 'career';
+export type LegislativeOverviewSort = 'uf_asc' | 'uf_desc' | 'party_asc' | 'party_desc' | 'cost_asc' | 'cost_desc' | 'presence_asc' | 'presence_desc';
+export type HouseSort = 'name' | 'expense_desc' | 'expense_asc';
+export type PartyHouse = 'all' | 'senado' | 'camara';
+export type ComparisonDimension = string;
+
+type Contract<K extends string> = K extends keyof typeof Legacy ? typeof Legacy[K] extends (...args: any[]) => infer R ? R : any : any;
+type CompatResult<T = any> = { status: 'available'; data: T } | { status: 'unavailable'; message: string };
+type ComparisonSetupCompat = { options: any[]; years: number[] };
+type ComparisonCompat = { source: any; year: number; people: any[]; expenses: any[]; rows: any[]; coverage: any; fidelity: any[]; costs: any[]; cabinet: any[]; agreements: any[]; benchmarks: any; [key: string]: any };
+type ProfileResult = Contract<'profile'>;
+const call = <K extends string>(name: K, ...args: any[]): Promise<Contract<K>> => Promise.resolve((pgData as any)[name](...args)) as Promise<Contract<K>>;
+
+export const cabinetCompetenceBenchmark = (...args: any[]): Promise<any> => call('cabinetCompetenceBenchmark', ...args) as Promise<any>;
+export const commissionAgenda = (...args: any[]): Promise<Contract<'commissionAgenda'>> => call('commissionAgenda', ...args);
+export const commissionDetail = (...args: any[]): Promise<Contract<'commissionDetail'>> => call('commissionDetail', ...args);
+export const commissionDirectory = (...args: any[]): Promise<Contract<'commissionDirectory'>> => call('commissionDirectory', ...args);
+export const commissionOverview = (...args: any[]): Promise<Contract<'commissionOverview'>> => call('commissionOverview', ...args);
+export const comparison = (source: any, year: number, filters: any = {}): Promise<Contract<'comparison'>> => call('expenseComparison', source, year, filters);
+export const comparisonDashboard = (...args: any[]): Promise<CompatResult<ComparisonCompat>> => call('comparisonDashboard', ...args) as Promise<CompatResult<ComparisonCompat>>;
+export const comparisonYears = (source: any): Promise<Contract<'comparisonYears'>> => call('expenseYears', source);
+export const congressSupplierCategoryMix = (...args: any[]): Promise<Contract<'congressSupplierCategoryMix'>> => call('congressSupplierCategoryMix', ...args);
+export const congressSupplierOverview = (...args: any[]): Promise<Contract<'congressSupplierOverview'>> => call('congressSupplierOverview', ...args);
+export const expenseDetail = (...args: any[]): Promise<Contract<'expenseDetail'>> => call('expenseDetail', ...args);
+export const homeHighlights = (...args: any[]): Promise<Contract<'homeHighlights'>> => call('homeHighlights', ...args);
+export const homeOverview = (...args: any[]): Promise<Contract<'homeOverview'>> => call('homeOverview', ...args);
+export const houseListing = (...args: any[]): Promise<Contract<'houseListing'>> => call('houseListing', ...args);
+export const houseMetricSummary = (...args: any[]): Promise<Contract<'houseMetricSummary'>> => call('houseMetricSummary', ...args);
+export const legislativeOverview = (...args: any[]): Promise<Contract<'legislativeOverview'>> => call('legislativeOverview', ...args);
+export const parliamentarianSupplierNetwork = (...args: any[]): Promise<Contract<'parliamentarianSupplierNetwork'>> => call('parliamentarianSupplierNetwork', ...args);
+export const parties = (house: any, requestedYear: number | null, search?: string): Promise<Contract<'parties'>> => call('parties', house, requestedYear, search) as unknown as Promise<Contract<'parties'>>;
+export const partyComparison = (...args: any[]): Promise<CompatResult<ComparisonCompat>> => call('partyComparison', ...args) as unknown as Promise<CompatResult<ComparisonCompat>>;
+export const partyDetail = (...args: any[]): Promise<Contract<'partyDetail'>> => call('partyDetail', ...args);
+export const partyLanding = (...args: any[]): Promise<Contract<'partyLanding'>> => call('partyLanding', ...args);
+export const patrimonyRanking = (...args: any[]): Promise<Contract<'patrimonyRanking'>> => call('patrimonyRanking', ...args);
+export const personComparison = (source: any, year: number, ids: string[], dimension: any): Promise<CompatResult<ComparisonCompat>> => call('comparisonDashboard', source, year, ids, dimension) as unknown as Promise<CompatResult<ComparisonCompat>>;
+export const personComparisonSetup = (...args: any[]): Promise<CompatResult<ComparisonSetupCompat>> => call('personComparisonSetup', ...args) as Promise<CompatResult<ComparisonSetupCompat>>;
+export async function profile(source: any, externalId: string, _section?: DataProfileSection, _votePage?: number): Promise<ProfileResult> {
+  return await (pgData as any).profileFull(source, externalId, _section ?? 'overview', _votePage ?? 1) as ProfileResult;
 }
-export function houseListing(source:Source,query:{uf?:string;party?:string;search?:string;page:number;pageSize:number;sort:HouseSort}){
-  return cachedRead(`house:${source}:${JSON.stringify(query)}`,db=>{
-    const base={source,...(query.uf?{uf:query.uf}:{}),...(query.party?{party:query.party}:{}),...(query.search?{search:query.search}:{})};
-    const year=publishedExpenseYears(db,source)[0]??new Date().getFullYear();
-    const expenseSorted=query.sort==='expense_desc'||query.sort==='expense_asc';
-    const comparison=expenseSorted?publishedExpenseComparison(db,source,year,{...(query.uf?{uf:query.uf}:{}),...(query.party?{party:query.party}:{})}):null;
-    let result=listPublished(db,{...base,page:query.page,pageSize:query.pageSize});
-    if(comparison){
-      const sorted=[...comparison.items].sort((a,b)=>query.sort==='expense_asc'?a.valueCents-b.valueCents:b.valueCents-a.valueCents);
-      const wanted=sorted.slice((query.page-1)*query.pageSize,query.page*query.pageSize).map(item=>item.externalId);
-      const profiles=listPublished(db,{source,page:1,pageSize:100}).items.filter(item=>wanted.includes(item.externalId)).sort((a,b)=>wanted.indexOf(a.externalId)-wanted.indexOf(b.externalId));
-      result={...result,items:profiles,total:sorted.length};
-    }
-    const ids=result.items.map(item=>item.externalId),marks=ids.map(()=>'?').join(',');
-    const expenseMap=new Map<string,{valueCents:number}>();
-    if(ids.length)for(const row of db.prepare(`SELECT e.external_id,sum(e.net_cents-e.refund_cents) value FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id WHERE e.source=? AND e.year=? AND e.external_id IN (${marks}) GROUP BY e.external_id`).all(source,year,...ids))expenseMap.set(String(row.external_id),{valueCents:Number(row.value)});
-    const cabinets=publishedCabinetSummaries(db,source,ids);
-    const annualCabinetMap=new Map<string,number>();
-    if(ids.length){
-      const rows=source==='senado'
-        ? db.prepare(`SELECT c.external_id,sum(c.value_cents) value FROM expanded_costs c JOIN active_expanded_cost_publications a ON a.batch_id=c.batch_id WHERE c.source='senado' AND a.year=? AND c.rubric='cabinet_payroll_gross' AND c.value_cents IS NOT NULL AND c.external_id IN (${marks}) GROUP BY c.external_id`).all(year,...ids)
-        : db.prepare(`SELECT c.external_id,sum(c.spent_cents) value FROM cabinet_monthly_budgets c JOIN active_cabinet_budget_publications a ON a.batch_id=c.batch_id WHERE c.source='camara' AND a.year=? AND c.spent_cents IS NOT NULL AND c.external_id IN (${marks}) GROUP BY c.external_id`).all(year,...ids);
-      for(const row of rows)annualCabinetMap.set(String(row.external_id),Number(row.value));
-    }
-    const today=new Date(),salaryMonths=year===today.getFullYear()?today.getMonth()+1:year<today.getFullYear()?12:0,salaryAt=`${year}-${String(Math.max(1,salaryMonths)).padStart(2,'0')}-01`,salaryRow=salaryMonths?db.prepare(`SELECT value_cents FROM normative_values WHERE kind='parliamentary_subsidy' AND applies_to='congress' AND valid_from<=? AND (valid_to IS NULL OR valid_to>=?) ORDER BY valid_from DESC LIMIT 1`).get(salaryAt,salaryAt):null,salaryCents=salaryRow?Number(salaryRow.value_cents)*salaryMonths:null;
-    const allProfiles=db.prepare(`SELECT p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=?`).all(source).map(row=>JSON.parse(String(row.payload)) as Profile);
-    const allIds=allProfiles.map(item=>item.externalId),revision=publicationRevision(db),allMetrics=cachedValue(`overview-participation:${revision}:${source}:${year}`,current=>publishedParticipationRows(current,source,year,allIds),1_800_000);
-    const activityIds=db.prepare('SELECT batch_id FROM active_activity_publications WHERE source=?').all(source).map(row=>String(row.batch_id));
-    const activityMarks=activityIds.map(()=>'?').join(','),proposalMap=new Map<string,number>();
-    if(ids.length&&activityIds.length)for(const row of db.prepare(`SELECT person_external_id,count(DISTINCT proposal_id) value FROM proposal_authors WHERE batch_id IN (${activityMarks}) AND person_external_id IN (${marks}) GROUP BY person_external_id`).all(...activityIds,...ids))proposalMap.set(String(row.person_external_id),Number(row.value));
-    const activityIsSample=db.prepare("SELECT 1 FROM active_activity_publications WHERE source=? AND scope LIKE 'amostra-%' LIMIT 1").get(source)!==undefined;
-    const visible=result.items.map(item=>{const cabinet=cabinets[item.externalId]??{staff:null,financialCents:null,period:null},expenseCents=expenseMap.get(item.externalId)?.valueCents??null,annualCabinetCents=annualCabinetMap.get(item.externalId)??null,totalCostCents=expenseCents!==null&&annualCabinetCents!==null&&salaryCents!==null?expenseCents+annualCabinetCents+salaryCents:null;return{...item,expenseCents,expenseYear:expenseMap.has(item.externalId)?year:null,annualCabinetCents,salaryCents,salaryMonths,totalCostCents,participation:allMetrics[item.externalId]!,staff:cabinet.staff,cabinetFinancialCents:cabinet.financialCents,cabinetPeriod:cabinet.period,proposalCount:proposalMap.has(item.externalId)?proposalMap.get(item.externalId)!:activityIsSample?null:0}});
-    const panorama=cachedValue(`overview-panorama:${revision}:${source}:${year}`,current=>listingPanorama(current,source,year,allProfiles,[],allMetrics),1_800_000),operations=cachedValue(`overview-operations:${revision}:${source}:${year}`,current=>publishedHouseOperations(current,source,year),1_800_000),cabinetPanorama=cachedValue(`house-cabinet:${revision}:${source}`,current=>publishedCabinetPanorama(current,source),1_800_000),topics=cachedValue(`house-topics:${revision}:${source}:${year}`,current=>publishedHouseTopics(current,source,year),1_800_000);
-    return{year,panorama,operations,cabinetPanorama,topics,facets:publishedFacets(db,source),result:{...result,items:visible}};
-  });
-}
-export function parties(house:PartyHouse,requestedYear:number|null,search?:string,voteKey?:string){return cachedRead(`parties:${house}:${requestedYear}:${search??''}:${voteKey??''}`,db=>{
-  const sources:Source[]=house==='all'?['senado','camara']:[house];
-  const revision=publicationRevision(db);
-  const availableYears=sources.flatMap(source=>publishedExpenseYears(db,source));
-  const year=requestedYear&&availableYears.includes(requestedYear)?requestedYear:(Math.max(...availableYears,0)||new Date().getFullYear());
-  const base=cachedRead(`party-panorama:${revision}:${house}:${year}`,current=>publishedPartyPanorama(current,house,year),1_800_000);
-  const optionsResult=cachedRead(`party-vote-options:${revision}:${house}`,current=>publishedVoteOptions(current,house),1_800_000);
-  const topicsResult=cachedRead(`party-topics:${revision}:${house}`,current=>publishedOfficialTopics(current,house),1_800_000);
-  if(base.status==='unavailable'||optionsResult.status==='unavailable'||topicsResult.status==='unavailable')throw new Error('Panorama partidário indisponível');
-  const rows=search?base.data.rows.filter(row=>searchText(row.party).includes(searchText(search))):base.data.rows;
-  const panorama={...base.data,rows,coverage:{...base.data.coverage,availability:rows.length?'available' as const:'unavailable' as const,sampleSize:rows.length}};
-  const options=optionsResult.data,selected=voteKey&&options.some(item=>item.key===voteKey)?voteKey:options[0]?.key;
-  const vote=selected?cachedRead(`party-vote:${revision}:${selected}`,current=>publishedPartyVote(current,selected),1_800_000):null;
-  return{panorama,voteOptions:options,vote:vote?.status==='available'?vote.data:null,topics:topicsResult.data,availableYears:[...new Set(availableYears)].sort((a,b)=>b-a)};
-})}
-
-export function partyLanding(requestedYear:number|null){return read(connection=>{
-  const revision=publicationRevision(connection);
-  return cachedValue(`party-landing:v2:${revision}:${requestedYear??'latest'}`,db=>{
-  const sources:Source[]=['senado','camara'];
-  const availableYears=[...new Set(sources.flatMap(source=>publishedExpenseYears(db,source)))].sort((a,b)=>b-a);
-  const year=requestedYear&&availableYears.includes(requestedYear)?requestedYear:availableYears[0]??new Date().getFullYear();
-  const profiles=new Map<string,Profile>();
-  for(const source of sources)for(const row of db.prepare(`SELECT p.external_id,p.payload FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=?`).all(source))profiles.set(`${source}:${row.external_id}`,JSON.parse(String(row.payload)) as Profile);
-  const seats=new Map<string,{party:string;senators:number;deputies:number;expenseMedianCents:number|null;expenseSample:number}>();
-  const seat=(party:string)=>{let row=seats.get(party);if(!row){row={party,senators:0,deputies:0,expenseMedianCents:null,expenseSample:0};seats.set(party,row)}return row};
-  for(const item of profiles.values()){const row=seat(item.party);if(item.source==='senado')row.senators++;else row.deputies++}
-  const expensesByPerson=new Map<string,{party:string;value:number}>(),monthlyExpenses=new Map<string,number>();
-  for(const row of db.prepare(`SELECT e.source,e.external_id,e.month,sum(e.net_cents-e.refund_cents) value FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id WHERE e.year=? GROUP BY e.source,e.external_id,e.month`).all(year)){
-    const source=String(row.source) as Source,id=String(row.external_id),month=Number(row.month),person=profiles.get(`${source}:${id}`),party=person?partyAtDate(person,`${year}-${String(month).padStart(2,'0')}-15`):null;if(!party)continue;const key=`${party}:${source}:${id}`,value=expensesByPerson.get(key)??{party,value:0};value.value+=Number(row.value);expensesByPerson.set(key,value);monthlyExpenses.set(`${source}:${id}:${month}`,Number(row.value));
-  }
-  const expensesByParty=new Map<string,number[]>();for(const item of expensesByPerson.values()){const values=expensesByParty.get(item.party)??[];values.push(item.value);expensesByParty.set(item.party,values)}
-  for(const [party,values] of expensesByParty){const row=seat(party),stats=distribution(values);row.expenseMedianCents=stats.median;row.expenseSample=stats.count}
-  const panorama={rows:[...seats.values()]};
-  const normativeValues=db.prepare(`SELECT valid_from,valid_to,value_cents FROM normative_values WHERE kind='parliamentary_subsidy' AND applies_to='congress' ORDER BY valid_from DESC`).all();
-  const monthlyCabinets=new Map<string,number>();
-  for(const row of db.prepare(`SELECT c.external_id,c.month,sum(c.spent_cents) value FROM cabinet_monthly_budgets c JOIN active_cabinet_budget_publications a ON a.batch_id=c.batch_id WHERE a.year=? AND c.spent_cents IS NOT NULL GROUP BY c.external_id,c.month`).all(year))monthlyCabinets.set(`camara:${row.external_id}:${row.month}`,Number(row.value));
-  for(const row of db.prepare(`SELECT c.external_id,CAST(substr(c.competence,6,2) AS INTEGER) month,sum(c.value_cents) value FROM expanded_costs c JOIN active_expanded_cost_publications a ON a.batch_id=c.batch_id WHERE c.source='senado' AND a.year=? AND c.rubric='cabinet_payroll_gross' AND c.value_cents IS NOT NULL GROUP BY c.external_id,substr(c.competence,1,7)`).all(year))monthlyCabinets.set(`senado:${row.external_id}:${row.month}`,Number(row.value));
-  const personCosts=new Map<string,{source:Source;party:string;sum:number;months:number}>();
-  for(const [key,expense] of monthlyExpenses){const cabinet=monthlyCabinets.get(key);if(cabinet===undefined)continue;const [source,id,monthText]=key.split(':') as [Source,string,string],month=Number(monthText),at=`${year}-${String(month).padStart(2,'0')}-01`,salary=normativeValues.find(row=>String(row.valid_from)<=at&&(!row.valid_to||String(row.valid_to)>=at)),profile=profiles.get(`${source}:${id}`),party=profile?partyAtDate(profile,`${year}-${String(month).padStart(2,'0')}-15`):null;if(!salary||!party)continue;const personKey=`${source}:${party}:${id}`,value=personCosts.get(personKey)??{source,party,sum:0,months:0};value.sum+=expense+cabinet+Number(salary.value_cents);value.months++;personCosts.set(personKey,value)}
-  const partyCosts=new Map<string,{source:Source;party:string;sum:number;n:number;months:number}>();
-  for(const person of personCosts.values()){const key=`${person.source}:${person.party}`,value=partyCosts.get(key)??{source:person.source,party:person.party,sum:0,n:0,months:0};value.sum+=person.sum/person.months;value.n++;value.months+=person.months;partyCosts.set(key,value)}
-  const costByHouse=Object.fromEntries(sources.map(source=>[source,[...partyCosts.values()].filter(item=>item.source===source&&item.n>=3).map(item=>({party:item.party,meanMonthlyCents:item.sum/item.n,n:item.n,observedPersonMonths:item.months})).sort((a,b)=>b.meanMonthlyCents-a.meanMonthlyCents||a.party.localeCompare(b.party,'pt-BR'))])) as Record<Source,{party:string;meanMonthlyCents:number;n:number;observedPersonMonths:number}[]>;
-  const authorsByParty=new Map<string,number>(),authoredProposals=new Set<string>();let authoredUniverse=0;
-  for(const source of sources){
-    const base=`FROM proposals p INDEXED BY proposals_batch_effective_year JOIN proposal_authors x ON x.batch_id=p.batch_id AND x.proposal_id=p.external_id JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE a.source=? AND COALESCE(json_extract(p.payload,'$.year'),CAST(substr(json_extract(p.payload,'$.presentedAt'),1,4) AS INTEGER))=? AND json_extract(x.payload,'$.party') IS NOT NULL`;
-    authoredUniverse+=Number(db.prepare(`SELECT count(DISTINCT p.external_id) value FROM proposals p INDEXED BY proposals_batch_effective_year JOIN proposal_authors x ON x.batch_id=p.batch_id AND x.proposal_id=p.external_id JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE a.source=? AND COALESCE(json_extract(p.payload,'$.year'),CAST(substr(json_extract(p.payload,'$.presentedAt'),1,4) AS INTEGER))=?`).get(source,year)?.value??0);
-    for(const row of db.prepare(`SELECT json_extract(x.payload,'$.party') party,count(DISTINCT p.external_id) count ${base} GROUP BY json_extract(x.payload,'$.party')`).all(source,year))authorsByParty.set(String(row.party),(authorsByParty.get(String(row.party))??0)+Number(row.count));
-    for(const row of db.prepare(`SELECT DISTINCT p.external_id ${base}`).all(source,year))authoredProposals.add(`${source}:${row.external_id}`);
-  }
-  const themes=new Map<string,Set<string>>();
-  for(const row of db.prepare(`SELECT c.source,c.proposal_id,json_extract(c.payload,'$.label') label FROM legislative_complements c JOIN active_complement_publications a ON a.batch_id=c.batch_id WHERE c.kind='theme' AND c.proposal_id IS NOT NULL`).all()){const key=`${row.source}:${row.proposal_id}`;if(!authoredProposals.has(key)||!row.label)continue;const label=String(row.label),ids=themes.get(label)??new Set<string>();ids.add(key);themes.set(label,ids)}
-  const topTheme=[...themes].map(([label,ids])=>({label,count:ids.size})).sort((a,b)=>b.count-a.count||a.label.localeCompare(b.label,'pt-BR'))[0]??null,themedTotal=new Set([...themes.values()].flatMap(ids=>[...ids])).size;
-  const participation=new Map<string,{total:number;n:number}>();
-  for(const source of sources){const ids=[...profiles.entries()].flatMap(([key])=>key.startsWith(`${source}:`)?[key.slice(source.length+1)]:[]),metrics=cachedValue(`overview-participation:${revision}:${source}:${year}`,current=>publishedParticipationRows(current,source,year,ids),1_800_000);for(const id of ids){const profile=profiles.get(`${source}:${id}`)!,metric=metrics[id],value=metric?.participation;if(!value||value.numerator===null||!value.denominator||value.numerator===0||(source==='camara'&&(!metric.presence.denominator||metric.presence.numerator===null)))continue;const party=profile.party,current=participation.get(party)??{total:0,n:0};current.total+=value.numerator/value.denominator;current.n++;participation.set(party,current)}}
-  const operations=Object.fromEntries(sources.map(source=>{
-    const roster=[...profiles.values()].filter(item=>item.source===source).length;
-    const expenseRows=db.prepare(`SELECT e.month,sum(e.net_cents-e.refund_cents) value FROM expenses e JOIN active_expense_publications a ON a.batch_id=e.batch_id WHERE e.source=? AND e.year=? GROUP BY e.month`).all(source,year);
-    const cabinetRows=source==='camara'?db.prepare(`SELECT c.month,sum(c.spent_cents) value FROM cabinet_monthly_budgets c JOIN active_cabinet_budget_publications a ON a.batch_id=c.batch_id WHERE a.year=? AND c.spent_cents IS NOT NULL GROUP BY c.month`).all(year):db.prepare(`SELECT CAST(substr(c.competence,6,2) AS INTEGER) month,sum(c.value_cents) value FROM expanded_costs c JOIN active_expanded_cost_publications a ON a.batch_id=c.batch_id WHERE c.source='senado' AND a.year=? AND c.rubric='cabinet_payroll_gross' AND c.value_cents IS NOT NULL GROUP BY substr(c.competence,1,7)`).all(year);
-    const expenseByMonth=new Map(expenseRows.map(row=>[Number(row.month),Number(row.value)])),cabinetByMonth=new Map(cabinetRows.map(row=>[Number(row.month),Number(row.value)]));
-    const months=[...expenseByMonth.keys()].filter(month=>cabinetByMonth.has(month)&&month>=1&&month<=12).sort((a,b)=>a-b),common=months.flatMap(month=>{const at=`${year}-${String(month).padStart(2,'0')}-01`,salary=normativeValues.find(row=>String(row.valid_from)<=at&&(!row.valid_to||String(row.valid_to)>=at));return salary?[{month,salary:Number(salary.value_cents)*roster,expense:expenseByMonth.get(month)!,cabinet:cabinetByMonth.get(month)!}]:[]});
-    const mean=(values:number[])=>values.length?values.reduce((total,value)=>total+value,0)/values.length:null;
-    const salaryMonthly=mean(common.map(item=>item.salary)),expenseMonthly=mean(common.map(item=>item.expense)),cabinetMonthly=mean(common.map(item=>item.cabinet));
-    return[source,{costs:{roster,salaryMonthly,expenseMonthly,cabinetMonthly,totalMonthly:salaryMonthly!==null&&expenseMonthly!==null&&cabinetMonthly!==null?salaryMonthly+expenseMonthly+cabinetMonthly:null,months:common.map(item=>`${year}-${String(item.month).padStart(2,'0')}`)}}];
-  })) as Record<Source,{costs:{roster:number;salaryMonthly:number|null;expenseMonthly:number|null;cabinetMonthly:number|null;totalMonthly:number|null;months:string[]}}>;
-  const updates=db.prepare(`SELECT min(published_at) value FROM (SELECT b.published_at FROM publication_batches b JOIN active_publications a ON a.batch_id=b.id UNION ALL SELECT b.published_at FROM activity_batches b JOIN active_activity_publications a ON a.batch_id=b.id UNION ALL SELECT b.published_at FROM expense_batches b JOIN active_expense_publications a ON a.batch_id=b.id WHERE a.year=?)`).get(year);
-  return{year,availableYears,panorama,updatedAt:updates?.value?String(updates.value):null,topTheme,themedTotal,authoredTotal:authoredProposals.size,authoredUniverse,authoredByParty:Object.fromEntries(authorsByParty),participationByParty:Object.fromEntries([...participation].map(([party,value])=>[party,{mean:value.total/value.n,n:value.n}])),costByHouse,operations};
-  },1_800_000);
-})}
-
-export function partyDetail(party:string,year?:number,voteKey?:string){return cachedRead(`party-detail:v2:${party}:${year??''}:${voteKey??''}`,db=>{const revision=publicationRevision(db),options=cachedValue(`party-vote-options:${revision}:all`,current=>publishedVoteOptions(current,'all'),1_800_000);return publishedPartyDetail(db,party,year,voteKey,options,key=>cachedValue(`party-vote:${revision}:${key}`,current=>publishedPartyVote(current,key),1_800_000))})}
-export function stateRepresentation(uf:string,compareUf?:string){return cachedRead(`state:${uf}:${compareUf??''}`,db=>{const years=['senado','camara'].flatMap(source=>publishedExpenseYears(db,source as Source));const year=Math.max(...years,0)||new Date().getFullYear();const representation=publishedStateRepresentation(db,uf,year);const comparison=[representation.summary,...(compareUf&&compareUf!==uf?publishedStateComparison(db,year,[compareUf]):[])];return{representation,comparison,topics:publishedStateTopics(db,uf)}})}
-export function personComparison(source:Source,year:number,ids:string[],dimension:ComparisonDimension){return read(db=>publishedPersonComparison(db,source,year,ids,dimension))}
-export function personComparisonSetup(source:Source){return read(db=>({options:publishedComparisonOptions(db,source),years:publishedComparisonYears(db,source)}))}
-
-export function propositionListing(query:PropositionQuery){return read(db=>{const fingerprint=publicationRevision(db)+':'+String(db.prepare(`SELECT group_concat(source||':'||scope||':'||batch_id,'|') value FROM active_activity_publications`).get()?.value??''),key=`${fingerprint}:${JSON.stringify(query)}`,cache=shared.senadoTrackerPropositionCache??=new Map();let result=cache.get(key);if(!result){result=publishedPropositions(db,query);if(cache.size>=100)cache.clear();cache.set(key,result)}runPropositionShadow({...(query.search?{q:query.search}:{}),...(query.source?{source:query.source}:{}),...(query.type?{type:query.type}:{}),...(query.year?{year:query.year}:{}),...(query.group?{group:query.group}:{}),...(query.author?{authorId:query.author}:{}),...(query.theme?{theme:query.theme}:{}),...(query.page?{page:query.page}:{}),...(query.pageSize?{pageSize:query.pageSize}:{} )},{items:result.items as any,hasNextPage:result.page*result.pageSize<result.total});const dashboardKey=`${fingerprint}:${query.source??'all'}:${query.year??'latest'}`,dashboardCache=shared.senadoTrackerPropositionDashboardCache??=new Map();let dashboard=dashboardCache.get(dashboardKey);if(!dashboard){dashboard=publishedPropositionDashboard(db,{...(query.source?{source:query.source}:{}),...(query.year?{year:query.year}:{})},(source,year)=>cachedValue(`overview-operations:${publicationRevision(db)}:${source}:${year}`,current=>publishedHouseOperations(current,source,year),1_800_000));if(dashboardCache.size>=20)dashboardCache.clear();dashboardCache.set(dashboardKey,dashboard)}return{result,coverage:publishedPropositionCoverage(db),dashboard}})}
-export function propositionOperationalBundle(year?:number){return cachedRead(`proposition-operational:${year??'latest'}`,db=>cachedValue(`proposition-operational:${publicationRevision(db)}:${year??'latest'}`,current=>composeOperationalBundle(current,year,Object.fromEntries(GROUPS.map(group=>[group.key,group.label]))),1_800_000),300_000)}
-export function propositionResultComposition(query:PropositionQuery){return cachedRead(`proposition-composition:${JSON.stringify(query)}`,db=>publishedPropositionComposition(db,query),30_000)}
-export function propositionObservedState(source:Source,id:string){return cachedRead(`proposition-observed:${source}:${id}`,db=>proposalObservedState(db,source,id),60_000)}
-export function propositionDetail(source:Source,id:string){return cachedRead(`proposition:${source}:${id}`,db=>publishedProposition(db,source,id),60_000)}
-
-export function expenseDetail(source:Source,id:string,year:number){return cachedRead(`expense-detail:${source}:${id}:${year}`,db=>publishedExpenseDetail(db,source,id,year),60_000)}
-export function rankings(query:RankingQuery){return cachedRead(`rankings:${JSON.stringify(query)}`,db=>publishedRankings(db,query),60_000)}
-export function rankingsDashboard(query:DashboardQuery){return cachedRead(`rankings-dashboard:${JSON.stringify(query)}`,db=>publishedRankingsDashboard(db,query),60_000)}
-export function supplierRadar(query:SupplierRadarQuery){return cachedRead(`supplier-radar:${JSON.stringify(query)}`,db=>publishedSupplierRadar(db,query),60_000)}
-export function supplierExplorer(query:SupplierExplorerQuery){return cachedRead(`supplier-explorer:${JSON.stringify(query)}`,db=>publishedSupplierExplorer(db,query),60_000)}
-export function supplierExplorerFacets(query:{year?:number;house?:'all'|'CAMARA'|'SENADO'}={}){return cachedRead(`supplier-explorer-facets:${JSON.stringify(query)}`,db=>publishedSupplierExplorerFacets(db,query),60_000)}
-export function supplierNetwork(supplierId:string,query:{year?:number;house?:'all'|'CAMARA'|'SENADO';limit?:number}={}){return cachedRead(`supplier-network:${supplierId}:${JSON.stringify(query)}`,db=>publishedSupplierNetwork(db,supplierId,query),60_000)}
-export function parliamentarianSupplierNetwork(source:string,externalId:string,query:{year?:number;limit?:number}={}){return cachedRead(`parliamentarian-supplier-network:${source}:${externalId}:${JSON.stringify(query)}`,db=>publishedParliamentarianSupplierNetwork(db,source,externalId,query),60_000)}
-export function supplierGlobalDetail(id:string,year?:number){return cachedRead(`supplier-global-detail:${id}:${year??''}`,db=>publishedSupplierGlobalDetail(db,id,year),60_000)}
-export function supplierGlobalStory(id:string,year:number|null){return cachedRead(`supplier-global-story:${id}:${year??''}`,db=>publishedSupplierGlobalStory(db,id,year),60_000)}
-export function supplierMarket(query:SupplierMarketQuery){return cachedRead(`supplier-market:${JSON.stringify(query)}`,db=>publishedSupplierMarket(db,query),60_000)}
-export function institutionalSupplierOverview(query:{year?:number;house?:'all'|'CAMARA'|'SENADO'}={}){return cachedRead(`institutional-supplier-overview:${JSON.stringify(query)}`,db=>publishedInstitutionalSupplierOverview(db,query),60_000)}
-export function congressSupplierOverview(query:{year?:number;house?:'all'|'CAMARA'|'SENADO'}={}){return cachedRead(`congress-supplier-overview:${JSON.stringify(query)}`,db=>publishedCongressSupplierOverview(db,query),60_000)}
-export function congressSupplierCategoryMix(query:{year?:number;house?:'all'|'CAMARA'|'SENADO'}={}){return cachedRead(`congress-supplier-category-mix:${JSON.stringify(query)}`,db=>publishedCongressSupplierCategoryMix(db,query),60_000)}
-export function supplierDetail(query:SupplierDetailQuery){return cachedRead(`supplier-detail:${JSON.stringify(query)}`,db=>publishedSupplierDetail(db,query),60_000)}
-// A correção monetária entra pelos parâmetros, então a chave de cache precisa deles — antes era fixa.
-// O deflator vem do índice publicado; se qualquer um dos dois meses de referência faltar, fica `null` e
-// a página não oferece a correção, em vez de estimá-la.
-export function patrimonyRanking(corrected=false,fromYear=2018,toYear=2022){return cachedRead(`patrimony-ranking:${corrected?'ipca':'nominal'}:${fromYear}:${toYear}`,db=>{
-  const months=publishedElectionMonths(db,[fromYear,toYear]),from=months[fromYear],to=months[toYear];
-  const available=from&&to?publishedDeflator(db,'ipca',from,to):null;
-  const deflator=available?{indexCode:available.indexCode,fromMonth:available.fromMonth,toMonth:available.toMonth,factor:available.factor}:null;
-  return{...publishedPatrimonyRanking(db,fromYear,toYear,corrected?deflator:null),deflatorAvailable:deflator};
-},60_000)}
-
-export function homeOverview(){return cachedRead('home-overview',db=>({counts:{senators:listPublished(db,{source:'senado',pageSize:1}).total,deputies:listPublished(db,{source:'camara',pageSize:1}).total,parties:publishedFacets(db).parties.length}}),60_000)}
-
-export function comparisonDashboard(source:Source,year:number,ids:string[]){return cachedRead(`comparison-dashboard:${source}:${year}:${ids.join(',')}`,db=>publishedPersonComparisonDashboard(db,source,year,ids),60_000)}
-export function partyComparison(year:number,parties:string[]){return cachedRead(`party-comparison:${year}:${parties.join(',')}`,db=>{if(parties.length<2||parties.length>10||new Set(parties).size!==parties.length)throw new Error('Selecione de dois a dez partidos diferentes');const revision=publicationRevision(db),panorama=cachedValue(`party-panorama:${revision}:all:${year}`,current=>publishedPartyPanorama(current,'all',year),1_800_000),byParty=new Map(panorama.rows.map(item=>[item.party,item])),rows=parties.map(item=>byParty.get(item));if(rows.some(item=>!item))throw new Error('Partido não publicado');return{year,rows:rows.map(item=>item!),coverage:panorama.coverage}})}
-export function statesComparison(year:number,ufs:string[]){return cachedRead(`states-comparison:${year}:${ufs.join(',')}`,db=>publishedStatesComparison(db,year,ufs),60_000)}
-// Uma entrada de 30 min por Casa e ano alimenta régua de KPI e coroplético, reusando a participação
-// já cacheada em `overview-participation:` para não recomputar presença e votações nominais.
-export function houseMetricSummary(source:Source,requestedYear?:number){return cachedRead(`house-metrics:${source}:${requestedYear??'latest'}`,db=>{
-  const revision=publicationRevision(db),year=requestedYear??(publishedExpenseYears(db,source)[0]??new Date().getFullYear());
-  return cachedValue(`house-metrics:${revision}:${source}:${year}`,current=>{
-    const ids=current.prepare(`SELECT p.external_id FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=?`).all(source).map(row=>String(row.external_id));
-    const participation=cachedValue(`overview-participation:${revision}:${source}:${year}`,connection=>publishedParticipationRows(connection,source,year,ids),1_800_000);
-    return publishedHouseMetricSummary(current,source,year,participation);
-  },1_800_000);
-},1_800_000)}
-// O eixo varre a legislatura inteira: cold custa ~2,6 s na Câmara, então a entrada de 30 min é o que
-// mantém a página de comparação barata. A chave inclui a revisão do lote publicado.
-// Primeira dobra da home: um número do período, três extremos com rosto e a âncora em salário mínimo.
-// Nada aqui emite consulta nova — `houseMetricSummary` e o painel de rankings já são cacheados, e o
-// patrimônio (a varredura eleitoral mais cara) fica desligado porque nenhum destaque depende dele.
-export function homeHighlights(){return cachedRead('home-highlights',db=>{
-  const revision=publicationRevision(db);
-  return cachedValue(`home-highlights:${revision}`,current=>{
-    const dashboard=publishedRankingsDashboard(current,{includeAssets:false});
-    const summaries=(['senado','camara'] as Source[]).flatMap(source=>{
-      const year=publishedExpenseYears(current,source)[0];if(!year)return[];
-      const ids=current.prepare(`SELECT p.external_id FROM profiles p JOIN active_publications a ON a.batch_id=p.batch_id WHERE a.source=?`).all(source).map(row=>String(row.external_id));
-      const participation=cachedValue(`overview-participation:${revision}:${source}:${year}`,connection=>publishedParticipationRows(connection,source,year,ids),1_800_000);
-      return[[source,publishedHouseMetricSummary(current,source,year,participation)] as const];
-    });
-    return{highlights:dashboard.highlights,coverage:dashboard.coverage,year:dashboard.year,updatedAt:dashboard.updatedAt,
-      summaries:Object.fromEntries(summaries) as Partial<Record<Source,ReturnType<typeof publishedHouseMetricSummary>>>,
-      minimumWage:publishedMinimumWage(current)};
-  },1_800_000);
-},1_800_000)}
-export function voteAxis(source:Source){return cachedRead(`vote-axis:${source}`,db=>cachedValue(`vote-axis:${publicationRevision(db)}:${source}`,current=>publishedCurrentVoteAxis(current,source),1_800_000),1_800_000)}
-export function cabinetCompetenceBenchmark(source:Source,competence:string){return cachedRead(`cabinet-competence:${source}:${competence}`,db=>cachedValue(`cabinet-competence:${publicationRevision(db)}:${source}:${competence}`,current=>publishedCabinetCompetenceBenchmark(current,source,competence),1_800_000),1_800_000)}
-
-export function commissionAgenda(query:import('@senadotracker/db').CommissionAgendaQuery){return cachedRead(`commission-agenda:${JSON.stringify(query)}`,db=>publishedCommissionAgenda(db,query),30_000)}
-export function commissionDetail(bodyId:string,year:number){return cachedRead(`commission-detail:${bodyId}:${year}`,db=>publishedCommissionDetail(db,bodyId,year),30_000)}
+export const profileIdentity = (source: Source, externalId: string): Promise<Contract<'profileIdentity'>> => call('profile', source, externalId) as Promise<Contract<'profileIdentity'>>;
+export const propositionDetail = (...args: any[]): Promise<Contract<'propositionDetail'>> => call('propositionDetail', ...args);
+export const propositionListing = (...args: any[]): Promise<Contract<'propositionListing'>> => call('propositionListing', ...args);
+export const propositionObservedState = (...args: any[]): Promise<Contract<'propositionObservedState'>> => call('propositionObservedState', ...args);
+// The operational bundle is a discriminated public result.  Keep the facade
+// type explicit because the legacy compose implementation is optional in
+// standalone tooling and otherwise TypeScript infers `void` from that module.
+export const propositionOperationalBundle = (...args: any[]): Promise<CompatResult<any>> => call('propositionOperationalBundle', ...args) as Promise<CompatResult<any>>;
+export const propositionResultComposition = (...args: any[]): Promise<Contract<'propositionResultComposition'>> => call('propositionResultComposition', ...args);
+export const rankings = (...args: any[]): Promise<Contract<'rankings'>> => call('rankings', ...args);
+export const rankingsDashboard = (...args: any[]): Promise<Contract<'rankingsDashboard'>> => call('rankingsDashboard', ...args);
+export const roster = (...args: any[]): Promise<Contract<'roster'>> => call('roster', ...args);
+export const stateRepresentation = (...args: any[]): Promise<Contract<'stateRepresentation'>> => call('stateRepresentation', ...args);
+export const statesComparison = (...args: any[]): Promise<CompatResult<ComparisonCompat>> => call('statesComparison', ...args) as unknown as Promise<CompatResult<ComparisonCompat>>;
+export const supplierDetail = (...args: any[]): Promise<Contract<'supplierDetail'>> => call('supplierDetail', ...args);
+export const supplierExplorer = (...args: any[]): Promise<Contract<'supplierExplorer'>> => call('supplierExplorer', ...args);
+export const supplierExplorerFacets = (...args: any[]): Promise<Contract<'supplierExplorerFacets'>> => call('supplierExplorerFacets', ...args);
+export const supplierGlobalDetail = (...args: any[]): Promise<Contract<'supplierGlobalDetail'>> => call('supplierGlobalDetail', ...args);
+export const supplierGlobalStory = (...args: any[]): Promise<Contract<'supplierGlobalStory'>> => call('supplierGlobalStory', ...args);
+export const supplierMarket = (...args: any[]): Promise<Contract<'supplierMarket'>> => call('supplierMarket', ...args);
+export const supplierNetwork = (...args: any[]): Promise<Contract<'supplierNetwork'>> => call('supplierNetwork', ...args);
+export const supplierRadar = (...args: any[]): Promise<Contract<'supplierRadar'>> => call('supplierRadar', ...args);
+export const voteAxis = (...args: any[]): Promise<CompatResult<any>> => call('voteAxis', ...args) as Promise<CompatResult<any>>;
 
 
 
 
-export function commissionDirectory(query:import('@senadotracker/db').CommissionDirectoryQuery){return read(db=>publishedCommissionDirectory(db,query))}
-export function commissionOverview(limit=5){return read(db=>publishedCommissionOverview(db,limit))}
 
-export function propositionFlagship(){return cachedRead('proposition-flagship',db=>{const groups={camara:proposalGroupSummary(db,'camara'),senado:proposalGroupSummary(db,'senado')};const themes=proposalThemeGroupSummary(db,'camara');const events={camara:proposalEventSummary(db,'camara'),senado:proposalEventSummary(db,'senado')};const relation=proposalRelationSummary(db,'camara','2610975');const recent={camara:proposalRecentActivity(db,'camara',30),senado:proposalRecentActivity(db,'senado',30)};const registry=insightRegistry(db);return{groups,themes,events,relation,recent,registry}},60_000)}

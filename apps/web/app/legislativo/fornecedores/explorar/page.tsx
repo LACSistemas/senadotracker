@@ -27,13 +27,13 @@ export default async function SupplierExplorerPage({searchParams}:{searchParams:
   const sort:SupplierExplorerSort=sortParam==='name'||sortParam==='institutional_paid'||sortParam==='reach'?sortParam:'parliamentary_value';
   const direction:'asc'|'desc'=directionParam==='asc'?'asc':'desc';
   const query:SupplierExplorerQuery={year:Number.isSafeInteger(year)?year:new Date().getFullYear(),page,pageSize:25,search,activity,house,sort,direction};
-  const result=supplierExplorer(query);
+  const result=await supplierExplorer(query);
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Explorador indisponível" description={result.message}/></main></>;
   const data=result.data;
 
-  const overviewResult=congressSupplierOverview({year:data.year,house});
+  const overviewResult=await congressSupplierOverview({year:data.year,house});
   const overview=overviewResult.status==='available'?overviewResult.data:null;
-  const facetsResult=supplierExplorerFacets({year:data.year,house});
+  const facetsResult=await supplierExplorerFacets({year:data.year,house});
   const facets=facetsResult.status==='available'?facetsResult.data:null;
 
   const base={ano:data.year,busca:search||undefined,tipo:activity==='all'?undefined:activity,casa:house==='all'?undefined:house,ordem:sort,direcao:direction};

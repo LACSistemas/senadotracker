@@ -1,0 +1,1 @@
+import {openDatabase} from '@senadotracker/db';import path from 'node:path';const db=openDatabase(path.join(process.cwd(),'data','senadotracker.sqlite'),true);console.log(db.prepare("select name from sqlite_master where type='table'").all().map(x=>x.name).filter(x=>x.toLowerCase().includes('theme')));

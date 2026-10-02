@@ -1,4 +1,4 @@
-import { houseMetrics } from '@senadotracker/db';
+﻿import { houseMetrics } from '../../../packages/db/src/benchmarks.ts';
 import type { Source } from '@senadotracker/domain';
 import { CellBar } from '@/components/cell-bar';
 import { HighlightCard } from '@/components/highlight-card';
@@ -115,3 +115,4 @@ export function RankingsGroups({data,groupHref,houseHref}:{data:GroupRankings;gr
     </p>
   </>;
 }
+

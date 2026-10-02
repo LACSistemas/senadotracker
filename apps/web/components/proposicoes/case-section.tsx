@@ -1,6 +1,6 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import type { OperationalBundle } from '@/lib/proposicoes/compose';
+import type { OperationalBundle } from '@/lib/proposicoes/compose-types';
 import { composeEntries } from '@/lib/proposicoes/composition';
 import { nf, pf, typeName } from '@/lib/proposicoes/taxonomy';
 import { AnimatedBarStrip } from './animated-bar-strip';
@@ -18,7 +18,7 @@ export function CaseSection({ relation, href }: { relation: OperationalBundle['r
   const total = relation.relatedCount;
   if (!total) return null;
   const label = relation.parentLabel ?? 'esta matéria';
-  const entries = composeEntries(relation.countByGroup.map(item => ({ group: item.group, count: item.count, share: item.count / total, topTypes: [] })), total);
+  const entries = composeEntries(relation.countByGroup.map((item: any) => ({ group: item.group, count: item.count, share: item.count / total, topTypes: [] })), total);
   const types = [...relation.countByType].sort((a, b) => b.count - a.count || a.type.localeCompare(b.type));
   const lead = types[0]!;
   return <section id="caso" className="section-hairline border-y bg-card" style={{ ['--hairline' as string]: 'var(--group-6)' }} aria-labelledby="caso-titulo">
@@ -34,11 +34,14 @@ export function CaseSection({ relation, href }: { relation: OperationalBundle['r
         </div>
       </Reveal>
       <p className="mt-8 max-w-2xl text-sm font-semibold text-primary">A maior parte dessa rede é formada por {typeName(lead.type)?.toLocaleLowerCase('pt-BR') ?? lead.type}; os demais tipos aparecem em uma cauda bem menor.</p>
-      <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{types.slice(0, 8).map(item => <li key={item.type} className="rounded-2xl border bg-background p-4">
+      <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{types.slice(0, 8).map((item: any) => <li key={item.type} className="rounded-2xl border bg-background p-4">
         <p className="hero-figure text-2xl">{nf.format(item.count)}</p><p className="mt-1 font-bold">{item.type}</p><p className="text-xs text-muted-foreground">{typeName(item.type) ?? 'sigla publicada'} · {pf.format(item.count / total)}</p></li>)}</ul>
       {relation.events.length ? <div className="mt-10 border-t pt-6"><h3 className="font-bold">Eventos observados nesta matéria</h3>
-        <p className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{relation.events.slice(0, 6).map(event => <span key={event.kind}><b className="tabular-nums text-foreground">{nf.format(event.count)}</b> {EVENT_NAMES[event.kind] ?? event.kind}</span>)}</p></div> : null}
+        <p className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">{relation.events.slice(0, 6).map((event: any) => <span key={event.kind}><b className="tabular-nums text-foreground">{nf.format(event.count)}</b> {EVENT_NAMES[event.kind] ?? event.kind}</span>)}</p></div> : null}
       <Link className="focus-ring mt-8 inline-flex items-center gap-2 font-bold text-primary underline underline-offset-4" href={href}>Abrir {label} <ArrowRight size={16} aria-hidden="true" /></Link>
     </div>
   </section>;
 }
+
+
+

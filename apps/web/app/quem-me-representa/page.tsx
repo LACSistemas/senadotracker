@@ -1,7 +1,8 @@
-import Link from 'next/link';
+﻿import Link from 'next/link';
 import { BarChart3, MapPin, ReceiptText, Search, Users, Vote } from 'lucide-react';
 import { ufs, searchText, sources, type DataCoverage, type Source } from '@senadotracker/domain';
-import { houseMetricKeys, houseMetrics, stateChoropleth, type HouseMetricKey, type StateSummary } from '@senadotracker/db';
+import { houseMetricKeys, houseMetrics, stateChoropleth, type HouseMetricKey } from '../../../../packages/db/src/benchmarks.ts';
+import type { StateSummary } from '@senadotracker/db';
 import { houseMetricSummary, stateRepresentation } from '@/lib/data';
 import { StateChoroplethMap } from '@/components/state-choropleth-map';
 import { LegislativeSubnav } from '@/components/legislative-subnav';
@@ -44,13 +45,13 @@ export default async function StatePage({searchParams}:{searchParams:Promise<Par
   const subject=scalar(params.assunto)?.trim();
   const rawDeputyPage=Number(scalar(params.paginaDeputados)??1),deputyPage=Number.isSafeInteger(rawDeputyPage)&&rawDeputyPage>0?rawDeputyPage:1;
   if(!uf){
-    const summary=houseMetricSummary(house);
+    const summary=await houseMetricSummary(house);
     const choropleth=summary.status==='available'?{...stateChoropleth(summary.data,metric),year:summary.data.year}:null;
     return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1}><div className="page-shell py-8"><InstitutionHero context="Representação por estado" title="Quem me representa?" description="Escolha uma UF para consultar senadores e deputados federais nos cadastros oficiais ativos." imageUrl="/congresso.svg" location="Congresso Nacional" actions={<StateSelector/>}/></div><section className="page-shell py-10"><h2 className="text-center text-3xl font-bold">Escolha seu estado no mapa</h2><p className="mx-auto mt-2 max-w-2xl text-center text-muted-foreground">Cada unidade federativa abre a bancada federal da UF. A busca por cidade não é inferida sem uma base eleitoral adequada.</p>
       {choropleth?<><MapControls house={house} metric={metric} year={choropleth.year}/><div className="mt-6"><StateChoroplethMap data={choropleth} names={states} href={target=>`/quem-me-representa?uf=${target}&casa=${house}`}/></div></>:<div className="mt-6"><BrazilStateMap/></div>}
     </section></main></>;
   }
-  const data=stateRepresentation(uf,compareUf);
+  const data=await Promise.resolve(stateRepresentation(uf,compareUf));
   if(data.status==='unavailable') return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Representação indisponível" description={data.message}/></main></>;
   const {representation,comparison}=data.data;
   const topics=subject?data.data.topics.filter(item=>searchText(item.label).includes(searchText(subject))):data.data.topics;
@@ -87,3 +88,4 @@ function RepresentativeTable<T>({id,title,rows,total=rows.length,columns,coverag
 function StateComparison({rows,year,house}:{rows:StateSummary[];year:number;house:Source}){const label=houseLabels[house];const coverage:DataCoverage={availability:'available',source:house,period:{from:`${year}-01-01`,to:`${year}-12-31`,grain:'year'},batchId:null,note:`Mesmo período e regras de elegibilidade para todas as UFs, dentro ${houseOf[house]}.`,sampleSize:rows.length};const columns:DataColumn<StateSummary>[]=[{key:'uf',header:'UF',render:row=><strong>{states[row.uf]} ({row.uf})</strong>},{key:'representatives',header:`Representantes · ${label}`,align:'right',render:row=>row.byHouse[house].representatives},{key:'expense',header:'Cota mediana',align:'right',render:row=>row.byHouse[house].expenseCents.median===null?'Omitida':money.format(row.byHouse[house].expenseCents.median!/100)},{key:'presence',header:'Presença mediana',align:'right',render:row=>row.byHouse[house].presence.median===null?'Omitida':pct(row.byHouse[house].presence.median)},{key:'participation',header:'Participação mediana',align:'right',render:row=>row.byHouse[house].participation.median===null?'Omitida':pct(row.byHouse[house].participation.median)},{key:'cabinet',header:house==='senado'?'Folha mediana':'Verba mediana',align:'right',render:row=>row.byHouse[house].cabinet.financialCents.median===null?'Omitida':`${money.format(row.byHouse[house].cabinet.financialCents.median!/100)} · ${row.byHouse[house].cabinet.period}`}];return <div><h2 className="text-2xl font-bold">Como os estados se comparam?</h2><p className="mt-2 text-sm text-muted-foreground">Medianas {houseOf[house]} sem observações compatíveis são omitidas. Trocar a Casa acima troca o universo da tabela.</p><div className="mt-5"><DataTable caption={`Comparação entre estados · ${label}`} rows={rows} columns={columns} rowKey={row=>row.uf} coverage={coverage}/></div></div>}
 
 function HouseCabinet({title,data}:{title:string;data:StateSummary['byHouse']['senado']['cabinet']}){return <div className="rounded-2xl border bg-background p-5"><h3 className="font-bold">{title}</h3><p className="mt-1 text-xs text-muted-foreground">{data.kind==='budget_spent'?`Verba utilizada em ${data.period??'período indisponível'}`:`Folha identificada em ${data.period??'competência indisponível'}`}</p><dl className="mt-4 grid grid-cols-2 gap-4"><div><dt className="text-xs text-muted-foreground">Vínculos medianos</dt><dd className="mt-1 text-xl font-black">{data.staff.median??'—'}</dd><small>n={data.staff.count}</small></div><div><dt className="text-xs text-muted-foreground">Métrica financeira mediana</dt><dd className="mt-1 text-xl font-black">{data.financialCents.median===null?'—':money.format(data.financialCents.median/100)}</dd><small>n={data.financialCents.count}</small></div></dl></div>}
+

@@ -1,0 +1,16 @@
+$.cabinetPanorama.financial.p10	84833070.8	84710503
+$.cabinetPanorama.financial.p90	109491697.4	109472679
+$.operations.processingTime.note	'Média observada em n=3256; cobertura parcial, não representa ainda todas as matérias concluídas pela Casa. Primeiro desfecho normativo datado ou, para situação final, a última movimentação oficial datada após a apresentação. Cobertura: 75.6% do universo terminal identificado.'	'Média observada em n=3256; cobertura parcial, ainda não representa todas as matérias concluídas. Primeiro desfecho normativo datado ou, para situação final, a última movimentação oficial datada após a apresentação.'
+$.operations.stages.agendaCoverage.events	1121	651
+$.operations.stages.agendaCoverage.eventsCovered	1121	651
+$.operations.stages.agendaCoverage.to	'2026-09-25'	'2026-09-03'
+$.operations.updatedAt	'2026-09-18T20:01:58.514Z'	'2026-09-30T21:21:04.696Z'
+$.panorama.activity.coverage.batchId	'1144995a-ce00-494d-bd00-2e1ef1909edd'	'8671b6cb-c9a3-4544-b111-7d5dde3be0bf'
+$.panorama.participation.meanRatio	0.7965220713187918	0.7965220713187924
+$.panorama.presence.coverage.batchId	'17fb0edb-dbb0-45ee-9eee-0f248fb74cb2'	'c13b6412-56e3-4622-b2fc-47c40ca4b716'
+$.panorama.presence.coverage.note	'Presença registrada pela Câmara em eventos; indicador restringe-se a sessões deliberativas encerradas e ao período de exercício.'	'Média entre deputados com presença oficial disponível e ao menos um voto nominal registrado; ausência de cobertura não vira zero.'
+$.panorama.presence.distributionRatio.p10	0.882693947144075	0.8823529411764706
+$.topics.coverage.batchId	'1144995a-ce00-494d-bd00-2e1ef1909edd'	'camara:2026-L57:1144995a-ce00-494d-bd00-2e1ef1909edd'
+$.topics.least.count	1	538
+$.topics.least.label	'Direito Constitucional'	'Direito Penal e Processual Penal'
+$.topics.least.share	9.570293808019906e-05	0.0514881806871471

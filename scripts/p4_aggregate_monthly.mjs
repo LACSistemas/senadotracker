@@ -1,0 +1,3 @@
+import fs from 'node:fs';import crypto from 'node:crypto';
+const l=fs.readFileSync('artifacts/postgres-p4-final/monthly_progress.jsonl','utf8').trim().split(/\r?\n/).filter(Boolean).map(JSON.parse),m=l.filter(x=>x.status==='MATCH').length;
+const out={cases:l.length,matches:m,mismatches:l.length-m,status:l.length===m?'PASS':'FAIL',fingerprint:crypto.createHash('sha256').update(l.map(x=>x.source+':'+x.externalId+':'+x.year+':'+x.month+':'+x.status).sort().join('|')).digest('hex'),completedShards:24,totalShards:24};fs.writeFileSync('artifacts/postgres-p4-final/monthly_final.json',JSON.stringify(out,null,2));console.log(out);

@@ -1,0 +1,2 @@
+import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});
+(async()=>{for(const id of ['1173','1186','22','285','345']) console.log(id,(await p.query(`select count(distinct proposal_id)::int n from civica_poc.proposal_authors a join civica.active_activity_publications ap on ap.source=a.source and ap.batch_id=a.batch_id where a.source='senado' and a.person_external_id=$1`,[id])).rows[0]);await p.end()})()

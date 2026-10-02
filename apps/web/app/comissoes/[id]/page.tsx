@@ -55,7 +55,7 @@ export default async function CommissionPage({ params, searchParams }: { params:
   const route = await params;
   const q = searchParams ? await searchParams : {};
   const year = Number(q.year) || new Date().getFullYear();
-  const result = commissionDetail(decodeURIComponent(route.id), year);
+  const result = await commissionDetail(decodeURIComponent(route.id), year);
   if (result.status === 'unavailable' || !result.data) notFound();
   const data = JSON.parse(JSON.stringify(result.data));
   const b = data.body;

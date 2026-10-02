@@ -1,0 +1,1 @@
+﻿import { partyDetail } from '../apps/web/lib/data-postgres-wave4.ts'; const x=await partyDetail('PL',2026); console.log(x.data.panorama); console.log(x.data.people.slice(0,2).map((p:any)=>({presence:p.presence,participation:p.participation}))); process.exit(0)

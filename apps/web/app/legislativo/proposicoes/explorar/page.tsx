@@ -27,10 +27,10 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const type = scalar(q.tipo) || undefined, group = scalar(q.grupo) || undefined, theme = scalar(q.tema)?.trim() || undefined, author = scalar(q.autor)?.trim() || undefined;
   const year = Number(scalar(q.ano)), validYear = Number.isInteger(year) && year > 0 ? year : undefined, page = Math.max(1, Number(scalar(q.pagina) ?? 1));
   const filters = { ...(search ? { search } : {}), ...(source ? { source } : {}), ...(type ? { type } : {}), ...(theme ? { theme } : {}), ...(author ? { author } : {}), ...(validYear ? { year: validYear } : {}) };
-  const response = propositionListing({ page, pageSize: 12, ...filters, ...(group ? { group } : {}) });
+  const response = await propositionListing({ page, pageSize: 12, ...filters, ...(group ? { group } : {}) });
   if (response.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Exploração indisponível" description={response.message} /></main></>;
   const { result } = response.data;
-  const composition = propositionResultComposition(filters);
+  const composition = await propositionResultComposition(filters);
   const entries = composition.status === 'available' ? composeEntries(composition.data.groups.map(item => ({ ...item, topTypes: [] })), composition.data.total) : [];
   const params: Record<string, string | undefined> = { q: search, casa: source, tipo: type, grupo: group, ano: validYear ? String(validYear) : undefined, tema: theme, autor: author };
   const hrefWith = (overrides: Record<string, string | undefined>, pageNumber = 1) => {
@@ -43,7 +43,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const groupHrefs = Object.fromEntries(GROUPS.map(meta => [meta.key, hrefWith({ grupo: group === meta.key ? undefined : meta.key })]));
   const selectedKey = group ? (groupMeta(group).tail ? OTHER_KEY : group) : null;
   const totalPages = Math.max(1, Math.ceil(result.total / result.pageSize));
-  const people = author ? null : roster({ search: search ?? '', page: 1, pageSize: 5, ...(source ? { source } : {}) });
+  const people = author ? null : await roster({ search: search ?? '', page: 1, pageSize: 5, ...(source ? { source } : {}) });
   const filtered = Boolean(search || author || theme || source || type || group || validYear);
   return <>
     <LegislativeSubnav />

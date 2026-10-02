@@ -1,0 +1,1 @@
+import {DatabaseSync} from 'node:sqlite'; const d=new DatabaseSync('artifacts/postgres-parity/senadotracker-parity.sqlite',{readOnly:true}); for(const t of ['people','profiles','mandates','party_memberships']){console.log(t,d.prepare(`pragma table_info(${t})`).all(),d.prepare(`select count(*) n from ${t}`).get())}

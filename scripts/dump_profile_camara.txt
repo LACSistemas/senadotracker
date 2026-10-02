@@ -1,0 +1,40 @@
+$.activity.appointments[0].rawId	'989723e8-6a17-456e-b36a-c276c27b5ef6'	'1431a140-4d46-4763-b483-98792e132570'
+$.activity.appointments[1].rawId	'77c98a54-93c6-4095-90fc-5f6e906b4561'	'a17ef68b-26ab-4d1d-ada7-f75ff174b461'
+$.activity.appointments[2].rawId	'77c98a54-93c6-4095-90fc-5f6e906b4561'	'a17ef68b-26ab-4d1d-ada7-f75ff174b461'
+$.cabinet.financial.coverage.note	'Verba mensal oficial; 513/513 deputados no recorte. 13Âº, fÃ©rias e auxÃ\xadlio-alimentaÃ§Ã£o ficam fora desta verba conforme a CÃ¢mara.'	'Verba mensal oficial.'
+$.cabinet.staff.categories.length	2	0
+$.cabinet.staff.coverage.availability	'stale'	'available'
+$.cabinet.staff.coverage.note	'Snapshot oficial da CÃ¢mara coletado em 2026-09-09T17:27:16.449Z; unidades nÃ£o parlamentares nÃ£o sÃ£o atribuÃ\xaddas a deputados. Snapshot excedeu 2 dias em 2026-10-01T01:23:20.571Z.'	'Vínculos do snapshot de gabinete.'
+$.expenseCoverage.length	0	2
+$.expenses.coverage[0].availability	'$missing'	'available'
+$.expenses.coverage[0].complete	'$missing'	False
+$.expenses.coverage[0].months	'$missing'	5
+$.expenses.coverage[0].note	'$missing'	'Despesas publicadas no PostgreSQL.'
+$.expenses.coverage[0].period	'$missing'	{'keys': ['from', 'grain', 'to'], 'counts': {}}
+$.expenses.coverage[0].publishedAt	'$missing'	None
+$.expenses.coverage[0].recordCount	'$missing'	105
+$.expenses.coverage[0].sampleSize	'$missing'	105
+$.expenses.coverage[0].source	'$missing'	'camara'
+$.expenses.coverage[1].availability	'$missing'	'available'
+$.expenses.coverage[1].complete	'$missing'	False
+$.expenses.coverage[1].months	'$missing'	3
+$.expenses.coverage[1].note	'$missing'	'Despesas publicadas no PostgreSQL.'
+$.expenses.coverage[1].period	'$missing'	{'keys': ['from', 'grain', 'to'], 'counts': {}}
+$.expenses.coverage[1].publishedAt	'$missing'	None
+$.expenses.coverage[1].recordCount	'$missing'	106
+$.expenses.coverage[1].sampleSize	'$missing'	106
+$.expenses.coverage[1].source	'$missing'	'camara'
+$.expenses.items[0].batchId	'$missing'	'a7b63d5e-4411-472e-8b23-3a2b54c931e2'
+$.expenses.items[0].origin	{'keys': ['batchId', 'fetchedAt', 'publishedAt', 'sha256', 'url'], 'counts': {}}	'$missing'
+$.expenses.items[1].batchId	'$missing'	'a7b63d5e-4411-472e-8b23-3a2b54c931e2'
+$.expenses.items[1].origin	{'keys': ['batchId', 'fetchedAt', 'publishedAt', 'sha256', 'url'], 'counts': {}}	'$missing'
+$.expenses.items[2].batchId	'$missing'	'a7b63d5e-4411-472e-8b23-3a2b54c931e2'
+$.expenses.items[2].origin	{'keys': ['batchId', 'fetchedAt', 'publishedAt', 'sha256', 'url'], 'counts': {}}	'$missing'
+$.participationHistory.length	0	9
+$.participationMonthly.length	0	9
+$.profile.assetYear	'$missing'	None
+$.profile.assetsCents	'$missing'	None
+$.profile.cabinetCents	'$missing'	None
+$.profile.costMonths	'$missing'	None
+$.profile.costPeriod	'$missing'	None
+$.profile.expenseCents	'$missing'	None

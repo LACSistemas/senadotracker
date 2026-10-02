@@ -1,0 +1,1 @@
+import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'civica_postgres_lab',user:'projetoeleitor_user',password:process.env.DB_PASSWORD}); console.log((await p.query("select year from civica_poc.proposals where external_id='2599901'")).rows); await p.end();

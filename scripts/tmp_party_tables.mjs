@@ -1,0 +1,1 @@
+import {DatabaseSync} from 'node:sqlite';const s=new DatabaseSync('data/senadotracker.sqlite',{readOnly:true});const tables=s.prepare("select name from sqlite_master where name like '%party%' or name like '%panorama%'").all();console.log(tables);s.close();

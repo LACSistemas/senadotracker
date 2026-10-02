@@ -27,7 +27,7 @@ function date(value:string|null){if(!value)return'Data de publicação não info
 
 export default async function PartiesPage({searchParams}:{searchParams:Promise<Params>}){
   const q=await searchParams,rawYear=Number(scalar(q.ano)),year=Number.isInteger(rawYear)&&rawYear>2000?rawYear:null,search=scalar(q.busca)?.trim()??'',house=scalar(q.casa)==='camara'?'camara':scalar(q.casa)==='senado'?'senado':'all',order=scalar(q.ordem)==='cadeiras'?'cadeiras':'nome',rawPage=Number(scalar(q.pagina)??1),page=Number.isSafeInteger(rawPage)&&rawPage>0?rawPage:1,showAll=scalar(q.todos)==='1';
-  const result=partyLanding(year);
+  const result=await Promise.resolve(partyLanding(year));
   if(result.status==='unavailable')return <><LegislativeSubnav/><main id="conteudo" className="page-shell py-12"><EmptyState title="Partidos indisponíveis" description={result.message}/></main></>;
   const data=result.data,rows=data.panorama.rows.filter(row=>row.senators+row.deputies>0),represented=rows.length,totalSeats=rows.reduce((sum,row)=>sum+row.senators+row.deputies,0),largest=[...rows].sort((a,b)=>(b.senators+b.deputies)-(a.senators+a.deputies)||a.party.localeCompare(b.party,'pt-BR'))[0];
   const authored=[...rows].map(row=>({party:row.party,count:data.authoredByParty[row.party]??0})).sort((a,b)=>b.count-a.count||a.party.localeCompare(b.party,'pt-BR'));

@@ -15,7 +15,7 @@ export async function GET(request:Request){
   // Mesma leitura de URL da página: o CSV respeita modo, Casa, ano e ordenação em vez de reinterpretá-los.
   const mode=parseMode(params.get('modo')??undefined),query=dashboardQuery(Object.fromEntries(params));
   if(mode!=='parlamentares'){
-    const result=groupRankings(mode,groupHouse(query.source),query.year);
+    const result=await groupRankings(mode,groupHouse(query.source),query.year);
     if(result.status==='unavailable')return new Response(result.message,{status:503});
     const {rows,house,year}=result.data,isParty=mode==='partidos';
     const headers=['posicao',isParty?'partido':'uf','cadeiras_congresso','senadores','deputados',...(isParty?[]:['partidos_na_bancada','concentracao_hhi_pct']),
@@ -24,7 +24,7 @@ export async function GET(request:Request){
       row.observed,house,row.values.proposals,row.values.monthlyCostCents===null?'':Math.round(row.values.monthlyCostCents),row.values.staff,pct(row.values.presence),year])],
       `rankings-${mode}-${house}-${year}.csv`);
   }
-  const result=rankingsDashboard({...query,page:1});
+  const result=await Promise.resolve(rankingsDashboard({...query,page:1}));
   if(result.status==='unavailable')return new Response(result.message,{status:503});
   const {allItems,year:publishedYear}=result.data;
   const headers=['posicao','nome','cargo','casa','uf','partido','situacao','participacao_nominal_pct','proposicoes_autoria','relatorias','custo_total_centavos','gasto_mensal_centavos','meses_custo','periodo_custo','ano_custo','gabinete_vinculos','patrimonio_declarado_centavos','ano_pleito','mandatos','perfil'];

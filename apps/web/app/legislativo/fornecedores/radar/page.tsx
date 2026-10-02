@@ -20,7 +20,7 @@ function href(values:Record<string,string|number|undefined>){const p=new URLSear
 
 export default async function SuppliersPage({searchParams}:{searchParams:Promise<Params>}){
   const p=await searchParams,sourceValue=scalar(p.casa),source:Source|undefined=sourceValue==='senado'||sourceValue==='camara'?sourceValue:undefined,requested=Number(scalar(p.ano)),year=Number.isInteger(requested)?requested:undefined,search=scalar(p.busca)?.trim(),rawPage=Number(scalar(p.pagina)??1),page=Number.isSafeInteger(rawPage)&&rawPage>0?rawPage:1;
-  const result=supplierRadar({page,pageSize:25,...(source?{source}:{}),...(year?{year}:{}),...(search?{search}:{})});
+  const result=await supplierRadar({page,pageSize:25,...(source?{source}:{}),...(year?{year}:{}),...(search?{search}:{})});
   if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Radar indisponível" description={result.message}/></main></>;
   const data=result.data;type Item=(typeof data.items)[number];const columns:DataColumn<Item>[]=[
     {key:'supplier',header:'Fornecedor',render:item=><div><Link className="font-bold text-primary underline" href={`/legislativo/fornecedores/radar/${item.document}?${new URLSearchParams({...(source?{casa:source}:{}),...(data.year?{ano:String(data.year)}:{})})}`}>{item.supplier}</Link><small className="block text-muted-foreground">{doc(item.document)}</small></div>},

@@ -1,0 +1,72 @@
+{
+    "stage":  "P1.8_FINAL_CLOSED",
+    "adapterQueriesCache":  false,
+    "adapterWorksWithoutCache":  true,
+    "adapterQueriesSQLite":  false,
+    "atomicReconstruction":  true,
+    "atomicCoverage":  {
+                           "rowsLoaded":  85746,
+                           "amendment":  {
+                                             "sqlite":  1,
+                                             "postgres":  1
+                                         },
+                           "body":  {
+                                        "sqlite":  777,
+                                        "postgres":  777
+                                    },
+                           "resultingNorm":  {
+                                                 "sqlite":  64,
+                                                 "postgres":  64
+                                             }
+                       },
+    "originalCorpus":  {
+                           "cases":  300,
+                           "completed":  300,
+                           "matches":  300,
+                           "mismatches":  0,
+                           "corpusHash":  "4b23e6b38ba45995443b5498439b78abb1f9580cb92516fe29c24aa0a3038e12"
+                       },
+    "supplemental":  {
+                         "amendments":  {
+                                            "cases":  1,
+                                            "matches":  1
+                                        },
+                         "bodies":  {
+                                        "cases":  777,
+                                        "matches":  777
+                                    },
+                         "resultingNorms":  {
+                                                "cases":  64,
+                                                "matches":  64
+                                            },
+                         "deliberations":  {
+                                               "cases":  1,
+                                               "matches":  1
+                                           }
+                     },
+    "regressions":  {
+                        "P1.3":  {
+                                     "completed":  106,
+                                     "matches":  106,
+                                     "remaining":  394
+                                 },
+                        "P1.4_detail":  "NOT COMPLETED",
+                        "P1.4_parent":  "NOT COMPLETED",
+                        "P1_3":  "500/500",
+                        "P1_4_detail":  "200/200",
+                        "P1_4_parent":  "142/142"
+                    },
+    "performance":  {
+                        "p50Ms":  241,
+                        "p95Ms":  304,
+                        "p99Ms":  374
+                    },
+    "roundTrips":  {
+                       "detail":  4
+                   },
+    "critical":  0,
+    "high":  0,
+    "unknown":  0,
+    "semanticDecision":  "PASS",
+    "productionDecision":  "OFF"
+}

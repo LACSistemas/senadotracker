@@ -1,0 +1,1 @@
+process.env.SENADOTRACKER_DB_PATH='data/senadotracker.sqlite'; import * as l from '../packages/db/src/web-legacy-contract.ts'; const x=await l.stateRepresentation('MT'); console.log(x.data.representation.deputies.map(p=>p.name+'|'+p.externalId).join('\\n'));

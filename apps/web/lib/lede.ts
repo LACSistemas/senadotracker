@@ -1,4 +1,4 @@
-import { houseMetricKeys, type HouseMetricKey, type HouseMetricSummary } from '@senadotracker/db';
+﻿import { houseMetricKeys, type HouseMetricKey, type HouseMetricSummary } from '../../../packages/db/src/benchmarks.ts';
 import { percentileOf, type DataCoverage } from '@senadotracker/domain';
 // Relativo e com extensão de propósito: o alias `@/` não resolve fora do bundler do Next, e este
 // módulo é função pura testada direto por tsx, como `eval-color.ts`.
@@ -83,3 +83,4 @@ export function houseLede(summary:HouseMetricSummary,metric:HouseMetricKey,conte
     Sem o valor vigente publicado, devolve `null` — a âncora some em vez de ser estimada. */
 export const humanAnchor=(cents:number|null,referenceCents:number|null|undefined,label:string)=>
   cents===null||!referenceCents?null:`${count(Math.round(cents/referenceCents))} ${label}`;
+

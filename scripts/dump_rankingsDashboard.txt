@@ -1,0 +1,40 @@
+$.allItems[0].annualCabinetCents	'$missing'	107798895
+$.allItems[0].assetYear	2022	None
+$.allItems[0].assetsCents	147000000	None
+$.allItems[0].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.allItems[0].cabinetFinancialCents	'$missing'	107798895
+$.allItems[0].cabinetPeriod	'$missing'	'2026'
+$.allItems[0].costPeriod	'2026-01 a 2026-07'	'2026'
+$.allItems[0].events	'$missing'	{'length': 6, 'first': [{'at': '2023-02-01T00:00', 'description': 'Nome no início da legislatura / Partido no início da legislatura', 'key': '64221c6b6c13239728ee107cc7f53dce503755b2ac53a66712b9b29d4988e19b', 'legislature': '57', 'party': 'MDB', 'partyId': '36899', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'role': None, 'state': None}, {'at': '2023-02-01T12:05', 'description': 'Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória', 'key': '41bfbf554d7970b67f3d4a596bd121d467e8c780f72dbc034e6840aa50b9ed2b', 'legislature': '57', 'party': 'MDB', 'partyId': '36899', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'role': 'Titular', 'state': 'Exercício'}]}
+$.allItems[0].exercises	'$missing'	{'length': 2, 'first': [{'basis': 'derived', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:41bfbf554d7970b67f3d4a596bd121d467e8c780f72dbc034e6840aa50b9ed2b', 'mandateKey': 'legislatura:57', 'precision': 'local_datetime', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'start': '2023-02-01T12:05', 'state': 'Exercício'}, {'basis': 'derived', 'cause': 'FIM_MANDATO', 'end': '2023-01-31T23:59', 'endReason': 'next_event', 'key': 'legislatura:56:8a004673e28f3a5a5295e2b459c70ea49d418612ea0d30807fc09ff3450b4861', 'mandateKey': 'legislatura:56', 'precision': 'local_datetime', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'start': '2019-02-01T11:45', 'state': 'Exercício'}]}
+$.allItems[0].expenseYear	'$missing'	2026
+$.allItems[0].fullName	'$missing'	'Acácio Favacho'
+$.allItems[0].historyAvailability	'$missing'	'available'
+$.allItems[0].mandates	2	[{'end': '2027-01-31', 'key': 'legislatura:57', 'legislature': '57', 'officialId': None, 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'role': 'Titular', 'start': '2023-02-01', 'titularId': None, 'uf': 'AP'}, {'end': '2023-01-31', 'key': 'legislatura:56', 'legislature': '56', 'officialId': None, 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'role': None, 'start': '2019-02-01', 'titularId': None, 'uf': 'AP'}]
+$.allItems[0].monthlyCostCents	23998359.42857143	19392030
+$.allItems[0].observedAt	'$missing'	'2026-09-11T12:24:46.199Z'
+$.allItems[0].officialUrl	'$missing'	'https://www.camara.leg.br/deputados/204379'
+$.allItems[0].participation	0.7622950819672131	{'participation': {'availability': 'available', 'denominator': 122, 'note': 'Votações nominais plenárias durante períodos de exercício; não mede presença.', 'numerator': 93}, 'presence': {'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 57}}
+$.allItems[0].parties	'$missing'	{'length': 3, 'first': [{'basis': 'derived', 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:64221c6b6c13239728ee107cc7f53dce503755b2ac53a66712b9b29d4988e19b:party', 'mandateKey': 'legislatura:57', 'party': 'MDB', 'partyId': '36899', 'precision': 'local_datetime', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'start': '2023-02-01T00:00'}, {'basis': 'derived', 'end': '2022-04-11T15:52', 'endReason': 'next_event', 'key': 'legislatura:56:8a004673e28f3a5a5295e2b459c70ea49d418612ea0d30807fc09ff3450b4861:party', 'mandateKey': 'legislatura:56', 'party': 'PROS', 'partyId': '36763', 'precision': 'local_datetime', 'rawId': 'e483aa5e-03d7-4352-85f9-c41fd6583dae', 'start': '2019-02-01T11:45'}]}
+$.allItems[0].personId	'$missing'	'a87f9af4-d65f-46f5-9672-7bb691a84f5a'
+$.allItems[0].presence	0.8260869565217391	{'availability': 'available', 'denominator': 69, 'note': 'Presença oficial publicada.', 'numerator': 57}
+$.allItems[0].proposalCount	'$missing'	15
+$.allItems[0].publishedAt	'$missing'	'2026-09-11T12:26:53.177Z'
+$.allItems[0].rapporteurships	2	0
+$.allItems[0].rawId	'$missing'	'746921a0-2b42-4183-88d1-11b163982cc7'
+$.allItems[0].salaryCents	'$missing'	None
+$.allItems[0].salaryMonths	'$missing'	None
+$.allItems[0].situation	'Em exercício'	'Cadastro atual'
+$.allItems[0].totalCostCents	167988516	135744210
+$.allItems[1].annualCabinetCents	'$missing'	109368785
+$.allItems[1].assetYear	2022	None
+$.allItems[1].assetsCents	111360812	None
+$.allItems[1].batchId	'$missing'	'e4543a76-ee63-4b6b-8c5f-faadc2f5479e'
+$.allItems[1].cabinetFinancialCents	'$missing'	109368785
+$.allItems[1].cabinetPeriod	'$missing'	'2026'
+$.allItems[1].costPeriod	'2026-01 a 2026-07'	'2026'
+$.allItems[1].events	'$missing'	{'length': 3, 'first': [{'at': '2023-02-01T00:00', 'description': 'Nome no início da legislatura / Partido no início da legislatura', 'key': 'a7041018383a6708e1a8ba58401f3d79ed12aeb62caffd8335b4af39c84b8ff4', 'legislature': '57', 'party': 'REPUBLICANOS', 'partyId': '37908', 'rawId': '1f784ad8-cd8e-4032-989f-7bef094e854c', 'role': None, 'state': None}, {'at': '2023-02-01T12:05', 'description': 'Entrada - Posse de Eleito Titular - Posse na Sessão Preparatória', 'key': 'b6415694c045ec15f3c3fd3d63c15e834017e6fe94cac4df458d11d834983b2e', 'legislature': '57', 'party': 'REPUBLICANOS', 'partyId': '37908', 'rawId': '1f784ad8-cd8e-4032-989f-7bef094e854c', 'role': 'Titular', 'state': 'Exercício'}]}
+$.allItems[1].exercises	'$missing'	{'length': 1, 'first': [{'basis': 'derived', 'cause': None, 'end': None, 'endReason': 'not_reported', 'key': 'legislatura:57:b6415694c045ec15f3c3fd3d63c15e834017e6fe94cac4df458d11d834983b2e', 'mandateKey': 'legislatura:57', 'precision': 'local_datetime', 'rawId': '1f784ad8-cd8e-4032-989f-7bef094e854c', 'start': '2023-02-01T12:05', 'state': 'Exercício'}]}
+$.allItems[1].expenseYear	'$missing'	2026
+$.allItems[1].fullName	'$missing'	'Adail Filho'
+$.allItems[1].historyAvailability	'$missing'	'available'

@@ -25,9 +25,8 @@
   /* Rampa sequencial do mapa (magnitude) com tons fixos, e cinza quente fora do matiz para "sem dado". */
   --map-1:hsl(159 54% 88%); --map-2:hsl(159 54% 74%); --map-3:hsl(159 54% 60%); --map-4:hsl(159 54% 46%); --map-5:hsl(159 54% 33%); --map-empty:#e9e7e0;
   --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem);
-  /* Tipografia: Inter para corpo e números, Fraunces (serifa com eixo óptico) para títulos editoriais. As variáveis
-     --font-inter/--font-fraunces são injetadas por next/font no <html>; a pilha abaixo é o fallback sem rede. */
-  --font-sans:var(--font-inter),Inter,Arial,Helvetica,sans-serif; --font-display:var(--font-fraunces),Georgia,'Times New Roman',serif; --font-serif:var(--font-display);
+  /* Tipografia determinística para builds offline: a pilha local evita download de fontes durante o build. */
+  --font-sans:Inter,Arial,Helvetica,sans-serif; --font-display:Georgia,'Times New Roman',serif; --font-serif:var(--font-display);
   /* Grupos funcionais das proposições: 7 matizes categóricos + cinza "Outras formas".
      Validados com o validador de paleta (superfície #faf9f5): ΔE adjacente ≥ 13,6 (CVD) e ≥ 22,8 (visão normal), contraste ≥ 3:1.
      A ordem é fixa e taxonômica — ver apps/web/lib/proposicoes/taxonomy.ts. */
