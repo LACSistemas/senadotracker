@@ -1,4 +1,5 @@
 'use client';
+import { temporalPhrase } from '@/lib/proposicoes/taxonomy';
 import type { EditorialFact, PrincipalStaleness, PropositionHouse, StageFlow } from '@senadotracker/db';
 import { CoverageBadge } from '@/components/metrics';
 import { HOUSES, nf } from '@/lib/proposicoes/taxonomy';
@@ -14,12 +15,12 @@ function HousePanel({ house, flow, staleness }: { house: PropositionHouse; flow:
   const phrases = flow.stages.filter(stage => stage.available && PHRASES[stage.key]).map(stage => `${nf.format(stage.count ?? 0)} ${PHRASES[stage.key]}`);
   return <article className="min-w-0 rounded-3xl border bg-card p-6 card-elevated sm:p-8">
     <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
-      <div><h3 className="font-display text-2xl font-medium">{HOUSES[house]}</h3><p className="mt-1 text-sm text-muted-foreground">Matérias principais apresentadas em {flow.year}</p></div>
+      <div><h3 className="font-display text-2xl font-medium">{HOUSES[house]}</h3><p className="mt-1 text-sm text-muted-foreground">Matérias principais {temporalPhrase(flow.temporalBasis ?? 'identifier_year', flow.year)}</p></div>
       <CoverageBadge coverage={flow.coverage} />
     </header>
     {flow.universe
       ? <>
-        <p className="mt-5 max-w-3xl text-base leading-7"><strong className="hero-figure text-3xl">{nf.format(flow.universe)}</strong> <span className="text-muted-foreground">matérias principais apresentadas{phrases.length ? ' · ' : ''}{phrases.join(' · ')}.</span></p>
+        <p className="mt-5 max-w-3xl text-base leading-7"><strong className="hero-figure text-3xl">{nf.format(flow.universe)}</strong> <span className="text-muted-foreground">matérias principais {temporalPhrase(flow.temporalBasis ?? 'identifier_year', flow.year)}{phrases.length ? ' · ' : ''}{phrases.join(' · ')}.</span></p>
         <div className="mt-6 max-w-[880px]"><StageRiver flow={flow} /></div>
         <div className="mt-10 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)]">
           <div className="min-w-0"><h4 className="text-sm font-bold uppercase tracking-[.12em] text-muted-foreground">Há quanto tempo sem movimentação observada</h4><div className="mt-4"><StalenessBars staleness={staleness} /></div></div>

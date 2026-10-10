@@ -1,1 +1,0 @@
-import {openDatabase} from '@senadotracker/db';import path from 'node:path';const d=openDatabase(path.join(process.cwd(),'data','senadotracker.sqlite'),true);console.log(d.prepare("pragma table_info(legislative_votes)").all());console.log(d.prepare("select * from legislative_votes where deliberation_id='7105' limit 5").all());

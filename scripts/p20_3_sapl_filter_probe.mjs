@@ -1,0 +1,1 @@
+const b='https://sapl.al.ac.leg.br';for(const q of ['ano=2026','materia__ano=2026','materia__ano__exact=2026','materia__ano_gte=2026','ano__gte=2026']){const u=`${b}/api/materia/autoria/?${q}&limit=100`;const r=await fetch(u,{headers:{accept:'application/json'}});const j=await r.json();console.log(q,r.status,j.pagination?.total_entries,j.results?.[0]);}

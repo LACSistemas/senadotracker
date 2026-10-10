@@ -1,4 +1,5 @@
 'use client';
+import { temporalPhrase } from '@/lib/proposicoes/taxonomy';
 import { useState } from 'react';
 import type { StageFlow } from '@senadotracker/db';
 import { nf, pf } from '@/lib/proposicoes/taxonomy';
@@ -32,7 +33,7 @@ export function StageRiver({ flow }: { flow: StageFlow }) {
         <p className="text-base font-bold leading-none">{tip.stage.count === null ? 'sem dado publicado' : nf.format(tip.stage.count)}{tip.stage.share !== null ? <span className="ml-1.5 text-xs font-semibold text-muted-foreground">· {pf.format(tip.stage.share)}</span> : null}</p>
         <p className="mt-1.5 font-semibold">{tip.stage.label}</p><p className="mt-1 leading-4 text-muted-foreground">{tip.stage.note}</p>
       </div> : null}
-      <svg role="img" aria-label={`Rio de tramitação de ${nf.format(flow.universe)} matérias principais apresentadas em ${flow.year}: ${columns.map(column => `${column.stage.label} ${column.stage.count === null ? 'sem dado publicado' : nf.format(column.stage.count)}`).join('; ')}`} viewBox={`0 0 ${W} ${H}`} className="h-auto w-full">
+      <svg role="img" aria-label={`Rio de tramitação de ${nf.format(flow.universe)} matérias principais ${temporalPhrase(flow.temporalBasis ?? 'identifier_year', flow.year)}: ${columns.map(column => `${column.stage.label} ${column.stage.count === null ? 'sem dado publicado' : nf.format(column.stage.count)}`).join('; ')}`} viewBox={`0 0 ${W} ${H}`} className="h-auto w-full">
         <g style={{ opacity: inView ? 1 : 0, transition: 'opacity 900ms ease 200ms' }}>
           {ribbons.map(ribbon => <path key={ribbon.key} d={ribbon.d} fill="var(--group-1)" fillOpacity={ribbon.skipped ? 0.07 : 0.16} />)}
         </g>

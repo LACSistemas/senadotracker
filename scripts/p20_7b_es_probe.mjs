@@ -1,0 +1,15 @@
+import { chromium } from '@playwright/test';
+const b=await chromium.launch({headless:true});
+const p=await b.newPage();
+await p.goto('https://www3.al.es.gov.br/spl/consulta-producao.aspx?ano=2026',{waitUntil:'domcontentloaded',timeout:120000});
+console.log('initial',await p.locator('a[href*="processo.aspx?id="]').count(),await p.locator('#ContentPlaceHolder1_ddl_ItensExibidos').inputValue());
+await p.locator('#ContentPlaceHolder1_ddl_ItensExibidos').selectOption('100');
+await p.locator('#ContentPlaceHolder1_ddl_ItensExibidos').dispatchEvent('change');
+await p.waitForLoadState('domcontentloaded',{timeout:120000}).catch(()=>{});
+await p.waitForTimeout(1000);
+console.log('after',await p.locator('a[href*="processo.aspx?id="]').count(),await p.locator('#ContentPlaceHolder1_ddl_ItensExibidos').inputValue());
+console.log('next disabled',await p.locator('#ContentPlaceHolder1_lbNext').getAttribute('class'));
+await p.locator('#ContentPlaceHolder1_lbNext').click();
+await p.waitForTimeout(3000);
+console.log('next page first',await p.locator('a[href*="processo.aspx?id="]').first().getAttribute('href'),await p.locator('#ContentPlaceHolder1_ddl_ItensExibidos').inputValue());
+await b.close();

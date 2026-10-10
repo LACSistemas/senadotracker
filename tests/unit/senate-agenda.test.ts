@@ -12,5 +12,5 @@ test('normaliza itens de pauta e respeita o recorte publicado',()=>{
   assert.equal(rows[0]?.proposalId,'500');
   assert.equal(rows[0]?.occurredAt,'2026-09-15');
   assert.equal(rows[0]?.kind,'agenda_item');
-  assert.deepEqual(JSON.parse(rows[0]!.value!),{meetingId:'10',itemId:'100',order:'1',agendaType:'Pauta',result:null,committee:'CCJ'});
+  assert.deepEqual(JSON.parse(rows[0]!.value!),{meetingId:'10',itemId:'100',order:'1',agendaType:'Pauta',result:null,committee:'CCJ',bodyId:'40',bodySigla:'CCJ',bodyName:'',scheduledDate:'2026-09-15',startAt:'2026-09-15T10:00:00.000',endAt:'',location:'',title:'',description:''});
 });

@@ -1,1 +1,0 @@
-import {DatabaseSync} from 'node:sqlite'; const s=new DatabaseSync('data/senadotracker.sqlite',{readOnly:true}); console.log(s.prepare("select year,count(*) n,sum(net_value_scaled) v from supplier_parliamentary_clients where supplier_id='sup_31f934746e5c251a09b7cdc8ceddb95f' and institution='CAMARA' and client_external_id='107283' group by year").all());

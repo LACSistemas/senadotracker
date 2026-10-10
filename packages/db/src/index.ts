@@ -1,5 +1,7 @@
 ﻿import { DatabaseSync } from 'node:sqlite';
 export { proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry } from './proposition-analytics.ts';
+export { getNationalLegislators, getNationalLegislatorById, getNationalHouseCapabilities, getNationalDomainCoverage, getNationalCoverageSummary, type NationalQueryable, type NationalLegislator, type NationalLegislatorFilters } from './postgres-national.ts';
+export { getNationalMetricCatalog, getNationalMetricCoverage, getNationalOverview, getStateLegislatureOverview, getNationalRanking, getHouseRanking, getNationalPartyAggregates, getNationalUfAggregates, getNationalBudgetAggregates, type AnalyticsQueryable, type AnalyticsFilters, type MetricCatalogRow, type MetricCoverageRow, type RankingRow, type StateLegislatureOverview } from './postgres-national-analytics.ts';
 export { proposalFunctionalOverview, principalStageFlow, principalStaleness, activityDnaByAuthor, activityRhythm, activityCalendar, recentLegislativeEvents, proposalObservedState, buildEditorialFacts, editorialFacts, loadUniverse, loadEvents, loadAuthorLinks, latestEventDay, collectEvidence, PROPOSITION_GROUP_ORDER, PRINCIPAL_GROUP, RECENT_EVENT_TYPES, type PropositionHouse, type StageKey, type FunctionalOverview, type HouseFunctionalView, type FunctionalGroupCount, type StageFlow, type StageFlowStage, type PrincipalStaleness, type StalenessBucket, type StalenessPoint, type ActivityDna, type DnaRow, type ActivityRhythm, type HouseRhythm, type RhythmMonth, type ActivityCalendar, type CalendarDay, type RecentEvents, type RecentEventItem, type RecentEventType, type ObservedState, type EditorialFact, type EditorialFactsInput, type UniverseItem, type EventRecord, type AuthorLink, type Evidence } from './proposition-operations.ts';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
@@ -252,3 +254,12 @@ export * from './postgres-people.ts';
 
 export * from './postgres-committees.ts';
 export * from './postgres-votes-presence.ts';
+export { ensurePropositionGraphSchema, loadRelationGraph, loadAmendmentGraph, loadSupportDetail, withRelationGraph, dedupeAuthors, PROPOSITION_GRAPH_SCHEMA_SQL, AMENDMENT_GROUP, ROOT_GROUP, type RelationNode, type RelationGraph, type AmendmentItem, type AmendmentGraph } from './postgres-proposition-graph.ts';
+export { ensureTemporalSchema, migrateIdentifierYearZeroToNull, TEMPORAL_SCHEMA_SQL } from './postgres-temporal.ts';
+export { ensureStateBudgetSchema, getStateBudgetAmendmentsByLegislator, getStateBudgetAmendmentDetail, getStateBudgetAmendmentHouseSummary, STATE_BUDGET_SCHEMA, STATE_BUDGET_DATABASE, STATE_BUDGET_SCHEMA_SQL } from './postgres-state-budget.ts';
+export * from './postgres-budget.ts';
+export * from './postgres-budget-read.ts';
+
+export { ensureStateStorySchema, refreshStateHouseStory, readStateHouseStory, readStateHouseGlances, reconcileStateHouseStories, STATE_STORY_VERSION, type StoryReconcileResult, type StateHouseGlance, financeLabelSemantics, STATE_STORY_SCHEMA, type StateHouseStory, type StorySeats, type StoryProposals, type StoryFinance, type FinanceLabelSemantics } from './postgres-state-story.ts';
+export { createFinanceResolver, officialBridgeFromRosterPayload, normalizeActorName, normalizeActorNameNoTitle, type FinanceLinkMethod } from './state-finance-identity.ts';
+export { PORTRAIT_ALLOWED_HOSTS, PORTRAIT_EXTS, PORTRAIT_CONTENT_TYPE, isPortraitUrlAllowed, canonicalPortraitUrl, portraitDirectory, portraitKey, portraitPath, sniffImage, fetchPortraitFollowingRedirects, mirrorPortrait, mirrorPendingPortraits, listPortraitSources, ensurePortraitSchema, type MirrorBatchResult, type MirrorStatus, type PortraitExt } from './portrait-mirror.ts';

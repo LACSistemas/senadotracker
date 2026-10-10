@@ -1,3 +1,0 @@
-﻿import sqlite3
-c=sqlite3.connect('data/senadotracker.sqlite')
-for q in ["select source,year,count(*) n,sum(coalesce(spent_cents,0)) spent from cabinet_monthly_budgets group by source,year", "select source,count(*) n from cabinet_monthly_budgets group by source", "select source,count(*) n from cabinet_staff group by source", "select source,count(*) n from functional_staff_assignments group by source", "select source,year,count(*) n,sum(net_cents-refund_cents) total from expenses group by source,year order by 1,2", "select source,year,count(*) n from active_expense_publications join expense_batches on id=batch_id group by source,year"]: print(q, c.execute(q).fetchall())

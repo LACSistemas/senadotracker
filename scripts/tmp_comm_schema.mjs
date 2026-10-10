@@ -1,1 +1,0 @@
-import { DatabaseSync } from 'node:sqlite'; const db=new DatabaseSync('data/senadotracker.sqlite'); for(const t of ['commission_meetings','commission_agenda_items','commission_meeting_versions','commission_agenda_item_versions']) console.log(t,db.prepare(`pragma table_info(${t})`).all());

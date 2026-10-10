@@ -11,7 +11,11 @@ const root = process.cwd();
 const env = Object.fromEntries(fs.readFileSync(path.join(root, '.env'), 'utf8').split(/\r?\n/).filter(Boolean).filter(line => !line.startsWith('#')).map(line => { const i = line.indexOf('='); return [line.slice(0, i), line.slice(i + 1)]; }));
 for (const [key, value] of Object.entries(env)) if (process.env[key] === undefined) process.env[key] = value;
 process.env.PROPOSITIONS_PG_SHADOW_ENABLED = 'false';
-process.env.SENADOTRACKER_DB_PATH = path.join(root, 'data', 'senadotracker.sqlite');
+const sqliteBaseline = process.env.CIVICA_SQLITE_BASELINE_PATH;
+if (!sqliteBaseline) throw new Error('SQLITE_BASELINE_REQUIRED: set CIVICA_SQLITE_BASELINE_PATH to the archived read-only baseline');
+if (!fs.existsSync(sqliteBaseline)) throw new Error(`SQLITE_BASELINE_NOT_FOUND: ${sqliteBaseline}`);
+process.env.CIVICA_SQLITE_BASELINE_PATH = sqliteBaseline;
+process.env.SENADOTRACKER_DB_PATH = sqliteBaseline;
 // Next resolves `server-only` at build time; the standalone audit runs under
 // Node, so provide the intentionally empty package marker when dependencies do
 // not include Next's private marker package.
@@ -26,7 +30,7 @@ if (!fs.existsSync(composeStub)) fs.writeFileSync(composeStub, 'export function 
 const taxonomyStub = path.join(proposicoesDir, 'taxonomy.ts');
 if (!fs.existsSync(taxonomyStub)) fs.writeFileSync(taxonomyStub, 'export const GROUPS = ["proposicoes_legislativas_principais","requerimentos","emendas_substitutivos","pareceres_relatorios","instrumentos_votacao_tramitacao","indicacoes_sugestoes","oficios_documentos","mensagens_comunicacoes_institucionais","recursos_representacoes_peticoes","atos_documentos_especiais"].map(key=>({key,label:key}));\n');
 
-const sqliteDb = new DatabaseSync(process.env.SENADOTRACKER_DB_PATH, { readOnly: true });
+const sqliteDb = new DatabaseSync(sqliteBaseline, { readOnly: true });
 const one = <T = any>(sql: string, ...params: any[]) => sqliteDb.prepare(sql).get(...params) as T | undefined;
 const proposal = one<{ source: string; id: string }>(`SELECT p.source, p.external_id id FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE CAST(json_extract(p.payload,'$.year') AS INTEGER)=2026 LIMIT 1`);
 const secondProposal = one<{ source: string; id: string }>(`SELECT p.source, p.external_id id FROM proposals p JOIN active_activity_publications a ON a.batch_id=p.batch_id WHERE CAST(json_extract(p.payload,'$.year') AS INTEGER)=2026 AND p.external_id<>? LIMIT 1`, proposal?.id ?? '');

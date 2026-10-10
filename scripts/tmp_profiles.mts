@@ -1,1 +1,0 @@
-﻿import { profiles } from '../apps/web/lib/data-postgres-wave4.ts'; const ps=await profiles(); const pl=ps.filter((p:any)=>p.party==='PL'); console.log(pl.length,pl.slice(0,3).map((p:any)=>[p.source,p.externalId,p.parties?.slice(-2)])); process.exit(0)

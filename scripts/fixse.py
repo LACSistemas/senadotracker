@@ -1,0 +1,1 @@
+﻿p='scripts/p20_7a_se_collect.py'; s=open(p,encoding='utf8').read(); s=s.replace("r'[?&]id=(\\\\d+)'", "r'[?&]id=(\\d+)'"); s=s.replace("r'Localizada\\\\(s\\\\)\\\\s*([0-9.]+)\\\\s+proposi'", "r'Localizada\\(s\\)\\s*([0-9.]+)\\s+proposi'"); open(p,'w',encoding='utf8').write(s)

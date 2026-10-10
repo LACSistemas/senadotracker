@@ -1,0 +1,217 @@
+{
+  "house": "TO",
+  "sourceRows": [
+    {
+      "external_id": "00193a3090b9ddfa93b5d2fb68cf4cf55e67853e508320482b7fed5a1f5ff90c",
+      "person_external_id": "2257",
+      "occurred_at": "19/06/2026",
+      "competence": "2026-06",
+      "amount_cents": "20000",
+      "category": "NF-e",
+      "supplier_name": "Petro Petroleo 71 Comercio de Combustíveis Ltda",
+      "supplier_document": "50.766.414/0001-02",
+      "fiscal_document_number": "8359",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_81361.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_81361.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "44dc7e873e329bc8d36bb33dea33e19d95a25397b8cce9a233371324cfcd0d98",
+        "sourceKey": "6|Vilmar de Oliveira|33|8359|19/06/2026",
+        "canonicalPerson": "2257",
+        "providerPersonLabel": "Vilmar de Oliveira"
+      }
+    },
+    {
+      "external_id": "0055345bd67066b757ed4a31238623dbb4c4e0a68dc717096ac09844720c21b7",
+      "person_external_id": "2297",
+      "occurred_at": "13/04/2026",
+      "competence": "2026-04",
+      "amount_cents": "800000",
+      "category": "NF-e",
+      "supplier_name": "MJ Lima de Assis",
+      "supplier_document": "05.087.673/0001-44",
+      "fiscal_document_number": "18286",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80666.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80666.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "019c6ca0600a4e8a94892322a4ff8b9413994764b1ced4a1c19341e1b13d17a1",
+        "sourceKey": "4|Eduardo Fortes|10|18286|13/04/2026",
+        "canonicalPerson": "2297",
+        "providerPersonLabel": "Eduardo Fortes"
+      }
+    },
+    {
+      "external_id": "0056539eaa5cc579c1eca84693a60f55e86d47f89bb97a2b3b54942c94d846ad",
+      "person_external_id": "2288",
+      "occurred_at": "20/01/2026",
+      "competence": "2026-01",
+      "amount_cents": "49720",
+      "category": "NF-e",
+      "supplier_name": "Petro Petróleo 75 Comércio de Combustíveis Ltda",
+      "supplier_document": "50.749.743/0001-38",
+      "fiscal_document_number": "56719",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_79161.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_79161.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "4cee0eabd1790870128d7aa1cca983d6fa446ae55e2ed804cd7a46c567f39283",
+        "sourceKey": "1|Claudia Lelis|9|56719|20/01/2026",
+        "canonicalPerson": "2288",
+        "providerPersonLabel": "Claudia Lelis"
+      }
+    },
+    {
+      "external_id": "0061a94f8916dba27364febb62933d288fe8a19b2e0312e40cb0059cf78c54e0",
+      "person_external_id": "2267",
+      "occurred_at": "27/01/2026",
+      "competence": "2026-01",
+      "amount_cents": "1200000",
+      "category": "NFS-e",
+      "supplier_name": "Sigma Assessoria e Consultoria Ltda",
+      "supplier_document": "02.696.703/0001-21",
+      "fiscal_document_number": "6",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_79175.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_79175.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "ee94d927e15e1d94bd4543a126f6dc3b079f46d2e01d1e6f00bf56efbc0cb8f9",
+        "sourceKey": "1|Jorge Frederico|3|6|27/01/2026",
+        "canonicalPerson": "2267",
+        "providerPersonLabel": "Jorge Frederico"
+      }
+    },
+    {
+      "external_id": "006b74bba8c695945d83aa675755bfd4d6f806664ee6fd3ceeb0e03d2371ad7f",
+      "person_external_id": "2301",
+      "occurred_at": "04/06/2026",
+      "competence": "2026-06",
+      "amount_cents": "31700",
+      "category": "NF-e",
+      "supplier_name": "Auto Posto Japão",
+      "supplier_document": "02.503.452/0001-11",
+      "fiscal_document_number": "38094",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_81368.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_81368.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "c77aadf781b52d43554984468b7cb1d47d1bc4a86087cf0cf6cfed19a20a6f30",
+        "sourceKey": "6|Moisemar Marinho|11|38094|04/06/2026",
+        "canonicalPerson": "2301",
+        "providerPersonLabel": "Moisemar Marinho"
+      }
+    },
+    {
+      "external_id": "009c48e2d6883ae1d7e7c6858df397a4206d80354cd6b209a80b325278a339a1",
+      "person_external_id": "2284",
+      "occurred_at": "13/08/2026",
+      "competence": "2026-08",
+      "amount_cents": "25000",
+      "category": "NFC-e",
+      "supplier_name": "Super Posto Portal de Palmas Ltda",
+      "supplier_document": "15.499.984/0001-74",
+      "fiscal_document_number": "610785",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_82071.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_82071.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "3713dd777dfcabf0a38c9eddeff4b41518c201f7f7d517a369353bb460556d94",
+        "sourceKey": "8|Ivory de Lira|28|610785|13/08/2026",
+        "canonicalPerson": "2284",
+        "providerPersonLabel": "Ivory de Lira"
+      }
+    },
+    {
+      "external_id": "009f2ecda139ec412d5663469c6210808f7f2d934250967859e8ab663d93f5d7",
+      "person_external_id": "2257",
+      "occurred_at": "25/03/2026",
+      "competence": "2026-03",
+      "amount_cents": "1000000",
+      "category": "NFS-e",
+      "supplier_name": "Coelho & Silva Advocacia",
+      "supplier_document": "37.979.163/0001-78",
+      "fiscal_document_number": "4",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80496.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80496.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "1a748048f300295ba6b913d6e2144815e2fbee5405afab2cc8046987d356f9d3",
+        "sourceKey": "3|Vilmar de Oliveira|2|4|25/03/2026",
+        "canonicalPerson": "2257",
+        "providerPersonLabel": "Vilmar de Oliveira"
+      }
+    },
+    {
+      "external_id": "00c21fa4d4ac81cf92b313bc57d93c68080208adee90e31bd229bc9f218c5ff4",
+      "person_external_id": "2257",
+      "occurred_at": "07/04/2026",
+      "competence": "2026-04",
+      "amount_cents": "102318",
+      "category": "NF-e",
+      "supplier_name": "Posto Trevo 1 Combustíveis e Serviços Ltda",
+      "supplier_document": "33.210.337/0001-82",
+      "fiscal_document_number": "75768",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80646.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80646.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "323ced8f8ede4a4e72dae3b79715087f1729fae822956b8b60e7940cddc4535c",
+        "sourceKey": "4|Vilmar de Oliveira|20|75768|07/04/2026",
+        "canonicalPerson": "2257",
+        "providerPersonLabel": "Vilmar de Oliveira"
+      }
+    },
+    {
+      "external_id": "00d34695a39350ae8a64a0ddb5e32c9cc5ccb193c0ae6840103aeeab3a11f5fb",
+      "person_external_id": "2287",
+      "occurred_at": "01/04/2026",
+      "competence": "2026-04",
+      "amount_cents": "31500",
+      "category": "REC",
+      "supplier_name": "Starlink Brazil Serviços de Internet Ltda",
+      "supplier_document": "40.154.884/0001-53",
+      "fiscal_document_number": "15695-56",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80650.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80650.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "136af760728cb9055316244c80789af9dbe780cb24bf1bae409732f60f419e34",
+        "sourceKey": "4|Professor Júnior Geo|1|15695-56|01/04/2026",
+        "canonicalPerson": "2287",
+        "providerPersonLabel": "Professor Júnior Geo"
+      }
+    },
+    {
+      "external_id": "00d45257f91e1870e1e79dd57ea24ed7669851d3c2e4d815f2f391f3e25d52ee",
+      "person_external_id": "2285",
+      "occurred_at": "28/04/2026",
+      "competence": "2026-04",
+      "amount_cents": "1440000",
+      "category": "NFS-e",
+      "supplier_name": "Leandro Gomes de Melo - Sociedade Individual de Advocacia",
+      "supplier_document": "41.745.347/0001-40",
+      "fiscal_document_number": "36",
+      "description": null,
+      "source_url": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80647.PDF",
+      "provenance": {
+        "source": "https://www.al.to.leg.br/transparencia/baixar?arquivo=transparencia_ano_2026_14_80647.PDF",
+        "provider": "aleto_codap",
+        "rawSha256": "af88f63bc23dde0d21c1cf8a09f66364a07c63438b7d5136df2d25e9943c64f2",
+        "sourceKey": "4|Vanda Monteiro|4|36|28/04/2026",
+        "canonicalPerson": "2285",
+        "providerPersonLabel": "Vanda Monteiro"
+      }
+    }
+  ],
+  "fixtureKind": "bounded-active-revision-evidence",
+  "database": "civica_postgres_lab"
+}

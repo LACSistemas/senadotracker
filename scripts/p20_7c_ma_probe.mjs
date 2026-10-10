@@ -1,0 +1,3 @@
+﻿import { chromium } from '@playwright/test'; import fs from 'node:fs';
+const b=await chromium.launch({headless:true}); const p=await b.newPage(); const req=[]; p.on('request',r=>{if(r.url().includes('alemalegis')) req.push({url:r.url(),method:r.method(),post:r.postData()})});
+const u='https://alemalegis.al.ma.leg.br/home/protocol/legislative-matter/research'; const resp=await p.goto(u,{waitUntil:'domcontentloaded',timeout:120000}); console.log('resp',resp?.status(),p.url()); await p.waitForTimeout(12000); fs.writeFileSync('artifacts/P20_7C_MA_network.json',JSON.stringify(req,null,2)); console.log('reqs',req.length); console.log(req.slice(-40)); await b.close();

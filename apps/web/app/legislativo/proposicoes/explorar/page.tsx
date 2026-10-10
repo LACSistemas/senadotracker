@@ -25,14 +25,14 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const q = await searchParams;
   const search = scalar(q.q)?.trim() || undefined, sourceValue = scalar(q.casa), source: Source | undefined = sourceValue === 'camara' || sourceValue === 'senado' ? sourceValue : undefined;
   const type = scalar(q.tipo) || undefined, group = scalar(q.grupo) || undefined, theme = scalar(q.tema)?.trim() || undefined, author = scalar(q.autor)?.trim() || undefined;
-  const year = Number(scalar(q.ano)), validYear = Number.isInteger(year) && year > 0 ? year : undefined, page = Math.max(1, Number(scalar(q.pagina) ?? 1));
-  const filters = { ...(search ? { search } : {}), ...(source ? { source } : {}), ...(type ? { type } : {}), ...(theme ? { theme } : {}), ...(author ? { author } : {}), ...(validYear ? { year: validYear } : {}) };
+  const year = Number(scalar(q.ano_numero) ?? scalar(q.ano)), validYear = Number.isInteger(year) && year > 0 ? year : undefined, page = Math.max(1, Number(scalar(q.pagina) ?? 1));
+  const filters = { ...(search ? { search } : {}), ...(source ? { source } : {}), ...(type ? { type } : {}), ...(theme ? { theme } : {}), ...(author ? { author } : {}), ...(validYear ? { identifierYear: validYear } : {}) };
   const response = await propositionListing({ page, pageSize: 12, ...filters, ...(group ? { group } : {}) });
   if (response.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Exploração indisponível" description={response.message} /></main></>;
   const { result } = response.data;
   const composition = await propositionResultComposition(filters);
   const entries = composition.status === 'available' ? composeEntries(composition.data.groups.map(item => ({ ...item, topTypes: [] })), composition.data.total) : [];
-  const params: Record<string, string | undefined> = { q: search, casa: source, tipo: type, grupo: group, ano: validYear ? String(validYear) : undefined, tema: theme, autor: author };
+  const params: Record<string, string | undefined> = { q: search, casa: source, tipo: type, grupo: group, ano_numero: validYear ? String(validYear) : undefined, tema: theme, autor: author };
   const hrefWith = (overrides: Record<string, string | undefined>, pageNumber = 1) => {
     const next = new URLSearchParams();
     Object.entries({ ...params, ...overrides }).forEach(([key, value]) => { if (value) next.set(key, value); });
@@ -62,7 +62,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
             <Input name="autor" defaultValue={author ?? ''} placeholder="Autor parlamentar" aria-label="Autor parlamentar" /><Input name="tema" defaultValue={theme ?? ''} placeholder="Tema direto publicado" aria-label="Tema" />
           </div>
           <details className="mt-4"><summary className="focus-ring flex w-fit cursor-pointer items-center gap-2 text-sm font-bold"><Filter size={16} aria-hidden="true" />Filtros avançados</summary>
-            <div className="mt-3 grid gap-3 sm:grid-cols-2"><NativeSelect name="tipo" defaultValue={type ?? ''} aria-label="Tipo"><option value="">Todos os tipos</option>{result.facets.types.map(value => <option key={value}>{value}</option>)}</NativeSelect><Input name="ano" inputMode="numeric" defaultValue={validYear ?? ''} placeholder="Ano" aria-label="Ano" /></div></details>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2"><NativeSelect name="tipo" defaultValue={type ?? ''} aria-label="Tipo"><option value="">Todos os tipos</option>{result.facets.types.map(value => <option key={value}>{value}</option>)}</NativeSelect><Input name="ano_numero" inputMode="numeric" defaultValue={validYear ?? ''} placeholder="Ano do número" aria-label="Ano do número da proposição" /></div></details>
         </form>
         {!filtered ? <section className="mt-8 grid gap-4 md:grid-cols-3" aria-label="Por onde começar">
           <Discovery title="Por assunto" text="Proposições com tema Saúde na cobertura disponível" href={hrefWith({ tema: 'Saúde' })} />

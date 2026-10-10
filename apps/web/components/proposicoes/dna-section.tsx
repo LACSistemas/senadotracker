@@ -70,7 +70,7 @@ export function DnaSection({ party, member }: { party: ActivityDna; member: Acti
     <div className="page-shell py-16 lg:py-20">
       <p className="eyebrow">03 · DNA da atividade</p>
       <h2 id="dna-titulo" className="prop-h2 mt-3 max-w-3xl text-4xl sm:text-5xl">Quem está fazendo o quê?</h2>
-      <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Cada faixa mostra como um partido ou parlamentar distribui a atividade entre as funções. É um retrato de composição, não uma classificação: nenhuma ordem aqui indica mais ou menos trabalho.</p>
+      <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Cada faixa mostra como um partido ou parlamentar distribui a autoria entre as funções. É um retrato de composição, não uma classificação: nenhuma ordem aqui indica mais ou menos trabalho.</p>
       <div className="mt-8 flex flex-wrap items-center gap-4"><Segmented label="Ver por" value={dimension} onChange={setDimension} options={[{ value: 'party', label: 'Partido' }, { value: 'member', label: 'Parlamentar' }]} /><GroupChips entries={LEGEND} /></div>
       <dl className="mt-6 grid max-w-4xl gap-x-8 gap-y-2 text-xs leading-5 text-muted-foreground sm:grid-cols-2">
         <div><dt className="inline font-bold text-foreground">Proposições distintas: </dt><dd className="inline">quantas proposições diferentes têm ao menos um autor do {dimension === 'party' ? 'partido' : 'parlamentar'}.</dd></div>

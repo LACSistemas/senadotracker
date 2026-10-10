@@ -18,6 +18,8 @@ import parties from '../fixtures/sources/senado-filiacoes.json' with { type: 'js
 import history from '../fixtures/sources/camara-historico.json' with { type: 'json' };
 import page1 from '../fixtures/sources/camara-lista.json' with { type: 'json' };
 import page2 from '../fixtures/sources/camara-page2.json' with { type: 'json' };
+import { migrations as ALL_MIGRATIONS } from '../../packages/db/src/migrations.ts';
+const LATEST_MIGRATION = Math.max(...ALL_MIGRATIONS.map(item => item.version));
 
 const response = (data: unknown, url = 'https://legis.senado.leg.br/dadosabertos/senador/lista/atual.json'): JsonResponse => ({ data, url, fetchedAt: '2026-09-08T12:00:00.000Z', rawId: randomUUID() });
 const singleRoster = () => {
@@ -113,7 +115,7 @@ test('migrações são repetíveis e chaves estrangeiras/identidades duplicadas 
     db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('senado', '1', 'p');
     assert.throws(() => db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('senado', '1', 'p'));
     assert.throws(() => db.prepare('INSERT INTO external_identifiers VALUES (?,?,?)').run('camara', '1', 'missing'));
-    assert.equal(db.prepare('SELECT max(version) AS version FROM schema_migrations').get()!.version, 37);
+    assert.equal(db.prepare('SELECT max(version) AS version FROM schema_migrations').get()!.version, LATEST_MIGRATION);
   } finally { db.close(); }
   const reopened = openDatabase(join(directory, 'test.sqlite'));
   assert.equal(reopened.prepare('SELECT count(*) AS n FROM people').get()!.n, 1); reopened.close();

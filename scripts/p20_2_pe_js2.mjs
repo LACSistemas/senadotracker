@@ -1,0 +1,1 @@
+const u='https://proposicoes.alepe.pe.gov.br/static/js/main.29724183.js';const r=await fetch(u);const b=await r.text();console.log(r.status,b.length);for(const re of [/https?:[^"'`]+/g,/\/api\/[^"'`]+/g,/projetos[^"'`]{0,100}/gi,/indic[^"'`]{0,100}/gi,/requer[^"'`]{0,100}/gi])console.log(re,[...b.matchAll(re)].slice(0,100).map(x=>x[0]));

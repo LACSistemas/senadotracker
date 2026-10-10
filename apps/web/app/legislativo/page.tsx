@@ -98,9 +98,10 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 
       <section className="page-shell py-10">
         <SectionTitle title="Comece por aqui" subtitle="Escolha um caminho para explorar os dados." />
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
           <QuickPath title="Senadores" text={`Conheça os ${panoramas.senado.roster.parliamentarians} senadores, seus gastos, votações e mais.`} href="/legislativo/senadores" icon={Landmark} tone="bg-blue-50 text-blue-700" />
           <QuickPath title="Deputados Federais" text={`Explore os ${panoramas.camara.roster.parliamentarians} deputados federais e sua atuação na Câmara.`} href="/legislativo/deputados" icon={Users} tone="bg-emerald-50 text-emerald-700" />
+          <QuickPath title="Deputados Estaduais" text="Explore deputados estaduais e distritais, suas Assembleias, atuação, gastos e dados disponíveis em cada estado." href="/legislativo/estaduais" icon={Landmark} tone="bg-teal-50 text-teal-700" />
           <QuickPath title="Partidos" text="Veja a atuação dos partidos no Congresso Nacional." href="/legislativo/partidos" icon={Building2} tone="bg-violet-50 text-violet-700" />
           <QuickPath title="Estados" text="Compare a representatividade e os dados por estado." href="/quem-me-representa" icon={MapPin} tone="bg-amber-50 text-amber-700" />
           <QuickPath title="Proposições" text="Acompanhe projetos, PECs e outras matérias legislativas." href="/legislativo/proposicoes" icon={FileText} tone="bg-sky-50 text-sky-700" />

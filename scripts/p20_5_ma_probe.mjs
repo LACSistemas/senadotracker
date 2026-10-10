@@ -1,0 +1,1 @@
+﻿const b=await (await fetch('https://alemalegis.al.ma.leg.br/main-FDDGB4BL.js')).text();for(const p of ['wr=', 'apiURL', 'environment']){let i=b.indexOf(p);console.log(p,i,i>=0?b.slice(i-500,i+800):'')}

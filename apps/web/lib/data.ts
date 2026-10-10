@@ -14,7 +14,23 @@ type CompatResult<T = any> = { status: 'available'; data: T } | { status: 'unava
 type ComparisonSetupCompat = { options: any[]; years: number[] };
 type ComparisonCompat = { source: any; year: number; people: any[]; expenses: any[]; rows: any[]; coverage: any; fidelity: any[]; costs: any[]; cabinet: any[]; agreements: any[]; benchmarks: any; [key: string]: any };
 type ProfileResult = Contract<'profile'>;
-const call = <K extends string>(name: K, ...args: any[]): Promise<Contract<K>> => Promise.resolve((pgData as any)[name](...args)) as Promise<Contract<K>>;
+// In-memory TTL cache shared by every data-fetcher below.  The published data
+// only changes when a new batch lands, not on every page view, so there is no
+// need to recompute these (expensive, multi-query) reads on each request.
+// Caches the in-flight promise (not just the resolved value) so concurrent
+// requests for the same key dedupe instead of each triggering their own query.
+const DATA_CACHE_TTL_MS = Number(process.env.DATA_CACHE_TTL_MS ?? 120_000);
+const dataCache = new Map<string, { expires: number; value: Promise<any> }>();
+const call = <K extends string>(name: K, ...args: any[]): Promise<Contract<K>> => {
+  const key = `${name}:${JSON.stringify(args)}`;
+  const now = Date.now();
+  const hit = dataCache.get(key);
+  if (hit && hit.expires > now) return hit.value as Promise<Contract<K>>;
+  const value = Promise.resolve((pgData as any)[name](...args)).catch((err) => { dataCache.delete(key); throw err; });
+  if (dataCache.size >= 500) dataCache.delete(dataCache.keys().next().value!);
+  dataCache.set(key, { expires: now + DATA_CACHE_TTL_MS, value });
+  return value as Promise<Contract<K>>;
+};
 
 export const cabinetCompetenceBenchmark = (...args: any[]): Promise<any> => call('cabinetCompetenceBenchmark', ...args) as Promise<any>;
 export const commissionAgenda = (...args: any[]): Promise<Contract<'commissionAgenda'>> => call('commissionAgenda', ...args);
@@ -33,6 +49,7 @@ export const houseListing = (...args: any[]): Promise<Contract<'houseListing'>> 
 export const houseMetricSummary = (...args: any[]): Promise<Contract<'houseMetricSummary'>> => call('houseMetricSummary', ...args);
 export const legislativeOverview = (...args: any[]): Promise<Contract<'legislativeOverview'>> => call('legislativeOverview', ...args);
 export const parliamentarianSupplierNetwork = (...args: any[]): Promise<Contract<'parliamentarianSupplierNetwork'>> => call('parliamentarianSupplierNetwork', ...args);
+export const parliamentarianPix = (source: 'camara' | 'senado', externalId: string): Promise<import('./pix-profile-model.ts').PixProfileData> => call('parliamentarianPix', source, externalId) as Promise<import('./pix-profile-model.ts').PixProfileData>;
 export const parties = (house: any, requestedYear: number | null, search?: string): Promise<Contract<'parties'>> => call('parties', house, requestedYear, search) as unknown as Promise<Contract<'parties'>>;
 export const partyComparison = (...args: any[]): Promise<CompatResult<ComparisonCompat>> => call('partyComparison', ...args) as unknown as Promise<CompatResult<ComparisonCompat>>;
 export const partyDetail = (...args: any[]): Promise<Contract<'partyDetail'>> => call('partyDetail', ...args);

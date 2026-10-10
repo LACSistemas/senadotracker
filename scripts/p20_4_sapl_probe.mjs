@@ -1,0 +1,6 @@
+import {writeFileSync} from 'node:fs';
+const bases={RO:'https://sapl.al.ro.leg.br',AC:'https://sapl.al.ac.leg.br',AL:'https://sapl.al.al.leg.br',TO:'https://sapl.al.to.leg.br',RR:'https://sapl.al.rr.leg.br',PB:'https://sapl.al.pb.leg.br',AM:'https://sapl.al.am.leg.br',MA:'https://sapl.al.ma.leg.br'};
+const paths=['/api/schema/','/api/sessao/sessaoplenaria/?limit=1','/api/sessao/presenca/?limit=1','/api/votacao/votacao/?limit=1','/api/sessao/ordemdia/?limit=1'];
+async function get(url){const started=Date.now();try{const r=await fetch(url,{headers:{accept:'application/json,text/html','user-agent':'Civica-P20.4-sapl/1.0'},redirect:'manual'});const body=await r.text();return {url,status:r.status,contentType:r.headers.get('content-type'),bytes:body.length,elapsedMs:Date.now()-started,sample:body.slice(0,300)}}catch(e){return {url,error:String(e),elapsedMs:Date.now()-started}}}
+const out={generatedAt:new Date().toISOString(),database:'civica_postgres_lab',houses:{}};for(const [h,b] of Object.entries(bases)){out.houses[h]={baseUrl:b,probes:[]};for(const path of paths){const x=await get(b+path);out.houses[h].probes.push(x);if(h==='PB'||h==='AM'||h==='MA')await new Promise(r=>setTimeout(r,1200))}}
+writeFileSync('artifacts/P20_4_sapl_probe.json',JSON.stringify(out,null,2));console.log(JSON.stringify(out,null,2));

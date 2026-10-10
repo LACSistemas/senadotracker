@@ -1,4 +1,5 @@
 'use client';
+import { temporalPhrase } from '@/lib/proposicoes/taxonomy';
 import type { EditorialFact, FunctionalOverview } from '@senadotracker/db';
 import { GROUPS, HOUSES, OTHER_COLOR, OTHER_LABEL, SCOPE_LABEL, formatDate, nf, pf } from '@/lib/proposicoes/taxonomy';
 import { AnimatedBarStrip } from './animated-bar-strip';
@@ -16,7 +17,7 @@ function SplitStrip({ house, overview }: { house: 'congresso' | 'camara' | 'sena
   if (!total) return <div><p className="text-sm font-semibold">{house === 'congresso' ? 'Congresso' : HOUSES[house]}</p><p className="mt-1 text-sm text-muted-foreground">Sem proposições publicadas para {overview.year}.</p></div>;
   const share = principal / total, name = house === 'congresso' ? 'Congresso Nacional' : HOUSES[house];
   return <div className="min-w-0">
-    <p className="flex flex-wrap items-baseline justify-between gap-x-4 text-sm font-semibold"><span>{name}</span><span className="text-xs font-normal text-muted-foreground">{nf.format(total)} proposições em {overview.year}</span></p>
+    <p className="flex flex-wrap items-baseline justify-between gap-x-4 text-sm font-semibold"><span>{name}</span><span className="text-xs font-normal text-muted-foreground">{nf.format(total)} proposições {temporalPhrase(overview.temporalBasis ?? 'identifier_year', overview.year)}</span></p>
     <AnimatedBarStrip className="mt-2" size="md" showTable={false} inlineLabels segments={[
       { key: 'principais', label: PRINCIPAL.label, value: principal, share, color: PRINCIPAL.color },
       { key: 'outras', label: OTHER_LABEL, value: total - principal, share: 1 - share, color: OTHER_COLOR },
@@ -34,7 +35,7 @@ export function Hero({ facts, overview }: { facts: EditorialFact[]; overview: Fu
   return <header className="hero-wash relative overflow-hidden border-b">
     <div className="surface-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
     <div className="page-shell relative py-14 sm:py-20 lg:py-24">
-      <p className="eyebrow">Atividade legislativa · {SCOPE_LABEL[scope]} · {overview.year}</p>
+      <p className="eyebrow">Proposições e documentos · {SCOPE_LABEL[scope]} · {overview.year}</p>
       <h1 className="prop-thesis mt-5 max-w-5xl text-[clamp(2.3rem,5.8vw,5rem)]"><HeroSentence facts={facts} /></h1>
       <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">Projeto de lei é só uma parte do que o Legislativo registra. Proposições também são requerimentos, pareceres, emendas e instrumentos de tramitação. Esta página mostra a composição publicada e os rastros observáveis, sem transformar registros diferentes em um funil.</p>
       <div className={`mt-10 grid gap-8 ${houses.length > 1 ? 'md:grid-cols-2' : 'max-w-3xl'}`}>{houses.map(house => <SplitStrip key={house} house={house} overview={overview} />)}</div>

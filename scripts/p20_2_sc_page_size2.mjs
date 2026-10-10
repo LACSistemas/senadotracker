@@ -1,0 +1,1 @@
+for(const pg of [1,2,100,101,3511]){const u=`https://portalelegis.alesc.sc.gov.br/proposicoes/processo-legislativo?ano=2026&page=${pg}&per_page=100`;const r=await fetch(u);const b=await r.text();const cards=[...b.matchAll(/<h4[^>]*class="card-title"[^>]*>/gi)].length;console.log(pg,r.status,cards,b.match(/<a href="\/proposicoes\/([^\"]+)"/i)?.[1],b.includes('Nenhum'))}

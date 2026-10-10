@@ -1,0 +1,1 @@
+const u='https://dadosabertos.almg.gov.br/api/ajuda/swagger/view?url=%2Fws%2Fajuda%2Fapi%2Fproposicoes%3Fformato%3Dswagger';const r=await fetch(u);const b=await r.text();console.log(r.status,r.url,b.length);console.log([...b.matchAll(/<script[^>]+src="([^"]+)/gi)].map(x=>x[1])); console.log(b.slice(-5000));

@@ -1,0 +1,2 @@
+export type CollectorErrorCode = 'FETCH_ERROR' | 'HTTP_ERROR' | 'SOURCE_TIMEOUT' | 'SCHEMA_DRIFT' | 'PARSE_ERROR' | 'CANONICALIZATION_ERROR' | 'RECONCILIATION_ERROR' | 'PUBLICATION_ERROR' | 'DATABASE_GUARD_ERROR' | 'LOCKED' | 'UNKNOWN' | 'HARNESS_ERROR';
+export class CollectorError extends Error { constructor(readonly code: CollectorErrorCode, message: string, readonly cause?: unknown) { super(message); this.name = `CollectorError:${code}`; } }

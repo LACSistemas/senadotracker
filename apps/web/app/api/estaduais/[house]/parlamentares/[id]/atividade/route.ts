@@ -1,0 +1,4 @@
+import { NextResponse } from 'next/server';
+import { getStateLegislatorActivity } from '@/lib/state-product';
+export const dynamic = 'force-dynamic';
+export async function GET(request: Request, { params }: { params: Promise<{ house: string; id: string }> }) { const { house, id } = await params; const value = new URL(request.url).searchParams.get('ano'); const year = value === null ? 2026 : Number(value); if (!Number.isInteger(year) || year < 1900 || year > 2200) return NextResponse.json({ error: 'invalid year' }, { status: 400 }); try { const result = await getStateLegislatorActivity(house, id, year); if (!result) return NextResponse.json({ error: 'state parliamentarian not found' }, { status: 404 }); return NextResponse.json(result, { headers: { 'cache-control': 'no-store' } }); } catch (error) { return NextResponse.json({ error: error instanceof Error ? error.message : 'state activity query failed' }, { status: 503 }); } }

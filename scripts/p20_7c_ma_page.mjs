@@ -1,0 +1,2 @@
+﻿import { chromium } from '@playwright/test'; import fs from 'node:fs';
+const b=await chromium.launch({headless:true}); const p=await b.newPage(); await p.goto('https://alemalegis.al.ma.leg.br/home/protocol/legislative-matter/research',{waitUntil:'domcontentloaded',timeout:120000}); await p.waitForTimeout(8000); console.log('title',await p.title(),'url',p.url()); console.log((await p.locator('body').innerText()).slice(0,5000)); fs.writeFileSync('artifacts/P20_7C_MA_page.html',await p.content()); await b.close();

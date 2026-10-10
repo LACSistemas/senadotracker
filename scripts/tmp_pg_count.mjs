@@ -1,1 +1,0 @@
-import pg from 'pg';const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});console.log((await p.query("select count(distinct payload->>'label') n from civica.legislative_complements where kind='theme'" )).rows);await p.end();

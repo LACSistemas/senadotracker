@@ -1,0 +1,1 @@
+﻿const u='https://sapl.al.pi.leg.br/api/parlamentares/parlamentar/?limit=100'; const r=await fetch(u); const j=await r.json(); console.log(r.status,j.pagination,j.results?.length); console.log((j.results||[]).slice(0,3));

@@ -1,0 +1,3 @@
+import fs from 'node:fs'; import crypto from 'node:crypto';
+const names=['P20_FINAL.json','P20_FINAL.md','P20_FINAL_national_domain_matrix.json','P20_FINAL_proposal_matrix.json','P20_FINAL_authorship_linkage_audit.json','P20_FINAL_rapporteurship_audit.json','P20_FINAL_participation_audit.json','P20_FINAL_product_query_validation.json','P20_FINAL_provider_health.json','P20_FINAL_terminal_exceptions.json','P20.json','P20.md'];
+const out={generatedAt:new Date().toISOString(),files:{}}; for(const n of names){const b=fs.readFileSync('artifacts/'+n);out.files[n]={bytes:b.length,sha256:crypto.createHash('sha256').update(b).digest('hex')};} fs.writeFileSync('artifacts/P20_FINAL_sha256.json',JSON.stringify(out,null,2)+'\n','utf8'); console.log(JSON.stringify(out,null,2));

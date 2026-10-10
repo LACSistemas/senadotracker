@@ -1,0 +1,4 @@
+import { NextResponse } from 'next/server';
+import { getStateLegislatorFinance } from '@/lib/state-product';
+export const dynamic = 'force-dynamic';
+export async function GET(request: Request, { params }: { params: Promise<{ house: string; id: string }> }) { const { house, id } = await params; const value = new URL(request.url).searchParams.get('ano'); const year = value === null ? 2026 : Number(value); if (!Number.isInteger(year) || year < 1900 || year > 2200) return NextResponse.json({ error: 'invalid year' }, { status: 400 }); try { return NextResponse.json(await getStateLegislatorFinance(house, id, year), { headers: { 'cache-control': 'no-store' } }); } catch (error) { return NextResponse.json({ error: error instanceof Error ? error.message : 'state finance query failed' }, { status: 503 }); } }

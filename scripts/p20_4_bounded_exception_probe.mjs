@@ -1,0 +1,6 @@
+import {writeFileSync} from 'node:fs';
+const targets={PB:'https://sapl.al.pb.leg.br',AM:'https://sapl.al.am.leg.br',MA:'https://sapl.al.ma.leg.br'};
+const path='/api/materia/materialegislativa/?ano=2026&limit=20&page=1';
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function probe(url){const attempts=[];for(let n=1;n<=3;n++){const c=new AbortController();const t=setTimeout(()=>c.abort(),8000);const started=Date.now();try{const r=await fetch(url,{signal:c.signal,headers:{accept:'application/json','user-agent':'Civica-P20.4-bounded/1.0'},redirect:'manual'});const b=await r.text();attempts.push({attempt:n,status:r.status,bytes:b.length,elapsedMs:Date.now()-started,retryAfter:r.headers.get('retry-after')});if(r.ok)return {url,attempts,success:true};}catch(e){attempts.push({attempt:n,error:String(e),elapsedMs:Date.now()-started});}finally{clearTimeout(t)}if(n<3)await sleep(1000*n)}return {url,attempts,success:false}}
+const out={phase:'P20.4',bounded:true,delayMs:[1000,2000],targets:{}};for(const [h,b] of Object.entries(targets))out.targets[h]=await probe(b+path);writeFileSync('artifacts/P20_4_bounded_exception_probe.json',JSON.stringify(out,null,2));console.log(JSON.stringify(out,null,2));

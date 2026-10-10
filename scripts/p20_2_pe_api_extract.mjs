@@ -1,0 +1,1 @@
+const r=await fetch('https://proposicoes.alepe.pe.gov.br/static/js/main.29724183.js');const b=await r.text();for(const term of ['/api/v1/proposicoes/','proposicoes/projetos']){let i=0;while((i=b.indexOf(term,i))>=0){console.log('\nTERM',term,b.slice(Math.max(0,i-1200),i+1800));i+=term.length}}

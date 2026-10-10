@@ -1,0 +1,227 @@
+{
+  "house": "DF",
+  "sourceRows": [
+    {
+      "external_id": "0179b2c6d0f9be3c474c7505fc08a3e787cc42ce47140433d8d16ca6f73abc06",
+      "person_external_id": "joaquim-roriz-neto",
+      "occurred_at": "2026-04-03",
+      "competence": "2026-04",
+      "amount_cents": "353984",
+      "category": "Serviços Online",
+      "supplier_name": "Facebook",
+      "supplier_document": "13.347.016/0001-17",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Deputado Joaquim Roriz Neto|133801007|2026-04-03|353984|row=104",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Deputado Joaquim Roriz Neto",
+        "source_person_label_raw": "Deputado Joaquim Roriz Neto",
+        "source_person_label_decoded": "Deputado Joaquim Roriz Neto",
+        "source_person_label_normalized": "joaquim roriz neto"
+      }
+    },
+    {
+      "external_id": "02a5f332664830aabe6ac0e70f580b9ba47bac3bb664169b0d5cc89a02164f47",
+      "person_external_id": "roberio-negreiros-2019-2022",
+      "occurred_at": "2026-07-31",
+      "competence": "2026-07",
+      "amount_cents": "694500",
+      "category": "I- Locação e Manutenção de Imóveis",
+      "supplier_name": "MF Campos Serviços Imobiliário Ltda. - Aluguel",
+      "supplier_document": "40.112.929/0001-27",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Deputado Robério Negreiros|58|2026-07-31|694500|row=237",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Deputado Robério Negreiros",
+        "source_person_label_raw": "Deputado Robério Negreiros",
+        "source_person_label_decoded": "Deputado Robério Negreiros",
+        "source_person_label_normalized": "roberio negreiros"
+      }
+    },
+    {
+      "external_id": "0872e21fa283d2782f26f86f73ea2399e639915021154a7cd33986752dd46d64",
+      "person_external_id": null,
+      "occurred_at": "2026-06-02",
+      "competence": "2026-06",
+      "amount_cents": "550000",
+      "category": "Assessoria / Consultoria Jurídica",
+      "supplier_name": "Soily Braga - Sociedade Individual de Advocacia",
+      "supplier_document": "52.385.773/0001-37",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Marcos Martins Machado|35|2026-06-02|550000|row=126",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Marcos Martins Machado",
+        "source_person_label_raw": "Marcos Martins Machado",
+        "source_person_label_decoded": "Marcos Martins Machado",
+        "source_person_label_normalized": "marcos martins machado"
+      }
+    },
+    {
+      "external_id": "09ab9cebc7f18448e6d31d93a7adc93dcbd9acd988e4d5a797bf26ddc5ed3400",
+      "person_external_id": "roberio-negreiros-2019-2022",
+      "occurred_at": "2026-02-26",
+      "competence": "2026-02",
+      "amount_cents": "32574",
+      "category": "II - Locação de bens móveis, máquinas e equipamentos",
+      "supplier_name": "Smart Soluções Inteligentes para DOC Ltda. - EPP",
+      "supplier_document": "72.638.216/0001-98",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Deputado Robério Negreiros|100|2026-02-26|32574|row=38",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Deputado Robério Negreiros",
+        "source_person_label_raw": "Deputado Robério Negreiros",
+        "source_person_label_decoded": "Deputado Robério Negreiros",
+        "source_person_label_normalized": "roberio negreiros"
+      }
+    },
+    {
+      "external_id": "0a7798fecb47061f9933b3b76e935d28619cae6e9a3b626c0a31f24aef71d3de",
+      "person_external_id": null,
+      "occurred_at": "2026-04-06",
+      "competence": "2026-04",
+      "amount_cents": "500000",
+      "category": "Divulgação de Atividade Parlamentar",
+      "supplier_name": "Pro Vídeo Locação e Eventos Ltda",
+      "supplier_document": "13.542.814/0001-08",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Marcos Martins Machado|499|2026-04-06|500000|row=81",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Marcos Martins Machado",
+        "source_person_label_raw": "Marcos Martins Machado",
+        "source_person_label_decoded": "Marcos Martins Machado",
+        "source_person_label_normalized": "marcos martins machado"
+      }
+    },
+    {
+      "external_id": "0d08f6cf8badfde341db2f948f36403fc9e285cbd7aefa36a51a86048ebd7ee0",
+      "person_external_id": null,
+      "occurred_at": "2026-03-04",
+      "competence": "2026-03",
+      "amount_cents": "500000",
+      "category": "Divulgação atividade parlamentar",
+      "supplier_name": "PLANETA DIÁRIO PORTAL DE NOTÍCIAS LTDA",
+      "supplier_document": "40.750.576/0001-90",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Jane Klébia do Nascimento da Silva|2564166|2026-03-04|500000|row=53",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_raw": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_decoded": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_normalized": "jane klebia do nascimento da silva"
+      }
+    },
+    {
+      "external_id": "0d20ca7eda5718d40435544a11d21c7bf02f3f8dca14209ab62ae90443237024",
+      "person_external_id": "hermeto-2019-2022",
+      "occurred_at": "2026-07-22",
+      "competence": "2026-07",
+      "amount_cents": "26329",
+      "category": "Locação e manutenção de imóveis",
+      "supplier_name": "Neoenergia",
+      "supplier_document": "07.522.669/0001-92",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Deputado Hermeto|20135734|2026-07-22|26329|row=230",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Deputado Hermeto",
+        "source_person_label_raw": "Deputado Hermeto",
+        "source_person_label_decoded": "Deputado Hermeto",
+        "source_person_label_normalized": "hermeto"
+      }
+    },
+    {
+      "external_id": "0d301b462a463d36568cac93e774d84507c2da8a553a9ec572a207a920a15b3d",
+      "person_external_id": null,
+      "occurred_at": "2026-04-12",
+      "competence": "2026-04",
+      "amount_cents": "78840",
+      "category": "Consultoria Especializada",
+      "supplier_name": "VIZION GESTÃO DE NEGÓCIOS EMPRESARIAIS LTDA",
+      "supplier_document": "07.979.987/0001-87",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Jane Klébia do Nascimento da Silva|2659116|2026-04-12|78840|row=87",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_raw": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_decoded": "Jane Klébia do Nascimento da Silva",
+        "source_person_label_normalized": "jane klebia do nascimento da silva"
+      }
+    },
+    {
+      "external_id": "0e53034b02a89cf32f994de7e34d21f623334b54df60808e07b385015f123514",
+      "person_external_id": null,
+      "occurred_at": "2026-04-06",
+      "competence": "2026-04",
+      "amount_cents": "550000",
+      "category": "Assessoria / Consultoria Jurídica",
+      "supplier_name": "Soily Braga - Sociedade Individual de Advocacia",
+      "supplier_document": "52.385.773/0001-37",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Marcos Martins Machado|32|2026-04-06|550000|row=82",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Marcos Martins Machado",
+        "source_person_label_raw": "Marcos Martins Machado",
+        "source_person_label_decoded": "Marcos Martins Machado",
+        "source_person_label_normalized": "marcos martins machado"
+      }
+    },
+    {
+      "external_id": "0f85d1a92156840d14b42a7120ede1997c857b05c53e39159e4402c4136739b5",
+      "person_external_id": null,
+      "occurred_at": "2026-02-05",
+      "competence": "2026-02",
+      "amount_cents": "500000",
+      "category": "Divulgação de Atividade Parlamentar",
+      "supplier_name": "Pro Vídeo Locação e Eventos Ltda",
+      "supplier_document": "13.542.814/0001-08",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+      "provenance": {
+        "source": "https://dados.cl.df.gov.br/dataset/662b8e54-727c-4e97-873c-d8c168ecc465/resource/5e3b2a07-e18a-439f-b89c-617c68eb1ef2/download/verba_indenizatoria_2026_corrigido-1.xlsx",
+        "sourceKey": "Marcos Martins Machado|482|2026-02-05|500000|row=26",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Marcos Martins Machado",
+        "source_person_label_raw": "Marcos Martins Machado",
+        "source_person_label_decoded": "Marcos Martins Machado",
+        "source_person_label_normalized": "marcos martins machado"
+      }
+    }
+  ],
+  "fixtureKind": "bounded-active-revision-evidence",
+  "database": "civica_postgres_lab"
+}

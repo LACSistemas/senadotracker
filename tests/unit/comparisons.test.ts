@@ -32,7 +32,10 @@ test('votos sem direção observável não sustentam concordância',()=>{
   assert.equal(result.ratio,null);
 });
 
-test('comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez',()=>{const db=openDatabase(':memory:');try{
+test('comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez',(t)=>{
+  // O corte do período (reportingCutoff) usa o relógio: congela em setembro/2026 para o teste não depender do mês em que roda.
+  t.mock.timers.enable({apis:['Date'],now:new Date('2026-09-28T15:00:00-03:00')});
+  const db=openDatabase(':memory:');try{
   db.prepare("INSERT INTO people VALUES ('p1','now'),('p2','now')").run();db.prepare("INSERT INTO external_identifiers VALUES ('senado','1','p1'),('senado','2','p2')").run();db.prepare("INSERT INTO ingestion_runs(id,source,started_at,status,parser_version,roster_complete) VALUES ('roster','senado','now','published','test',1),('expense','senado','now','published','test',1),('cabinet','senado','now','published','test',1)").run();db.prepare("INSERT INTO raw_objects VALUES ('raw-roster','roster','https://example.test','now',200,'application/json',?,'raw',1),('raw-expense','expense','https://example.test','now',200,'application/json',?,'raw',1),('raw-cabinet','cabinet','https://example.test','now',200,'application/json',?,'raw',1)").run('0'.repeat(64),'1'.repeat(64),'2'.repeat(64));db.prepare("INSERT INTO publication_batches VALUES ('roster','senado','now')").run();db.prepare("INSERT INTO active_publications VALUES ('senado','roster')").run();
   const profile=(id:string,name:string)=>JSON.stringify({source:'senado',externalId:id,name,fullName:name,uf:'DF',party:'P',photoUrl:null,officialUrl:'https://example.test',observedAt:'2026-01-01',historyAvailability:'available',mandates:[],exercises:[{mandateKey:'m',state:'active',cause:null,start:'2026-01-01',end:null}],parties:[],events:[],rawId:'raw-roster'});
   db.prepare("INSERT INTO profiles VALUES ('roster','p1','1','Ana','ana','DF','P','raw-roster',?),('roster','p2','2','Bia','bia','DF','P','raw-roster',?)").run(profile('1','Ana'),profile('2','Bia'));

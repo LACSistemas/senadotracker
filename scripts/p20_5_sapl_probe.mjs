@@ -1,0 +1,1 @@
+﻿const hs={PB:'https://sapl.al.pb.leg.br',AM:'https://sapl.al.am.leg.br'};for(const [h,b] of Object.entries(hs)){for(const lim of [10,25,50,100]){const u=`${b}/api/materia/materialegislativa/?ano=2026&limit=${lim}&page=1`;const r=await fetch(u);let j;try{j=await r.json()}catch(e){j={}};console.log(h,lim,r.status,j.pagination,j.results?.length)}}

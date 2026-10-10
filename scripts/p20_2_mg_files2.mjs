@@ -1,0 +1,1 @@
+const r=await fetch('https://dadosabertos.almg.gov.br/documentacao/arquivos/proposicoes');const b=await r.text();console.log(r.status,b.length);for(const term of ['csv','zip','download','arquivo','proposi']){let i=0,c=0;while((i=b.toLowerCase().indexOf(term,i))>=0&&c<30){console.log(term,b.slice(Math.max(0,i-180),i+500));i+=term.length;c++}}

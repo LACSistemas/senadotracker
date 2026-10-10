@@ -1,2 +1,0 @@
-import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});
-(async()=>{for(const q of [`select column_name from information_schema.columns where table_schema='civica' and table_name='identity_links'`,`select * from civica.identity_links limit 5`,`select * from civica.external_identifiers where external_id in ('825','1173')`,`select * from civica.external_identifiers where source='senado' limit 10`])console.log(JSON.stringify((await p.query(q)).rows,null,2));await p.end()})()

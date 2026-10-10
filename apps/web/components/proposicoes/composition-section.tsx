@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import type { EditorialFact, FunctionalOverview } from '@senadotracker/db';
 import { CoverageBadge } from '@/components/metrics';
-import { HOUSES, formatDate, nf } from '@/lib/proposicoes/taxonomy';
+import { HOUSES, formatDate, nf, temporalPhrase } from '@/lib/proposicoes/taxonomy';
 import { composeEntries } from '@/lib/proposicoes/composition';
 import { AnimatedBarStrip, type StripSegment } from './animated-bar-strip';
 import { FunctionalGroupLegend } from './functional-group-legend';
@@ -22,7 +22,7 @@ function HousePanel({ overview, house, compact }: { overview: FunctionalOverview
     <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
       <div>
         <h3 className="font-display text-2xl font-medium">{title}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{view ? (view.partial ? 'Recorte publicado: matérias de autoria dos parlamentares em exercício' : `Todas as proposições publicadas com ano ${overview.year}`) : `Câmara e Senado somados, ano ${overview.year}`}</p>
+        <p className="mt-1 text-sm text-muted-foreground">{view ? (view.partial ? 'Recorte publicado: matérias de autoria dos parlamentares em exercício' : `Proposições ${temporalPhrase(overview.temporalBasis ?? 'presented_at', overview.year)}, por função`) : `Câmara e Senado somados · proposições ${temporalPhrase(overview.temporalBasis ?? 'presented_at', overview.year)}`}</p>
         {view ? <div className="mt-2"><CoverageBadge coverage={view.coverage} /></div> : null}
       </div>
     </header>

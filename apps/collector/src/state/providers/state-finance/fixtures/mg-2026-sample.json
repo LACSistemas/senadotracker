@@ -1,0 +1,197 @@
+{
+  "house": "MG",
+  "sourceRows": [
+    {
+      "external_id": "0015746c970a6000d97ef6b95370976397b92a90105a46001778f8996b3d14b5",
+      "person_external_id": "28866",
+      "occurred_at": "2026-09-03",
+      "competence": "2026-09",
+      "amount_cents": "61900",
+      "category": "Starlink Brazil Serviços de Internet Ltda.",
+      "supplier_name": "Starlink Brazil Serviços de Internet Ltda.",
+      "supplier_document": "40154884000153",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28866",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28866",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28866|Starlink Brazil Serviços de Internet Ltda.|40154884000153|03/09/2026|011339197|R$ 619,00|R$ 619,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Eduardo Azevedo / PL - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Direto"
+      }
+    },
+    {
+      "external_id": "002f53204f5b0506fb496c2c3ebf3e3e172d114cf23d4cefe3206d2b190d8b09",
+      "person_external_id": "26145",
+      "occurred_at": "2026-07-01",
+      "competence": "2026-07",
+      "amount_cents": "24500",
+      "category": "48.477.257 Rodrigo Oliveira Barbosa",
+      "supplier_name": "48.477.257 Rodrigo Oliveira Barbosa",
+      "supplier_document": "48477257000165",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145|48.477.257 Rodrigo Oliveira Barbosa|48477257000165|01/07/2026|123|R$ 245,00|R$ 245,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Betão / PT - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diretora Entenda"
+      }
+    },
+    {
+      "external_id": "0037cfe2cb4e3c443113040d3160e8418f83bd26198497a5fdea990e334dfb5e",
+      "person_external_id": "26145",
+      "occurred_at": "2026-08-18",
+      "competence": "2026-08",
+      "amount_cents": "24922",
+      "category": "Posto Bernardo Ltda.",
+      "supplier_name": "Posto Bernardo Ltda.",
+      "supplier_document": "60592275000193",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26145|Posto Bernardo Ltda.|60592275000193|18/08/2026|161512|R$ 249,22|R$ 249,22",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Betão / PT - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diretora Entenda"
+      }
+    },
+    {
+      "external_id": "004305dd1f84f54d594716ac0b03537e9924a70a32d2791d101cad316164fb18",
+      "person_external_id": "26143",
+      "occurred_at": "2026-08-25",
+      "competence": "2026-08",
+      "amount_cents": "350000",
+      "category": "Valor Locações Ltda.",
+      "supplier_name": "Valor Locações Ltda.",
+      "supplier_document": "07475524000188",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26143",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26143",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=26143|Valor Locações Ltda.|07475524000188|25/08/2026|02364|R$ 3.500,00|R$ 3.500,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Andréia de Jesus / PT - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diret"
+      }
+    },
+    {
+      "external_id": "004e8e7889c2df124d9cb02005ef5ae100bb17d745e7db73304d8078b25a94fc",
+      "person_external_id": "28863",
+      "occurred_at": "2026-08-26",
+      "competence": "2026-08",
+      "amount_cents": "28972",
+      "category": "Duodrive 2 Comercio de Combustiveis Ltda.",
+      "supplier_name": "Duodrive 2 Comercio de Combustiveis Ltda.",
+      "supplier_document": "55077411000177",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28863",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28863",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28863|Duodrive 2 Comercio de Combustiveis Ltda.|55077411000177|26/08/2026|78807|R$ 289,72|R$ 289,72",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Chiara Biondini / PL - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Direto"
+      }
+    },
+    {
+      "external_id": "006590d985ce7778ee755ec8e0a5b57d1e6319ff976ef6f41d9a88c2341ca559",
+      "person_external_id": "18848",
+      "occurred_at": "2026-08-10",
+      "competence": "2026-08",
+      "amount_cents": "15000",
+      "category": "Niponica Comercio de Veiculos Ltda",
+      "supplier_name": "Niponica Comercio de Veiculos Ltda",
+      "supplier_document": "07215045000718",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848|Niponica Comercio de Veiculos Ltda|07215045000718|10/08/2026|2026000002245|R$ 150,00|R$ 150,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Cassio Soares / PSD - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diretor"
+      }
+    },
+    {
+      "external_id": "00909a2e9f5948d6211ac8a283dfb4832d7371d3e179652adcb2aa8b854d1ae3",
+      "person_external_id": "28874",
+      "occurred_at": "2026-08-28",
+      "competence": "2026-08",
+      "amount_cents": "600000",
+      "category": "Candido e Candido Neto Advogados Associados",
+      "supplier_name": "Candido e Candido Neto Advogados Associados",
+      "supplier_document": "23537497000187",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28874",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28874",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28874|Candido e Candido Neto Advogados Associados|23537497000187|28/08/2026|99|R$ 6.000,00|R$ 6.000,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Maria Clara Marra / PSDB - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Di"
+      }
+    },
+    {
+      "external_id": "009ed8f6d854b89a07f8697d7b4371ad2701dc976a231a58c76290d76a6bf116",
+      "person_external_id": "18848",
+      "occurred_at": "2026-08-19",
+      "competence": "2026-08",
+      "amount_cents": "26471",
+      "category": "Posto Santa Edwiges Petroleo Ltda.",
+      "supplier_name": "Posto Santa Edwiges Petroleo Ltda.",
+      "supplier_document": "19848233001220",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=18848|Posto Santa Edwiges Petroleo Ltda.|19848233001220|19/08/2026|285563|R$ 264,71|R$ 264,71",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Cassio Soares / PSD - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diretor"
+      }
+    },
+    {
+      "external_id": "00ad63ebea905a7f1a4e12fc77f4f8c9f5510c788fd52e3a8b16d1282c86b6e4",
+      "person_external_id": "28865",
+      "occurred_at": "2026-08-25",
+      "competence": "2026-08",
+      "amount_cents": "84000",
+      "category": "Hotel do Hespanhol Ltda.",
+      "supplier_name": "Hotel do Hespanhol Ltda.",
+      "supplier_document": "24731853000404",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28865",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28865",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=28865|Hotel do Hespanhol Ltda.|24731853000404|25/08/2026|231|R$ 840,00|R$ 840,00",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Dr. Maurício / NOVO - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Diretor"
+      }
+    },
+    {
+      "external_id": "01209fb864d792ab9458d2132d3aa3616b1c01f8ed33143e49eec4867073c0f9",
+      "person_external_id": "9655",
+      "occurred_at": "2026-07-17",
+      "competence": "2026-07",
+      "amount_cents": "16005",
+      "category": "Auto Posto Iconecta Limitada",
+      "supplier_name": "Auto Posto Iconecta Limitada",
+      "supplier_document": "23018799000149",
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=9655",
+      "provenance": {
+        "source": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=9655",
+        "sourceKey": "https://www.almg.gov.br/transparencia/prestacao-de-contas/deputados/verba-indenizatoria/detalhe.html?id=9655|Auto Posto Iconecta Limitada|23018799000149|17/07/2026|281326|R$ 160,05|R$ 160,05",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Prestação de contas: Dalmo Ribeiro / PSDB - Assembleia Legislativa de Minas Gerais Ir para o conteúdo Navegar em: A Assembleia Deputados Presidência Mesa Direto"
+      }
+    }
+  ],
+  "fixtureKind": "bounded-active-revision-evidence",
+  "database": "civica_postgres_lab"
+}

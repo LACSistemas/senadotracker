@@ -1,0 +1,2 @@
+﻿from pathlib import Path
+p=Path('artifacts/P20_7E.md');s=p.read_text();s += '\n## Publicação\n\n- ES revision: `state:ES:legislative:d009e83316a0f1d632f90adb5f55ea26243c3a314e4825bd83c075e0f98b6153`; 270 propostas; 312 relações de autoria.\n- BA revision: `state:BA:legislative:023f6678d50db7efb8c113f4c555a176736ab3ac6cfd409fffa0293036e7d203`; 89 propostas; 89 relações de autoria.\n- Run2 em ambas: `DUPLICATE_INSERTIONS=0`, `NEW_REVISION_ON_UNCHANGED_REPLAY=0`.\n';p.write_text(s)

@@ -88,6 +88,10 @@ export async function collectSourcePostgres(options: PostgresCollectOptions) {
 /** P1 activity publication from already validated PostgreSQL proposal rows. This
  * is the PG-only refresh path; it intentionally does not open SQLite. */
 export async function collectActivityPostgres(source: Source, options: { scope?: string; smoke?: boolean } = {}) {
+  // Câmara: antes de republicar, traz para o catálogo o que foi apresentado recentemente (incremental com sobreposição); falha não bloqueia.
+  let presented: unknown = null;
+  if (source === 'senado' && !options.smoke) { try { const { collectSenadoPresentedPostgres } = await import('./postgres-senado-presented.ts'); const r = await collectSenadoPresentedPostgres({ progress: m => console.error(m) }); presented = { runId: r.runId, range: [r.rangeFrom, r.rangeTo], inserted: r.inserted, failed: r.failed, coverage: r.reconciliation.coverage }; } catch (error) { presented = { error: error instanceof Error ? error.message : String(error) }; } }
+  if (source === 'camara' && !options.smoke) { try { const { collectCamaraPresentedPostgres } = await import('./postgres-camara-presented.ts'); const r = await collectCamaraPresentedPostgres({ progress: m => console.error(m) }); presented = { runId: r.runId, range: [r.rangeFrom, r.rangeTo], inserted: r.inserted, failed: r.failed, coverage: r.reconciliation.coverage }; } catch (error) { presented = { error: error instanceof Error ? error.message : String(error) }; } }
   const store = new PostgresCollectorStore(); await store.assertTarget(); const scope = options.scope ?? 'default'; const id = `pg-activity:${source}:${scope}:${randomUUID()}`; const now = new Date().toISOString();
   const result = await store.transaction(async client => {
     const rows = await client.query<any>(`SELECT external_id,raw_id,payload FROM civica_poc.proposals p JOIN civica_poc.active_publications a ON a.source=p.source AND a.batch_id=p.batch_id WHERE p.source=$1 ORDER BY external_id`, [source]);
@@ -98,7 +102,11 @@ export async function collectActivityPostgres(source: Source, options: { scope?:
     for (const row of rows.rows) { await client.query(`INSERT INTO civica.proposals(batch_id,source,external_id,raw_id,payload) VALUES($1,$2,$3,$4,$5) ON CONFLICT(batch_id,external_id) DO UPDATE SET payload=excluded.payload`, [id,source,row.external_id,fallbackRaw,row.payload ?? {}]); }
     if (!options.smoke) await client.query(`INSERT INTO civica.active_activity_publications(source,scope,batch_id) VALUES($1,$2,$3) ON CONFLICT(source,scope) DO UPDATE SET batch_id=excluded.batch_id`, [source,scope,id]);
     return { id, proposals: rows.rowCount };
-  }); await store.pool.end(); return result;
+  }); await store.pool.end();
+  // Pais históricos citados como principal entram como matérias de suporte; falha aqui nunca invalida a publicação dos filhos.
+  let principals: unknown = null;
+  if (source === 'camara' && !options.smoke) { try { const { resolveCamaraPrincipalsPostgres } = await import('./postgres-principal-resolver.ts'); principals = await resolveCamaraPrincipalsPostgres({ scope: 'all', progress: m => console.error(m) }); } catch (error) { principals = { error: error instanceof Error ? error.message : String(error) }; } }
+  return { ...result, ...(presented ? { presented } : {}), ...(principals ? { principals } : {}) };
 }
 
 export async function refreshPropositionOperationalComponentsPostgres(year = new Date().getUTCFullYear()) {

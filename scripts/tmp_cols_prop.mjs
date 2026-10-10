@@ -1,2 +1,0 @@
-import pg from 'pg';(async()=>{const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});for(const [sch,t] of [['civica_poc','proposals'],['civica','proposals']])console.log(sch,(await p.query('select column_name from information_schema.columns where table_schema=$1 and table_name=$2 order by ordinal_position',[sch,t])).rows);await p.end()})()
-

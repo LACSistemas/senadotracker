@@ -11,6 +11,8 @@
   },
   "scripts": {
     "cli": "tsx src/index.ts",
+    "civica:collect": "tsx src/index.ts",
+    "civica:preflight": "tsx src/index.ts preflight --json",
     "typecheck": "tsc --noEmit -p tsconfig.json"
   }
 }

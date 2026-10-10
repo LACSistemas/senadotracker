@@ -1,0 +1,217 @@
+{
+  "house": "AP",
+  "sourceRows": [
+    {
+      "external_id": "000c70b349540ead5ea87bc74ef88fbc609d6eee036974274308fd6a76c4d373",
+      "person_external_id": "98",
+      "occurred_at": null,
+      "competence": "2026-07",
+      "amount_cents": "1200000",
+      "category": "3390.39.10 -  Locação de Imóveis",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "a4819d8f7729699842b0cc5b8a5fea13ecc067562c6ad0292c8d6ac4b5c169e9",
+        "sourceKey": "07|78|3390.39.10 -  Locação de Imóveis",
+        "canonicalPerson": "98",
+        "providerPersonLabel": "CARLOS LOBATO - MDB"
+      }
+    },
+    {
+      "external_id": "007ac17b112f6cc0353e3d8609e33dcd323ee12819084b34cf6a397ef619e09f",
+      "person_external_id": "75",
+      "occurred_at": null,
+      "competence": "2026-04",
+      "amount_cents": "1110046",
+      "category": "3390.36.15 -  Locação de Imóveis",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "4a4fe511e3f691c09bc1030775a20652310fe6eb3358ab291f9a84d66c0b9c01",
+        "sourceKey": "04|55|3390.36.15 -  Locação de Imóveis",
+        "canonicalPerson": "75",
+        "providerPersonLabel": "ALLINY SERRÃO - UNIÃO"
+      }
+    },
+    {
+      "external_id": "0187e81d50a256670c024fe9ca3cf3befa537f75cf4f92eb79f64c765b168197",
+      "person_external_id": null,
+      "occurred_at": null,
+      "competence": "2026-01",
+      "amount_cents": "186580",
+      "category": "3390.30.01 -  Combustíveis e Lubrificantes Automotivos",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "121bffe52e5992ef5039efd6b8c3caaf28eaa22eaca8d64bdf03b102d4347c35",
+        "sourceKey": "01|73|3390.30.01 -  Combustíveis e Lubrificantes Automotivos",
+        "canonicalPerson": null,
+        "providerPersonLabel": "RAYFRAN BEIRÃO - PROS"
+      }
+    },
+    {
+      "external_id": "01db917c54274ecb18d6d9040b74d8d177cb31d317280c619041a78fd7d7ba5c",
+      "person_external_id": null,
+      "occurred_at": null,
+      "competence": "2026-04",
+      "amount_cents": "272207",
+      "category": "3390.30.01 -  Combustíveis e Lubrificantes Automotivos",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "df25a4fa605a4da0e345c92930a3062b2f8cb2a409471595678c530b63eb9a92",
+        "sourceKey": "04|73|3390.30.01 -  Combustíveis e Lubrificantes Automotivos",
+        "canonicalPerson": null,
+        "providerPersonLabel": "RAYFRAN BEIRÃO - PROS"
+      }
+    },
+    {
+      "external_id": "021db0309953570a05af2f510041bdd58cee84b8f092d2a48baa7978ccae1738",
+      "person_external_id": "75",
+      "occurred_at": null,
+      "competence": "2026-05",
+      "amount_cents": "925000",
+      "category": "3390.36.15 -  Locação de Imóveis",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "a683c5bf1a476c90a683933955a83861fb09290cf0c2ed1a7f3ccd34922b32a6",
+        "sourceKey": "05|55|3390.36.15 -  Locação de Imóveis",
+        "canonicalPerson": "75",
+        "providerPersonLabel": "ALLINY SERRÃO - UNIÃO"
+      }
+    },
+    {
+      "external_id": "023a2158bf0d6c7c1d3e561f3be948b58ee823230a8093e8f17f752bddd41e36",
+      "person_external_id": null,
+      "occurred_at": null,
+      "competence": "2026-04",
+      "amount_cents": "237000",
+      "category": "3390.33.00 -  Passagens e Despesas com Locomoção",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "c1034941284314277132557e213d1d568f8338943002aa52138881fa34928437",
+        "sourceKey": "04|38|3390.33.00 -  Passagens e Despesas com Locomoção",
+        "canonicalPerson": null,
+        "providerPersonLabel": "OLIVEIRA SANTOS  -  REPUBLICANOS"
+      }
+    },
+    {
+      "external_id": "03e9dbb945328997ab40f5f4b3858f08b79758167eafea1fa08392ff443c30bb",
+      "person_external_id": "89",
+      "occurred_at": null,
+      "competence": "2026-04",
+      "amount_cents": "1900000",
+      "category": "3390.39.14 -  Locação de Bens Móveis de Outras Naturezas e Intangíveis",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "ae6d05c96d87552811b8828b13b8b97371db585dfc3287d8cf597f04650bd892",
+        "sourceKey": "04|74|3390.39.14 -  Locação de Bens Móveis de Outras Naturezas e Intangíveis",
+        "canonicalPerson": "89",
+        "providerPersonLabel": "ZENEIDE COSTA - PODEMOS"
+      }
+    },
+    {
+      "external_id": "040a8dc34831794bfddad1fbb3274f41ade16c25cec6a4059f59ba1f1fe6215c",
+      "person_external_id": "95",
+      "occurred_at": null,
+      "competence": "2026-07",
+      "amount_cents": "25290",
+      "category": "3390.39.57 -  Serviço de Processamento de Dados",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "c00114f3b4263c9197a1f4aae9a13298c23ea024cb6a4c454d9ff15a53cc3702",
+        "sourceKey": "07|75|3390.39.57 -  Serviço de Processamento de Dados",
+        "canonicalPerson": "95",
+        "providerPersonLabel": "RODOLFO  VALE - PC do B"
+      }
+    },
+    {
+      "external_id": "041d42cdc3b26471a855419bb5d41dee92da0800219fec0f8e96097104ce694c",
+      "person_external_id": "85",
+      "occurred_at": null,
+      "competence": "2026-08",
+      "amount_cents": "500000",
+      "category": "3390.39.11 -  Locação de Software",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "12c6b85e09ed55c49b16bb76ddfdc5e2f0cb32554deae3c33e1898fd8747037d",
+        "sourceKey": "08|65|3390.39.11 -  Locação de Software",
+        "canonicalPerson": "85",
+        "providerPersonLabel": "R. NELSON VIEIRA - PL"
+      }
+    },
+    {
+      "external_id": "043ee3c912dee404d368cd18114536219e91ea1aa2831e5b5488bc20e295ff51",
+      "person_external_id": "87",
+      "occurred_at": null,
+      "competence": "2026-03",
+      "amount_cents": "1301000",
+      "category": "3390.39.90 -  Serviços de Publicidade Legal",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": null,
+      "source_url": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+      "provenance": {
+        "source": "https://al.ap.leg.br/transparencia/pagina.php?pg=ceap&acao=buscar",
+        "provider": "alap_ceap",
+        "rawSha256": "441d78aa20b88ea8155d097ecf3356f2c5d7eaa8ebff823739c198a475a19f54",
+        "sourceKey": "03|70|3390.39.90 -  Serviços de Publicidade Legal",
+        "canonicalPerson": "87",
+        "providerPersonLabel": "LILIANE ABREU - PV"
+      }
+    }
+  ],
+  "fixtureKind": "bounded-active-revision-evidence",
+  "database": "civica_postgres_lab"
+}

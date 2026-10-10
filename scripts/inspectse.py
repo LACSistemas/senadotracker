@@ -1,0 +1,2 @@
+﻿import json
+x=json.load(open('artifacts/P20_7A_SE_corpus.json',encoding='utf8'));print(x['rows'][0]); print(x['rows'][-1]); print('author rows',sum(len(r['authors']) for r in x['rows']),'no authors',sum(not r['authors'] for r in x['rows']));print('fields missing', {k:sum(r.get(k) is None for r in x['rows']) for k in ['process_number','protocol_number','date','status_raw','current_activity_raw','summary']})

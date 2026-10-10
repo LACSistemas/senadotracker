@@ -4,22 +4,10 @@ import { proposalFunctionalGroup, type Proposal } from '@senadotracker/domain';
 import { OfficialHttp, type JsonResponse } from './http.ts';
 import { saveRaw } from './raw.ts';
 
-type Json=Record<string,unknown>;
-type Theme={code:string;label:string;relevance:string|null;rawId:string};
-type Resolved={proposal:Proposal;themes:Theme[]};
+import { parsePrincipalProposal, idFromUri, text, items, type Json, type Resolved } from './principal-proposal-parser.ts';
 const api='https://dadosabertos.camara.leg.br/api/v2';
-const text=(value:unknown)=>value===null||value===undefined||String(value).trim()===''?null:String(value).trim();
-const idFromUri=(value:unknown)=>/\/(\d+)\/?$/.exec(String(value??''))?.[1]??null;
-const items=(value:unknown):Json[]=>Array.isArray(value)?value.filter((item):item is Json=>Boolean(item)&&typeof item==='object'):[];
 
-export function parsePrincipalProposal(detailResponse:JsonResponse,themesResponse:JsonResponse,discoveredByProposalId:string):Resolved{
-  const root=detailResponse.data as Json,detail=(root.dados??{}) as Json,id=String(detail.id??'');
-  if(!/^\d+$/.test(id))throw new Error('Detalhe da proposição-pai sem ID oficial');
-  const type=text(detail.siglaTipo)??text(detail.descricaoTipo)??'Proposição',number=text(detail.numero),year=Number(detail.ano)||null,principalProposalId=idFromUri(detail.uriPropPrincipal);
-  const proposal:Proposal={source:'camara',externalId:id,type,functionalGroup:proposalFunctionalGroup(type),number,year,label:[type,number].filter(Boolean).join(' ')+(year?`/${year}`:''),summary:text(detail.ementa),presentedAt:text(detail.dataApresentacao),status:text((detail.statusProposicao as Json|undefined)?.descricaoSituacao)??text(detail.descricaoSituacao),officialUrl:`https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=${id}`,rawId:detailResponse.rawId,principalProposalId,previousProposalId:idFromUri(detail.uriPropAnterior),nextProposalId:idFromUri(detail.uriPropPosterior),relationshipEvidence:principalProposalId||detail.uriPropAnterior||detail.uriPropPosterior?'official_uri':null,catalogRole:'relationship_support',discoveredByProposalId};
-  const themes=items((themesResponse.data as Json).dados).map((item,index)=>({code:text(item.codTema)??String(index),label:text(item.tema)??`Tema ${index+1}`,relevance:text(item.relevancia),rawId:themesResponse.rawId}));
-  return{proposal,themes};
-}
+export { parsePrincipalProposal } from './principal-proposal-parser.ts';
 
 export interface PrincipalResolutionOptions{children:Proposal[];rawDirectory:string;maxDepth?:number;concurrency?:number;clientFactory?:(runId:string)=>{json:(url:string)=>Promise<JsonResponse>};progress?:(message:string)=>void}
 export interface PrincipalResolutionResult{dependencies:number;missingBefore:number;resolved:number;reused:number;failed:number;requests:number;remaining:number;maxDepth:number}

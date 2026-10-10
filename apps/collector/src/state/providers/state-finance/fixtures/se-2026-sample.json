@@ -1,0 +1,206 @@
+{
+  "house": "SE",
+  "sourceRows": [
+    {
+      "external_id": "012b11ab74e9daa321cee586d51c0dc92308db5007e039c0915bd518e31c9fad",
+      "person_external_id": "565",
+      "occurred_at": null,
+      "competence": "2026-03",
+      "amount_cents": "3150000",
+      "category": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Cristiano Cavalcante|12|34",
+        "canonicalPerson": "565",
+        "providerPersonLabel": "Cristiano Cavalcante"
+      }
+    },
+    {
+      "external_id": "01650be0587fcd1fe76b71d99e23fba497c6e7fd6815485b8f1047285d753454",
+      "person_external_id": "557",
+      "occurred_at": null,
+      "competence": "2026-02",
+      "amount_cents": "750000",
+      "category": "Art. 4Âº XIII - ContrataÃ§Ã£o de serviÃ§os de seguranÃ§a pessoal privada",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº XIII - ContrataÃ§Ã£o de serviÃ§os de seguranÃ§a pessoal privada",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Maisa Mitidieri|50|134",
+        "canonicalPerson": "557",
+        "providerPersonLabel": "Maisa Mitidieri"
+      }
+    },
+    {
+      "external_id": "01739ed9671c4d41a9bce86804e9c94aa0cfcf07248c876d176011f5c9bbd8da",
+      "person_external_id": "569",
+      "occurred_at": null,
+      "competence": "2026-01",
+      "amount_cents": "2700000",
+      "category": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-120/?wpdmdl=186576&refresh=6ab57b036be011790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-120/?wpdmdl=186576&refresh=6ab57b036be011790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-120/?wpdmdl=186576&refresh=6ab57b036be011790278403&output_type=csv&name_file=Ressarcimento dos Deputados|LuizÃ£o Donatrampi|45|125",
+        "canonicalPerson": null,
+        "providerPersonLabel": "LuizÃ£o Donatrampi",
+        "source_person_label_raw": "LuizÃ£o Donatrampi",
+        "source_person_label_decoded": "Luizão Donatrampi",
+        "source_person_label_normalized": "luizao donatrampi"
+      }
+    },
+    {
+      "external_id": "01f9ad3ec6961b1334c489b3bf9f243f5a3aecaf9e59d9671eea6a68b97272bc",
+      "person_external_id": null,
+      "occurred_at": null,
+      "competence": "2026-05",
+      "amount_cents": "3100000",
+      "category": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Ã�urea Ribeiro|4|14",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Ã�urea Ribeiro",
+        "source_person_label_raw": "Ã�urea Ribeiro",
+        "source_person_label_decoded": "Ã�urea Ribeiro",
+        "source_person_label_normalized": "a�urea ribeiro"
+      }
+    },
+    {
+      "external_id": "0283b960eafd70af8392d6a776b82e1eb24b53f3fff35b0043f60fe1ed9f9686",
+      "person_external_id": "571",
+      "occurred_at": null,
+      "competence": "2026-03",
+      "amount_cents": "3150000",
+      "category": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Marcos Oliveira|59|164",
+        "canonicalPerson": "571",
+        "providerPersonLabel": "Marcos Oliveira"
+      }
+    },
+    {
+      "external_id": "02a0c2fd6dab563fd2d48230949061d8bcd6b618007ae7e6dd5d6dc4c3f6bb44",
+      "person_external_id": "537",
+      "occurred_at": null,
+      "competence": "2026-05",
+      "amount_cents": "288960",
+      "category": "Art. 4Âº II - CombustÃ­veis, lubrificantes, peÃ§as e manutenÃ§Ã£o de veÃ­culos",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº II - CombustÃ­veis, lubrificantes, peÃ§as e manutenÃ§Ã£o de veÃ­culos",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Luciano Pimentel|45|129",
+        "canonicalPerson": "537",
+        "providerPersonLabel": "Luciano Pimentel"
+      }
+    },
+    {
+      "external_id": "03bbcb30d46fe3d021577a173829768978147009e7026bfe7d972f6540646512",
+      "person_external_id": "572",
+      "occurred_at": null,
+      "competence": "2026-03",
+      "amount_cents": "1350000",
+      "category": "Art. 4Âº VI - LocaÃ§Ã£o de veÃ­culos automotores",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº VI - LocaÃ§Ã£o de veÃ­culos automotores",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Neto Batalha|66|179",
+        "canonicalPerson": "572",
+        "providerPersonLabel": "Neto Batalha"
+      }
+    },
+    {
+      "external_id": "04bab86bd013719f96892d08722d99fb8485d1d7da08968340d83762946b75b8",
+      "person_external_id": "545",
+      "occurred_at": null,
+      "competence": "2026-02",
+      "amount_cents": "2721000",
+      "category": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº I - ContrataÃ§Ã£o de assessoria e consultoria",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-121/?wpdmdl=186680&refresh=6ab57b0375dfc1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Adailton Martins|1|7",
+        "canonicalPerson": "545",
+        "providerPersonLabel": "Adailton Martins"
+      }
+    },
+    {
+      "external_id": "072157cdc563b7df8c8fb475c8c63ae35693821797c15dc9fd91108fa3a38429",
+      "person_external_id": "575",
+      "occurred_at": null,
+      "competence": "2026-05",
+      "amount_cents": "850000",
+      "category": "Art. 4Âº VI - LocaÃ§Ã£o de veÃ­culos automotores",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº VI - LocaÃ§Ã£o de veÃ­culos automotores",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-124/?wpdmdl=191403&refresh=6ab57b038dc591790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Paulo JÃºnior|65|182",
+        "canonicalPerson": null,
+        "providerPersonLabel": "Paulo JÃºnior",
+        "source_person_label_raw": "Paulo JÃºnior",
+        "source_person_label_decoded": "Paulo Júnior",
+        "source_person_label_normalized": "paulo junior"
+      }
+    },
+    {
+      "external_id": "07365c310c069b9a99672e0ae68eab2feb6e9788c13f87b254a40273a1f16db7",
+      "person_external_id": "571",
+      "occurred_at": null,
+      "competence": "2026-03",
+      "amount_cents": "1024062",
+      "category": "Art. 4Âº II - CombustÃ­veis, lubrificantes, peÃ§as e manutenÃ§Ã£o de veÃ­culos",
+      "supplier_name": null,
+      "supplier_document": null,
+      "fiscal_document_number": null,
+      "description": "Art. 4Âº II - CombustÃ­veis, lubrificantes, peÃ§as e manutenÃ§Ã£o de veÃ­culos",
+      "source_url": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+      "provenance": {
+        "source": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados",
+        "sourceKey": "https://al.se.leg.br/converter.php?pdf_link=https://al.se.leg.br/download/ressarcimento-dos-deputados-122/?wpdmdl=188001&refresh=6ab57b037d0bf1790278403&output_type=csv&name_file=Ressarcimento dos Deputados|Marcos Oliveira|60|165",
+        "canonicalPerson": "571",
+        "providerPersonLabel": "Marcos Oliveira"
+      }
+    }
+  ],
+  "fixtureKind": "bounded-active-revision-evidence",
+  "database": "civica_postgres_lab"
+}

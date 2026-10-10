@@ -1,4 +1,0 @@
-import fs from 'node:fs'; import path from 'node:path'; import {DatabaseSync} from 'node:sqlite';
-const root=process.cwd(); const env=Object.fromEntries(fs.readFileSync('.env','utf8').split(/\r?\n/).filter(x=>x&&!x.startsWith('#')).map(x=>{const i=x.indexOf('=');return [x.slice(0,i),x.slice(i+1)]})); for(const [k,v] of Object.entries(env)) if(process.env[k]===undefined) process.env[k]=v; process.env.SENADOTRACKER_DB_PATH=path.join(root,'data','senadotracker.sqlite');
-const legacy=await import('../packages/db/src/web-legacy-contract.ts'); const current=await import('../apps/web/lib/data-postgres.ts');
-for(const [name,args] of [['house', ['camara',{page:1,pageSize:10,sort:'name'}]],['senate',['senado',{page:1,pageSize:10,sort:'name'}]]]){const a=await legacy.houseListing(...args); const b=(await current.houseListing(...args)).data; console.log(name,JSON.stringify(a.data?.topics??a.topics,null,2)); console.log('PG',JSON.stringify(b?.topics,null,2));}

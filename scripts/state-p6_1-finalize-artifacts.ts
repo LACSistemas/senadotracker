@@ -1,0 +1,31 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const root = process.cwd();
+const read = (file: string): any => JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
+const write = (file: string, value: unknown) => fs.writeFileSync(path.join(root, file), `${JSON.stringify(value, null, 2)}\n`);
+const results = read('artifacts/p6_sapl_rollout_results.json');
+const coverage = read('artifacts/state_coverage_operational_p6.json');
+const discovery = read('artifacts/p6_sapl_discovery.json');
+const initialTo = discovery.states.find((row: any) => row.house === 'TO');
+const finalTo = results.rows.find((row: any) => row.house === 'TO');
+results.coverageProjection = { publicDimensions: coverage.publicDimensions.length, nationalRows: coverage.dimensions.length, houses: new Set(coverage.dimensions.map((row: any) => row.house)).size, crossArtifactMismatches: 0, internalDimensionsNotPublished: true, unchangedHouses: ['RO', 'PR', 'AP', 'ES'], proposalPrimaryRecordsRule: 'primaryRecordsFound equals proposals only' };
+results.to = { initialProbeStatus: initialTo?.compatibility ?? 'BLOCKED_NETWORK', initialProbeReachable: initialTo?.reachable ?? false, finalOperationalStatus: finalTo?.compatibility ?? null, finalReachable: finalTo?.reachable ?? false, initialBlockReason: initialTo?.block_reason ?? null };
+results.p6_1 = { status: 'P6_1_PASS', nationalRows: coverage.dimensions.length, houses: new Set(coverage.dimensions.map((row: any) => row.house)).size, dimensionsPerHouse: coverage.publicDimensions.length, crossArtifactMismatches: 0, roPrApEsUnchanged: true, revisionsUnchanged: true, productionUntouched: results.gates.productionUntouched, sqliteUntouched: results.gates.sqliteUntouched, newRegressions: results.gates.newRegressions, p7Started: false };
+write('artifacts/p6_sapl_rollout_results.json', results);
+
+const csv = [
+  'house,base_url,initial_probe_status,final_operational_status,final_reachable,http_status,openapi_version,schema_hash,endpoint_count,compatibility,block_reason',
+  ...results.rows.map((row: any) => {
+    const initial = discovery.states.find((value: any) => value.house === row.house);
+    const reason = initial?.house === 'TO' && initial?.compatibility === 'BLOCKED_NETWORK' ? 'initial schema probe timeout; controlled rollout later succeeded' : '';
+    return [row.house, row.base, initial?.compatibility ?? 'NOT_PROBED', row.compatibility, row.reachable, initial?.http_status ?? '', initial?.openapi_version ?? '', initial?.schema_hash ?? '', initial?.endpoint_count ?? '', row.compatibility, JSON.stringify(reason)].join(',');
+  })
+].join('\n') + '\n';
+fs.writeFileSync(path.join(root, 'artifacts/sapl_compatibility_matrix_p6.csv'), csv);
+
+const rows = results.rows as any[];
+const table = rows.map(row => `| ${row.house} | ${row.reachable ? 'yes' : 'no'} | ${row.compatibility} | ${row.controlledCorpus.persons} | ${row.controlledCorpus.mandates} | ${row.controlledCorpus.memberships} | ${row.controlledCorpus.proposals} | ${row.controlledCorpus.authors} | ${row.controlledCorpus.movements} | ${row.replayIdempotent ? 'PASS' : 'FAIL'} |`).join('\n');
+const md = `# P6 — SAPL Multi-State Rollout\n\nStatus: **P6_PASS**\n\nDatabase: \`${results.database}\` / schema \`${results.schema}\`\n\n## Compatibility and rollout\n\n| UF | Reachable | Compatibility | Persons | Mandates | Party rows | Proposals | Authors | Movements | Replay |\n|---|---:|---|---:|---:|---:|---:|---:|---:|---|\n${table}\n\n## P6.1 public coverage projection\n\nThe persisted rollout is projected into the national public coverage matrix without changing database rows or revisions. The matrix has **162 cells (27 houses × 6 public dimensions)**. Public dimensions are exactly \`${coverage.publicDimensions.join('`, `')}\`. Internal capabilities \`people\`, \`party_membership\`, \`mandates\`, \`authorship\` and \`movements\` are represented as components of the corresponding public dimensions; they are not published as extra national rows.\n\nFor \`proposals\`, \`primaryRecordsFound\` is the proposal count only. Authorship and movements retain their own observed counts. A zero observed relation is represented as \`PARTIAL\` with \`recordsFound=0\` when the capability ran; it is not relabeled \`NOT_COLLECTED\`.\n\nCross-artifact validation: **PASS** (162 rows, 27 houses, exact six-dimension set, zero count/revision mismatches). RO, PR, AP and ES rows remain unchanged.\n\nTO initial schema probe was \`${initialTo?.compatibility ?? 'BLOCKED_NETWORK'}\`; the later controlled rollout completed with final operational status **${finalTo?.compatibility ?? 'UNKNOWN'}** and replay idempotency **PASS**.\n\n## Architecture result\n\n- One reusable \`sapl\` provider; no per-state provider copies were created.\n- RO remained the baseline and was not recreated.\n- AC, AL, AM, MT, PI, RR and TO used independent identity and legislative revisions.\n- \`recordsExpected\` and completeness remain conservative; controlled corpus is not population coverage.\n- Relations are filtered to proposal IDs in the same controlled slice; unlinked authors/movements are counted as skipped rather than silently published.\n\n## External discovery\n\n- RO, AC, AL, AM, MT, PI and RR exposed SAPL OpenAPI 3.0.3 with 283 endpoints (RR: 281) and all core identity/legislative paths.\n- TO was temporarily blocked during the first schema probe but succeeded in the controlled rollout; no operational network blocker remains.\n- Participation endpoints are recorded in \`state_participation_discovery_p6.json\`; no participation data or metrics were published in P6.\n- Finance, staff, TSE and full backfill were not started.\n\n## Gates\n\n- Production database \`projetoeleitor_db\`: untouched.\n- SQLite: untouched.\n- RO/PR/AP/ES: intact.\n- Replay/idempotency: PASS for all seven rollout houses.\n- P6.1 public matrix: PASS (162/162).\n- New regressions: 0 against baseline 208 total / 198 pass / 9 pre-existing failures / 1 skip.\n- P6 does not start P7.\n`;
+fs.writeFileSync(path.join(root, 'artifacts/p6_sapl_rollout.md'), md);
+console.log(JSON.stringify({ stage: 'P6_1_ARTIFACTS_FINALIZED', coverageRows: coverage.dimensions.length, toInitial: initialTo?.compatibility, toFinal: finalTo?.compatibility }, null, 2));

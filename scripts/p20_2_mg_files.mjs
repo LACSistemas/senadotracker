@@ -1,0 +1,1 @@
+const r=await fetch('https://dadosabertos.almg.gov.br/documentacao/arquivos');const b=await r.text();console.log(r.status,b.length);for(const m of b.matchAll(/href="([^"]+)"[^>]*>([^<]+)/gi)){const s=m[2].trim();if(/propos|process|legis/i.test(s+m[1]))console.log(m[1],s)}

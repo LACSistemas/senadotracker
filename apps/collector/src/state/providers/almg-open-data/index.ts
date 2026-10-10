@@ -1,0 +1,20 @@
+import { createHash } from 'node:crypto';
+import type { ExternalIdentityKey, NormalizedPerson, Provenance, RawEnvelope } from '../../contracts.ts';
+import { externalId, houseCode, providerId, resourceType } from '../../identifiers.ts';
+
+export const ALMG_PROVIDER = providerId('almg_open_data');
+export const ALMG_BASE_URL = 'https://dadosabertos.almg.gov.br/api/v2/';
+export interface AlmgRaw { readonly envelope: RawEnvelope; readonly body: string; }
+export interface AlmgPersonRecord { readonly person: NormalizedPerson; readonly partySnapshot?: string; readonly asOfDate: string; readonly raw: AlmgRaw; }
+export interface AlmgRun { readonly persons: readonly NormalizedPerson[]; readonly partyObservations: readonly { person: ExternalIdentityKey; party: string; asOfDate: string; provenance: Provenance }[]; readonly raw: readonly AlmgRaw[]; readonly asOfDate: string; }
+
+export async function runAlmgIdentity(options: { readonly commissionIds?: readonly number[]; readonly asOfDate?: string; readonly fetchImpl?: typeof fetch }): Promise<AlmgRun> {
+  const ids = options.commissionIds ?? [1270, 1271]; const asOfDate = options.asOfDate ?? '2025-05-06'; const fetchImpl = options.fetchImpl ?? fetch; const raw: AlmgRaw[] = []; const people: NormalizedPerson[] = []; const partyObservations: { person: ExternalIdentityKey; party: string; asOfDate: string; provenance: Provenance }[] = [];
+  for (const commissionId of ids) { const url = `${ALMG_BASE_URL}comissoes/${commissionId}/composicoes/${asOfDate.replaceAll('-', '/')}`; const value = await getXml(url, commissionId, asOfDate, fetchImpl, raw); for (const member of parseAlmgMembers(value.body)) { const key = { house: houseCode('MG'), provider: ALMG_PROVIDER, resource: resourceType('person'), externalId: externalId(member.id) }; const provenance = { rawId: value.envelope.rawId, endpoint: value.envelope.endpoint, fetchedAt: value.envelope.fetchedAt, sha256: value.envelope.sha256 }; if (!people.some(person => person.key.externalId === member.id)) people.push({ key, name: member.name, provenance, status: 'available' }); if (member.party) partyObservations.push({ person: key, party: member.party, asOfDate, provenance }); } }
+  return { persons: people.slice(0, 10), partyObservations, raw, asOfDate };
+}
+
+export function parseAlmgMembers(xml: string): { id: string; name: string; party?: string }[] { const rows = [...xml.matchAll(/<membroComissaoHistorico>([\s\S]*?)<\/membroComissaoHistorico>/gi)]; const output: { id: string; name: string; party?: string }[] = []; for (const row of rows) for (const role of ['Titular', 'Suplente']) { const id = tag(row[1]!, `idDeputado${role}`); const name = tag(row[1]!, `nomeParlamentar${role}`); const party = tag(row[1]!, `partidoDeputado${role}`); if (id && name) output.push({ id, name, ...(party ? { party } : {}) }); } return output; }
+async function getXml(url: string, commissionId: number, asOfDate: string, fetchImpl: typeof fetch, raw: AlmgRaw[]): Promise<AlmgRaw> { const response = await fetchImpl(url, { headers: { accept: 'application/xml,text/xml', 'user-agent': 'civica-p11-1/1.0' }, redirect: 'follow' }); const body = await response.text(); const sha256 = createHash('sha256').update(body).digest('hex'); const envelope: RawEnvelope = { house: houseCode('MG'), provider: ALMG_PROVIDER, resource: resourceType('commission-composition'), endpoint: url, params: { commissionId, asOfDate }, fetchedAt: new Date().toISOString(), status: response.status, contentType: response.headers.get('content-type') ?? 'application/xml', sha256, rawId: `raw:sha256:${sha256}`, body }; if (!response.ok) throw new Error(`ALMG HTTP ${response.status}`); raw.push({ envelope, body }); return { envelope, body }; }
+function tag(xml: string, name: string): string | undefined { const match = xml.match(new RegExp(`<${name}>([\\s\\S]*?)<\\/${name}>`, 'i')); return match ? decode(match[1]!) : undefined; }
+function decode(value: string): string { return value.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/\s+/g, ' ').trim(); }

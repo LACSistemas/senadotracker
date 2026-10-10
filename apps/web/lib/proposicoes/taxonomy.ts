@@ -80,6 +80,8 @@ const TYPE_NAMES: Readonly<Record<string, string>> = {
   PLV: 'Projeto de lei de conversão',
   REQ: 'Requerimento', RQS: 'Requerimento', RIC: 'Requerimento de informação', RQI: 'Requerimento de informação', RQN: 'Requerimento no Congresso Nacional',
   SBT: 'Substitutivo', EMC: 'Emenda', EMP: 'Emenda de plenário', EMR: 'Emenda de relator',
+  'SBT-A': 'Substitutivo adotado pela comissão', 'EMC-A': 'Emenda adotada pela comissão', 'SBE-A': 'Subemenda adotada pela comissão', SBR: 'Subemenda de relator',
+  ESB: 'Emenda ao substitutivo', EMA: 'Emenda aglutinativa', EMS: 'Emenda ou substitutivo do Senado',
   PRL: 'Parecer do relator', PAR: 'Parecer', REL: 'Relatório',
   RPD: 'Instrumento de tramitação', DTQ: 'Destaque',
   INC: 'Indicação', SUG: 'Sugestão',
@@ -114,3 +116,7 @@ export const formatDate = (value: string | null | undefined) => {
   const day = value?.match(/^\d{4}-\d{2}-\d{2}/)?.[0];
   return day ? new Intl.DateTimeFormat('pt-BR', { timeZone: 'UTC' }).format(new Date(`${day}T00:00:00Z`)) : 'data não publicada';
 };
+
+/** Frase de uma métrica anual a partir da sua base temporal (identifier_year nunca vira "apresentadas"). */
+export { temporalPhrase, describeTemporalBasis, presentedYearOf, normalizeIdentifierYear } from '@senadotracker/domain';
+export type { TemporalBasis } from '@senadotracker/domain';

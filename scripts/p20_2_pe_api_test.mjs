@@ -1,0 +1,1 @@
+for(const fam of ['projetos','indicacoes','requerimentos']){const u=`https://dadosabertos.alepe.pe.gov.br/api/v1/proposicoes/${fam}/?legislatura=20`;const r=await fetch(u);const b=await r.text();console.log(fam,r.status,r.headers.get('content-type'),b.length,b.slice(0,300));}

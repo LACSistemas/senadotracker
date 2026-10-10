@@ -1,1 +1,0 @@
-import fs from 'node:fs';for(const line of fs.readFileSync('.env','utf8').split(/\r?\n/)){const m=line.match(/^([A-Z0-9_]+)=(.*)$/);if(m)process.env[m[1]]=m[2];}const {parties}=await import('../apps/web/lib/data-postgres.ts');const x=(await parties('all',2026)).data;console.log('rows',x.panorama.rows.length,x.panorama.rows.map(r=>r.party));console.log('topics',x.topics.length);

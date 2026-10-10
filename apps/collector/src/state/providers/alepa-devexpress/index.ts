@@ -1,0 +1,91 @@
+﻿import { createHash } from 'node:crypto';
+import type { ExternalIdentityKey, NormalizedMovement, NormalizedPerson, NormalizedProposal, NormalizedProposalAuthor, Provenance, RawEnvelope } from '../../contracts.ts';
+import { externalId, houseCode, providerId, resourceType } from '../../identifiers.ts';
+
+export const ALEPA_BASE_URL = 'https://www.alepa.pa.gov.br';
+export const ALEPA_PROVIDER = providerId('alepa_devexpress');
+
+export interface AlepaRaw { readonly envelope: RawEnvelope; readonly body: string }
+export interface AlepaCard { readonly id: string; readonly authorRaw?: string; readonly type?: string; readonly number?: string; readonly year?: number; readonly presentedAt?: string; readonly ementa?: string; readonly situation?: string; readonly decision?: string; readonly veto?: string; readonly detailPath: string }
+export interface AlepaProposalRecord { readonly proposal: NormalizedProposal; readonly authors: readonly NormalizedProposalAuthor[]; readonly movements: readonly NormalizedMovement[]; readonly raw: readonly AlepaRaw[] }
+export interface AlepaRun { readonly proposals: readonly AlepaProposalRecord[]; readonly raw: readonly AlepaRaw[]; readonly pages: readonly { readonly pageIndex: number; readonly keys: readonly string[]; readonly pageCount: number }[]; readonly metrics: { readonly requests: number; readonly failures: number }; readonly participationEvidence: { readonly endpoint: string; readonly idVotacao: string; readonly proposalId: string; readonly format: string } }
+interface DevExpressState { readonly keys: readonly string[]; readonly callbackState: string; readonly selection: string; readonly toolbar?: unknown }
+interface ParsedEnvelope { readonly html: string; readonly state: DevExpressState; readonly pageIndex: number; readonly pageCount: number; readonly itemCount: number }
+
+export async function runAlepaDevexpress(options: { readonly limit?: number; readonly pages?: readonly number[]; readonly year?: number; readonly fetchImpl?: typeof fetch } = {}): Promise<AlepaRun> {
+  const fetchImpl = options.fetchImpl ?? fetch; const limit = Math.min(Math.max(options.limit ?? 10, 1), 10); const requestedPages = [...new Set((options.pages ?? [0, 1]).filter(value => Number.isInteger(value) && value >= 0))].sort((a, b) => a - b);
+  if (requestedPages.length < 2) throw new Error('ALEPA controlled corpus must cover at least two pages');
+  const session = new AlepaHttpSession(fetchImpl); const raw: AlepaRaw[] = []; let failures = 0; const pages: { pageIndex: number; keys: string[]; pageCount: number }[] = []; const cardsByPage = new Map<number, AlepaCard[]>();
+  const initial = await session.get('/Legislativo/Proposicoes'); raw.push(initial); let state = parseInitialState(initial.body);
+  for (const pageIndex of requestedPages) {
+    const response = pageIndex === 0 ? await session.search({ year: options.year ?? 2026, state }) : await session.page(pageIndex, state); raw.push(response);
+    const parsed = parseDxEnvelope(response.body); state = { ...parsed.state }; const cards = parseCards(parsed.html); const keys = [...parsed.state.keys];
+    if (cards.some(card => !keys.includes(card.id))) throw new Error('ALEPA card key does not match DevExpress stateObject.keys');
+    pages.push({ pageIndex, keys, pageCount: parsed.pageCount }); cardsByPage.set(pageIndex, cards);
+  }
+  const firstPage = cardsByPage.get(requestedPages[0]!) ?? []; const secondPage = cardsByPage.get(requestedPages[1]!) ?? []; const firstTake = Math.ceil(limit / 2); const selected = [...firstPage.slice(0, firstTake), ...secondPage.slice(0, limit - firstTake)];
+  const searchRaw = raw.find(value => value.envelope.resource === 'proposal-search') ?? raw[0]!; const pageRaw = raw.find(value => value.envelope.resource === 'proposal-page') ?? searchRaw;
+  const detailResults = await Promise.all(selected.map(async (card, index) => { try { return { card, detail: await session.get(card.detailPath), fallback: index < firstTake ? searchRaw : pageRaw }; } catch { return { card, detail: null, fallback: index < firstTake ? searchRaw : pageRaw }; } }));
+  const proposals: AlepaProposalRecord[] = [];
+  for (const result of detailResults) { if (!result.detail) { failures++; proposals.push(parseCard(result.card, result.fallback)); } else { raw.push(result.detail); proposals.push(parseDetail(result.card, result.detail)); } }
+  return { proposals, raw, pages, metrics: { requests: raw.length, failures }, participationEvidence: { endpoint: `${ALEPA_BASE_URL}/Legislativo/DetalhesVotacaoNominal?IdProposicao=0&IdVotacao=8752&type=PDF`, idVotacao: '8752', proposalId: '0', format: 'PDF' } };
+}
+
+export function parseDxEnvelope(body: string): ParsedEnvelope {
+  const html = body.includes('/*DXHTML*/') ? body.slice(body.indexOf('/*DXHTML*/') + '/*DXHTML*/'.length) : body; if (!html.includes('cardViewProposicoes')) throw new Error(`ALEPA DevExpress response missing card view: ${html.slice(0, 240)}`);
+  let state: DevExpressState; try { state = parseStateObject(body); } catch { state = parseStateObject(html); }
+  const summary = decodeEntities(firstMatch(html, /<b[^>]*class="dxp-lead[^>]*>([\s\S]*?)<\/b>/i) ?? ''); const match = summary.match(/P[a\u00e1]gina\s+(\d+)\s+de\s+(\d+)\s+\((\d+)\s+itens\)/i); return { html, state, pageIndex: match ? Number(match[1]) - 1 : 0, pageCount: match ? Number(match[2]) : 0, itemCount: match ? Number(match[3]) : 0 };
+}
+export function parseInitialState(body: string): DevExpressState { return parseStateObject(body); }
+export function parseStateObject(html: string): DevExpressState {
+  const match = html.match(/'stateObject':\{\s*'keys':\[([^\]]*)\],\s*'callbackState':'([^']*)',\s*'selection':'([^']*)'(?:,\s*'toolbar':([^}]*))?/i); if (!match) throw new Error('ALEPA DevExpress stateObject not found'); const keys = [...match[1]!.matchAll(/'([^']+)'/g)].map(value => value[1]!); return { keys, callbackState: match[2]!, selection: match[3]!, toolbar: match[4] ? safeJsonish(match[4]!) : undefined };
+}
+export function parseCards(html: string): AlepaCard[] {
+  const cards: AlepaCard[] = [];
+  for (const click of html.matchAll(/onCardClick\(\"([^\"]+)\"\)/gi)) {
+    const href = decodeEntities(click[1]!);
+    if (href.includes('DetalhesProposicao') && !new URL(href, ALEPA_BASE_URL).searchParams.get('IdProposicao')) throw new Error('ALEPA card is missing IdProposicao');
+  }
+  for (const match of html.matchAll(/onclick='onCardClick\("([^"]+)"\)'[^>]*>([\s\S]*?)(?=<\/div>\s*<\/div>\s*<\/div>\s*<\/div>|<div id="cardViewProposicoes_DXDataCard|<\/td>)/gi)) {
+    const detailPath = decodeEntities(match[1]!); const id = new URL(detailPath, ALEPA_BASE_URL).searchParams.get('IdProposicao'); if (!id) throw new Error('ALEPA card is missing IdProposicao'); const content = match[2]!; const heading = cleanHtml(firstMatch(content, /<h3[^>]*>([\s\S]*?)<\/h3>/i)); const label = cleanHtml(firstMatch(content, /<span[^>]*>([\s\S]*?)<\/span>/i)) ?? ''; const ementa = cleanHtml(firstMatch(content, /<p[^>]*>([\s\S]*?)<\/p>/i)); const labelMatch = label.match(/^(.+?)\s+N(?:\u00ba|o)\s*([^/]+)\/(\d{4})(?:,\s*DE\s*(\d{2}\/\d{2}\/\d{4}))?/i); const date = labelMatch?.[4] ? parseDate(labelMatch[4]!) : undefined; const params = new URL(detailPath, ALEPA_BASE_URL).searchParams;
+    cards.push({ id, ...(heading ? { authorRaw: heading } : {}), ...(labelMatch?.[1] ? { type: labelMatch[1]!.trim() } : {}), ...(labelMatch?.[2] ? { number: labelMatch[2]!.trim() } : {}), ...(labelMatch?.[3] ? { year: Number(labelMatch[3]) } : {}), ...(date ? { presentedAt: date } : {}), ...(ementa ? { ementa } : {}), ...(params.get('situacao') ? { situation: params.get('situacao')! } : {}), ...(params.get('decisao') ? { decision: params.get('decisao')! } : {}), ...(params.get('veto') ? { veto: params.get('veto')! } : {}), detailPath });
+  }
+  return cards;
+}
+export function parseDetail(card: AlepaCard, raw: AlepaRaw): AlepaProposalRecord {
+  const provenance = provenanceFrom(raw.envelope); const fields = new Map<string, string>(); for (const match of raw.body.matchAll(/<p[^>]*>\s*([^:<]+):\s*([\s\S]*?)<\/p>/gi)) { const key = cleanHtml(match[1]!); const value = cleanHtml(match[2]!); if (key && value) fields.set(key, value); }
+  const field = (name: string): string | undefined => { const target = normalizeLabel(name); return [...fields.entries()].find(([key]) => normalizeLabel(key) === target)?.[1]; };
+  // The card is the stable public-list projection used to select the controlled
+  // corpus. Detail pages are opportunistic enrichment and may expose a label
+  // (for example "EM ANDAMENTO") while the card exposes its stable code ("1").
+  // Prefer card values whenever present so a detail timeout/replay cannot alter
+  // the semantic revision.
+  const title = card.ementa ?? field('Ementa'); const number = card.number ?? field('Numero'); const enteredAt = field('Data da Entrada'); const presentedAt = card.presentedAt ?? (enteredAt ? parseDate(enteredAt) : undefined); const status = card.situation ?? field('Situacao'); const key = proposalKey(card.id);
+  const proposal: NormalizedProposal = { key, ...(title ? { title } : {}), ...(card.type ? { type: card.type } : {}), ...(number ? { number } : {}), ...(card.year ? { year: card.year } : {}), ...(presentedAt ? { presentedAt } : {}), ...(status ? { status } : {}), provenance }; const authorRaw = field('Autor') ?? card.authorRaw; const authors = authorRaw ? [{ proposal: key, actorType: 'parliamentarian' as const, authorRaw, role: 'author', order: 1, provenance }] : []; return { proposal, authors, movements: [], raw: [raw] };
+}
+function parseCard(card: AlepaCard, raw: AlepaRaw): AlepaProposalRecord { const provenance = provenanceFrom(raw.envelope); const key = proposalKey(card.id); const proposal: NormalizedProposal = { key, ...(card.ementa ? { title: card.ementa } : {}), ...(card.type ? { type: card.type } : {}), ...(card.number ? { number: card.number } : {}), ...(card.year ? { year: card.year } : {}), ...(card.presentedAt ? { presentedAt: card.presentedAt } : {}), ...(card.situation ? { status: card.situation } : {}), provenance }; const authors = card.authorRaw ? [{ proposal: key, actorType: 'parliamentarian' as const, authorRaw: card.authorRaw, role: 'author', order: 1, provenance }] : []; return { proposal, authors, movements: [], raw: [raw] }; }
+
+class AlepaHttpSession {
+  private cookie = ''; private referer = ''; private dxcss = ''; private dxscript = '';
+  constructor(private readonly fetchImpl: typeof fetch) {}
+  async get(path: string): Promise<AlepaRaw> { return this.request(new URL(path, ALEPA_BASE_URL).href, 'GET'); }
+  async search(input: { readonly year: number; readonly state: DevExpressState }): Promise<AlepaRaw> { const body = new URLSearchParams({ DXCallbackName: 'cbpProposicoes', __DXCallbackArgument: 'c0:[object Object]', 'model[Numero]': '', 'model[Ano]': String(input.year), 'model[IdAutor]': '', 'model[Texto]': '', cardViewProposicoes: encodeState(input.state), DXMVCEditorsValues: '{}' }); return this.request(new URL('/Legislativo/CallbackPanelProposicoes', ALEPA_BASE_URL).href, 'POST', body); }
+  async page(pageIndex: number, state: DevExpressState): Promise<AlepaRaw> { const keys = JSON.stringify(state.keys); const command = 'PAGERONCLICK3'; const pager = `PN${pageIndex}`; const callback = `c0:KV|${keys.length};${keys};CT|2;{};GB|${command.length + pager.length + 4};12|${command}|${pager};`; const body = new URLSearchParams({ DXCallbackName: 'cardViewProposicoes', __DXCallbackArgument: callback, cardViewProposicoes: encodeState(state), DXMVCEditorsValues: '{}' }); return this.request(new URL('/Legislativo/CardViewProposicoes', ALEPA_BASE_URL).href, 'POST', body); }
+  private async request(url: string, method: 'GET' | 'POST', body?: URLSearchParams): Promise<AlepaRaw> {
+    const headers: Record<string, string> = { accept: 'text/html, */*; q=0.01', 'user-agent': 'civica-state-collector/11.2', 'x-requested-with': 'XMLHttpRequest' }; if (this.referer) headers.referer = this.referer; if (this.dxcss) headers.dxcss = this.dxcss; if (this.dxscript) headers.dxscript = this.dxscript; if (this.cookie) headers.cookie = this.cookie; if (body) headers['content-type'] = 'application/x-www-form-urlencoded; charset=UTF-8'; const controller = new AbortController(); const timer = setTimeout(() => controller.abort(), 30_000); let response: Response; try { response = await this.fetchImpl(url, { method, headers, ...(body ? { body } : {}), redirect: 'follow', signal: controller.signal }); } finally { clearTimeout(timer); }
+    const text = await response.text(); const sha256 = createHash('sha256').update(text).digest('hex'); const setCookie = response.headers.get('set-cookie'); if (setCookie) this.cookie = setCookie.split(';')[0]!; if (!this.dxcss && text.includes('cardViewProposicoes')) { this.dxcss = dynamicDxHeader(text, 'stylesheet'); this.dxscript = dynamicDxHeader(text, 'script'); } this.referer = url;
+    const envelope: RawEnvelope = { house: houseCode('PA'), provider: ALEPA_PROVIDER, resource: resourceType(url.includes('DetalhesProposicao') ? 'proposal-detail' : url.includes('CardView') ? 'proposal-page' : url.includes('CallbackPanel') ? 'proposal-search' : 'proposal-list'), endpoint: url, params: body ? Object.fromEntries(body.entries()) : {}, fetchedAt: new Date().toISOString(), status: response.status, contentType: response.headers.get('content-type') ?? 'text/html', sha256, rawId: `raw:sha256:${sha256}`, body: text }; if (!response.ok) throw new Error(`ALEPA HTTP ${response.status}`); return { envelope, body: text };
+  }
+}
+function encodeState(state: DevExpressState): string { return JSON.stringify({ keys: state.keys, callbackState: state.callbackState, selection: state.selection, toolbar: state.toolbar === undefined ? null : state.toolbar }).replaceAll('"', '&quot;'); }
+function proposalKey(id: string): ExternalIdentityKey { return { house: houseCode('PA'), provider: ALEPA_PROVIDER, resource: resourceType('proposal'), externalId: externalId(id) }; }
+function provenanceFrom(envelope: RawEnvelope): Provenance { return { rawId: envelope.rawId, endpoint: envelope.endpoint, fetchedAt: envelope.fetchedAt, sha256: envelope.sha256 }; }
+function parseDate(value: string): string | undefined { const match = value.match(/(\d{2})\/(\d{2})\/(\d{4})/); if (!match) return undefined; return new Date(Date.UTC(Number(match[3]), Number(match[2]) - 1, Number(match[1]))).toISOString(); }
+function firstMatch(value: string, expression: RegExp): string | undefined { return value.match(expression)?.[1]; }
+function cleanHtml(value: string | undefined): string | undefined { if (!value) return undefined; const clean = decodeEntities(value.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim()); return clean || undefined; }
+function normalizeLabel(value: string): string { return decodeEntities(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ''); }
+function decodeEntities(value: string): string { return value.replace(/&#(\d+);/g, (_, code: string) => String.fromCharCode(Number(code))).replace(/&#x([0-9a-f]+);/gi, (_, code: string) => String.fromCharCode(parseInt(code, 16))).replace(/&quot;/g, '"').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/&#39;|&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>'); }
+function safeJsonish(value: string): unknown { try { return JSON.parse(value); } catch { return null; } }
+function dynamicDxHeader(html: string, kind: 'stylesheet' | 'script'): string { const values = kind === 'stylesheet' ? [...html.matchAll(/<link[^>]+href="\/DXR\.axd\?r=([^"&]+)[^>]*>/gi)].map(value => value[1]!) : [...html.matchAll(/<script[^>]+src="\/DXR\.axd\?r=([^"&]+)[^>]*>/gi)].map(value => value[1]!); return values.flatMap(value => value.replace(/-[A-Za-z0-9]+$/, '').split(',')).join(','); }
+
+

@@ -1,0 +1,1 @@
+import pg from 'pg';const p=new pg.Pool({host:process.env.DB_HOST,port:Number(process.env.DB_PORT||5432),user:process.env.DB_USER,password:process.env.DB_PASSWORD,database:'civica_postgres_lab'});console.log((await p.query(`select conname,pg_get_constraintdef(oid) def from pg_constraint where conrelid='civica_state.public_domain_revisions'::regclass`)).rows);await p.end();

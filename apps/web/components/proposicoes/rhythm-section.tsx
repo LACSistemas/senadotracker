@@ -1,4 +1,5 @@
 'use client';
+import { temporalPhrase } from '@/lib/proposicoes/taxonomy';
 import { useState } from 'react';
 import type { ActivityCalendar, ActivityRhythm, PropositionHouse } from '@senadotracker/db';
 import { HOUSES } from '@/lib/proposicoes/taxonomy';
@@ -21,7 +22,7 @@ export function RhythmSection({ rhythm, calendar }: { rhythm: { presented: Activ
       <div className="mt-8 space-y-8">
         {houses.map(house => <article key={`${mode}-${house}`} className="min-w-0 rounded-3xl border bg-background p-6 sm:p-8">
           <h3 className="font-display text-2xl font-medium">{HOUSES[house]}</h3>
-          <p className="mb-5 mt-1 text-sm text-muted-foreground">{mode === 'presented' ? `Proposições por mês de apresentação, ${year}` : `Registros de tramitação por mês de ocorrência, ${year}`}</p>
+          <p className="mb-5 mt-1 text-sm text-muted-foreground">{mode === 'presented' ? `Proposições ${temporalPhrase(data.temporalBasis ?? 'identifier_year', year)}, por mês de apresentação` : `Registros de tramitação coletados, por mês de ocorrência, ${year}`}</p>
           <div className="max-w-[920px]"><RhythmChart rhythm={data.houses[house]} year={year} mode={mode} /></div>
         </article>)}
       </div>

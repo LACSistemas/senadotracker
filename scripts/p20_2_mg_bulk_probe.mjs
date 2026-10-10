@@ -1,0 +1,1 @@
+const u='https://dadosabertos.almg.gov.br/arquivo/proposicoes/download?ano=2026&tipo=CSV';const r=await fetch(u);const b=await r.arrayBuffer();console.log(r.status,r.url,r.headers.get('content-type'),b.byteLength,Buffer.from(b).slice(0,300).toString('utf8'));

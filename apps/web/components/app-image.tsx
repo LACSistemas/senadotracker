@@ -12,5 +12,6 @@ export function InstitutionalImage({src,priority=false,className}:{src:string;pr
 export function OfficialPortrait({src,name,sizes='160px',priority=false}:{src:string|null|undefined;name:string;sizes?:string;priority?:boolean}){
   const [failed,setFailed]=useState(false);
   if(!src||failed)return <span className="grid size-full place-items-center bg-muted px-2 text-center text-xs text-muted-foreground">Foto indisponível</span>;
-  return <Image src={src} alt={`Foto oficial de ${name}`} fill sizes={sizes} priority={priority} unoptimized className="object-cover object-top" onError={()=>setFailed(true)}/>;
+  const portraitSrc = /^https?:\/\//i.test(src) ? `/api/portrait?url=${encodeURIComponent(src)}` : src;
+  return <Image src={portraitSrc} alt={`Foto oficial de ${name}`} fill sizes={sizes} priority={priority} unoptimized className="object-cover object-top" onError={()=>setFailed(true)}/>;
 }

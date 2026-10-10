@@ -1,4 +1,0 @@
-import fs from 'node:fs'; import path from 'node:path'; import {partyLanding as legacyLanding} from '../packages/db/src/web-legacy-contract.ts';
-for(const l of fs.readFileSync('.env','utf8').split(/\r?\n/)){const m=l.match(/^([A-Z0-9_]+)=(.*)$/);if(m)process.env[m[1]]=m[2];}
-const raw=legacyLanding(2026); console.log('legacyShape',raw); const s=raw?.data??raw; const {partyLanding}=await import('../apps/web/lib/data-postgres-wave4.ts'); const g=(await partyLanding(2026)).data;
-console.log(JSON.stringify({sql:{authoredTotal:s.authoredTotal,authoredUniverse:s.authoredUniverse,themedTotal:s.themedTotal,topTheme:s.topTheme,rows:s.panorama.rows,costByHouse:s.costByHouse},pg:{authoredTotal:g.authoredTotal,authoredUniverse:g.authoredUniverse,themedTotal:g.themedTotal,topTheme:g.topTheme,rows:g.panorama.rows,costByHouse:g.costByHouse}},null,2));

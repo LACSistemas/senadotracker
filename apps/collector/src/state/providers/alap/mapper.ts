@@ -1,0 +1,30 @@
+import type { ExternalIdentityKey, NormalizedMovement, NormalizedPartyMembership, NormalizedPerson, NormalizedProposal, NormalizedProposalAuthor, Provenance } from '../../contracts.ts';
+import { externalId, houseCode, providerId, resourceType } from '../../identifiers.ts';
+
+export const AP_PROVIDER = providerId('alap_legislative');
+const AP = houseCode('AP');
+export interface AlapPersonRecord { id: string; displayName: string; fullName: string; party: string | null }
+export interface AlapProposalRecord { id: string; type?: string; number?: string; year?: number; title?: string; origin?: string; presentedAt?: string; status?: string; movements: Array<{ key: string; occurredAt?: string; status?: string; body?: string }> }
+export const personKey = (id: string): ExternalIdentityKey => ({ house: AP, provider: AP_PROVIDER, resource: resourceType('parliamentarian'), externalId: externalId(id) });
+export const proposalKey = (id: string): ExternalIdentityKey => ({ house: AP, provider: AP_PROVIDER, resource: resourceType('proposal'), externalId: externalId(id) });
+export function mapPerson(record: AlapPersonRecord, provenance: Provenance): NormalizedPerson { return { key: personKey(record.id), name: record.fullName || record.displayName, status: 'available', provenance: { ...provenance, displayName: record.displayName } as Provenance }; }
+export function mapParty(record: AlapPersonRecord, provenance: Provenance): NormalizedPartyMembership { return { person: personKey(record.id), ...(record.party ? { rawPartyLabel: record.party, canonicalParty: record.party, alias: record.party } : {}), provenance }; }
+export function mapProposal(record: AlapProposalRecord, provenance: Provenance): NormalizedProposal { return { key: proposalKey(record.id), ...(record.title ? { title: record.title } : {}), ...(record.type ? { type: record.type } : {}), ...(record.number ? { number: record.number } : {}), ...(record.year !== undefined ? { year: record.year } : {}), ...(record.presentedAt ? { presentedAt: record.presentedAt } : {}), ...(record.status ? { status: record.status } : {}), provenance }; }
+export function mapMovement(record: AlapProposalRecord['movements'][number], proposal: ExternalIdentityKey, provenance: Provenance): NormalizedMovement { return { proposal, movementKey: record.key, ...(record.occurredAt ? { occurredAt: record.occurredAt } : {}), ...(record.status ? { status: record.status } : {}), ...(record.body ? { body: record.body } : {}), provenance }; }
+export function mapAuthor(raw: string, proposal: ExternalIdentityKey, provenance: Provenance): NormalizedProposalAuthor { return { proposal, actorType: 'parliamentarian', authorRaw: raw, role: 'author', provenance }; }
+export function provenanceFromEnvelope(value: { rawId: string; endpoint: string; fetchedAt: string; sha256: string }): Provenance { return { rawId: value.rawId, endpoint: value.endpoint, fetchedAt: value.fetchedAt, sha256: value.sha256 }; }
+
+export function parseParliamentarians(html: string): AlapPersonRecord[] {
+  const out: AlapPersonRecord[] = []; const re = /href=["'][^"']*[?&]iddeputado=(\d+)[^"']*["'][\s\S]*?onmouseover="([^"]+)"/gi;
+  for (const match of html.matchAll(re)) { const tip = decodeHtml(match[2]!); const displayName = clean(tip.match(/<b>Dep\.<\/b>\s*([^<]+)/i)?.[1]); const fullName = clean(tip.match(/Nome Completo:<\/b>\s*([^<]+)/i)?.[1]) || displayName; const party = clean(tip.match(/Partido:<\/b>\s*([^<]+)/i)?.[1]) || null; if (match[1] && (displayName || fullName)) out.push({ id: match[1], displayName: displayName || fullName, fullName: fullName || displayName, party }); }
+  return unique(out, value => value.id);
+}
+export function parseProposalIds(html: string): string[] { return [...new Set([...html.matchAll(/\/portal\/proposicao\/(\d+)/gi)].map(match => match[1]!).filter(Boolean))]; }
+export function parseProposalDetail(id: string, html: string): AlapProposalRecord {
+  const text = plain(html); const heading = text.match(/((?:Projeto|Proposta|Indicação|Moção|Requerimento|Veto|Prestação)[^|]{0,180}?n[ºo]\s*([0-9]+)\s*\/\s*(\d{2,4})(?:-[A-Z]+)?)/i); const type = heading?.[1]?.split(/\s+n[ºo]/i)[0]?.trim(); const number = heading?.[2]; const year = heading?.[3] ? Number(heading[3].length === 2 ? `20${heading[3]}` : heading[3]) : undefined; const origin = text.match(/Origem:\s*([^|]+?)(?=\s+Ementa:|$)/i)?.[1]?.trim(); const title = text.match(/Ementa:\s*([^|]+?)(?=\s+Data de Protocolo:|$)/i)?.[1]?.trim(); const date = text.match(/Data de Protocolo:\s*(\d{2}\/\d{2}\/\d{4})/i)?.[1]; const presentedAt = date ? toIso(date) : undefined; const movementText = text.split(/Movimenta[cç][aã]o da proposi[cç][aã]o/i)[1] ?? ''; const movements: AlapProposalRecord['movements'] = []; for (const m of movementText.matchAll(/(\d{2}\/\d{2}\/\d{4})\s+([^|]+?)(?=\s+\d{2}\/\d{2}\/\d{4}|$)/g)) movements.push({ key: `${id}:${m[1]}:${m[2]!.trim()}`, occurredAt: toIso(m[1]!), status: m[2]!.trim() }); return { id, ...(type ? { type } : {}), ...(number ? { number } : {}), ...(year !== undefined ? { year } : {}), ...(title ? { title } : {}), ...(origin ? { origin } : {}), ...(presentedAt ? { presentedAt } : {}), movements };
+}
+function plain(html: string): string { return decodeHtml(html.replace(/<script[\s\S]*?<\/script>/gi, ' ').replace(/<style[\s\S]*?<\/style>/gi, ' ').replace(/<[^>]+>/g, ' ')).replace(/\s+/g, ' ').trim(); }
+function decodeHtml(value: string): string { return value.replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&').replace(/&quot;/gi, '"').replace(/&#39;/gi, "'").replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n))); }
+function clean(value?: string): string { return decodeHtml(value ?? '').replace(/\s+/g, ' ').replace(/[\"')]+$/, '').trim(); }
+function toIso(value: string): string { const [day, month, year] = value.split('/').map(Number); return new Date(Date.UTC(year!, month! - 1, day!)).toISOString(); }
+function unique<T>(values: T[], key: (value: T) => string): T[] { return [...new Map(values.map(value => [key(value), value])).values()]; }

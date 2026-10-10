@@ -6,7 +6,7 @@ test('hub unificado soma parlamentar+institucional sem deduplicar por valor e ra
   const db=openDatabase(':memory:');
   try {
     const run=startRun(db,'civica',Date.parse('2026-09-24T00:00:00Z'));
-    db.prepare("INSERT INTO supplier_aggregate_revisions VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
+    db.prepare("INSERT INTO supplier_aggregate_revisions(id,published_at,status,reconciliation_json) VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
     db.prepare('INSERT INTO active_supplier_aggregate_revision VALUES (1,?)').run(run);
     db.prepare("INSERT INTO suppliers VALUES ('both','Fornecedor Ambos','company','confirmed','2026-01-01','2026-01-01'),('parl','Fornecedor Parlamentar','company','confirmed','2026-01-01','2026-01-01'),('inst','Fornecedor Institucional','company','confirmed','2026-01-01','2026-01-01')").run();
     db.prepare('INSERT INTO supplier_global_yearly VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)').run(run,'both',2026,10000,1,1,1,1,1,5000,1,1,1,'2026-01-01','2026-01-01');
@@ -57,7 +57,7 @@ test('mix de categorias unifica parlamentar e institucional sem fundir Casas, re
   const db=openDatabase(':memory:');
   try {
     const run=startRun(db,'civica',Date.parse('2026-09-24T00:00:00Z'));
-    db.prepare("INSERT INTO supplier_aggregate_revisions VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
+    db.prepare("INSERT INTO supplier_aggregate_revisions(id,published_at,status,reconciliation_json) VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
     db.prepare('INSERT INTO active_supplier_aggregate_revision VALUES (1,?)').run(run);
     db.prepare("INSERT INTO suppliers VALUES ('both','Fornecedor Ambos','company','confirmed','2026-01-01','2026-01-01')").run();
     // Mesma categoria ("Telefonia") publicada por Câmara e Senado: devem permanecer linhas distintas, nunca fundidas.
@@ -82,7 +82,7 @@ test('filtro por Casa restringe totais e ranking à Casa escolhida', () => {
   const db=openDatabase(':memory:');
   try {
     const run=startRun(db,'civica',Date.parse('2026-09-24T00:00:00Z'));
-    db.prepare("INSERT INTO supplier_aggregate_revisions VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
+    db.prepare("INSERT INTO supplier_aggregate_revisions(id,published_at,status,reconciliation_json) VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
     db.prepare('INSERT INTO active_supplier_aggregate_revision VALUES (1,?)').run(run);
     db.prepare("INSERT INTO suppliers VALUES ('both','Fornecedor Ambos','company','confirmed','2026-01-01','2026-01-01'),('parl','Fornecedor Parlamentar','company','confirmed','2026-01-01','2026-01-01')").run();
     db.prepare('INSERT INTO supplier_global_house_yearly VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)').run(run,'both',2026,'CAMARA',10000,1,1,1,1,5000,1,1,'2026-01-01','2026-01-01');

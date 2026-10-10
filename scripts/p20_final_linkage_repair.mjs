@@ -1,0 +1,33 @@
+﻿import pg from 'pg'; import fs from 'node:fs'; import {createHash} from 'node:crypto';
+const e=Object.fromEntries(fs.readFileSync('.env','utf8').split(/\r?\n/).filter(x=>x.includes('=')).map(x=>x.split('=')));
+const p=new pg.Pool({host:e.DB_HOST,port:+e.DB_PORT,user:e.DB_USER,password:e.DB_PASSWORD,database:'civica_postgres_lab',max:2}); const c=await p.connect();
+const norm=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/\b(DEPUTAD[AO]|DEP\.?|DEPUTADO ESTADUAL|DEPUTADA ESTADUAL)\b/g,'').replace(/[^A-Z0-9]+/g,' ').trim().replace(/\s+/g,' ');
+const inst=/^(GOVERNADOR|GOVERNADOR DO ESTADO|PODER |MESA |COMISSAO|TRIBUNAL|MINISTERIO PUBLICO|DEFENSORIA|SECRETARIA|PREFEITURA|CAMARA |ASSEMBLEIA|UNIVERSIDADE|ASSOCIACAO|BANCADA|BLOCO )/i;
+let out={database:null,houses:{}};
+try{
+ out.database=(await c.query('select current_database() db')).rows[0].db;if(out.database!=='civica_postgres_lab')throw Error('wrong database '+out.database);
+ await c.query('begin');
+ for(const house of ['ES','BA']){
+  const old=(await c.query("select distinct on(house) house,revision_id from civica_state.active_publications where house=$1 and domain='legislative' order by house,activated_at desc",[house])).rows[0]; if(!old)throw Error('no active '+house);
+  const roster=(await c.query('select external_id,name from civica_state.current_state_parliamentarians where house=$1',[house])).rows;
+  const map=new Map();for(const r of roster){const k=norm(r.name);if(!k)continue;if(map.has(k)&&map.get(k)!==String(r.external_id))map.set(k,null);else map.set(k,String(r.external_id));}
+  const ars=(await c.query('select * from civica_state.proposal_authors where house=$1 and revision_id=$2',[house,old.revision_id])).rows;
+  let mapped=0,person=0,instCount=0,unresolved=0,changed=0,currentRows=0,currentLinked=0;const transformed=[];
+  for(const a of ars){let actor=a.actor_type, personId=a.person_external_id, org=a.organization_external_id;const nk=norm(a.author_raw);const isInstitution=inst.test(nk)||actor==='institution'||actor==='collective';if(isInstitution){if(actor!=='institution')changed++;actor='institution';personId=null;org=org??('org:'+createHash('sha256').update(nk).digest('hex').slice(0,24));instCount++;}else{person++;const match=map.get(nk);if(match){if(personId!==match)changed++;personId=match;mapped++;currentRows++;currentLinked++;}else{personId=null;unresolved++;}}
+ transformed.push({...a,actor_type:actor,person_external_id:personId,organization_external_id:org,actor_type_canonical:actor.toUpperCase()});}
+  const fingerprint=JSON.stringify(transformed.map(a=>[a.proposal_external_id,a.author_key,a.actor_type,a.person_external_id,a.organization_external_id]).sort((x,y)=>JSON.stringify(x).localeCompare(JSON.stringify(y))));
+  const revision='state:'+house+':legislative:'+createHash('sha256').update(old.revision_id+'|p20-final-linkage-v1|'+fingerprint).digest('hex');
+  const runId='p20.final:'+house+':linkage:'+createHash('sha256').update(revision).digest('hex').slice(0,16);
+  const quality=(await c.query('select quality from civica_state.public_domain_revisions where house=$1 and domain=\'legislative\' and revision_id=$2 limit 1',[house,old.revision_id])).rows[0]?.quality??{};
+  const q={...quality,linkageRepair:{version:'p20-final-linkage-v1',source:'current_state_parliamentarians exact normalized official name + source actor classification',changedRows:changed,personRows:person,linkedPersonRows:mapped,institutionalRows:instCount,unresolvedPersonRows:unresolved,current2026PersonRows:currentRows,current2026LinkedRows:currentLinked,deterministic:true,noFuzzy:true,sourceRevision:old.revision_id}};
+  await c.query(`insert into civica_state.ingestion_runs(run_id,house,provider,started_at,finished_at,status,parser_version,discovery_schema_hash,expected_count,quality,reconciliation) select $1,house,provider,now(),now(),'published','p20-final-linkage-v1',discovery_schema_hash,expected_count,$3,reconciliation from civica_state.ingestion_runs where house=$2 order by finished_at desc nulls last limit 1 on conflict(run_id) do nothing`,[runId,house,q]);
+  await c.query(`insert into civica_state.public_domain_revisions(house,domain,revision_id,status,quality,created_at,activated_at) values($1,'legislative',$2,'active',$3,now(),now()) on conflict(house,domain,revision_id) do update set status='active',quality=excluded.quality,activated_at=now()`,[house,revision,q]);
+  await c.query(`insert into civica_state.public_revision_contributions(house,domain,revision_id,provider,run_id,batch_id) select $1,'legislative',$2,provider,$3,$3 from civica_state.public_revision_contributions where house=$1 and domain='legislative' order by revision_id desc limit 1 on conflict do nothing`,[house,revision,runId]);
+  const pq=await c.query(`insert into civica_state.proposals(revision_id,house,provider,external_id,title,type,number,year,presented_at,status,raw_id,provenance) select $1,house,provider,external_id,title,type,number,year,presented_at,status,raw_id,provenance from civica_state.proposals where house=$2 and revision_id=$3 on conflict(revision_id,house,provider,external_id) do nothing`,[revision,house,old.revision_id]);
+  let aq=0;for(const a of transformed){const x=await c.query(`insert into civica_state.proposal_authors(revision_id,house,provider,proposal_external_id,author_key,actor_type,person_external_id,organization_external_id,actor_external_key,author_raw,role,author_order,raw_id,provenance,actor_type_raw,actor_type_canonical) values($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16) on conflict(revision_id,house,provider,proposal_external_id,author_key) do nothing`,[revision,house,a.provider,a.proposal_external_id,a.author_key,a.actor_type,a.person_external_id,a.organization_external_id,a.actor_external_key,a.author_raw,a.role,a.author_order,a.raw_id,a.provenance,a.actor_type_raw,a.actor_type_canonical]);aq+=x.rowCount??0;}
+  await c.query(`insert into civica_state.active_publications(house,domain,revision_id,activated_at) values($1,'legislative',$2,now()) on conflict(house,domain) do update set revision_id=excluded.revision_id,activated_at=now()`,[house,revision]);
+  out.houses[house]={sourceRevision:old.revision_id,revision,runId,sourceAuthors:ars.length,personRows:person,linkedPersonRows:mapped,institutionalRows:instCount,unresolvedPersonRows:unresolved,current2026PersonRows:currentRows,current2026LinkedRows:currentLinked,linkageRate:currentRows?currentLinked/currentRows:null,changedRows:changed,insertedProposals:pq.rowCount,insertedAuthors:aq};
+ }
+ await c.query('commit');
+}catch(err){await c.query('rollback');throw err}finally{c.release();await p.end()}
+console.log(JSON.stringify(out,null,2));

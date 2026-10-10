@@ -6,7 +6,7 @@ test('explorador separa universos e não expõe CPF', () => {
   const db=openDatabase(':memory:');
   try {
     const run=startRun(db,'civica',Date.parse('2026-09-24T00:00:00Z'));
-    db.prepare("INSERT INTO supplier_aggregate_revisions VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
+    db.prepare("INSERT INTO supplier_aggregate_revisions(id,published_at,status,reconciliation_json) VALUES (?,?,'published','{}')").run(run,'2026-09-24T00:00:00Z');
     db.prepare('INSERT INTO active_supplier_aggregate_revision VALUES (1,?)').run(run);
     db.prepare("INSERT INTO suppliers VALUES ('both','Fornecedor Ambos','company','confirmed','2026-01-01','2026-01-01'),('institutional','Fornecedor Institucional','company','confirmed','2026-01-01','2026-01-01')").run();
     db.prepare("INSERT INTO supplier_identifiers VALUES ('cnpj','both','cnpj','12.345.678/0001-95','12345678000195','BR',0,'valid','v1',NULL,NULL,'fixture','cnpj','2026-01-01'),('cpf','institutional','cpf','123.456.789-09','12345678909','BR',0,'valid','v1',NULL,NULL,'fixture','cpf','2026-01-01')").run();

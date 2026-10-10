@@ -1,1 +1,0 @@
-import pg from 'pg';const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});for(const s of ['senado','camara'])console.log(s,(await p.query(`select external_id,name,ctid from civica_people_poc.profiles where source=$1 and uf='MT' order by ctid`,[s])).rows);await p.end();

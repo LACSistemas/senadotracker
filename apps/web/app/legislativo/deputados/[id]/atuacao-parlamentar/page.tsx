@@ -3,5 +3,5 @@ import { ParliamentarianProfilePage } from '@/components/parliamentarian-profile
 import { profileMetadata } from '@/lib/profile-metadata';
 export const dynamic='force-dynamic';
 export async function generateMetadata({params}:{params:Promise<{id:string}>}):Promise<Metadata>{const {id}=await params;return await profileMetadata('camara',id,`/legislativo/deputados/${id}/atuacao-parlamentar`)}
-export default async function Page({params,searchParams}:{params:Promise<{id:string}>;searchParams:Promise<{paginaVotos?:string}>}){const {id}=await params;const query=await searchParams;const raw=Number(query.paginaVotos??1);const votePage=Number.isSafeInteger(raw)&&raw>0?raw:1;return <ParliamentarianProfilePage source="camara" id={id} section="activity" votePage={votePage}/>}
+export default async function Page({params,searchParams}:{params:Promise<{id:string}>;searchParams:Promise<{paginaVotos?:string;paginaEmendas?:string}>}){const {id}=await params;const query=await searchParams;const raw=Number(query.paginaVotos??1);const votePage=Number.isSafeInteger(raw)&&raw>0?raw:1;const rawPix=Number(query.paginaEmendas??1);const pixPage=Number.isSafeInteger(rawPix)&&rawPix>0?rawPix:1;return <ParliamentarianProfilePage source="camara" id={id} section="activity" votePage={votePage} pixPage={pixPage}/>}
 

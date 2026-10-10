@@ -15,6 +15,7 @@
  * Este arquivo mora ao lado de proposition-analytics.ts (que segue em estilo compacto) para que a camada nova
  * seja legível e testável.
  */
+import type { TemporalBasis } from '@senadotracker/domain';
 import type { DatabaseSync } from 'node:sqlite';
 import type { DataCoverage } from '@senadotracker/domain';
 
@@ -196,6 +197,8 @@ function currentStage(id: string, evidence: Evidence): StageKey {
 export interface FunctionalGroupCount { group: string; count: number; share: number; topTypes: Array<{ type: string; count: number; share: number }> }
 export interface HouseFunctionalView { source: PropositionHouse; scope: string; batchId: string; publishedAt: string; year: number; total: number; partial: boolean; groups: FunctionalGroupCount[]; coverage: DataCoverage }
 export interface FunctionalOverview {
+  /** Base temporal do recorte anual: o número da proposição, a apresentação ou a atividade. */
+  temporalBasis?: TemporalBasis;
   year: number;
   years: Array<{ year: number; camara: number; senado: number }>;
   houses: { camara: HouseFunctionalView | null; senado: HouseFunctionalView | null };
@@ -252,7 +255,7 @@ export function proposalFunctionalOverview(db: DatabaseSync, query: { year?: num
 // ─── §3.2 Onde estão as matérias principais? ───────────────────────────────────────────────────────────
 
 export interface StageFlowStage { key: StageKey; label: string; count: number | null; share: number | null; available: boolean; note: string }
-export interface StageFlow { source: PropositionHouse; year: number; universe: number; stages: StageFlowStage[]; coverage: DataCoverage; updatedThrough: string | null }
+export interface StageFlow { source: PropositionHouse; year: number; temporalBasis?: TemporalBasis; universe: number; stages: StageFlowStage[]; coverage: DataCoverage; updatedThrough: string | null }
 const STAGE_LABEL: Record<StageKey, string> = { presented: 'Apresentação', rite: 'Rito', instruction: 'Instrução', agenda: 'Pauta', deliberation: 'Deliberação', post: 'Pós-deliberação', outcome: 'Desfecho' };
 interface Shared { asOf?: string; universe?: Map<string, UniverseItem>; events?: EventRecord[]; evidence?: Evidence }
 
@@ -399,7 +402,7 @@ export function activityDnaByAuthor(db: DatabaseSync, query: { dimension: 'party
 
 export interface RhythmMonth { month: string; total: number; counts: number[] }
 export interface HouseRhythm { source: PropositionHouse; months: RhythmMonth[]; total: number; unmatched: number; updatedThrough: string | null; coverage: DataCoverage }
-export interface ActivityRhythm { mode: 'presented' | 'events'; year: number; houses: Record<PropositionHouse, HouseRhythm> }
+export interface ActivityRhythm { mode: 'presented' | 'events'; year: number; temporalBasis?: TemporalBasis; houses: Record<PropositionHouse, HouseRhythm> }
 
 export function activityRhythm(db: DatabaseSync, query: { mode: 'presented' | 'events'; year: number; universe?: Partial<Record<PropositionHouse, Map<string, UniverseItem>>>; events?: Partial<Record<PropositionHouse, EventRecord[]>> }): ActivityRhythm {
   const houses = {} as Record<PropositionHouse, HouseRhythm>;
@@ -426,7 +429,7 @@ export function activityRhythm(db: DatabaseSync, query: { mode: 'presented' | 'e
 }
 
 export interface CalendarDay { date: string; count: number; byKind: Record<string, number>; examples: Array<{ proposalId: string; label: string; kind: string }> }
-export interface ActivityCalendar { source: PropositionHouse; year: number; days: CalendarDay[]; max: number; coverageFrom: string | null; coverageTo: string | null; coverage: DataCoverage }
+export interface ActivityCalendar { source: PropositionHouse; year: number; temporalBasis?: TemporalBasis; days: CalendarDay[]; max: number; coverageFrom: string | null; coverageTo: string | null; coverage: DataCoverage }
 
 /** Contagem diária de registros de tramitação. Dias fora da janela [coverageFrom, coverageTo] são "sem cobertura", não zero. */
 export function activityCalendar(db: DatabaseSync, source: PropositionHouse, year: number, options: { universe?: Map<string, UniverseItem>; events?: EventRecord[] } = {}): ActivityCalendar {

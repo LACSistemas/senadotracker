@@ -1,2 +1,0 @@
-import pg from 'pg'; const p=new pg.Pool({host:'localhost',port:5432,database:'projetoeleitor_db',user:'projetoeleitor_user',password:'projetoeleitorsenha'});
-(async()=>{console.log((await p.query(`select id,source,reconciliation_json from civica.ingestion_runs where source='camara' and (id ilike '%agenda%' or parser_version ilike '%agenda%') order by started_at desc limit 10`)).rows);await p.end()})()

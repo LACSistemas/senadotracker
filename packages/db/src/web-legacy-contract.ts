@@ -8,8 +8,18 @@ import { distribution,searchText,type Profile,type Source } from '@senadotracker
 import { runPropositionShadow } from './proposition-shadow';
 import { composeOperationalBundle } from './proposicoes/compose';
 import { GROUPS } from './proposicoes/taxonomy';
-const defaultPath=resolve(process.cwd(),'../../data/senadotracker.sqlite');
-const databasePath=()=>process.env.SENADOTRACKER_DB_PATH??defaultPath;
+/**
+ * The legacy wrapper is retained only for historical comparator runs.
+ * It must be pointed explicitly at the archived baseline outside the repo;
+ * there is intentionally no repository-local SQLite default or fallback.
+ */
+const databasePath=()=>{
+  const configured=process.env.CIVICA_SQLITE_BASELINE_PATH??process.env.SENADOTRACKER_DB_PATH;
+  if(!configured)throw new Error('SQLITE_BASELINE_REQUIRED: set CIVICA_SQLITE_BASELINE_PATH to the archived read-only baseline');
+  const path=resolve(configured);
+  if(path.toLowerCase().endsWith('data\\senadotracker.sqlite')||path.toLowerCase().endsWith('data/senadotracker.sqlite'))throw new Error('SQLITE_REPOSITORY_PATH_FORBIDDEN: use the archived baseline outside the repository');
+  return path;
+};
 export type DataResult<T>={ status:'available'; data:T }|{ status:'unavailable'; message:string };
 const shared=globalThis as typeof globalThis&{senadoTrackerReadDb?:ReturnType<typeof openDatabase>;senadoTrackerReadDbPath?:string;senadoTrackerPropositionCache?:Map<string,ReturnType<typeof publishedPropositions>>;senadoTrackerPropositionDashboardCache?:Map<string,ReturnType<typeof publishedPropositionDashboard>>;senadoTrackerReadCache?:Map<string,{expires:number;value:unknown}>};
 function reader(path:string){if(shared.senadoTrackerReadDb&&shared.senadoTrackerReadDbPath===path)return shared.senadoTrackerReadDb;shared.senadoTrackerReadDb?.close();const db=openDatabase(path,true);db.exec('PRAGMA cache_size=-32768; PRAGMA mmap_size=268435456; PRAGMA temp_store=MEMORY;');shared.senadoTrackerReadDb=db;shared.senadoTrackerReadDbPath=path;return db}

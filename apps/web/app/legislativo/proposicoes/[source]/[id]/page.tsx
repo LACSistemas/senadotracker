@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, CalendarClock, CheckCircle2, ExternalLink, Flag } from 'lucide-react';
 import type { Source } from '@senadotracker/domain';
 import { propositionDetail, propositionObservedState } from '@/lib/data';
-import { formatDate, nf, stageLabel } from '@/lib/proposicoes/taxonomy';
+import { formatDate, nf, stageLabel, typeName } from '@/lib/proposicoes/taxonomy';
 import { LegislativeSubnav } from '@/components/legislative-subnav';
 import { EmptyState } from '@/components/empty-state';
 import { ProposalStory } from '@/components/proposition-story';
@@ -22,17 +22,20 @@ export async function generateMetadata({ params }: { params: Promise<{ source: s
   return { title: proposal?.label ?? 'Proposição', ...(proposal?.summary ? { description: proposal.summary.slice(0, 200) } : {}) };
 }
 
-export default async function PropositionPage({ params }: { params: Promise<{ source: string; id: string }> }) {
-  const route = await params;
+export default async function PropositionPage({ params, searchParams }: { params: Promise<{ source: string; id: string }>; searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const route = await params, query = await searchParams;
+  const text = (value: string | string[] | undefined) => typeof value === 'string' ? value : undefined, pageValue = Number(text(query.pagina_emendas));
+  const amendmentQuery = { type: text(query.emendas) ?? null, page: Number.isInteger(pageValue) && pageValue > 0 ? pageValue : 1 };
   if (!['senado', 'camara'].includes(route.source)) notFound();
   const source = route.source as Source, id = decodeURIComponent(route.id);
-  const result = await propositionDetail(source, id);
+  const result = await propositionDetail(source, id, amendmentQuery);
   if (result.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Proposição indisponível" description={result.message} /></main></>;
   if (!result.data) notFound();
   const item = result.data as any;
   const proposal = item.proposal;
-  const observedResult = await propositionObservedState(source, id), observed = observedResult.status === 'available' ? observedResult.data : null;
-  const typeLabel = humanType[proposal.type] ?? proposal.type;
+  const isSupport = proposal.catalogRole === 'relationship_support';
+  const observedResult = isSupport ? null : await propositionObservedState(source, id), observed = observedResult?.status === 'available' ? observedResult.data : null;
+  const typeLabel = humanType[proposal.type] ?? typeName(proposal.type) ?? proposal.type;
   const code = `${proposal.type} ${proposal.number ?? ''}${proposal.year ? `/${proposal.year}` : ''}`.trim();
   const rawTitle = String(proposal.summary ?? proposal.label);
   const normalizedTitle = rawTitle.replace(/\bSr\.\s+(?=Ministro)/gi, '').replace(/\bSra\.\s+(?=Ministra)/gi, '');

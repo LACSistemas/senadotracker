@@ -1,1 +1,0 @@
-﻿process.env.SENADOTRACKER_DB_PATH='C:/Projetos/senadotracker/data/senadotracker.sqlite'; const legacy=await import('../packages/db/src/web-legacy-contract.ts'); console.log(legacy.parties('all',2026).data.voteOptions.slice(0,10));

@@ -1,0 +1,1 @@
+﻿p='scripts/p20_7a_pa_browser_collect.mjs';s=open(p,encoding='utf8').read();import re;s=re.sub(r':any\[\]','',s);s=s.replace(':string','').replace(':number','').replace('as any','');s=s.replace('const txt=(s)=>', 'const txt=(s)=>');open(p,'w',encoding='utf8').write(s)

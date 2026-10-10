@@ -1,0 +1,8 @@
+import fs from 'node:fs';
+const p='artifacts/P20.json';
+const x=JSON.parse(fs.readFileSync(p,'utf8'));
+x.p22_4={phase:'P22.4',status:'PASS_WITH_DOCUMENTED_LIMITATION',database:'civica_postgres_lab',targets:['PA','PR','RJ','SE','CE'],targetTimelineStatus:{PA:'PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY',PR:'PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY',RJ:'PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY',SE:'PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY',CE:'PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY'},operationalTimeline:'12/27',partialTimeline:'5/27',externalBlockerTimeline:'2/27',eventsFabricated:0,P22_5_STARTED:false,P23_STARTED:false,productionTouched:false,projecteleitorDbTouched:false,sqliteTouched:false};
+x.readyForP23=false;
+fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
+const md=`\n\n## P22.4 — Tramitação profunda PA → PR → RJ → SE → CE\n\nA execução de P22.4 foi concluída como PASS_WITH_DOCUMENTED_LIMITATION no banco civica_postgres_lab. As cinco revisões legislativas P20 foram reutilizadas; nenhum evento foi inventado e nenhuma revisão de timeline vazia foi ativada.\n\n- PA, PR, RJ, SE e CE: PARTIAL_WITH_PROVEN_SOURCE_BOUNDARY;\n- PR: o contrato JSON valor.tramites[] foi comprovado em raws de 2025, mas não há detalhe 2026 correspondente no corpus local;\n- CE: os raws são CSVs de expediente agregado, sem chave de evento por proposição;\n- PA, RJ e SE: os raws ativos são listagens/atividade corrente, sem histórico de eventos por proposição;\n- Run2: DUPLICATE_INSERTIONS=0, NEW_REVISION_ON_UNCHANGED_REPLAY=0;\n- P22.5 e P23 não iniciados; produção, projetoeleitor_db e SQLite não tocados.\n\nArtefatos detalhados: P22_4*.json e P22_4.md.\n`;
+fs.appendFileSync('artifacts/P20.md',md);

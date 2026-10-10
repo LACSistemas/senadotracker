@@ -1,1 +1,0 @@
-﻿import {openDatabase} from '@senadotracker/db';const db=openDatabase('data/senadotracker.sqlite',true);const rows=db.prepare(`SELECT r.id,r.url,r.path,r.fetched_at FROM raw_objects r WHERE r.id IN (SELECT DISTINCT raw_id FROM legislative_complements WHERE kind='theme' AND source='senado') LIMIT 5`).all();console.log(rows);

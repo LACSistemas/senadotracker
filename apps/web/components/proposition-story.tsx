@@ -3,6 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import type { Source } from '@senadotracker/domain';
 import { PropositionTimeline } from '@/components/proposition-timeline';
 import { AnimatedBarStrip } from '@/components/proposicoes/animated-bar-strip';
+import { AmendmentsSection } from '@/components/proposition-amendments';
 
 type Detail = any;
 const labels: Record<string, { role: string; kind: string; title: string }> = {
@@ -33,16 +34,47 @@ function DateLabel({ value }: { value: string | null | undefined }) {
   return <time dateTime={value}>{new Intl.DateTimeFormat('pt-BR', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(`${value.slice(0, 10)}T12:00:00Z`))}</time>;
 }
 
+const TYPE_WORDING: Record<string, string> = {
+  EMC: 'Esta emenda foi apresentada à tramitação de', EMP: 'Esta emenda de plenário foi apresentada à tramitação de', EMR: 'Esta emenda de relator foi apresentada à tramitação de', EMA: 'Esta emenda aglutinativa foi apresentada à tramitação de', EMS: 'Esta emenda do Senado está ligada à tramitação de',
+  'EMC-A': 'Esta emenda adotada pela comissão está ligada a', SBT: 'Este substitutivo faz parte da tramitação de', 'SBT-A': 'Este substitutivo adotado pela comissão está ligado a',
+  ESB: 'Esta emenda atua sobre o substitutivo ligado a', SBR: 'Esta subemenda de relator atua sobre', 'SBE-A': 'Esta subemenda adotada atua sobre',
+  PRL: 'Este parecer analisa', PAR: 'Este parecer analisa', DTQ: 'Este destaque atua sobre', RPD: 'Este destaque atua sobre', REC: 'Este recurso contesta decisão relacionada a',
+};
+const wordingFor = (type: string) => TYPE_WORDING[type.toUpperCase()] ?? 'Este objeto está relacionado a';
+const shortText = (value: string | null | undefined, max = 220) => { const text = String(value ?? '').trim(); return text.length > max ? `${text.slice(0, max - 1).trim()}…` : text; };
+
+/**
+ * Único cartão da matéria principal e da cadeia até a raiz (pai imediato → raiz). Não existe outro bloco "Matéria principal" nesta página.
+ * Os temas exibidos aqui são da matéria principal (contexto), nunca da própria proposição.
+ */
 function Context({ item }: { item: Detail }) {
   const principal = item.principal;
   if (!principal && item.proposal.principalProposalId) return <section className="rounded-2xl border border-primary/25 bg-primary/5 p-6"><p className="text-xs font-bold uppercase tracking-[.16em] text-primary">Contexto relacionado</p><h2 className="mt-2 text-2xl font-bold">Matéria principal identificada</h2><p className="mt-2 text-sm text-muted-foreground">Contexto aguardando carregamento para a matéria {item.proposal.principalProposalId}.</p></section>;
   if (!principal) return null;
-  const wording = item.proposal.type === 'EMC' || item.proposal.type.startsWith('SBT') ? 'Esta emenda modifica' : item.proposal.type === 'PRL' || item.proposal.type === 'PAR' ? 'Este parecer analisa' : item.proposal.type === 'DTQ' || item.proposal.type === 'RPD' ? 'Este destaque atua sobre' : item.proposal.type === 'REC' ? 'Este recurso contesta decisão relacionada a' : 'Este objeto está relacionado a';
-  return <section className="rounded-2xl border border-primary/25 bg-primary/5 p-6"><p className="text-xs font-bold uppercase tracking-[.16em] text-primary">Contexto relacionado</p><h2 className="mt-2 text-2xl font-bold">{wording}</h2><p className="mt-3 font-semibold">{principal.label}</p>{principal.themes?.length ? <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">{principal.themes[0].label}</p> : null}<Link className="mt-4 inline-block font-bold text-primary underline" href={`/legislativo/proposicoes/${item.proposal.source}/${encodeURIComponent(principal.id)}`}>Abrir matéria principal →</Link></section>;
+  const relation = item.relation, ancestors: any[] = relation?.ancestors ?? [], root = relation?.root && relation.root.id !== principal.id ? relation.root : null;
+  const themes: string[] = principal.themes?.length ? principal.themes : root?.themes ?? [];
+  const label = principal.label ?? `Proposição ${principal.id}`;
+  const link = (node: any, text: string) => node.hasPage && node.href ? <Link className="mt-4 mr-5 inline-block font-bold text-primary underline" href={node.href}>{text}</Link> : null;
+  return <section className="rounded-2xl border border-primary/25 bg-primary/5 p-6" aria-labelledby="contexto-titulo">
+    <p className="text-xs font-bold uppercase tracking-[.16em] text-primary">Contexto relacionado</p>
+    <h2 id="contexto-titulo" className="mt-2 text-2xl font-bold">{wordingFor(item.proposal.type)}</h2>
+    {ancestors.length > 1 ? <ol className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm" aria-label="Caminho até a matéria raiz">
+      <li className="font-semibold text-muted-foreground">{item.proposal.label}</li>
+      {ancestors.map((node: any) => <li key={node.id} className="flex items-center gap-2"><span aria-hidden="true" className="text-primary">→</span>{node.hasPage && node.href ? <Link className="focus-ring font-semibold text-primary underline decoration-primary/30 underline-offset-4" href={node.href}>{node.label ?? node.id}</Link> : <span className="font-semibold">{node.label ?? `Proposição ${node.id}`}</span>}</li>)}
+    </ol> : null}
+    <p className="mt-3 font-semibold">{label}</p>
+    {principal.summary ? <p className="mt-1 line-clamp-3 max-w-3xl text-sm text-muted-foreground">{shortText(principal.summary, 320)}</p> : null}
+    {principal.role === 'relationship_support' ? <p className="mt-2 text-xs text-muted-foreground">Matéria histórica{principal.year ? ` de ${principal.year}` : ''}, mantida aqui por estar ligada a proposições do recorte atual.</p> : null}
+    {root ? <p className="mt-2 text-sm"><span className="font-semibold">Matéria raiz:</span> {root.label ?? `Proposição ${root.id}`}{root.summary && root.summary !== principal.summary ? <span className="text-muted-foreground"> — {shortText(root.summary, 140)}</span> : null}</p> : null}
+    {themes.length ? <p className="mt-2 text-sm text-muted-foreground"><span className="font-semibold text-foreground">{principal.themes?.length ? 'Temas da matéria principal:' : 'Temas da matéria raiz:'}</span> {themes.slice(0, 4).join(' · ')}</p> : null}
+    {relation && !relation.reachesRoot && ancestors.length ? <p className="mt-2 text-xs text-muted-foreground">A cadeia oficial até a matéria raiz não pôde ser completada com os dados publicados.</p> : null}
+    {principal.hasPage ? <>{link(principal, 'Abrir matéria principal →')}{root ? link(root, 'Abrir matéria raiz →') : null}</> : <p className="mt-4 text-sm text-muted-foreground">A matéria principal (ID {principal.id}) ainda não foi resolvida no catálogo; sem página própria por enquanto.</p>}
+  </section>;
 }
 
 function Historical({ item, model }: { item: Detail; model: ReturnType<typeof resolveProposalPresentationModel> }) {
   const events = item.movements ?? [];
+  if (item.proposal.catalogRole === 'relationship_support') return <section><h2 className="prop-h2 text-3xl sm:text-4xl">Matéria histórica</h2><p className="mt-3 max-w-3xl rounded-2xl border bg-card p-5 leading-relaxed text-muted-foreground">Esta matéria é anterior ao recorte coletado e aparece porque proposições atuais estão oficialmente ligadas a ela. Identificação, ementa, situação e temas vêm da fonte oficial; a tramitação própria não foi coletada.</p></section>;
   const labelsByKind: Record<string, string[]> = { fulfillment_flow: ['Apresentado', 'Processamento', 'Cumprimento / resposta'], procedural_effect: ['Instrumento', 'Alvo', 'Decisão', 'Efeito'], document_flow: ['Documento registrado', 'Relação documental', 'Resposta / documento posterior'], decision_record: ['Protocolo', 'Eventos próprios', 'Julgamento / efeito'], decision_formation: ['Apresentação', 'Arena / versão', 'Decisão documental'], historical_card: ['Primeiro registro', 'Eventos próprios', 'Estado atual'] };
   if (model.kind === 'timeline') return <section><h2 className="prop-h2 text-3xl sm:text-4xl">{model.title}</h2><p className="mt-2 text-muted-foreground">Os marcos publicados aparecem por data; a situação atual fica separada quando não possui data própria.</p>{events.length ? <PropositionTimeline events={events} /> : <Fallback text="Nenhum evento próprio foi publicado no lote ativo." />}</section>;
   if (model.group === 'requerimentos' && item.proposal.type !== 'RIC') return <section><h2 className="prop-h2 text-3xl sm:text-4xl">O que aconteceu com o pedido</h2>{events.length ? <PropositionTimeline events={[...events].sort((a: any, b: any) => String(a.occurredAt ?? '').localeCompare(String(b.occurredAt ?? '')))} /> : <p className="mt-3 text-sm text-muted-foreground">Nenhum evento próprio foi publicado para este pedido.</p>}</section>;
@@ -76,13 +108,13 @@ export function ProposalStory({ item, source }: { item: Detail; source: Source }
   const products = [...(item.documents ?? []), ...(item.resultingNorms ?? [])];
   const shownAuthors = authors.slice(0, 9);
   const participantTitle = model.group === 'pareceres_relatorios' || (model.group === 'atos_documentos_especiais' && ['PPP', 'PEP'].includes(model.subtype)) ? 'Relatoria' : model.group === 'requerimentos' ? 'Autores do pedido' : model.group === 'emendas_substitutivos' ? 'Autoria da emenda' : model.group === 'recursos_representacoes_peticoes' ? 'Autores do recurso' : model.group === 'oficios_documentos' ? 'Origem institucional' : 'Autoria';
-  return <div className="space-y-14"><section className="rounded-2xl border-l-4 border-primary bg-primary/5 px-5 py-4 text-base leading-relaxed">{model.role}</section><Context item={item} /><Historical item={item} model={model} />{model.group === 'proposicoes_legislativas_principais' ? <ActivityAround item={item} /> : null}<Decision item={item} source={source} />{authors.length ? <section><h2 className="prop-h2 text-3xl sm:text-4xl">{participantTitle}</h2><div className="mt-5 flex flex-wrap gap-3">{shownAuthors.map((author: any) => <div className="rounded-xl border p-4" key={`${author.name}:${author.order}`}><p className="font-bold">{author.name}</p><p className="mt-1 text-sm text-muted-foreground">{author.kind}{author.party ? ` · ${author.party}/${author.uf ?? 'UF não informada'}` : ''}</p></div>)}</div>{authors.length > shownAuthors.length ? <p className="mt-3 text-sm text-muted-foreground">Mostrando 9 de {authors.length} participantes.</p> : null}</section> : null}{products.length ? <section><h2 className="prop-h2 text-3xl sm:text-4xl">O que este objeto produziu</h2><div className="mt-5 grid gap-3 md:grid-cols-2">{products.map((entry: any) => <a className="rounded-xl border p-4 hover:border-primary" href={entry.officialUrl} key={entry.externalKey}><p className="font-bold">{entry.label}</p><p className="mt-1 text-xs text-muted-foreground"><DateLabel value={entry.occurredAt} /> · Fonte oficial →</p></a>)}</div></section> : null}</div>;
+  return <div className="space-y-14"><section className="rounded-2xl border-l-4 border-primary bg-primary/5 px-5 py-4 text-base leading-relaxed">{model.role}</section><Context item={item} /><Historical item={item} model={model} /><AmendmentsSection item={item} />{model.group === 'proposicoes_legislativas_principais' ? <ActivityAround item={item} /> : null}<Decision item={item} source={source} />{authors.length ? <section><h2 className="prop-h2 text-3xl sm:text-4xl">{participantTitle}</h2><div className="mt-5 flex flex-wrap gap-3">{shownAuthors.map((author: any) => <div className="rounded-xl border p-4" key={`${author.name}:${author.order}`}><p className="font-bold">{author.name}</p><p className="mt-1 text-sm text-muted-foreground">{author.kind}{author.party ? ` · ${author.party}/${author.uf ?? 'UF não informada'}` : ''}</p></div>)}</div>{authors.length > shownAuthors.length ? <p className="mt-3 text-sm text-muted-foreground">Mostrando 9 de {authors.length} participantes.</p> : null}</section> : null}{products.length ? <section><h2 className="prop-h2 text-3xl sm:text-4xl">O que este objeto produziu</h2><div className="mt-5 grid gap-3 md:grid-cols-2">{products.map((entry: any) => <a className="rounded-xl border p-4 hover:border-primary" href={entry.officialUrl} key={entry.externalKey}><p className="font-bold">{entry.label}</p><p className="mt-1 text-xs text-muted-foreground"><DateLabel value={entry.occurredAt} /> · Fonte oficial →</p></a>)}</div></section> : null}</div>;
 }
 
 function ActivityAround({ item }: { item: Detail }) {
   // Cores por entidade, as mesmas dos grupos funcionais: emendas (Modificar textos), documentos (Documentar e oficiar), normas (Criar ou alterar normas).
   const groups = [
-    { key: 'amendments', label: 'Emendas e substitutivos', one: 'emenda ou substitutivo', color: 'var(--group-3)', items: (item.amendments ?? []) as any[] },
+    { key: 'amendments', label: 'Emendas e substitutivos', one: 'emenda ou substitutivo', color: 'var(--group-3)', items: (item.amendmentGraph ? [] : item.amendments ?? []) as any[] },
     { key: 'documents', label: 'Documentos', one: 'documento', color: 'var(--group-7)', items: (item.documents ?? []) as any[] },
     { key: 'norms', label: 'Normas ou produtos', one: 'norma ou produto', color: 'var(--group-1)', items: (item.resultingNorms ?? []) as any[] },
   ].filter(group => group.items.length);
