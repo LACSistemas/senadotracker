@@ -260,6 +260,6 @@ export { ensureStateBudgetSchema, getStateBudgetAmendmentsByLegislator, getState
 export * from './postgres-budget.ts';
 export * from './postgres-budget-read.ts';
 
-export { ensureStateStorySchema, refreshStateHouseStory, readStateHouseStory, readStateHouseGlances, reconcileStateHouseStories, STATE_STORY_VERSION, type StoryReconcileResult, type StateHouseGlance, financeLabelSemantics, STATE_STORY_SCHEMA, type StateHouseStory, type StorySeats, type StoryProposals, type StoryFinance, type FinanceLabelSemantics } from './postgres-state-story.ts';
+export { ensureStateStorySchema, refreshStateHouseStory, readStateHouseStory, readStateHouseGlances, readStateNumbersInput, type StateNumbersInput, reconcileStateHouseStories, STATE_STORY_VERSION, type StoryReconcileResult, type StateHouseGlance, financeLabelSemantics, STATE_STORY_SCHEMA, type StateHouseStory, type StorySeats, type StoryProposals, type StoryFinance, type FinanceLabelSemantics } from './postgres-state-story.ts';
 export { createFinanceResolver, officialBridgeFromRosterPayload, normalizeActorName, normalizeActorNameNoTitle, type FinanceLinkMethod } from './state-finance-identity.ts';
 export { PORTRAIT_ALLOWED_HOSTS, PORTRAIT_EXTS, PORTRAIT_CONTENT_TYPE, isPortraitUrlAllowed, canonicalPortraitUrl, portraitDirectory, portraitKey, portraitPath, sniffImage, fetchPortraitFollowingRedirects, mirrorPortrait, mirrorPendingPortraits, listPortraitSources, ensurePortraitSchema, type MirrorBatchResult, type MirrorStatus, type PortraitExt } from './portrait-mirror.ts';

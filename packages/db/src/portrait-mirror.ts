@@ -42,13 +42,13 @@ export function portraitDirectory(): string {
   let dir = process.cwd();
   for (let depth = 0; depth < 6; depth++) {
     const manifest = join(dir, 'package.json');
-    if (existsSync(manifest)) { try { if (JSON.parse(readFileSync(manifest, 'utf8')).workspaces) return join(dir, 'data', 'portraits'); } catch { /* manifesto ilegível: continua subindo */ } }
+    if (existsSync(/* turbopackIgnore: true */ manifest)) { try { if (JSON.parse(readFileSync(/* turbopackIgnore: true */ manifest, 'utf8')).workspaces) return join(dir, 'data', 'portraits'); } catch { /* manifesto ilegível: continua subindo */ } }
     const parent = dirname(dir); if (parent === dir) break; dir = parent;
   }
   return join(process.cwd(), 'data', 'portraits');
 }
 export const portraitKey = (url: string) => createHash('sha256').update(url).digest('hex').slice(0, 32);
-export const portraitPath = (dir: string, url: string, ext: PortraitExt) => { const key = portraitKey(url); return join(dir, key.slice(0, 2), `${key}.${ext}`); };
+export const portraitPath = (dir: string, url: string, ext: PortraitExt) => { const key = portraitKey(url); return join(/* turbopackIgnore: true */ dir, key.slice(0, 2), `${key}.${ext}`); };
 
 export function sniffImage(bytes: Uint8Array): PortraitExt | null {
   if (bytes[0] === 0xff && bytes[1] === 0xd8) return 'jpg';
@@ -100,7 +100,7 @@ export async function mirrorPortrait(pool: Pick<Pool, 'query'>, sourceUrl: strin
   const dir = options.dir ?? portraitDirectory(), key = portraitKey(sourceUrl), now = (options.now ?? (() => new Date()))().toISOString();
   await ensurePortraitSchema(pool);
   const prior = (await pool.query<{ file_ext: PortraitExt | null; etag: string | null; last_modified: string | null; failures: number }>(`SELECT file_ext, etag, last_modified, failures FROM civica_media.portraits WHERE source_url=$1`, [sourceUrl])).rows[0];
-  const havePrior = Boolean(prior?.file_ext && existsSync(portraitPath(dir, sourceUrl, prior.file_ext)));
+  const havePrior = Boolean(prior?.file_ext && existsSync(/* turbopackIgnore: true */ portraitPath(dir, sourceUrl, prior.file_ext)));
   const conditional: Record<string, string> = {}; if (havePrior && !options.force) { if (prior!.etag) conditional['if-none-match'] = prior!.etag; if (prior!.last_modified) conditional['if-modified-since'] = prior!.last_modified; }
   const fail = async (error: string) => { await pool.query(`INSERT INTO civica_media.portraits(source_url,key,status,checked_at,failures,last_error) VALUES($1,$2,'failed',$3,1,$4) ON CONFLICT(source_url) DO UPDATE SET status=CASE WHEN civica_media.portraits.file_ext IS NULL THEN 'failed' ELSE 'stale' END, checked_at=$3, failures=civica_media.portraits.failures+1, last_error=$4`, [sourceUrl, key, now, error]); return { status: 'failed' as const, error }; };
   try {
@@ -110,9 +110,9 @@ export async function mirrorPortrait(pool: Pick<Pool, 'query'>, sourceUrl: strin
     const declared = Number(response.headers.get('content-length') ?? 0); if (declared > MAX_BYTES) return await fail('imagem grande demais');
     const raw = Buffer.from(await response.arrayBuffer()); if (raw.length === 0 || raw.length > MAX_BYTES) return await fail('corpo vazio ou grande demais');
     const processed = await resizeIfPossible(raw); if (!processed) return await fail('conteúdo não é uma imagem reconhecida');
-    const file = portraitPath(dir, sourceUrl, processed.ext); await mkdir(dirname(file), { recursive: true });
-    const tmp = `${file}.${process.pid}.tmp`; await writeFile(tmp, processed.bytes); await rename(tmp, file);
-    if (prior?.file_ext && prior.file_ext !== processed.ext) await rm(portraitPath(dir, sourceUrl, prior.file_ext), { force: true });
+    const file = portraitPath(dir, sourceUrl, processed.ext); await mkdir(/* turbopackIgnore: true */ dirname(file), { recursive: true });
+    const tmp = `${file}.${process.pid}.tmp`; await writeFile(/* turbopackIgnore: true */ tmp, processed.bytes); await rename(/* turbopackIgnore: true */ tmp, /* turbopackIgnore: true */ file);
+    if (prior?.file_ext && prior.file_ext !== processed.ext) await rm(/* turbopackIgnore: true */ portraitPath(dir, sourceUrl, prior.file_ext), { force: true });
     const sha = createHash('sha256').update(processed.bytes).digest('hex');
     await pool.query(`INSERT INTO civica_media.portraits(source_url,key,file_ext,sha256,bytes,width,height,etag,last_modified,status,fetched_at,checked_at,failures,last_error) VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,'ok',$10,$10,0,NULL) ON CONFLICT(source_url) DO UPDATE SET key=excluded.key,file_ext=excluded.file_ext,sha256=excluded.sha256,bytes=excluded.bytes,width=excluded.width,height=excluded.height,etag=excluded.etag,last_modified=excluded.last_modified,status='ok',fetched_at=excluded.fetched_at,checked_at=excluded.checked_at,failures=0,last_error=NULL`, [sourceUrl, key, processed.ext, sha, processed.bytes.length, processed.width, processed.height, response.headers.get('etag'), response.headers.get('last-modified'), now]);
     return { status: 'stored' };

@@ -1,0 +1,3721 @@
+{
+  "meta": {
+    "title": "P1 - Investigacao expandida: seguranca publica, bem-estar social e qualidade de vida",
+    "investigated_on": "2026-10-10",
+    "mode": "somente investigacao; nenhum codigo, schema, migration, collector ou frontend alterado",
+    "p0_files": [
+      "investigacao_executivo_nacional.md",
+      "investigacao_executivo_fontes.json"
+    ],
+    "p0_ids_preserved": "source_ids da P0 mantidos em p0_reference; familias F0-F8 mantidas; novas familias propostas F9-F13",
+    "sample_territories": [
+      "Brasil",
+      "ES",
+      "Vitoria/ES (3205309)",
+      "Alto Rio Novo/ES (3200359)",
+      "Sao Paulo/SP (3550308)",
+      "Belem/PA (1501402)"
+    ],
+    "evidence_levels": [
+      "VERIFIED_API",
+      "VERIFIED_DATASET",
+      "DOCUMENTED_ONLY",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_EVALUATED",
+      "UNAVAILABLE"
+    ],
+    "caveats": [
+      "arquivos grandes foram inspecionados por Range/HEAD/amostra; o que nao foi lido esta marcado",
+      "amostras de municipios (4) e contagens por pacote nao sao estatisticas nacionais",
+      "Zero explicito, ausencia de registro, dado nao enviado e valor suprimido sao tratados separadamente em cada fonte"
+    ],
+    "counts": {
+      "sources": 25,
+      "tests": 25,
+      "indicators": 69,
+      "opportunities": 18,
+      "questions": 40,
+      "relationships": 17
+    }
+  },
+  "sources": [
+    {
+      "source_id": "p1_mds_misocial",
+      "provider": "MDS (SAGI)",
+      "source_name": "MI Social - indice Solr de indicadores municipais mensais",
+      "official_url": "http://aplicacoes.mds.gov.br/sagi/servicos/misocial",
+      "documentation_url": "https://aplicacoes.cidadania.gov.br/vis/data3/data-explorer.php (VIS DATA 3; sem documentacao do Solr localizada)",
+      "domains": [
+        "protecao social",
+        "pobreza",
+        "Bolsa Familia",
+        "BPC",
+        "CadUnico",
+        "SUAS",
+        "seguranca alimentar (cisternas)",
+        "primeira infancia"
+      ],
+      "government_levels": [
+        "municipal",
+        "UF",
+        "Uniao"
+      ],
+      "access_type": "Solr aberto, sem chave, HTTP (nao HTTPS); wt=json; q/fq/fl/rows/sort/facet",
+      "endpoints": [
+        "GET /sagi/servicos/misocial?q=codigo_ibge:320530&fq=anomes_s:202609&wt=json"
+      ],
+      "dataset_names": [
+        "documentos tipo_s=mes_mu (um por municipio x mes)"
+      ],
+      "geographic_granularity": "municipio (codigo_ibge 6 digitos; 5.571 por mes)",
+      "temporal_granularity": "mensal (anomes_s AAAAMM)",
+      "historical_range_verified": "200301..202612 (288 meses); Bolsa Familia com valor real ate 202609",
+      "update_frequency": "mensal (ultimo mes real observado: 2026-09)",
+      "identifiers": [
+        "codigo_ibge (6 digitos, sem DV)",
+        "uf_municipio",
+        "anomes_s"
+      ],
+      "sample_record_count": 1604448,
+      "coverage_metrics": {
+        "numFound": 1604448,
+        "meses": 288,
+        "municipios_por_mes": 5571,
+        "campos_com_valor_em_pelo_menos_um_municipio_2026_09": 152,
+        "campos_nao_vazios_Vitoria_6_meses_amostrados": 280,
+        "municipios_com_valor_2026_09": {
+          "cadsuas_qtd_cras_i": 5559,
+          "cadsuas_qtd_creas_i": 2758,
+          "cadsuas_qtd_unidade_acolhimento_i": 2778,
+          "cadsuas_qtd_centro_pop_i": 237,
+          "cadsuas_qtd_profissionais_conselho_mun_i": 5354
+        },
+        "amostra_2026_09": {
+          "Vitoria": {
+            "cras": 12,
+            "creas": 3,
+            "centro_pop": 2,
+            "familias_pbf": 19085,
+            "valor_pbf_reais": 12829147,
+            "bpc_residencia_total": 4770
+          },
+          "Alto Rio Novo": {
+            "cras": 1,
+            "creas": 1,
+            "centro_pop": null,
+            "familias_pbf": 1129,
+            "bpc_residencia_total": 157
+          },
+          "Sao Paulo": {
+            "cras": 54,
+            "creas": 32,
+            "centro_pop": 6,
+            "familias_pbf": 664474,
+            "bpc_residencia_total": 215507
+          },
+          "Belem": {
+            "cras": 12,
+            "creas": 5,
+            "centro_pop": 2,
+            "familias_pbf": 147006,
+            "bpc_residencia_total": 49480
+          }
+        }
+      },
+      "incremental_strategy": "fq=anomes_s:AAAAMM por mes; um unico endpoint; retificacoes retroativas nao testadas",
+      "limitations": [
+        "meses futuros (2026-10..12) existem como linhas com valores repetidos do ultimo mes (ex.: bpc_residencia_total_i identico em 202610-202612): tratar como preenchimento, nao observacao",
+        "campo ausente em municipio nao e zero (Centro POP presente em so 237 municipios; ausencia pode ser zero ou nao informado)",
+        "sem esquema/documentacao oficial: 196 campos em um documento, 280 no total amostrado; nomes mudam por periodo (ex.: sicon_*_ate_2019, *_apartir_2023)",
+        "campos de populacao_censo_2010 desatualizados",
+        "host em HTTP simples; estabilidade nao garantida",
+        "nao ha populacao em situacao de rua nem CadUnico por faixa de renda detalhada fora dos 57 campos qtd_pes_cad_*"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F10_PROTECAO_SOCIAL",
+      "p0_reference": null,
+      "p1_novelty": "Fonte inedita na P0 (a P0 so tinha Portal da Transparencia, onde bolsa-familia deu 403). Equipamentos SUAS por municipio (CRAS/CREAS/Centro POP), BPC, CadUnico por faixa etaria/sexo, IGD, repasses SUAS, cisternas e fomento rural em um unico endpoint mensal desde 2003.",
+      "test_ids": [
+        "T01"
+      ]
+    },
+    {
+      "source_id": "p1_ipeadata_odata",
+      "provider": "Ipea",
+      "source_name": "Ipeadata OData v4 (inclui Atlas do Desenvolvimento Humano e Atlas da Violencia)",
+      "official_url": "http://www.ipeadata.gov.br/api/odata4/",
+      "documentation_url": "http://www.ipeadata.gov.br/api/",
+      "domains": [
+        "desenvolvimento humano",
+        "renda",
+        "desigualdade",
+        "violencia (homicidios)",
+        "mortalidade infantil",
+        "educacao"
+      ],
+      "government_levels": [
+        "Brasil",
+        "regiao",
+        "UF",
+        "municipio"
+      ],
+      "access_type": "OData v4 aberto; GET /Metadados, /ValoresSerie(SERCODIGO=...), /Territorios",
+      "endpoints": [
+        "/Metadados",
+        "/Metadados('ADH_IDHM')",
+        "/ValoresSerie(SERCODIGO='AVIOL12_HOMIC')",
+        "/Territorios"
+      ],
+      "dataset_names": [
+        "ADH_* (539 series Atlas Brasil)",
+        "AVIOL12_HOMIC/HOMICF/HOMICJ (homicidios)"
+      ],
+      "geographic_granularity": "municipio (NIVNOME=Municipios; TERCODIGO = IBGE 7 digitos)",
+      "temporal_granularity": "ADH decenal (1991/2000/2010; algumas series com 2022); homicidios anual",
+      "historical_range_verified": "ADH_IDHM 1991/2000/2010; ADH_T_ANALF15M 1991..2022; AVIOL12_HOMIC municipal 1980..2022 (UF/regiao ate 2024)",
+      "update_frequency": "por serie (Metadados.SERATUALIZACAO; ADH ate 2024-11; homicidios 2026-07)",
+      "identifiers": [
+        "SERCODIGO",
+        "TERCODIGO (IBGE 7)",
+        "NIVNOME"
+      ],
+      "sample_record_count": 445240,
+      "coverage_metrics": {
+        "series_total": 3606,
+        "series_ADH": 539,
+        "ADH_IDHM_linhas": 16776,
+        "municipios_por_ano_censitario": 5564,
+        "homicidios_linhas_total": 445240,
+        "homicidios_linhas_municipais": 204928,
+        "homicidios_municipal_anos": "1980..2022",
+        "amostra_2022_homicidios": {
+          "Vitoria": 90,
+          "Alto Rio Novo": 0,
+          "Sao Paulo": 344,
+          "Belem": 339
+        },
+        "amostra_IDHM_2010": {
+          "Vitoria": 0.845,
+          "Alto Rio Novo": 0.664,
+          "Sao Paulo": 0.805,
+          "Belem": 0.746
+        }
+      },
+      "incremental_strategy": "recarga integral da serie (o servidor ignora $filter/$orderby em ValoresSerie e devolve a serie inteira)",
+      "limitations": [
+        "IDHM municipal e decenal: ultimo ano em Ipeadata = 2010 (nao apresentar como anual)",
+        "ValoresSerie ignora $filter e $orderby; Metadados com $filter/$select deu HTTP 500; so a lista completa (7,3 MB) funcionou",
+        "HOMICF/HOMICJ municipais validados so por contagem de linhas e 2022",
+        "definicao de homicidio segue o Atlas da Violencia/SIM (nao verificada neste teste)",
+        "zero municipal: Alto Rio Novo = 0 em 2022 e valor real do registro, nao ausencia"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": "atlas_violencia_ipea",
+      "p1_novelty": "Na P0 o Atlas da Violencia estava BLOCKED (API 404). Desbloqueado pelo Ipeadata: homicidios totais, femininos e de jovens por municipio 1980-2022, e 539 series do Atlas Brasil (IDHM, renda, Gini, mortalidade infantil, analfabetismo) por municipio.",
+      "test_ids": [
+        "T02"
+      ]
+    },
+    {
+      "source_id": "p1_bcb_pix_olinda",
+      "provider": "Banco Central do Brasil",
+      "source_name": "Pix - Dados Abertos (Olinda): transacoes por municipio",
+      "official_url": "https://olinda.bcb.gov.br/olinda/servico/Pix_DadosAbertos/versao/v1/odata",
+      "documentation_url": "https://dadosabertos.bcb.gov.br/dataset/pix",
+      "domains": [
+        "inclusao financeira",
+        "consumo/atividade economica local"
+      ],
+      "government_levels": [
+        "municipal",
+        "UF",
+        "regiao"
+      ],
+      "access_type": "OData aberto sem chave (catalogo /olinda/servico retorna 403)",
+      "endpoints": [
+        "GET /TransacoesPixPorMunicipio(DataBase=@DataBase)?@DataBase='202011'&$filter=Municipio_Ibge eq 3205309&$format=json",
+        "/$metadata"
+      ],
+      "dataset_names": [
+        "TransacoesPixPorMunicipio",
+        "EstatisticasTransacoesPix",
+        "EstatisticasFraudesPix",
+        "ChavesPix",
+        "CnaePorteRecebedor",
+        "PixUsuariosCadastradosDICT"
+      ],
+      "geographic_granularity": "municipio (Municipio_Ibge 7 digitos)",
+      "temporal_granularity": "mensal (AnoMes)",
+      "historical_range_verified": "202011..~202608/09 (DataBase=202011 devolve 72 linhas para Vitoria)",
+      "update_frequency": "mensal",
+      "identifiers": [
+        "Municipio_Ibge",
+        "AnoMes"
+      ],
+      "sample_record_count": 72,
+      "coverage_metrics": {
+        "vitoria_linhas_desde_2020_11": 72,
+        "campos": [
+          "VL_PagadorPF",
+          "QT_PagadorPF",
+          "VL_PagadorPJ",
+          "QT_PagadorPJ",
+          "VL_RecebedorPF",
+          "QT_RecebedorPF",
+          "VL_RecebedorPJ",
+          "QT_RecebedorPJ",
+          "QT_PES_PagadorPF",
+          "QT_PES_PagadorPJ",
+          "QT_PES_RecebedorPF",
+          "QT_PES_RecebedorPJ"
+        ]
+      },
+      "incremental_strategy": "DataBase e o mes INICIAL: a funcao devolve todos os meses a partir dele; coletar incrementalmente com DataBase = ultimo mes + filtro por Municipio_Ibge",
+      "limitations": [
+        "valores monetarios e contagens de transacoes; nao e renda nem consumo mensurado",
+        "o parametro DataBase nao e o mes exato (verificado pelo numero de linhas); limite $top da API nao esgotado",
+        "dados PF/PJ por municipio do pagador/recebedor, nao do domicilio"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F11_TRABALHO_RENDA_FINANCAS",
+      "p0_reference": null,
+      "p1_novelty": "Dimensao inteiramente nova: pagamentos digitais por municipio desde nov/2020 (inclusao financeira e atividade).",
+      "test_ids": [
+        "T03"
+      ]
+    },
+    {
+      "source_id": "p1_ibge_sidra_agregados",
+      "provider": "IBGE",
+      "source_name": "API de Agregados/SIDRA - tabelas com nivel municipal (N6)",
+      "official_url": "https://servicodados.ibge.gov.br/api/v3/agregados",
+      "documentation_url": "https://servicodados.ibge.gov.br/api/docs/agregados",
+      "domains": [
+        "renda (Censo 2022)",
+        "PIB municipal",
+        "empresas e salarios",
+        "nascimentos",
+        "deficiencia",
+        "quilombolas e indigenas",
+        "entorno urbanistico",
+        "MUNIC (capacidade institucional)",
+        "saneamento (PNSB 2008)",
+        "Censo Agropecuario"
+      ],
+      "government_levels": [
+        "Brasil",
+        "UF",
+        "municipio (N6)",
+        "distrito (N10 em algumas)"
+      ],
+      "access_type": "REST JSON aberto, sem chave",
+      "endpoints": [
+        "/v3/agregados?nivel=N6",
+        "/v3/agregados/{id}/metadados",
+        "/v3/agregados/{id}/localidades/N6",
+        "/v3/agregados/{id}/periodos/{p}/variaveis?localidades=N6[3205309,3550308]"
+      ],
+      "dataset_names": [
+        "10289 renda Censo 2022",
+        "10211 populacao",
+        "5938 PIB",
+        "6449 CEMPRE",
+        "2609 nascidos vivos",
+        "10125 deficiencia",
+        "10089 quilombolas",
+        "10050/10055 entorno",
+        "10201 conexao domiciliar",
+        "10026/10037/10028/10021 MUNIC 2023"
+      ],
+      "geographic_granularity": "municipio (5.570)",
+      "temporal_granularity": "por tabela (anual, decenal, pontual)",
+      "historical_range_verified": "ex.: PIB 2002..2023; CEMPRE 2006..2021; nascidos vivos 2003..2024; Censo 2022",
+      "update_frequency": "por pesquisa",
+      "identifiers": [
+        "id de agregado",
+        "codigo IBGE 7 digitos (localidades N6)"
+      ],
+      "sample_record_count": 4448,
+      "coverage_metrics": {
+        "tabelas_com_nivel_N6": 4448,
+        "pesquisas": 33,
+        "por_pesquisa": {
+          "Censo Agropecuario": 1145,
+          "Pesquisa Nacional de Saude": 1076,
+          "Censo Demografico": 1022,
+          "Pesquisa Nacional de Saneamento Basico": 263,
+          "PeNSE": 240,
+          "PNAD Continua anual": 194,
+          "MUNIC": 186,
+          "Registro Civil": 73
+        },
+        "amostras": {
+          "renda_media_trabalho_censo2022": {
+            "Vitoria": 5242.06,
+            "Alto Rio Novo": 1902.21,
+            "Sao Paulo": 4547.62,
+            "Belem": 2986.88
+          },
+          "renda_mediana": {
+            "Vitoria": 2500,
+            "Alto Rio Novo": 1212,
+            "Sao Paulo": 2100,
+            "Belem": 1400
+          },
+          "pib_2023_mil_reais": {
+            "Vitoria": 28257606,
+            "Alto Rio Novo": 152485,
+            "Sao Paulo": 1066825105,
+            "Belem": 40536062
+          },
+          "empresas_2021": {
+            "Vitoria": 22094,
+            "Alto Rio Novo": 152,
+            "Sao Paulo": 638246,
+            "Belem": 19642
+          },
+          "nascidos_vivos_2024": {
+            "Vitoria": 3486,
+            "Alto Rio Novo": 89,
+            "Sao Paulo": 121047,
+            "Belem": 13842
+          },
+          "pcd_pct_2022": {
+            "Vitoria": 6.3,
+            "Alto Rio Novo": 9.7,
+            "Sao Paulo": 6.4,
+            "Belem": 8.5
+          },
+          "vab_adm_publica_pct_2021": {
+            "Vitoria": 7.9,
+            "Alto Rio Novo": 42.2,
+            "Sao Paulo": 7.3,
+            "Belem": 21.3
+          }
+        }
+      },
+      "incremental_strategy": "por tabela e periodo; recarga do periodo novo; registro de tabelas configuravel",
+      "limitations": [
+        "N6 declarado em metadados nao implica municipios completos: PNAD anual/trimestral tem N6 = 27 capitais (valores \"...\" ate para capital); IPCA N6 = 6 municipios; PNS N6 so amostras",
+        "VAB por atividade (var 525) so ate 2021 em 5938 (2022/2023 \"...\")",
+        "tabelas \"Pesquisa Urbanistica do Entorno\" cobrem so setores selecionados (nao todo o municipio)",
+        "simbolos SIDRA: \"-\" zero absoluto, \"...\" nao se aplica/nao disponivel, \"X\" sigilo: nao confundir com zero",
+        "Censo 2022 sem tabelas municipais de esgoto/agua/lixo no SIDRA agregado (apenas 2010 e FTP)"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": "ibge_sidra",
+      "p1_novelty": "P0 usou SIDRA so para populacao. Agora: catalogo de 4.448 tabelas municipais, renda do Censo 2022, PIB, CEMPRE, nascimentos, deficiencia, quilombolas/indigenas, MUNIC 2023, e evidencias negativas (PNAD e IPCA nao sao municipais).",
+      "test_ids": [
+        "T04"
+      ]
+    },
+    {
+      "source_id": "p1_ibge_ftp_censo2022_subnacional",
+      "provider": "IBGE",
+      "source_name": "FTP Censo 2022 - agregados por municipio, bairro, distrito, subdistrito e setor; grade estatistica; faces de logradouro",
+      "official_url": "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/",
+      "documentation_url": "dicionario_de_dados_agregados_por_setores_censitarios_20260520.xlsx (no proprio FTP)",
+      "domains": [
+        "demografia",
+        "domicilios",
+        "renda do responsavel",
+        "alfabetizacao",
+        "cor ou raca",
+        "registro de nascimento",
+        "entorno urbanistico",
+        "favelas e comunidades urbanas",
+        "indigenas",
+        "quilombolas"
+      ],
+      "government_levels": [
+        "setor censitario",
+        "bairro",
+        "distrito",
+        "subdistrito",
+        "municipio"
+      ],
+      "access_type": "HTTP directory listing; ZIPs CSV/XLSX",
+      "endpoints": [
+        "/Agregados_por_Setores_Censitarios/Agregados_por_Bairro_csv/",
+        "/Agregados_por_Setores_Censitarios/Agregados_por_Municipio_csv/",
+        "/Agregados_por_Setores_Censitarios_Rendimento_do_Responsavel/",
+        "/Agregados_por_Setores_Censitarios_Caracteristicas_urbanisticas_do_entorno_dos_domicilios/",
+        "/Favelas_e_comunidades_urbanas_Resultados_do_universo/",
+        "https://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/grade_estatistica/censo_2022/grade_1km/",
+        "https://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/malha_de_setores_censitarios/censo_2022/base_de_faces_de_logradouros_versao_2022_censo_demografico/"
+      ],
+      "dataset_names": [
+        "agregados_por_{municipios,bairros,distritos,setores}_{basico,alfabetizacao,caracteristicas_domicilio1..3,cor_ou_raca,demografia,renda_responsavel}"
+      ],
+      "geographic_granularity": "setor censitario / bairro / distrito / municipio; grade 1, 5 e 10 km",
+      "temporal_granularity": "Censo 2022 (pontual; arquivos revisados ate 2026-05)",
+      "historical_range_verified": "2022",
+      "update_frequency": "revisoes pontuais (nomes com datas 20250417, 20260508, 20260520)",
+      "identifiers": [
+        "CD_SETOR",
+        "codigo de bairro/distrito",
+        "codigo IBGE do municipio"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "listagem_verificada": true,
+        "conteudo_dos_zips_lido": false
+      },
+      "incremental_strategy": "arquivo unico por tema; recarga quando o nome com data mudar",
+      "limitations": [
+        "conteudo dos ZIPs nao foi baixado (apenas listagem e nomes); colunas e cobertura de supressao por sigilo nao verificadas",
+        "entorno urbanistico apenas em setores selecionados",
+        "agregados por bairro dependem da delimitacao de cada municipio"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": null,
+      "p1_novelty": "Granularidade abaixo do municipio (bairro e setor) com renda, alfabetizacao, domicilios e entorno; grade de 1 km para analises de acesso.",
+      "test_ids": [
+        "T05"
+      ]
+    },
+    {
+      "source_id": "p1_ibge_munic",
+      "provider": "IBGE",
+      "source_name": "MUNIC - Pesquisa de Informacoes Basicas Municipais (2023 e modulos tematicos)",
+      "official_url": "https://ftp.ibge.gov.br/Perfil_Municipios/",
+      "documentation_url": "https://www.ibge.gov.br/estatisticas/sociais/saude/10586-pesquisa-de-informacoes-basicas-municipais.html",
+      "domains": [
+        "seguranca (guarda municipal, delegacias especializadas, casas-abrigo)",
+        "conselho tutelar",
+        "primeira infancia",
+        "habitacao e favelas",
+        "transporte coletivo",
+        "cultura",
+        "esporte",
+        "seguranca alimentar (modulo 2024)",
+        "saneamento (modulo 2023)"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "API SIDRA (186 tabelas N6=5.570) + FTP com bases XLSX/ODS",
+      "endpoints": [
+        "/api/v3/agregados/10026/periodos/2023/variaveis?localidades=N6[...]",
+        "FTP /Perfil_Municipios/2023/Base_de_Dados/Base_MUNIC_2023.xlsx",
+        "FTP /Perfil_Municipios/Saneamento_2023/",
+        "FTP /Perfil_Municipios/Seguranca_Alimentar_2024/Base_de_dados_Seguranca_Alimentar_MUNIC.xlsx"
+      ],
+      "dataset_names": [
+        "10026 delegacias especializadas",
+        "10028 guarda municipal",
+        "10021 casas-abrigo",
+        "10037 conselho tutelar",
+        "6478 equipamentos culturais",
+        "8443-8446 transporte coletivo",
+        "8440 favelas"
+      ],
+      "geographic_granularity": "municipio (5.570 localidades em 10037/10028/10026/10021/8440/8443)",
+      "temporal_granularity": "edicao (2001..2024 por modulo)",
+      "historical_range_verified": "edicoes 2001, 2002, 2004..2021, 2023, 2024 listadas; valores lidos em 2023",
+      "update_frequency": "anual/bienal por modulo",
+      "identifiers": [
+        "codigo IBGE 7 digitos"
+      ],
+      "sample_record_count": 186,
+      "coverage_metrics": {
+        "tabelas_N6": 186,
+        "6478_localidades": 5518,
+        "amostra_2023": {
+          "delegacia_especializada": {
+            "Vitoria": 1,
+            "Alto Rio Novo": 1,
+            "Sao Paulo": 1,
+            "Belem": 1
+          },
+          "guarda_municipal": {
+            "Vitoria": 1,
+            "Alto Rio Novo": 0,
+            "Sao Paulo": 1,
+            "Belem": 1
+          },
+          "conselho_tutelar": {
+            "Vitoria": 1,
+            "Alto Rio Novo": 1,
+            "Sao Paulo": 1,
+            "Belem": 1
+          }
+        }
+      },
+      "incremental_strategy": "nova edicao anual/bienal",
+      "limitations": [
+        "indica EXISTENCIA e caracteristicas gerais do servico declaradas pela prefeitura; nao mede capacidade, efetivo nem qualidade",
+        "quando a variavel e \"sim/nao\" sem contagem, a classe \"-\" significa nao ha",
+        "valores \"1\" da amostra indicam existencia (contagem de municipios=1 na localidade)"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": null,
+      "p1_novelty": "Resolve a lacuna \"estrutura de seguranca e protecao\" da P0 em escala nacional: existencia de guarda municipal, delegacias especializadas, casas-abrigo, conselho tutelar, plano diretor e transporte em todos os municipios.",
+      "test_ids": [
+        "T06"
+      ]
+    },
+    {
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "provider": "MJSP - Sinesp VDE",
+      "source_name": "Sinesp VDE - arquivos anuais 2015-2026 (revisao da P0)",
+      "official_url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/dnsp-base-de-dados/bancovde-{ANO}.xlsx",
+      "documentation_url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/sinesp-1",
+      "domains": [
+        "criminalidade",
+        "vitimizacao",
+        "mortes violentas",
+        "atividade policial (mandados)",
+        "bombeiros"
+      ],
+      "government_levels": [
+        "municipio (11 eventos)",
+        "UF (20 eventos)"
+      ],
+      "access_type": "XLSX anual; HEAD 403, GET/Range 206 com User-Agent de navegador",
+      "endpoints": [
+        "bancovde-2015.xlsx ... bancovde-2026.xlsx"
+      ],
+      "dataset_names": [
+        "aba unica por ano; 14 colunas"
+      ],
+      "geographic_granularity": "ver evento: municipio ou UF",
+      "temporal_granularity": "mensal",
+      "historical_range_verified": "2015-01..2026-08 (todos os 12 arquivos respondem 206; 2015 e 2026 lidos)",
+      "update_frequency": "mensal (arquivo do ano corrente cresce)",
+      "identifiers": [
+        "uf",
+        "municipio (NOME)",
+        "evento",
+        "data_referencia"
+      ],
+      "sample_record_count": 554586,
+      "coverage_metrics": {
+        "eventos_distintos": 31,
+        "linhas_2026": 554586,
+        "linhas_2015": 820160,
+        "periodo_2026": "2026-01..2026-08",
+        "eventos_com_granularidade_municipal_2026": {
+          "Mandado de prisao cumprido": 4471,
+          "Morte no transito ou em decorrencia dele (exceto homicidio doloso)": 3224,
+          "Tentativa de homicidio": 3217,
+          "Homicidio doloso": 2938,
+          "Suicidio": 2798,
+          "Mortes a esclarecer (sem indicio de crime)": 1804,
+          "Mortes no transito (PF/PRF)": 1253,
+          "Tentativa de feminicidio": 1231,
+          "Feminicidio": 636,
+          "Roubo seguido de morte (latrocinio)": 253,
+          "Lesao corporal seguida de morte": 233
+        },
+        "eventos_apenas_UF_2026": [
+          "Estupro",
+          "Estupro de vulneravel",
+          "Furto de veiculo",
+          "Roubo de veiculo",
+          "Roubo de carga",
+          "Roubo a instituicao financeira",
+          "Trafico de drogas",
+          "Arma de fogo apreendida",
+          "Pessoa desaparecida",
+          "Pessoa localizada",
+          "Morte por intervencao de agente do Estado",
+          "Atendimento pre-hospitalar",
+          "Busca e salvamento",
+          "Combate a incendios",
+          "Emissao de alvaras",
+          "Realizacao de vistorias",
+          "Morte de agente do Estado",
+          "Suicidio de agente do Estado"
+        ],
+        "eventos_sempre_zero": [
+          "Apreensao de Cocaina",
+          "Apreensao de Maconha"
+        ]
+      },
+      "incremental_strategy": "rebaixar o arquivo do ano corrente a cada atualizacao e comparar por (uf, municipio, evento, mes)",
+      "limitations": [
+        "CORRIGE A P0: a P0 descreveu o VDE como \"por municipio\"; so 11 dos 31 eventos tem granularidade municipal (os demais trazem 27 linhas por mes = UF)",
+        "sem codigo IBGE: ligacao ao municipio e por NOME (PROBABLE; 5.597 pares uf+nome > 5.571 municipios)",
+        "nao ha crimes cibernéticos, ambientais, violencia domestica/sexual por municipio, violencia contra crianca/idoso/racial nem efetivo policial",
+        "estupro e demais eventos so UF: nao inferir ranking municipal",
+        "apreensoes de cocaina/maconha sao 100% zero: nao reportadas, nao inexistentes",
+        "metodologias estaduais diferem; contagem e de vitimas (total_vitima) ou ocorrencias (total) conforme evento"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F7_SEGURANCA",
+      "p0_reference": "sinesp_vde",
+      "p1_novelty": "Serie de 2015 a 2026 (a P0 so tinha 2024-2025) e mapa preciso de quais eventos tem granularidade municipal.",
+      "test_ids": [
+        "T07"
+      ]
+    },
+    {
+      "source_id": "p1_prf_datatran",
+      "provider": "PRF",
+      "source_name": "Dados abertos da PRF - acidentes em rodovias federais (datatran)",
+      "official_url": "https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf",
+      "documentation_url": "idem (pagina lista os arquivos)",
+      "domains": [
+        "acidentes de transito",
+        "mortes no transito",
+        "seguranca viaria"
+      ],
+      "government_levels": [
+        "trecho de rodovia federal",
+        "municipio (nome)"
+      ],
+      "access_type": "ZIP de CSV hospedado no Google Drive (82 links na pagina); download direto via drive.google.com/uc?export=download&id=...",
+      "endpoints": [
+        "https://drive.google.com/uc?export=download&id=1-G3MdmHBt6CprDwcW99xxC4BZ2DU5ryR (datatran2025.csv dentro do ZIP)"
+      ],
+      "dataset_names": [
+        "datatran{ANO}.csv (acidentes por ocorrencia)",
+        "acidentes por pessoa",
+        "acidentes por ocorrencia agrupada"
+      ],
+      "geographic_granularity": "ponto (latitude/longitude, BR, km) e municipio por NOME",
+      "temporal_granularity": "ocorrencia (data_inversa, horario)",
+      "historical_range_verified": "2025 lido; a pagina lista 82 arquivos Drive (varios anos e tipos)",
+      "update_frequency": "anual/continuo (nao verificado)",
+      "identifiers": [
+        "id (ocorrencia)",
+        "uf",
+        "br",
+        "km",
+        "municipio (nome)"
+      ],
+      "sample_record_count": 708,
+      "coverage_metrics": {
+        "colunas": 30,
+        "linhas_lidas_no_trecho": 708
+      },
+      "incremental_strategy": "arquivo anual completo; sem filtro de API",
+      "limitations": [
+        "somente rodovias federais (nao cobre vias estaduais/municipais)",
+        "municipio por NOME sem codigo IBGE",
+        "dependencia de links do Google Drive (cota/mudanca de id)",
+        "nao misturar com SIM (obitos) nem com VDE \"mortes no transito\": definicoes diferentes"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F7_SEGURANCA",
+      "p0_reference": null,
+      "p1_novelty": "Seguranca viaria georreferenciada (lat/lon, km, causa, tipo de pista, condicao climatica, mortos/feridos) - dimensao ausente na P0.",
+      "test_ids": [
+        "T08"
+      ]
+    },
+    {
+      "source_id": "p1_senappen_sisdepen",
+      "provider": "SENAPPEN",
+      "source_name": "SISDEPEN - bases de dados semestrais do sistema prisional",
+      "official_url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen/bases-de-dados",
+      "documentation_url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen/relatorios",
+      "domains": [
+        "sistema prisional",
+        "capacidade e ocupacao",
+        "presos provisorios",
+        "trabalho e educacao nas unidades"
+      ],
+      "government_levels": [
+        "estabelecimento penal",
+        "municipio",
+        "UF"
+      ],
+      "access_type": "CSV/XLSX por ciclo semestral (20 CSV listados 2016-2025); GET aberto",
+      "endpoints": [
+        "/senappen/pt-br/servicos/sisdepen/bases-de-dados/2025/19o-ciclo-base-de-dados-2025-2-semestre.csv/@@download/file"
+      ],
+      "dataset_names": [
+        "base de dados do 19o ciclo (2025-2S)"
+      ],
+      "geographic_granularity": "estabelecimento (nome, endereco, CEP, UF, municipio por nome)",
+      "temporal_granularity": "semestral",
+      "historical_range_verified": "2016..2025-2S (20 arquivos CSV)",
+      "update_frequency": "semestral",
+      "identifiers": [
+        "nome do estabelecimento",
+        "UF",
+        "municipio (nome)",
+        "CEP"
+      ],
+      "sample_record_count": 1532,
+      "coverage_metrics": {
+        "unidades_19o_ciclo": 1532,
+        "colunas": 1737,
+        "tamanho_bytes": 9323129
+      },
+      "incremental_strategy": "novo arquivo por ciclo",
+      "limitations": [
+        "sem identificador estavel de unidade nem codigo IBGE no cabecalho lido: ligacao por nome/CEP (PROBABLE)",
+        "colunas mudam entre ciclos (1.737 no 19o)",
+        "encoding latin1 com cabecalhos longos",
+        "dados declarados pelas unidades"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F7_SEGURANCA",
+      "p0_reference": null,
+      "p1_novelty": "Resolve o item \"sistema penitenciario\" que a P0 so mencionou.",
+      "test_ids": [
+        "T09"
+      ]
+    },
+    {
+      "source_id": "p1_senatran_frota",
+      "provider": "SENATRAN/MT",
+      "source_name": "Frota de veiculos por UF e municipio (mensal)",
+      "official_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2026",
+      "documentation_url": "idem",
+      "domains": [
+        "mobilidade",
+        "motorizacao",
+        "seguranca viaria"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "XLSX mensal; HEAD 403, GET com Range 206 (UA de navegador)",
+      "endpoints": [
+        "/conteudo-Senatran/G_Frota_por_UF_Municipio_TIPO_ESPECIE_EIXOS_Abril_2026.xlsx",
+        "/conteudo-Senatran/H_Frota_por_UF_Municipio_RESTRICAO_Abril_2026.xlsx"
+      ],
+      "dataset_names": [
+        "G (tipo/especie/eixos)",
+        "H (restricao)",
+        "A (UF/municipio/CEP)"
+      ],
+      "geographic_granularity": "municipio por NOME (maiusculas sem acento)",
+      "temporal_granularity": "mensal",
+      "historical_range_verified": "2024..2026-04",
+      "update_frequency": "mensal",
+      "identifiers": [
+        "UF",
+        "Municipio (nome)"
+      ],
+      "sample_record_count": 275557,
+      "coverage_metrics": {
+        "linhas_G_abril_2026": 275557,
+        "tamanho_bytes": 7915972
+      },
+      "incremental_strategy": "arquivo mensal completo",
+      "limitations": [
+        "sem codigo IBGE (PROBABLE por nome)",
+        "frota registrada, nao veiculos em circulacao",
+        "URLs com prefixos \"copy_of_\" em alguns meses"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F13_INFRA_SETORIAL",
+      "p0_reference": null,
+      "p1_novelty": "Motorizacao por municipio (tipo/especie).",
+      "test_ids": [
+        "T10"
+      ]
+    },
+    {
+      "source_id": "p1_pdet_caged_rais",
+      "provider": "MTE (PDET)",
+      "source_name": "Novo CAGED e RAIS - microdados nao identificados",
+      "official_url": "ftp://ftp.mtps.gov.br/pdet/microdados/",
+      "documentation_url": "Layout Nao-identificado Novo Caged Movimentacao.xlsx (no FTP)",
+      "domains": [
+        "emprego formal",
+        "admissoes e desligamentos",
+        "salarios",
+        "setores",
+        "ocupacao"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "FTP anonimo (curl --list-only ftp://...); arquivos 7z",
+      "endpoints": [
+        "ftp://ftp.mtps.gov.br/pdet/microdados/NOVO%20CAGED/2026/202608/CAGEDMOV202608.7z",
+        "ftp://ftp.mtps.gov.br/pdet/microdados/RAIS/2024/"
+      ],
+      "dataset_names": [
+        "CAGEDMOV",
+        "CAGEDFOR",
+        "CAGEDEXC",
+        "RAIS vinculos"
+      ],
+      "geographic_granularity": "municipio (codigo IBGE de 6 digitos no microdado)",
+      "temporal_granularity": "mensal (CAGED), anual (RAIS)",
+      "historical_range_verified": "CAGED 2020..202608; RAIS 1985..2024 (+2024 parcial, 2025)",
+      "update_frequency": "mensal / anual",
+      "identifiers": [
+        "municipio (6 digitos)",
+        "subclasse CNAE",
+        "CBO2002"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "CAGEDMOV_202608_bytes": 50894750,
+        "campos": [
+          "competenciamov",
+          "regiao",
+          "uf",
+          "municipio",
+          "secao",
+          "subclasse",
+          "saldomovimentacao",
+          "categoria",
+          "cbo2002ocupacao",
+          "graudeinstrucao",
+          "idade",
+          "horascontratuais",
+          "racacor",
+          "sexo",
+          "tipoempregador",
+          "tipoestabelecimento",
+          "tipomovimentacao",
+          "tipodeficiencia",
+          "indtrabintermitente",
+          "indtrabparcial",
+          "salario",
+          "tamestabjan"
+        ]
+      },
+      "incremental_strategy": "um arquivo por mes (CAGEDMOV), agregar por municipio/secao; reprocessar fora de prazo (CAGEDFOR)",
+      "limitations": [
+        "microdado: exige agregacao e validacao de sigilo; 7z precisa de extrator",
+        "so emprego formal celetista/estatutario declarado; informalidade nao aparece",
+        "salario declarado na movimentacao nao e renda domiciliar",
+        "FTP pode ser bloqueado em redes corporativas"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F11_TRABALHO_RENDA_FINANCAS",
+      "p0_reference": null,
+      "p1_novelty": "Emprego formal mensal por municipio (saldo, salario de admissao, setor, sexo, instrucao).",
+      "test_ids": [
+        "T11"
+      ]
+    },
+    {
+      "source_id": "p1_snis_planilhas",
+      "provider": "MCid - SNIS",
+      "source_name": "SNIS: diagnosticos em planilhas (agua e esgoto 2022, residuos 2022, aguas pluviais 2022) e Serie Historica web",
+      "official_url": "https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/snis/produtos-do-snis/diagnosticos-snis",
+      "documentation_url": "idem",
+      "domains": [
+        "agua",
+        "esgoto",
+        "residuos solidos",
+        "drenagem"
+      ],
+      "government_levels": [
+        "prestador",
+        "municipio (por prestador)"
+      ],
+      "access_type": "ZIP aninhado de .xls (BIFF); HEAD 403 e GET com Range 206 (UA de navegador); Serie Historica (Yii) sem API comprovada; SINISA exige login (302 /entrar)",
+      "endpoints": [
+        "/snis/produtos-do-snis/diagnosticos/diagnostico_tematico_visao_geral_ae_snis_2023_atualizado2.zip (9,2 MB)",
+        "/diagnosticos/Planilha_RS_2022_atualizado_29112024.zip (10,8 MB)",
+        "/diagnosticos/Planilhas_AP2022.zip (4,1 MB)"
+      ],
+      "dataset_names": [
+        "Planilha_LPU_Indicadores.xls",
+        "Planilha_LPU_Informacoes.xls",
+        "Resumo_Estado",
+        "Resumo_Abrangencia"
+      ],
+      "geographic_granularity": "prestador com coluna Municipio (nome); codigo IBGE nao verificado",
+      "temporal_granularity": "anual (ano-base 2022)",
+      "historical_range_verified": "ano-base 2022 (arquivos de 2022); anos anteriores na Serie Historica web (nao automatizada)",
+      "update_frequency": "anual",
+      "identifiers": [
+        "Municipio (nome)",
+        "prestador"
+      ],
+      "sample_record_count": 1873,
+      "coverage_metrics": {
+        "linhas_planilha_indicadores_LPU": 1873,
+        "colunas": 94,
+        "formato": "xls BIFF (requer xlrd/LibreOffice)"
+      },
+      "incremental_strategy": "um pacote por ano-base",
+      "limitations": [
+        "planilhas por prestador (um municipio pode ter varios; um prestador varios municipios)",
+        "nao e API; formato xls legado",
+        "SINISA (sucessor) exige autenticacao: nao automatizavel",
+        "defasagem de pelo menos um ano"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F8_SANEAMENTO",
+      "p0_reference": "snis_sinisa",
+      "p1_novelty": "P0 tinha so DOCUMENTED_ONLY. Agora: pacote de 2022 acessivel e lido (1.873 linhas x 94 colunas); caminho de extracao documentado; SINISA bloqueado por login.",
+      "test_ids": [
+        "T12"
+      ]
+    },
+    {
+      "source_id": "p1_anatel_pda",
+      "provider": "Anatel",
+      "source_name": "Paineis de Dados - acessos de banda larga fixa e telefonia movel",
+      "official_url": "https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip",
+      "documentation_url": "https://informacoes.anatel.gov.br/paineis/acessos",
+      "domains": [
+        "inclusao digital",
+        "conectividade"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "ZIP de CSV aberto (206 com Range)",
+      "endpoints": [
+        "/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip (1,05 GB)",
+        "/dadosabertos/paineis_de_dados/acessos/acessos_telefonia_movel.zip (3,2 GB)"
+      ],
+      "dataset_names": [
+        "Acessos_Banda_Larga_Fixa_{periodo}.csv"
+      ],
+      "geographic_granularity": "municipio (Codigo IBGE Municipio)",
+      "temporal_granularity": "mensal",
+      "historical_range_verified": "2007..(Last-Modified 2026-10-08); primeiro membro 2007-2010",
+      "update_frequency": "mensal",
+      "identifiers": [
+        "Codigo IBGE Municipio",
+        "CNPJ da empresa"
+      ],
+      "sample_record_count": 19413,
+      "coverage_metrics": {
+        "colunas": [
+          "Ano",
+          "Mes",
+          "Grupo Economico",
+          "Empresa",
+          "CNPJ",
+          "Porte da Prestadora",
+          "UF",
+          "Municipio",
+          "Codigo IBGE Municipio",
+          "Faixa de Velocidade",
+          "Tecnologia",
+          "Meio de Acesso",
+          "Acessos"
+        ],
+        "bytes_banda_larga": 1054258839,
+        "bytes_movel": 3235814355
+      },
+      "incremental_strategy": "arquivo cumulativo grande: usar Range e reprocessar so o periodo novo (nao ha filtro)",
+      "limitations": [
+        "arquivos de GB: nao baixar para explorar",
+        "acessos (contratos) por prestadora, nao pessoas ou domicilios conectados",
+        "cobertura movel/rede: caminho testado (cobertura_movel.zip) devolveu 404",
+        "conteudo da telefonia movel nao inspecionado"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F13_INFRA_SETORIAL",
+      "p0_reference": null,
+      "p1_novelty": "Conectividade fixa por municipio, velocidade e tecnologia desde 2007.",
+      "test_ids": [
+        "T13"
+      ]
+    },
+    {
+      "source_id": "p1_inpe_queimadas",
+      "provider": "INPE",
+      "source_name": "Programa Queimadas - focos ativos (CSV mensal)",
+      "official_url": "https://dataserver-coids.inpe.br/queimadas/queimadas/focos/csv/mensal/Brasil/",
+      "documentation_url": "https://terrabrasilis.dpi.inpe.br/queimadas/",
+      "domains": [
+        "queimadas",
+        "risco ambiental"
+      ],
+      "government_levels": [
+        "ponto (lat/lon)",
+        "municipio",
+        "bioma"
+      ],
+      "access_type": "HTTP directory + CSV (Range 206)",
+      "endpoints": [
+        "focos_mensal_br_202609.csv (123 MB)"
+      ],
+      "dataset_names": [
+        "focos_mensal_br_{AAAAMM}.csv"
+      ],
+      "geographic_granularity": "ponto com municipio_id e estado_id",
+      "temporal_granularity": "evento (data_hora_gmt); arquivo mensal",
+      "historical_range_verified": "202301..202610 na listagem mensal",
+      "update_frequency": "diaria/mensal",
+      "identifiers": [
+        "id",
+        "municipio_id",
+        "estado_id"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "colunas": [
+          "id",
+          "lat",
+          "lon",
+          "data_hora_gmt",
+          "satelite",
+          "municipio",
+          "estado",
+          "pais",
+          "municipio_id",
+          "estado_id",
+          "pais_id",
+          "numero_dias_sem_chuva",
+          "precipitacao",
+          "risco_fogo",
+          "bioma",
+          "frp"
+        ],
+        "bytes_202609": 123024987
+      },
+      "incremental_strategy": "arquivo diario ou mensal novo; agregar por municipio",
+      "limitations": [
+        "foco de calor detectado por satelite nao e incendio confirmado nem area queimada",
+        "arquivos de ate ~120 MB/mes",
+        "serie mensal listada so desde 2023-01 neste diretorio (anos anteriores em outro diretorio nao verificado)"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F12_AMBIENTE_RISCO",
+      "p0_reference": null,
+      "p1_novelty": "Exposicao a fogo por municipio com risco_fogo, dias sem chuva e bioma.",
+      "test_ids": [
+        "T14"
+      ]
+    },
+    {
+      "source_id": "p1_s2id_atlas_digital",
+      "provider": "MIDR - Defesa Civil / Atlas Digital de Desastres",
+      "source_name": "BD Atlas 1991-2025 consolidado (S2iD)",
+      "official_url": "https://atlasdigital.mdr.gov.br/paginas/downloads.xhtml",
+      "documentation_url": "idem",
+      "domains": [
+        "desastres",
+        "danos humanos e materiais",
+        "estiagem",
+        "inundacoes"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "CSV/XLSX aberto (GET com Range 206)",
+      "endpoints": [
+        "/arquivos/2026/BD_Atlas_1991_2025_v1.1_2026.08.06_Consolidado.csv (86 MB)"
+      ],
+      "dataset_names": [
+        "BD_Atlas_1991_2025 consolidado"
+      ],
+      "geographic_granularity": "municipio (Cod_IBGE_Mun) por registro de desastre",
+      "temporal_granularity": "evento (Data_Evento)",
+      "historical_range_verified": "1991..2025 (nome do arquivo; primeira linha 1991)",
+      "update_frequency": "anual/semestral (versao 2026-08-06)",
+      "identifiers": [
+        "Protocolo_S2iD",
+        "Cod_IBGE_Mun",
+        "Cod_Cobrade"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "tamanho_bytes": 86134318,
+        "colunas_principais": [
+          "Protocolo_S2iD",
+          "Nome_Municipio",
+          "Sigla_UF",
+          "Data_Evento",
+          "Cod_Cobrade",
+          "tipologia",
+          "DH_MORTOS",
+          "DH_DESABRIGADOS",
+          "DH_DESALOJADOS",
+          "DH_AFETADOS_SECA_ESTIAGEM",
+          "DM_Uni Habita Danificadas",
+          "DM_total_danos_materiais"
+        ]
+      },
+      "incremental_strategy": "nova versao consolidada",
+      "limitations": [
+        "so desastres com registro/reconhecimento no S2iD (subnotificacao possivel; nao e exposicao a risco)",
+        "mudancas de criterio entre decadas",
+        "primeira linha lida e uma estiagem de 1991 (fase inicial do cadastro)"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F12_AMBIENTE_RISCO",
+      "p0_reference": null,
+      "p1_novelty": "Danos de desastres por municipio desde 1991 (mortos, desabrigados, danos a unidades habitacionais, escolas, unidades de saude).",
+      "test_ids": [
+        "T15"
+      ]
+    },
+    {
+      "source_id": "p1_aneel_ckan",
+      "provider": "ANEEL",
+      "source_name": "Dados Abertos ANEEL (CKAN): DEC/FEC, CDE, tarifa social, geracao distribuida",
+      "official_url": "https://dadosabertos.aneel.gov.br/",
+      "documentation_url": "https://dadosabertos.aneel.gov.br/api/3/action/help_show?name=package_search",
+      "domains": [
+        "energia",
+        "qualidade do fornecimento",
+        "tarifa social",
+        "subsidios"
+      ],
+      "government_levels": [
+        "distribuidora",
+        "conjunto eletrico",
+        "municipio (a verificar)"
+      ],
+      "access_type": "CKAN aberto (package_search/package_show) com CSV/Parquet/ZIP",
+      "endpoints": [
+        "/api/3/action/package_search?q=tarifa+social",
+        "/api/3/action/package_show?id=indicadores-coletivos-de-continuidade-dec-e-fec"
+      ],
+      "dataset_names": [
+        "indicadores-coletivos-de-continuidade-dec-e-fec (17 recursos, ate 2026-10-05)",
+        "beneficiarios-da-cde (110 recursos)",
+        "tarifa-social-de-energia-eletrica-beneficiarios (4 recursos)",
+        "relacao-de-empreendimentos-de-geracao-distribuida"
+      ],
+      "geographic_granularity": "DEC/FEC: conjunto eletrico (nao municipio); CDE: agente/CNPJ",
+      "temporal_granularity": "DEC/FEC 2000..; CDE mensal desde 2017",
+      "historical_range_verified": "DEC/FEC Parquet 2000-2009 (17,7 MB) e 2010-2019 (50,3 MB) via Range",
+      "update_frequency": "mensal",
+      "identifiers": [
+        "conjunto eletrico",
+        "CNPJ"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "recursos_DEC_FEC": 17
+      },
+      "incremental_strategy": "novo recurso/ano por pacote",
+      "limitations": [
+        "DEC/FEC e por conjunto eletrico: precisa de tabela conjunto->municipio (nao localizada nesta rodada)",
+        "recursos de tarifa social nao responderam ao teste de Range (URL de download nao confirmada)",
+        "beneficiarios CDE mostrou so rede basica (agentes)"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F13_INFRA_SETORIAL",
+      "p0_reference": null,
+      "p1_novelty": "Vulnerabilidade/continuidade energetica (nova dimensao).",
+      "test_ids": [
+        "T16"
+      ]
+    },
+    {
+      "source_id": "p1_tse_comparecimento",
+      "provider": "TSE",
+      "source_name": "Detalhe da votacao por municipio e zona - comparecimento e abstencao",
+      "official_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/detalhe_votacao_munzona/detalhe_votacao_munzona_2024.zip",
+      "documentation_url": "https://dadosabertos.tse.jus.br/",
+      "domains": [
+        "participacao politica"
+      ],
+      "government_levels": [
+        "zona eleitoral",
+        "municipio"
+      ],
+      "access_type": "ZIP/CSV aberto",
+      "endpoints": [
+        "detalhe_votacao_munzona_2024.zip (1,5 MB)"
+      ],
+      "dataset_names": [
+        "detalhe_votacao_munzona_2024_BRASIL.csv"
+      ],
+      "geographic_granularity": "zona eleitoral / municipio (SG_UE, CD_MUNICIPIO = codigo TSE)",
+      "temporal_granularity": "eleicao",
+      "historical_range_verified": "2024 (colunas lidas); 2012 listado na P0",
+      "update_frequency": "por eleicao",
+      "identifiers": [
+        "SG_UE",
+        "CD_MUNICIPIO (TSE)"
+      ],
+      "sample_record_count": 47,
+      "coverage_metrics": {
+        "colunas": 47,
+        "campos_chave": [
+          "QT_APTOS",
+          "QT_COMPARECIMENTO",
+          "QT_ABSTENCOES",
+          "QT_VOTOS_BRANCOS",
+          "QT_TOTAL_VOTOS_NULOS"
+        ]
+      },
+      "incremental_strategy": "arquivo por eleicao",
+      "limitations": [
+        "codigo TSE != IBGE (tabela de equivalencia ja prevista na P0)",
+        "participacao eleitoral nao mede participacao social ampla"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F0_REFERENCE",
+      "p0_reference": "tse_dados_abertos",
+      "p1_novelty": "Comparecimento/abstencao/votos nulos por municipio: indicador de participacao.",
+      "test_ids": [
+        "T17"
+      ]
+    },
+    {
+      "source_id": "p1_demas_saude_estendida",
+      "provider": "Ministerio da Saude - DEMAS",
+      "source_name": "API DEMAS: SISVAN, vacinacao PNI, SIM, SINASC, SISAGUA (revisao da P0)",
+      "official_url": "https://apidadosabertos.saude.gov.br/v1/",
+      "documentation_url": "https://apidadosabertos.saude.gov.br/static/swagger.json",
+      "domains": [
+        "estado nutricional",
+        "imunizacao",
+        "mortalidade",
+        "nascimentos",
+        "qualidade da agua"
+      ],
+      "government_levels": [
+        "registro individual (anonimizado)",
+        "estabelecimento",
+        "municipio"
+      ],
+      "access_type": "REST aberto, limit/offset",
+      "endpoints": [
+        "/sisvan/estado-nutricional",
+        "/vacinacao/doses-aplicadas-pni-2025",
+        "/vigilancia-e-meio-ambiente/sistema-de-informacao-sobre-mortalidade",
+        "/vigilancia-e-meio-ambiente/sistema-de-informacao-sobre-nascidos-vivos",
+        "/sisagua/*"
+      ],
+      "dataset_names": [
+        "sisvan/estado-nutricional",
+        "vacinacao/doses-aplicadas-pni-2020..2026"
+      ],
+      "geographic_granularity": "registro individual com codigo_municipio (6 digitos)",
+      "temporal_granularity": "data/competencia do atendimento",
+      "historical_range_verified": "SISVAN: registro de 2011-09 visto; PNI 2020..2026 listados",
+      "update_frequency": "variavel",
+      "identifiers": [
+        "codigo_municipio (6)",
+        "codigo_cnes"
+      ],
+      "sample_record_count": 2,
+      "coverage_metrics": {
+        "sisvan_campos": [
+          "codigo_municipio",
+          "idade",
+          "fase_vida",
+          "sexo",
+          "raca_cor",
+          "escolaridade",
+          "data_acompanhamento",
+          "ano_mes_competencia",
+          "peso",
+          "altura",
+          "imc"
+        ]
+      },
+      "incremental_strategy": "paginacao por offset; limite de 20 por pagina observado na P0 (CNES)",
+      "limitations": [
+        "SISVAN so cobre pessoas acompanhadas pelo SUS/APS: nao representa a populacao (vies de cobertura)",
+        "registros individuais (anonimizados) em volume gigantesco: agregar na origem nao e possivel (sem filtro de municipio nos recursos SISVAN/SIM testados)",
+        "SINASC devolveu lista vazia na P0 e continua sem dados; S3 do OpenDataSUS (DO24OPEN.csv) devolve 403"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F5_SAUDE",
+      "p0_reference": "demas_dados_abertos_saude",
+      "p1_novelty": "Dimensoes nutricional e vacinal existem em nivel individual; nao ha agregado municipal pronto.",
+      "test_ids": [
+        "T18"
+      ]
+    },
+    {
+      "source_id": "p1_fjp_deficit_habitacional",
+      "provider": "Fundacao Joao Pinheiro",
+      "source_name": "Deficit habitacional e inadequacao de domicilios 2016-2019",
+      "official_url": "https://fjp.mg.gov.br/deficit-habitacional-no-brasil/",
+      "documentation_url": "idem",
+      "domains": [
+        "habitacao"
+      ],
+      "government_levels": [
+        "Brasil",
+        "regiao",
+        "UF",
+        "RM"
+      ],
+      "access_type": "XLSX publico (wp-content)",
+      "endpoints": [
+        "/wp-content/uploads/2020/12/04.03_Dados-Deficit-Habitacional-2016-2019.xlsx"
+      ],
+      "dataset_names": [
+        "abas: Deficit, Rusticos, Improvisados, Comodos, Familias_Conviventes, Onus, Total de domicilios"
+      ],
+      "geographic_granularity": "regiao/UF (coluna Regiao)",
+      "temporal_granularity": "anual 2016-2019",
+      "historical_range_verified": "2016..2019",
+      "update_frequency": "irregular",
+      "identifiers": [
+        "Regiao"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "abas": 8
+      },
+      "incremental_strategy": "arquivo por edicao",
+      "limitations": [
+        "NAO e municipal: baseado em PNAD (amostra)",
+        "municipal so a partir de edicoes censitarias (2010) - nao verificado nesta rodada",
+        "deficit (rustico, improvisado, coabitacao, onus) difere de inadequacao: nao somar"
+      ],
+      "evidence_status": "VERIFIED_DATASET",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": null,
+      "p1_novelty": "Define o limite: deficit habitacional municipal atual nao existe em dado aberto verificado.",
+      "test_ids": [
+        "T19"
+      ]
+    },
+    {
+      "source_id": "p1_atlasbrasil_site",
+      "provider": "PNUD / Ipea / FJP",
+      "source_name": "Atlas do Desenvolvimento Humano no Brasil (site)",
+      "official_url": "https://www.atlasbrasil.org.br/",
+      "documentation_url": "https://www.atlasbrasil.org.br/acervo/biblioteca",
+      "domains": [
+        "IDHM"
+      ],
+      "government_levels": [
+        "municipio",
+        "UF"
+      ],
+      "access_type": "site (sem API: /api devolve 404); series completas via Ipeadata (p1_ipeadata_odata)",
+      "endpoints": [],
+      "dataset_names": null,
+      "geographic_granularity": "municipio (censo) e UF (series anuais a partir da PNAD)",
+      "temporal_granularity": "decenal (municipio); anual (UF)",
+      "historical_range_verified": "municipio: 1991/2000/2010 (Ipeadata); site expoe seletor de anos ate 2024 para UF",
+      "update_frequency": "decenal",
+      "identifiers": [],
+      "sample_record_count": null,
+      "coverage_metrics": null,
+      "incremental_strategy": null,
+      "limitations": [
+        "IDHM municipal NAO e anual",
+        "indices anuais por UF nao devem ser misturados com os municipais censitarios"
+      ],
+      "evidence_status": "DOCUMENTED_ONLY",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F9_INDICADORES_TABULARES",
+      "p0_reference": null,
+      "p1_novelty": "Esclarece a validade temporal do IDHM.",
+      "test_ids": [
+        "T20"
+      ]
+    },
+    {
+      "source_id": "p1_terrabrasilis_wfs",
+      "provider": "INPE",
+      "source_name": "TerraBrasilis - GeoServer WFS (PRODES/DETER)",
+      "official_url": "https://terrabrasilis.dpi.inpe.br/geoserver/ows",
+      "documentation_url": "https://terrabrasilis.dpi.inpe.br/",
+      "domains": [
+        "desmatamento"
+      ],
+      "government_levels": [
+        "bioma",
+        "feicao geografica"
+      ],
+      "access_type": "WFS 2.0 aberto (GetCapabilities 200)",
+      "endpoints": [
+        "?service=WFS&request=GetCapabilities"
+      ],
+      "dataset_names": [
+        "prodes-amazon-nb:accumulated_deforestation_2007_biome",
+        "prodes-legal-amz:*",
+        "prodes-cerrado-nb:*"
+      ],
+      "geographic_granularity": "poligonos por bioma; camada municipal nao identificada",
+      "temporal_granularity": "anual (PRODES)",
+      "historical_range_verified": "camadas acumuladas 2000/2007",
+      "update_frequency": "anual",
+      "identifiers": [],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "capabilities_bytes": 172297
+      },
+      "incremental_strategy": null,
+      "limitations": [
+        "agregacao por municipio exige interseccao espacial propria (nao ha tabela municipal pronta verificada)"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F12_AMBIENTE_RISCO",
+      "p0_reference": null,
+      "p1_novelty": "Existe interface padrao (WFS) para desmatamento; camada municipal NOT_EVALUATED.",
+      "test_ids": [
+        "T21"
+      ]
+    },
+    {
+      "source_id": "p1_inmet_api",
+      "provider": "INMET",
+      "source_name": "API de estacoes meteorologicas",
+      "official_url": "https://apitempo.inmet.gov.br/estacoes/T",
+      "documentation_url": "https://portal.inmet.gov.br/",
+      "domains": [
+        "clima"
+      ],
+      "government_levels": [
+        "estacao"
+      ],
+      "access_type": "REST aberto",
+      "endpoints": [
+        "/estacoes/T (262 KB)"
+      ],
+      "dataset_names": [
+        "estacoes automaticas"
+      ],
+      "geographic_granularity": "estacao (lat/lon, CD_DISTRITO, SG_ESTADO)",
+      "temporal_granularity": "dados horarios/diarios (nao testados)",
+      "historical_range_verified": null,
+      "update_frequency": null,
+      "identifiers": [
+        "CD_ESTACAO"
+      ],
+      "sample_record_count": null,
+      "coverage_metrics": {
+        "resposta_bytes": 262134
+      },
+      "incremental_strategy": null,
+      "limitations": [
+        "lista de estacoes testada; series de temperatura/chuva NAO_EVALUATED",
+        "cobertura por municipio depende de tabela estacao->municipio"
+      ],
+      "evidence_status": "VERIFIED_API",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": "F12_AMBIENTE_RISCO",
+      "p0_reference": null,
+      "p1_novelty": "Possibilidade de exposicao a calor/chuva.",
+      "test_ids": [
+        "T22"
+      ]
+    },
+    {
+      "source_id": "p1_registro_civil_portal",
+      "provider": "ARPEN-Brasil",
+      "source_name": "Portal da Transparencia do Registro Civil",
+      "official_url": "https://transparencia.registrocivil.org.br/",
+      "documentation_url": null,
+      "domains": [
+        "registro civil"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "site; caminho /api/... devolve HTML (sem API comprovada)",
+      "endpoints": [],
+      "dataset_names": null,
+      "geographic_granularity": null,
+      "temporal_granularity": null,
+      "historical_range_verified": null,
+      "update_frequency": null,
+      "identifiers": [],
+      "sample_record_count": null,
+      "coverage_metrics": null,
+      "incremental_strategy": null,
+      "limitations": [
+        "alternativa oficial verificada: SIDRA 2609 (nascidos vivos registrados por municipio 2003-2024)"
+      ],
+      "evidence_status": "BLOCKED",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": null,
+      "p0_reference": null,
+      "p1_novelty": "Sub-registro de nascimento permanece sem fonte municipal verificada.",
+      "test_ids": [
+        "T23"
+      ]
+    },
+    {
+      "source_id": "p1_vis_data3",
+      "provider": "MDS",
+      "source_name": "VIS DATA 3 (painel)",
+      "official_url": "https://aplicacoes.cidadania.gov.br/vis/data3/data-explorer.php",
+      "documentation_url": null,
+      "domains": [
+        "CadUnico",
+        "pobreza",
+        "populacao em situacao de rua (a verificar)"
+      ],
+      "government_levels": [
+        "municipal"
+      ],
+      "access_type": "aplicacao web (HTML); API nao localizada",
+      "endpoints": [],
+      "dataset_names": null,
+      "geographic_granularity": null,
+      "temporal_granularity": null,
+      "historical_range_verified": null,
+      "update_frequency": null,
+      "identifiers": [],
+      "sample_record_count": null,
+      "coverage_metrics": null,
+      "incremental_strategy": null,
+      "limitations": [
+        "populacao em situacao de rua: nenhum campo no MI Social (busca por \"rua\" em 152 campos ativos nao encontrou)"
+      ],
+      "evidence_status": "BLOCKED",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": null,
+      "p0_reference": null,
+      "p1_novelty": "Registro negativo explicito sobre populacao em situacao de rua.",
+      "test_ids": [
+        "T24"
+      ]
+    },
+    {
+      "source_id": "p1_blocked_misc",
+      "provider": "varios",
+      "source_name": "Fontes tentadas sem acesso estruturado nesta rodada (ANA, ANCINE, IBRAM, BCB Estban, MDHC Disque 100, INEP indicadores, SNBP, CEMADEN, CNEFE)",
+      "official_url": null,
+      "documentation_url": null,
+      "domains": [
+        "recursos hidricos",
+        "cultura",
+        "bancos",
+        "direitos humanos",
+        "educacao",
+        "enderecos"
+      ],
+      "government_levels": [],
+      "access_type": null,
+      "endpoints": [
+        "https://www.snirh.gov.br/hidroweb/rest/api/... (401 token)",
+        "https://dadosabertos.ana.gov.br/api/3/action/package_search (404)",
+        "https://dados.ancine.gov.br/... (404/403)",
+        "https://cadastronacionaldemuseus.museus.gov.br/ (sem conexao)",
+        "https://olinda.bcb.gov.br/olinda/servico (403)",
+        "https://www.gov.br/mdh/pt-br/ouvidoria/dados-abertos (404)",
+        "download.inep.gov.br/.../indicadores_educacionais/2024/... (404)"
+      ],
+      "dataset_names": null,
+      "geographic_granularity": null,
+      "temporal_granularity": null,
+      "historical_range_verified": null,
+      "update_frequency": null,
+      "identifiers": [],
+      "sample_record_count": null,
+      "coverage_metrics": null,
+      "incremental_strategy": null,
+      "limitations": [
+        "cada falha foi tecnica (token, 403/404, rede) e nao prova indisponibilidade"
+      ],
+      "evidence_status": "BLOCKED",
+      "tested_at": "2026-10-10",
+      "recommended_collector_family": null,
+      "p0_reference": null,
+      "p1_novelty": "Registro das tentativas e proximos experimentos.",
+      "test_ids": [
+        "T25"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "T01",
+      "source_id": "p1_mds_misocial",
+      "tested_at": "2026-10-10",
+      "request": "GET http://aplicacoes.mds.gov.br/sagi/servicos/misocial?q=*:*&wt=json&rows=1",
+      "http_status": 200,
+      "result": "numFound=1604448; 196 campos no documento; facet anomes_s = 288 meses (200301..202612), 5.571 docs/mes; q=codigo_ibge:320530&fq=anomes_s:202609 -> CRAS 12 / CREAS 3 / Centro POP 2 / PBF 19.085 familias / R$ 12.829.147"
+    },
+    {
+      "test_id": "T02",
+      "source_id": "p1_ipeadata_odata",
+      "tested_at": "2026-10-10",
+      "request": "GET http://www.ipeadata.gov.br/api/odata4/Metadados (7,36 MB, 3.606 series) e ValoresSerie(SERCODIGO=...)",
+      "http_status": 200,
+      "result": "ADH_IDHM 16.776 linhas (5.564 municipios x 1991/2000/2010 + Brasil); AVIOL12_HOMIC 445.240 linhas, 204.928 municipais (1980-2022); Vitoria homicidios 2020/2021/2022 = 87/77/90"
+    },
+    {
+      "test_id": "T03",
+      "source_id": "p1_bcb_pix_olinda",
+      "tested_at": "2026-10-10",
+      "request": "GET .../TransacoesPixPorMunicipio(DataBase=@DataBase)?@DataBase='202011'&$filter=Municipio_Ibge eq 3205309",
+      "http_status": 200,
+      "result": "DataBase=202011 -> 72 linhas; 202108 -> 63; 202508 -> 15; 202608 -> 3 (parametro e mes inicial)"
+    },
+    {
+      "test_id": "T04",
+      "source_id": "p1_ibge_sidra_agregados",
+      "tested_at": "2026-10-10",
+      "request": "GET /v3/agregados?nivel=N6 e /agregados/{id}/periodos/{p}/variaveis?localidades=N6[...]",
+      "http_status": 200,
+      "result": "4.448 tabelas N6; 10289 Vitoria media R$ 5.242,06 / mediana R$ 2.500; PNAD N6 = 27 capitais (\"...\" para Vitoria); IPCA N6 = 6 municipios"
+    },
+    {
+      "test_id": "T05",
+      "source_id": "p1_ibge_ftp_censo2022_subnacional",
+      "tested_at": "2026-10-10",
+      "request": "GET listagens ftp.ibge.gov.br/Censos/Censo_Demografico_2022/... e geoftp.ibge.gov.br/recortes_para_fins_estatisticos/...",
+      "http_status": 200,
+      "result": "diretorios por municipio/bairro/distrito/setor; renda do responsavel; entorno; favelas; grade 1/5/10 km; faces de logradouro"
+    },
+    {
+      "test_id": "T06",
+      "source_id": "p1_ibge_munic",
+      "tested_at": "2026-10-10",
+      "request": "GET /v3/agregados/{10026,10028,10021,10037,8440,8443}/localidades/N6 e variaveis",
+      "http_status": 200,
+      "result": "N6=5.570 (6478: 5.518); valores 2023 para os 4 recortes"
+    },
+    {
+      "test_id": "T07",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "tested_at": "2026-10-10",
+      "request": "GET Range bancovde-{2015..2026}.xlsx (UA de navegador); leitura integral de 2026 e 2015",
+      "http_status": 206,
+      "result": "12 arquivos; 31 eventos; 11 eventos municipais e 18-20 so UF; 554.586 linhas em 2026 (jan-ago)"
+    },
+    {
+      "test_id": "T08",
+      "source_id": "p1_prf_datatran",
+      "tested_at": "2026-10-10",
+      "request": "GET Drive uc?export=download&id=1-G3Mdm... Range 0-300000 + inflate parcial do ZIP",
+      "http_status": 206,
+      "result": "datatran2025.csv; 30 colunas incl. lat/lon, br, km, causa_acidente, mortos"
+    },
+    {
+      "test_id": "T09",
+      "source_id": "p1_senappen_sisdepen",
+      "tested_at": "2026-10-10",
+      "request": "GET .../bases-de-dados/2025/19o-ciclo-base-de-dados-2025-2-semestre.csv/@@download/file",
+      "http_status": 200,
+      "result": "9.323.129 bytes; 1.532 estabelecimentos; 1.737 colunas"
+    },
+    {
+      "test_id": "T10",
+      "source_id": "p1_senatran_frota",
+      "tested_at": "2026-10-10",
+      "request": "GET Range G_Frota_por_UF_Municipio_TIPO_ESPECIE_EIXOS_Abril_2026.xlsx (HEAD=403)",
+      "http_status": 206,
+      "result": "7.915.972 bytes; 275.557 linhas; colunas UF, Municipio, Tipo Veiculo, Especie, Eixos, Qtd."
+    },
+    {
+      "test_id": "T11",
+      "source_id": "p1_pdet_caged_rais",
+      "tested_at": "2026-10-10",
+      "request": "curl --list-only ftp://ftp.mtps.gov.br/pdet/microdados/NOVO%20CAGED/ e .../RAIS/ ; HEAD CAGEDMOV202608.7z; download do layout xlsx",
+      "http_status": 226,
+      "result": "CAGED 2020..2026 (202608 modificado 2026-09-29, 50,9 MB); RAIS 1985..2024; layout com 23 campos"
+    },
+    {
+      "test_id": "T12",
+      "source_id": "p1_snis_planilhas",
+      "tested_at": "2026-10-10",
+      "request": "GET Range e download de diagnostico_tematico_visao_geral_ae_snis_2023_atualizado2.zip; xlrd na planilha LPU",
+      "http_status": 206,
+      "result": "ZIP 9.225.312 B com 8 planilhas; LPU_Indicadores.xls 1.873 linhas x 94 colunas"
+    },
+    {
+      "test_id": "T13",
+      "source_id": "p1_anatel_pda",
+      "tested_at": "2026-10-10",
+      "request": "GET Range acessos_banda_larga_fixa.zip + inflate parcial",
+      "http_status": 206,
+      "result": "1.054.258.839 B; colunas com Codigo IBGE Municipio; primeiro membro 2007-2010"
+    },
+    {
+      "test_id": "T14",
+      "source_id": "p1_inpe_queimadas",
+      "tested_at": "2026-10-10",
+      "request": "GET Range focos_mensal_br_202508.csv e listagem do diretorio",
+      "http_status": 206,
+      "result": "colunas com municipio_id, lat, lon, risco_fogo, frp; 202609 = 123.024.987 B"
+    },
+    {
+      "test_id": "T15",
+      "source_id": "p1_s2id_atlas_digital",
+      "tested_at": "2026-10-10",
+      "request": "GET Range BD_Atlas_1991_2025_v1.1_2026.08.06_Consolidado.csv",
+      "http_status": 206,
+      "result": "86.134.318 B; Cod_IBGE_Mun, tipologia, DH_*, DM_*"
+    },
+    {
+      "test_id": "T16",
+      "source_id": "p1_aneel_ckan",
+      "tested_at": "2026-10-10",
+      "request": "GET /api/3/action/package_search e package_show + Range nos recursos",
+      "http_status": 200,
+      "result": "DEC/FEC com 17 recursos (Parquet/CSV); beneficiarios-da-cde 110 recursos; tarifa social 4 recursos"
+    },
+    {
+      "test_id": "T17",
+      "source_id": "p1_tse_comparecimento",
+      "tested_at": "2026-10-10",
+      "request": "GET detalhe_votacao_munzona_2024.zip (1,5 MB) e leitura do CSV BRASIL",
+      "http_status": 200,
+      "result": "47 colunas incl. QT_APTOS, QT_COMPARECIMENTO, QT_ABSTENCOES"
+    },
+    {
+      "test_id": "T18",
+      "source_id": "p1_demas_saude_estendida",
+      "tested_at": "2026-10-10",
+      "request": "GET /sisvan/estado-nutricional?limit=2 e /vacinacao/doses-aplicadas-pni-2025?limit=2",
+      "http_status": 200,
+      "result": "registros individuais com codigo_municipio"
+    },
+    {
+      "test_id": "T19",
+      "source_id": "p1_fjp_deficit_habitacional",
+      "tested_at": "2026-10-10",
+      "request": "GET xlsx FJP 2016-2019 e leitura das abas",
+      "http_status": 200,
+      "result": "Regiao/UF; sem municipio"
+    },
+    {
+      "test_id": "T20",
+      "source_id": "p1_atlasbrasil_site",
+      "tested_at": "2026-10-10",
+      "request": "GET https://www.atlasbrasil.org.br/ e /api/",
+      "http_status": 200,
+      "result": "site HTML; /api = 404"
+    },
+    {
+      "test_id": "T21",
+      "source_id": "p1_terrabrasilis_wfs",
+      "tested_at": "2026-10-10",
+      "request": "GET WFS GetCapabilities",
+      "http_status": 200,
+      "result": "camadas PRODES por bioma"
+    },
+    {
+      "test_id": "T22",
+      "source_id": "p1_inmet_api",
+      "tested_at": "2026-10-10",
+      "request": "GET https://apitempo.inmet.gov.br/estacoes/T",
+      "http_status": 200,
+      "result": "lista de estacoes automaticas com lat/lon"
+    },
+    {
+      "test_id": "T23",
+      "source_id": "p1_registro_civil_portal",
+      "tested_at": "2026-10-10",
+      "request": "GET https://transparencia.registrocivil.org.br/api/record/...",
+      "http_status": 200,
+      "result": "devolve HTML do portal"
+    },
+    {
+      "test_id": "T24",
+      "source_id": "p1_vis_data3",
+      "tested_at": "2026-10-10",
+      "request": "GET https://aplicacoes.cidadania.gov.br/vis/data3/",
+      "http_status": 200,
+      "result": "HTML; sem API localizada; busca \"rua\" no MI Social sem campos"
+    },
+    {
+      "test_id": "T25",
+      "source_id": "p1_blocked_misc",
+      "tested_at": "2026-10-10",
+      "request": "varias URLs",
+      "http_status": "401/403/404/sem conexao",
+      "result": "ver limitations"
+    }
+  ],
+  "indicators": [
+    {
+      "indicator_id": "IND.SEG.HOMICIDIO_MUN_ANO",
+      "name": "Homicidios por municipio (Atlas da Violencia, base SIM)",
+      "domain": "seguranca",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "obitos",
+      "granularity": "municipio",
+      "temporality": "anual 1980-2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo (obitos)",
+      "limitations": "defasagem de 2+ anos; por local de residencia ou ocorrencia nao verificado",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SEG.HOMICIDIO_FEM_MUN_ANO",
+      "name": "Homicidios de mulheres por municipio",
+      "domain": "seguranca",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "obitos",
+      "granularity": "municipio",
+      "temporality": "anual 1980-2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "numeros pequenos oscilam; nao e feminicidio juridico",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SEG.HOMICIDIO_JOVEM_MUN_ANO",
+      "name": "Homicidios de jovens 15-29 por municipio",
+      "domain": "seguranca",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "obitos",
+      "granularity": "municipio",
+      "temporality": "anual 1980-2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "idem",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_HOMICIDIO_DOLOSO_MUN_MES",
+      "name": "Homicidio doloso (vitimas) por municipio e mes",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "municipio (por nome)",
+      "temporality": "mensal 2015-01..2026-08",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo estadual",
+      "limitations": "sem codigo IBGE; metodologias estaduais",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_TENTATIVA_HOMICIDIO_MUN_MES",
+      "name": "Tentativa de homicidio por municipio",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "idem",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_FEMINICIDIO_MUN_MES",
+      "name": "Feminicidio e tentativa por municipio",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "636 municipios com ocorrencia em jan-ago/2026",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_LATROCINIO_MUN_MES",
+      "name": "Roubo seguido de morte",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "253 municipios com ocorrencia",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_SUICIDIO_MUN_MES",
+      "name": "Suicidio registrado pela seguranca",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "sensivel; nao comparar com SIM",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_MANDADO_PRISAO_MUN_MES",
+      "name": "Mandados de prisao cumpridos",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "mandados",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro de atividade",
+      "limitations": "atividade, nao eficacia",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_ESTUPRO_UF_MES",
+      "name": "Estupro e estupro de vulneravel",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "ocorrencias",
+      "granularity": "UF",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "SO UF: nao ha municipal",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_VEICULOS_UF_MES",
+      "name": "Furto e roubo de veiculos e de carga",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "ocorrencias",
+      "granularity": "UF",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "SO UF",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_INTERVENCAO_POLICIAL_UF_MES",
+      "name": "Mortes por intervencao de agente do Estado",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "vitimas",
+      "granularity": "UF",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "SO UF",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.VDE_DESAPARECIDOS_UF_MES",
+      "name": "Pessoas desaparecidas e localizadas",
+      "domain": "seguranca",
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "pessoas",
+      "granularity": "UF",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "SO UF",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.PRF_ACIDENTE",
+      "name": "Acidentes em rodovias federais (georreferenciados)",
+      "domain": "seguranca viaria",
+      "source_id": "p1_prf_datatran",
+      "unit": "ocorrencias, mortos, feridos",
+      "granularity": "ponto (lat/lon, BR, km); municipio por nome",
+      "temporality": "por ocorrencia",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "so rodovias federais",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.SISDEPEN_UNIDADE",
+      "name": "Unidades prisionais, capacidade e custodiados",
+      "domain": "sistema prisional",
+      "source_id": "p1_senappen_sisdepen",
+      "unit": "vagas, presos",
+      "granularity": "estabelecimento",
+      "temporality": "semestral 2016-2025",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "declaracao das unidades",
+      "limitations": "sem chave estavel",
+      "collector_family": "F7_SEGURANCA"
+    },
+    {
+      "indicator_id": "IND.SEG.MUNIC_GUARDA_MUNICIPAL",
+      "name": "Existencia de guarda municipal e estrutura",
+      "domain": "estrutura de seguranca",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao e classes",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa censitaria institucional",
+      "limitations": "existencia, nao efetivo",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SEG.MUNIC_DELEGACIA_ESPECIALIZADA",
+      "name": "Delegacias especializadas no municipio",
+      "domain": "estrutura de seguranca",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao e tipo",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "idem",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SEG.MUNIC_CASA_ABRIGO_MULHER",
+      "name": "Casas-abrigo e servicos de atendimento a mulheres em violencia",
+      "domain": "protecao",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao e unidades",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "idem",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.INF.MUNIC_CONSELHO_TUTELAR",
+      "name": "Conselhos tutelares",
+      "domain": "infancia",
+      "source_id": "p1_ibge_munic",
+      "unit": "unidades",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "existencia",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.MOB.FROTA_MUNICIPIO",
+      "name": "Frota de veiculos por tipo e municipio",
+      "domain": "mobilidade",
+      "source_id": "p1_senatran_frota",
+      "unit": "veiculos",
+      "granularity": "municipio (nome)",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "sem IBGE",
+      "collector_family": "F13_INFRA_SETORIAL"
+    },
+    {
+      "indicator_id": "IND.MOB.MUNIC_TRANSPORTE_COLETIVO",
+      "name": "Transporte coletivo por onibus intramunicipal",
+      "domain": "mobilidade",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao e classes",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "existencia",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.CENSO22_RENDIMENTO_MEDIO",
+      "name": "Rendimento nominal medio mensal de todos os trabalhos (Censo 2022)",
+      "domain": "renda",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "R$",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "pessoas ocupadas; nao e renda domiciliar per capita",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.CENSO22_RENDIMENTO_MEDIANO",
+      "name": "Rendimento nominal mediano mensal de todos os trabalhos (Censo 2022)",
+      "domain": "renda",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "R$",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "idem",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.CENSO22_MASSA_RENDIMENTO",
+      "name": "Massa de rendimento nominal mensal",
+      "domain": "renda",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "R$",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "idem",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.RDPC_ATLAS",
+      "name": "Renda domiciliar per capita (Atlas DH)",
+      "domain": "renda",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "R$ de 2010",
+      "granularity": "municipio",
+      "temporality": "1991/2000/2010",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "decenal",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.GINI_ATLAS",
+      "name": "Indice de Gini da renda (Atlas DH)",
+      "domain": "desigualdade",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "indice 0-1",
+      "granularity": "municipio",
+      "temporality": "1991/2000/2010",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "indice derivado do censo",
+      "limitations": "decenal; Censo 2022 ainda nao incorporado",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.DH.IDHM",
+      "name": "IDHM e componentes (renda, longevidade, educacao)",
+      "domain": "desenvolvimento humano",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "indice 0-1",
+      "granularity": "municipio",
+      "temporality": "1991/2000/2010",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "indice composto",
+      "limitations": "NAO anual",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.PIB_MUN",
+      "name": "PIB municipal a precos correntes",
+      "domain": "economia",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "mil R$",
+      "granularity": "municipio",
+      "temporality": "2002-2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "estimativa estatistica",
+      "limitations": "rateio por modelo; nao e renda local",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.VAB_ADM_PUBLICA_SHARE",
+      "name": "Participacao da administracao publica no VAB (dependencia do setor publico)",
+      "domain": "economia",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "%",
+      "granularity": "municipio",
+      "temporality": "2002-2021",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "estimativa estatistica",
+      "limitations": "serie termina em 2021",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.CEMPRE_EMPRESAS_PO_SALARIOS",
+      "name": "Empresas, pessoal ocupado, assalariados e salarios",
+      "domain": "trabalho",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "unidades/pessoas/R$",
+      "granularity": "municipio",
+      "temporality": "2006-2021",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo (CEMPRE)",
+      "limitations": "serie termina em 2021",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.TRA.CAGED_SALDO_MUN_MES",
+      "name": "Saldo de emprego formal (admissoes - desligamentos)",
+      "domain": "trabalho",
+      "source_id": "p1_pdet_caged_rais",
+      "unit": "vinculos",
+      "granularity": "municipio (6 digitos)",
+      "temporality": "mensal 2020-01..2026-08",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "so formal; microdado",
+      "collector_family": "F11_TRABALHO_RENDA_FINANCAS"
+    },
+    {
+      "indicator_id": "IND.TRA.CAGED_SALARIO_ADMISSAO",
+      "name": "Salario de admissao por municipio e setor",
+      "domain": "renda",
+      "source_id": "p1_pdet_caged_rais",
+      "unit": "R$",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "salario da admissao, nao renda familiar",
+      "collector_family": "F11_TRABALHO_RENDA_FINANCAS"
+    },
+    {
+      "indicator_id": "IND.TRA.RAIS_VINCULOS",
+      "name": "Vinculos formais por municipio, CNAE e natureza juridica",
+      "domain": "trabalho",
+      "source_id": "p1_pdet_caged_rais",
+      "unit": "vinculos",
+      "granularity": "municipio",
+      "temporality": "anual 1985-2024",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "sem leitura do layout RAIS nesta rodada",
+      "collector_family": "F11_TRABALHO_RENDA_FINANCAS"
+    },
+    {
+      "indicator_id": "IND.FIN.PIX_VALOR_QT",
+      "name": "Valor e quantidade de transacoes Pix por municipio (PF/PJ, pagador/recebedor)",
+      "domain": "inclusao financeira",
+      "source_id": "p1_bcb_pix_olinda",
+      "unit": "R$ e transacoes",
+      "granularity": "municipio",
+      "temporality": "mensal 2020-11..",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "nao e renda",
+      "collector_family": "F11_TRABALHO_RENDA_FINANCAS"
+    },
+    {
+      "indicator_id": "IND.FIN.PIX_PESSOAS",
+      "name": "Pessoas distintas que pagam/recebem via Pix",
+      "domain": "inclusao financeira",
+      "source_id": "p1_bcb_pix_olinda",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "QT_PES_*",
+      "collector_family": "F11_TRABALHO_RENDA_FINANCAS"
+    },
+    {
+      "indicator_id": "IND.PRO.PBF_FAMILIAS_VALOR",
+      "name": "Familias beneficiarias e valor repassado do Bolsa Familia",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "familias, R$",
+      "granularity": "municipio",
+      "temporality": "mensal 2005-..2026-09",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "preenchimento nos meses futuros",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.PBF_PRIMEIRA_INFANCIA",
+      "name": "Beneficiarios do beneficio primeira infancia",
+      "domain": "infancia",
+      "source_id": "p1_mds_misocial",
+      "unit": "pessoas, R$",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "campos pbf_qtd_benef_primeira_infancia_bpi_i",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.BPC_BENEFICIARIOS",
+      "name": "Beneficiarios do BPC (idosos e PCD)",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "pessoas, R$",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "campos bpc_*",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CADUNICO_POBREZA",
+      "name": "Familias/pessoas no CadUnico em pobreza e extrema pobreza",
+      "domain": "pobreza",
+      "source_id": "p1_mds_misocial",
+      "unit": "familias/pessoas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "cadastro = demanda registrada, nao populacao total pobre",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CADUNICO_FAIXA_ETARIA_SEXO",
+      "name": "Pessoas no CadUnico por faixa etaria e sexo (benef. e nao benef. do PBF)",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo",
+      "limitations": "57 campos qtd_pes_cad_*",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CRAS_QTD",
+      "name": "Numero de CRAS e profissionais",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "unidades, profissionais",
+      "granularity": "municipio",
+      "temporality": "mensal (extracao CadSUAS)",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "cadastro de equipamentos (CadSUAS)",
+      "limitations": "5.559 municipios com valor",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CREAS_QTD",
+      "name": "Numero de CREAS e profissionais",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "unidades, profissionais",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "cadastro de equipamentos",
+      "limitations": "2.758 municipios com valor; ausencia != zero",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CENTRO_POP_QTD",
+      "name": "Numero de Centros POP",
+      "domain": "populacao em situacao de rua (servico)",
+      "source_id": "p1_mds_misocial",
+      "unit": "unidades",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "cadastro de equipamentos",
+      "limitations": "237 municipios; mede oferta, nao populacao em situacao de rua",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.UNIDADE_ACOLHIMENTO_QTD",
+      "name": "Unidades de acolhimento",
+      "domain": "protecao social",
+      "source_id": "p1_mds_misocial",
+      "unit": "unidades",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "cadastro de equipamentos",
+      "limitations": "2.778 municipios",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.SUAS_REPASSES_IGD",
+      "name": "Repasses e saldos do SUAS e IGD-M/IGD-PAB",
+      "domain": "financiamento social",
+      "source_id": "p1_mds_misocial",
+      "unit": "R$ e indice",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro financeiro",
+      "limitations": "campos suas_repasse_*, suas_saldo_*, igd_*",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.PRO.CISTERNAS_FOMENTO",
+      "name": "Cisternas entregues e fomento rural",
+      "domain": "seguranca hidrica/rural",
+      "source_id": "p1_mds_misocial",
+      "unit": "unidades, R$",
+      "granularity": "municipio",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro de programa",
+      "limitations": "cobertura restrita (530 municipios com fomento em 2026-09)",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.ALI.INSEGURANCA_ALIMENTAR_CADUN",
+      "name": "Proporcao de familias com inseguranca alimentar grave no CadUnico",
+      "domain": "alimentacao",
+      "source_id": "p1_mds_misocial",
+      "unit": "%",
+      "granularity": "municipio",
+      "temporality": "campo sisan_prop_fam_insan_grave_atualiz_cadun_d (vazio em Vitoria 2026-09)",
+      "evidence_status": "INFERRED",
+      "method_class": "indicador derivado do cadastro",
+      "limitations": "presenca nao confirmada para os 4 recortes",
+      "collector_family": "F10_PROTECAO_SOCIAL"
+    },
+    {
+      "indicator_id": "IND.ALI.MUNIC_SAN_AO",
+      "name": "Politica municipal de seguranca alimentar (lei, camara intersetorial, acoes)",
+      "domain": "alimentacao",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao",
+      "granularity": "municipio",
+      "temporality": "2023/2024",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "existencia",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.ALI.SISVAN_ESTADO_NUTRICIONAL",
+      "name": "Estado nutricional de pessoas acompanhadas (peso, altura, IMC)",
+      "domain": "nutricao",
+      "source_id": "p1_demas_saude_estendida",
+      "unit": "registros",
+      "granularity": "individual -> municipio",
+      "temporality": "2008-..",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro administrativo (vies de cobertura)",
+      "limitations": "nao representa a populacao",
+      "collector_family": "F5_SAUDE"
+    },
+    {
+      "indicator_id": "IND.HAB.FJP_DEFICIT_UF",
+      "name": "Deficit habitacional (rustico, improvisado, coabitacao, onus)",
+      "domain": "habitacao",
+      "source_id": "p1_fjp_deficit_habitacional",
+      "unit": "domicilios",
+      "granularity": "UF",
+      "temporality": "anual 2016-2019",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "estimativa amostral (PNAD)",
+      "limitations": "NAO municipal",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.HAB.CENSO22_DOMICILIOS",
+      "name": "Domicilios e moradores por setores censitarios",
+      "domain": "habitacao",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "domicilios, pessoas",
+      "granularity": "municipio/setor",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "10054 cobre setores censitarios selecionados",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.HAB.MUNIC_FAVELAS",
+      "name": "Municipios com favelas/cortiços/palafitas (declarado pela prefeitura)",
+      "domain": "habitacao",
+      "source_id": "p1_ibge_munic",
+      "unit": "sim/nao",
+      "granularity": "municipio",
+      "temporality": "2023",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa institucional",
+      "limitations": "declaracao",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.SAN.SNIS_AE_INDICADORES",
+      "name": "Indicadores de agua e esgoto por prestador (atendimento, perdas, tratamento)",
+      "domain": "saneamento",
+      "source_id": "p1_snis_planilhas",
+      "unit": "varios",
+      "granularity": "prestador (municipio por nome)",
+      "temporality": "anual 2022",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "declaracao do prestador",
+      "limitations": "94 colunas; sem API",
+      "collector_family": "F8_SANEAMENTO"
+    },
+    {
+      "indicator_id": "IND.SAN.SNIS_RS_AP",
+      "name": "Residuos solidos e aguas pluviais por municipio",
+      "domain": "saneamento",
+      "source_id": "p1_snis_planilhas",
+      "unit": "varios",
+      "granularity": "municipio",
+      "temporality": "anual 2022",
+      "evidence_status": "DOCUMENTED_ONLY",
+      "method_class": "declaracao",
+      "limitations": "zips localizados (10,8 MB e 4,1 MB), planilhas nao lidas",
+      "collector_family": "F8_SANEAMENTO"
+    },
+    {
+      "indicator_id": "IND.DIG.BANDA_LARGA_FIXA_MUN",
+      "name": "Acessos de banda larga fixa por municipio, velocidade e tecnologia",
+      "domain": "inclusao digital",
+      "source_id": "p1_anatel_pda",
+      "unit": "acessos",
+      "granularity": "municipio (IBGE)",
+      "temporality": "mensal 2007-..",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro regulatorio",
+      "limitations": "acessos != domicilios conectados",
+      "collector_family": "F13_INFRA_SETORIAL"
+    },
+    {
+      "indicator_id": "IND.DIG.CENSO22_CONEXAO_DOMICILIAR",
+      "name": "Moradores 10+ em domicilios com conexao domiciliar",
+      "domain": "inclusao digital",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "tabela 10201; classes nao detalhadas nesta rodada",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.AMB.FOCOS_QUEIMADAS_MUN_MES",
+      "name": "Focos de calor por municipio, bioma e risco de fogo",
+      "domain": "ambiente",
+      "source_id": "p1_inpe_queimadas",
+      "unit": "focos",
+      "granularity": "municipio_id + ponto",
+      "temporality": "mensal",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "deteccao por satelite",
+      "limitations": "nao e area queimada",
+      "collector_family": "F12_AMBIENTE_RISCO"
+    },
+    {
+      "indicator_id": "IND.AMB.DESASTRES_S2ID",
+      "name": "Desastres registrados, danos humanos e materiais por municipio",
+      "domain": "risco",
+      "source_id": "p1_s2id_atlas_digital",
+      "unit": "ocorrencias, pessoas, R$",
+      "granularity": "municipio",
+      "temporality": "1991-2025",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "subnotificacao; nao e exposicao",
+      "collector_family": "F12_AMBIENTE_RISCO"
+    },
+    {
+      "indicator_id": "IND.AMB.DEC_FEC",
+      "name": "Continuidade do fornecimento de energia (DEC/FEC)",
+      "domain": "energia",
+      "source_id": "p1_aneel_ckan",
+      "unit": "horas e interrupcoes",
+      "granularity": "conjunto eletrico",
+      "temporality": "anual/mensal 2000-",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "indicador regulatorio",
+      "limitations": "precisa conjunto->municipio",
+      "collector_family": "F13_INFRA_SETORIAL"
+    },
+    {
+      "indicator_id": "IND.INF.NASCIDOS_VIVOS_MUN",
+      "name": "Nascidos vivos registrados por municipio de residencia",
+      "domain": "infancia",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "anual 2003-2024",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "registro civil",
+      "limitations": "registrados no ano, nao ocorridos",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.INF.MORT_INFANTIL_ATLAS",
+      "name": "Mortalidade infantil (por mil)",
+      "domain": "infancia",
+      "source_id": "p1_ipeadata_odata",
+      "unit": "por mil nascidos vivos",
+      "granularity": "municipio",
+      "temporality": "1991/2000/2010",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "indicador demografico",
+      "limitations": "estimativa censitaria; defasada",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.POP.CENSO22_POPULACAO_IDADE",
+      "name": "Populacao residente por sexo e idade",
+      "domain": "demografia",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "tabela 9514; grupos etarios nao detalhados nesta rodada",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.POP.CENSO22_PCD",
+      "name": "Pessoas com deficiencia (2+ anos) e percentual",
+      "domain": "inclusao",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas, %",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario (autodeclarado)",
+      "limitations": "classes de dificuldade nao exploradas",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.POP.CENSO22_QUILOMBOLA_INDIGENA",
+      "name": "Populacao quilombola e indigena",
+      "domain": "diversidade",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas, %",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario",
+      "limitations": "\"-\" = zero absoluto",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.POP.CENSO22_AUTISMO",
+      "name": "Pessoas diagnosticadas com autismo",
+      "domain": "saude/inclusao",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "pessoas",
+      "granularity": "municipio",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "dado censitario (autodeclarado)",
+      "limitations": "tabela 10145",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.URB.CENSO22_ENTORNO",
+      "name": "Caracteristicas urbanisticas do entorno dos domicilios (calcada, rampa, arborizacao etc.)",
+      "domain": "infraestrutura urbana",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "domicilios/faces",
+      "granularity": "municipio e setor",
+      "temporality": "2022",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "levantamento amostral de setores",
+      "limitations": "cobertura parcial dos setores",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.PAR.TSE_COMPARECIMENTO",
+      "name": "Comparecimento e abstencao por municipio e zona",
+      "domain": "participacao",
+      "source_id": "p1_tse_comparecimento",
+      "unit": "eleitores",
+      "granularity": "municipio/zona",
+      "temporality": "2024",
+      "evidence_status": "VERIFIED_DATASET",
+      "method_class": "registro administrativo",
+      "limitations": "codigo TSE",
+      "collector_family": "F0_REFERENCE"
+    },
+    {
+      "indicator_id": "IND.PRECOS.IPCA_N6",
+      "name": "IPCA por municipio (so 6 municipios; regioes metropolitanas em N7)",
+      "domain": "custo de vida",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "indice",
+      "granularity": "6 municipios",
+      "temporality": "2020-01..2026-09",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "pesquisa amostral de precos",
+      "limitations": "NAO existe indice de custo de vida para 5.570 municipios",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    },
+    {
+      "indicator_id": "IND.REN.PNAD_N6",
+      "name": "PNAD Continua por municipio (so capitais)",
+      "domain": "renda/trabalho",
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "varios",
+      "granularity": "27 capitais",
+      "temporality": "2012-2025",
+      "evidence_status": "VERIFIED_API",
+      "method_class": "estimativa amostral",
+      "limitations": "NAO e municipal em geral",
+      "collector_family": "F9_INDICADORES_TABULARES"
+    }
+  ],
+  "relationships": [
+    {
+      "relationship_id": "R01",
+      "relation": "MI Social (codigo_ibge 6 dig) <-> municipio IBGE 7 dig",
+      "link_class": "EXACT (com calculo do digito verificador ou tabela IBGE6->IBGE7)",
+      "note": "mesma regra do DEMAS na P0"
+    },
+    {
+      "relationship_id": "R02",
+      "relation": "Pix (Municipio_Ibge 7) <-> municipio",
+      "link_class": "EXACT",
+      "note": "chave oficial"
+    },
+    {
+      "relationship_id": "R03",
+      "relation": "Anatel (Codigo IBGE Municipio) <-> municipio",
+      "link_class": "EXACT",
+      "note": "chave oficial"
+    },
+    {
+      "relationship_id": "R04",
+      "relation": "S2iD (Cod_IBGE_Mun) <-> municipio",
+      "link_class": "EXACT",
+      "note": "chave oficial"
+    },
+    {
+      "relationship_id": "R05",
+      "relation": "INPE (municipio_id) <-> municipio",
+      "link_class": "HIGH_CONFIDENCE",
+      "note": "codigo do INPE nao conferido contra IBGE"
+    },
+    {
+      "relationship_id": "R06",
+      "relation": "CAGED (municipio 6 dig) <-> municipio",
+      "link_class": "EXACT",
+      "note": "codigo IBGE de 6 digitos"
+    },
+    {
+      "relationship_id": "R07",
+      "relation": "Ipeadata (TERCODIGO 7 dig) <-> municipio",
+      "link_class": "EXACT",
+      "note": "verificado 3205309"
+    },
+    {
+      "relationship_id": "R08",
+      "relation": "Sinesp VDE (uf+nome), PRF (uf+nome), SENATRAN (UF+nome), SISDEPEN (UF+nome+CEP) <-> municipio",
+      "link_class": "PROBABLE",
+      "note": "sem codigo IBGE"
+    },
+    {
+      "relationship_id": "R09",
+      "relation": "TSE (SG_UE) <-> municipio",
+      "link_class": "EXACT por tabela de equivalencia ja prevista na P0",
+      "note": ""
+    },
+    {
+      "relationship_id": "R10",
+      "relation": "CRAS/CREAS/Centro POP (MI Social) x populacao em pobreza (CadUnico) x populacao (SIDRA)",
+      "link_class": "vinculo territorial (mesmo codigo)",
+      "note": "hipotese analitica: cobertura de equipamentos; nao causal"
+    },
+    {
+      "relationship_id": "R11",
+      "relation": "Homicidios (Ipeadata) x guarda municipal/delegacia (MUNIC)",
+      "link_class": "vinculo territorial + temporal (2022 vs 2023)",
+      "note": "associacao possivel; causalidade nao demonstrada"
+    },
+    {
+      "relationship_id": "R12",
+      "relation": "Desastres (S2iD) x obras de drenagem (Obrasgov, P0)",
+      "link_class": "vinculo territorial; temporal parcial",
+      "note": "ligacao exata inexistente"
+    },
+    {
+      "relationship_id": "R13",
+      "relation": "Banda larga (Anatel) x escolas (Censo Escolar, P0)",
+      "link_class": "vinculo territorial",
+      "note": "sem identificador de escola na Anatel"
+    },
+    {
+      "relationship_id": "R14",
+      "relation": "CNES (lat/lon, P0) + grade 1 km (IBGE) -> populacao a X km de hospital",
+      "link_class": "derivavel (distancia em linha reta apenas)",
+      "note": "tempo de deslocamento exige malha viaria nao oficial/nao verificada"
+    },
+    {
+      "relationship_id": "R15",
+      "relation": "SNIS (prestador, municipio por nome) x municipio",
+      "link_class": "PROBABLE",
+      "note": "planilhas por prestador"
+    },
+    {
+      "relationship_id": "R16",
+      "relation": "BPC/PBF (MI Social) x transferencias (Portal, P0)",
+      "link_class": "vinculo territorial; valores nao conciliados",
+      "note": "fontes diferentes"
+    },
+    {
+      "relationship_id": "R17",
+      "relation": "Pix (inclusao financeira) x CAGED (emprego formal) x renda Censo 2022",
+      "link_class": "associacao estatistica possivel",
+      "note": "periodos diferentes; nao causal"
+    }
+  ],
+  "collector_families": [
+    {
+      "family": "F0_REFERENCE",
+      "status": "EXISTENTE_P0 (estendida)",
+      "adds": [
+        "IBGE malhas municipais (API v3/malhas), geoftp (malha 2024, grade estatistica 2022, faces de logradouro)",
+        "TSE comparecimento"
+      ],
+      "note": "tabela IBGE6/IBGE7/SIAFI/TSE continua sendo a dependencia critica"
+    },
+    {
+      "family": "F5_SAUDE",
+      "status": "EXISTENTE_P0 (estendida)",
+      "adds": [
+        "SISVAN, PNI, SIM, SINASC (registro individual) - decidir se vale agregar"
+      ],
+      "note": "sem filtro municipal nos recursos testados"
+    },
+    {
+      "family": "F7_SEGURANCA",
+      "status": "EXISTENTE_P0 (estendida)",
+      "adds": [
+        "Sinesp VDE 2015-2026",
+        "PRF datatran (Drive)",
+        "SISDEPEN CSV semestral"
+      ],
+      "note": "tres formatos de arquivo, um pipeline por esquema"
+    },
+    {
+      "family": "F8_SANEAMENTO",
+      "status": "EXISTENTE_P0 (estendida)",
+      "adds": [
+        "SNIS planilhas xls aninhadas",
+        "MUNIC saneamento 2023"
+      ],
+      "note": "SINISA exige login"
+    },
+    {
+      "family": "F9_INDICADORES_TABULARES",
+      "status": "PROPOSTA_P1",
+      "systems": [
+        "IBGE API Agregados/SIDRA",
+        "IBGE MUNIC (API + FTP)",
+        "Ipeadata OData",
+        "IBGE FTP Censo 2022"
+      ],
+      "pipelines": 3,
+      "datasets": "registro configuravel de 30-60 tabelas/series (de 4.448 tabelas N6 e 3.606 series)",
+      "frequency": "por pesquisa (mensal/anual/decenal)",
+      "backfill": "periodos completos por tabela; Ipeadata recarga integral por serie",
+      "incremental": "novo periodo por tabela; metadata SERATUALIZACAO no Ipeadata",
+      "volume": "pequeno a medio (tabelas N6 = 5.570 linhas por variavel e periodo)",
+      "complexity": "baixa a media: um coletor generico dirigido por registro",
+      "cobertura": "nacional (5.570)",
+      "reuses_p0": [
+        "InstitutionalHttp",
+        "raw_objects",
+        "checkpoints"
+      ]
+    },
+    {
+      "family": "F10_PROTECAO_SOCIAL",
+      "status": "PROPOSTA_P1",
+      "systems": [
+        "MDS MI Social (Solr)"
+      ],
+      "pipelines": 1,
+      "datasets": "1 indice, ~150-280 campos ativos",
+      "frequency": "mensal",
+      "backfill": "fq=anomes_s por mes desde 2003 (1,6 M documentos)",
+      "incremental": "fq=anomes_s:ULTIMO + reconsulta dos 3 meses anteriores",
+      "volume": "5.571 documentos/mes",
+      "complexity": "baixa tecnica, alta curadoria (campos sem documentacao e que mudam)",
+      "cobertura": "nacional",
+      "reuses_p0": [
+        "InstitutionalHttp"
+      ]
+    },
+    {
+      "family": "F11_TRABALHO_RENDA_FINANCAS",
+      "status": "PROPOSTA_P1",
+      "systems": [
+        "PDET CAGED/RAIS (FTP, 7z)",
+        "BCB Olinda (Pix)"
+      ],
+      "pipelines": 2,
+      "datasets": "CAGEDMOV mensal; RAIS anual; TransacoesPixPorMunicipio",
+      "frequency": "mensal",
+      "backfill": "CAGED 2020-; Pix 2020-11-; RAIS 1985-",
+      "incremental": "arquivo do mes; Pix com DataBase=ultimo mes",
+      "volume": "CAGED ~50 MB/mes comprimido; Pix pequeno",
+      "complexity": "media (FTP + 7z + agregacao com sigilo)",
+      "cobertura": "nacional",
+      "reuses_p0": [
+        "checkpoints"
+      ]
+    },
+    {
+      "family": "F12_AMBIENTE_RISCO",
+      "status": "PROPOSTA_P1",
+      "systems": [
+        "INPE Queimadas (CSV)",
+        "S2iD Atlas Digital (CSV)",
+        "TerraBrasilis WFS",
+        "INMET API"
+      ],
+      "pipelines": 3,
+      "datasets": "focos mensais; BD Atlas consolidado; PRODES; estacoes",
+      "frequency": "mensal/anual",
+      "backfill": "focos 2023- no diretorio mensal; S2iD 1991-2025 em um arquivo",
+      "incremental": "novo mes/novo consolidado",
+      "volume": "alto (123 MB/mes de focos; 86 MB do S2iD)",
+      "complexity": "media-alta (agregacao espacial para PRODES/INMET)",
+      "cobertura": "nacional (por municipio_id/Cod_IBGE)",
+      "reuses_p0": []
+    },
+    {
+      "family": "F13_INFRA_SETORIAL",
+      "status": "PROPOSTA_P1",
+      "systems": [
+        "Anatel PDA",
+        "ANEEL CKAN",
+        "SENATRAN frota"
+      ],
+      "pipelines": 3,
+      "datasets": "banda larga fixa; DEC/FEC e CDE; frota por municipio",
+      "frequency": "mensal",
+      "backfill": "Anatel 2007-; SENATRAN 2024-",
+      "incremental": "arquivo cumulativo (Anatel) exige Range e reprocessamento do periodo novo",
+      "volume": "muito alto no Anatel (1 GB e 3,2 GB)",
+      "complexity": "alta (arquivos enormes, chaves por nome em SENATRAN, conjunto->municipio na ANEEL)",
+      "cobertura": "nacional",
+      "reuses_p0": []
+    }
+  ],
+  "collector_architectures": {
+    "A_centralizada": {
+      "novas_familias": [
+        "F9_INDICADORES_TABULARES",
+        "F10_PROTECAO_SOCIAL",
+        "F11_TRABALHO_RENDA_FINANCAS"
+      ],
+      "estendidas": [
+        "F0_REFERENCE",
+        "F7_SEGURANCA"
+      ],
+      "sistemas_integrados": 8,
+      "resultado": "cobre renda Censo 2022, PIB, empresas, nascimentos, deficiencia, MUNIC (seguranca/protecao), homicidios municipais 1980-2022, Atlas/IDHM, MDS (CRAS/CREAS/PBF/BPC), CAGED e Pix com cerca de 3 coletores novos"
+    },
+    "B_ampliada": {
+      "novas_familias": [
+        "F12_AMBIENTE_RISCO",
+        "F13_INFRA_SETORIAL"
+      ],
+      "estendidas": [
+        "F5_SAUDE",
+        "F7_SEGURANCA",
+        "F8_SANEAMENTO"
+      ],
+      "sistemas_adicionais": [
+        "INPE",
+        "S2iD",
+        "TerraBrasilis",
+        "INMET",
+        "Anatel",
+        "ANEEL",
+        "SENATRAN",
+        "PRF",
+        "SISDEPEN",
+        "SNIS",
+        "IBGE FTP setor/bairro",
+        "DEMAS registro individual"
+      ],
+      "resultado": "acrescenta ambiente/risco, conectividade, energia, frota, acidentes, prisoes, saneamento por prestador e granularidade abaixo do municipio"
+    }
+  },
+  "product_opportunities": [
+    {
+      "opportunity_id": "O01",
+      "question": "Quais municipios mais dependem de transferencias de renda?",
+      "source": "MI Social + populacao SIDRA",
+      "granularity": "municipio mensal",
+      "period": "2003-2026",
+      "collector_family": "F10",
+      "auto_update_possible": true,
+      "methodological_caveat": "familias beneficiarias nao mede dependencia da renda; usar populacao 2022 como denominador"
+    },
+    {
+      "opportunity_id": "O02",
+      "question": "Qual a intensidade de pagamentos digitais (inclusao financeira) por municipio?",
+      "source": "BCB Pix",
+      "granularity": "municipio mensal",
+      "period": "2020-11..",
+      "collector_family": "F11",
+      "auto_update_possible": true,
+      "methodological_caveat": "valor/quantidade por local do pagador, nao do domicilio"
+    },
+    {
+      "opportunity_id": "O03",
+      "question": "Quais municipios tem banda larga fixa e de que velocidade/tecnologia?",
+      "source": "Anatel PDA",
+      "granularity": "municipio mensal",
+      "period": "2007..",
+      "collector_family": "F13",
+      "auto_update_possible": false,
+      "methodological_caveat": "acessos, nao domicilios; arquivo de GB"
+    },
+    {
+      "opportunity_id": "O04",
+      "question": "Onde houve desastres e quem foi atingido?",
+      "source": "S2iD Atlas Digital",
+      "granularity": "municipio por evento",
+      "period": "1991-2025",
+      "collector_family": "F12",
+      "auto_update_possible": false,
+      "methodological_caveat": "so registrados no S2iD"
+    },
+    {
+      "opportunity_id": "O05",
+      "question": "Quais municipios tem mais focos de fogo e em que bioma?",
+      "source": "INPE Queimadas",
+      "granularity": "ponto/municipio",
+      "period": "2023-",
+      "collector_family": "F12",
+      "auto_update_possible": false,
+      "methodological_caveat": "foco != area queimada"
+    },
+    {
+      "opportunity_id": "O06",
+      "question": "Que capacidade institucional cada prefeitura declara (guarda, delegacias especializadas, casas-abrigo, conselho tutelar, plano diretor, transporte)?",
+      "source": "IBGE MUNIC 2023",
+      "granularity": "municipio",
+      "period": "2023",
+      "collector_family": "F9",
+      "auto_update_possible": false,
+      "methodological_caveat": "existencia, nao qualidade"
+    },
+    {
+      "opportunity_id": "O07",
+      "question": "Quao dependente do setor publico e a economia local?",
+      "source": "SIDRA PIB (VAB adm. publica)",
+      "granularity": "municipio",
+      "period": "2002-2021",
+      "collector_family": "F9",
+      "auto_update_possible": false,
+      "methodological_caveat": "serie termina em 2021"
+    },
+    {
+      "opportunity_id": "O08",
+      "question": "Como e a estrutura empresarial e salarial (porte, assalariados, salarios)?",
+      "source": "SIDRA CEMPRE",
+      "granularity": "municipio",
+      "period": "2006-2021",
+      "collector_family": "F9",
+      "auto_update_possible": false,
+      "methodological_caveat": "serie termina em 2021"
+    },
+    {
+      "opportunity_id": "O09",
+      "question": "Quantas pessoas quilombolas, indigenas, com deficiencia ou autismo vivem em cada municipio?",
+      "source": "SIDRA Censo 2022",
+      "granularity": "municipio",
+      "period": "2022",
+      "collector_family": "F9",
+      "auto_update_possible": false,
+      "methodological_caveat": "autodeclaracao; \"-\" = zero"
+    },
+    {
+      "opportunity_id": "O10",
+      "question": "Como e o entorno urbano (calcadas, rampas, arborizacao) onde as pessoas moram?",
+      "source": "SIDRA/FTP Censo 2022 entorno",
+      "granularity": "municipio/setor",
+      "period": "2022",
+      "collector_family": "F9",
+      "auto_update_possible": false,
+      "methodological_caveat": "apenas setores selecionados"
+    },
+    {
+      "opportunity_id": "O11",
+      "question": "Quem comparece as urnas?",
+      "source": "TSE detalhe da votacao",
+      "granularity": "municipio/zona",
+      "period": "2024",
+      "collector_family": "F0",
+      "auto_update_possible": false,
+      "methodological_caveat": "nao mede participacao social"
+    },
+    {
+      "opportunity_id": "O12",
+      "question": "Quantas unidades prisionais existem, com que capacidade e ocupacao?",
+      "source": "SISDEPEN",
+      "granularity": "estabelecimento",
+      "period": "2016-2025",
+      "collector_family": "F7",
+      "auto_update_possible": false,
+      "methodological_caveat": "sem chave estavel"
+    },
+    {
+      "opportunity_id": "O13",
+      "question": "Onde acontecem mortes em rodovias federais?",
+      "source": "PRF datatran",
+      "granularity": "ponto",
+      "period": "2025 lido",
+      "collector_family": "F7",
+      "auto_update_possible": false,
+      "methodological_caveat": "so rodovias federais"
+    },
+    {
+      "opportunity_id": "O14",
+      "question": "Quao motorizado e o municipio e por tipo de veiculo?",
+      "source": "SENATRAN",
+      "granularity": "municipio mensal",
+      "period": "2024-2026",
+      "collector_family": "F13",
+      "auto_update_possible": false,
+      "methodological_caveat": "chave por nome"
+    },
+    {
+      "opportunity_id": "O15",
+      "question": "Quais municipios tem seguranca hidrica rural apoiada por cisternas e fomento?",
+      "source": "MI Social (cisternas/fomento)",
+      "granularity": "municipio mensal",
+      "period": "ate 2026-09",
+      "collector_family": "F10",
+      "auto_update_possible": true,
+      "methodological_caveat": "cobertura restrita a municipios do programa"
+    },
+    {
+      "opportunity_id": "O16",
+      "question": "Quanto o SUAS repassa e quanto sobra em saldo por municipio?",
+      "source": "MI Social (suas_repasse/suas_saldo/IGD)",
+      "granularity": "municipio mensal",
+      "period": "ate 2026-09",
+      "collector_family": "F10",
+      "auto_update_possible": true,
+      "methodological_caveat": "campos sem documentacao"
+    },
+    {
+      "opportunity_id": "O17",
+      "question": "Quais populacoes vivem longe de um hospital (linha reta)?",
+      "source": "IBGE grade 1 km + CNES lat/lon (P0)",
+      "granularity": "grade 1 km",
+      "period": "2022 + CNES atual",
+      "collector_family": "F0+F5",
+      "auto_update_possible": false,
+      "methodological_caveat": "distancia em linha reta nao e tempo de deslocamento"
+    },
+    {
+      "opportunity_id": "O18",
+      "question": "Qual a continuidade da energia fornecida (DEC/FEC) onde moram as pessoas?",
+      "source": "ANEEL DEC/FEC",
+      "granularity": "conjunto eletrico",
+      "period": "2000..",
+      "collector_family": "F13",
+      "auto_update_possible": false,
+      "methodological_caveat": "precisa conjunto->municipio"
+    }
+  ],
+  "product_questions": [
+    {
+      "question_id": "Q01",
+      "question": "Como evoluiu o numero de homicidios por municipio desde 1980?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "Ipeadata AVIOL12_HOMIC"
+    },
+    {
+      "question_id": "Q02",
+      "question": "Quantos homicidios de jovens e de mulheres ocorreram no municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "Ipeadata HOMICJ/HOMICF"
+    },
+    {
+      "question_id": "Q03",
+      "question": "Que eventos de seguranca so existem por UF e nao por municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "VDE"
+    },
+    {
+      "question_id": "Q04",
+      "question": "Quais municipios registraram feminicidio em 2026?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "VDE"
+    },
+    {
+      "question_id": "Q05",
+      "question": "Qual o rendimento medio e mediano do trabalho em cada municipio (Censo 2022)?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA 10289"
+    },
+    {
+      "question_id": "Q06",
+      "question": "Como e a desigualdade (Gini) por municipio e como mudou 1991-2010?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "Ipeadata ADH_GINI"
+    },
+    {
+      "question_id": "Q07",
+      "question": "O IDHM do municipio mudou desde 1991? (decenal)",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "Ipeadata ADH_IDHM"
+    },
+    {
+      "question_id": "Q08",
+      "question": "Quantas familias recebem Bolsa Familia a cada mes e quanto custa?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MI Social"
+    },
+    {
+      "question_id": "Q09",
+      "question": "Quantos CRAS, CREAS e Centros POP existem no municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MI Social"
+    },
+    {
+      "question_id": "Q10",
+      "question": "Quantos idosos e pessoas com deficiencia recebem BPC?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MI Social"
+    },
+    {
+      "question_id": "Q11",
+      "question": "Quantas criancas estao em familias do Cadastro Unico por faixa etaria?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MI Social"
+    },
+    {
+      "question_id": "Q12",
+      "question": "Quanto o municipio recebeu do SUAS e do IGD?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MI Social"
+    },
+    {
+      "question_id": "Q13",
+      "question": "Qual a participacao do setor publico no valor adicionado do municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA 5938 (ate 2021)"
+    },
+    {
+      "question_id": "Q14",
+      "question": "Quantas empresas e assalariados existem e qual a massa salarial?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA CEMPRE"
+    },
+    {
+      "question_id": "Q15",
+      "question": "Quantos empregos formais foram criados no mes por municipio?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "CAGED (microdado + agregacao)"
+    },
+    {
+      "question_id": "Q16",
+      "question": "Como evoluiu o volume de Pix por municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "BCB Pix"
+    },
+    {
+      "question_id": "Q17",
+      "question": "Quantas pessoas com deficiencia ou autismo vivem no municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA Censo 2022"
+    },
+    {
+      "question_id": "Q18",
+      "question": "Quantas pessoas quilombolas e indigenas vivem no municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA Censo 2022"
+    },
+    {
+      "question_id": "Q19",
+      "question": "O municipio tem guarda municipal, delegacia especializada, casa-abrigo e conselho tutelar?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "MUNIC 2023"
+    },
+    {
+      "question_id": "Q20",
+      "question": "Qual a distancia (linha reta) da populacao ate o hospital mais proximo?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "grade 1 km + CNES"
+    },
+    {
+      "question_id": "Q21",
+      "question": "Quantas pessoas vivem a mais de 30 min de um hospital (tempo real)?",
+      "feasibility": "HYPOTHESIS",
+      "basis": "exige malha viaria oficial nao verificada"
+    },
+    {
+      "question_id": "Q22",
+      "question": "Onde ocorrem os acidentes mais letais em rodovias federais?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "PRF datatran"
+    },
+    {
+      "question_id": "Q23",
+      "question": "Quantas unidades prisionais ha no municipio e qual a lotacao?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "SISDEPEN (liga por nome)"
+    },
+    {
+      "question_id": "Q24",
+      "question": "Quantos veiculos por habitante existem no municipio?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "SENATRAN + SIDRA (liga por nome)"
+    },
+    {
+      "question_id": "Q25",
+      "question": "Que municipios tem mais focos de fogo por mes?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "INPE (arquivos grandes)"
+    },
+    {
+      "question_id": "Q26",
+      "question": "Que desastres atingiram o municipio desde 1991 e quantos desabrigados?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "S2iD Atlas"
+    },
+    {
+      "question_id": "Q27",
+      "question": "Qual a velocidade/tecnologia de banda larga fixa disponivel por municipio?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "Anatel (arquivo de GB)"
+    },
+    {
+      "question_id": "Q28",
+      "question": "Quantos domicilios nao tem esgoto adequado?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "Censo 2022 FTP (agregados caracteristicas_domicilio) - ZIP nao lido"
+    },
+    {
+      "question_id": "Q29",
+      "question": "Qual a cobertura de agua e esgoto por prestador/municipio?",
+      "feasibility": "ANSWERABLE_WITH_WORK",
+      "basis": "SNIS 2022 (xls)"
+    },
+    {
+      "question_id": "Q30",
+      "question": "Quantas pessoas estao em situacao de rua em cada municipio?",
+      "feasibility": "UNAVAILABLE",
+      "basis": "sem fonte municipal verificada; Centro POP mede so oferta"
+    },
+    {
+      "question_id": "Q31",
+      "question": "Qual o deficit habitacional do municipio hoje?",
+      "feasibility": "UNAVAILABLE",
+      "basis": "FJP so UF/regiao 2016-2019"
+    },
+    {
+      "question_id": "Q32",
+      "question": "Qual o custo de vida (cesta/aluguel) de cada municipio?",
+      "feasibility": "UNAVAILABLE",
+      "basis": "IPCA em 6 municipios; sem indice municipal"
+    },
+    {
+      "question_id": "Q33",
+      "question": "Qual o poder de compra real por municipio?",
+      "feasibility": "HYPOTHESIS",
+      "basis": "renda nominal municipal existe; deflator municipal nao"
+    },
+    {
+      "question_id": "Q34",
+      "question": "Quantas crianças estao sem registro de nascimento por municipio?",
+      "feasibility": "HYPOTHESIS",
+      "basis": "SIDRA traz registros; sub-registro municipal nao verificado"
+    },
+    {
+      "question_id": "Q35",
+      "question": "Qual a taxa de resolucao de crimes por municipio?",
+      "feasibility": "UNAVAILABLE",
+      "basis": "sem fonte nacional verificada (inqueritos/denuncias)"
+    },
+    {
+      "question_id": "Q36",
+      "question": "Qual o efetivo policial por municipio?",
+      "feasibility": "UNAVAILABLE",
+      "basis": "sem fonte nacional verificada"
+    },
+    {
+      "question_id": "Q37",
+      "question": "Quem mais comparece e se abstém nas eleicoes municipais?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "TSE 2024"
+    },
+    {
+      "question_id": "Q38",
+      "question": "Qual a proporcao de familias com inseguranca alimentar grave?",
+      "feasibility": "HYPOTHESIS",
+      "basis": "campo SISAN no MI Social nao confirmado para os recortes"
+    },
+    {
+      "question_id": "Q39",
+      "question": "Como o setor de servicos e a administracao publica pesam no PIB do municipio?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "SIDRA 5938 (ate 2021)"
+    },
+    {
+      "question_id": "Q40",
+      "question": "Que diferenca ha entre capital e interior na renda e na protecao social?",
+      "feasibility": "ANSWERABLE_NOW",
+      "basis": "Censo 2022 + MI Social"
+    }
+  ],
+  "gaps": [
+    "populacao em situacao de rua por municipio (sem fonte aberta verificada; Centro POP e oferta)",
+    "efetivo policial, delegacias (cadastro), tempo de resposta, inqueritos, mandados esclarecidos por municipio",
+    "crimes ciberneticos, ambientais, violencia domestica/sexual/racial por municipio",
+    "deficit habitacional e inadequacao municipais atuais",
+    "indice de custo de vida municipal e deflator regional abaixo das RMs/capitais",
+    "tempo de deslocamento real a servicos (malha viaria oficial nao verificada)",
+    "sub-registro de nascimento municipal",
+    "acesso a justica (Defensoria) e medidas protetivas por municipio (CNJ nao testado nesta rodada)",
+    "saneamento municipal do Censo 2022 (ZIPs do FTP nao lidos) e SINISA (login)",
+    "qualidade do ar, calor extremo e arborizacao urbana (fontes nao verificadas)",
+    "cultura/esporte equipamentos (ANCINE, IBRAM, SNBP sem acesso estruturado)",
+    "indicadores educacionais INEP municipais (caminhos de download nao localizados)"
+  ],
+  "territorial_coverage": [
+    {
+      "source_id": "p1_mds_misocial",
+      "unit": "municipio",
+      "covered": 5571,
+      "universe": 5571,
+      "basis": "documentos por mes em 202609 (inclui DF); campos individuais tem cobertura menor (ex.: CREAS 2.758, Centro POP 237)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_ibge_sidra_agregados",
+      "unit": "municipio",
+      "covered": 5570,
+      "universe": 5570,
+      "basis": "localidades N6 em 10289 e nas tabelas MUNIC testadas (6478: 5.518)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_ipeadata_odata",
+      "unit": "municipio",
+      "covered": 5564,
+      "universe": 5570,
+      "basis": "linhas por ano censitario em ADH_IDHM; homicidios 5.564 em 2022",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "unit": "municipio",
+      "covered": 2938,
+      "universe": 5571,
+      "basis": "municipios com ao menos um homicidio doloso em jan-ago/2026 (os eventos municipais trazem linhas zero-preenchidas para ~5.600 unidades); 11 de 31 eventos tem granularidade municipal, os demais sao so UF",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "source_id": "p1_bcb_pix_olinda",
+      "unit": "municipio",
+      "covered": null,
+      "universe": 5571,
+      "basis": "contagem nacional por mes nao calculada (limite $top)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_ibge_sidra_agregados_pnad",
+      "unit": "municipio",
+      "covered": 27,
+      "universe": 5570,
+      "basis": "PNAD Continua N6 = capitais",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_ibge_sidra_agregados_ipca",
+      "unit": "municipio",
+      "covered": 6,
+      "universe": 5570,
+      "basis": "IPCA N6",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "source_id": "p1_prf_datatran",
+      "unit": "rodovia federal",
+      "covered": null,
+      "universe": null,
+      "basis": "cobertura por municipio nao medida",
+      "evidence": "VERIFIED_DATASET"
+    }
+  ],
+  "temporal_coverage": [
+    {
+      "source_id": "p1_mds_misocial",
+      "first": "2003-01",
+      "last_real": "2026-09",
+      "cadence": "mensal"
+    },
+    {
+      "source_id": "p1_ipeadata_odata",
+      "first": "1980 (homicidios) / 1991 (ADH)",
+      "last_real": "2022 (municipal) / 2010 (IDHM)",
+      "cadence": "anual/decenal"
+    },
+    {
+      "source_id": "p1_bcb_pix_olinda",
+      "first": "2020-11",
+      "last_real": "2026-08/09",
+      "cadence": "mensal"
+    },
+    {
+      "source_id": "p1_sinesp_vde_2015_2026",
+      "first": "2015-01",
+      "last_real": "2026-08",
+      "cadence": "mensal"
+    },
+    {
+      "source_id": "p1_pdet_caged_rais",
+      "first": "2020-01 (CAGED) / 1985 (RAIS)",
+      "last_real": "2026-08 (CAGED) / 2024 (RAIS)",
+      "cadence": "mensal/anual"
+    },
+    {
+      "source_id": "p1_anatel_pda",
+      "first": "2007",
+      "last_real": "2026-10-08 (arquivo)",
+      "cadence": "mensal"
+    },
+    {
+      "source_id": "p1_s2id_atlas_digital",
+      "first": "1991",
+      "last_real": "2025",
+      "cadence": "anual"
+    },
+    {
+      "source_id": "p1_inpe_queimadas",
+      "first": "2023-01 (diretorio mensal)",
+      "last_real": "2026-10",
+      "cadence": "mensal"
+    },
+    {
+      "source_id": "p1_senappen_sisdepen",
+      "first": "2016-2S",
+      "last_real": "2025-2S",
+      "cadence": "semestral"
+    },
+    {
+      "source_id": "p1_ibge_sidra_agregados",
+      "first": "2002 (PIB) / 2003 (nascidos) / 2006 (CEMPRE)",
+      "last_real": "2023 (PIB) / 2024 (nascidos) / 2021 (CEMPRE) / 2022 (Censo)",
+      "cadence": "por tabela"
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier": "IBGE 7 digitos",
+      "sources": [
+        "SIDRA",
+        "Ipeadata",
+        "Pix",
+        "Anatel",
+        "S2iD"
+      ]
+    },
+    {
+      "identifier": "IBGE 6 digitos (sem DV)",
+      "sources": [
+        "MI Social",
+        "CAGED",
+        "DEMAS (P0)"
+      ]
+    },
+    {
+      "identifier": "nome do municipio + UF",
+      "sources": [
+        "Sinesp VDE",
+        "PRF",
+        "SENATRAN",
+        "SISDEPEN",
+        "SNIS"
+      ]
+    },
+    {
+      "identifier": "codigo TSE (SG_UE)",
+      "sources": [
+        "TSE"
+      ]
+    },
+    {
+      "identifier": "municipio_id INPE",
+      "sources": [
+        "INPE Queimadas"
+      ]
+    },
+    {
+      "identifier": "conjunto eletrico",
+      "sources": [
+        "ANEEL DEC/FEC"
+      ]
+    },
+    {
+      "identifier": "CNPJ da prestadora",
+      "sources": [
+        "Anatel",
+        "ANEEL CDE"
+      ]
+    }
+  ],
+  "p0_revisits": [
+    {
+      "p0_source_id": "atlas_violencia_ipea",
+      "p0_status": "BLOCKED",
+      "p1_status": "VERIFIED_API",
+      "how": "via Ipeadata OData (series AVIOL12_*)"
+    },
+    {
+      "p0_source_id": "sinesp_vde",
+      "p0_status": "VERIFIED_DATASET (2025)",
+      "p1_status": "VERIFIED_DATASET (2015-2026)",
+      "how": "mapa de granularidade por evento; P0 dizia \"por municipio\" para todos"
+    },
+    {
+      "p0_source_id": "snis_sinisa",
+      "p0_status": "DOCUMENTED_ONLY",
+      "p1_status": "VERIFIED_DATASET (SNIS 2022 xls) / BLOCKED (SINISA login)",
+      "how": "ZIPs aninhados lidos com xlrd"
+    },
+    {
+      "p0_source_id": "ibge_sidra",
+      "p0_status": "VERIFIED_API (so populacao)",
+      "p1_status": "VERIFIED_API (4.448 tabelas N6)",
+      "how": "catalogo e valores dos 4 recortes"
+    },
+    {
+      "p0_source_id": "demas_dados_abertos_saude",
+      "p0_status": "VERIFIED_API",
+      "p1_status": "VERIFIED_API",
+      "how": "SISVAN e PNI individuais; SINASC ainda vazio"
+    },
+    {
+      "p0_source_id": "tse_dados_abertos",
+      "p0_status": "VERIFIED_DATASET",
+      "p1_status": "VERIFIED_DATASET",
+      "how": "comparecimento/abstencao"
+    },
+    {
+      "p0_source_id": "portal_transparencia_downloads",
+      "p0_status": "VERIFIED_DATASET",
+      "p1_status": "inalterado",
+      "how": "bolsa-familia-pagamentos seguiu 403; substituido por MI Social"
+    }
+  ],
+  "gates": [
+    {
+      "gate": "P1_SOURCE_DISCOVERY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "gate": "P1_SECURITY_DEPTH",
+      "state": "PARTIAL"
+    },
+    {
+      "gate": "P1_SOCIAL_WELLBEING_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "gate": "P1_CREATIVE_DISCOVERY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "gate": "P1_MUNICIPAL_GRANULARITY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "gate": "P1_HISTORICAL_COVERAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "gate": "P1_INDICATOR_VALIDITY",
+      "state": "PARTIAL"
+    },
+    {
+      "gate": "P1_IDENTITY_LINKAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "gate": "P1_COLLECTOR_CONSOLIDATION",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "gate": "P1_PRODUCT_OPPORTUNITIES",
+      "state": "PASS_WITH_CAVEATS"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import { createFinanceResolver, officialBridgeFromRosterPayload } from './state-
  */
 export const STATE_STORY_SCHEMA = 'civica_state_story';
 /** Sobe quando o FORMATO ou a REGRA do cálculo muda: entra na chave, então todas as Casas são recalculadas sozinhas após o deploy. */
-export const STATE_STORY_VERSION = 3;
+export const STATE_STORY_VERSION = 5;
 export const STATE_STORY_SCHEMA_SQL = [
   `CREATE SCHEMA IF NOT EXISTS ${STATE_STORY_SCHEMA}`,
   `CREATE TABLE IF NOT EXISTS ${STATE_STORY_SCHEMA}.house_story (house text NOT NULL, section text NOT NULL, source_key text NOT NULL, built_at timestamptz NOT NULL DEFAULT now(), payload jsonb NOT NULL, PRIMARY KEY (house, section))`,
@@ -29,7 +29,9 @@ export interface StoryProposals {
 }
 export type FinanceLabelSemantics = 'category' | 'supplier' | 'unusable';
 export interface StoryFinance {
-  totalCents: number; people: number; linkedValuePct: number | null; semantics: FinanceLabelSemantics; from: string | null; to: string | null; ignoredFutureRows: number;
+  totalCents: number; people: number; linkedValuePct: number | null; semantics: FinanceLabelSemantics;
+  /** false quando a Casa mistura linhas de saldo/disponibilidade de extrato com despesas (somar os valores seria enganoso). */
+  amountsReliable: boolean; from: string | null; to: string | null; ignoredFutureRows: number;
   monthly: Array<{ month: string; cents: number; n: number }>;
   labels: Array<{ label: string; cents: number; n: number }>;
   byParty: Array<{ party: string; cents: number; members: number }>;
@@ -139,8 +141,9 @@ export async function refreshStateHouseStory(pool: Pool, house: string, options:
     const byMethod: Record<string, number> = {}; let unlinkedActors = 0, unlinkedCents = 0;
     for (const [key, link] of linkOf) { if (link) byMethod[link.method] = (byMethod[link.method] ?? 0) + 1; else { unlinkedActors++; unlinkedCents += actorCents.get(key) ?? 0; } }
     const semantics = financeLabelSemantics(house, labels.rows.map(r => r.label ?? ''), labelDistinct.rows[0]?.n ?? 0);
+    const amountsReliable = !labels.rows.some(r => /Saldo|Disponibilidade/i.test(r.label ?? ''));
     const finance: StoryFinance = {
-      totalCents: total, people: linkOf.size, linkedValuePct: total ? Math.round(1000 * linkedCents / total) / 10 : null, semantics,
+      amountsReliable, totalCents: total, people: linkOf.size, linkedValuePct: total ? Math.round(1000 * linkedCents / total) / 10 : null, semantics,
       from: valid[0]?.month ?? null, to: valid.at(-1)?.month ?? null, ignoredFutureRows: ignored,
       monthly: valid.map(r => ({ month: r.month!, cents: Number(r.cents), n: r.n })),
       labels: semantics === 'unusable' ? [] : labels.rows.filter(r => r.label).map(r => ({ label: r.label!, cents: Number(r.cents), n: r.n })),
@@ -211,4 +214,32 @@ export async function reconcileStateHouseStories(pool: Pool, options: { houses?:
     } finally { client.release(); }
   }
   return result;
+}
+
+
+export interface StateNumbersInput {
+  houses: Array<{ house: string; deputies: number; proposals: number | null; proposalsYear: number | null; parties: string[]; finance: { reliable: boolean; monthly: Array<{ month: string; cents: number; n: number }> } | null }>;
+  subsidies: Array<{ house: string; position: string; cents: number; from: string; to: string | null }>;
+  legislativeOperational: string[];
+  /** partidos canônicos distintos nas 27 Casas (mesma fonte da landing das Assembleias). */
+  canonicalPartyCount: number;
+}
+
+/** Insumos do bloco "Assembleias Legislativas" da página /legislativo: 3 consultas, tudo já agregado. */
+export async function readStateNumbersInput(pool: Pool): Promise<StateNumbersInput> {
+  const [stories, subsidies, capabilities, parties] = await Promise.all([
+    pool.query<{ house: string; section: string; payload: any }>(`SELECT house, section, payload FROM ${STATE_STORY_SCHEMA}.house_story`).catch(error => { if ((error as { code?: string }).code === '42P01') return { rows: [] as Array<{ house: string; section: string; payload: any }> }; throw error; }),
+    pool.query<{ house: string; position: string; cents: string | null; from: string; to: string | null }>(`SELECT house, position, gross_amount_cents::text AS cents, effective_from AS "from", effective_to AS "to" FROM civica_state.state_subsidy_reference WHERE gross_amount_cents IS NOT NULL`),
+    pool.query<{ house: string; status: string }>(`SELECT house_id AS house, status FROM civica_national.domain_capabilities WHERE domain='LEGISLATIVE' AND house_id NOT IN ('CAMARA','SENADO')`),
+    pool.query<{ n: string }>(`SELECT count(DISTINCT canonical_party_code)::text AS n FROM civica_national.current_legislators_analytics WHERE is_current=true AND legislative_level IN ('STATE_DEPUTY','DISTRICT_DEPUTY') AND canonical_party_code IS NOT NULL`),
+  ]);
+  const by = new Map<string, StateNumbersInput['houses'][number]>();
+  for (const row of stories.rows) {
+    const item = by.get(row.house) ?? { house: row.house, deputies: 0, proposals: null, proposalsYear: null, parties: [], finance: null };
+    if (row.section === 'seats') { item.deputies = row.payload.total; item.parties = (row.payload.parties as Array<{ party: string }>).map(p => p.party).filter(p => p !== 'Sem partido'); }
+    else if (row.section === 'proposals') { item.proposals = row.payload.total; item.proposalsYear = row.payload.year; }
+    else if (row.section === 'finance') item.finance = { reliable: row.payload.amountsReliable !== false, monthly: row.payload.monthly };
+    by.set(row.house, item);
+  }
+  return { houses: [...by.values()].sort((a, b) => a.house.localeCompare(b.house)), subsidies: subsidies.rows.map(r => ({ house: r.house, position: r.position, cents: Number(r.cents), from: r.from, to: r.to })), legislativeOperational: capabilities.rows.filter(r => r.status === 'OPERATIONAL' || r.status === 'AVAILABLE').map(r => r.house), canonicalPartyCount: Number(parties.rows[0]?.n ?? 0) };
 }

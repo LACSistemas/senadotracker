@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
   const dir = portraitDirectory(), key = portraitKey(raw);
   for (const ext of PORTRAIT_EXTS) {
     try {
-      const bytes = await readFile(portraitPath(dir, raw, ext)), etag = `"${key}-${bytes.length}"`;
+      const bytes = await readFile(/* turbopackIgnore: true */ portraitPath(dir, raw, ext)), etag = `"${key}-${bytes.length}"`;
       if (request.headers.get('if-none-match') === etag) return new Response(null, { status: 304, headers: { etag } });
       return new Response(new Uint8Array(bytes), { status: 200, headers: { 'content-type': PORTRAIT_CONTENT_TYPE[ext], etag, 'cache-control': 'public, max-age=86400, stale-while-revalidate=604800' } });
     } catch { /* sem cópia nesta extensão */ }

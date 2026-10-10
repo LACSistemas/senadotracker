@@ -4,6 +4,7 @@ import { ArrowDown, ArrowRight, ArrowUp, ArrowUpDown, BarChart3, Building2, File
 import { ufs, type DataCoverage, type Source } from '@senadotracker/domain';
 import type { HousePanorama as HousePanoramaData } from '@senadotracker/db';
 import { legislativeOverview, type LegislativeOverviewSort } from '@/lib/data';
+import { getStateLegislativeNumbers, type StateLegislativeNumbers } from '@/lib/state-legislative-numbers';
 import { OfficialPortrait } from '@/components/app-image';
 import { SearchBar, FilterBar } from '@/components/data-controls';
 import { DataTable, type DataColumn } from '@/components/data-table';
@@ -55,6 +56,7 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
   if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Entrada legislativa indisponível" description={data.message} /></main>;
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;
+  const stateNumbers = await getStateLegislativeNumbers();
   const selected = { casa: source, uf, partido: party, busca: search, ordenacao: sort };
   const mixedCoverage: DataCoverage = { availability: 'available', source: 'multiple', period: { from: null, to: null, grain: 'snapshot' }, batchId: null, note: 'Cadastro ativo; cada métrica conserva período e cobertura próprios.', sampleSize: result.items.length };
   type Item = (typeof result.items)[number];
@@ -88,10 +90,11 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
       </section>
 
       <section className="border-y bg-card"><div className="page-shell py-10">
-        <SectionTitle title="Congresso em números" subtitle={`Um panorama do Senado Federal e da Câmara dos Deputados, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
+        <SectionTitle title="Legislativo em Números" subtitle={`Um panorama do Senado Federal, da Câmara dos Deputados e das Assembleias Legislativas, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
         <div className="mt-5 space-y-3">
           <HousePanorama source="senado" year={years.senado} data={panoramas.senado} monthlyCost={monthlyCosts.senado} processingTime={processingTimes.senado} />
           <HousePanorama source="camara" year={years.camara} data={panoramas.camara} monthlyCost={monthlyCosts.camara} processingTime={processingTimes.camara} />
+          {stateNumbers && <StatePanorama numbers={stateNumbers} />}
         </div>
       </div></section>
 
@@ -145,6 +148,20 @@ function HousePanorama({ source, year, data, monthlyCost, processingTime }: { so
     { icon: BarChart3, value: ratio(data.participation.meanRatio), label: 'participação em votações nominais', detail: `média entre parlamentares observáveis · ${year} · n=${data.participation.coverage.sampleSize??0}` },
   ];
   return <article className="overflow-x-auto rounded-2xl border bg-background p-2 shadow-sm"><div className="grid min-w-[1020px] grid-cols-[230px_repeat(5,minmax(135px,1fr))] gap-2"><div className={cn('flex min-h-28 flex-col justify-between rounded-xl p-4 text-white', senate ? 'bg-[#1554a2]' : 'bg-[#08783e]')}><div className="flex items-center gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/15"><Landmark size={20} /></span><div><h3 className="font-black leading-tight">{senate ? 'Senado Federal' : 'Câmara dos Deputados'}</h3><p className="mt-0.5 text-xs text-white/70">{senate ? 'A Casa da Federação' : 'A voz do povo brasileiro'}</p></div></div><Link className="inline-flex items-center gap-1 text-xs font-bold underline" href={senate ? '/legislativo/senadores' : '/legislativo/deputados'}>Ver {senate ? 'senadores' : 'deputados'} <ArrowRight size={12} /></Link></div>{cells.map(({ icon: Icon, value, label, detail }) => <div key={label} className={cn('flex min-h-28 flex-col justify-center rounded-xl border px-4 py-3', senate ? 'border-blue-100 bg-blue-50/65' : 'border-emerald-100 bg-emerald-50/65')}><div className="flex items-center gap-2"><Icon size={16} className={senate ? 'text-blue-700' : 'text-emerald-700'} /><span className="text-xs font-bold text-muted-foreground">{label}</span></div><strong className="mt-2 block text-xl leading-none tracking-tight">{value}</strong><small className="mt-2 block leading-4 text-muted-foreground">{detail}</small></div>)}</div></article>;
+}
+
+const monthLabel = (month: string) => { const [year, mm] = month.split('-'); return `${['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'][Number(mm) - 1] ?? mm}/${year}`; };
+
+function StatePanorama({ numbers }: { numbers: StateLegislativeNumbers }) {
+  const { cost, proposals } = numbers;
+  const cells = [
+    { icon: Users, value: numbers.deputies.toLocaleString('pt-BR'), label: 'deputados estaduais', detail: `${numbers.houses} Casas · inclui ${numbers.districtDeputies} distritais (CLDF)` },
+    { icon: ReceiptText, value: cost ? money.format(cost.totalCents / 100) : '—', label: 'custo mensal identificado', detail: cost ? `subsídios + cotas · ${cost.houses.length} de ${numbers.houses} Casas · ${monthLabel(cost.month)}` : 'sem mês comum utilizável' },
+    { icon: ReceiptText, value: cost ? money.format(cost.meanCents / 100) : '—', label: 'custo médio mensal', detail: cost ? `subsídio + cota · n=${cost.deputies.toLocaleString('pt-BR')}` : '—' },
+    { icon: FileText, value: proposals ? proposals.perHouse.toLocaleString('pt-BR') : 'N/D', label: 'proposições por Assembleia', detail: proposals ? `média de ${proposals.total.toLocaleString('pt-BR')} proposições em ${proposals.houses} Assembleias · ${proposals.year}` : 'sem proposições publicadas' },
+    { icon: Building2, value: numbers.parties.toLocaleString('pt-BR'), label: 'partidos nas Assembleias', detail: `partidos distintos nas ${numbers.houses} Casas` },
+  ];
+  return <div><article className="overflow-x-auto rounded-2xl border bg-background p-2 shadow-sm"><div className="grid min-w-[1020px] grid-cols-[230px_repeat(5,minmax(135px,1fr))] gap-2"><div className="flex min-h-28 flex-col justify-between rounded-xl bg-[#0f6b63] p-4 text-white"><div className="flex items-center gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/15"><Landmark size={20} /></span><div><h3 className="font-black leading-tight">Assembleias Legislativas</h3><p className="mt-0.5 text-xs text-white/70">27 Casas, 27 realidades</p></div></div><Link className="inline-flex items-center gap-1 text-xs font-bold underline" href="/legislativo/estaduais">Ver deputados estaduais <ArrowRight size={12} /></Link></div>{cells.map(({ icon: Icon, value, label, detail }) => <div key={label} className="flex min-h-28 flex-col justify-center rounded-xl border border-teal-100 bg-teal-50/65 px-4 py-3"><div className="flex items-center gap-2"><Icon size={16} className="text-teal-700" /><span className="text-xs font-bold text-muted-foreground">{label}</span></div><strong className="mt-2 block text-xl leading-none tracking-tight">{value}</strong><small className="mt-2 block leading-4 text-muted-foreground">{detail}</small></div>)}</div></article>{cost && <p className="mt-2 px-2 text-xs leading-5 text-muted-foreground">Custo desconsiderando gabinete: soma o subsídio bruto vigente e as cotas e verbas indenizatórias que cada Casa publica, em {monthLabel(cost.month)}, nas {cost.houses.length} de {numbers.houses} Assembleias com dados comparáveis; a média divide pelos {cost.deputies.toLocaleString('pt-BR')} deputados dessas Casas. Cada Assembleia tem regras próprias.</p>}</div>;
 }
 
 function SourceCard({ name, text, href, logo, wide = false, icon: Icon }: { name: string; text: string; href: string; logo?: string; wide?: boolean; icon?: LucideIcon }) { return <a href={href} className="focus-ring rounded-2xl border bg-background p-4 transition hover:border-primary"><div className="flex h-10 items-center">{logo ? <img src={logo} alt="" className={cn('object-contain object-left', wide ? 'h-7 w-36' : 'size-10')} /> : Icon ? <Icon className="text-primary" size={30} /> : null}</div><strong className="mt-3 block">{name}</strong><p className="mt-1 text-xs leading-5 text-muted-foreground">{text}</p><span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary">Acessar fonte <ArrowRight size={12} /></span></a>; }
