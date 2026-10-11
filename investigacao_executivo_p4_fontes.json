@@ -1,0 +1,1023 @@
+{
+  "meta": {
+    "id": "investigacao_executivo_p4_fontes",
+    "date": "2026-10-11",
+    "scope": "investigação apenas",
+    "companion": "investigacao_executivo_p4.md",
+    "previous": {
+      "p3": "investigacao_executivo_p3_fontes.json",
+      "p2": "investigacao_executivo_p2_inqueritos_fontes.json",
+      "p1": "investigacao_executivo_p1_fontes.json",
+      "p0": "investigacao_executivo_fontes.json"
+    },
+    "evidence_classes": [
+      "VERIFIED_API",
+      "VERIFIED_DATASET",
+      "DOCUMENTED_ONLY",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_EVALUATED",
+      "UNAVAILABLE"
+    ],
+    "privacy": "CPF, contas bancárias e identificadores de AIH vistos nos testes não foram gravados nem reproduzidos"
+  },
+  "corrections": [
+    {
+      "id": "COR-01",
+      "p3_claim": "SIH por hospital via DEMAS traz a produção do estabelecimento",
+      "p4_finding": "API devolve ~1 linha por hospital-mês e ignora limit; CNES 0011738 teve 12 linhas e R$ 166.274 em 2025, contra 2.095 AIH e R$ 4.698.475 em jan-mar/2025 nos arquivos RD",
+      "fix": "usar RD do DATASUS (ftp SIHSUS/200801_/Dados/RDUFAAMM.dbc)",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "COR-02",
+      "p3_claim": "PDDE: 100% adimplente no ES 2024",
+      "p4_finding": "o filtro Inadimplente falha com HTTP 500 (ORA-01722) em todos os testes; o relatório só lista o que o servidor serializa",
+      "fix": "inadimplência só por consulta escola a escola",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "COR-03",
+      "p3_claim": "TCE-CE: API documentada",
+      "p4_finding": "serviço novo no ar com 105 recursos e 185 municípios (184 com IBGE), mas tabelas devolvem 0 linhas em 195+ consultas",
+      "fix": "classificar VERIFIED_API (serviço) / dados NOT_CONFIRMED",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "COR-04",
+      "p3_claim": "RS: 497 municípios na jurisdição (a confirmar)",
+      "p4_finding": "confirmado: 497 PM, 497 CM e 125 outros órgãos em 2025",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "COR-05",
+      "p3_claim": "ES sem código de município",
+      "p4_finding": "o dataset agregado de despesas traz o nome do município na coluna EsferaAdministrativa (78/78 casam com o Siconfi)",
+      "evidence": "VERIFIED_DATASET"
+    }
+  ],
+  "coverage": {
+    "municipal_payments": {
+      "SP": 644,
+      "ES": 78,
+      "PE": 184,
+      "RS": 497,
+      "total": 1403,
+      "share_of_5570": 0.2519,
+      "evidence": "VERIFIED"
+    },
+    "rs_2025": {
+      "rows": 26932626,
+      "ops": {
+        "E": 6617886,
+        "L": 8592693,
+        "P": 11722047
+      },
+      "orgaos": {
+        "PM": 497,
+        "CM": 497,
+        "outros": 125,
+        "total": 1119
+      },
+      "cnpj14_pct_rows": 54.5,
+      "cnpj14_pct_pj_payments": 62.8,
+      "cpf11_in_clear_pct": 9.0,
+      "contract_pct": 16.9,
+      "licitacao_pct": 37.4,
+      "historico_pct": 100
+    }
+  },
+  "reconciliations": [
+    {
+      "id": "REC-ES-78",
+      "tce": "TCE-ES",
+      "year": 2024,
+      "siconfi": "DCA-Anexo I-D",
+      "municipalities": 78,
+      "name_match": 78,
+      "within_1_brl": 71,
+      "divergent": [
+        {
+          "m": "Vila Pavão",
+          "pct": 2.8333,
+          "brl": 1795306.19
+        },
+        {
+          "m": "São Domingos do Norte",
+          "pct": 0.4045,
+          "brl": 329044.27
+        },
+        {
+          "m": "Irupi",
+          "pct": 0.2422,
+          "brl": 204241.38
+        },
+        {
+          "m": "Barra de São Francisco",
+          "pct": 0.1102,
+          "brl": 248554.82
+        },
+        {
+          "m": "Domingos Martins",
+          "pct": 0.0503,
+          "brl": 115928.34
+        },
+        {
+          "m": "Presidente Kennedy",
+          "pct": 0.0113,
+          "brl": 93134.83
+        },
+        {
+          "m": "Vargem Alta",
+          "pct": 0.0011,
+          "brl": 1456.61
+        }
+      ]
+    },
+    {
+      "id": "REC-ES-MOV-ARN",
+      "tce": "TCE-ES empenhos 5 partições",
+      "year": 2024,
+      "municipality": "Alto Rio Novo",
+      "ugs": 4,
+      "tce_values": [
+        49496680.91,
+        49004390.55,
+        48622589.05
+      ],
+      "siconfi": [
+        49500000.0,
+        49000000.0,
+        48620000.0
+      ],
+      "result": "idêntico ao centavo ao somar todas as linhas"
+    },
+    {
+      "id": "REC-ES-MOV-VIT",
+      "tce": "TCE-ES empenhos 5 partições",
+      "year": 2024,
+      "municipality": "Vitória",
+      "ugs": 37,
+      "tce_values": [
+        3433411455.69,
+        3108383039.25,
+        3054578156.47
+      ],
+      "siconfi": [
+        3433405227.29,
+        3108383039.25,
+        3054578156.47
+      ],
+      "result": "liquidada e paga idênticas; empenhada +6.228,40"
+    },
+    {
+      "id": "REC-SP-ADAM",
+      "tce": "TCE-SP",
+      "year": 2024,
+      "municipality": "Adamantina",
+      "tce_events": {
+        "Empenhado": 303460000.0,
+        "Anulacao": 12510000.0,
+        "Liquidado": 280100000.0,
+        "Pago": 276960000.0
+      },
+      "siconfi": [
+        290960000.0,
+        280100000.0,
+        276960000.0
+      ],
+      "rule": "empenhado líquido = Empenhado + Reforço − Anulação"
+    },
+    {
+      "id": "REC-PE-ABREU",
+      "tce": "TCE-PE",
+      "year": 2024,
+      "municipality": "Abreu e Lima",
+      "tce_values": [
+        308160000.0,
+        306100000.0,
+        303210000.0
+      ],
+      "siconfi": [
+        308150000.0,
+        306100000.0,
+        303200000.0
+      ]
+    },
+    {
+      "id": "REC-RS-PM",
+      "tce": "TCE-RS",
+      "year": 2025,
+      "scope": "somente PM, ano_empenho=2025",
+      "rows": [
+        {
+          "m": "Agudo",
+          "pago": 114800000.0,
+          "dca": 116700000.0,
+          "pct": 98.4
+        },
+        {
+          "m": "Alegrete",
+          "pago": 401220000.0,
+          "dca": 414620000.0,
+          "pct": 96.8
+        },
+        {
+          "m": "Canoas",
+          "pago": 1884990000.0,
+          "dca": 2394120000.0,
+          "pct": 78.7
+        },
+        {
+          "m": "Caxias do Sul",
+          "pago": 2296300000.0,
+          "dca": 3364460000.0,
+          "pct": 68.3
+        },
+        {
+          "m": "Porto Alegre",
+          "pago": 7185220000.0,
+          "dca": 11349540000.0,
+          "pct": 63.3
+        }
+      ],
+      "explanation": "autarquias/fundações/câmara são órgãos separados; Agudo total de todos os anos 152,85 mi inclui pagamentos de empenhos anteriores"
+    }
+  ],
+  "reconciliation_rules": [
+    {
+      "tce": "ES",
+      "rule": "somar todas as linhas das 5 partições por UG do município (linhas são deltas mensais; há negativos); não deduplicar por empenho"
+    },
+    {
+      "tce": "SP",
+      "rule": "empenhado líquido = Empenhado + Reforço − Anulação; Liquidado e Pago independentes; capital fora"
+    },
+    {
+      "tce": "PE",
+      "rule": "somar VALOREMPENHADO/LIQUIDADO/PAGO por município; paginar por UG/mês (limite 100.000)"
+    },
+    {
+      "tce": "RS",
+      "rule": "filtrar ano_empenho; somar vl_pagamento de todos os órgãos do município (PM, CM, autarquias/fundações)"
+    },
+    {
+      "tce": "*",
+      "rule": "verificar contra DCA Anexo I-D (Total Geral da Despesa) com tolerância declarada"
+    }
+  ],
+  "state_executive": [
+    {
+      "uf": "ES",
+      "source": "dados.es.gov.br: Despesas – execução orçamentária e financeira",
+      "creditor": "nome + CPF/CNPJ (CPF mascarado)",
+      "stages": [
+        "empenho",
+        "liquidação",
+        "pagamento",
+        "RAP"
+      ],
+      "keys": [
+        "DocumentoEmpenho (NE)",
+        "Documento (OB)",
+        "CodigoProcesso"
+      ],
+      "size": "1,2–1,5 GB/ano; 2004–2026",
+      "cnpj14_pct_prefix": 48.1,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "uf": "MG",
+      "source": "dados.mg.gov.br: Despesa por Empenho",
+      "creditor": "razão social + CNPJ/CPF (14 dígitos em 97,8%)",
+      "stages": [
+        "empenho"
+      ],
+      "keys": [
+        "numero_empenho",
+        "contratoconvenio_saida",
+        "numero_processo_compra_siad"
+      ],
+      "rows_2025": 63293,
+      "updated": "2026-10-07",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "uf": "RS",
+      "source": "dados.rs.gov.br: Despesa do Estado (ZIP mensal)",
+      "creditor": "Cod_Credor, Favorecido, CNPJ (85% CPF formatado)",
+      "stages": [
+        "empenho",
+        "liquidação",
+        "pagamento"
+      ],
+      "keys": [
+        "Empenho",
+        "Liquidacao",
+        "Pagamento",
+        "Processo"
+      ],
+      "rows_2026_03": 384314,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "uf": "PE",
+      "source": "TCE-PE DespesasEstaduais!json",
+      "creditor": "NOME_FORNECEDOR, CPF_CNPJ",
+      "stages": [
+        "empenhado",
+        "liquidado",
+        "pago"
+      ],
+      "keys": [
+        "NUMEROEMPENHO",
+        "NUMERO_CONTRATO",
+        "ANO_CONTRATO"
+      ],
+      "cap": 100000,
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "uf": "BA",
+      "source": "dados.ba.gov.br: Despesas (VW_PAINEL_DESPESA)",
+      "creditor": "ausente",
+      "stages": [
+        "liquidado total",
+        "pago"
+      ],
+      "size": "225 MB; 63 colunas; 2013+",
+      "evidence": "VERIFIED_DATASET",
+      "note": "agregado; ordem cronológica de pagamentos (319 MB) não aberta"
+    },
+    {
+      "uf": "PB",
+      "source": "dados.pb.gov.br: JSON Notas de Empenho/Liquidações",
+      "evidence": "NOT_EVALUATED",
+      "note": "recursos sem URL no catálogo"
+    },
+    {
+      "uf": "SC",
+      "source": "dados.sc.gov.br: Despesas/Liquidações",
+      "evidence": "VERIFIED_DATASET",
+      "note": "2019–2022"
+    },
+    {
+      "uf": "GO",
+      "source": "dadosabertos.go.gov.br: despesas por entidade",
+      "evidence": "VERIFIED_DATASET",
+      "note": "não é o Estado inteiro"
+    },
+    {
+      "uf": "RO",
+      "source": "dados.ro.gov.br: Despesas (JSON 2023)",
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "uf": "SP",
+      "source": "dadosabertos.sp.gov.br",
+      "evidence": "NOT_EVALUATED",
+      "note": "execução de despesas é link"
+    }
+  ],
+  "uf_matrix": {
+    "AC": {
+      "municipal": "NOT_EVALUATED",
+      "state": "portal CKAN com 1 dataset de despesa (saúde per capita): NOT_LOCATED"
+    },
+    "AL": {
+      "municipal": "NOT_EVALUATED (sem resposta)",
+      "state": "NOT_EVALUATED"
+    },
+    "AM": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "AP": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "BA": {
+      "municipal": "TCM-BA: só despesa própria; pagamentos municipais não localizados",
+      "state": "PARTIAL (painel agregado)"
+    },
+    "CE": {
+      "municipal": "API SIM no ar, 184 municípios com IBGE; dados NOT_CONFIRMED (0 linhas)",
+      "state": "NOT_EVALUATED"
+    },
+    "DF": {
+      "municipal": "n/a",
+      "state": "NOT_EVALUATED"
+    },
+    "ES": {
+      "municipal": "VERIFIED (78)",
+      "state": "VERIFIED"
+    },
+    "GO": {
+      "municipal": "TCE-GO CKAN só indicadores",
+      "state": "PARTIAL (por entidade)"
+    },
+    "MA": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "MG": {
+      "municipal": "SPA; API não localizada (SICOM documentado, 853 municípios)",
+      "state": "VERIFIED (empenho)"
+    },
+    "MS": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "MT": {
+      "municipal": "NOT_EVALUATED (sem resposta)",
+      "state": "NOT_EVALUATED"
+    },
+    "PA": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "PB": {
+      "municipal": "NOT_EVALUATED (URL SAGRES 404)",
+      "state": "PARTIAL (JSON sem URL)"
+    },
+    "PE": {
+      "municipal": "VERIFIED (184)",
+      "state": "VERIFIED (TCE-PE)"
+    },
+    "PI": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "PR": {
+      "municipal": "NOT_EVALUATED (720 mil licitações abertas, documentado)",
+      "state": "NOT_EVALUATED"
+    },
+    "RJ": {
+      "municipal": "NOT_EVALUATED (sem resposta)",
+      "state": "NOT_EVALUATED"
+    },
+    "RN": {
+      "municipal": "NOT_EVALUATED",
+      "state": "CKAN sem datasets de despesa"
+    },
+    "RO": {
+      "municipal": "NOT_EVALUATED (403)",
+      "state": "DOCUMENTED_ONLY"
+    },
+    "RR": {
+      "municipal": "NOT_EVALUATED (sem resposta)",
+      "state": "NOT_EVALUATED"
+    },
+    "RS": {
+      "municipal": "VERIFIED (497)",
+      "state": "VERIFIED"
+    },
+    "SC": {
+      "municipal": "BLOCKED (Qlik visual-only para emendas, fase anterior)",
+      "state": "PARTIAL (2019–2022)"
+    },
+    "SE": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    },
+    "SP": {
+      "municipal": "VERIFIED (644; capital TCM-SP)",
+      "state": "NOT_EVALUATED"
+    },
+    "TO": {
+      "municipal": "NOT_EVALUATED",
+      "state": "NOT_EVALUATED"
+    }
+  },
+  "schools": {
+    "pdde_by_year": {
+      "2023": {
+        "ufs_ok": 27,
+        "rows": 247863,
+        "schools": 126402,
+        "previsto_brl": 2278500000
+      },
+      "2024": {
+        "ufs_ok": 2,
+        "ufs": [
+          "ES",
+          "MS"
+        ],
+        "rows": 7726,
+        "schools": 3821
+      },
+      "2025": {
+        "ufs_ok": 4,
+        "ufs": [
+          "AC",
+          "MS",
+          "SE",
+          "TO"
+        ],
+        "rows": 12348,
+        "schools": 5371
+      }
+    },
+    "failure": {
+      "code": "ORA-01722 invalid number",
+      "http": 500,
+      "bytes": 159,
+      "depends_on": "UF × ano; inadimplente sempre",
+      "fallback": [
+        "export por município (AC 2024: 12/22)",
+        "consulta por escola (2/2)"
+      ]
+    },
+    "censo_join": {
+      "year": 2023,
+      "pdde_schools": 126402,
+      "matched_pct": 99.99,
+      "unmatched": 16,
+      "uf_consistent_pct": 100,
+      "active_public_with_pdde_pct": 89.4,
+      "municipal_pct": 88.6,
+      "estadual_pct": 94.3,
+      "federal_pct": 0,
+      "censo_has_coordinates": false
+    },
+    "amounts": [
+      {
+        "m": "Vitória",
+        "previsto": 2187575,
+        "devido": 2189605,
+        "pago": 2095771,
+        "pago_sobre_devido": 0.957
+      },
+      {
+        "m": "Alto Rio Novo",
+        "previsto": 122930,
+        "devido": 125570,
+        "pago": 122930,
+        "pago_sobre_devido": 0.979
+      },
+      {
+        "m": "Curitiba",
+        "previsto": 11291632,
+        "devido": 11451692,
+        "pago": 10392158,
+        "pago_sobre_devido": 0.907
+      },
+      {
+        "m": "Agudo",
+        "previsto": 247542,
+        "devido": 247542,
+        "pago": 224609,
+        "pago_sobre_devido": 0.907
+      }
+    ],
+    "semantics": {
+      "previsto": "≈ devido final (relatório de prestação)",
+      "devido": "previsto + ajustes",
+      "pago": "soma das ordens de pagamento com data",
+      "saldo": "estoque em conta por UEx×programa×mês; não somar com pago"
+    }
+  },
+  "health": {
+    "estoque_es": {
+      "municipios_with_stock": 68,
+      "municipios": 78,
+      "cnes": 393,
+      "rows": 53999,
+      "age_le_7d_pct": 88.3,
+      "zero_lines_pct": 21.7,
+      "vitoria_stale_since": "2026-05-05",
+      "serra": "sem estoque",
+      "history": "API só mês corrente (anomes anterior = 0 linhas)",
+      "opendatasus_dataset": "bnafar-posicao-de-estoque (DOCUMENTED_ONLY)"
+    },
+    "pncp_catmat": {
+      "purchases": 50,
+      "items": 272,
+      "with_catalog_code": 0,
+      "evidence": "VERIFIED_API",
+      "classification": "UNLINKED (amostra)"
+    },
+    "sih_rd_es_2025_q1": {
+      "aih": 77995,
+      "valor_brl": 135200000,
+      "hospitals": 71,
+      "residence_eq_hospital_municipality_pct": 44.5,
+      "other_uf_pct": 1.14,
+      "vitoria_hospitals_resident_pct": 20.4,
+      "santa_rita": {
+        "aih": 2095,
+        "valor_brl": 4698475,
+        "origins": 82,
+        "own_city_pct": 11.9
+      },
+      "top_flows": [
+        [
+          "Cariacica",
+          "Vitória",
+          2968
+        ],
+        [
+          "Vila Velha",
+          "Vitória",
+          2575
+        ],
+        [
+          "Serra",
+          "Vitória",
+          1993
+        ],
+        [
+          "Cariacica",
+          "Serra",
+          1585
+        ]
+      ],
+      "source": "ftp.datasus.gov.br SIHSUS RDES2501..2503"
+    },
+    "sih_demas_api": {
+      "rows_santa_rita_2025": 12,
+      "valor_brl": 166274,
+      "verdict": "NOT_FEASIBLE para totais"
+    }
+  },
+  "territory": {
+    "point_in_polygon": {
+      "points": 391,
+      "inside": 391,
+      "municipality_consistent": 391
+    },
+    "vitoria_population": 322869,
+    "vitoria_sectors": 680,
+    "vitoria_sectors_with_income": 642,
+    "income_suppressed_pct": 0.6,
+    "serra": {
+      "sectors": 1013,
+      "population": 520653,
+      "with_income": 999
+    },
+    "alto_rio_novo": {
+      "sectors": 17,
+      "population": 7434
+    },
+    "fala_2025": {
+      "rows": 1563634,
+      "municipal_rows": 137023,
+      "orgs": 2230,
+      "municipalities": 1650,
+      "share_of_5570": 0.296,
+      "es_municipalities": 38,
+      "response_pct": 85.1,
+      "late_pct": 14.9,
+      "satisfaction_pct": 2.6,
+      "kinds": {
+        "prefeitura": 1323,
+        "camara": 664,
+        "secretaria": 109,
+        "ouvidoria": 11,
+        "outro": 123
+      }
+    },
+    "cities_156": {
+      "SP": "trimestral 2012–3º tri 2026, atualizado 2026-10-09",
+      "Recife": {
+        "rows_2025": 86966,
+        "dates_valid_pct": 100,
+        "median_days": 2,
+        "p90_days": 106,
+        "neighborhood_match_pct": 95.6
+      },
+      "BH": "2020–2023-07 (defasado)"
+    }
+  },
+  "identity_rules": [
+    {
+      "id": "RULE-01",
+      "rule": "CNPJ do ente → Siconfi → IBGE7",
+      "measure": "PE 184/184",
+      "classification": "EXACT"
+    },
+    {
+      "id": "RULE-02",
+      "rule": "IBGE6 ↔ IBGE7 por regra de dígito",
+      "classification": "EXACT"
+    },
+    {
+      "id": "RULE-03",
+      "rule": "nome normalizado + UF → ente municipal do Siconfi",
+      "measure": "Fala.BR 2.222/2.230 (99,6%); TCE-ES 78/78; ambiguidade 0 dentro da UF",
+      "classification": "HIGH_CONFIDENCE"
+    },
+    {
+      "id": "RULE-04",
+      "rule": "tabela de apelidos para os que falham",
+      "measure": "8 órgãos sem casamento",
+      "classification": "PROBABLE"
+    },
+    {
+      "id": "RULE-05",
+      "rule": "unidade gestora → município",
+      "measure": "ES (EsferaAdministrativa), SP (slug): alto; RS autarquias: por nome",
+      "classification": "HIGH_CONFIDENCE/PROBABLE"
+    },
+    {
+      "id": "RULE-06",
+      "rule": "bairro normalizado → NM_BAIRRO do Censo",
+      "measure": "Recife 95,6%",
+      "classification": "HIGH_CONFIDENCE"
+    },
+    {
+      "id": "RULE-07",
+      "rule": "coordenada → setor e conferência do município",
+      "measure": "391/391",
+      "classification": "EXACT"
+    },
+    {
+      "id": "RULE-08",
+      "rule": "Inep 8 dígitos",
+      "measure": "PDDE×Censo 99,99%",
+      "classification": "EXACT"
+    }
+  ],
+  "contracts": [
+    {
+      "data": "pagamento municipal TCE-ES",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "pagamento municipal TCE-SP",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "pagamento municipal TCE-PE",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "pagamento municipal TCE-RS",
+      "state": "NEEDS_VALIDATION"
+    },
+    {
+      "data": "despesa estadual ES/MG/RS/PE",
+      "state": "NEEDS_VALIDATION"
+    },
+    {
+      "data": "PDDE por escola (consulta)",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "PDDE lote 2023",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "PDDE×Censo",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "estoque de medicamentos",
+      "state": "NEEDS_VALIDATION"
+    },
+    {
+      "data": "SIH por RD",
+      "state": "NEEDS_VALIDATION"
+    },
+    {
+      "data": "SIH via DEMAS",
+      "state": "NOT_FEASIBLE"
+    },
+    {
+      "data": "setor + CNES",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "Fala.BR",
+      "state": "READY_FOR_CONTRACT"
+    },
+    {
+      "data": "156 SP e Recife",
+      "state": "NEEDS_VALIDATION"
+    },
+    {
+      "data": "156 BH",
+      "state": "BLOCKED"
+    },
+    {
+      "data": "TCE-CE",
+      "state": "DISCOVERY_ONLY"
+    }
+  ],
+  "gates": [
+    {
+      "id": "P4_PAYMENT_COVERAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_PAYMENT_RECONCILIATION",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_STATE_EXECUTIVE_DISCOVERY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P4_OTHER_TCE_DISCOVERY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P4_SCHOOL_PDDE_NATIONAL",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P4_SCHOOL_CENSUS_LINK",
+      "state": "PASS"
+    },
+    {
+      "id": "P4_SCHOOL_AMOUNT_SEMANTICS",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_HEALTH_STOCK_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P4_HEALTH_STOCK_HISTORY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P4_PATIENT_FLOW",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_SUBMUNICIPAL_VALIDATION",
+      "state": "PASS"
+    },
+    {
+      "id": "P4_COMPLAINTS_COVERAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_TERRITORIAL_IDENTITY_RULES",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P4_PRODUCT_READINESS",
+      "state": "PARTIAL"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BLK-P4-01",
+      "text": "Pagamento municipal em 25,2% dos municípios; 23 UFs sem TCE provado",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-P4-02",
+      "text": "TCE-MG atrás de SPA; API não localizada",
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "BLK-P4-03",
+      "text": "TCE-CE sem dados nas tabelas",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "BLK-P4-04",
+      "text": "PDDE 2024/2025 e inadimplência não saem em lote",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "BLK-P4-05",
+      "text": "Estoque sem histórico na API; cobertura irregular",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "BLK-P4-06",
+      "text": "CPF em claro em TCE-RS, TCE-PE e PNCP",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "BLK-P4-07",
+      "text": "PNCP×estoque por CATMAT não provado (0% de itens catalogados na amostra)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "BLK-P4-08",
+      "text": "Divergências ES×DCA (até 2,83%) não explicadas",
+      "evidence": "INFERRED"
+    },
+    {
+      "id": "BLK-P4-09",
+      "text": "BH 156 defasado em 2023",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "BLK-P4-10",
+      "text": "17 UFs sem portal de despesa estadual localizado por CKAN",
+      "evidence": "NOT_EVALUATED"
+    }
+  ],
+  "next_experiments": [
+    "TCE-MG: localizar API por trás da SPA",
+    "TCE-CE: confirmar parâmetros e exercícios com dados",
+    "PDDE por escola: custo de varredura e inadimplência",
+    "SIH RD: 3 UFs grandes × 12 meses; validar VAL_TOT",
+    "BNAFAR: enumerar histórico no OpenDataSUS",
+    "tabela de apelidos de municípios e autarquias do RS",
+    "PNCP×CATMAT com amostra de medicamentos",
+    "segunda reconciliação (2023) no ES",
+    "geocodificar escolas por Inep",
+    "varredura por navegador dos portais estaduais das 17 UFs"
+  ],
+  "tests": [
+    {
+      "id": "TST-RS-FULL",
+      "result": "26.932.626 linhas; 497 PM; 497 CM; 125 outros"
+    },
+    {
+      "id": "TST-RS-TGT",
+      "result": "98,4%–63,3% do DCA"
+    },
+    {
+      "id": "TST-ES-DCA",
+      "result": "71/78 ≤ R$ 1"
+    },
+    {
+      "id": "TST-ES-MOV",
+      "result": "ARN idêntico; Vitória E +6.228,40"
+    },
+    {
+      "id": "TST-SP-DCA",
+      "result": "L e P idênticos"
+    },
+    {
+      "id": "TST-PE-DCA",
+      "result": "≤ R$ 10 mil"
+    },
+    {
+      "id": "TST-CE-API",
+      "result": "105 recursos; 0 linhas"
+    },
+    {
+      "id": "TST-PDDE-27",
+      "result": "27/2/4 UFs"
+    },
+    {
+      "id": "TST-PDDE-FALLBACK",
+      "result": "12/22 municípios; 2/2 escolas"
+    },
+    {
+      "id": "TST-PDDE-INAD",
+      "result": "HTTP 500"
+    },
+    {
+      "id": "TST-PDDE-CENSO",
+      "result": "99,99%"
+    },
+    {
+      "id": "TST-EST-ES",
+      "result": "68/78; 393 CNES"
+    },
+    {
+      "id": "TST-EST-HIST",
+      "result": "0 linhas"
+    },
+    {
+      "id": "TST-SIH-RD",
+      "result": "77.995 AIH"
+    },
+    {
+      "id": "TST-GEO",
+      "result": "391/391"
+    },
+    {
+      "id": "TST-FALA-25",
+      "result": "2.230 órgãos; 1.650 municípios"
+    },
+    {
+      "id": "TST-156-REC",
+      "result": "86.966 linhas"
+    },
+    {
+      "id": "TST-PNCP-CAT",
+      "result": "0%"
+    }
+  ],
+  "evidence_inventory": [
+    "TST-RS-FULL",
+    "TST-RS-TGT",
+    "TST-ES-DCA",
+    "TST-ES-MOV",
+    "TST-SP-DCA",
+    "TST-PE-DCA",
+    "TST-CE-API",
+    "TST-PDDE-27",
+    "TST-PDDE-FALLBACK",
+    "TST-PDDE-INAD",
+    "TST-PDDE-CENSO",
+    "TST-EST-ES",
+    "TST-EST-HIST",
+    "TST-SIH-RD",
+    "TST-GEO",
+    "TST-FALA-25",
+    "TST-156-REC",
+    "TST-PNCP-CAT"
+  ]
+}
