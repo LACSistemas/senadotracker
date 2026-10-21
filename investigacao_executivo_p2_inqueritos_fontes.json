@@ -1,0 +1,2092 @@
+{
+  "meta": {
+    "id": "investigacao_executivo_p2_inqueritos_fontes",
+    "date": "2026-10-10",
+    "scope": "investigação apenas",
+    "evidence_classes": [
+      "VERIFIED_API",
+      "VERIFIED_DATASET",
+      "DOCUMENTED_ONLY",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_EVALUATED",
+      "UNAVAILABLE"
+    ],
+    "companion": "investigacao_executivo_p2_inqueritos.md"
+  },
+  "sources": [
+    {
+      "id": "SRC-SSP-SP",
+      "name": "SSP-SP — Dados trimestrais",
+      "institution": "Secretaria da Segurança Pública de SP",
+      "scope": "UF/SP",
+      "urls": [
+        "https://www.ssp.sp.gov.br/assets/estatistica/trimestral/dadosTrimestral.json",
+        "https://www.ssp.sp.gov.br/assets/estatistica/trimestral/arquivos/2026-02.htm"
+      ],
+      "access": "HTML estático + JSON de índice, sem autenticação (HTTP 200)",
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-HTML-STATIC",
+      "notes": "SPA Angular; endpoints descobertos no main.js."
+    },
+    {
+      "id": "SRC-SSP-SP-MANUAL",
+      "name": "SSP-SP — Manual de Interpretação dos Dados Criminais",
+      "institution": "SSP-SP",
+      "urls": [
+        "https://www.ssp.sp.gov.br/assets/download/Manual%20de%20Interpreta%C3%A7%C3%A3o%20dos%20Dados%20Criminais.pdf"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "IP pode ser instaurado em unidade diferente da do BO; dados corrigidos em Diário Oficial."
+    },
+    {
+      "id": "SRC-SENASP-PISP",
+      "name": "Pesquisa Perfil das Instituições de Segurança Pública",
+      "institution": "MJSP/Senasp",
+      "scope": "UF",
+      "urls": [
+        "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/download/pesquisa-perfil/relatorio_pesquisa_perfil_anobase_2017.pdf",
+        "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/pesquisaperfil/pisp-ano-base-2024.pdf"
+      ],
+      "access": "PDF com Range GET e UA de navegador; ano-base 2024 redireciona para login",
+      "evidence": "VERIFIED_DATASET",
+      "evidence_by_year": {
+        "2017": "VERIFIED_DATASET",
+        "2022": "DOCUMENTED_ONLY",
+        "2024": "BLOCKED"
+      },
+      "collector_family": "COL-PDF-MANUAL"
+    },
+    {
+      "id": "SRC-SENASP-PORT1145",
+      "name": "Portaria MJSP 1.145/2026 (aprova Res. ConSinesp 10/2025)",
+      "institution": "MJSP",
+      "urls": [
+        "https://bibliotecadigital.mj.gov.br/bitstream/1/16686/2/PRT_GM_2026_1145.pdf"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Texto normativo lido na íntegra; anexo da Resolução e periodicidade mensal não confirmados."
+    },
+    {
+      "id": "SRC-SINESP-VDE",
+      "name": "Sinesp VDE (bancovde-2015..2026.xlsx)",
+      "institution": "MJSP",
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Sem indicador de inquérito; IP aparece só em metodologia de tentativa de homicídio/feminicídio."
+    },
+    {
+      "id": "SRC-CNMP-RETRATO",
+      "name": "CNMP — Ministério Público: um retrato (BI Tableau)",
+      "institution": "CNMP",
+      "scope": "Nacional",
+      "urls": [
+        "https://www.cnmp.mp.br/portal/transparencia/relatorios-em-bi/14512-mp-um-retrato-2021",
+        "https://public.tableau.com/views/MPumRetrato-2021/AtuaoFuncional-MPEs"
+      ],
+      "evidence": "DOCUMENTED_ONLY",
+      "access_evidence": "BLOCKED",
+      "notes": "IP recebidos = movimentos. Última edição localizada: 2021."
+    },
+    {
+      "id": "SRC-CNMP-CEAP",
+      "name": "CNMP — Controle Externo da Atividade Policial em Números (Res. 20/2007)",
+      "institution": "CNMP",
+      "urls": [
+        "https://public.tableau.com/app/profile/cnmp/viz/ControleExternodaAtividadePolicialemNmeros-PginadeAbertura/Painel_Abertura_Resoluo20"
+      ],
+      "evidence": "DOCUMENTED_ONLY",
+      "notes": "Inspeções de delegacias; não é fluxo de IP."
+    },
+    {
+      "id": "SRC-CNMP-ELO",
+      "name": "CNMP — ELO Relatório 110",
+      "institution": "CNMP",
+      "urls": [
+        "http://elo.cnmp.mp.br/pages/relatorios/resolucao110.seam"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Resultado negativo: filtro por conselheiro; processos do CNMP."
+    },
+    {
+      "id": "SRC-MP-IP-TRANSP",
+      "name": "Consulta 'Inquéritos policiais e seus andamentos no MP' por MP",
+      "institution": "MPF, MPDFT, MPGO, MPBA, MPAL (testados)",
+      "evidence": "VERIFIED_DATASET",
+      "structured_access": "NOT_PROVEN",
+      "collector_family": "COL-PER-MP"
+    },
+    {
+      "id": "SRC-MPPR-IC",
+      "name": "MPPR — Inquéritos Civis e seus andamentos",
+      "institution": "MPPR",
+      "urls": [
+        "https://ords.mppr.mp.br/ords/f?p=121:2"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Inquérito CIVIL, não policial. Não somar."
+    },
+    {
+      "id": "SRC-DATAJUD",
+      "name": "CNJ DataJud API pública",
+      "institution": "CNJ",
+      "urls": [
+        "https://api-publica.datajud.cnj.jus.br/api_publica_{tribunal}/_search"
+      ],
+      "access": "APIKey pública da Wiki; HTTP 429 sob rajada",
+      "evidence": "VERIFIED_API",
+      "collector_family": "COL-DATAJUD-AGG"
+    },
+    {
+      "id": "SRC-ISP-RJ",
+      "name": "ISPdados — base_elucidacao.csv e infográfico",
+      "institution": "ISP-RJ",
+      "urls": [
+        "https://www.ispdados.rj.gov.br/Arquivos/base_elucidacao.csv",
+        "https://www.ispdados.rj.gov.br/Arquivos/infografico_taxa_elucidacao_resultado.pdf"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-CSV-OPEN"
+    },
+    {
+      "id": "SRC-ES-CKAN",
+      "name": "Dados Abertos ES (CKAN) — SESP",
+      "institution": "SESP-ES",
+      "urls": [
+        "https://dados.es.gov.br/api/3/action/package_search"
+      ],
+      "evidence": "VERIFIED_API",
+      "notes": "42 datasets, nenhum de inquérito."
+    },
+    {
+      "id": "SRC-ES-OBS",
+      "name": "Observatório da Segurança Pública ES",
+      "institution": "SESP-ES",
+      "urls": [
+        "https://observatorio.sesp.es.gov.br/serie-historica-de-dados"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Sem inquérito."
+    },
+    {
+      "id": "SRC-ES-ANUARIO",
+      "name": "Anuário Estadual de Segurança Pública 2023",
+      "institution": "IJSN-ES",
+      "evidence": "VERIFIED_DATASET",
+      "notes": "2 páginas citam IP em texto; sem totais."
+    },
+    {
+      "id": "SRC-PR-CAPE",
+      "name": "SESP-PR CAPE Estatísticas (BI Qlik)",
+      "institution": "SESP-PR",
+      "urls": [
+        "https://www.seguranca.pr.gov.br/CAPE/Estatisticas"
+      ],
+      "evidence": "NOT_EVALUATED",
+      "notes": "BI JS não renderizado."
+    },
+    {
+      "id": "SRC-DF-SSP",
+      "name": "SSP-DF — apresentações mensais (PDF)",
+      "institution": "SSP-DF",
+      "urls": [
+        "https://ssp.df.gov.br/documents/d/ssp/26apresentao-fevereiro-final-p-site-compressed-1-pdf"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "Exemplo de 2016 com 'Produtividade PCDF — IP instaurados'; publicação corrente não verificada."
+    },
+    {
+      "id": "SRC-SOUDAPAZ",
+      "name": "Instituto Sou da Paz — Onde Mora a Impunidade",
+      "institution": "Sou da Paz",
+      "evidence": "DOCUMENTED_ONLY",
+      "notes": "Indicador: homicídios com denúncia até o fim do ano seguinte; 27 UFs via LAI."
+    },
+    {
+      "id": "SRC-ADEPOL",
+      "name": "Adepol do Brasil — pesquisa de resolutividade 2022",
+      "institution": "Adepol",
+      "evidence": "DOCUMENTED_ONLY",
+      "notes": "Média 64,16%; razão relatados/instaurados; relatório completo não localizado."
+    },
+    {
+      "id": "SRC-CNMP-2013-ESTOQUE",
+      "name": "Reportagem sobre 3,8 milhões de IP sem conclusão (CNMP, 2013)",
+      "evidence": "DOCUMENTED_ONLY"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "DS-SP-TRIM",
+      "source": "SRC-SSP-SP",
+      "title": "Total de inquéritos instaurados por trimestre",
+      "coverage_time": "1995–2026T2 (alguns .htm antigos 404)",
+      "coverage_territory": "Capital, Grande SP, Interior, 10 DEINTER",
+      "granularity": "trimestre × macro-região",
+      "fields": [
+        "Total de inquéritos instaurados",
+        "Total de termos circunstanciados lavrados pela Polícia Civil",
+        "Total de boletins de ocorrência"
+      ],
+      "samples": {
+        "2026T1": {
+          "capital": 28460,
+          "gde_sp": 19465,
+          "interior": 73411,
+          "estado": 121336
+        },
+        "2026T2": {
+          "capital": 29614,
+          "gde_sp": 20879,
+          "interior": 75369,
+          "deinter_1_10": [
+            7712,
+            9716,
+            11461,
+            6919,
+            5987,
+            6497,
+            9535,
+            4701,
+            9754,
+            3087
+          ],
+          "estado": 125862
+        },
+        "2025T4": 105375,
+        "2019T4": 89292,
+        "2012T4": 106715,
+        "2005T4": 75651
+      },
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-PISP-2017",
+      "source": "SRC-SENASP-PISP",
+      "title": "PISP ano-base 2017, tabelas 2.16–2.20",
+      "coverage_time": "2017",
+      "coverage_territory": "UF (RO, RR não responderam)",
+      "tables": {
+        "2.16_portaria_total": 783989,
+        "2.18_remetidos_com_indiciamento_total": 447808,
+        "2.19_remetidos_sem_indiciamento_total": 129295,
+        "2.20_nao_remetidos_total": 436236
+      },
+      "per_uf": {
+        "AC": {
+          "portaria": 1059,
+          "flagrante": 2030,
+          "rem_com": 2692,
+          "rem_sem": 81,
+          "nao_rem": 399
+        },
+        "AL": {
+          "portaria": 8064,
+          "flagrante": 6370,
+          "rem_com": 9886,
+          "rem_sem": 1666,
+          "nao_rem": 2877
+        },
+        "AM": {
+          "portaria": 9750,
+          "flagrante": 5358,
+          "rem_com": 12943,
+          "rem_sem": 1740,
+          "nao_rem": 5034
+        },
+        "AP": {
+          "portaria": 2259,
+          "flagrante": 2572
+        },
+        "BA": {
+          "portaria": 41186,
+          "flagrante": 23452,
+          "rem_com": 47885,
+          "rem_sem": 4299
+        },
+        "CE": {
+          "portaria": 25074,
+          "flagrante": 20882
+        },
+        "DF": {
+          "portaria": 23439,
+          "flagrante": 11800,
+          "rem_com": 18012,
+          "rem_sem": 17227
+        },
+        "ES": {
+          "portaria": 12033,
+          "flagrante": 8362,
+          "rem_com": 15309,
+          "rem_sem": 1687,
+          "nao_rem": 7072
+        },
+        "GO": {
+          "portaria": 26846,
+          "flagrante": 24848,
+          "rem_com": 35793,
+          "rem_sem": 3125,
+          "nao_rem": 12776
+        },
+        "MG": {
+          "portaria": 127043,
+          "flagrante": 80533,
+          "rem_com": 84516,
+          "rem_sem": 19521,
+          "nao_rem": 103539
+        },
+        "MS": {
+          "portaria": 28849,
+          "flagrante": 10924
+        },
+        "MT": {
+          "portaria": 21746,
+          "flagrante": 19635,
+          "rem_com": 31825,
+          "rem_sem": 3110
+        },
+        "PA": {
+          "portaria": 21737,
+          "flagrante": 20038,
+          "rem_com": 26793,
+          "rem_sem": 23387,
+          "nao_rem": 16620
+        },
+        "PB": {
+          "portaria": 21617,
+          "rem_com": 14267,
+          "rem_sem": 2131
+        },
+        "PE": {
+          "portaria": 29621,
+          "flagrante": 15853,
+          "rem_com": 29533,
+          "rem_sem": 1569,
+          "nao_rem": 14280
+        },
+        "PI": {
+          "portaria": 6382,
+          "flagrante": 6477,
+          "rem_com": 8901,
+          "rem_sem": 1369,
+          "nao_rem": 1809
+        },
+        "PR": {
+          "portaria": 54655,
+          "flagrante": 43476,
+          "nao_rem": 67357
+        },
+        "RJ": {
+          "portaria": 58120,
+          "flagrante": 30030,
+          "rem_com": 7560,
+          "rem_sem": 3245,
+          "nao_rem": 67895
+        },
+        "RN": {
+          "portaria": 8597,
+          "rem_com": 7151,
+          "rem_sem": 1281,
+          "nao_rem": 3767
+        },
+        "RS": {
+          "portaria": 196985,
+          "rem_com": 63067,
+          "rem_sem": 41848,
+          "nao_rem": 114762
+        },
+        "SC": {
+          "portaria": 51198,
+          "rem_com": 16614,
+          "nao_rem": 18049
+        },
+        "SE": {
+          "portaria": 7729,
+          "rem_com": 9851,
+          "rem_sem": 1520
+        },
+        "TO": {
+          "rem_com": 5210,
+          "rem_sem": 489
+        }
+      },
+      "per_uf_note": "Valores transcritos do PDF; UFs/campos ausentes = '-' ou '---' no original ou não capturados. Revisar contra o PDF antes de uso.",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-RJ-ELUCIDACAO",
+      "source": "SRC-ISP-RJ",
+      "title": "Taxa de elucidação por coorte semestral",
+      "coverage_time": "2013S1–2024S1 (24 linhas)",
+      "fields": [
+        "ano",
+        "semestre",
+        "letalidade_violenta",
+        "homicidio",
+        "pol_mortos_em_serv",
+        "morte_interv_agente_estado",
+        "tempo_apos_registro",
+        "metodologia"
+      ],
+      "methodologies": [
+        "Primeira versão",
+        "Resolução SESEG Nº 1234/2018",
+        "Carta do Rio"
+      ],
+      "follow_up": [
+        "18 a 24 meses",
+        "12 meses",
+        "24 meses"
+      ],
+      "sample_2024S1": {
+        "letalidade_violenta": 29.3,
+        "homicidio": 24.8,
+        "morte_interv_agente_estado": 49.3,
+        "pol_mortos_em_serv": 100
+      },
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-DATAJUD-IP-UF",
+      "source": "SRC-DATAJUD",
+      "title": "Documentos da classe 279 por tribunal estadual",
+      "snapshot": "2026-10-10",
+      "per_tribunal": {
+        "ac": {
+          "ip_docs": 29221,
+          "grau": {
+            "G1": 27640,
+            "JE": 1575,
+            "G2": 5,
+            "TR": 1
+          },
+          "orgaos": 39
+        },
+        "al": {
+          "ip_docs": 30876,
+          "grau": {
+            "G1": 29701,
+            "JE": 1141,
+            "G2": 30,
+            "TR": 4
+          },
+          "orgaos": 106
+        },
+        "am": {
+          "ip_docs": 121502,
+          "grau": {
+            "G1": 118330,
+            "JE": 3143,
+            "G2": 29
+          },
+          "orgaos": 119
+        },
+        "ap": {
+          "ip_docs": 27602,
+          "grau": {
+            "G1": 26415,
+            "JE": 1183,
+            "G2": 4
+          },
+          "orgaos": 33
+        },
+        "ba": {
+          "ip_docs": 300822,
+          "grau": {
+            "G1": 299124,
+            "JE": 1613,
+            "G2": 85
+          },
+          "orgaos": 407
+        },
+        "ce": {
+          "ip_docs": 200288,
+          "grau": {
+            "G1": 200231,
+            "JE": 29,
+            "G2": 28
+          },
+          "orgaos": 369
+        },
+        "dft": {
+          "ip_docs": 20301,
+          "grau": {
+            "G1": 19280,
+            "JE": 1018,
+            "G2": 3
+          },
+          "orgaos": 95
+        },
+        "es": {
+          "ip_docs": 93736,
+          "grau": {
+            "G1": 90699,
+            "JE": 3031,
+            "G2": 6
+          },
+          "orgaos": 152
+        },
+        "go": {
+          "ip_docs": 192513,
+          "grau": {
+            "G1": 183081,
+            "JE": 9216,
+            "G2": 215,
+            "TR": 1
+          },
+          "orgaos": 301
+        },
+        "ma": {
+          "ip_docs": 61046,
+          "grau": {
+            "G1": 60115,
+            "JE": 917,
+            "G2": 14
+          },
+          "orgaos": 346
+        },
+        "mg": {
+          "ip_docs": 1585419,
+          "grau": {
+            "G1": 1531296,
+            "JE": 53569,
+            "G2": 554
+          },
+          "orgaos": 826
+        },
+        "ms": {
+          "ip_docs": 116849,
+          "grau": {
+            "G1": 116240,
+            "JE": 598,
+            "G2": 11
+          },
+          "orgaos": 175
+        },
+        "mt": {
+          "ip_docs": 120802,
+          "grau": {
+            "G1": 118406,
+            "JE": 2352,
+            "G2": 44
+          },
+          "orgaos": 227
+        },
+        "pa": {
+          "ip_docs": 166149,
+          "grau": {
+            "G1": 160915,
+            "JE": 5209,
+            "G2": 25
+          },
+          "orgaos": 254
+        },
+        "pb": {
+          "ip_docs": 76233,
+          "grau": {
+            "G1": 71617,
+            "JE": 4571,
+            "G2": 45
+          },
+          "orgaos": 149
+        },
+        "pe": {
+          "ip_docs": 77696,
+          "grau": {
+            "G1": 77069,
+            "JE": 610,
+            "G2": 17
+          },
+          "orgaos": 271
+        },
+        "pi": {
+          "ip_docs": 36832,
+          "grau": {
+            "G1": 35776,
+            "JE": 958,
+            "G2": 98
+          },
+          "orgaos": 133
+        },
+        "pr": {
+          "ip_docs": 221035,
+          "grau": {
+            "G1": 215893,
+            "JE": 5059,
+            "G2": 83
+          },
+          "orgaos": 324
+        },
+        "rj": {
+          "ip_docs": 287242,
+          "grau": {
+            "G1": 275770,
+            "JE": 11471,
+            "G2": 1
+          },
+          "orgaos": 538
+        },
+        "rn": {
+          "ip_docs": 74693,
+          "grau": {
+            "G1": 69957,
+            "JE": 4726,
+            "G2": 10
+          },
+          "orgaos": 160
+        },
+        "ro": {
+          "ip_docs": 45332,
+          "grau": {
+            "G1": 42690,
+            "JE": 2623,
+            "G2": 19
+          },
+          "orgaos": 74
+        },
+        "rr": {
+          "ip_docs": 13376,
+          "grau": {
+            "G1": 13245,
+            "JE": 120,
+            "G2": 11
+          },
+          "orgaos": 36
+        },
+        "rs": {
+          "ip_docs": 320050,
+          "grau": {
+            "G1": 319617,
+            "JE": 379,
+            "G2": 54
+          },
+          "orgaos": 333
+        },
+        "sc": {
+          "ip_docs": 171283,
+          "grau": {
+            "G1": 166367,
+            "JE": 4871,
+            "G2": 43,
+            "TR": 2
+          },
+          "orgaos": 209
+        },
+        "se": {
+          "ip_docs": 68795,
+          "grau": {
+            "G1": 67031,
+            "JE": 1715,
+            "G2": 49
+          },
+          "orgaos": 126
+        },
+        "sp": {
+          "ip_docs": 1456342,
+          "grau": {
+            "G1": 1397473,
+            "JE": 58198,
+            "G2": 671
+          },
+          "orgaos": 1141
+        },
+        "to": {
+          "ip_docs": 133498,
+          "grau": {
+            "G1": 132361,
+            "JE": 955,
+            "G2": 182
+          },
+          "orgaos": 102
+        }
+      },
+      "total_docs": 6049533,
+      "note": "Documentos processo×grau; não são inquéritos instaurados."
+    },
+    {
+      "id": "DS-DATAJUD-IP-ES-MOV",
+      "source": "SRC-DATAJUD",
+      "title": "Movimentos em IPs do TJES (93.736 docs)",
+      "moves": {
+        "26": [
+          "Distribuição",
+          60601
+        ],
+        "36": [
+          "Redistribuição",
+          14421
+        ],
+        "51": [
+          "Conclusão",
+          64602
+        ],
+        "982": [
+          "Remessa",
+          43324
+        ],
+        "123": [
+          "Remessa",
+          14261
+        ],
+        "980": [
+          "Remessa",
+          3660
+        ],
+        "132": [
+          "Recebimento",
+          54517
+        ],
+        "979": [
+          "Recebimento",
+          4940
+        ],
+        "981": [
+          "Recebimento",
+          4804
+        ],
+        "1063": [
+          "Determinação de arquivamento de procedimentos investigatórios",
+          12918
+        ],
+        "391": [
+          "Denúncia",
+          8571
+        ],
+        "893": [
+          "Desarquivamento",
+          6270
+        ],
+        "849": [
+          "Reativação",
+          4793
+        ],
+        "14999": [
+          "Iniciada Tramitação Direta entre MP e Autoridade Policial",
+          11622
+        ],
+        "15000": [
+          "Finalizada Tramitação Direta entre MP e Autoridade Policial",
+          10517
+        ],
+        "22": [
+          "Baixa Definitiva",
+          5455
+        ],
+        "246": [
+          "Definitivo",
+          56048
+        ],
+        "11878": [
+          "Prescrição",
+          10876
+        ],
+        "11025": [
+          "Suspensão ou Sobrestamento",
+          3438
+        ],
+        "10966": [
+          "Mudança de Classe Processual",
+          12284
+        ],
+        "14738": [
+          "Retificação de Classe Processual",
+          14173
+        ]
+      },
+      "unit": "documentos com ao menos uma ocorrência"
+    },
+    {
+      "id": "DS-DATAJUD-ES-MUN",
+      "source": "SRC-DATAJUD",
+      "title": "IPs TJES por município do órgão julgador",
+      "rows": {
+        "3205002 Serra": 14152,
+        "3205200 Vila Velha": 13016,
+        "3205309 Vitória": 11931,
+        "3201308 Cariacica": 11160
+      },
+      "municipios_distintos": 69
+    },
+    {
+      "id": "DS-TPU-CLASSES",
+      "source": "SRC-DATAJUD",
+      "title": "Classes TPU relacionadas",
+      "classes": {
+        "279": "Inquérito Policial",
+        "280": "Auto de Prisão em Flagrante",
+        "278": "Termo Circunstanciado",
+        "11041": "Inquérito Policial Militar",
+        "1733": "Procedimento Investigatório Criminal (PIC-MP)",
+        "272": "Representação Criminal/Notícia de Crime",
+        "273": "Pedido de Arquivamento em Representação Criminal",
+        "14678": "Acordo de Não Persecução Penal",
+        "283": "Ação Penal - Procedimento Ordinário"
+      },
+      "tjes_counts": {
+        "279": 93736,
+        "280": 60225,
+        "278": 120914,
+        "11041": 6540,
+        "1733": 7486,
+        "272": 6763,
+        "273": 5,
+        "14678": 2079,
+        "283": 95930
+      }
+    }
+  ],
+  "institutions": [
+    {
+      "id": "INS-PC",
+      "name": "Polícias Civis"
+    },
+    {
+      "id": "INS-MP",
+      "name": "Ministérios Públicos e CNMP"
+    },
+    {
+      "id": "INS-JUD",
+      "name": "Tribunais de Justiça e CNJ"
+    },
+    {
+      "id": "INS-MJSP",
+      "name": "MJSP/Senasp/Sinesp"
+    },
+    {
+      "id": "INS-OSC",
+      "name": "Sou da Paz, FBSP, Adepol"
+    }
+  ],
+  "states": [
+    {
+      "uf": "SP",
+      "source": "SSP-SP trimestral",
+      "opening": "verificado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "trimestral",
+      "municipal": "não",
+      "precinct": "não",
+      "api_or_file": "HTML+JSON",
+      "evidence": "VERIFIED_DATASET",
+      "datajud_ip_docs": 1456342
+    },
+    {
+      "uf": "PR",
+      "source": "SESP/CAPE (BI Qlik); PCPR imprensa",
+      "opening": "documentado (operação)",
+      "completion": "documentado (operação)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não testado",
+      "precinct": "não testado",
+      "api_or_file": "BI Qlik (não testado)",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 221035,
+      "pisp_2017": {
+        "portaria": 54655,
+        "flagrante": 43476,
+        "nao_rem": 67357
+      }
+    },
+    {
+      "uf": "ES",
+      "source": "CKAN/Observatório/Anuário/PCES",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "CKAN 200 sem IP",
+      "evidence": "VERIFIED_DATASET (negativo)",
+      "datajud_ip_docs": 93736,
+      "pisp_2017": {
+        "portaria": 12033,
+        "flagrante": 8362,
+        "rem_com": 15309,
+        "rem_sem": 1687,
+        "nao_rem": 7072
+      }
+    },
+    {
+      "uf": "MG",
+      "source": "SEJUSP dados abertos",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "CSV de crimes",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 1585419,
+      "pisp_2017": {
+        "portaria": 127043,
+        "flagrante": 80533,
+        "rem_com": 84516,
+        "rem_sem": 19521,
+        "nao_rem": 103539
+      }
+    },
+    {
+      "uf": "RJ",
+      "source": "ISPdados",
+      "opening": "não localizado",
+      "completion": "verificado (elucidação)",
+      "backlog": "não localizado",
+      "monthly": "semestral",
+      "municipal": "não",
+      "precinct": "não",
+      "api_or_file": "CSV+PDF",
+      "evidence": "VERIFIED_DATASET",
+      "datajud_ip_docs": 287242,
+      "pisp_2017": {
+        "portaria": 58120,
+        "flagrante": 30030,
+        "rem_com": 7560,
+        "rem_sem": 3245,
+        "nao_rem": 67895
+      }
+    },
+    {
+      "uf": "DF",
+      "source": "SSP-DF/PCDF",
+      "opening": "documentado",
+      "completion": "documentado",
+      "backlog": "não localizado",
+      "monthly": "mensal (histórico)",
+      "municipal": "não",
+      "precinct": "não",
+      "api_or_file": "PDF",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 20301,
+      "pisp_2017": {
+        "portaria": 23439,
+        "flagrante": 11800,
+        "rem_com": 18012,
+        "rem_sem": 17227
+      }
+    },
+    {
+      "uf": "RS",
+      "source": "SSP-RS",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "documentado (imprensa)",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "XLS de crimes",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 320050,
+      "pisp_2017": {
+        "portaria": 196985,
+        "rem_com": 63067,
+        "rem_sem": 41848,
+        "nao_rem": 114762
+      }
+    },
+    {
+      "uf": "SC",
+      "source": "SSP-SC",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "404 em página testada",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 171283,
+      "pisp_2017": {
+        "portaria": 51198,
+        "rem_com": 16614,
+        "nao_rem": 18049
+      }
+    },
+    {
+      "uf": "GO",
+      "source": "SSP-GO",
+      "opening": "documentado",
+      "completion": "documentado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 192513,
+      "pisp_2017": {
+        "portaria": 26846,
+        "flagrante": 24848,
+        "rem_com": 35793,
+        "rem_sem": 3125,
+        "nao_rem": 12776
+      }
+    },
+    {
+      "uf": "BA",
+      "source": "SSP-BA",
+      "opening": "documentado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 300822,
+      "pisp_2017": {
+        "portaria": 41186,
+        "flagrante": 23452,
+        "rem_com": 47885,
+        "rem_sem": 4299
+      }
+    },
+    {
+      "uf": "PE",
+      "source": "SDS-PE",
+      "opening": "documentado (Adepol)",
+      "completion": "documentado (Adepol)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "404 em página testada",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 77696,
+      "pisp_2017": {
+        "portaria": 29621,
+        "flagrante": 15853,
+        "rem_com": 29533,
+        "rem_sem": 1569,
+        "nao_rem": 14280
+      }
+    },
+    {
+      "uf": "CE",
+      "source": "SSPDS-CE",
+      "opening": "não testado",
+      "completion": "não testado",
+      "backlog": "não testado",
+      "monthly": "não testado",
+      "municipal": "não testado",
+      "precinct": "não testado",
+      "api_or_file": "sem resposta (1 tentativa)",
+      "evidence": "NOT_EVALUATED",
+      "datajud_ip_docs": 200288,
+      "pisp_2017": {
+        "portaria": 25074,
+        "flagrante": 20882
+      }
+    },
+    {
+      "uf": "MS",
+      "source": "SEJUSP-MS",
+      "opening": "não localizado",
+      "completion": "documentado (Adepol)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 116849,
+      "pisp_2017": {
+        "portaria": 28849,
+        "flagrante": 10924
+      }
+    },
+    {
+      "uf": "MT",
+      "source": "SESP-MT",
+      "opening": "não localizado",
+      "completion": "documentado (Adepol)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 120802,
+      "pisp_2017": {
+        "portaria": 21746,
+        "flagrante": 19635,
+        "rem_com": 31825,
+        "rem_sem": 3110
+      }
+    },
+    {
+      "uf": "PA",
+      "source": "SEGUP-PA",
+      "opening": "não localizado",
+      "completion": "documentado (Adepol)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "404 em página testada",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 166149,
+      "pisp_2017": {
+        "portaria": 21737,
+        "flagrante": 20038,
+        "rem_com": 26793,
+        "rem_sem": 23387,
+        "nao_rem": 16620
+      }
+    },
+    {
+      "uf": "MA",
+      "source": "SSP-MA",
+      "opening": "não localizado",
+      "completion": "documentado (Adepol)",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 61046
+    },
+    {
+      "uf": "AC",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 29221,
+      "pisp_2017": {
+        "portaria": 1059,
+        "flagrante": 2030,
+        "rem_com": 2692,
+        "rem_sem": 81,
+        "nao_rem": 399
+      }
+    },
+    {
+      "uf": "AL",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 30876,
+      "pisp_2017": {
+        "portaria": 8064,
+        "flagrante": 6370,
+        "rem_com": 9886,
+        "rem_sem": 1666,
+        "nao_rem": 2877
+      }
+    },
+    {
+      "uf": "AM",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 121502,
+      "pisp_2017": {
+        "portaria": 9750,
+        "flagrante": 5358,
+        "rem_com": 12943,
+        "rem_sem": 1740,
+        "nao_rem": 5034
+      }
+    },
+    {
+      "uf": "AP",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 27602,
+      "pisp_2017": {
+        "portaria": 2259,
+        "flagrante": 2572
+      }
+    },
+    {
+      "uf": "PB",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 76233,
+      "pisp_2017": {
+        "portaria": 21617,
+        "rem_com": 14267,
+        "rem_sem": 2131
+      }
+    },
+    {
+      "uf": "PI",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 36832,
+      "pisp_2017": {
+        "portaria": 6382,
+        "flagrante": 6477,
+        "rem_com": 8901,
+        "rem_sem": 1369,
+        "nao_rem": 1809
+      }
+    },
+    {
+      "uf": "RN",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 74693,
+      "pisp_2017": {
+        "portaria": 8597,
+        "rem_com": 7151,
+        "rem_sem": 1281,
+        "nao_rem": 3767
+      }
+    },
+    {
+      "uf": "SE",
+      "source": "portal estadual",
+      "opening": "não localizado",
+      "completion": "não localizado",
+      "backlog": "não localizado",
+      "monthly": "não localizado",
+      "municipal": "não localizado",
+      "precinct": "não localizado",
+      "api_or_file": "nenhum",
+      "evidence": "DOCUMENTED_ONLY",
+      "datajud_ip_docs": 68795,
+      "pisp_2017": {
+        "portaria": 7729,
+        "rem_com": 9851,
+        "rem_sem": 1520
+      }
+    },
+    {
+      "uf": "RO",
+      "source": "portal estadual",
+      "opening": "não testado",
+      "completion": "não testado",
+      "backlog": "não testado",
+      "monthly": "não testado",
+      "municipal": "não testado",
+      "precinct": "não testado",
+      "api_or_file": "nenhum",
+      "evidence": "NOT_EVALUATED",
+      "datajud_ip_docs": 45332
+    },
+    {
+      "uf": "RR",
+      "source": "portal estadual",
+      "opening": "não testado",
+      "completion": "não testado",
+      "backlog": "não testado",
+      "monthly": "não testado",
+      "municipal": "não testado",
+      "precinct": "não testado",
+      "api_or_file": "nenhum",
+      "evidence": "NOT_EVALUATED",
+      "datajud_ip_docs": 13376
+    },
+    {
+      "uf": "TO",
+      "source": "portal estadual",
+      "opening": "não testado",
+      "completion": "não testado",
+      "backlog": "não testado",
+      "monthly": "não testado",
+      "municipal": "não testado",
+      "precinct": "não testado",
+      "api_or_file": "nenhum",
+      "evidence": "NOT_EVALUATED",
+      "datajud_ip_docs": 133498,
+      "pisp_2017": {
+        "rem_com": 5210,
+        "rem_sem": 489
+      }
+    }
+  ],
+  "events": [
+    {
+      "id": "EVT-REGISTRADO",
+      "term": "Registrado",
+      "stage": "pré-IP",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "ocorrência",
+      "repeatable": true,
+      "reversible": true,
+      "final": false,
+      "comparable": "parcial",
+      "identifier": "BO (não público)"
+    },
+    {
+      "id": "EVT-INSTAURADO",
+      "term": "Instaurado",
+      "stage": "entrada",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "procedimento",
+      "repeatable": false,
+      "reversible": false,
+      "final": false,
+      "comparable": "parcial",
+      "definition": "Port. 1.145 §3º",
+      "identifier": "nº do IP (não público em agregados)"
+    },
+    {
+      "id": "EVT-DISTRIBUIDO",
+      "term": "Distribuído",
+      "stage": "judicial",
+      "institution": "Judiciário",
+      "kind": "evento",
+      "unit": "movimentação",
+      "repeatable": true,
+      "reversible": true,
+      "final": false,
+      "tpu_codes": [
+        26,
+        36
+      ]
+    },
+    {
+      "id": "EVT-PENDENTE",
+      "term": "Em andamento/pendente",
+      "stage": "estoque",
+      "institution": "Polícia Civil",
+      "kind": "estado",
+      "unit": "procedimento",
+      "comparable": "não"
+    },
+    {
+      "id": "EVT-DEVOLVIDO",
+      "term": "Diligenciado/devolvido",
+      "stage": "entre etapas",
+      "institution": "MP/Judiciário→PC",
+      "kind": "evento",
+      "unit": "movimentação",
+      "repeatable": true,
+      "reversible": true,
+      "final": false,
+      "comparable": "não",
+      "notes": "semântica de devolução não provada nos códigos de remessa/recebimento"
+    },
+    {
+      "id": "EVT-RELATADO",
+      "term": "Relatado",
+      "stage": "saída policial",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "procedimento",
+      "repeatable": "possível",
+      "reversible": true,
+      "final": false
+    },
+    {
+      "id": "EVT-CONCLUIDO",
+      "term": "Concluído",
+      "stage": "saída policial",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "procedimento",
+      "definition": "Port. 1.145 §2º: relatado e remetido, ainda que não elucidado",
+      "final": false,
+      "comparable": "só homicídio/feminicídio"
+    },
+    {
+      "id": "EVT-REMETIDO",
+      "term": "Remetido",
+      "stage": "saída policial",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "movimentação",
+      "repeatable": true,
+      "reversible": true,
+      "final": false,
+      "tpu_codes": [
+        982,
+        123,
+        980
+      ],
+      "pisp_variants": [
+        "com indiciamento",
+        "sem indiciamento"
+      ]
+    },
+    {
+      "id": "EVT-RECEBIDO-MP",
+      "term": "Recebido pelo MP",
+      "stage": "tramitação MP",
+      "institution": "MP",
+      "kind": "evento",
+      "unit": "movimentação",
+      "repeatable": true,
+      "final": false,
+      "tpu_codes": [
+        132,
+        979,
+        981
+      ]
+    },
+    {
+      "id": "EVT-INDICIADO",
+      "term": "Indiciado",
+      "stage": "saída policial",
+      "institution": "Polícia Civil",
+      "kind": "evento",
+      "unit": "procedimento",
+      "final": false
+    },
+    {
+      "id": "EVT-ELUCIDADO",
+      "term": "Esclarecido/elucidado",
+      "stage": "desfecho investigativo",
+      "kind": "estado",
+      "definitions": {
+        "MJSP_1145": "relatado e remetido com autoria+materialidade, inexistência de crime ou excludentes (exceto prescrição)",
+        "ISP_RJ": "Res. SESEG 1.234/2018, 24 meses após o registro",
+        "SOU_DA_PAZ": "denúncia até o fim do ano seguinte"
+      },
+      "comparable": "não entre fontes"
+    },
+    {
+      "id": "EVT-SOLUCIONADO",
+      "term": "Solucionado",
+      "definition": "sem definição normativa localizada",
+      "comparable": "não usar"
+    },
+    {
+      "id": "EVT-DENUNCIADO",
+      "term": "Denunciado",
+      "stage": "tramitação MP",
+      "institution": "MP",
+      "kind": "evento",
+      "unit": "procedimento",
+      "tpu_codes": [
+        391
+      ],
+      "final": false
+    },
+    {
+      "id": "EVT-ARQUIVADO",
+      "term": "Arquivado",
+      "stage": "MP/juízo",
+      "institution": "MP e Judiciário",
+      "kind": "evento",
+      "unit": "procedimento",
+      "reversible": true,
+      "final": false,
+      "tpu_codes": [
+        1063
+      ]
+    },
+    {
+      "id": "EVT-REABERTO",
+      "term": "Reaberto",
+      "stage": "pós-arquivamento",
+      "institution": "Judiciário",
+      "kind": "evento",
+      "unit": "procedimento",
+      "repeatable": true,
+      "tpu_codes": [
+        893,
+        849
+      ]
+    },
+    {
+      "id": "EVT-TRAMITACAO-DIRETA",
+      "term": "Tramitação direta MP↔autoridade policial",
+      "stage": "entre etapas",
+      "kind": "evento",
+      "tpu_codes": [
+        14999,
+        15000
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "source": "SRC-DATAJUD",
+      "fields": [
+        "id",
+        "tribunal",
+        "grau",
+        "numeroProcesso",
+        "dataAjuizamento",
+        "nivelSigilo",
+        "orgaoJulgador.{codigo,nome,codigoMunicipioIBGE}",
+        "classe.{codigo,nome}",
+        "sistema",
+        "formato",
+        "dataHoraUltimaAtualizacao",
+        "@timestamp",
+        "movimentos[]",
+        "assuntos[]"
+      ],
+      "absent": [
+        "partes",
+        "processo relacionado",
+        "valor",
+        "magistrado"
+      ]
+    },
+    {
+      "source": "SRC-SSP-SP",
+      "fields": [
+        "ITEM",
+        "Capital",
+        "Gde SP",
+        "Interior",
+        "Deinter 1..10",
+        "Estado"
+      ]
+    },
+    {
+      "source": "DS-RJ-ELUCIDACAO",
+      "fields": [
+        "ano",
+        "semestre",
+        "letalidade_violenta",
+        "homicidio",
+        "pol_mortos_em_serv",
+        "morte_interv_agente_estado",
+        "tempo_apos_registro",
+        "metodologia"
+      ]
+    }
+  ],
+  "territorial_coverage": {
+    "national": "PISP 2017 (UF); DataJud; CNMP BI",
+    "uf": "SP, RJ(elucidação), PISP 2017",
+    "macro_region": "SP DEINTER",
+    "municipality": "somente órgão julgador (judicial)",
+    "precinct": "nenhuma"
+  },
+  "temporal_coverage": {
+    "SP": "1995–2026T2",
+    "RJ": "2013S1–2024S1",
+    "PISP": "2004–07, 2012, 2017, 2022, 2024",
+    "CNMP": "2011–2021 (última localizada)",
+    "DATAJUD": "eventos com data/hora; histórico não confiável antes de 2020"
+  },
+  "keys": [
+    "UF",
+    "IBGE",
+    "numeroProcesso",
+    "classe.codigo",
+    "movimentos.codigo",
+    "DEINTER",
+    "orgaoJulgador.codigo"
+  ],
+  "tests": [
+    {
+      "id": "TST-SP-IDX",
+      "target": "SRC-SSP-SP",
+      "request": "GET dadosTrimestral.json",
+      "status": 200,
+      "result": "32 anos listados",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-SP-2602",
+      "target": "DS-SP-TRIM",
+      "request": "GET arquivos/2026-02.htm",
+      "status": 200,
+      "result": "125.862 = 29.614+20.879+75.369; interior = soma de 10 DEINTER",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-SP-Q1",
+      "target": "DS-SP-TRIM",
+      "request": "PDF 1º tri/2026 (espelho)",
+      "status": 200,
+      "result": "121.336 = 28.460+19.465+73.411",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-SP-OLD",
+      "target": "DS-SP-TRIM",
+      "request": "1995-01.htm; 1999-04.htm",
+      "status": 404,
+      "result": "não encontrado sob esse nome; não classificado como indisponível",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "TST-PISP17",
+      "target": "DS-PISP-2017",
+      "request": "GET PDF com Range",
+      "status": 206,
+      "result": "228 páginas; tabelas 2.16–2.20",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-PISP24",
+      "target": "SRC-SENASP-PISP",
+      "request": "GET pisp-ano-base-2024.pdf (3 variações)",
+      "status": 200,
+      "result": "página de login (require_login)",
+      "evidence": "BLOCKED"
+    },
+    {
+      "id": "TST-PORT1145",
+      "target": "SRC-SENASP-PORT1145",
+      "request": "GET PDF DSpace",
+      "status": 200,
+      "result": "artigos 1–12 lidos",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-CNMP-BI",
+      "target": "SRC-CNMP-RETRATO",
+      "request": "GET lista de BIs",
+      "status": 200,
+      "result": "40 painéis; nenhum 'inquérito policial'",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-CNMP-ELO",
+      "target": "SRC-CNMP-ELO",
+      "request": "GET resolucao110.seam",
+      "status": 200,
+      "result": "filtro por conselheiro; hipótese refutada",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-CNMP-TABLEAU",
+      "target": "SRC-CNMP-RETRATO",
+      "request": "GET .csv e embed Tableau Public",
+      "status": 404,
+      "result": "csv 404/WAF; embed 200 sem exportação",
+      "evidence": "BLOCKED"
+    },
+    {
+      "id": "TST-DJ-27",
+      "target": "SRC-DATAJUD",
+      "request": "POST _search term classe.codigo=279 em 27 aliases",
+      "status": 200,
+      "result": "6.049.533 documentos",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DJ-DATE",
+      "target": "SRC-DATAJUD",
+      "request": "date_histogram dataAjuizamento",
+      "status": 200,
+      "result": "anos 2597–2612: datas compactas lidas como epoch ms",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DJ-RANGE",
+      "target": "SRC-DATAJUD",
+      "request": "range numérico em dataAjuizamento",
+      "status": 200,
+      "result": "TJSP T1/2026=59.372; T2/2026=69.069; TJES T1=1.196, T2=1.788",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DJ-429",
+      "target": "SRC-DATAJUD",
+      "request": "rajada de agregações",
+      "status": 429,
+      "result": "limite de taxa; retomado com pausa de 20–25 s",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DJ-DUR",
+      "target": "SRC-DATAJUD",
+      "request": "400 IPs TJES com 26 e 1063",
+      "status": 200,
+      "result": "mediana 120 d; p25 28; p75 563; p90 1391 (viés)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-RJ-CSV",
+      "target": "DS-RJ-ELUCIDACAO",
+      "request": "GET base_elucidacao.csv",
+      "status": 200,
+      "result": "24 linhas, 8 colunas, latin-1, decimal vírgula",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-ES-CKAN",
+      "target": "SRC-ES-CKAN",
+      "request": "package_search org SESP; q=inquerito",
+      "status": 200,
+      "result": "42 datasets; 0 para inquerito",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-ES-ANU",
+      "target": "SRC-ES-ANUARIO",
+      "request": "GET PDF 131 p.",
+      "status": 200,
+      "result": "2 páginas citam IP, sem totais",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-LANDINGS",
+      "target": "UFs",
+      "request": "GET 12 páginas de estatística estaduais",
+      "status": "7x200, 3x404, 1x000, 1 redirect",
+      "result": "nenhuma menção a inquérito na página de entrada",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "TST-MPS",
+      "target": "SRC-MP-IP-TRANSP",
+      "request": "GET 5 páginas de MPs",
+      "status": 200,
+      "result": "consultas por unidade/parte; sem CSV/JSON",
+      "evidence": "VERIFIED_DATASET"
+    }
+  ],
+  "relationships": [
+    {
+      "a": "UF",
+      "b": "UF",
+      "classification": "EXACT",
+      "note": "todas as fontes"
+    },
+    {
+      "a": "DataJud.orgaoJulgador",
+      "b": "Município IBGE",
+      "classification": "EXACT",
+      "note": "TJTO com código 0 na P-Judiciário"
+    },
+    {
+      "a": "Delegacia/DEINTER",
+      "b": "Município",
+      "classification": "UNLINKED",
+      "note": "DEINTER SP: PROBABLE se houver tabela oficial (não testado)"
+    },
+    {
+      "a": "Unidade do MP",
+      "b": "Município/Comarca",
+      "classification": "UNLINKED",
+      "note": "não testado"
+    },
+    {
+      "a": "IP (279)",
+      "b": "Ação penal",
+      "classification": "UNLINKED",
+      "note": "sem campo de ligação"
+    },
+    {
+      "a": "IP policial",
+      "b": "IP judicial",
+      "classification": "UNLINKED"
+    },
+    {
+      "a": "PISP",
+      "b": "Portaria 1.145",
+      "classification": "PROBABLE",
+      "note": "conceitos próximos, definições diferentes"
+    },
+    {
+      "a": "TPU classe/movimento",
+      "b": "DataJud",
+      "classification": "EXACT"
+    }
+  ],
+  "indicators": [
+    {
+      "id": "IND-OPEN-SP-QTR",
+      "feasibility": "POSSIBLE",
+      "sources": [
+        "DS-SP-TRIM"
+      ],
+      "caveat": "revisável; não é produtividade total"
+    },
+    {
+      "id": "IND-OPEN-UF-2017",
+      "feasibility": "POSSIBLE_ONE_YEAR",
+      "sources": [
+        "DS-PISP-2017"
+      ]
+    },
+    {
+      "id": "IND-SENT-UF-2017",
+      "feasibility": "POSSIBLE_ONE_YEAR",
+      "sources": [
+        "DS-PISP-2017"
+      ],
+      "caveat": "fluxo do ano, não coorte"
+    },
+    {
+      "id": "IND-NOTSENT-UF-2017",
+      "feasibility": "POSSIBLE_ONE_YEAR",
+      "sources": [
+        "DS-PISP-2017"
+      ],
+      "caveat": "semântica de estoque não confirmada"
+    },
+    {
+      "id": "IND-CLEAR-RJ-COHORT",
+      "feasibility": "POSSIBLE",
+      "sources": [
+        "DS-RJ-ELUCIDACAO"
+      ],
+      "cohort": "registros do semestre, 24 meses"
+    },
+    {
+      "id": "IND-INEH-NATIONAL",
+      "feasibility": "NOT_VERIFIABLE_TODAY",
+      "sources": [
+        "SRC-SENASP-PORT1145"
+      ],
+      "formula": "elucidados encaminhados / instaurados"
+    },
+    {
+      "id": "IND-INRPH-NATIONAL",
+      "feasibility": "NOT_VERIFIABLE_TODAY",
+      "sources": [
+        "SRC-SENASP-PORT1145"
+      ],
+      "formula": "concluídos encaminhados / instaurados"
+    },
+    {
+      "id": "IND-INIPH-NATIONAL",
+      "feasibility": "NOT_VERIFIABLE_TODAY",
+      "sources": [
+        "SRC-SENASP-PORT1145"
+      ],
+      "formula": "instaurados / registros em unidade de PJ"
+    },
+    {
+      "id": "IND-MP-MOVES",
+      "feasibility": "PARTIAL",
+      "sources": [
+        "SRC-CNMP-RETRATO"
+      ],
+      "caveat": "movimentos; última edição localizada 2021"
+    },
+    {
+      "id": "IND-JUD-IP-DOCS",
+      "feasibility": "POSSIBLE",
+      "sources": [
+        "DS-DATAJUD-IP-UF"
+      ],
+      "caveat": "não é instauração; tratar data compacta"
+    },
+    {
+      "id": "IND-JUD-IP-ARCH",
+      "feasibility": "POSSIBLE",
+      "sources": [
+        "DS-DATAJUD-IP-ES-MOV"
+      ]
+    },
+    {
+      "id": "IND-JUD-IP-DUR",
+      "feasibility": "VIABLE_SAMPLE_ONLY",
+      "sources": [
+        "TST-DJ-DUR"
+      ],
+      "caveat": "relógio judicial"
+    },
+    {
+      "id": "IND-COHORT-GENERAL",
+      "feasibility": "INFEASIBLE"
+    },
+    {
+      "id": "IND-BACKLOG-NATIONAL",
+      "feasibility": "INFEASIBLE"
+    },
+    {
+      "id": "IND-FLOW-RATIO",
+      "feasibility": "FORBIDDEN",
+      "reason": "concluídos do mês / instaurados do mês não é taxa de conclusão"
+    }
+  ],
+  "collector_families": [
+    {
+      "id": "COL-HTML-STATIC",
+      "sources": [
+        "SRC-SSP-SP"
+      ]
+    },
+    {
+      "id": "COL-CSV-OPEN",
+      "sources": [
+        "SRC-ISP-RJ"
+      ]
+    },
+    {
+      "id": "COL-DATAJUD-AGG",
+      "sources": [
+        "SRC-DATAJUD"
+      ],
+      "requirements": [
+        "limitador de taxa",
+        "tratar data compacta e ISO",
+        "agregar, não espelhar"
+      ]
+    },
+    {
+      "id": "COL-PDF-MANUAL",
+      "sources": [
+        "SRC-SENASP-PISP"
+      ]
+    },
+    {
+      "id": "COL-BI-EMBED",
+      "sources": [
+        "SRC-CNMP-RETRATO",
+        "SRC-PR-CAPE"
+      ],
+      "status": "não estimado"
+    },
+    {
+      "id": "COL-PER-MP",
+      "sources": [
+        "SRC-MP-IP-TRANSP"
+      ],
+      "status": "não estimado"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SCN-A",
+      "name": "Nacional centralizado",
+      "coverage": "27 UFs só no judicial; policial 1 ano",
+      "families": 3,
+      "complexity": "baixa/média"
+    },
+    {
+      "id": "SCN-B",
+      "name": "Nacional + complementos estaduais",
+      "coverage": "A + SP + RJ",
+      "families": "4–5",
+      "complexity": "média",
+      "recommended": true
+    },
+    {
+      "id": "SCN-C",
+      "name": "Cobertura estadual ampliada",
+      "coverage": "teórica 27; comprovada 2",
+      "families": 6,
+      "complexity": "alta",
+      "note": "sem evidência para prometer cobertura nacional"
+    }
+  ],
+  "gates": [
+    {
+      "id": "P2_NATIONAL_SOURCE_DISCOVERY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P2_CNMP_VERIFICATION",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_SENASP_VERIFICATION",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_DATAJUD_LINKAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_STATE_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_INVESTIGATION_SEMANTICS",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P2_OPENING_COUNTS",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_COMPLETION_COUNTS",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_BACKLOG_COUNTS",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_TERRITORIAL_GRANULARITY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_HISTORICAL_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P2_COLLECTOR_FEASIBILITY",
+      "state": "PASS_WITH_CAVEATS"
+    }
+  ],
+  "limitations": [
+    "Nenhuma fonte policial pública localizada chega a município ou delegacia.",
+    "Estoque pendente contínuo não localizado.",
+    "DataJud: documento ≠ procedimento; dataAjuizamento em formato compacto lida como epoch ms; cobertura de IP desconhecida (razão ~0,49–0,55 em SP, limite inferior).",
+    "PISP: ano único lido (2017); RO/RR sem resposta; SP '-'.",
+    "INEH/INIPH/INRPH sem publicação localizada; periodicidade mensal não confirmada no texto da Portaria.",
+    "Taxas Adepol e Sou da Paz vêm de imprensa/documentos de terceiros; definições distintas.",
+    "BIs em JavaScript (Tableau, Qlik, Power BI) não renderizados.",
+    "Buscas de portais estaduais restritas à página de entrada em 11 UFs."
+  ],
+  "evidence_inventory": [
+    "TST-SP-IDX",
+    "TST-SP-2602",
+    "TST-SP-Q1",
+    "TST-SP-OLD",
+    "TST-PISP17",
+    "TST-PISP24",
+    "TST-PORT1145",
+    "TST-CNMP-BI",
+    "TST-CNMP-ELO",
+    "TST-CNMP-TABLEAU",
+    "TST-DJ-27",
+    "TST-DJ-DATE",
+    "TST-DJ-RANGE",
+    "TST-DJ-429",
+    "TST-DJ-DUR",
+    "TST-RJ-CSV",
+    "TST-ES-CKAN",
+    "TST-ES-ANU",
+    "TST-LANDINGS",
+    "TST-MPS"
+  ]
+}

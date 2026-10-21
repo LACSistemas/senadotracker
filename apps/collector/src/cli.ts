@@ -33,6 +33,7 @@ Uso:
   npm run collector -- collect-camara-budget --year YYYY [--ids ID,ID] [--dry-run] [--report ARQUIVO]
   npm run collector -- collect-senate-staff --year YYYY [--ids ID,ID] [--consolidated ARQUIVO] [--dry-run] [--report ARQUIVO]
   npm run collector -- import-cabinet --source senado --competence YYYY-MM --file ARQUIVO [--dry-run] [--report ARQUIVO]
+  npm run collector -- collect-senate-cabinet-costs-pg --year 2026 [--months YYYY-MM,...] [--publish --allow-source-revision]
   npm run collector -- status
 
 Opções:

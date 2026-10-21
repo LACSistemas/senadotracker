@@ -1,0 +1,2633 @@
+{
+ "meta": {
+  "titulo": "P8 — Indicadores de saúde pública",
+  "gerado": "2026-10-19",
+  "planilha_original_no_repo": false,
+  "planilha_texto_recebido": true,
+  "nota": "planilha colada pelo usuário; sem metas ou benchmarks no texto",
+  "somente_leitura": true,
+  "resultado": {
+   "obtiveis": 14,
+   "municipais": 14,
+   "somente_estadual": 0,
+   "integracao_local": 2,
+   "inviaveis": 3,
+   "sem_rota_comprovada": 1,
+   "historico_desde_2013": 6,
+   "mensais": 4,
+   "multi_fonte": 9,
+   "estabelecimentos_cnes": 501726,
+   "municipios_essenciais_observados": 5569,
+   "municipios_essenciais_estaveis": 3184
+  }
+ },
+ "fontes": [
+  {
+   "id": "SRC-DATASUS-SIM",
+   "catalog": "EXISTENTE",
+   "name": "SIM — Declarações de Óbito (DO) por UF e ano",
+   "inst": "DATASUS/SVSA",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/ (definitivo 1996–2024) e /SIM/PRELIM/DORES/ (2025–2026)",
+   "access": "FTP + DBC (blast) → DBF",
+   "fmt": "DBC",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-01",
+    "TST-P8-02"
+   ],
+   "note": "O endpoint DEMAS de SIM devolve linhas sem filtro municipal (TST-P8-24); a rota por FTP é a única com filtro territorial comprovado."
+  },
+  {
+   "id": "SRC-DATASUS-SINASC",
+   "catalog": "EXISTENTE",
+   "name": "SINASC — Declarações de Nascido Vivo (DN) por UF e ano",
+   "inst": "DATASUS/SVSA",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SINASC/1996_/Dados/DNRES/ (1996–2024) e /SINASC/PRELIM/DNRES/ (2025–2026)",
+   "access": "FTP + DBC → DBF",
+   "fmt": "DBC",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-01",
+    "TST-P8-02"
+   ],
+   "note": "O endpoint DEMAS de SINASC continua devolvendo 0 linhas (reconfirmado em TST-P8-24)."
+  },
+  {
+   "id": "SRC-DATASUS-SIH",
+   "catalog": "EXISTENTE",
+   "name": "SIH-RD — AIH reduzida por UF e mês",
+   "inst": "DATASUS",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/RD{UF}{AA}{MM}.dbc",
+   "access": "FTP + DBC",
+   "fmt": "DBC",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-08",
+    "TST-P8-09"
+   ],
+   "note": "Arquivo por UF do gestor/hospital; o município de residência exige os 27 arquivos."
+  },
+  {
+   "id": "SRC-DATASUS-SIA",
+   "catalog": "EXISTENTE",
+   "name": "SIA-PA — Produção ambulatorial por UF e mês",
+   "inst": "DATASUS",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIASUS/200801_/Dados/PA{UF}{AA}{MM}.dbc",
+   "access": "FTP + DBC",
+   "fmt": "DBC",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-10"
+   ],
+   "note": "Só ES/2024-06 foi baixado (33 MB, 1.109.849 linhas)."
+  },
+  {
+   "id": "SRC-DATASUS-CNES-FTP",
+   "catalog": "NEW",
+   "name": "CNES via FTP: ST, LT, EQ, PF, SR, EP, HB por UF e competência",
+   "inst": "DATASUS",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/{ST|LT|EQ|PF|SR|EP|HB}/",
+   "access": "FTP + DBC",
+   "fmt": "DBC",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-03",
+    "TST-P8-04",
+    "TST-P8-05"
+   ],
+   "note": "Competências 200508–202609 listadas. Substitui a varredura paginada do DEMAS como rota em lote."
+  },
+  {
+   "id": "SRC-DEMAS-CNES",
+   "catalog": "EXISTENTE",
+   "name": "DEMAS: CNES (estabelecimentos, leitos, equipamentos, profissionais, serviços)",
+   "inst": "Ministério da Saúde",
+   "url": "https://apidadosabertos.saude.gov.br/assistencia-a-saude/{cnes-estabelecimentos|cnes-leitos|cnes-equipamentos|cnes-profissionais|cnes-servicos-especializados}",
+   "access": "API REST JSON (limit/offset)",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-25"
+   ],
+   "note": "Campos verificados; lat/long no cadastro; sem estratégia de lote nacional comprovada nesta fase."
+  },
+  {
+   "id": "SRC-DATASUS-PNI",
+   "catalog": "EXISTENTE",
+   "name": "SI-PNI — cobertura vacinal por residência (parquet) e TabNet",
+   "inst": "DATASUS / Min. Saúde",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/Dados_Abertos/SIPNIBD/Cobertura_Residencia.parquet ; http://tabnet.datasus.gov.br/cgi/dhdat.exe?bd_pni/cpnibr.def",
+   "access": "FTP (arquivo único) + POST TabNet",
+   "fmt": "PARQUET / HTML",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-13",
+    "TST-P8-14"
+   ],
+   "note": "Regra oficial de cálculo em ftp://…/PNI/DOCS/Regrascobertura2013.pdf (lido)."
+  },
+  {
+   "id": "SRC-EGESTOR-APS",
+   "catalog": "NEW",
+   "name": "e-Gestor AB — Relatórios Públicos da APS (API do front)",
+   "inst": "Ministério da Saúde / SAPS",
+   "url": "https://relatorioaps-prd.saude.gov.br/{data/competencias-cnes|cobertura/aps|cobertura/ab|cobertura/acs|cobertura/pns|cobertura/sb/v2|ibge/regioes}",
+   "access": "API REST JSON (rotas extraídas do bundle do SPA relatorioaps.saude.gov.br)",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-11",
+    "TST-P8-12"
+   ],
+   "note": "API usada pelo próprio portal público; não é API documentada. Contrato pode mudar sem aviso."
+  },
+  {
+   "id": "SRC-DEMAS-SISAB",
+   "catalog": "EXISTENTE",
+   "name": "DEMAS: Indicadores de desempenho Previne Brasil (SISAB)",
+   "inst": "Ministério da Saúde",
+   "url": "https://apidadosabertos.saude.gov.br/atencao-primaria/indicador-desempenho-programa-previne-brasil",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-15"
+   ],
+   "note": "Somente 2024Q1–2024Q3 localizado. Dicionário de códigos de indicador não localizado."
+  },
+  {
+   "id": "SRC-DEMAS-SIAPS",
+   "catalog": "NEW",
+   "name": "DEMAS: SIAPS — atendimento individual (MIAI), agregado",
+   "inst": "Ministério da Saúde",
+   "url": "https://apidadosabertos.saude.gov.br/atencao-primaria/siaps-atendimento-individual",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-16"
+   ],
+   "note": "Competência única localizada nos testes (202512)."
+  },
+  {
+   "id": "SRC-SIOPS",
+   "catalog": "EXISTENTE",
+   "name": "SIOPS — consulta pública",
+   "inst": "Ministério da Saúde",
+   "url": "https://siops-consulta-publica-api.saude.gov.br ; https://siops.saude.gov.br ; https://siops.datasus.gov.br/rel_LRF.php",
+   "access": "NÃO COMPROVADA (rotas da API pública não enumeráveis; app novo exige login; PHP legado respondeu \"não transmitiu\")",
+   "fmt": "?",
+   "auth": "login no app novo",
+   "status": "NOT_ENUMERABLE",
+   "tests": [
+    "TST-P8-19"
+   ],
+   "note": "Gate P8_SIOPS_FINANCE = PARTIAL."
+  },
+  {
+   "id": "SRC-SICONFI",
+   "catalog": "EXISTENTE",
+   "name": "Siconfi/Tesouro — API de dados (RREO, RGF, DCA)",
+   "inst": "STN",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/{rreo|rgf|dca|anexos-relatorios}",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-17",
+    "TST-P8-18",
+    "TST-P8-20"
+   ],
+   "note": "RREO Anexo 12 (ASPS) não é servido; municípios pequenos usam RREO/RGF Simplificado."
+  },
+  {
+   "id": "SRC-IBGE-SIDRA",
+   "catalog": "EXISTENTE",
+   "name": "IBGE SIDRA — estimativas de população (tabela 6579) e Censo 2022 (9514)",
+   "inst": "IBGE",
+   "url": "https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/last",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-21"
+   ],
+   "note": "Estimativa 2026: 5.571 municípios; soma 214.211.951."
+  },
+  {
+   "id": "SRC-IBGE-LOC",
+   "catalog": "EXISTENTE",
+   "name": "IBGE Localidades — municípios",
+   "inst": "IBGE",
+   "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [
+    "TST-P8-21"
+   ],
+   "note": "Lista 5.571 municípios (um a mais que o \"5.570\" corrente)."
+  },
+  {
+   "id": "SRC-DATASUS-SIGTAP",
+   "catalog": "NEW",
+   "name": "Tabela Unificada SUS (SIGTAP) mensal",
+   "inst": "DATASUS",
+   "url": "ftp://ftp2.datasus.gov.br/public/sistemas/tup/downloads/TabelaUnificada_202610_v2610151110.zip",
+   "access": "FTP ZIP (layout posicional)",
+   "fmt": "TXT posicional",
+   "auth": "anônimo",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-10"
+   ],
+   "note": "5.039 procedimentos decodificados; nomes dos códigos de consulta."
+  },
+  {
+   "id": "SRC-REF-PORTARIA-SAS-221",
+   "catalog": "NEW",
+   "name": "Portaria SAS/MS nº 221/2008 — Lista Brasileira de ICSAP",
+   "inst": "SAS/MS",
+   "url": "https://bvsms.saude.gov.br/bvs/saudelegis/sas/2008/prt0221_17_04_2008.html",
+   "access": "HTTP (HTML)",
+   "fmt": "HTML",
+   "auth": "nenhuma",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-09"
+   ],
+   "note": "Lista transcrita de 19 grupos / 117 códigos de 3 dígitos e 71 de 4 dígitos."
+  },
+  {
+   "id": "SRC-REF-LC141",
+   "catalog": "NEW",
+   "name": "LC 141/2012 (ASPS), texto com redação da LC 227/2026",
+   "inst": "Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp141.htm",
+   "access": "HTTP (HTML)",
+   "fmt": "HTML",
+   "auth": "nenhuma",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-22"
+   ],
+   "note": "Arts. 6º e 7º lidos."
+  },
+  {
+   "id": "SRC-REF-LRF",
+   "catalog": "NEW",
+   "name": "LC 101/2000 (LRF), arts. 19 e 20",
+   "inst": "Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp101.htm",
+   "access": "HTTP (HTML)",
+   "fmt": "HTML",
+   "auth": "nenhuma",
+   "status": "VERIFIED_DATASET",
+   "tests": [
+    "TST-P8-22"
+   ],
+   "note": "Limites globais e por Poder lidos."
+  },
+  {
+   "id": "SRC-DEMAS-BNAFAR",
+   "catalog": "EXISTENTE",
+   "name": "DEMAS: estoque de medicamentos BNAFAR/Hórus",
+   "inst": "Ministério da Saúde",
+   "url": "https://apidadosabertos.saude.gov.br/daf/estoque-medicamentos-bnafar-horus",
+   "access": "API REST JSON",
+   "fmt": "JSON",
+   "auth": "nenhuma",
+   "status": "VERIFIED_API",
+   "tests": [],
+   "note": "Não reexecutado na P8: P4 comprovou ES (53.999 linhas, 393 CNES, só mês corrente). Mantido como oportunidade adicional."
+  }
+ ],
+ "datasets": {
+  "reutilizados": [
+   "SAU-CNES-ESTAB",
+   "SAU-CNES-LEITOS",
+   "SAU-CNES-EQUIP",
+   "SAU-CNES-PROF",
+   "SAU-CNES-SERVICOS",
+   "SAU-SIH-AGREG",
+   "SAU-SIA-AGREG",
+   "SAU-SIM-AGREG",
+   "SAU-SINASC-AGREG",
+   "SAU-PNI-AGREG",
+   "SAU-SIOPS",
+   "SAU-SISAB-PREVINE",
+   "SAU-BNAFAR-ESTOQUE",
+   "FIN-SICONFI-RREO-CORE",
+   "FIN-SICONFI-RGF-CORE",
+   "FIN-SICONFI-DCA-CORE",
+   "TER-SIDRA-SERIES"
+  ],
+  "novos": [
+   {
+    "id": "SAU-APS-COBERTURA",
+    "collector": "EXEC-C20 (adaptação)",
+    "granularidade": "município × competência",
+    "fontes": [
+     "SRC-EGESTOR-APS"
+    ]
+   },
+   {
+    "id": "SAU-SIAPS-ATEND",
+    "collector": "novo",
+    "granularidade": "município × competência × perfil",
+    "fontes": [
+     "SRC-DEMAS-SIAPS"
+    ]
+   }
+  ]
+ },
+ "campos": {
+  "SINASC (DN)": [
+   "CODMUNRES",
+   "CODMUNNASC",
+   "PARTO",
+   "CONSULTAS",
+   "CONSPRENAT",
+   "DTNASC",
+   "IDADEMAE",
+   "SEXO",
+   "PESO",
+   "GESTACAO",
+   "TPROBSON",
+   "CODESTAB"
+  ],
+  "SIM (DO)": [
+   "TIPOBITO",
+   "DTOBITO",
+   "IDADE",
+   "CODMUNRES",
+   "CODMUNOCOR",
+   "CAUSABAS",
+   "TPMORTEOCO",
+   "OBITOGRAV",
+   "OBITOPUERP",
+   "SEXO",
+   "LOCOCOR"
+  ],
+  "SIH-RD": [
+   "UF_ZI",
+   "ANO_CMPT",
+   "MES_CMPT",
+   "MUNIC_RES",
+   "MUNIC_MOV",
+   "CNES",
+   "DIAG_PRINC",
+   "PROC_REA",
+   "VAL_TOT",
+   "DIAS_PERM",
+   "MORTE",
+   "IDADE",
+   "COD_IDADE",
+   "SEXO",
+   "DT_INTER",
+   "DT_SAIDA",
+   "N_AIH",
+   "UTI_MES_TO",
+   "CAR_INT",
+   "COMPLEX",
+   "FINANC"
+  ],
+  "SIA-PA": [
+   "PA_CODUNI",
+   "PA_UFMUN",
+   "PA_MUNPCN",
+   "PA_PROC_ID",
+   "PA_CBOCOD",
+   "PA_QTDPRO",
+   "PA_QTDAPR",
+   "PA_VALPRO",
+   "PA_VALAPR",
+   "PA_CMP",
+   "PA_TPFIN"
+  ],
+  "CNES-LT": [
+   "CNES",
+   "CODUFMUN",
+   "TP_LEITO",
+   "CODLEITO",
+   "QT_EXIST",
+   "QT_CONTR",
+   "QT_SUS",
+   "QT_NSUS",
+   "COMPETEN",
+   "NAT_JUR",
+   "TP_UNID"
+  ],
+  "CNES-ST": [
+   "CNES",
+   "CODUFMUN",
+   "TP_UNID",
+   "VINC_SUS",
+   "NAT_JUR",
+   "ESFERA_A",
+   "TPGESTAO",
+   "DT_ATUAL",
+   "COMPETEN"
+  ],
+  "e-Gestor APS /cobertura/aps": [
+   "nuComp",
+   "coUfIbge",
+   "coMunicipioIbge",
+   "coClassificacaoTipologia",
+   "nuAnoReferencia",
+   "tpOrigemBasePopulacao",
+   "qtPopulacao",
+   "qtEsf",
+   "qtEap30",
+   "qtEap20",
+   "qtEsfr",
+   "qtEcr",
+   "qtEapp20",
+   "qtEapp30",
+   "qtCapacidadeEquipe",
+   "qtCobertura"
+  ],
+  "e-Gestor APS /cobertura/ab": [
+   "nuComp",
+   "coMunicipioIbge",
+   "qtEsf",
+   "qtEAbParametrizada",
+   "qtEsfAb",
+   "qtPopulacao",
+   "qtCoberturaSf",
+   "pcCoberturaAb",
+   "pcCoberturaSf",
+   "qtCoberturaAb"
+  ],
+  "PNI Cobertura_Residencia.parquet": [
+   "CO_ANO",
+   "CO_UF",
+   "CO_MUNICIPIO",
+   "NU_IMUNO",
+   "QT_DOSE",
+   "NU_POPULACAO",
+   "NU_TAXA_COBERTURA",
+   "DT_CARGA"
+  ],
+  "Previne (DEMAS)": [
+   "uf",
+   "municipio",
+   "codigo_municipio",
+   "codigo_tipo_indicador",
+   "quadrimestre",
+   "competencia",
+   "visao_equipe",
+   "numerador",
+   "denominador_utilizador",
+   "denominador_identificado",
+   "denominador_estimado",
+   "percentual",
+   "percentual_quadrimestre",
+   "cadastro",
+   "populacao"
+  ],
+  "SIAPS MIAI (DEMAS)": [
+   "competencia_siaps",
+   "municipio",
+   "categoria_profissional",
+   "capitulo_de_cid_e_ciap2",
+   "tipo_de_atendimento",
+   "tipo_de_equipe",
+   "qtd_registros_atendimento",
+   "qtd_pessoas_atendidas"
+  ],
+  "Siconfi RREO": [
+   "exercicio",
+   "demonstrativo",
+   "periodo",
+   "periodicidade",
+   "cod_ibge",
+   "uf",
+   "populacao",
+   "anexo",
+   "esfera",
+   "rotulo",
+   "coluna",
+   "cod_conta",
+   "conta",
+   "valor"
+  ],
+  "Siconfi RGF": [
+   "exercicio",
+   "periodo",
+   "periodicidade",
+   "cod_ibge",
+   "co_poder",
+   "populacao",
+   "anexo",
+   "rotulo",
+   "coluna",
+   "cod_conta",
+   "conta",
+   "valor"
+  ],
+  "Siconfi DCA": [
+   "exercicio",
+   "cod_ibge",
+   "anexo",
+   "rotulo",
+   "coluna",
+   "cod_conta",
+   "conta",
+   "valor",
+   "populacao"
+  ]
+ },
+ "testes": [
+  {
+   "id": "TST-P8-01",
+   "title": "Inventário FTP SIM/SINASC",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/{SIM,SINASC}",
+   "method": "FTP LIST",
+   "result": "SINASC definitivo 1996–2024 (27 UFs + 2 códigos extras por ano); SIM CID10 definitivo 1996–2024; PRELIM 2025–2026 (SIM e SINASC). Em /SINASC/NOV/DNRES o definitivo termina em 2022; 2023–2024 só em /SINASC/1996_/Dados/DNRES.",
+   "indicators": [
+    "IND-SAU-08",
+    "IND-SAU-09",
+    "IND-SAU-11",
+    "IND-SAU-12"
+   ]
+  },
+  {
+   "id": "TST-P8-02",
+   "title": "SIM + SINASC 2024, 27 UFs, por município de residência",
+   "url": "ftp://…/SINASC/1996_/Dados/DNRES/DN{UF}2024.dbc ; …/SIM/CID10/DORES/DO{UF}2024.dbc",
+   "method": "download 54 arquivos DBC → DBF; agregação por CODMUNRES",
+   "result": "2.389.325 nascidos; 1.532.015 óbitos não fetais; 30.020 óbitos <1 ano (IDADE 0xx–3xx); TMI Brasil 12,56‰. 5.584 códigos de residência (5.570 do IBGE + 14 códigos UF-ignorado xx0000). Maternos (CAUSABAS O00–O95,O98–O99, sexo F): 1.326 → RMM 55,5/100 mil NV. Cesárea (PARTO=2): 60,6%. CONSPRENAT válido em 98,4%; ≥6 consultas em 87,5% dos válidos. Nascimentos fora do município de residência: 34,5%; óbitos infantis: 48,6%.",
+   "indicators": [
+    "IND-SAU-08",
+    "IND-SAU-09",
+    "IND-SAU-11",
+    "IND-SAU-12"
+   ],
+   "fields": "SINASC: CODMUNRES, CODMUNNASC, PARTO, CONSULTAS, CONSPRENAT, DTNASC, IDADEMAE, TPROBSON…; SIM: TIPOBITO, DTOBITO, IDADE, CODMUNRES, CODMUNOCOR, CAUSABAS, TPMORTEOCO, OBITOGRAV, OBITOPUERP…"
+  },
+  {
+   "id": "TST-P8-03",
+   "title": "CNES LT (leitos) e ST (estabelecimentos) 2026-09, 27 UFs",
+   "url": "ftp://…/CNES/200508_/Dados/{LT,ST}/{LT,ST}{UF}2609.dbc",
+   "method": "download 54 DBC",
+   "result": "LT: 51.965 linhas (CNES × tipo/código de leito); 543.524 leitos existentes (362.715 SUS, 180.809 não SUS; QT_EXIST = QT_SUS + QT_NSUS em 100% das linhas); sem hospital-dia (TP_LEITO 7): 528.275 → 2,47 por 1.000 hab. (SUS 1,66). 3.605 municípios com ≥1 leito; 1.966 sem leito registrado. ST: 501.726 estabelecimentos em 5.571 municípios; 131.831 com vínculo SUS; UBS (TP_UNID 02) 43.841 em 5.469 municípios; hospitais (05,07) 6.636 em 3.159 municípios.",
+   "indicators": [
+    "IND-SAU-05",
+    "IND-SAU-06"
+   ],
+   "fields": "LT: CNES, CODUFMUN, TP_LEITO, CODLEITO, QT_EXIST, QT_CONTR, QT_SUS, QT_NSUS, COMPETEN, NAT_JUR, TP_UNID; ST: 114 campos incl. CODUFMUN, TP_UNID, VINC_SUS, NAT_JUR, DT_ATUAL, QTLEIT*, QTINST*"
+  },
+  {
+   "id": "TST-P8-04",
+   "title": "Histórico CNES LT (ES)",
+   "url": "ftp://…/CNES/200508_/Dados/LT/LTES{AAMM}.dbc",
+   "method": "download",
+   "result": "LTES1301 (1.029 linhas), LTES1812 (991), LTES2301 (1.023) recuperados; LTES0508 inexistente (série ES começa depois de 2005-08). DT_ATUAL do ST tem datas futuras (até 2027-04) e 72.955 registros com DT_ATUAL anterior a 2023.",
+   "indicators": [
+    "IND-SAU-05"
+   ]
+  },
+  {
+   "id": "TST-P8-05",
+   "title": "CNES PF, EQ, SR, EP — ES 2026-09",
+   "url": "ftp://…/CNES/200508_/Dados/{PF,EQ,SR,EP}/…ES2609.dbc",
+   "method": "download",
+   "result": "PF: 145.836 vínculos/40 campos (7,6 MB); EQ: 26.875 linhas/28 campos; SR: 23.595 linhas; EP: 2.552 (equipes). Escala nacional por razão de estabelecimentos (ST ES 10.270 / BR 501.726 = 1/48,9): PF ≈ 7,1 mi, EQ ≈ 1,31 mi por competência.",
+   "indicators": [
+    "IND-SAU-01"
+   ]
+  },
+  {
+   "id": "TST-P8-08",
+   "title": "SIH-RD ES 2024 (12 meses)",
+   "url": "ftp://…/SIHSUS/200801_/Dados/RDES24{01..12}.dbc",
+   "method": "download 12 DBC (23,6 MB)",
+   "result": "307.500 AIH, R$ 533,4 mi (VAL_TOT = valor aprovado), 73 CNES com AIH. ICSAP 15,5% (47.561). Internações de residentes fora do município: 54,6%. Óbitos hospitalares (MORTE=1): 11.968 (3,9%). Vitória: 18.335 AIH de residentes (26,1% fora); 65.329 AIH ocorridas em 9 CNES, 79,3% de residentes de outros municípios. Layout: 113 campos em 2020; 95 em 2013-01; 86 em 2008-01.",
+   "indicators": [
+    "IND-SAU-06",
+    "IND-SAU-10"
+   ]
+  },
+  {
+   "id": "TST-P8-09",
+   "title": "SIH-RD Brasil, 27 UFs, 2024-06 + lista ICSAP",
+   "url": "ftp://…/SIHSUS/200801_/Dados/RD{UF}2406.dbc (89,2 MB)",
+   "method": "download 27 DBC; DIAG_PRINC × lista oficial",
+   "result": "1.188.890 AIH (1.188.340 N_AIH únicos), R$ 1,970 bi, 53.714 óbitos hospitalares, ICSAP 15,8%. 5.570/5.571 municípios com ≥1 AIH de residente; 3.062 municípios onde alguma AIH foi faturada. Residentes do ES: 25.915 (arquivos nacionais) vs 25.651 (só RDES) → −1,0%. Municípios sem hospital CNES com AIH de residentes: 2.411/2.412.",
+   "indicators": [
+    "IND-SAU-10"
+   ],
+   "fields": "MUNIC_RES, MUNIC_MOV, CNES, DIAG_PRINC, PROC_REA, VAL_TOT, DIAS_PERM, MORTE, DT_INTER, DT_SAIDA, IDADE, COD_IDADE, SEXO, N_AIH, UTI_MES_TO, CAR_INT…"
+  },
+  {
+   "id": "TST-P8-10",
+   "title": "SIA-PA ES 2024-06 e SIGTAP",
+   "url": "ftp://…/SIASUS/200801_/Dados/PAES2406.dbc (33 MB) ; ftp2…/TabelaUnificada_202610_v2610151110.zip",
+   "method": "download; decodificação; agregação por PA_PROC_ID",
+   "result": "1.109.849 linhas/59 campos; 1.067 estabelecimentos; 44.337 pares estab×procedimento. Consultas (QTDAPR): 0301010072 médica especializada 210.799; 0301010064 médica atenção primária 18.308; 0301010056 saúde do trabalhador 533; 0301010307 teleconsulta médica 2.304; (não médicas: 0301010048 143.350; 0301010030 21.429). A atenção primária quase não aparece no SIA.",
+   "indicators": [
+    "IND-SAU-02"
+   ],
+   "fields": "PA_CODUNI, PA_UFMUN, PA_MUNPCN, PA_PROC_ID, PA_CBOCOD, PA_QTDPRO, PA_QTDAPR, PA_VALPRO, PA_VALAPR, PA_CMP, PA_TPFIN…"
+  },
+  {
+   "id": "TST-P8-11",
+   "title": "e-Gestor APS: competências e cobertura 2026-08",
+   "url": "https://relatorioaps-prd.saude.gov.br/cobertura/aps?unidadeGeografica=MUNICIPIO&coUf={UF}&nuCompInicio=202608&nuCompFim=202608",
+   "method": "GET JSON (27 chamadas, 36 s)",
+   "result": "79 competências listadas (201912–202608; faltam 202511 e 202601). 5.570 municípios devolvidos (IBGE lista 5.571); Brasil 98,77% (213.418.341 hab., 56.244 eSF). qtCobertura>100 em 4.755 municípios (mediana 148,8; máx 408,9): cobertura NÃO é limitada a 100. Vitória: 346.500/343.378 = 100,9. População-base: DOU 2025.",
+   "indicators": [
+    "IND-SAU-01"
+   ],
+   "fields": "nuComp, coUfIbge, coMunicipioIbge, coClassificacaoTipologia, nuAnoReferencia, tpOrigemBasePopulacao, qtPopulacao, qtEsf, qtEap30, qtEap20, qtEsfr, qtEcr, qtEapp20, qtEapp30, qtCapacidadeEquipe, qtCobertura"
+  },
+  {
+   "id": "TST-P8-12",
+   "title": "e-Gestor APS: quebra metodológica",
+   "url": "…/cobertura/{ab|aps}?unidadeGeografica=MUNICIPIO&coMunicipio=320530&nuCompInicio=C&nuCompFim=C",
+   "method": "GET JSON",
+   "result": "/cobertura/ab responde 201912–202012 (pcCoberturaAb, pcCoberturaSf; Vitória 202001: AB 92,28 / SF 79,89) e 0 linhas de 202112 em diante; /cobertura/aps responde de 202112 (Vitória 92,46; 202212 89,44; 202301 101,55; 202312 104,02; 202412 107,26; 202512 101,05; 202608 100,9) e 0 linhas até 202012. 2021 inteiro não foi testado mês a mês.",
+   "indicators": [
+    "IND-SAU-01"
+   ]
+  },
+  {
+   "id": "TST-P8-13",
+   "title": "Cobertura vacinal — parquet SIPNIBD",
+   "url": "ftp://…/Dados_Abertos/SIPNIBD/Cobertura_Residencia.parquet",
+   "method": "download (5,1 MB)",
+   "result": "1.088.479 linhas; 2015–2026; 36 rótulos de imunobiológico (variações de nome entre anos); 5.570–5.571 municípios por ano desde 2021; carga 01/07/2026 (2026 parcial). Campos: CO_ANO, CO_UF, CO_MUNICIPIO, NU_IMUNO, QT_DOSE, NU_POPULACAO, NU_TAXA_COBERTURA, DT_CARGA. Vitória BCG: 2017 142%; 2019 124%; 2021 91%; 2022 55% (TabNet 2022: 55,1% — confere). Doses_Residencia.parquet = 1,17 GB, não baixado.",
+   "indicators": [
+    "IND-SAU-07"
+   ]
+  },
+  {
+   "id": "TST-P8-14",
+   "title": "Cobertura vacinal — TabNet POST e regra oficial",
+   "url": "http://tabnet.datasus.gov.br/cgi/webtabx.exe?bd_pni/cpnibr.def ; ftp://…/PNI/DOCS/Regrascobertura2013.pdf",
+   "method": "POST (Linha=Município, Coluna=Ano, Incremento=BCG, PAno=2019,2022) ; leitura do PDF",
+   "result": "5.569 municípios com BCG; 2.303 acima de 100% em 2022; Brasil 86,67% (2019) e 90,09% (2022). Fórmula do TabNet: soma(QT_DOSE)×100/soma(NU_POPULACAO). PDF oficial: cobertura = doses aplicadas / população na idade-alvo × 100; denominador = SINASC; regras de dose (D3, DU, reforço) mudam por período. Séries TabNet terminam em 2022.",
+   "indicators": [
+    "IND-SAU-07"
+   ]
+  },
+  {
+   "id": "TST-P8-15",
+   "title": "Previne Brasil — indicadores de desempenho",
+   "url": "https://apidadosabertos.saude.gov.br/atencao-primaria/indicador-desempenho-programa-previne-brasil",
+   "method": "GET JSON (filtros uf, quadrimestre, codigo_municipio, competencia)",
+   "result": "Somente 2024Q1, Q2 e Q3 em Vitória; 2024Q3: 100.242 linhas, 5.570 municípios, códigos 10,20,30,40,50,70 × 3 visões (válidas, homologadas, geral). O campo \"percentual\" não é numerador/denominador (mediana 92 vs 58,8 do cálculo do código 10); denominador<30 em 2.198 municípios. Dicionário dos códigos não localizado: significado NÃO verificado.",
+   "indicators": [
+    "IND-SAU-11",
+    "IND-SAU-13"
+   ]
+  },
+  {
+   "id": "TST-P8-16",
+   "title": "SIAPS atendimento individual (MIAI)",
+   "url": "https://apidadosabertos.saude.gov.br/atencao-primaria/siaps-atendimento-individual",
+   "method": "GET JSON (competencia_siaps, municipio)",
+   "result": "Competências testadas: 202101, 202312, 202412, 202506, 202603 → 0 linhas; 202512 → 13.489 linhas em Vitória, 100.992 registros (49.829 de categoria MÉDICO). Agregado por categoria profissional, CID/CIAP, tipo de atendimento e equipe. Não há campo de encaminhamento/seguimento.",
+   "indicators": [
+    "IND-SAU-02",
+    "IND-SAU-13"
+   ]
+  },
+  {
+   "id": "TST-P8-17",
+   "title": "Siconfi: RREO Anexo 02 (função Saúde) e RGF Anexo 01",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/{rreo|rgf}",
+   "method": "GET JSON",
+   "result": "Vitória 2024 bim.6: 3.234 linhas RREO; Saúde: dotação atualizada R$ 546,5 mi, empenhado 503,0 mi (92,0%), liquidado 457,5 mi (83,7%), inscrito em RPNP 45,5 mi. RGF 2024 Q3 Executivo: DTP 41,53% da RCL ajustada, limite máximo 54%. Anexos servidos: 01,02,03,04,06,07,09,10,11,13,14 — NÃO há Anexo 08 (MDE) nem 12 (ASPS) em Vitória, SP, Recife, BH, nem em ES-UF e SP-UF.",
+   "indicators": [
+    "IND-SAU-15",
+    "IND-SAU-16",
+    "IND-SAU-17",
+    "IND-SAU-19",
+    "IND-SAU-20"
+   ]
+  },
+  {
+   "id": "TST-P8-18",
+   "title": "Siconfi: DCA Anexos I-E, I-F, I-G",
+   "url": "…/dca?an_exercicio=2024&id_ente=3205309&no_anexo=DCA-Anexo I-E",
+   "method": "GET JSON",
+   "result": "I-E (Vitória, 10 - Saúde): empenhadas 503,0 mi; liquidadas 457,5 mi; pagas 447,8 mi; RPNP inscritos 45,5 mi; RPP inscritos 9,6 mi. I-G (restos a pagar por função): RPNP inscrito até 31/12 anterior 47,4 mi; liquidados/pagos 35,4 mi; cancelados 13,7 mi; RPP pagos 6,1 mi. DCA e RREO existem desde 2015 (2013: 0 linhas).",
+   "indicators": [
+    "IND-SAU-17",
+    "IND-SAU-19"
+   ]
+  },
+  {
+   "id": "TST-P8-19",
+   "title": "SIOPS: rotas e formulário legado",
+   "url": "https://siops-consulta-publica-api.saude.gov.br ; https://siops.saude.gov.br ; https://siops.datasus.gov.br/rel_LRF.php",
+   "method": "GET/POST",
+   "result": "API pública: /swagger-ui/, /v3/api-docs, /v2/api-docs → 404; /swagger-resources → []. App novo siops.saude.gov.br: env.js aponta siops-backend/-gestor-api/-relatorio-api (área com login). PHP legado rel_LRF.php: POST com cmbAno/cmbUF/cmbMunicipio/cmbPeriodo respondeu \"O Municipio mun – mun não transmitiu os dados\": parâmetros reais não confirmados. Extração do indicador \"% ASPS\" NÃO comprovada.",
+   "indicators": [
+    "IND-SAU-15",
+    "IND-SAU-16",
+    "IND-SAU-17",
+    "IND-SAU-19"
+   ]
+  },
+  {
+   "id": "TST-P8-20",
+   "title": "Siconfi: amostra aleatória de 150 municípios (seed 8)",
+   "url": "…/rreo ; …/rgf",
+   "method": "GET JSON (RREO bim.6 ou RREO Simplificado sem.2; RGF Q3 ou RGF Simplificado)",
+   "result": "150/150 com despesa Saúde (RREO Anexo 02) e DTP %RCL (RGF Anexo 01). 86 usam RREO/RGF padrão, 64 usam os Simplificados. Despesa de Saúde empenhada per capita: mediana R$ 1.242 (p10 493; p90 2.276). DTP do Executivo: mediana 43,9% da RCL ajustada (29,7–77,4); 9/150 acima de 54%. Três municípios pequenos (Alto Rio Novo, Serra da Saudade, André da Rocha) têm 0 linhas no RREO padrão e dados completos no Simplificado.",
+   "indicators": [
+    "IND-SAU-16",
+    "IND-SAU-17",
+    "IND-SAU-19",
+    "IND-SAU-20"
+   ]
+  },
+  {
+   "id": "TST-P8-21",
+   "title": "IBGE: municípios e população",
+   "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios ; https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/last",
+   "method": "GET JSON",
+   "result": "5.571 municípios (um novo, sem nascidos em 2024); população 2026: 214.211.951. Atenção: o prefixo 3200359 = Alto Rio Novo (código de 6 dígitos 320035); 320040 é Anchieta.",
+   "indicators": [
+    "IND-SAU-05",
+    "IND-SAU-16"
+   ]
+  },
+  {
+   "id": "TST-P8-22",
+   "title": "Normas: LC 141/2012 e LRF",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp141.htm ; …/lcp101.htm",
+   "method": "GET HTML",
+   "result": "LC 141 art. 6º: Estados e DF, mínimo 12%; art. 7º: Municípios e DF, mínimo 15% (redação da LC 227/2026). LRF art. 19: União 50%, Estados 60%, Municípios 60% da RCL; art. 20: Executivo municipal 54% / Legislativo 6%; Executivo estadual 49%.",
+   "indicators": [
+    "IND-SAU-15",
+    "IND-SAU-20"
+   ]
+  },
+  {
+   "id": "TST-P8-23",
+   "title": "Amostras territoriais (14 municípios + 78 do ES)",
+   "url": "(derivado de TST-P8-02/03/09/11/13)",
+   "method": "junção por código IBGE de 6 dígitos",
+   "result": "Ver seção 18. ES: 78/78 municípios com nascidos; 31 sem hospital CNES; 22 sem leito; TMI do ES pela soma dos municípios 12,20‰; óbitos <1 ano por UF = 610 vs soma municipal 609 (um óbito sem município de residência).",
+   "indicators": [
+    "IND-SAU-05",
+    "IND-SAU-08",
+    "IND-SAU-01",
+    "IND-SAU-10"
+   ]
+  },
+  {
+   "id": "TST-P8-24",
+   "title": "DEMAS: SIM, SINASC, população SVSA, PNI doses",
+   "url": "https://apidadosabertos.saude.gov.br/{vigilancia-e-meio-ambiente/…|vacinacao/doses-aplicadas-pni-2024}",
+   "method": "GET JSON (limit)",
+   "result": "SIM: devolve registros (campos minúsculos, só limit/offset, sem filtro municipal). SINASC: 0 linhas. svsa-populacao-residente (ano=2024, cod_mun=320530): 0 linhas. PNI doses 2024: microdado individual (paciente, estabelecimento, vacina, data), só limit/offset. Swagger de 113 rotas em /static/swagger.json.",
+   "indicators": [
+    "IND-SAU-07",
+    "IND-SAU-08"
+   ]
+  },
+  {
+   "id": "TST-P8-25",
+   "title": "DEMAS CNES: campos",
+   "url": "https://apidadosabertos.saude.gov.br/assistencia-a-saude/cnes-{estabelecimentos,leitos,equipamentos,profissionais}",
+   "method": "GET JSON (limit=1)",
+   "result": "Estabelecimentos: nu_comp, co_ibge, co_cnes, nu_cnpj, tp_gestao, tp_unidade, ds_natureza_juridica, nu_latitude, nu_longitude, ds_status. Leitos: nu_comp (200812 em Vitória), tp_leito, ds_leito, qt_existente, qt_sus. Equipamentos: tp_equipamento, qt_existente, qt_uso, disp_sus. Profissionais: traz no_profissional (nome em claro), ds_cbo, carga horária, equipe (co_ine). Dado pessoal: agregar antes de armazenar.",
+   "indicators": [
+    "IND-SAU-05"
+   ]
+  },
+  {
+   "id": "TST-P8-26",
+   "title": "Busca por fontes de espera, absenteísmo e satisfação",
+   "url": "(busca web + swagger DEMAS)",
+   "method": "WebSearch + leitura do swagger",
+   "result": "Não há base nacional de tempo de espera nem de absenteísmo. Painéis estaduais/municipais existem (RS Painel de Dados da Regulação, POA, MPDFT Mapa Social da Saúde sobre SISREG), sem teste de extração nesta fase. DEMAS tem \"ouvidoria/ouvidor2|3\" (manifestações) — não é satisfação. PMAQ (módulo III) existe nas publicações acadêmicas, sem URL de microdados confirmada.",
+   "indicators": [
+    "IND-SAU-03",
+    "IND-SAU-04",
+    "IND-SAU-14"
+   ]
+  }
+ ],
+ "cobertura": {
+  "IND-SAU-01": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2026-08: 5.570 de 5.571 municípios; 27 UFs; Brasil 98,77%"
+  },
+  "IND-SAU-02": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": null,
+   "ufs": 1,
+   "cobertura": "SIA: 27 UFs em arquivo, 1 UF×1 mês testado; APS fora do SIA"
+  },
+  "IND-SAU-03": {
+   "classe": "LOCAL_SYSTEM_ONLY",
+   "municipios": 0,
+   "ufs": 0,
+   "cobertura": "Nenhuma base nacional ou estadual testada"
+  },
+  "IND-SAU-04": {
+   "classe": "LOCAL_SYSTEM_ONLY",
+   "municipios": 0,
+   "ufs": 0,
+   "cobertura": "3 painéis subnacionais identificados; extração não testada"
+  },
+  "IND-SAU-05": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5571,
+   "ufs": 27,
+   "cobertura": "2026-09: 3.605 municípios com ≥1 leito; 1.966 sem leito registrado; 27 UFs; Brasil 2,47 (SUS 1,66)"
+  },
+  "IND-SAU-06": {
+   "classe": "FACILITY_LEVEL",
+   "municipios": null,
+   "ufs": 1,
+   "cobertura": "Proxy ES 2024: n=69 hospitais com ≥20 leitos SUS; mediana 53%, p10 11%, p90 88%"
+  },
+  "IND-SAU-07": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5571,
+   "ufs": 27,
+   "cobertura": "5.570–5.571 municípios por ano; 25+ rótulos por ano"
+  },
+  "IND-SAU-08": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2024: 5.570/5.571 municípios com nascidos; Brasil 12,56‰"
+  },
+  "IND-SAU-09": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2024: 1.326 óbitos em 798 municípios; 4.786 municípios sem óbito; RMM Brasil 55,5"
+  },
+  "IND-SAU-10": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2024-06: 5.570/5.571 municípios com AIH de residentes; ICSAP 15,8% (1.188.890 AIH)"
+  },
+  "IND-SAU-11": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2024: Brasil 87,5% dos válidos; 98,4% com informação válida; ignorado 6.749; em branco 30.516"
+  },
+  "IND-SAU-12": {
+   "classe": "NATIONAL_MUNICIPAL",
+   "municipios": 5570,
+   "ufs": 27,
+   "cobertura": "2024: Brasil 60,6%; mediana municipal 65,0% (0–100); PARTO ignorado 1.173"
+  },
+  "IND-SAU-13": {
+   "classe": "LOCAL_SYSTEM_ONLY",
+   "municipios": 0,
+   "ufs": 0,
+   "cobertura": "SIAPS agregado não traz conduta/encaminhamento"
+  },
+  "IND-SAU-14": {
+   "classe": "NOT_PROVEN",
+   "municipios": 0,
+   "ufs": 0,
+   "cobertura": "Nenhum instrumento nacional vigente comparável encontrado"
+  },
+  "IND-SAU-15": {
+   "classe": "NOT_PROVEN",
+   "municipios": null,
+   "ufs": null,
+   "cobertura": "Extração não comprovada; o Siconfi não serve RREO Anexo 12"
+  },
+  "IND-SAU-16": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": 150,
+   "ufs": null,
+   "cobertura": "Amostra aleatória: 150/150 municípios; 86 padrão + 64 simplificado"
+  },
+  "IND-SAU-17": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": 150,
+   "ufs": null,
+   "cobertura": "Amostra: 150/150"
+  },
+  "IND-SAU-18": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": 150,
+   "ufs": null,
+   "cobertura": "Insumos comprovados em amostra; deflator não testado"
+  },
+  "IND-SAU-19": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": 1,
+   "ufs": null,
+   "cobertura": "Vitória: I-E e I-G com função 10 - Saúde; amostra nacional não executada para I-G"
+  },
+  "IND-SAU-20": {
+   "classe": "PARTIAL_MUNICIPAL",
+   "municipios": 150,
+   "ufs": null,
+   "cobertura": "Amostra: 150/150 (86 padrão + 64 simplificado); mediana 43,9%"
+  },
+  "_denominador_municipios_IBGE": 5571,
+  "_essenciais_observados": {
+   "municipios": 5569,
+   "estaveis_nv_ge_100": 3184,
+   "criterio": "01 APS, 05 leitos, 07 BCG 2025, 08 TMI, 10 ICSAP jun/2024, 11 pré-natal, 12 cesáreas"
+  }
+ },
+ "formulas": {
+  "IND-SAU-01": "qtCapacidadeEquipe / qtPopulacao × 100 (sem teto)",
+  "IND-SAU-05": "Σ QT_EXIST (TP_LEITO≠7) / população × 1.000",
+  "IND-SAU-07": "QT_DOSE / NU_POPULACAO",
+  "IND-SAU-08": "óbitos <1 ano (TIPOBITO=2, IDADE 0xx–3xx) / nascidos vivos × 1.000, ambos por CODMUNRES",
+  "IND-SAU-09": "óbitos CAUSABAS O00–O95,O98–O99 (sexo F) / nascidos vivos × 100.000",
+  "IND-SAU-10": "AIH com DIAG_PRINC ∈ Portaria SAS 221/2008 / (população ou total de AIH)",
+  "IND-SAU-11": "CONSPRENAT∈[6,98] / CONSPRENAT∈[0,98] × 100",
+  "IND-SAU-12": "PARTO=2 / PARTO∈{1,2} × 100",
+  "IND-SAU-16": "empenhado função Saúde / população",
+  "IND-SAU-17": "empenhado|liquidado|pago / dotação atualizada × 100",
+  "IND-SAU-20": "% sobre a RCL ajustada (RGF Anexo 01, co_poder=E)"
+ },
+ "relacionamentos": [
+  {
+   "id": "REL-01",
+   "de": "IBGE/Siconfi 7 dígitos",
+   "para": "DATASUS/e-Gestor/PNI 6 dígitos",
+   "regra": "remover dígito verificador",
+   "estado": "EXATA"
+  },
+  {
+   "id": "REL-02",
+   "de": "SIM.CODMUNRES",
+   "para": "SINASC.CODMUNRES",
+   "regra": "igualdade + mesmo ano",
+   "estado": "EXATA"
+  },
+  {
+   "id": "REL-03",
+   "de": "CNES ST/LT",
+   "para": "SIH.CNES / SIA.PA_CODUNI",
+   "regra": "igualdade (7 dígitos)",
+   "estado": "EXATA (ES)"
+  },
+  {
+   "id": "REL-04",
+   "de": "SIH.MUNIC_RES",
+   "para": "SIDRA 6579",
+   "regra": "igualdade (6 dígitos)",
+   "estado": "EXATA"
+  },
+  {
+   "id": "REL-05",
+   "de": "PNI.NU_POPULACAO",
+   "para": "SINASC nascidos",
+   "regra": "denominador oficial",
+   "estado": "NÃO VERIFICADA"
+  },
+  {
+   "id": "REL-06",
+   "de": "e-Gestor.qtPopulacao (DOU)",
+   "para": "IBGE",
+   "regra": "população-base",
+   "estado": "DIVERGENTE"
+  },
+  {
+   "id": "REL-07",
+   "de": "Siconfi.populacao",
+   "para": "IBGE",
+   "regra": "população-base",
+   "estado": "DIVERGENTE"
+  }
+ ],
+ "indicadores": [
+  {
+   "indicator_id": "IND-SAU-01",
+   "nome": "Cobertura da Atenção Básica/ESF",
+   "eixo": "Eficiência operacional",
+   "definicao": "Capacidade de equipes de APS (eSF/eAP) relativa à população do município, conforme metodologia vigente do e-Gestor (desde 2021); até 2020 a cobertura AB/SF era calculada por outra regra.",
+   "fonte": "Ministério da Saúde — e-Gestor AB / SISAB (API do portal Relatórios Públicos da APS)",
+   "url": "https://relatorioaps.saude.gov.br/ (SPA) → API https://relatorioaps-prd.saude.gov.br",
+   "endpoint": "GET /cobertura/aps?unidadeGeografica=MUNICIPIO&coUf={UF}&nuCompInicio=AAAAMM&nuCompFim=AAAAMM ; GET /cobertura/ab (≤202012) ; GET /data/competencias-cnes",
+   "numerador": "qtCapacidadeEquipe (capacidade de pessoas atendidas pelas equipes)",
+   "denominador": "qtPopulacao (base DOU, ano de referência 2025 em 2026-08)",
+   "formula": "qtCapacidadeEquipe / qtPopulacao × 100 (sem teto: valores até 408,9)",
+   "unidade": "% da população",
+   "granularidade": "município × competência mensal",
+   "historico": "201912–202608 listados; /ab recuperado 201912–202012; /aps recuperado 202112–202608; 2021 intra-ano não testado; antes de 2019 não testado",
+   "atualizacao": "mensal (competência CNES)",
+   "cobertura": "2026-08: 5.570 de 5.571 municípios; 27 UFs; Brasil 98,77%",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-11, TST-P8-12",
+   "limitacao": "Duas metodologias não comparáveis (AB ≤2020; APS ≥2021). Cobertura passa de 100% em 4.755 municípios. População-base própria (DOU) difere do IBGE. Competências ausentes (202511, 202601). API não documentada.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Extração por município comprovada nos 27 UFs, mas a série é descontínua e a regra de teto não está documentada.",
+   "collector": "ADAPTAÇÃO de EXEC-C20 (SIOPS + SISAB)",
+   "dataset": "SAU-APS-COBERTURA (NOVO)",
+   "volume": "≈518 mil linhas (79 competências APS + 14 AB × 5.571)",
+   "pg_gb": 0.07,
+   "validacao": "A cobertura >100% deve ser exibida limitada a 100%? Como tratar a quebra de 2021? A capacidade por tipologia municipal é adequada para comparação entre portes?",
+   "ate2013": false,
+   "mensal": true,
+   "multi": false,
+   "nivel": "Município",
+   "pg_gib": 0.063
+  },
+  {
+   "indicator_id": "IND-SAU-02",
+   "nome": "Consultas médicas por habitante/ano",
+   "eixo": "Eficiência operacional",
+   "definicao": "Consultas médicas registradas no SUS por habitante. No SIA aparecem principalmente consultas especializadas; a atenção primária migrou para o e-SUS APS e não aparece no SIA.",
+   "fonte": "DATASUS SIA-PA (+ SIAPS/DEMAS para APS) e IBGE (população)",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIASUS/200801_/Dados/ ; https://apidadosabertos.saude.gov.br/atencao-primaria/siaps-atendimento-individual",
+   "endpoint": "PA{UF}{AAMM}.dbc ; GET /atencao-primaria/siaps-atendimento-individual?competencia_siaps=&municipio=",
+   "numerador": "SIA: PA_QTDAPR com PA_PROC_ID em {0301010072, 0301010064, 0301010056, 0301010307} (consulta médica); SIAPS: qtd_registros_atendimento com categoria_profissional=MEDICO",
+   "denominador": "população residente IBGE (ou do município do paciente PA_MUNPCN)",
+   "formula": "Σ quantidade aprovada (ou apresentada) de consultas médicas no ano / população",
+   "unidade": "consultas por habitante/ano",
+   "granularidade": "estabelecimento × procedimento × mês (SIA); município × competência (SIAPS)",
+   "historico": "SIA 2008–2026 listado (PAES0801 e PAES1301 existem); só 2024-06 recuperado; SIAPS: só 202512 devolveu dados",
+   "atualizacao": "mensal (SIA); SIAPS não demonstrou série",
+   "cobertura": "SIA: 27 UFs em arquivo, 1 UF×1 mês testado; APS fora do SIA",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": null,
+   "n_uf": 1,
+   "evidencia": "TST-P8-10, TST-P8-16",
+   "limitacao": "ES jun/2024: 231.944 consultas médicas aprovadas para ~4 mi de habitantes → ≈0,7/hab/ano, claramente subestimado porque a APS não está no SIA. Diferença entre quantidade apresentada (QTDPRO) e aprovada (QTDAPR). Urgência/UPA (0301060096) não é consulta. SIAPS sem série.",
+   "viabilidade": "NEEDS_VALIDATION",
+   "motivo": "Só a parte especializada é mensurável; a parte de APS depende de competência única no SIAPS. Definir o indicador (conjunto de procedimentos) exige especialista.",
+   "collector": "ADAPTAÇÃO de EXEC-C34 (SIA) + NOVO SRC-DEMAS-SIAPS",
+   "dataset": "SAU-SIA-AGREG",
+   "volume": "≈2,2 mi linhas/ano (estab×grupo) ou ≈0,43 mi (município×6 códigos×ano, versão A)",
+   "pg_gb": 0.06,
+   "validacao": "Quais procedimentos SIGTAP compõem \"consulta médica\"? Inclui teleconsulta, urgência, saúde do trabalhador? Como compor SIA e e-SUS sem dupla contagem?",
+   "ate2013": false,
+   "mensal": true,
+   "multi": true,
+   "nivel": "Município (paciente) / Estabelecimento",
+   "pg_gib": 0.009
+  },
+  {
+   "indicator_id": "IND-SAU-03",
+   "nome": "Taxa de absenteísmo em consultas",
+   "eixo": "Eficiência operacional",
+   "definicao": "Percentual de faltas em consultas agendadas. Depende de agenda com status de comparecimento.",
+   "fonte": "Sistemas municipais/estaduais de agendamento e regulação (SISREG local)",
+   "url": "— (nenhum endpoint nacional localizado)",
+   "endpoint": "—",
+   "numerador": "faltas (agendamentos com status \"faltou\")",
+   "denominador": "agendamentos efetivados (comparecimentos + faltas)",
+   "formula": "faltas / agendamentos × 100",
+   "unidade": "%",
+   "granularidade": "unidade/serviço × dia",
+   "historico": "—",
+   "atualizacao": "—",
+   "cobertura": "Nenhuma base nacional ou estadual testada",
+   "cov_class": "LOCAL_SYSTEM_ONLY",
+   "n_mun": 0,
+   "n_uf": 0,
+   "evidencia": "TST-P8-26",
+   "limitacao": "Existem painéis estaduais/municipais de fila (RS, Porto Alegre, DF), mas nenhum publica absenteísmo em dado aberto verificado.",
+   "viabilidade": "LOCAL_INTEGRATION_REQUIRED",
+   "motivo": "Exige convênio com cada secretaria; sem dado público comprovado.",
+   "collector": "NOVO por ente (não priorizar)",
+   "dataset": "—",
+   "volume": "n/d",
+   "pg_gb": 0.0,
+   "validacao": "Qual status conta como falta (cancelamento prévio, reagendamento)? Como tratar overbooking intencional?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Serviço (local)",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-04",
+   "nome": "Tempo médio de espera por consulta ou exame",
+   "eixo": "Eficiência operacional",
+   "definicao": "Dias entre solicitação e realização (ou agendamento); deve ser reportado com mediana e percentis.",
+   "fonte": "Sistemas de regulação (SISREG/estaduais/municipais)",
+   "url": "https://estado.rs.gov.br/painel-amplia-transparencia-a-situacao-das-filas-de-espera-no-sus-por-atendimento-no-estado (RS); painel de Porto Alegre; Mapa Social da Saúde (MPDFT, base SISREG)",
+   "endpoint": "Não testado",
+   "numerador": "Σ (data de realização − data de solicitação)",
+   "denominador": "nº de solicitações atendidas",
+   "formula": "mediana e percentis 25/75/90 da diferença de datas; fila atual separada",
+   "unidade": "dias",
+   "granularidade": "solicitação (microdado local); painéis agregados",
+   "historico": "RS: 3 anos (conforme notícia); POA: desde 2020; não testado",
+   "atualizacao": "mensal/diária conforme painel",
+   "cobertura": "3 painéis subnacionais identificados; extração não testada",
+   "cov_class": "LOCAL_SYSTEM_ONLY",
+   "n_mun": 0,
+   "n_uf": 0,
+   "evidencia": "TST-P8-26",
+   "limitacao": "Fila atual ≠ tempo de espera. Dados de solicitação/agendamento/realização/cancelamento não estão em base federal aberta.",
+   "viabilidade": "LOCAL_INTEGRATION_REQUIRED",
+   "motivo": "Sem fonte nacional; painéis estaduais são heterogêneos e não foram extraídos.",
+   "collector": "NOVO por UF (RS, DF como candidatos a piloto)",
+   "dataset": "—",
+   "volume": "n/d",
+   "pg_gb": 0.0,
+   "validacao": "Como padronizar especialidade/procedimento entre estados? Excluir pedidos cancelados ou administrativos?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "UF/Município (painéis)",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-05",
+   "nome": "Leitos hospitalares por 1.000 habitantes",
+   "eixo": "Eficiência operacional",
+   "definicao": "Leitos de internação existentes no CNES por mil habitantes, excluindo hospital-dia (TP_LEITO 7); distinguir existentes e SUS.",
+   "fonte": "DATASUS CNES-LT (FTP) e DEMAS cnes-leitos; população IBGE",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/CNES/200508_/Dados/LT/ ; https://apisidra.ibge.gov.br/values/t/6579/n6/all/v/9324/p/last",
+   "endpoint": "LT{UF}{AAMM}.dbc ; SIDRA 6579 variável 9324",
+   "numerador": "Σ QT_EXIST (ou QT_SUS) por CODUFMUN, TP_LEITO≠7",
+   "denominador": "população residente estimada IBGE",
+   "formula": "Σ QT_EXIST / população × 1.000",
+   "unidade": "leitos por 1.000 hab.",
+   "granularidade": "estabelecimento CNES × tipo/código de leito × competência",
+   "historico": "LT 2005–2026 listado; ES recuperado em 2013-01, 2018-12, 2023-01, 2026-09",
+   "atualizacao": "mensal",
+   "cobertura": "2026-09: 3.605 municípios com ≥1 leito; 1.966 sem leito registrado; 27 UFs; Brasil 2,47 (SUS 1,66)",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5571,
+   "n_uf": 27,
+   "evidencia": "TST-P8-03, TST-P8-04, TST-P8-21",
+   "limitacao": "Cadastro autodeclarado (DT_ATUAL defasado em 72.955 registros e datas futuras). Leitos complementares (UTI/UCI) entram na soma total, mas não são \"leitos de internação\" comparáveis. Município sem leito ≠ dado ausente: pode não ter hospital. Leitos por residente ignora fluxo regional (54,6% das internações no ES ocorrem fora do município de residência).",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Extração completa e reproduzível; a definição do que conta como leito e a leitura regional exigem decisão de especialista.",
+   "collector": "REUTILIZADO EXEC-C30 (CNES leitos) com rota FTP",
+   "dataset": "SAU-CNES-LEITOS",
+   "volume": "≈52 mil linhas/competência (51.965 em 2026-09)",
+   "pg_gb": 0.11,
+   "validacao": "Incluir leitos complementares? Separar clínicos/cirúrgicos/obstétricos/pediátricos? Considerar a região de saúde como unidade de análise?",
+   "ate2013": true,
+   "mensal": true,
+   "multi": true,
+   "nivel": "Município / Estabelecimento",
+   "pg_gib": 0.009
+  },
+  {
+   "indicator_id": "IND-SAU-06",
+   "nome": "Taxa de ocupação de leitos",
+   "eixo": "Eficiência operacional",
+   "definicao": "Pacientes-dia / leitos-dia operacionais × 100. Requer censo diário ou leitos operacionais; não equivale a AIH/leitos.",
+   "fonte": "CNES (leitos existentes), SIH-RD (DIAS_PERM), sistemas hospitalares",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIHSUS/200801_/Dados/ + CNES LT",
+   "endpoint": "RD{UF}{AAMM}.dbc + LT{UF}{AAMM}.dbc",
+   "numerador": "proxy exploratório: Σ DIAS_PERM das AIH SUS do CNES no ano",
+   "denominador": "proxy: QT_SUS × 366 (leitos SUS-dia existentes, não operacionais)",
+   "formula": "NÃO adotada. Proxy apenas para auditoria.",
+   "unidade": "%",
+   "granularidade": "estabelecimento CNES (proxy)",
+   "historico": "proxy possível desde 2008 (RD) — sem validade",
+   "atualizacao": "—",
+   "cobertura": "Proxy ES 2024: n=69 hospitais com ≥20 leitos SUS; mediana 53%, p10 11%, p90 88%",
+   "cov_class": "FACILITY_LEVEL",
+   "n_mun": null,
+   "n_uf": 1,
+   "evidencia": "TST-P8-08",
+   "limitacao": "SIH cobre só internações pagas pelo SUS; DIAS_PERM é contado na competência de saída; leitos existentes ≠ operacionais; UTI e hospital-dia têm regras próprias. O único registro federal diário de ocupação aberto no DEMAS é o de COVID-19.",
+   "viabilidade": "NOT_FEASIBLE_WITH_PUBLIC_DATA",
+   "motivo": "Não há fonte pública com pacientes-dia e leitos-dia operacionais para todos os hospitais; o proxy não é metodologicamente defensável.",
+   "collector": "Não criar (apenas como análise interna rotulada)",
+   "dataset": "—",
+   "volume": "n/d",
+   "pg_gb": 0.0,
+   "validacao": "Existe censo hospitalar diário (CIHA/SIH + Fala hospitais) usado como oficial? Como tratar hospitais privados e UTI?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Estabelecimento",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-07",
+   "nome": "Cobertura vacinal",
+   "eixo": "Eficiência operacional",
+   "definicao": "Doses aplicadas (por imunobiológico/dose) ÷ população-alvo (SINASC para <1 ano) × 100, por município de residência. Não mede indivíduos vacinados.",
+   "fonte": "DATASUS/MS — SIPNIBD (parquet) e TabNet",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/Dados_Abertos/SIPNIBD/Cobertura_Residencia.parquet ; http://tabnet.datasus.gov.br/cgi/dhdat.exe?bd_pni/cpnibr.def",
+   "endpoint": "Cobertura_Residencia.parquet (5,1 MB) ; POST webtabx.exe?bd_pni/cpnibr.def",
+   "numerador": "QT_DOSE (por NU_IMUNO, CO_ANO, CO_MUNICIPIO)",
+   "denominador": "NU_POPULACAO",
+   "formula": "QT_DOSE / NU_POPULACAO (NU_TAXA_COBERTURA em fração)",
+   "unidade": "% (fração no arquivo)",
+   "granularidade": "município de residência × ano × imunobiológico/dose",
+   "historico": "parquet 2015–2026 (2026 parcial, carga 01/07/2026); TabNet 1994–2022",
+   "atualizacao": "anual (parquet atualizado em ciclos; carga de 2026-07-01)",
+   "cobertura": "5.570–5.571 municípios por ano; 25+ rótulos por ano",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5571,
+   "n_uf": 27,
+   "evidencia": "TST-P8-13, TST-P8-14",
+   "limitacao": "Rótulos mudam (ex.: Hepatite B ≤1/≤2/≤30 dias; Pneumo 10/20/13); coberturas >100% (41% dos municípios no BCG 2022 pelo TabNet); denominador SINASC difere de residentes reais; registros de vacinação em município diferente do de residência; regra da dose muda por período.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Arquivo oficial único com cobertura municipal e fórmula documentada; exige dicionário canônico de imunobiológicos e tratamento de >100%.",
+   "collector": "REUTILIZADO EXEC-C35 (SIM/SINASC/PNI) — rota parquet",
+   "dataset": "SAU-PNI-AGREG",
+   "volume": "1.088.479 linhas (2015–2026)",
+   "pg_gb": 0.16,
+   "validacao": "Qual dose/imunobiológico representa cada meta? Truncar >100%? Como tratar denominador e migração?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município",
+   "pg_gib": 0.132
+  },
+  {
+   "indicator_id": "IND-SAU-08",
+   "nome": "Mortalidade infantil",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Óbitos de residentes com menos de 1 ano por 1.000 nascidos vivos de mães residentes, mesmo município e ano.",
+   "fonte": "DATASUS — SIM (DO) e SINASC (DN)",
+   "url": "ftp://ftp.datasus.gov.br/dissemin/publicos/SIM/CID10/DORES/ ; …/SINASC/1996_/Dados/DNRES/",
+   "endpoint": "DO{UF}{AAAA}.dbc e DN{UF}{AAAA}.dbc",
+   "numerador": "SIM: TIPOBITO=2 e IDADE iniciando em 0,1,2,3 (<1 ano), por CODMUNRES",
+   "denominador": "SINASC: contagem de DN por CODMUNRES",
+   "formula": "óbitos <1 ano / nascidos vivos × 1.000",
+   "unidade": "‰",
+   "granularidade": "município de residência × ano (microdado → agregável por mês, sexo, peso, causa)",
+   "historico": "1996–2024 definitivo; 2025–2026 preliminar; recuperado em teste: ES 1996, 2000, 2013, 2022; Brasil 2024",
+   "atualizacao": "anual (definitivo) + preliminar mensal",
+   "cobertura": "2024: 5.570/5.571 municípios com nascidos; Brasil 12,56‰",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-02, TST-P8-23",
+   "limitacao": "Numerador e denominador comprovados para o MESMO município e ano. Pequenos números: 2.387 municípios com <100 nascidos; 1.575 sem óbito infantil. 48,6% dos óbitos infantis ocorrem fora do município de residência (usar residência). 14 códigos \"UF ignorada\" (xx0000). Subnotificação e dados preliminares em 2025–2026.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Cálculo completo reproduzido; instabilidade estatística exige agregação plurianual ou intervalos de confiança.",
+   "collector": "REUTILIZADO EXEC-C35 — trocar rota DEMAS por FTP DBC",
+   "dataset": "SAU-SIM-AGREG + SAU-SINASC-AGREG",
+   "volume": "≈5,6 mil municípios × 29 anos ≈ 162 mil linhas (indicadores) ",
+   "pg_gb": 0.03,
+   "validacao": "Usar média móvel de 3–5 anos para municípios pequenos? Tratar neonatal precoce/tardio e pós-neonatal separadamente?",
+   "ate2013": true,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Município",
+   "pg_gib": 0.02
+  },
+  {
+   "indicator_id": "IND-SAU-09",
+   "nome": "Mortalidade materna",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Óbitos maternos por 100 mil nascidos vivos. Definição adotada no teste: CAUSABAS O00–O95 e O98–O99, sexo feminino (exclui tardias O96/O97). A definição oficial (incluindo outras causas com TPMORTEOCO/OBITOGRAV) não foi reproduzida.",
+   "fonte": "DATASUS — SIM (DO) e SINASC (DN)",
+   "url": "idem IND-SAU-08",
+   "endpoint": "idem IND-SAU-08",
+   "numerador": "SIM: CAUSABAS iniciando em O (exceto O96, O97), SEXO=2",
+   "denominador": "SINASC por CODMUNRES",
+   "formula": "óbitos maternos / nascidos vivos × 100.000",
+   "unidade": "por 100 mil NV",
+   "granularidade": "município de residência × ano",
+   "historico": "1996–2024 (campos de investigação/morte materna variam por ano)",
+   "atualizacao": "anual",
+   "cobertura": "2024: 1.326 óbitos em 798 municípios; 4.786 municípios sem óbito; RMM Brasil 55,5",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-02",
+   "limitacao": "Instabilidade extrema em municípios (5.183 com <1.000 NV). Regra oficial de classificação (causas e investigação) deve ser validada antes de publicar.",
+   "viabilidade": "NEEDS_VALIDATION",
+   "motivo": "Dado disponível, mas a definição oficial e o uso municipal exigem validação epidemiológica.",
+   "collector": "REUTILIZADO EXEC-C35",
+   "dataset": "SAU-SIM-AGREG",
+   "volume": "junto com IND-SAU-08",
+   "pg_gb": 0.0,
+   "validacao": "Qual critério oficial de morte materna (inclui causas tardias e investigadas)? Em que nível territorial publicar?",
+   "ate2013": true,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Município",
+   "pg_gib": 0.02
+  },
+  {
+   "indicator_id": "IND-SAU-10",
+   "nome": "Internações por Condições Sensíveis à Atenção Primária (ICSAP)",
+   "eixo": "Qualidade assistencial",
+   "definicao": "AIH com diagnóstico principal na Lista Brasileira de ICSAP (Portaria SAS/MS 221/2008: 19 grupos, 117 códigos de 3 dígitos + 71 de 4 dígitos), por município de residência.",
+   "fonte": "DATASUS SIH-RD e Portaria SAS 221/2008",
+   "url": "ftp://…/SIHSUS/200801_/Dados/ ; https://bvsms.saude.gov.br/bvs/saudelegis/sas/2008/prt0221_17_04_2008.html",
+   "endpoint": "RD{UF}{AAMM}.dbc (27 UFs)",
+   "numerador": "AIH com DIAG_PRINC na lista, MUNIC_RES",
+   "denominador": "(taxa) população por faixa etária; (proporção) total de AIH",
+   "formula": "ICSAP / 10.000 hab. (padronizar por idade) ou ICSAP / total de internações",
+   "unidade": "internações; por 10 mil hab.; %",
+   "granularidade": "município de residência × mês (agregável por hospital, sexo, idade)",
+   "historico": "2008–2026 listado; recuperado ES 2008-01, 2013-01, 2020-01 e 2024 completo; Brasil 2024-06",
+   "atualizacao": "mensal",
+   "cobertura": "2024-06: 5.570/5.571 municípios com AIH de residentes; ICSAP 15,8% (1.188.890 AIH)",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-08, TST-P8-09",
+   "limitacao": "Só internações SUS. Município de residência exige os 27 arquivos (arquivo da UF perde 1,0% no ES). Taxa padronizada precisa de população por idade (SVSA/DEMAS devolveu 0 linhas; Censo 2022 via SIDRA 9514 é alternativa não implementada). Lista de 2008, anterior à CID/regras recentes; não equivale a \"internação evitável\" individual.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Cálculo completo reproduzido; denominador por idade e revisão da lista dependem de especialista.",
+   "collector": "REUTILIZADO EXEC-C32 (SIH-RD agregado) com campo ICSAP",
+   "dataset": "SAU-SIH-AGREG",
+   "volume": "≈1,2 mi AIH/mês → município×ano ≈100 mil linhas (A)",
+   "pg_gb": 0.02,
+   "validacao": "A lista de 2008 continua válida? Padronização por idade e sexo; excluir partos?",
+   "ate2013": true,
+   "mensal": true,
+   "multi": true,
+   "nivel": "Município",
+   "pg_gib": 0.024
+  },
+  {
+   "indicator_id": "IND-SAU-11",
+   "nome": "Cobertura de pré-natal com 6 ou mais consultas",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Nascidos vivos cuja mãe teve ≥6 consultas de pré-natal (CONSPRENAT numérico), entre os com informação válida.",
+   "fonte": "DATASUS SINASC (DN); Previne Brasil indicador (a confirmar)",
+   "url": "ftp://…/SINASC/1996_/Dados/DNRES/ ; https://apidadosabertos.saude.gov.br/atencao-primaria/indicador-desempenho-programa-previne-brasil",
+   "endpoint": "DN{UF}{AAAA}.dbc",
+   "numerador": "CONSPRENAT ≥ 6 e < 99",
+   "denominador": "CONSPRENAT válido (numérico, <99)",
+   "formula": "numerador / denominador × 100",
+   "unidade": "%",
+   "granularidade": "município de residência × ano",
+   "historico": "CONSPRENAT presente em 2013 (ausente em 1996/2000, quando só há CONSULTAS categórico); SISPRENATAL FTP 2012–2014 (descontinuado)",
+   "atualizacao": "anual",
+   "cobertura": "2024: Brasil 87,5% dos válidos; 98,4% com informação válida; ignorado 6.749; em branco 30.516",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-02, TST-P8-15",
+   "limitacao": "CONSULTAS (categórico) não separa 6 de 4–5 (categoria \"4 a 6\"). DN registra consultas declaradas, não produção da APS. O indicador do Previne (código 10, 2024Q1–Q3) tem outra definição (inclui início até 12ª semana) e dicionário não verificado. A meta de ≥6 consultas deve ser revalidada (mudança de recomendação para 8 contatos da OMS).",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Cálculo municipal reproduzido com SINASC; referência de 6 consultas precisa de validação clínica.",
+   "collector": "REUTILIZADO EXEC-C35",
+   "dataset": "SAU-SINASC-AGREG",
+   "volume": "junto com IND-SAU-08",
+   "pg_gb": 0.0,
+   "validacao": "6 consultas ou 8 contatos? Incluir início precoce? Usar SINASC (declarado) ou SISAB (produção)?",
+   "ate2013": true,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município",
+   "pg_gib": 0.02
+  },
+  {
+   "indicator_id": "IND-SAU-12",
+   "nome": "Taxa de cesáreas",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Partos cesáreos entre os nascidos vivos com tipo de parto informado, por município de residência (ou ocorrência).",
+   "fonte": "DATASUS SINASC (DN)",
+   "url": "ftp://…/SINASC/1996_/Dados/DNRES/",
+   "endpoint": "DN{UF}{AAAA}.dbc",
+   "numerador": "PARTO = 2",
+   "denominador": "PARTO ∈ {1,2}",
+   "formula": "cesáreas / partos com tipo informado × 100",
+   "unidade": "%",
+   "granularidade": "município (residência e ocorrência) × ano; TPROBSON permite classificação de Robson",
+   "historico": "1996–2024; recuperado ES 1996, 2000, 2013, 2022; Brasil 2024",
+   "atualizacao": "anual",
+   "cobertura": "2024: Brasil 60,6%; mediana municipal 65,0% (0–100); PARTO ignorado 1.173",
+   "cov_class": "NATIONAL_MUNICIPAL",
+   "n_mun": 5570,
+   "n_uf": 27,
+   "evidencia": "TST-P8-02",
+   "limitacao": "34,5% dos nascidos têm residência diferente do município do parto. Taxa bruta não ajusta o perfil das gestantes (usar Robson). Faixa \"15–30%\" da planilha não tem fonte oficial.",
+   "viabilidade": "READY_FOR_CONTRACT",
+   "motivo": "Campo único, definição inequívoca, cobertura nacional e histórica comprovadas; benchmark é uma decisão editorial separada.",
+   "collector": "REUTILIZADO EXEC-C35",
+   "dataset": "SAU-SINASC-AGREG",
+   "volume": "junto com IND-SAU-08",
+   "pg_gb": 0.0,
+   "validacao": "Publicar por Robson? Separar hospitais públicos e privados (CODESTAB)?",
+   "ate2013": true,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município / Estabelecimento",
+   "pg_gib": 0.02
+  },
+  {
+   "indicator_id": "IND-SAU-13",
+   "nome": "Resolutividade da Atenção Básica",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Percentual de casos resolvidos sem encaminhamento. Não existe definição nacional padronizada localizada; exigiria dado individual de encaminhamento e seguimento.",
+   "fonte": "e-SUS APS / SISAB (individual) — não público",
+   "url": "https://apidadosabertos.saude.gov.br/atencao-primaria/siaps-atendimento-individual (agregado)",
+   "endpoint": "—",
+   "numerador": "atendimentos sem encaminhamento (campo inexistente no agregado)",
+   "denominador": "atendimentos",
+   "formula": "não definida",
+   "unidade": "%",
+   "granularidade": "—",
+   "historico": "SIAPS: 202512",
+   "atualizacao": "—",
+   "cobertura": "SIAPS agregado não traz conduta/encaminhamento",
+   "cov_class": "LOCAL_SYSTEM_ONLY",
+   "n_mun": 0,
+   "n_uf": 0,
+   "evidencia": "TST-P8-16",
+   "limitacao": "Sem definição nacional e sem campo de desfecho no dado aberto.",
+   "viabilidade": "NOT_FEASIBLE_WITH_PUBLIC_DATA",
+   "motivo": "O dado necessário (encaminhamento individual) não é público.",
+   "collector": "Não criar",
+   "dataset": "—",
+   "volume": "n/d",
+   "pg_gb": 0.0,
+   "validacao": "Existe indicador oficial de resolutividade? Quais códigos de conduta (e-SUS) o definem?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "—",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-14",
+   "nome": "Satisfação dos usuários",
+   "eixo": "Qualidade assistencial",
+   "definicao": "Percepção de qualidade por pesquisa amostral. Reclamações de ouvidoria não são índice de satisfação.",
+   "fonte": "PMAQ-AB avaliação externa (módulo III; ciclos antigos); pesquisas municipais; Ouvidoria SUS",
+   "url": "https://apidadosabertos.saude.gov.br/ouvidoria/ouvidor2 (manifestações; não satisfação)",
+   "endpoint": "Não testado",
+   "numerador": "—",
+   "denominador": "—",
+   "formula": "—",
+   "unidade": "nota 0–10 ou %",
+   "granularidade": "unidade básica (PMAQ) / município (pesquisas)",
+   "historico": "PMAQ ciclos 2012–2018 (publicações); URL de microdados não confirmada",
+   "atualizacao": "descontinuada",
+   "cobertura": "Nenhum instrumento nacional vigente comparável encontrado",
+   "cov_class": "NOT_PROVEN",
+   "n_mun": 0,
+   "n_uf": 0,
+   "evidencia": "TST-P8-26",
+   "limitacao": "Sem amostra, questionário e período comparáveis; ouvidoria mede reclamações, não satisfação.",
+   "viabilidade": "NOT_FEASIBLE_WITH_PUBLIC_DATA",
+   "motivo": "Sem instrumento nacional vigente e sem microdados confirmados.",
+   "collector": "Não criar",
+   "dataset": "—",
+   "volume": "n/d",
+   "pg_gb": 0.0,
+   "validacao": "Existe pesquisa nacional atual (ex.: sucessora do PMAQ)?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "—",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-15",
+   "nome": "Percentual de aplicação de recursos em Saúde (ASPS)",
+   "eixo": "Saúde financeira",
+   "definicao": "Despesa própria em ações e serviços públicos de saúde ÷ receita de impostos e transferências constitucionais da base legal (LC 141). Mínimo: 15% municípios; 12% estados.",
+   "fonte": "SIOPS (Ministério da Saúde), com reconciliação via Siconfi",
+   "url": "https://siops.saude.gov.br/ ; https://siops-consulta-publica-api.saude.gov.br",
+   "endpoint": "NÃO COMPROVADO",
+   "numerador": "despesa com ASPS (demonstrativo SIOPS)",
+   "denominador": "base de cálculo da LC 141 (impostos e transferências)",
+   "formula": "ASPS / base × 100 (percentual apurado)",
+   "unidade": "%",
+   "granularidade": "ente × ano (ou bimestre)",
+   "historico": "não testado",
+   "atualizacao": "bimestral/anual",
+   "cobertura": "Extração não comprovada; o Siconfi não serve RREO Anexo 12",
+   "cov_class": "NOT_PROVEN",
+   "n_mun": null,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-19, TST-P8-22",
+   "limitacao": "Dependência de rota SIOPS não enumerável. Despesa por função Saúde (Siconfi) ≠ ASPS; usá-la como substituto seria incorreto.",
+   "viabilidade": "NEEDS_VALIDATION",
+   "motivo": "A base legal está verificada, mas a rota de extração do percentual apurado não foi comprovada.",
+   "collector": "ADAPTAÇÃO EXEC-C20 (SIOPS) — depende de novo discovery",
+   "dataset": "SAU-SIOPS",
+   "volume": "≈5,6 mil entes × 15 anos × ~20 indicadores ≈ 1,7 mi linhas (estimativa)",
+   "pg_gb": 0.2,
+   "validacao": "Os valores do SIOPS (declaratório) reconciliam com o Siconfi? Como tratar entes que não transmitiram?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Município / UF",
+   "pg_gib": 0.0
+  },
+  {
+   "indicator_id": "IND-SAU-16",
+   "nome": "Gasto público per capita em Saúde",
+   "eixo": "Saúde financeira",
+   "definicao": "Despesa empenhada (ou liquidada/paga) na função Saúde do ente ÷ população. Não equivale a ASPS nem separa recursos próprios de transferências.",
+   "fonte": "Siconfi (RREO Anexo 02 / DCA Anexo I-E) e IBGE",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/",
+   "endpoint": "/rreo (co_tipo_demonstrativo=RREO|RREO Simplificado) ; /dca (no_anexo=DCA-Anexo I-E)",
+   "numerador": "conta '10 - Saúde'/'Saúde': empenhadas, liquidadas (RREO) e pagas (DCA)",
+   "denominador": "população do ente (campo populacao do Siconfi ou IBGE)",
+   "formula": "despesa / população",
+   "unidade": "R$/hab.",
+   "granularidade": "ente × exercício (× bimestre, × subfunção)",
+   "historico": "RREO e DCA desde 2015 (2013: 0 linhas)",
+   "atualizacao": "bimestral (RREO), semestral (simplificado), anual (DCA)",
+   "cobertura": "Amostra aleatória: 150/150 municípios; 86 padrão + 64 simplificado",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": 150,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-18, TST-P8-20",
+   "limitacao": "Cobertura nacional não medida (só amostra). Soma entre entes dá dupla contagem (transferências). Inclui intra-orçamentárias em bloco separado. Pagas por função só no DCA.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Extração comprovada em amostra aleatória; falta medir entrega nacional e decidir tratamento de transferências.",
+   "collector": "REUTILIZADO EXEC-C11/C12 (Siconfi DCA/RREO) — incluir Anexo 02 e formulário simplificado",
+   "dataset": "FIN-SICONFI-RREO-CORE, FIN-SICONFI-DCA-CORE",
+   "volume": "≈5,6 mil entes × 10 anos × 12 métricas ≈ 0,67 mi linhas",
+   "pg_gb": 0.09,
+   "validacao": "Empenhado, liquidado ou pago como base pública? Excluir transferências a outros entes?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Município / UF",
+   "pg_gib": 0.007
+  },
+  {
+   "indicator_id": "IND-SAU-17",
+   "nome": "Execução orçamentária da Saúde",
+   "eixo": "Saúde financeira",
+   "definicao": "Despesa executada ÷ dotação atualizada da função Saúde. A planilha cita SIOPE, que é a base da Educação; a fonte aplicável é o Siconfi (RREO/DCA) ou o SIOPS.",
+   "fonte": "Siconfi RREO Anexo 02 e DCA Anexo I-E",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/",
+   "endpoint": "/rreo ; /dca",
+   "numerador": "empenhado | liquidado | pago (DCA)",
+   "denominador": "DOTAÇÃO ATUALIZADA (a)",
+   "formula": "executado / dotação atualizada × 100 (3 variantes)",
+   "unidade": "%",
+   "granularidade": "ente × exercício × bimestre",
+   "historico": "2015 em diante",
+   "atualizacao": "bimestral",
+   "cobertura": "Amostra: 150/150",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": 150,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-18, TST-P8-20",
+   "limitacao": "Vitória 2024: 92,0% empenhado, 83,7% liquidado; pago só no DCA (anual). Alta execução não significa qualidade. SIOPE ≠ Saúde (correção da planilha).",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Colunas de dotação e execução comprovadas; falta cobertura nacional medida.",
+   "collector": "REUTILIZADO EXEC-C11/C12",
+   "dataset": "FIN-SICONFI-RREO-CORE, FIN-SICONFI-DCA-CORE",
+   "volume": "junto com IND-SAU-16",
+   "pg_gb": 0.0,
+   "validacao": "Apresentar as 3 variantes? Como tratar créditos adicionais ao longo do ano?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município / UF",
+   "pg_gib": 0.02
+  },
+  {
+   "indicator_id": "IND-SAU-18",
+   "nome": "Evolução da despesa versus receita",
+   "eixo": "Saúde financeira",
+   "definicao": "Variação percentual da despesa de Saúde comparada à variação da receita de referência (a definir: receita corrente, RCL ou base de impostos), em valores deflacionados.",
+   "fonte": "Siconfi RREO (Anexos 01 e 02), RCL do RGF, deflator IPCA",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/",
+   "endpoint": "/rreo, /rgf",
+   "numerador": "Δ% despesa Saúde real",
+   "denominador": "Δ% receita de referência real",
+   "formula": "(D_t/D_{t-1} − 1) comparado a (R_t/R_{t-1} − 1); sem sentido \"menor é melhor\"",
+   "unidade": "p.p. ou razão",
+   "granularidade": "ente × exercício",
+   "historico": "2015 em diante",
+   "atualizacao": "anual",
+   "cobertura": "Insumos comprovados em amostra; deflator não testado",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": 150,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-20",
+   "limitacao": "Numerador, denominador e deflator precisam ser definidos; deflator não foi testado nesta fase.",
+   "viabilidade": "NEEDS_VALIDATION",
+   "motivo": "Insumos existem, mas a definição do indicador é metodologicamente aberta.",
+   "collector": "Derivado (sem collector próprio)",
+   "dataset": "FIN-SICONFI-RREO-CORE + TER-SIDRA-SERIES",
+   "volume": "derivado",
+   "pg_gb": 0.0,
+   "validacao": "Qual receita? Qual deflator? Como interpretar aumento de despesa acima da receita?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": true,
+   "nivel": "Município / UF",
+   "pg_gib": 0.007
+  },
+  {
+   "indicator_id": "IND-SAU-19",
+   "nome": "Restos a pagar em Saúde",
+   "eixo": "Saúde financeira",
+   "definicao": "Restos a pagar da função Saúde: inscrições, pagamentos, cancelamentos e saldos (processados e não processados), em R$.",
+   "fonte": "Siconfi RREO Anexo 02 (RPNP inscritos), DCA Anexos I-E e I-G",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/",
+   "endpoint": "/dca?no_anexo=DCA-Anexo I-E ; …I-G",
+   "numerador": "RP inscritos/pagos/cancelados (colunas do I-G)",
+   "denominador": "— (valores absolutos; opcional: despesa empenhada)",
+   "formula": "saldo = inscritos + anteriores − pagos − cancelados",
+   "unidade": "R$",
+   "granularidade": "ente × exercício × função",
+   "historico": "2015 em diante",
+   "atualizacao": "anual (DCA)",
+   "cobertura": "Vitória: I-E e I-G com função 10 - Saúde; amostra nacional não executada para I-G",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": 1,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-18",
+   "limitacao": "Resto a pagar não é inadimplência. O I-F/I-G têm estrutura distinta por ano; só um município testado no I-G.",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "motivo": "Colunas comprovadas em um município e RPNP em 150; falta medir I-G em amostra.",
+   "collector": "REUTILIZADO EXEC-C11 (DCA)",
+   "dataset": "FIN-SICONFI-DCA-CORE",
+   "volume": "junto com IND-SAU-16",
+   "pg_gb": 0.0,
+   "validacao": "Como distinguir RP normal de acúmulo preocupante? Comparar com empenhado?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município / UF",
+   "pg_gib": 0.027
+  },
+  {
+   "indicator_id": "IND-SAU-20",
+   "nome": "Gasto total com pessoal",
+   "eixo": "Saúde financeira",
+   "definicao": "Despesa total com pessoal do Poder Executivo como % da RCL ajustada (RGF). NÃO é gasto com pessoal da Saúde.",
+   "fonte": "Siconfi RGF Anexo 01 (Q3 ou semestral simplificado)",
+   "url": "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/rgf",
+   "endpoint": "/rgf?an_exercicio=&in_periodicidade=Q|S&nr_periodo=&co_tipo_demonstrativo=RGF|RGF Simplificado&co_poder=E&id_ente=",
+   "numerador": "conta 'DESPESA TOTAL COM PESSOAL - DTP (VI)' (Valor)",
+   "denominador": "'RECEITA CORRENTE LÍQUIDA AJUSTADA… (V)'",
+   "formula": "coluna '% sobre a RCL Ajustada'; limite máximo no mesmo anexo (54% Executivo municipal)",
+   "unidade": "% da RCL",
+   "granularidade": "ente × Poder × quadrimestre/semestre",
+   "historico": "2015 em diante (RGF 2015 Vitória: 226 linhas)",
+   "atualizacao": "quadrimestral/semestral",
+   "cobertura": "Amostra: 150/150 (86 padrão + 64 simplificado); mediana 43,9%",
+   "cov_class": "PARTIAL_MUNICIPAL",
+   "n_mun": 150,
+   "n_uf": null,
+   "evidencia": "TST-P8-17, TST-P8-20, TST-P8-22",
+   "limitacao": "Cobertura nacional não medida. Diferenciar limites por Poder (Executivo 54%/49%; global 60%). Há RGF por Poder: usar co_poder=E para o Executivo.",
+   "viabilidade": "READY_FOR_CONTRACT",
+   "motivo": "Definição legal inequívoca, campos explícitos e extração comprovada em amostra aleatória, mas só como indicador do Executivo, nunca como indicador de Saúde.",
+   "collector": "REUTILIZADO EXEC-C12 (RGF)",
+   "dataset": "FIN-SICONFI-RGF-CORE",
+   "volume": "≈5,6 mil entes × 10 anos × 3 períodos ≈ 0,17 mi linhas",
+   "pg_gb": 0.02,
+   "validacao": "Rotular como \"pessoal do Executivo\". Comparação entre municípios exige RCL ajustada comparável?",
+   "ate2013": false,
+   "mensal": false,
+   "multi": false,
+   "nivel": "Município / UF",
+   "pg_gib": 0.014
+  }
+ ],
+ "oportunidades_adicionais": [
+  {
+   "id": "EXT-01",
+   "titulo": "Estabelecimentos por tipo e natureza jurídica (CNES ST)",
+   "fonte": "SRC-DATASUS-CNES-FTP",
+   "granularidade": "estabelecimento × competência",
+   "evidencia": "TST-P8-03",
+   "resultado": "501.726 estabelecimentos; 131.831 SUS; UBS 43.841; hospitais 6.636 em 3.159 municípios",
+   "viabilidade": "READY_FOR_CONTRACT",
+   "dataset": "SAU-CNES-ESTAB"
+  },
+  {
+   "id": "EXT-02",
+   "titulo": "Leitos SUS vs não SUS por tipo (UTI/complementares)",
+   "fonte": "SRC-DATASUS-CNES-FTP",
+   "granularidade": "estabelecimento × tipo/código de leito",
+   "evidencia": "TST-P8-03",
+   "resultado": "TP_LEITO 3 (complementares) 82.975; SUS 44.236",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "SAU-CNES-LEITOS"
+  },
+  {
+   "id": "EXT-03",
+   "titulo": "Equipamentos (EQ) e profissionais por CBO (PF)",
+   "fonte": "SRC-DATASUS-CNES-FTP",
+   "granularidade": "estabelecimento × equipamento; profissional × estabelecimento × CBO",
+   "evidencia": "TST-P8-05",
+   "resultado": "ES: 26.875 e 145.836 linhas. PF contém identificação individual: agregar por município × CBO antes de gravar.",
+   "viabilidade": "NEEDS_VALIDATION (privacidade)",
+   "dataset": "SAU-CNES-EQUIP / SAU-CNES-PROF"
+  },
+  {
+   "id": "EXT-04",
+   "titulo": "Internações de residentes fora do município (fluxo)",
+   "fonte": "SRC-DATASUS-SIH",
+   "granularidade": "município de residência × município de atendimento × mês",
+   "evidencia": "TST-P8-08, TST-P8-09",
+   "resultado": "ES 2024: 54,6% fora do município; Alto Rio Novo (sem hospital): 100% fora do município; Vitória recebe 79,3% das AIH ocorridas de outros municípios",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "SAU-SIH-AGREG"
+  },
+  {
+   "id": "EXT-05",
+   "titulo": "Valor aprovado e permanência por hospital/procedimento",
+   "fonte": "SRC-DATASUS-SIH",
+   "granularidade": "hospital × procedimento × mês",
+   "evidencia": "TST-P8-08",
+   "resultado": "VAL_TOT = valor aprovado (não pago); DIAS_PERM média 4,86 dias, mediana 2 (ES 2024); letalidade hospitalar 3,9%",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "SAU-SIH-AGREG"
+  },
+  {
+   "id": "EXT-06",
+   "titulo": "Cobertura vacinal por imunobiológico",
+   "fonte": "SRC-DATASUS-PNI",
+   "granularidade": "município × ano × vacina",
+   "evidencia": "TST-P8-13",
+   "resultado": "25 rótulos em 2026; 1.088.479 linhas",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "SAU-PNI-AGREG"
+  },
+  {
+   "id": "EXT-07",
+   "titulo": "Indicadores Previne Brasil por município e quadrimestre",
+   "fonte": "SRC-DEMAS-SISAB",
+   "granularidade": "município × quadrimestre × indicador × visão",
+   "evidencia": "TST-P8-15",
+   "resultado": "Só 2024Q1–Q3; dicionário não localizado; campo percentual não é razão simples",
+   "viabilidade": "NEEDS_VALIDATION",
+   "dataset": "SAU-SISAB-PREVINE"
+  },
+  {
+   "id": "EXT-08",
+   "titulo": "Estoque de medicamentos (BNAFAR/Hórus)",
+   "fonte": "SRC-DEMAS-BNAFAR",
+   "granularidade": "CNES × CATMAT × lote (só mês corrente)",
+   "evidencia": "P4 (ES: 53.999 linhas, 393 CNES, 68/78 municípios); não reexecutado",
+   "viabilidade": "READY_WITH_CAVEATS (sem histórico; ausência ≠ estoque zero)",
+   "dataset": "SAU-BNAFAR-ESTOQUE"
+  },
+  {
+   "id": "EXT-09",
+   "titulo": "Despesa de Saúde por subfunção",
+   "fonte": "SRC-SICONFI",
+   "granularidade": "ente × exercício × subfunção",
+   "evidencia": "TST-P8-17",
+   "resultado": "RREO Anexo 02 (Vitória) traz as subfunções de Saúde por nome: Atenção Básica; Assistência Hospitalar e Ambulatorial; Suporte Profilático e Terapêutico; Vigilância Sanitária; Vigilância Epidemiológica",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "FIN-SICONFI-RREO-CORE"
+  },
+  {
+   "id": "EXT-10",
+   "titulo": "Produção ambulatorial por estabelecimento",
+   "fonte": "SRC-DATASUS-SIA",
+   "granularidade": "estabelecimento × procedimento × mês",
+   "evidencia": "TST-P8-10",
+   "resultado": "ES 2024-06: 1.067 estabelecimentos; 44.337 pares estab×procedimento",
+   "viabilidade": "NEEDS_VALIDATION",
+   "dataset": "SAU-SIA-AGREG"
+  },
+  {
+   "id": "EXT-11",
+   "titulo": "Atendimento individual da APS (categoria profissional, CID/CIAP)",
+   "fonte": "SRC-DEMAS-SIAPS",
+   "granularidade": "município × competência × perfil",
+   "evidencia": "TST-P8-16",
+   "resultado": "Vitória 202512: 100.992 registros; 49.829 por médico; só uma competência",
+   "viabilidade": "NEEDS_VALIDATION",
+   "dataset": "SAU-SIAPS-ATEND (NOVO)"
+  },
+  {
+   "id": "EXT-12",
+   "titulo": "Cobertura de equipes de APS por tipo (eSF, eAP, eSB…)",
+   "fonte": "SRC-EGESTOR-APS",
+   "granularidade": "município × competência",
+   "evidencia": "TST-P8-11",
+   "resultado": "56.244 eSF no Brasil em 2026-08; campos por tipo de equipe",
+   "viabilidade": "READY_WITH_CAVEATS",
+   "dataset": "SAU-APS-COBERTURA (NOVO)"
+  }
+ ],
+ "benchmarks": [
+  {
+   "id": "BM-01",
+   "planilha": "Mortalidade infantil abaixo de 12 por 1.000 NV",
+   "indicador": "IND-SAU-08",
+   "fonte_oficial": "Não localizada nesta fase. 12‰ coincide com a referência do ODS 3.2 para mortalidade NEONATAL (não infantil); fonte primária não lida.",
+   "vigente": "NÃO VERIFICADO",
+   "aplica": "nacional/estados",
+   "tipo": "referência gerencial",
+   "adequado": "NÃO para comparação pública municipal",
+   "observacao": "Brasil 2024 medido: 12,56‰; 1.575 dos 5.584 códigos sem nenhum óbito infantil; 2.387 municípios com <100 nascidos. Comparar município a limiar fixo gera ruído estatístico."
+  },
+  {
+   "id": "BM-02",
+   "planilha": "Mortalidade materna abaixo de 30 por 100 mil NV",
+   "indicador": "IND-SAU-09",
+   "fonte_oficial": "Não verificada com fonte primária. 30/100 mil aparece como meta brasileira do ODS 3.1 (global: 70); a confirmar.",
+   "vigente": "NÃO VERIFICADO",
+   "aplica": "nacional",
+   "tipo": "meta de política (ODS)",
+   "adequado": "NÃO para município",
+   "observacao": "Medido: RMM Brasil 2024 = 55,5; 4.786 municípios sem óbito materno; 5.183 com <1.000 NV (instável). Só agregação regional/plurianual é defensável."
+  },
+  {
+   "id": "BM-03",
+   "planilha": "Cesáreas entre 15% e 30%",
+   "indicador": "IND-SAU-12",
+   "fonte_oficial": "Sem norma brasileira localizada para 15–30%. A referência da OMS de 10–15% nasceu em 1985 (reunião de Fortaleza) e a declaração da OMS de 2015 recomenda não perseguir uma taxa específica e usar a classificação de Robson (leitura via PAHO e imprensa; documento original não lido).",
+   "vigente": "15–30%: SEM FONTE; 10–15%: SUPERADA",
+   "aplica": "população de gestantes, não hospital",
+   "tipo": "referência gerencial contestável",
+   "adequado": "NÃO",
+   "observacao": "Brasil 2024: 60,6%; mediana municipal 65,0%; TPROBSON disponível no SINASC para padronizar."
+  },
+  {
+   "id": "BM-04",
+   "planilha": "Ocupação de leitos entre 70% e 85%",
+   "indicador": "IND-SAU-06",
+   "fonte_oficial": "Não localizada. A faixa vem de parâmetros antigos (Portaria 1.101/2002, depois 1.631/2015, hoje consolidada) — conforme estudos técnicos secundários (CNM 2018). Leitos-dia hospital-dia e UTI têm cálculo separado.",
+   "vigente": "NÃO VERIFICADO",
+   "aplica": "hospital/serviço, não município",
+   "tipo": "parâmetro técnico histórico",
+   "adequado": "NÃO",
+   "observacao": "Ocupação alta pode indicar superlotação; baixa pode indicar acesso inadequado ou mix. Indicador não é calculável com dado público (ver IND-SAU-06)."
+  },
+  {
+   "id": "BM-05",
+   "planilha": "Absenteísmo abaixo de 20%",
+   "indicador": "IND-SAU-03",
+   "fonte_oficial": "Nenhuma norma localizada.",
+   "vigente": "SEM FONTE",
+   "aplica": "serviço/município",
+   "tipo": "referência gerencial",
+   "adequado": "NÃO",
+   "observacao": "Sem base nacional (TST-P8-26)."
+  },
+  {
+   "id": "BM-06",
+   "planilha": "Cobertura vacinal ≥ 95%",
+   "indicador": "IND-SAU-07",
+   "fonte_oficial": "Metas do PNI variam por imunobiológico; o PDF \"Regrascobertura2013\" do DATASUS define o cálculo mas não lista metas. Metas (95% geral; 90% para BCG e rotavírus) são de conhecimento do PNI e NÃO foram confirmadas em documento nesta fase.",
+   "vigente": "A CONFIRMAR",
+   "aplica": "por vacina e faixa etária",
+   "tipo": "meta técnica do PNI",
+   "adequado": "PARCIAL: só por vacina, com denominador SINASC e coberturas >100% tratadas",
+   "observacao": "BCG 2022: 41% dos municípios acima de 100% no TabNet (2.303/5.569)."
+  },
+  {
+   "id": "BM-07",
+   "planilha": "Aplicação mínima em Saúde de 15% da receita de referência",
+   "indicador": "IND-SAU-15",
+   "fonte_oficial": "LC 141/2012, arts. 6º e 7º (texto lido em planalto.gov.br, redação LC 227/2026): Estados 12%; Municípios 15%; DF aparece nos dois artigos (leitura jurídica necessária).",
+   "vigente": "SIM",
+   "aplica": "Municípios 15%; Estados 12%; DF a esclarecer",
+   "tipo": "meta legal (mínimo constitucional)",
+   "adequado": "SIM, com a base legal de cada ente",
+   "observacao": "A base de cálculo (impostos e transferências constitucionais, deduções) só é reproduzível com os demonstrativos do SIOPS; o Siconfi não serve o Anexo 12."
+  },
+  {
+   "id": "BM-08",
+   "planilha": "Pessoal até 60% da RCL",
+   "indicador": "IND-SAU-20",
+   "fonte_oficial": "LRF arts. 19 e 20 (lidos): global 60% para Estados e Municípios (50% União). Por Poder: Executivo municipal 54%, Legislativo 6%; Executivo estadual 49%. O RGF do Siconfi (Vitória) traz limite máximo 54% para o Executivo.",
+   "vigente": "SIM",
+   "aplica": "por ente e por Poder",
+   "tipo": "limite legal",
+   "adequado": "SIM, desde que rotulado como despesa total com pessoal do Executivo (não da Saúde)",
+   "observacao": "Na amostra aleatória de 150 municípios, 9 excederam 54%. Não existe limite legal de pessoal específico da Saúde."
+  }
+ ],
+ "bloqueios": [
+  {
+   "id": "BLK-01",
+   "indicadores": [
+    "IND-SAU-15"
+   ],
+   "titulo": "Rota SIOPS não comprovada",
+   "detalhe": "API pública sem swagger; app novo com login; PHP legado com parâmetros não confirmados; Siconfi não serve Anexo 12",
+   "tipo": "descoberta/credencial"
+  },
+  {
+   "id": "BLK-02",
+   "indicadores": [
+    "IND-SAU-03",
+    "IND-SAU-04"
+   ],
+   "titulo": "Sem base nacional de absenteísmo e espera",
+   "detalhe": "só painéis subnacionais",
+   "tipo": "integração local"
+  },
+  {
+   "id": "BLK-03",
+   "indicadores": [
+    "IND-SAU-06"
+   ],
+   "titulo": "Sem pacientes-dia/leitos-dia operacionais",
+   "detalhe": "AIH ≠ ocupação",
+   "tipo": "dado inexistente em fonte aberta"
+  },
+  {
+   "id": "BLK-04",
+   "indicadores": [
+    "IND-SAU-13",
+    "IND-SAU-14"
+   ],
+   "titulo": "Sem definição/instrumento nacional público",
+   "detalhe": "resolutividade e satisfação",
+   "tipo": "dado inexistente em fonte aberta"
+  },
+  {
+   "id": "BLK-05",
+   "indicadores": [
+    "IND-SAU-01"
+   ],
+   "titulo": "API do e-Gestor não documentada",
+   "detalhe": "rotas extraídas do bundle do SPA",
+   "tipo": "risco de contrato"
+  },
+  {
+   "id": "BLK-06",
+   "indicadores": [
+    "IND-SAU-09"
+   ],
+   "titulo": "Definição oficial de morte materna não reproduzida",
+   "detalhe": "exige validação epidemiológica",
+   "tipo": "metodológico"
+  }
+ ],
+ "gates": [
+  {
+   "id": "P8_SOURCE_VALIDATION",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "18 fontes primárias consultadas (17 com acesso real nesta fase; BNAFAR só por P4) (TST-P8-01…26). SIOPS não enumerável; SISAB legado respondeu 500; OpenDataSUS S3/CKAN não acessível por API."
+  },
+  {
+   "id": "P8_20_INDICATORS",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Os 20 indicadores têm linha na matriz e estado de viabilidade; 14 com extração pública comprovada (alguns parciais), 1 sem rota comprovada (IND-15), 2 locais, 3 inviáveis."
+  },
+  {
+   "id": "P8_MUNICIPAL_COVERAGE",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Medida em escala nacional para 9 indicadores (01, 05, 07, 08, 09, 10, 11, 12 + população). Finanças só em amostra (150 aleatórios + 14 dirigidos)."
+  },
+  {
+   "id": "P8_STATE_COVERAGE",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "27/27 UFs nos arquivos SIM/SINASC/SIH/CNES; APS 27/27. Finanças estaduais: RREO de ES e SP-UF lidos (Anexos 01–14 sem 08/12); amostra de estados não sistemática."
+  },
+  {
+   "id": "P8_HISTORICAL_AVAILABILITY",
+   "estado": "PARTIAL",
+   "justificativa": "Histórico recuperado em teste: SIM/SINASC ES 1996–2024 (parcial), CNES LT ES 2013–2026, SIH ES 2008–2024, PNI 2015–2026, Siconfi 2015–2024. e-Gestor só 201912+. Séries completas por UF não baixadas."
+  },
+  {
+   "id": "P8_CNES_FACILITIES",
+   "estado": "PASS",
+   "justificativa": "ST 2026-09: 501.726 estabelecimentos, 5.571 municípios, 27 UFs; campos de tipo, natureza jurídica e vínculo SUS verificados; lat/long no DEMAS."
+  },
+  {
+   "id": "P8_CNES_BEDS",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "LT 2026-09 completo (51.965 linhas; 543.524 leitos). Cadastro autodeclarado, DT_ATUAL defasado; definição de leito precisa ser decidida."
+  },
+  {
+   "id": "P8_CNES_PROFESSIONALS",
+   "estado": "PARTIAL",
+   "justificativa": "PF só em ES (145.836 vínculos). Contém identificação individual; agregação nacional por CBO não executada."
+  },
+  {
+   "id": "P8_SIH_HOSPITAL_ACTIVITY",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Brasil 2024-06 e ES 2024 completos; hospital, residência e procedimento verificados. Valor é aprovado, não pago."
+  },
+  {
+   "id": "P8_SIA_AMBULATORY_ACTIVITY",
+   "estado": "PARTIAL",
+   "justificativa": "Só ES/2024-06. A atenção primária não aparece no SIA; consulta médica por habitante subestimada."
+  },
+  {
+   "id": "P8_SISAB_PRIMARY_CARE",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Cobertura APS por município (e-Gestor API) comprovada nos 27 UFs; quebra AB→APS; Previne só 2024Q1–Q3; SISAB legado indisponível."
+  },
+  {
+   "id": "P8_PNI_VACCINATION",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Parquet nacional de cobertura por município 2015–2026 e TabNet; regra oficial lida; denominadores e >100% a tratar."
+  },
+  {
+   "id": "P8_SIM_MORTALITY",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Brasil 2024 completo por residência; mortes maternas e infantis calculadas; definição oficial de morte materna não reproduzida."
+  },
+  {
+   "id": "P8_SINASC_BIRTHS",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Brasil 2024 completo; cesárea e pré-natal por município. DEMAS SINASC vazio — usar FTP."
+  },
+  {
+   "id": "P8_ICSAP",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Lista oficial transcrita e aplicada em 1,19 mi AIH (Brasil 2024-06) e 307,5 mil (ES 2024). Padronização por idade não executada."
+  },
+  {
+   "id": "P8_SIOPS_FINANCE",
+   "estado": "PARTIAL",
+   "justificativa": "Siconfi comprova função Saúde, execução, RP e pessoal; o percentual ASPS (SIOPS) não foi comprovado: rotas não enumeráveis e Anexo 12 ausente no Siconfi."
+  },
+  {
+   "id": "P8_WAITING_TIMES",
+   "estado": "BLOCKED",
+   "justificativa": "Sem base nacional; só painéis estaduais/municipais não extraídos."
+  },
+  {
+   "id": "P8_ABSENTEEISM",
+   "estado": "BLOCKED",
+   "justificativa": "Sem base pública localizada."
+  },
+  {
+   "id": "P8_PATIENT_SATISFACTION",
+   "estado": "BLOCKED",
+   "justificativa": "Sem instrumento nacional vigente; ouvidoria não é satisfação."
+  },
+  {
+   "id": "P8_BENCHMARK_VALIDITY",
+   "estado": "PARTIAL",
+   "justificativa": "Dois benchmarks verificados em texto legal (LC 141; LRF); seis sem fonte primária lida ou contestáveis. Nenhum semáforo recomendado."
+  },
+  {
+   "id": "P8_STORAGE_ESTIMATION",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "Cenários A/B/C calculados com a fórmula calibrada (1.070 previsto vs 1.060 medido em civica_state.movements); contagens medidas quando possível, escala por razão quando não."
+  },
+  {
+   "id": "P8_MVP_READINESS",
+   "estado": "PASS_WITH_CAVEATS",
+   "justificativa": "MVP de 11 indicadores prontos ou com ressalvas definido; depende de decisões de especialista (seção 30)."
+  }
+ ],
+ "questoes_especialista": [
+  {
+   "indicador": "IND-SAU-01",
+   "pergunta": "A cobertura de APS deve ser truncada em 100%? Como apresentar a mudança de metodologia de 2021?"
+  },
+  {
+   "indicador": "IND-SAU-02",
+   "pergunta": "Quais procedimentos SIGTAP definem \"consulta médica\" e como combinar SIA (especializada) com e-SUS (APS) sem dupla contagem?"
+  },
+  {
+   "indicador": "IND-SAU-05",
+   "pergunta": "Quais tipos de leito compõem o indicador? Devem ser mostrados por região de saúde em vez de por município?"
+  },
+  {
+   "indicador": "IND-SAU-06",
+   "pergunta": "Há fonte oficial de ocupação hospitalar ou censo de leitos operacionais que possamos acessar?"
+  },
+  {
+   "indicador": "IND-SAU-07",
+   "pergunta": "Qual dose/imunobiológico representa cada meta? Como tratar coberturas >100% e a mudança de rótulos?"
+  },
+  {
+   "indicador": "IND-SAU-08",
+   "pergunta": "Qual janela de agregação mínima para municípios pequenos? Separar neonatal e pós-neonatal?"
+  },
+  {
+   "indicador": "IND-SAU-09",
+   "pergunta": "Qual a definição oficial de morte materna e em que nível territorial publicar?"
+  },
+  {
+   "indicador": "IND-SAU-10",
+   "pergunta": "A lista de 2008 continua válida? Como padronizar por idade e excluir internações obstétricas?"
+  },
+  {
+   "indicador": "IND-SAU-11",
+   "pergunta": "Manter 6 consultas ou migrar para 8 contatos? SINASC (declarado) ou produção da APS?"
+  },
+  {
+   "indicador": "IND-SAU-12",
+   "pergunta": "Publicar a taxa bruta ou o grupo de Robson? Hospital público e privado separados?"
+  },
+  {
+   "indicador": "IND-SAU-15",
+   "pergunta": "Como reconciliar o percentual ASPS do SIOPS com o Siconfi? DF aplica 12% ou 15% após a LC 227/2026?"
+  },
+  {
+   "indicador": "IND-SAU-16/17",
+   "pergunta": "Qual base (empenhado, liquidado, pago) é a pública? Como evitar dupla contagem de transferências?"
+  },
+  {
+   "indicador": "IND-SAU-18",
+   "pergunta": "Qual receita de referência e qual deflator?"
+  },
+  {
+   "indicador": "IND-SAU-20",
+   "pergunta": "Rotular como pessoal do Executivo e comparar com o limite de 54%/49%?"
+  }
+ ],
+ "armazenamento": {
+  "calibracao": "1.070 B previstos vs 1.060 B medidos em civica_state.movements; baseline 2026-10-13",
+  "cenarios": {
+   "A": {
+    "linhas": 3500567,
+    "dados_gib": 0.249,
+    "indices_gib": 0.174,
+    "historico_gib": 0.0,
+    "total_gib": 0.424,
+    "crescimento_anual_gib": 0.052,
+    "objetos_gib": 4.69
+   },
+   "B": {
+    "linhas": 14791548,
+    "dados_gib": 1.309,
+    "indices_gib": 0.517,
+    "historico_gib": 0.14,
+    "total_gib": 1.966,
+    "crescimento_anual_gib": 0.159,
+    "objetos_gib": 5.02
+   },
+   "C": {
+    "linhas": 107876473,
+    "dados_gib": 9.022,
+    "indices_gib": 3.378,
+    "historico_gib": 0.14,
+    "total_gib": 12.54,
+    "crescimento_anual_gib": 1.56,
+    "objetos_gib": 18.97
+   }
+  },
+  "tabelas": [
+   {
+    "cenario": "A",
+    "id": "A1",
+    "tabela": "sau_indicador_valor",
+    "linhas": 3420067,
+    "bytes_por_linha": 130,
+    "gib": 0.4152,
+    "base": "indicador (smallint) × ente (int IBGE) × período (int) com numerador, denominador, valor, flags. Soma dos 14 indicadores com extração comprovada (ver INDROWS) + 6% de agregados por UF."
+   },
+   {
+    "cenario": "A",
+    "id": "A2",
+    "tabela": "ter_pop_mun_ano (SIDRA 6579 / FIN)",
+    "linhas": 78000,
+    "bytes_por_linha": 107,
+    "gib": 0.0078,
+    "base": "denominador populacional município × ano (2013–2026); dataset TER-SIDRA-SERIES já previsto"
+   },
+   {
+    "cenario": "A",
+    "id": "A3",
+    "tabela": "sau_indicador_def + dicionários (imunobiológico, CID/ICSAP, procedimento)",
+    "linhas": 2500,
+    "bytes_por_linha": 235,
+    "gib": 0.0005,
+    "base": "metadados e listas oficiais (lista ICSAP 188 códigos, SIGTAP 5.039)"
+   },
+   {
+    "cenario": "B",
+    "id": "B1",
+    "tabela": "sau_cnes_estab (SCD)",
+    "linhas": 501726,
+    "bytes_por_linha": 799,
+    "gib": 0.3734,
+    "base": "501.726 estabelecimentos (ST 2026-09, medido) com tipo, natureza, vínculo SUS, lat/long, município; fator de histórico 0,6 por versões cadastrais"
+   },
+   {
+    "cenario": "B",
+    "id": "B2",
+    "tabela": "sau_cnes_leitos_estab (snapshots dez/ano + último)",
+    "linhas": 545632,
+    "bytes_por_linha": 108,
+    "gib": 0.0548,
+    "base": "51.965 linhas por competência (medido) × 14 snapshots × 0,75 (mudanças reais)"
+   },
+   {
+    "cenario": "B",
+    "id": "B3",
+    "tabela": "sau_cnes_equip_estab (último + variações)",
+    "linhas": 2100702,
+    "bytes_por_linha": 108,
+    "gib": 0.2109,
+    "base": "EQ ES = 26.875 linhas (medido); escala ×48,9 por razão de estabelecimentos; +15%/ano de mudanças"
+   },
+   {
+    "cenario": "B",
+    "id": "B4",
+    "tabela": "sau_cnes_prof_agreg (município × grupo CBO × dez)",
+    "linhas": 1949850,
+    "bytes_por_linha": 100,
+    "gib": 0.1812,
+    "base": "agregado de PF (ES: 145.836 vínculos, medido) por município × 25 grupos CBO × 14 snapshots; sem identificação individual"
+   },
+   {
+    "cenario": "B",
+    "id": "B5",
+    "tabela": "sau_sih_hospital_mes",
+    "linhas": 1000000,
+    "bytes_por_linha": 132,
+    "gib": 0.1228,
+    "base": "hospital × mês (ES 2024: 842 hospital-meses, medido; escala por AIH ≈ 0,8 mi; arredondado para 1 mi)"
+   },
+   {
+    "cenario": "B",
+    "id": "B6",
+    "tabela": "sau_sih_hospital_mes_subgrupo",
+    "linhas": 5193071,
+    "bytes_por_linha": 124,
+    "gib": 0.599,
+    "base": "hospital × mês × subgrupo de procedimento (7.896 linhas no ES 2024 = 0,026 por AIH; 14 anos de 14,3 mi AIH/ano)"
+   },
+   {
+    "cenario": "C",
+    "id": "C1",
+    "tabela": "sau_sih_hospital_residencia_mes",
+    "linhas": 11984011,
+    "bytes_por_linha": 116,
+    "gib": 1.2927,
+    "base": "hospital × município de residência × mês (18.593 linhas no ES 2024 = 0,06 por AIH)"
+   },
+   {
+    "cenario": "C",
+    "id": "C2",
+    "tabela": "sau_sih_hospital_proc_mes",
+    "linhas": 36151767,
+    "bytes_por_linha": 116,
+    "gib": 3.8997,
+    "base": "hospital × procedimento (10 dígitos) × mês (55.518 linhas no ES 2024 = 0,181 por AIH)"
+   },
+   {
+    "cenario": "C",
+    "id": "C3",
+    "tabela": "sau_sia_estab_grupo_mes",
+    "linhas": 28701267,
+    "bytes_por_linha": 116,
+    "gib": 3.096,
+    "base": "estabelecimento × grupo de procedimento (4 dígitos) × mês; ES 2024-06 = 3.766 linhas (medido); 13 anos"
+   },
+   {
+    "cenario": "C",
+    "id": "C4",
+    "tabela": "sau_cnes_prof_vinculo (pseudonimizado)",
+    "linhas": 11399371,
+    "bytes_por_linha": 141,
+    "gib": 1.4958,
+    "base": "vínculo × estabelecimento × CBO; ES 145.836 por competência (medido). Dado pessoal: só com pseudônimo e decisão jurídica"
+   },
+   {
+    "cenario": "C",
+    "id": "C5",
+    "tabela": "sau_cnes_servicos_estab (SR)",
+    "linhas": 1498509,
+    "bytes_por_linha": 108,
+    "gib": 0.1504,
+    "base": "SR ES 23.595 linhas (medido) × 48,9 × 1,3"
+   },
+   {
+    "cenario": "C",
+    "id": "C6",
+    "tabela": "sau_bnafar_estoque (corrente) + agregado mensal",
+    "linhas": 3350000,
+    "bytes_por_linha": 205,
+    "gib": 0.6398,
+    "base": "P4: 53.999 linhas no ES (78 municípios) → 3,35 mi nacional; API só mês corrente; sem histórico retroativo"
+   }
+  ],
+  "backfill_A": [
+   {
+    "fonte": "SIM+SINASC 1996–2024",
+    "arquivos_chamadas": "54 arquivos/ano × 29 anos = 1.566 DBC",
+    "gib": 4.69
+   },
+   {
+    "fonte": "CNES LT 14 snapshots + ST dez",
+    "arquivos_chamadas": "2 × 27 UFs × 14 = 756 DBC",
+    "gib": 0.32
+   },
+   {
+    "fonte": "SIH-RD (agregar ICSAP por município × ano)",
+    "arquivos_chamadas": "27 UFs × 12 meses × 14 anos (2013–2026) = 4.536 DBC (processados em fluxo; retidos apenas no cenário C)",
+    "gib": 13.96
+   },
+   {
+    "fonte": "e-Gestor APS",
+    "arquivos_chamadas": "27 UFs × 93 competências = 2.511 chamadas JSON",
+    "gib": 0.4
+   },
+   {
+    "fonte": "PNI parquet",
+    "arquivos_chamadas": "1 arquivo",
+    "gib": 0.0
+   },
+   {
+    "fonte": "Siconfi RREO/RGF/DCA",
+    "arquivos_chamadas": "≈5.600 entes × 10 anos × 3 chamadas ≈ 168 mil chamadas (≈1 s cada)",
+    "gib": 6.0
+   },
+   {
+    "fonte": "SIA consultas (PA)",
+    "arquivos_chamadas": "27 UFs × 12 meses × 14 anos = 4.536 DBC grandes (≈1,6 GB/mês nacional)",
+    "gib": 268.8
+   }
+  ]
+ },
+ "amostras": [
+  {
+   "municipio": "320530",
+   "perfil": "ES capital (hospital)",
+   "nome": "Vitória",
+   "uf": "ES",
+   "pop": 343935.0,
+   "nv": 3498.0,
+   "tmi": 10.577472841623786,
+   "rmm": 28.58776443682104,
+   "pct_ces": 59.86277873070326,
+   "pct_pn6": 89.58810068649885,
+   "leitos1000": 6.483783273002166,
+   "n_hosp": 22.0,
+   "qtCobertura": 100.9,
+   "pct_icsap_jun24": 14.59589867310012,
+   "bcg2025": 95.0
+  },
+  {
+   "municipio": "320035",
+   "perfil": "ES pequeno, sem hospital (05/07)",
+   "nome": "Alto Rio Novo",
+   "uf": "ES",
+   "pop": 7772.0,
+   "nv": 90.0,
+   "tmi": 22.22222222222222,
+   "rmm": 0.0,
+   "pct_ces": 63.33333333333333,
+   "pct_pn6": 80.89887640449437,
+   "leitos1000": 0.0,
+   "n_hosp": 0.0,
+   "qtCobertura": 180.41,
+   "pct_icsap_jun24": 8.333333333333332,
+   "bcg2025": 110.0
+  },
+  {
+   "municipio": "355030",
+   "perfil": "SP capital",
+   "nome": "São Paulo",
+   "uf": "SP",
+   "pop": 11911337.0,
+   "nv": 120789.0,
+   "tmi": 11.226187815115614,
+   "rmm": 28.976148490342663,
+   "pct_ces": 52.87450532346464,
+   "pct_pn6": 91.15849112867154,
+   "leitos1000": 3.127524643119408,
+   "n_hosp": 230.0,
+   "qtCobertura": 59.5,
+   "pct_icsap_jun24": 13.137469203267695,
+   "bcg2025": 84.0
+  },
+  {
+   "municipio": "350850",
+   "perfil": "SP médio (~100 mil)",
+   "nome": "Caçapava",
+   "uf": "SP",
+   "pop": 100422.0,
+   "nv": 887.0,
+   "tmi": 10.146561443066515,
+   "rmm": 112.73957158962796,
+   "pct_ces": 67.08004509582864,
+   "pct_pn6": 92.22096956031568,
+   "leitos1000": 2.369998605883173,
+   "n_hosp": 5.0,
+   "qtCobertura": 72.57,
+   "pct_icsap_jun24": 19.33333333333333,
+   "bcg2025": 93.0
+  },
+  {
+   "municipio": "350720",
+   "perfil": "SP menor município",
+   "nome": "Borá",
+   "uf": "SP",
+   "pop": 935.0,
+   "nv": 4.0,
+   "tmi": 250.0,
+   "rmm": 0.0,
+   "pct_ces": 100.0,
+   "pct_pn6": 100.0,
+   "leitos1000": 0.0,
+   "n_hosp": 0.0,
+   "qtCobertura": 187.76,
+   "pct_icsap_jun24": 8.333333333333332,
+   "bcg2025": 175.0
+  },
+  {
+   "municipio": "261160",
+   "perfil": "PE capital",
+   "nome": "Recife",
+   "uf": "PE",
+   "pop": 1588983.0,
+   "nv": 16116.0,
+   "tmi": 11.851576073467362,
+   "rmm": 68.25515016133035,
+   "pct_ces": 49.63648791399988,
+   "pct_pn6": 83.70436331255566,
+   "leitos1000": 7.011402891031559,
+   "n_hosp": 85.0,
+   "qtCobertura": 89.02,
+   "pct_icsap_jun24": 16.181946261447116,
+   "bcg2025": 130.0
+  },
+  {
+   "municipio": "260290",
+   "perfil": "PE médio (~220 mil)",
+   "nome": "Cabo de Santo Agostinho",
+   "uf": "PE",
+   "pop": 219044.0,
+   "nv": 2435.0,
+   "tmi": 13.141683778234086,
+   "rmm": 164.27104722792606,
+   "pct_ces": 52.52774352651048,
+   "pct_pn6": 83.65224625623961,
+   "leitos1000": 1.8854659337849928,
+   "n_hosp": 9.0,
+   "qtCobertura": 86.27,
+   "pct_icsap_jun24": 14.206642066420663,
+   "bcg2025": 55.00000000000001
+  },
+  {
+   "municipio": "310620",
+   "perfil": "MG capital",
+   "nome": "Belo Horizonte",
+   "uf": "MG",
+   "pop": 2415451.0,
+   "nv": 21530.0,
+   "tmi": 10.72921504876916,
+   "rmm": 37.15745471435206,
+   "pct_ces": 47.05226480836237,
+   "pct_pn6": 90.15606801770323,
+   "leitos1000": 4.697673436554912,
+   "n_hosp": 63.0,
+   "qtCobertura": 92.57,
+   "pct_icsap_jun24": 18.23588476094848,
+   "bcg2025": 102.0
+  },
+  {
+   "municipio": "316660",
+   "perfil": "MG menor município",
+   "nome": "Serra da Saudade",
+   "uf": "MG",
+   "pop": 857.0,
+   "nv": 5.0,
+   "tmi": 0.0,
+   "rmm": 0.0,
+   "pct_ces": 60.0,
+   "pct_pn6": 100.0,
+   "leitos1000": 0.0,
+   "n_hosp": 0.0,
+   "qtCobertura": 408.87,
+   "pct_icsap_jun24": 14.285714285714285,
+   "bcg2025": 80.0
+  },
+  {
+   "municipio": "120040",
+   "perfil": "Norte (AC) capital",
+   "nome": "Rio Branco",
+   "uf": "AC",
+   "pop": 390058.0,
+   "nv": 4745.0,
+   "tmi": 14.75237091675448,
+   "rmm": 42.149631190727085,
+   "pct_ces": 57.94688026981451,
+   "pct_pn6": 77.37369337979094,
+   "leitos1000": 2.868804126565793,
+   "n_hosp": 12.0,
+   "qtCobertura": 88.84,
+   "pct_icsap_jun24": 11.5,
+   "bcg2025": 95.0
+  },
+  {
+   "municipio": "120043",
+   "perfil": "Norte (AC) pequeno, sem hospital (05/07)",
+   "nome": "Santa Rosa do Purus",
+   "uf": "AC",
+   "pop": 7285.0,
+   "nv": 188.0,
+   "tmi": 69.14893617021276,
+   "rmm": 0.0,
+   "pct_ces": 14.893617021276595,
+   "pct_pn6": 36.11111111111111,
+   "leitos1000": 2.1962937542896364,
+   "n_hosp": 0.0,
+   "qtCobertura": 145.48,
+   "pct_icsap_jun24": 32.0,
+   "bcg2025": 53.0
+  },
+  {
+   "municipio": "500270",
+   "perfil": "Centro-Oeste (MS) capital",
+   "nome": "Campo Grande",
+   "uf": "MS",
+   "pop": 970843.0,
+   "nv": 11487.0,
+   "tmi": 11.404196047706105,
+   "rmm": 17.41098633237573,
+   "pct_ces": 65.46530860973274,
+   "pct_pn6": 85.40451101628494,
+   "leitos1000": 2.9737042961632314,
+   "n_hosp": 24.0,
+   "qtCobertura": 82.87,
+   "pct_icsap_jun24": 12.87950216858382,
+   "bcg2025": 103.0
+  },
+  {
+   "municipio": "410690",
+   "perfil": "Sul (PR) capital",
+   "nome": "Curitiba",
+   "uf": "PR",
+   "pop": 1832183.0,
+   "nv": 16872.0,
+   "tmi": 7.34945471787577,
+   "rmm": 11.853959222380276,
+   "pct_ces": 59.43636902996143,
+   "pct_pn6": 95.16263057929724,
+   "leitos1000": 3.170534821030432,
+   "n_hosp": 60.0,
+   "qtCobertura": 61.79,
+   "pct_icsap_jun24": 13.29500538986705,
+   "bcg2025": 102.0
+  },
+  {
+   "municipio": "430066",
+   "perfil": "Sul (RS) menor município",
+   "nome": "André da Rocha",
+   "uf": "RS",
+   "pop": 1156.0,
+   "nv": 12.0,
+   "tmi": 0.0,
+   "rmm": 0.0,
+   "pct_ces": 83.33333333333334,
+   "pct_pn6": 100.0,
+   "leitos1000": 0.0,
+   "n_hosp": 0.0,
+   "qtCobertura": 302.76,
+   "pct_icsap_jun24": 12.5,
+   "bcg2025": 41.0
+  }
+ ],
+ "es78": {
+  "n": 78,
+  "com_nv": 78,
+  "sem_hosp": 31,
+  "sem_leito": 22,
+  "tmi_agr": 12.2,
+  "tmi_med": 11.5,
+  "nv_lt100": 9,
+  "aps_med": 137.8,
+  "aps_gt100": 72
+ },
+ "contagem_viabilidade": {
+  "READY_FOR_CONTRACT": [
+   "IND-SAU-12",
+   "IND-SAU-20"
+  ],
+  "READY_WITH_CAVEATS": [
+   "IND-SAU-01",
+   "IND-SAU-05",
+   "IND-SAU-07",
+   "IND-SAU-08",
+   "IND-SAU-10",
+   "IND-SAU-11",
+   "IND-SAU-16",
+   "IND-SAU-17",
+   "IND-SAU-19"
+  ],
+  "NEEDS_VALIDATION": [
+   "IND-SAU-02",
+   "IND-SAU-09",
+   "IND-SAU-15",
+   "IND-SAU-18"
+  ],
+  "LOCAL_INTEGRATION_REQUIRED": [
+   "IND-SAU-03",
+   "IND-SAU-04"
+  ],
+  "NOT_FEASIBLE_WITH_PUBLIC_DATA": [
+   "IND-SAU-06",
+   "IND-SAU-13",
+   "IND-SAU-14"
+  ],
+  "BLOCKED_EXTERNAL": []
+ }
+}

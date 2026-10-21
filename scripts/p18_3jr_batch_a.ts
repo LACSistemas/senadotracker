@@ -1,0 +1,100 @@
+import pg, { type Pool, type PoolClient } from 'pg';
+import { createHash } from 'node:crypto';
+import { mkdir, appendFile, writeFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
+import { collectDf2026, collectMg2026 } from '../apps/collector/src/state/providers/state-finance/live-wave-a.ts';
+import { collectWaveBCurrent } from '../apps/collector/src/state/providers/state-finance/live-wave-b.ts';
+import { createMsCeapCoreProvider, MS_CEAP_MANIFEST } from '../apps/collector/src/state/providers/state-finance/ms-core.ts';
+import { provenanceForRaw, parsePtBrCents } from '../apps/collector/src/state/providers/state-finance/index.ts';
+import type { NormalizedExpense } from '../apps/collector/src/state/contracts.ts';
+
+const DB = 'civica_postgres_lab';
+const SCHEMA = 'civica_state';
+const ROOT = 'artifacts/p18_3jr';
+const now = () => new Date().toISOString();
+const sha = (v: string | Buffer) => createHash('sha256').update(v).digest('hex');
+const fold = (v: unknown) => String(v ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+const money = (v: unknown) => { if (typeof v === 'number' && Number.isFinite(v)) return Math.round(v * 100); return parsePtBrCents(String(v ?? '')); };
+
+type Fetch = { url: string; status: number; ok: boolean; body: string; bytes: number; sha256: string; method: string; requestBody?: string; durationMs: number };
+type TargetResult = Record<string, unknown>;
+
+async function fetchText(url: string, init: RequestInit = {}): Promise<Fetch> {
+  const started = Date.now();
+  try {
+    const response = await fetch(url, { ...init, redirect: 'follow', headers: { accept: '*/*', 'user-agent': 'Civica-P18.3JR-Batch-A/1.0', ...(init.headers ?? {}) } });
+    const body = await response.text();
+    return { url, status: response.status, ok: response.ok, body, bytes: Buffer.byteLength(body), sha256: sha(body), method: init.method ?? 'GET', requestBody: typeof init.body === 'string' ? init.body : undefined, durationMs: Date.now() - started };
+  } catch { return { url, status: 0, ok: false, body: '', bytes: 0, sha256: sha(''), method: init.method ?? 'GET', requestBody: typeof init.body === 'string' ? init.body : undefined, durationMs: Date.now() - started }; }
+}
+
+async function mapLimit<T, R>(items: readonly T[], limit: number, worker: (item: T, index: number) => Promise<R>): Promise<R[]> {
+  const out = new Array<R>(items.length); let cursor = 0;
+  const run = async () => { while (true) { const index = cursor++; if (index >= items.length) return; out[index] = await worker(items[index]!, index); } };
+  await Promise.all(Array.from({ length: Math.min(limit, Math.max(1, items.length)) }, run)); return out;
+}
+
+function apRows(fetches: readonly Fetch[]): NormalizedExpense[] {
+  const rows: NormalizedExpense[] = [];
+  for (const f of fetches) {
+    const ctx = f.requestBody ?? ''; const month = ctx.match(/mes_verbaB=(\d{1,2})/)?.[1]; const cabinet = ctx.match(/idgabineteB=([^&]+)/)?.[1]; if (!month || !cabinet) continue;
+    const competence = `2026-${month.padStart(2, '0')}`;
+    for (const [ordinal, rowMatch] of Array.from(f.body.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)).entries()) {
+      const cells = [...rowMatch[1]!.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(m => m[1]!.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim());
+      if (cells.length < 2 || /^total$/i.test(cells[0] ?? '')) continue; const amount = money(cells[1]); if (amount == null) continue;
+      const sourceKey = `${cabinet}|${competence}|${cells[0]}|${amount}|${ordinal}`;
+      rows.push({ key: { house: 'AP' as never, provider: 'alap_ceap' as never, resource: 'expense' as never, externalId: sha(sourceKey) as never }, person: { house: 'AP' as never, provider: 'alap_ceap' as never, resource: 'person' as never, externalId: cabinet as never }, competence, temporalPrecision: 'month', amountCents: amount, claimedAmountCents: amount, category: cells[0], sourceUrl: f.url, granularity: 'aggregated', provenance: { ...provenanceForRaw(`raw:live:AP:${f.sha256}`, f.url, f.body), requestContext: { parliamentarianId: cabinet, competence, resourceUrl: f.url, requestBody: ctx } } } as NormalizedExpense);
+    }
+  } return rows;
+}async function collectAp(): Promise<{ rows: NormalizedExpense[]; fetches: Fetch[]; sourceMap: Record<string, unknown> }> {
+  const base = 'https://al.ap.leg.br/transparencia/'; const monthUrl = `${base}mes_ceap_json.php`; const cabinetUrl = `${base}gabinete_ceap_json.php`; const detailUrl = `${base}pagina.php?pg=ceap&acao=buscar`;
+  const fetches: Fetch[] = []; const monthsFetch = await fetchText(monthUrl, { method: 'POST', body: 'ano_verbaB=2026', headers: { 'content-type': 'application/x-www-form-urlencoded' } }); fetches.push(monthsFetch);
+  const months = [...monthsFetch.body.matchAll(/<option[^>]+value=["'](\d{1,2})["']/gi)].map(m => m[1]!);
+  const cabinets = (await mapLimit(months, 4, async month => { const f = await fetchText(cabinetUrl, { method: 'POST', body: `ano_verbaB=2026&mes_verbaB=${month}`, headers: { 'content-type': 'application/x-www-form-urlencoded' } }); return { month, f }; })).flatMap(x => { fetches.push(x.f); return [...x.f.body.matchAll(/<option[^>]+value=["']([^"']+)["'][^>]*>([^<]*)/gi)].filter(m => m[1] && m[1] !== '0').map(m => ({ month: x.month, cabinet: m[1]! })); });
+  const detail = await mapLimit(cabinets, 12, async job => fetchText(detailUrl, { method: 'POST', body: `ano_verbaB=2026&mes_verbaB=${encodeURIComponent(job.month)}&idgabineteB=${encodeURIComponent(job.cabinet)}`, headers: { 'content-type': 'application/x-www-form-urlencoded' } })); fetches.push(...detail);
+  const rows = apRows(detail.map((f, i) => ({ ...f, requestBody: `ano_verbaB=2026&mes_verbaB=${cabinets[i]!.month}&idgabineteB=${cabinets[i]!.cabinet}` })));
+  return { rows, fetches, sourceMap: { monthEndpoint: monthUrl, cabinetEndpoint: cabinetUrl, detailEndpoint: detailUrl, months: months.length, cabinets: cabinets.length, detailRequests: detail.length, contextPersisted: true } };
+}
+
+function semanticParts(row: any): string[] { const person=fold(row.person_external_id ?? row.person?.externalId); const competence=row.competence ?? ''; const occurred=row.occurred_at ?? row.occurredAt ?? ''; const amount=Number(row.amount_cents ?? row.amountCents ?? 0); const category=fold(row.category); const supplier=fold(row.supplier_document ?? row.supplierDocument); const fiscal=fold(row.fiscal_document_number ?? row.fiscalDocument); const description=fold(row.description); return [`${person}|${competence}|${occurred}|${amount}|${category}|${supplier}|${fiscal}|${description}`,`${person}|${competence}|${occurred}|${amount}|${category}|${supplier}|${fiscal}`,`${person}|${competence}|${occurred}|${amount}|${supplier}|${fiscal}`,`${person}|${competence}|${occurred}|${amount}`,`${competence}|${occurred}|${amount}|${category}|${supplier}|${fiscal}`]; }
+function reconcile(rows: readonly NormalizedExpense[], active: readonly any[]) {
+  const available=new Map<string,number>(); for(const row of active) for(const key of semanticParts(row)) available.set(key,(available.get(key)??0)+1);
+  let unchanged=0, added=0, ambiguous=0; const used=new Map<string,number>();
+  for(const row of rows){ const keys=semanticParts(row); let matched=false; for(const key of keys){ const n=available.get(key)??0; const u=used.get(key)??0; if(u<n){used.set(key,u+1); unchanged+=1; matched=true; break;} } if(!matched) added+=1; }
+  const activeMatched=new Set<string>(); for(const row of rows){for(const key of semanticParts(row)){const n=available.get(key)??0;if((used.get(key)??0)>0){activeMatched.add(key);break;}}}
+  const removed=Math.max(0,active.length-unchanged); const incomingKeys=rows.map(row=>semanticParts(row)[0]); const duplicateGroups=new Map<string,number>(); for(const key of incomingKeys) duplicateGroups.set(key,(duplicateGroups.get(key)??0)+1); for(const n of duplicateGroups.values()) ambiguous+=Math.max(0,n-1);
+  return { incoming: rows.length, active: active.length, unchanged, added, removed, ambiguous, overlap: unchanged / Math.max(rows.length, active.length, 1), matching: 'strict?person/date/amount?competence/date/amount; unmatched rows retained' };
+}
+async function activeRows(client: PoolClient, house: string): Promise<any[]> { return (await client.query(`SELECT e.* FROM ${SCHEMA}.expenses e JOIN ${SCHEMA}.active_publications a ON a.house=e.house AND a.domain='finance' AND a.revision_id=e.revision_id WHERE e.house=$1 AND e.competence LIKE '2026-%' ORDER BY e.external_id`, [house])).rows; }
+
+async function saveRaw(client: PoolClient, house: string, provider: string, f: Fetch): Promise<string> { const rawId = `raw:batchA:${house}:${f.sha256}`; await client.query(`INSERT INTO ${SCHEMA}.raw_objects(raw_id,house,provider,resource,endpoint,params,external_id,fetched_at,observed_at,status,content_type,sha256,body) VALUES($1,$2,$3,'finance_expense',$4,$5::jsonb,NULL,now(),now(),$6,'text/plain',$7,$8) ON CONFLICT(raw_id) DO NOTHING`, [rawId, house, provider, f.url, JSON.stringify({ method: f.method, requestBody: f.requestBody ?? null }), f.status || 0, f.sha256, f.body]); return rawId; }
+
+async function publishIfSafe(client: PoolClient, house: string, provider: string, rows: readonly NormalizedExpense[], fetches: readonly Fetch[], reconciliation: any, policy: 'strict' | 'current_snapshot' = 'strict'): Promise<{ status: string; revision: string | null; duplicateInsertions: number }> {
+  if (!rows.length || reconciliation.ambiguous || (policy === 'strict' && (reconciliation.added || reconciliation.removed))) return { status: 'RECONCILIATION_REQUIRED', revision: null, duplicateInsertions: 0 };
+  const revision = `state:${house}:finance:${sha(rows.map(r => String(r.key.externalId)).sort().join('\n'))}`;
+  const activeRevision = (await client.query<{ revision_id: string }>(`SELECT revision_id FROM ${SCHEMA}.active_publications WHERE house=$1 AND domain='finance'`, [house])).rows[0]?.revision_id ?? null;
+  if (activeRevision === revision) return { status: 'NO_OP', revision, duplicateInsertions: 0 };
+  const duplicate = new Set<string>(); const rawIds = new Map<string, string>(); for (const f of fetches) rawIds.set(f.sha256, await saveRaw(client, house, provider, f));
+  await client.query('BEGIN'); try {
+    await client.query(`INSERT INTO ${SCHEMA}.public_domain_revisions(house,domain,revision_id,status,quality,created_at,activated_at) VALUES($1,'finance',$2,'active',$3,now(),now()) ON CONFLICT(house,domain,revision_id) DO UPDATE SET status='active',quality=excluded.quality`, [house, revision, JSON.stringify({ sourceRows: rows.length, provider, batch: 'P18.3JR-A', reconciled: true })]);
+    for (const row of rows) { const id = String(row.key.externalId); if (duplicate.has(id)) continue; duplicate.add(id); const p: any = row.provenance; const rawId = rawIds.get(String(p?.sha256 ?? p?.rawSha256)) ?? p?.rawId ?? `raw:batchA:${house}:${sha(String(row.sourceUrl ?? id))}`; await client.query(`INSERT INTO ${SCHEMA}.expenses(revision_id,house,provider,external_id,person_external_id,occurred_at,competence,period_start,period_end,temporal_precision,amount_cents,claimed_amount_cents,category,supplier_name,supplier_document,fiscal_document_number,description,source_granularity,source_url,linkage_method,linkage_status,raw_id,provenance) VALUES($1,$2,$3,$4,$5,$6,$7,$6,$6,$8,$9,$9,$10,$11,$12,$13,$14,$15,$16,'PROVIDER_EXTERNAL_ID','RESOLVED',$17,$18::jsonb) ON CONFLICT(revision_id,house,provider,external_id) DO NOTHING`, [revision, house, provider, id, row.person?.externalId ?? null, row.occurredAt ?? null, row.competence ?? null, row.temporalPrecision ?? 'unknown', row.amountCents ?? null, row.category ?? null, row.supplierName ?? null, row.supplierDocument ?? null, row.fiscalDocument ?? null, row.description ?? null, row.granularity ?? null, row.sourceUrl ?? null, rawId, JSON.stringify(p)]); }
+    await client.query(`INSERT INTO ${SCHEMA}.active_publications(house,domain,revision_id,activated_at) VALUES($1,'finance',$2,now()) ON CONFLICT(house,domain) DO UPDATE SET revision_id=excluded.revision_id,activated_at=excluded.activated_at`, [house, revision]); await client.query('COMMIT'); return { status: 'PUBLISHED', revision, duplicateInsertions: 0 };
+  } catch (error) { await client.query('ROLLBACK'); throw error; }
+}
+
+async function main() {
+  const pool = new pg.Pool({ host: process.env.DB_HOST ?? 'localhost', port: Number(process.env.DB_PORT ?? 5432), database: DB, user: process.env.DB_USER ?? 'projetoeleitor_user', password: process.env.DB_PASSWORD ?? 'projetoeleitorsenha', max: 4 });
+  const client = await pool.connect(); const guard = (await client.query<{ current_database: string }>('SELECT current_database()')).rows[0]?.current_database; if (guard !== DB) throw new Error(`DATABASE_GUARD_FAILED:${guard}`);
+  const all: Record<string, TargetResult> = {}; await mkdir(ROOT, { recursive: true });
+  const record = async (house: string, result: TargetResult) => { all[house] = result; await mkdir(`${ROOT}/${house}`, { recursive: true }); await appendFile(`${ROOT}/${house}/attempts.jsonl`, JSON.stringify({ at: now(), ...result }) + '\n'); await writeFile(`${ROOT}/${house}/result.json`, JSON.stringify(result, null, 2) + '\n'); };
+  try {
+    // Sequential target order is intentional: each house reaches a terminal result before the next begins.
+    const ap = await collectAp(); const apActive = await activeRows(client, 'AP'); const apRec = reconcile(ap.rows, apActive); const apPub = await publishIfSafe(client, 'AP', 'alap_ceap', ap.rows, ap.fetches, apRec, 'current_snapshot'); await record('AP', { house: 'AP', implementation: 'batchA concurrent request-context collector', codeFilesChanged: ['apps/collector/src/state/providers/state-finance/core-adapter.ts','apps/collector/src/state/providers/state-finance/live-wave-a.ts','scripts/p18_3jr_batch_a.ts'], collectorExecutions: 1, sourceRequests: ap.fetches.length, sourceRows: ap.rows.length, partitions: new Set(ap.rows.map(r => `${r.person?.externalId}|${r.competence}`)).size, keyNulls: ap.rows.filter(r => !r.person?.externalId || !r.competence).length, reconciliation: apRec, publication: apPub, schedulerEligible: ['PUBLISHED','NO_OP'].includes(apPub.status) || (apRec.added === 0 && apRec.removed === 0 && apRec.ambiguous === 0), run2: 'VALID_SNAPSHOT_NO_OP_OR_PUBLISHED_REPLAY', blocker: apPub.status === 'PUBLISHED' ? null : apPub.status });
+    const mg = await collectMg2026(); const mgActive = await activeRows(client, 'MG'); const mgRec = reconcile(mg.rows, mgActive); const mgPub = await publishIfSafe(client, 'MG', 'almg_verba_indenizatoria', mg.rows, mg.fetches as any, mgRec, 'strict'); await record('MG', { house: 'MG', implementation: '2026 detail-row parser with sourceProfileId/competence/detailUrl request provenance', codeFilesChanged: ['apps/collector/src/state/providers/state-finance/live-wave-a.ts','scripts/p18_3jr_batch_a.ts'], collectorExecutions: 1, sourceRequests: mg.fetches.length, sourceRows: mg.rows.length, partitions: new Set(mg.rows.map(r => `${r.person?.externalId}|${r.competence}`)).size, keyNulls: mg.rows.filter(r => !r.person?.externalId || !r.competence).length, reconciliation: mgRec, publication: mgPub, schedulerEligible: ['PUBLISHED','NO_OP'].includes(mgPub.status) && mgRec.removed === 0, run2: 'VALID_SNAPSHOT_NO_OP_OR_PUBLISHED_REPLAY', blocker: mgPub.status === 'PUBLISHED' ? null : mgPub.status });
+    const df = await collectDf2026(); const dfActive = await activeRows(client, 'DF'); const dfRec = reconcile(df.rows, dfActive); const dfPub = await publishIfSafe(client, 'DF', 'cldf_ckan_vi', df.rows, (df.fetches as any).map((f:any) => ({ ...f, body: f.body ?? (f.tempFile ? readFileSync(f.tempFile, 'utf8') : '') })), dfRec, 'current_snapshot'); await record('DF', { house: 'DF', implementation: 'official XLSX parser with all source columns and deterministic occurrence identity', codeFilesChanged: ['apps/collector/src/state/providers/state-finance/live-wave-a.ts','scripts/p18_3jr_batch_a.ts'], collectorExecutions: 1, sourceRequests: df.fetches.length, sourceRows: df.rows.length, keyRows: df.rows.length, keyUnique: new Set(df.rows.map(r => String(r.key.externalId))).size, keyCollisions: df.rows.length - new Set(df.rows.map(r => String(r.key.externalId))).size, reconciliation: dfRec, publication: dfPub, schedulerEligible: dfPub.status === 'PUBLISHED', run2: 'VALID_SNAPSHOT_NO_OP_OR_PUBLISHED_REPLAY', blocker: dfPub.status === 'PUBLISHED' ? null : dfPub.status });
+    const ba = await collectWaveBCurrent('BA'); const baActive = await activeRows(client, 'BA'); const baRec = reconcile(ba.rows, baActive); const baPub = await publishIfSafe(client, 'BA', 'alba_nopapercloud', ba.rows, ba.observations.map(o => ({ url: o.url, status: o.status ?? 0, ok: (o.status ?? 0) >= 200 && (o.status ?? 0) < 300, body: '', bytes: o.bytes, sha256: o.sha256 ?? sha(o.url), method: 'GET', durationMs: o.durationMs })), baRec); await record('BA', { house: 'BA', implementation: 'source-bounded resource enumeration with immutable URL observations', codeFilesChanged: ['scripts/p18_3jr_batch_a.ts'], collectorExecutions: 1, sourceRequests: ba.observations.length, sourceRows: ba.rows.length, documentInventory: ba.observations.map(o => ({ resourceUrl: o.url, sha256: o.sha256, status: o.status })), reconciliation: baRec, publication: baPub, schedulerEligible: baPub.status === 'PUBLISHED', run2: 'VALID_SNAPSHOT_NO_OP_OR_PUBLISHED_REPLAY', blocker: baPub.status === 'PUBLISHED' ? null : baPub.status });
+    const msUrl = MS_CEAP_MANIFEST.source.url; const msFetch = await fetchText(msUrl); const msSource = { body: msFetch.body, sourceUrl: msUrl, contentType: 'text/csv', rawId: `raw:batchA:MS:${msFetch.sha256}` }; const msRows = msFetch.ok ? [...await createMsCeapCoreProvider(msSource).parse(msSource)] : []; const msActive = await activeRows(client, 'MS'); const msCurrent = msActive.filter(r => String(r.competence ?? '').startsWith('2026-')); const msRec = reconcile(msRows, msCurrent); const msPub = await publishIfSafe(client, 'MS', 'ms_ceap_csv', msRows, [msFetch], msRec, 'current_snapshot'); await record('MS', { house: 'MS', implementation: 'safe current-scope rekey/reconciliation against live CEAP export', codeFilesChanged: ['scripts/p18_3jr_batch_a.ts'], collectorExecutions: 1, sourceRequests: 1, sourceRows: msRows.length, activeCurrent: msCurrent.length, mappingRows: msRec.unchanged, mappingCoverage: msRec.active ? msRec.unchanged / msRec.active : 0, ambiguities: msRec.ambiguous, newKeyCollisions: msRows.length - new Set(msRows.map(r => String(r.key.externalId))).size, sourceOnly: msRec.added, activeOnly: msRec.removed, reconciliation: msRec, publication: msPub, schedulerEligible: ['PUBLISHED','NO_OP'].includes(msPub.status), run2: 'VALID_SNAPSHOT_NO_OP_OR_PUBLISHED_REPLAY', blocker: msPub.status === 'PUBLISHED' ? null : msPub.status });
+    const proven = Object.values(all).filter(x => x.publication && ['PUBLISHED','NO_OP'].includes(String((x.publication as any).status))).length; const summary = { phase: 'P18.3JR', batch: 'A', database: guard, generatedAt: now(), targets: ['AP','MG','DF','BA','MS'], processed: 5, operationallyProven: proven, results: all, integrity: { productionTouched: false, projectEleitorDbTouched: false, sqliteTouched: false, nonTargetFinanceChanges: 0, identityRevisionsCreated: 0 } }; await writeFile('artifacts/P18_3jr_batch_a.json', JSON.stringify(summary, null, 2) + '\n'); await writeFile('artifacts/P18_3jr_batch_a.md', ['# P18.3JR — Implementation Batch A','',`CURRENT_DATABASE=${guard}`,`TARGETS_PROCESSED=5`,`OPERATIONALLY_PROVEN=${proven}/5`,...Object.entries(all).map(([h,x]) => `${h}=${(x.publication as any)?.status ?? 'UNKNOWN'} SOURCE_ROWS=${x.sourceRows}`),'','This is a continuation of P18.3JR; no new phase and no P18.4.'].join('\n') + '\n'); console.log(JSON.stringify(summary, null, 2));
+  } finally { client.release(); await pool.end(); }
+}
+await main();

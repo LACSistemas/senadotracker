@@ -1,0 +1,1673 @@
+{
+ "meta": {
+  "phase": "P5",
+  "title": "Atuação política e administrativa do Poder Executivo",
+  "generated": "2026-10-11",
+  "horizon": "2013-01-01..2026-10 (extensível a 2000)",
+  "mode": "investigação apenas; nenhum código de produto alterado",
+  "prior": [
+   "P0",
+   "P1",
+   "P2",
+   "P3",
+   "P4"
+  ],
+  "privacy": "CPF nunca em claro; título eleitoral só como hash; SIAPE só agregado; sem dado de menor",
+  "notes": "Letras dos testes são rótulos descritivos desta execução (A..N); ver tests[].label"
+ },
+ "sources": [
+  {
+   "id": "S-TSE-CAND",
+   "name": "TSE consulta_cand (zip por ano/UF)",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/consulta_cand_{ano}.zip",
+   "sphere": "all",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2012-2024",
+   "note": "SQ_CANDIDATO, título (hash), vice por SG_UE+NR_TURNO+NR_CANDIDATO, DS_SIT_TOT_TURNO; CPF mascarado em 2024"
+  },
+  {
+   "id": "S-TSE-FOTO",
+   "name": "TSE foto_cand{ano}_{UF}_div.zip",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes{ano}/fotos/",
+   "sphere": "all",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2012-2024",
+   "note": "nome do arquivo contém SQ_CANDIDATO; leitura do índice via HTTP Range"
+  },
+  {
+   "id": "S-TSE-PLANO",
+   "name": "TSE propostas de governo (PDF)",
+   "url": "https://divulgacandcontas.tse.jus.br",
+   "sphere": "all",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "NEEDS_VALIDATION",
+   "years": "2014-2024",
+   "note": "PDF por candidato; sem estrutura"
+  },
+  {
+   "id": "S-SIORG",
+   "name": "SIORG REST (OpenAPI)",
+   "url": "https://estruturaorganizacional.dados.gov.br",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "versionado",
+   "note": "estrutura hierárquica, versaoConsulta, IDs persistentes"
+  },
+  {
+   "id": "S-SEN-LEG",
+   "name": "Senado legislacao/lista + legislacao/{id}",
+   "url": "https://legis.senado.leg.br/dadosabertos/legislacao",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2013-2026",
+   "note": "DEC/LEI/LCP/MPV/DLG por ano; DEC-n e DEC-sn separados"
+  },
+  {
+   "id": "S-PLANALTO",
+   "name": "Planalto páginas de atos",
+   "url": "https://www.planalto.gov.br/ccivil_03/",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2013-2026",
+   "note": "bloco de assinatura com signatário e referência ao DOU; variação de caixa de pasta"
+  },
+  {
+   "id": "S-SEN-PROC",
+   "name": "Senado processo (VET/MPV)",
+   "url": "https://legis.senado.leg.br/dadosabertos/processo",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2013-2026",
+   "note": "séries anuais de VET e MPV"
+  },
+  {
+   "id": "S-CAM-PROP",
+   "name": "Câmara proposições (CSV em lote)",
+   "url": "https://dadosabertos.camara.leg.br/arquivos/proposicoes/",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2013-2026",
+   "note": "autoria do Executivo é institucional (Poder Executivo), sem pessoa"
+  },
+  {
+   "id": "S-DOU",
+   "name": "DOU busca pública (JSON embutido)",
+   "url": "https://www.in.gov.br/consulta",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "years": "2013-2026",
+   "note": "frases acentuadas entre aspas retornam 0; paginação não confirmada"
+  },
+  {
+   "id": "S-INLABS",
+   "name": "INLABS Imprensa Nacional",
+   "url": "https://inlabs.in.gov.br",
+   "sphere": "federal",
+   "state": "BLOCKED",
+   "feas": "BLOCKED",
+   "years": "-",
+   "note": "exige cadastro/login; não contornado"
+  },
+  {
+   "id": "S-LEXML",
+   "name": "LexML",
+   "url": "https://www.lexml.gov.br",
+   "sphere": "all",
+   "state": "BLOCKED",
+   "feas": "BLOCKED",
+   "years": "-",
+   "note": "página anti-bot"
+  },
+  {
+   "id": "S-ALESP",
+   "name": "Alesp normas (XML)",
+   "url": "https://www.al.sp.gov.br/repositorio/legislacao",
+   "sphere": "state:SP",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "completo",
+   "note": "dataset completo de normas estaduais SP"
+  },
+  {
+   "id": "S-ALEPE",
+   "name": "ALEPE listas de legislação",
+   "url": "https://legis.alepe.pe.gov.br",
+   "sphere": "state:PE",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "years": "2014/2020/2025",
+   "note": "contagem 156/145/217; cobertura parcial"
+  },
+  {
+   "id": "S-ALMG",
+   "name": "ALMG legislação (HTML)",
+   "url": "https://www.almg.gov.br/legislacao-mineira",
+   "sphere": "state:MG",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "NEEDS_VALIDATION",
+   "years": "-",
+   "note": "HTML; não medido"
+  },
+  {
+   "id": "S-DOMSC",
+   "name": "Diário Oficial dos Municípios de SC",
+   "url": "https://diariomunicipal.sc.gov.br",
+   "sphere": "municipal:SC",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2008-2026",
+   "note": "289 prefeituras / 294 municípios; 5,49 mi atos de prefeituras; busca por entidade, categoria Decretos"
+  },
+  {
+   "id": "S-QD",
+   "name": "Querido Diário (repositório de spiders)",
+   "url": "https://github.com/okfn-brasil/querido-diario",
+   "sphere": "municipal",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "years": "variável",
+   "note": "449 spiders / 441 municípios; API inalcançável nesta execução"
+  },
+  {
+   "id": "S-PT-SIAPE",
+   "name": "Portal da Transparência SIAPE (cadastro)",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/servidores",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "mensal",
+   "note": "778.337 linhas, 627.380 pessoas (jul/2026); agregado apenas"
+  },
+  {
+   "id": "S-PT-CPGF",
+   "name": "Portal da Transparência CPGF",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/cpgf",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "mensal",
+   "note": "ago/2026: 15.237 linhas; Presidência 1.064 linhas, ~96% sigilosas"
+  },
+  {
+   "id": "S-PT-VIAGENS",
+   "name": "Portal da Transparência Viagens",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/viagens",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "anual",
+   "note": "2025: 814.395 viagens, 11.380 da Presidência, 92 sigilosas"
+  },
+  {
+   "id": "S-PT-DESP",
+   "name": "Portal da Transparência despesas-execução",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/despesas-execucao",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "mensal",
+   "note": "UG/órgão da Presidência isoláveis; pessoa não"
+  },
+  {
+   "id": "S-TCE-ES",
+   "name": "TCE-ES despesas (CKAN)",
+   "url": "https://dados-abertos.tce.es.gov.br",
+   "sphere": "municipal:ES",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "years": "2024",
+   "note": "UO Gabinete do Prefeito identificável"
+  },
+  {
+   "id": "S-AGENDA",
+   "name": "Agendas oficiais (Presidência/ministérios)",
+   "url": "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/agenda-do-presidente",
+   "sphere": "federal",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "DISCOVERY_ONLY",
+   "years": "-",
+   "note": "HTML; não coletado"
+  }
+ ],
+ "datasets": [
+  {
+   "id": "D-TSE-MAYOR",
+   "source": "S-TSE-CAND",
+   "unit": "prefeito eleito por UE/eleição",
+   "rows": {
+    "2012": 5567,
+    "2016": 5518,
+    "2020": 5494,
+    "2024": 5529
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-TSE-GOVPRES",
+   "source": "S-TSE-CAND",
+   "unit": "presidente/governador eleito",
+   "rows": {
+    "2014": 29,
+    "2018": 28,
+    "2022": 28
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-FED-DEC",
+   "source": "S-SEN-LEG",
+   "unit": "decreto numerado por ano",
+   "rows": {
+    "2013": 297,
+    "2016": 318,
+    "2020": 398,
+    "2025": 463
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "D-FED-VET",
+   "source": "S-SEN-PROC",
+   "unit": "veto por ano",
+   "rows": {
+    "2013": 57,
+    "2020": 59,
+    "2025": 51,
+    "2026": 55
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "D-FED-MPV",
+   "source": "S-SEN-PROC",
+   "unit": "MPV por ano",
+   "rows": {
+    "2013": 35,
+    "2020": 108,
+    "2025": 46,
+    "2026": 63
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "D-CAM-EXEC",
+   "source": "S-CAM-PROP",
+   "unit": "proposição de autoria Poder Executivo",
+   "rows": {
+    "2013": 866,
+    "2020": 835,
+    "2023": 385
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-SIAPE",
+   "source": "S-PT-SIAPE",
+   "unit": "vínculo",
+   "rows": {
+    "2026-07": 778337
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-CPGF",
+   "source": "S-PT-CPGF",
+   "unit": "transação",
+   "rows": {
+    "2026-08": 15237
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-VIAGENS",
+   "source": "S-PT-VIAGENS",
+   "unit": "viagem",
+   "rows": {
+    "2025": 814395
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D-DOMSC",
+   "source": "S-DOMSC",
+   "unit": "ato publicado",
+   "rows": {
+    "prefeituras": 5488834
+   },
+   "state": "VERIFIED_API"
+  }
+ ],
+ "tests": [
+  {
+   "id": "T-A",
+   "letter": "A",
+   "label": "Prefeito/vice por TSE: identidade, continuidade e foto (5 municípios + painel nacional)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "evidence": "vencedores 2012:5567 2016:5518 2020:5494 2024:5529; vice vinculado 99,96-100%; título presente 100%; foto 2024 5529/5529, 2020 5494/5494 (amostra de 4 UFs 2016-2012 ~100%)"
+  },
+  {
+   "id": "T-B",
+   "letter": "B",
+   "label": "Presidente/governador: eleito x empossado",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "evidence": "TSE dá eleitos 2014/2018/2022 (29/28/28 linhas; 2014 inclui suplementar); posse, afastamento e sucessão NÃO existem no TSE"
+  },
+  {
+   "id": "T-C",
+   "letter": "C",
+   "label": "Cadeia federal decreto: lista -> página -> assinatura -> DOU",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "evidence": "página+assinatura 84% (2013), 88% (2016), 100% (2020), 100% (2025) em amostras de 25; referência ao DOU 100%; signatário no bloco da página"
+  },
+  {
+   "id": "T-D",
+   "letter": "D",
+   "label": "Decretos municipais de 5 municípios (DOM/SC)",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "evidence": "Blumenau 3.336 publicações de decreto na busca 2024, Chapecó 3.774, Abdon Batista 251; ato traz categoria, número, ano, data; assinatura digital é do consórcio CIGA, prefeito só no PDF; Florianópolis e Joinville ausentes do DOM/SC"
+  },
+  {
+   "id": "T-E",
+   "letter": "E",
+   "label": "Projeto de lei do Executivo -> norma (estadual/municipal)",
+   "state": "INFERRED",
+   "result": "PARTIAL",
+   "evidence": "federal: Câmara marca Executivo como instituição (PL 31/18/38; MPV; PLN 42); estadual/municipal sem prova de ligação"
+  },
+  {
+   "id": "T-F",
+   "letter": "F",
+   "label": "Veto/MPV: contagem e cadeia",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "evidence": "VET 2013-2026: 36-73/ano; MPV 29-108/ano; cadeia veto->apreciação não fechada por ID"
+  },
+  {
+   "id": "T-G",
+   "letter": "G",
+   "label": "Nomeação/exoneração como par de atos",
+   "state": "NOT_EVALUATED",
+   "result": "PARTIAL",
+   "evidence": "Senado legislacao não contém decretos de nomeação/exoneração (0 nos decretos DEC listados); DOU busca sem paginação confirmada; INLABS bloqueado"
+  },
+  {
+   "id": "T-H",
+   "letter": "H",
+   "label": "SIORG: hierarquia e histórico de versões",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "evidence": "OpenAPI com versaoConsulta e árvore; IDs persistentes de unidade"
+  },
+  {
+   "id": "T-I",
+   "letter": "I",
+   "label": "Custo institucional da Presidência/gabinete",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "evidence": "Vice-Presidência isolável; Presidente pessoa não; ES: UO Gabinete do Prefeito (Alto Rio Novo/Vitória)"
+  },
+  {
+   "id": "T-J",
+   "letter": "J",
+   "label": "CPGF / suprimento de fundos",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "evidence": "Presidência 1.064 de 15.237 linhas (R$ 1,66 mi de R$ 11,72 mi); ~96% das linhas da Presidência sigilosas"
+  },
+  {
+   "id": "T-K",
+   "letter": "K",
+   "label": "Folha/cargos comissionados (SIAPE)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "evidence": "778.337 vínculos, 627.380 pessoas, 140.288 com função, 32 órgãos superiores; Presidência 2.005 vínculos/1.736 pessoas; só agregado"
+  },
+  {
+   "id": "T-L",
+   "letter": "L",
+   "label": "Viagens",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "evidence": "2025: 814.395 viagens; Presidência 11.380; sigilo 92; previsto x realizado separados"
+  },
+  {
+   "id": "T-M",
+   "letter": "M",
+   "label": "Adaptador de plataforma de diário municipal",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "evidence": "QD: Instar 111, Gazette 65, DOEM 56, DOSP 42, ADiários v1 34, MunicípioOnline 26 (de 449 spiders); DOEM/Leis Municipais/CR2 bloqueados; DOM/SC medido"
+  },
+  {
+   "id": "T-N",
+   "letter": "N",
+   "label": "Viagem <-> despesa/agenda",
+   "state": "INFERRED",
+   "result": "PARTIAL",
+   "evidence": "viagem tem PCDP/beneficiário; ligação a despesa por documento não provada; agenda não coletada"
+  }
+ ],
+ "people": [
+  {
+   "id": "PE-PRES",
+   "role": "Presidente/Vice",
+   "n_expected": 2,
+   "keys": [
+    "SQ_CANDIDATO",
+    "titulo_hash"
+   ],
+   "source": [
+    "S-TSE-CAND",
+    "S-PLANALTO"
+   ],
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PE-GOV",
+   "role": "Governador/Vice (27 UFs)",
+   "n_expected": 54,
+   "keys": [
+    "SQ_CANDIDATO",
+    "titulo_hash"
+   ],
+   "source": [
+    "S-TSE-CAND"
+   ],
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PE-MAYOR",
+   "role": "Prefeito/Vice (5.570)",
+   "n_expected": 11140,
+   "keys": [
+    "SQ_CANDIDATO",
+    "titulo_hash",
+    "SG_UE"
+   ],
+   "source": [
+    "S-TSE-CAND"
+   ],
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PE-MIN",
+   "role": "Ministros",
+   "n_expected": 38,
+   "keys": [
+    "SIORG unidade",
+    "nome"
+   ],
+   "source": [
+    "S-PLANALTO",
+    "S-SIORG",
+    "S-DOU"
+   ],
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "PE-SEC",
+   "role": "Secretários estaduais/municipais",
+   "n_expected": null,
+   "keys": [],
+   "source": [],
+   "state": "DISCOVERY_ONLY"
+  },
+  {
+   "id": "PE-COMM",
+   "role": "Cargos comissionados",
+   "n_expected": 140288,
+   "keys": [
+    "matrícula mascarada"
+   ],
+   "source": [
+    "S-PT-SIAPE"
+   ],
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "office_types": [
+  {
+   "id": "OT-PRES",
+   "name": "Presidente da República",
+   "eleito_source": "TSE",
+   "empossado_source": "Planalto/DOU (posse)",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OT-GOV",
+   "name": "Governador",
+   "eleito_source": "TSE",
+   "empossado_source": "diário estadual",
+   "state": "DISCOVERY_ONLY"
+  },
+  {
+   "id": "OT-MAYOR",
+   "name": "Prefeito",
+   "eleito_source": "TSE",
+   "empossado_source": "diário municipal / TSE suplementar",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OT-VICE",
+   "name": "Vice (qualquer esfera)",
+   "eleito_source": "TSE",
+   "empossado_source": "idem",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OT-MIN",
+   "name": "Ministro/Secretário",
+   "eleito_source": null,
+   "empossado_source": "decreto de nomeação (DOU)",
+   "state": "NEEDS_VALIDATION"
+  }
+ ],
+ "mandate_sources": [
+  {
+   "id": "MS-TSE-ORD",
+   "source": "S-TSE-CAND",
+   "rule": "eleição ordinária, maior NR_TURNO com DS_SIT_TOT_TURNO começando por ELEITO",
+   "coverage": {
+    "2012": "5567/5568",
+    "2016": "5518/5568",
+    "2020": "5494/5568",
+    "2024": "5529/5569"
+   },
+   "residual": "UEs sem eleito (1/50/74/40) = eleição anulada, indeferimento ou não realizada",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "MS-TSE-SUPL",
+   "source": "S-TSE-CAND",
+   "rule": "NM_TIPO_ELEICAO contém SUPLEMENTAR é evento separado, nunca sobrescreve o ordinário",
+   "suplementares_eleitas": {
+    "2012": 111,
+    "2016": 164,
+    "2020": 107,
+    "2024": 34
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "MS-CONT",
+   "source": "S-TSE-CAND",
+   "rule": "título eleitoral (hash) como chave entre eleições; 8 títulos mascarados em 2012, 1 em 2016, 0 depois",
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "office_holding_events": [
+  {
+   "id": "OHE-1",
+   "kind": "posse",
+   "source": "diário oficial da esfera",
+   "state": "NEEDS_VALIDATION",
+   "note": "não existe no TSE"
+  },
+  {
+   "id": "OHE-2",
+   "kind": "afastamento/licença",
+   "source": "ato do chefe do Legislativo/DOU",
+   "state": "DISCOVERY_ONLY"
+  },
+  {
+   "id": "OHE-3",
+   "kind": "sucessão por vice",
+   "source": "ato de posse; para federal Planalto",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OHE-4",
+   "kind": "cassação/renovação por eleição suplementar",
+   "source": "TSE suplementar",
+   "state": "VERIFIED_DATASET",
+   "n": {
+    "2012": 111,
+    "2016": 164,
+    "2020": 107,
+    "2024": 34
+   }
+  },
+  {
+   "id": "OHE-5",
+   "kind": "eleito 2026 ainda não empossado",
+   "source": "TSE 2026",
+   "state": "NOT_EVALUATED",
+   "note": "regra: eleito ≠ empossado; posse só em 2027-01-01"
+  }
+ ],
+ "photo_sources": [
+  {
+   "id": "PH-TSE",
+   "source": "S-TSE-FOTO",
+   "coverage": {
+    "2024 prefeitos": "5529/5529",
+    "2020 prefeitos": "5494/5494",
+    "2016 (ES,SP,PE,MG)": "1723/1724",
+    "2012 (ES,SP,PE,MG)": "1760/1760"
+   },
+   "provenance": "arquivo TSE por SQ_CANDIDATO; retrato de candidatura (não oficial de governo)",
+   "state": "VERIFIED_DATASET",
+   "reuse": "packages/db/src/portrait-mirror.ts"
+  },
+  {
+   "id": "PH-GOV",
+   "source": "sites oficiais",
+   "coverage": null,
+   "provenance": "foto oficial de gestão não coletada",
+   "state": "DISCOVERY_ONLY"
+  }
+ ],
+ "normative_act_types": [
+  {
+   "id": "NA-DEC",
+   "name": "Decreto",
+   "counting_unit": "ato numerado (DEC-n); DEC-sn separado",
+   "federal_per_year": {
+    "2013": 297,
+    "2016": 318,
+    "2020": 398,
+    "2025": 463
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NA-LEI",
+   "name": "Lei ordinária",
+   "counting_unit": "lei sancionada",
+   "federal_per_year": {
+    "2013": 172,
+    "2016": 171,
+    "2019": 185,
+    "2022": 228,
+    "2025": 239,
+    "2026": 204
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NA-LCP",
+   "name": "Lei complementar",
+   "counting_unit": "LCP",
+   "federal_per_year": {
+    "2013": 2,
+    "2016": 4,
+    "2019": 7,
+    "2022": 9,
+    "2025": 13,
+    "2026": 13
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NA-MPV",
+   "name": "Medida provisória",
+   "counting_unit": "MPV editada",
+   "federal_per_year": {
+    "2013": 35,
+    "2016": 56,
+    "2019": 48,
+    "2022": 58,
+    "2025": 46,
+    "2026": 63
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NA-VET",
+   "name": "Veto",
+   "counting_unit": "mensagem de veto (VET)",
+   "federal_per_year": {
+    "2013": 57,
+    "2020": 59,
+    "2025": 51,
+    "2026": 55
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NA-DLG",
+   "name": "Decreto legislativo",
+   "counting_unit": "DLG (ato do Legislativo, não do Executivo)",
+   "federal_per_year": {
+    "2013": 425,
+    "2016": 153,
+    "2025": 310
+   },
+   "state": "VERIFIED_API",
+   "note": "não contar como ato do Executivo"
+  },
+  {
+   "id": "NA-NOM",
+   "name": "Nomeação/exoneração",
+   "counting_unit": "ato no DOU (seção 2)",
+   "federal_per_year": null,
+   "state": "NEEDS_VALIDATION"
+  }
+ ],
+ "legislative_initiative_sources": [
+  {
+   "id": "LI-CAM",
+   "source": "S-CAM-PROP",
+   "scope": "federal",
+   "finding": "2013: 866 proposições do Executivo (TVR 552, MSC 166, PLN 42, MPV 35, PL 31, PLP 2); 2020: 835; 2023: 385; sem URN LexML (0)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "LI-ALESP",
+   "source": "S-ALESP",
+   "scope": "SP",
+   "finding": "normas completas; autoria Executivo por texto da norma",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "LI-MUN",
+   "source": "S-DOMSC",
+   "scope": "municipal",
+   "finding": "projeto de lei como metadado relacionado em alguns atos; não sistemático",
+   "state": "DISCOVERY_ONLY"
+  }
+ ],
+ "veto_sources": [
+  {
+   "id": "VS-SEN",
+   "source": "S-SEN-PROC",
+   "per_year": {
+    "2013": 57,
+    "2014": 36,
+    "2015": 64,
+    "2016": 52,
+    "2017": 50,
+    "2018": 42,
+    "2019": 62,
+    "2020": 59,
+    "2021": 73,
+    "2022": 65,
+    "2023": 49,
+    "2024": 50,
+    "2025": 51,
+    "2026": 55
+   },
+   "state": "VERIFIED_API"
+  }
+ ],
+ "provisional_measure_sources": [
+  {
+   "id": "MP-SEN",
+   "source": "S-SEN-PROC",
+   "per_year": {
+    "2013": 35,
+    "2014": 29,
+    "2015": 43,
+    "2016": 56,
+    "2017": 51,
+    "2018": 53,
+    "2019": 48,
+    "2020": 108,
+    "2021": 70,
+    "2022": 58,
+    "2023": 52,
+    "2024": 81,
+    "2025": 46,
+    "2026": 63
+   },
+   "state": "VERIFIED_API"
+  }
+ ],
+ "gazette_providers": [
+  {
+   "id": "GP-Instar",
+   "platform": "Instar",
+   "spiders": 111,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-Gazette (genérico)",
+   "platform": "Gazette (genérico)",
+   "spiders": 65,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-DOEM",
+   "platform": "DOEM",
+   "spiders": 56,
+   "state": "BLOCKED"
+  },
+  {
+   "id": "GP-DOSP",
+   "platform": "DOSP",
+   "spiders": 42,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-ADiários v1",
+   "platform": "ADiários v1",
+   "spiders": 34,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-MunicípioOnline",
+   "platform": "MunicípioOnline",
+   "spiders": 26,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-Atende v2",
+   "platform": "Atende v2",
+   "spiders": 22,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-DIOF",
+   "platform": "DIOF",
+   "spiders": 21,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-BarcoDigital",
+   "platform": "BarcoDigital",
+   "spiders": 12,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-Siganet",
+   "platform": "Siganet",
+   "spiders": 10,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-DiarioOficialBR",
+   "platform": "DiarioOficialBR",
+   "spiders": 10,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-Modernização",
+   "platform": "Modernização",
+   "spiders": 6,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP-DOM/SC",
+   "platform": "DOM/SC",
+   "spiders": 289,
+   "state": "VERIFIED_API"
+  }
+ ],
+ "gazette_coverage": {
+  "querido_diario_spiders": 449,
+  "municipios_unicos": 441,
+  "domsc_prefeituras": 289,
+  "domsc_municipios": 294,
+  "domsc_atos_prefeituras": 5488834,
+  "domsc_primeira_publicacao_ate_2014": 153,
+  "domsc_com_2026": 289,
+  "leitura": "441 de 5.570 municípios (7,9%) com spider QD; DOM/SC cobre 289 (97% dos 295 de SC, lacunas como Florianópolis e Joinville)"
+ },
+ "government_structures": [
+  {
+   "id": "GS-FED",
+   "sphere": "federal",
+   "source": "S-SIORG",
+   "state": "VERIFIED_API",
+   "time": "versionado",
+   "feas": "READY_FOR_CONTRACT"
+  },
+  {
+   "id": "GS-UF",
+   "sphere": "estadual",
+   "source": "portais de cada UF",
+   "state": "DISCOVERY_ONLY",
+   "feas": "DISCOVERY_ONLY",
+   "note": "sem equivalente nacional do SIORG"
+  },
+  {
+   "id": "GS-MUN",
+   "sphere": "municipal",
+   "source": "TCE UO/organograma",
+   "state": "INFERRED",
+   "feas": "DISCOVERY_ONLY",
+   "note": "TCE-ES UO lista Gabinete do Prefeito"
+  }
+ ],
+ "government_units": [
+  {
+   "id": "GU-PR",
+   "name": "Presidência da República",
+   "siorg": "orgsup",
+   "siape_vinculos": 2005,
+   "siape_pessoas": 1736,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GU-VP",
+   "name": "Vice-Presidência",
+   "isolable": true,
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "appointment_sources": [
+  {
+   "id": "AP-DOU",
+   "source": "S-DOU",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "busca pública; paginação e frase exata a validar"
+  },
+  {
+   "id": "AP-INLABS",
+   "source": "S-INLABS",
+   "state": "BLOCKED",
+   "feas": "BLOCKED"
+  },
+  {
+   "id": "AP-PLAN",
+   "source": "S-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "note": "só atos do Presidente; nomeações delegadas fora"
+  }
+ ],
+ "remuneration_sources": [
+  {
+   "id": "RM-ATO",
+   "kind": "ato de fixação de subsídio",
+   "source": "S-SEN-LEG/S-DOMSC",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "achado: atos fixando subsídio de agentes políticos existem como norma"
+  },
+  {
+   "id": "RM-PT",
+   "kind": "remuneração de servidor",
+   "source": "S-PT-SIAPE",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  }
+ ],
+ "payroll_sources": [
+  {
+   "id": "PY-SIAPE",
+   "source": "S-PT-SIAPE",
+   "rows": 778337,
+   "persons": 627380,
+   "with_function": 140288,
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "privacy": "agregado; sem CPF"
+  }
+ ],
+ "expense_sources": [
+  {
+   "id": "EX-PT",
+   "source": "S-PT-DESP",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  },
+  {
+   "id": "EX-TCE-ES",
+   "source": "S-TCE-ES",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  }
+ ],
+ "card_sources": [
+  {
+   "id": "CD-CPGF",
+   "source": "S-PT-CPGF",
+   "rows": 15237,
+   "presidencia_rows": 1064,
+   "presidencia_value_brl": 1664953.87,
+   "total_value_brl": 11724649.65,
+   "sigilo_presidencia_pct": 96,
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  }
+ ],
+ "travel_sources": [
+  {
+   "id": "TR-PT",
+   "source": "S-PT-VIAGENS",
+   "viagens_2025": 814395,
+   "presidencia": 11380,
+   "sigilo_pr": 92,
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  }
+ ],
+ "agenda_sources": [
+  {
+   "id": "AG-1",
+   "source": "S-AGENDA",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "DISCOVERY_ONLY",
+   "note": "não coletado; sem API"
+  }
+ ],
+ "identity_keys": [
+  {
+   "id": "IK-1",
+   "entity": "pessoa política",
+   "key": "hash(título eleitoral)",
+   "fallback": "SQ_CANDIDATO+eleição",
+   "rule": "CPF nunca persistido em claro; 2024 mascarado",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK-2",
+   "entity": "mandato",
+   "key": "eleição+SG_UE+cargo+NR_TURNO",
+   "rule": "suplementar é evento próprio",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK-3",
+   "entity": "ato federal",
+   "key": "tipo+número+ano (+URN LexML quando houver)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK-4",
+   "entity": "ato municipal",
+   "key": "plataforma+código do ato (ex.: DOM/SC /atos/{id})",
+   "fallback": "IBGE+tipo+número+ano",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK-5",
+   "entity": "unidade federal",
+   "key": "SIORG id",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK-6",
+   "entity": "município",
+   "key": "IBGE 7 dígitos ↔ SG_UE do TSE (tabela de-para)",
+   "state": "NEEDS_VALIDATION"
+  }
+ ],
+ "relationships": [
+  {
+   "id": "R01",
+   "a": "prefeito eleito",
+   "b": "vice eleito",
+   "cls": "EXACT",
+   "why": "SG_UE+NR_TURNO+NR_CANDIDATO",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R02",
+   "a": "candidato TSE",
+   "b": "foto TSE",
+   "cls": "EXACT",
+   "why": "SQ_CANDIDATO no nome do arquivo",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R03",
+   "a": "prefeito 2020",
+   "b": "prefeito 2024 (reeleição)",
+   "cls": "EXACT",
+   "why": "hash título",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R04",
+   "a": "eleito",
+   "b": "empossado",
+   "cls": "UNLINKED",
+   "why": "sem fonte nacional de posse",
+   "state": "NOT_EVALUATED"
+  },
+  {
+   "id": "R05",
+   "a": "decreto federal",
+   "b": "signatário",
+   "cls": "EXACT",
+   "why": "bloco de assinatura da página Planalto",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R06",
+   "a": "signatário",
+   "b": "titular do cargo",
+   "cls": "HIGH_CONFIDENCE",
+   "why": "assina o presidente em exercício; interino aparece (Alckmin, Rodrigo Maia)",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R07",
+   "a": "decreto",
+   "b": "DOU",
+   "cls": "EXACT",
+   "why": "referência ao DOU na página (100% da amostra)",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R08",
+   "a": "MPV",
+   "b": "lei de conversão",
+   "cls": "HIGH_CONFIDENCE",
+   "why": "processo Senado",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R09",
+   "a": "veto",
+   "b": "apreciação em sessão",
+   "cls": "PROBABLE",
+   "why": "não fechado por ID",
+   "state": "INFERRED"
+  },
+  {
+   "id": "R10",
+   "a": "proposição Executivo",
+   "b": "instituição Poder Executivo",
+   "cls": "INSTITUTIONAL_ONLY",
+   "why": "Câmara: autor institucional",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R11",
+   "a": "proposição Executivo",
+   "b": "presidente da época",
+   "cls": "TEMPORAL_ONLY",
+   "why": "só por data; nunca responsabilidade pessoal",
+   "state": "INFERRED"
+  },
+  {
+   "id": "R12",
+   "a": "norma",
+   "b": "projeto de lei de origem (estadual)",
+   "cls": "PROBABLE",
+   "why": "texto da norma cita o projeto",
+   "state": "INFERRED"
+  },
+  {
+   "id": "R13",
+   "a": "ato municipal",
+   "b": "prefeito",
+   "cls": "TEMPORAL_ONLY",
+   "why": "assinatura digital é do consórcio; prefeito só no PDF",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R14",
+   "a": "unidade SIORG",
+   "b": "ministro",
+   "cls": "UNLINKED",
+   "why": "SIORG não traz titular de forma confiável",
+   "state": "NOT_EVALUATED"
+  },
+  {
+   "id": "R15",
+   "a": "vínculo SIAPE",
+   "b": "Presidência",
+   "cls": "EXACT",
+   "why": "órgão de exercício",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R16",
+   "a": "vínculo SIAPE",
+   "b": "pessoa nomeada",
+   "cls": "UNLINKED",
+   "why": "sem CPF; agregado apenas",
+   "state": "BLOCKED"
+  },
+  {
+   "id": "R17",
+   "a": "CPGF Presidência",
+   "b": "pessoa",
+   "cls": "CONFLICT",
+   "why": "~96% sigilosas; portador ≠ beneficiário político",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R18",
+   "a": "despesa gabinete",
+   "b": "prefeito",
+   "cls": "INSTITUTIONAL_ONLY",
+   "why": "UO Gabinete do Prefeito (nível INSTITUTIONAL_COST/CABINET_COST)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R19",
+   "a": "viagem",
+   "b": "agenda",
+   "cls": "THEMATIC_ONLY",
+   "why": "agenda não coletada",
+   "state": "INFERRED"
+  },
+  {
+   "id": "R20",
+   "a": "viagem",
+   "b": "despesa",
+   "cls": "PROBABLE",
+   "why": "PCDP/documento; não provado",
+   "state": "INFERRED"
+  },
+  {
+   "id": "R21",
+   "a": "plano de governo (TSE)",
+   "b": "PPA/LOA",
+   "cls": "THEMATIC_ONLY",
+   "why": "sem pontuação automática promessa x resultado",
+   "state": "DOCUMENTED_ONLY"
+  },
+  {
+   "id": "R22",
+   "a": "ato de subsídio",
+   "b": "remuneração paga",
+   "cls": "PROBABLE",
+   "why": "norma fixa teto; folha municipal varia",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R23",
+   "a": "município TSE (SG_UE)",
+   "b": "IBGE",
+   "cls": "HIGH_CONFIDENCE",
+   "why": "de-para a validar",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "R24",
+   "a": "plataforma de diário",
+   "b": "município",
+   "cls": "EXACT",
+   "why": "spider id = IBGE em QD",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R25",
+   "a": "eleição suplementar",
+   "b": "mandato anterior",
+   "cls": "CONFLICT",
+   "why": "não sobrescrever; evento próprio",
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "territorial_coverage": {
+  "mayors_tse": {
+   "2012": 5567,
+   "2016": 5518,
+   "2020": 5494,
+   "2024": 5529
+  },
+  "mayors_photo_2024": "5529/5529",
+  "gazette_qd": 441,
+  "gazette_domsc": 289,
+  "uf_legislation": {
+   "SP": "completo (Alesp XML)",
+   "PE": "parcial (listas)",
+   "MG": "HTML, não medido",
+   "ES": "não medido",
+   "outras": "não avaliadas"
+  },
+  "municipalities_total": 5570
+ },
+ "temporal_coverage": {
+  "tse_mayors": "2012-2024",
+  "tse_govpres": "2014-2022",
+  "federal_acts": "2013-2026",
+  "siape": "2026-07 (snapshot mensal)",
+  "cpgf": "mensal",
+  "viagens": "2025 medido",
+  "domsc": "2008-2026",
+  "siorg": "versionado",
+  "gap": "eleitos 2026 pendentes; posse 2027"
+ },
+ "collector_families": [
+  {
+   "id": "F0",
+   "name": "Roster de mandatos TSE (prefeito/governador/presidente + vices)",
+   "reuse": "apps/collector/src/elections.ts (estender relevant(); hoje só senador/dep. federal); tabelas mandates/candidacies",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "F1",
+   "name": "Fotos de candidatura",
+   "reuse": "packages/db/src/portrait-mirror.ts",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "F2",
+   "name": "Atos federais (Senado legislacao + Planalto)",
+   "reuse": "novo; Senado já usado em P3",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "F3",
+   "name": "VET/MPV (Senado processo)",
+   "reuse": "novo, mesmo cliente do Senado",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "F4",
+   "name": "Diários municipais por plataforma (DOM/SC primeiro)",
+   "reuse": "apps/collector/src/state/providers/* como padrão de provider",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "F5",
+   "name": "Normas estaduais (Alesp XML, listas)",
+   "reuse": "state providers",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "F6",
+   "name": "SIORG",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "F7",
+   "name": "Custo institucional (PT despesas, CPGF, viagens, SIAPE agregado)",
+   "reuse": "core/registry/national-finance-registry.ts (P3/P4)",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "F8",
+   "name": "Nomeações/exonerações (DOU)",
+   "reuse": "-",
+   "feas": "BLOCKED",
+   "state": "NOT_EVALUATED"
+  },
+  {
+   "id": "F9",
+   "name": "Planos/PPA/LDO/LOA e agendas",
+   "reuse": "-",
+   "feas": "DISCOVERY_ONLY",
+   "state": "DOCUMENTED_ONLY"
+  }
+ ],
+ "collection_scenarios": [
+  {
+   "id": "SC-1",
+   "name": "Mínimo: F0+F1+F6",
+   "cost": "baixo (zips TSE ~MB; fotos ~GB só se espelhar)",
+   "delivers": "roster e fotos de 5.570 prefeitos, governadores, presidente; estrutura federal"
+  },
+  {
+   "id": "SC-2",
+   "name": "Atos: SC-1 + F2+F3",
+   "cost": "médio (páginas Planalto ~1.800 decretos/ano em amostra de 25 mostra 84-100% parseáveis)",
+   "delivers": "cadeia federal decreto/MPV/veto com signatário"
+  },
+  {
+   "id": "SC-3",
+   "name": "Municipal: SC-2 + F4 DOM/SC",
+   "cost": "alto (5,49 mi atos só em SC)",
+   "delivers": "decretos de 289 prefeituras; depende de filtro por categoria Decretos"
+  },
+  {
+   "id": "SC-4",
+   "name": "Completo: SC-3 + F5+F7+F8",
+   "cost": "muito alto; F8 bloqueada",
+   "delivers": "nomeações dependem de licença INLABS"
+  }
+ ],
+ "product_opportunities": [
+  {
+   "id": "PO-1",
+   "name": "Quem governa agora x quem foi eleito",
+   "needs": [
+    "F0",
+    "OHE"
+   ],
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "PO-2",
+   "name": "Linha do tempo de um prefeito (mandatos, vices, reeleição)",
+   "needs": [
+    "F0",
+    "F1"
+   ],
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO-3",
+   "name": "Atos assinados por cada presidente (signatário vs titular)",
+   "needs": [
+    "F2"
+   ],
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO-4",
+   "name": "Vetos e MPs por ano com unidade de contagem explícita",
+   "needs": [
+    "F3"
+   ],
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO-5",
+   "name": "Custo institucional do gabinete (nível rotulado, nunca pessoal)",
+   "needs": [
+    "F7"
+   ],
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO-6",
+   "name": "Mapa de cobertura de diários oficiais",
+   "needs": [
+    "F4"
+   ],
+   "state": "VERIFIED_API"
+  }
+ ],
+ "blockers": [
+  {
+   "id": "B-1",
+   "what": "INLABS exige login",
+   "impact": "nomeações/exonerações em massa",
+   "action": "obter credencial ou usar DOU público paginado"
+  },
+  {
+   "id": "B-2",
+   "what": "LexML anti-bot",
+   "impact": "URN/lexml de atos",
+   "action": "não contornar; usar fontes primárias"
+  },
+  {
+   "id": "B-3",
+   "what": "DOEM BunkerWeb, Leis Municipais 403, CR2 Bubble.io",
+   "impact": "parte dos municípios",
+   "action": "descartar ou pedir acordo"
+  },
+  {
+   "id": "B-4",
+   "what": "Querido Diário API inalcançável nesta execução",
+   "impact": "contagem de cobertura via spiders apenas",
+   "action": "reavaliar"
+  },
+  {
+   "id": "B-5",
+   "what": "Não há fonte nacional de posse/afastamento",
+   "impact": "eleito ≠ empossado não resolvível por TSE",
+   "action": "diários oficiais por esfera"
+  },
+  {
+   "id": "B-6",
+   "what": "CPGF da Presidência ~96% sigilosa",
+   "impact": "nenhum gasto pessoal do presidente",
+   "action": "manter nível INSTITUTIONAL_COST"
+  }
+ ],
+ "gates": [
+  {
+   "id": "P5_EXECUTIVE_ROSTER",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "prefeitos/governadores/presidente eleitos medidos; empossados não"
+  },
+  {
+   "id": "P5_MANDATE_VS_OFFICE",
+   "state": "PARTIAL",
+   "why": "eleito≠empossado só modelado; sem fonte de posse"
+  },
+  {
+   "id": "P5_ELECTED_NOT_YET_IN_OFFICE",
+   "state": "NOT_EVALUATED",
+   "why": "resultado de 2026 não coletado; regra definida"
+  },
+  {
+   "id": "P5_SUCCESSION_EVENTS",
+   "state": "PARTIAL",
+   "why": "suplementares TSE medidas (111/164/107/34); sucessão por vice sem fonte"
+  },
+  {
+   "id": "P5_OFFICIAL_PHOTOS",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "foto TSE 100% prefeitos 2020/2024; foto oficial de gestão não"
+  },
+  {
+   "id": "P5_NORMATIVE_ACTS_FEDERAL",
+   "state": "PASS",
+   "why": "cadeia lista->página->assinatura->DOU 84-100%"
+  },
+  {
+   "id": "P5_NORMATIVE_ACTS_STATE",
+   "state": "PARTIAL",
+   "why": "SP completo, PE parcial; 25 UFs não medidas"
+  },
+  {
+   "id": "P5_NORMATIVE_ACTS_MUNICIPAL",
+   "state": "PARTIAL",
+   "why": "DOM/SC mede 289 prefeituras; resto por plataformas"
+  },
+  {
+   "id": "P5_LEXML_COVERAGE",
+   "state": "BLOCKED",
+   "why": "anti-bot"
+  },
+  {
+   "id": "P5_EXECUTIVE_INITIATIVE",
+   "state": "PARTIAL",
+   "why": "federal institucional; estadual/municipal sem ligação"
+  },
+  {
+   "id": "P5_VETOS_MPS_COUNTING",
+   "state": "PASS",
+   "why": "séries anuais com unidade de contagem"
+  },
+  {
+   "id": "P5_APPOINTMENTS",
+   "state": "BLOCKED",
+   "why": "INLABS login; DOU parcial"
+  },
+  {
+   "id": "P5_STRUCTURE_FEDERAL",
+   "state": "PASS",
+   "why": "SIORG"
+  },
+  {
+   "id": "P5_STRUCTURE_SUBNATIONAL",
+   "state": "NOT_EVALUATED",
+   "why": "sem equivalente"
+  },
+  {
+   "id": "P5_INSTITUTIONAL_COST",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "Vice isolável, Presidente não"
+  },
+  {
+   "id": "P5_CORPORATE_CARDS",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "sigilo ~96% na Presidência"
+  },
+  {
+   "id": "P5_REMUNERATION",
+   "state": "PARTIAL",
+   "why": "atos de subsídio achados; folha por entidade não"
+  },
+  {
+   "id": "P5_COMMISSIONED_POSTS",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "SIAPE agregado"
+  },
+  {
+   "id": "P5_PAYROLL_PRIVACY",
+   "state": "PASS",
+   "why": "sem CPF em claro"
+  },
+  {
+   "id": "P5_TRAVEL",
+   "state": "PASS",
+   "why": "814.395 viagens 2025"
+  },
+  {
+   "id": "P5_AGENDAS",
+   "state": "NOT_EVALUATED",
+   "why": "não coletadas"
+  },
+  {
+   "id": "P5_GOVERNMENT_PLANS",
+   "state": "PARTIAL",
+   "why": "PDFs TSE; sem pontuação"
+  },
+  {
+   "id": "P5_IDENTITY_KEYS",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "título hash; IBGE↔SG_UE a validar"
+  },
+  {
+   "id": "P5_RELATIONSHIPS",
+   "state": "PARTIAL",
+   "why": "25 relações classificadas; 6 só INFERRED/UNLINKED"
+  },
+  {
+   "id": "P5_COLLECTOR_FAMILIES",
+   "state": "PASS",
+   "why": "F0–F9 com reuso"
+  },
+  {
+   "id": "P5_PRODUCT_READINESS",
+   "state": "PARTIAL",
+   "why": "roster+atos federais prontos; municipal e posse não"
+  }
+ ],
+ "evidence_inventory": [
+  "p5/cand_*.zip",
+  "p5/tse_an.json",
+  "p5/tse_an2.json",
+  "p5/photos.json",
+  "p5/testA.json",
+  "p5/fed_test.json",
+  "p5/senado_counts.json",
+  "p5/senado_vet_mpv.json",
+  "p5/senado_dec_nom.json",
+  "p5/camara_exec.json",
+  "p5/siorg_openapi.yaml",
+  "p5/qd_spiders.json",
+  "p5/domsc.json",
+  "p5/domsc2.json",
+  "p5/testD.json",
+  "p5/alepe_counts.json",
+  "p5/siape_agg.json",
+  "p5/cpgf_agg.json",
+  "p5/viagens_agg.json"
+ ]
+}

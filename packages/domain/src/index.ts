@@ -86,7 +86,15 @@ export function proposalFunctionalGroup(type:string):ProposalFunctionalGroup{
 }
 export interface Proposal { source:Source; externalId:string; type:string; functionalGroup:ProposalFunctionalGroup; number:string|null; year:number|null; label:string; summary:string|null; presentedAt:string|null; status:string|null; officialUrl:string; rawId:string; principalProposalId?:string|null; previousProposalId?:string|null; nextProposalId?:string|null; relationshipEvidence?:'official_uri'|null; catalogRole?:'catalog'|'relationship_support'; discoveredByProposalId?:string|null }
 export interface ProposalAuthor { proposalId:string; externalId:string|null; name:string; party:string|null; uf:string|null; kind:string; primary:boolean|null; order:number|null; rawId:string }
-export interface LegislativeAppointment { source:Source; externalId:string; personExternalId:string; kind:'rapporteurship'|'commission'|'office'; bodyId:string|null; bodyLabel:string|null; role:string; start:string|null; end:string|null; status:string|null; proposalId:string|null; officialUrl:string; rawId:string }
+/**
+ * A relatoria record can carry a source date whose meaning depends on the
+ * provider.  Câmara's annual proposições export exposes the date of the
+ * latest status, while Senado's relatorias export exposes DataDesignacao.
+ * Keep that distinction explicit so a status date is never presented as an
+ * inferred designation/start date.
+ */
+export interface LegislativeAppointment { source:Source; externalId:string; personExternalId:string; kind:'rapporteurship'|'commission'|'office'; bodyId:string|null; bodyLabel:string|null; role:string; start:string|null; end:string|null; status:string|null; proposalId:string|null; officialUrl:string; rawId:string; dateBasis?:'designation'|'latest_status'|'membership_start'|'unknown'; statusDate?:string|null }
+export * from './rapporteurship.ts';
 export interface LawLink { proposalId:string; lawId:string; lawLabel:string; officialUrl:string; relationship:string; rawId:string }
 export interface LegislativeSession { source:Source; externalId:string; date:string; startedAt:string|null; endedAt:string|null; kind:string; status:string; body:string; eligible:boolean; officialUrl:string; rawId:string }
 export interface Attendance { source:Source; sessionId:string; externalId:string; state:string; justification:string|null; rawId:string }
@@ -214,3 +222,4 @@ export * from './temporal.ts';
 export * from './authorship.ts';
 export * from './budget.ts';
 export * from './state-budget.ts';
+export * from './financial-contract.ts';

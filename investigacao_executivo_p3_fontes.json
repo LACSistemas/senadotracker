@@ -1,0 +1,2293 @@
+{
+  "meta": {
+    "id": "investigacao_executivo_p3_fontes",
+    "date": "2026-10-11",
+    "scope": "investigação apenas; nada implementado",
+    "companion": "investigacao_executivo_p3.md",
+    "evidence_classes": [
+      "VERIFIED_API",
+      "VERIFIED_DATASET",
+      "DOCUMENTED_ONLY",
+      "INFERRED",
+      "BLOCKED",
+      "NOT_EVALUATED",
+      "UNAVAILABLE"
+    ],
+    "feasibility_states": [
+      "READY_FOR_CONTRACT",
+      "NEEDS_VALIDATION",
+      "DISCOVERY_ONLY",
+      "BLOCKED",
+      "NOT_FEASIBLE"
+    ],
+    "link_classes": [
+      "EXACT",
+      "HIGH_CONFIDENCE",
+      "PROBABLE",
+      "TERRITORIAL_ONLY",
+      "TEMPORAL_ONLY",
+      "UNLINKED",
+      "CONFLICT"
+    ],
+    "previous_phases": {
+      "p0": [
+        "investigacao_executivo_nacional.md",
+        "investigacao_executivo_fontes.json"
+      ],
+      "p1": [
+        "investigacao_executivo_p1.md",
+        "investigacao_executivo_p1_fontes.json"
+      ],
+      "p2": [
+        "investigacao_executivo_p2_inqueritos.md",
+        "investigacao_executivo_p2_inqueritos_fontes.json"
+      ]
+    },
+    "privacy_notes": [
+      "CPF em claro em TCE-RS, TCE-PE (ListaServidores, CPF_CNPJ) e PNCP para pessoa física; não armazenar sem política.",
+      "PDDE Info mostra banco/agência/conta de unidades executoras; não armazenar.",
+      "Nenhum dado pessoal foi gravado no repositório."
+    ]
+  },
+  "sources": [
+    {
+      "id": "SRC-TCESP-DESPESAS",
+      "name": "TCE-SP API de despesas municipais",
+      "institution": "TCE-SP",
+      "urls": [
+        "https://transparencia.tce.sp.gov.br/api/json/municipios",
+        "https://transparencia.tce.sp.gov.br/api/json/despesas/{municipio}/{ano}/{mes}"
+      ],
+      "evidence": "VERIFIED_API",
+      "collector_family": "COL-F3",
+      "reuse": [
+        "apps/collector/src/institutional-http.ts",
+        "packages/domain/src/supplier-identity.ts"
+      ]
+    },
+    {
+      "id": "SRC-TCEES-CKAN",
+      "name": "TCE-ES via Dados Abertos ES (CKAN)",
+      "institution": "TCE-ES",
+      "urls": [
+        "https://dados.es.gov.br/dataset/despesas-municipios",
+        "https://dados.es.gov.br/dataset/tcees-empenho"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F3"
+    },
+    {
+      "id": "SRC-TCEPE-API",
+      "name": "TCE-PE API Dados Abertos",
+      "institution": "TCE-PE",
+      "urls": [
+        "https://sistemas.tce.pe.gov.br/DadosAbertos/Exemplo!listar",
+        "https://sistemas.tce.pe.gov.br/DadosAbertos/{metodo}!json"
+      ],
+      "evidence": "VERIFIED_API",
+      "collector_family": "COL-F3",
+      "methods_tested": [
+        "DespesasMunicipais",
+        "UnidadesJurisdicionadas",
+        "Sancoes",
+        "Obras",
+        "TransporteEscolar",
+        "Determinacoes",
+        "ListaServidores"
+      ]
+    },
+    {
+      "id": "SRC-TCERS-CKAN",
+      "name": "TCE-RS Dados Abertos (CKAN) — despesa por empenhos",
+      "institution": "TCE-RS",
+      "urls": [
+        "https://dados.tce.rs.gov.br/api/3/action/package_list",
+        "https://dados.tce.rs.gov.br/dados/municipal/empenhos/{ano}.csv.zip"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F3"
+    },
+    {
+      "id": "SRC-TCEMG",
+      "name": "TCE-MG SICOM / dados abertos",
+      "institution": "TCE-MG",
+      "evidence": "DOCUMENTED_ONLY",
+      "notes": "dadosabertos.tce.mg.gov.br/api retornou 404"
+    },
+    {
+      "id": "SRC-TCERJ",
+      "name": "TCE-RJ dados abertos",
+      "institution": "TCE-RJ",
+      "evidence": "NOT_EVALUATED",
+      "notes": "sem resposta em 1 tentativa"
+    },
+    {
+      "id": "SRC-TCEPR",
+      "name": "TCE-PR SIM-AM / licitações abertas",
+      "institution": "TCE-PR",
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "SRC-TCESC",
+      "name": "TCE-SC Farol/e-Sfinge (Qlik)",
+      "institution": "TCE-SC",
+      "evidence": "BLOCKED",
+      "notes": "visual-only para emendas (fase anterior P23.5 em scripts/)"
+    },
+    {
+      "id": "SRC-TCECE",
+      "name": "TCE-CE API SIM",
+      "institution": "TCE-CE",
+      "urls": [
+        "https://api.tce.ce.gov.br/"
+      ],
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "SRC-TCMBA",
+      "name": "TCM-BA dados abertos",
+      "institution": "TCM-BA",
+      "urls": [
+        "https://www.tcm.ba.gov.br/dados-abertos/"
+      ],
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "SRC-TCEGO",
+      "name": "TCE-GO CKAN",
+      "institution": "TCE-GO",
+      "urls": [
+        "https://dadosabertos.tce.go.gov.br/"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "63 datasets de indicadores; pagamentos não localizados"
+    },
+    {
+      "id": "SRC-TCMSP",
+      "name": "TCM-SP API (capital)",
+      "institution": "TCM-SP",
+      "urls": [
+        "https://portal.tcm.sp.gov.br/Pagina/67782"
+      ],
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "SRC-PNCP",
+      "name": "PNCP Consulta v1 e itens",
+      "institution": "Gestão/PNCP",
+      "urls": [
+        "https://pncp.gov.br/api/consulta/v1/contratos",
+        "https://pncp.gov.br/api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{seq}/itens"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:pncp",
+      "reuse": [
+        "apps/collector/src/pncp-enrichment.ts"
+      ],
+      "collector_family": "COL-F1"
+    },
+    {
+      "id": "SRC-SICONFI-ENTES",
+      "name": "Siconfi /entes",
+      "institution": "Tesouro",
+      "urls": [
+        "https://apidatalake.tesouro.gov.br/ords/siconfi/tt/entes"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:siconfi",
+      "collector_family": "COL-F0"
+    },
+    {
+      "id": "SRC-TRANSFEREGOV-ESP",
+      "name": "Transferegov Transferências Especiais",
+      "institution": "Gestão",
+      "urls": [
+        "https://api.transferegov.gestao.gov.br/transferenciasespeciais"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:transferegov",
+      "reuse": [
+        "apps/collector/src/postgres-pix-transferegov.ts",
+        "docs/contracts/emendas-pix.md"
+      ],
+      "collector_family": "COL-F2"
+    },
+    {
+      "id": "SRC-PORTAL-TRANSP-ZIP",
+      "name": "Portal da Transparência (ZIPs: CEIS, CNEP, SIAPE)",
+      "institution": "CGU",
+      "urls": [
+        "https://portaldatransparencia.gov.br/download-de-dados/ceis/{AAAAMMDD}",
+        "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/servidores/{AAAAMM}_Servidores_SIAPE.zip"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "reuse": [
+        "apps/collector/src/postgres-pix-portal.ts"
+      ],
+      "collector_family": "COL-F7"
+    },
+    {
+      "id": "SRC-PDDEINFO",
+      "name": "FNDE PDDE Info",
+      "institution": "FNDE",
+      "urls": [
+        "https://www.fnde.gov.br/pddeinfo/"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F4",
+      "routes": [
+        "/situacaoprestacaoconta/situacaoprestacaoconta/situacaoprestacaoconta",
+        "/situacaoprestacaoconta/situacaoprestacaoconta/excel",
+        "/pddeinfo/escola/consultar",
+        "/pddeinfo/escola/excelall",
+        "/consultasaldoentidade/consultasaldoentidade/consultasaldoentidade"
+      ]
+    },
+    {
+      "id": "SRC-SIOPE-OLINDA",
+      "name": "FNDE SIOPE Dados Abertos (Olinda OData)",
+      "institution": "FNDE",
+      "urls": [
+        "https://www.fnde.gov.br/olinda-ide/servico/DADOS_ABERTOS_SIOPE/versao/v1/odata/"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:siope",
+      "collector_family": "COL-F4"
+    },
+    {
+      "id": "SRC-FNDE-DADOSABERTOS",
+      "name": "FNDE portal de dados abertos (CKAN em SPA)",
+      "institution": "FNDE",
+      "urls": [
+        "https://www.fnde.gov.br/dadosabertos/"
+      ],
+      "evidence": "NOT_EVALUATED",
+      "notes": "exige JavaScript; API não localizada"
+    },
+    {
+      "id": "SRC-DEMAS",
+      "name": "DEMAS Dados Abertos da Saúde (CNES, SIH, estoque)",
+      "institution": "Ministério da Saúde",
+      "urls": [
+        "https://apidadosabertos.saude.gov.br/"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:demas_dados_abertos_saude",
+      "collector_family": "COL-F5"
+    },
+    {
+      "id": "SRC-DEMAS-S3-CIRURGIAS",
+      "name": "DEMAS cirurgias eletivas (CSV S3)",
+      "institution": "Ministério da Saúde",
+      "urls": [
+        "https://demas-dados-abertos.s3.amazonaws.com/csv/pnrfcirrea.csv.zip",
+        "https://demas-dados-abertos.s3.amazonaws.com/csv/pnrfcirpre.csv.zip",
+        "https://demas-dados-abertos.s3.amazonaws.com/csv/mgdi_ms_3f6.csv.zip"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F5"
+    },
+    {
+      "id": "SRC-SIOPS-API",
+      "name": "SIOPS consulta pública (API)",
+      "institution": "Ministério da Saúde",
+      "urls": [
+        "https://siops-consulta-publica-api.saude.gov.br/swagger-ui/"
+      ],
+      "evidence": "DOCUMENTED_ONLY",
+      "p0_ref": "p0:siops",
+      "notes": "/v3/api-docs 404; rotas não enumeradas"
+    },
+    {
+      "id": "SRC-FALABR",
+      "name": "Fala.BR manifestações de ouvidoria (dados abertos)",
+      "institution": "CGU",
+      "urls": [
+        "https://dadosabertos-download.cgu.gov.br/e-Ouv/manifestacoes-ouvidoria.zip"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F6"
+    },
+    {
+      "id": "SRC-SP156",
+      "name": "SP156 solicitações",
+      "institution": "Prefeitura de São Paulo",
+      "urls": [
+        "https://dados.prefeitura.sp.gov.br/dataset/dados-do-sp156"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F6"
+    },
+    {
+      "id": "SRC-RECIFE156",
+      "name": "Central 156 Emlurb (Recife)",
+      "institution": "Prefeitura do Recife",
+      "urls": [
+        "https://dados.recife.pe.gov.br/dataset/central-de-atendimento-de-servicos-da-emlurb-156"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F6"
+    },
+    {
+      "id": "SRC-BH156",
+      "name": "Solicitações dos cidadãos (Belo Horizonte)",
+      "institution": "PBH",
+      "urls": [
+        "https://ckan.pbh.gov.br/"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "collector_family": "COL-F6"
+    },
+    {
+      "id": "SRC-CENSO-SETORES",
+      "name": "Censo 2022 agregados por setor, renda do responsável e malha",
+      "institution": "IBGE",
+      "urls": [
+        "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios/",
+        "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Agregados_por_Setores_Censitarios_Rendimento_do_Responsavel/",
+        "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_de_setores_censitarios__divisoes_intramunicipais/censo_2022/setores/gpkg/UF/{UF}/{UF}_setores_CD2022.gpkg"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "p1_ref": "p1:censo2022",
+      "collector_family": "COL-F8"
+    },
+    {
+      "id": "SRC-ANEEL-CKAN",
+      "name": "ANEEL dados abertos (DEC/FEC, interrupções)",
+      "institution": "ANEEL",
+      "urls": [
+        "https://dadosabertos.aneel.gov.br/"
+      ],
+      "evidence": "VERIFIED_DATASET",
+      "notes": "catálogo e recursos verificados; arquivos não baixados"
+    },
+    {
+      "id": "SRC-TCU",
+      "name": "TCU dados abertos",
+      "institution": "TCU",
+      "urls": [
+        "https://dados-abertos.apps.tcu.gov.br/"
+      ],
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "SRC-SPU",
+      "name": "Patrimônio da União (dados.gov.br)",
+      "institution": "SPU",
+      "evidence": "BLOCKED",
+      "notes": "401 sem token"
+    },
+    {
+      "id": "SRC-COMPRAS",
+      "name": "Compras.gov.br dados abertos",
+      "institution": "Gestão",
+      "urls": [
+        "https://dadosabertos.compras.gov.br/"
+      ],
+      "evidence": "VERIFIED_API",
+      "p0_ref": "p0:compras",
+      "notes": "modulo-material responde; modulo-pesquisa-preco/1_consultarMaterial retornou 404"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "DS-TCESP-DESPESA-EVENTO",
+      "source": "SRC-TCESP-DESPESAS",
+      "fields": [
+        "orgao",
+        "mes",
+        "evento",
+        "nr_empenho",
+        "id_fornecedor",
+        "nm_fornecedor",
+        "dt_emissao_despesa",
+        "vl_despesa"
+      ],
+      "events": [
+        "Empenhado",
+        "Valor Liquidado",
+        "Valor Pago",
+        "Anulação",
+        "Reforço"
+      ],
+      "municipalities": 644,
+      "capital_excluded": true,
+      "samples": {
+        "adamantina_2024_01": {
+          "rows": 4561,
+          "PJ": 3134,
+          "PF": 1427
+        },
+        "campinas_2024_06": {
+          "rows": 17789,
+          "bytes": 5298719,
+          "seconds": 4.4
+        }
+      },
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-TCEES-EMPENHOS",
+      "source": "SRC-TCEES-CKAN",
+      "years": "2020-2026",
+      "fields_count": 58,
+      "sample_file": "municipios-despesas-empenhos-2-2025",
+      "rows": 913596,
+      "ugs": 536,
+      "prefeituras_by_name": 69,
+      "distinct_empenho_keys": 341097,
+      "keys_with_multiple_rows": 299270,
+      "negative_cells": 139904,
+      "credor_id_mix": {
+        "CNPJ": 534247,
+        "CPF": 161113,
+        "IDENTIFICACAO ESPECIAL": 155492,
+        "INSCRICAO GENERICA": 62679
+      },
+      "no_ibge": true,
+      "no_contract": true,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-TCEES-DESPESAS",
+      "source": "SRC-TCEES-CKAN",
+      "years": "2013-2026",
+      "format": "ZIP por ano",
+      "evidence": "VERIFIED_DATASET",
+      "notes": "declaratório; origem CidadES"
+    },
+    {
+      "id": "DS-TCEPE-DESPESAS",
+      "source": "SRC-TCEPE-API",
+      "method": "DespesasMunicipais",
+      "sample": {
+        "rows": 100000,
+        "municipios": 184,
+        "ugs": 627,
+        "cnpj14_pct": 62.7,
+        "zero_or_empty_pct": 15.2
+      },
+      "key": "ID_EMPENHO+ANOREFERENCIA+NUMERO_EMPENHO+ID_UNIDADE_GESTORA",
+      "limit_per_call": 100000,
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-TCEPE-UG",
+      "source": "SRC-TCEPE-API",
+      "method": "UnidadesJurisdicionadas",
+      "rows": 1817,
+      "prefeituras": 184,
+      "prefeituras_cnpj_in_siconfi": 184,
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-TCEPE-CONTROLE",
+      "source": "SRC-TCEPE-API",
+      "counts": {
+        "Sancoes": 12575,
+        "Obras": 2577,
+        "TransporteEscolar": 209,
+        "Determinacoes": 4784
+      },
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-TCERS-EMPENHOS",
+      "source": "SRC-TCERS-CKAN",
+      "fields_count": 48,
+      "file_bytes_2025": 1349555700,
+      "sample": {
+        "rows": 197713,
+        "orgaos": 3,
+        "ops": {
+          "P": 91647,
+          "L": 60574,
+          "E": 45492
+        },
+        "cnpj14_pct": 44.8
+      },
+      "contract_fields": [
+        "ano_licitacao",
+        "nr_licitacao",
+        "mod_licitacao",
+        "ano_contrato",
+        "nr_contrato",
+        "tp_instrumento_contratual"
+      ],
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-PDDE-PRESTACAO",
+      "source": "SRC-PDDEINFO",
+      "uf_year": "ES/2024",
+      "rows": 4891,
+      "schools": 2414,
+      "municipalities": 78,
+      "programs": {
+        "PDDE": 2360,
+        "PDDE QUALIDADE": 2182,
+        "PDDE EQUIDADE": 295,
+        "PDDE-EDUCACAO ESPECIAL": 54
+      },
+      "forecast_total_brl": 37700000,
+      "inep_len8_pct": 100,
+      "uex_cnpj_pct": 100,
+      "eex_cnpj_pct": 100,
+      "columns": [
+        "Ano",
+        "Programa",
+        "Região",
+        "UF",
+        "Município",
+        "Entidade Executora - EEx",
+        "CNPJ EEx",
+        "Situação Prestação de Contas EEx",
+        "Suspensão de Pagamento EEx",
+        "Nome da Escola",
+        "Código da Escola",
+        "CNPJ da Executora",
+        "Situação Prestação de Contas UEx",
+        "Suspensão de Pagamento UEx",
+        "Valor Total Previsto"
+      ],
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-PDDE-REPASSE-ESCOLA",
+      "source": "SRC-PDDEINFO",
+      "columns": [
+        "UF",
+        "Município",
+        "Rede de Ensino",
+        "Cod. Escola",
+        "Nome Escola",
+        "CNPJ UEx",
+        "Unidade Executora",
+        "Situação Receita Federal - UEx",
+        "CNPJ EEx/EM",
+        "Situação Receita Federal - EEx/EM",
+        "Telefone",
+        "Prestação de Contas",
+        "Dados Cadastrais - PDDEWeb",
+        "Destinação",
+        "Vl Devido Custeio",
+        "Vl Devido Capital",
+        "Vl Devido Total",
+        "Vl Ajuste Custeio",
+        "Vl Ajuste Capital",
+        "Vl Ajuste Total",
+        "Vl Final Devido Total",
+        "Vl Pago Custeio",
+        "Vl Pago Capital",
+        "Valor Pago Total",
+        "Data da Ordem de Pagamento"
+      ],
+      "sample_alto_rio_novo_2024": {
+        "schools": 10,
+        "destinations": 32,
+        "devido_brl": 115187,
+        "pago_brl": 97576,
+        "forecast_report_brl": 110576
+      },
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-PDDE-SALDO",
+      "source": "SRC-PDDEINFO",
+      "fields": [
+        "UEx",
+        "CNPJ",
+        "rede",
+        "município",
+        "banco/agência/conta (não armazenar)",
+        "mês",
+        "saldo conta/fundos/poupança/RDB",
+        "programa"
+      ],
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-SIOPE",
+      "source": "SRC-SIOPE-OLINDA",
+      "functions": [
+        "Dados_Gerais_Siope",
+        "Despesas_Siope",
+        "Despesas_Funcao_Educacao_Siope",
+        "Receita_Siope",
+        "Indicadores_Siope",
+        "Remuneracao_Siope",
+        "Informacoes_Complementares_Siope",
+        "Dados_Gerais_Siope_Dados_Responsaveis"
+      ],
+      "parameters": [
+        "Ano_Consulta",
+        "Num_Peri",
+        "Sig_UF"
+      ],
+      "sample": {
+        "ES_2024_6": {
+          "entes": 79,
+          "Vitoria_pago_educacao_brl": 808103944.68
+        }
+      },
+      "key": "COD_MUNI (IBGE 6)",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-DEMAS-SIH",
+      "source": "SRC-DEMAS",
+      "path": "/assistencia-a-saude/sih-procedimentos-hospitalares",
+      "params": [
+        "nu_ano",
+        "nu_comp",
+        "co_ibge",
+        "co_cnes",
+        "ds_grupo_nat_jur"
+      ],
+      "fields": [
+        "co_cnes",
+        "nu_cnpj",
+        "co_ibge_pac",
+        "ds_financiamento",
+        "ds_procedimento",
+        "qt_procedimento",
+        "nu_valor_procedimento"
+      ],
+      "semantics": "valor aprovado de produção; não é pagamento",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-DEMAS-ESTOQUE",
+      "source": "SRC-DEMAS",
+      "path": "/daf/estoque-medicamentos-bnafar-horus",
+      "params": [
+        "codigo_uf",
+        "codigo_municipio",
+        "codigo_cnes",
+        "anomes_posicao_estoque",
+        "data_posicao_estoque",
+        "codigo_catmat"
+      ],
+      "fields": [
+        "codigo_catmat",
+        "numero_lote",
+        "data_validade",
+        "quantidade_estoque",
+        "latitude",
+        "longitude"
+      ],
+      "position_date_seen": "2026-10-09",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-DEMAS-CNES",
+      "source": "SRC-DEMAS",
+      "path": "/cnes/estabelecimentos/{cnes}",
+      "fields": [
+        "numero_cnpj",
+        "latitude_estabelecimento_decimo_grau",
+        "longitude_estabelecimento_decimo_grau",
+        "codigo_municipio"
+      ],
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-DEMAS-CIRURGIAS",
+      "source": "SRC-DEMAS-S3-CIRURGIAS",
+      "granularity": "UF e BR",
+      "period": "2025-07+",
+      "rows_per_file": 783,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-FALABR-CSV",
+      "source": "SRC-FALABR",
+      "years": "2014-2026",
+      "file_bytes": 191810664,
+      "entries": 13,
+      "columns": 26,
+      "sample_2026": {
+        "rows": 76591,
+        "municipal_orgs": 175,
+        "esfera": {
+          "Federal": 65696,
+          "Municipal": 6211,
+          "Estadual": 3014
+        }
+      },
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-156-MUNICIPAL",
+      "sources": [
+        "SRC-SP156",
+        "SRC-RECIFE156",
+        "SRC-BH156"
+      ],
+      "since": "2012",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-CENSO-BASICO",
+      "source": "SRC-CENSO-SETORES",
+      "sectors": 468099,
+      "es_sectors": 8706,
+      "vitoria_sectors": 680,
+      "alto_rio_novo_sectors": 17,
+      "key": "CD_SETOR",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-CENSO-RENDA",
+      "source": "SRC-CENSO-SETORES",
+      "sectors": 458772,
+      "suppressed_cells_X": 53424,
+      "columns": [
+        "V06001",
+        "V06002",
+        "V06003",
+        "V06004",
+        "V06005",
+        "V06006"
+      ],
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-CENSO-MALHA-ES",
+      "source": "SRC-CENSO-SETORES",
+      "features": 8788,
+      "unique_codes": 8706,
+      "crs": "EPSG:4674",
+      "bytes": 26583040,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-CEIS",
+      "source": "SRC-PORTAL-TRANSP-ZIP",
+      "rows": 23713,
+      "date": "2026-10-09",
+      "pj_rows": 14612,
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-CNEP",
+      "source": "SRC-PORTAL-TRANSP-ZIP",
+      "rows": 1828,
+      "date": "2026-10-09",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-SIAPE-ZIP",
+      "source": "SRC-PORTAL-TRANSP-ZIP",
+      "example": "202607_Servidores_SIAPE.zip",
+      "bytes": 83363033,
+      "evidence": "VERIFIED_DATASET",
+      "notes": "HEAD apenas; contém dados pessoais"
+    },
+    {
+      "id": "DS-ANEEL-DECFEC",
+      "source": "SRC-ANEEL-CKAN",
+      "resources": [
+        "indicadores-continuidade-coletivos-2000-2009|2010-2019|2020-2029 (ZIP/Parquet)"
+      ],
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "DS-PNCP-ITENS",
+      "source": "SRC-PNCP",
+      "fields": [
+        "numeroItem",
+        "descricao",
+        "materialOuServico",
+        "valorUnitarioEstimado",
+        "valorTotal",
+        "quantidade",
+        "unidadeMedida",
+        "itemCategoriaNome",
+        "criterioJulgamentoNome",
+        "situacaoCompraItemNome",
+        "patrimonio",
+        "codigoRegistroImobiliario",
+        "temResultado"
+      ],
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "DS-TRANSFEREGOV-PLANOS",
+      "source": "SRC-TRANSFEREGOV-ESP",
+      "sample": {
+        "cnpj": "31796659000120",
+        "plans": 4,
+        "empenho": "2022NE005445",
+        "relatorio_gestao_rows": 0
+      },
+      "evidence": "VERIFIED_API"
+    }
+  ],
+  "tests": [
+    {
+      "id": "TST-TCESP-1",
+      "source": "SRC-TCESP-DESPESAS",
+      "request": "GET /api/json/municipios",
+      "status": 200,
+      "result": "644 municípios",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-TCESP-2",
+      "source": "SRC-TCESP-DESPESAS",
+      "request": "GET /despesas/adamantina/2024/1",
+      "status": 200,
+      "result": "4.561 linhas",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-TCESP-3",
+      "source": "SRC-TCESP-DESPESAS",
+      "request": "GET /despesas/campinas/2024/6",
+      "status": 200,
+      "result": "17.789 linhas; 4,4 s",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-TCEES-1",
+      "source": "SRC-TCEES-CKAN",
+      "request": "package_show despesas-municipios, tcees-empenho",
+      "status": 200,
+      "result": "recursos por ano",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-TCEES-3",
+      "source": "SRC-TCEES-CKAN",
+      "request": "ZIP empenhos 2-2025",
+      "status": 200,
+      "result": "913.596 linhas; CNPJ 58,5%",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-TCEPE-2",
+      "source": "SRC-TCEPE-API",
+      "request": "DespesasMunicipais!json?ANOREFERENCIA=2024",
+      "status": 200,
+      "result": "100.000 linhas; 184 municípios",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-TCEPE-3",
+      "source": "SRC-TCEPE-API",
+      "request": "UnidadesJurisdicionadas!json",
+      "status": 200,
+      "result": "184/184 prefeituras com CNPJ no Siconfi",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-TCERS-2",
+      "source": "SRC-TCERS-CKAN",
+      "request": "2025.csv.zip HEAD+Range",
+      "status": 200,
+      "result": "1,35 GB; 48 colunas",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-A1",
+      "relationship": "REL-CONTRACT-PAYMENT-RS",
+      "request": "PNCP Agudo × TCE-RS",
+      "result": "46/150 chave; 24 valor-consistentes",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-A2",
+      "relationship": "REL-CONTRACT-PAYMENT-ES",
+      "request": "PNCP Alto Rio Novo × TCE-ES",
+      "result": "nº empenho 0/20; CNPJ 14/20",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-PDDE-2",
+      "source": "SRC-PDDEINFO",
+      "request": "excel an_exercicio=2024 sg_uf=ES",
+      "status": 200,
+      "result": "4.891 linhas; 2.414 escolas",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-PDDE-3",
+      "source": "SRC-PDDEINFO",
+      "request": "escola/consultar co_escola=32087608",
+      "status": 200,
+      "result": "repasses 06/05/2024 e 24/05/2024; R$ 2.130,00",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-PDDE-4",
+      "source": "SRC-PDDEINFO",
+      "request": "escola/excelall SG_UF=ES CO_MUNICIPIO_FNDE=320035",
+      "status": 200,
+      "result": "10 escolas; devido 115.187; pago 97.576",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-SIOPE-2",
+      "source": "SRC-SIOPE-OLINDA",
+      "request": "Dados_Gerais_Siope(2024,6,'ES')",
+      "status": 200,
+      "result": "79 entes",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DEMAS-2",
+      "source": "SRC-DEMAS",
+      "request": "SIH co_cnes=0011738 nu_ano=2025",
+      "status": 200,
+      "result": "CNPJ, MAC, valor aprovado, co_ibge_pac",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-DEMAS-3",
+      "source": "SRC-DEMAS",
+      "request": "/daf/estoque-medicamentos-bnafar-horus",
+      "status": 200,
+      "result": "posição 2026-10-09; CATMAT; lat/lon",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-FALA-2",
+      "source": "SRC-FALABR",
+      "request": "CSV 2026 por Range",
+      "status": 206,
+      "result": "76.591 linhas; 175 órgãos municipais",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-TRF-1",
+      "source": "SRC-TRANSFEREGOV-ESP",
+      "request": "plano_acao_especial por CNPJ",
+      "status": 200,
+      "result": "4 planos; relatório de gestão 0",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-F-1",
+      "relationship": "REL-SANCTION-CREDITOR",
+      "request": "credores TCE-ES × CEIS/CNEP",
+      "result": "478/14.263; 131 janela temporal",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-CEN-1",
+      "source": "SRC-CENSO-SETORES",
+      "request": "básico, renda, GPKG ES",
+      "result": "468.099 setores; ES 8.706",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-G-1",
+      "relationship": "REL-CNES-SECTOR",
+      "request": "CNES 0011738 lat/lon ∈ setor",
+      "result": "320530905090052",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "TST-H-1",
+      "relationship": "REL-ENTE-CNPJ",
+      "request": "TCE-PE UG × Siconfi",
+      "result": "184/184",
+      "evidence": "VERIFIED_API"
+    },
+    {
+      "id": "TST-NEG-1",
+      "request": "TCE-RJ, TCE-PR, TCE-SC, TCM-CE, Querido Diário",
+      "result": "sem resposta em 1 tentativa",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "TST-NEG-2",
+      "request": "SPU via dados.gov.br",
+      "status": 401,
+      "result": "requer token",
+      "evidence": "BLOCKED"
+    }
+  ],
+  "indicators": [
+    {
+      "id": "IND-PAY-001",
+      "name": "Pago a fornecedor por município e ano",
+      "definition": "Soma de pagamentos efetivos a credor por ente, após reconciliação de movimentos",
+      "source": "SRC-TCESP-DESPESAS|SRC-TCEES-CKAN|SRC-TCEPE-API|SRC-TCERS-CKAN",
+      "dataset": "DS-TCESP-DESPESA-EVENTO|DS-TCEES-EMPENHOS|DS-TCEPE-DESPESAS|DS-TCERS-EMPENHOS",
+      "field": "vl_despesa|Paga|VALORPAGO|vl_pagamento",
+      "unit": "BRL",
+      "spatial_granularity": "município × credor",
+      "temporal_granularity": "mês",
+      "period_start": "2013 (ES despesas)",
+      "period_end": "2026-10",
+      "update": "mensal",
+      "observed_coverage": "SP 644; ES ~78; PE 184; RS 497 (a confirmar)",
+      "entity_id": "CNPJ do credor; UG",
+      "methodological_class": "fluxo operacional (movimentos)",
+      "limitations": "ES tem movimentos e estornos; sem IBGE; CPF",
+      "relationship_potential": "contrato PNCP; CEIS; Siconfi",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-PAY-002",
+      "name": "Pago por contrato",
+      "definition": "Pagamentos associados à chave (CNPJ, ano, nº contrato)",
+      "source": "SRC-TCERS-CKAN|SRC-PNCP",
+      "dataset": "DS-TCERS-EMPENHOS",
+      "field": "nr_contrato|vl_pagamento",
+      "unit": "BRL",
+      "spatial_granularity": "contrato",
+      "temporal_granularity": "ano",
+      "period_start": "2025",
+      "period_end": "2025",
+      "update": "mensal",
+      "observed_coverage": "RS: 46/150 casaram (prefixo do arquivo)",
+      "entity_id": "CNPJ+ano+nº contrato",
+      "methodological_class": "relação por chave composta",
+      "limitations": "PNCP numeroContratoEmpenho varia por município; só RS tem a chave",
+      "relationship_potential": "PNCP",
+      "proof_status": "VERIFIED (Agudo)",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-EDU-001",
+      "name": "PDDE pago por escola e destinação",
+      "definition": "Valor pago por escola (Inep) e destinação, com data da ordem de pagamento",
+      "source": "SRC-PDDEINFO",
+      "dataset": "DS-PDDE-REPASSE-ESCOLA",
+      "field": "Valor Pago Total",
+      "unit": "BRL",
+      "spatial_granularity": "escola",
+      "temporal_granularity": "ordem de pagamento",
+      "period_start": "exercício",
+      "period_end": "2026",
+      "update": "mensal",
+      "observed_coverage": "ES 2024: 2.414 escolas (previsto)",
+      "entity_id": "Inep; CNPJ UEx",
+      "methodological_class": "pagamento efetivo",
+      "limitations": "previsto ≠ devido ≠ pago; uma escola tem várias destinações",
+      "relationship_potential": "Censo Escolar; Siconfi",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-EDU-002",
+      "name": "Saldo de escola em conta",
+      "definition": "Saldo por UEx, programa e mês",
+      "source": "SRC-PDDEINFO",
+      "dataset": "DS-PDDE-SALDO",
+      "field": "Saldo Conta/Fundos/Poupança/RDB",
+      "unit": "BRL",
+      "spatial_granularity": "UEx × programa",
+      "temporal_granularity": "mês",
+      "period_start": "2024-03",
+      "period_end": "2026-08",
+      "update": "mensal",
+      "observed_coverage": "ES 2026-08 lido",
+      "entity_id": "CNPJ da UEx",
+      "methodological_class": "estoque",
+      "limitations": "tela exibe banco/agência/conta (não armazenar)",
+      "relationship_potential": "Inep",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-EDU-003",
+      "name": "Situação da prestação de contas do PDDE",
+      "definition": "Adimplência da EEx/UEx e suspensão de pagamento",
+      "source": "SRC-PDDEINFO",
+      "dataset": "DS-PDDE-PRESTACAO",
+      "field": "Situação Prestação de Contas; Suspensão de Pagamento",
+      "unit": "categoria",
+      "spatial_granularity": "escola",
+      "temporal_granularity": "exercício",
+      "period_start": "1997",
+      "period_end": "2026",
+      "update": "mensal",
+      "observed_coverage": "ES 2024: 4.891 linhas, todas 'Adimplente' no recorte padrão",
+      "entity_id": "Inep; CNPJ",
+      "methodological_class": "situação administrativa",
+      "limitations": "pendência ≠ irregularidade; filtro de inadimplência não explorado",
+      "relationship_potential": "Censo Escolar",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-EDU-004",
+      "name": "Despesa em educação por município",
+      "definition": "Despesa empenhada, liquidada e paga em educação (SIOPE)",
+      "source": "SRC-SIOPE-OLINDA",
+      "dataset": "DS-SIOPE",
+      "field": "VL_DESP_PAGA_EDU",
+      "unit": "BRL",
+      "spatial_granularity": "município",
+      "temporal_granularity": "período",
+      "period_start": "n/d",
+      "period_end": "2024",
+      "update": "semestral/bimestral",
+      "observed_coverage": "ES 2024: 79 entes",
+      "entity_id": "COD_MUNI (IBGE 6)",
+      "methodological_class": "execução declarada",
+      "limitations": "não chega à escola; declaratório",
+      "relationship_potential": "Siconfi",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-HLT-001",
+      "name": "Produção aprovada por hospital",
+      "definition": "Valor aprovado por estabelecimento, procedimento, competência e tipo de financiamento",
+      "source": "SRC-DEMAS",
+      "dataset": "DS-DEMAS-SIH",
+      "field": "nu_valor_procedimento",
+      "unit": "BRL",
+      "spatial_granularity": "estabelecimento",
+      "temporal_granularity": "competência",
+      "period_start": "n/d",
+      "period_end": "2026",
+      "update": "mensal",
+      "observed_coverage": "CNES 0011738 verificado",
+      "entity_id": "co_cnes; nu_cnpj",
+      "methodological_class": "valor aprovado",
+      "limitations": "não é repasse nem pagamento",
+      "relationship_potential": "CNES; setor",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-HLT-002",
+      "name": "Estoque de medicamentos por farmácia",
+      "definition": "Quantidade por CNES, CATMAT e lote na data de posição",
+      "source": "SRC-DEMAS",
+      "dataset": "DS-DEMAS-ESTOQUE",
+      "field": "quantidade_estoque",
+      "unit": "unidade",
+      "spatial_granularity": "estabelecimento",
+      "temporal_granularity": "dia",
+      "period_start": "n/d",
+      "period_end": "2026-10-09",
+      "update": "diária",
+      "observed_coverage": "amostra de 2 linhas",
+      "entity_id": "codigo_cnes; codigo_catmat",
+      "methodological_class": "estoque",
+      "limitations": "zero ≠ falta; só quem informa",
+      "relationship_potential": "PNCP/Compras por CATMAT",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-HLT-003",
+      "name": "Cirurgias eletivas realizadas e previstas",
+      "definition": "Contagem por UF e mês",
+      "source": "SRC-DEMAS-S3-CIRURGIAS",
+      "dataset": "DS-DEMAS-CIRURGIAS",
+      "field": "vl_indicador_calculado_uf",
+      "unit": "número",
+      "spatial_granularity": "UF",
+      "temporal_granularity": "mês",
+      "period_start": "2025-07",
+      "period_end": "2026-02",
+      "update": "mensal",
+      "observed_coverage": "27 UFs",
+      "entity_id": "co_uf",
+      "methodological_class": "produção",
+      "limitations": "sem tempo de espera",
+      "relationship_potential": "—",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-HLT-004",
+      "name": "Tempo de espera do SUS",
+      "definition": "Tempo entre solicitação e atendimento",
+      "source": "—",
+      "dataset": "—",
+      "field": "—",
+      "unit": "dias",
+      "spatial_granularity": "—",
+      "temporal_granularity": "—",
+      "period_start": "—",
+      "period_end": "—",
+      "update": "—",
+      "observed_coverage": "nenhuma fonte nacional",
+      "entity_id": "—",
+      "methodological_class": "—",
+      "limitations": "não localizado",
+      "relationship_potential": "—",
+      "proof_status": "NOT_EVALUATED",
+      "feasibility": "NOT_FEASIBLE"
+    },
+    {
+      "id": "IND-OUV-001",
+      "name": "Manifestações por órgão, assunto e esfera",
+      "definition": "Contagem de manifestações",
+      "source": "SRC-FALABR",
+      "dataset": "DS-FALABR-CSV",
+      "field": "código Órgão siorg; assunto; esfera",
+      "unit": "contagem",
+      "spatial_granularity": "órgão",
+      "temporal_granularity": "dia",
+      "period_start": "2014",
+      "period_end": "2026",
+      "update": "mensal",
+      "observed_coverage": "175 órgãos municipais no recorte",
+      "entity_id": "SIORG (federal); nome+UF (municipal)",
+      "methodological_class": "contagem",
+      "limitations": "município por nome",
+      "relationship_potential": "SIORG",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-OUV-002",
+      "name": "Dias para resolução e atraso",
+      "definition": "Prazo, resposta e dias de atraso por manifestação",
+      "source": "SRC-FALABR",
+      "dataset": "DS-FALABR-CSV",
+      "field": "dias para resolução; dias de atraso",
+      "unit": "dias",
+      "spatial_granularity": "manifestação",
+      "temporal_granularity": "dia",
+      "period_start": "2014",
+      "period_end": "2026",
+      "update": "mensal",
+      "observed_coverage": "2026 recorte",
+      "entity_id": "órgão",
+      "methodological_class": "tempo administrativo",
+      "limitations": "concluída ≠ resolvido",
+      "relationship_potential": "—",
+      "proof_status": "VERIFIED",
+      "feasibility": "READY_FOR_CONTRACT"
+    },
+    {
+      "id": "IND-OUV-003",
+      "name": "Tempo de atendimento 156 por bairro",
+      "definition": "Diferença entre abertura e parecer/última situação",
+      "source": "SRC-SP156|SRC-RECIFE156|SRC-BH156",
+      "dataset": "DS-156-MUNICIPAL",
+      "field": "Data de abertura; Data do parecer",
+      "unit": "dias",
+      "spatial_granularity": "bairro/distrito",
+      "temporal_granularity": "solicitação",
+      "period_start": "2012",
+      "period_end": "2026",
+      "update": "diária/mensal",
+      "observed_coverage": "SP, Recife, BH",
+      "entity_id": "serviço/assunto",
+      "methodological_class": "tempo administrativo",
+      "limitations": "esquemas diferentes",
+      "relationship_potential": "setor",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-CTL-001",
+      "name": "Credor com sanção vigente na data do empenho (temporal)",
+      "definition": "Interseção temporal entre sanção e empenho por CNPJ",
+      "source": "SRC-PORTAL-TRANSP-ZIP|SRC-TCEES-CKAN",
+      "dataset": "DS-CEIS|DS-CNEP|DS-TCEES-EMPENHOS",
+      "field": "CNPJ; data início/fim; DataEmissao",
+      "unit": "contagem",
+      "spatial_granularity": "credor",
+      "temporal_granularity": "dia",
+      "period_start": "n/d",
+      "period_end": "2026-10-09",
+      "update": "diária",
+      "observed_coverage": "478/14.263; 131 janela",
+      "entity_id": "CNPJ",
+      "methodological_class": "TEMPORAL_ONLY",
+      "limitations": "abrangência da sanção; sem inferência",
+      "relationship_potential": "CEIS/CNEP",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    },
+    {
+      "id": "IND-GEO-001",
+      "name": "População, domicílios e renda no setor do equipamento",
+      "definition": "Agregados do setor que contém a coordenada",
+      "source": "SRC-CENSO-SETORES|SRC-DEMAS",
+      "dataset": "DS-CENSO-BASICO|DS-CENSO-RENDA|DS-DEMAS-CNES",
+      "field": "CD_SETOR; V06004",
+      "unit": "valor",
+      "spatial_granularity": "setor censitário",
+      "temporal_granularity": "Censo 2022",
+      "period_start": "2022",
+      "period_end": "2022",
+      "update": "por edição",
+      "observed_coverage": "ES completo; um BR",
+      "entity_id": "CD_SETOR; CNES",
+      "methodological_class": "geométrico",
+      "limitations": "coordenada do cadastro; X suprimido",
+      "relationship_potential": "CNES; escolas",
+      "proof_status": "VERIFIED",
+      "feasibility": "NEEDS_VALIDATION"
+    }
+  ],
+  "entities": [
+    {
+      "id": "ENT-ENTE",
+      "name": "Ente federativo",
+      "keys": [
+        "CNPJ",
+        "IBGE7",
+        "IBGE6"
+      ],
+      "sources": [
+        "SRC-SICONFI-ENTES"
+      ]
+    },
+    {
+      "id": "ENT-ESCOLA",
+      "name": "Escola",
+      "keys": [
+        "Inep8"
+      ],
+      "sources": [
+        "SRC-PDDEINFO",
+        "p0:censo_escolar"
+      ]
+    },
+    {
+      "id": "ENT-UEX",
+      "name": "Unidade executora (PDDE)",
+      "keys": [
+        "CNPJ"
+      ],
+      "sources": [
+        "SRC-PDDEINFO"
+      ]
+    },
+    {
+      "id": "ENT-ESTAB-SAUDE",
+      "name": "Estabelecimento de saúde",
+      "keys": [
+        "CNES",
+        "CNPJ"
+      ],
+      "sources": [
+        "SRC-DEMAS"
+      ]
+    },
+    {
+      "id": "ENT-FORNECEDOR",
+      "name": "Fornecedor/credor",
+      "keys": [
+        "CNPJ",
+        "CPF (parcial/ausente conforme fonte)"
+      ],
+      "sources": [
+        "SRC-PNCP",
+        "SRC-TCESP-DESPESAS",
+        "SRC-TCEES-CKAN",
+        "SRC-TCEPE-API",
+        "SRC-TCERS-CKAN"
+      ],
+      "reuse": [
+        "packages/domain/src/supplier-identity.ts"
+      ]
+    },
+    {
+      "id": "ENT-UG",
+      "name": "Unidade gestora/órgão municipal",
+      "keys": [
+        "código UG TCE",
+        "CNPJ (PE)",
+        "nome"
+      ],
+      "sources": [
+        "SRC-TCEPE-API",
+        "SRC-TCEES-CKAN",
+        "SRC-TCERS-CKAN"
+      ]
+    },
+    {
+      "id": "ENT-SETOR",
+      "name": "Setor censitário",
+      "keys": [
+        "CD_SETOR"
+      ],
+      "sources": [
+        "SRC-CENSO-SETORES"
+      ]
+    },
+    {
+      "id": "ENT-ORGAO-OUVIDORIA",
+      "name": "Órgão de ouvidoria",
+      "keys": [
+        "SIORG",
+        "nome+município+UF"
+      ],
+      "sources": [
+        "SRC-FALABR"
+      ]
+    },
+    {
+      "id": "ENT-CONTRATO",
+      "name": "Contrato",
+      "keys": [
+        "numeroControlePNCP",
+        "ano+nº contrato"
+      ],
+      "sources": [
+        "SRC-PNCP",
+        "SRC-TCERS-CKAN"
+      ]
+    },
+    {
+      "id": "ENT-SANCAO",
+      "name": "Sanção administrativa",
+      "keys": [
+        "código da sanção"
+      ],
+      "sources": [
+        "DS-CEIS",
+        "DS-CNEP",
+        "DS-TCEPE-CONTROLE"
+      ]
+    }
+  ],
+  "identity_keys": [
+    {
+      "key": "CNPJ do ente",
+      "systems": [
+        "Siconfi",
+        "PNCP",
+        "PDDE",
+        "Transferegov",
+        "TCE-PE"
+      ],
+      "proof": "PE 184/184; Alto Rio Novo em 4 sistemas",
+      "classification": "EXACT"
+    },
+    {
+      "key": "IBGE 7/6",
+      "systems": [
+        "PNCP",
+        "CNES",
+        "SIOPE",
+        "PDDE"
+      ],
+      "classification": "EXACT",
+      "note": "conversão por regra de dígito"
+    },
+    {
+      "key": "Inep 8",
+      "systems": [
+        "PDDE",
+        "Censo Escolar",
+        "Ideb"
+      ],
+      "classification": "EXACT (PDDE); HIGH_CONFIDENCE com Censo até o join"
+    },
+    {
+      "key": "CNES",
+      "systems": [
+        "CNES",
+        "SIH",
+        "estoque"
+      ],
+      "classification": "EXACT"
+    },
+    {
+      "key": "CNPJ do estabelecimento",
+      "systems": [
+        "CNES",
+        "SIH"
+      ],
+      "classification": "EXACT"
+    },
+    {
+      "key": "Nº do contrato",
+      "systems": [
+        "PNCP",
+        "TCE-RS"
+      ],
+      "classification": "EXACT (RS, chave composta)"
+    },
+    {
+      "key": "Nº do empenho",
+      "systems": [
+        "PNCP",
+        "TCE-ES"
+      ],
+      "classification": "UNLINKED",
+      "note": "0/20 casaram"
+    },
+    {
+      "key": "Nome do município + UF",
+      "systems": [
+        "TCE-SP",
+        "TCE-ES",
+        "TCE-RS",
+        "Fala.BR"
+      ],
+      "classification": "PROBABLE/HIGH_CONFIDENCE"
+    },
+    {
+      "key": "CD_SETOR",
+      "systems": [
+        "Censo"
+      ],
+      "classification": "EXACT"
+    },
+    {
+      "key": "Coordenadas",
+      "systems": [
+        "CNES",
+        "estoque"
+      ],
+      "classification": "EXACT geométrico (depende do cadastro)"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "REL-ENTE-CNPJ",
+      "a": "Prefeitura (TCE-PE UG)",
+      "b": "Ente Siconfi",
+      "via": "CNPJ",
+      "classification": "EXACT",
+      "test": "TST-H-1",
+      "evidence": "184/184"
+    },
+    {
+      "id": "REL-CONTRACT-PAYMENT-RS",
+      "a": "PNCP contrato",
+      "b": "TCE-RS pagamento",
+      "via": "CNPJ+ano+nº contrato",
+      "classification": "EXACT",
+      "test": "TST-A1",
+      "evidence": "46/150 chave; 24 valor-consistentes (prefixo de arquivo)",
+      "false_positive_risk": "numeroContratoEmpenho tem significado variável"
+    },
+    {
+      "id": "REL-CONTRACT-PAYMENT-ES",
+      "a": "PNCP contrato",
+      "b": "TCE-ES empenho",
+      "via": "CNPJ+UG+ano+valor",
+      "classification": "HIGH_CONFIDENCE",
+      "test": "TST-A2",
+      "evidence": "nº empenho 0/20; CNPJ 14/20"
+    },
+    {
+      "id": "REL-SCHOOL-FUNDING",
+      "a": "Escola (Inep)",
+      "b": "PDDE repasse/prestação",
+      "via": "Inep",
+      "classification": "EXACT",
+      "test": "TST-PDDE-3",
+      "evidence": "2.130,00 = 2.130,00"
+    },
+    {
+      "id": "REL-HOSPITAL-FINANCING",
+      "a": "CNES",
+      "b": "SIH produção aprovada",
+      "via": "co_cnes+CNPJ",
+      "classification": "EXACT",
+      "test": "TST-DEMAS-2",
+      "note": "valor aprovado, não pagamento"
+    },
+    {
+      "id": "REL-MUNICIPALITY-COMPLAINT",
+      "a": "Município",
+      "b": "Fala.BR manifestação",
+      "via": "nome+UF",
+      "classification": "HIGH_CONFIDENCE",
+      "test": "TST-FALA-2"
+    },
+    {
+      "id": "REL-TRANSFER-ACCOUNTABILITY",
+      "a": "Plano de ação",
+      "b": "empenho e relatório de gestão",
+      "via": "id_plano_acao",
+      "classification": "EXACT (empenho); prestação ausente",
+      "test": "TST-TRF-1"
+    },
+    {
+      "id": "REL-SANCTION-CREDITOR",
+      "a": "CEIS/CNEP",
+      "b": "Credor municipal",
+      "via": "CNPJ",
+      "classification": "EXACT (identidade); TEMPORAL_ONLY (vínculo com o gasto)",
+      "test": "TST-F-1"
+    },
+    {
+      "id": "REL-CNES-SECTOR",
+      "a": "CNES (lat/lon)",
+      "b": "Setor censitário",
+      "via": "ponto em polígono",
+      "classification": "EXACT",
+      "test": "TST-G-1"
+    },
+    {
+      "id": "REL-PNCP-ESTOQUE-CATMAT",
+      "a": "PNCP/Compras (CATMAT)",
+      "b": "Estoque BNAFAR",
+      "via": "codigo_catmat",
+      "classification": "NOT_EVALUATED",
+      "note": "hipótese"
+    }
+  ],
+  "territorial_coverage": {
+    "payments_by_tce": {
+      "SP": {
+        "municipalities": 644,
+        "capital": "TCM-SP",
+        "status": "VERIFIED_API"
+      },
+      "ES": {
+        "municipalities_approx": 78,
+        "status": "VERIFIED_DATASET"
+      },
+      "PE": {
+        "municipalities": 184,
+        "status": "VERIFIED_API"
+      },
+      "RS": {
+        "municipalities_jurisdiction": 497,
+        "municipalities_read": 3,
+        "status": "VERIFIED_DATASET"
+      },
+      "others": "NOT_EVALUATED/DOCUMENTED"
+    },
+    "approximate_share_of_5570": 0.25,
+    "share_caveat": "RS não contado no arquivo",
+    "schools": {
+      "PDDE_ES_2024_schools": 2414,
+      "other_UFs": "NOT_EVALUATED"
+    },
+    "sectors": {
+      "brazil": 468099,
+      "ES": 8706,
+      "Vitoria": 680,
+      "Alto_Rio_Novo": 17
+    },
+    "complaints": {
+      "falabr_municipal_orgs_in_sample": 175,
+      "cities_156": [
+        "São Paulo",
+        "Recife",
+        "Belo Horizonte"
+      ]
+    },
+    "samples_requested": {
+      "Uniao": "testado",
+      "ES": "testado",
+      "Vitoria": "testado",
+      "Alto_Rio_Novo": "testado",
+      "Sao_Paulo": "parcial (SP156; TCE-SP não cobre capital)",
+      "Belo_Horizonte": "156 apenas",
+      "Curitiba": "sem resposta",
+      "Recife": "156 + TCE-PE",
+      "Belem": "sem resposta"
+    }
+  },
+  "temporal_coverage": {
+    "TCEES_despesas": "2013-2026",
+    "TCEES_empenhos": "2020-2026",
+    "FalaBR": "2014-2026",
+    "SP156": "2012-2026",
+    "Recife156": "2012-2026",
+    "PDDE": "1997-2026 (filtro de ano)",
+    "SIOPE": "n/d (2024 testado)",
+    "Censo": "2022",
+    "CEIS": "snapshot diário",
+    "Cirurgias": "2025-07+",
+    "SIH": "2025 testado"
+  },
+  "financial_granularity": [
+    {
+      "source": "TCE-SP",
+      "unit": "evento por empenho e fornecedor",
+      "stages": [
+        "empenho",
+        "liquidação",
+        "pagamento",
+        "anulação",
+        "reforço"
+      ],
+      "currency": "BRL string com vírgula"
+    },
+    {
+      "source": "TCE-ES",
+      "unit": "movimento mensal por empenho",
+      "stages": [
+        "empenhada",
+        "liquidada",
+        "paga",
+        "RP"
+      ],
+      "note": "negativos presentes"
+    },
+    {
+      "source": "TCE-PE",
+      "unit": "empenho com valores acumulados",
+      "stages": [
+        "empenhado",
+        "liquidado",
+        "pago"
+      ]
+    },
+    {
+      "source": "TCE-RS",
+      "unit": "operação E/L/P por linha",
+      "stages": [
+        "empenho",
+        "liquidação",
+        "pagamento"
+      ],
+      "extra": [
+        "licitação",
+        "contrato",
+        "histórico"
+      ]
+    },
+    {
+      "source": "PDDE",
+      "unit": "escola × destinação × ordem de pagamento",
+      "stages": [
+        "devido",
+        "ajuste",
+        "pago"
+      ],
+      "note": "previsto ≠ devido ≠ pago"
+    },
+    {
+      "source": "SIH",
+      "unit": "estabelecimento × procedimento × competência",
+      "stages": [
+        "aprovado"
+      ],
+      "note": "não é pagamento"
+    },
+    {
+      "source": "SIOPE",
+      "unit": "município × período",
+      "stages": [
+        "empenhada",
+        "liquidada",
+        "paga"
+      ]
+    }
+  ],
+  "service_granularity": [
+    {
+      "service": "ouvidoria",
+      "unit": "manifestação",
+      "source": "Fala.BR"
+    },
+    {
+      "service": "156 municipal",
+      "unit": "solicitação",
+      "source": "SP156/Recife/BH"
+    },
+    {
+      "service": "saúde produção",
+      "unit": "estabelecimento × competência",
+      "source": "SIH"
+    },
+    {
+      "service": "saúde abastecimento",
+      "unit": "CNES × CATMAT × lote × dia",
+      "source": "BNAFAR/Hórus"
+    },
+    {
+      "service": "educação repasse",
+      "unit": "escola",
+      "source": "PDDE"
+    },
+    {
+      "service": "energia",
+      "unit": "conjunto/evento (catálogo)",
+      "source": "ANEEL",
+      "status": "não baixado"
+    },
+    {
+      "service": "transporte público",
+      "unit": "n/d",
+      "status": "NOT_EVALUATED"
+    }
+  ],
+  "collector_families": [
+    {
+      "id": "COL-F0",
+      "name": "Referência e identidade",
+      "transports": [
+        "REST JSON"
+      ],
+      "sources": [
+        "SRC-SICONFI-ENTES"
+      ],
+      "reuse": [
+        "p0 F0"
+      ]
+    },
+    {
+      "id": "COL-F1",
+      "name": "PNCP (contratos, itens)",
+      "transports": [
+        "REST paginado"
+      ],
+      "sources": [
+        "SRC-PNCP"
+      ],
+      "reuse": [
+        "apps/collector/src/pncp-enrichment.ts",
+        "chamber-procurement.ts",
+        "senate-procurement.ts"
+      ]
+    },
+    {
+      "id": "COL-F2",
+      "name": "Transferências",
+      "transports": [
+        "PostgREST",
+        "ZIP CSV"
+      ],
+      "sources": [
+        "SRC-TRANSFEREGOV-ESP",
+        "SRC-PORTAL-TRANSP-ZIP"
+      ],
+      "reuse": [
+        "postgres-pix-transferegov.ts",
+        "postgres-pix-portal.ts",
+        "postgres-pix-identity.ts"
+      ]
+    },
+    {
+      "id": "COL-F3",
+      "name": "Pagamentos via Tribunais de Contas",
+      "transports": [
+        "REST JSON (SP, PE)",
+        "CSV/ZIP (ES, RS)"
+      ],
+      "sources": [
+        "SRC-TCESP-DESPESAS",
+        "SRC-TCEES-CKAN",
+        "SRC-TCEPE-API",
+        "SRC-TCERS-CKAN"
+      ],
+      "adapter_per": "TCE",
+      "reuse": [
+        "institutional-http.ts",
+        "packages/domain/src/supplier-identity.ts",
+        "packages/db/src/state-finance-identity.ts (regras de ligação)"
+      ]
+    },
+    {
+      "id": "COL-F4",
+      "name": "FNDE (PDDE, SIOPE)",
+      "transports": [
+        "HTML+XLSX",
+        "OData Olinda"
+      ],
+      "sources": [
+        "SRC-PDDEINFO",
+        "SRC-SIOPE-OLINDA"
+      ],
+      "reuse": [
+        "institutional-*"
+      ]
+    },
+    {
+      "id": "COL-F5",
+      "name": "Saúde DEMAS",
+      "transports": [
+        "REST JSON",
+        "CSV S3"
+      ],
+      "sources": [
+        "SRC-DEMAS",
+        "SRC-DEMAS-S3-CIRURGIAS"
+      ],
+      "reuse": [
+        "p0 DEMAS"
+      ]
+    },
+    {
+      "id": "COL-F6",
+      "name": "Atendimento ao cidadão",
+      "transports": [
+        "ZIP CSV",
+        "CKAN CSV"
+      ],
+      "sources": [
+        "SRC-FALABR",
+        "SRC-SP156",
+        "SRC-RECIFE156",
+        "SRC-BH156"
+      ],
+      "reuse": [
+        "institutional-*"
+      ]
+    },
+    {
+      "id": "COL-F7",
+      "name": "Controle externo",
+      "transports": [
+        "ZIP CSV",
+        "REST JSON"
+      ],
+      "sources": [
+        "SRC-PORTAL-TRANSP-ZIP",
+        "SRC-TCEPE-API"
+      ],
+      "reuse": [
+        "suppliers"
+      ]
+    },
+    {
+      "id": "COL-F8",
+      "name": "Território",
+      "transports": [
+        "ZIP CSV",
+        "GPKG"
+      ],
+      "sources": [
+        "SRC-CENSO-SETORES"
+      ],
+      "reuse": [],
+      "new_dependency": "PostGIS"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SCN-A",
+      "name": "Mínimo operacional",
+      "systems": 6,
+      "families": [
+        "COL-F0",
+        "COL-F1",
+        "COL-F2",
+        "COL-F4",
+        "COL-F5",
+        "COL-F6"
+      ],
+      "municipalities_with_payment_by_creditor": 0,
+      "maintenance": "baixa"
+    },
+    {
+      "id": "SCN-B",
+      "name": "Nacional + agregadores estaduais",
+      "systems": "10-11",
+      "families": [
+        "A",
+        "COL-F3",
+        "COL-F7"
+      ],
+      "municipalities_with_payment_by_creditor": "≈1400 (≈25%)",
+      "maintenance": "média (1 adaptador por TCE)",
+      "recommended": true
+    },
+    {
+      "id": "SCN-C",
+      "name": "Granularidade máxima",
+      "systems": "20+",
+      "families": [
+        "B",
+        "COL-F8"
+      ],
+      "municipalities_with_payment_by_creditor": "≈1400 + futuros",
+      "maintenance": "alta",
+      "caveat": "sem prova dos demais TCEs"
+    }
+  ],
+  "product_opportunities": [
+    {
+      "id": "OPP-01",
+      "name": "Estoque de medicamentos (BNAFAR/Hórus)",
+      "dataset": "DS-DEMAS-ESTOQUE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-02",
+      "name": "PDDE saldo mensal por UEx × programa",
+      "dataset": "DS-PDDE-SALDO",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-03",
+      "name": "PDDE prestação de contas, suspensão e situação RFB da UEx",
+      "dataset": "DS-PDDE-PRESTACAO",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-04",
+      "name": "SIH com município de residência do paciente",
+      "dataset": "DS-DEMAS-SIH",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-05",
+      "name": "TCE-PE obras fiscalizadas",
+      "dataset": "DS-TCEPE-CONTROLE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-06",
+      "name": "TCE-PE transporte escolar fiscalizado",
+      "dataset": "DS-TCEPE-CONTROLE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-07",
+      "name": "TCE-PE determinações e recomendações",
+      "dataset": "DS-TCEPE-CONTROLE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-08",
+      "name": "TCE-PE sanções",
+      "dataset": "DS-TCEPE-CONTROLE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-09",
+      "name": "TCE-RS empenho + licitação + contrato + histórico",
+      "dataset": "DS-TCERS-EMPENHOS",
+      "collection_complexity": "A",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-10",
+      "name": "Fala.BR serviço, atraso e satisfação",
+      "dataset": "DS-FALABR-CSV",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-11",
+      "name": "156 municipais (SP, Recife, BH)",
+      "dataset": "DS-156-MUNICIPAL",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-12",
+      "name": "Setor censitário como chave espacial",
+      "dataset": "DS-CENSO-BASICO",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-13",
+      "name": "Espinha de identidade por CNPJ",
+      "dataset": "DS-TCEPE-UG",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-14",
+      "name": "SIOPE remuneração e despesa por função",
+      "dataset": "DS-SIOPE",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-15",
+      "name": "Cirurgias eletivas por UF e mês",
+      "dataset": "DS-DEMAS-CIRURGIAS",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-16",
+      "name": "Cruzamento CEIS/CNEP × credores",
+      "dataset": "DS-CEIS",
+      "collection_complexity": "B",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-17",
+      "name": "TCE-SP despesa por evento",
+      "dataset": "DS-TCESP-DESPESA-EVENTO",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    },
+    {
+      "id": "OPP-18",
+      "name": "Interrupções de energia ANEEL",
+      "dataset": "DS-ANEEL-DECFEC",
+      "collection_complexity": "M",
+      "evidence": "VERIFIED_*"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "BLK-01",
+      "text": "TCEs de MG, RJ, PR, SC, CE, BA, PB, MT, GO, MS e demais não exercitados",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-02",
+      "text": "Pagamento de Executivos estaduais por credor não varrido",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-03",
+      "text": "Sem chave de contrato comum PNCP↔TCE fora do RS",
+      "evidence": "INFERRED"
+    },
+    {
+      "id": "BLK-04",
+      "text": "CPF em claro em TCE-RS, TCE-PE e PNCP",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "BLK-05",
+      "text": "Rotas da API do SIOPS não enumeradas",
+      "evidence": "DOCUMENTED_ONLY"
+    },
+    {
+      "id": "BLK-06",
+      "text": "PNAE/PNATE/FUNDEB/PNLD por escola não localizados; CKAN do FNDE é SPA",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-07",
+      "text": "Tempo de espera do SUS sem fonte nacional",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-08",
+      "text": "Pagamento efetivo por hospital não localizado",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-09",
+      "text": "SPU exige token",
+      "evidence": "BLOCKED"
+    },
+    {
+      "id": "BLK-10",
+      "text": "Município sem IBGE em SP, ES, RS e Fala.BR",
+      "evidence": "VERIFIED_DATASET"
+    },
+    {
+      "id": "BLK-11",
+      "text": "Vínculo conjunto elétrico→município (ANEEL) não testado",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-12",
+      "text": "Grade estatística, escolas geocodificadas e CRAS não testados",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-13",
+      "text": "PDDE em UFs além do ES não executado",
+      "evidence": "NOT_EVALUATED"
+    },
+    {
+      "id": "BLK-14",
+      "text": "Filtro de inadimplência do PDDE não explorado",
+      "evidence": "NOT_EVALUATED"
+    }
+  ],
+  "gates": [
+    {
+      "id": "P3_SOURCE_DISCOVERY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_FINANCIAL_TRACEABILITY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_STATE_PAYMENT_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_MUNICIPAL_PAYMENT_COVERAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_SCHOOL_FUNDING_LINKAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_HEALTH_FINANCING_LINKAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_HEALTH_WAITING_LISTS",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_CITIZEN_SERVICE_DATA",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_PUBLIC_WORKFORCE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_TRANSFER_ACCOUNTABILITY",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_AUDIT_LINKAGE",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_SUBMUNICIPAL_COVERAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_OPERATIONAL_SERVICE_DATA",
+      "state": "PARTIAL"
+    },
+    {
+      "id": "P3_CREATIVE_DISCOVERY",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_IDENTITY_LINKAGE",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_COLLECTOR_CONSOLIDATION",
+      "state": "PASS_WITH_CAVEATS"
+    },
+    {
+      "id": "P3_PRODUCT_READINESS",
+      "state": "PARTIAL"
+    }
+  ],
+  "evidence_inventory": [
+    "TST-TCESP-1",
+    "TST-TCESP-2",
+    "TST-TCESP-3",
+    "TST-TCEES-1",
+    "TST-TCEES-3",
+    "TST-TCEPE-2",
+    "TST-TCEPE-3",
+    "TST-TCERS-2",
+    "TST-A1",
+    "TST-A2",
+    "TST-PDDE-2",
+    "TST-PDDE-3",
+    "TST-PDDE-4",
+    "TST-SIOPE-2",
+    "TST-DEMAS-2",
+    "TST-DEMAS-3",
+    "TST-FALA-2",
+    "TST-TRF-1",
+    "TST-F-1",
+    "TST-CEN-1",
+    "TST-G-1",
+    "TST-H-1",
+    "TST-NEG-1",
+    "TST-NEG-2"
+  ]
+}

@@ -21,7 +21,7 @@ export function ComparisonVoteAxis({axis,highlights}:{axis:VoteAxis;highlights:H
     <p className="mt-3 text-sm leading-6 text-muted-foreground">{axis.coverage.note}</p>
     <div className="mt-4"><CoverageBadge coverage={axis.coverage}/></div>
   </section>;
-  return <section aria-label="Eixo das votações nominais">
+  return <section aria-label="Eixo das votações nominais" suppressHydrationWarning>
     <div className="flex flex-wrap items-center justify-between gap-2">
       <h2 className="text-2xl font-bold">O que mais separa a {houseLabel}?</h2>
       <CoverageBadge coverage={axis.coverage}/>

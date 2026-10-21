@@ -158,8 +158,8 @@ export function collectEvidence(db: DatabaseSync, source: PropositionHouse, asOf
   };
   const batches = activeBatches(db, source);
   if (batches.length) {
-    for (const row of db.prepare(`SELECT json_extract(x.payload,'$.proposalId') pid,json_extract(x.payload,'$.start') start FROM legislative_appointments x WHERE x.batch_id IN (${marks(batches.length)}) AND json_extract(x.payload,'$.kind')='rapporteurship' AND json_extract(x.payload,'$.proposalId') IS NOT NULL`).all(...batchIdsOf(batches)) as Row[]) {
-      const id = String(row.pid), day = dayOf(row.start);
+    for (const row of db.prepare(`SELECT json_extract(x.payload,'$.proposalId') pid,COALESCE(json_extract(x.payload,'$.statusDate'),json_extract(x.payload,'$.start')) observed_date FROM legislative_appointments x WHERE x.batch_id IN (${marks(batches.length)}) AND json_extract(x.payload,'$.kind')='rapporteurship' AND json_extract(x.payload,'$.proposalId') IS NOT NULL`).all(...batchIdsOf(batches)) as Row[]) {
+      const id = String(row.pid), day = dayOf(row.observed_date);
       evidence.instruction.add(id); evidence.rapporteurRows++;
       if (day) touch(id, day, false);
     }
@@ -274,7 +274,7 @@ export function principalStageFlow(db: DatabaseSync, source: PropositionHouse, y
   const stages: StageFlowStage[] = universeSize ? [
     stage('presented', universeSize, `Matérias principais apresentadas em ${year}.`),
     stage('rite', null, 'O regime de tramitação (ordinário, urgência, prioridade) não é publicado como dado estruturado neste lote.'),
-    stage('instruction', evidence.rapporteurRows || evidence.instruction.size ? inYear(evidence.instruction) : null, source === 'camara' ? 'Relatoria designada ou órgão registrado. Só há relatorias de deputados do cadastro atual, então a contagem é parcial.' : 'Relatoria designada ou órgão registrado.'),
+    stage('instruction', evidence.rapporteurRows || evidence.instruction.size ? inYear(evidence.instruction) : null, source === 'camara' ? 'Relator registrado no catálogo; a data observada é o último status da matéria e não prova o início da relatoria. Só há relatorias de deputados do cadastro atual, então a contagem é parcial.' : 'Relatoria designada ou órgão registrado.'),
     stage('agenda', hasAgenda ? inYear(evidence.agenda) : null, 'Matérias com item de pauta publicado.'),
     stage('deliberation', hasDeliberations ? inYear(evidence.deliberated) : null, 'Matérias com deliberação ou efeito de votação registrado.'),
     stage('post', hasDeliberations ? inYear(evidence.approved) : null, 'Matérias com deliberação aprovada registrada.'),
@@ -518,8 +518,8 @@ export function proposalObservedState(db: DatabaseSync, source: PropositionHouse
     if (isNormEvent(event)) evidence.outcome.add(id);
     days.push(event.day); (isClosingEvent(event) ? lastClosing : lastOpen).push(event.day);
   }
-  if (batches.length) for (const row of db.prepare(`SELECT json_extract(x.payload,'$.start') start FROM legislative_appointments x WHERE x.batch_id IN (${marks(batches.length)}) AND json_extract(x.payload,'$.kind')='rapporteurship' AND json_extract(x.payload,'$.proposalId')=?`).all(...batchIdsOf(batches), id) as Row[]) {
-    evidence.instruction.add(id); const day = dayOf(row.start); if (day && day <= today) { days.push(day); lastOpen.push(day); }
+  if (batches.length) for (const row of db.prepare(`SELECT COALESCE(json_extract(x.payload,'$.statusDate'),json_extract(x.payload,'$.start')) observed_date FROM legislative_appointments x WHERE x.batch_id IN (${marks(batches.length)}) AND json_extract(x.payload,'$.kind')='rapporteurship' AND json_extract(x.payload,'$.proposalId')=?`).all(...batchIdsOf(batches), id) as Row[]) {
+    evidence.instruction.add(id); const day = dayOf(row.observed_date); if (day && day <= today) { days.push(day); lastOpen.push(day); }
   }
   for (const deliberation of loadDeliberations(db, source)) if (deliberation.proposalId === id && deliberation.day <= today) { evidence.deliberated.add(id); if (deliberation.approved) evidence.approved.add(id); days.push(deliberation.day); lastOpen.push(deliberation.day); }
   const last = [...days].sort().at(-1) ?? null, principal = group === PRINCIPAL_GROUP;

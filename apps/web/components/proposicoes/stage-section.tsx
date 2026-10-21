@@ -38,10 +38,10 @@ export function StageSection({ flow, staleness, facts }: { flow: Record<Proposit
     <div className="page-shell py-16 lg:py-20">
       <p className="eyebrow">02 · tramitação</p>
       <h2 id="tramitacao-titulo" className="prop-h2 mt-3 max-w-3xl text-4xl sm:text-5xl">Onde estão as matérias legislativas principais?</h2>
-      <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Só as matérias principais têm um caminho de tramitação para acompanhar. Requerimentos, pareceres e emendas têm a sua própria história e ficam de fora deste retrato.</p>
+      <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">Os blocos mostram conjuntos independentes de marcos publicados. Eles ajudam a localizar onde ha registro, mas nao representam um funil de conversao entre materias.</p>
       <EditorialLine facts={facts} ids={houses.length > 1 ? ['recent_movement'] : ['recent_movement', 'history_coverage']} className="mt-8" />
       <div className="mt-10 space-y-8">{houses.map(house => <HousePanel key={house} house={house} flow={flow[house]} staleness={staleness[house]} />)}</div>
-      <p className="mt-6 max-w-3xl text-xs leading-5 text-muted-foreground">As etapas mostram o que foi <b>registrado</b>. Uma matéria pode ter etapas sem registro publicado, e o "rito" (urgência, prioridade) ainda não é publicado como dado estruturado. Descrever o que não foi observado não é afirmar que a matéria esteja parada.</p>
+      <p className="mt-6 max-w-3xl text-xs leading-5 text-muted-foreground">Cada numero corresponde a um conjunto de eventos observado. Uma materia pode aparecer em mais de um conjunto, e a ausencia de um marco nao prova que ela esteja parada.</p>
     </div>
   </section>;
 }

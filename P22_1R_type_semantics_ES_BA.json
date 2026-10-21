@@ -1,0 +1,1504 @@
+{
+  "phase": "P22.1R",
+  "database": "civica_postgres_lab",
+  "houses": {
+    "ES": {
+      "sourceTypeUnknown": 0,
+      "rows": [
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Arquivamento da Indicação",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "INDICATION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 863
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Para Ciência e Providências (GEALE)",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 627
+        },
+        {
+          "sourceTypeId": "314",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_314",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 294
+        },
+        {
+          "sourceTypeId": "308",
+          "sourceTypeLabel": "Enviar Ofício ao Destinatário",
+          "canonicalTypeCode": "ES_TYPE_308",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 287
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 163
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Análise da Proposição para Emissão de Parecer(Justiça)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 128
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Providenciar Resposta ao Requerimento de Informação",
+          "canonicalTypeCode": "ES_TYPE_16",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 125
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 112
+        },
+        {
+          "sourceTypeId": "17",
+          "sourceTypeLabel": "Retorno ao Gabinete para diligências",
+          "canonicalTypeCode": "ES_TYPE_17",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 108
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Arquivamento da Proposição Principal",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 86
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 82
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 77
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": "Dar Ciência do Ofício à Comissão Permanente",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 67
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": "Organizar Sessão Solene/Especial",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 65
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 50
+        },
+        {
+          "sourceTypeId": "1343",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_1343",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 50
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 45
+        },
+        {
+          "sourceTypeId": "309",
+          "sourceTypeLabel": "Acesso liberado",
+          "canonicalTypeCode": "ES_TYPE_309",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 44
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 42
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 41
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Ciência da Minuta ao Relator",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 38
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Arquivar no Gabinete",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 38
+        },
+        {
+          "sourceTypeId": "327",
+          "sourceTypeLabel": "Leitura do Ofício",
+          "canonicalTypeCode": "ES_TYPE_327",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 36
+        },
+        {
+          "sourceTypeId": "314",
+          "sourceTypeLabel": "Aguardar prosseguimento da tramitação",
+          "canonicalTypeCode": "ES_TYPE_314",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 34
+        },
+        {
+          "sourceTypeId": "2392",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_2392",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 29
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 29
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 27
+        },
+        {
+          "sourceTypeId": "5240",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_5240",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 26
+        },
+        {
+          "sourceTypeId": "308",
+          "sourceTypeLabel": "Autorizar Requerimento",
+          "canonicalTypeCode": "ES_TYPE_308",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 26
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 21
+        },
+        {
+          "sourceTypeId": "2392",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_2392",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 20
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Retorno à Com. Justiça com parecer elaborado",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 19
+        },
+        {
+          "sourceTypeId": "287",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_287",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 18
+        },
+        {
+          "sourceTypeId": "336",
+          "sourceTypeLabel": "Envio à Comissão de Finanças",
+          "canonicalTypeCode": "ES_TYPE_336",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 15
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 15
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Discussão única do veto, na forma do art. 66, § 6º da Constituição Estadual",
+          "canonicalTypeCode": "ES_TYPE_2",
+          "functionalGroup": "VOTING_INSTRUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 14
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Posicionamento do Governador",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 13
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 12
+        },
+        {
+          "sourceTypeId": "2392",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_2392",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 12
+        },
+        {
+          "sourceTypeId": "287",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na DIPROL (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_287",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 11
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 11
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 11
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": "Para Arquivar no Gabinete",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 10
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Compilar Norma",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 10
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 9
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Devolução à Procuradoria Geral.",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 9
+        },
+        {
+          "sourceTypeId": "309",
+          "sourceTypeLabel": "Autorizar Requerimento",
+          "canonicalTypeCode": "ES_TYPE_309",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 8
+        },
+        {
+          "sourceTypeId": "2454",
+          "sourceTypeLabel": "Preparar ato de licença de Deputado",
+          "canonicalTypeCode": "ES_TYPE_2454",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 8
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_16",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 8
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Localização da Proposição",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "2366",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_2366",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "287",
+          "sourceTypeLabel": "Arquivamento da Emenda",
+          "canonicalTypeCode": "ES_TYPE_287",
+          "functionalGroup": "AMENDMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "7",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_7",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "17",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_17",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 6
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 6
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_16",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 6
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 5
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Análise da Proposição para Emissão de Parecer(Justiça)",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 5
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Análise da Proposição para Emissão de Parecer (MV)",
+          "canonicalTypeCode": "ES_TYPE_2",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Para providências quanto à diligência",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "2392",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_2392",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "2454",
+          "sourceTypeLabel": "Arquivar no Gabinete",
+          "canonicalTypeCode": "ES_TYPE_2454",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Para Providências (Comissão)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Ciências e Providências",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_16",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "1344",
+          "sourceTypeLabel": "Envio à Comissão de Finanças",
+          "canonicalTypeCode": "ES_TYPE_1344",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "17",
+          "sourceTypeLabel": "Leitura de Resposta de Informação",
+          "canonicalTypeCode": "ES_TYPE_17",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Arquivamento da Proposição Principal",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Arquivamento da Proposição Principal a pedido do(s) autor(es)",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Análise da Proposição para Emissão de Parecer(Finanças)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Discussão Especial em 3ª Sessão",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "7",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_7",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Para providências (Gab.)",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "290",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na DIPROL (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_290",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "287",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_287",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "9",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_9",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Distribuição da Proposição na Comissão de Justiça (Redação Final)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "1344",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_1344",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Leitura da Indicação",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "INDICATION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_2",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Leitura do Ofício",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "2454",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_2454",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Encaminhamento para parecer técnico na Diretoria da Procuradoria",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "309",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_309",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "5240",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_5240",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "308",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_308",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Arquivamento da Proposição Principal",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "2391",
+          "sourceTypeLabel": "Arquivamento do Ofício",
+          "canonicalTypeCode": "ES_TYPE_2391",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2386",
+          "sourceTypeLabel": "Aguardar encerramento",
+          "canonicalTypeCode": "ES_TYPE_2386",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Discussão Especial em 1ª Sessão",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "9",
+          "sourceTypeLabel": "Arquivar Processo",
+          "canonicalTypeCode": "ES_TYPE_9",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Discussão Prévia 1",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Elaboração da Minuta de Parecer(Finanças)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Elaboração de Parecer Técnico na Procuradoria Geral",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Elaborar relatório",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Envio da proposição à Coordenação das Comissões Permanentes",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2366",
+          "sourceTypeLabel": "Arquivar Requerimento (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_2366",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Para Ciência e Emissão de Parecer",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2366",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_2366",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Para providências (Gab.)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Arquivamento da proposição, na forma do art. 147 do RI",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Arquivamento da Proposição Principal (MV)",
+          "canonicalTypeCode": "ES_TYPE_2",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na SGM (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_2",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Registro da Proposição Principal",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Resgistro da Publicação da Norma Sancionada Integralmente",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Retorno ao Gabinete para diligências",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Verificar a Existência de Proposições/Normas de mesma Natureza",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_12",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "1344",
+          "sourceTypeLabel": "Arquivamento da Mensagem Governamental",
+          "canonicalTypeCode": "ES_TYPE_1344",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "18",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_18",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "1344",
+          "sourceTypeLabel": "Para Ciência da Devolução da Mensagem de Outros Poderes",
+          "canonicalTypeCode": "ES_TYPE_1344",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2371",
+          "sourceTypeLabel": "Arquivamento do Ofício",
+          "canonicalTypeCode": "ES_TYPE_2371",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2371",
+          "sourceTypeLabel": "Aguardar conclusão dos trabalhos",
+          "canonicalTypeCode": "ES_TYPE_2371",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2366",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_2366",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Para ciência e providências do setor solicitante",
+          "canonicalTypeCode": "ES_TYPE_6",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "7",
+          "sourceTypeLabel": "Leitura da Proposição Principal",
+          "canonicalTypeCode": "ES_TYPE_7",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "9",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_9",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "314",
+          "sourceTypeLabel": "Arquivamento da proposição, na forma do art. 147 do RI",
+          "canonicalTypeCode": "ES_TYPE_314",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": "Leitura do Requerimento no EXPEDIENTE para Simples Despacho",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "316",
+          "sourceTypeLabel": "Enviar Ofício ao Destinatário",
+          "canonicalTypeCode": "ES_TYPE_316",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Aguardar Análise da Presidência na DIPROL (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "325",
+          "sourceTypeLabel": "Ciência e providências.",
+          "canonicalTypeCode": "ES_TYPE_325",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "308",
+          "sourceTypeLabel": "Arquivar Requerimento de Voto de Congratulação/Pesar (Ales Digital)",
+          "canonicalTypeCode": "ES_TYPE_308",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "3",
+          "sourceTypeLabel": "Para Ciência da Devolução da Proposição",
+          "canonicalTypeCode": "ES_TYPE_3",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "3",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_3",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": "Para Providências (Comissão)",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "8",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_8",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Arquivamento da proposição, na forma do art. 147 do RI",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "334",
+          "sourceTypeLabel": "Arquivar Eletronicamente a Proposição no Ales Digital",
+          "canonicalTypeCode": "ES_TYPE_334",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Elaboração de Estudo de Técnica",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "287",
+          "sourceTypeLabel": ".Ciência e Providências",
+          "canonicalTypeCode": "ES_TYPE_287",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Para Providências",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Para Providências (Comissão)",
+          "canonicalTypeCode": "ES_TYPE_4",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2500",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_2500",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2500",
+          "sourceTypeLabel": "Envio à Comissão de Finanças",
+          "canonicalTypeCode": "ES_TYPE_2500",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Aguardar prosseguimento da tramitação",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Análise da proposição para emissão de parecer (Infra-Estrutura)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2454",
+          "sourceTypeLabel": "Requerer licença para missão autorizada",
+          "canonicalTypeCode": "ES_TYPE_2454",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Análise da Proposição para Emissão de Parecer(Meio Ambiente)",
+          "canonicalTypeCode": "ES_TYPE_5",
+          "functionalGroup": "OPINION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "9",
+          "sourceTypeLabel": "Arquivado",
+          "canonicalTypeCode": "ES_TYPE_9",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "2407",
+          "sourceTypeLabel": "Protocolar",
+          "canonicalTypeCode": "ES_TYPE_2407",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        }
+      ]
+    },
+    "BA": {
+      "sourceTypeUnknown": 0,
+      "rows": [
+        {
+          "sourceTypeId": "7",
+          "sourceTypeLabel": "Andamento Processual (Moção)",
+          "canonicalTypeCode": "BA_TYPE_7",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 675
+        },
+        {
+          "sourceTypeId": "3",
+          "sourceTypeLabel": "Andamento Processual (Indicação)",
+          "canonicalTypeCode": "BA_TYPE_3",
+          "functionalGroup": "INDICATION",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 551
+        },
+        {
+          "sourceTypeId": "1",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Ordinária)",
+          "canonicalTypeCode": "BA_TYPE_1",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 252
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Requerimento)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 92
+        },
+        {
+          "sourceTypeId": "11",
+          "sourceTypeLabel": "Andamento Processual (Ofício)",
+          "canonicalTypeCode": "BA_TYPE_11",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 79
+        },
+        {
+          "sourceTypeId": "13",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Resolução)",
+          "canonicalTypeCode": "BA_TYPE_13",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 71
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Andamento Processual (Utilidade Pública)",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 62
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Ordinária)",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 51
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Ordinária)",
+          "canonicalTypeCode": "BA_TYPE_5",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 17
+        },
+        {
+          "sourceTypeId": "11",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Ordinária)",
+          "canonicalTypeCode": "BA_TYPE_11",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 11
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Analisar Processo",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 7
+        },
+        {
+          "sourceTypeId": "2",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Decreto Legislativo)",
+          "canonicalTypeCode": "BA_TYPE_2",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 4
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Resolução)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "5",
+          "sourceTypeLabel": "Andamento Processual (Mensagem)",
+          "canonicalTypeCode": "BA_TYPE_5",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Andamento Processual (Requerimento)",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "REQUEST",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 3
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Proposição Protocolada",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "UNCLASSIFIED",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "12",
+          "sourceTypeLabel": "Andamento Processual (Emenda)",
+          "canonicalTypeCode": "BA_TYPE_12",
+          "functionalGroup": "AMENDMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Ordinária)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 2
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Resolução da Mesa Diretora)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "10",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Emenda Constitucional)",
+          "canonicalTypeCode": "BA_TYPE_10",
+          "functionalGroup": "AMENDMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "11",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Complementar)",
+          "canonicalTypeCode": "BA_TYPE_11",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "16",
+          "sourceTypeLabel": "Processo Arquivado",
+          "canonicalTypeCode": "BA_TYPE_16",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Mensagem)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "SPECIAL_DOCUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Decreto Legislativo)",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "4",
+          "sourceTypeLabel": "Para Discussão e Votação na Ordem do Dia",
+          "canonicalTypeCode": "BA_TYPE_4",
+          "functionalGroup": "VOTING_INSTRUMENT",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "6",
+          "sourceTypeLabel": "Andamento Processual (Projeto de Lei Complementar)",
+          "canonicalTypeCode": "BA_TYPE_6",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        },
+        {
+          "sourceTypeId": "9",
+          "sourceTypeLabel": "Andamento Processual (Resolução da Mesa Diretora)",
+          "canonicalTypeCode": "BA_TYPE_9",
+          "functionalGroup": "LEGISLATIVE_MAIN",
+          "mappingConfidence": "SOURCE_NATIVE_ID_AND_LABEL",
+          "proposalCount": 1
+        }
+      ]
+    }
+  }
+}

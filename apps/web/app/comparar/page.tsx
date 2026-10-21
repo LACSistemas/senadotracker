@@ -10,7 +10,7 @@ import { PartyLogo } from '@/components/party-logo';
 import { OfficialPortrait } from '@/components/app-image';
 import { BarChart, BulletChart, GroupedBarChart, MultiLineChart } from '@/components/charts';
 import { ComparisonAgreementMatrix } from '@/components/comparison-agreement-matrix';
-import { ComparisonVoteAxis } from '@/components/comparison-vote-axis';
+import { ComparisonVoteAxisClient } from '@/components/comparison-vote-axis-client';
 import { CoverageBadge } from '@/components/metrics';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button, buttonVariants } from '@/components/ui/button';
@@ -58,7 +58,7 @@ function PersonPanels({data,axis}:{data:PersonData;axis:VoteAxis|null}){
   <section><h2 className="text-2xl font-bold">Gabinete</h2><p className="mt-2 text-sm text-muted-foreground">{data.source==='senado'?'Folha identificada e vínculos do Senado.':'Verba utilizada e vínculos da Câmara.'} O período acompanha cada observação.</p><div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">{data.cabinet.map(item=><MetricCard key={item.externalId} title={names.get(item.externalId)!} color={color(item.externalId)} value={item.financialCents===null?'Indisponível':money.format(item.financialCents/100)} detail={`${item.staff??'—'} vínculos · ${item.period??'período indisponível'}`}/>)}</div></section>
   <ComparisonPatrimony data={data as any} palette={colors}/>
   <ComparisonAgreementMatrix data={data as any} palette={colors}/>
-  {axis&&<ComparisonVoteAxis axis={axis} highlights={data.people.map((item,index)=>({externalId:item.profile.externalId,name:item.profile.name,color:colors[index]??'#115b45'}))}/>}
+  {axis&&<ComparisonVoteAxisClient axis={axis} highlights={data.people.map((item,index)=>({externalId:item.profile.externalId,name:item.profile.name,color:colors[index]??'#115b45'}))}/>}
   <section className="grid gap-6 xl:grid-cols-2">{data.fidelity.some(item=>item.total>0)
     ? <div><BulletChart title="Fidelidade à orientação partidária" data={data.fidelity.map(item=>({label:names.get(item.externalId)!,value:item.ratio,color:color(item.externalId)}))} benchmark={null} coverage={{...data.coverage.votes,note:'Votos comparáveis diante de orientação oficial; orientações livres ou ausentes ficam fora do denominador.'}}/><p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted-foreground">{data.fidelity.map(item=><span key={item.externalId} className="inline-flex items-center gap-1.5"><i className="size-2.5 rounded-full" style={{background:color(item.externalId)}} aria-hidden="true"/>{names.get(item.externalId)}: {item.aligned} alinhados em n={item.total}; {item.excluded} excluídos</span>)}</p></div>
     // Sem orientação publicada nos lotes ativos a fidelidade não é zero — é inobservável. Um gráfico

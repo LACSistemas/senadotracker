@@ -1,0 +1,4233 @@
+{
+ "meta": {
+  "phase": "P7",
+  "title": "Fechamento nacional da atuação política do Poder Executivo",
+  "generated": "2026-10-11",
+  "horizon": "2013-01-01..2026-10 (2012 para municipais)",
+  "mode": "investigação; nada alterado no repositório além destes dois arquivos; sem commit/push",
+  "prior": [
+   "P0",
+   "P1",
+   "P2",
+   "P3",
+   "P4",
+   "P5",
+   "P6"
+  ],
+  "privacy": "sem CPF em claro; nomes apenas de agentes públicos no cargo; documentos pessoais não coletados",
+  "evidence_tiers": {
+   "PRIMARY_DOCUMENT": "ato, termo, edição oficial ou página do órgão/Casa legislativa",
+   "INSTITUTIONAL_NEWS": "notícia do próprio órgão/Casa/governo",
+   "PRESS": "imprensa: apenas corroboração, nunca prova única"
+  },
+  "reproducibility": "scripts descartáveis no scratchpad (p5/p6/p7); parâmetros em tests[].method"
+ },
+ "sources": [
+  {
+   "id": "S7-DIOES",
+   "name": "Imprensa Oficial ES (DIO/ES)",
+   "url": "https://ioes.dio.es.gov.br/portal/edicoes/download/{id}",
+   "sphere": "ES:estado+municipios",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "edições PDF enumeráveis por id sequencial (6060=2021-08-20; 8800=2024-01-31; 10000=2025-03-17; 11283=2026-07-08); mistura DOE, AMUNES e diários municipais"
+  },
+  {
+   "id": "S7-SIGPUB",
+   "name": "SIGPub / diariomunicipal.com.br (Vox)",
+   "url": "https://www.diariomunicipal.com.br/{associacao}/",
+   "sphere": "municipal:multi-UF",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "22 portais (associações); busca avançada lista entidades; PDFs de edição em www-storage.voxtecnologia.com.br; busca/calendário não reproduzíveis por script"
+  },
+  {
+   "id": "S7-ALES",
+   "name": "Assembleia Legislativa ES",
+   "url": "https://www.al.es.gov.br",
+   "sphere": "ES",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "notícias de posse com termo"
+  },
+  {
+   "id": "S7-ALMG",
+   "name": "ALMG legislação mineira e notícias",
+   "url": "https://www.almg.gov.br/legislacao-mineira/texto/DEC/{n}/{ano}/",
+   "sphere": "MG",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "texto original de DEC e DNE com assinatura; notícias de posse"
+  },
+  {
+   "id": "S7-ALESP",
+   "name": "Alesp: notícias e repositório de decretos",
+   "url": "https://www.al.sp.gov.br",
+   "sphere": "SP",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "notícias de posse; repositório estático de decretos (decreto-67634-06.04.2023.html)"
+  },
+  {
+   "id": "S7-ALERJ",
+   "name": "ALERJ / STJ (afastamento Witzel)",
+   "url": "https://www.alerj.rj.gov.br",
+   "sphere": "RJ",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "ALERJ notícia 50487; STJ notícia 28/08/2020"
+  },
+  {
+   "id": "S7-ALEPE",
+   "name": "Alepe e Alepe Legis",
+   "url": "https://legis.alepe.pe.gov.br",
+   "sphere": "PE",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "DOE em PDF (flip) e decretos do Executivo com assinatura"
+  },
+  {
+   "id": "S7-LEGIS-AC",
+   "name": "LEGIS Acre",
+   "url": "https://legis.ac.gov.br/detalhar/{id}",
+   "sphere": "AC",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "decreto com governador no texto"
+  },
+  {
+   "id": "S7-SINJ-DF",
+   "name": "SINJ-DF",
+   "url": "https://www.sinj.df.gov.br/sinj/Norma/",
+   "sphere": "DF",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "decreto com signatário e notas de republicação"
+  },
+  {
+   "id": "S7-LEGISLA-GO",
+   "name": "Legisla Goiás",
+   "url": "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/{id}/pdf",
+   "sphere": "GO",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "API com PDF por id; autor e legislações relacionadas"
+  },
+  {
+   "id": "S7-MS",
+   "name": "Legislação MS (SECOGE) e DOE MS",
+   "url": "https://aacpdappls.net.ms.gov.br",
+   "sphere": "MS",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "decreto com governador e secretário"
+  },
+  {
+   "id": "S7-IOMAT",
+   "name": "IOMAT MT",
+   "url": "https://www.iomat.mt.gov.br",
+   "sphere": "MT",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "DOE em PDF"
+  },
+  {
+   "id": "S7-CMV",
+   "name": "Câmara Municipal de Vitória",
+   "url": "https://www.cmv.es.gov.br",
+   "sphere": "municipal:Vitória",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "notícias oficiais de renúncia e posse"
+  },
+  {
+   "id": "S7-CMR",
+   "name": "Câmara Municipal do Recife e DOME",
+   "url": "https://www.recife.pe.leg.br",
+   "sphere": "municipal:Recife",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "notícia de posse e Diário Oficial do Município"
+  },
+  {
+   "id": "S7-CMSP",
+   "name": "Câmara Municipal de São Paulo",
+   "url": "https://www.saopaulo.sp.leg.br",
+   "sphere": "municipal:São Paulo",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "nota da Mesa e posse de Nunes"
+  },
+  {
+   "id": "S7-DOMSC",
+   "name": "DOM/SC (P6)",
+   "url": "https://diariomunicipal.sc.gov.br",
+   "sphere": "municipal:SC",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "categoria Portarias/Decretos; busca multi-termo é AND"
+  },
+  {
+   "id": "S7-TCE-ES",
+   "name": "TCE-ES despesas 2024 (zip P4)",
+   "url": "dados abertos",
+   "sphere": "municipal:ES",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "942.247 linhas, 78 municípios; UO e órgão separados"
+  },
+  {
+   "id": "S7-MG-DESP",
+   "name": "dados.mg.gov.br despesa por empenho 2025",
+   "url": "https://dados.mg.gov.br",
+   "sphere": "MG",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "77 UOs; GABINETE MILITAR (UO 1071); sem folha"
+  },
+  {
+   "id": "S7-SIORG",
+   "name": "SIORG orgao-entidade/completa",
+   "url": "https://estruturaorganizacional.dados.gov.br/doc",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "336 unidades; sem código SIAFI/SIAPE"
+  },
+  {
+   "id": "S7-SIAPE",
+   "name": "SIAPE cadastro 2026-07 (P6)",
+   "url": "Portal da Transparência",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "note": "MINISTRO DE ESTADO 39; downloads com AccessDenied nesta rodada"
+  },
+  {
+   "id": "S7-SEN-LEG",
+   "name": "Senado legislacao/lista tipo=DEC",
+   "url": "https://legis.senado.leg.br/dadosabertos/legislacao/lista",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "devolve DEC-n e DEC-sn juntos"
+  },
+  {
+   "id": "S7-DOU",
+   "name": "DOU consulta (P6)",
+   "url": "https://www.in.gov.br/consulta",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "cursor + busca fuzzy"
+  },
+  {
+   "id": "S7-DOEM",
+   "name": "DOEM / IBDM",
+   "url": "https://www.doem.org.br",
+   "sphere": "municipal",
+   "state": "BLOCKED",
+   "feas": "BLOCKED",
+   "note": "página de verificação de bot; não contornada"
+  },
+  {
+   "id": "S7-DOU-LJ",
+   "name": "DOU leiturajornal (listagem diária por seção)",
+   "url": "https://www.in.gov.br/leiturajornal?secao=do2&data=DD-MM-AAAA",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "JSON embutido com todos os itens da seção do dia (628–737 itens); seções do1,do1e,do2,do2e; artType \"Decreto de Pessoal\" e órgão \"Atos do Poder Executivo\"; sem login"
+  },
+  {
+   "id": "S7-CGU-SIAPE",
+   "name": "CGU download SIAPE (histórico mensal)",
+   "url": "https://dadosabertos-download.cgu.gov.br/PortalDaTransparencia/saida/servidores/AAAAMM_Servidores_SIAPE.zip",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "HTTP 200 de 2013-01 a 2026-07 (~80 MB por mês); substitui o endpoint do Portal que negou acesso"
+  },
+  {
+   "id": "S7-FAMEM",
+   "name": "FAMEM/Siganet (Maranhão)",
+   "url": "https://diariooficial.famem.org.br",
+   "sphere": "municipal:MA",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "edição diária nº 3955 de 2026-10-09; PDF assinado em painel.siganet.net.br"
+  },
+  {
+   "id": "S7-SAPL",
+   "name": "SAPL Interlegis (API REST)",
+   "url": "https://sapl.{municipio}.{uf}.leg.br/api/",
+   "sphere": "municipal+estadual",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "normajuridica ↔ materia ↔ autoria; PI estadual e municípios amostrados"
+  },
+  {
+   "id": "S7-TCE-RS-MUN",
+   "name": "TCE-RS empenhos municipais 2025",
+   "url": "https://dados.tce.rs.gov.br/dados/municipal/empenhos/2025.csv.zip",
+   "sphere": "municipal:RS",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "26.932.626 linhas; órgão orçamentário e unidade orçamentária por pagamento"
+  },
+  {
+   "id": "S7-RS-ESTADO",
+   "name": "dados.rs.gov.br despesa do estado 2025",
+   "url": "https://dados.rs.gov.br",
+   "sphere": "RS",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "Órgão/UO/Fase/Valor; dezembro de 2025 lido (351.323 linhas)"
+  },
+  {
+   "id": "S7-TCE-SP",
+   "name": "TCE-SP despesas por município",
+   "url": "https://transparencia.tce.sp.gov.br/api/json/despesas/{municipio}/{ano}/{mes}",
+   "sphere": "municipal:SP",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "campos: orgao, evento, fornecedor, valor; sem unidade orçamentária"
+  },
+  {
+   "id": "S7-DIOEM-OUTROS",
+   "name": "Candidatos a diários: Assomasul (diariooficialms.com.br), DOEMPI, publicacoesmunicipais, diariomunicipios, MPX",
+   "url": "vários",
+   "sphere": "municipal",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "DISCOVERY_ONLY",
+   "note": "respondem 200; sem lista de clientes nem edição extraída"
+  }
+ ],
+ "datasets": [
+  {
+   "id": "D7-0",
+   "source": "S7-DIOES"
+  },
+  {
+   "id": "D7-1",
+   "source": "S7-SIGPUB"
+  },
+  {
+   "id": "D7-2",
+   "source": "S7-TCE-ES"
+  },
+  {
+   "id": "D7-3",
+   "source": "S7-MG-DESP"
+  },
+  {
+   "id": "D7-4",
+   "source": "S7-DOU-LJ"
+  },
+  {
+   "id": "D7-5",
+   "source": "S7-CGU-SIAPE"
+  },
+  {
+   "id": "D7-6",
+   "source": "S7-SAPL"
+  },
+  {
+   "id": "D7-7",
+   "source": "S7-TCE-RS-MUN"
+  },
+  {
+   "id": "D7-8",
+   "source": "S7-RS-ESTADO"
+  }
+ ],
+ "tests": [
+  {
+   "id": "T7-AUD1",
+   "label": "Auditoria: DF vs municípios",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "method": "IBGE localidades 5.571; DF 5300108",
+   "evidence": "DF aparece na união P6 (QD 1); sem DF: P6 = 730/5.570 (13,1%)"
+  },
+  {
+   "id": "T7-AUD2",
+   "label": "Auditoria: portarias 58/128 vs 0",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "method": "DOM/SC Abdon Batista 2024, 9 variações",
+   "evidence": "nomear=58, exonerar=128; \"exonerar nomear\"=0 (AND); \"nomear OR exonerar\"=584=total (OR não suportado); sem categoria: nomear=142, exonerar=138; unidade = publicação com o termo; sem erro de serialização"
+  },
+  {
+   "id": "T7-AUD3",
+   "label": "Auditoria: DEC 2013 = 628",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "method": "Senado lista tipo=DEC|DEC-n|DEC-sn",
+   "evidence": "DEC=628 (297 DEC-n + 331 DEC-sn); script P6 exigia <numero> e descartou DEC-sn; sem queda normativa"
+  },
+  {
+   "id": "T7-AUD4",
+   "label": "Auditoria: 37 assinaturas ausentes",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "refetch + regex robusta",
+   "evidence": "37/37 falhas de extração (34 entidades HTML, 3 ordinal/nome curto); 37/37 recuperadas; 840/840"
+  },
+  {
+   "id": "T7-GOV",
+   "label": "Governadores: ES, SP, MG, RJ, PE",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "busca dirigida em domínios oficiais e fetch",
+   "evidence": "ES e MG ciclo fechado; RJ, SP, PE parciais"
+  },
+  {
+   "id": "T7-GOV-2026",
+   "label": "Renúncias de governadores em 2026 com página oficial",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "pesquisa em domínios oficiais por UF",
+   "evidence": "10 UFs com página institucional: GO (Alego, 2026-03-31), DF (CLDF, renúncia 03-28, posse 03-30), MT (ALMT, 03-31), PB (A União/Governo, 04-02), PA (Alepa, renúncia 04-02), AC (Agência AC, comunicação 03-24 com efeito 04-02), RR (ALERR, 03-27), ES (04-02), MG (03-22), RJ (renúncia 03-23; ALERJ regula eleição indireta). Amazonas NÃO renunciou (corrige lista da imprensa)"
+  },
+  {
+   "id": "T7-GOV-SIG",
+   "label": "Decretos estaduais com governador nominal",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "1 decreto por UF em 2025 e, quando possível, 2020",
+   "evidence": "2025: AC, AM, BA(PDF SEFAZ), DF, ES, GO, MA, MG, MS, MT, PE, PI, RO, SC, SE, TO, SP(2023); 2020: AC, DF, GO, MG, MS, MT, PE, PR, SP; RS 2021; PA/PB/RN/AL só edição do DOE com decretos e nome no cabeçalho; AP, CE, RJ, RR sem documento verificado"
+  },
+  {
+   "id": "T7-MAYOR",
+   "label": "Prefeitos: Vitória, Recife, São Paulo, SC",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "páginas de Câmaras e DOM",
+   "evidence": "ver mayor_office_holding"
+  },
+  {
+   "id": "T7-PROV",
+   "label": "Provedores fora do QD/DOM-SC",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "sondagem de URLs; listas; PDFs mais recentes",
+   "evidence": "SIGPub 22 portais, 2195 municípios clientes; DIO/ES AMUNES 40; FAMEM/Siganet MA 20 municípios em 1 edição; SAPL em 68/300 municípios amostrados (legislação); candidatos Assomasul, DOEMPI, publicacoesmunicipais, diariomunicipios, MPX sem acervo extraído"
+  },
+  {
+   "id": "T7-UNION",
+   "label": "União nacional deduplicada (sem DF)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "P6 + SIGPub ativo + DIO-ES + FAMEM",
+   "evidence": "verificada 2699 (48.5%); com clientes sem edição recente 2885 (51.8%); sem fonte 2685"
+  },
+  {
+   "id": "T7-FED-CHAINS",
+   "label": "Cadeias federais nomeação→exercício→exoneração (DOU leiturajornal + SIAPE)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "varredura de seções do2/do2e por data; histórico SIAPE em 6 meses (2013-01, 2016-01, 2019-01, 2023-01, 2025-02, 2025-04)",
+   "evidence": "Saúde: Queiroga exonerado 2023-01-01 (DOU do2); Nísia ingresso 2023-01-01 (SIAPE 202301/202502); EXONERAR Nísia + NOMEAR Padilha no DOU Ed. 46-A Seção 2 Extra A de 2025-03-10; SIAPE 202504 Padilha ingresso 2025-03-10. Secom: Pimenta exonerado a pedido e Sidônio nomeado em 2025-01-14 (do2e). Justiça: Dino exonerado a pedido a partir de 2024-02-01 (do2e 2024-01-31); Lewandowski ingresso 2024-02-01 (SIAPE 202502)"
+  },
+  {
+   "id": "T7-SIAPE-HIST",
+   "label": "Histórico mensal SIAPE 2013–2026 disponível",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "HEAD em 8 meses + leitura de 6 snapshots",
+   "evidence": "HTTP 200 em 201301..202607; ministros por snapshot: 34 (2013-01), 28 (2016-01), 39 (2019-01), 43 (2023-01), 38 (2025-02), 38 (2025-04); linhas legadas aparecem (ex.: Queiroga ainda em 2023-01)"
+  },
+  {
+   "id": "T7-ES-CHAIN",
+   "label": "Cadeia estadual: Secretário da Saúde ES",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "varredura DIO/ES ids 9781–9815 e 11015–11060",
+   "evidence": "Decreto 005-S exonera Miguel Paulo Duarte Neto; 007-S nomeia Tyago Ribeiro Hoffmann (02.01.2025); exercício assinado até 2026-03-31; Decreto 626-S designa Gleikson Barbosa dos Santos para responder pelo cargo"
+  },
+  {
+   "id": "T7-MUN-CHAIN",
+   "label": "Cadeia municipal: secretários de Abdon Batista (DOM/SC)",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "busca em Portarias 2024–2025 + localização da portaria de nomeação por número",
+   "evidence": "Portarias 554, 555 e 556/2024 (2024-12-30) exoneram três secretários citando a portaria de nomeação (180/2023, 258/2021, 102/2023); Portaria 180/2023 localizada (ato 4591466, publicada 2023-02-24) com PDF-imagem sem texto"
+  },
+  {
+   "id": "T7-SAPL-PI",
+   "label": "SAPL estadual PI: projeto do Governador → lei",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "method": "API normajuridica?ano=2025 + materia + autoria",
+   "evidence": "449 normas de 2025, 449 com matéria vinculada (100%); amostra de 60: 37 com autoria Governador/Governo (ex.: Projeto de Lei Ordinária do Governo nº 101/2025 → Lei 8.914 de 2025-12-23, autor Rafael Tajra Fonteles)"
+  },
+  {
+   "id": "T7-SAPL-MUN",
+   "label": "SAPL municipal: prevalência e cadeia projeto do Prefeito → lei",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "DNS+API em 300 municípios amostrados; 12 instâncias detalhadas",
+   "evidence": "68/300 municípios com API SAPL no padrão sapl.<municipio>.<uf>.leg.br (22,7%); em 12 instâncias: 4 com normas de 2025 ligadas a matéria e autoria Prefeito/Executivo (Perdizes MG, Adamantina SP, Roraínópolis RR, Sete Lagoas MG), 2 com normas sem matéria, 6 sem normas de 2025"
+  },
+  {
+   "id": "T7-SIAPE-SIORG",
+   "label": "Ponte SIAPE↔SIORG",
+   "state": "VERIFIED_DATASET",
+   "result": "PARTIAL",
+   "method": "39 ministros SIAPE vs 336 unidades SIORG",
+   "evidence": "sem chave comum; nome normalizado exato 29/39; 10 sem match"
+  },
+  {
+   "id": "T7-CAB-MUN",
+   "label": "Gabinete do Prefeito: ES, RS (2024/2025), SP",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "TCE-ES 2024; TCE-RS 2025 (pagamentos); TCE-SP",
+   "evidence": "ES e RS isolam UO; TCE-SP só órgão (sem UO); ver municipal_cabinet_costs"
+  },
+  {
+   "id": "T7-CAB-STATE",
+   "label": "Gabinete do Governador: MG 2025, RS dez/2025",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "MG despesa por empenho 2025; RS despesa do estado dez/2025",
+   "evidence": "MG Gabinete Militar R$ 18,6 mi pagos; RS Casa Civil/Casa Militar/Vice no órgão \"Governo do Estado\" em dez/2025; ES, SP, RJ e PE não varridos (TCE-PE inalcançável nesta rodada)"
+  },
+  {
+   "id": "T7-MODEL",
+   "label": "Auditoria do modelo existente (leitura)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "migrations.ts; postgres-collector.ts",
+   "evidence": "ver canonical_model_audit"
+  }
+ ],
+ "consistency_audit": {
+  "df": {
+   "ibge_entries": 5571,
+   "municipalities": 5570,
+   "df_included_in_p6_union": true,
+   "p6_union_with_df": 731,
+   "p6_union_without_df": 730,
+   "pct_without_df": 13.1,
+   "executives_state_district": 27,
+   "note": "DF é ente sem prefeitura; entra apenas em \"Executivos estaduais/distrital\""
+  },
+  "portarias": {
+   "results": {
+    "nomear|Portarias": 58,
+    "exonerar|Portarias": 128,
+    "exonerar nomear|Portarias": 0,
+    "nomear exonerar|Portarias": 0,
+    "exonerar nomear|todas": 7,
+    "nomear|todas": 142,
+    "exonerar|todas": 138,
+    "*:*|Portarias": 584,
+    "nomear OR exonerar|Portarias": 584
+   },
+   "interpretation": "unidade = publicações que contêm o termo; AND implícito entre termos; OR não suportado; 0 no JSON P6 = consulta AND; 58/128 = termos isolados na mesma população (Portarias, Abdon Batista, 2024)",
+   "json_serialization_error": false
+  },
+  "dec_2013": {
+   "tipo_DEC": 628,
+   "DEC_n": 297,
+   "DEC_sn": 331,
+   "p6_cause": "filtro por <numero> removeu DEC-sn",
+   "production_decline": false,
+   "how_to_distinguish": "campo <tipo> do documento: DEC-n (numerado) e DEC-sn (sem número)"
+  },
+  "signatures": {
+   "sample": 840,
+   "p6_extracted": 803,
+   "recovered": 37,
+   "causes": {
+    "regex_nome_curto": 3,
+    "sem_marcador_independencia": 34
+   },
+   "final_pct": 100.0
+  }
+ },
+ "territorial_universe": {
+  "municipalities": 5570,
+  "df": 1,
+  "states": 26,
+  "executives_subnational": 27,
+  "note": "cobertura municipal calculada sobre 5.570; DF tratado à parte"
+ },
+ "governor_office_holding": {
+  "states": [
+   {
+    "uf": "ES",
+    "identity": {
+     "elected": "Renato Casagrande/Ricardo Ferraço (2022)",
+     "state": "VERIFIED_DATASET"
+    },
+    "swearing_in": {
+     "events": [
+      {
+       "date": "2023-01-01",
+       "who": "Casagrande e Ferraço",
+       "place": "Ales",
+       "doc": "notícia Ales (termo de posse citado)",
+       "tier": "INSTITUTIONAL_NEWS",
+       "url": "https://www.al.es.gov.br/Noticia/2022/12/43999/casagrande-toma-posse-na-ales-em-1-de-janeiro.html"
+      },
+      {
+       "date": "2026-04-02",
+       "who": "Ricardo Ferraço (governador, sucessão por renúncia de Casagrande)",
+       "place": "Ales + Palácio Anchieta",
+       "doc": "portal do governo ES (termo de posse assinado)",
+       "tier": "INSTITUTIONAL_NEWS",
+       "url": "https://www.es.gov.br/Noticia/ricardo-ferraco-toma-posse-como-governador-do-espirito-santo"
+      }
+     ],
+     "state": "VERIFIED_API"
+    },
+    "exercise": {
+     "evidence": "decreto assinado por Casagrande em 2025-10-20 (DIO/ES ed. 26.591)",
+     "state": "VERIFIED_DATASET"
+    },
+    "replacements": {
+     "note": "Ferraço assume por seis dias (título sedes.es.gov.br); datas não extraídas",
+     "state": "DOCUMENTED_ONLY"
+    },
+    "end": {
+     "note": "sucessão 2026-04-02",
+     "state": "VERIFIED_API"
+    },
+    "cycle_closed": true
+   },
+   {
+    "uf": "MG",
+    "identity": {
+     "elected": "Zema/Mateus Simões (2022)",
+     "state": "VERIFIED_DATASET"
+    },
+    "swearing_in": {
+     "events": [
+      {
+       "date": "2023-01-01",
+       "who": "Zema e Mateus Simões",
+       "doc": "ALMG: Assembleia empossa governador para o segundo mandato",
+       "tier": "INSTITUTIONAL_NEWS"
+      },
+      {
+       "date": "2026-03-22",
+       "who": "Mateus Simões (titular, renúncia de Zema)",
+       "doc": "ALMG reunião solene: declaração de bens, compromisso, termo de posse",
+       "tier": "INSTITUTIONAL_NEWS"
+      }
+     ],
+     "state": "VERIFIED_API"
+    },
+    "exercise": {
+     "evidence": "Decreto 49.025/2025 e DNE 274/2025 com ROMEU ZEMA NETO no texto (ALMG)",
+     "state": "VERIFIED_DATASET"
+    },
+    "replacements": {
+     "note": "não localizadas",
+     "state": "NOT_EVALUATED"
+    },
+    "end": {
+     "note": "renúncia a partir de 22/03/2026",
+     "state": "VERIFIED_API"
+    },
+    "cycle_closed": true
+   },
+   {
+    "uf": "RJ",
+    "identity": {
+     "elected": "Witzel/Castro (2018)",
+     "state": "VERIFIED_DATASET"
+    },
+    "swearing_in": {
+     "events": [
+      {
+       "date": "2020-08-28",
+       "who": "afastamento de Witzel por 180 dias (STJ, relator Benedito Gonçalves); Castro em exercício",
+       "doc": "STJ notícia",
+       "tier": "PRIMARY_DOCUMENT"
+      },
+      {
+       "date": "2021-04-30",
+       "who": "impeachment 10x0 (Tribunal Especial Misto)",
+       "doc": "ALERJ notícia 50487",
+       "tier": "INSTITUTIONAL_NEWS"
+      },
+      {
+       "date": "2021-05-01",
+       "who": "Castro empossado 10h Palácio Tiradentes",
+       "doc": "ALERJ notícia 50487",
+       "tier": "INSTITUTIONAL_NEWS"
+      },
+      {
+       "date": "2026-03-23",
+       "who": "Castro renuncia; TJ-RJ presidente interino (indireta prevista)",
+       "doc": "Poder360/JB",
+       "tier": "PRESS"
+      }
+     ],
+     "state": "VERIFIED_API"
+    },
+    "exercise": {
+     "evidence": "nenhum decreto assinado obtido",
+     "state": "NOT_EVALUATED"
+    },
+    "replacements": {
+     "note": "Castro governador em exercício 2020-08-28..2021-05-01",
+     "state": "VERIFIED_API"
+    },
+    "end": {
+     "note": "2026: interinidade pelo presidente do TJ, fonte só imprensa",
+     "state": "INFERRED"
+    },
+    "cycle_closed": false
+   },
+   {
+    "uf": "SP",
+    "identity": {
+     "elected": "Doria/Rodrigo Garcia (2018)",
+     "state": "VERIFIED_DATASET"
+    },
+    "swearing_in": {
+     "events": [
+      {
+       "date": "2022-04-01",
+       "who": "Rodrigo Garcia (sucessão por renúncia de Doria; Doria comunicou saída em 2022-03-31)",
+       "doc": "Alesp notícia id=436383; compromisso lido pelo presidente da Alesp",
+       "tier": "INSTITUTIONAL_NEWS",
+       "conflict": "imprensa também cita 31/03"
+      }
+     ],
+     "state": "VERIFIED_API"
+    },
+    "exercise": {
+     "evidence": "repositório Alesp de decretos disponível; nenhum decreto de governador fetchado",
+     "state": "NOT_EVALUATED"
+    },
+    "replacements": {
+     "note": "n/a",
+     "state": "NOT_EVALUATED"
+    },
+    "end": {
+     "note": "sucessão 2022-04-01",
+     "state": "VERIFIED_API"
+    },
+    "cycle_closed": false
+   },
+   {
+    "uf": "PE",
+    "identity": {
+     "elected": "Paulo Câmara/Luciana Santos (2018); Raquel Lyra (2022)",
+     "state": "VERIFIED_DATASET"
+    },
+    "swearing_in": {
+     "events": [
+      {
+       "date": "2019-01-01",
+       "who": "Paulo Câmara e Luciana Santos",
+       "doc": "Alepe: notícia + DOE PE (flip pdf)",
+       "tier": "PRIMARY_DOCUMENT"
+      },
+      {
+       "date": "2015-01-02",
+       "who": "Paulo Câmara e Raul Henry",
+       "doc": "DOE PE 02/01/2015 (flip pdf)",
+       "tier": "PRIMARY_DOCUMENT"
+      }
+     ],
+     "state": "VERIFIED_API"
+    },
+    "exercise": {
+     "evidence": "Decreto 58.019/2025 assinado por Raquel Teixeira Lyra Lucena (Alepe Legis/SEFAZ-PE)",
+     "state": "VERIFIED_DATASET"
+    },
+    "replacements": {
+     "note": "posse de Raquel Lyra 2023 não localizada nesta rodada",
+     "state": "NOT_EVALUATED"
+    },
+    "end": {
+     "note": "n/a",
+     "state": "NOT_EVALUATED"
+    },
+    "cycle_closed": false
+   }
+  ],
+  "summary": {
+   "closed_cycles": 2,
+   "partial": 3,
+   "resignations_2026_with_official_page": 10,
+   "resignations_2026": [
+    {
+     "uf": "GO",
+     "who": "Ronaldo Caiado → Daniel Vilela",
+     "date": "2026-03-31",
+     "source": "Alego (portal.al.go.leg.br/noticias/163542) e goias.gov.br",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "DF",
+     "who": "Ibaneis Rocha → Celina Leão",
+     "date": "renúncia 2026-03-28; posse 2026-03-30",
+     "source": "CLDF (cl.df.gov.br)",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "MT",
+     "who": "Mauro Mendes → Otaviano Pivetta",
+     "date": "2026-03-31",
+     "source": "ALMT (al.mt.gov.br)",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "PB",
+     "who": "João Azevêdo → Lucas Ribeiro",
+     "date": "2026-04-02",
+     "source": "A União/Governo da PB; existe também notícia de governador interino Adriano Galdino (data não extraída)",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "PA",
+     "who": "Helder Barbalho → Hana Ghassan",
+     "date": "renúncia 2026-04-02",
+     "source": "Alepa (alepa.pa.gov.br/Comunicacao/Noticia/11627)",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "AC",
+     "who": "Gladson Cameli → Mailza Assis",
+     "date": "comunicação 2026-03-24; efeito 2026-04-02",
+     "source": "Agência de Notícias do Acre",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "RR",
+     "who": "Antonio Denarium → Edilson Damião",
+     "date": "2026-03-27",
+     "source": "ALERR (al.rr.leg.br)",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "ES",
+     "who": "Renato Casagrande → Ricardo Ferraço",
+     "date": "2026-04-02",
+     "source": "portal do governo ES e Ales",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "MG",
+     "who": "Romeu Zema → Mateus Simões",
+     "date": "2026-03-22",
+     "source": "ALMG",
+     "tier": "INSTITUTIONAL_NEWS"
+    },
+    {
+     "uf": "RJ",
+     "who": "Cláudio Castro renuncia (2026-03-23); vice já vago; presidente do TJRJ interino; eleição indireta regulamentada pela Alerj",
+     "date": "2026-03-23",
+     "source": "ALERJ (Noticia 82480/83191) e TJRJ; resultado da eleição indireta não localizado",
+     "tier": "INSTITUTIONAL_NEWS"
+    }
+   ],
+   "correction": "Amazonas (Wilson Lima) não renunciou: lista de imprensa com 11 nomes estava incorreta; 10 UFs confirmadas por página institucional",
+   "ufs_with_signed_decree": [
+    "AC",
+    "AM",
+    "BA",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MG",
+    "MS",
+    "MT",
+    "PE",
+    "PI",
+    "PR",
+    "RO",
+    "RS",
+    "SC",
+    "SE",
+    "SP",
+    "TO"
+   ]
+  }
+ },
+ "mayor_office_holding": {
+  "municipalities": [
+   {
+    "municipality": "Vitória/ES",
+    "events": [
+     {
+      "date": "2026-04-04",
+      "event": "renúncia de Lorenzo Pazolini na CMV",
+      "tier": "INSTITUTIONAL_NEWS"
+     },
+     {
+      "date": "2026-04-06",
+      "event": "posse de Cris Samorini; termo de posse e sucessão definitiva",
+      "tier": "INSTITUTIONAL_NEWS",
+      "url": "https://www.cmv.es.gov.br/noticia/ler/11685/"
+     }
+    ],
+    "doc_extra": "DO Vitória 06/04/2026",
+    "cycle_closed": true,
+    "state": "VERIFIED_API"
+   },
+   {
+    "municipality": "Recife/PE",
+    "events": [
+     {
+      "date": "2026-04-02",
+      "event": "João Campos protocola renúncia",
+      "tier": "INSTITUTIONAL_NEWS"
+     },
+     {
+      "date": "2026-04-06",
+      "event": "posse de Victor Marques (vice-prefeito vago); sessão solene 15h45",
+      "tier": "INSTITUTIONAL_NEWS"
+     }
+    ],
+    "doc_extra": "DOME Recife nº 043 de 09.04.26",
+    "cycle_closed": true,
+    "state": "VERIFIED_API"
+   },
+   {
+    "municipality": "São Paulo/SP",
+    "events": [
+     {
+      "date": "2021-05-16",
+      "event": "Mesa Diretora declara extinção do mandato de Bruno Covas por morte (11h20); Ricardo Nunes já em exercício como prefeito em exercício",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2025-01-01",
+      "event": "posse de Nunes (2º mandato) e vice",
+      "tier": "INSTITUTIONAL_NEWS"
+     }
+    ],
+    "doc_extra": "nota oficial da Mesa",
+    "cycle_closed": true,
+    "state": "VERIFIED_API"
+   },
+   {
+    "municipality": "Alto Rio Novo/ES",
+    "events": [
+     {
+      "date": "2025-01-01",
+      "event": "prefeito Alexandro de Melo Valim em exercício desde 2025 (fonte secundária)",
+      "tier": "PRESS"
+     }
+    ],
+    "cycle_closed": false,
+    "state": "INFERRED",
+    "note": "sem ata/termo localizado"
+   },
+   {
+    "municipality": "Abdon Batista/SC",
+    "events": [
+     {
+      "date": "2024-12-18..2024-12-23",
+      "event": "decretos 163-168/2024 assinados por Jadir Luiz de Souza, Prefeito Municipal (PDF ICP-Brasil)",
+      "tier": "PRIMARY_DOCUMENT"
+     }
+    ],
+    "cycle_closed": false,
+    "state": "VERIFIED_DATASET",
+    "note": "exercício em 2024 provado por assinatura; posse não buscada"
+   },
+   {
+    "municipality": "Chapecó/SC",
+    "events": [
+     {
+      "date": "2024-12-19/20",
+      "event": "decretos assinados eletronicamente (SEI) por prefeito",
+      "tier": "PRIMARY_DOCUMENT"
+     }
+    ],
+    "cycle_closed": false,
+    "state": "VERIFIED_DATASET"
+   },
+   {
+    "municipality": "Belo Horizonte/MG",
+    "events": [],
+    "cycle_closed": false,
+    "state": "NOT_EVALUATED",
+    "note": "não testado"
+   },
+   {
+    "municipality": "Curitiba/PR",
+    "events": [],
+    "cycle_closed": false,
+    "state": "NOT_EVALUATED",
+    "note": "não testado"
+   },
+   {
+    "municipality": "Porto Alegre/RS",
+    "events": [],
+    "cycle_closed": false,
+    "state": "NOT_EVALUATED",
+    "note": "não testado"
+   },
+   {
+    "municipality": "Salvador/BA",
+    "events": [],
+    "cycle_closed": false,
+    "state": "NOT_EVALUATED",
+    "note": "busca devolveu cronologia contraditória (Bruno Reis); não usado"
+   }
+  ],
+  "summary": {
+   "tested": 10,
+   "closed_by_official_succession_doc": 3,
+   "exercise_by_signature": 2,
+   "not_evaluated": 4,
+   "partial": 1,
+   "suplementar_cases": {
+    "ciclos": {
+     "2012": 110,
+     "2016": 120,
+     "2020": 36,
+     "2024": 11
+    },
+    "individual_cases_documented": 0,
+    "note": "contagens TSE; nenhum caso individual com documento de vacância/interino obtido"
+   },
+   "capitals_2026": [
+    "Rio de Janeiro",
+    "Recife",
+    "Vitória",
+    "São Luís",
+    "Manaus",
+    "Boa Vista"
+   ],
+   "capitals_note": "lista parcial de imprensa (Jovem Pan); Recife e Vitória confirmadas por Câmara"
+  }
+ },
+ "succession_events": [
+  {
+   "id": "SE7-ES-2026",
+   "scope": "ES",
+   "kind": "SUCCEEDED",
+   "date": "2026-04-02",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-MG-2026",
+   "scope": "MG",
+   "kind": "SUCCEEDED",
+   "date": "2026-03-22",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-RJ-2020",
+   "scope": "RJ",
+   "kind": "ACTING",
+   "date": "2020-08-28",
+   "tier": "PRIMARY_DOCUMENT"
+  },
+  {
+   "id": "SE7-RJ-2021",
+   "scope": "RJ",
+   "kind": "REMOVED/SUCCEEDED",
+   "date": "2021-05-01",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-SP-2022",
+   "scope": "SP",
+   "kind": "SUCCEEDED",
+   "date": "2022-04-01",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-VIT-2026",
+   "scope": "Vitória",
+   "kind": "RESIGNED/SUCCEEDED",
+   "date": "2026-04-06",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-REC-2026",
+   "scope": "Recife",
+   "kind": "RESIGNED/SUCCEEDED",
+   "date": "2026-04-06",
+   "tier": "INSTITUTIONAL_NEWS"
+  },
+  {
+   "id": "SE7-SPM-2021",
+   "scope": "São Paulo (cidade)",
+   "kind": "TERM_ENDED_BY_DEATH/SUCCEEDED",
+   "date": "2021-05-16",
+   "tier": "PRIMARY_DOCUMENT"
+  }
+ ],
+ "new_gazette_providers": [
+  {
+   "id": "NGP-SIGPUB",
+   "name": "SIGPub (diariomunicipal.com.br)",
+   "tier": "VERIFIED_PUBLICATION",
+   "portals": 23,
+   "active_portals": 15,
+   "stale_portals": 6,
+   "clients_unique_ibge": 2195,
+   "active_unique_ibge": 1942,
+   "new_vs_p6": 1942,
+   "per_portal": {
+    "aam": {
+     "clients": 61,
+     "entities": 153,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 10,
+     "portarias_in_latest": 186,
+     "leis_in_latest": 5,
+     "municipios_na_edicao": 18
+    },
+    "aemerj": {
+     "clients": 10,
+     "entities": 14,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 2,
+     "portarias_in_latest": 20,
+     "leis_in_latest": 1,
+     "municipios_na_edicao": 5
+    },
+    "agm": {
+     "clients": 99,
+     "entities": 128,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 22,
+     "portarias_in_latest": 48,
+     "leis_in_latest": 3,
+     "municipios_na_edicao": 15
+    },
+    "ama": {
+     "clients": 91,
+     "entities": 108,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 3,
+     "portarias_in_latest": 18,
+     "leis_in_latest": 3,
+     "municipios_na_edicao": 59
+    },
+    "amm-mg": {
+     "clients": 465,
+     "entities": 750,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 70,
+     "portarias_in_latest": 129,
+     "leis_in_latest": 39,
+     "municipios_na_edicao": 223
+    },
+    "amm-mt": {
+     "clients": 136,
+     "entities": 167,
+     "latest_edition": "2015-03-09",
+     "decretos_in_latest": 0,
+     "portarias_in_latest": 0,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 0
+    },
+    "amp": {
+     "clients": 178,
+     "entities": 188,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 224,
+     "portarias_in_latest": 372,
+     "leis_in_latest": 74,
+     "municipios_na_edicao": 166
+    },
+    "amr": {
+     "clients": 14,
+     "entities": 32,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 1,
+     "portarias_in_latest": 8,
+     "leis_in_latest": 1,
+     "municipios_na_edicao": 12
+    },
+    "amupe": {
+     "clients": 174,
+     "entities": 193,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 28,
+     "portarias_in_latest": 73,
+     "leis_in_latest": 17,
+     "municipios_na_edicao": 51
+    },
+    "amurc": {
+     "clients": 15,
+     "entities": 16,
+     "latest_edition": "2013-05-21",
+     "decretos_in_latest": 2,
+     "portarias_in_latest": 0,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 1
+    },
+    "apm": {
+     "clients": 7,
+     "entities": 8,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 0,
+     "portarias_in_latest": 0,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 1
+    },
+    "appm": {
+     "clients": 31,
+     "entities": 34,
+     "latest_edition": "2020-02-07",
+     "decretos_in_latest": 0,
+     "portarias_in_latest": 0,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 1
+    },
+    "aprece": {
+     "clients": 108,
+     "entities": 109,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 22,
+     "portarias_in_latest": 91,
+     "leis_in_latest": 16,
+     "municipios_na_edicao": 50
+    },
+    "arom": {
+     "clients": 47,
+     "entities": 55,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 71,
+     "portarias_in_latest": 157,
+     "leis_in_latest": 8,
+     "municipios_na_edicao": 51
+    },
+    "bahia": {
+     "clients": 0,
+     "entities": 1,
+     "latest_edition": null,
+     "decretos_in_latest": null,
+     "portarias_in_latest": null,
+     "leis_in_latest": null,
+     "municipios_na_edicao": null
+    },
+    "famep": {
+     "clients": 108,
+     "entities": 206,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 5,
+     "portarias_in_latest": 339,
+     "leis_in_latest": 4,
+     "municipios_na_edicao": 67
+    },
+    "famup": {
+     "clients": 118,
+     "entities": 123,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 1,
+     "portarias_in_latest": 27,
+     "leis_in_latest": 6,
+     "municipios_na_edicao": 64
+    },
+    "famurs": {
+     "clients": 266,
+     "entities": 303,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 48,
+     "portarias_in_latest": 245,
+     "leis_in_latest": 29,
+     "municipios_na_edicao": 119
+    },
+    "femurn": {
+     "clients": 153,
+     "entities": 243,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 27,
+     "portarias_in_latest": 155,
+     "leis_in_latest": 20,
+     "municipios_na_edicao": 116
+    },
+    "fgm": {
+     "clients": 55,
+     "entities": 78,
+     "latest_edition": "2026-10-08",
+     "decretos_in_latest": 13,
+     "portarias_in_latest": 9,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 13
+    },
+    "ms": {
+     "clients": 0,
+     "entities": 59,
+     "latest_edition": "2020-10-29",
+     "decretos_in_latest": 0,
+     "portarias_in_latest": 1,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 1
+    },
+    "sergipe": {
+     "clients": 7,
+     "entities": 12,
+     "latest_edition": "2009-12-09",
+     "decretos_in_latest": 0,
+     "portarias_in_latest": 0,
+     "leis_in_latest": 0,
+     "municipios_na_edicao": 0
+    },
+    "maceio": {
+     "clients": 1,
+     "entities": 2,
+     "latest_edition": null,
+     "decretos_in_latest": null,
+     "portarias_in_latest": null,
+     "leis_in_latest": null,
+     "municipios_na_edicao": null
+    }
+   },
+   "format": "PDF assinado por edição (XML DSIG), URL em www-storage.voxtecnologia.com.br com id+data+hash; histórico desde 2009 informado pelo portal",
+   "api": "busca avançada GET devolve página sem resultados em requisição simples; endpoints de calendário retornam erro para POST simples",
+   "historical": "edições antigas existem (2009, 2013, 2015, 2020 observadas na home) mas sem enumeração reproduzível",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "NGP-DIOES",
+   "name": "DIO/ES: AMUNES + diários municipais",
+   "tier": "VERIFIED_PUBLICATION",
+   "municipalities_seen": 40,
+   "editions_scanned": 9,
+   "format": "PDF por edição; id sequencial enumerável",
+   "stable_id": "id numérico da edição",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT"
+  },
+  {
+   "id": "NGP-DOEM",
+   "name": "DOEM/IBDM",
+   "tier": "PROVIDER_CLIENT",
+   "note": "verificação de bot; bloqueado",
+   "state": "BLOCKED",
+   "feas": "BLOCKED"
+  },
+  {
+   "id": "NGP-DIOENET",
+   "name": "DIOENET",
+   "tier": "DOCUMENTED_CONNECTOR",
+   "note": "site responde; QD tem 4 spiders; sem lista de clientes obtida",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "DISCOVERY_ONLY"
+  },
+  {
+   "id": "NGP-IOMAT",
+   "name": "IOMAT (Imprensa Oficial MT)",
+   "tier": "VERIFIED_PUBLICATION",
+   "note": "DOE estadual MT, decretos com governador; não agrega municípios (AMM-MT no SIGPub está desatualizado: última edição na home 2015-03-09)",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "NGP-FAMEM",
+   "name": "FAMEM / Siganet (MA)",
+   "tier": "VERIFIED_PUBLICATION",
+   "latest": "edição 3955 de 2026-10-09",
+   "municipios_na_edicao": 20,
+   "decretos": 14,
+   "portarias": 84,
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "NGP-SAPL",
+   "name": "SAPL Interlegis (legislação municipal e estadual)",
+   "tier": "VERIFIED_PUBLICATION",
+   "prevalence": "68/300",
+   "note": "não é diário; entrega leis, matérias e autoria por API",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT"
+  },
+  {
+   "id": "NGP-CANDIDATES",
+   "name": "Assomasul (diariooficialms.com.br), DOEMPI (doempi.org), publicacoesmunicipais.com.br, diariomunicipios.com.br, MPX",
+   "tier": "PROVIDER_CLIENT",
+   "state": "DOCUMENTED_ONLY",
+   "feas": "DISCOVERY_ONLY",
+   "note": "localizados; sem lista de clientes nem edição extraída"
+  }
+ ],
+ "municipal_coverage": {
+  "denominator": 5570,
+  "df_excluded": true,
+  "p6_union": 730,
+  "sigpub_active": 1942,
+  "dioes": 40,
+  "union_verified": 2699,
+  "union_verified_pct": 48.5,
+  "union_with_unverified_clients": 2885,
+  "union_all_pct": 51.8,
+  "without_source": 2685,
+  "per_uf": [
+   {
+    "uf": "AC",
+    "verified": 0,
+    "with_clients": 0,
+    "total": 22
+   },
+   {
+    "uf": "AL",
+    "verified": 92,
+    "with_clients": 92,
+    "total": 102
+   },
+   {
+    "uf": "AM",
+    "verified": 62,
+    "with_clients": 62,
+    "total": 62
+   },
+   {
+    "uf": "AP",
+    "verified": 3,
+    "with_clients": 3,
+    "total": 16
+   },
+   {
+    "uf": "BA",
+    "verified": 72,
+    "with_clients": 84,
+    "total": 417
+   },
+   {
+    "uf": "CE",
+    "verified": 116,
+    "with_clients": 116,
+    "total": 184
+   },
+   {
+    "uf": "ES",
+    "verified": 41,
+    "with_clients": 41,
+    "total": 78
+   },
+   {
+    "uf": "GO",
+    "verified": 151,
+    "with_clients": 151,
+    "total": 246
+   },
+   {
+    "uf": "MA",
+    "verified": 47,
+    "with_clients": 47,
+    "total": 217
+   },
+   {
+    "uf": "MG",
+    "verified": 479,
+    "with_clients": 479,
+    "total": 853
+   },
+   {
+    "uf": "MS",
+    "verified": 10,
+    "with_clients": 10,
+    "total": 79
+   },
+   {
+    "uf": "MT",
+    "verified": 3,
+    "with_clients": 136,
+    "total": 142
+   },
+   {
+    "uf": "PA",
+    "verified": 111,
+    "with_clients": 111,
+    "total": 144
+   },
+   {
+    "uf": "PB",
+    "verified": 125,
+    "with_clients": 125,
+    "total": 223
+   },
+   {
+    "uf": "PE",
+    "verified": 178,
+    "with_clients": 178,
+    "total": 185
+   },
+   {
+    "uf": "PI",
+    "verified": 1,
+    "with_clients": 32,
+    "total": 224
+   },
+   {
+    "uf": "PR",
+    "verified": 202,
+    "with_clients": 202,
+    "total": 399
+   },
+   {
+    "uf": "RJ",
+    "verified": 41,
+    "with_clients": 41,
+    "total": 92
+   },
+   {
+    "uf": "RN",
+    "verified": 156,
+    "with_clients": 156,
+    "total": 167
+   },
+   {
+    "uf": "RO",
+    "verified": 47,
+    "with_clients": 47,
+    "total": 52
+   },
+   {
+    "uf": "RR",
+    "verified": 14,
+    "with_clients": 14,
+    "total": 15
+   },
+   {
+    "uf": "RS",
+    "verified": 284,
+    "with_clients": 284,
+    "total": 497
+   },
+   {
+    "uf": "SC",
+    "verified": 293,
+    "with_clients": 293,
+    "total": 295
+   },
+   {
+    "uf": "SE",
+    "verified": 29,
+    "with_clients": 33,
+    "total": 75
+   },
+   {
+    "uf": "SP",
+    "verified": 116,
+    "with_clients": 122,
+    "total": 645
+   },
+   {
+    "uf": "TO",
+    "verified": 26,
+    "with_clients": 26,
+    "total": 139
+   }
+  ],
+  "greedy_adapters": [
+   [
+    1,
+    "SIGPub (portais ativos)",
+    1942
+   ],
+   [
+    2,
+    "DOM/SC",
+    2235
+   ],
+   [
+    3,
+    "BaseInstarSpider",
+    2339
+   ],
+   [
+    4,
+    "BaseDoemSpider",
+    2395
+   ],
+   [
+    5,
+    "DIO-ES/AMUNES",
+    2435
+   ],
+   [
+    6,
+    "BaseDospSpider",
+    2475
+   ],
+   [
+    7,
+    "BaseMunicipioOnlineSpider",
+    2501
+   ],
+   [
+    8,
+    "BaseAdiariosV1Spider",
+    2524
+   ],
+   [
+    9,
+    "FAMEM/Siganet-MA",
+    2544
+   ],
+   [
+    10,
+    "BaseAtendeV2Spider",
+    2563
+   ],
+   [
+    11,
+    "BaseDiofSpider",
+    2581
+   ],
+   [
+    12,
+    "BaseBarcoDigitalSpider",
+    2593
+   ],
+   [
+    13,
+    "BaseDiarioOficialBRSpider",
+    2603
+   ],
+   [
+    14,
+    "BaseSiganetSpider",
+    2612
+   ],
+   [
+    15,
+    "BaseAdiariosV2Spider",
+    2617
+   ],
+   [
+    16,
+    "BaseModernizacaoSpider",
+    2622
+   ],
+   [
+    17,
+    "BaseAplusSpider",
+    2626
+   ],
+   [
+    18,
+    "BaseDioenetSpider",
+    2630
+   ],
+   [
+    19,
+    "BaseDionetSpider",
+    2633
+   ],
+   [
+    20,
+    "BaseAdministracaoPublicaSpider",
+    2636
+   ]
+  ],
+  "by_document_type": "não medido por município (apenas em uma edição por portal)",
+  "definitions": [
+   "PROVIDER_CLIENT",
+   "DOCUMENTED_CONNECTOR",
+   "VERIFIED_PUBLICATION",
+   "VERIFIED_DECREE",
+   "VERIFIED_HISTORICAL_SERIES",
+   "OPERATIONAL_COLLECTION_POSSIBLE"
+  ],
+  "level_counts": {
+   "PROVIDER_CLIENT": 2885,
+   "VERIFIED_PUBLICATION_portal_level": 2699,
+   "VERIFIED_DECREE_municipality_level": 4,
+   "VERIFIED_HISTORICAL_SERIES": 1,
+   "OPERATIONAL_COLLECTION_POSSIBLE": "DOM/SC e DIO/ES apenas"
+  },
+  "famem": 20
+ },
+ "provider_overlap": {
+  "sigpub_x_p6": 46,
+  "sigpub_new": 2149,
+  "exclusive_by_portal": {
+   "aam": 61,
+   "aemerj": 10,
+   "agm": 94,
+   "ama": 91,
+   "amm-mg": 465,
+   "amm-mt": 136,
+   "amp": 178,
+   "amr": 14,
+   "amupe": 174,
+   "amurc": 15,
+   "apm": 7,
+   "appm": 31,
+   "aprece": 108,
+   "arom": 47,
+   "famep": 108,
+   "famup": 118,
+   "famurs": 266,
+   "femurn": 153,
+   "fgm": 50,
+   "sergipe": 7,
+   "ms": 56,
+   "maceio": 1
+  },
+  "note": "GO: AGM e FGM sobrepõem em 5; demais portais disjuntos"
+ },
+ "state_normative_coverage": [
+  {
+   "uf": "AC",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "decretos 6.835/2020 e 11.628/2025: Gladson de Lima Cameli, Governador",
+   "has_2020": true
+  },
+  {
+   "uf": "AM",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 51.978/2025: Wilson Miranda Lima",
+   "has_2020": false
+  },
+  {
+   "uf": "BA",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 23.362/2025 (PDF SEFAZ): Jerônimo Rodrigues; LegislaBahia HTML sem nome",
+   "has_2020": false
+  },
+  {
+   "uf": "DF",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "decretos 40.708/2020 e 46.742/2025: Ibaneis Rocha; republicação marcada",
+   "has_2020": true
+  },
+  {
+   "uf": "ES",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "DIO/ES: decretos -S assinados Casagrande",
+   "has_2020": false
+  },
+  {
+   "uf": "GO",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "decretos 9.705/2020 e 10.639/2025: Caiado",
+   "has_2020": true
+  },
+  {
+   "uf": "MA",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 40.801/2025: Carlos Brandão",
+   "has_2020": false
+  },
+  {
+   "uf": "MG",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "DEC 47.925/2020 e 49.025/2025 (ALMG): Zema Neto; DNE",
+   "has_2020": true
+  },
+  {
+   "uf": "MS",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "decretos 15.486/2020 e 16.588/2025: Azambuja / Riedel",
+   "has_2020": true
+  },
+  {
+   "uf": "MT",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "DOE 2020-04-03 e decreto 1.691/2025: Mauro Mendes",
+   "has_2020": true
+  },
+  {
+   "uf": "PE",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2025",
+   "evidence": "decretos 49.055/2020 e 58.019/2025: Paulo Câmara / Raquel Lyra",
+   "has_2020": true
+  },
+  {
+   "uf": "PI",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 23.699/2025: Rafael Tajra Fonteles; SAPL liga lei a projeto",
+   "has_2020": false
+  },
+  {
+   "uf": "PR",
+   "tier": "VERIFIED_DOC",
+   "years": "2020",
+   "evidence": "decreto 4.569/2020 (DOE 10677): Ratinho Junior",
+   "has_2020": true
+  },
+  {
+   "uf": "RO",
+   "tier": "VERIFIED_DOC",
+   "years": "2026",
+   "evidence": "decreto 31.210/2026: Marcos José Rocha dos Santos (assinatura eletrônica)",
+   "has_2020": false
+  },
+  {
+   "uf": "RS",
+   "tier": "VERIFIED_DOC",
+   "years": "2021",
+   "evidence": "decreto 56.199/2021: Eduardo Leite",
+   "has_2020": false
+  },
+  {
+   "uf": "SC",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 1.303/2025 (leis.alesc.sc.gov.br/ato-normativo/53548): Jorginho Mello",
+   "has_2020": false
+  },
+  {
+   "uf": "SE",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "decreto 1.267/2025: Fábio Mitidieri",
+   "has_2020": false
+  },
+  {
+   "uf": "SP",
+   "tier": "VERIFIED_DOC",
+   "years": "2020+2023",
+   "evidence": "decretos 65.051/2020 e 67.634/2023 (repositório Alesp): Doria / Tarcísio",
+   "has_2020": true
+  },
+  {
+   "uf": "TO",
+   "tier": "VERIFIED_DOC",
+   "years": "2025",
+   "evidence": "DOE 2025-03-07: Wanderlei Barbosa Castro",
+   "has_2020": false
+  },
+  {
+   "uf": "PA",
+   "tier": "DOE_LEVEL",
+   "years": "2025",
+   "evidence": "DOE 2025-12-01 (98 decretos): Helder Zahluth Barbalho no cabeçalho; assinatura por decreto não extraída",
+   "has_2020": false
+  },
+  {
+   "uf": "PB",
+   "tier": "DOE_LEVEL",
+   "years": "2025",
+   "evidence": "DOE 2025-12-24 (66 decretos): Governador João Azevêdo Lins Filho",
+   "has_2020": false
+  },
+  {
+   "uf": "RN",
+   "tier": "DOE_LEVEL",
+   "years": "2025",
+   "evidence": "DOE 2025-04-09 (30 decretos): Fátima Bezerra no cabeçalho",
+   "has_2020": false
+  },
+  {
+   "uf": "AL",
+   "tier": "DOE_LEVEL",
+   "years": "2025",
+   "evidence": "DOE AL (viewPdf/51533): Paulo Dantas citado; assinatura não isolada",
+   "has_2020": false
+  },
+  {
+   "uf": "CE",
+   "tier": "LEAD",
+   "years": "-",
+   "evidence": "decretos 36.xxx/2025 em seplag.ce.gov.br; URL testada devolveu 404",
+   "has_2020": false
+  },
+  {
+   "uf": "AP",
+   "tier": "LEAD",
+   "years": "-",
+   "evidence": "DOE 8555 baixado; nome não localizado no texto extraído",
+   "has_2020": false
+  },
+  {
+   "uf": "RJ",
+   "tier": "NOT_TESTED",
+   "years": "-",
+   "evidence": "portal candidato 404; sem documento",
+   "has_2020": false
+  },
+  {
+   "uf": "RR",
+   "tier": "NOT_TESTED",
+   "years": "-",
+   "evidence": "ALERR e portal alcançáveis; decreto não fetchado",
+   "has_2020": false
+  }
+ ],
+ "signatories": {
+  "state": [
+   {
+    "uf": "AC",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "AM",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "BA",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "DF",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "ES",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "GO",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "MA",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "MG",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "MS",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "MT",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "PE",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2025"
+   },
+   {
+    "uf": "PI",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "PR",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020"
+   },
+   {
+    "uf": "RO",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2026"
+   },
+   {
+    "uf": "RS",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2021"
+   },
+   {
+    "uf": "SC",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "SE",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "SP",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2020+2023"
+   },
+   {
+    "uf": "TO",
+    "named_signatory": true,
+    "tier": "VERIFIED_DOC",
+    "years": "2025"
+   },
+   {
+    "uf": "PA",
+    "named_signatory": false,
+    "tier": "DOE_LEVEL",
+    "years": "2025"
+   },
+   {
+    "uf": "PB",
+    "named_signatory": false,
+    "tier": "DOE_LEVEL",
+    "years": "2025"
+   },
+   {
+    "uf": "RN",
+    "named_signatory": false,
+    "tier": "DOE_LEVEL",
+    "years": "2025"
+   },
+   {
+    "uf": "AL",
+    "named_signatory": false,
+    "tier": "DOE_LEVEL",
+    "years": "2025"
+   },
+   {
+    "uf": "CE",
+    "named_signatory": false,
+    "tier": "LEAD",
+    "years": "-"
+   },
+   {
+    "uf": "AP",
+    "named_signatory": false,
+    "tier": "LEAD",
+    "years": "-"
+   },
+   {
+    "uf": "RJ",
+    "named_signatory": false,
+    "tier": "NOT_TESTED",
+    "years": "-"
+   },
+   {
+    "uf": "RR",
+    "named_signatory": false,
+    "tier": "NOT_TESTED",
+    "years": "-"
+   }
+  ],
+  "municipal": {
+   "pdf": {
+    "sample": 9,
+    "extracted": 9,
+    "municipalities": [
+     "Abdon Batista",
+     "Chapecó"
+    ]
+   },
+   "page": {
+    "sample": 40,
+    "with_person": 10
+   },
+   "note": "P6; sem ampliação nesta rodada"
+  },
+  "classes": [
+   "SIGNED_BY_PERSON",
+   "ISSUED_BY_AUTHORITY",
+   "INSTITUTIONAL_EXECUTIVE_ACT",
+   "PUBLISHED_DURING_TERM",
+   "UNRESOLVED",
+   "CONFLICT"
+  ]
+ },
+ "federal_appointments": {
+  "chains": [
+   {
+    "id": "CH7-FED-SAUDE",
+    "office": "Ministro de Estado da Saúde",
+    "events": [
+     {
+      "date": "2021-03-23",
+      "event": "Queiroga ingressa (SIAPE 202301)",
+      "tier": "PRIMARY_DATASET"
+     },
+     {
+      "date": "2023-01-01",
+      "event": "EXONERAR Marcelo Queiroga (DOU seção 2, 01/01/2023)",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2023-01-01",
+      "event": "Nísia Trindade: ingresso no SIAPE e contrassinatura de decreto de 01/01/2023 (decreto próprio de nomeação não localizado)",
+      "tier": "PRIMARY_DATASET"
+     },
+     {
+      "date": "2025-03-10",
+      "event": "EXONERAR Nísia Verônica Trindade Lima e NOMEAR Alexandre Rocha Santos Padilha (DOU Ed. 46-A, Seção 2 Extra A)",
+      "tier": "PRIMARY_DOCUMENT",
+      "url": "decretos-de-10-de-marco-de-2025-616753152"
+     },
+     {
+      "date": "2025-03-10",
+      "event": "Padilha: ingresso 10/03/2025, diploma DECRETO (SIAPE 202504)",
+      "tier": "PRIMARY_DATASET"
+     }
+    ],
+    "closed": "saída de Nísia e entrada de Padilha fechadas por DOU; entrada de Nísia por SIAPE",
+    "state": "VERIFIED_DATASET"
+   },
+   {
+    "id": "CH7-FED-SECOM",
+    "office": "Ministro da Secretaria de Comunicação Social",
+    "events": [
+     {
+      "date": "2025-01-14",
+      "event": "EXONERAR, a pedido, Paulo Roberto Severo Pimenta",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2025-01-14",
+      "event": "NOMEAR Sidônio Cardoso Palmeira",
+      "tier": "PRIMARY_DOCUMENT"
+     }
+    ],
+    "closed": "saída e entrada fechadas na mesma edição extra (do2e 14-01-2025)",
+    "state": "VERIFIED_API"
+   },
+   {
+    "id": "CH7-FED-JUSTICA",
+    "office": "Ministro da Justiça e Segurança Pública",
+    "events": [
+     {
+      "date": "2023-01-01",
+      "event": "Flávio Dino ingresso (SIAPE 202301)",
+      "tier": "PRIMARY_DATASET"
+     },
+     {
+      "date": "2024-02-01",
+      "event": "EXONERAR, a pedido, a partir de 01/02/2024, Flávio Dino (DOU do2e de 31/01/2024)",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2024-02-01",
+      "event": "Enrique Ricardo Lewandowski ingresso (SIAPE 202502), diploma DECRETO; decreto de nomeação não localizado na varredura",
+      "tier": "PRIMARY_DATASET"
+     }
+    ],
+    "closed": "saída por DOU, entrada por SIAPE",
+    "state": "VERIFIED_DATASET"
+   }
+  ],
+  "chains_closed": 3,
+  "method": "leiturajornal por data (seções do2/do2e) filtrando órgão \"Atos do Poder Executivo\" e artType \"Decreto de Pessoal\"; SIAPE mensal do host CGU",
+  "siape_hist": {
+   "201301": 34,
+   "201601": 28,
+   "201901": 39,
+   "202301": 43,
+   "202502": 38,
+   "202504": 38
+  },
+  "inlabs": "não necessário para estes casos; continua sem cadastro",
+  "state": "VERIFIED_DATASET"
+ },
+ "state_appointments": {
+  "chains": [
+   {
+    "id": "CH7-ES-SAUDE",
+    "uf": "ES",
+    "office": "Secretário de Estado da Saúde",
+    "events": [
+     {
+      "date": "2024-11-01",
+      "event": "exercício: Miguel Paulo Duarte Neto assina convênio como Secretário",
+      "doc": "DIO/ES ed. 2025-01-02 (id 9781)",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2025-01-02",
+      "event": "Decreto 005-S: exonera Miguel Paulo Duarte Neto",
+      "doc": "DIO/ES ed. 26.391 (id 9786), publ. 2025-01-03",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2025-01-02",
+      "event": "Decreto 007-S: nomeia Tyago Ribeiro Hoffmann",
+      "doc": "DIO/ES ed. 26.391 (id 9786)",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2025-01-07",
+      "event": "exercício: Hoffmann presidente nato de órgão colegiado",
+      "doc": "DIO/ES id 9793",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2026-03-31",
+      "event": "último ato localizado assinado como Secretário (03/04/2026 edições)",
+      "doc": "DIO/ES ids 11018, 11030, 11047",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2026-03-31",
+      "event": "Decreto 626-S: designa Gleikson Barbosa dos Santos para responder pelo cargo",
+      "doc": "DIO/ES id 11021 (2026-04-01)",
+      "tier": "PRIMARY_DOCUMENT"
+     }
+    ],
+    "gaps": [
+     "decreto de saída de Hoffmann não localizado",
+     "nomeação de Miguel Duarte (2023) não buscada"
+    ],
+    "closed": "entrada+saída do antecessor e entrada do sucessor; saída do sucessor parcial"
+   }
+  ],
+  "chains_closed": 1,
+  "note": "MG DNE e SP DOE não testados; RS: Portal do Estado publica \"decreto-atos-do-governador\"",
+  "state": "VERIFIED_DATASET"
+ },
+ "municipal_appointments": {
+  "chains": [
+   {
+    "id": "CH7-MUN-ABDON",
+    "municipality": "Abdon Batista/SC",
+    "events": [
+     {
+      "date": "2023-02-24",
+      "event": "Portaria 180/2023 (nomeação de Saimon Eduardo Mancheim, Secretário de Agricultura e Meio Ambiente): ato DOM/SC 4591466; PDF é imagem",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2024-12-30",
+      "event": "Portaria 554/2024 exonera Saimon Mancheim \"nomeado através da Portaria nº 180/2023\"",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2024-12-30",
+      "event": "Portaria 555/2024 exonera Telmo José Gerent (Secretário de Cultura e Turismo; Portaria 258/2021)",
+      "tier": "PRIMARY_DOCUMENT"
+     },
+     {
+      "date": "2024-12-30",
+      "event": "Portaria 556/2024 exonera Valdir Santos de Lis (Secretário de Esportes; Portaria 102/2023)",
+      "tier": "PRIMARY_DOCUMENT"
+     }
+    ],
+    "closed": "1 nomeação localizada + 3 exonerações com referência explícita; exercício não medido; texto da nomeação não legível por máquina",
+    "state": "VERIFIED_API"
+   }
+  ],
+  "chains_closed": 0,
+  "chains_partial": 1,
+  "transition_context": "o fim de ciclo (30/12/2024) coincide com a troca de gestão de 2025",
+  "evidence": [
+   {
+    "source": "S7-DIOES",
+    "note": "Serra: cabeçalho de cada edição lista Prefeito e SECRETARIADO MUNICIPAL"
+   }
+  ],
+  "state": "VERIFIED_API"
+ },
+ "siape_siorg_identity": {
+  "siape_fields": [
+   "COD_ORG_EXERCICIO",
+   "COD_UORG_EXERCICIO",
+   "ORG_EXERCICIO",
+   "DATA_INGRESSO_CARGOFUNCAO",
+   "DIPLOMA_INGRESSO_CARGOFUNCAO"
+  ],
+  "siorg_fields_absent": [
+   "codigo SIAFI",
+   "codigo SIAPE"
+  ],
+  "exact_name_match": 29,
+  "total": 39,
+  "unmatched": 10,
+  "unmatched_examples": [
+   "MIN DA INTEG E DO DESENV REGIONAL",
+   "MIN GESTAO E INOV EM SERV PUBLICOS",
+   "MINISTERIO DO MEIO AMBIENTE",
+   "Ministério da Ciência, Tecnologia, Inovações e Comunicações"
+  ],
+  "rule": "nome normalizado não é identidade; exigir tabela de equivalência SIAFI<->SIORG versionada",
+  "state": "VERIFIED_DATASET",
+  "history": {
+   "host": "S7-CGU-SIAPE",
+   "months_checked": {
+    "201301": 34,
+    "201601": 28,
+    "201901": 39,
+    "202301": 43,
+    "202502": 38,
+    "202504": 38
+   },
+   "note": "SIAPE traz diploma e ingresso por cargo; resolve \"quem\" com data; SIORG resolve \"onde\"; falta a ponte de código"
+  }
+ },
+ "government_structures": {
+  "federal": {
+   "source": "S7-SIORG",
+   "units": 336,
+   "versions": "versaoConsulta/dataInicialVersaoConsulta",
+   "occupant": false,
+   "state": "VERIFIED_API"
+  },
+  "state_municipal": "ES municipal: UO \"Gabinete do Prefeito\" varia por município (ver custos); estadual não avaliado",
+  "state": "NOT_EVALUATED"
+ },
+ "executive_legislative_links": {
+  "federal": "P6: veto→lei 86%",
+  "state": {
+   "PI": {
+    "normas_2025": 449,
+    "with_materia": 449,
+    "executive_sample": "37/60",
+    "example": "PL Ordinária do Governo nº 101/2025 → Lei 8.914/2025",
+    "author_is_person": true
+   },
+   "other_states": "não testados",
+   "state": "VERIFIED_API"
+  },
+  "municipal": {
+   "sapl_prevalence": "68/300 amostrados (22.7%)",
+   "detailed": {
+    "sapl.chaval.ce.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.perdizes.mg.leg.br": {
+     "normas2025": 112,
+     "pagina": 50,
+     "com_materia": 36,
+     "amostra_autoria": 15,
+     "autoria_executivo": 10,
+     "ex_amostra": [
+      [
+       "Lei Ordinária nº 2.455, de 22 de dezembro de 2025",
+       [
+        "Poder Executivo - Prefeito"
+       ]
+      ],
+      [
+       "Lei Ordinária nº 2.454, de 22 de dezembro de 2025",
+       [
+        "Poder Executivo - Prefeito"
+       ]
+      ]
+     ]
+    },
+    "sapl.santaisabeldorionegro.am.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.patobragado.pr.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.congonhal.mg.leg.br": {
+     "normas2025": 72,
+     "pagina": 50,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.novaesperancadosudoeste.pr.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.alcobaca.ba.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.adamantina.sp.leg.br": {
+     "normas2025": 96,
+     "pagina": 50,
+     "com_materia": 49,
+     "amostra_autoria": 15,
+     "autoria_executivo": 13,
+     "ex_amostra": [
+      [
+       "Lei Complementar nº 470, de 22 de dezembro de 2025",
+       [
+        "Prefeito do Município - Prefeito"
+       ]
+      ],
+      [
+       "Lei Complementar nº 469, de 22 de dezembro de 2025",
+       [
+        "Prefeito do Município - Prefeito"
+       ]
+      ]
+     ]
+    },
+    "sapl.rorainopolis.rr.leg.br": {
+     "normas2025": 47,
+     "pagina": 47,
+     "com_materia": 36,
+     "amostra_autoria": 15,
+     "autoria_executivo": 7,
+     "ex_amostra": [
+      [
+       "Lei Ordinária nº 545, de 18 de dezembro de 2025",
+       [
+        "Alessandro Daltro Sousa - Prefeito"
+       ]
+      ],
+      [
+       "Lei Ordinária nº 544, de 17 de dezembro de 2025",
+       [
+        "Alessandro Daltro Sousa - Prefeito"
+       ]
+      ]
+     ]
+    },
+    "sapl.maracas.ba.leg.br": {
+     "normas2025": 76,
+     "pagina": 50,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.itaguara.mg.leg.br": {
+     "normas2025": 0,
+     "pagina": 0,
+     "com_materia": 0,
+     "amostra_autoria": 0,
+     "autoria_executivo": 0,
+     "ex_amostra": []
+    },
+    "sapl.setelagoas.mg.leg.br": {
+     "normas2025": 230,
+     "pagina": 50,
+     "com_materia": 41,
+     "amostra_autoria": 15,
+     "autoria_executivo": 1,
+     "ex_amostra": [
+      [
+       "Lei  nº 10.279, de 23 de julho de 2025",
+       [
+        "CHEFE DO PODER EXECUTIVO  - PREFEITO"
+       ]
+      ]
+     ]
+    }
+   },
+   "chain_usable_instances": "4/12",
+   "recife": "SAPL legado com PLE (Projeto de Lei do Executivo) autor Prefeito (publico.recife.pe.leg.br)",
+   "vetoes": "não medidos",
+   "state": "VERIFIED_API"
+  },
+  "caveat": "autoria vem como pessoa (Prefeito/Governador) no SAPL, o que não vale para a autoria institucional federal; tratar como INITIATIVE_BY_OFFICEHOLDER, não como responsabilidade pessoal por si só"
+ },
+ "municipal_cabinet_costs": {
+  "ES": {
+   "source": "S7-TCE-ES",
+   "year": 2024,
+   "units": [
+    {
+     "mun": "ALTO RIO NOVO",
+     "orgao": "GABINETE DO PREFEITO",
+     "uo": "FUNDO MUNICIPAL DE PROTEÇÃO DEFESA CIVIL - FUNMPDEC",
+     "cod_uo": "011002",
+     "valores": {
+      "empenhada": 0.0,
+      "liquidada": 0.0,
+      "paga": 0.0
+     },
+     "grupos": {
+      "INVESTIMENTOS": 0.0,
+      "OUTRAS DESPESAS CORRENTES": 0.0
+     },
+     "ug": [
+      "Prefeitura Municipal de Alto Rio Novo"
+     ]
+    },
+    {
+     "mun": "ALTO RIO NOVO",
+     "orgao": "GABINETE DO PREFEITO",
+     "uo": "GABINETE DO PREFEITO",
+     "cod_uo": "011001",
+     "valores": {
+      "empenhada": 466842.98,
+      "liquidada": 459115.03,
+      "paga": 459115.03
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 114727.9,
+      "PESSOAL E ENCARGOS SOCIAIS": 344387.13,
+      "INVESTIMENTOS": 0.0
+     },
+     "ug": [
+      "Prefeitura Municipal de Alto Rio Novo"
+     ]
+    },
+    {
+     "mun": "CARIACICA",
+     "orgao": "SECRETARIA MUNICIPAL DE GOVERNO E RECURSOS HUMANOS",
+     "uo": "SECRETARIA MUNICIPAL DE GOVERNO E RECURSOS HUMANOS",
+     "cod_uo": "020100",
+     "valores": {
+      "empenhada": 22119848.21,
+      "liquidada": 21220287.5,
+      "paga": 21122772.03
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 17047908.45,
+      "INVESTIMENTOS": 1818.18,
+      "PESSOAL E ENCARGOS SOCIAIS": 4073045.4
+     },
+     "ug": [
+      "SECRETARIA MUNICIPAL DE GOVERNO"
+     ]
+    },
+    {
+     "mun": "CARIACICA",
+     "orgao": "SECRETARIA MUNICIPAL DE HABITACAO",
+     "uo": "GABINETE DO PREFEITO",
+     "cod_uo": "350100",
+     "valores": {
+      "empenhada": 16926397.32,
+      "liquidada": 12349443.95,
+      "paga": 12265865.85
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 6576765.73,
+      "INVESTIMENTOS": 8970.0,
+      "PESSOAL E ENCARGOS SOCIAIS": 5680130.12
+     },
+     "ug": [
+      "Gabinete do Prefeito de Cariacica"
+     ]
+    },
+    {
+     "mun": "LINHARES",
+     "orgao": "Gabinete do Prefeito",
+     "uo": "Controladoria Geral do Municipio",
+     "cod_uo": "03",
+     "valores": {
+      "empenhada": 570721.75,
+      "liquidada": 570721.75,
+      "paga": 565189.67
+     },
+     "grupos": {
+      "PESSOAL E ENCARGOS SOCIAIS": 555209.37,
+      "INVESTIMENTOS": 0.0,
+      "OUTRAS DESPESAS CORRENTES": 9980.3
+     },
+     "ug": [
+      "Gabinete do Prefeito de Linhares"
+     ]
+    },
+    {
+     "mun": "LINHARES",
+     "orgao": "Gabinete do Prefeito",
+     "uo": "Gabinete do Prefeito",
+     "cod_uo": "01",
+     "valores": {
+      "empenhada": 3234800.2,
+      "liquidada": 3234800.2,
+      "paga": 3220241.52
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 1634655.27,
+      "INVESTIMENTOS": 143.53,
+      "PESSOAL E ENCARGOS SOCIAIS": 1585442.72
+     },
+     "ug": [
+      "Gabinete do Prefeito de Linhares"
+     ]
+    },
+    {
+     "mun": "LINHARES",
+     "orgao": "Gabinete do Prefeito",
+     "uo": "Ouvidoria Geral do Município",
+     "cod_uo": "04",
+     "valores": {
+      "empenhada": 159549.76,
+      "liquidada": 159549.76,
+      "paga": 157722.43
+     },
+     "grupos": {
+      "PESSOAL E ENCARGOS SOCIAIS": 144446.84,
+      "OUTRAS DESPESAS CORRENTES": 13275.59,
+      "INVESTIMENTOS": 0.0
+     },
+     "ug": [
+      "Gabinete do Prefeito de Linhares"
+     ]
+    },
+    {
+     "mun": "SERRA",
+     "orgao": "COORDENADORIA DE GOVERNO",
+     "uo": "Coordenadoria de Governo",
+     "cod_uo": "020100",
+     "valores": {
+      "empenhada": 11234919.43,
+      "liquidada": 10219007.6,
+      "paga": 10202957.7
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 4978635.43,
+      "INVESTIMENTOS": 15466.95,
+      "PESSOAL E ENCARGOS SOCIAIS": 5208855.32
+     },
+     "ug": [
+      "Coordenadoria de Governo de Serra"
+     ]
+    },
+    {
+     "mun": "VITORIA",
+     "orgao": "SECRETARIA DE GOVERNO",
+     "uo": "SECRETARIA DE GOVERNO",
+     "cod_uo": "100100",
+     "valores": {
+      "empenhada": 24411729.83,
+      "liquidada": 18175294.63,
+      "paga": 17830266.06
+     },
+     "grupos": {
+      "OUTRAS DESPESAS CORRENTES": 9445973.0,
+      "INVESTIMENTOS": 133593.17,
+      "PESSOAL E ENCARGOS SOCIAIS": 8250699.89
+     },
+     "ug": [
+      "Secretaria Municipal de Governo de Vitória"
+     ]
+    }
+   ],
+   "total_paid_municipality": {
+    "CARIACICA": 1570201752.26,
+    "LINHARES": 1210586331.27,
+    "SERRA": 3128508921.27,
+    "VILA VELHA": 2019779142.68,
+    "VITORIA": 3054578156.47,
+    "ALTO RIO NOVO": 48622589.05
+   },
+   "layers_found": {
+    "ALTO_RIO_NOVO": "órgão=UO Gabinete do Prefeito (011001): paga R$ 459.115 de R$ 48,6 mi (0,94%); pessoal R$ 344.387",
+    "LINHARES": "órgão Gabinete do Prefeito contém UOs Gabinete (3,22 mi pago), Controladoria (0,57 mi), Ouvidoria (0,16 mi): somar só a UO Gabinete evita misturar controles",
+    "CARIACICA": "UO \"Gabinete do Prefeito\" (350100) aparece sob órgão Secretaria Municipal de Habitação (12,27 mi pago): ambiguidade de código/nome",
+    "SERRA": "Coordenadoria de Governo (10,2 mi pago)",
+    "VITORIA": "sem UO Gabinete; Secretaria de Governo (17,8 mi pago)"
+   },
+   "conclusion": "nome não identifica o perímetro; é necessário mapa por município (UO->camada); apenas Alto Rio Novo e Linhares têm UO Gabinete coerente; TCEs de SP, PE e RS não testados nesta rodada",
+   "state": "VERIFIED_DATASET"
+  },
+  "RS": {
+   "source": "S7-TCE-RS-MUN",
+   "year": 2025,
+   "measure": "vl_pagamento com dt_operacao em 2025",
+   "units": [
+    {
+     "municipio": "PM DE AGUDO",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "1",
+     "unidade": "Estrutura do Gabinete",
+     "pago_2025": 2175889.54
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "10",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE PROJETOS E CAPTACAO DE RECURSOS",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 8650430.75
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "11",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE EDUCACAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 501328476.49
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "12",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE ESPORTE E LAZER",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 12072928.31
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "13",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE MEIO AMBIENTE",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 66938049.91
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "14",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE ASSISTENCIA SOCIAL",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 15906936.1
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "17",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE DESENVOLVIMENTO ECONOMICO E INOVACAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 7181669.43
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "18",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE DESENVOLVIMENTO URBANO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 8065386.03
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "19",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE OBRAS E RECONSTRUCAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 68335560.43
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO PREFEITO E ORGAOS INTEGRANTES",
+     "pago_2025": 26304950.25
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "20",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE MOBILIDADE URBANA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 14651654.73
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "21",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE SERVICOS E ZELADORIA URBANA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 71453112.07
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "22",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE CULTURA E TURISMO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 7723807.64
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "23",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE SEGURANCA PUBLICA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 34037420.6
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "25",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DAS RELACOES INSTITUCIONAIS",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 3247781.76
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "26",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE COMUNICACAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 9478672.63
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "PROCURADORIA-GERAL DO MUNICIPIO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO PROCURADOR DIRECAO E APOIO",
+     "pago_2025": 18992416.51
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "33",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE LICITACOES E CONTRATOS",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 7644828.44
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "35",
+     "orgao_orcamentario": "ESCRITORIO DE PARTICIPACAO E MOBILIZACAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 1351.66
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "36",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DA DEFESA CIVIL E RESILIENCIA CLIMATICA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 3290109.38
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "38",
+     "orgao_orcamentario": "SECRETARIA EXTRAORDINARIA DE APOIO A RECONSTRUCAO DE CANOAS",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 3741604.64
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "39",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE HABITACAO E REGULARIZACAO FUNDIARIA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 4827677.2
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "4",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE TRANSPARENCIA CONTROLADORIA E GOVERNO DIGITAL",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO CONTROLADOR DIRECAO E APOIO",
+     "pago_2025": 4810099.0
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "40",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE CIDADANIA MULHER E INCLUSAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 3871658.62
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "41",
+     "orgao_orcamentario": "SECRETARIA GERAL DE GOVERNO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 6331659.53
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "42",
+     "orgao_orcamentario": "SECRETARIA DISTRITAL NOROESTE",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 683998.18
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "43",
+     "orgao_orcamentario": "SECRETARIA DISTRITAL NORDESTE",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 877924.71
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "44",
+     "orgao_orcamentario": "SECRETARIA DISTRITAL SUDESTE",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 516989.84
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "45",
+     "orgao_orcamentario": "SECRETARIA DISTRITAL SUDOESTE",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 812564.58
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "5",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE BEM-ESTAR ANIMAL",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 12232403.19
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "8",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DE ADMINISTRACAO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 37044377.38
+    },
+    {
+     "municipio": "PM DE CANOAS",
+     "cd_orgao": "9",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL DA FAZENDA",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO SECRETARIO DIRECAO E APOIO",
+     "pago_2025": 33947377.01
+    },
+    {
+     "municipio": "PM DE CAXIAS DO SUL",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "EXECUTIVO ADMINISTRACAO DIRETA",
+     "cd_uo": "2",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 610260.23
+    },
+    {
+     "municipio": "PM DE CAXIAS DO SUL",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "EXECUTIVO ADMINISTRACAO DIRETA",
+     "cd_uo": "4",
+     "unidade": "SECRETARIA DE GOVERNO MUNICIPAL",
+     "pago_2025": 18878.26
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "22",
+     "orgao_orcamentario": "Secretaria Municipal de Governo e Ações Estratégicas",
+     "cd_uo": "23",
+     "unidade": "Secretaria Municipal de Governo e Ações Estratégicas",
+     "pago_2025": 2060090.17
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "Gabinete do Prefeito",
+     "cd_uo": "16",
+     "unidade": "Chefia de Gabinete",
+     "pago_2025": 3667644.62
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "Gabinete do Prefeito",
+     "cd_uo": "17",
+     "unidade": "Procuradoria Geral do Municipio",
+     "pago_2025": 9650190.41
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "Gabinete do Prefeito",
+     "cd_uo": "18",
+     "unidade": "Assessoria de Comunicação Social",
+     "pago_2025": 1107560.8
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "Gabinete do Prefeito",
+     "cd_uo": "92",
+     "unidade": "Coordenadoria de Transparência e Controle Interno",
+     "pago_2025": 1170909.89
+    },
+    {
+     "municipio": "PM DE PELOTAS",
+     "cd_orgao": "3",
+     "orgao_orcamentario": "Gabinete do Prefeito",
+     "cd_uo": "93",
+     "unidade": "Gabinete da Vice Prefeita",
+     "pago_2025": 722273.18
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "1",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 26080312.01
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "10",
+     "unidade": "GABINETE DE COMUNICACAO SOCIAL",
+     "pago_2025": 2495943.17
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "10",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 22654883.48
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "11",
+     "unidade": "GABINETE DA CAUSA ANIMAL",
+     "pago_2025": 1090994.12
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "11",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 1085995.7
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "12",
+     "unidade": "FUNDO MUNICIPAL DOS DIREITOS DOS ANIMAIS  FMDA",
+     "pago_2025": 7228.84
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "13",
+     "unidade": "GABINETE DE INOVACAO",
+     "pago_2025": 773241.24
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "13",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 180.0
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "14",
+     "unidade": "GABINETE DO PREFEITO",
+     "pago_2025": 128611.3
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "2",
+     "orgao_orcamentario": "GABINETE DO PREFEITO",
+     "cd_uo": "14",
+     "unidade": "SISTEMA MUNICIPAL DE PROTECAO E DEFESA CIVIL",
+     "pago_2025": 42052.0
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "1",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 15518573.67
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "2",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 627422.91
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "3",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 668705.28
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "4",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 11218.86
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "5",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 7804705.29
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "6",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 25525.5
+    },
+    {
+     "municipio": "PM DE PORTO ALEGRE",
+     "cd_orgao": "86",
+     "orgao_orcamentario": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "cd_uo": "7",
+     "unidade": "SECRETARIA MUNICIPAL GERAL DE GOVERNO",
+     "pago_2025": 162275.49
+    }
+   ],
+   "total_pago": {
+    "PM DE AGUDO": 133108763.74,
+    "PM DE CANOAS": 2059500477.56,
+    "PM DE CAXIAS DO SUL": 2429185523.88,
+    "PM DE PELOTAS": 1404525694.1,
+    "PM DE PORTO ALEGRE": 7572331324.26
+   },
+   "headline": {
+    "Agudo": "Órgão Gabinete do Prefeito/UO Estrutura do Gabinete: R$ 2.175.890 de R$ 133,1 mi (1,6%)",
+    "Caxias do Sul": "UO Gabinete do Prefeito R$ 610.260",
+    "Canoas": "Gabinete do Prefeito e Órgãos Integrantes R$ 26,3 mi (dezenas de \"Gabinete do Secretário\" não são do prefeito)",
+    "Pelotas": "órgão Gabinete do Prefeito contém Procuradoria Geral (R$ 9,65 mi), Chefia de Gabinete (R$ 3,67 mi), Comunicação (R$ 1,11 mi), Controle Interno (R$ 1,17 mi) e Gabinete da Vice (R$ 0,72 mi)",
+    "Porto Alegre": "UO Gabinete do Prefeito R$ 26,1 mi e 22,7 mi em código de UO reaproveitado (nomes diferentes por exercício); Secretaria Geral de Governo à parte (R$ 15,5 mi na UO 1)"
+   }
+  },
+  "SP": {
+   "source": "S7-TCE-SP",
+   "finding": "API devolve apenas órgão (Prefeitura, Câmara, autarquias); sem unidade orçamentária: gabinete NÃO isolável",
+   "state": "VERIFIED_API"
+  },
+  "PE": {
+   "finding": "sistemas.tce.pe.gov.br sem resposta nesta rodada; P4 havia verificado a API",
+   "state": "NOT_EVALUATED"
+  },
+  "layers": {
+   "DIRECT_OFFICE_EXPENSE": "UO \"Gabinete do Prefeito\" isolada",
+   "CABINET_COST": "órgão orçamentário Gabinete do Prefeito (pode incluir PGM, controle, comunicação)",
+   "GOVERNMENT_BODY_COST": "Secretaria de Governo/Coordenadoria",
+   "NOT_ATTRIBUTABLE": "UOs \"Gabinete do Secretário\""
+  },
+  "warnings": [
+   "código de UO reaproveitado entre exercícios (Porto Alegre)",
+   "órgão \"Gabinete do Prefeito\" abriga PGM (Pelotas)",
+   "UO homônima sob outro órgão (Cariacica)",
+   "\"Gabinete do Secretário\" ≠ gabinete do prefeito (Canoas)"
+  ],
+  "state": "VERIFIED_DATASET"
+ },
+ "state_cabinet_costs": {
+  "MG": {
+   "unit": "GABINETE MILITAR DO GOVERNADOR (UO 1071)",
+   "year": 2025,
+   "empenhado": 42308465,
+   "liquidado": 21358582,
+   "pago": 18612466,
+   "rows": 359,
+   "other": {
+    "CASA_CIVIL": 2536988,
+    "SEGOV_empenhado": 43335682
+   },
+   "personnel": "ausente no dataset",
+   "state": "VERIFIED_DATASET"
+  },
+  "RS": {
+   "source": "S7-RS-ESTADO",
+   "month": "2025-12",
+   "unit": [
+    {
+     "orgao": "Governo do Estado",
+     "uo": "Casa Civil do Gabinete do Governador",
+     "pago": 10169923
+    },
+    {
+     "orgao": "Governo do Estado",
+     "uo": "Casa Militar do Gabinete do Governador",
+     "pago": 2861496
+    },
+    {
+     "orgao": "Governo do Estado",
+     "uo": "Gabinete do Vice-governador",
+     "pago": 802386
+    }
+   ],
+   "trap": "\"Gabinete e Órgãos Centrais\" é UO de cada secretaria, não o gabinete do governador (ex.: Educação R$ 1,05 bi pagos em dez/2025)",
+   "state": "VERIFIED_DATASET"
+  },
+  "ES": "dataset estadual 1,2–1,5 GB/ano não varrido",
+  "SP": "NOT_EVALUATED",
+  "RJ": "NOT_EVALUATED",
+  "PE": "TCE-PE inalcançável nesta rodada",
+  "layers": [
+   "ENTIRE_EXECUTIVE_BUDGET",
+   "GOVERNMENT_BODY_COST",
+   "CABINET_COST",
+   "DIRECT_OFFICE_EXPENSE",
+   "PERSON_SPECIFIC_EXPENSE",
+   "NOT_ATTRIBUTABLE"
+  ]
+ },
+ "canonical_model_audit": {
+  "existing": {
+   "sqlite_legacy": "packages/db/src/migrations.ts: people, profiles, mandates(batch,person,key,payload), exercise_periods(batch,person,key,mandate_key,start,end,payload; CHECK end>=start; FK mandates), party_memberships, elections, candidacies(office TEXT, payload)",
+   "postgres": "apps/collector/src/postgres-collector.ts grava civica.exercise_periods com a mesma forma (ON CONFLICT batch,person,key)"
+  },
+  "gaps": [
+   "mandates e exercise_periods exigem profiles de parlamentar (FK por batch+person): executivos precisam de perfil ou de tabela própria",
+   "sem entidade de cargo/órgão/unidade com versão",
+   "sem campos de fonte, confiança, motivo de encerramento, data de publicação/efeito (só em payload JSON)",
+   "sem entidade de ato normativo, assinatura, nomeação, exoneração, veto como linhas",
+   "candidacies.office é texto; resultado eleitoral e vice sem coluna",
+   "suplementar não tem representação própria"
+  ],
+  "cases": [
+   {
+    "case": "mesmo prefeito em duas eleições",
+    "person_key": "hash(título)",
+    "mandate_key": "eleição+UE+cargo+turno",
+    "exercise": "dois períodos",
+    "conflict": "nenhum"
+   },
+   {
+    "case": "vice que assume",
+    "person_key": "vice",
+    "mandate_key": "mandato de vice",
+    "exercise": "período no cargo de titular com motivo SUCCEEDED",
+    "conflict": "mandato ≠ exercício exige tabela de evento"
+   },
+   {
+    "case": "governador substituído temporariamente (RJ 2020-21)",
+    "exercise": "dois períodos para o titular e um ACTING para o vice",
+    "conflict": "exercise_periods não tem tipo"
+   },
+   {
+    "case": "ministro que muda de pasta",
+    "exercise": "períodos por cargo/órgão",
+    "conflict": "sem entidade de cargo"
+   },
+   {
+    "case": "secretaria extinta",
+    "conflict": "sem versão de órgão"
+   },
+   {
+    "case": "nomeação e exoneração no mesmo ano",
+    "conflict": "exigem eventos com data de publicação e efeito"
+   },
+   {
+    "case": "decreto por substituto",
+    "conflict": "ato precisa de signatário + titular na data"
+   },
+   {
+    "case": "ato republicado",
+    "conflict": "sem relação de versão (DF mostra republicação)"
+   },
+   {
+    "case": "eleição suplementar",
+    "conflict": "mandato ordinário e suplementar na mesma UE"
+   },
+   {
+    "case": "despesa de gabinete atravessando dois mandatos",
+    "conflict": "unidade orçamentária contínua; titular muda"
+   }
+  ],
+  "recommendation": "evolução futura necessária; nada implementado",
+  "state": "VERIFIED_DATASET"
+ },
+ "identity_keys": [
+  {
+   "id": "IK7-PERSON",
+   "key": "hash(título eleitoral)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK7-HOLDING",
+   "key": "pessoa+cargo+ente+início+fonte",
+   "state": "INFERRED"
+  },
+  {
+   "id": "IK7-ACT-ES",
+   "key": "edição DIO/ES id + número do decreto-S",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK7-ACT-DOMSC",
+   "key": "código do ato",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK7-ACT-STATE",
+   "key": "URL/ID estável por portal (AC detalhar/N, GO legislacoes/N, ALMG DEC/N/ano)",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK7-UNIT-MUN",
+   "key": "CodigoUnidadeOrcamentaria+município (nome não confiável)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK7-SIORG",
+   "key": "id SIORG numérico (ex.: 304)",
+   "state": "VERIFIED_API"
+  }
+ ],
+ "temporal_contracts": [
+  {
+   "id": "TC7-EVENT",
+   "states": [
+    "ELECTED",
+    "SWORN_IN",
+    "ACTING",
+    "TEMPORARILY_REPLACED",
+    "RETURNED",
+    "RESIGNED",
+    "REMOVED",
+    "SUCCEEDED",
+    "TERM_ENDED",
+    "UNKNOWN"
+   ],
+   "fields": [
+    "inicio",
+    "fim",
+    "data_publicacao",
+    "data_efeito",
+    "fonte",
+    "tier",
+    "confianca",
+    "motivo"
+   ],
+   "rule": "ausência de publicação não prova exercício contínuo"
+  }
+ ],
+ "relationships": [
+  {
+   "id": "R7-01",
+   "a": "decreto -S (ES)",
+   "b": "nomeação/exoneração de secretário",
+   "cls": "EXACT",
+   "basis": "texto do decreto \"Nomear/Exonerar X para o cargo Y\"",
+   "evidence": "T7-ES-CHAIN",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-02",
+   "a": "secretário nomeado",
+   "b": "exercício",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "atos assinados pelo secretário em edições posteriores",
+   "evidence": "T7-ES-CHAIN",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-03",
+   "a": "governador (ES/MG/PE/AC/DF/GO/MS/MT)",
+   "b": "decreto estadual",
+   "cls": "EXACT",
+   "basis": "nome no documento",
+   "evidence": "T7-GOV-SIG",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-04",
+   "a": "prefeito renunciante",
+   "b": "sucessor",
+   "cls": "EXACT",
+   "basis": "ata/notícia da Câmara com termo de posse",
+   "evidence": "T7-MAYOR",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-05",
+   "a": "governador afastado (RJ 2020)",
+   "b": "vice em exercício",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "STJ + ALERJ",
+   "evidence": "T7-GOV",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-06",
+   "a": "ministro (SIAPE)",
+   "b": "unidade SIORG",
+   "cls": "PROBABLE",
+   "basis": "nome normalizado: 29/39 exato",
+   "evidence": "T7-SIAPE-SIORG",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-07",
+   "a": "ministro (SIAPE)",
+   "b": "unidade SIORG (10 restantes)",
+   "cls": "UNLINKED",
+   "basis": "nomes abreviados/obsoletos",
+   "evidence": "T7-SIAPE-SIORG",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-08",
+   "a": "município",
+   "b": "portal SIGPub",
+   "cls": "EXACT",
+   "basis": "entidade \"Município de X\" na busca avançada + UF do portal",
+   "evidence": "T7-PROV",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-09",
+   "a": "município",
+   "b": "edição publicada",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "nome do município no texto da edição de 2026-10-08",
+   "evidence": "T7-PROV",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-10",
+   "a": "UO \"Gabinete do Prefeito\"",
+   "b": "prefeito",
+   "cls": "INSTITUTIONAL_ONLY",
+   "basis": "perímetro contábil; nunca despesa pessoal",
+   "evidence": "T7-CAB-MUN",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-11",
+   "a": "Cariacica UO Gabinete (350100)",
+   "b": "órgão Habitação",
+   "cls": "CONFLICT",
+   "basis": "nome de UO sob órgão de outra natureza",
+   "evidence": "T7-CAB-MUN",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-12",
+   "a": "GABINETE MILITAR (MG UO 1071)",
+   "b": "Governador",
+   "cls": "INSTITUTIONAL_ONLY",
+   "basis": "unidade do gabinete; sem folha",
+   "evidence": "T7-CAB-STATE",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-13",
+   "a": "eleição suplementar",
+   "b": "interrupção de mandato",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "TSE (P6); sem data de afastamento",
+   "evidence": "P6:R6-06",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-14",
+   "a": "ato republicado (DF)",
+   "b": "ato original",
+   "cls": "EXACT",
+   "basis": "nota \"Republicado ... Edição Extra nº 05-A\"",
+   "evidence": "T7-GOV-SIG",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-15",
+   "a": "ministro (DOU decreto de pessoal)",
+   "b": "ingresso SIAPE",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "mesma data de efeito (Padilha 2025-03-10)",
+   "evidence": "T7-FED-CHAINS",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-16",
+   "a": "exoneração municipal (Abdon Batista)",
+   "b": "portaria de nomeação",
+   "cls": "EXACT",
+   "basis": "texto cita \"nomeado através da Portaria nº N/AAAA\"",
+   "evidence": "T7-MUN-CHAIN",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-17",
+   "a": "norma estadual PI (SAPL)",
+   "b": "projeto do Governador",
+   "cls": "EXACT",
+   "basis": "campo materia da normajuridica + autoria",
+   "evidence": "T7-SAPL-PI",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-18",
+   "a": "norma municipal SAPL",
+   "b": "projeto do Prefeito",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "materia + autoria \"Prefeito\" em 4 de 12 instâncias",
+   "evidence": "T7-SAPL-MUN",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "R7-19",
+   "a": "UO Gabinete do Prefeito (RS/ES)",
+   "b": "perímetro contábil",
+   "cls": "INSTITUTIONAL_ONLY",
+   "basis": "código de UO por exercício; nunca despesa pessoal",
+   "evidence": "T7-CAB-MUN",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "R7-20",
+   "a": "ministro (SIAPE mensal)",
+   "b": "período no cargo",
+   "cls": "PROBABLE",
+   "basis": "primeiro e último snapshot com o titular; linhas legadas exigem cruzar com DOU",
+   "evidence": "T7-SIAPE-HIST",
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "collection_scenarios": [
+  {
+   "id": "CS7-A",
+   "name": "Perfis históricos básicos",
+   "coverage": "eleitos 2012–2024; fotos 100% 2020/2024",
+   "cost": "baixo",
+   "gaps": "titular efetivo",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "CS7-B",
+   "name": "Atuação federal",
+   "coverage": "decretos 100% da lista; assinatura 840/840; vetos 765; ministros por SIAPE mensal + DOU leiturajornal; viagens",
+   "cost": "médio",
+   "gaps": "agendas; nomeações de segundo escalão em massa (volume)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "CS7-C",
+   "name": "Atuação estadual",
+   "coverage": "decretos com governador nominal em 19 UFs (documento verificado), SAPL-PI, cadeia ES, posse/sucessão em 10 UFs de 2026",
+   "cost": "alto",
+   "gaps": "AP, CE, RJ, RR; 2020 só em 9 UFs",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "CS7-D",
+   "name": "Atuação municipal",
+   "coverage": "2699 municípios (48.5%) com publicação verificada em portal; SAPL ~23% dos municípios; decretos individuais SC; 3 sucessões em capitais",
+   "cost": "muito alto",
+   "gaps": "2685 sem fonte",
+   "state": "NEEDS_VALIDATION"
+  }
+ ],
+ "collector_families": [
+  {
+   "id": "CF7-1",
+   "name": "TSE roster e fotos (executivos)",
+   "reuse": "apps/collector/src/elections.ts (estender relevant()); portrait-mirror.ts",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 1
+  },
+  {
+   "id": "CF7-2",
+   "name": "Atos federais Senado+Planalto (incl. DEC-sn)",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 2
+  },
+  {
+   "id": "CF7-3",
+   "name": "Vetos Senado",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 3
+  },
+  {
+   "id": "CF7-4",
+   "name": "Viagens+pagamentos federais",
+   "reuse": "national-finance-registry (P3/P4)",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 4
+  },
+  {
+   "id": "CF7-5",
+   "name": "DIO/ES por id (DOE + AMUNES + diários municipais)",
+   "reuse": "state/providers (padrão)",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 5
+  },
+  {
+   "id": "CF7-6",
+   "name": "DOM/SC por categoria",
+   "reuse": "state/providers",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 6
+  },
+  {
+   "id": "CF7-7",
+   "name": "SIGPub (22 portais, PDFs por edição)",
+   "reuse": "novo; exige parsing de PDF e descoberta de URLs",
+   "feas": "NEEDS_VALIDATION",
+   "order": 7
+  },
+  {
+   "id": "CF7-8",
+   "name": "Portais de normas estaduais (AC, DF, GO, MG, MS, MT, PE)",
+   "reuse": "state/providers",
+   "feas": "NEEDS_VALIDATION",
+   "order": 8
+  },
+  {
+   "id": "CF7-9",
+   "name": "Despesa de gabinete por TCE/estado (ES, MG)",
+   "reuse": "national-finance-registry",
+   "feas": "NEEDS_VALIDATION",
+   "order": 9
+  },
+  {
+   "id": "CF7-10",
+   "name": "SIAPE snapshots + ponte SIORG",
+   "reuse": "novo",
+   "feas": "NEEDS_VALIDATION",
+   "order": 10
+  },
+  {
+   "id": "CF7-11",
+   "name": "DOU leiturajornal (decretos de pessoal por data)",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 11
+  },
+  {
+   "id": "CF7-12",
+   "name": "SAPL API (normas, matérias, autoria) Estados e Câmaras",
+   "reuse": "apps/collector/src/state/providers (padrão)",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 12
+  },
+  {
+   "id": "CF7-13",
+   "name": "FAMEM/Siganet MA",
+   "reuse": "novo",
+   "feas": "NEEDS_VALIDATION",
+   "order": 13
+  },
+  {
+   "id": "CF7-14",
+   "name": "SIAPE mensal via host CGU",
+   "reuse": "national-finance-registry",
+   "feas": "READY_FOR_CONTRACT",
+   "order": 14
+  }
+ ],
+ "product_readiness": [
+  {
+   "n": 1,
+   "experience": "Presidentes eleitos",
+   "data_found": "TSE 2014/2018/2022",
+   "coverage": "100%",
+   "history": "2014–2022",
+   "attribution": "eleição",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 2,
+   "experience": "Governadores eleitos",
+   "data_found": "TSE",
+   "coverage": "27 UFs",
+   "history": "2014–2022",
+   "attribution": "eleição",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 3,
+   "experience": "Prefeitos eleitos",
+   "data_found": "TSE",
+   "coverage": "5.5 mil por ciclo",
+   "history": "2012–2024",
+   "attribution": "eleição",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 4,
+   "experience": "Fotos históricas",
+   "data_found": "TSE fotos",
+   "coverage": "100% prefeitos 2020/2024",
+   "history": "2012–2024 (amostra)",
+   "attribution": "candidatura",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 5,
+   "experience": "Titulares efetivamente em exercício",
+   "data_found": "posse/sucessão oficial em 12 UFs e 3 capitais; assinatura de decretos em 19 UFs; federal por assinatura",
+   "coverage": "12 UFs com evento; 2 ciclos fechados",
+   "history": "pontual",
+   "attribution": "documental",
+   "readiness": "NEEDS_VALIDATION",
+   "note": "cobertura explícita por UF"
+  },
+  {
+   "n": 6,
+   "experience": "Substituições e sucessões",
+   "data_found": "TSE suplementares; 2026 por Assembleias/Câmaras",
+   "coverage": "10 UFs 2026 + 3 capitais",
+   "history": "2012–2026",
+   "attribution": "documental",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 7,
+   "experience": "Decretos assinados",
+   "data_found": "federal 840/840; 19 UFs; SC",
+   "coverage": "federal completo; estadual 19/27",
+   "history": "2013–2026 federal",
+   "attribution": "SIGNED_BY_PERSON onde há nome",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 8,
+   "experience": "Leis sancionadas",
+   "data_found": "normaGerada; Planalto; SAPL-PI",
+   "coverage": "federal; PI",
+   "history": "2013–2026",
+   "attribution": "institucional",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 9,
+   "experience": "Projetos do Executivo",
+   "data_found": "Câmara institucional; SAPL (PI, municípios)",
+   "coverage": "federal + PI + ~8% municípios",
+   "history": "2013+",
+   "attribution": "INITIATIVE_BY_OFFICEHOLDER (SAPL)",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 10,
+   "experience": "Vetos",
+   "data_found": "Senado processo",
+   "coverage": "765",
+   "history": "2013–2026",
+   "attribution": "institucional",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 11,
+   "experience": "Medidas provisórias",
+   "data_found": "Senado",
+   "coverage": "série anual",
+   "history": "2013–2026",
+   "attribution": "institucional",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 12,
+   "experience": "Ministros por período",
+   "data_found": "SIAPE mensal 2013–2026 + DOU leiturajornal",
+   "coverage": "3 cadeias verificadas; 6 snapshots lidos",
+   "history": "2013–2026",
+   "attribution": "decreto/diploma",
+   "readiness": "NEEDS_VALIDATION",
+   "note": "reconstrução completa exige varrer 160 snapshots"
+  },
+  {
+   "n": 13,
+   "experience": "Secretários por período",
+   "data_found": "DIO/ES decretos-S; DOM/SC portarias",
+   "coverage": "1 cadeia ES; 1 município SC",
+   "history": "ES 2021+",
+   "attribution": "decreto/portaria",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 14,
+   "experience": "Nomeações",
+   "data_found": "DOU leiturajornal; DIO/ES; ALMG DNE",
+   "coverage": "federal por data; ES/MG",
+   "history": "parcial",
+   "attribution": "decreto",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 15,
+   "experience": "Exonerações",
+   "data_found": "DOU leiturajornal; DIO/ES; DOM/SC",
+   "coverage": "federal; ES; Abdon Batista",
+   "history": "parcial",
+   "attribution": "decreto/portaria",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 16,
+   "experience": "Organograma",
+   "data_found": "SIORG",
+   "coverage": "federal",
+   "history": "versionado",
+   "attribution": "institucional",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 17,
+   "experience": "Cargos comissionados",
+   "data_found": "SIAPE agregado",
+   "coverage": "federal",
+   "history": "mensal 2013–2026 disponível",
+   "attribution": "institucional",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 18,
+   "experience": "Servidores agregados",
+   "data_found": "SIAPE",
+   "coverage": "federal",
+   "history": "mensal 2013–2026",
+   "attribution": "institucional",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 19,
+   "experience": "Subsídios e remuneração oficial",
+   "data_found": "atos de fixação",
+   "coverage": "esparso",
+   "history": "-",
+   "attribution": "-",
+   "readiness": "DISCOVERY_ONLY",
+   "note": ""
+  },
+  {
+   "n": 20,
+   "experience": "Custo do gabinete",
+   "data_found": "TCE-ES 2024; TCE-RS 2025; MG 2025; RS estado dez/2025",
+   "coverage": "ES 78 + RS 497 municípios (dados); MG; RS",
+   "history": "1 ano",
+   "attribution": "INSTITUTIONAL_ONLY",
+   "readiness": "NEEDS_VALIDATION",
+   "note": "tabela UO→camada por município"
+  },
+  {
+   "n": 21,
+   "experience": "Despesas institucionais",
+   "data_found": "Portal Transparência federal",
+   "coverage": "federal",
+   "history": "mensal",
+   "attribution": "institucional",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 22,
+   "experience": "Cartões corporativos",
+   "data_found": "CPGF",
+   "coverage": "federal",
+   "history": "mensal",
+   "attribution": "sigilo 96%",
+   "readiness": "NEEDS_VALIDATION",
+   "note": ""
+  },
+  {
+   "n": 23,
+   "experience": "Viagens",
+   "data_found": "PT viagens",
+   "coverage": "federal 2025",
+   "history": "1 ano",
+   "attribution": "institucional",
+   "readiness": "READY_FOR_CONTRACT",
+   "note": ""
+  },
+  {
+   "n": 24,
+   "experience": "Agendas oficiais",
+   "data_found": "-",
+   "coverage": "-",
+   "history": "-",
+   "attribution": "-",
+   "readiness": "DISCOVERY_ONLY",
+   "note": ""
+  }
+ ],
+ "blockers": [
+  {
+   "id": "B7-1",
+   "what": "INLABS (cadastro)",
+   "owner": "responsável do produto",
+   "impact": "nomeações de segundo escalão em massa com garantia de completude",
+   "alternative": "leiturajornal por data já recupera decretos de pessoal da Presidência sem login; INLABS passa a ser opcional"
+  },
+  {
+   "id": "B7-2",
+   "what": "SIGPub: busca e calendário não reproduzíveis por script simples",
+   "owner": "engenharia",
+   "impact": "histórico por município",
+   "alternative": "PDFs de edição pela home; pedir arquivo à associação"
+  },
+  {
+   "id": "B7-3",
+   "what": "DOEM (verificação de bot)",
+   "owner": "acordo com IBDM",
+   "impact": "56 municípios QD",
+   "alternative": "nenhuma legítima sem acordo"
+  },
+  {
+   "id": "B7-4",
+   "what": "Endpoint do Portal da Transparência com AccessDenied",
+   "owner": "-",
+   "impact": "nenhum: host CGU entrega 2013–2026",
+   "alternative": "usar dadosabertos-download.cgu.gov.br"
+  },
+  {
+   "id": "B7-5",
+   "what": "2685 municípios sem fonte",
+   "owner": "descoberta",
+   "impact": "cobertura nacional",
+   "alternative": "diários próprios, TCEs, associações ainda não mapeadas"
+  },
+  {
+   "id": "B7-6",
+   "what": "Tabela SIAFI↔SIORG inexistente",
+   "owner": "construção manual",
+   "impact": "vínculo cargo-unidade",
+   "alternative": "tabela curada"
+  },
+  {
+   "id": "B7-7",
+   "what": "TCE-PE inalcançável nesta rodada",
+   "owner": "repetir",
+   "impact": "PE estado e municípios",
+   "alternative": "repetir; P4 já verificou"
+  },
+  {
+   "id": "B7-8",
+   "what": "AP, CE, RJ, RR sem decreto verificado; RJ pós-eleição indireta sem fonte",
+   "owner": "trabalho de descoberta",
+   "impact": "4 UFs",
+   "alternative": "DOE de cada UF"
+  },
+  {
+   "id": "B7-9",
+   "what": "TCE-SP sem unidade orçamentária",
+   "owner": "fonte",
+   "impact": "gabinete de prefeitos SP",
+   "alternative": "portais municipais ou TCM-SP (capital)"
+  }
+ ],
+ "gates": [
+  {
+   "id": "P7_P5_P6_CONSISTENCY",
+   "state": "PASS",
+   "source": [
+    "T7-AUD1",
+    "T7-AUD2",
+    "T7-AUD3",
+    "T7-AUD4"
+   ],
+   "proof": "quatro divergências reconciliadas",
+   "coverage": "completa",
+   "limitation": "arquivos anteriores não corrigidos",
+   "next_action": "notas de correção na consolidação"
+  },
+  {
+   "id": "P7_EXECUTIVE_ROSTER_INTEGRITY",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-AUD1"
+   ],
+   "proof": "TSE por ciclo; DF separado",
+   "coverage": "5.5 mil prefeitos/ciclo",
+   "limitation": "UEs sem eleito 1/50/74/40; sem tabela IBGE↔SG_UE",
+   "next_action": "tabela de equivalência"
+  },
+  {
+   "id": "P7_FEDERAL_OFFICE_HOLDING",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-AUD4",
+    "T7-FED-CHAINS"
+   ],
+   "proof": "assinatura 840/840; substitutos",
+   "coverage": "2013–2026 amostral",
+   "limitation": "sem ato de posse; bordas por amostra",
+   "next_action": "varrer DEC-n e DEC-sn completos"
+  },
+  {
+   "id": "P7_STATE_OFFICE_HOLDING",
+   "state": "PARTIAL",
+   "source": [
+    "T7-GOV",
+    "T7-GOV-2026"
+   ],
+   "proof": "ciclos fechados ES e MG; 10 UFs com sucessão de 2026 documentada institucionalmente",
+   "coverage": "12 UFs com evento oficial (ES, MG, RJ, SP, PE + GO, DF, MT, PB, PA, AC, RR)",
+   "limitation": "15 UFs sem evento próprio; RJ pós-renúncia sem desfecho; exercício por assinatura só em 19 UFs",
+   "next_action": "completar eventos de 2022–2025"
+  },
+  {
+   "id": "P7_MUNICIPAL_OFFICE_HOLDING",
+   "state": "PARTIAL",
+   "source": [
+    "T7-MAYOR"
+   ],
+   "proof": "3 sucessões em capitais com documento da Câmara; 2 SC por assinatura",
+   "coverage": "10 testados: 3 fechados, 2 por assinatura, 1 parcial, 4 não avaliados",
+   "limitation": "nenhuma suplementar individual documentada",
+   "next_action": "atas das Câmaras"
+  },
+  {
+   "id": "P7_SUCCESSION_DOCUMENTATION",
+   "state": "PARTIAL",
+   "source": [
+    "T7-GOV-2026",
+    "T7-MAYOR"
+   ],
+   "proof": "18 eventos de sucessão com fonte institucional",
+   "coverage": "amostral",
+   "limitation": "afastamentos temporários quase ausentes (RJ 2020; PB e ES com notícia de interinidade sem data)",
+   "next_action": ""
+  },
+  {
+   "id": "P7_STATE_SIGNATORIES",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-GOV-SIG"
+   ],
+   "proof": "nome do governador no documento em 19 UFs; 4 em DOE sem assinatura isolada; 4 sem verificação",
+   "coverage": "19/27 verificadas; 2020 em 9 UFs",
+   "limitation": "AP, CE, RJ, RR sem documento; ES só 2025",
+   "next_action": "testar 2020 nas demais"
+  },
+  {
+   "id": "P7_MUNICIPAL_SIGNATORIES",
+   "state": "PARTIAL",
+   "source": [
+    "P6"
+   ],
+   "proof": "PDF 9/9; página 10/40",
+   "coverage": "2 municípios",
+   "limitation": "só SC",
+   "next_action": "amostrar SIGPub e DIO/ES"
+  },
+  {
+   "id": "P7_MUNICIPAL_PROVIDER_DISCOVERY",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-PROV"
+   ],
+   "proof": "4 famílias novas verificadas (SIGPub, DIO/ES, FAMEM/Siganet, SAPL) e 5 candidatas localizadas",
+   "coverage": "4 de 5 meta",
+   "limitation": "candidatas sem acervo extraído",
+   "next_action": "sondar Assomasul, DOEMPI"
+  },
+  {
+   "id": "P7_MUNICIPAL_COVERAGE_UNION",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-UNION"
+   ],
+   "proof": "2699 verificados em nível de portal; 2885 com clientes",
+   "coverage": "48.5%–51.8%",
+   "limitation": "verificação por portal, não por município; decretos individuais só SC",
+   "next_action": "amostra por município"
+  },
+  {
+   "id": "P7_STATE_NORMATIVE_COVERAGE",
+   "state": "PARTIAL",
+   "source": [
+    "T7-GOV-SIG",
+    "T7-SAPL-PI"
+   ],
+   "proof": "documento real em 23 UFs (19 com nome); SAPL-PI liga lei a projeto",
+   "coverage": "23/27 com documento",
+   "limitation": "2020 em 9 UFs; leis e nomeações só em PI e ES",
+   "next_action": "testar leis 2020"
+  },
+  {
+   "id": "P7_FEDERAL_APPOINTMENTS",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-FED-CHAINS",
+    "T7-SIAPE-HIST"
+   ],
+   "proof": "3 cadeias com saída ou entrada por DOU e SIAPE",
+   "coverage": "3/3 (uma com ambos extremos em DOU)",
+   "limitation": "decretos de nomeação de Nísia e Lewandowski não localizados; amostra de ministros",
+   "next_action": "varrer todas as datas de posse"
+  },
+  {
+   "id": "P7_STATE_APPOINTMENTS",
+   "state": "PARTIAL",
+   "source": [
+    "T7-ES-CHAIN"
+   ],
+   "proof": "1 cadeia no ES",
+   "coverage": "1/3",
+   "limitation": "demais UFs não testadas",
+   "next_action": "repetir em MG (DNE) e SP"
+  },
+  {
+   "id": "P7_MUNICIPAL_APPOINTMENTS",
+   "state": "PARTIAL",
+   "source": [
+    "T7-MUN-CHAIN"
+   ],
+   "proof": "1 nomeação + 3 exonerações com referência",
+   "coverage": "1 município",
+   "limitation": "PDF da nomeação é imagem; exercício não medido",
+   "next_action": "ampliar a DIO/ES"
+  },
+  {
+   "id": "P7_SIAPE_SIORG_IDENTITY",
+   "state": "PARTIAL",
+   "source": [
+    "T7-SIAPE-SIORG"
+   ],
+   "proof": "29/39 por nome exato; sem chave comum",
+   "coverage": "74%",
+   "limitation": "nome não é identidade",
+   "next_action": "tabela SIAFI↔SIORG"
+  },
+  {
+   "id": "P7_EXECUTIVE_LEGISLATIVE_LINKAGE",
+   "state": "PARTIAL",
+   "source": [
+    "T7-SAPL-PI",
+    "T7-SAPL-MUN"
+   ],
+   "proof": "PI: projeto do Governador→lei por ID; SAPL municipal em 22,7% dos municípios amostrados e 4 de 12 instâncias com cadeia",
+   "coverage": "federal + PI + ~8% dos municípios (estimativa)",
+   "limitation": "vetos estaduais/municipais não medidos; autoria é pessoa",
+   "next_action": "testar vetos e ES/MG/SP/RJ/PE"
+  },
+  {
+   "id": "P7_CABINET_COST_MUNICIPAL",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-CAB-MUN"
+   ],
+   "proof": "UO Gabinete do Prefeito isolada em ES (4 municípios) e RS (5 municípios); TCE-SP sem UO; PE sem acesso",
+   "coverage": "ES+RS (575 prefeituras em dados) ; SP não isolável",
+   "limitation": "perímetros heterogêneos; mapa por município obrigatório",
+   "next_action": "tabela UO→camada"
+  },
+  {
+   "id": "P7_CABINET_COST_STATE",
+   "state": "PARTIAL",
+   "source": [
+    "T7-CAB-STATE"
+   ],
+   "proof": "MG Gabinete Militar 2025; RS Casa Civil/Casa Militar/Vice dez/2025",
+   "coverage": "2 de 5 estados",
+   "limitation": "ES, SP, RJ, PE não varridos; RS só um mês; sem folha em MG",
+   "next_action": "varrer 12 meses RS e dados ES"
+  },
+  {
+   "id": "P7_CANONICAL_TEMPORAL_MODEL",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [
+    "T7-MODEL"
+   ],
+   "proof": "modelo atual lido; 10 casos conceituais",
+   "coverage": "conceitual",
+   "limitation": "incompatibilidades listadas; nada implementado",
+   "next_action": "decisão de modelagem"
+  },
+  {
+   "id": "P7_COLLECTOR_FEASIBILITY",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [],
+   "proof": "14 famílias ordenadas",
+   "coverage": "-",
+   "limitation": "SIGPub, portais estaduais e FAMEM NEEDS_VALIDATION",
+   "next_action": ""
+  },
+  {
+   "id": "P7_PRODUCT_READINESS",
+   "state": "PARTIAL",
+   "source": [],
+   "proof": "9 READY_FOR_CONTRACT, 13 NEEDS_VALIDATION e 2 DISCOVERY_ONLY de 24",
+   "coverage": "-",
+   "limitation": "titulares efetivos e nomeações subnacionais parciais",
+   "next_action": ""
+  },
+  {
+   "id": "P7_RESEARCH_CLOSURE",
+   "state": "PASS_WITH_CAVEATS",
+   "source": [],
+   "proof": "mapa final emitido; lacunas atribuídas a acesso, descoberta ou publicação futura",
+   "coverage": "-",
+   "limitation": "investigação não esgota o nível municipal",
+   "next_action": "decisão de implementação"
+  }
+ ],
+ "evidence_inventory": [
+  "p7/portarias_recon.json",
+  "p7/bad_cat.json",
+  "p7/bad2.json",
+  "p7/sigpub_assoc.json",
+  "p7/sigpdf.json",
+  "p7/union2.json",
+  "p7/final_union.json",
+  "p7/dioscan_9781_9815.json",
+  "p7/dioscan_11015_11060.json",
+  "p7/dioes_mun.json",
+  "p7/statedoc.json",
+  "p7/statedoc2.json",
+  "p7/siape_siorg.json",
+  "p7/escab.json",
+  "p7/mg_Empenho_2025.csv",
+  "p7/prov_probe.json",
+  "p7/sig2020.json",
+  "p7/sig3.json",
+  "p7/sig4.json",
+  "p7/sapl_pi.json",
+  "p7/sapl_scan.json",
+  "p7/sapl_mun.json",
+  "p7/rscab.json",
+  "p7/rsstate.json",
+  "p7/famem_ed.json",
+  "p7/siape_hist_201301.json",
+  "p7/padilha_chain.json",
+  "p7/dom_secret.json",
+  "p7/fam.json",
+  "p7/dou_min_*.json"
+ ]
+}

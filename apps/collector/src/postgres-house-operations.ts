@@ -79,7 +79,41 @@ export async function rebuildHouseOperationsPostgres(source: Source, year: numbe
     const processing = processingSummary(matters.filter(m => officialIds.size ? officialIds.has(m.id) : true), canonicalEvents.filter(e => officialIds.size ? officialIds.has(e.proposalId) : true), year);
     const agenda = (await store.query<any>(`SELECT count(*)::int events,count(DISTINCT i.proposal_id)::int matters,max(m.scheduled_date)::text max_date FROM civica_committees_poc.agenda_items i JOIN civica_committees_poc.meetings m ON m.id=i.meeting_id WHERE i.source=$1 AND i.active=true AND i.proposal_id IS NOT NULL AND m.scheduled_date >= $2 AND m.scheduled_date < $3`, [source, `${year}-01-01`, `${year + 1}-01-01`])).rows[0] ?? {};
     const norm = new Set(events.filter(e => e.kind === 'resulting_norm' && e.date?.slice(0, 4) === String(year)).map(e => e.proposalId)).size;
-    const summary = { source, year, observedAt: official?.fetchedAt ?? new Date().toISOString(), backlog: officialIds.size || matters.length, backlogUniverse: source === 'senado' ? 'Matérias distintas retornadas pela pesquisa institucional oficial tramitando=S.' : 'Proposições distintas do catálogo ativo publicado.', processing, received, deliberated: 0, deliberatedReceived: 0, voteEvents: 0, decision: 0, norm, agenda: Number(agenda.matters ?? 0), agendaCoverage: { year, from: `${year}-01-01`, to: String(agenda.max_date ?? '').slice(0, 10) || null, items: Number(agenda.events ?? 0), matters: Number(agenda.matters ?? 0), published: false, source: source === 'senado' ? 'https://legis.senado.leg.br/dadosabertos/agendareuniao/mes/{AAAAMM}.json' : 'GET /eventos/{id}/pauta' } };
+    // Camara vote events are stored separately from the institutional
+    // operations publication. Rebuild the summary from the persisted vote
+    // batch so a future collector run cannot restore the old zero values.
+    // Only actualVotedProposalId is a promoted matter relation; anchor and
+    // possible-object candidates remain coverage metadata in the read layer.
+    let deliberated = 0, deliberatedReceived = 0, voteEvents = 0, decision = 0; let voteCoverage: Record<string, unknown> | null = null;
+    if (source === 'camara') {
+      const activeVoteBatch = (await store.query<{ batch_id: string }>(`SELECT batch_id FROM civica_votes_presence_poc.active_legislative WHERE source='camara' AND year=$1 LIMIT 1`, [year])).rows[0]?.batch_id;
+      if (activeVoteBatch) {
+        const voteStats = (await store.query<{ vote_events: number; linked_events: number; linked_matters: number; linked_received: number; decisions: number }>(`
+          WITH d AS (
+            SELECT d.external_id, d.payload,
+              EXISTS (SELECT 1 FROM civica_votes_presence_poc.votes v WHERE v.source=d.source AND v.batch_id=d.batch_id AND v.deliberation_id=d.external_id) AS has_votes
+            FROM civica_votes_presence_poc.deliberations d
+            WHERE d.source='camara' AND d.batch_id=$1
+          ), linked AS (
+            SELECT NULLIF(payload->>'actualVotedProposalId','') AS proposal_id,
+              bool_or(COALESCE((payload->>'approved')::boolean,false)) AS approved
+            FROM d WHERE NULLIF(payload->>'actualVotedProposalId','') IS NOT NULL
+            GROUP BY NULLIF(payload->>'actualVotedProposalId','')
+          )
+          SELECT
+            (SELECT count(*)::int FROM d WHERE has_votes) AS vote_events,
+            (SELECT count(*)::int FROM d WHERE NULLIF(payload->>'actualVotedProposalId','') IS NOT NULL) AS linked_events,
+            (SELECT count(*)::int FROM linked) AS linked_matters,
+            (SELECT count(DISTINCT l.proposal_id)::int FROM linked l JOIN civica_poc.proposals p ON p.source='camara' AND p.external_id=l.proposal_id JOIN civica_poc.active_publications ap ON ap.source=p.source AND ap.batch_id=p.batch_id AND (p.presented_year=$2 OR (p.presented_year IS NULL AND extract(year FROM p.presented_at)::int=$2))) AS linked_received,
+            (SELECT count(*)::int FROM linked WHERE approved) AS decisions`, [activeVoteBatch, year])).rows[0];
+        voteEvents = Number(voteStats?.vote_events ?? 0);
+        deliberated = Number(voteStats?.linked_matters ?? 0);
+        deliberatedReceived = Number(voteStats?.linked_received ?? 0);
+        decision = Number(voteStats?.decisions ?? 0);
+        voteCoverage = { events: Number(voteStats?.vote_events ?? 0), linkedMatterEvents: Number(voteStats?.linked_events ?? 0), linkedMatterIds: Number(voteStats?.linked_matters ?? 0), unresolvedEvents: Number(voteStats?.vote_events ?? 0) - Number(voteStats?.linked_events ?? 0), relation: 'actualVotedProposalId only', batchId: activeVoteBatch };
+      }
+    }
+    const summary = { source, year, observedAt: official?.fetchedAt ?? new Date().toISOString(), backlog: officialIds.size || matters.length, backlogUniverse: source === 'senado' ? 'Mat\u00e9rias distintas retornadas pela pesquisa institucional oficial tramitando=S.' : 'Proposi\u00e7\u00f5es distintas do cat\u00e1logo ativo publicado.', processing, received, deliberated, deliberatedReceived, voteEvents, decision, voteCoverage, norm, agenda: Number(agenda.matters ?? 0), agendaCoverage: { year, from: `${year}-01-01`, to: String(agenda.max_date ?? '').slice(0, 10) || null, items: Number(agenda.events ?? 0), matters: Number(agenda.matters ?? 0), published: false, source: source === 'senado' ? 'https://legis.senado.leg.br/dadosabertos/agendareuniao/mes/{AAAAMM}.json' : 'GET /eventos/{id}/pauta' } };
     // Câmara still lacks its canonical official agenda/operations publication
     // in the PostgreSQL schema.  The relational counts are useful diagnostics,
     // but are not sufficient evidence to activate a public read model.

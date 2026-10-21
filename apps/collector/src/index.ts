@@ -21,6 +21,7 @@ const isElection=args[0]==='import-elections'&&/^20(18|22)$/.test(option('--year
 const isCamaraStaff=args[0]==='collect-camara-staff';
 const isCamaraBudget=args[0]==='collect-camara-budget'&&/^20\d{2}$/.test(option('--year')??'');
 const isSenateStaff=args[0]==='collect-senate-staff'&&/^20\d{2}$/.test(option('--year')??'');
+const isSenateCabinetCosts=args[0]==='collect-senate-cabinet-costs-pg'&&/^20\d{2}$/.test(option('--year')??'');
 const isPriceIndex=args[0]==='collect-price-index'&&['ipca'].includes(option('--index')??'');
 const isThemes=args[0]==='collect-themes'&&/^20\d{2}$/.test(option('--year')??'');
 const isCamaraPropositions=args[0]==='collect-camara-propositions'&&Boolean(option('--ids'));
@@ -43,7 +44,7 @@ const isHouseOperations=args[0]==='collect-house-operations'&&['senado','camara'
 const postgresHouseSource=option('--source')??(args[0]==='collect-house-operations-pg'?args[1]:undefined);
 const postgresHouseYear=option('--year')??(args[0]==='collect-house-operations-pg'?args[2]:undefined);
 const isPostgresHouseOperations=args[0]==='collect-house-operations-pg'&&['senado','camara','all'].includes(postgresHouseSource??'')&&/^20\d{2}$/.test(postgresHouseYear??'');
-const isPostgresCollectorCommand = isSenadoPresented || isCamaraPresented || isCamaraPrincipals || isStateCoverage || isCollect || isActivity || isExpense || isElection || isComplement || isPropositionEnrichment || isThemes || isVotes || isPresence || isSenateAgenda || isCamaraAgenda || isHouseOperations || isPostgresHouseOperations || isCamaraPropositions || isCamaraMovements || isSenateProcesses || args[0] === 'refresh-proposition-operational' || ['rebuild-supplier-aggregates','collect-institutional-suppliers','sync-institutional-suppliers'].includes(institutionalOptions?.command ?? '');
+const isPostgresCollectorCommand = isSenadoPresented || isCamaraPresented || isCamaraPrincipals || isStateCoverage || isCollect || isActivity || isExpense || isElection || isComplement || isPropositionEnrichment || isThemes || isVotes || isPresence || isSenateAgenda || isCamaraAgenda || isHouseOperations || isPostgresHouseOperations || isCamaraPropositions || isCamaraMovements || isSenateProcesses || isSenateCabinetCosts || args[0] === 'refresh-proposition-operational' || ['rebuild-supplier-aggregates','collect-institutional-suppliers','sync-institutional-suppliers'].includes(institutionalOptions?.command ?? '');
 if (isPostgresCollectorCommand) {
   if (isStateCoverage) {
     await import('../../../scripts/state-coverage-ro.ts');
@@ -63,6 +64,11 @@ if (isPostgresCollectorCommand) {
     console.log(JSON.stringify(await resolveCamaraPrincipalsPostgres({ scope, maxDepth: Number(option('--max-depth')) || 10, concurrency: Number(option('--concurrency')) || 4, ...(Number(option('--limit')) ? { limit: Number(option('--limit')) } : {}), progress: message => console.error(message) }), null, 2));
   } else {
   const { collectSourcePostgres, collectActivityPostgres, refreshPropositionOperationalComponentsPostgres, refreshPropositionEnrichmentPostgres, collectCommitteesPostgres, collectVotesPresencePostgres, collectExpensesPostgres, refreshSupplierDerivedPostgres, collectElectionsPostgres, collectInstitutionalSuppliersPostgres } = await import('./postgres-collector.ts');
+  if (isSenateCabinetCosts) {
+    const { collectSenateCabinetCostsPostgres } = await import('./postgres-senate-costs.ts');
+    const requestedMonths = option('--months')?.split(',').map(value => value.trim()).filter(Boolean);
+    console.log(JSON.stringify(await collectSenateCabinetCostsPostgres({ year: Number(option('--year')), ...(requestedMonths?.length ? { months: requestedMonths } : {}), publish: args.includes('--publish'), allowSourceRevision: args.includes('--allow-source-revision'), progress: message => console.error(message) }), null, 2));
+  } else {
   const selected = (option('--source') ?? (args[0] === 'collect-themes' ? 'camara' : (args[2] === 'all' ? 'all' : args[2]))) as 'senado'|'camara'|'all'|undefined;
   if (args[0] === 'collect-expenses') {
     const requested = (option('--source') ?? args[2]) as 'senado'|'camara'|'all'; const year = Number(option('--year') ?? args[4]);
@@ -99,6 +105,7 @@ if (isPostgresCollectorCommand) {
     for (const source of sources) if (source) console.log(JSON.stringify(await refreshPropositionEnrichmentPostgres(source, limit), null, 2));
   }
   }
+  }
 } else if (isControlPlane) {
   // Load the same local connection contract used by the application.  The
   // target is still checked by SELECT current_database() before any write.
@@ -123,7 +130,7 @@ if (isPostgresCollectorCommand) {
 `); } catch (error) { process.stderr.write(`portraits: mirror skipped (${error instanceof Error ? error.message : String(error)})
 `); } }
   } finally { await pool.end(); }
-} else if (!institutionalOptions && !isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isThemes && !isPriceIndex && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations && !isStateCoverage) {
+} else if (!institutionalOptions && !isCollect && !isStatus && !isExpense && !isVotes && !isActivity && !isPresence && !isComplement && !isCabinet && !isElection && !isCamaraStaff && !isCamaraBudget && !isSenateStaff && !isSenateCabinetCosts && !isThemes && !isPriceIndex && !isCamaraPropositions && !isCamaraMovements && !isSenateProcesses && !isSenateAgenda && !isCamaraAgenda && !isPropositionEnrichment && !isHouseOperations && !isStateCoverage) {
   const result = runCli(args);
   if (result.stdout) process.stdout.write(result.stdout);
   if (result.stderr) process.stderr.write(result.stderr);

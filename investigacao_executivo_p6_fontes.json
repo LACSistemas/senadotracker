@@ -1,0 +1,2351 @@
+{
+ "meta": {
+  "phase": "P6",
+  "title": "Fechamento de mandatos, autoria de atos e cobertura nacional do Executivo",
+  "generated": "2026-10-11",
+  "horizon": "2013-01-01..2026-10 (2012 para municipais)",
+  "mode": "investigação apenas; nenhum código, banco, migration ou arquivo anterior alterado",
+  "prior": [
+   "P0",
+   "P1",
+   "P2",
+   "P3",
+   "P4",
+   "P5"
+  ],
+  "privacy": "CPF não registrado (certificados ICP-Brasil mascaram ou foram descartados); título só hash; SIAPE só agregado; nomes de agentes políticos só quando agente público no cargo",
+  "reproducibility": "scripts descartáveis no scratchpad da sessão (p5/ e p6/); comandos e parâmetros descritos em tests[].method",
+  "notes": "Letras de teste do P5 mantidas; testes novos usam T6-xx"
+ },
+ "sources": [
+  {
+   "id": "S6-TSE-CAND",
+   "name": "TSE consulta_cand",
+   "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand/",
+   "sphere": "all",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "eleitos e suplementares; DS_SITUACAO_CANDIDATURA e detalhe (2012/2016)"
+  },
+  {
+   "id": "S6-SEN-LEG",
+   "name": "Senado legislacao/lista",
+   "url": "https://legis.senado.leg.br/dadosabertos/legislacao/lista",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "DEC-n por ano; 2013-2026 = 5249 decretos numerados listados"
+  },
+  {
+   "id": "S6-PLANALTO",
+   "name": "Planalto páginas de decretos",
+   "url": "https://www.planalto.gov.br/ccivil_03/",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "bloco de assinatura; variação de pasta"
+  },
+  {
+   "id": "S6-SEN-VET",
+   "name": "Senado processo VET",
+   "url": "https://legis.senado.leg.br/dadosabertos/processo",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "siglaTipoDeliberacao, dataDeliberacao, normaGerada, urlDocumento"
+  },
+  {
+   "id": "S6-DOU",
+   "name": "DOU consulta pública",
+   "url": "https://www.in.gov.br/consulta",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "JSON embutido; paginação por cursor (newPage/score/id/displayDate); busca fuzzy"
+  },
+  {
+   "id": "S6-INLABS",
+   "name": "INLABS",
+   "url": "https://inlabs.in.gov.br",
+   "sphere": "federal",
+   "state": "BLOCKED",
+   "feas": "BLOCKED",
+   "note": "cadastro necessário; não acessado"
+  },
+  {
+   "id": "S6-SIORG",
+   "name": "SIORG REST",
+   "url": "https://estruturaorganizacional.dados.gov.br",
+   "sphere": "federal",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "cargo-funcao: quantitativos alocados; não traz ocupante"
+  },
+  {
+   "id": "S6-SIAPE",
+   "name": "Portal da Transparência SIAPE Cadastro",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/servidores",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "note": "DATA_INGRESSO_CARGOFUNCAO, DIPLOMA, ORG_EXERCICIO; julho/2026 lido; downloads retornaram AccessDenied nesta rodada"
+  },
+  {
+   "id": "S6-PT-VIAG",
+   "name": "Portal da Transparência Viagens 2025",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/viagens",
+   "sphere": "federal",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "Viagem/Pagamento/Passagem/Trecho ligados por Identificador do processo de viagem"
+  },
+  {
+   "id": "S6-DOMSC",
+   "name": "DOM/SC",
+   "url": "https://diariomunicipal.sc.gov.br",
+   "sphere": "municipal:SC",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "categoria estruturada (radio categoria=Decretos), filtro por entidade e período, paginação AtoASolrDocument_page"
+  },
+  {
+   "id": "S6-QD",
+   "name": "Querido Diário spiders",
+   "url": "https://github.com/okfn-brasil/querido-diario",
+   "sphere": "municipal",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "note": "449 spiders / 440 municípios com IBGE válido"
+  },
+  {
+   "id": "S6-IBGE",
+   "name": "IBGE localidades",
+   "url": "https://servicodados.ibge.gov.br/api/v1/localidades/municipios",
+   "sphere": "all",
+   "state": "VERIFIED_API",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "5.571 entradas (5.570 municípios + DF)"
+  },
+  {
+   "id": "S6-ALESP",
+   "name": "Alesp normas XML",
+   "url": "https://www.al.sp.gov.br/repositorio/legislacao",
+   "sphere": "state:SP",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "note": "254.060 normas; IdTipo, Promulg E/L, Data, Numero; sem signatário"
+  },
+  {
+   "id": "S6-BA",
+   "name": "LegislaBahia",
+   "url": "https://www.legislabahia.ba.gov.br",
+   "sphere": "state:BA",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "decreto com Data do Ato e Data de Publicação no DOE; listagem paginada; signatário não aparece no texto HTML"
+  },
+  {
+   "id": "S6-ALEPE",
+   "name": "Alepe Legis",
+   "url": "https://legis.alepe.pe.gov.br",
+   "sphere": "state:PE",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "note": "pesquisa avançada"
+  },
+  {
+   "id": "S6-ALMG",
+   "name": "ALMG dados abertos",
+   "url": "https://dadosabertos.almg.gov.br",
+   "sphere": "state:MG",
+   "state": "BLOCKED",
+   "feas": "DISCOVERY_ONLY",
+   "note": "endpoint testado devolveu HTTP 500/HTML"
+  },
+  {
+   "id": "S6-STATE-PORTALS",
+   "name": "Portais estaduais de legislação (27 UFs)",
+   "url": "vários",
+   "sphere": "state",
+   "state": "VERIFIED_API",
+   "feas": "DISCOVERY_ONLY",
+   "note": "alcançabilidade de página inicial medida; ver state_coverage"
+  }
+ ],
+ "datasets": [
+  {
+   "id": "D6-FED-SAMPLE",
+   "source": "S6-PLANALTO",
+   "unit": "decreto numerado",
+   "rows": {
+    "listados": 5249,
+    "amostra": 840,
+    "pagina_recuperada": 840,
+    "assinatura_extraida": 803
+   },
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D6-VET",
+   "source": "S6-SEN-VET",
+   "unit": "mensagem de veto",
+   "rows": 765,
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "D6-VIAG-PRES",
+   "source": "S6-PT-VIAG",
+   "unit": "viagem Presidência 2025",
+   "rows": 11380,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D6-DOMSC-DEC",
+   "source": "S6-DOMSC",
+   "unit": "decreto por município 2024",
+   "rows": {
+    "Lages": 1451,
+    "Blumenau": 964,
+    "Chapecó": 2563,
+    "Abdon Batista": 167
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "D6-ALESP",
+   "source": "S6-ALESP",
+   "unit": "norma",
+   "rows": 254060,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "D6-GAZETTE-UNION",
+   "source": "S6-QD",
+   "unit": "município com fonte",
+   "rows": 731,
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "tests": [
+  {
+   "id": "T6-A",
+   "label": "Linha da Presidência desde 2013 por signatário de decretos",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "Senado lista DEC-n por ano; amostra aleatória de 60/ano (seed 11); página Planalto; regex do bloco de assinatura; data do ato",
+   "evidence": "840 decretos 2013-2026: 840/840 páginas, 803 assinaturas (95.6%). Dilma 2013-01-23..2016-05-11; Temer 2016-05-30..2018-12-27 (e 21 como vice em exercício antes de 12/05/2016); Bolsonaro 2019-01-01..2022-12-29; Lula 2023-01-01..2026-09-28. Substitutos: Alckmin 24, Mourão 5, Rodrigo Maia 6, Lewandowski 3",
+   "relationships": [
+    "R6-05"
+   ]
+  },
+  {
+   "id": "T6-B",
+   "label": "Substituições presidenciais comprovadas por ato",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "agrupar signatários não titulares por data",
+   "evidence": "Lewandowski 2014-09-23/24 (3); Rodrigo Maia 2016-09-01..2017-01-10 (6); Mourão 2019-06-27..2021-11-17 (5); Alckmin 2023-04-12..2026-05-07 (24). Datas são de amostra: bordas exatas exigem varredura completa",
+   "relationships": [
+    "R6-05"
+   ]
+  },
+  {
+   "id": "T6-C",
+   "label": "Eleições suplementares como evidência de interrupção de mandato municipal",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "TSE prefeito: suplementar com eleito em UE que tinha eleito ordinário no mesmo ciclo",
+   "evidence": "interrupções documentadas pelo TSE: 110 (ciclo 2012), 120 (2016), 36 (2020), 11 (2024, em curso); 111/163/106/34 UEs com suplementar eleita",
+   "relationships": [
+    "R6-06"
+   ]
+  },
+  {
+   "id": "T6-D",
+   "label": "Candidatura do eleito: situação jurídica na data da eleição",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "DS_DETALHE_SITUACAO_CAND dos vencedores",
+   "evidence": "2012: 5.174 DEFERIDO, 349 DEFERIDO COM RECURSO, 42 SUBSTITUTO PENDENTE; 2016: 244 COM RECURSO, 4 INDEFERIDO COM RECURSO, 4 CASSADO COM RECURSO; 2020/2024 sem detalhe (campo vazio / #NE)",
+   "relationships": [
+    "R6-06"
+   ]
+  },
+  {
+   "id": "T6-E",
+   "label": "DOM/SC: decretos por categoria estruturada, 4 municípios",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "GET ?r=site/portal&codigoEntidade=N&q=*:*&categoria=Decretos&dataInicial/dataFinal=2024",
+   "evidence": "Blumenau 964, Chapecó 2.563, Lages 1.451, Abdon Batista 167 (a busca textual da P5 dava 3.336/3.774/-/251: superestima 1,5x a 3,5x). Cada ato: categoria, número, ano, data de publicação, PDF. Resultados trazem item-sentinela de 2009 sem número (artefato)",
+   "relationships": [
+    "R6-07"
+   ]
+  },
+  {
+   "id": "T6-F",
+   "label": "DOM/SC: signatário do decreto",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "página do ato (assinatura ICP-Brasil) e pdftotext do PDF original",
+   "evidence": "página do ato traz assinante ICP só em Abdon Batista (10/10); Blumenau, Chapecó e Lages 0/10 (apenas certificado do consórcio). PDF: Abdon Batista 6/6 com \"Nome, Prefeito Municipal\"; Chapecó 3/3 com \"Documento assinado eletronicamente por <nome>, Prefeito(a)\" (SEI)",
+   "relationships": [
+    "R6-08"
+   ]
+  },
+  {
+   "id": "T6-G",
+   "label": "União de cobertura de diários municipais",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "IBGE (5.571) x spiders QD por classe-base x DOM/SC por nome dentro de SC",
+   "evidence": "união 731 municípios (13.1%); sobreposição QD x DOM/SC = 2; plataformas quase sem sobreposição; SC 293/295 via DOM/SC",
+   "relationships": [
+    "R6-12"
+   ]
+  },
+  {
+   "id": "T6-H",
+   "label": "Estimativa de cobertura por número de adaptadores",
+   "state": "INFERRED",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "cobertura gulosa sobre o universo documentado (QD+DOM/SC)",
+   "evidence": "1 adaptador 293; 3: 446; 5: 506; 10: 581; 20: 618 (sem DOEM bloqueado); com DOEM 3: 460, 20: 670",
+   "relationships": [
+    "R6-12"
+   ]
+  },
+  {
+   "id": "T6-I",
+   "label": "Normas estaduais SP: classe institucional",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "campos Promulg e IdTipo do XML da Alesp, 2013-2026",
+   "evidence": "decretos (IdTipo 3, Promulg E) 14.729; leis (9, E) 3.949; LC (2, E) 578; 2013-2026; Promulg distingue origem Executivo/Legislativo; assinante não consta no XML",
+   "relationships": [
+    "R6-09"
+   ]
+  },
+  {
+   "id": "T6-J",
+   "label": "Decreto estadual BA com data de ato e de publicação",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "LegislaBahia /documentos/decreto-no-24877-de-08-de-outubro-de-2026",
+   "evidence": "Data do Ato 08/10/2026; Publicação no DOE 09/10/2026; ementa e texto; \"O GOVERNADOR DO ESTADO DA BAHIA\" sem nome; filtro de data devolve erro com formato testado",
+   "relationships": [
+    "R6-09"
+   ]
+  },
+  {
+   "id": "T6-K",
+   "label": "Alcançabilidade de portais de legislação das 27 UFs",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "GET da página inicial de portal candidato por UF (curl, 25s)",
+   "evidence": "20 de 27 responderam 200 (CE e SP com sinal de WAF/captcha na home, não contornado); 7 não: AL 404, PA 404, RJ 404, MG 500, MA/RN/RO sem resposta. URLs são candidatos escolhidos, não catálogo oficial",
+   "relationships": [
+    "R6-09"
+   ]
+  },
+  {
+   "id": "T6-L",
+   "label": "DOU: paginação e precisão de busca",
+   "state": "VERIFIED_API",
+   "result": "PARTIAL",
+   "method": "consulta ?q=...&s=do2&exactDate=personalizado; leitura do JSON embutido; parâmetros do script da página",
+   "evidence": "paginação existe e é por cursor (currentPage,newPage,score,id,displayDate do último item): página 2 sem sobreposição com a 1; total informado (5.513 em mar/2023 para a consulta). Busca fuzzy: consultas por \"Nomear Ministro de Estado\" retornam portarias de conselhos e tribunais, não os decretos presidenciais; frase entre aspas retorna 0",
+   "relationships": [
+    "R6-13"
+   ]
+  },
+  {
+   "id": "T6-M",
+   "label": "Ministros atuais: ocupante, órgão, data e ato",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "SIAPE Cadastro 2026-07 filtrando DESCRICAO_CARGO = MINISTRO DE ESTADO",
+   "evidence": "39 ocupantes; ORG_EXERCICIO/COD_ORG_EXERCICIO (ex.: 25000 Saúde, 32000 Minas e Energia), DATA_INGRESSO_CARGOFUNCAO (ex.: 2025-03-10, 2023-01-01, 2026-04-01) e DIPLOMA_INGRESSO = DECRETO; só fotografia mensal vigente; histórico mensal 2013-2026 não verificado (download retornou AccessDenied)",
+   "relationships": [
+    "R6-04"
+   ]
+  },
+  {
+   "id": "T6-N",
+   "label": "SIORG: existe vínculo unidade -> ocupante?",
+   "state": "VERIFIED_API",
+   "result": "PASS",
+   "method": "leitura do OpenAPI e dos endpoints de cargo-funcao",
+   "evidence": "cargo-funcao e alocados-estrutura trazem quantitativos de cargos por unidade, nenhum campo de ocupante: SIORG não resolve \"quem\" (relação SIORG->ministro permanece UNLINKED); SIAPE resolve por código de órgão (mapeamento SIAPE<->SIORG a validar)",
+   "relationships": [
+    "R6-10"
+   ]
+  },
+  {
+   "id": "T6-O",
+   "label": "Vetos: ciclo de vida",
+   "state": "VERIFIED_API",
+   "result": "PASS_WITH_CAVEATS",
+   "method": "Senado processo?sigla=VET&ano=2013..2026 e detalhe do processo",
+   "evidence": "765 vetos; 660 com normaGerada (86%); deliberação: MANTIDA_MATE=432, SEM_DELIBERACAO=133, REJEITADO_PLENARIO=106, MANTIDO_PARCIALMENTE=81, PREJUDICADO=13; campos dataDeliberacao, tramitando, autoria Presidência da República, urlDocumento; PL de origem só no texto da ementa (parsing)",
+   "relationships": [
+    "R6-02",
+    "R6-03"
+   ]
+  },
+  {
+   "id": "T6-P",
+   "label": "Viagem -> pagamento (Presidência, 2025)",
+   "state": "VERIFIED_DATASET",
+   "result": "PASS",
+   "method": "join por Identificador do processo de viagem entre Viagem.csv e Pagamento.csv",
+   "evidence": "11380 viagens, 11341 com pagamento (99.66%); soma(diárias+passagens+outros-devolução) = pagamento em 11049 (97.4%), diferença em 292; 263 não realizadas; solicitante inclui Gabinete da Vice-Presidência (366)",
+   "relationships": [
+    "R6-01"
+   ]
+  },
+  {
+   "id": "T6-Q",
+   "label": "Ministro/secretário: cadeia nomeação->exercício->exoneração",
+   "state": "DOCUMENTED_ONLY",
+   "result": "PARTIAL",
+   "method": "SIAPE (início, diploma), DOU (busca), DOM/SC categoria Portarias",
+   "evidence": "ministros: início por SIAPE; fim por substituição não verificado; DOM/SC Abdon Batista 2024: Portarias 584; com \"nomear\" 58, \"exonerar\" 128 (busca textual); sem cadeia fechada em nenhum nível",
+   "relationships": [
+    "R6-04"
+   ]
+  }
+ ],
+ "office_holding_sources": [
+  {
+   "id": "OHS-FED-SIG",
+   "source": "S6-PLANALTO",
+   "level": "federal",
+   "covers": [
+    "exercício efetivo",
+    "substituição"
+   ],
+   "granularity": "dia do ato",
+   "state": "VERIFIED_DATASET",
+   "feas": "NEEDS_VALIDATION",
+   "limitation": "amostral; ausência de ato não prova ausência de exercício"
+  },
+  {
+   "id": "OHS-TSE-SUP",
+   "source": "S6-TSE-CAND",
+   "level": "municipal",
+   "covers": [
+    "interrupção"
+   ],
+   "granularity": "ciclo/UE",
+   "state": "VERIFIED_DATASET",
+   "feas": "READY_FOR_CONTRACT",
+   "limitation": "sem data de afastamento"
+  },
+  {
+   "id": "OHS-DOM",
+   "source": "S6-DOMSC",
+   "level": "municipal",
+   "covers": [
+    "posse",
+    "substituição (potencial)"
+   ],
+   "granularity": "ato",
+   "state": "VERIFIED_API",
+   "feas": "NEEDS_VALIDATION",
+   "limitation": "não testado para posse"
+  },
+  {
+   "id": "OHS-STATE",
+   "source": "S6-STATE-PORTALS",
+   "level": "estadual",
+   "covers": [],
+   "granularity": null,
+   "state": "NOT_EVALUATED",
+   "feas": "DISCOVERY_ONLY",
+   "limitation": "nenhum evento de exercício estadual verificado"
+  }
+ ],
+ "office_holding_events": [
+  {
+   "id": "OHE6-01",
+   "person": "Dilma Rousseff",
+   "office": "Presidente",
+   "kind": "último ato assinado",
+   "date": "2016-05-11",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": "sinal de afastamento; documento de afastamento não coletado"
+  },
+  {
+   "id": "OHE6-02",
+   "person": "Michel Temer",
+   "office": "Presidente (exercício)",
+   "kind": "primeiro ato como titular em exercício",
+   "date": "2016-05-30",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": "amostra; borda real pode ser 12/05/2016"
+  },
+  {
+   "id": "OHE6-03",
+   "person": "Rodrigo Maia",
+   "office": "Presidente (substituto)",
+   "kind": "atos em substituição",
+   "date": "2016-09-01..2017-01-10",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": ""
+  },
+  {
+   "id": "OHE6-04",
+   "person": "Antônio Hamilton Mourão",
+   "office": "Presidente (substituto)",
+   "kind": "atos em substituição",
+   "date": "2019-06-27..2021-11-17",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": ""
+  },
+  {
+   "id": "OHE6-05",
+   "person": "Geraldo Alckmin",
+   "office": "Presidente (substituto)",
+   "kind": "atos em substituição",
+   "date": "2023-04-12..2026-05-07",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": "24 atos na amostra"
+  },
+  {
+   "id": "OHE6-06",
+   "person": "Ricardo Lewandowski",
+   "office": "Presidente (substituto)",
+   "kind": "atos em substituição",
+   "date": "2014-09-23..2014-09-24",
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET",
+   "note": "3 atos na amostra"
+  }
+ ],
+ "succession_events": [
+  {
+   "id": "SE6-MUN",
+   "scope": "municipal",
+   "kind": "suplementar após mandato interrompido",
+   "counts": {
+    "2012": 110,
+    "2016": 120,
+    "2020": 36,
+    "2024": 11
+   },
+   "source": "S6-TSE-CAND",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "SE6-FED",
+   "scope": "federal",
+   "kind": "substituições e sucessão",
+   "count": 5,
+   "source": "S6-PLANALTO",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "SE6-STATE",
+   "scope": "estadual",
+   "kind": "sucessão de governador",
+   "source": null,
+   "state": "NOT_EVALUATED"
+  }
+ ],
+ "signatory_sources": [
+  {
+   "id": "SG-FED",
+   "level": "federal",
+   "source": "S6-PLANALTO",
+   "sample": 840,
+   "pages": 840,
+   "extracted": 803,
+   "pct": 95.6,
+   "multi_signer": 0,
+   "retification_flag": 1,
+   "non_titular": 59,
+   "state": "VERIFIED_DATASET",
+   "by_year": {
+    "2013": {
+     "sample": 60,
+     "extracted": 57
+    },
+    "2014": {
+     "sample": 60,
+     "extracted": 58
+    },
+    "2015": {
+     "sample": 60,
+     "extracted": 54
+    },
+    "2016": {
+     "sample": 60,
+     "extracted": 50
+    },
+    "2017": {
+     "sample": 60,
+     "extracted": 52
+    },
+    "2018": {
+     "sample": 60,
+     "extracted": 57
+    },
+    "2019": {
+     "sample": 60,
+     "extracted": 58
+    },
+    "2020": {
+     "sample": 60,
+     "extracted": 59
+    },
+    "2021": {
+     "sample": 60,
+     "extracted": 59
+    },
+    "2022": {
+     "sample": 60,
+     "extracted": 60
+    },
+    "2023": {
+     "sample": 60,
+     "extracted": 60
+    },
+    "2024": {
+     "sample": 60,
+     "extracted": 59
+    },
+    "2025": {
+     "sample": 60,
+     "extracted": 60
+    },
+    "2026": {
+     "sample": 60,
+     "extracted": 60
+    }
+   }
+  },
+  {
+   "id": "SG-DOMSC-PAGE",
+   "level": "municipal",
+   "source": "S6-DOMSC",
+   "sample": 40,
+   "municipalities": 4,
+   "with_person_signature_on_page": 10,
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "SG-DOMSC-PDF",
+   "level": "municipal",
+   "source": "S6-DOMSC",
+   "sample": 9,
+   "extracted": 9,
+   "state": "VERIFIED_DATASET",
+   "note": "Abdon Batista 6/6, Chapecó 3/3"
+  },
+  {
+   "id": "SG-STATE",
+   "level": "estadual",
+   "source": "S6-BA",
+   "sample": 1,
+   "extracted": 0,
+   "state": "NOT_EVALUATED"
+  }
+ ],
+ "normative_sources": [
+  {
+   "id": "NS-FED",
+   "level": "federal",
+   "source": "S6-SEN-LEG",
+   "per_year": {
+    "2013": 297,
+    "2014": 207,
+    "2015": 245,
+    "2016": 318,
+    "2017": 310,
+    "2018": 399,
+    "2019": 537,
+    "2020": 398,
+    "2021": 332,
+    "2022": 398,
+    "2023": 550,
+    "2024": 472,
+    "2025": 463,
+    "2026": 323
+   },
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NS-SP",
+   "level": "SP",
+   "source": "S6-ALESP",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "NS-BA",
+   "level": "BA",
+   "source": "S6-BA",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "NS-MUN-SC",
+   "level": "municipal SC",
+   "source": "S6-DOMSC",
+   "counts_2024": {
+    "Lages": 1451,
+    "Blumenau": 964,
+    "Chapecó": 2563,
+    "Abdon Batista": 167
+   },
+   "state": "VERIFIED_API"
+  }
+ ],
+ "gazette_providers": [
+  {
+   "id": "GP6-DOM/SC",
+   "platform": "DOM/SC",
+   "municipalities": 293,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Instar",
+   "platform": "Instar",
+   "municipalities": 111,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-DOEM",
+   "platform": "DOEM",
+   "municipalities": 56,
+   "blocked": true,
+   "state": "BLOCKED"
+  },
+  {
+   "id": "GP6-DOSP",
+   "platform": "DOSP",
+   "municipalities": 42,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-ADiários v1",
+   "platform": "ADiários v1",
+   "municipalities": 34,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-MunicípioOnline",
+   "platform": "MunicípioOnline",
+   "municipalities": 26,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Atende v2",
+   "platform": "Atende v2",
+   "municipalities": 22,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-DIOF",
+   "platform": "DIOF",
+   "municipalities": 21,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-BarcoDigital",
+   "platform": "BarcoDigital",
+   "municipalities": 12,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Siganet",
+   "platform": "Siganet",
+   "municipalities": 10,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-DiarioOficialBR",
+   "platform": "DiarioOficialBR",
+   "municipalities": 10,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Modernização",
+   "platform": "Modernização",
+   "municipalities": 6,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Dionet",
+   "platform": "Dionet",
+   "municipalities": 5,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-ADiários v2",
+   "platform": "ADiários v2",
+   "municipalities": 5,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Aplus",
+   "platform": "Aplus",
+   "municipalities": 4,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-Dioenet",
+   "platform": "Dioenet",
+   "municipalities": 4,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-PTIO",
+   "platform": "PTIO",
+   "municipalities": 4,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "GP6-AdministraçãoPública",
+   "platform": "AdministraçãoPública",
+   "municipalities": 3,
+   "blocked": false,
+   "state": "VERIFIED_DATASET"
+  }
+ ],
+ "gazette_coverage": {
+  "municipios_ibge": 5571,
+  "qd_spiders": 449,
+  "qd_municipios": 440,
+  "domsc_municipios": 293,
+  "union": 731,
+  "union_pct": 13.1,
+  "generic_per_city_spiders": 62,
+  "note": "cobertura de conectores documentados, não prova de acervo completo; DOM/SC resolve 293/295 de SC (faltam Laurentino e Grão-Pará)"
+ },
+ "provider_overlap": {
+  "domsc_x_qd": 2,
+  "exclusive": {
+   "BaseDiofSpider": 19,
+   "BaseSigpubSpider": 2,
+   "BaseGazetteSpider": 57,
+   "BaseAdiariosV1Spider": 33,
+   "BaseDoemSpider": 54,
+   "BaseDospSpider": 41,
+   "BaseDionetSpider": 5,
+   "BaseSiganetSpider": 10,
+   "BaseAplusSpider": 3,
+   "BaseAratextSpider": 2,
+   "BaseAdministracaoPublicaSpider": 3,
+   "BaseInstarSpider": 111,
+   "BaseAdminLteSpider": 2,
+   "BaseAtendeV2Spider": 22,
+   "BaseDioenetSpider": 4,
+   "BasePtioSpider": 4,
+   "BaseAdiariosV2Spider": 5,
+   "BaseModernizacaoSpider": 6,
+   "BasePortalGovSpider": 2,
+   "BaseMunicipioOnlineSpider": 26,
+   "BaseDiarioOficialBRSpider": 10,
+   "BaseBarcoDigitalSpider": 12,
+   "DOM/SC": 291
+  },
+  "reading": "plataformas praticamente disjuntas; somar após deduplicar por IBGE"
+ },
+ "state_coverage": [
+  {
+   "uf": "AC",
+   "reachable": true,
+   "code": "200",
+   "title": "LEGIS :: Portal da Legislação do Estado do Acre",
+   "waf": false,
+   "url": "https://legis.ac.gov.br"
+  },
+  {
+   "uf": "AL",
+   "reachable": false,
+   "code": "404",
+   "title": "Assembleia Legislativa de Alagoas",
+   "waf": false,
+   "url": "https://www.al.al.leg.br/atividade-legislativa/legislacao"
+  },
+  {
+   "uf": "AM",
+   "reachable": true,
+   "code": "200",
+   "title": "ALEAM | Assembleia Legislativa do Estado do Amazonas",
+   "waf": false,
+   "url": "https://www.aleam.gov.br"
+  },
+  {
+   "uf": "AP",
+   "reachable": true,
+   "code": "200",
+   "title": "Portal da Assembleia Legislativa do Estado do Amapá",
+   "waf": false,
+   "url": "https://www.al.ap.gov.br"
+  },
+  {
+   "uf": "BA",
+   "reachable": true,
+   "code": "200",
+   "title": "Início | Portal de Legislação do Estado da Bahia | Casa Civil",
+   "waf": false,
+   "url": "https://www.legislabahia.ba.gov.br"
+  },
+  {
+   "uf": "CE",
+   "reachable": true,
+   "code": "200",
+   "title": "Principal",
+   "waf": true,
+   "url": "https://belt.al.ce.gov.br"
+  },
+  {
+   "uf": "DF",
+   "reachable": true,
+   "code": "200",
+   "title": " .:: SINJ-DF - Sistema Integrado de Normas Jurídicas do DF ::. ",
+   "waf": false,
+   "url": "https://www.sinj.df.gov.br/sinj/"
+  },
+  {
+   "uf": "ES",
+   "reachable": true,
+   "code": "200",
+   "title": "Diário Oficial / Home",
+   "waf": false,
+   "url": "https://ioes.dio.es.gov.br"
+  },
+  {
+   "uf": "GO",
+   "reachable": true,
+   "code": "200",
+   "title": null,
+   "waf": false,
+   "url": "https://legisla.casacivil.go.gov.br"
+  },
+  {
+   "uf": "MA",
+   "reachable": false,
+   "code": "000",
+   "title": null,
+   "waf": false,
+   "url": "https://legislacao.ma.gov.br"
+  },
+  {
+   "uf": "MG",
+   "reachable": false,
+   "code": "500",
+   "title": "Dados Abertos - ALMG ",
+   "waf": false,
+   "url": "https://dadosabertos.almg.gov.br/api/v2/legislacao/pesquisa?formato=json&tp=DEC&ano=2025&ini=1&p=1"
+  },
+  {
+   "uf": "MS",
+   "reachable": true,
+   "code": "200",
+   "title": null,
+   "waf": false,
+   "url": "https://aacpdappls.net.ms.gov.br/appls/legislacao/secoge/govato.nsf"
+  },
+  {
+   "uf": "MT",
+   "reachable": true,
+   "code": "200",
+   "title": " Busca Legislação ",
+   "waf": false,
+   "url": "https://www.al.mt.gov.br/norma-juridica"
+  },
+  {
+   "uf": "PA",
+   "reachable": false,
+   "code": "404",
+   "title": "404 - File or directory not found.",
+   "waf": false,
+   "url": "https://www.alepa.pa.gov.br/Legislacao"
+  },
+  {
+   "uf": "PB",
+   "reachable": true,
+   "code": "200",
+   "title": "Legislação Cidadã - Assembleia Legislativa da Paraíba",
+   "waf": false,
+   "url": "https://www.al.pb.leg.br/legislacao"
+  },
+  {
+   "uf": "PE",
+   "reachable": true,
+   "code": "200",
+   "title": " Alepe Legis - Portal da Legislação Estadual de Pernambuco ",
+   "waf": false,
+   "url": "https://legis.alepe.pe.gov.br"
+  },
+  {
+   "uf": "PI",
+   "reachable": true,
+   "code": "200",
+   "title": "SAPL - Assembleia Legislativa do Estado do Piauí",
+   "waf": false,
+   "url": "https://sapl.al.pi.leg.br"
+  },
+  {
+   "uf": "PR",
+   "reachable": true,
+   "code": "200",
+   "title": "Sistema Legislação",
+   "waf": false,
+   "url": "https://www.legislacao.pr.gov.br"
+  },
+  {
+   "uf": "RJ",
+   "reachable": false,
+   "code": "404",
+   "title": "The resource cannot be found.",
+   "waf": false,
+   "url": "https://www.alerj.rj.gov.br/Visualizar/Leis"
+  },
+  {
+   "uf": "RN",
+   "reachable": false,
+   "code": "000",
+   "title": null,
+   "waf": false,
+   "url": "https://diariooficial.rn.gov.br"
+  },
+  {
+   "uf": "RO",
+   "reachable": false,
+   "code": "000",
+   "title": null,
+   "waf": false,
+   "url": "https://ale.ro.leg.br"
+  },
+  {
+   "uf": "RR",
+   "reachable": true,
+   "code": "200",
+   "title": "Assembleia Legislativa do Estado de Roraima | ALE-RR",
+   "waf": false,
+   "url": "https://al.rr.leg.br"
+  },
+  {
+   "uf": "RS",
+   "reachable": true,
+   "code": "200",
+   "title": "Sistema Legis - Assembleia Gaúcha",
+   "waf": false,
+   "url": "https://www.al.rs.gov.br/legis"
+  },
+  {
+   "uf": "SC",
+   "reachable": true,
+   "code": "200",
+   "title": "Legislação / Pesquisa da Legislação Estadual",
+   "waf": false,
+   "url": "https://leis.alesc.sc.gov.br"
+  },
+  {
+   "uf": "SE",
+   "reachable": true,
+   "code": "200",
+   "title": "Principal - Assembleia Legislativa de Sergipe",
+   "waf": false,
+   "url": "https://www.al.se.leg.br"
+  },
+  {
+   "uf": "SP",
+   "reachable": true,
+   "code": "200",
+   "title": "Alesp - Legislação Estadual",
+   "waf": true,
+   "url": "https://www.al.sp.gov.br/norma/"
+  },
+  {
+   "uf": "TO",
+   "reachable": true,
+   "code": "200",
+   "title": "Assembleia Legislativa do Estado do Tocantins",
+   "waf": false,
+   "url": "https://www.al.to.leg.br"
+  }
+ ],
+ "municipal_coverage": {
+  "per_uf": [
+   {
+    "uf": "DF",
+    "covered": 1,
+    "total": 1,
+    "pct": 100
+   },
+   {
+    "uf": "SC",
+    "covered": 293,
+    "total": 295,
+    "pct": 99
+   },
+   {
+    "uf": "SE",
+    "covered": 29,
+    "total": 75,
+    "pct": 39
+   },
+   {
+    "uf": "RJ",
+    "covered": 33,
+    "total": 92,
+    "pct": 36
+   },
+   {
+    "uf": "AP",
+    "covered": 3,
+    "total": 16,
+    "pct": 19
+   },
+   {
+    "uf": "TO",
+    "covered": 26,
+    "total": 139,
+    "pct": 19
+   },
+   {
+    "uf": "SP",
+    "covered": 116,
+    "total": 645,
+    "pct": 18
+   },
+   {
+    "uf": "BA",
+    "covered": 72,
+    "total": 417,
+    "pct": 17
+   },
+   {
+    "uf": "MA",
+    "covered": 28,
+    "total": 217,
+    "pct": 13
+   },
+   {
+    "uf": "MS",
+    "covered": 10,
+    "total": 79,
+    "pct": 13
+   },
+   {
+    "uf": "RR",
+    "covered": 1,
+    "total": 15,
+    "pct": 7
+   },
+   {
+    "uf": "CE",
+    "covered": 13,
+    "total": 184,
+    "pct": 7
+   },
+   {
+    "uf": "PR",
+    "covered": 27,
+    "total": 399,
+    "pct": 7
+   },
+   {
+    "uf": "RN",
+    "covered": 6,
+    "total": 167,
+    "pct": 4
+   },
+   {
+    "uf": "PB",
+    "covered": 10,
+    "total": 223,
+    "pct": 4
+   },
+   {
+    "uf": "ES",
+    "covered": 3,
+    "total": 78,
+    "pct": 4
+   },
+   {
+    "uf": "RS",
+    "covered": 21,
+    "total": 497,
+    "pct": 4
+   },
+   {
+    "uf": "PE",
+    "covered": 5,
+    "total": 185,
+    "pct": 3
+   },
+   {
+    "uf": "AL",
+    "covered": 3,
+    "total": 102,
+    "pct": 3
+   },
+   {
+    "uf": "RO",
+    "covered": 1,
+    "total": 52,
+    "pct": 2
+   },
+   {
+    "uf": "AM",
+    "covered": 1,
+    "total": 62,
+    "pct": 2
+   },
+   {
+    "uf": "PA",
+    "covered": 3,
+    "total": 144,
+    "pct": 2
+   },
+   {
+    "uf": "MG",
+    "covered": 20,
+    "total": 853,
+    "pct": 2
+   },
+   {
+    "uf": "MT",
+    "covered": 3,
+    "total": 142,
+    "pct": 2
+   },
+   {
+    "uf": "GO",
+    "covered": 2,
+    "total": 246,
+    "pct": 1
+   },
+   {
+    "uf": "AC",
+    "covered": 0,
+    "total": 22,
+    "pct": 0
+   },
+   {
+    "uf": "PI",
+    "covered": 1,
+    "total": 224,
+    "pct": 0
+   }
+  ],
+  "greedy_without_doem": {
+   "1": 293,
+   "3": 446,
+   "5": 506,
+   "10": 581,
+   "20": 618
+  },
+  "greedy_with_doem": {
+   "1": 293,
+   "3": 460,
+   "5": 536,
+   "10": 625,
+   "20": 670
+  },
+  "order": [
+   [
+    1,
+    "DOM/SC",
+    293
+   ],
+   [
+    2,
+    "BaseInstarSpider",
+    404
+   ],
+   [
+    3,
+    "BaseDospSpider",
+    446
+   ],
+   [
+    4,
+    "BaseAdiariosV1Spider",
+    480
+   ],
+   [
+    5,
+    "BaseMunicipioOnlineSpider",
+    506
+   ],
+   [
+    6,
+    "BaseAtendeV2Spider",
+    528
+   ],
+   [
+    7,
+    "BaseDiofSpider",
+    549
+   ],
+   [
+    8,
+    "BaseBarcoDigitalSpider",
+    561
+   ],
+   [
+    9,
+    "BaseSiganetSpider",
+    571
+   ],
+   [
+    10,
+    "BaseDiarioOficialBRSpider",
+    581
+   ]
+  ]
+ },
+ "federal_appointments": {
+  "sources": [
+   "S6-SIAPE",
+   "S6-DOU",
+   "S6-INLABS"
+  ],
+  "ministers_current": 39,
+  "dou_pagination": "cursor",
+  "dou_precision": "baixa (busca fuzzy)",
+  "inlabs": "BLOCKED",
+  "state": "BLOCKED"
+ },
+ "state_appointments": {
+  "sources": [
+   "S6-BA"
+  ],
+  "state": "NOT_EVALUATED",
+  "note": "BA publica decretos individuais; nomeação não medida"
+ },
+ "municipal_appointments": {
+  "source": "S6-DOMSC",
+  "abdon_batista_2024": {
+   "Portarias": 584,
+   "Decretos": 167,
+   "Leis": 54,
+   "Atos de Pessoal": 0,
+   "portarias_nomear_exonerar": 0
+  },
+  "blumenau_2024": {
+   "Portarias": 4153,
+   "Decretos": 964,
+   "Leis": 202,
+   "Atos de Pessoal": 0,
+   "portarias_nomear_exonerar": 0
+  },
+  "chapeco_2024": {
+   "Portarias": 682,
+   "Decretos": 2563,
+   "Leis": 284,
+   "Atos de Pessoal": 0,
+   "portarias_nomear_exonerar": 0
+  },
+  "lages_2024": {
+   "Portarias": 1111,
+   "Decretos": 1451,
+   "Leis": 52,
+   "Atos de Pessoal": 0,
+   "portarias_nomear_exonerar": 0
+  },
+  "state": "VERIFIED_API",
+  "note": "categoria Portarias existe; \"Atos de Pessoal\" = 0; tipo nomeação/exoneração só por texto"
+ },
+ "government_structure": {
+  "federal": {
+   "source": "S6-SIORG",
+   "occupant_field": false,
+   "bridge": "SIAPE COD_ORG_EXERCICIO",
+   "state": "VERIFIED_API"
+  },
+  "state": {
+   "state": "NOT_EVALUATED"
+  },
+  "municipal": {
+   "source": "TCE (P4)",
+   "state": "INFERRED"
+  }
+ },
+ "executive_legislative_links": {
+  "camara": "autor institucional (P5)",
+  "senado_vet": "normaGerada e dataDeliberacao",
+  "pl_origin": "texto da ementa",
+  "state": "VERIFIED_DATASET"
+ },
+ "veto_lifecycle": {
+  "total": 765,
+  "with_norm": 660,
+  "outcomes": {
+   "SEM_DELIBERACAO": 133,
+   "MANTIDA_MATE": 432,
+   "PREJUDICADO": 13,
+   "MANTIDO_PARCIALMENTE": 81,
+   "REJEITADO_PLENARIO": 106
+  },
+  "per_year": {
+   "2013": {
+    "n": 57,
+    "delib": {
+     "null": 21,
+     "MANTIDA_MATE": 36
+    },
+    "com_lei": 40,
+    "com_pl_no_texto": 12,
+    "tipo": {
+     "parcial": 22,
+     "total": 10,
+     "?": 25
+    },
+    "tramitando_sim": 21
+   },
+   "2014": {
+    "n": 36,
+    "delib": {
+     "MANTIDA_MATE": 35,
+     "PREJUDICADO": 1
+    },
+    "com_lei": 26,
+    "com_pl_no_texto": 12,
+    "tipo": {
+     "parcial": 26,
+     "total": 10
+    },
+    "tramitando_sim": 0
+   },
+   "2015": {
+    "n": 64,
+    "delib": {
+     "MANTIDA_MATE": 57,
+     "MANTIDO_PARCIALMENTE": 4,
+     "REJEITADO_PLENARIO": 2,
+     "PREJUDICADO": 1
+    },
+    "com_lei": 47,
+    "com_pl_no_texto": 27,
+    "tipo": {
+     "parcial": 44,
+     "total": 19,
+     "?": 1
+    },
+    "tramitando_sim": 0
+   },
+   "2016": {
+    "n": 52,
+    "delib": {
+     "MANTIDA_MATE": 47,
+     "PREJUDICADO": 1,
+     "MANTIDO_PARCIALMENTE": 3,
+     "REJEITADO_PLENARIO": 1
+    },
+    "com_lei": 49,
+    "com_pl_no_texto": 24,
+    "tipo": {
+     "parcial": 43,
+     "total": 3,
+     "?": 6
+    },
+    "tramitando_sim": 0
+   },
+   "2017": {
+    "n": 50,
+    "delib": {
+     "MANTIDA_MATE": 41,
+     "REJEITADO_PLENARIO": 7,
+     "MANTIDO_PARCIALMENTE": 1,
+     "PREJUDICADO": 1
+    },
+    "com_lei": 44,
+    "com_pl_no_texto": 25,
+    "tipo": {
+     "total": 7,
+     "parcial": 42,
+     "?": 1
+    },
+    "tramitando_sim": 0
+   },
+   "2018": {
+    "n": 42,
+    "delib": {
+     "MANTIDA_MATE": 32,
+     "MANTIDO_PARCIALMENTE": 5,
+     "REJEITADO_PLENARIO": 4,
+     "PREJUDICADO": 1
+    },
+    "com_lei": 42,
+    "com_pl_no_texto": 20,
+    "tipo": {
+     "parcial": 38,
+     "?": 1,
+     "total": 3
+    },
+    "tramitando_sim": 0
+   },
+   "2019": {
+    "n": 62,
+    "delib": {
+     "MANTIDA_MATE": 41,
+     "MANTIDO_PARCIALMENTE": 8,
+     "REJEITADO_PLENARIO": 13
+    },
+    "com_lei": 49,
+    "com_pl_no_texto": 28,
+    "tipo": {
+     "parcial": 41,
+     "total": 21
+    },
+    "tramitando_sim": 0
+   },
+   "2020": {
+    "n": 59,
+    "delib": {
+     "REJEITADO_PLENARIO": 9,
+     "MANTIDA_MATE": 39,
+     "MANTIDO_PARCIALMENTE": 11
+    },
+    "com_lei": 53,
+    "com_pl_no_texto": 54,
+    "tipo": {
+     "total": 10,
+     "parcial": 49
+    },
+    "tramitando_sim": 0
+   },
+   "2021": {
+    "n": 73,
+    "delib": {
+     "REJEITADO_PLENARIO": 27,
+     "MANTIDO_PARCIALMENTE": 12,
+     "MANTIDA_MATE": 32,
+     "PREJUDICADO": 2
+    },
+    "com_lei": 68,
+    "com_pl_no_texto": 60,
+    "tipo": {
+     "parcial": 58,
+     "total": 15
+    },
+    "tramitando_sim": 0
+   },
+   "2022": {
+    "n": 65,
+    "delib": {
+     "REJEITADO_PLENARIO": 22,
+     "MANTIDA_MATE": 29,
+     "MANTIDO_PARCIALMENTE": 12,
+     "PREJUDICADO": 1,
+     "null": 1
+    },
+    "com_lei": 59,
+    "com_pl_no_texto": 54,
+    "tipo": {
+     "parcial": 47,
+     "total": 18
+    },
+    "tramitando_sim": 1
+   },
+   "2023": {
+    "n": 49,
+    "delib": {
+     "MANTIDO_PARCIALMENTE": 18,
+     "MANTIDA_MATE": 14,
+     "PREJUDICADO": 2,
+     "null": 4,
+     "REJEITADO_PLENARIO": 11
+    },
+    "com_lei": 47,
+    "com_pl_no_texto": 41,
+    "tipo": {
+     "parcial": 44,
+     "total": 5
+    },
+    "tramitando_sim": 4
+   },
+   "2024": {
+    "n": 50,
+    "delib": {
+     "MANTIDO_PARCIALMENTE": 4,
+     "MANTIDA_MATE": 25,
+     "REJEITADO_PLENARIO": 6,
+     "null": 15
+    },
+    "com_lei": 46,
+    "com_pl_no_texto": 47,
+    "tipo": {
+     "parcial": 13,
+     "?": 37
+    },
+    "tramitando_sim": 15
+   },
+   "2025": {
+    "n": 51,
+    "delib": {
+     "null": 38,
+     "REJEITADO_PLENARIO": 3,
+     "PREJUDICADO": 3,
+     "MANTIDO_PARCIALMENTE": 3,
+     "MANTIDA_MATE": 4
+    },
+    "com_lei": 44,
+    "com_pl_no_texto": 47,
+    "tipo": {
+     "?": 51
+    },
+    "tramitando_sim": 38
+   },
+   "2026": {
+    "n": 55,
+    "delib": {
+     "null": 54,
+     "REJEITADO_PLENARIO": 1
+    },
+    "com_lei": 46,
+    "com_pl_no_texto": 46,
+    "tipo": {
+     "?": 53,
+     "parcial": 2
+    },
+    "tramitando_sim": 54
+   }
+  },
+  "state": "VERIFIED_API"
+ },
+ "institutional_cost": {
+  "minimal_isolable_unit": "Gabinete da Vice-Presidência (solicitante de 366 viagens); Presidência (órgão superior)",
+  "source": [
+   "S6-PT-VIAG"
+  ],
+  "person_level": "NOT_ATTRIBUTABLE",
+  "state": "VERIFIED_DATASET"
+ },
+ "workforce": {
+  "source": "S6-SIAPE",
+  "note": "sem nova medição além de P5 (778.337 vínculos; 627.380 pessoas; 140.288 com função)",
+  "state": "VERIFIED_DATASET"
+ },
+ "travels": {
+  "source": "S6-PT-VIAG",
+  "presidencia": 11380,
+  "linked": 11341,
+  "equal_value": 11049,
+  "different": 292,
+  "not_realized": 263,
+  "state": "VERIFIED_DATASET"
+ },
+ "agendas": {
+  "state": "NOT_EVALUATED",
+  "note": "não coletadas"
+ },
+ "identity_keys": [
+  {
+   "id": "IK6-PERSON",
+   "key": "hash(título)",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK6-MANDATE",
+   "key": "eleição+SG_UE+cargo+turno",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK6-HOLDING",
+   "key": "pessoa+cargo+ente+início+fonte",
+   "state": "INFERRED",
+   "note": "novo, a materializar"
+  },
+  {
+   "id": "IK6-ACT-FED",
+   "key": "tipo+número+ano",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK6-ACT-DOMSC",
+   "key": "código do ato DOM/SC",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK6-VIAGEM",
+   "key": "Identificador do processo de viagem",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "IK6-VET",
+   "key": "VET numero/ano + id processo Senado",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "IK6-MUN",
+   "key": "IBGE 7 dígitos",
+   "state": "VERIFIED_API"
+  }
+ ],
+ "temporal_contracts": [
+  {
+   "id": "TC6-HOLDING",
+   "fields": [
+    "data_inicio",
+    "data_fim",
+    "data_publicacao",
+    "data_efeito",
+    "fonte",
+    "confianca",
+    "motivo_encerramento",
+    "evidencia"
+   ],
+   "rule": "mandato e exercício separados; lacuna explícita, nunca preenchida",
+   "maps_to": "exercise_periods",
+   "state": "INFERRED"
+  },
+  {
+   "id": "TC6-ACT",
+   "fields": [
+    "data_ato",
+    "data_publicacao",
+    "data_efeito",
+    "signatario",
+    "classe_atribuicao"
+   ],
+   "rule": "PUBLISHED_DURING_TERM nunca vira SIGNED_BY_PERSON",
+   "maps_to": "novo",
+   "state": "INFERRED"
+  }
+ ],
+ "attribution_classes": [
+  "SIGNED_BY_PERSON",
+  "ISSUED_BY_AUTHORITY",
+  "DELEGATED_SIGNATURE",
+  "INSTITUTIONAL_EXECUTIVE_ACT",
+  "PUBLISHED_DURING_TERM",
+  "NOT_ATTRIBUTABLE",
+  "CONFLICT"
+ ],
+ "relationships": [
+  {
+   "id": "R6-01",
+   "a": "viagem",
+   "b": "pagamento",
+   "cls": "EXACT",
+   "basis": "Identificador do processo de viagem",
+   "evidence": "T6-P",
+   "state": "VERIFIED_DATASET",
+   "note": "previsto x pago: usar Pagamento, não Viagem; 97,4% de igualdade de valor"
+  },
+  {
+   "id": "R6-02",
+   "a": "veto",
+   "b": "lei/norma gerada",
+   "cls": "EXACT",
+   "basis": "normaGerada no processo VET",
+   "evidence": "T6-O",
+   "state": "VERIFIED_API",
+   "note": "660/765"
+  },
+  {
+   "id": "R6-03",
+   "a": "veto",
+   "b": "deliberação do Congresso",
+   "cls": "EXACT",
+   "basis": "siglaTipoDeliberacao e dataDeliberacao",
+   "evidence": "T6-O",
+   "state": "VERIFIED_API",
+   "note": "vetos recentes ainda tramitando (2025: 38; 2026: 54)"
+  },
+  {
+   "id": "R6-04",
+   "a": "ministro (cargo)",
+   "b": "ocupante e órgão",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "SIAPE: cargo MINISTRO DE ESTADO, COD_ORG_EXERCICIO, DATA_INGRESSO_CARGOFUNCAO, diploma DECRETO",
+   "evidence": "T6-M",
+   "state": "VERIFIED_DATASET",
+   "note": "apenas fotografia vigente; fim do período por snapshot seguinte, não por ato"
+  },
+  {
+   "id": "R6-05",
+   "a": "decreto federal",
+   "b": "signatário",
+   "cls": "EXACT",
+   "basis": "bloco de assinatura Planalto",
+   "evidence": "T6-A",
+   "state": "VERIFIED_DATASET",
+   "note": "95.6% da amostra; signatário != titular quando há substituto"
+  },
+  {
+   "id": "R6-06",
+   "a": "mandato municipal ordinário",
+   "b": "interrupção por eleição suplementar",
+   "cls": "EXACT",
+   "basis": "TSE: suplementar eleita na mesma SG_UE do ciclo",
+   "evidence": "T6-C",
+   "state": "VERIFIED_DATASET",
+   "note": "não informa data de afastamento nem sucessor interino"
+  },
+  {
+   "id": "R6-07",
+   "a": "ato municipal",
+   "b": "tipo Decretos",
+   "cls": "EXACT",
+   "basis": "categoria estruturada DOM/SC",
+   "evidence": "T6-E",
+   "state": "VERIFIED_API",
+   "note": "texto livre superestima"
+  },
+  {
+   "id": "R6-08",
+   "a": "decreto municipal",
+   "b": "prefeito signatário",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "PDF: nome + \"Prefeito Municipal\" ou assinatura ICP/SEI",
+   "evidence": "T6-F",
+   "state": "VERIFIED_DATASET",
+   "note": "amostra pequena; assinante ICP na página só em 1 de 4 municípios"
+  },
+  {
+   "id": "R6-09",
+   "a": "norma estadual",
+   "b": "classe institucional Executivo/Legislativo",
+   "cls": "INSTITUTIONAL_ONLY",
+   "basis": "SP Promulg E/L; BA \"O GOVERNADOR\"",
+   "evidence": "T6-I",
+   "state": "VERIFIED_DATASET",
+   "note": "autoridade pessoal não constante"
+  },
+  {
+   "id": "R6-10",
+   "a": "unidade SIORG",
+   "b": "ministro",
+   "cls": "UNLINKED",
+   "basis": "SIORG sem ocupante",
+   "evidence": "T6-N",
+   "state": "VERIFIED_API",
+   "note": "ponte possível via SIAPE (código de órgão)"
+  },
+  {
+   "id": "R6-11",
+   "a": "proposição do Executivo",
+   "b": "presidente",
+   "cls": "TEMPORAL_ONLY",
+   "basis": "autoria institucional",
+   "evidence": "P5:R11",
+   "state": "INFERRED",
+   "note": "nunca responsabilidade pessoal"
+  },
+  {
+   "id": "R6-12",
+   "a": "município",
+   "b": "plataforma de diário",
+   "cls": "EXACT",
+   "basis": "IBGE no spider QD / entidade DOM/SC",
+   "evidence": "T6-G",
+   "state": "VERIFIED_DATASET",
+   "note": "cobertura de conector, não de documentos"
+  },
+  {
+   "id": "R6-13",
+   "a": "nomeação/exoneração federal",
+   "b": "ministro",
+   "cls": "UNLINKED",
+   "basis": "DOU busca fuzzy; INLABS bloqueado",
+   "evidence": "T6-L",
+   "state": "BLOCKED",
+   "note": "cadeia não fechada"
+  },
+  {
+   "id": "R6-14",
+   "a": "substituição presidencial",
+   "b": "decreto do substituto",
+   "cls": "HIGH_CONFIDENCE",
+   "basis": "signatário diferente do titular na data",
+   "evidence": "T6-B",
+   "state": "VERIFIED_DATASET",
+   "note": "amostral"
+  }
+ ],
+ "collector_families": [
+  {
+   "id": "CF6-A",
+   "name": "Roster e mandatos TSE (executivos)",
+   "reuse": "apps/collector/src/elections.ts; migrations mandates/exercise_periods",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET",
+   "scenario": "A"
+  },
+  {
+   "id": "CF6-B1",
+   "name": "Atos federais Senado+Planalto (assinatura)",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET",
+   "scenario": "B"
+  },
+  {
+   "id": "CF6-B2",
+   "name": "Vetos Senado (ciclo de vida)",
+   "reuse": "novo",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API",
+   "scenario": "B"
+  },
+  {
+   "id": "CF6-B3",
+   "name": "Ministros SIAPE por snapshot mensal",
+   "reuse": "national-finance-registry (P3)",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET",
+   "scenario": "B"
+  },
+  {
+   "id": "CF6-B4",
+   "name": "Viagens e pagamentos",
+   "reuse": "national-finance-registry",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET",
+   "scenario": "B"
+  },
+  {
+   "id": "CF6-C",
+   "name": "Normas estaduais (Alesp XML; BA; demais por portal)",
+   "reuse": "state/providers",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET",
+   "scenario": "C"
+  },
+  {
+   "id": "CF6-D1",
+   "name": "DOM/SC por categoria",
+   "reuse": "state/providers (padrão)",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API",
+   "scenario": "D"
+  },
+  {
+   "id": "CF6-D2",
+   "name": "Instar/DOSP/ADiários (plataformas)",
+   "reuse": "-",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET",
+   "scenario": "D"
+  },
+  {
+   "id": "CF6-E",
+   "name": "DOU por cursor (nomeações)",
+   "reuse": "-",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_API",
+   "scenario": "B"
+  }
+ ],
+ "operational_scenarios": [
+  {
+   "id": "OS6-A",
+   "name": "Identidade e roster",
+   "coverage": "prefeitos 2012-2024 (5.5 mil por ciclo); governadores/presidente 2014-2022",
+   "volume": "MB",
+   "gaps": "exercício",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "OS6-B",
+   "name": "Atuação federal",
+   "coverage": "5249 decretos 2013-2026; 765 vetos; viagens 2025",
+   "volume": "~14 mil páginas Planalto por varredura completa; 1 req/decreto",
+   "gaps": "nomeações (INLABS), agendas",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "OS6-C",
+   "name": "Atuação estadual",
+   "coverage": "SP completo (metadados); BA decretos individuais; 20/27 portais alcançáveis",
+   "volume": "variável",
+   "gaps": "assinatura, nomeações",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OS6-D",
+   "name": "Atuação municipal",
+   "coverage": "731 municípios (13.1%) com conector documentado",
+   "volume": "DOM/SC 5,49 mi atos",
+   "gaps": "5.4 mil municípios sem fonte comprovada",
+   "state": "NEEDS_VALIDATION"
+  },
+  {
+   "id": "OS6-E",
+   "name": "Cobertura ampliada",
+   "coverage": "adaptadores incrementais",
+   "volume": "-",
+   "gaps": "teto 618-670 com 20 adaptadores no universo conhecido",
+   "state": "INFERRED"
+  }
+ ],
+ "product_opportunities": [
+  {
+   "id": "PO6-01",
+   "name": "Histórico de prefeitos eleitos",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-02",
+   "name": "Histórico de prefeitos em exercício",
+   "feas": "DISCOVERY_ONLY",
+   "state": "INFERRED"
+  },
+  {
+   "id": "PO6-03",
+   "name": "Linha do tempo da Presidência por signatário",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-04",
+   "name": "Fotos de candidaturas",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-05",
+   "name": "Decretos assinados (federal)",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-06",
+   "name": "Decretos municipais SC",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO6-07",
+   "name": "Leis sancionadas",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO6-08",
+   "name": "Vetos e desfecho",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO6-09",
+   "name": "Medidas provisórias",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO6-10",
+   "name": "Ministros por período",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-11",
+   "name": "Organograma histórico",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_API"
+  },
+  {
+   "id": "PO6-12",
+   "name": "Nomeações/exonerações",
+   "feas": "BLOCKED",
+   "state": "BLOCKED"
+  },
+  {
+   "id": "PO6-13",
+   "name": "Cargos comissionados (agregado)",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-14",
+   "name": "Custo institucional do gabinete",
+   "feas": "NEEDS_VALIDATION",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-15",
+   "name": "Viagens oficiais e pagamento",
+   "feas": "READY_FOR_CONTRACT",
+   "state": "VERIFIED_DATASET"
+  },
+  {
+   "id": "PO6-16",
+   "name": "Agendas oficiais",
+   "feas": "DISCOVERY_ONLY",
+   "state": "NOT_EVALUATED"
+  }
+ ],
+ "blockers": [
+  {
+   "id": "B6-1",
+   "what": "INLABS: cadastro",
+   "impact": "nomeações em massa",
+   "action": "cadastro legítimo pelo responsável"
+  },
+  {
+   "id": "B6-2",
+   "what": "Busca pública do DOU é fuzzy e sem filtro de espécie",
+   "impact": "precisão insuficiente para nomeações",
+   "action": "usar INLABS ou extração por edição"
+  },
+  {
+   "id": "B6-3",
+   "what": "Portal da Transparência negou downloads nesta rodada (AccessDenied)",
+   "impact": "histórico mensal SIAPE 2013-2025 não verificado",
+   "action": "repetir mais tarde, sem contornar"
+  },
+  {
+   "id": "B6-4",
+   "what": "ALMG dados abertos 500",
+   "impact": "MG",
+   "action": "reavaliar endpoint"
+  },
+  {
+   "id": "B6-5",
+   "what": "Sem fonte nacional de posse/afastamento",
+   "impact": "exercício estadual e municipal",
+   "action": "diários por esfera"
+  },
+  {
+   "id": "B6-6",
+   "what": "5.4 mil municípios sem fonte comprovada",
+   "impact": "cobertura nacional",
+   "action": "descoberta de provedores fora do QD"
+  },
+  {
+   "id": "B6-7",
+   "what": "LexML, DOEM, Leis Municipais, CR2",
+   "impact": "parte dos municípios",
+   "action": "manter bloqueio"
+  }
+ ],
+ "gates": [
+  {
+   "id": "P6_FEDERAL_OFFICE_HOLDING",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "linha 2013-2026 derivada de assinaturas; sem ato de afastamento/posse",
+   "evidence": [
+    "T6-A",
+    "T6-B"
+   ]
+  },
+  {
+   "id": "P6_STATE_OFFICE_HOLDING",
+   "state": "NOT_EVALUATED",
+   "why": "nenhum evento de exercício estadual verificado em ES/SP/MG/RJ/PE",
+   "evidence": []
+  },
+  {
+   "id": "P6_MUNICIPAL_OFFICE_HOLDING",
+   "state": "PARTIAL",
+   "why": "interrupções por suplementar (TSE) comprovadas; posse e sucessão interina sem fonte",
+   "evidence": [
+    "T6-C",
+    "T6-D"
+   ]
+  },
+  {
+   "id": "P6_SUCCESSION_EVENTS",
+   "state": "PARTIAL",
+   "why": "federal por assinatura; municipal por suplementar; estadual ausente",
+   "evidence": [
+    "T6-B",
+    "T6-C"
+   ]
+  },
+  {
+   "id": "P6_SIGNATORY_EXTRACTION_FEDERAL",
+   "state": "PASS",
+   "why": "803/840 (95.6%) em amostra de 14 anos",
+   "evidence": [
+    "T6-A"
+   ]
+  },
+  {
+   "id": "P6_SIGNATORY_EXTRACTION_STATE",
+   "state": "PARTIAL",
+   "why": "BA e SP sem nome do signatário nos dados estruturados; só classe institucional",
+   "evidence": [
+    "T6-I",
+    "T6-J"
+   ]
+  },
+  {
+   "id": "P6_SIGNATORY_EXTRACTION_MUNICIPAL",
+   "state": "PARTIAL",
+   "why": "PDF 9/9; página 10/40; amostra de 4 municípios de SC",
+   "evidence": [
+    "T6-F"
+   ]
+  },
+  {
+   "id": "P6_MUNICIPAL_GAZETTE_PROVIDERS",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "18 plataformas medidas em municípios cobertos",
+   "evidence": [
+    "T6-G"
+   ]
+  },
+  {
+   "id": "P6_MUNICIPAL_COVERAGE_UNION",
+   "state": "PASS",
+   "why": "união 731 (13.1%) deduplicada por IBGE",
+   "evidence": [
+    "T6-G",
+    "T6-H"
+   ]
+  },
+  {
+   "id": "P6_STATE_NORMATIVE_COVERAGE",
+   "state": "PARTIAL",
+   "why": "20 portais alcançáveis; SP e BA com prova de ato; demais sem teste de 2020/2025",
+   "evidence": [
+    "T6-I",
+    "T6-J",
+    "T6-K"
+   ]
+  },
+  {
+   "id": "P6_FEDERAL_APPOINTMENTS",
+   "state": "PARTIAL",
+   "why": "SIAPE dá 39 ministros vigentes; DOU paginável mas impreciso; INLABS bloqueado",
+   "evidence": [
+    "T6-L",
+    "T6-M"
+   ]
+  },
+  {
+   "id": "P6_STATE_APPOINTMENTS",
+   "state": "NOT_EVALUATED",
+   "why": "não testado",
+   "evidence": []
+  },
+  {
+   "id": "P6_MUNICIPAL_APPOINTMENTS",
+   "state": "PARTIAL",
+   "why": "portarias existem no DOM/SC; tipo só por texto",
+   "evidence": [
+    "T6-Q"
+   ]
+  },
+  {
+   "id": "P6_GOVERNMENT_STRUCTURE_LINKAGE",
+   "state": "PARTIAL",
+   "why": "SIORG sem ocupante; ponte via SIAPE a validar",
+   "evidence": [
+    "T6-N",
+    "T6-M"
+   ]
+  },
+  {
+   "id": "P6_EXECUTIVE_LEGISLATIVE_LINKAGE",
+   "state": "PARTIAL",
+   "why": "veto->lei comprovado; projeto->veto por parsing; estadual/municipal não",
+   "evidence": [
+    "T6-O"
+   ]
+  },
+  {
+   "id": "P6_VETO_LIFECYCLE",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "765 vetos, desfecho e norma; dispositivos/votações não medidos",
+   "evidence": [
+    "T6-O"
+   ]
+  },
+  {
+   "id": "P6_INSTITUTIONAL_COST",
+   "state": "PARTIAL",
+   "why": "unidade mínima = Vice-Presidência; estaduais não testados",
+   "evidence": [
+    "T6-P"
+   ]
+  },
+  {
+   "id": "P6_GOVERNMENT_WORKFORCE",
+   "state": "PARTIAL",
+   "why": "P5 mantida; sem nova prova de histórico",
+   "evidence": []
+  },
+  {
+   "id": "P6_TRAVEL_EXPENSE_LINKAGE",
+   "state": "PASS",
+   "why": "99.66% das viagens da Presidência com pagamento; valores iguais em 97,4%",
+   "evidence": [
+    "T6-P"
+   ]
+  },
+  {
+   "id": "P6_OFFICIAL_AGENDA_LINKAGE",
+   "state": "NOT_EVALUATED",
+   "why": "agendas não coletadas",
+   "evidence": []
+  },
+  {
+   "id": "P6_CANONICAL_IDENTITY",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "chaves definidas; IK6-HOLDING ainda não materializada",
+   "evidence": []
+  },
+  {
+   "id": "P6_TEMPORAL_CONTRACT",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "contrato definido; reuso de exercise_periods não validado em código",
+   "evidence": []
+  },
+  {
+   "id": "P6_COLLECTOR_FEASIBILITY",
+   "state": "PASS_WITH_CAVEATS",
+   "why": "9 famílias; 4 prontas para contrato",
+   "evidence": []
+  },
+  {
+   "id": "P6_PRODUCT_READINESS",
+   "state": "PARTIAL",
+   "why": "6 de 16 experiências prontas ou próximas",
+   "evidence": []
+  }
+ ],
+ "evidence_inventory": [
+  "p5/cand_*.zip",
+  "p6/fed2.json (840 decretos)",
+  "p6/vet_all.json",
+  "p6/viag2.json",
+  "p6/union.json",
+  "p6/greedy.json",
+  "p6/tse6.json",
+  "p6/testD2.json",
+  "p6/sig_dom.json",
+  "p6/nom.json",
+  "p6/state_probe.json",
+  "p6/alesp_tipos.json",
+  "p6/dou*.py (paginação)",
+  "p6/pdf/ (9 decretos SC)",
+  "p5/siape202607.zip",
+  "p5/pt_viagens_2025.zip",
+  "p5/alesp_normas.zip",
+  "p6/ibge.json"
+ ]
+}

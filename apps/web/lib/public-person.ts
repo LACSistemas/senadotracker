@@ -27,6 +27,7 @@ export function buildPublicPerson(profile: any, metrics: any = {}) {
     participation: metrics.participation ?? p.participation ?? null,
     proposals: metrics.proposals ?? p.proposals ?? null,
     proposalCount: metrics.proposals ?? p.proposalCount ?? null,
+    activityYear: metrics.activityYear ?? p.activityYear ?? null,
     rapporteurships: metrics.rapporteurships ?? p.rapporteurships ?? 0,
     expenseCents: metrics.expenseCents ?? p.expenseCents ?? null,
     cabinetCents: metrics.cabinetCents ?? p.cabinetCents ?? null,

@@ -1,5 +1,6 @@
 import pg from 'pg';
 import { postgresPeopleRepository } from '../../../packages/db/src/postgres-people.ts';
+import { rankingsDashboard } from './data-postgres-wave4.ts';
 
 const pool = new pg.Pool({ host: process.env.DB_HOST, port: Number(process.env.DB_PORT ?? 5432), database: process.env.DB_NAME, user: process.env.DB_USER, password: process.env.DB_PASSWORD, max: 10 });
 type Available<T> = { status: 'available'; data: T };
@@ -43,22 +44,57 @@ const distribution = (values: number[]) => {
 
 export async function houseMetricSummary(source: 'camara' | 'senado', requestedYear?: number) {
   const year = requestedYear ?? 2026;
-  const profiles = (await pool.query('SELECT external_id,name,uf,party,payload FROM civica_people_poc.profiles WHERE source=$1 ORDER BY search_name,external_id', [source])).rows;
-  const expenses = (await pool.query('SELECT e.external_id,sum(e.net_cents-e.refund_cents)::bigint value FROM civica_finance_poc.expenses e JOIN civica_finance_poc.active_expense_publications a ON a.source=e.source AND a.year=e.year AND a.batch_id=e.batch_id WHERE e.source=$1 AND e.year=$2 GROUP BY e.external_id', [source, year])).rows;
-  const expenseMap = new Map(expenses.map((row) => [String(row.external_id), Number(row.value)]));
-  const votes = (await pool.query("SELECT v.external_id,count(*)::int n FROM civica_votes_presence_poc.votes v JOIN civica_votes_presence_poc.deliberations d ON d.batch_id=v.batch_id AND d.source=v.source AND d.external_id=v.deliberation_id WHERE v.source=$1 AND d.year=$2 GROUP BY v.external_id", [source, year])).rows;
-  const voteMap = new Map(votes.map((row) => [String(row.external_id), Number(row.n)]));
-  const rows = profiles.map((row: any) => { const id = String(row.external_id), p = json(row.payload), hasExpense = expenseMap.has(id), expense = expenseMap.get(id), exercises = Array.isArray(p.exercises) ? p.exercises : []; return { source, externalId: id, name: String(row.name ?? ''), photoUrl: p.photoUrl ?? null, role: source === 'senado' ? 'Senador(a)' : 'Deputado(a) federal', uf: row.uf ?? null, party: row.party ?? null, situation: exercises.some((item: any) => !item?.end || String(item.end).slice(0, 10) >= new Date().toISOString().slice(0, 10)) ? 'Em exercício' : 'Cadastro atual', presence: 0, participation: voteMap.has(id) ? Math.min(1, Number(voteMap.get(id)) / 100) : 0, proposals: 0, rapporteurships: 0, expenseCents: hasExpense ? expense : null, cabinetCents: 0, totalCostCents: hasExpense ? expense : null, monthlyCostCents: hasExpense ? Math.round(Number(expense) / 12) : null, costMonths: hasExpense ? 7 : null, costPeriod: hasExpense ? `${year}-01 a ${year}-07` : null, staff: 0, assetsCents: null, assetYear: null, mandates: p.historyAvailability === 'available' && Array.isArray(p.mandates) ? p.mandates.length : null }; });
+  // Keep the summary on the same financial read contract as rankings and profiles.
+  // This prevents the historical wave-2 adapter from inventing zeros or a fixed
+  // Jan-Jul/12 window when the source publishes another competence window.
+  const dashboard = await rankingsDashboard({ source, year, includeAssets: false });
+  if (dashboard.status !== 'available') return dashboard as any;
+  const allRows = dashboard.data.allItems.filter((row: any) => row.source === source);
+  const rows = allRows.map((row: any) => ({
+    source,
+    externalId: String(row.externalId),
+    name: String(row.name ?? ''),
+    photoUrl: row.photoUrl ?? null,
+    role: source === 'senado' ? 'Senador(a)' : 'Deputado(a) federal',
+    uf: row.uf ?? null,
+    party: row.party ?? null,
+    situation: row.situation ?? 'Cadastro atual',
+    presence: row.presence ?? null,
+    participation: row.participation ?? null,
+    proposals: row.proposals ?? row.proposalCount ?? null,
+    rapporteurships: row.rapporteurships ?? null,
+    expenseCents: row.expenseCents ?? null,
+    cabinetCents: row.cabinetCents ?? row.cabinetFinancialCents ?? null,
+    totalCostCents: row.totalCostCents ?? null,
+    monthlyCostCents: row.monthlyCostCents ?? null,
+    costMonths: row.costMonths ?? null,
+    costPeriod: row.costPeriod ?? null,
+    staff: row.staff ?? null,
+    assetsCents: row.assetsCents ?? null,
+    assetYear: row.assetYear ?? null,
+    mandates: Array.isArray(row.mandates) ? row.mandates.length : null,
+  }));
   const roster = rows.length;
   const valuesFor = (key: string, subset = rows) => subset.flatMap((row: any) => typeof row[key] === 'number' && Number.isFinite(row[key]) ? [row[key]] : []);
-  const coverage = (key: string, values: number[], denominator = roster) => ({ availability: values.length ? 'available' : 'unavailable', source, period: { from: `${year}-01-01`, to: `${year}-12-31`, grain: 'year' }, batchId: values.length ? `pg:${source}:${key}:${year}` : null, note: `${metaFor(key)[0]}. Mediana sobre ${values.length} de ${denominator} ${source === 'senado' ? 'senadores' : 'deputados'}.`, sampleSize: values.length });
+  const coverage = (key: string, values: number[], denominator = roster) => ({
+    availability: values.length ? (values.length < denominator ? 'partial' : 'available') : 'unavailable',
+    source,
+    period: { from: `${year}-01-01`, to: `${year}-12-31`, grain: 'year' },
+    batchId: values.length ? `pg:${source}:${key}:${year}` : null,
+    note: `${metaFor(key)[0]}. Observado em ${values.length} de ${denominator}; ausências permanecem indisponíveis e não são convertidas em zero.`,
+    sampleSize: values.length,
+  });
   const metrics: any = {};
-  for (const key of metricKeys) { const values = valuesFor(key), meta = metaFor(key); metrics[key] = { meta: { key, label: meta[0], unit: meta[1], direction: meta[2], houseMinSample: 10, stateMinSample: 3, partyMinSample: 3, note: meta[0] }, distribution: distribution(values), values, coverage: coverage(key, values) }; }
+  for (const key of metricKeys) {
+    const values = valuesFor(key), meta = metaFor(key);
+    metrics[key] = { meta: { key, label: meta[0], unit: meta[1], direction: meta[2], houseMinSample: 10, stateMinSample: 3, partyMinSample: 3, note: meta[0] }, distribution: distribution(values), values, coverage: coverage(key, values) };
+  }
   const group = (key: string, subset: any[]) => ({ key, representatives: subset.length, metrics: Object.fromEntries(metricKeys.map((metric) => { const values = valuesFor(metric, subset); return [metric, { distribution: distribution(values), coverage: coverage(metric, values, subset.length) }]; })) });
   const states: any = {};
-  for (const uf of ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO']) { const subset = rows.filter((row: any) => row.uf === uf), parties = new Set(subset.map((row: any) => row.party)); states[uf] = { ...group(uf, subset), uf, parties: parties.size, concentration: subset.length ? 1 / Math.max(1, parties.size) : null }; }
-  const parties: any = {}; for (const party of [...new Set(rows.map((row: any) => row.party).filter(Boolean))].sort()) { const subset = rows.filter((row: any) => row.party === party); parties[party] = { ...group(String(party), subset), party }; }
-  return ok({ source, year, updatedAt: new Date().toISOString(), roster, metrics, states, parties, rows: Object.fromEntries(rows.map((row: any) => [row.externalId, row])) });
+  for (const uf of ['AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO']) { const subset = rows.filter((row: any) => row.uf === uf), parties = new Set(subset.map((row: any) => row.party).filter(Boolean)); states[uf] = { ...group(uf, subset), uf, parties: parties.size, concentration: subset.length ? 1 / Math.max(1, parties.size) : null }; }
+  const parties: any = {};
+  for (const party of [...new Set(rows.map((row: any) => row.party).filter(Boolean))].sort()) { const subset = rows.filter((row: any) => row.party === party); parties[party] = { ...group(String(party), subset), party }; }
+  return ok({ source, year, updatedAt: dashboard.data.updatedAt, roster, metrics, states, parties, rows: Object.fromEntries(rows.map((row: any) => [row.externalId, row])) });
 }
 
 export async function voteAxis(source: 'camara' | 'senado') {
