@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-10-21T10:30:00-03:00",
+  "gates": {
+    "S0_SSD_VERIFIED": "PASS",
+    "S1_STORAGE_CONFIG": "PASS",
+    "S2_RAW_MIGRATION": "PASS",
+    "S3_POSTGRES_SAFETY": "PASS",
+    "N1_CNES_ST_NATIONAL": "PASS",
+    "N2_CNES_LT_NATIONAL": "PASS",
+    "N3_CNES_EQ_NATIONAL": "PASS",
+    "N4_CNES_PF": "PASS",
+    "N5_PNI_NATIONAL": "PASS",
+    "N6_SIH_HOSPITAL_NATIONAL": "PASS",
+    "N7_SIH_RESIDENCE_NATIONAL": "PASS",
+    "N8_SIM_SINASC": "PASS_WITH_CAVEATS",
+    "N9_APS": "NEEDS_VALIDATION",
+    "N10_SICONFI": "PARTIAL",
+    "N11_PUBLICATION_INTEGRITY": "PASS",
+    "N12_INDICATOR_RECONCILIATION": "PASS",
+    "N13_FRONTEND_REGRESSION": "PASS",
+    "N14_POSTGRES_TESTS": "PASS",
+    "N15_STORAGE_BUDGET": "PASS",
+    "N16_FINAL_REPORT": "PASS",
+    "DEMAS_ENRICHMENT": "PARTIAL"
+  },
+  "ssd": { "volumeGuid": "54b8f375-0000-0000-0000-100000000000", "label": "Dados", "fileSystem": "NTFS", "bus": "USB", "serial": "WXD1A64H70F2", "sizeBytes": 500106784768, "root": "D:/Civica" },
+  "coverage": {
+    "cnes_st": { "ufs": 27, "competences": 165, "slices": 4455, "range": "201301-202609" },
+    "cnes_lt": { "ufs": 27, "competences": 165, "slices": 4455, "range": "201301-202609" },
+    "cnes_eq": { "ufs": 27, "competences": 165, "slices": 4455, "range": "201301-202609" },
+    "cnes_pf": { "ufs": 27, "snapshots": 14, "slices": 378, "calendar": "dez/2013..dez/2025 + 202609" },
+    "sim": { "ufs": 27, "years": 13, "slices": 351, "range": "2013-2025", "preliminary": "2025" },
+    "sinasc": { "ufs": 27, "years": 13, "slices": 351, "range": "2013-2025", "preliminary": "2025" },
+    "pni": { "ufs": 27, "municipalities": 5571, "vaccines": 34, "range": "2015-2026" },
+    "sih_hospital": { "ufs": 27, "competences": 163, "slices": 4401, "range": "201301-202607" },
+    "sih_residence": { "competences": 163, "slices": 163, "range": "201301-202607", "pendingSource": "202608 (AC e RR sem arquivo)" },
+    "aps": { "status": "pilot ES only, not published", "months": 68 },
+    "siconfi": { "status": "pilot only, not published" }
+  },
+  "reconciliation": {
+    "cnes_202609": { "establishments": 501726, "beds": 543524, "bedsSus": 362715, "bedsNonSus": 180809, "matchesP8": true },
+    "sih_202406": { "rawRows": 1188890, "aih": 1188707, "duplicates": 183, "icsapPct": 15.81, "approvedValueBRL": 1969984744.80 },
+    "sih_hospital_vs_residence": { "months": 163, "equalMonths": 163, "maxAihDiff": 0, "maxCentsDiff": 0, "aihTotal": 167967146 },
+    "brazil_2024": { "infantMortalityPerThousand": 12.56, "cesareanPct": 60.62, "prenatal6PlusPct": 87.50 }
+  },
+  "storage": { "rawFiles": 18861, "rawBytes": 23430094246, "manifestEntries": 18857, "rawDivergences": 0, "postgresBytes": 20965739667, "postgresBaselineBytes": 16242846867, "civicaExecBytes": 4898881536, "ssdFreeGB": 442, "internalFreeGB": 45 },
+  "tests": { "execDbTests": "23/23 (isolated scratch cluster)", "npmTest": "333 tests, 290 pass, 0 fail, 43 skipped (DB tests run separately)", "typecheck": "clean", "build": "next build ok" },
+  "runs": { "failedRuns": 0, "queueTransientFailures": 18, "queueRetries": 15 }
+}

@@ -1,0 +1,1692 @@
+{
+ "generated": "2026-10-13",
+ "baseline": {
+  "BASELINE_POSTGRES_GB": 14.973,
+  "BASELINE_POSTGRES_BYTES": 16077065363,
+  "BASELINE_TABLES_GB": 8.124,
+  "BASELINE_INDEXES_GB": 4.382,
+  "BASELINE_TOAST_GB": 2.447,
+  "BASELINE_ROW_COUNTS": 15976931,
+  "BASELINE_TABLE_COUNT": 216,
+  "BASELINE_MEASUREMENT_DATE": "2026-10-13",
+  "notes": "pg_database_size = 16.077.065.363 B (14,97 GiB); soma das 216 tabelas = 14,96 GiB; linhas = n_live_tup ou count(*) exato quando n_live_tup=0 (118 tabelas); schema civica_state = 11,69 GB (73%); 5 schemas *_poc somam ~2,2 GB duplicados de civica.*",
+  "by_schema_gb": {
+   "civica_state": 10.888,
+   "civica": 1.7,
+   "civica_votes_presence_poc": 0.829,
+   "civica_finance_poc": 0.717,
+   "civica_poc": 0.365,
+   "civica_budget": 0.171,
+   "civica_state_budget": 0.134,
+   "civica_elections_poc": 0.119,
+   "civica_committees_poc": 0.026,
+   "civica_people_poc": 0.008,
+   "civica_media": 0.001,
+   "civica_national": 0.001,
+   "civica_state_story": 0.0,
+   "civica_ops": 0.0
+  },
+  "by_schema_rows": {
+   "civica_state": 7491919,
+   "civica": 2747433,
+   "civica_votes_presence_poc": 1992419,
+   "civica_finance_poc": 2149503,
+   "civica_poc": 444945,
+   "civica_elections_poc": 184869,
+   "civica_state_budget": 231188,
+   "civica_budget": 694937,
+   "civica_committees_poc": 26365,
+   "civica_people_poc": 10507,
+   "civica_media": 1652,
+   "civica_state_story": 76,
+   "civica_national": 675,
+   "civica_ops": 443
+  }
+ },
+ "dataset_count": 113,
+ "source_count": 85,
+ "collector_count": 55,
+ "collectors_new": 52,
+ "collectors_reused": 3,
+ "new_tables_proposed": 120,
+ "storage_scenarios": {
+  "A": {
+   "datasets_estimated": 93,
+   "datasets_not_estimated": 6,
+   "datasets_excluded": 14,
+   "backfill_rows": 60292544,
+   "annual_new_rows": 6022018,
+   "table_data_gb": 10.702,
+   "index_gb": 2.868,
+   "toast_gb": 0.016,
+   "history_gb": 0.592,
+   "ADDITIONAL_STORAGE_GB": 14.177,
+   "annual_postgres_growth_gb": 1.884,
+   "raw_external_storage_gb": 54.99,
+   "PROJECTED_TOTAL_DATABASE_GB_after_backfill": 29.15
+  },
+  "B": {
+   "datasets_estimated": 100,
+   "datasets_not_estimated": 10,
+   "datasets_excluded": 3,
+   "backfill_rows": 703922020,
+   "annual_new_rows": 87295279,
+   "table_data_gb": 123.518,
+   "index_gb": 52.347,
+   "toast_gb": 9.944,
+   "history_gb": 6.915,
+   "ADDITIONAL_STORAGE_GB": 192.723,
+   "annual_postgres_growth_gb": 25.001,
+   "raw_external_storage_gb": 515.7,
+   "PROJECTED_TOTAL_DATABASE_GB_after_backfill": 207.7
+  },
+  "C": {
+   "datasets_estimated": 101,
+   "datasets_not_estimated": 12,
+   "datasets_excluded": 0,
+   "backfill_rows": 1130125317,
+   "annual_new_rows": 281835875,
+   "table_data_gb": 261.96,
+   "index_gb": 86.607,
+   "toast_gb": 176.188,
+   "history_gb": 54.022,
+   "ADDITIONAL_STORAGE_GB": 578.777,
+   "annual_postgres_growth_gb": 99.482,
+   "raw_external_storage_gb": 1056.81,
+   "PROJECTED_TOTAL_DATABASE_GB_after_backfill": 593.75
+  }
+ },
+ "yearly_projections": {
+  "A": {
+   "backfill_gb": 14.18,
+   "plus_1y_gb": 16.06,
+   "plus_3y_gb": 19.83,
+   "plus_5y_gb": 23.6,
+   "total_database_y0": 29.15,
+   "total_database_y1": 31.03,
+   "total_database_y3": 34.8,
+   "total_database_y5": 38.57,
+   "raw_external_gb": 55.0,
+   "raw_external_annual_gb": 4.9
+  },
+  "B": {
+   "backfill_gb": 192.72,
+   "plus_1y_gb": 217.72,
+   "plus_3y_gb": 267.73,
+   "plus_5y_gb": 317.73,
+   "total_database_y0": 207.7,
+   "total_database_y1": 232.7,
+   "total_database_y3": 282.7,
+   "total_database_y5": 332.7,
+   "raw_external_gb": 515.7,
+   "raw_external_annual_gb": 62.3
+  },
+  "C": {
+   "backfill_gb": 578.78,
+   "plus_1y_gb": 678.26,
+   "plus_3y_gb": 877.22,
+   "plus_5y_gb": 1076.19,
+   "total_database_y0": 593.75,
+   "total_database_y1": 693.23,
+   "total_database_y3": 892.2,
+   "total_database_y5": 1091.16,
+   "raw_external_gb": 1056.8,
+   "raw_external_annual_gb": 198.0
+  }
+ },
+ "estimate_range_B": {
+  "low_gb": 98.8,
+  "high_gb": 380.4,
+  "method": "fatores por confiança HIGH 0,85–1,15; MEDIUM 0,65–1,5; LOW 0,35–2,5 (heurístico)"
+ },
+ "confidence_breakdown_B": {
+  "HIGH": {
+   "gb": 9.45,
+   "datasets": 8
+  },
+  "LOW": {
+   "gb": 94.6,
+   "datasets": 63
+  },
+  "MEDIUM": {
+   "gb": 88.67,
+   "datasets": 29
+  }
+ },
+ "sensitivity_B_gb": {
+  "B base": 192.72,
+  "janela de backfill de 5 anos nas fontes de despesa (TCE-RS/SP/PE/ES e estados)": 141.04,
+  "TCE-SP: 1.500 eventos/município-mês (faixa baixa)": 180.88,
+  "TCE-SP: 4.200 eventos/município-mês (faixa alta)": 205.48,
+  "tabelas de eventos com 1 btree + BRIN em vez de 2–3 btrees": 169.25
+ },
+ "domain_breakdown": {
+  "A": {
+   "TERRITORIO": {
+    "postgres_gb": 0.4,
+    "annual_gb": 0.012,
+    "backfill_rows": 2788435,
+    "raw_gb": 3.47,
+    "datasets": 6,
+    "not_estimated": 0
+   },
+   "POLITICA_EXECUTIVO": {
+    "postgres_gb": 3.215,
+    "annual_gb": 0.357,
+    "backfill_rows": 7324237,
+    "raw_gb": 30.63,
+    "datasets": 28,
+    "not_estimated": 0
+   },
+   "FINANCAS_FEDERAIS": {
+    "postgres_gb": 0.037,
+    "annual_gb": 0.003,
+    "backfill_rows": 120000,
+    "raw_gb": 0.02,
+    "datasets": 1,
+    "not_estimated": 0
+   },
+   "FINANCAS_SUBNACIONAL": {
+    "postgres_gb": 3.038,
+    "annual_gb": 0.292,
+    "backfill_rows": 18492085,
+    "raw_gb": 0.22,
+    "datasets": 11,
+    "not_estimated": 3
+   },
+   "CONTRATOS": {
+    "postgres_gb": 2.46,
+    "annual_gb": 0.825,
+    "backfill_rows": 3981000,
+    "raw_gb": 3.66,
+    "datasets": 4,
+    "not_estimated": 0
+   },
+   "INFRAESTRUTURA": {
+    "postgres_gb": 0.222,
+    "annual_gb": 0.016,
+    "backfill_rows": 1236491,
+    "raw_gb": 0.55,
+    "datasets": 6,
+    "not_estimated": 0
+   },
+   "TRANSFERENCIAS": {
+    "postgres_gb": 0.15,
+    "annual_gb": 0.057,
+    "backfill_rows": 632220,
+    "raw_gb": 0.23,
+    "datasets": 3,
+    "not_estimated": 0
+   },
+   "EDUCACAO": {
+    "postgres_gb": 0.483,
+    "annual_gb": 0.04,
+    "backfill_rows": 2762956,
+    "raw_gb": 1.74,
+    "datasets": 7,
+    "not_estimated": 0
+   },
+   "CONTROLE": {
+    "postgres_gb": 0.032,
+    "annual_gb": 0.005,
+    "backfill_rows": 75000,
+    "raw_gb": 1.3,
+    "datasets": 2,
+    "not_estimated": 0
+   },
+   "SAUDE": {
+    "postgres_gb": 3.36,
+    "annual_gb": 0.215,
+    "backfill_rows": 18173230,
+    "raw_gb": 12.09,
+    "datasets": 14,
+    "not_estimated": 1
+   },
+   "SEGURANCA": {
+    "postgres_gb": 0.425,
+    "annual_gb": 0.035,
+    "backfill_rows": 2038243,
+    "raw_gb": 0.66,
+    "datasets": 5,
+    "not_estimated": 1
+   },
+   "SOCIAL": {
+    "postgres_gb": 0.262,
+    "annual_gb": 0.021,
+    "backfill_rows": 2218642,
+    "raw_gb": 0.41,
+    "datasets": 4,
+    "not_estimated": 1
+   },
+   "ATENDIMENTO": {
+    "postgres_gb": 0.093,
+    "annual_gb": 0.007,
+    "backfill_rows": 450000,
+    "raw_gb": 0.0,
+    "datasets": 2,
+    "not_estimated": 0
+   }
+  },
+  "B": {
+   "TERRITORIO": {
+    "postgres_gb": 3.284,
+    "annual_gb": 0.088,
+    "backfill_rows": 17302126,
+    "raw_gb": 5.25,
+    "datasets": 7,
+    "not_estimated": 0
+   },
+   "POLITICA_EXECUTIVO": {
+    "postgres_gb": 28.134,
+    "annual_gb": 3.36,
+    "backfill_rows": 51971280,
+    "raw_gb": 360.15,
+    "datasets": 31,
+    "not_estimated": 1
+   },
+   "FINANCAS_FEDERAIS": {
+    "postgres_gb": 2.882,
+    "annual_gb": 0.248,
+    "backfill_rows": 9300000,
+    "raw_gb": 1.2,
+    "datasets": 1,
+    "not_estimated": 0
+   },
+   "FINANCAS_SUBNACIONAL": {
+    "postgres_gb": 110.886,
+    "annual_gb": 12.226,
+    "backfill_rows": 401307538,
+    "raw_gb": 45.6,
+    "datasets": 12,
+    "not_estimated": 4
+   },
+   "CONTRATOS": {
+    "postgres_gb": 10.036,
+    "annual_gb": 3.928,
+    "backfill_rows": 20413700,
+    "raw_gb": 13.7,
+    "datasets": 5,
+    "not_estimated": 0
+   },
+   "INFRAESTRUTURA": {
+    "postgres_gb": 1.689,
+    "annual_gb": 0.146,
+    "backfill_rows": 9541325,
+    "raw_gb": 3.9,
+    "datasets": 7,
+    "not_estimated": 0
+   },
+   "TRANSFERENCIAS": {
+    "postgres_gb": 1.393,
+    "annual_gb": 0.145,
+    "backfill_rows": 6660255,
+    "raw_gb": 2.0,
+    "datasets": 3,
+    "not_estimated": 0
+   },
+   "EDUCACAO": {
+    "postgres_gb": 5.542,
+    "annual_gb": 0.459,
+    "backfill_rows": 28955654,
+    "raw_gb": 15.0,
+    "datasets": 9,
+    "not_estimated": 0
+   },
+   "CONTROLE": {
+    "postgres_gb": 0.032,
+    "annual_gb": 0.005,
+    "backfill_rows": 75000,
+    "raw_gb": 1.3,
+    "datasets": 2,
+    "not_estimated": 0
+   },
+   "SAUDE": {
+    "postgres_gb": 20.26,
+    "annual_gb": 3.444,
+    "backfill_rows": 115137036,
+    "raw_gb": 55.7,
+    "datasets": 13,
+    "not_estimated": 2
+   },
+   "SEGURANCA": {
+    "postgres_gb": 2.213,
+    "annual_gb": 0.185,
+    "backfill_rows": 12551930,
+    "raw_gb": 2.4,
+    "datasets": 5,
+    "not_estimated": 1
+   },
+   "SOCIAL": {
+    "postgres_gb": 2.314,
+    "annual_gb": 0.202,
+    "backfill_rows": 19506173,
+    "raw_gb": 5.0,
+    "datasets": 4,
+    "not_estimated": 1
+   },
+   "ATENDIMENTO": {
+    "postgres_gb": 4.058,
+    "annual_gb": 0.565,
+    "backfill_rows": 11200000,
+    "raw_gb": 4.5,
+    "datasets": 1,
+    "not_estimated": 1
+   }
+  },
+  "C": {
+   "TERRITORIO": {
+    "postgres_gb": 6.732,
+    "annual_gb": 0.091,
+    "backfill_rows": 18416326,
+    "raw_gb": 5.26,
+    "datasets": 7,
+    "not_estimated": 0
+   },
+   "POLITICA_EXECUTIVO": {
+    "postgres_gb": 104.955,
+    "annual_gb": 12.162,
+    "backfill_rows": 121816320,
+    "raw_gb": 855.75,
+    "datasets": 34,
+    "not_estimated": 1
+   },
+   "FINANCAS_FEDERAIS": {
+    "postgres_gb": 0,
+    "annual_gb": 0,
+    "backfill_rows": 0,
+    "raw_gb": 0,
+    "datasets": 0,
+    "not_estimated": 1
+   },
+   "FINANCAS_SUBNACIONAL": {
+    "postgres_gb": 349.51,
+    "annual_gb": 38.019,
+    "backfill_rows": 665719752,
+    "raw_gb": 69.0,
+    "datasets": 11,
+    "not_estimated": 5
+   },
+   "CONTRATOS": {
+    "postgres_gb": 29.293,
+    "annual_gb": 12.504,
+    "backfill_rows": 31579250,
+    "raw_gb": 22.0,
+    "datasets": 5,
+    "not_estimated": 0
+   },
+   "INFRAESTRUTURA": {
+    "postgres_gb": 1.689,
+    "annual_gb": 0.146,
+    "backfill_rows": 9541325,
+    "raw_gb": 3.9,
+    "datasets": 7,
+    "not_estimated": 0
+   },
+   "TRANSFERENCIAS": {
+    "postgres_gb": 1.393,
+    "annual_gb": 0.145,
+    "backfill_rows": 6660255,
+    "raw_gb": 2.0,
+    "datasets": 3,
+    "not_estimated": 0
+   },
+   "EDUCACAO": {
+    "postgres_gb": 10.185,
+    "annual_gb": 1.066,
+    "backfill_rows": 34833347,
+    "raw_gb": 15.0,
+    "datasets": 9,
+    "not_estimated": 0
+   },
+   "CONTROLE": {
+    "postgres_gb": 0.032,
+    "annual_gb": 0.005,
+    "backfill_rows": 75000,
+    "raw_gb": 1.3,
+    "datasets": 2,
+    "not_estimated": 0
+   },
+   "SAUDE": {
+    "postgres_gb": 66.134,
+    "annual_gb": 34.369,
+    "backfill_rows": 198225636,
+    "raw_gb": 70.7,
+    "datasets": 13,
+    "not_estimated": 2
+   },
+   "SEGURANCA": {
+    "postgres_gb": 2.482,
+    "annual_gb": 0.208,
+    "backfill_rows": 12551930,
+    "raw_gb": 2.4,
+    "datasets": 5,
+    "not_estimated": 1
+   },
+   "SOCIAL": {
+    "postgres_gb": 2.314,
+    "annual_gb": 0.202,
+    "backfill_rows": 19506173,
+    "raw_gb": 5.0,
+    "datasets": 4,
+    "not_estimated": 1
+   },
+   "ATENDIMENTO": {
+    "postgres_gb": 4.058,
+    "annual_gb": 0.565,
+    "backfill_rows": 11200000,
+    "raw_gb": 4.5,
+    "datasets": 1,
+    "not_estimated": 1
+   }
+  }
+ },
+ "government_level_breakdown": {
+  "A": {
+   "NACIONAL": {
+    "postgres_gb": 6.835,
+    "annual_gb": 1.102,
+    "backfill_rows": 29354266,
+    "raw_gb": 21.29
+   },
+   "MULTI": {
+    "postgres_gb": 0.86,
+    "annual_gb": 0.077,
+    "backfill_rows": 5358238,
+    "raw_gb": 1.41
+   },
+   "FEDERAL": {
+    "postgres_gb": 0.901,
+    "annual_gb": 0.121,
+    "backfill_rows": 2908339,
+    "raw_gb": 3.99
+   },
+   "ESTADUAL": {
+    "postgres_gb": 0.551,
+    "annual_gb": 0.058,
+    "backfill_rows": 2327874,
+    "raw_gb": 28.17
+   },
+   "MUNICIPAL": {
+    "postgres_gb": 5.031,
+    "annual_gb": 0.526,
+    "backfill_rows": 20343825,
+    "raw_gb": 0.13
+   }
+  },
+  "B": {
+   "NACIONAL": {
+    "postgres_gb": 41.898,
+    "annual_gb": 8.18,
+    "backfill_rows": 207474692,
+    "raw_gb": 95.95
+   },
+   "MULTI": {
+    "postgres_gb": 11.714,
+    "annual_gb": 1.233,
+    "backfill_rows": 60890441,
+    "raw_gb": 47.05
+   },
+   "FEDERAL": {
+    "postgres_gb": 15.048,
+    "annual_gb": 1.391,
+    "backfill_rows": 53052184,
+    "raw_gb": 24.6
+   },
+   "ESTADUAL": {
+    "postgres_gb": 12.541,
+    "annual_gb": 1.451,
+    "backfill_rows": 37653411,
+    "raw_gb": 44.3
+   },
+   "MUNICIPAL": {
+    "postgres_gb": 111.523,
+    "annual_gb": 12.746,
+    "backfill_rows": 344851290,
+    "raw_gb": 303.8
+   }
+  },
+  "C": {
+   "NACIONAL": {
+    "postgres_gb": 115.388,
+    "annual_gb": 48.313,
+    "backfill_rows": 308720735,
+    "raw_gb": 119.26
+   },
+   "MULTI": {
+    "postgres_gb": 18.742,
+    "annual_gb": 1.735,
+    "backfill_rows": 107908939,
+    "raw_gb": 50.05
+   },
+   "FEDERAL": {
+    "postgres_gb": 26.004,
+    "annual_gb": 2.268,
+    "backfill_rows": 89967824,
+    "raw_gb": 27.6
+   },
+   "ESTADUAL": {
+    "postgres_gb": 23.74,
+    "annual_gb": 2.712,
+    "backfill_rows": 62386659,
+    "raw_gb": 52.0
+   },
+   "MUNICIPAL": {
+    "postgres_gb": 394.903,
+    "annual_gb": 44.453,
+    "backfill_rows": 561141158,
+    "raw_gb": 807.9
+   }
+  }
+ },
+ "source_breakdown_B": {
+  "SRC-TCE-RS": {
+   "postgres_gb": 49.336,
+   "annual_gb": 4.903,
+   "backfill_rows": 161000000
+  },
+  "SRC-TCE-SP": {
+   "postgres_gb": 25.509,
+   "annual_gb": 3.092,
+   "backfill_rows": 98184240
+  },
+  "SRC-DATASUS-SIH": {
+   "postgres_gb": 14.065,
+   "annual_gb": 1.504,
+   "backfill_rows": 78540000
+  },
+  "SRC-ESTADO-FIN": {
+   "postgres_gb": 11.484,
+   "annual_gb": 1.356,
+   "backfill_rows": 34015411
+  },
+  "SRC-TCE-ES": {
+   "postgres_gb": 9.786,
+   "annual_gb": 1.288,
+   "backfill_rows": 35064450
+  },
+  "SRC-PNCP": {
+   "postgres_gb": 8.699,
+   "annual_gb": 3.811,
+   "backfill_rows": 17813700
+  },
+  "SRC-TCE-PE": {
+   "postgres_gb": 8.252,
+   "annual_gb": 1.031,
+   "backfill_rows": 29145600
+  },
+  "SRC-PT-VIAGENS": {
+   "postgres_gb": 7.597,
+   "annual_gb": 0.744,
+   "backfill_rows": 26300000
+  },
+  "SRC-SICONFI": {
+   "postgres_gb": 6.522,
+   "annual_gb": 0.556,
+   "backfill_rows": 43904274
+  },
+  "SRC-SIGPUB": {
+   "postgres_gb": 6.274,
+   "annual_gb": 0.704,
+   "backfill_rows": 5900000
+  },
+  "SRC-QD": {
+   "postgres_gb": 4.601,
+   "annual_gb": 0.765,
+   "backfill_rows": 4500000
+  },
+  "SRC-DEMAS-CNES": {
+   "postgres_gb": 4.186,
+   "annual_gb": 0.238,
+   "backfill_rows": 22211200
+  },
+  "SRC-FALABR": {
+   "postgres_gb": 4.058,
+   "annual_gb": 0.565,
+   "backfill_rows": 11200000
+  },
+  "SRC-INEP-CENSO": {
+   "postgres_gb": 3.937,
+   "annual_gb": 0.303,
+   "backfill_rows": 19666500
+  },
+  "SRC-DOMSC": {
+   "postgres_gb": 3.806,
+   "annual_gb": 0.486,
+   "backfill_rows": 3600000
+  },
+  "SRC-PT-DESPESAS": {
+   "postgres_gb": 2.882,
+   "annual_gb": 0.248,
+   "backfill_rows": 9300000
+  },
+  "SRC-SAPL": {
+   "postgres_gb": 2.395,
+   "annual_gb": 0.211,
+   "backfill_rows": 5830000
+  },
+  "SRC-IBGE-CENSO22": {
+   "postgres_gb": 1.609,
+   "annual_gb": 0.0,
+   "backfill_rows": 3164598
+  },
+  "SRC-IBGE-MUNIC": {
+   "postgres_gb": 1.446,
+   "annual_gb": 0.072,
+   "backfill_rows": 12532500
+  },
+  "SRC-DIOES": {
+   "postgres_gb": 1.331,
+   "annual_gb": 0.238,
+   "backfill_rows": 1400000
+  },
+  "SRC-MDS": {
+   "postgres_gb": 1.264,
+   "annual_gb": 0.097,
+   "backfill_rows": 10957081
+  },
+  "SRC-SINESP-VDE": {
+   "postgres_gb": 0.985,
+   "annual_gb": 0.084,
+   "backfill_rows": 7291130
+  },
+  "SRC-TRANSFEREGOV-FF": {
+   "postgres_gb": 0.84,
+   "annual_gb": 0.06,
+   "backfill_rows": 5240255
+  },
+  "SRC-PRF-DATATRAN": {
+   "postgres_gb": 0.753,
+   "annual_gb": 0.056,
+   "backfill_rows": 2000000
+  },
+  "SRC-DEMAS-BNAFAR": {
+   "postgres_gb": 0.743,
+   "annual_gb": 1.595,
+   "backfill_rows": 4080000
+  },
+  "SRC-PDET": {
+   "postgres_gb": 0.725,
+   "annual_gb": 0.07,
+   "backfill_rows": 5900000
+  },
+  "SRC-FNDE-TRANSF": {
+   "postgres_gb": 0.72,
+   "annual_gb": 0.051,
+   "backfill_rows": 4491648
+  },
+  "SRC-CNPJ-RFB": {
+   "postgres_gb": 0.681,
+   "annual_gb": 0.068,
+   "backfill_rows": 1400000
+  },
+  "SRC-INPE": {
+   "postgres_gb": 0.67,
+   "annual_gb": 0.051,
+   "backfill_rows": 3300000
+  },
+  "SRC-COMPRAS-GOV": {
+   "postgres_gb": 0.656,
+   "annual_gb": 0.049,
+   "backfill_rows": 1200000
+  },
+  "SRC-DOE-UF": {
+   "postgres_gb": 0.616,
+   "annual_gb": 0.054,
+   "backfill_rows": 438000
+  },
+  "SRC-PT-CONVENIOS": {
+   "postgres_gb": 0.553,
+   "annual_gb": 0.039,
+   "backfill_rows": 1420000
+  },
+  "SRC-PT-CPGF": {
+   "postgres_gb": 0.545,
+   "annual_gb": 0.054,
+   "backfill_rows": 1860000
+  },
+  "SRC-FNDE-PDDE": {
+   "postgres_gb": 0.531,
+   "annual_gb": 0.081,
+   "backfill_rows": 2052281
+  },
+  "SRC-SSP-ESTADOS": {
+   "postgres_gb": 0.441,
+   "annual_gb": 0.041,
+   "backfill_rows": 3200000
+  },
+  "SRC-ANATEL": {
+   "postgres_gb": 0.386,
+   "annual_gb": 0.049,
+   "backfill_rows": 3141480
+  },
+  "SRC-DATASUS-SIM": {
+   "postgres_gb": 0.369,
+   "annual_gb": 0.031,
+   "backfill_rows": 3007800
+  },
+  "SRC-SIOPS": {
+   "postgres_gb": 0.338,
+   "annual_gb": 0.026,
+   "backfill_rows": 2751580
+  },
+  "SRC-OBRASGOV": {
+   "postgres_gb": 0.298,
+   "annual_gb": 0.03,
+   "backfill_rows": 600000
+  },
+  "SRC-FAMEM-SIGANET": {
+   "postgres_gb": 0.232,
+   "annual_gb": 0.028,
+   "backfill_rows": 227000
+  },
+  "SRC-DATASUS-PNI": {
+   "postgres_gb": 0.224,
+   "annual_gb": 0.017,
+   "backfill_rows": 1824732
+  },
+  "SRC-DATASUS-SINASC": {
+   "postgres_gb": 0.222,
+   "annual_gb": 0.018,
+   "backfill_rows": 1804680
+  },
+  "SRC-FNDE-SIOPE": {
+   "postgres_gb": 0.2,
+   "annual_gb": 0.015,
+   "backfill_rows": 1629225
+  },
+  "SRC-IBGE-SIDRA": {
+   "postgres_gb": 0.184,
+   "annual_gb": 0.014,
+   "backfill_rows": 1593020
+  },
+  "SRC-IPEADATA": {
+   "postgres_gb": 0.164,
+   "annual_gb": 0.003,
+   "backfill_rows": 1336800
+  },
+  "SRC-BCB-PIX": {
+   "postgres_gb": 0.161,
+   "annual_gb": 0.031,
+   "backfill_rows": 1312292
+  },
+  "SRC-DOU-LJ": {
+   "postgres_gb": 0.16,
+   "annual_gb": 0.012,
+   "backfill_rows": 304000
+  },
+  "SRC-INEP-IDEB": {
+   "postgres_gb": 0.154,
+   "annual_gb": 0.008,
+   "backfill_rows": 1116000
+  },
+  "SRC-SNIS": {
+   "postgres_gb": 0.145,
+   "annual_gb": 0.003,
+   "backfill_rows": 1183625
+  },
+  "SRC-TSE-CAND": {
+   "postgres_gb": 0.134,
+   "annual_gb": 0.012,
+   "backfill_rows": 243000
+  },
+  "SRC-DEMAS-SISAB": {
+   "postgres_gb": 0.113,
+   "annual_gb": 0.014,
+   "backfill_rows": 917044
+  },
+  "SRC-SIAPE-CGU": {
+   "postgres_gb": 0.101,
+   "annual_gb": 0.007,
+   "backfill_rows": 577980
+  },
+  "SRC-SIORG": {
+   "postgres_gb": 0.097,
+   "annual_gb": 0.012,
+   "backfill_rows": 168000
+  },
+  "SRC-SENATRAN": {
+   "postgres_gb": 0.086,
+   "annual_gb": 0.006,
+   "backfill_rows": 701820
+  },
+  "SRC-SENADO-LEG": {
+   "postgres_gb": 0.077,
+   "annual_gb": 0.006,
+   "backfill_rows": 13000
+  },
+  "SRC-ANEEL": {
+   "postgres_gb": 0.076,
+   "annual_gb": 0.005,
+   "backfill_rows": 554400
+  },
+  "SRC-TSE-VOT": {
+   "postgres_gb": 0.058,
+   "annual_gb": 0.015,
+   "backfill_rows": 275000
+  },
+  "SRC-IBGE-MALHA": {
+   "postgres_gb": 0.043,
+   "annual_gb": 0.001,
+   "backfill_rows": 5571
+  },
+  "SRC-DIARIOS-CAMARAS": {
+   "postgres_gb": 0.03,
+   "annual_gb": 0.008,
+   "backfill_rows": 52000
+  },
+  "SRC-SENAPPEN": {
+   "postgres_gb": 0.03,
+   "annual_gb": 0.003,
+   "backfill_rows": 30800
+  },
+  "SRC-S2ID": {
+   "postgres_gb": 0.028,
+   "annual_gb": 0.002,
+   "backfill_rows": 60000
+  },
+  "SRC-TSE-FOTOS": {
+   "postgres_gb": 0.025,
+   "annual_gb": 0.002,
+   "backfill_rows": 113000
+  },
+  "SRC-TSE-PLANOS": {
+   "postgres_gb": 0.019,
+   "annual_gb": 0.001,
+   "backfill_rows": 68000
+  },
+  "SRC-SENADO-PROC": {
+   "postgres_gb": 0.019,
+   "annual_gb": 0.001,
+   "backfill_rows": 47300
+  },
+  "SRC-PT-CEIS": {
+   "postgres_gb": 0.018,
+   "annual_gb": 0.003,
+   "backfill_rows": 35000
+  },
+  "SRC-TCU": {
+   "postgres_gb": 0.014,
+   "annual_gb": 0.001,
+   "backfill_rows": 40000
+  },
+  "SRC-PLANALTO": {
+   "postgres_gb": 0.011,
+   "annual_gb": 0.001,
+   "backfill_rows": 44000
+  },
+  "SRC-CAMARA-PROP": {
+   "postgres_gb": 0.006,
+   "annual_gb": 0.0,
+   "backfill_rows": 11000
+  },
+  "SRC-INQUERITOS": {
+   "postgres_gb": 0.005,
+   "annual_gb": 0.0,
+   "backfill_rows": 30000
+  },
+  "SRC-AGENDAS": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-TCM-SP": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-TCE-OUTROS": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-TRANSFEREGOV-ESP": {
+   "postgres_gb": 0.0,
+   "annual_gb": 0.046,
+   "backfill_rows": 0
+  },
+  "SRC-DATASUS-SIA": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-DEMAS-OUTROS": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-DATAJUD": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-OUTROS-SOCIAL": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  },
+  "SRC-156": {
+   "postgres_gb": 0,
+   "annual_gb": 0,
+   "backfill_rows": 0
+  }
+ },
+ "layers_B": {
+  "RAW_object_storage_gb": 515.7,
+  "NORMALIZED_postgres_gb": 192.72,
+  "SERVING_postgres_gb": 9.06,
+  "serving_by_domain": {
+   "TERRITORIO": 0.164,
+   "POLITICA_EXECUTIVO": 1.688,
+   "FINANCAS_FEDERAIS": 0.144,
+   "FINANCAS_SUBNACIONAL": 4.435,
+   "CONTRATOS": 0.502,
+   "INFRAESTRUTURA": 0.135,
+   "TRANSFERENCIAS": 0.084,
+   "EDUCACAO": 0.333,
+   "CONTROLE": 0.002,
+   "SAUDE": 1.013,
+   "SEGURANCA": 0.177,
+   "SOCIAL": 0.185,
+   "ATENDIMENTO": 0.203
+  }
+ },
+ "infrastructure": {
+  "A": {
+   "db_gb_y1": 31.0338234864333,
+   "headroom_gb": 7.758455871608325,
+   "staging_gb": 15,
+   "wal_backfill_generated_gb": 17.012560608050485,
+   "backups_gb": 27.93044113778997,
+   "minimum_disk_gb": 53.792279358041625,
+   "recommended_disk_gb": 81.7227204958316,
+   "raw_object_storage_gb": 54.98833437506549,
+   "ram_min": 16,
+   "ram_rec": 32,
+   "cpu_min": 4,
+   "cpu_rec": 8
+  },
+  "B": {
+   "db_gb_y1": 232.69745281715572,
+   "headroom_gb": 58.17436320428893,
+   "staging_gb": 50,
+   "wal_backfill_generated_gb": 231.26795747380612,
+   "backups_gb": 209.42770753544016,
+   "minimum_disk_gb": 340.87181602144466,
+   "recommended_disk_gb": 550.2995235568849,
+   "raw_object_storage_gb": 515.7,
+   "ram_min": 32,
+   "ram_rec": 64,
+   "cpu_min": 8,
+   "cpu_rec": 16
+  },
+  "C": {
+   "db_gb_y1": 693.2319299828757,
+   "headroom_gb": 173.30798249571893,
+   "staging_gb": 50,
+   "wal_backfill_generated_gb": 694.5326313818335,
+   "backups_gb": 623.9087369845881,
+   "minimum_disk_gb": 916.5399124785947,
+   "recommended_disk_gb": 1540.4486494631828,
+   "raw_object_storage_gb": 1056.8099999999997,
+   "ram_min": 64,
+   "ram_rec": 128,
+   "cpu_min": 16,
+   "cpu_rec": 32
+  }
+ },
+ "deduplication": {
+  "persons": {
+   "naive_rows": 113000,
+   "canonical_rows": 85000,
+   "saved_rows": 28000,
+   "basis": "113 mil candidaturas executivas ↔ ~85 mil pessoas por hash de título (reeleições e candidatos repetidos)",
+   "row_bytes": 330.9443029709435,
+   "saved_gb": 0.009
+  },
+  "suppliers": {
+   "naive_rows": 3100000,
+   "canonical_rows": 1400000,
+   "saved_rows": 1700000,
+   "basis": "soma assumida dos credores PJ por fonte (PNCP 0,8 mi, TCE-RS 0,22, TCE-SP 0,45, TCE-ES 0,08, TCE-PE 0,11, federal 0,6, estados 0,25, outros 0,6) vs união com sobreposição 55%; NÃO medido",
+   "row_bytes": 474.8511698770269,
+   "saved_gb": 0.752
+  },
+  "municipalities": {
+   "naive_rows": 334260,
+   "canonical_rows": 5571,
+   "saved_rows": 328689,
+   "basis": "um município por fonte (≈60 fontes municipais) vs entidade única",
+   "saved_gb": 0.0573
+  },
+  "facilities": {
+   "naive_rows": 51480000,
+   "canonical_rows": 1042800.0,
+   "saved_rows": 50437200.0,
+   "basis": "estabelecimento por competência mensal (13 anos) vs SCD só com mudanças",
+   "saved_gb": 6.95
+  },
+  "acts": {
+   "note": "republicações (DF, DOE) viram versões do mesmo ato (hist 4–10%) em vez de linhas independentes"
+  },
+  "proposals": {
+   "note": "SAPL estadual (9 Casas) reutiliza civica_state.proposals; EXEC-C61 não duplica proposições legislativas"
+  },
+  "total_saved_gb": 7.77
+ },
+ "snapshot_vs_delta": [
+  {
+   "dataset": "SAU-BNAFAR-ESTOQUE",
+   "model": "snapshot diário completo",
+   "rows_year": 1222750000,
+   "gb_year": 222.67988446233565
+  },
+  {
+   "dataset": "SAU-BNAFAR-ESTOQUE",
+   "model": "snapshot semanal completo",
+   "rows_year": 174200000,
+   "gb_year": 31.72425751244234
+  },
+  {
+   "dataset": "SAU-BNAFAR-ESTOQUE",
+   "model": "delta (88% mudam em ≤7 dias)",
+   "rows_year": 153296000.0,
+   "gb_year": 27.91734661094926
+  },
+  {
+   "dataset": "SAU-BNAFAR-ESTOQUE",
+   "model": "corrente + agregado mensal município×CATMAT (RECOMENDADO)",
+   "rows_year": 8760000,
+   "gb_year": 1.3376948828989876
+  },
+  {
+   "dataset": "SAU-CNES-LEITOS",
+   "model": "snapshot mensal completo (13 anos)",
+   "rows_year": 2280000,
+   "gb_year": 0.31409268621677594,
+   "backfill_rows": 29640000,
+   "backfill_gb": 4.083204920818087
+  },
+  {
+   "dataset": "SAU-CNES-LEITOS",
+   "model": "snapshot anual (dezembro)",
+   "rows_year": 190000,
+   "gb_year": 0.02617439051806466,
+   "backfill_rows": 2470000,
+   "backfill_gb": 0.3402670767348406
+  },
+  {
+   "dataset": "SAU-CNES-LEITOS",
+   "model": "delta/SCD (RECOMENDADO)",
+   "rows_year": 22800.0,
+   "gb_year": 0.003140926862167759,
+   "backfill_rows": 486400.0,
+   "backfill_gb": 0.06700643972624554
+  },
+  {
+   "dataset": "SAU-CNES-EQUIP",
+   "model": "snapshot mensal completo (13 anos)",
+   "rows_year": 13200000,
+   "gb_year": 1.8184313412550186,
+   "backfill_rows": 171600000,
+   "backfill_gb": 23.63960743631524
+  },
+  {
+   "dataset": "SAU-CNES-EQUIP",
+   "model": "snapshot anual (dezembro)",
+   "rows_year": 1100000,
+   "gb_year": 0.15153594510458487,
+   "backfill_rows": 14300000,
+   "backfill_gb": 1.9699672863596034
+  },
+  {
+   "dataset": "SAU-CNES-EQUIP",
+   "model": "delta/SCD (RECOMENDADO)",
+   "rows_year": 165000.0,
+   "gb_year": 0.02273039176568773,
+   "backfill_rows": 3245000.0,
+   "backfill_gb": 0.4470310380585254
+  },
+  {
+   "dataset": "SAU-CNES-PROF",
+   "model": "snapshot mensal completo (13 anos)",
+   "rows_year": 43200000,
+   "gb_year": 7.867324480697526,
+   "backfill_rows": 561600000,
+   "backfill_gb": 102.27521824906783
+  },
+  {
+   "dataset": "SAU-CNES-PROF",
+   "model": "snapshot anual (dezembro)",
+   "rows_year": 3600000,
+   "gb_year": 0.6556103733914606,
+   "backfill_rows": 46800000,
+   "backfill_gb": 8.522934854088987
+  },
+  {
+   "dataset": "SAU-CNES-PROF",
+   "model": "delta/SCD (RECOMENDADO)",
+   "rows_year": 900000.0,
+   "gb_year": 0.16390259334786514,
+   "backfill_rows": 15300000.0,
+   "backfill_gb": 2.786344086913707
+  }
+ ],
+ "implementation_waves": [
+  {
+   "wave": 0,
+   "name": "Existente (sem trabalho)",
+   "collectors": [
+    "EXISTENTE-PIX"
+   ],
+   "backfill_rows": 0,
+   "postgres_gb_B": 0.0,
+   "annual_growth_gb_B": 0.046,
+   "raw_gb_B": 0.0
+  },
+  {
+   "wave": 1,
+   "name": "Onda 1 — Identidade, infraestrutura e núcleo federal de alta confiança",
+   "collectors": [
+    "EXEC-C00",
+    "EXEC-C01",
+    "EXEC-C02",
+    "EXEC-C03",
+    "EXEC-C10",
+    "EXEC-C08",
+    "EXEC-C50",
+    "EXEC-C51",
+    "EXEC-C52",
+    "EXEC-C53",
+    "EXEC-C54",
+    "EXEC-C55",
+    "EXEC-C62"
+   ],
+   "backfill_rows": 39388288,
+   "postgres_gb_B": 11.806,
+   "annual_growth_gb_B": 1.124,
+   "raw_gb_B": 58.6
+  },
+  {
+   "wave": 2,
+   "name": "Onda 2 — Dados estruturados nacionais",
+   "collectors": [
+    "EXEC-C11",
+    "EXEC-C12",
+    "EXEC-C13",
+    "EXEC-C14",
+    "EXEC-C15",
+    "EXEC-C20",
+    "EXEC-C21",
+    "EXEC-C22",
+    "EXEC-C23",
+    "EXEC-C24",
+    "EXEC-C25",
+    "EXEC-C17",
+    "EXEC-C19"
+   ],
+   "backfill_rows": 125056355,
+   "postgres_gb_B": 20.351,
+   "annual_growth_gb_B": 1.482,
+   "raw_gb_B": 33.7
+  },
+  {
+   "wave": 3,
+   "name": "Onda 3 — Saúde e educação granulares",
+   "collectors": [
+    "EXEC-C16",
+    "EXEC-C30",
+    "EXEC-C31",
+    "EXEC-C32",
+    "EXEC-C33",
+    "EXEC-C34",
+    "EXEC-C35",
+    "EXEC-C18"
+   ],
+   "backfill_rows": 112282393,
+   "postgres_gb_B": 19.735,
+   "annual_growth_gb_B": 3.45,
+   "raw_gb_B": 50.5
+  },
+  {
+   "wave": 4,
+   "name": "Onda 4 — Finanças e contratos subnacionais",
+   "collectors": [
+    "EXEC-C41",
+    "EXEC-C40",
+    "EXEC-C42",
+    "EXEC-C43",
+    "EXEC-C44",
+    "EXEC-C45",
+    "EXEC-C46",
+    "EXEC-C47"
+   ],
+   "backfill_rows": 385118657,
+   "postgres_gb_B": 116.111,
+   "annual_growth_gb_B": 15.73,
+   "raw_gb_B": 60.5
+  },
+  {
+   "wave": 5,
+   "name": "Onda 5 — Atos estaduais e municipais",
+   "collectors": [
+    "EXEC-C56",
+    "EXEC-C57",
+    "EXEC-C58",
+    "EXEC-C59",
+    "EXEC-C60",
+    "EXEC-C61"
+   ],
+   "backfill_rows": 17395000,
+   "postgres_gb_B": 14.655,
+   "annual_growth_gb_B": 1.721,
+   "raw_gb_B": 243.0
+  },
+  {
+   "wave": 6,
+   "name": "Onda 6 — Complementares e cobertura parcial",
+   "collectors": [
+    "EXEC-C74",
+    "EXEC-C70",
+    "EXEC-C71",
+    "EXEC-C72",
+    "EXEC-C73",
+    "EXEC-C75"
+   ],
+   "backfill_rows": 24681325,
+   "postgres_gb_B": 10.065,
+   "annual_growth_gb_B": 1.448,
+   "raw_gb_B": 69.4
+  }
+ ],
+ "gates": [
+  {
+   "id": "EXEC_COLLECTOR_SOURCE_CATALOG",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "85 fontes canônicas consolidadas de P0–P7 (16 arquivos lidos) com 113 datasets; evidências: VERIFIED_API 25, VERIFIED_DATASET 40, DOCUMENTED_ONLY 20",
+   "limitation": "inventário de Saúde P1–P7 não existe no repositório; contagens de fontes só documentadas ficam NOT_ESTIMATED",
+   "risk": "médio",
+   "next_action": "obter o inventário de Saúde, se existir fora do repositório, e reconciliar IDs"
+  },
+  {
+   "id": "EXEC_COLLECTOR_EXISTING_INFRASTRUCTURE",
+   "state": "PASS",
+   "evidence": "apps/collector/src (core, state, CLI), packages/db/src e control-plane inspecionados; nenhum collector do Executivo operacional; reuso mapeado (core/*, state/providers/sapl, institutional-http, elections.ts, portrait-mirror, pix, pncp-enrichment)",
+   "limitation": "código lido, não executado",
+   "risk": "baixo",
+   "next_action": "validar contratos de CollectorProvider ao implementar a Onda 1"
+  },
+  {
+   "id": "EXEC_POSTGRES_BASELINE",
+   "state": "PASS",
+   "evidence": "medido em 2026-10-13, só leitura: 16,077,065,363 B (14.97 GiB), 216 tabelas, 15,976,931 linhas",
+   "limitation": "n_live_tup inexistente em 118 tabelas: contagem exata por count(*); bloat não medido (sem pgstattuple)",
+   "risk": "baixo",
+   "next_action": "repetir a medição antes da Onda 1"
+  },
+  {
+   "id": "EXEC_POSTGRES_ROW_SIZE",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "custo por linha medido em 10 famílias (pessoas, mandatos, proposições, eventos, despesas/pagamentos, fornecedores, snapshots, documentos); fórmula de heap validada em movements (1.070 previstos vs 1.060 medidos)",
+   "limitation": "tabelas novas usam chaves curtas; tabelas atuais têm chaves compostas de texto (índice 260–510 B/linha)",
+   "risk": "médio",
+   "next_action": "medir 3 tabelas piloto da Onda 1 e recalibrar"
+  },
+  {
+   "id": "EXEC_DATASET_GRANULARITY",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "113 datasets na menor unidade útil (empenho/evento, norma, escola × etapa, estabelecimento × versão); nenhum estimado como linha por município sem justificativa",
+   "limitation": "SIA, SIM/SINASC detalhado, DataJud e SISVAN/SISAGUA sem amostragem",
+   "risk": "médio",
+   "next_action": "amostrar SIA em 3 UFs × 3 meses"
+  },
+  {
+   "id": "EXEC_DATASET_HISTORICAL_VOLUME",
+   "state": "PARTIAL",
+   "evidence": "âncoras medidas: PNCP (contratos/contratações), Siconfi (DCA/RREO/RGF), TCE-RS 26,9 mi, TCE-ES 942 mil, DOM/SC 5,49 mi, SIAPE, viagens, CPGF, despesas federais, SAPL-PI; 10 datasets NOT_ESTIMATED no cenário B",
+   "limitation": "TCE-SP/PE, SIH nacional, CNES nacional, SIGPub e QD são extrapolações de amostras ou referências externas",
+   "risk": "alto",
+   "next_action": "medir contagens nacionais de CNES e SIH; TCE-SP por amostra de 30 municípios"
+  },
+  {
+   "id": "EXEC_DATASET_ANNUAL_GROWTH",
+   "state": "PARTIAL",
+   "evidence": "crescimento anual B = 87,30 mi linhas e 25,00 GB/ano",
+   "limitation": "crescimento de contratos PNCP é exponencial (0,24 → 1,09 → 2,02 mi); tratado como constante em 2026",
+   "risk": "médio",
+   "next_action": "revisar anualmente com contagens reais"
+  },
+  {
+   "id": "EXEC_STORAGE_ESTIMATION",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "A=14,18 GB, B=192,7 GB, C=578,8 GB; somas por domínio, esfera e fonte reconciliam ao total; faixa indicativa de B 98,78–380,4 GB",
+   "limitation": "faixa por confiança é heurística, não intervalo estatístico",
+   "risk": "alto",
+   "next_action": "recalibrar após Onda 1 e após amostras"
+  },
+  {
+   "id": "EXEC_INDEX_ESTIMATION",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "índices calculados por tabela a partir das larguras de chave (B: 52,35 GB; 39% do heap+TOAST, variando de 0% a >100% por tabela)",
+   "limitation": "não mede bloat de índice; BRIN/partição não aplicados no cenário base",
+   "risk": "médio",
+   "next_action": "comparar com BRIN nas 8 tabelas de eventos"
+  },
+  {
+   "id": "EXEC_OBJECT_STORAGE_STRATEGY",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "RAW fora do PostgreSQL: A 54,99 GB, B 515,7 GB, C 1.056,8 GB; nada volumoso em bytea",
+   "limitation": "custo/serviço de object storage não definido; PDFs de SIGPub/DOM-SC dominam",
+   "risk": "médio",
+   "next_action": "definir bucket, retenção e hash; decidir se PDFs de municípios são espelhados ou só referenciados"
+  },
+  {
+   "id": "EXEC_DEDUPLICATION",
+   "state": "PARTIAL",
+   "evidence": "economia estimada 7,77 GB (fornecedores 0,75, estabelecimentos por SCD 6,95, pessoas 0,01)",
+   "limitation": "sobreposição de fornecedores assumida (55%), não medida",
+   "risk": "médio",
+   "next_action": "medir interseção de credores entre PNCP e 4 TCEs em amostra"
+  },
+  {
+   "id": "EXEC_TEMPORAL_MODEL",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "modelo de mandato/exercício/evento com início, fim, publicação, efeito, fonte, confiança e motivo; incompatibilidades do exercise_periods atual listadas em P7",
+   "limitation": "exercise_periods exige profiles de parlamentar; precisa de tabela própria",
+   "risk": "médio",
+   "next_action": "decidir exec_holding_period vs adaptar exercise_periods"
+  },
+  {
+   "id": "EXEC_COLLECTOR_DEPENDENCIES",
+   "state": "PASS",
+   "evidence": "55 collectors com dependências explícitas; grafo acíclico verificado",
+   "limitation": "dependência da tabela IBGE↔SG_UE",
+   "risk": "baixo",
+   "next_action": "construir a tabela na Onda 1"
+  },
+  {
+   "id": "EXEC_COLLECTION_FREQUENCY",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "cadência, janela, watermark, tombstone e revisão definidas por família; snapshots vs delta comparados para 4 datasets",
+   "limitation": "várias fontes sem política de retificação documentada",
+   "risk": "médio",
+   "next_action": "testar retificações no PNCP e no Siconfi"
+  },
+  {
+   "id": "EXEC_BACKFILL_FEASIBILITY",
+   "state": "PARTIAL",
+   "evidence": "backfill factível por ondas; TCE-RS/SP/PE/ES somam ~60% do volume; históricos além de 2025 não verificados para RS, SP e PE",
+   "limitation": "TCE-PE inalcançável na P7; PNCP com rate limit; SIGPub sem enumeração histórica",
+   "risk": "alto",
+   "next_action": "provar histórico por fonte antes de comprometer a janela de backfill"
+  },
+  {
+   "id": "EXEC_OPERATIONAL_COST",
+   "state": "PARTIAL",
+   "evidence": "recursos estimados por cenário (disco, RAM, CPU, WAL, staging, backups, rede); B: disco recomendado 550,3 GB",
+   "limitation": "sem preços de provedores; ambiente de produção não identificável no repositório (somente PostgreSQL local de desenvolvimento medido)",
+   "risk": "médio",
+   "next_action": "definir ambiente de produção e cotar"
+  },
+  {
+   "id": "EXEC_IMPLEMENTATION_WAVES",
+   "state": "PASS",
+   "evidence": "seis ondas com critérios de aceite, rollback, validação e observabilidade; ordem reavaliada (atos federais sobem para a Onda 1)",
+   "limitation": "esforço de engenharia não estimado",
+   "risk": "médio",
+   "next_action": "aprovar a ordem e o escopo de B"
+  },
+  {
+   "id": "EXEC_COVERAGE_REALISM",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "cobertura declarada por fonte: TCE de 4 UFs = 25,2% dos municípios; diários 48,5% por portal; SAPL ~23%; saúde/educação nacionais; demais UFs só estaduais com cobertura parcial",
+   "limitation": "cobertura municipal de pagamentos por credor limitada a ES, RS, SP e PE até novos TCEs serem provados",
+   "risk": "alto",
+   "next_action": "prova de TCE-MG/PR/SC/GO antes de prometer cobertura"
+  },
+  {
+   "id": "EXEC_PRIVACY_AND_RETENTION",
+   "state": "PASS_WITH_CAVEATS",
+   "evidence": "sem CPF em claro; hash de título; AIH e vínculos profissionais pseudonimizados e em camada interna; texto livre de manifestações excluído; CPGF sigilosa preservada",
+   "limitation": "CPF em claro nas fontes TCE-RS (9%), PE; exige descarte no parsing; base legal para dados de servidores a validar",
+   "risk": "alto",
+   "next_action": "parecer jurídico sobre servidores e profissionais de saúde"
+  },
+  {
+   "id": "EXEC_FINAL_READINESS",
+   "state": "PARTIAL",
+   "evidence": "plano executável para Ondas 1–2 (alta confiança); Ondas 3–5 dependem de provas pontuais; B total 192,7 GB + 14,97 GB atuais",
+   "limitation": "estimativa de B tem incerteza concentrada em 6 datasets de despesa e saúde",
+   "risk": "alto",
+   "next_action": "executar Onda 1 como piloto e recalibrar o modelo de armazenamento"
+  }
+ ],
+ "gate_counts": {
+  "PASS_WITH_CAVEATS": 10,
+  "PASS": 4,
+  "PARTIAL": 6
+ },
+ "blockers": [
+  "TCE-PE inalcançável na P7",
+  "histórico além de 2025 não provado para TCE-RS/SP/PE",
+  "INLABS opcional; DOEM bloqueado",
+  "tabela IBGE↔SG_UE inexistente",
+  "tabela SIAFI↔SIORG inexistente",
+  "contagens nacionais de CNES/SIH/SIA por medir",
+  "base legal para servidores e profissionais de saúde",
+  "decisão de object storage e ambiente de produção",
+  "SIGPub sem enumeração histórica reproduzível",
+  "inventário de Saúde P1–P7 ausente"
+ ],
+ "assumptions": [
+  "linhas de CNES (330 mil estabelecimentos, 190 mil leitos, 1,1 mi equipamentos, 3,6 mi vínculos), SIH nacional (12 mi AIH/ano) e frota/ocorrências são referências externas não medidas aqui",
+  "TCE-SP: 2.800 eventos por município-mês (faixa 1.500–4.200)",
+  "TCE-PE: 3.000 eventos por município-mês",
+  "históricos de TCE-RS/SP/PE com fator médio 0,75–0,8 sobre o último ano",
+  "sobreposição de fornecedores 55%",
+  "cobertura de entes Siconfi 0,93; categoria de atos municipais 66% (4 municípios de SC)",
+  "crescimento anual constante",
+  "geometria simplificada nos cenários A/B",
+  "sem preços de hospedagem"
+ ],
+ "not_estimated_datasets": {
+  "B": [
+   "POL-AGENDAS",
+   "FIN-SICONFI-MSC",
+   "FIN-TCMSP-CAPITAL",
+   "FIN-TCE-OUTROS",
+   "FIN-ESTADO-OUTROS",
+   "SAU-SIA-AGREG",
+   "SAU-OUTROS",
+   "SEG-DATAJUD-AGREG",
+   "SOC-OUTROS",
+   "ATD-156-CIDADES"
+  ],
+  "C": [
+   "POL-DESPESAS-FED",
+   "POL-AGENDAS",
+   "FIN-SICONFI-RREO-CORE",
+   "FIN-SICONFI-MSC",
+   "FIN-TCMSP-CAPITAL",
+   "FIN-TCE-OUTROS",
+   "FIN-ESTADO-OUTROS",
+   "SAU-SIA-AGREG",
+   "SAU-OUTROS",
+   "SEG-DATAJUD-AGREG",
+   "SOC-OUTROS",
+   "ATD-156-CIDADES"
+  ],
+  "excluded_B": [
+   "POL-SIAPE-VINCULOS-FUNCAO",
+   "POL-VIAGENS-TRECHOS",
+   "POL-VIAGENS-PASSAGENS"
+  ]
+ },
+ "method_note": "Fórmula de heap validada contra civica_state.movements (avg_width 973 B -> 1.070 B previstos; 1.060 B medidos). Índices usam largura de chave por coluna; a chave composta com texto longo das tabelas atuais (revision_id,house,provider,external_id,...) mede 260-510 B/linha de índice; as tabelas novas propostas usam chaves inteiras/curtas.",
+ "top_datasets_B": [
+  {
+   "dataset": "FIN-TCERS-EMPENHOS",
+   "postgres_gb": 49.336,
+   "rows": 161000000,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "FIN-TCESP-EVENTOS",
+   "postgres_gb": 25.509,
+   "rows": 98184240,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "SAU-SIH-AGREG",
+   "postgres_gb": 14.065,
+   "rows": 78540000,
+   "domain": "SAUDE",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "FIN-TCEPE-DESPESAS",
+   "postgres_gb": 8.252,
+   "rows": 29145600,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "FIN-TCEES-EMPENHOS",
+   "postgres_gb": 7.127,
+   "rows": 24500000,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-ATOS-MUN-SIGPUB",
+   "postgres_gb": 6.274,
+   "rows": 5900000,
+   "domain": "POLITICA_EXECUTIVO",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "FIN-ESTADO-ES",
+   "postgres_gb": 6.237,
+   "rows": 18480000,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "FIN-ESTADO-RS",
+   "postgres_gb": 4.974,
+   "rows": 14737920,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-ATOS-MUN-QD",
+   "postgres_gb": 4.601,
+   "rows": 4500000,
+   "domain": "POLITICA_EXECUTIVO",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "ATD-FALABR",
+   "postgres_gb": 4.058,
+   "rows": 11200000,
+   "domain": "ATENDIMENTO",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-VIAGENS-PAGAMENTOS",
+   "postgres_gb": 3.816,
+   "rows": 18000000,
+   "domain": "POLITICA_EXECUTIVO",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-ATOS-MUN-DOMSC",
+   "postgres_gb": 3.806,
+   "rows": 3600000,
+   "domain": "POLITICA_EXECUTIVO",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-VIAGENS",
+   "postgres_gb": 3.781,
+   "rows": 8300000,
+   "domain": "POLITICA_EXECUTIVO",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "CON-PNCP-CONTRATOS",
+   "postgres_gb": 3.591,
+   "rows": 5320000,
+   "domain": "CONTRATOS",
+   "confidence": "HIGH"
+  },
+  {
+   "dataset": "FIN-SICONFI-DCA-CORE",
+   "postgres_gb": 3.231,
+   "rows": 22334340,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "CON-PNCP-CONTRATACOES",
+   "postgres_gb": 3.151,
+   "rows": 5050000,
+   "domain": "CONTRATOS",
+   "confidence": "MEDIUM"
+  },
+  {
+   "dataset": "POL-DESPESAS-FED",
+   "postgres_gb": 2.882,
+   "rows": 9300000,
+   "domain": "FINANCAS_FEDERAIS",
+   "confidence": "HIGH"
+  },
+  {
+   "dataset": "SAU-CNES-PROF",
+   "postgres_gb": 2.786,
+   "rows": 15300000,
+   "domain": "SAUDE",
+   "confidence": "LOW"
+  },
+  {
+   "dataset": "FIN-TCEES-DESPESAS",
+   "postgres_gb": 2.591,
+   "rows": 10400000,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "HIGH"
+  },
+  {
+   "dataset": "FIN-SICONFI-RREO-CORE",
+   "postgres_gb": 2.366,
+   "rows": 15517656,
+   "domain": "FINANCAS_SUBNACIONAL",
+   "confidence": "LOW"
+  }
+ ],
+ "measured_anchors": {
+  "pncp_contratos": {
+   "2023": 242956,
+   "2024": 1087189,
+   "2025": 2023064
+  },
+  "pncp_contratacoes_soma_modalidades": {
+   "2024": 1230637,
+   "2025": 1462709
+  },
+  "siconfi_dca_linhas": {
+   "Vitoria_2024_7_anexos": 2072,
+   "municipio_pequeno_2024_7_anexos": 1016,
+   "I-C+I-D_Vitoria": 509,
+   "I-C+I-D_pequeno": 273
+  },
+  "siconfi_rreo_A01_bim6_Vitoria": 489,
+  "siconfi_rgf_A01_Vitoria": 198,
+  "siconfi_entes": 5598,
+  "pt_despesas_execucao_linhas_mes": 66525,
+  "rs_estado_dez2025_linhas": 351323,
+  "mg_empenho_2025_linhas": 63293,
+  "pg_database_bytes": 16077065363,
+  "note": "contagens obtidas por requisições públicas e consultas somente leitura em 2026-10-13; 2023 de contratações descartada por rate limit"
+ }
+}

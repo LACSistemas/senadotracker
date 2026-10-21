@@ -1,0 +1,90 @@
+{
+  "filas": [
+    {
+      "fila": "queue-cnes-wave1.jsonl",
+      "entradas": 24,
+      "falhas": 9,
+      "retries": 0
+    },
+    {
+      "fila": "queue-cnes-wave1b.jsonl",
+      "entradas": 2,
+      "falhas": 2,
+      "retries": 0
+    },
+    {
+      "fila": "queue-cnes-wave1c.jsonl",
+      "entradas": 6,
+      "falhas": 1,
+      "retries": 2
+    },
+    {
+      "fila": "queue-cnes-wave1d.jsonl",
+      "entradas": 4,
+      "falhas": 0,
+      "retries": 1
+    },
+    {
+      "fila": "queue-cnes-wave1e.jsonl",
+      "entradas": 6,
+      "falhas": 0,
+      "retries": 0
+    },
+    {
+      "fila": "queue-pf-wave1.jsonl",
+      "entradas": 27,
+      "falhas": 0,
+      "retries": 0
+    },
+    {
+      "fila": "queue-sih-wave3.jsonl",
+      "entradas": 7,
+      "falhas": 5,
+      "retries": 0
+    },
+    {
+      "fila": "queue-sih-wave3b.jsonl",
+      "entradas": 2,
+      "falhas": 1,
+      "retries": 0
+    },
+    {
+      "fila": "queue-sih-wave3c.jsonl",
+      "entradas": 21,
+      "falhas": 0,
+      "retries": 7
+    },
+    {
+      "fila": "queue-sih-wave3d.jsonl",
+      "entradas": 12,
+      "falhas": 0,
+      "retries": 3
+    },
+    {
+      "fila": "queue-sih-wave3e.jsonl",
+      "entradas": 5,
+      "falhas": 0,
+      "retries": 2
+    },
+    {
+      "fila": "queue-sih-wave3f.jsonl",
+      "entradas": 2,
+      "falhas": 0,
+      "retries": 0
+    },
+    {
+      "fila": "queue-sih-wave3g.jsonl",
+      "entradas": 10,
+      "falhas": 0,
+      "retries": 0
+    },
+    {
+      "fila": "queue-vital-wave4.jsonl",
+      "entradas": 26,
+      "falhas": 0,
+      "retries": 0
+    }
+  ],
+  "falhasDefinitivas": 18,
+  "retriesTotal": 15
+}

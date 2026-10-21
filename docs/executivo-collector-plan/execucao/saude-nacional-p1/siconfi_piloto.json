@@ -1,0 +1,79 @@
+[
+  {
+    "ente": 3205309,
+    "nome": "Vitória (padrão)",
+    "tipo": "RREO",
+    "anexo": "RREO-Anexo 02",
+    "ms": 1339,
+    "bytes": 473234,
+    "sha256": "1767ef4efef33061",
+    "items": 1202,
+    "hasMore": false,
+    "anexos": [
+      "RREO-Anexo 02"
+    ],
+    "saudeEmpenhadaAteBimestre": 503003429.15
+  },
+  {
+    "ente": 3205309,
+    "nome": "Vitória (padrão)",
+    "tipo": "RREO",
+    "anexo": "RREO-Anexo 12",
+    "ms": 269,
+    "bytes": 621,
+    "sha256": "b226de9b30516da4",
+    "items": 0,
+    "hasMore": false,
+    "anexos": [],
+    "saudeEmpenhadaAteBimestre": null
+  },
+  {
+    "ente": 32,
+    "nome": "Espírito Santo (estado)",
+    "tipo": "RREO",
+    "anexo": "RREO-Anexo 02",
+    "ms": 1811,
+    "bytes": 838158,
+    "sha256": "387e771b3220a956",
+    "items": 2149,
+    "hasMore": false,
+    "anexos": [
+      "RREO-Anexo 02"
+    ],
+    "saudeEmpenhadaAteBimestre": 5157316413.9
+  },
+  {
+    "ente": 32,
+    "nome": "Espírito Santo (estado)",
+    "tipo": "RREO",
+    "anexo": "RREO-Anexo 12",
+    "ms": 420,
+    "bytes": 611,
+    "sha256": "f0e3ba23b5ffef92",
+    "items": 0,
+    "hasMore": false,
+    "anexos": [],
+    "saudeEmpenhadaAteBimestre": null
+  },
+  {
+    "ente": 3200359,
+    "nome": "Alto Rio Novo (simplificado)",
+    "tipo": "RREO Simplificado",
+    "anexo": null,
+    "ms": 1158,
+    "bytes": 503606,
+    "sha256": "c292cf697fd7535f",
+    "items": 1284,
+    "hasMore": false,
+    "anexos": [
+      "RREO-Anexo 01",
+      "RREO-Anexo 02",
+      "RREO-Anexo 03",
+      "RREO-Anexo 06",
+      "RREO-Anexo 07",
+      "RREO-Anexo 09",
+      "RREO-Anexo 14"
+    ],
+    "saudeEmpenhadaAteBimestre": 10596993.13
+  }
+]

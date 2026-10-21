@@ -1,0 +1,627 @@
+{
+ "revisao": {
+  "numero": 2,
+  "correcoes": [
+   {
+    "id": "C01",
+    "titulo": "Escopo da investigação de páginas",
+    "antes": "Investiguei `/legislativo/estaduais` (Assembleias Legislativas) como se fosse a experiência territorial do produto.",
+    "evidencia": "A experiência territorial existente é `/quem-me-representa` (`?uf=` e `?casa=`): Legislativo federal (Senado e Câmara) por UF. É a rota da navegação \"Estados\" (cabeçalho, mapa, cartão da home) e dela partem os 27 links do mapa (`/quem-me-representa?uf=XX`). Ela nada tem de executivo.",
+    "correcao": "Nova seção 2A em `investigacao_backend_territorial_atual.md` com o fluxo URL → parâmetros → componentes → loader → SQL → tabelas, inventário de rotas territoriais e regras de separação Legislativo × Executivo.",
+    "arq": "A integração futura de Saúde parte de `?uf=` (validado pelo conjunto `ufs` do domínio), com seção própria \"Poder Executivo\", sem usar `casa` nem entrar em `summary.byHouse`. A rota não é modificada.",
+    "sto": "nenhum",
+    "plano": "Fase 1E ganha um ponto de integração com a navegação existente; `DataCoverage` (rota) e `ProductCoverage` (Assembleias) precisam de adaptador."
+   },
+   {
+    "id": "C02",
+    "titulo": "Aritmética de competência (`yyyymm − 1`)",
+    "antes": "O algoritmo de intervalos fechava versões com `valid_to = c − 1`. Para `c = 202501` isso dá `202500`, que não é competência.",
+    "evidencia": "Teste de mesa executado: `202501 − 1 = 202500` (inválido). Implementação de referência com `ym_prev`/`ym_next` e `CHECK` de mês 01–12 passou nos 7 cenários, incluindo dezembro → janeiro.",
+    "correcao": "Intervalos **semiabertos** `[valid_from, valid_to)`: encerrar = gravar `valid_to = c` (competência em que o estado deixa de valer). Nenhuma subtração. Funções `ym_next`/`ym_prev` (SQL) só para a guarda de contiguidade; tipo `civica_exec.competence` com `CHECK`.",
+    "arq": "Todas as tabelas de intervalo (`exec_sau_cnes_estab_v`, `_leito_v`, `_equip_v`) e consultas passam a usar `valid_to > c`.",
+    "sto": "nenhum",
+    "plano": "Critério de aceite da Fase 1A inclui os 7 testes de mesa como testes automatizados."
+   },
+   {
+    "id": "C03",
+    "titulo": "Integridade referencial de estabelecimentos históricos",
+    "antes": "Leitos, equipamentos e versões apontavam para `exec_sau_cnes_estab_cur`, que só tinha estabelecimentos vigentes (501.726).",
+    "evidencia": "No ES, 165 competências têm **13.093 CNES distintos** contra 10.270 vigentes (×1,275); 4.485 desaparecimentos e **1.662 reaparecimentos**. Uma FK para a tabela \"atual\" violaria a integridade para qualquer estabelecimento encerrado.",
+    "correcao": "`exec_sau_cnes_estab_cur` vira `exec_sau_cnes_estab`: identidade de **todo** CNES já visto (+ stubs de CNES só vistos no SIH) e atributos descritivos atuais. É o alvo de todas as FKs (`_v`, leitos, equipamentos, `exec_sau_hosp_mes_subgrupo`).",
+    "arq": "Ordem de carga: identidade antes dos fatos; SIH cria stubs para CNES desconhecido (nunca órfãos).",
+    "sto": "+0,05 GiB (639.639 linhas em vez de 501.726)",
+    "plano": "Família 2 passa a construir a identidade a partir de todas as competências."
+   },
+   {
+    "id": "C04",
+    "titulo": "O ponteiro não determina a visibilidade; rollback não é O(1)",
+    "antes": "A seção 7 atualizava as linhas de fato **no lugar** e apontava `exec_publication` para o novo `run_id`; a seção 6 do plano falava em rollback por `previous_run_id`.",
+    "evidencia": "Com mutação no lugar, os valores visíveis são os do último `COMMIT`; o ponteiro apenas registra. Os dados antigos deixam de existir na tabela: voltar exige reaplicar o inverso ou reprocessar o RAW. Não é O(1).",
+    "correcao": "Ponteiro redefinido como **registro e portão** (cobertura, idempotência, base para rollback). Rollback exato por **`exec_change_log`** (O(linhas alteradas), só para a publicação mais recente da fatia); fora disso, **replay do RAW**. Sequências transacionais exatas de publicação, rollback e reprocessamento com critérios de aceite.",
+    "arq": "Nova tabela `exec_change_log`; `slice_hash` em `exec_ingestion_run`; indicadores derivados são gravados e registrados na mesma transação dos fatos.",
+    "sto": "+0,26 GiB (`exec_change_log`, retenção rolante de 12 meses)",
+    "plano": "Fase 0 inclui `exec_change_log`; teste de rollback é critério de aceite da Fase 0."
+   },
+   {
+    "id": "C05",
+    "titulo": "Unicidade e temporalidade dos indicadores",
+    "antes": "`exec_ind_value` tinha PK `(indicator_id, entity_id, period_start)` sem lugar para duas metodologias nem para preliminar/definitivo; `run_id` era `integer` numa tabela e `bigint` em outra.",
+    "evidencia": "A cobertura de APS tem duas metodologias sem sobreposição (AB até 202012; APS desde 202112) e o SINASC/SIM publica preliminar e definitivo do mesmo ano.",
+    "correcao": "Uma linha de `exec_ind_def` por **versão metodológica** (ids distintos, `supersedes_id`, `valid_from_period`/`valid_to_period`); `status` (1 preliminar, 2 definitivo) em `exec_ind_value`; definitivo **substitui** preliminar na mesma PK (o valor anterior fica no change log e no RAW); `period_end` explícito; `run_id integer` em todas as tabelas.",
+    "arq": "Séries que cruzam versões são montadas por união explícita; a lacuna 2021 é declarada, não interpolada.",
+    "sto": "+0,04 GiB (colunas extras)",
+    "plano": "Fase 1B/1D publicam só versões com definição aprovada."
+   },
+   {
+    "id": "C06",
+    "titulo": "Reconciliação dos códigos IBGE",
+    "antes": "Fatos de SIM/SINASC/SIH com município `xx0000` (\"ignorado\") não tinham entidade; `exec_entity_external_id` e `exec_ref_code` não admitiam reuso de código ao longo do tempo.",
+    "evidencia": "14 códigos `xx0000` em 2024 no SINASC; `ibge6` é único nos 5.571 municípios (5.571/5.571); PNI traz o município novo desde 2023, SIM/SINASC/SIH ainda não.",
+    "correcao": "`exec_entity.kind = 5` (\"município ignorado da UF\", 27 linhas) para somar corretamente por UF sem entrar em ranking municipal; PK de `exec_entity_external_id` e `exec_ref_code` com `valid_from`; regra explícita 6↔7 dígitos; guarda de contiguidade.",
+    "arq": "Universo: 5.571 municípios + 27 \"ignorados\" + 27 UFs + 5 regiões + Brasil = 5.667 entidades.",
+    "sto": "desprezível",
+    "plano": "Fase 0: seeds com 5.667 entidades e teste de reconciliação."
+   },
+   {
+    "id": "C07",
+    "titulo": "Chaves e unidades de `exec_fin_fact`",
+    "antes": "A PK `(entity_id, exercicio, periodo, conta_id, coluna_id)` não distinguia RREO bimestral de RREO Simplificado semestral nem unidade de coluna.",
+    "evidencia": "64 de 150 municípios sorteados usam formulário simplificado; colunas têm unidades diferentes (R$, % da RCL).",
+    "correcao": "`conta_id` identifica (demonstrativo, variante, anexo, conta) e mapeia para conta canônica; unidade (centavos, pontos-base) vem do dicionário da coluna.",
+    "arq": "Comparação entre entes usa a conta canônica.",
+    "sto": "nenhum",
+    "plano": "Família 11: dicionário de contas antes da carga."
+   },
+   {
+    "id": "C08",
+    "titulo": "Retificações retroativas de intervalos",
+    "antes": "A regra de correção retroativa estava em prosa e sem prova.",
+    "evidencia": "Teste de mesa T5: republicar 202203 com SUS 6→5 produz o mesmo resultado que reconstruir tudo do zero.",
+    "correcao": "Algoritmo `rebuild_from(k)` transacional com guarda de contiguidade, verificação de no máximo um intervalo aberto por chave e ausência de sobreposição.",
+    "arq": "Exige RAW das competências k…última.",
+    "sto": "nenhum",
+    "plano": "RAW do CNES é retenção obrigatória."
+   },
+   {
+    "id": "C09",
+    "titulo": "Retenção do RAW",
+    "antes": "Apresentei 34,2 GiB (completa) e 5,7 GiB (mínima) sem definir retenção por dataset nem o que se perde.",
+    "evidencia": "A disponibilidade atual não garante a futura: o definitivo do SINASC mudou de pasta (`/NOV/DNRES` termina em 2022; 2023–2024 em `/1996_/Dados/DNRES`); `/PRELIM` guarda só 2025–2026; o PNI é um arquivo único substituído a cada carga; `/cobertura/ab` deixou de responder de 2021 em diante; SIAPS só devolve 202512; BNAFAR só o mês corrente.",
+    "correcao": "Política por classe: **obrigatória 22,5 GiB** (tudo, exceto SIH além de 24 meses), completa 34,2 GiB, mínima de 24 meses 5,7 GiB (insuficiente para reconstruir CNES).",
+    "arq": "Manifesto marca `retention_class` por arquivo.",
+    "sto": "RAW_EXTERNAL_GIB = 22,5 (recomendado); PostgreSQL inalterado",
+    "plano": "Aprovação do HD externo com capacidade ≥ 40 GiB livres (22,5 + folga)."
+   },
+   {
+    "id": "C10",
+    "titulo": "Consultas SQL",
+    "antes": "Q1 usava tabela inexistente (`exec_dataset`); Q6/Q9 referenciavam `exec_sau_cnes_estab_cur`; filtros temporais assumiam intervalos fechados; faltavam `kind`, `status` e dependências.",
+    "evidencia": "Auditoria linha a linha das 15 consultas contra o DDL revisado.",
+    "correcao": "Consultas reescritas com intervalos semiabertos, identidade de CNES, `kind`, `status`, `flags` e lista de dependências; navegação `/quem-me-representa → UF → território → Saúde` adicionada.",
+    "arq": "Nenhuma tabela nova além de `exec_change_log`.",
+    "sto": "nenhum",
+    "plano": "Latências continuam metas a medir no benchmark."
+   },
+   {
+    "id": "C11",
+    "titulo": "Armazenamento",
+    "antes": "2,72 GiB no PostgreSQL; 20 tabelas.",
+    "evidencia": "Itens C03–C06 e C04 alteram linhas e colunas; índices parciais de intervalo aberto adicionados.",
+    "correcao": "**3,12 GiB** (+0,40 GiB): `exec_change_log` 0,26; identidade de CNES +0,05; índices únicos parciais e colunas de status; 21 tabelas.",
+    "arq": "—",
+    "sto": "2,72 → 3,12 GiB; crescimento anual 0,22 GiB",
+    "plano": "Totais de ondas recalculados."
+   }
+  ],
+  "respostas": {
+   "quem_me_representa": "Legislativo federal por UF (?uf, ?casa); não executivo; sem município; loader stateRepresentation/houseMetricSummary; cache em memória 120 s",
+   "identidade_reutilizavel": "navegação (mapa, seletor ?uf=, ufs); NÃO há dimensão territorial no banco",
+   "modelo_d_continua": true,
+   "tabelas_alteradas": 15,
+   "tabela_nova": 1,
+   "tabelas_inalteradas": 5,
+   "rollback": "O(linhas alteradas) via exec_change_log (run mais recente, 12 meses) ou replay do RAW; não é O(1)",
+   "raw_obrigatorio_gib": 22.5,
+   "raw_completo_gib": 34.2,
+   "raw_minimo_24m_gib": 5.7,
+   "postgres_gib": 3.12,
+   "fase0_aprovavel": true
+  },
+  "validacao_postgres_descartavel": {
+   "cluster": "temporário, porta 55432, removido",
+   "ddl_tabelas": 21,
+   "consultas_executadas": 13,
+   "restricoes_rejeitadas": [
+    "competência 202500",
+    "2º intervalo aberto",
+    "FK de CNES inexistente",
+    "latest sem value"
+   ],
+   "rollback_hash_igual": true,
+   "falha_no_meio_estado_inalterado": true
+  },
+  "testes_de_mesa": [
+   "dez/2024→jan/2025",
+   "mudança de leitos",
+   "desaparecimento",
+   "reaparecimento",
+   "correção retroativa 202203",
+   "duas versões metodológicas",
+   "preliminar→definitiva com rollback"
+  ],
+  "retencao_gib": {
+   "obrigatoria": 22.5,
+   "completa": 34.2,
+   "minima_24m": 5.7,
+   "crescimento_anual_obrigatoria": 1.58,
+   "crescimento_anual_completa": 2.57
+  }
+ },
+ "meta": {
+  "titulo": "Saúde Fase 1 — arquitetura territorial e plano de implementação",
+  "gerado": "2026-10-19",
+  "somente_leitura_exceto": "DROP TABLE civica.expenses_corrupt (autorizado) para encerrar checkpoints falhando",
+  "status": "plano para aprovação; nada implementado"
+ },
+ "resultado_executivo": {
+  "paginas_estaduais": "DUAS experiências, ambas Legislativo: /quem-me-representa (federais por UF; ?uf, ?casa) e /legislativo/estaduais/[house]/… (Assembleias); todas force-dynamic; 4 rotas /api/estaduais/**",
+  "paginas_municipais": false,
+  "civica_state": "Dados das 27 Assembleias (50 tabelas, 10,89 GiB); chave house=UF + revision_id; publicação por ponteiro active_publications; sem particionamento; raw_objects 2,5 GiB no PostgreSQL",
+  "modelo_recomendado": "D (híbrido): dimensões canônicas + fatos nacionais por domínio + intervalos + serving; partições adiadas",
+  "tabela_por_uf": "não",
+  "tabela_por_municipio": "não",
+  "tabelas_novas": 21,
+  "particoes_fase1": 0,
+  "particoes_candidatas_cenario_c": [
+   "exec_sau_hosp_proc_mes (~36 mi)",
+   "exec_sau_sia_estab_grupo_mes (~29 mi)"
+  ],
+  "novas_tabelas_total": 21,
+  "tabelas_existentes_reutilizadas": [
+   "civica_ops.scheduler_provider_state / scheduler_decisions / control_plane_runs",
+   "padrão civica_state_story.house_story",
+   "core/publication-lifecycle (reconcileCandidate, semanticRevisionId)",
+   "CollectorRuntime + postgres-advisory-lock",
+   "contrato ProductCoverage (apps/web/lib/state-product.ts)",
+   "civica_national.houses (ligação UF ↔ Casa)",
+   "padrão de schema_migrations"
+  ],
+  "collectors_fase1": {
+   "total": 10,
+   "ids": [
+    "EXEC-C01",
+    "EXEC-C14",
+    "EXEC-C21",
+    "EXEC-C30",
+    "EXEC-C31",
+    "EXEC-C32",
+    "EXEC-C35",
+    "EXEC-C20",
+    "EXEC-C11",
+    "EXEC-C12"
+   ],
+   "novos": 0,
+   "datasets_novos": [
+    "SAU-APS-COBERTURA",
+    "SAU-SIAPS-ATEND (fora da Fase 1)"
+   ]
+  },
+  "postgres_adicional_gib": 3.12,
+  "hd_externo_gib": {
+   "obrigatoria": 22.5,
+   "completa": 34.2,
+   "minima_24_meses": 5.7
+  },
+  "crescimento_anual_gib": 0.22,
+  "ordem": [
+   "Fase 0 fundação territorial",
+   "1A CNES",
+   "1B epidemiologia (paralela a 1A)",
+   "1C SIH-RD",
+   "1D APS e Siconfi",
+   "1E consulta"
+  ],
+  "frontend_muda": false,
+  "frontend_nota": "/quem-me-representa e as páginas das Assembleias ficam intactas nesta etapa; integração futura = bloco \"Poder Executivo\" + rotas novas, com adaptador DataCoverage"
+ },
+ "armazenamento": {
+  "CURRENT_DATABASE_GIB": 14.95,
+  "HEALTH_PHASE1_ADDITIONAL_GIB": 3.11,
+  "SERVING_ADDITIONAL_GIB": 0.012,
+  "RAW_EXTERNAL_GIB": 22.5,
+  "RAW_EXTERNAL_GIB_COMPLETA": 34.2,
+  "RAW_EXTERNAL_GIB_MINIMO": 5.7,
+  "ANNUAL_GROWTH_GIB": 0.22,
+  "TOTAL_AFTER_HEALTH_PHASE1_GIB": 18.07,
+  "compartilhado_gib": 1.19,
+  "especifico_saude_gib": 1.93,
+  "temp_postgres_gib": 3.0,
+  "temp_externo_gib": 6.0,
+  "wal_backfill_gib": 6.2,
+  "p8_cenario_b": {
+   "postgres_gib": 1.97,
+   "objetos_gib": 5.0,
+   "anual_gib": 0.16
+  },
+  "raw_componentes_gib": {
+   "sim_sinasc": 4.69,
+   "cnes": 4.14,
+   "sih": 13.71,
+   "cnes_pf": 5.18,
+   "pni_aps": 0.2,
+   "siconfi": 6.0,
+   "misc": 0.3
+  },
+  "diferenca_vs_p8": "+1.15 GiB (1,97 → 3.12); a versão anterior deste plano estimava 2,72: medições do ES (equipamentos 3,46 mi intervalos vs 2,1 mi), fundação/proveniência, finanças em lista branca, tabela de nomes/lat-long, IND-05 mensal"
+ },
+ "tabelas": [
+  {
+   "id": "T01",
+   "nome": "civica_exec.exec_entity",
+   "camada": "DIMENSION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 5667,
+   "gib": 0.0011,
+   "particao": "nenhuma",
+   "collector": "EXEC-C01",
+   "pk": "entity_id int"
+  },
+  {
+   "id": "T02",
+   "nome": "civica_exec.exec_entity_version",
+   "camada": "DIMENSION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 12000,
+   "gib": 0.0014,
+   "particao": "nenhuma",
+   "collector": "EXEC-C01",
+   "pk": "(entity_id, valid_from)"
+  },
+  {
+   "id": "T03",
+   "nome": "civica_exec.exec_entity_external_id",
+   "camada": "DIMENSION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 22100,
+   "gib": 0.003,
+   "particao": "nenhuma",
+   "collector": "EXEC-C01",
+   "pk": "(source smallint, code text, valid_from date)"
+  },
+  {
+   "id": "T04",
+   "nome": "civica_exec.exec_ref_code",
+   "camada": "DIMENSION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 8000,
+   "gib": 0.0015,
+   "particao": "nenhuma",
+   "collector": "EXEC-C00",
+   "pk": "(domain smallint, code text, valid_from date)"
+  },
+  {
+   "id": "T05",
+   "nome": "civica_exec.exec_territory_population",
+   "camada": "DIMENSION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 156000,
+   "gib": 0.0132,
+   "particao": "nenhuma",
+   "collector": "EXEC-C14",
+   "pk": "(entity_id, year, source)"
+  },
+  {
+   "id": "T06",
+   "nome": "civica_exec.exec_ingestion_run",
+   "camada": "PROVENANCE",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 60000,
+   "gib": 0.0172,
+   "particao": "nenhuma",
+   "collector": "EXEC-C00",
+   "pk": "run_id integer"
+  },
+  {
+   "id": "T07",
+   "nome": "civica_exec.exec_raw_manifest",
+   "camada": "PROVENANCE",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 25000,
+   "gib": 0.0085,
+   "particao": "nenhuma",
+   "collector": "EXEC-C00",
+   "pk": "file_id bigint"
+  },
+  {
+   "id": "T08",
+   "nome": "civica_exec.exec_publication",
+   "camada": "PUBLICATION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 70000,
+   "gib": 0.0091,
+   "particao": "nenhuma",
+   "collector": "EXEC-C00",
+   "pk": "(dataset_id, uf, competence)"
+  },
+  {
+   "id": "T09",
+   "nome": "civica_exec.exec_change_log",
+   "camada": "PUBLICATION",
+   "classe": "SHARED_FOUNDATION",
+   "linhas": 1500000,
+   "gib": 0.2606,
+   "particao": "nenhuma (retenção rolante de 12 meses)",
+   "collector": "EXEC-C00",
+   "pk": "(run_id, seq)"
+  },
+  {
+   "id": "H01",
+   "nome": "civica_exec.exec_sau_cnes_estab_v",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 1901184,
+   "gib": 0.2396,
+   "particao": "nenhuma",
+   "collector": "EXEC-C21",
+   "pk": "(cnes int, valid_from int)"
+  },
+  {
+   "id": "H02",
+   "nome": "civica_exec.exec_sau_cnes_estab",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 639639,
+   "gib": 0.2396,
+   "particao": "nenhuma",
+   "collector": "EXEC-C21",
+   "pk": "cnes int"
+  },
+  {
+   "id": "H03",
+   "nome": "civica_exec.exec_sau_cnes_leito_v",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 201765,
+   "gib": 0.026,
+   "particao": "nenhuma",
+   "collector": "EXEC-C30",
+   "pk": "(cnes, tp_leito, cod_leito, valid_from)"
+  },
+  {
+   "id": "H04",
+   "nome": "civica_exec.exec_sau_cnes_equip_v",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 3455558,
+   "gib": 0.4581,
+   "particao": "nenhuma",
+   "collector": "EXEC-C30",
+   "pk": "(cnes, tipo, codigo, valid_from)"
+  },
+  {
+   "id": "H05",
+   "nome": "civica_exec.exec_sau_prof_mun_cbo",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 1949850,
+   "gib": 0.1666,
+   "particao": "nenhuma",
+   "collector": "EXEC-C31",
+   "pk": "(entity_id, cbo_group, snapshot_ym)"
+  },
+  {
+   "id": "H06",
+   "nome": "civica_exec.exec_sau_hosp_mes_subgrupo",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 5193071,
+   "gib": 0.7081,
+   "particao": "nenhuma na Fase 1 (RANGE por ano se C for aprovado)",
+   "collector": "EXEC-C32",
+   "pk": "(cnes, competence, subgrupo)"
+  },
+  {
+   "id": "H07",
+   "nome": "civica_exec.exec_sau_sih_mun_mes",
+   "camada": "NORMALIZED",
+   "classe": "HEALTH",
+   "linhas": 902340,
+   "gib": 0.0898,
+   "particao": "nenhuma",
+   "collector": "EXEC-C32",
+   "pk": "(entity_id, competence)"
+  },
+  {
+   "id": "H09",
+   "nome": "civica_exec.exec_ind_def",
+   "camada": "DIMENSION",
+   "classe": "SHARED_INDICATORS",
+   "linhas": 40,
+   "gib": 0.0,
+   "particao": "nenhuma",
+   "collector": "EXEC-C00",
+   "pk": "indicator_id smallint"
+  },
+  {
+   "id": "H10",
+   "nome": "civica_exec.exec_ind_value",
+   "camada": "NORMALIZED",
+   "classe": "SHARED_INDICATORS",
+   "linhas": 4311755,
+   "gib": 0.6241,
+   "particao": "nenhuma",
+   "collector": "por família (derivado em SQL na publicação)",
+   "pk": "(indicator_id, entity_id, period_start)"
+  },
+  {
+   "id": "H11",
+   "nome": "civica_exec.exec_ind_latest",
+   "camada": "SERVING",
+   "classe": "SHARED_INDICATORS",
+   "linhas": 80000,
+   "gib": 0.0102,
+   "particao": "nenhuma",
+   "collector": "publicação (trigger lógico no job)",
+   "pk": "(indicator_id, entity_id)"
+  },
+  {
+   "id": "H12",
+   "nome": "civica_exec.exec_fin_fact",
+   "camada": "NORMALIZED",
+   "classe": "SHARED_INDICATORS",
+   "linhas": 2800000,
+   "gib": 0.2393,
+   "particao": "nenhuma",
+   "collector": "EXEC-C11/C12",
+   "pk": "(entity_id, exercicio, periodo, conta_id, coluna_id)"
+  },
+  {
+   "id": "H13",
+   "nome": "civica_exec.exec_story",
+   "camada": "SERVING",
+   "classe": "HEALTH",
+   "linhas": 150,
+   "gib": 0.0017,
+   "particao": "nenhuma",
+   "collector": "publicação",
+   "pk": "(entity_id, domain, section)"
+  }
+ ],
+ "historico_es": {
+  "competencias": 165,
+  "periodo": "2013-01..2026-09",
+  "snapshots_vs_intervalos": {
+   "leitos": [
+    169703,
+    4271
+   ],
+   "estabelecimentos": [
+    1220612,
+    38916
+   ],
+   "equipamentos": [
+    3273769,
+    70733
+   ]
+  },
+  "escala_brasil": {
+   "razao_estabelecimentos": 48.9,
+   "razao_linhas_lt": 47.2,
+   "estab_versoes": 1901184,
+   "leito_intervalos": 201765,
+   "equip_intervalos": 3455558,
+   "snapshots_equivalentes": 227583407,
+   "reducao": 40.9
+  }
+ },
+ "banco": {
+  "medido_em": "2026-10-19",
+  "gib": 14.95,
+  "tabelas": 216,
+  "linhas_reltuples": 15995563,
+  "civica_state_gib": 10.888,
+  "tabelas_particionadas": 0,
+  "versao": "PostgreSQL 17.4",
+  "shared_buffers": "1GB",
+  "work_mem": "32MB",
+  "max_wal_size": "1GB",
+  "data_checksums": "off",
+  "extensoes": [
+   "plpgsql",
+   "pg_trgm",
+   "unaccent"
+  ],
+  "estatisticas_ausentes": 66,
+  "explain": [
+   {
+    "consulta": "expenses ES por pessoa",
+    "ms": 107.6
+   },
+   {
+    "consulta": "proposals SP 2026",
+    "ms": 48.9
+   }
+  ],
+  "proposals": {
+   "linhas": 2135609,
+   "ativas": 1058455,
+   "revisoes": 76
+  },
+  "skew": {
+   "proposals_sp_pct": 93,
+   "expenses_sc_pct": 67,
+   "cnes_sp_pct": 23.2,
+   "cnes_mg_pct": 12.9
+  }
+ },
+ "territorio": {
+  "municipio_novo": {
+   "codigo7": 5101837,
+   "codigo6": 510183,
+   "nome": "Boa Esperança do Norte",
+   "uf": "MT",
+   "populacao_2026": 5983,
+   "cnes_estabelecimentos": 14,
+   "em_sinasc_sim_2024": false,
+   "em_sih_202406": false,
+   "em_pni": true,
+   "em_aps_202608": true,
+   "instalacao_data": "não confirmada"
+  },
+  "universo_ibge": 5571,
+  "df_municipio": "5300108 (Brasília) conta como município",
+  "apos_correcao_p8_municipio_sem_linha_aps": "Itati (4310652)"
+ },
+ "correcoes_p8": [
+  {
+   "arquivo": "investigacao_executivo_p8_saude.md",
+   "secao": "18 (tabela de cobertura, linha 01)",
+   "original": "1 município novo sem linha",
+   "correto": "o município sem linha na API de APS é Itati (4310652); Boa Esperança do Norte está presente"
+  }
+ ],
+ "incidente": {
+  "descricao": "Checkpoints falhando em loop (15.123 erros no dia) por buffer corrompido da tabela civica.expenses_corrupt",
+  "acao": "DROP TABLE civica.expenses_corrupt (autorizado)",
+  "resultado": "checkpoint complete às 18:32; erros cessaram"
+ },
+ "decisoes_a_aprovar": [
+  "schema civica_exec e 20 tabelas",
+  "modelo D e partição adiada com benchmark",
+  "retenção do RAW e HD externo",
+  "privacidade: nada individual",
+  "escopo da Fase 1 (01,05,07,08,10,11,12,16,17,19,20)",
+  "UFs-piloto para medir escala",
+  "janela de requisições Siconfi/DEMAS",
+  "benchmark isolado"
+ ],
+ "riscos": [
+  "nome/lat-long do CNES (DEMAS) sem varredura nacional comprovada",
+  "escala nacional extrapolada do ES",
+  "SIOPS sem rota",
+  "definições de especialista",
+  "privacidade PF/SIH/PNI",
+  "API e-Gestor não documentada",
+  "backup/ANALYZE/WAL antes do backfill",
+  "limites de taxa Siconfi/DEMAS",
+  "duplicatas N_AIH",
+  "instalação do município novo"
+ ],
+ "queries": [
+  "Q1",
+  "Q2",
+  "Q3",
+  "Q4",
+  "Q5",
+  "Q6",
+  "Q7",
+  "Q8",
+  "Q9",
+  "Q10",
+  "Q11",
+  "Q12",
+  "Q13",
+  "Q14",
+  "Q15"
+ ]
+}

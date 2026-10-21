@@ -1,0 +1,357 @@
+{
+  "geradoEm": "2026-10-21T12:10:46.232Z",
+  "porDataset": {
+    "cnes_st": {
+      "esperado": 4455,
+      "publicado": 4455,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "cnes_lt": {
+      "esperado": 4455,
+      "publicado": 4455,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "cnes_eq": {
+      "esperado": 4455,
+      "publicado": 4455,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "cnes_pf": {
+      "esperado": 378,
+      "publicado": 378,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "sim": {
+      "esperado": 351,
+      "publicado": 324,
+      "ressalva": 27,
+      "ausente": 0
+    },
+    "sinasc": {
+      "esperado": 351,
+      "publicado": 324,
+      "ressalva": 27,
+      "ausente": 0
+    },
+    "sih_hospital": {
+      "esperado": 4401,
+      "publicado": 4401,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "sih_residencia": {
+      "esperado": 163,
+      "publicado": 163,
+      "ressalva": 0,
+      "ausente": 0
+    },
+    "pni": {
+      "esperado": 27,
+      "publicado": 0,
+      "ressalva": 27,
+      "ausente": 0
+    },
+    "aps": {
+      "esperado": 27,
+      "publicado": 0,
+      "ressalva": 0,
+      "ausente": 27
+    },
+    "siconfi": {
+      "esperado": 27,
+      "publicado": 0,
+      "ressalva": 0,
+      "ausente": 27
+    }
+  },
+  "indicadores": [
+    {
+      "code": "IND-SAU-05",
+      "municipios": 5571,
+      "valores": 921628,
+      "de": "2013-01-01",
+      "ate": "2026-09-01"
+    },
+    {
+      "code": "IND-SAU-05S",
+      "municipios": 5571,
+      "valores": 921628,
+      "de": "2013-01-01",
+      "ate": "2026-09-01"
+    },
+    {
+      "code": "IND-SAU-07:bcg",
+      "municipios": 5571,
+      "valores": 67099,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:dtp",
+      "municipios": 5571,
+      "valores": 5598,
+      "de": "2023-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:dtp_1_reforco",
+      "municipios": 5571,
+      "valores": 22391,
+      "de": "2023-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:dtp_2_reforco",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:dtpa_adulto",
+      "municipios": 5570,
+      "valores": 5597,
+      "de": "2023-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:febre_amarela",
+      "municipios": 5571,
+      "valores": 64679,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:febre_amarela_reforco",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:hepatite_a_infantil",
+      "municipios": 5571,
+      "valores": 67151,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:hepatite_b",
+      "municipios": 5571,
+      "valores": 5598,
+      "de": "2023-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:hepatite_b_1_dia",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:hepatite_b_2_dias",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:hepatite_b_30_dias",
+      "municipios": 5571,
+      "valores": 66969,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:meningo_c",
+      "municipios": 5570,
+      "valores": 16527,
+      "de": "2015-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:meningo_c_1_reforco",
+      "municipios": 5570,
+      "valores": 5597,
+      "de": "2023-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:meningococica_conjugada",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:meningococica_conjugada_1_reforco",
+      "municipios": 5571,
+      "valores": 61544,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:penta_dtp_hepb_hib",
+      "municipios": 5571,
+      "valores": 67163,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumo_10",
+      "municipios": 5571,
+      "valores": 55967,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumo_10_1_reforco",
+      "municipios": 5571,
+      "valores": 55913,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumo_20",
+      "municipios": 5571,
+      "valores": 5598,
+      "de": "2026-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumo_20_1_reforco",
+      "municipios": 5571,
+      "valores": 5598,
+      "de": "2026-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumococica_conjugada",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:pneumococica_conjugada_1_reforco",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:polio_injetavel_vip",
+      "municipios": 5571,
+      "valores": 50371,
+      "de": "2015-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:polio_injetavel_vip_reforco",
+      "municipios": 5570,
+      "valores": 44742,
+      "de": "2015-01-01",
+      "ate": "2022-01-01"
+    },
+    {
+      "code": "IND-SAU-07:polio_oral_bivalente",
+      "municipios": 5570,
+      "valores": 5597,
+      "de": "2023-01-01",
+      "ate": "2023-01-01"
+    },
+    {
+      "code": "IND-SAU-07:poliomielite",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:poliomielite_1_reforco",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:poliomielite_2_reforco",
+      "municipios": 5571,
+      "valores": 5598,
+      "de": "2024-01-01",
+      "ate": "2024-01-01"
+    },
+    {
+      "code": "IND-SAU-07:rotavirus",
+      "municipios": 5571,
+      "valores": 67163,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:triplice_viral_1_dose",
+      "municipios": 5571,
+      "valores": 67160,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:triplice_viral_2_dose",
+      "municipios": 5571,
+      "valores": 67040,
+      "de": "2015-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:varicela",
+      "municipios": 5571,
+      "valores": 39171,
+      "de": "2020-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-07:varicela_2_dose",
+      "municipios": 5571,
+      "valores": 16794,
+      "de": "2024-01-01",
+      "ate": "2026-01-01"
+    },
+    {
+      "code": "IND-SAU-08",
+      "municipios": 5571,
+      "valores": 72961,
+      "de": "2013-01-01",
+      "ate": "2025-01-01"
+    },
+    {
+      "code": "IND-SAU-10",
+      "municipios": 5570,
+      "valores": 912223,
+      "de": "2013-01-01",
+      "ate": "2026-07-01"
+    },
+    {
+      "code": "IND-SAU-11",
+      "municipios": 5571,
+      "valores": 72961,
+      "de": "2013-01-01",
+      "ate": "2025-01-01"
+    },
+    {
+      "code": "IND-SAU-12",
+      "municipios": 5571,
+      "valores": 72961,
+      "de": "2013-01-01",
+      "ate": "2025-01-01"
+    }
+  ],
+  "cnes": {
+    "vigentes": 501726,
+    "distintos": 639009
+  }
+}

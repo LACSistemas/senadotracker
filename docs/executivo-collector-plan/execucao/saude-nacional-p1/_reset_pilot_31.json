@@ -1,0 +1,59 @@
+{
+ "ufCode": 31,
+ "at": "2026-10-20T22:39:02.140Z",
+ "deleted": {
+  "exec_sau_cnes_equip_v": 153794,
+  "exec_sau_cnes_leito_v": 5433,
+  "exec_sau_cnes_estab_v": 65334,
+  "change_log": 13850,
+  "publication": 9,
+  "estab_identity": 64494
+ },
+ "hashesBefore": [
+  {
+   "dataset_id": 3,
+   "competence": 202607,
+   "h": "453e9d89611ea9dc6ce28d0ce333d2b2f357e81e639141e9163c4c012b91080f"
+  },
+  {
+   "dataset_id": 3,
+   "competence": 202608,
+   "h": "4bd18f4d05b0e14beab0f96ed73ce42a58b58b3351cbedc3b38efabb643d91f2"
+  },
+  {
+   "dataset_id": 3,
+   "competence": 202609,
+   "h": "d8f10a8f2ec59c98cf2c925acc668a70e6c0e146443f93942d1d2238820f0e01"
+  },
+  {
+   "dataset_id": 4,
+   "competence": 202607,
+   "h": "3fe038a0d23cb92193a671197c62828cc8684e6e1c1cc03b0e245998fa947358"
+  },
+  {
+   "dataset_id": 4,
+   "competence": 202608,
+   "h": "4ffccf7c5b5305ef12ed8ccf34cd5e5be5a7ec11aa2c7caf40e980ab59db8368"
+  },
+  {
+   "dataset_id": 4,
+   "competence": 202609,
+   "h": "75b379cf78349c7d6737799864af889052567fdf19c3be1d7aee6aaa86efb581"
+  },
+  {
+   "dataset_id": 5,
+   "competence": 202607,
+   "h": "443504c20ccf8653cc77329e6168ff85feb04221fe3ecbf20144cb12063249ac"
+  },
+  {
+   "dataset_id": 5,
+   "competence": 202608,
+   "h": "8954cd59b80dc4ee47cdcf60d7e9193f005d9399d2e77106b4fb04c970d8b2af"
+  },
+  {
+   "dataset_id": 5,
+   "competence": 202609,
+   "h": "0cba2c651ebb7944a4c13cfaddcff4131a17da3483e9e2c5ca0d2b287bae9b33"
+  }
+ ]
+}

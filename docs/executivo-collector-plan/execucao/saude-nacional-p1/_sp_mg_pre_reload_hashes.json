@@ -1,0 +1,164 @@
+[
+ {
+  "dataset_id": 3,
+  "uf": 31,
+  "competence": 202607,
+  "run_id": 840,
+  "slice_hash": "453e9d89611ea9dc6ce28d0ce333d2b2f357e81e639141e9163c4c012b91080f",
+  "rows_out": 127678,
+  "row_count": 127678
+ },
+ {
+  "dataset_id": 3,
+  "uf": 31,
+  "competence": 202608,
+  "run_id": 843,
+  "slice_hash": "4bd18f4d05b0e14beab0f96ed73ce42a58b58b3351cbedc3b38efabb643d91f2",
+  "rows_out": 128490,
+  "row_count": 128490
+ },
+ {
+  "dataset_id": 3,
+  "uf": 31,
+  "competence": 202609,
+  "run_id": 846,
+  "slice_hash": "d8f10a8f2ec59c98cf2c925acc668a70e6c0e146443f93942d1d2238820f0e01",
+  "rows_out": 129412,
+  "row_count": 129412
+ },
+ {
+  "dataset_id": 3,
+  "uf": 35,
+  "competence": 202607,
+  "run_id": 831,
+  "slice_hash": "a0ea3e89ab6cfcdf18396e00edb70a5fff4f89889f10ea8242c3794942e91e4f",
+  "rows_out": 230296,
+  "row_count": 230296
+ },
+ {
+  "dataset_id": 3,
+  "uf": 35,
+  "competence": 202608,
+  "run_id": 834,
+  "slice_hash": "b09a5a59726f6c15d074ce39a38820dd293294c6923944cc65fb835ac3f837f2",
+  "rows_out": 231810,
+  "row_count": 231810
+ },
+ {
+  "dataset_id": 3,
+  "uf": 35,
+  "competence": 202609,
+  "run_id": 837,
+  "slice_hash": "19ed750ed0b88e55d0de353e4cf79209def758666bd872eee3821bd34b2ab235",
+  "rows_out": 232986,
+  "row_count": 232986
+ },
+ {
+  "dataset_id": 4,
+  "uf": 31,
+  "competence": 202607,
+  "run_id": 841,
+  "slice_hash": "3fe038a0d23cb92193a671197c62828cc8684e6e1c1cc03b0e245998fa947358",
+  "rows_out": 5225,
+  "row_count": 5225
+ },
+ {
+  "dataset_id": 4,
+  "uf": 31,
+  "competence": 202608,
+  "run_id": 844,
+  "slice_hash": "4ffccf7c5b5305ef12ed8ccf34cd5e5be5a7ec11aa2c7caf40e980ab59db8368",
+  "rows_out": 5245,
+  "row_count": 5245
+ },
+ {
+  "dataset_id": 4,
+  "uf": 31,
+  "competence": 202609,
+  "run_id": 847,
+  "slice_hash": "75b379cf78349c7d6737799864af889052567fdf19c3be1d7aee6aaa86efb581",
+  "rows_out": 5242,
+  "row_count": 5242
+ },
+ {
+  "dataset_id": 4,
+  "uf": 35,
+  "competence": 202607,
+  "run_id": 832,
+  "slice_hash": "0683889067a741db0dcb232a6629c9f29a7b9ae9f162523316b615ed10ed0afa",
+  "rows_out": 8327,
+  "row_count": 8327
+ },
+ {
+  "dataset_id": 4,
+  "uf": 35,
+  "competence": 202608,
+  "run_id": 835,
+  "slice_hash": "b63c528ecdbbaad95969e7b66f1f619633c82a17015b6f889ce75568db4a415d",
+  "rows_out": 8323,
+  "row_count": 8323
+ },
+ {
+  "dataset_id": 4,
+  "uf": 35,
+  "competence": 202609,
+  "run_id": 838,
+  "slice_hash": "c0900c82c20b98f9c9c383d36dc4cc3a3432f4b3eb20d302497937fa8e4e7f18",
+  "rows_out": 8317,
+  "row_count": 8317
+ },
+ {
+  "dataset_id": 5,
+  "uf": 31,
+  "competence": 202607,
+  "run_id": 842,
+  "slice_hash": "443504c20ccf8653cc77329e6168ff85feb04221fe3ecbf20144cb12063249ac",
+  "rows_out": 149735,
+  "row_count": 149735
+ },
+ {
+  "dataset_id": 5,
+  "uf": 31,
+  "competence": 202608,
+  "run_id": 845,
+  "slice_hash": "8954cd59b80dc4ee47cdcf60d7e9193f005d9399d2e77106b4fb04c970d8b2af",
+  "rows_out": 151301,
+  "row_count": 151301
+ },
+ {
+  "dataset_id": 5,
+  "uf": 31,
+  "competence": 202609,
+  "run_id": 848,
+  "slice_hash": "0cba2c651ebb7944a4c13cfaddcff4131a17da3483e9e2c5ca0d2b287bae9b33",
+  "rows_out": 152779,
+  "row_count": 152779
+ },
+ {
+  "dataset_id": 5,
+  "uf": 35,
+  "competence": 202607,
+  "run_id": 833,
+  "slice_hash": "c75594cf86ca04ac4d7f4c133908da888d6f18de9f474fac7a86c79d578b9b52",
+  "rows_out": 248040,
+  "row_count": 248040
+ },
+ {
+  "dataset_id": 5,
+  "uf": 35,
+  "competence": 202608,
+  "run_id": 836,
+  "slice_hash": "ca47db64a7c421f9a07505c1d3eae8ec97a09ac40cb5d36bbace8dff214b9324",
+  "rows_out": 249815,
+  "row_count": 249815
+ },
+ {
+  "dataset_id": 5,
+  "uf": 35,
+  "competence": 202609,
+  "run_id": 839,
+  "slice_hash": "791e6ab26d537484e20c98583e688ab6699eac10998feef48b376e42277cbfef",
+  "rows_out": 251575,
+  "row_count": 251575
+ }
+]
