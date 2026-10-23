@@ -27,7 +27,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 2 — crachá
 - [x] 2.1 `components/cracha-hero.tsx` (pílulas de carreira e de honestidade)
 - [x] 2.2 `KpiStripCracha`
-- [ ] 2.3 "Em resumo, em {ano}" (temas clicáveis)
+- [x] 2.3 "Em resumo, em {ano}": `lib/person-themes.ts` + `components/person-themes.tsx` (temas atribuídos pela Casa, barras tocáveis → `/legislativo/proposicoes/explorar?autor=&tema=`, cobertura "N de M têm tema", temas frequentes sem proposta). Falta: linha de votos/partido (a fonte não publica orientação) e filtro de votos por tema
 - [ ] 2.4 Abas client-side com `?secao=`
 - [ ] 2.5 Aceite mobile
 ### Fase 1 — busca
