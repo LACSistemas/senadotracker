@@ -36,7 +36,10 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - [x] 1.3 Home "Quem representa você?" com busca e "ver por estado"
 - [x] 1.4 E2E `tests/e2e/ux-busca.spec.ts` ("/" → "Beto" → Enter → perfil)
 ### Fase 4 — drilldowns
-- [ ] 4.1–4.4
+- [x] 4.1 Cota mês a mês tocável (`components/quota-explorer.tsx`, agregação testada em `lib/quota-explorer.ts`); seletor de ano; mês sem registro = tracejado e desabilitado
+- [x] 4.2 "Com o que gastou em {ano}" (categorias ordenadas por valor)
+- [ ] 4.3 "Ano a ano" (propostas, falas, votos e cota por ano)
+- [~] 4.4 Temas tocáveis levam às propostas; filtro de votos por tema não feito
 ### Fase 5 — IA/navegação
 - [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")
 - [x] 5.2 `/investigar` (7 ferramentas, nenhuma rota removida)

@@ -1,0 +1,12 @@
+import { chromium } from 'playwright';
+const [base, path, out] = process.argv.slice(2);
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1100, height: 900 } });
+await p.goto(base + path, { waitUntil: 'networkidle', timeout: 120000 });
+const sec = p.locator('section[aria-labelledby=cota-mes]');
+await sec.scrollIntoViewIfNeeded();
+const btns = sec.getByRole('button', { name: /de \d{4}: R\$/ });
+console.log('meses com dado:', await btns.count());
+await btns.nth(1).click();
+await p.waitForTimeout(300);
+await sec.screenshot({ path: out });
+await b.close();

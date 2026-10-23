@@ -39,4 +39,16 @@ test.describe('busca global e crachá', () => {
     await nav.getByRole('link', { name: 'Investigar' }).click();
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Investigar');
   });
+
+  test('gastos: tocar num mês mostra categorias e maiores notas; mês sem registro não é clicável', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379/gastos-equipe');
+    const sec = page.locator('section[aria-labelledby=cota-mes]');
+    await sec.scrollIntoViewIfNeeded();
+    await expect(sec.getByText(/Com o que gastou em \d{4}/)).toBeVisible();
+    const month = sec.getByRole('button', { name: /de \d{4}: R\$/ }).first();
+    await month.click();
+    await expect(month).toHaveAttribute('aria-pressed', 'true');
+    await expect(sec.getByText(/Maiores notas da competência/)).toBeVisible();
+    await expect(sec.getByRole('button', { name: /sem registro publicado/ }).first()).toBeDisabled();
+  });
 });
