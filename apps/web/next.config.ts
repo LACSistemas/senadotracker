@@ -1,6 +1,8 @@
 ﻿import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Permite validar em outro diretório sem tocar o .next do servidor em uso (NEXT_DIST_DIR=.next-ux).
+  distDir: process.env.NEXT_DIST_DIR ?? '.next',
   poweredByHeader: false,
   reactStrictMode: true,
   images: {

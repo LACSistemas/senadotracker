@@ -1,8 +1,8 @@
-import { rateBench, crimeBench, rulerOf } from './bench';
-import { robberyFamilySeries, type StateCrimePayloadLite } from './build-crime';
-import { changeRatio, directionOf, fmt, signedPct } from './format';
-import { latestValue, sparkOf } from './series';
-import type { BenchView, ChartPoint, CrimeChapter, FinanceChapter, Hero, Kpi, ScopeInfo, StructureChapter, TrafficChapter } from './types';
+import { rateBench, crimeBench, rulerOf } from './bench.ts';
+import { robberyFamilySeries, type StateCrimePayloadLite } from './build-crime.ts';
+import { changeRatio, directionOf, fmt, signedPct } from './format.ts';
+import { latestValue, sparkOf } from './series.ts';
+import type { BenchView, ChartPoint, CrimeChapter, FinanceChapter, Hero, Kpi, ScopeInfo, StructureChapter, TrafficChapter } from './types.ts';
 
 type Q = Parameters<typeof rateBench>[0];
 const noPartial = (pts: ChartPoint[]) => pts.filter(p => p.v != null && p.state !== 'partial');
@@ -15,7 +15,7 @@ const delta = (cur: ChartPoint, prev: ChartPoint | null, label: string, flat = 0
 };
 const SMALL = (v: number) => v < 15 ? 'Números pequenos: poucos casos a mais ou a menos mudam muito o percentual.' : null;
 
-export interface HeroInput { bounds?: Map<number, import('./series').Bounds>; financeBench?: Promise<BenchView | null>; scope: ScopeInfo; crime: CrimeChapter; traffic: TrafficChapter; finance: FinanceChapter; structure: StructureChapter; sc: StateCrimePayloadLite | null; population: number | null }
+export interface HeroInput { bounds?: Map<number, import('./series.ts').Bounds>; financeBench?: Promise<BenchView | null>; scope: ScopeInfo; crime: CrimeChapter; traffic: TrafficChapter; finance: FinanceChapter; structure: StructureChapter; sc: StateCrimePayloadLite | null; population: number | null }
 
 export async function buildHero(q: Q, i: HeroInput): Promise<{ hero: Hero; benchByKpi: Record<string, BenchView> }> {
   const { scope } = i; const kpis: Kpi[] = []; const rejected: Hero['rejected'] = []; const benchByKpi: Record<string, BenchView> = {};

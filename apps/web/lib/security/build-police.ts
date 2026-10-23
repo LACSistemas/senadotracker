@@ -1,5 +1,5 @@
-import { mkChart, mkSeries, monthlyToAnnual } from './series';
-import type { ChartPoint, PoliceChapter, PoliceFamilyView, ScopeInfo } from './types';
+import { mkChart, mkSeries, monthlyToAnnual } from './series.ts';
+import type { ChartPoint, PoliceChapter, PoliceFamilyView, ScopeInfo } from './types.ts';
 
 interface OcSeries { family: string; indicatorId: number; source: string; abrangencia: string; measure: string; unit: string; level: string; note: string | null; points: Array<{ period: string; value: number | null; preliminary: boolean }>; first: string | null; last: string | null }
 export interface OcPayloadLite { families: Array<{ code: string; label: string; semantics: string; series: OcSeries[] }>; restrictions: string[]; notAvailable: string[] }

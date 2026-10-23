@@ -1,5 +1,5 @@
-import { fmt, periodLong } from './format';
-import type { InstitutionCard, ScopeInfo, StructureChapter } from './types';
+import { fmt, periodLong } from './format.ts';
+import type { InstitutionCard, ScopeInfo, StructureChapter } from './types.ts';
 
 interface Pt { value: number | null; status?: string; period?: { start: string; end: string }; source?: string; label?: string; corporation?: string | null }
 interface Existence { state: 'yes' | 'no' | 'unknown' | string; existence?: Pt; staff?: Pt }

@@ -2,9 +2,9 @@
 
 import * as React from 'react';
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import type { BenchView, ChartPoint, ChartSeries, ChartView, PointState } from '../../lib/security/types';
-import { fmt, periodLabel } from '../../lib/security/format';
-import { cn } from '../../lib/utils';
+import type { BenchView, ChartPoint, ChartSeries, ChartView, PointState } from '../../lib/security/types.ts';
+import { fmt, periodLabel } from '../../lib/security/format.ts';
+import { cn } from '../../lib/utils.ts';
 
 const COLORS: Record<NonNullable<ChartSeries['color']>, string> = { primary: '#115b45', ink: '#14304f', amber: '#a77612', blue: '#3263c3', plum: '#74478e', grey: '#7b8aa0' };
 const STATE_LABEL: Record<PointState, string> = { ok: '', prelim: 'preliminar: pode ser revisto', partial: 'ano incompleto', zero: 'zero informado pela fonte', suppressed: 'valor suprimido para proteger as vítimas', absent: 'sem dado' };

@@ -6,17 +6,17 @@ import {
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
 import { loadMunicipalities, loadMunicipality, loadState, loadStates } from '@/lib/exec-territory';
-import { crimeBench, rateBench, type Own } from './bench';
-import { buildCrimeChapter, type PopYear, type SegPayload, type StateCrimePayloadLite } from './build-crime';
-import { buildFinanceChapter, type FinancePayload } from './build-finance';
-import { buildPoliceChapter, type OcNationalLite, type OcPayloadLite } from './build-police';
-import { buildPrisonChapter, type PrisonMuniPayload, type PrisonStatePayload } from './build-prison';
-import { buildStructureChapter, type StaffMuni, type StaffNational, type StaffState } from './build-structure';
-import { buildTrafficChapter, type TrafficPayload } from './build-traffic';
-import { VDE_RATE_ID } from './catalog';
-import { buildHero } from './hero';
-import { crimeNarrative, financeNarrative, policeNarrative, prisonNarrative, structureNarrative, trafficNarrative } from './narrative';
-import type { BenchView, ContractPreview, ScopeInfo, SecurityPageData, SourceStamp } from './types';
+import { crimeBench, rateBench, type Own } from './bench.ts';
+import { buildCrimeChapter, type PopYear, type SegPayload, type StateCrimePayloadLite } from './build-crime.ts';
+import { buildFinanceChapter, type FinancePayload } from './build-finance.ts';
+import { buildPoliceChapter, type OcNationalLite, type OcPayloadLite } from './build-police.ts';
+import { buildPrisonChapter, type PrisonMuniPayload, type PrisonStatePayload } from './build-prison.ts';
+import { buildStructureChapter, type StaffMuni, type StaffNational, type StaffState } from './build-structure.ts';
+import { buildTrafficChapter, type TrafficPayload } from './build-traffic.ts';
+import { VDE_RATE_ID } from './catalog.ts';
+import { buildHero } from './hero.ts';
+import { crimeNarrative, financeNarrative, policeNarrative, prisonNarrative, structureNarrative, trafficNarrative } from './narrative.ts';
+import type { BenchView, ContractPreview, ScopeInfo, SecurityPageData, SourceStamp } from './types.ts';
 
 type Q = Pick<Pool, 'query'>;
 export interface Counter { n: number; ms: number; durations?: number[] }

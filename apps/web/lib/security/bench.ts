@@ -1,8 +1,8 @@
 import { BENCH_RATE_MIN_POPULATION, readCrimeRateBench, readMunicipalRateBench, readUfRateBench, sizeBandOf, type BenchPoint, type CrimeBenchYear, type SizeBand } from '@senadotracker/db';
-import { stateDe } from './catalog';
-import { fmt } from './format';
-import { benchUnavailable, benchView } from './series';
-import type { BenchBandPoint, BenchView, Ruler, ScopeInfo } from './types';
+import { stateDe } from './catalog.ts';
+import { fmt } from './format.ts';
+import { benchUnavailable, benchView } from './series.ts';
+import type { BenchBandPoint, BenchView, Ruler, ScopeInfo } from './types.ts';
 
 type Q = Parameters<typeof readUfRateBench>[0];
 /**

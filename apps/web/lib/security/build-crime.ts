@@ -1,7 +1,7 @@
 import { ALL_CRIME_DEFS, type CrimeDef } from '@senadotracker/db';
-import { CRIME_FEATURED, EXPLICIT_ZERO, CRIME_PLAIN, GROUP_LABEL, GROUP_ORDER, ROBBERY_FAMILY, SOURCE_PLAIN, VDE_CRIME, VDE_RATE_ID, vdeCountCode } from './catalog';
-import { fillMonthly, mkChart, mkSeries, monthlyToAnnual, monthlyToAnnualBounded, pointsFromCrime, pointsFromRm, type Bounds, type CrimePointRm, type RmPoint } from './series';
-import type { BenchView, ChartPoint, ChartView, CrimeChapter, ExploreOption, MeasureView, ScopeInfo } from './types';
+import { CRIME_FEATURED, EXPLICIT_ZERO, CRIME_PLAIN, GROUP_LABEL, GROUP_ORDER, ROBBERY_FAMILY, SOURCE_PLAIN, VDE_CRIME, VDE_RATE_ID, vdeCountCode } from './catalog.ts';
+import { fillMonthly, mkChart, mkSeries, monthlyToAnnual, monthlyToAnnualBounded, pointsFromCrime, pointsFromRm, type Bounds, type CrimePointRm, type RmPoint } from './series.ts';
+import type { BenchView, ChartPoint, ChartView, CrimeChapter, ExploreOption, MeasureView, ScopeInfo } from './types.ts';
 
 export interface SegMetric { indicatorId: number; code: string; label: string; unit: string; source: string; definition: string; granularity: string; grain: 'A' | 'M'; perspective?: string | null; comparability: string; series: RmPoint[]; latestPeriod: string | null; provisional: boolean }
 export interface SegPayload { metrics: SegMetric[]; coverage: { vde?: { firstMonth?: string; lastMonth?: string; municipalUniverse?: number } } }

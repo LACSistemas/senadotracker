@@ -1,6 +1,6 @@
-import { fmt } from './format';
-import { mkChart, mkSeries } from './series';
-import type { ChartPoint, ChartView, PrisonChapter, PrisonUnitView, ScopeInfo } from './types';
+import { fmt } from './format.ts';
+import { mkChart, mkSeries } from './series.ts';
+import type { ChartPoint, ChartView, PrisonChapter, PrisonUnitView, ScopeInfo } from './types.ts';
 
 interface PPoint { competence: number; ref: string; period: { start: string; end: string }; value: number | null; flags?: string[] }
 interface PSeries { indicatorId: number; code: string; label: string; unit: string; scope: string; kind: string; points: PPoint[] }

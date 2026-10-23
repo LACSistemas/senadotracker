@@ -1,8 +1,8 @@
-import { FLEET_TYPE_PLAIN, INFRACTION_NOTE, PRF_BREAK, TRAFFIC_USER } from './catalog';
-import { fmt, periodLong } from './format';
-import { mkChart, mkSeries, monthlyToAnnual, pointsFromRm, type RmPoint } from './series';
-import { POP_GAP } from './build-crime';
-import type { ChartPoint, ChartView, ScopeInfo, TrafficChapter } from './types';
+import { FLEET_TYPE_PLAIN, INFRACTION_NOTE, PRF_BREAK, TRAFFIC_USER } from './catalog.ts';
+import { fmt, periodLong } from './format.ts';
+import { mkChart, mkSeries, monthlyToAnnual, pointsFromRm, type RmPoint } from './series.ts';
+import { POP_GAP } from './build-crime.ts';
+import type { ChartPoint, ChartView, ScopeInfo, TrafficChapter } from './types.ts';
 
 interface TMetric { indicatorId: number; code: string; label: string; unit: string; series: RmPoint[]; latestPeriod: string | null; provisional: boolean; comparability: string }
 interface FleetPt { competence: number; total: number; byType: Record<string, number> }

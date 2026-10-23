@@ -1,4 +1,4 @@
-import type { BenchView, ContractPreview, FinanceChapter, FinanceYear, MoneyStage, ScopeInfo } from './types';
+import type { BenchView, ContractPreview, FinanceChapter, FinanceYear, MoneyStage, ScopeInfo } from './types.ts';
 
 interface Money { value: number | null; cents?: string }
 interface FYear { exercicio: number; coverage: string; function06: { empenhada?: Money; liquidada?: Money; paga?: Money } | null; total?: { empenhada?: Money; paga?: Money } | null; shareOfTotalEmpenhada: { percent: number } | null; subfunctions: Array<{ code: string; label: string; empenhada?: Money | null; paga?: Money | null }> }

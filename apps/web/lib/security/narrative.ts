@@ -1,5 +1,5 @@
-import { changeRatio, directionOf, fmt, signedPct } from './format';
-import type { ChartPoint, CrimeChapter, FinanceChapter, PoliceChapter, PrisonChapter, ScopeInfo, StructureChapter, TrafficChapter } from './types';
+import { changeRatio, directionOf, fmt, signedPct } from './format.ts';
+import type { ChartPoint, CrimeChapter, FinanceChapter, PoliceChapter, PrisonChapter, ScopeInfo, StructureChapter, TrafficChapter } from './types.ts';
 
 /**
  * Frases de abertura de cada capítulo: descrevem o que os dados mostram e o que NÃO mostram. Nunca atribuem causa

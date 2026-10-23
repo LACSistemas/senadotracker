@@ -1,5 +1,5 @@
-import type { BenchBandPoint, BenchView, ChartPoint, ChartSeries, ChartView, Grain, PointState } from './types';
-import { changeRatio, fmt, periodLabel, signedPct } from './format';
+import type { BenchBandPoint, BenchView, ChartPoint, ChartSeries, ChartView, Grain, PointState } from './types.ts';
+import { changeRatio, fmt, periodLabel, signedPct } from './format.ts';
 
 /** Pontos como saem dos read models P9.1/P9.2/P9.4 (`period` ISO, `kind`, `flags[]`). */
 export interface RmPoint { period: string; value: number | null; numerator?: number | null; denominator?: number | null; status?: string; kind?: string; flags?: string[] }
