@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Building2, Check, FileSearch, FileText, Gavel, Landmark, MapPinned, Scale, UserMinus, Users, Wallet } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
+import { GlobalSearch } from '@/components/global-search';
 import { InstitutionHero } from '@/components/heroes';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -66,8 +67,9 @@ export default async function HomePage() {
       <div className="page-shell py-8 sm:py-10">
         <InstitutionHero
           context="Congresso Nacional · dados oficiais"
-          title="Entenda quem representa você. Pelos dados."
-          description="Organizamos informações oficiais sobre parlamentares, gastos, participação, atividade legislativa e gabinetes, sempre com período, cobertura e fonte."
+          title="Quem representa você?"
+          description="Entenda quem representa você, pelos dados: quanto custa, se trabalha e como votou, com informações oficiais, período e fonte."
+          actions={<div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center"><div className="w-full max-w-xl"><GlobalSearch variant="hero"/></div><Link href="/quem-me-representa" className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 text-sm font-bold text-white no-underline hover:bg-white/10">ou veja por estado <ArrowRight size={15} aria-hidden="true"/></Link></div>}
           imageUrl="/congresso.svg"
           location="Brasília · DF"
         />

@@ -31,17 +31,20 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - [ ] 2.4 Abas client-side com `?secao=`
 - [ ] 2.5 Aceite mobile
 ### Fase 1 — busca
-- [ ] 1.1 Command palette + `/api/busca`
-- [ ] 1.2 Header com campo de busca
-- [ ] 1.3 Home "Quem representa você?"
+- [x] 1.1 `components/global-search.tsx` (`/` ou ⌘K, `<dialog>`, combobox/listbox) + `app/api/busca/route.ts` (2 SELECTs com LIMIT, sem facetas)
+- [x] 1.2 Header com campo de busca (ícone no mobile)
+- [x] 1.3 Home "Quem representa você?" com busca e "ver por estado"
+- [x] 1.4 E2E `tests/e2e/ux-busca.spec.ts` ("/" → "Beto" → Enter → perfil)
 ### Fase 4 — drilldowns
 - [ ] 4.1–4.4
 ### Fase 5 — IA/navegação
-- [ ] 5.1 Rótulos do header (feito em parte: ver log)
-- [ ] 5.2 `/investigar`
-- [ ] 5.3 Breadcrumb
+- [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")
+- [x] 5.2 `/investigar` (7 ferramentas, nenhuma rota removida)
+- [~] 5.3 `components/breadcrumb.tsx` criado e usado em `/investigar`; falta aplicar nas rotas profundas
 ### Fase 6 — polimento
 - [ ] 6.1–6.6
 
 ## Log
 - Fase 0/3/2.1/2.2: ver commits.
+- Validação: servidor de dev isolado (`NEXT_DIST_DIR=.next-ux`, porta 3105) para não tocar o `.next` do servidor em uso. Typecheck (web + testes) limpo; E2E de busca/crachá 4/4.
+- Não feito ainda: 2.3 (temas clicáveis), 2.4 (abas client-side — hoje são 4 rotas com gating CSS, intocado de propósito), Fase 4, 5.3 nas rotas profundas, Fase 6, 3.3 fora do crachá/home.
