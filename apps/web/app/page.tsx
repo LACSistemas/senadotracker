@@ -87,7 +87,7 @@ export default async function HomePage() {
             </div>
             <div className="min-w-0">
               <LedeLine lede={headline} />
-              <p className="mt-3 text-sm leading-6 text-muted-foreground">Cota parlamentar, gabinete e subsídio normativo somados apenas nos meses em que as três parcelas foram observadas. Cada número do site carrega período, universo e cobertura próprios.</p>
+              <p className="mt-3 text-sm leading-6 text-muted-foreground">Soma da cota para o mandato, do gasto com a equipe do gabinete e do salário do cargo, só nos meses em que as três parcelas foram publicadas. Cada número do site mostra período, universo e cobertura.</p>
             </div>
           </div>
         </section>

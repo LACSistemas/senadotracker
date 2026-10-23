@@ -22,7 +22,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 3 — linguagem simples
 - [x] 3.1 `lib/glossario.ts`
 - [x] 3.2 `components/termo-explicado.tsx`
-- [x] 3.3 Rótulos em linguagem simples no crachá e nas seções de custos/participação/produção do perfil; home e páginas de Casa/ranking pendentes
+- [x] 3.3 Rótulos em linguagem simples no crachá e nas seções de custos/participação/produção do perfil; home (texto de apoio) feito; páginas de Casa/ranking e a frase-síntese de `lib/lede.ts` (coberta por testes) pendentes
 - [ ] 3.4 Revisão com leigo
 ### Fase 2 — crachá
 - [x] 2.1 `components/cracha-hero.tsx` (pílulas de carreira e de honestidade)
