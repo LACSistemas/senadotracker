@@ -28,7 +28,9 @@ test.describe('busca global e crachá', () => {
     const tiles = page.locator('ul.grid-cols-2');
     await expect(tiles.getByText('Quanto custa por mês').first()).toBeVisible();
     await expect(tiles.getByText('Participação nas votações').first()).toBeVisible();
-    await expect(page.getByRole('link', { name: /Faltam \d+ dados? neste crachá/ })).toBeVisible();
+    // A pílula só existe quando falta dado; se existir, leva à explicação (nunca some sem motivo).
+    const pill = page.getByRole('link', { name: /Faltam \d+ dados? neste crachá/ });
+    if (await pill.count()) { await pill.click(); await expect(page.locator('#faltam-dados')).toBeVisible(); }
     await page.getByRole('button', { name: /O que significa “Subsídio|O que significa “Custo médio/ }).first().click();
     await expect(page.getByRole('note').first()).toBeVisible();
   });

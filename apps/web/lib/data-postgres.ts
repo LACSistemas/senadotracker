@@ -217,9 +217,12 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
   // resolver per historical year while building the overview envelope.
   const metricYears=isActivity?years:(needsActivity?[currentYear]:[]);
   const yearMetrics=needsActivity
-    ? await Promise.all(metricYears.map(async year=>({year,metric:(await (source==='camara'
-      ? personParticipation(source,year,id,(base as any).payload??base)
-      : publishedParticipation(source,year,[id]))).participation})))
+    ? await Promise.all(metricYears.map(async year=>{
+        const found=await (source==='camara'?personParticipation(source,year,id,(base as any).payload??base):publishedParticipation(source,year,[id]));
+        // O Senado devolve um mapa por parlamentar; a Câmara, a métrica da própria pessoa.
+        const metric:any=found.participation instanceof Map?found.participation.get(id):found.participation;
+        return {year,metric};
+      }))
     : [];
   const currentMetric=yearMetrics.find(x=>x.year===currentYear)?.metric;
   const currentPresence=presenceRows.find(r=>Number(r.year)===currentYear)??presenceRows[0];
