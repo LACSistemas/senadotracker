@@ -38,7 +38,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 4 — drilldowns
 - [x] 4.1 Cota mês a mês tocável (`components/quota-explorer.tsx`, agregação testada em `lib/quota-explorer.ts`); seletor de ano; mês sem registro = tracejado e desabilitado
 - [x] 4.2 "Com o que gastou em {ano}" (categorias ordenadas por valor)
-- [ ] 4.3 "Ano a ano" (propostas, falas, votos e cota por ano)
+- [ ] 4.3 "Ano a ano": BLOQUEADO por dados gateados por rota — a cota anual só carrega na rota `costs` e presença/participação por ano só na `activity` (ver `metricYears` em `lib/data-postgres.ts`); uma tabela única mostraria "—" falso. Depende de 2.4 (carregar tudo uma vez). Achado pré-existente: o bloco "Como isso mudou ao longo do tempo" aparece na rota `career` mas seus dados só existem em `activity`/`costs`, então lá mostra "Indisponível"
 - [~] 4.4 Temas tocáveis levam às propostas; filtro de votos por tema não feito
 ### Fase 5 — IA/navegação
 - [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")
