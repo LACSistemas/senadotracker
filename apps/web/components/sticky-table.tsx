@@ -15,7 +15,7 @@ export function StickyTable<Row>({caption,columns,rows,rowKey,widths,minWidth}:{
   caption:string;columns:StickyColumn<Row>[];rows:Row[];rowKey:(row:Row)=>string;widths:readonly number[];minWidth:number}){
   const fixed=(column:StickyColumn<Row>)=>column.sticky!==undefined?stickyStyle(widths,column.sticky):undefined;
   const edge=widths.length-1;
-  return <div className="mt-5 overflow-x-auto"><table className="w-full border-separate border-spacing-0 text-left text-xs" style={{minWidth}}>
+  return <div tabIndex={0} role="region" aria-label="Tabela com rolagem horizontal" className="mt-5 overflow-x-auto focus-ring"><table className="w-full border-separate border-spacing-0 text-left text-xs" style={{minWidth}}>
     <caption className="sr-only">{caption}</caption>
     <thead className="bg-slate-100 text-slate-700"><tr>{columns.map(column=>
       <th scope="col" key={column.key} style={fixed(column)}

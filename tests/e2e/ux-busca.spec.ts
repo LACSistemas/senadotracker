@@ -104,4 +104,27 @@ test.describe('busca global e crachá', () => {
     await expect(page.getByRole('heading', { name: 'Carreira política' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: /Eleições e patrimônio/ })).toBeVisible();
   });
+
+  test('presença: calendário dia a dia com total oficial, seletor de ano e setas do teclado', async ({ page }) => {
+    await page.goto('/legislativo/deputados/121948/atuacao-parlamentar');
+    const sec = page.locator('section[aria-labelledby=presenca-calendario]');
+    await sec.scrollIntoViewIfNeeded();
+    await sec.getByRole('button', { name: /^2025/ }).click();
+    await expect(sec.getByText('Presente em 119 de 121 dias')).toBeVisible();
+    const first = sec.locator('button[data-iso]').first();
+    await first.focus();
+    await page.keyboard.press('ArrowRight');
+    await expect(sec.locator('button[data-iso][aria-pressed="true"]')).toHaveCount(1);
+    await expect(sec.getByText(/feira, \d{2}\/\d{2}\/2025/).first()).toBeVisible();
+    await sec.getByText('Ver como tabela').click();
+    await expect(sec.getByRole('table')).toBeVisible();
+  });
+
+  test('votos: filtro por tema aplica na lista e diz a cobertura', async ({ page }) => {
+    await page.goto('/legislativo/deputados/121948/atuacao-parlamentar');
+    await expect(page.getByText(/votações têm tema no catálogo/)).toBeVisible();
+    await page.getByRole('link', { name: /^Finanças Públicas e Orçamento/ }).first().click();
+    await expect(page).toHaveURL(/votoTema=/);
+    await expect(page.getByText(/Votações nominais sobre Finanças Públicas e Orçamento/)).toBeVisible();
+  });
 });

@@ -204,7 +204,7 @@ function SourcesBand() {
   ] as const;
   return (
     <section aria-label="Fontes oficiais" className="border-b bg-white">
-      <div className="page-shell flex min-h-16 items-center gap-5 overflow-x-auto py-2.5">
+      <div tabIndex={0} role="region" aria-label="Faixa de dados do Congresso, com rolagem horizontal" className="page-shell focus-ring flex min-h-16 items-center gap-5 overflow-x-auto py-2.5">
         <strong className="shrink-0 border-r pr-5 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Fontes oficiais</strong>
         <div className="flex min-w-max flex-1 items-center justify-between gap-8">
           {sources.map(([src, name, status, size]) => (

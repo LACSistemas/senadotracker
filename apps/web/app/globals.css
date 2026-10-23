@@ -20,7 +20,7 @@
 .profile-section-content[data-profile-section="overview"] .career-only {
   display: none;
 }
-:root { color-scheme: light; --background:#f3f1eb; --foreground:#172c27; --card:#faf9f5; --card-foreground:#172c27; --primary:#115b45; --primary-foreground:#f9fcfa; --secondary:#dce9e2; --secondary-foreground:#174535; --muted:#e9e7e0; --muted-foreground:#60706a; --border:#d6d9d2; --input:#c8cec7; --ring:#17785b; --success:#157f58; --warning:#a65d08; --danger:#a33a3a; --chart-1:#115b45; --chart-2:#2d7f93; --chart-3:#d39a3c; --chart-4:#8b6aa8;
+:root { color-scheme: light; --background:#f3f1eb; --foreground:#172c27; --card:#faf9f5; --card-foreground:#172c27; --primary:#115b45; --primary-foreground:#f9fcfa; --secondary:#dce9e2; --secondary-foreground:#174535; --muted:#e9e7e0; --muted-foreground:#586862; --border:#d6d9d2; --input:#c8cec7; --ring:#17785b; --success:#157f58; --warning:#a65d08; --danger:#a33a3a; --chart-1:#115b45; --chart-2:#2d7f93; --chart-3:#d39a3c; --chart-4:#8b6aa8;
   /* Escala de avaliação: relação com um referencial, não identidade de série. Mesma paleta da marca, significado novo. */
   --eval-good:#157f58; --eval-typical:#60706a; --eval-watch:#a65d08; --eval-alert:#a33a3a; --eval-unknown:#c8cec7;
   /* Rampa sequencial do mapa (magnitude) com tons fixos, e cinza quente fora do matiz para "sem dado". */

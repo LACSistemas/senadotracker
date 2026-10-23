@@ -57,12 +57,12 @@ export const partyLanding = (...args: any[]): Promise<Contract<'partyLanding'>> 
 export const patrimonyRanking = (...args: any[]): Promise<Contract<'patrimonyRanking'>> => call('patrimonyRanking', ...args);
 export const personComparison = (source: any, year: number, ids: string[], dimension: any): Promise<CompatResult<ComparisonCompat>> => call('comparisonDashboard', source, year, ids, dimension) as unknown as Promise<CompatResult<ComparisonCompat>>;
 export const personComparisonSetup = (...args: any[]): Promise<CompatResult<ComparisonSetupCompat>> => call('personComparisonSetup', ...args) as Promise<CompatResult<ComparisonSetupCompat>>;
-export async function profile(source: any, externalId: string, _section?: DataProfileSection, _votePage?: number): Promise<ProfileResult> {
+export async function profile(source: any, externalId: string, _section?: DataProfileSection, _votePage?: number, _voteTheme?: string | null): Promise<ProfileResult> {
   // Profile reads are among the heaviest single-page contracts (especially
   // activity, which spans several published years). Keep them behind the
   // same in-flight/TTL cache used by the other read contracts so a layout,
   // metadata loader and page body cannot issue the same fan-out concurrently.
-  return await call('profileFull', source, externalId, _section ?? 'overview', _votePage ?? 1) as ProfileResult;
+  return await call('profileFull', source, externalId, _section ?? 'overview', _votePage ?? 1, _voteTheme ?? null) as ProfileResult;
 }
 export const profileIdentity = (source: Source, externalId: string): Promise<Contract<'profileIdentity'>> => call('profile', source, externalId) as Promise<Contract<'profileIdentity'>>;
 export const propositionDetail = (...args: any[]): Promise<Contract<'propositionDetail'>> => call('propositionDetail', ...args);

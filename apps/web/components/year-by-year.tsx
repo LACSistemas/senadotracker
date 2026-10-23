@@ -11,7 +11,7 @@ function Bar({value,max,children}:{value:number|null;max:number;children:string}
 export function YearByYear({years}:{years:PersonYear[]|null}){
   if(!years||!years.length)return null;
   const maxQuota=Math.max(1,...years.map(item=>item.quotaCents??0)),maxProps=Math.max(1,...years.map(item=>item.proposals??0));
-  return <div className="mt-6 overflow-x-auto rounded-2xl border bg-card">
+  return <div tabIndex={0} role="region" aria-label="Tabela Ano a ano, com rolagem horizontal" className="focus-ring mt-6 overflow-x-auto rounded-2xl border bg-card">
     <table className="w-full min-w-[30rem] text-left text-sm"><caption className="p-4 text-left text-lg font-bold">Ano a ano</caption>
       <thead><tr className="border-y text-xs text-muted-foreground"><th scope="col" className="p-3">Ano</th><th scope="col" className="p-3">Cota gasta</th><th scope="col" className="p-3">Propostas que apresentou</th></tr></thead>
       <tbody>{years.map(item=><tr key={item.year} className="border-b last:border-0">
