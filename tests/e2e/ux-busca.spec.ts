@@ -51,4 +51,11 @@ test.describe('busca global e crachá', () => {
     await expect(sec.getByText(/Maiores notas da competência/)).toBeVisible();
     await expect(sec.getByRole('button', { name: /sem registro publicado/ }).first()).toBeDisabled();
   });
+
+  test('perfil de senador: nenhum tile mostra NaN/undefined (dado ausente vira "—")', async ({ page }) => {
+    await page.goto('/legislativo/senadores/4639');
+    await expect(page.getByText('Quanto custa por mês').first()).toBeVisible();
+    const body = await page.locator('main').innerText();
+    expect(body).not.toMatch(/NaN|undefined/);
+  });
 });

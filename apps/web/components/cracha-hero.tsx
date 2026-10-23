@@ -38,7 +38,7 @@ export function KpiStripCracha({tiles,className}:{tiles:CrachaTile[];className?:
         <strong className={cn('block min-w-0 whitespace-nowrap text-[clamp(1rem,4.4vw,1.5rem)] lg:text-[clamp(1.15rem,1.7vw,1.5rem)] leading-tight tabular-nums',missing&&'text-muted-foreground')} aria-label={missing?'Não publicado':undefined}>{missing?'—':tile.value}</strong>
         <ArrowRight size={16} aria-hidden="true" className="mb-1 shrink-0 text-primary transition group-hover:translate-x-0.5"/><span className="sr-only">Ver detalhes</span>
       </Link>
-      <p className="mt-1 text-xs text-muted-foreground">{missing?'Não publicado pela fonte oficial.':tile.context}</p>
+      <p className="mt-1 text-xs text-muted-foreground">{missing?(tile.coverage.note||'Não publicado pela fonte oficial.'):tile.context}</p>
       <details className="mt-2 text-xs"><summary className="focus-ring inline-flex min-h-8 cursor-pointer items-center font-bold text-primary">Como foi medido</summary>
         <p className="mt-1 text-muted-foreground">{tile.coverage.note}</p>
         <p className="mt-1 text-muted-foreground">{tile.coverage.period.from&&tile.coverage.period.to?`Período: ${tile.coverage.period.from} a ${tile.coverage.period.to}.`:'Período não informado.'}</p>
