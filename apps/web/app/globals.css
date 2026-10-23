@@ -16,6 +16,7 @@
   display: none;
 }
 
+.profile-section-content[data-profile-section="career"] .tab-ov-only { display: none; }
 .profile-section-content[data-profile-section="overview"] .career-only {
   display: none;
 }

@@ -110,9 +110,11 @@ export async function profile(source:'camara'|'senado',id:string){return ok(awai
 
 /** Full public profile assembled from the PostgreSQL publications.  This deliberately
  * keeps missing sources as null/unavailable instead of turning them into empty metrics. */
-export async function profileFull(source:'camara'|'senado',id:string,section:'overview'|'costs'|'activity'|'career'='overview',votePage=1){
+export async function profileFull(source:'camara'|'senado',id:string,section:'overview'|'costs'|'activity'|'career'|'all'='overview',votePage=1){
   const base=await cachedProfileDetail(source,id); if(!base) return ok(null);
-  const needsCosts=section==='overview'||section==='costs', needsActivity=section==='overview'||section==='activity', needsVotes=section==='activity';
+  // `all` = perfil unificado (abas client-side): carrega de uma vez o que cada rota carregava sozinha.
+  const all=section==='all',isActivity=section==='activity'||all;
+  const needsCosts=section==='overview'||section==='costs'||all, needsActivity=section==='overview'||section==='activity'||all, needsVotes=isActivity;
   const [activityBatchResult,expenseResult,activityYearHeadResult,activityYearFallbackResult]=await Promise.all([
     pool.query(`SELECT a.batch_id,a.scope,b.published_at FROM civica_poc.active_publications a LEFT JOIN civica_poc.proposition_batches b ON b.id=a.batch_id WHERE a.source=$1 ORDER BY b.published_at DESC`,[source]),
     needsCosts?pool.query(`SELECT e.batch_id,e.source,e.external_id,e.year,e.month,e.record_key,e.category_code,e.category,e.supplier,e.supplier_document,e.document_number,e.document_id,e.document_url,e.issued_at,e.gross_cents,e.deduction_cents,e.net_cents,e.refund_cents,e.installment,e.detail,e.raw_id FROM civica.expenses e JOIN civica.active_expense_publications a ON a.source=e.source AND a.batch_id=e.batch_id WHERE e.source=$1 AND e.external_id=$2 ORDER BY e.year DESC,e.month DESC,e.issued_at DESC NULLS LAST,e.record_key`,[source,id]):Promise.resolve({rows:[] as any[]}),
@@ -134,7 +136,7 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
     pool.query(`SELECT count(DISTINCT a.proposal_id)::int total FROM civica_poc.proposal_authors a JOIN civica_poc.active_publications ap ON ap.source=a.source AND ap.batch_id=a.batch_id JOIN civica_poc.proposals p ON p.source=a.source AND p.batch_id=a.batch_id AND p.external_id=a.proposal_id WHERE a.source=$1 AND a.person_external_id=$2 AND COALESCE(p.functional_group,'') <> 'pareceres_relatorios'`,[source,id]),
     pool.query(`SELECT count(DISTINCT a.proposal_id)::int total FROM civica_poc.proposal_authors a JOIN civica_poc.active_publications ap ON ap.source=a.source AND ap.batch_id=a.batch_id JOIN civica_poc.proposals p ON p.source=a.source AND p.batch_id=a.batch_id AND p.external_id=a.proposal_id WHERE a.source=$1 AND a.person_external_id=$2 AND COALESCE(p.functional_group,'') <> 'pareceres_relatorios' AND (p.presented_year=$3 OR (p.presented_year IS NULL AND extract(year from p.presented_at)::int=$3))`,[source,id,activityYear]),
     pool.query(`SELECT x.kind,x.external_id,x.raw_id,x.payload FROM civica.legislative_appointments x JOIN civica.active_activity_publications ap ON ap.source=x.source AND ap.batch_id=x.batch_id WHERE x.source=$1 AND x.person_external_id=$2 ORDER BY COALESCE(x.payload->>'statusDate',x.payload->>'start','') DESC,NULLIF(split_part(x.external_id,':',6),'')::int NULLS LAST,x.external_id ASC LIMIT 100`,[source,id]),
-    section==='activity'?pool.query(`
+    isActivity?pool.query(`
     SELECT c.kind,c.external_key,c.proposal_id,c.deliberation_id,c.body_id,c.occurred_at,c.payload
       FROM civica.legislative_complements c
       JOIN civica.active_complement_publications ap ON ap.source=c.source AND ap.batch_id=c.batch_id
@@ -147,7 +149,7 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
      WHERE a.source=$1 AND a.payload->>'personExternalId'=$2
     ORDER BY occurred_at DESC NULLS LAST, external_key
     LIMIT 100`,[source,id]):Promise.resolve({rows:[] as any[]}),
-    section==='activity'?pool.query(`SELECT c.kind,c.external_key,c.proposal_id,c.deliberation_id,c.body_id,c.occurred_at,c.raw_id,c.payload,b.reconciliation_json FROM civica.legislative_complements c JOIN civica.active_complement_publications ap ON ap.source=c.source AND ap.batch_id=c.batch_id JOIN civica.complement_batches b ON b.id=c.batch_id WHERE c.source=$1 AND c.kind='reconciliation' ORDER BY c.external_key`,[source]):Promise.resolve({rows:[] as any[]}),
+    isActivity?pool.query(`SELECT c.kind,c.external_key,c.proposal_id,c.deliberation_id,c.body_id,c.occurred_at,c.raw_id,c.payload,b.reconciliation_json FROM civica.legislative_complements c JOIN civica.active_complement_publications ap ON ap.source=c.source AND ap.batch_id=c.batch_id JOIN civica.complement_batches b ON b.id=c.batch_id WHERE c.source=$1 AND c.kind='reconciliation' ORDER BY c.external_key`,[source]):Promise.resolve({rows:[] as any[]}),
   ]):null;
   const activityRows=activityReadResults?.[0].rows??[];
   const proposalTotalRow=activityReadResults?.[1].rows[0]??null;
@@ -213,7 +215,7 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
   // The overview only renders the current-year KPI. Historical participation
   // is exposed by the activity route, so do not fan out one full participation
   // resolver per historical year while building the overview envelope.
-  const metricYears=section==='activity'?years:(needsActivity?[currentYear]:[]);
+  const metricYears=isActivity?years:(needsActivity?[currentYear]:[]);
   const yearMetrics=needsActivity
     ? await Promise.all(metricYears.map(async year=>({year,metric:(await (source==='camara'
       ? personParticipation(source,year,id,(base as any).payload??base)
@@ -284,7 +286,7 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
   const electoralProfile=electoralProfileRaw?.elections?.length?electoralProfileRaw:null;
   const electoralCoverage=electoralProfile?await electionsRepo.publishedElectoralCoverage():[];
   const participationHistory=yearMetrics.map(({year,metric})=>{const row=presenceRows.find(r=>Number(r.year)===year);const camaraEmpty=!row&&source==='camara';return {year,presence:row?{availability:'available',numerator:Number(row.days_present),denominator:Number(row.days_total),note:'Dias de PlenÃ¡rio conforme o relatÃ³rio individual oficial da CÃ¢mara.'}:camaraEmpty?{availability:'available',numerator:0,denominator:0,note:'Dias Ãºnicos derivados do lote de eventos; justificativas podem ter cobertura parcial.'}:{availability:'unavailable',numerator:null,denominator:null,note:'Dias Ãºnicos derivados do lote de eventos; justificativas podem ter cobertura parcial.'},participation:metric??{availability:'unavailable',numerator:null,denominator:null,note:'ParticipaÃ§Ã£o nominal nÃ£o publicada neste ano.'}};});
-  const participationMonthly=section==='activity'?((await Promise.all([currentYear].map(async year=>{
+  const participationMonthly=isActivity?((await Promise.all([currentYear].map(async year=>{
     const official=(await pool.query(`SELECT days_json FROM civica_votes_presence_poc.official_presence WHERE external_id=$1 AND year=$2`,[id,year])).rows[0]?.days_json;
     const sessions=(await pool.query(`SELECT external_id::text id,date::text date FROM civica_votes_presence_poc.sessions WHERE source=$1 AND batch_id=(SELECT batch_id FROM civica_votes_presence_poc.active_legislative WHERE source=$1 AND year=$2 LIMIT 1) AND eligible=true`,[source,year])).rows;
     const attendance=(await pool.query(`SELECT session_id::text id FROM civica_votes_presence_poc.attendance WHERE source=$1 AND batch_id=(SELECT batch_id FROM civica_votes_presence_poc.active_legislative WHERE source=$1 AND year=$2 LIMIT 1) AND external_id=$3`,[source,year,id])).rows;
@@ -311,7 +313,7 @@ export async function profileFull(source:'camara'|'senado',id:string,section:'ov
   const publicExpenseCoverage=section==='overview'?[]:expenseCoverage;
   const publicParticipationHistory=section==='overview'?[]:participationHistory;
   const publicParticipationMonthly=section==='overview'?[]:participationMonthly;
-  return ok({profile:profileCompat,source:{batchId:base.batchId??null,publishedAt:base.publishedAt??null,sha256:String(sourceRow?.sha256??''),url:String(sourceRow?.url??''),fetchedAt:sourceRow?.fetched_at?String(sourceRow.fetched_at):undefined,contentType:sourceRow?.content_type?String(sourceRow.content_type):undefined},subsidy,annualFinancial,expenseCoverage:publicExpenseCoverage,expenses:{items:expenses,coverage:expenseCoverage},votes,voteTotal,activity,activityBatches,complement:{personal:section==='activity'?events:[],summaries:section==='activity'?summaries:[]},expandedCosts,elections:electoralProfile?.elections??[],electoralCoverage,electoralProfile,participation,participationHistory:publicParticipationHistory,participationMonthly:publicParticipationMonthly,cabinet:cabinetEmpty?null:cabinet,cabinetPanorama:null});
+  return ok({profile:profileCompat,source:{batchId:base.batchId??null,publishedAt:base.publishedAt??null,sha256:String(sourceRow?.sha256??''),url:String(sourceRow?.url??''),fetchedAt:sourceRow?.fetched_at?String(sourceRow.fetched_at):undefined,contentType:sourceRow?.content_type?String(sourceRow.content_type):undefined},subsidy,annualFinancial,expenseCoverage:publicExpenseCoverage,expenses:{items:expenses,coverage:expenseCoverage},votes,voteTotal,activity,activityBatches,complement:{personal:isActivity?events:[],summaries:isActivity?summaries:[]},expandedCosts,elections:electoralProfile?.elections??[],electoralCoverage,electoralProfile,participation,participationHistory:publicParticipationHistory,participationMonthly:publicParticipationMonthly,cabinet:cabinetEmpty?null:cabinet,cabinetPanorama:null});
 }
 export async function propositionListing(query:any){
   const repositoryQuery={...query,q:query?.q??query?.search};

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { ArrowRight, Info } from 'lucide-react';
 import type { DataCoverage } from '@senadotracker/domain';
 import { TermoExplicado } from '@/components/termo-explicado';
-import type { TermoChave } from '@/lib/glossario';
+import { GLOSSARIO, type TermoChave } from '@/lib/glossario';
 import { cn } from '@/lib/utils';
 
 export interface CrachaGap{label:string;note:string}
@@ -45,4 +45,13 @@ export function KpiStripCracha({tiles,className}:{tiles:CrachaTile[];className?:
         {tile.second}
       </details>
     </li>;})}</ul>;
+}
+
+// Só no celular: os 3 números que respondem "quanto custa, trabalha?" já na primeira tela. Repete valores dos tiles
+// (mesmas variáveis), por isso fica fora da árvore de acessibilidade — os tiles abaixo são a versão completa.
+export function QuickFacts({tiles}:{tiles:CrachaTile[]}){
+  const pick=(['custoMensal','participacao','propostas'] as const).map(chave=>tiles.find(tile=>tile.chave===chave)).filter((tile):tile is CrachaTile=>Boolean(tile));
+  return <dl aria-hidden="true" className="mt-4 grid grid-cols-3 gap-2 md:hidden">{pick.map(tile=>{
+    const missing=tile.value===null||tile.coverage.availability==='unavailable';
+    return <div key={tile.chave} className="min-w-0 rounded-xl bg-white/15 p-2.5"><dt className="text-[0.68rem] font-bold leading-tight text-white/80">{GLOSSARIO[tile.chave].curto}</dt><dd className="mt-1 whitespace-nowrap text-[0.82rem] font-extrabold tabular-nums">{missing?'—':tile.value}</dd></div>;})}</dl>;
 }

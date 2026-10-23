@@ -28,8 +28,8 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - [x] 2.1 `components/cracha-hero.tsx` (pílulas de carreira e de honestidade)
 - [x] 2.2 `KpiStripCracha`
 - [x] 2.3 "Em resumo, em {ano}": `lib/person-themes.ts` + `components/person-themes.tsx` (temas atribuídos pela Casa, barras tocáveis → `/legislativo/proposicoes/explorar?autor=&tema=`, cobertura "N de M têm tema", temas frequentes sem proposta). Falta: linha de votos/partido (a fonte não publica orientação) e filtro de votos por tema
-- [~] 2.4 Abas: mantidas como 4 rotas deep-linkáveis (já compartilháveis), com skeleton de navegação; abas client-side exigem unificar o carregamento de dados (decisão pendente, ver Log)
-- [ ] 2.5 Aceite mobile
+- [x] 2.4 Abas client-side: `components/profile-tabs-shell.tsx` (troca por `data-profile-section`, `history.pushState` para a URL da aba, Voltar, links internos e tiles interceptados, fallback sem JS pela rota). Dados unificados: `profileFull(..., 'all')` carrega de uma vez o que cada rota carregava. Comparação de texto visível antes × depois (3 parlamentares × 4 abas): visão geral idêntica; as outras abas só ganharam a pílula 'Faltam N dados' e, em Atuação, a série de cota no histórico
+- [x] 2.5 Mobile 390: nome, status, pílulas e os 3 números-chave (custo/mês, participação, propostas) na primeira tela (`QuickFacts`, só <md, decorativo; os tiles completos vêm logo abaixo). O cartão de fontes oficiais segue no hero
 ### Fase 1 — busca
 - [x] 1.1 `components/global-search.tsx` (`/` ou ⌘K, `<dialog>`, combobox/listbox) + `app/api/busca/route.ts` (2 SELECTs com LIMIT, sem facetas)
 - [x] 1.2 Header com campo de busca (ícone no mobile)
@@ -38,7 +38,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 4 — drilldowns
 - [x] 4.1 Cota mês a mês tocável (`components/quota-explorer.tsx`, agregação testada em `lib/quota-explorer.ts`); seletor de ano; mês sem registro = tracejado e desabilitado
 - [x] 4.2 "Com o que gastou em {ano}" (categorias ordenadas por valor)
-- [~] 4.3 "Ano a ano" na visão geral com as duas séries que existem para todos os anos (cota gasta, com meses publicados, e propostas apresentadas; `lib/person-years.ts`). Presença/participação por ano seguem bloqueadas pelo gating por rota (ver 2.4)
+- [x] 4.3 "Ano a ano" na visão geral com as duas séries que existem para todos os anos (cota gasta, com meses publicados, e propostas apresentadas; `lib/person-years.ts`). Presença/participação por ano seguem bloqueadas pelo gating por rota (ver 2.4)
 - [~] 4.4 Temas tocáveis levam às propostas; filtro de votos por tema não feito
 ### Fase 5 — IA/navegação
 - [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")
@@ -58,3 +58,4 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - Decisão sobre 2.4: abas client-side exigem carregar custos, atividade e histórico numa só chamada (hoje cada rota carrega só o seu). Isso é uma mudança de camada de dados com custo de desempenho; não foi feita. Recomendação: manter 4 rotas com prefetch + skeleton (feito) ou aprovar a mudança de dados.
 - A11y própria (`scripts/security/a11y-check.mjs`, `A11Y_PAGES=...`) em home, perfil de deputado, gastos de senador e /investigar, 1440 e 390: 0 pulos de título, 1 `<h1>`, 0 svg sem rótulo, foco visível em 38–40 de 39–40 abas. Ressalvas: 5 falhas de contraste no cartão "Fontes oficiais conectadas" do hero (já existia; o cartão é claro sobre gradiente translúcido, provável falso positivo da heurística — não verificado); 1 elemento sem foco visível na home e no /investigar (não identificado); alvos < 24 px em links do rodapé e das tabelas de notas (já existiam). Os 12 botões de mês da cota foram ajustados para ≥ 24 px.
 - Corrigido o achado antigo: o bloco "Como isso mudou ao longo do tempo" saiu da aba Carreira (onde sempre dizia "Indisponível") e passou para a aba Atuação, mostrando só as séries que a rota carrega (presença e participação). A série de cota anual não aparece ali; o "Ano a ano" da visão geral cobre cota e propostas.
+- Aprovado e feito 2.4. Medição (dev, 3 perfis × 4 abas): 1–6 s por rota antes, 1,9–3,8 s depois (dev não é produção; sem medição de build). Achado cosmético existente: o gráfico de linha da cota mostra eixo com valores negativos (ex.: -58,4 mil) mesmo sem gasto negativo — vem do `LineChart`, não alterado.

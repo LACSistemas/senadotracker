@@ -108,9 +108,9 @@ test('modelo de apresentação: moeda, proporção, nomes e paginação sem inve
   assert.equal(beneficiaryLabel('ESTADO DA PARAIBA', 'estado').title, 'Paraiba'); assert.equal(beneficiaryLabel('FUNDACAO X', 'outro').kind, 'Outro ente'); assert.equal(beneficiaryLabel(null, null).title, 'Beneficiário não informado');
 });
 
-test('estrutura: a seção só é consultada na rota de atuação e nenhuma regra de identidade existe no web', () => {
+test('estrutura: a seção é consultada uma vez no perfil unificado (abas client-side) e nenhuma regra de identidade existe no web', () => {
   const page = readFileSync('apps/web/components/parliamentarian-profile-page.tsx', 'utf8');
-  assert.match(page, /section==='activity'\?getPix\(source,id\):null/); assert.match(page, /<PixProfileSection data=\{pixData\}/);
+  assert.match(page, /const pixPromise=getPix\(source,id\);/); assert.match(page, /<PixProfileSection data=\{pixData\}/);
   assert.match(readFileSync('apps/web/app/globals.css', 'utf8'), /data-profile-section="activity"\][^{]*:not\(:has\(#emendas-pix\)\)/);
   for (const file of ['apps/web/lib/data-postgres-pix.ts', 'apps/web/components/pix-profile-section.tsx', 'apps/web/lib/pix-profile-model.ts']) {
     const src = readFileSync(file, 'utf8');

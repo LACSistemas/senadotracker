@@ -3,7 +3,7 @@ import * as pgData from './data-postgres.ts';
 import type * as Legacy from '../../../packages/db/src/web-legacy-contract.ts';
 
 export type DataResult<T> = { status: 'available'; data: T } | { status: 'unavailable'; message: string };
-export type DataProfileSection = 'overview' | 'costs' | 'activity' | 'career';
+export type DataProfileSection = 'overview' | 'costs' | 'activity' | 'career' | 'all';
 export type LegislativeOverviewSort = 'uf_asc' | 'uf_desc' | 'party_asc' | 'party_desc' | 'cost_asc' | 'cost_desc' | 'presence_asc' | 'presence_desc';
 export type HouseSort = 'name' | 'expense_desc' | 'expense_asc';
 export type PartyHouse = 'all' | 'senado' | 'camara';

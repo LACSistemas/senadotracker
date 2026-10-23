@@ -74,4 +74,31 @@ test.describe('busca global e crachá', () => {
     await page.goto('/legislativo/deputados/204379/carreira-politica');
     await expect(page.getByRole('heading', { name: /Como isso mudou/ })).toBeHidden();
   });
+
+  test('abas do perfil trocam sem recarregar, mantêm URL própria e o Voltar funciona', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379');
+    await page.evaluate(() => { (window as any).__semReload = true; });
+    const nav = page.getByRole('navigation', { name: 'Seções do perfil' });
+    await nav.getByRole('link', { name: 'Gastos e equipe' }).click();
+    await expect(page).toHaveURL(/\/gastos-equipe$/);
+    await expect(page.getByRole('heading', { name: /Quanto custa este mandato/ })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Visão geral' })).toBeHidden();
+    await expect(nav.getByRole('link', { name: 'Gastos e equipe' })).toHaveAttribute('aria-current', 'page');
+    await page.goBack();
+    await expect(page).toHaveURL(/\/legislativo\/deputados\/204379$/);
+    await expect(page.getByRole('heading', { name: 'Visão geral' })).toBeVisible();
+    expect(await page.evaluate(() => (window as any).__semReload)).toBe(true);
+  });
+
+  test('tile do crachá abre a aba certa sem recarregar; a rota direta abre a mesma aba', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379');
+    await page.evaluate(() => { (window as any).__semReload = true; });
+    await page.getByRole('link', { name: /Ver detalhes/ }).nth(2).click();
+    await expect(page).toHaveURL(/atuacao-parlamentar#participacao$/);
+    await expect(page.getByRole('heading', { name: /Ele participa/ })).toBeVisible();
+    expect(await page.evaluate(() => (window as any).__semReload)).toBe(true);
+    await page.goto('/legislativo/deputados/204379/carreira-politica');
+    await expect(page.getByRole('heading', { name: 'Carreira política' }).first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Eleições e patrimônio/ })).toBeVisible();
+  });
 });
