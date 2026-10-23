@@ -25,8 +25,9 @@ test.describe('busca global e crachá', () => {
 
   test('perfil: crachá com tiles em linguagem simples e "—" para o que não foi publicado', async ({ page }) => {
     await page.goto('/legislativo/deputados/204379');
-    await expect(page.getByText('Quanto custa por mês').first()).toBeVisible();
-    await expect(page.getByText('Participação nas votações').first()).toBeVisible();
+    const tiles = page.locator('ul.grid-cols-2');
+    await expect(tiles.getByText('Quanto custa por mês').first()).toBeVisible();
+    await expect(tiles.getByText('Participação nas votações').first()).toBeVisible();
     await expect(page.getByRole('link', { name: /Faltam \d+ dados? neste crachá/ })).toBeVisible();
     await page.getByRole('button', { name: /O que significa “Subsídio|O que significa “Custo médio/ }).first().click();
     await expect(page.getByRole('note').first()).toBeVisible();
@@ -54,7 +55,7 @@ test.describe('busca global e crachá', () => {
 
   test('perfil de senador: nenhum tile mostra NaN/undefined (dado ausente vira "—")', async ({ page }) => {
     await page.goto('/legislativo/senadores/4639');
-    await expect(page.getByText('Quanto custa por mês').first()).toBeVisible();
+    await expect(page.locator('ul.grid-cols-2').getByText('Quanto custa por mês').first()).toBeVisible();
     const body = await page.locator('main').innerText();
     expect(body).not.toMatch(/NaN|undefined/);
   });
