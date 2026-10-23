@@ -1,0 +1,165 @@
+{
+ "gerado_em": "2026-10-21",
+ "escopo": "investigação somente leitura; nenhum collector, tabela, migration, frontend ou commit",
+ "fontes": {
+  "total": 49,
+  "testadas_com_leitura_real": 46,
+  "por_estado": {
+   "READY_WITH_CAVEATS": 22,
+   "DISCOVERY_ONLY": 6,
+   "READY_FOR_CONTRACT": 7,
+   "NEEDS_VALIDATION": 10,
+   "LOCAL_INTEGRATION_REQUIRED": 3,
+   "NOT_FEASIBLE_WITH_PUBLIC_DATA": 1
+  },
+  "operacionais": 7,
+  "operacionais_com_ressalva": 22,
+  "a_validar": 10,
+  "integracao_local": 3,
+  "somente_descoberta": 6,
+  "inviaveis": 1,
+  "bloqueio_externo_provado": 0,
+  "parciais": 35,
+  "bloqueadas": 0
+ },
+ "testes": {
+  "total": 49,
+  "reutilizados_de_investigacoes_anteriores": 4
+ },
+ "indicadores": {
+  "candidatos": 95,
+  "por_status": {
+   "READY_FOR_CONTRACT": 15,
+   "READY_WITH_CAVEATS": 57,
+   "NEEDS_VALIDATION": 10,
+   "LOCAL_INTEGRATION_REQUIRED": 6,
+   "NOT_FEASIBLE_WITH_PUBLIC_DATA": 3,
+   "DISCOVERY_ONLY": 4
+  },
+  "por_eixo": {
+   "A": 37,
+   "B": 18,
+   "C": 8,
+   "D": 8,
+   "E": 4,
+   "F": 12,
+   "G": 8
+  },
+  "prontos_para_contrato": 15,
+  "prontos_com_ressalvas": 57,
+  "dependem_de_integracao_estadual_ou_local": 16
+ },
+ "cobertura": {
+  "municipal_nacional_comprovada": {
+   "homicidio_sim": "5.570 municípios (código IBGE) — 27 UFs, 2013–2024 + 2025 prelim",
+   "homicidio_vde": "5.564 de 5.570 nomes municipais válidos casam diretamente (99,89 %); +6 por alias validado na P9.1; 27 pares \"NÃO INFORMADO\" à parte; 5.597 pares no total — 27 UFs",
+   "guarda_municipal": "5.570 municípios (MUNIC 2023)",
+   "frota": "5.529 de 5.572 por nome (99,2 %)"
+  },
+  "estadual_municipal_operacional": [
+   "RJ (IBGE nativo)",
+   "MG (IBGE 6 díg.)",
+   "RS",
+   "ES",
+   "CE",
+   "PE",
+   "AL",
+   "SP (BO)",
+   "DF (RA)"
+  ],
+  "ufs_sem_fonte_estadual_estruturada_localizada": [
+   "SC",
+   "SE",
+   "AC",
+   "AP",
+   "RN",
+   "PB",
+   "RO",
+   "RR"
+  ],
+  "roubo_furto_municipal": "não nacional: só RJ (62 colunas), MG, ES, RS, SP; nacional por UF no VDE (veículos, carga, instituição financeira)"
+ },
+ "reuso": {
+  "SIM_RAW_local": "324 definitivos + 27 preliminares; zero download",
+  "exec_entity": "5.571 municípios + UF",
+  "exec_story/exec_ind_*/exec_publication/exec_raw_manifest": "reutilizáveis",
+  "exec_fin_fact": "reutilizável (função 06 do Siconfi)",
+  "collector_financeiro": "único para todos os domínios"
+ },
+ "armazenamento": {
+  "postgres": {
+   "A": {
+    "linhas": 5769473,
+    "pg_gib_sem_log": 0.97,
+    "pg_gib_com_log": 2.19
+   },
+   "B": {
+    "linhas": 7625181,
+    "pg_gib_sem_log": 1.32,
+    "pg_gib_com_log": 2.94
+   },
+   "C": {
+    "linhas": 16286951,
+    "pg_gib_sem_log": 2.86,
+    "pg_gib_com_log": 6.31
+   }
+  },
+  "raw_ssd_gib_carga_inicial_e_primeiro_ano": 13.4,
+  "bytes_por_linha_medidos": {
+   "exec_ind_value": 196,
+   "exec_change_log": 227
+  },
+  "banco_hoje_gib": 20.4
+ },
+ "riscos": [
+  "dados pessoais em BO/microdados (SP, RS, ES, CE, PE, AL): agregar sem persistir linha",
+  "zero-fill de meses futuros (MG)",
+  "crosswalk por nome (VDE, Senatran, RS, ES, PRF)",
+  "cobertura desigual do RENAEST entre UFs",
+  "exec_change_log domina o tamanho do schema",
+  "denominador populacional ausente em 2022–2023",
+  "organizações criminosas: sem fonte estruturada e risco de exposição"
+ ],
+ "gates": {
+  "G01_REUSE_PREVIOUS_EVIDENCE": "PASS",
+  "G02_NATIONAL_CRIME_SOURCES": "PASS_WITH_CAVEATS",
+  "G03_STATE_CRIME_SOURCES": "PARTIAL",
+  "G04_MUNICIPAL_CRIME_COVERAGE": "PARTIAL",
+  "G05_CRIME_TAXONOMY": "PASS_WITH_CAVEATS",
+  "G06_PM_PC_STAFFING": "PARTIAL",
+  "G07_PF_PRF_GUARDAS": "PARTIAL",
+  "G08_POLICE_UNITS": "PARTIAL",
+  "G09_POLICE_ACTIVITY": "PARTIAL",
+  "G10_PRISON_SYSTEM": "PASS_WITH_CAVEATS",
+  "G11_ORGANIZED_CRIME_EVIDENCE": "PASS_WITH_CAVEATS",
+  "G12_SENATRAN_DETRAN": "PARTIAL",
+  "G13_TRAFFIC_ACCIDENTS": "PASS_WITH_CAVEATS",
+  "G14_PUBLIC_FINANCE": "PASS_WITH_CAVEATS",
+  "G15_TERRITORIAL_IDENTITY": "PASS_WITH_CAVEATS",
+  "G16_INDICATOR_FEASIBILITY": "PASS",
+  "G17_METHODOLOGICAL_COMPARABILITY": "PASS_WITH_CAVEATS",
+  "G18_STORAGE_PROJECTION": "PASS_WITH_CAVEATS",
+  "G19_OPERATIONAL_TESTS": "PASS_WITH_CAVEATS",
+  "G20_IMPLEMENTATION_PLAN": "PASS",
+  "G21_ARTIFACT_CONSISTENCY": "PASS",
+  "G22_NO_IMPLEMENTATION": "PASS"
+ },
+ "respostas": {
+  "indicadores_com_evidencia_real": 72,
+  "dependem_de_integracao_estadual_ou_local": 16,
+  "inviaveis_com_dado_publico": 3,
+  "somente_descoberta": 4,
+  "bloqueio_externo_provado": 0
+ },
+ "git": {
+  "commit": false,
+  "push": false,
+  "banco_alterado": false
+ },
+ "gates_resumo": {
+  "PASS": 5,
+  "PASS_WITH_CAVEATS": 10,
+  "PARTIAL": 7
+ },
+ "errata": "ver seção Errata em investigacao_executivo_p9_seguranca.md (P9.1)"
+}

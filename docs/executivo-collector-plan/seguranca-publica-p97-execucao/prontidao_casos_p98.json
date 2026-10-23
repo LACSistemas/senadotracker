@@ -1,0 +1,441 @@
+{
+  "geradoEm": "2026-10-23T18:23:41.251Z",
+  "casos": {
+    "Vitória/ES": {
+      "ibge7": 3205309,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1031,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 39,
+          "pontos": 339,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 30,
+          "pontos": 892,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 10,
+          "pontos": 1027,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SESP-ES",
+      "linhasP96NoNivelUF": 1050,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Serra/ES": {
+      "ibge7": 3205002,
+      "porOnda": {
+        "P9.1": {
+          "indicadores": 30,
+          "pontos": 1040,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1030,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 27,
+          "pontos": 487,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 36,
+          "pontos": 294,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 10,
+          "pontos": 1041,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SESP-ES",
+      "linhasP96NoNivelUF": 1050,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Alto Rio Novo/ES": {
+      "ibge7": 3200359,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 26,
+          "pontos": 661,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 25,
+          "pontos": 276,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 14,
+          "pontos": 28,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 7,
+          "pontos": 191,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 2,
+          "pontos": 18,
+          "ultimo": "2025-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SESP-ES",
+      "linhasP96NoNivelUF": 1050,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "São Paulo/SP": {
+      "ibge7": 3550308,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1076,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 37,
+          "pontos": 338,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1674,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 27,
+          "pontos": 495,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 24,
+          "pontos": 1218,
+          "ultimo": "2026-08",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SSP-SP",
+      "linhasP96NoNivelUF": 1263,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Rio de Janeiro/RJ": {
+      "ibge7": 3304557,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1062,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 33,
+          "pontos": 352,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1625,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 55,
+          "pontos": 8157,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 29,
+          "pontos": 519,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "ISP-RJ",
+      "linhasP96NoNivelUF": 8157,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Belo Horizonte/MG": {
+      "ibge7": 3106200,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1084,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 39,
+          "pontos": 345,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 30,
+          "pontos": 1147,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 27,
+          "pontos": 507,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 18,
+          "pontos": 1746,
+          "ultimo": "2026-07",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SEJUSP-MG",
+      "linhasP96NoNivelUF": 1746,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Recife/PE": {
+      "ibge7": 2611606,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1075,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 29,
+          "pontos": 191,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1374,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 29,
+          "pontos": 517,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 11,
+          "pontos": 1446,
+          "ultimo": "2026-09",
+          "suprimidas": true
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SDS-PE",
+      "linhasP96NoNivelUF": 1791,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Porto Alegre/RS": {
+      "ibge7": 4314902,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 45,
+          "pontos": 1029,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 33,
+          "pontos": 325,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1413,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.6": {
+          "indicadores": 15,
+          "pontos": 2553,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 27,
+          "pontos": 513,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": "SSP-RS",
+      "linhasP96NoNivelUF": 2553,
+      "leitura": "município com série estadual municipalizada"
+    },
+    "Salvador/BA (sem fonte estadual)": {
+      "ibge7": 2927408,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1057,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 36,
+          "pontos": 300,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1460,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 27,
+          "pontos": 499,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": null,
+      "linhasP96NoNivelUF": 0,
+      "leitura": "UF sem fonte estadual publicada — usar VDE (UF) como contexto"
+    },
+    "Curitiba/PR (sem fonte estadual)": {
+      "ibge7": 4106902,
+      "porOnda": {
+        "P9.2": {
+          "indicadores": 47,
+          "pontos": 1061,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.5": {
+          "indicadores": 39,
+          "pontos": 357,
+          "ultimo": "2026-01",
+          "suprimidas": false
+        },
+        "P9.1": {
+          "indicadores": 31,
+          "pontos": 1269,
+          "ultimo": "2026-09",
+          "suprimidas": false
+        },
+        "P9.4": {
+          "indicadores": 29,
+          "pontos": 521,
+          "ultimo": "2025-07",
+          "suprimidas": false
+        },
+        "P9.3": {
+          "indicadores": 17,
+          "pontos": 34,
+          "ultimo": "2023-01",
+          "suprimidas": false
+        }
+      },
+      "fonteEstadualPublicadaParaUF": null,
+      "linhasP96NoNivelUF": 0,
+      "leitura": "UF sem fonte estadual publicada — usar VDE (UF) como contexto"
+    }
+  },
+  "resumoClassificacaoUF": {
+    "P9.1": {
+      "READY_FOR_FRONTEND": 62
+    },
+    "P9.2": {
+      "READY_FOR_FRONTEND": 122
+    },
+    "P9.3": {
+      "READY_WITH_CAVEATS": 62
+    },
+    "P9.4": {
+      "READY_WITH_CAVEATS": 37
+    },
+    "P9.5": {
+      "READY_WITH_CAVEATS": 39
+    },
+    "P9.6": {
+      "READY_WITH_CAVEATS": 140
+    }
+  }
+}

@@ -1,0 +1,405 @@
+ok 1 - snapshot da Camara usa URI oficial e rejeita unidade generica
+ok 2 - verba preserva limite proporcional, gasto e meses
+ok 3 - pagina individual do Senado preserva categorias, fcodigo e remove tabela responsiva duplicada
+ok 4 - Senado preserva estagiário e classifica lotações da base ativa
+ok 5 - resultado simplificado preserva chave, voto e situação literal
+ok 6 - bens e contas preservam centavos, contraparte e versão
+ok 7 - nome sozinho não confirma e duplicidade fica ambígua
+ok 8 - lote eleitoral mantém versões e só consulta vínculo confirmado
+ok 9 - Senado: suplência e exercício são dimensões diferentes
+ok 10 - Senado: resposta preserva exercícios encerrados e lacuna entre filiações
+ok 11 - Câmara: o link next conecta duas páginas, sem repetir identidades
+ok 12 - Câmara: evento nulo após fim de mandato não equivale a exercício
+ok 13 - fixtures têm integridade e proveniência de respostas oficiais, sem representar cobertura completa
+ok 14 - leitor TSE trata Windows-1252, aspas e cabecalho divergente
+ok 15 - complemento preserva estados e valores documentados
+ok 16 - vínculo eleitoral usa nome, UF e cargo mesmo sem histórico partidário do pleito
+ok 17 - dry-run reconcilia os tres layouts sem publicar
+ok 18 - Senado distingue matéria, deliberação, resultado e voto individual
+ok 19 - Câmara conserva votação alfanumérica e voto contextual
+ok 20 - parsers só publicam identidades conhecidas e ligam voto à deliberação
+ok 21 - Câmara separa âncora, última apresentação e objeto efetivamente votado
+ok 22 - oito votações da PEC 221 nunca viram votações próprias do REQ 2940
+ok 23 - identidades não colidem entre Casas; números imprecisos e datas impossíveis são rejeitados
+ok 24 - parser do Senado preserva suplência, filiação e limites ausentes; diagnostica campos novos
+ok 25 - histórico da Câmara não cria exercício/filiação após fim de mandato e conserva nulo
+ok 26 - paginação percorre todas as páginas e rejeita repetição, ciclo e vazio
+ok 27 - migrações são repetíveis e chaves estrangeiras/identidades duplicadas são protegidas
+ok 28 - lease recusa concorrência, expira e impede publicação pelo dono anterior
+ok 29 - brutos têm hash verificável, conteúdo imutável e metadados por requisição
+ok 30 - staging repetido não duplica; somente lote validado torna-se público
+ok 31 - retificação mantém pessoa e lote anterior; falha no meio da publicação faz rollback
+ok 32 - lote vazio/incompleto ou alterado na fonte é rejeitado sem apagar lote publicado
+ok 33 - jornada completa coleta → bruto → staging → validação → publicação é repetível offline
+ok 34 - falha de integração registra erro e libera lease
+ok 35 - reimportação financeira troca lote ativo sem duplicar a consulta publicada
+ok 36 - atividade preserva coautoria e troca lote ativo sem inferir lei
+ok 37 - presenca ignora sessoes fora do exercicio e datas futuras
+ok 38 - complemento troca lote ativo e recusa chaves repetidas sem afetar o anterior
+ok 39 - migrations: 25 tabelas (v2 = exec_seg_cov; v3 = trânsito), idempotentes
+ok 40 - fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+ok 41 - restrições de integridade rejeitam dados inválidos
+ok 42 - T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+ok 43 - T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+ok 44 - idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+ok 45 - falha injetada no meio: nada parcial, run registrado como FALHO
+ok 46 - rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+ok 47 - T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+ok 48 - publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+ok 49 - T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+ok 50 - T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+ok 51 - derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+ok 52 - migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+ok 53 - SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+ok 54 - SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+ok 55 - VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+ok 56 - VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+ok 57 - contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+ok 58 - migração v3: três tabelas tipadas sem dado pessoal; idempotente; 122 definições de trânsito
+ok 59 - SIM trânsito: bootstrap, NO_CHANGE, republicação com log, rollback exato, falha injetada e reconciliação que barra
+ok 60 - frota: tabela larga por município × mês publicada como instantâneo; troca de arquivo substitui; rollback exato; total divergente barra
+ok 61 - RENAEST: fatia UF × ano; conteúdo igual com arquivo novo = NO_CHANGE; revisão de mês antigo troca só aquela fatia; cobertura persistida; rollback exato
+ok 62 - PRF: mensal (UF) e anual (município) coerentes; reconciliação mensal × anual; republicação e rollback exatos
+ok 63 - infrações: tabela por UF de jurisdição × mês × código; soma confere com o indicador; republicação substitui a fatia
+ok 64 - contratos de leitura: seções separadas por fonte, poucas consultas, ausência explicada (RENAEST nunca vira zero; SIM/PRF só com fatia publicada)
+ok 65 - KPIs, tabelas e distribuições da interface reconciliam com o SQLite publicado # SKIP
+ok 66 - Altineu Côrtes: PRL é relatoria; REQ, PEC e EMP têm papéis distintos
+ok 67 - comissões e órgãos nunca viram parlamentares/autores legislativos
+ok 68 - coautor/apoio não é tratado como proponente principal
+ok 69 - institucional, procedimental e ambíguo ficam fora dos rankings de proposições
+ok 70 - relatoria e peças do relator são D, não "emenda apresentada" nem "proposição"
+ok 71 - Senado: senador autor de PL/REQ, Câmara e Presidência como institucional, comissão como comissão
+ok 72 - a distribuição da Casa reproduz exatamente a matriz do painel de rankings
+ok 73 - percentil é exato e empates não contam como abaixo
+ok 74 - as UFs são agrupadas dentro da Casa e nunca somadas entre Casas
+ok 75 - coroplético inclui as 27 UFs e respeita o piso de amostra por estado
+ok 76 - escala encurta sem repetir tom quando há poucos valores distintos
+ok 77 - bancadas são agrupadas dentro da Casa, simétrico a UF, e nunca somadas entre Casas
+ok 78 - HHI vale 1 com bancada de partido único e discrimina 5+1+1+1 de 2+2+2+2
+ok 79 - piso de amostra da bancada é por partido, não o piso maior da Casa
+ok 80 - desligar patrimônio não altera as outras colunas
+ok 81 - snapshot publica somente atribuição confirmada e deriva desatualização
+ok 82 - snapshot rejeita atribuição ambígua e preserva atomicidade
+ok 83 - verba mensal preserva limite proporcional, nulo e lote anterior
+ok 84 - folha agrega gabinete por competência e mantém rubricas separadas
+ok 85 - normaliza pauta deliberativa da Câmara com o escopo do evento
+ok 86 - monthWindows divide o intervalo em meses, respeitando o limite de 3 meses da API
+ok 87 - coletor por apresentação: insere o que falta, é idempotente e reconcilia COMPLETE # SKIP requer o PostgreSQL local (DB_*)
+ok 88 - parser da página contratual distingue aditivos, documentos e empenhos
+ok 89 - parser financeiro mantém fase e sinal publicados
+ok 90 - publica os cinco conjuntos da Câmara e é idempotente por chave natural
+ok 91 - CLI real exibe ajuda, encerra com zero e não inicia coleta
+ok 92 - CLI rejeita comando desconhecido com stderr e exit code 2
+ok 93 - CLI não esconde argumento inválido acompanhado de --help
+ok 94 - snapshot completo encerra pessoa que desapareceu
+ok 95 - snapshot parcial não encerra membros antigos
+ok 96 - mudança de função encerra a função anterior e mantém a nova
+ok 97 - dois papéis publicados permanecem ativos
+ok 98 - comparação vazia não fabrica média zero e valida recorte
+ok 99 - comparação nominal exige de duas a quatro pessoas distintas
+ok 100 - concordância exclui ausência e não voto do denominador
+ok 101 - abreviações de ausência do Senado ficam fora do voto direcional
+ok 102 - obstrução é posição na Câmara e não no Senado
+ok 103 - votos sem direção observável não sustentam concordância
+ok 104 - comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez
+ok 105 - hub unificado soma parlamentar+institucional sem deduplicar por valor e rankeia por dimensão
+ok 106 - mix de categorias unifica parlamentar e institucional sem fundir Casas, reconciliando top+outros+sem-classificacao com o total
+ok 107 - filtro por Casa restringe totais e ranking à Casa escolhida
+ok 108 - custo alto acende e custo baixo fica em verde
+ok 109 - presença baixa acende: a cauda de alerta acompanha a direção da métrica
+ok 110 - cobertura insuficiente nunca recebe verde nem vermelho
+ok 111 - universo sem caudas não emite juízo, só posição relativa
+ok 112 - seta segue a direção para a cor nunca viajar sozinha
+ok 113 - tokens de tom são estáveis e a legenda cobre o indisponível
+ok 114 - sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+ok 115 - com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+ok 116 - volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+ok 117 - orçamento de RAW excedido interrompe com BudgetError (retomável)
+ok 118 - registerLocalRaw é idempotente e não duplica entradas do manifesto
+ok 119 - aritmética de competência: dezembro → janeiro e janeiro → dezembro
+ok 120 - T1 dez/2024 → jan/2025: intervalo semiaberto fecha em 202501 e dezembro continua com o valor antigo
+ok 121 - T2 mudança de leitos numa competência não duplica competências iguais
+ok 122 - T3/T4 desaparecimento e reaparecimento (e lacuna recusada)
+ok 123 - T5 correção retroativa de uma competência antiga é igual a reconstruir do zero
+ok 124 - detalhamento reconcilia categorias, meses, fornecedor e benchmarks no mesmo lote
+ok 125 - detalhe invertido do fornecedor reconcilia pessoas, dimensões e concentração
+ok 126 - ano sem lote permanece indisponível em vez de fabricar zeros
+ok 127 - centavos preservam vírgula, ponto, sinal e valor sem zero inicial
+ok 128 - CEAPS mantém valor reembolsado e vínculo conservador
+ok 129 - CEAP mantém bruto, glosa, líquido e documento
+ok 130 - reconcilia estorno com sinal e não soma fontes paralelas
+ok 131 - pagamento acima do liquidado não é publicado silenciosamente
+ok 132 - ausência é explícita e nunca vira zero
+ok 133 - moeda respeita centavos e o número de dígitos pedido
+ok 134 - razão vira percentual e múltiplo ganha o sinal de vezes
+ok 135 - unidade da métrica escolhe o formato, para a régua não conhecer centavos
+ok 136 - quintil descreve a posição na distribuição pelos cortes p20/p40/p60/p80
+ok 137 - benchmark só compara valor elegível, no mesmo período e com grupo de tamanho mínimo
+ok 138 - tendência exige os dois pontos e ignora pequeno número; variação < 0,5 % é estável
+ok 139 - vacinas: metas do PNI, acima de 100 % conta como na meta e ausente fica fora da contagem
+ok 140 - lede usa só fatos comparativos e cita vacinas abaixo da meta
+ok 141 - média móvel de 3 anos soma numeradores e denominadores e respeita o mínimo de denominador
+ok 142 - variação relativa usa o ponto de 5 anos antes e ignora lacunas
+ok 143 - aba de evolução compara com a mediana do estado e do Brasil e marca anos sem população
+ok 144 - hospitais: concentração, parcela e índice de polo regional
+ok 145 - residentes: janela de 12 meses, calendário por índice e fallback para município pequeno
+ok 146 - faixas do calendário
+ok 147 - layout: uma cadeira por parlamentar, contagem exata por partido, tudo dentro do semicírculo
+ok 148 - layout: cadeiras não se sobrepõem em nenhuma fileira (513, 81 e casos pequenos)
+ok 149 - layout: cada partido ocupa uma fatia contínua, da esquerda para a direita, na ordem dada
+ok 150 - composição: contagem por partido a partir do cadastro, ordenada, sem partido agrupado
+ok 151 - cores: estáveis por partido, distintas entre os partidos da Câmara e neutras para "Sem partido"
+ok 152 - custo zero: a composição reaproveita o cadastro já carregado, sem consulta nova
+ok 153 - dados reais: cadeiras do hemiciclo = parlamentares em exercício do cadastro ativo (uma consulta) # SKIP requer o PostgreSQL local (DB_*)
+ok 154 - tramitação usa primeiro desfecho terminal datado, calcula média e mediana
+ok 155 - tramitação exclui eventos sem data e matérias abertas
+ok 156 - situação terminal repetida não transforma evento antigo em desfecho
+ok 157 - HTTP 429 e 503 têm retry limitado, preservando também respostas de falha
+ok 158 - HTML com status 200 é arquivado e rejeitado; não é cadastro vazio
+ok 159 - timeout aborta requisição e tentativas param no limite
+ok 160 - 404 não é repetido; destino não oficial nunca é requisitado
+ok 161 - Retry-After excessivo é limitado a 30s e UTF-8 inválido é rejeitado
+ok 162 - o primeiro eixo separa blocos que votam em sentidos opostos
+ok 163 - a orientação do eixo é determinística entre execuções
+ok 164 - quem vota pouco é omitido em vez de posicionado no zero
+ok 165 - votação unânime não entra na matriz e universo curto fica indisponível
+ok 166 - obstrução posiciona na Câmara e desaparece no Senado
+ok 167 - CLI institucional aceita recorte e controles comuns
+ok 168 - CLI aceita backfill financeiro anual das duas Casas
+ok 169 - CLI institucional rejeita período e concorrência inválidos
+ok 170 - allowlist bloqueia host não oficial
+ok 171 - retry institucional respeita Retry-After e devolve bytes
+ok 172 - vazio e tipo inválido falham sem virar conjunto vazio
+ok 173 - normaliza data, moeda e chave sem perder precisão
+ok 174 - movimentos de anulação e estorno têm sinal negativo
+ok 175 - escolhe a métrica de percentil mais extremo
+ok 176 - some quando nenhuma métrica tem referencial
+ok 177 - nunca afirma "abaixo de X%" nem enuncia percentual tautológico
+ok 178 - empate desconta o desvio: um zero compartilhado não vence a manchete
+ok 179 - é determinística e liga para a rota da seção, nunca só para o hash
+ok 180 - cada métrica aponta para a seção que a originou
+ok 181 - a lede da Casa enuncia mediana e n, e não recebe tom
+ok 182 - a âncora humana some sem valor de referência publicado
+ok 183 - a contagem do percentil bate com percentileOf do domain
+ok 184 - valor normativo respeita a vigência e nunca cai no mais recente
+ok 185 - kind e applies_to desconhecidos devolvem null em vez de outro valor
+ok 186 - o subsídio parlamentar mantém o comportamento anterior
+ok 187 - números de /proposicoes: presentedYear inclui ano do número nulo, suporte fica fora, somas e ritmo reconciliam # SKIP requer o PostgreSQL local (DB_*)
+ok 188 - autoria legislativa não inclui relatoria: PRL do Altineu é relatoria, PEC é autoria legislativa
+ok 189 - textos: presented_at usa "apresentadas"; identifier_year nunca
+ok 190 - componentes de /proposicoes derivam o texto anual da base temporal (sem "apresentadas" fixo)
+ok 191 - P0.5.2: Câmara appointment date is latest status unless an explicit basis says otherwise
+ok 192 - P0.5.2: annual relatoria uses matter year and does not imply start date
+ok 193 - distribuição usa interpolação linear e vazio permanece nulo
+ok 194 - série histórica preserva lacuna como null
+ok 195 - panorama de senado limita o universo a observações compatíveis
+ok 196 - panorama de camara limita o universo a observações compatíveis
+ok 197 - filiação partidária é resolvida na data da observação
+ok 198 - comportamento partidário agrega apenas votos registrados
+ok 199 - a correção monetária não reordena o ranking, só muda o sinal
+ok 200 - sem deflator os campos reais ficam nulos, nunca iguais ao nominal
+ok 201 - quem tem um só pleito fica fora e a cobertura diz quantos são
+ok 202 - bem com versão conflitante é excluído e contado na cobertura
+ok 203 - o mês de referência vem da data da eleição, não de constante
+ok 204 - recarga idempotente: carregar duas vezes não duplica nada e o código da emenda é único # SKIP requer o PostgreSQL local (DB_*)
+ok 205 - plano ligado à emenda correta; uma emenda com vários planos; Portal ↔ Transferegov pelo código de 12 dígitos # SKIP requer o PostgreSQL local (DB_*)
+ok 206 - perfil: EXACT revisado é visível; HIGH reviewed=false e não resolvido ficam fora do perfil # SKIP requer o PostgreSQL local (DB_*)
+ok 207 - o código não resolvido (modelo do 1270) nunca devolve pessoa; a CHECK impede reviewed sem pessoa # SKIP requer o PostgreSQL local (DB_*)
+ok 208 - CONFLICT e AMBIGUOUS com pessoa candidata nunca atribuem, mesmo com reviewed=false/true bloqueado pela CHECK # SKIP requer o PostgreSQL local (DB_*)
+ok 209 - pago ≠ execução; pago do Portal por emenda (sem DH, como 2020–2022); DH+OB por plano (2023+) # SKIP requer o PostgreSQL local (DB_*)
+ok 210 - pessoa com dois códigos SIOP em Casas diferentes: união só com identity_links CONFIRMADO # SKIP requer o PostgreSQL local (DB_*)
+ok 211 - validade datada do código: mesma pessoa/código fora do período não atribui # SKIP requer o PostgreSQL local (DB_*)
+ok 212 - beneficiário: autores só aparecem atribuídos quando o crosswalk está revisado # SKIP requer o PostgreSQL local (DB_*)
+ok 213 - o domínio é separado de proposições: nenhuma FK/tabela de civica_budget aponta para civica_poc # SKIP requer o PostgreSQL local (DB_*)
+ok 214 - código da emenda: 12 dígitos, autor SIOP nas posições 5–8; formas inválidas viram null
+ok 215 - decimal brasileiro, ente e UF não inventam valor
+ok 216 - áreas de política pública viram pares função/subfunção
+ok 217 - EXACT: nome exato + UF + exercício na janela de autoria em todos os anos
+ok 218 - o código SIOP numérico nunca casa com id da Câmara/Senado
+ok 219 - homônimos pai/filho: o período decide (Átila Lira), sem AMBIGUOUS
+ok 220 - AMBIGUOUS quando dois homônimos têm exercício na janela do mesmo ano
+ok 221 - troca de Casa: a mesma pessoa tem um código por Casa e o ano da emenda segue a janela de autoria
+ok 222 - HIGH: exercício só no ano da emenda (suplente que assume), nunca EXACT
+ok 223 - HIGH: UF da emenda (aplicação) diferente da UF do parlamentar; HIGH: nome com tratamento removido
+ok 224 - sem exercício datado não há atribuição: nome achado + histórico vazio = CONFLICT sem pessoa (caso 1270)
+ok 225 - janela de autoria: ago–dez do ano anterior
+ok 226 - regra de uso: só revisado, EXACT|HIGH e com pessoa é atribuível a perfil
+ok 227 - candidatos Câmara↔Senado por nome civil completo exato; nome de uma palavra não vira candidato
+ok 228 - CSV do Portal: aspas, delimitador e quebra de linha dentro do campo
+ok 229 - Portal: só Transferências Especiais; valores brasileiros; código/autor como texto
+ok 230 - homônimo parcial (caso 1270): outra pessoa ativa cujo nome oficial começa pelo nome do autor → AMBIGUOUS, sem pessoa
+ok 231 - pai e filho com nome oficial próprio (Otto Alencar × Otto Alencar Filho): nome mais longo reivindicado por outro código não vira concorrente
+ok 232 - roster histórico + crosswalk: troca de Casa gera dois códigos, EXACT revisado, HIGH não, sem pessoa para o não resolvido; idempotente # SKIP requer o PostgreSQL local (DB_*)
+ok 233 - o lote histórico nunca é publicado como ativo (telas atuais seguem vendo só o roster ativo) # SKIP requer o PostgreSQL local (DB_*)
+ok 234 - exercício da Câmara: eventos simultâneos de mesma situação não criam lacuna; licença e fim de mandato fecham
+ok 235 - revisão humana positiva sobrevive a nova execução mesmo que a resolução automática piore; CONFLICT não atribui # SKIP requer o PostgreSQL local (DB_*)
+ok 236 - perfil sem Pix não quebra: pessoa desconhecida e pessoa sem autoria viram estado vazio explicado # SKIP requer o PostgreSQL local (DB_*)
+ok 237 - estado "autoria em revisão": linha da pessoa ainda não revisada não entra, mas explica o vazio # SKIP requer o PostgreSQL local (DB_*)
+ok 238 - somente reviewed=true entra; AMBIGUOUS/CONFLICT/outro parlamentar nunca; totais batem com os planos # SKIP requer o PostgreSQL local (DB_*)
+ok 239 - funções: valor só por plano de área única; planos multiárea ficam à parte e não são repartidos # SKIP requer o PostgreSQL local (DB_*)
+ok 240 - pessoa com mais de um author_code: agrega os dois e mostra Casa/anos; link candidato não une # SKIP requer o PostgreSQL local (DB_*)
+ok 241 - modelo de apresentação: moeda, proporção, nomes e paginação sem inventar
+ok 242 - estrutura: a seção só é consultada na rota de atuação e nenhuma regra de identidade existe no web
+ok 243 - 1270 (João Carlos Bacelar) não tem pessoa e nenhuma emenda dele é atribuída a perfil # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+ok 244 - só linhas revisadas atribuem: EXACT por regra, HIGH só com revisão humana registrada; AMBIGUOUS/CONFLICT nunca # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+ok 245 - 4454 (Rafael Simões) só atribui se o histórico oficial resolveu; nunca por força # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+ok 246 - troca de Casa real: cada um dos seis tem um código na Câmara e outro no Senado, em pessoas distintas até o link ser confirmado # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+ok 247 - cobertura real de atribuição e integridade da carga # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+ok 248 - PNCP é enriquecimento publicável sem inferir pagamento
+ok 249 - falha do PNCP permanece pendente e não derruba a execução das Casas
+ok 250 - retrato: host fora da lista é recusado e o nome do arquivo depende só da URL
+ok 251 - retrato: redirecionamento só entre hosts permitidos (Senado http→https→legis)
+ok 252 - retrato: baixa, reduz, grava; 304 não regrava; falha preserva a última foto boa
+ok 253 - retrato: conteúdo que não é imagem e host proibido não são gravados
+ok 254 - retrato: o lote só busca o que falta ou está velho
+ok 255 - retrato: cadastro antigo de SP (host da API, que dá 404) aponta para o host que serve a foto
+ok 256 - deflator é o quociente dos números-índice dos dois meses
+ok 257 - mês ausente não é estimado: a série nunca é completada
+ok 258 - publicação rejeita lote inválido em vez de gravar dado ruim
+ok 259 - o parser do SIDRA descarta período e valor não numéricos
+ok 260 - cadeia oficial de 7 níveis é resolvida até a raiz; limite não é ilimitado; ciclo não trava # SKIP requer o PostgreSQL local (DB_*)
+ok 261 - resolver deduplica pais, preserva ano real, percorre cadeia e é idempotente
+ok 262 - falha do pai fica registrada sem criar suporte nem lançar a coleta
+ok 263 - dedupeAuthors remove repetição do mesmo parlamentar e preserva coautores distintos
+ok 264 - dedupeAuthors ignora acentos e caixa ao comparar nomes
+ok 265 - o schema do grafo cria o índice pai → filhos e as tabelas de suporte, de forma idempotente
+ok 266 - o parser do pai histórico preserva o ano real e marca a matéria como suporte
+ok 267 - a taxonomia da web e a ordem do banco descrevem os mesmos dez grupos, na mesma ordem
+ok 268 - composição funcional: contagens por grupo, anos e universo não comparável quando o Senado é recorte
+ok 269 - composição funcional: Congresso agrega quando os dois universos são completos
+ok 270 - composição funcional: ano sem dados vira cobertura indisponível, não zero fabricado
+ok 271 - rio de tramitação: só evidência estruturada; rito segue indisponível
+ok 272 - rio de tramitação: ano sem matérias principais devolve cobertura indisponível e nenhuma etapa
+ok 273 - tempo sem movimentação: âncora no último registro, encerradas fora e sem-histórico contadas à parte
+ok 274 - tempo sem movimentação: desarquivamento reabre a matéria e norma resultante a encerra
+ok 275 - DNA por partido: proposições distintas diferem de vínculos e "autor principal" é null quando a Casa não publica a marca
+ok 276 - DNA por parlamentar: parlamentares com poucas proposições ficam fora e a contagem de exclusão é publicada
+ok 277 - ritmo: proposições por mês de apresentação e eventos por mês de ocorrência, cada um no grupo da proposição
+ok 278 - calendário: contagem diária, exemplos e janela de cobertura explícita
+ok 279 - eventos recentes: a janela termina no último registro desses tipos e cada matéria conta uma vez por tipo
+ok 280 - estado observado da proposição usa o mesmo dado do rio e da inatividade
+ok 281 - frases editoriais: derivadas dos números, sempre com base e sem linguagem de ranking
+ok 282 - frases editoriais: com uma Casa só, a tese diz isso em vez de comparar
+ok 283 - composição do resultado da busca usa os mesmos filtros da listagem e ignora o filtro de grupo
+ok 284 - busca de proposições combina texto e autoria com ordem determinística
+ok 285 - detalhe mantém complementos ausentes e votação ausente como lacunas
+ok 286 - detalhe não vincula votação da Câmara por rótulo legado sem objeto comprovado
+ok 287 - classifica siglas em grupos funcionais e usa grupo especial como fallback
+ok 288 - busca por identificador usa tipo, numero e ano da proposicao
+ok 289 - subsídio normativo respeita vigência e preserva a base legal
+ok 290 - frescor cadastral expõe estado desatualizado
+ok 291 - queryHref carrega o modo em ordenação e paginação, e o omite em Parlamentares
+ok 292 - queryHref aceita um caminho alternativo, para o CSV reusar a mesma leitura de query
+ok 293 - parseMode cai em Parlamentares para qualquer valor que não seja um dos três modos
+ok 294 - trocar de sujeito descarta filtro de pessoa e preserva Casa, ano e ordenação
+ok 295 - modeHref para um modo agregado sem Casa assume a Câmara, o maior universo
+ok 296 - dashboardQuery ignora ordenação desconhecida e cai em nome
+ok 297 - ranking de cota ordena, filtra e informa a amostra observada
+ok 298 - painel de rankings filtra e não inventa custo ou presença sem lotes compatíveis
+ok 299 - XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+ok 300 - XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+ok 301 - DBC inválido do SIM falha sem produzir agregados
+ok 302 - arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+ok 303 - definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+ok 304 - download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+ok 305 - cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+ok 306 - SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+ok 307 - CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+ok 308 - normalização de nomes: determinística, idempotente e sem apagar o nome original
+ok 309 - crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+ok 310 - resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+ok 311 - SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+ok 312 - SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+ok 313 - SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+ok 314 - SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+ok 315 - VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+ok 316 - VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+ok 317 - VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+ok 318 - VDE: meses futuros preenchidos com zero não são publicados
+ok 319 - VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+ok 320 - VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+ok 321 - VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+ok 322 - VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+ok 323 - identificação do Senado: sigla, número e ano, inclusive com sufixo de comissão
+ok 324 - autores do Senado: código do parlamentar, partido, UF só de senadores e órgãos sem código
+ok 325 - coletor universal do Senado: matérias de qualquer origem, número anterior, idempotência e COMPLETE # SKIP requer o PostgreSQL local (DB_*)
+ok 326 - normaliza itens de pauta e respeita o recorte publicado
+ok 327 - fallback do Senado separa cobrança, documento fiscal, empenho e liquidação
+ok 328 - PagamentoDto é cobrança e filhos preservam documento fiscal e empenho
+ok 329 - execução do Senado distingue empenhado, liquidado e pago pela NE exata
+ok 330 - detalhe SIAFI preserva data, exercício, restos e anulação
+ok 331 - linhas da mesma NE por elemento de despesa são somadas antes do vínculo
+ok 332 - detalhe divergente não substitui o total oficial agregado
+ok 333 - detalha ata sem converter garantia ou cobrança em pagamento
+ok 334 - endpoint opcional indisponível é ausência de cobertura, não ausência factual
+ok 335 - PCA mantém planejamento separado de contratação e gasto
+ok 336 - penalidade preserva fornecedor, espécie e vigência
+ok 337 - identifica o processo na resposta de detalhe do Senado
+ok 338 - normaliza assuntos e tramitação do processo do Senado
+ok 339 - publica conjuntos estruturados do Senado sem confundir instrumento e pagamento
+ok 340 - financeLabelSemantics: categoria real, favorecido e rótulo inutilizável
+ok 341 - readStateHouseStory: sem tabela de agregados devolve vazio (nada quebra a página)
+ok 342 - readStateHouseStory: agregado só é "fresco" se a chave de revisões ativas bate
+ok 343 - refreshStateHouseStory: não escreve fora do schema de agregados
+ok 344 - readStateHouseGlances: junta seções por Casa e tolera schema ausente
+ok 345 - control-plane: afterPublication roda só quando uma revisão foi ativada e nunca em dry-run
+ok 346 - control-plane: falha no afterPublication vira aviso e não derruba a coleta
+ok 347 - reconcileStateHouseStories: recalcula só Casas defasadas, respeita a trava e isola falhas
+ok 348 - financeiro: normalização ignora acento, caixa, pontuação e "Dep.", mas não inventa nomes
+ok 349 - financeiro: id do cadastro > chave oficial > nome exato único > nome sem tratamento
+ok 350 - financeiro: nome ambíguo, desconhecido ou só parecido nunca é ligado
+ok 351 - financeiro: ponte oficial de SP lê matrícula do portal da ALESP
+ok 352 - custo = subsídio × parlamentares + cotas do mês comum; sem gabinete; mesmo universo na média
+ok 353 - Casa com saldos misturados a despesas e Casa com poucos lançamentos ficam fora, com motivo
+ok 354 - subsídio vigente no mês: troca de tabela e referência judicial não entram
+ok 355 - proposições por Assembleia: só Casas operacionais com volume mínimo; média sobre essas Casas
+ok 356 - deputados: total e distritais; sem Casas devolve zeros sem quebrar
+ok 357 - o mapa base mantém as 27 UFs e a navegação por href
+ok 358 - cada UF pintada alcança path e o disco de chamada na mesma regra
+ok 359 - UF sem valor recebe o cinza de ausência, nunca o tom mais claro da rampa
+ok 360 - tom escuro troca a tinta do rótulo e o halo protege o meio-tom
+ok 361 - tooltip nativo e aria-label carregam o valor; o href pode ser redirecionado
+ok 362 - texto injetado é escapado para não romper o SVG
+ok 363 - consulta por UF separa Casas e não transforma métricas ausentes em zero
+ok 364 - comparação estadual usa o mesmo ano e omite UF sem representantes
+ok 365 - supplier detail accepts only CNPJ with valid check digits
+ok 366 - normaliza CNPJ sem destruir letras
+ok 367 - mantém compatibilidade com CNPJ numérico e rejeita sentinela
+ok 368 - CPF tem tipo próprio e documento mascarado não produz match forte
+ok 369 - documento desconhecido não vira identidade forte
+ok 370 - explorador separa universos e não expõe CPF
+ok 371 - backfill global une CNPJ forte, preserva aliases e ignora sentinela/ausente
+ok 372 - identifierYear: 0, nulo e lixo viram null; anos reais passam
+ok 373 - regressão do carregador: Number(null) era 0; a normalização devolve null (ano e número)
+ok 374 - presentedYear usa America/Sao_Paulo: a meia-noite BRT (03:00Z) é o novo ano
+ok 375 - Câmara: data local sem fuso é interpretada em Brasília
+ok 376 - temporalBasis: identifier_year nunca é descrita como "apresentadas"
+ok 377 - banco: a guarda impede gravar year = 0 e presented_year acompanha o fuso (transação revertida) # SKIP requer o PostgreSQL local (DB_*)
+ok 378 - temas anuais da Câmara vinculam somente proposições ativas e preservam o nome oficial
+ok 379 - PRF: 1 linha = 1 sinistro (id repetida conta uma vez), três formatos de data, só somas na saída — sem id, km, coordenadas ou horário
+ok 380 - frota: XLSX com título, fórmula e cabeçalho repetido → linhas de município, vazio ≠ 0, UF/MUNICIPIO e ruído ignorados
+ok 381 - infrações: layouts wide UTF-16, wide com aspas duplicadas e long com colunas em outra ordem dão o mesmo resultado; milhar com ponto; vazio ≠ 0
+ok 382 - RENAEST: agregação em fluxo sem dado pessoal; veículo órfão e código IBGE inválido são contados; saída sem endereço, CEP, coordenadas, hora ou número do acidente
+ok 383 - portal que devolve HTML (limite de taxa) é rejeitado, nada vai ao RAW nem ao manifesto, e a tentativa seguinte recupera o arquivo
+ok 384 - retomada real de download parcial: o servidor derruba a conexão em 1 MiB; o curl retoma com Range e o arquivo final é idêntico (SHA-256)
+ok 385 - fonte republicada: mesmo conteúdo em outra pasta não duplica (dedupeByHash); conteúdo diferente vira nova versão
+ok 386 - SSD ausente ou trocado: nenhuma coleta de trânsito lê o banco nem grava
+ok 387 - CID de trânsito: terrestre V01–V89 por categoria, V90–V99 à parte, Y85.0 é sequela e nunca entra no evento agudo
+ok 388 - chave compacta: determinística e sem fuzzy; crosswalk valida 48 aliases contra o IBGE e não tem colisões
+ok 389 - inventário da frota: competência identificada em todos os 165 nomes reais de arquivo (2013-01 a 2026-09), um por mês
+ok 390 - páginas da PRF e das infrações: links repetidos/trocados não enganam o parser; HTML nunca é aceito como arquivo
+ok 391 - RENAEST: escolhe o recurso cumulativo mais recente pelo mês do nome (não pela ordem da lista)
+ok 392 - SIM trânsito: totais com zero explícito, categorias só quando > 0, sequela separada, V90–V99 fora do terrestre, nada vaza entre UFs
+ok 393 - SIM trânsito: ocorrência é perspectiva distinta (indicadores próprios, sem taxa); sem município fica fora e declarado
+ok 394 - frota: cabeçalho esperado, município ignorado e não conciliado preservados na UF, total e tipos sem perda
+ok 395 - RENAEST: UF = Σ municípios + ignorado; sem registro não vira zero; escopo restrito a fatais é inferido e rotulado; mês sem registro gera cobertura
+ok 396 - PRF: mensal por UF com zero explícito dentro do período do arquivo; anual por município; nome sem correspondência vai ao ignorado; UF nula não é inferida
+ok 397 - infrações: UF de jurisdição por nome, soma por UF = soma das linhas, nomes de UF desconhecidos são declarados
+ok 398 - definições: ids únicos, códigos únicos, famílias e granularidades coerentes
+ok 399 - Senado conta posições de voto e exclui estados sem voto registrado
+ok 400 - Câmara conta obstrução, mas não vazio ou Artigo 17
+ok 401 - cores de voto distinguem sim, não e códigos sem inferir desconhecidos
+# tests 401
+# pass 371
+# fail 0
+# skipped 30

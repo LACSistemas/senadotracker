@@ -1,0 +1,86 @@
+﻿fonte,uf,nome_na_fonte,metodo,municipio_ibge,ibge7,regra_ou_efeito,periodo,ocorrencias_(meses_ou_anos),registros_afetados
+prf,(NULL),GUARANTA DO NORTE,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2007..2012,3,3
+prf,(NULL),MATUPA,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2007..2007,2,2
+prf,(NULL),PEIXOTO DE AZEVEDO,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2008..2008,3,3
+prf,(NULL),SAO JOAO DE MERITI,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2012..2012,1,1
+prf,(NULL),TABOAO DA SERRA,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2012..2012,1,1
+prf,(NULL),TERRA NOVA DO NORTE,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2007..2007,1,1
+prf,(NULL),VALPARAISO DE GOIAS,uf_desconhecida,,,UF ausente/nula na fonte: não atribuído a UF,2012..2012,1,1
+prf,BA,MUQUEM DE SAO FRANCISCO,alias,Muquém do São Francisco,2922250,truncamento ou grafia diferente do IBGE,2017..2026,105,259
+prf,BA,SANTA TERESINHA,alias,Santa Terezinha,2928505,truncamento ou grafia diferente do IBGE,2007..2026,164,326
+prf,CE,ITAPAGE,alias,Itapajé,2306306,truncamento ou grafia diferente do IBGE,2007..2016,115,481
+prf,MT,POXOREO,alias,Poxoréu,5107008,truncamento ou grafia diferente do IBGE,2007..2024,149,248
+prf,MT,SANTO ANTONIO DO LEVERGER,alias,Santo Antônio de Leverger,5107800,truncamento ou grafia diferente do IBGE,2007..2026,234,2504
+prf,PA,ELDORADO DOS CARAJAS,alias,Eldorado do Carajás,1502954,truncamento ou grafia diferente do IBGE,2011..2016,43,73
+prf,PA,SANTA ISABEL DO PARA,alias,Santa Izabel do Pará,1506500,truncamento ou grafia diferente do IBGE,2007..2016,119,1004
+prf,PB,NOVA SERRANA,nao_conciliado,,,"sem município com esse nome na UF; valores preservados no município ignorado da UF; nada foi inventado",2007..2007,1,1
+prf,PB,SANTAREM,alias,Joca Claudino,2513653,renomeação do município,2014..2014,1,1
+prf,PB,SAO BENTO DE POMBAL,nao_conciliado,,,"sem município com esse nome na UF; valores preservados no município ignorado da UF; nada foi inventado",2007..2015,62,94
+prf,PB,SAO DOMINGOS DE POMBAL,alias,São Domingos,2513968,truncamento ou grafia diferente do IBGE,2007..2014,4,4
+prf,PE,BELEM DE SAO FRANCISCO,alias,Belém do São Francisco,2601607,truncamento ou grafia diferente do IBGE,2007..2025,196,537
+prf,PR,VILA ALTA,nao_conciliado,,,"sem município com esse nome na UF; valores preservados no município ignorado da UF; nada foi inventado",2009..2016,17,23
+prf,RJ,PARATI,alias,Paraty,3303807,truncamento ou grafia diferente do IBGE,2007..2016,120,1171
+prf,RN,ACU,alias,Assú,2400208,truncamento ou grafia diferente do IBGE,2017..2026,91,200
+prf,RN,ARES,alias,Arez,2401206,truncamento ou grafia diferente do IBGE,2007..2026,142,255
+prf,RN,AUGUSTO SEVERO,alias,Campo Grande,2401305,renomeação do município,2017..2025,34,45
+prf,RO,VILA NOVA DO MAMORE,alias,Nova Mamoré,1100338,truncamento ou grafia diferente do IBGE,2007..2016,15,18
+prf,RR,SAO LUIZ,alias,São Luiz do Anauá,1400605,truncamento ou grafia diferente do IBGE,2010..2022,7,7
+prf,SC,BARRA DO SUL,alias,Balneário Barra do Sul,4202057,renomeação do município,2013..2015,2,3
+prf,SC,PICARRAS,alias,Balneário Piçarras,4212809,renomeação do município,2007..2016,120,933
+prf,SC,SAO MIGUEL DOESTE,alias,São Miguel do Oeste,4217204,truncamento ou grafia diferente do IBGE,2007..2016,118,614
+prf,SE,AMPARO DE SAO FRANCISCO,alias,Amparo do São Francisco,2800100,truncamento ou grafia diferente do IBGE,2011..2014,2,2
+prf,SP,EMBU,alias,Embu das Artes,3515004,renomeação do município,2007..2016,120,2638
+prf,TO,FORTALEZA DO TABOCAO,alias,Tabocão,1708254,renomeação do município,2007..2026,194,482
+senatran_frota,BA,LAGEDO DO TABOCAL,alias,Lajedo do Tabocal,2919058,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,225724
+senatran_frota,BA,SANTA TERESINHA,alias,Santa Terezinha,2928505,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,262932
+senatran_frota,DF,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2015-06..2016-08,15,15
+senatran_frota,GO,BOM JESUS,alias,Bom Jesus de Goiás,5203500,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,2487622
+senatran_frota,MA,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2015-06..2015-06,1,1
+senatran_frota,MG,AMPARO DA SERRA,alias,Amparo do Serra,3102506,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,316500
+senatran_frota,MG,BARAO D0 MONTE ALTO,alias,Barão do Monte Alto,3105509,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,283732
+senatran_frota,MG,BRASOPOLIS,alias,Brazópolis,3108909,truncamento ou grafia diferente do IBGE,2013-01..2023-03,123,851624
+senatran_frota,MG,GOUVEA,alias,Gouveia,3127602,truncamento ou grafia diferente do IBGE,2013-01..2024-02,134,606063
+senatran_frota,MG,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2024-08..2025-02,7,7
+senatran_frota,MG,QUELUZITA,alias,Queluzito,3153806,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,140306
+senatran_frota,MT,POXOREO,alias,Poxoréu,5107008,truncamento ou grafia diferente do IBGE,2013-01..2022-02,110,618890
+senatran_frota,MT,SANTO ANTONIO DO LEVERGER,alias,Santo Antônio de Leverger,5107800,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,828207
+senatran_frota,MT,VILA BELA DA SANTISSIMA TRINDA,alias,Vila Bela da Santíssima Trindade,5105507,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,895510
+senatran_frota,PA,ELDORADO DOS CARAJAS,alias,Eldorado do Carajás,1502954,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,1439411
+senatran_frota,PA,SANTA ISABEL DO PARA,alias,Santa Izabel do Pará,1506500,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,3333408
+senatran_frota,PB,CAMPO DE SANTANA,alias,Tacima,2516409,renomeação do município,2013-01..2016-11,47,49791
+senatran_frota,PB,SANTAREM,alias,Joca Claudino,2513653,renomeação do município,2013-01..2026-09,165,86771
+senatran_frota,PB,SAO DOMINGOS DE POMBAL,alias,São Domingos,2513968,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,107720
+senatran_frota,PE,BELEM DE SAO FRANCISCO,alias,Belém do São Francisco,2601607,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,753119
+senatran_frota,PE,IGUARACI,alias,Iguaracy,2606903,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,419004
+senatran_frota,PE,LAGOA DO ITAENGA,alias,Lagoa de Itaenga,2608503,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,985333
+senatran_frota,PI,SAO FRANCISCO DE ASSIS DO PIAU,alias,São Francisco de Assis do Piauí,2209658,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,136044
+senatran_frota,PR,BELA VISTA DO CAROBA,alias,Bela Vista da Caroba,4102752,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,399850
+senatran_frota,PR,MUNHOZ DE MELLO,alias,Munhoz de Melo,4116307,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,374799
+senatran_frota,PR,PINHAL DO SAO BENTO,alias,Pinhal de São Bento,4119251,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,242951
+senatran_frota,PR,SANTA CRUZ DO MONTE CASTELO,alias,Santa Cruz de Monte Castelo,4123303,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,971538
+senatran_frota,RJ,ARMACAO DE BUZIOS,alias,Armação dos Búzios,3300233,renomeação do município,2013-01..2022-01,109,2056796
+senatran_frota,RJ,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2018-11..2020-10,24,24
+senatran_frota,RJ,PARATI,alias,Paraty,3303807,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,1907079
+senatran_frota,RJ,TRAJANO DE MORAIS,alias,Trajano de Moraes,3305901,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,593025
+senatran_frota,RN,ARES,alias,Arez,2401206,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,459183
+senatran_frota,RN,BOA SAUDE,alias,Januário Cicco,2405306,renomeação do município,2013-01..2026-09,165,336614
+senatran_frota,RO,NOVA DO MAMORE,alias,Nova Mamoré,1100338,truncamento ou grafia diferente do IBGE,2013-01..2022-02,110,937877
+senatran_frota,RR,SAO LUIZ,alias,São Luiz do Anauá,1400605,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,297527
+senatran_frota,SC,BALNEARIO DE PICARRAS,alias,Balneário Piçarras,4212809,renomeação do município,2013-01..2026-09,165,2583202
+senatran_frota,SC,LAGEADO GRANDE,alias,Lajeado Grande,4209458,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,175278
+senatran_frota,SC,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2024-08..2024-09,2,2
+senatran_frota,SC,PRESIDENTE CASTELO BRANCO,alias,Presidente Castello Branco,4213906,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,229542
+senatran_frota,SC,SAO LOURENCO D'OESTE,alias,São Lourenço do Oeste,4216909,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,3411456
+senatran_frota,SC,SAO MIGUEL D'OESTE,alias,São Miguel do Oeste,4217204,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,6078147
+senatran_frota,SE,AMPARO DE SAO FRANCISCO,alias,Amparo do São Francisco,2800100,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,83714
+senatran_frota,SP,EMBU,alias,Embu das Artes,3515004,renomeação do município,2013-01..2022-03,111,12197911
+senatran_frota,SP,IBITIUVA,nao_conciliado,,,"sem município com esse nome na UF; valores preservados no município ignorado da UF; nada foi inventado",2024-11..2025-05,7,7
+senatran_frota,SP,MUNICIPIO NAO INFORMADO,nao_informado,,,valores preservados no município ignorado da UF,2013-01..2026-09,165,387
+senatran_frota,TO,COUTO DE MAGALHAES,alias,Couto Magalhães,1706001,truncamento ou grafia diferente do IBGE,2013-01..2026-09,165,200081
+senatran_frota,TO,FORTALEZA DO TABOCAO,alias,Tabocão,1708254,renomeação do município,2013-01..2026-09,165,194307
+senatran_frota,TO,SAO VALERIO DA NATIVIDADE,alias,São Valério,1720499,renomeação do município,2013-01..2026-09,165,201867
+senatran_frota,MT,,ibge_com_meses_sem_linha,Boa Esperança do Norte,,"presente em 15 de 165 competências a partir de 2025-07; município criado depois ou sem instalação comprovada: nenhuma linha foi inventada para os meses ausentes",,15,0
+senatran_frota,PA,,ibge_com_meses_sem_linha,Mojuí dos Campos,,"presente em 158 de 165 competências a partir de 2013-08; município criado depois ou sem instalação comprovada: nenhuma linha foi inventada para os meses ausentes",,158,0
+senatran_frota,SC,,ibge_com_meses_sem_linha,Pescaria Brava,,"presente em 158 de 165 competências a partir de 2013-08; município criado depois ou sem instalação comprovada: nenhuma linha foi inventada para os meses ausentes",,158,0
+senatran_frota,MS,,ibge_com_meses_sem_linha,Paraíso das Águas,,"presente em 160 de 165 competências a partir de 2013-06; município criado depois ou sem instalação comprovada: nenhuma linha foi inventada para os meses ausentes",,160,0
+senatran_frota,SC,,ibge_com_meses_sem_linha,Balneário Rincão,,"presente em 161 de 165 competências a partir de 2013-05; município criado depois ou sem instalação comprovada: nenhuma linha foi inventada para os meses ausentes",,161,0

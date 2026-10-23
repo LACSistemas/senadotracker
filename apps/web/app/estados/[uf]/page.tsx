@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { MunicipalFinder, MunicipalMap, THEMES, formatInt, type MapMetric } from '@/components/territory/territory-ui';
 import { HealthPanel } from '@/components/territory/health-panel';
+import { Suspense } from 'react';
+import { SecuritySummary } from '@/components/security/security-summary';
 import { findMunicipalities, isUf, loadBenchmarks, loadPanelValues, loadVaccinePanel, loadCoverage, loadGeometry, loadIndicators, loadMapValues, loadMunicipalities, loadState, loadUfStory, ymLabel } from '@/lib/exec-territory';
 
 export const dynamic = 'force-dynamic';
@@ -65,9 +67,11 @@ export default async function EstadoPage({ params, searchParams }: Props) {
     {hasHealth && <div><HealthPanel scope={state.name} kind="uf" ufCode={state.ufCode!} ufName={state.name} values={panelValues} vaccines={vaccines} facilities={f.total > 0 ? f : null} bench={bench} cnesLabel={lastCnes ? ymLabel(lastCnes.lastCompetence) : 'sem competência'} compact />
       <p className="mt-3 text-sm"><Link href={`/estados/${uf}/saude`} className="font-semibold text-primary hover:underline">Abrir toda a Saúde de {state.name} →</Link></p></div>}
 
+    <Suspense fallback={null}><SecuritySummary kind="uf" code={uf} /></Suspense>
+
     <section aria-labelledby="areas">
       <h2 id="areas" className="section-hairline pt-3 font-display text-2xl">Áreas temáticas</h2>
-      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{THEMES.map(t => <li key={t.slug}><Link href={`/estados/${uf}/${t.slug}`} className="card-lift flex h-full flex-col rounded-xl border bg-card p-4"><span className="font-display text-lg">{t.label}</span><span className="mt-1 text-xs text-muted-foreground">{t.ready ? (hasHealth ? 'Dados publicados' : 'Coleta pendente neste estado') : 'Em preparação, sem dados'}</span></Link></li>)}</ul>
+      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{THEMES.map(t => <li key={t.slug}><Link href={`/estados/${uf}/${t.slug}`} className="card-lift flex h-full flex-col rounded-xl border bg-card p-4"><span className="font-display text-lg">{t.label}</span><span className="mt-1 text-xs text-muted-foreground">{t.ready ? (t.slug !== 'saude' || hasHealth ? 'Dados publicados' : 'Coleta pendente neste estado') : 'Em preparação, sem dados'}</span></Link></li>)}</ul>
     </section>
 
     <section aria-labelledby="cobertura" className="rounded-xl border bg-card p-5 text-sm">

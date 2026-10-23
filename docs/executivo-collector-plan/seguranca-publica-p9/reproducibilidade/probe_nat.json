@@ -1,0 +1,588 @@
+[
+ {
+  "tag": "FBSP",
+  "url": "https://forumseguranca.org.br/anuario-brasileiro-seguranca-publica/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 100428,
+  "final_url": "https://forumseguranca.org.br/publicacoes/anuario-brasileiro-de-seguranca-publica/",
+  "secs": 0.5,
+  "title": "Anuário Brasileiro de Segurança Pública - Fórum Brasileiro de Segurança Pública",
+  "data_links": [
+   "https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026.xlsx"
+  ],
+  "n_data_links": 1,
+  "pdf_links": 5,
+  "kw": [
+   "estatística",
+   "ocorrência",
+   "município",
+   "painel"
+  ]
+ },
+ {
+  "tag": "FBSP",
+  "url": "https://publicacoes.forumseguranca.org.br/",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 572911,
+  "final_url": "https://publicacoes.forumseguranca.org.br/",
+  "secs": 0.5,
+  "title": "Repositório DSpace :: Início",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "ocorrência",
+   "indicadores",
+   "município",
+   "painel",
+   "captcha"
+  ]
+ },
+ {
+  "tag": "FBSP",
+  "url": "https://forumseguranca.org.br/estatisticas/",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 73570,
+  "final_url": "https://forumseguranca.org.br/estatisticas/",
+  "secs": 0.4,
+  "title": "Página não encontrada - Fórum Brasileiro de Segurança Pública",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 3,
+  "kw": [
+   "painel"
+  ]
+ },
+ {
+  "tag": "SISDEPEN",
+  "url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen/bases-de-dados",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 443347,
+  "final_url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen/bases-de-dados",
+  "secs": 1.0,
+  "title": "Bases de Dados",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SISDEPEN",
+  "url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 272484,
+  "final_url": "https://www.gov.br/senappen/pt-br/servicos/sisdepen",
+  "secs": 0.9,
+  "title": "Levantamento de Informações Penais",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "painel",
+   "powerbi",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENAPPEN",
+  "url": "https://www.gov.br/senappen/pt-br/assuntos/noticias",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 340397,
+  "final_url": "https://www.gov.br/senappen/pt-br/assuntos/noticias",
+  "secs": 0.8,
+  "title": ">> Notícias",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "município",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENATRAN",
+  "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2026",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 385697,
+  "final_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/frota-de-veiculos-2026",
+  "secs": 1.1,
+  "title": "Frota de Veículos - 2026",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "município",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENATRAN",
+  "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 299287,
+  "final_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran",
+  "secs": 1.0,
+  "title": "Estatísticas - Frota de Veículos - SENATRAN",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENATRAN",
+  "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-quantidade-de-infracoes-denatran",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 605734,
+  "final_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-quantidade-de-infracoes-denatran",
+  "secs": 2.5,
+  "title": "Quantidade de Infrações (Notificação de Penalidade)",
+  "data_links": [
+   "https://antigo.infraestrutura.gov.br/images/Estatistica/RENAINF/NP/csv/2020-06_infracoes_com_NP.csv"
+  ],
+  "n_data_links": 1,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatisticas",
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENATRAN",
+  "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/registro-nacional-de-sinistros-e-estatisticas-de-transito/",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 347830,
+  "final_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/registro-nacional-de-sinistros-e-estatisticas-de-transito/",
+  "secs": 0.8,
+  "title": "Registro Nacional de Sinistros e Estatísticas de Trânsito",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SENATRAN",
+  "url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-condutores-habilitados",
+  "status": "404",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 151076,
+  "final_url": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-condutores-habilitados",
+  "secs": 1.7,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatisticas",
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PRF",
+  "url": "https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 465770,
+  "final_url": "https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/dados-abertos-da-prf",
+  "secs": 0.9,
+  "title": "Dados Abertos da PRF",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "indicadores",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PRF",
+  "url": "https://www.gov.br/prf/pt-br/acesso-a-informacao/institucional/estrutura-organizacional",
+  "status": "404",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 150624,
+  "final_url": "https://www.gov.br/prf/pt-br/acesso-a-informacao/institucional/estrutura-organizacional",
+  "secs": 0.6,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "ocorrência",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PF",
+  "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/dados-abertos",
+  "status": "200",
+  "content_type": "text/html;charset=utf-8",
+  "bytes": 136700,
+  "final_url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/dados-abertos",
+  "secs": 0.4,
+  "title": "Dados Abertos na Polícia Federal — Polícia Federal",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 3,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "painel",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PF",
+  "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/unidades",
+  "status": "404",
+  "content_type": "application/json",
+  "bytes": 26,
+  "final_url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/unidades",
+  "secs": 0.2,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "MUNIC",
+  "url": "https://www.ibge.gov.br/estatisticas/sociais/saude/10586-pesquisa-de-informacoes-basicas-municipais.html",
+  "status": "403",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 5912,
+  "final_url": "https://www.ibge.gov.br/estatisticas/sociais/saude/10586-pesquisa-de-informacoes-basicas-municipais.html",
+  "secs": 0.1,
+  "title": "Just a moment...",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatisticas",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "ESTADIC",
+  "url": "https://www.ibge.gov.br/estatisticas/sociais/saude/10655-pesquisa-de-informacoes-basicas-estaduais.html",
+  "status": "403",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 5909,
+  "final_url": "https://www.ibge.gov.br/estatisticas/sociais/saude/10655-pesquisa-de-informacoes-basicas-estaduais.html",
+  "secs": 0.1,
+  "title": "Just a moment...",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatisticas",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PEP",
+  "url": "https://www.gov.br/gestao/pt-br/assuntos/servidores/painel-estatistico-de-pessoal",
+  "status": "404",
+  "content_type": "application/json",
+  "bytes": 26,
+  "final_url": "https://www.gov.br/gestao/pt-br/assuntos/servidores/painel-estatistico-de-pessoal",
+  "secs": 0.2,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "PEP",
+  "url": "https://www.gov.br/gestao/pt-br/assuntos/central-de-conteudo/painel-estatistico-de-pessoal",
+  "status": "404",
+  "content_type": "application/json",
+  "bytes": 26,
+  "final_url": "https://www.gov.br/gestao/pt-br/assuntos/central-de-conteudo/painel-estatistico-de-pessoal",
+  "secs": 0.2,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "PT",
+  "url": "https://portaldatransparencia.gov.br/download-de-dados/despesas-execucao",
+  "status": "200",
+  "content_type": "text/html;charset=UTF-8",
+  "bytes": 96447,
+  "final_url": "https://portaldatransparencia.gov.br/download-de-dados/despesas-execucao",
+  "secs": 0.3,
+  "title": "Despesas Execucao | Portal da Transparência",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "painel",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "PT",
+  "url": "https://portaldatransparencia.gov.br/api-de-dados",
+  "status": "200",
+  "content_type": "text/html;charset=UTF-8",
+  "bytes": 98244,
+  "final_url": "https://portaldatransparencia.gov.br/api-de-dados",
+  "secs": 0.2,
+  "title": "API de Dados | Portal da Transparência do Governo Federal",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "município",
+   "painel",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SINESP",
+  "url": "https://dados.mj.gov.br/",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "https://dados.mj.gov.br/",
+  "secs": 3.0
+ },
+ {
+  "tag": "SINESP",
+  "url": "https://dados.gov.br/dados/conjuntos-dados?palavraChave=sinesp",
+  "status": "200",
+  "content_type": "text/html",
+  "bytes": 9632,
+  "final_url": "https://dados.gov.br/dados/conjuntos-dados?palavraChave=sinesp",
+  "secs": 0.1,
+  "title": "Portal de Dados Abertos",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos"
+  ]
+ },
+ {
+  "tag": "SINESP",
+  "url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados_nacionais_de_seguranca_publica",
+  "status": "200",
+  "content_type": "text/html;charset=utf-8",
+  "bytes": 176096,
+  "final_url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados_nacionais_de_seguranca_publica",
+  "secs": 1.6,
+  "title": "Dados Nacionais de Segurança Pública — Ministério da Justiça e Segurança Pública",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 1,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "ocorrência",
+   "indicadores",
+   "painel",
+   "powerbi",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SINESP",
+  "url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023",
+  "status": "200",
+  "content_type": "text/html;charset=utf-8",
+  "bytes": 243550,
+  "final_url": "https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023",
+  "secs": 0.5,
+  "title": "Base de Dados e Notas Metodológicas dos Gestores Estaduais - Sinesp VDE 2015 a 2026 — Ministério da Justiça e Segurança ",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 1,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "ocorrência",
+   "indicadores",
+   "município",
+   "painel",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "FOGO",
+  "url": "https://fogocruzado.org.br/dados-abertos/",
+  "status": "403",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 5632,
+  "final_url": "https://fogocruzado.org.br/dados-abertos/",
+  "secs": 0.2,
+  "title": "Just a moment...",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "FOGO",
+  "url": "https://api.fogocruzado.org.br/",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 47394,
+  "final_url": "https://api.fogocruzado.org.br/",
+  "secs": 0.3,
+  "title": "API Fogo Cruzado",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "indicadores",
+   "município"
+  ]
+ },
+ {
+  "tag": "ATLAS",
+  "url": "https://www.ipea.gov.br/atlasviolencia/",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 16210,
+  "final_url": "https://www.ipea.gov.br/atlasviolencia/",
+  "secs": 0.3,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "ATLAS",
+  "url": "https://www.ipea.gov.br/atlasviolencia/dados-series/",
+  "status": "404",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 11908,
+  "final_url": "https://www.ipea.gov.br/atlasviolencia/dados-series/",
+  "secs": 0.2,
+  "title": "404: This page could not be found.",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "SIM",
+  "url": "https://opendatasus.saude.gov.br/dataset/sim",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 33300,
+  "final_url": "https://dadosabertos.saude.gov.br/",
+  "secs": 2.0,
+  "title": "Portal de Dados Abertos do SUS",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 5,
+  "kw": [
+   "dados abertos",
+   "indicadores",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "CNJ",
+  "url": "https://www.cnj.jus.br/sistema-carcerario/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 293857,
+  "final_url": "https://www.cnj.jus.br/sistema-carcerario/",
+  "secs": 0.3,
+  "title": "Sistema Carcerário, Execução Penal e Medidas Socioeducativas - Portal CNJ",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 2,
+  "kw": [
+   "painel",
+   "powerbi",
+   "cloudflare"
+  ]
+ },
+ {
+  "tag": "SNIPC",
+  "url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/politica-prisional",
+  "status": "404",
+  "content_type": "application/json",
+  "bytes": 26,
+  "final_url": "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/politica-prisional",
+  "secs": 0.2,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ }
+]

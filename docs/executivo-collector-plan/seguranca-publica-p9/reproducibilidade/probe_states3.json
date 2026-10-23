@@ -1,0 +1,514 @@
+[
+ {
+  "tag": "DF",
+  "url": "https://www.ssp.df.gov.br/documents/d/ssp/00_distrito_federal_balanco_criminal_oficial_2026-xlsx",
+  "status": "200",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 1905945,
+  "final_url": "https://www.ssp.df.gov.br/documents/d/ssp/00_distrito_federal_balanco_criminal_oficial_2026-xlsx",
+  "secs": 1.0,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "DF",
+  "url": "https://www.ssp.df.gov.br/documents/d/ssp/oeste-ra_09_ceilandia-xlsx",
+  "status": "200",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 1905843,
+  "final_url": "https://www.ssp.df.gov.br/documents/d/ssp/oeste-ra_09_ceilandia-xlsx",
+  "secs": 0.9,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "DF",
+  "url": "https://www.ssp.df.gov.br/serie-historica",
+  "status": "200",
+  "content_type": "text/html;charset=UTF-8",
+  "bytes": 139267,
+  "final_url": "https://www.ssp.df.gov.br/serie-historica",
+  "secs": 0.5,
+  "title": "Série histórica - Secretaria de Estado de Segurança Pública - Secretaria de Estado de Segurança Pública",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "estatística",
+   "estatisticas",
+   "ocorrência"
+  ]
+ },
+ {
+  "tag": "PA",
+  "url": "https://sistemas.segup.pa.gov.br/transparencia/exportar-dados/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 68903,
+  "final_url": "https://sistemas.segup.pa.gov.br/transparencia/exportar-dados/",
+  "secs": 0.7,
+  "title": "Exportar Dados – Portal da Transparência da Segurança Pública | SEGUP-PA",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística"
+  ]
+ },
+ {
+  "tag": "PA",
+  "url": "https://sistemas.segup.pa.gov.br/transparencia/dashboard/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 69196,
+  "final_url": "https://sistemas.segup.pa.gov.br/transparencia/dashboard/",
+  "secs": 0.8,
+  "title": "Dashboard – Portal da Transparência da Segurança Pública | SEGUP-PA",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "indicadores",
+   "powerbi"
+  ]
+ },
+ {
+  "tag": "PA",
+  "url": "https://sistemas.segup.pa.gov.br/transparencia/download-category/servidores/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 78366,
+  "final_url": "https://sistemas.segup.pa.gov.br/transparencia/download-category/servidores/",
+  "secs": 0.7,
+  "title": "Servidores – Portal da Transparência da Segurança Pública | SEGUP-PA",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística"
+  ]
+ },
+ {
+  "tag": "PI",
+  "url": "https://www.ssp.pi.gov.br/datassp/painel-de-indicadores/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 207551,
+  "final_url": "https://www.ssp.pi.gov.br/datassp/painel-de-indicadores/",
+  "secs": 2.8,
+  "title": "Painel de indicadores – Secretaria da Segurança Pública – SSP-PI",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "indicadores",
+   "painel",
+   "captcha"
+  ]
+ },
+ {
+  "tag": "PI",
+  "url": "https://www.ssp.pi.gov.br/datassp/relatorios-trimestrais/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 206540,
+  "final_url": "https://www.ssp.pi.gov.br/datassp/relatorios-trimestrais/",
+  "secs": 2.7,
+  "title": "Relatórios Trimestrais – Secretaria da Segurança Pública – SSP-PI",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "indicadores",
+   "painel",
+   "captcha"
+  ]
+ },
+ {
+  "tag": "BA",
+  "url": "https://www.ba.gov.br/ssp/sites/site-ssp/files/2025-12/01_MORTES_VIOLENTAS_ESTADO_2023.xlsx",
+  "status": "200",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 47921,
+  "final_url": "https://www.ba.gov.br/ssp/sites/site-ssp/files/2025-12/01_MORTES_VIOLENTAS_ESTADO_2023.xlsx",
+  "secs": 0.9,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "BA",
+  "url": "https://www.ba.gov.br/ssp/corregedoria/estatistica",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 111482,
+  "final_url": "https://www.ba.gov.br/ssp/corregedoria/estatistica",
+  "secs": 1.5,
+  "title": "Estatística | SSP - SECRETARIA DA SEGURANÇA PÚBLICA",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 5,
+  "kw": [
+   "estatística",
+   "indicadores",
+   "município",
+   "painel",
+   "powerbi"
+  ]
+ },
+ {
+  "tag": "GO",
+  "url": "https://goias.gov.br/seguranca/wp-content/uploads/sites/56/2026/04/Estatisticas-de-2025.pdf",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "https://goias.gov.br/seguranca/wp-content/uploads/sites/56/2026/04/Estatisticas-de-2025.pdf",
+  "secs": 12.2
+ },
+ {
+  "tag": "GO",
+  "url": "https://dadosabertos.go.gov.br/dataset?q=seguranca",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 48590,
+  "final_url": "https://dadosabertos.go.gov.br/dataset?q=seguranca",
+  "secs": 0.4,
+  "title": "Conjunto de dados - Dados Abertos Goiás",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "dados abertos",
+   "ocorrência",
+   "município"
+  ]
+ },
+ {
+  "tag": "GO",
+  "url": "https://dadosabertos.go.gov.br/api/3/action/package_search?q=ocorrencias",
+  "status": "200",
+  "content_type": "application/json;charset=utf-8",
+  "bytes": 95949,
+  "final_url": "https://dadosabertos.go.gov.br/api/3/action/package_search?q=ocorrencias",
+  "secs": 0.4,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "MS",
+  "url": "http://estatistica.sigo.ms.gov.br/",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "http://estatistica.sigo.ms.gov.br/",
+  "secs": 21.1
+ },
+ {
+  "tag": "MS",
+  "url": "https://monitorviolenciacontramulher.sejusp.ms.gov.br/",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "https://monitorviolenciacontramulher.sejusp.ms.gov.br/",
+  "secs": 21.2
+ },
+ {
+  "tag": "SC",
+  "url": "https://ssp.sc.gov.br/estatisticas-ssp/",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 164872,
+  "final_url": "https://ssp.sc.gov.br/estatisticas-ssp/",
+  "secs": 15.8,
+  "title": "Página não encontrada - SSP/SC",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 1,
+  "kw": [
+   "estatisticas"
+  ]
+ },
+ {
+  "tag": "SC",
+  "url": "https://www.ssp.sc.gov.br/estatisticas",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 164872,
+  "final_url": "https://ssp.sc.gov.br/estatisticas",
+  "secs": 1.2,
+  "title": "Página não encontrada - SSP/SC",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 1,
+  "kw": [
+   "estatisticas"
+  ]
+ },
+ {
+  "tag": "SC",
+  "url": "https://ssp.sc.gov.br/dados-estatisticos/",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 164872,
+  "final_url": "https://ssp.sc.gov.br/dados-estatisticos/",
+  "secs": 0.6,
+  "title": "Página não encontrada - SSP/SC",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 1,
+  "kw": [
+   "estatisticas"
+  ]
+ },
+ {
+  "tag": "TO",
+  "url": "http://www.to.gov.br/ssp/estatisticas-criminais-2021/6rnks2fg54lh",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 28893,
+  "final_url": "https://www.to.gov.br/ssp/estatisticas-criminais-2021/6rnks2fg54lh",
+  "secs": 0.4,
+  "title": "Estatísticas Criminais - 2021 - SSP-TO",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "painel"
+  ]
+ },
+ {
+  "tag": "TO",
+  "url": "http://www.to.gov.br/ssp/estatisticas/37s2impwz72k",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 30768,
+  "final_url": "https://www.to.gov.br/ssp/estatisticas/37s2impwz72k",
+  "secs": 0.3,
+  "title": "Estatísticas - SSP-TO",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "ocorrência",
+   "município",
+   "painel",
+   "powerbi"
+  ]
+ },
+ {
+  "tag": "AM",
+  "url": "https://www.ssp.am.gov.br/estatisticas",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 79824,
+  "final_url": "https://www.ssp.am.gov.br/estatisticas",
+  "secs": 0.6,
+  "title": "Página não encontrada - SSP",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 3,
+  "kw": [
+   "estatística"
+  ]
+ },
+ {
+  "tag": "AM",
+  "url": "https://www.ssp.am.gov.br/?s=estat%C3%ADstica",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 79175,
+  "final_url": "https://www.ssp.am.gov.br/?s=estat%C3%ADstica",
+  "secs": 0.6,
+  "title": "Resultados da pesquisa estatística - SSP",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística"
+  ]
+ },
+ {
+  "tag": "AP",
+  "url": "https://sejusp.ap.gov.br/",
+  "status": "200",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 37207,
+  "final_url": "https://sejusp.ap.gov.br/",
+  "secs": 0.8,
+  "title": "100 DIAS - 100 Dias de Governo",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 2,
+  "kw": [
+   "ocorrência"
+  ]
+ },
+ {
+  "tag": "AC",
+  "url": "https://seguranca.ac.gov.br/",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "https://seguranca.ac.gov.br/",
+  "secs": 0.3
+ },
+ {
+  "tag": "RO",
+  "url": "https://rondonia.ro.gov.br/sesdec/estatisticas/",
+  "status": "403",
+  "content_type": "text/plain; charset=utf-8",
+  "bytes": 35,
+  "final_url": "https://rondonia.ro.gov.br/sesdec/estatisticas/",
+  "secs": 0.4
+ },
+ {
+  "tag": "RN",
+  "url": "https://www.sesed.rn.gov.br/",
+  "status": "000",
+  "content_type": "",
+  "bytes": 0,
+  "final_url": "https://www.sesed.rn.gov.br/",
+  "secs": 3.2
+ },
+ {
+  "tag": "SE",
+  "url": "https://www.ssp.se.gov.br/estatisticas",
+  "status": "404",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 23010,
+  "final_url": "https://ssp.se.gov.br/PaginaNaoEncontrada",
+  "secs": 0.6,
+  "title": "Portal SSP/SE",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "captcha"
+  ]
+ },
+ {
+  "tag": "PB",
+  "url": "https://paraiba.pb.gov.br/diretas/sesds/estatisticas-criminais",
+  "status": "200",
+  "content_type": "text/html",
+  "bytes": 47899,
+  "final_url": "https://paraiba.pb.gov.br/diretas/sesds/estatisticas-criminais",
+  "secs": 0.6,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "captcha"
+  ]
+ },
+ {
+  "tag": "MA",
+  "url": "https://www.ssp.ma.gov.br/estatisticas/estatisticas-maranhao/",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 122567,
+  "final_url": "https://www.ssp.ma.gov.br/estatisticas/estatisticas-maranhao/",
+  "secs": 1.2,
+  "title": "Página não encontrada – SSP/MA – Secretaria de Segurança Pública do Maranhão",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas"
+  ]
+ },
+ {
+  "tag": "RR",
+  "url": "https://sesp.rr.gov.br/estatisticas/",
+  "status": "404",
+  "content_type": "text/html; charset=UTF-8",
+  "bytes": 134698,
+  "final_url": "https://sesp.rr.gov.br/estatisticas/",
+  "secs": 2.3,
+  "title": "Página não encontrada – SESPRR",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "PE",
+  "url": "https://www.sds.pe.gov.br/images/indicadores/CVP/MICRODADOS_DE_CVLI_JAN_2004_A_SETEMBRO_2026.xlsx",
+  "status": "200",
+  "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "bytes": 4437553,
+  "final_url": "https://www.sds.pe.gov.br/images/indicadores/CVP/MICRODADOS_DE_CVLI_JAN_2004_A_SETEMBRO_2026.xlsx",
+  "secs": 1.2,
+  "title": "",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": []
+ },
+ {
+  "tag": "PE",
+  "url": "https://www.sds.pe.gov.br/estatisticas/indicadores-criminais/crimes-contra-o-patrimonio",
+  "status": "200",
+  "content_type": "text/html; charset=utf-8",
+  "bytes": 68222,
+  "final_url": "https://www.sds.pe.gov.br/estatisticas/indicadores-criminais/crimes-contra-o-patrimonio",
+  "secs": 0.6,
+  "title": "Secretaria de Defesa Social - CRIMES CONTRA O PATRIMÔNIO",
+  "data_links": [
+   "/images/ESTATÍSTICAS/GACE/Microdados_de_CVP_-_Disponível_janeiro_de_2014_a_setembro_de_2026.xlsx"
+  ],
+  "n_data_links": 1,
+  "pdf_links": 12,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "ocorrência",
+   "indicadores",
+   "município",
+   "painel"
+  ]
+ },
+ {
+  "tag": "MT",
+  "url": "https://www.sesp.mt.gov.br/estatisticas",
+  "status": "200",
+  "content_type": "text/html;charset=UTF-8",
+  "bytes": 84090,
+  "final_url": "https://www.sesp.mt.gov.br/estatisticas",
+  "secs": 0.4,
+  "title": "SESP",
+  "data_links": [],
+  "n_data_links": 0,
+  "pdf_links": 0,
+  "kw": [
+   "estatística",
+   "estatisticas",
+   "painel",
+   "captcha",
+   "cloudflare"
+  ]
+ }
+]

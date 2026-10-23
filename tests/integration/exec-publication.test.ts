@@ -29,9 +29,9 @@ async function stateHash(): Promise<string> {
 test.before(async () => { if (skip) return; ctx = await createTestDb(); pool = ctx.pool; const r = await seedMiniTerritory(pool); assert.equal(r.status, 'PUBLISHED'); await ident(111, VIT); await ident(222, VIT); await ident(333, RIO); });
 test.after(async () => { if (!skip) await ctx.drop(); });
 
-test('migrations: 21 tabelas, idempotentes', { skip }, async () => {
+test('migrations: 38 tabelas (v2 = exec_seg_cov; v3 = trânsito; v4 = prisional; v5 = finanças; v6 = contratos e transferências), idempotentes', { skip }, async () => {
   const n = (await pool.query(`SELECT count(*)::int n FROM information_schema.tables WHERE table_schema = 'civica_exec' AND table_name <> 'schema_migrations'`)).rows[0].n;
-  assert.equal(n, 21);
+  assert.equal(n, 39);
   assert.deepEqual(await applyExecMigrations(pool), []);
 });
 

@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { createReadStream } from 'node:fs';
-import { appendFile, mkdir, readdir, rename, rm, stat, statfs, readFile } from 'node:fs/promises';
+import { appendFile, mkdir, open, readdir, rename, rm, stat, statfs, readFile } from 'node:fs/promises';
 import type { Dirent } from 'node:fs';
 import { dirname, join, parse, resolve } from 'node:path';
 import type { Pool } from 'pg';
@@ -104,7 +104,7 @@ export interface ManifestEntry { url: string; relPath: string; sha256: string; b
 const MANIFEST = 'MANIFEST.jsonl';
 /** O manifesto acompanha o RAW (mesma pasta) para que a cópia seja autossuficiente. */
 const manifestPath = (cfg: StorageConfig) => join(cfg.rawDir, MANIFEST);
-async function readManifest(cfg: StorageConfig): Promise<Map<string, ManifestEntry>> {
+export async function readManifest(cfg: StorageConfig): Promise<Map<string, ManifestEntry>> {
   const m = new Map<string, ManifestEntry>();
   try { for (const line of (await readFile(manifestPath(cfg), 'utf8')).split('\n')) if (line.trim()) { const e = JSON.parse(line) as ManifestEntry; m.set(e.relPath, e); } } catch { /* sem manifesto ainda */ }
   return m;
@@ -121,16 +121,28 @@ export async function remoteInfo(url: string): Promise<{ bytes: number | null; m
 }
 
 /** Baixa (com retomada e .part), confere tamanho, calcula SHA-256 e registra no manifesto local. Idempotente: arquivo igual já registrado não é rebaixado. */
-export async function fetchRaw(cfg: StorageConfig, spec: { url: string; relPath: string; competence: number | null; uf: number | null; retention: 1 | 2 | 3 | 4; dataset: string; dedupeByHash?: boolean }): Promise<ManifestEntry & { reused: boolean }> {
+export async function fetchRaw(cfg: StorageConfig, spec: { url: string; relPath: string; competence: number | null; uf: number | null; retention: 1 | 2 | 3 | 4; dataset: string; dedupeByHash?: boolean; /** User-Agent de navegador (gov.br recusa clientes sem ele) */ userAgent?: string; /** Valida o início do arquivo baixado (ex.: portal devolve HTML em vez do arquivo quando limita a taxa); se falhar, o download é descartado e a chamada falha. */ accept?: (head: Buffer) => boolean; /** Tentativas do próprio curl (padrão 5) */ retries?: number }): Promise<ManifestEntry & { reused: boolean }> {
   const dest = join(cfg.rawDir, spec.relPath); await mkdir(dirname(dest), { recursive: true });
   const manifest = await readManifest(cfg); const known = manifest.get(spec.relPath);
   try { const s = await stat(dest); if (known && s.size === known.bytes) return { ...known, reused: true }; } catch { /* ainda não existe */ }
   await assertCanStore(cfg, 150 * 1024 * 1024);
   const part = `${dest}.part`;
-  const r = await curl(['-sS', '--fail', '--retry', '5', '--retry-delay', '3', '--retry-all-errors', '-C', '-', '--max-time', '1800', '-w', '%{filetime}', '-o', part, spec.url]);
+  // Cada tentativa é uma nova execução do curl com `-C -`: o deslocamento é recalculado a partir do .part que ficou em disco (retomada real; o --retry interno do curl não retoma).
+  let r = { code: -1, out: '', err: '' }; const attempts = (spec.retries ?? 5) + 1;
+  for (let i = 1; i <= attempts; i++) {
+    r = await curl(['-sS', '-L', '--fail', '-C', '-', '--max-time', '1800', ...(spec.userAgent ? ['-A', spec.userAgent] : []), '-w', '%{filetime}', '-o', part, spec.url]);
+    if (r.code === 0) break;
+    if (r.code === 33) { r = { ...r, code: 0 }; break; }   // intervalo não satisfazível: o .part já está completo
+    if (i < attempts) await new Promise(res => setTimeout(res, Math.min(3000 * i, 15000)));
+  }
   if (r.code !== 0) throw new Error(`download falhou (${r.code}): ${spec.url} ${r.err.trim().slice(0, 200)}`);
   const size = (await stat(part)).size;
   if (size === 0) { await rm(part, { force: true }); throw new Error(`arquivo vazio: ${spec.url}`); }
+  if (spec.accept) {
+    const fh = await open(part, 'r'); const head = Buffer.alloc(512);
+    try { const { bytesRead } = await fh.read(head, 0, 512, 0); if (!spec.accept(head.subarray(0, bytesRead))) { await fh.close(); await rm(part, { force: true }); throw new Error(`conteúdo inesperado (não é o arquivo esperado): ${spec.url}`); } }
+    finally { await fh.close().catch(() => undefined); }
+  }
   const ft = Number(r.out.trim()); const modified = Number.isFinite(ft) && ft > 0 ? new Date(ft * 1000).toISOString() : null;
   await rename(part, dest);
   if (spec.dedupeByHash) {   // fonte republicada sem mudança: mantém uma só cópia (a primeira) em vez de duplicar o arquivo
@@ -158,4 +170,10 @@ export async function recordManifest(pool: Pool, e: ManifestEntry, runId: number
 }
 export function runPython(script: string, args: string[]): Promise<{ code: number; out: string; err: string }> {
   return new Promise(res => { const p = spawn('python', ['-I', script, ...args], { env: { ...process.env, PYTHONIOENCODING: 'utf-8' } }); let out = '', err = ''; p.stdout.on('data', d => out += d); p.stderr.on('data', d => err += d); p.on('close', code => res({ code: code ?? -1, out, err })); });
+}
+
+/** Confere o CRC de todo o ZIP baixado; arquivo corrompido/truncado é removido (o manifesto não o reaproveita) e a coleta falha de forma retomável. */
+export async function assertZipIntact(cfg: StorageConfig, relPath: string): Promise<void> {
+  const r = await runPython('scripts/exec/zip_test.py', [join(cfg.rawDir, relPath)]);
+  if (r.code !== 0) { await rm(join(cfg.rawDir, relPath), { force: true }); throw new Error(`ZIP corrompido ou truncado (CRC): ${relPath}; arquivo removido, rode a coleta de novo`); }
 }

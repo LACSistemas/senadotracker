@@ -1,0 +1,384 @@
+{
+ "sim_prelim_2025": {
+  "AC": {
+   "agressoes": 183,
+   "interv_legal": 1,
+   "indeterminada": 16,
+   "mun_com_agressao": 19
+  },
+  "AL": {
+   "agressoes": 1107,
+   "interv_legal": 9,
+   "indeterminada": 225,
+   "mun_com_agressao": 88
+  },
+  "AM": {
+   "agressoes": 842,
+   "interv_legal": 6,
+   "indeterminada": 207,
+   "mun_com_agressao": 57
+  },
+  "AP": {
+   "agressoes": 232,
+   "interv_legal": 110,
+   "indeterminada": 25,
+   "mun_com_agressao": 15
+  },
+  "BA": {
+   "agressoes": 4549,
+   "interv_legal": 801,
+   "indeterminada": 1347,
+   "mun_com_agressao": 365
+  },
+  "CE": {
+   "agressoes": 2588,
+   "interv_legal": 30,
+   "indeterminada": 2264,
+   "mun_com_agressao": 170
+  },
+  "DF": {
+   "agressoes": 260,
+   "interv_legal": 12,
+   "indeterminada": 264,
+   "mun_com_agressao": 1
+  },
+  "ES": {
+   "agressoes": 919,
+   "interv_legal": 33,
+   "indeterminada": 160,
+   "mun_com_agressao": 71
+  },
+  "GO": {
+   "agressoes": 1102,
+   "interv_legal": 137,
+   "indeterminada": 235,
+   "mun_com_agressao": 157
+  },
+  "MA": {
+   "agressoes": 2135,
+   "interv_legal": 8,
+   "indeterminada": 155,
+   "mun_com_agressao": 193
+  },
+  "MG": {
+   "agressoes": 2175,
+   "interv_legal": 42,
+   "indeterminada": 4292,
+   "mun_com_agressao": 435
+  },
+  "MS": {
+   "agressoes": 437,
+   "interv_legal": 58,
+   "indeterminada": 107,
+   "mun_com_agressao": 66
+  },
+  "MT": {
+   "agressoes": 795,
+   "interv_legal": 42,
+   "indeterminada": 94,
+   "mun_com_agressao": 103
+  },
+  "PA": {
+   "agressoes": 2168,
+   "interv_legal": 189,
+   "indeterminada": 96,
+   "mun_com_agressao": 138
+  },
+  "PB": {
+   "agressoes": 1006,
+   "interv_legal": 3,
+   "indeterminada": 66,
+   "mun_com_agressao": 146
+  },
+  "PE": {
+   "agressoes": 3146,
+   "interv_legal": 10,
+   "indeterminada": 783,
+   "mun_com_agressao": 176
+  },
+  "PI": {
+   "agressoes": 542,
+   "interv_legal": 5,
+   "indeterminada": 55,
+   "mun_com_agressao": 110
+  },
+  "PR": {
+   "agressoes": 1473,
+   "interv_legal": 391,
+   "indeterminada": 354,
+   "mun_com_agressao": 273
+  },
+  "RJ": {
+   "agressoes": 2798,
+   "interv_legal": 188,
+   "indeterminada": 3866,
+   "mun_com_agressao": 92
+  },
+  "RN": {
+   "agressoes": 877,
+   "interv_legal": 18,
+   "indeterminada": 234,
+   "mun_com_agressao": 117
+  },
+  "RO": {
+   "agressoes": 505,
+   "interv_legal": 14,
+   "indeterminada": 77,
+   "mun_com_agressao": 47
+  },
+  "RR": {
+   "agressoes": 217,
+   "interv_legal": 2,
+   "indeterminada": 68,
+   "mun_com_agressao": 12
+  },
+  "RS": {
+   "agressoes": 1246,
+   "interv_legal": 2,
+   "indeterminada": 245,
+   "mun_com_agressao": 220
+  },
+  "SC": {
+   "agressoes": 538,
+   "interv_legal": 70,
+   "indeterminada": 225,
+   "mun_com_agressao": 143
+  },
+  "SE": {
+   "agressoes": 495,
+   "interv_legal": 2,
+   "indeterminada": 89,
+   "mun_com_agressao": 60
+  },
+  "SP": {
+   "agressoes": 2598,
+   "interv_legal": 221,
+   "indeterminada": 5376,
+   "mun_com_agressao": 376
+  },
+  "TO": {
+   "agressoes": 298,
+   "interv_legal": 14,
+   "indeterminada": 54,
+   "mun_com_agressao": 93
+  }
+ },
+ "vde_2025": {
+  "AC": {
+   "homicidio_doloso": 164.0,
+   "latrocinio": 6.0,
+   "lesao_morte": 1.0,
+   "esclarecer": 116.0,
+   "municipios_com_homicidio": 21,
+   "interv_estado": 9.0
+  },
+  "AL": {
+   "homicidio_doloso": 903.0,
+   "latrocinio": 6.0,
+   "lesao_morte": 8.0,
+   "esclarecer": 741.0,
+   "municipios_com_homicidio": 82,
+   "interv_estado": 109.0
+  },
+  "AM": {
+   "homicidio_doloso": 707.0,
+   "latrocinio": 19.0,
+   "lesao_morte": 14.0,
+   "esclarecer": 4.0,
+   "municipios_com_homicidio": 55,
+   "interv_estado": 43.0
+  },
+  "AP": {
+   "homicidio_doloso": 185.0,
+   "latrocinio": 4.0,
+   "lesao_morte": 6.0,
+   "esclarecer": 8.0,
+   "municipios_com_homicidio": 15,
+   "interv_estado": 138.0
+  },
+  "BA": {
+   "homicidio_doloso": 3663.0,
+   "latrocinio": 60.0,
+   "lesao_morte": 78.0,
+   "esclarecer": 873.0,
+   "municipios_com_homicidio": 336,
+   "interv_estado": 1570.0
+  },
+  "CE": {
+   "homicidio_doloso": 2927.0,
+   "latrocinio": 25.0,
+   "lesao_morte": 22.0,
+   "esclarecer": 383.0,
+   "municipios_com_homicidio": 166,
+   "interv_estado": 200.0
+  },
+  "DF": {
+   "homicidio_doloso": 221.0,
+   "latrocinio": 12.0,
+   "lesao_morte": 6.0,
+   "esclarecer": 0.0,
+   "municipios_com_homicidio": 1,
+   "interv_estado": 15.0
+  },
+  "ES": {
+   "homicidio_doloso": 762.0,
+   "latrocinio": 25.0,
+   "lesao_morte": 13.0,
+   "esclarecer": 239.0,
+   "municipios_com_homicidio": 66,
+   "interv_estado": 76.0
+  },
+  "GO": {
+   "homicidio_doloso": 757.0,
+   "latrocinio": 19.0,
+   "lesao_morte": 30.0,
+   "esclarecer": 517.0,
+   "municipios_com_homicidio": 133,
+   "interv_estado": 362.0
+  },
+  "MA": {
+   "homicidio_doloso": 1815.0,
+   "latrocinio": 59.0,
+   "lesao_morte": 16.0,
+   "esclarecer": 123.0,
+   "municipios_com_homicidio": 195,
+   "interv_estado": 142.0
+  },
+  "MG": {
+   "homicidio_doloso": 2317.0,
+   "latrocinio": 44.0,
+   "lesao_morte": 26.0,
+   "esclarecer": 0.0,
+   "municipios_com_homicidio": 424,
+   "interv_estado": 208.0
+  },
+  "MS": {
+   "homicidio_doloso": 309.0,
+   "latrocinio": 5.0,
+   "lesao_morte": 7.0,
+   "esclarecer": 345.0,
+   "municipios_com_homicidio": 58,
+   "interv_estado": 59.0
+  },
+  "MT": {
+   "homicidio_doloso": 675.0,
+   "latrocinio": 15.0,
+   "lesao_morte": 6.0,
+   "esclarecer": 417.0,
+   "municipios_com_homicidio": 104,
+   "interv_estado": 143.0
+  },
+  "PA": {
+   "homicidio_doloso": 1683.0,
+   "latrocinio": 72.0,
+   "lesao_morte": 30.0,
+   "esclarecer": 274.0,
+   "municipios_com_homicidio": 137,
+   "interv_estado": 634.0
+  },
+  "PB": {
+   "homicidio_doloso": 899.0,
+   "latrocinio": 20.0,
+   "lesao_morte": 9.0,
+   "esclarecer": 63.0,
+   "municipios_com_homicidio": 136,
+   "interv_estado": 61.0
+  },
+  "PE": {
+   "homicidio_doloso": 2883.0,
+   "latrocinio": 58.0,
+   "lesao_morte": 28.0,
+   "esclarecer": 239.0,
+   "municipios_com_homicidio": 172,
+   "interv_estado": 90.0
+  },
+  "PI": {
+   "homicidio_doloso": 489.0,
+   "latrocinio": 15.0,
+   "lesao_morte": 9.0,
+   "esclarecer": 3.0,
+   "municipios_com_homicidio": 102,
+   "interv_estado": 20.0
+  },
+  "PR": {
+   "homicidio_doloso": 1183.0,
+   "latrocinio": 44.0,
+   "lesao_morte": 48.0,
+   "esclarecer": 22.0,
+   "municipios_com_homicidio": 235,
+   "interv_estado": 490.0
+  },
+  "RJ": {
+   "homicidio_doloso": 3342.0,
+   "latrocinio": 77.0,
+   "lesao_morte": 66.0,
+   "esclarecer": 2924.0,
+   "municipios_com_homicidio": 91,
+   "interv_estado": 808.0
+  },
+  "RN": {
+   "homicidio_doloso": 824.0,
+   "latrocinio": 15.0,
+   "lesao_morte": 12.0,
+   "esclarecer": 607.0,
+   "municipios_com_homicidio": 119,
+   "interv_estado": 137.0
+  },
+  "RO": {
+   "homicidio_doloso": 414.0,
+   "latrocinio": 4.0,
+   "lesao_morte": 2.0,
+   "esclarecer": 468.0,
+   "municipios_com_homicidio": 42,
+   "interv_estado": 47.0
+  },
+  "RR": {
+   "homicidio_doloso": 127.0,
+   "latrocinio": 4.0,
+   "lesao_morte": 8.0,
+   "esclarecer": 101.0,
+   "municipios_com_homicidio": 14,
+   "interv_estado": 4.0
+  },
+  "RS": {
+   "homicidio_doloso": 1052.0,
+   "latrocinio": 32.0,
+   "lesao_morte": 45.0,
+   "esclarecer": 1057.0,
+   "municipios_com_homicidio": 212,
+   "interv_estado": 80.0
+  },
+  "SC": {
+   "homicidio_doloso": 429.0,
+   "latrocinio": 18.0,
+   "lesao_morte": 23.0,
+   "esclarecer": 0.0,
+   "municipios_com_homicidio": 127,
+   "interv_estado": 100.0
+  },
+  "SE": {
+   "homicidio_doloso": 284.0,
+   "latrocinio": 8.0,
+   "lesao_morte": 4.0,
+   "esclarecer": 367.0,
+   "municipios_com_homicidio": 51,
+   "interv_estado": 193.0
+  },
+  "SP": {
+   "homicidio_doloso": 2257.0,
+   "latrocinio": 131.0,
+   "lesao_morte": 122.0,
+   "esclarecer": 3283.0,
+   "municipios_com_homicidio": 340,
+   "interv_estado": 838.0
+  },
+  "TO": {
+   "homicidio_doloso": 247.0,
+   "latrocinio": 8.0,
+   "lesao_morte": 4.0,
+   "esclarecer": 363.0,
+   "municipios_com_homicidio": 78,
+   "interv_estado": 25.0
+  }
+ }
+}

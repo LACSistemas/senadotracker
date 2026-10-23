@@ -1,0 +1,26 @@
+﻿medida,momento,valor,observacao
+postgres_banco_bytes,antes,21907737747,pg_database_size
+postgres_banco_bytes,depois,22264155283,pg_database_size
+postgres_schema_civica_exec_bytes,antes,5709496320,soma pg_total_relation_size
+postgres_schema_civica_exec_bytes,depois,6065315840,soma pg_total_relation_size
+exec_ind_value_total_bytes,depois,1105723392,"heap 522002432 + índices 583557120; 6201195 linhas no total"
+exec_ind_latest_total_bytes,depois,88883200,
+exec_seg_cov_total_bytes,depois,19152896,149606 linhas
+exec_change_log_total_bytes,depois,3428687872,4 linhas de log pertencem à Segurança
+linhas_exec_ind_value_sim,depois,866295,indicadores 3001–3015
+linhas_exec_ind_value_vde,depois,1266767,indicadores 3101–3208
+linhas_exec_seg_cov,depois,149606,
+linhas_exec_ind_latest_seguranca,depois,140983,
+bytes_por_linha_ind_value_medido,depois,178.30811512942265,total da tabela ÷ linhas (inclui índices)
+wal_bytes_gerados,delta,1500311839,pg_stat_wal.wal_bytes (inclui qualquer outra atividade do cluster no período)
+raw_ssd_seguranca_bytes,depois,293133871,D:\Civica\raw\seguranca (XLSX do VDE)
+raw_ssd_referencias_ipea_bytes,depois,64653700,Atlas/Ipeadata para reconciliação
+raw_sim_novo_bytes,depois,0,"RAW do SIM reutilizado; nenhuma cópia nova"
+staging_ssd_bytes,depois,136927441,caches JSON agregados de extração
+ssd_livre_gib,antes,435.2,
+ssd_livre_gib,depois,434.9,
+disco_postgres_livre_gib,antes,41.2,
+disco_postgres_livre_gib,depois,40.6,
+runs_dataset_15,depois,0,"702 publicações (execuções publicadas, incluindo ensaios no banco real quando houver)"
+runs_dataset_16,depois,0,"26 publicações (execuções publicadas, incluindo ensaios no banco real quando houver)"
+runs_dataset_17,depois,149606,"324 publicações (execuções publicadas, incluindo ensaios no banco real quando houver)"

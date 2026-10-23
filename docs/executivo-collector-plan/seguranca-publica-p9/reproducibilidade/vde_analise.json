@@ -1,0 +1,1153 @@
+{
+ "2025": {
+  "linhas": 832302,
+  "meses": [
+   "2025-01",
+   "2025-02",
+   "2025-03",
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10",
+   "2025-11",
+   "2025-12"
+  ],
+  "ufs": 27,
+  "abrangencia": {
+   "Estadual": 689889,
+   "Polícia Federal": 73893,
+   "Polícia Rodoviária Federal": 68520
+  },
+  "eventos": [
+   {
+    "evento": "Emissão de Alvarás de licença",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 1770049.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Atendimento pré-hospitalar",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 1054625.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Realização de vistorias",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 760400.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Busca e salvamento",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 523603.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Combate a incêndios",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 348520.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mandado de prisão cumprido",
+    "linhas": 135096,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 4017,
+    "ufs_com_ocorrencia": 27,
+    "total": 297651.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Tráfico de drogas",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 219765.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Furto de veículo",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 201925.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Arma de Fogo Apreendida",
+    "linhas": 5832,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 110360.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": true,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo de veículo",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 104539.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo de carga",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 23,
+    "total": 8565.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo a instituição financeira",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 13,
+    "total": 58.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Apreensão de Cocaína",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 0,
+    "ufs_com_ocorrencia": 0,
+    "total": 0.0,
+    "total_vitima": 0.0,
+    "tudo_zero": true,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Apreensão de Maconha",
+    "linhas": 648,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 0,
+    "ufs_com_ocorrencia": 0,
+    "total": 0.0,
+    "total_vitima": 0.0,
+    "tudo_zero": true,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Estupro",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 19909.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Estupro de vulnerável",
+    "linhas": 324,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 63690.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Feminicídio",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 911,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 1578.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Homicídio doloso",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3386,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 31518.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Lesão corporal seguida de morte",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 383,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 643.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Morte de Agente do Estado",
+    "linhas": 2916,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 21,
+    "total": 0.0,
+    "total_vitima": 192.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": true
+   },
+   {
+    "evento": "Morte no trânsito ou em decorrência dele (exceto homicídio doloso)",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3571,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 25074.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Morte por intervenção de Agente do Estado",
+    "linhas": 972,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 6601.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mortes a esclarecer (sem indício de crime)",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1940,
+    "ufs_com_ocorrencia": 24,
+    "total": 0.0,
+    "total_vitima": 13537.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mortes no trânsito",
+    "linhas": 67737,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1387,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 6056.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Pessoa Desaparecida",
+    "linhas": 972,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 85066.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": true,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Pessoa Localizada",
+    "linhas": 972,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 57672.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": true,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo seguido de morte (latrocínio)",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 444,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 805.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Suicídio",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3284,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 16592.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Suicídio de Agente do Estado",
+    "linhas": 2916,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 24,
+    "total": 0.0,
+    "total_vitima": 138.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": true
+   },
+   {
+    "evento": "Tentativa de feminicídio",
+    "linhas": 67557,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1482,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 4190.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Tentativa de homicídio",
+    "linhas": 67566,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3541,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 33881.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   }
+  ],
+  "pares_uf_municipio": 5597
+ },
+ "2026": {
+  "linhas": 618206,
+  "meses": [
+   "2026-01",
+   "2026-02",
+   "2026-03",
+   "2026-04",
+   "2026-05",
+   "2026-06",
+   "2026-07",
+   "2026-08",
+   "2026-09"
+  ],
+  "ufs": 27,
+  "abrangencia": {
+   "Estadual": 517302,
+   "Polícia Federal": 55386,
+   "Polícia Rodoviária Federal": 45518
+  },
+  "eventos": [
+   {
+    "evento": "Emissão de Alvarás de licença",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 25,
+    "total": 1249791.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Atendimento pré-hospitalar",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 26,
+    "total": 751776.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Realização de vistorias",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 25,
+    "total": 477416.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Busca e salvamento",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 26,
+    "total": 412205.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mandado de prisão cumprido",
+    "linhas": 101322,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 4378,
+    "ufs_com_ocorrencia": 27,
+    "total": 230594.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Combate a incêndios",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 26,
+    "total": 217300.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Tráfico de drogas",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 175412.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Furto de veículo",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 136268.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Arma de Fogo Apreendida",
+    "linhas": 4374,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 79285.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": true,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo de veículo",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 60509.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo de carga",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 20,
+    "total": 5186.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo a instituição financeira",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 6,
+    "total": 19.0,
+    "total_vitima": 0.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Apreensão de Cocaína",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 0,
+    "ufs_com_ocorrencia": 0,
+    "total": 0.0,
+    "total_vitima": 0.0,
+    "tudo_zero": true,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Apreensão de Maconha",
+    "linhas": 486,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 0,
+    "ufs_com_ocorrencia": 0,
+    "total": 0.0,
+    "total_vitima": 0.0,
+    "tudo_zero": true,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal"
+    ],
+    "tem_sexo": false,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Estupro",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 15304.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Estupro de vulnerável",
+    "linhas": 243,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 47152.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Feminicídio",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 681,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 1082.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Homicídio doloso",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 2961,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 20723.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Lesão corporal seguida de morte",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 250,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 409.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Morte de Agente do Estado",
+    "linhas": 2079,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 21,
+    "total": 0.0,
+    "total_vitima": 79.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": true
+   },
+   {
+    "evento": "Morte no trânsito ou em decorrência dele (exceto homicídio doloso)",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3244,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 18919.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Morte por intervenção de Agente do Estado",
+    "linhas": 702,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 4872.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mortes a esclarecer (sem indício de crime)",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1837,
+    "ufs_com_ocorrencia": 23,
+    "total": 0.0,
+    "total_vitima": 12064.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Mortes no trânsito",
+    "linhas": 45140,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1237,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 4120.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Pessoa Desaparecida",
+    "linhas": 729,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 67085.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": true,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Pessoa Localizada",
+    "linhas": 729,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 44241.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": true,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Roubo seguido de morte (latrocínio)",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 282,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 448.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Suicídio",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 2868,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 12265.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Suicídio de Agente do Estado",
+    "linhas": 2079,
+    "municipios_distintos_mes_max": 1,
+    "municipios_com_ocorrencia": 1,
+    "ufs_com_ocorrencia": 21,
+    "total": 0.0,
+    "total_vitima": 80.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual",
+     "Polícia Federal",
+     "Polícia Rodoviária Federal"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": true
+   },
+   {
+    "evento": "Tentativa de feminicídio",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 1327,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 3350.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   },
+   {
+    "evento": "Tentativa de homicídio",
+    "linhas": 50661,
+    "municipios_distintos_mes_max": 5298,
+    "municipios_com_ocorrencia": 3223,
+    "ufs_com_ocorrencia": 27,
+    "total": 0.0,
+    "total_vitima": 25038.0,
+    "tudo_zero": false,
+    "abrangencias": [
+     "Estadual"
+    ],
+    "tem_sexo": true,
+    "tem_faixa": false,
+    "tem_arma": false,
+    "tem_agente": false
+   }
+  ],
+  "pares_uf_municipio": 5597
+ },
+ "ES_2025": {
+  "municipios_distintos": 79,
+  "homicidio_doloso_vitimas": 762.0,
+  "top_homicidio": {
+   "VILA VELHA": 118.0,
+   "SERRA": 97.0,
+   "CARIACICA": 92.0,
+   "LINHARES": 52.0,
+   "SÃO MATEUS": 48.0,
+   "VITÓRIA": 36.0,
+   "ARACRUZ": 21.0,
+   "VIANA": 20.0,
+   "GUARAPARI": 19.0,
+   "JAGUARÉ": 17.0
+  }
+ }
+}

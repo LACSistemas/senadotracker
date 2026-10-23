@@ -1,0 +1,175 @@
+{
+ "at": "2026-10-22T02:03:10.803Z",
+ "profiles": [
+  {
+   "kind": "estado",
+   "id": 32,
+   "label": "ES",
+   "queries": 4,
+   "dbMs": 5.1,
+   "bytes": 105344,
+   "points": 521,
+   "wallMsMedian": 6.9,
+   "wallMsMax": 12.3,
+   "wallMsFirst": 115.3
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP",
+   "queries": 4,
+   "dbMs": 4.7,
+   "bytes": 101917,
+   "points": 499,
+   "wallMsMedian": 4.9,
+   "wallMsMax": 5.2,
+   "wallMsFirst": 7.1
+  },
+  {
+   "kind": "estado",
+   "id": 11,
+   "label": "RO",
+   "queries": 4,
+   "dbMs": 5.7,
+   "bytes": 134791,
+   "points": 687,
+   "wallMsMedian": 6,
+   "wallMsMax": 6.2,
+   "wallMsFirst": 5.8
+  },
+  {
+   "kind": "estado",
+   "id": 53,
+   "label": "DF",
+   "queries": 4,
+   "dbMs": 4.7,
+   "bytes": 127589,
+   "points": 641,
+   "wallMsMedian": 5.3,
+   "wallMsMax": 7.5,
+   "wallMsFirst": 5.7
+  },
+  {
+   "kind": "municipio",
+   "id": 3205309,
+   "label": "Vitória/ES",
+   "queries": 4,
+   "dbMs": 1.8,
+   "bytes": 1746,
+   "points": 0,
+   "wallMsMedian": 1.1,
+   "wallMsMax": 6.2,
+   "wallMsFirst": 7.3
+  },
+  {
+   "kind": "municipio",
+   "id": 3550308,
+   "label": "São Paulo/SP",
+   "queries": 5,
+   "dbMs": 8.4,
+   "bytes": 121222,
+   "points": 495,
+   "wallMsMedian": 7.3,
+   "wallMsMax": 7.5,
+   "wallMsFirst": 28
+  },
+  {
+   "kind": "municipio",
+   "id": 3304557,
+   "label": "Rio de Janeiro/RJ",
+   "queries": 5,
+   "dbMs": 15.8,
+   "bytes": 184736,
+   "points": 519,
+   "wallMsMedian": 16.8,
+   "wallMsMax": 17.5,
+   "wallMsFirst": 23.9
+  },
+  {
+   "kind": "municipio",
+   "id": 3200359,
+   "label": "Alto Rio Novo/ES",
+   "queries": 4,
+   "dbMs": 2.2,
+   "bytes": 1751,
+   "points": 0,
+   "wallMsMedian": 1,
+   "wallMsMax": 1.1,
+   "wallMsFirst": 1.4
+  },
+  {
+   "kind": "municipio",
+   "id": 1100015,
+   "label": "Alta Floresta D'Oeste/RO",
+   "queries": 5,
+   "dbMs": 6.4,
+   "bytes": 87692,
+   "points": 458,
+   "wallMsMedian": 4.9,
+   "wallMsMax": 5.4,
+   "wallMsFirst": 6.1
+  },
+  {
+   "kind": "brasil",
+   "id": 0,
+   "label": "Brasil",
+   "queries": 4,
+   "dbMs": 7.3,
+   "bytes": 133033,
+   "points": 687,
+   "wallMsMedian": 5.9,
+   "wallMsMax": 8.6,
+   "wallMsFirst": 5.9
+  }
+ ],
+ "plans": [
+  {
+   "name": "UF: série de todos os indicadores prisionais de uma UF (entidade × indicadores × períodos)",
+   "executionMs": 0.278,
+   "node": "Index Scan",
+   "index": "exec_ind_value_pkey",
+   "rows": 499,
+   "sharedHit": 605,
+   "sharedRead": 0
+  },
+  {
+   "name": "município: observações das unidades de São Paulo (índice parcial entity_id, competence)",
+   "executionMs": 0.323,
+   "node": "Sort",
+   "index": null,
+   "rows": 234,
+   "sharedHit": 60,
+   "sharedRead": 0
+  },
+  {
+   "name": "município: fatos de capacidade/população das unidades de um município (3 medidas)",
+   "executionMs": 99.241,
+   "node": "Gather",
+   "index": null,
+   "rows": 581,
+   "sharedHit": 6227,
+   "sharedRead": 0
+  },
+  {
+   "name": "cobertura por UF e ciclo",
+   "executionMs": 0.053,
+   "node": "Sort",
+   "index": null,
+   "rows": 19,
+   "sharedHit": 5,
+   "sharedRead": 0
+  },
+  {
+   "name": "publicações do sistema prisional",
+   "executionMs": 0.15,
+   "node": "Aggregate",
+   "index": null,
+   "rows": 2,
+   "sharedHit": 200,
+   "sharedRead": 0
+  }
+ ],
+ "contract": {
+  "indicators": 37
+ }
+}

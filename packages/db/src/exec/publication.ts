@@ -149,7 +149,7 @@ export async function publishSlice(pool: Pool, input: PublishInput): Promise<Pub
     runId = run.rows[0].run_id;
     await c.query(`DELETE FROM ${q('exec_change_log')} WHERE run_id = $1`, [runId]);
     const preHash = await sliceHash(c, input.tables.map(t => t.spec), input.uf, input.competence);
-    await c.query(`UPDATE ${q('exec_ingestion_run')} SET quality = jsonb_set(coalesce(quality, '{}'::jsonb), '{preHash}', to_jsonb($2::text)) WHERE run_id = $1`, [runId, preHash]);
+    await c.query(`UPDATE ${q('exec_ingestion_run')} SET quality = jsonb_set(jsonb_set(coalesce(quality, '{}'::jsonb), '{preHash}', to_jsonb($2::text)), '{specIds}', $3::jsonb) WHERE run_id = $1`, [runId, preHash, JSON.stringify(input.tables.map(t => t.spec.tableId))]);
     let rowsOut = 0;
     for (const t of input.tables) {
       const stg = await stage(c, t.spec, t.rows);
@@ -216,7 +216,9 @@ export async function rollbackRun(pool: Pool, runId: number): Promise<RollbackRe
     if (newer.rowCount) { await c.query('ROLLBACK'); return { status: 'REFUSED', reason: 'existe run publicado mais recente na mesma fatia: use replay' }; }
     const log = (await c.query(`SELECT seq, table_id, op, pk, old_row FROM ${q('exec_change_log')} WHERE run_id = $1 ORDER BY seq DESC`, [runId])).rows;
     if (!log.length) { await c.query('ROLLBACK'); return { status: 'REFUSED', reason: 'change log ausente ou expirado: use replay' }; }
-    const specs = [...new Set(log.map(l => l.table_id as number))].filter(id => SPEC_BY_ID.has(id)).map(id => SPEC_BY_ID.get(id)!);
+    // o hash da fatia cobre TODAS as tabelas da publicação (gravadas em quality.specIds); runs antigos usam as tabelas presentes no change log
+    const recorded = ((r.quality as Row | null)?.specIds as number[] | undefined)?.filter(id => SPEC_BY_ID.has(id));
+    const specs = (recorded?.length ? recorded : [...new Set(log.map(l => l.table_id as number))].filter(id => SPEC_BY_ID.has(id))).map(id => SPEC_BY_ID.get(id)!);
     const curHash = await sliceHash(c, specs, r.uf, r.competence);
     if (r.slice_hash && Buffer.from(r.slice_hash).toString('hex') !== curHash) { await c.query('ROLLBACK'); return { status: 'REFUSED', reason: 'o estado atual difere do publicado pelo run (alteração posterior): use replay' }; }
     // tabela de indicadores: remove "latest" dos pares afetados antes do inverso

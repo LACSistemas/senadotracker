@@ -1,0 +1,1434 @@
+0 Temas disponíveis|||||variável
+2 1. RECURSOS HUMANOS POR VÍNCULO|||||título link
+3 2. ASSISTÊNCIA SOCIAL|||||título link
+4 3. TRABALHO E INCLUSÃO PRODUTIVA|||||título link
+5 4. SEGURANÇA ALIMENTAR E NUTRICIONAL|||||título link
+6 5. POLÍTICA PARA MULHERES|||||título link
+7 6. SEGURANÇA PÚBLICA|||||título link
+8 7. DIREITOS HUMANOS|||||título link
+9 8. PRIMEIRA INFÂNCIA|||||título link
+11 Código da Unidade da Federação|||||Cod UF
+12 Sigla da Unidade da Federação|||||Sigla UF
+13 Nome da Unidade da Federação|||||Nome UF
+14 População das Unidades da Federação publicada no DOU em 2023*|||||PopUF
+15 Grande Região|||||Região
+16 (*) Em anos de Censo Demográfico, o IBGE divulga os dados de população recenseada. Para 2023, em cumprimento ao Art. 102 da Lei n° 8.443, de 16.07.1992, foram publicadas no Diário Oficial da União, em 31 de agosto de 2023, as populações do Censo Demográfico 2022, com atualizações de limites territoriais que tenham sido comunicadas ao IBGE entre 1 de agosto de 2022 e 30 de abril de 2023, no âmbito dos acordos de cooperação técnica mantidos com órgãos estaduais, visando à consolidação dos limites.
+18 1. RECURSOS HUMANOS POR VÍNCULO
+19 1.1 Composição do quadro de pessoal da administração direta||||subtítulo link
+20 1.2 Composição do quadro de pessoal da administração indireta||||subtítulo link
+22 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+24 1. RECURSOS HUMANOS POR VÍNCULO
+25 1.1 Composição do quadro de pessoal da administração direta
+26 |Estatutários||||EREH0111
+27 |Celetistas||||EREH0112
+28 |Somente comissionados||||EREH0113
+29 |Estagiários||||EREH0114
+30 |Sem vínculo permanente||||EREH0115
+31 Total (1)|||||EREH0116
+33 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais – 2023
+34 (1) Inclusive os sem declaração de vínculo.
+35 (*) Não soube informar - sabe que existe, mas não soube informar.
+37 1.2 Composição do quadro de pessoal da administração indireta
+38 Administração indireta - existência|||||EREH02
+39 |Estatutários||||EREH0311
+40 |Celetistas||||EREH0312
+41 |Somente comissionados||||EREH0313
+42 |Estagiários||||EREH0314
+43 |Sem vínculo permanente||||EREH0315
+44 Total (1)|||||EREH0316
+46 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais – 2023
+47 (1) Inclusive os sem declaração de vínculo.
+48 (*) Não soube informar - sabe que existe, mas não soube informar.
+51 2. ASSISTÊNCIA SOCIAL
+52 2.1 Órgão gestor da assistência social e perfil do gestor|||||subtítulo link
+53 2.2 Plano Estadual de Assistência Social e Comissão Intergestores Bipartide (CIB)|||||subtítulo link
+54 2.3 Desenho de regionalização|||||subtítulo link
+55 2.4 Conselho Estadual de Assistência Social|||||subtítulo link
+56 2.5 Assessoramento e apoio técnico aos municípios|||||subtítulo link
+57 2.6 Plano Estadual de Capacitação|||||subtítulo link
+58 2.7 Serviços socioassistenciais|||||subtítulo link
+59 2.8 Fundo Estadual de Assistência Social e cofinanciamento aos municípios|||||subtítulo link
+61 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+63 2. ASSISTÊNCIA SOCIAL
+64 2.1 Órgão gestor da assistência social e perfil do gestor
+65 Caracterização do órgão gestor |||||EASS01
+67 Perfil do órgão gestor:
+68 |Sexo||||EASS03
+69 |Idade||||EASS04
+70 |Cor/raça||||EASS05
+71 ||Este quesito foi respondido pelo próprio titular|||EASS051
+72 |Escolaridade||||EASS06
+73 ||Formação de nível superior do titular do órgão gestor|||EASS07
+75 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+77 2.2 Plano Estadual de Assistência Social e Comissão Intergestores Bipartide (CIB)
+78 Plano Estadual de Assistência Social - existência|||||EASS09
+79 |Ano da última atualização do plano||||EASS091
+80 |O plano foi aprovado pelo Conselho Estadual de Assistência Social||||EASS10
+81 |O desenvolvimento do plano é avaliado anualmente||||EASS11
+82 ||A avaliação anual é realizada pelo: 
+83 |||Órgão gestor da assistência social||EASS1111
+84 |||Conselho Estadual de Assistência Social||EASS1112
+85 |||Outro||EASS1113
+87 A Comissão Intergestores Bipartide (CIB) está|||||EASS12
+88 |Frequência das reuniões||||EASS13
+90 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+92 2.3 Desenho de regionalização
+93 A Política de Assistência Social do estado adota desenho de regionalização dos municípios|||||EASS14
+94 |O desenho de regionalização adotado||||EASS15
+95 |O desenho de regionalização foi pactuado na Comissão Intergestores Bipartite||||EASS16
+97 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+99 2.4 Conselho Estadual de Assistência Social
+100 Conselho Estadual de Assistência Social - existência|||||EASS17
+101 |Lei de criação||||EASS171a
+102 |Ano de criação||||EASS171b
+103 |Formação||||EASS172
+104 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses||||EASS18
+105 |Número de conselheiros (titulares e suplentes)||||EASS19
+106 |Realiza capacitação para os membros:
+107 ||Periodicamente|||EASS201
+108 ||Ocasionalmente|||EASS202
+109 ||Não realiza|||EASS203
+110 |Disponibiliza infraestrutura para o funcionamento do conselho||||EASS21
+111 ||Sala própria|||EASS2111
+112 ||Computador|||EASS2112
+113 ||Impressora|||EASS2113
+114 ||Acesso à internet|||EASS2114
+115 ||Veículo próprio|||EASS2115
+116 ||Telefone|||EASS2116
+117 ||Diárias|||EASS2117
+118 ||Dotação orçamentária própria|||EASS2118
+119 ||Transporte/Locomoção|||EASS2119
+120 |Composição do Conselho:
+121 ||Representante governamental da área de assistência social|||EASS221
+122 ||Representante governamental da área de saúde|||EASS222
+123 ||Representante governamental da área de educação|||EASS223
+124 ||Representante governamental de outras áreas|||EASS224
+125 ||Representante da sociedade civil de entidades e organizações da assistência social|||EASS225
+126 ||Representante da sociedade civil de organização de trabalhadores|||EASS226
+127 ||Representante da sociedade civil de organização de usuários dos serviços socioassistenciais|||EASS227
+128 ||Representante da sociedade civil de usuários dos serviços dos serviços socioassistenciais|||EASS228
+130 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+132 2.5 Assessoramento e apoio técnico aos municípios
+133 As atividades de assessoramento e apoio técnico aos municípios possuem planejamento anual|||||EASS23
+134 Instrumentos e estratégias adotadas para o acompanhamento da gestão municipal:
+135 |Visitas técnicas periódicas e planejadas||||EASS241
+136 |Visitas técnicas esporádicas||||EASS242
+137 |Contatos telefônicos periódicos e planejados||||EASS243
+138 |Contatos telefônicos esporádicos||||EASS244
+139 |Sistema de informação próprio||||EASS245
+140 |Sistema de informação desenvolvido pelo MDS||||EASS246
+142 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+144 2.6 Plano Estadual de Capacitação
+145 Plano Estadual de Capacitação na área de assistência social - existência|||||EASS25
+146 No ano de 2022 realizou/promoveu cursos de capacitação para o pessoal ocupado na área de assistência social em quais grupos de temas:
+147 |Política Nacional de Assistência Social, Organização do Sistema Único da Assistência Social (SUAS) e Legislação correlata||||EASS261
+148 |Organização e Serviços da Proteção Social Básica||||EASS262
+149 |Organização e Serviços da Proteção Social Especial||||EASS263
+150 |Gestão e financiamento do SUAS||||EASS264
+151 |Controle Social||||EASS265
+152 |Atendimento de povos e comunidades tradicionais||||EASS266
+153 |Atendimento a usuários de álcool e outras drogas||||EASS267
+154 |Inclusão de pessoas com deficiência||||EASS268
+155 |Vigilância socioassistencial, monitoramento e avaliação||||EASS269
+156 |Planejamento e gestão||||EASS2610
+157 |Violências e violações de direitos||||EASS2611
+158 |Outros||||EASS2612
+159 |Não realizou/promoveu curso de capacitação||||EASS2613
+161 |Cursos oferecidos pelo estado são destinados:
+162 ||Conselheiros estaduais|||EASS271
+163 ||Técnicos de nível superior estaduais|||EASS272
+164 ||Técnicos de nível médio estaduais|||EASS273
+165 ||Conselheiros municipais|||EASS274
+166 ||Gestores municipais|||EASS275
+167 ||Técnicos de nível superior das prefeituras|||EASS276
+168 ||Técnicos de nível médio das prefeituras|||EASS277
+169 ||Dirigentes e técnicos das entidades e organizações de assistência social|||EASS278
+170 ||Outros|||EASS279
+172 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+174 2.7 Serviços socioassistenciais
+175 O estado executa diretamente serviços socioassistenciais|||||EASS28
+176 |Serviço de Convivência||||EASS291
+177 |Serviço de Proteção Social Básica no Domicílio para Pessoas com Deficiência e Idosas||||EASS292
+178 |Serviço de Proteção e Atendimento Especializado a Famílias e Indivíduos (PAEFI/CREAS)||||EASS293
+179 |Serviço Especializado para Pessoas em Situação de Rua||||EASS294
+180 |Serviço Especializado para Pessoas com Deficiência, Idosas e suas Famílias||||EASS295
+181 |Serviço de Proteção Social a Adolescentes em Cumprimento de Medida Socioeducativa de Liberdade Assistida (LA) e de Prestação de Serviços à Comunidade (PSC)||||EASS296
+182 |Serviço Especializado em Abordagem Social||||EASS297
+183 |Programa/Serviço de acolhimento em Família Acolhedora para Criança e Adolescente||||EASS298
+184 |Serviço de Acolhimento Institucional para crianças e adolescentes||||EASS299
+185 |Serviço de Acolhimento Institucional para adultos e famílias||||EASS2910
+186 |Serviço de Acolhimento Institucional para Idosos||||EASS2911
+187 |Serviço de Acolhimento Institucional para jovens e adultos com deficiência||||EASS2912
+188 |Serviço de Acolhimento Institucional para mulheres em situação de violência||||EASS2913
+189 |Serviço de Acolhimento em Repúblicas para Jovens (maiores de 18 anos)||||EASS2914
+191 Existe procedimento de transição destes serviços para o município|||||EASS30
+193 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+195 2.8 Fundo Estadual de Assistência Social e cofinanciamento aos municípios
+196 Fundo Estadual de Assistência Social - existência|||||EASS31
+197 |O ordenador de despesa do fundo é||||EASS311
+199 O estado repassou recursos próprios a título de cofinanciamento aos municípios no ano de 2022|||||EASS32
+200 |O valor de recursos próprios repassados aos municípios em 2022 foram na modalidade:
+201 ||Fundo a fundo|||EASS3211
+202 ||Convênio|||EASS3212
+204 Cofinanciamento nos anos de 2021 e 2022 de reforma, ampliação ou construção de equipamentos socioassistenciais:
+205 |Centro de Referência de Assistência Social – CRAS||||EASS331
+206 ||Quantidade de municípios beneficiados |||EASS3311
+207 |Centro de Referência Especializado de Assistência Social – CREAS||||EASS332
+208 ||Quantidade de municípios beneficiados |||EASS3321
+209 |Centro de Referência Especializado de Assistência Social para população em situação de rua – CREAS POP||||EASS333
+210 ||Quantidade de municípios beneficiados |||EASS3331
+211 |Casa lar||||EASS334
+212 ||Quantidade de municípios beneficiados |||EASS3341
+213 |Casas de passagem||||EASS335
+214 ||Quantidade de municípios beneficiados |||EASS3351
+215 |Residência inclusiva||||EASS336
+216 ||Quantidade de municípios beneficiados |||EASS3361
+217 |Abrigo institucional – Instituição de longa permanência para idosos||||EASS337
+218 ||Quantidade de municípios beneficiados |||EASS3371
+219 |Centro de Convivência (para criança, adolescente, juventude e ou idoso)||||EASS338
+220 ||Quantidade de municípios beneficiados |||EASS3381
+221 |Outros||||EASS339
+222 ||Quantidade de municípios beneficiados |||EASS3391
+223 |O estado não cofinanciou a reforma, ampliação ou construção de nenhum equipamento||||EASS3310
+225 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+228 3. TRABALHO E INCLUSÃO PRODUTIVA
+229 3.1 Diagnóstico socioeconômico do estado|||||subtítulo link
+230 3.2 Ações, programas ou projetos de inclusão produtiva para a geração de trabalho e renda|||||subtítulo link
+231 3.3 Ações, programas ou projetos de inclusão produtiva rural|||||subtítulo link
+232 3.4 Ações, programas ou projetos de qualificação profissional e intermediação de mão de obra|||||subtítulo link
+233 3.5 Ações, programas ou projetos de inclusão produtiva urbana|||||subtítulo link
+234 3.6 Ações, programas ou projetos de de crédito, microcrédito e seguro|||||subtítulo link
+236 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+238 3. TRABALHO E INCLUSÃO PRODUTIVA
+239 3.1 Diagnóstico socioeconômico do estado
+240 Estudo setorial e/ou diagnóstico socioeconômico do estado que tenha sido realizado no período entre 2021 e 2022 - existência|||||ETIP01
+241 |Ano do diagnóstico||||ETIP011
+242 |Órgão responsável pela elaboração do diagnóstico:
+243 ||Agricultura|||ETIP021
+244 ||Assistência social|||ETIP022
+245 ||Fazenda|||ETIP023
+246 ||Planejamento|||ETIP024
+247 ||Trabalho|||ETIP025
+248 ||Desenvolvimento econômico|||ETIP026
+249 ||Outro órgão|||ETIP027
+250 ||Não sabe informar|||ETIP028
+252 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+254 3.2 Ações, programas ou projetos de inclusão produtiva para a geração de trabalho e renda
+255 O estado desenvolve ações, programas ou projetos de inclusão produtiva para a geração de trabalho e renda|||||ETIP03
+256 |Órgão gestor responsável pelas ações, programas ou projetos:
+257 ||Agricultura|||ETIP041
+258 ||Assistência social|||ETIP042
+259 ||Fazenda|||ETIP043
+260 ||Planejamento|||ETIP044
+261 ||Trabalho|||ETIP045
+262 ||Desenvolvimento econômico|||ETIP046
+263 ||Outro órgão|||ETIP047
+264 ||Não sabe informar|||ETIP048
+266 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+268 3.3 Ações, programas ou projetos de inclusão produtiva rural
+269 O estado desenvolve ações, programas ou projetos de inclusão produtiva rural|||||ETIP05
+270 |Ações, programas ou projetos desenvolvidos:
+271 ||Ações de assistência técnica e extensão rural|||ETIP061
+272 ||Ações de fomento a atividades produtivas|||ETIP062
+273 ||Ações de incentivo para acesso ao crédito e ao seguro rural|||ETIP063
+274 ||Ações de aquisição ou empréstimo de tratores e implementos agrícolas|||ETIP064
+275 ||Ações de doação de sementes ou matrizes de pequenos animais|||ETIP065
+276 ||Ações de aquisição de alimentos no âmbito do Programa de Aquisição de Alimentos (PAA) ou do Programa Nacional de Alimentação Escolar (PNAE)|||ETIP066
+277 ||Ações de aquisição de alimentos para atender a demandas regulares de restaurantes universitários, presídios, hospitais, entre outros|||ETIP067
+278 ||Ações de apoio a transporte, armazenagem, comercialização e distribuição de alimentos (2)|||ETIP068
+279 ||Ações de fomento a empreendimentos coletivos rurais (associativismo, cooperativismo e economia solidária)|||ETIP069
+280 ||Ações de assistência técnico-gerencial a empreendimentos coletivos rurais (para formalização, melhora da produção, aspectos jurídicos e comerciais)|||ETIP0610
+282 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+283 (2) Empréstimos de caminhões, manutenção de centrais de recebimento de alimentos provenientes de programas como o PAA e o PNAE.
+285 3.4 Ações, programas ou projetos de qualificação profissional e intermediação de mão de obra
+286 O estado desenvolve ações, programas ou projetos de qualificação profissional e intermediação de mão de obra|||||ETIP07
+287 |Ações, programas ou projetos desenvolvidos:
+288 ||Ações de qualificação profissional|||ETIP081
+289 ||Ações de intermediação de mão de obra|||ETIP082
+290 ||Ações de mobilização e sensibilização para cursos de qualificação profissional|||ETIP083
+292 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+294 3.5 Ações, programas ou projetos de inclusão produtiva urbana
+295 O estado desenvolve ações, programas ou projetos de inclusão produtiva urbana|||||ETIP09
+296 |Ações, programas ou projetos desenvolvidos:
+297 ||Ações de fomento a empreendimentos individuais urbanos|||ETIP101
+298 ||Ações fomento a empreendimentos coletivos urbanos (Associativismo, Cooperativismo e Economia Solidária urbana e outros grupos não formalizados)|||ETIP102
+299 ||Ações de assistência técnico-gerencial a empreendimentos individuais urbanos (para formalização, melhora da produção, aspectos jurídicos e comerciais)|||ETIP103
+300 ||Ações de incubação de empreendimentos|||ETIP104
+301 ||Ações de fomento ao artesanato|||ETIP105
+302 ||Ações de doação de equipamentos ou kit básico para desempenho do trabalho|||ETIP106
+304 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+306 3.6 Ações, programas ou projetos de crédito, microcrédito e seguro
+307 O estado desenvolve ações, programas ou projetos de crédito, microcrédito e seguro|||||ETIP11
+308 |Ações, programas ou projetos desenvolvidos:
+309 ||Ações para promover o acesso a microcrédito produtivo orientado (Programa CRESCER e/ou similar)|||ETIP121
+310 ||Ações de acesso a crédito por meio do Banco do Povo ou outras organizações congêneres|||ETIP122
+311 ||Ações de acesso a crédito do Proger urbano|||ETIP123
+313 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+315 3.7 Ações, programas ou projetos de geração de trabalho e renda
+316 O estado desenvolve ações, programas ou projetos de geração de trabalho e renda|||||ETIP13
+317 |Ações, programas ou projetos desenvolvidos:
+318 ||Projeto(s) de apoio à comercialização de negócios, cooperativas e empreendimentos solidários|||ETIP141
+319 ||Projeto(s) de apoio ao associativismo, cooperativismo e economia solidária|||ETIP142
+321 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+324 4. SEGURANÇA ALIMENTAR E NUTRICIONAL
+325 4.1 Órgão gestor da segurança alimentar|||||subtítulo link
+326 4.2 Lei de segurança alimentar|||||subtítulo link
+327 4.3 Conselho, câmara ou instância governamental intersetorial e plano de segurança alimentar|||||subtítulo link
+328 4.4 Orçamento |||||subtítulo link
+329 4.5 Ações desenvolvidas|||||subtítulo link
+331 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+333 4. SEGURANÇA ALIMENTAR E NUTRICIONAL
+334 4.1 Órgão gestor da segurança alimentar
+335 Caracterização do órgão gestor |||||ESAN01
+336 |Secretaria ou setor está associada ou subordinada:
+337 ||Assistência social|||ESAN021
+338 ||Agricultura|||ESAN022
+339 ||Planejamento|||ESAN023
+340 ||Saúde|||ESAN024
+341 ||Direitos humanos|||ESAN025
+342 ||Outra|||ESAN026
+344 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+346 4.2 Lei de segurança alimentar
+347 Lei de segurança alimentar - existência|||||ESAN04
+348 |Número da lei||||ESAN041
+349 |Mês promulgação||||ESAN042a
+350 |Ano da promulgação||||ESAN042b
+351 |Mês da apresentação do projeto de lei||||ESAN043a
+352 |Ano da apresentação do projeto de lei||||ESAN044b
+354 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+356 4.3 Conselho, câmara ou instância governamental intersetorial e plano de segurança alimentar
+357 Conselho Estadual de Segurança Alimentar - existência|||||ESAN05
+358 |Lei de criação||||ESAN051a
+359 |Ano de criação||||ESAN051b
+360 |Composição||||ESAN052
+361 |Caráter:
+362 ||Consultivo|||ESAN061
+363 ||Deliberativo|||ESAN062
+364 ||Normativo|||ESAN063
+365 ||Fiscalizador|||ESAN064
+366 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses||||ESAN07
+367 |Número de conselheiros (titulares e suplentes)||||ESAN08
+368 |Realiza capacitação para os membros:
+369 ||Periodicamente|||ESAN091
+370 ||Ocasionalmente|||ESAN092
+371 ||Não realiza|||ESAN093
+372 |Disponibiliza infraestrutura para o funcionamento||||ESAN10
+373 ||Sala própria|||ESAN1011
+374 ||Computador|||ESAN1012
+375 ||Impressora|||ESAN1013
+376 ||Acesso à internet|||ESAN1014
+377 ||Veículo próprio|||ESAN1015
+378 ||Telefone|||ESAN1016
+379 ||Diárias|||ESAN1017
+380 ||Dotação orçamentária própria|||ESAN1018
+381 ||Transporte/locomoção|||ESAN1019
+383 Câmara ou instância governamental intersetorial de segurança alimentar e nutricional - existência|||||ESAN11
+384 |Áreas do governo representadas:
+385 ||Fazenda|||ESAN121
+386 ||Planejamento|||ESAN122
+387 ||Agricultura|||ESAN123
+388 ||Saúde|||ESAN124
+389 ||Trabalho|||ESAN125
+390 ||Educação|||ESAN126
+391 ||Assistência social|||ESAN127
+392 ||Segurança Alimentar|||ESAN128
+393 ||Casa Civil|||ESAN129
+394 ||Direitos Humanos|||ESAN1210
+395 ||Outras|||ESAN1211
+397 |Recursos orçamentários estaduais para apoiar o funcionamento - existência||||ESAN14
+399 Plano de segurança alimentar - existência|||||ESAN15
+401 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+403 4.4 Orçamento 
+404 Recursos orçamentários estaduais previstos para o financiamento da política (3) - existência|||||ESAN16
+406 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+407 (3) Recursos orçamentários estaduais previstos para o financiamento de políticas de segurança alimentar e nutricional (exceto contrapartidas de convênios com o governo federal).
+409 4.5 Ações desenvolvidas
+410 Atividades de educação alimentar e nutricional|||||ESAN171
+411 |Com recurso repassado pelo governo federal||||ESAN17111
+412 |Com recurso próprio||||ESAN17112
+413 Atividades de capacitação, fomento ou incentivo à produção orgânica e/ou agroecológica|||||ESAN172
+414 |Com recurso repassado pelo governo federal||||ESAN17211
+415 |Com recurso próprio||||ESAN17212
+416 Doação de alimentos (4)|||||ESAN173
+417 |Com recurso repassado pelo governo federal||||ESAN17311
+418 |Com recurso próprio||||ESAN17312
+419 Manutenção de feiras livres/populares ou mercados públicos de alimentos|||||ESAN174
+420 |Com recurso repassado pelo governo federal||||ESAN17411
+421 |Com recurso próprio||||ESAN17412
+422 Manutenção de bancos de alimentos|||||ESAN175
+423 |Com recurso repassado pelo governo federal||||ESAN17511
+424 |Com recurso próprio||||ESAN17512
+425 Manutenção de cozinhas comunitárias|||||ESAN176
+426 |Com recurso repassado pelo governo federal||||ESAN17611
+427 |Com recurso próprio||||ESAN17612
+428 Manutenção de restaurantes populares|||||ESAN177
+429 |Com recurso repassado pelo governo federal||||ESAN17711
+430 |Com recurso próprio||||ESAN17712
+431 Manutenção de equipamentos de abastecimento público de alimentos (5)|||||ESAN178
+432 |Com recurso repassado pelo governo federal||||ESAN17811
+433 |Com recurso próprio||||ESAN17812
+434 Atividades de agricultura urbana (6)|||||ESAN179
+435 |Com recurso repassado pelo governo federal||||ESAN17911
+436 |Com recurso próprio||||ESAN17912
+437 Programa de alimentação escolar|||||ESAN1710
+438 |Com recurso repassado pelo governo federal||||ESAN171011
+439 |Com recurso próprio||||ESAN171012
+440 Programa de hortas escolares|||||ESAN1711
+441 |Com recurso repassado pelo governo federal||||ESAN171111
+442 |Com recurso próprio||||ESAN171112
+443 Serviços de Assistência Técnica e Extensão Rural para agricultores familiares e povos e comunidades tradicionais|||||ESAN1712
+444 |Com recurso repassado pelo governo federal||||ESAN171211
+445 |Com recurso próprio||||ESAN171212
+446 Compras públicas da agricultura familiar|||||ESAN1713
+447 |Por meio de qual programa:
+448 ||Programa Nacional de Alimentação Escolar (PNAE)|||ESAN171311
+449 ||Programa de Aquisição de Alimentos (PAA)|||ESAN171312
+450 ||Programas próprios|||ESAN171313
+451 |Com recurso repassado pelo governo federal||||ESAN171321
+452 |Com recurso próprio||||ESAN171322
+453 Atividades relacionadas ao público do Cadastro Único e/ou Programa Bolsa Família|||||ESAN1714
+454 |Por meio de qual programa:
+455 ||Cursos de capacitação e/ou educação alimentar e nutricional|||ESAN171411
+456 ||Encaminhamento a outras redes de serviços (assistência, saúde, educação)|||ESAN171412
+457 ||Avaliação nutricional|||ESAN171413
+458 ||Disseminação de orientações técnicas e materiais informativos|||ESAN171414
+459 ||Atividades relacionadas à geração de trabalho e renda|||ESAN171415
+460 |Com recurso repassado pelo governo federal||||ESAN171421
+461 |Com recurso próprio||||ESAN171422
+462 Programa cisternas, incluindo água para consumo e produção|||||ESAN1715
+464 Repasse de recursos aos municípios (7)|||||ESAN18
+466 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+467 (4) Para grupos específicos e/ou povos indígenas, comunidades quilombolas, e demais povos ou comunidades tradicionais.
+468 (5) Centrais de abastecimento - Ceasas, entrepostos.
+469 (6) Hortas comunitárias em terrenos urbanos.
+470 (7) Repasse de recursos aos municípios com vistas a desenvolver programas, projetos e serviços públicos de apoio à produção, abastecimento e consumo de alimentos.
+473 5. POLÍTICA PARA MULHERES
+474 5.1 Organismo executivo de políticas para as mulheres e perfil do gestor|||||subtítulo link
+475 5.2 Plano estadual de políticas para as mulheres|||||subtítulo link
+476 5.3 Conselho e fundo estadual de direitos da mulher|||||subtítulo link
+477 5.4 Estrutura e serviços|||||subtítulo link
+478 5.5 Levantamento de informações|||||subtítulo link
+480 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+482 5. POLÍTICA PARA MULHERES
+483 5.1 Organismo executivo de políticas para as mulheres e perfil do gestor
+484 Organismo executivo de políticas para as mulheres - existência|||||EPPM01
+485 |Caracteriza-se como||||EPPM02
+486 ||Secretaria ou setor a qual está associada ou subordinada:
+487 |||Assistência social||EPPM031
+488 |||Direitos humanos||EPPM032
+489 |||Justiça||EPPM033
+490 |||Segurança pública||EPPM034
+491 |||Saúde||EPPM035
+492 |||Outra||EPPM036
+494 Perfil do gestor:
+495 |Sexo||||EPPM05
+496 |Idade||||EPPM06
+497 |Cor/raça||||EPPM07
+498 ||Este quesito foi respondido pelo próprio titular|||EPPM071
+499 |Escolaridade||||EPPM08
+501 Principais áreas de atuação do organismo executivo de políticas para as mulheres, seja na execução direta ou na articulação com outros órgãos:
+502 |Educação||||EPPM10a1
+503 |Trabalho||||EPPM10a2
+504 |Cultura||||EPPM10a3
+505 |Esporte||||EPPM10a4
+506 |Assistência social||||EPPM10a5
+507 |Segurança pública||||EPPM10a6
+508 |Justiça||||EPPM10a7
+509 |Comunicação||||EPPM10a8
+510 |Meio ambiente||||EPPM10a9
+511 |Saúde||||EPPM10a10
+512 |Outra||||EPPM10a11
+514 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+516 5.2 Plano estadual de políticas para as mulheres e programa, projeto ou ação em cooperação
+517 Plano estadual de políticas para as mulheres - existência|||||EPPM11
+518 |Por qual instrumento||||EPPM111
+519 |Último ano de vigência do plano||||EPPM112
+521 O estado instituiu Comitê para o acompanhamento e monitoramento do Plano|||||EPPM12
+522 |O Comitê é composto por:
+523 ||Órgão gestor da política para mulheres|||EPPM131
+524 ||Órgão gestor da assistência social|||EPPM132
+525 ||Órgão gestor da saúde|||EPPM133
+526 ||Órgão gestor da cultura|||EPPM134
+527 ||Órgão gestor da educação|||EPPM135
+528 ||Órgão gestor da justiça|||EPPM136
+529 ||Órgão gestor responsável por políticas de fomento a geração de trabalho e renda|||EPPM137
+530 ||Órgão gestor da segurança pública|||EPPM138
+531 ||Outras secretarias|||EPPM139
+532 ||Sociedade civil|||EPPM1310
+534 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+536 5.3 Conselho e fundo estadual de direitos da mulher
+537 Conselho estadual de direitos da mulher - existência|||||EPPM14
+538 |Lei de criação ||||EPPM141a
+539 |Ano de criação ||||EPPM141b
+540 |Composição||||EPPM142
+541 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses||||EPPM15
+542 |Número de conselheiros (titulares e suplentes)||||EPPM16
+543 |Realiza capacitação para os membros:
+544 ||Periodicamente|||EPPM171
+545 ||Ocasionalmente|||EPPM172
+546 ||Não realiza|||EPPM173
+547 |Disponibiliza infraestrutura para o funcionamento||||EPPM18
+548 ||Sala própria|||EPPM1811
+549 ||Computador|||EPPM1812
+550 ||Impressora|||EPPM1813
+551 ||Acesso à internet|||EPPM1814
+552 ||Veículo próprio|||EPPM1815
+553 ||Telefone|||EPPM1816
+554 ||Diárias|||EPPM1817
+555 ||Dotação orçamentária própria|||EPPM1818
+556 ||Transporte/Locomoção|||EPPM1819
+557 |O Conselho é vinculado administrativamente||||EPPM19
+558 |Quem preside o conselho||||EPPM20
+560 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+562 5.4 Estrutura e serviços
+563 Casas-abrigo para Mulheres em situação de violência doméstica e familiar (8) ou Serviços de Acolhimento para Mulheres em situação de violência (Sistema Único de Assistência Social - SUAS) (9)|||||EPPM21
+564 |Quantidade||||EPPM211
+565 |O endereço da casa ou abrigo é sigiloso||||EPPM212
+566 |Principais atividades realizadas:
+567 ||Atendimento psicológico individual|||EPPM221
+568 ||Atendimento psicológico em grupo|||EPPM222
+569 ||Atividades culturais e educativas|||EPPM223
+570 ||Atividades profissionalizantes|||EPPM224
+571 ||Atendimento social (10)|||EPPM225
+572 ||Atendimento jurídico (11)|||EPPM226
+573 ||Atendimento médico (12)|||EPPM227
+574 ||Acompanhamento pedagógico das crianças|||EPPM228
+575 ||Encaminhamento para programas de emprego e geração de renda|||EPPM229
+576 ||Garantia de inserção/permanência das crianças na escola|||EPPM2210
+577 ||Creche|||EPPM2211
+578 ||Outras atividades|||EPPM2212
+579 ||Não sabe informar|||EPPM2213
+581 Serviços especializados existentes:
+582 |Centros Especializado de Atendimento à Mulher (CEAM)/Centro de Referência e Atendimento à Mulher (CRAM)/Núcleos Integrados de Atendimento às Mulheres em Situação de Violência (NIAM) (13)||||EPPM24a1
+583 ||Quantos|||EPPM24a11
+584 |Casas de acolhimento de curta duração (Casa de Passagem)||||EPPM24a2
+585 ||Quantas|||EPPM24a21
+586 |Serviços Especializados para o Atendimento à Violência Sexual (14)||||EPPM24a3
+587 ||Quantos|||EPPM24a31
+588 |Centro Integrado de de Serviços de Atendimento a Mulheres em situação de violência (15)||||EPPM24a4
+589 ||Quantos|||EPPM24a41
+590 |Unidades móveis de atendimento à mulher (16)||||EPPM24a5
+591 ||Quantas|||EPPM24a51
+592 |Rondas/Patrulhas Maria da Penha||||EPPM24a6
+593 ||Quantas|||EPPM24a61
+594 |Delegacias Especializadas de Atendimento ás Mulheres - DEAM||||EPPM24a7
+595 ||Quantos|||EPPM24a71
+596 |Núcleo especializado para atendimento à mulher nas delegacias comuns||||EPPM24a8
+597 ||Quantos|||EPPM24a81
+598 |Juizados ou varas especializadas de violência doméstica e familiar contra a mulher||||EPPM24a9
+599 ||Quantos|||EPPM24a91
+600 |Promotorias Especializadas/Núcleos de Gênero do Ministério Público||||EPPM24a10
+601 ||Quantos|||EPPM24a101
+602 |Defensorias da Mulher ou Núcleo Especial de Defesa dos Direitos da Mulher (Nudem)||||EPPM24a11
+603 ||Quantos|||EPPM24a111
+604 |Presídio exclusivamente feminino||||EPPM24a12
+605 ||Quantos|||EPPM24a121
+606 |Instituto médico legal||||EPPM24a13
+608 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+609 (8) Casa(s) Abrigo são locais seguros que oferecem abrigo protegido e integral a mulheres em situação de violência doméstica e familiar sob risco de morte iminente. Constitui serviço temporário e em geral de caráter sigiloso, no qual as usuárias poderão por período determinado, durante o qual deverão reunir condições necessárias para retomar o curso de suas vidas. Atendem exclusivamente mulheres e seus dependentes (sejam homens ou mulheres).
+610 (9) Serviços de Acolhimento para Mulheres em situação de violência - acolhimento provisório para mulheres, acompanhadas ou não de seus filhos, em situação de risco de morte ou ameaças em razão da violência doméstica e familiar, causadora de lesão, sofrimento físico, sexual, psicológico ou dano moral.
+611 (10) Atendimento social acompanhado por assistente social que insira a mulher em programas sociais do governo, como Bolsa-Família e/ou Benefícios de Prestação Continuada.
+612 (11) Atendimento jurídico no caso de advogado próprio ou de encaminhamentos para Defensoria Pública.
+613 (12) Atendimento médico, hospitalar ou de outra especialidade da área de saúde, ou encaminhamento para serviço de saúde da rede pública.
+614 (13) Centros de Referência/Especializados ou Núcleos Integrados de Atendimento às Mulheres em Situação de Violência: prestam acolhimento, acompanhamento psicossocial e orientação jurídica às mulheres em situação de violência (violência doméstica e fam
+615 (14) Serviços Especializados de Atendimento à Violência Sexual são serviços de saúde especializados no atendimento a mulheres em situação de violência contam com equipes multidisciplinares (psicólogos, assistentes sociais, enfermeiras/os e médicas/os
+616 (15) Centro Integrado de Serviços de Atendimento a Mulheres em Situação de Violência reune em um mesmo espaço físico, diferentes serviços voltados à mulher em situação de violência, tais como: Apoio Psicossocial; Delegacia; Juizado Especializado em 
+617 (16) Unidades Móveis de Atendimento à Mulher são ônibus especialmente desenvolvidos para o trânsito fora de estrada, adaptados para o atendimento às mulheres do campo e da floresta.
+619 5.5 Levantamento de informações
+620 Levantamento do quantitativo de mulheres atendidas pelos Centros de Referência/Especializados ou Núcleos Integrados de Atendimento às Mulheres em Situação de Violência - existência|||||EPPM25
+621 |Quantitativo é divulgado||||EPPM251
+622 ||Quantos atendimentos foram feitos em 2022|||EPPM252
+623 Levantamento do quantitativo de mulheres atendidas pelos pelos serviços especializados de segurança pública para mulheres em situação de violência no estado?|||||EPPM27
+624 |Existe informação acerca do tipo de violência/agressão||||EPPM271
+625 Levantamento do quantitativo de mulheres atendidas pelos pelos serviços especializados de saúde para mulheres em situação de violência no estado?|||||EPPM28
+626 |Existe informação acerca do tipo de violência/agressão||||EPPM281
+628 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais - 2023
+630 6. SEGURANÇA PÚBLICA|||||subtítulo link
+631 6.1 Órgão gestor da segurança pública e perfil do gestor|||||subtítulo link
+632 6.2 Conselho, fundo, plano estadual de segurança e Programa/Projeto/Ação Estadual de Redução e/ou Prevenção de Homicídios|||||subtítulo link
+633 6.3 Polícia Militar|||||subtítulo link
+634 6.4 Polícia civil|||||subtítulo link
+636 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+638 6. SEGURANÇA PÚBLICA
+639 6.1 Órgão gestor da segurança pública e perfil do gestor
+640 Caracterização do órgão de segurança pública|||||ESEG01
+641 |Secretaria ou setor a segurança pública está associada ou subordinada
+642 ||Direitos Humanos|||ESEG021
+643 ||Defesa Social|||ESEG022
+644 ||Justiça|||ESEG023
+645 ||Outra|||ESEG024
+647 Perfil do gestor:
+648 |Sexo||||ESEG04
+649 |Idade||||ESEG05
+650 |Cor/raça||||ESEG06
+651 ||Foi respondido pelo próprio titular do órgão gestor|||ESEG061
+652 |Escolaridade||||ESEG07
+654 Órgãos que integram a segurança pública estadual:
+655 |Polícia Civil||||ESEG081
+656 |Polícia Militar ||||ESEG082
+657 |Corpo de Bombeiro Militar||||ESEG083
+658 |Instituto Médico Legal||||ESEG084
+659 |DETRAN||||ESEG085
+660 |Administração Penitenciária||||ESEG086
+661 |Defesa Civil||||ESEG087
+662 |Outros||||ESEG088
+664 O órgão gestor estadual da segurança pública possui corregedoria|||||ESEG09
+665 O órgão gestor estadual da segurança pública possui ouvidoria|||||ESEG10
+667 O órgão gestor da segurança pública recebeu, em 2022, outros recursos além daqueles provenientes do orçamento estadual|||||ESEG12
+668 |Os recursos foram provenientes de:
+669 ||Fundo Nacional de Segurança Pública|||ESEG131
+670 ||Outras fontes federais (17)|||ESEG132
+671 ||Recursos Municipais |||ESEG133
+672 ||Organismos Internacionais|||ESEG134
+673 ||Cooperação com outras Unidades da Federação|||ESEG135
+674 ||Outros|||ESEG136
+676 O órgão gestor de segurança pública produz informações estatísticas relacionadas ao tema|||||ESEG14
+677 |A produção de estatísticas é regulamentada ou normatizada por instrumento legal||||ESEG141
+678 ||Instrumento|||ESEG142
+679 ||Número|||ESEG143a
+680 ||Ano|||ESEG143b
+681 |As informações estatísticas produzidas pelo órgão gestor da segurança pública:
+682 ||São produzidas para orientar as ações do órgão gestor de segurança|||ESEG151
+683 ||São encaminhadas para a Secretaria Nacional de Segurança Pública com regularidade|||ESEG152
+684 |Essas estatísticas são divulgadas para o público em geral:
+685 ||Através do Diário Oficial|||ESEG161
+686 ||Através de publicação própria|||ESEG162
+687 ||Através de página na internet|||ESEG163
+688 ||Imprensa|||ESEG164
+689 ||Outra|||ESEG165
+690 ||Não são divulgadas|||ESEG166
+692 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+693 (17) Exceto do Fundo Nacional de Segurança Pública.
+695 6.2 Conselho, fundo, plano estadual de segurança e Programa/Projeto/Ação Estadual de Redução e/ou Prevenção de Homicídios
+696 Conselho estadual de segurança pública - existência|||||ESEG17
+697 |Lei de criação||||ESEG171a
+698 |Ano de criação||||ESEG171b
+699 |Formação ||||ESEG172
+700 |Caráter:
+701 ||Consultivo|||ESEG181
+702 ||Deliberativo|||ESEG182
+703 ||Normativo|||ESEG183
+704 ||Fiscalizador|||ESEG184
+705 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||ESEG19
+706 |Número de conselheiros (titulares e suplentes)||||ESEG20
+707 |O estado realiza capacitação dos membros:
+708 ||Periodicamente|||ESEG211
+709 ||Ocasionalmente|||ESEG212
+710 ||Não realiza|||ESEG213
+711 |O estado disponibiliza infraestrutura||||ESEG22
+712 ||Sala |||ESEG2211
+713 ||Computador|||ESEG2212
+714 ||Impressora|||ESEG2213
+715 ||Acesso à internet|||ESEG2214
+716 ||Veículo|||ESEG2215
+717 ||Telefone|||ESEG2216
+718 ||Diárias|||ESEG2217
+719 ||Dotação orçamentária própria|||ESEG2218
+720 ||Transporte/locomoçaõ|||ESEG2219
+722 Fundo estadual de segurança pública - existência|||||ESEG23
+724 Plano estadual de segurança pública - existência|||||ESEG24
+725 |Ano da elaboração do Plano||||ESEG241
+726 |O Plano é avaliado periodicamente||||ESEG242
+727 |Objetivos do plano:
+728 ||Fortalecer a articulação interinstitucional, com o intuito de promover o alinhamento estratégico da política de segurança pública e defesa social|||ESEG251
+729 ||Desenvolver e ampliar programas de formação, capacitação e valorização do pessoal das instituições que compõem o sistema de segurança pública|||ESEG252
+730 ||Desenvolver e otimizar ações voltadas para a prevenção à violência e criminalidade em territórios e grupos populacionais específicos|||ESEG253
+731 ||Promover ações voltadas para a prevenção do uso nocivo de drogas, em todos os níveis, reduzindo os riscos de danos sociais|||ESEG254
+732 ||Fomentar o controle interno e externo dos órgãos de segurança pública, em especial no combate aos desvios de conduta|||ESEG255
+733 ||Promover o compartilhamento, padronização e consolidação de informações entre as instituições|||ESEG256
+734 ||Promover ações direcionadas à prevenção e enfretamento à violência contra a mulher|||ESEG257
+735 ||Desenvolver ações de combate à corrupção e e às organizações criminosas|||ESEG258
+736 ||Aprimorar medidas de policiamento ostensivo visando à redução de crimes contra o patrimônio|||ESEG259
+737 ||Fortalecer e consolidar as atividades de inteligência policial, como base para ações de repressão aos crimes de tráfico de drogas e armas|||ESEG2510
+738 ||Nenhum dos relacionados|||ESEG2511
+739 ||Não sabe informar|||ESEG2512
+741 O estado tem Programa/Projeto/Ação Estadual de Redução e/ou Prevenção de Homicídios|||||ESEG26
+742 |Ano da elaboração||||ESEG261
+743 |O Plano é avaliado periodicamente||||ESEG262
+744 |O Plano prioriza a prevenção de homicídios na população jovem (de 15 a 29 anos)||||ESEG263
+746 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+748 6.3 Polícia Militar
+749 Efetivo existente em 31 de dezembro de 2022:
+750 |Homens||||ESEG271
+751 |Mulheres||||ESEG272
+752 |Total||||ESEG273
+754 Plano de distribuição regional do efetivo - existência|||||ESEG28
+755 |Existe uma normatização em relação à distribuição regional do efetivo||||ESEG281
+756 ||Critérios adotados no plano de distribuição regional do efetivo:
+757 |||Densidade demográfica||ESEG291
+758 |||Incidência da criminalidade||ESEG292
+759 |||Tamanho da frota de veículos||ESEG293
+760 |||Existência de presídios||ESEG294
+761 |||Localidade de fronteira||ESEG295
+762 |||Incidência de conflitos fundiários||ESEG296
+763 |||Polo industrial e/ou comercial||ESEG297
+764 |||Existência de conglomerado de favelas||ESEG298
+765 |||Área de concentração de riqueza||ESEG299
+766 |||Polo universitário||ESEG2910
+767 |||Extensão territorial||ESEG2911
+768 |||Município da capital e do interior||ESEG2912
+769 |||Nenhum dos relacionados||ESEG2913
+770 |||Não sabe informar||ESEG2914
+772 Quantidade de unidades operacionais existentes em 31 de dezembro de 2022:
+773 |Capital total||||ESEG3011
+774 |Capital com acesso a internet||||ESEG3012
+775 |Outros municípios total||||ESEG3021
+776 |Outros municípios com acesso a internet||||ESEG3022
+777 |Total||||ESEG3031
+778 |Total com acesso a internet||||ESEG3032
+780 Modalidades de policiamento:
+781 |Rodoviário||||ESEG311
+782 |Ambiental||||ESEG312
+783 |Aéreo||||ESEG313
+784 |Turístico||||ESEG314
+785 |Escolar||||ESEG315
+786 |Trânsito||||ESEG316
+787 |Comunitário||||ESEG317
+788 |Operações especiais||||ESEG318
+789 |Choque||||ESEG319
+790 |Com cães||||ESEG3110
+791 |Fluvial||||ESEG3111
+792 |Montada||||ESEG3112
+793 |De fronteira||||ESEG3113
+794 |Outras||||ESEG3114
+796 Serviço de recebimento de reclamações, sugestões, elogios a profissionais:
+797 |Sim, administrado pela própria Polícia Militar||||ESEG321
+798 |Sim, administrado por outra instituição||||ESEG322
+799 |Não possui||||ESEG323
+801 Cobertura do serviço de telefone de emergência (190):
+802 |Capital||||ESEG331
+803 |Municípios da região metropolitana||||ESEG332
+804 ||Todos ou parte dos municípios|||ESEG3321
+805 |Outros municípios||||ESEG333
+806 ||Todos ou parte dos municípios|||ESEG3331
+808 |O serviço de telefone de emergência (190) é informatizado:
+809 ||Na capital|||ESEG341
+810 ||Nos municípios da região metropolitana|||ESEG342
+811 |||Todos ou parte dos municípios||ESEG3421
+812 ||Em outros municípios|||ESEG343
+813 |||Todos ou parte dos municípios||ESEG3431
+814 ||O serviço não é informatizado|||ESEG344
+816 ||Sistema informatizado permite:
+817 |||Cadastramento das ocorrências||ESEG351
+818 |||Identificação das chamadas recebidas||ESEG352
+819 |||Georreferenciamento das chamadas recebidas||ESEG353
+820 |||Contato com o setor específico de despacho de viaturas||ESEG354
+821 |||Contato direto da central de atendimento do 190 com as viaturas||ESEG355
+822 |||Georreferenciamento das viaturas||ESEG356
+823 |||Acompanhamento das chamadas e ocorrências||ESEG357
+824 |||Solicitar outros serviços para uma ocorrência (bombeiro, ambulância, defesa civil e outros)||ESEG358
+825 |||Nenhuma das funcionalidades relacionadas||ESEG359
+826 |||Não sabe informar||ESEG3510
+828 A corregedoria responsável pela Polícia Militar|||||ESEG36
+830 Forma de registro das ocorrências realizadas pela Polícia Militar|||||ESEG37
+831 |Abrangência do sistema informatizado de registro de ocorrências:
+832 ||Capital|||ESEG381
+833 ||Municípios da região metropolitana|||ESEG382
+834 |||Todos ou parte dos municípios||ESEG3821
+835 ||Outros municípios|||ESEG383
+836 |||Todos ou parte dos municípios||ESEG3831
+837 |Sistema de registros de ocorrências da Polícia Militar é integrado ao sistema de registros||||ESEG39
+839 Curso de formação dos profissionais:
+840 |De formação de oficiais:
+841 ||Realizado em unidade própria desta Polícia Militar|||ESEG4011
+842 ||Realizado em unidade conveniada/parceira|||ESEG4012
+843 ||Não possui curso de formação|||ESEG4013
+844 |De formação de soldados:
+845 ||Realizado em unidade própria desta Polícia Militar|||ESEG4021
+846 ||Realizado em unidade conveniada/parceira|||ESEG4022
+847 ||Não possui curso de formação|||ESEG4023
+849 |O curso de formação de oficiais é realizado de forma integrada com a Polícia Civil||||ESEG41
+851 Existe plano de carreira para os policiais militares|||||ESEG42
+853 Programa de capacitação continuada oferecido aos profissionais - existência|||||ESEG43
+854 |Periodicidade||||ESEG431
+855 |Temas da capacitação em 2018:
+856 ||Análise estatística de dados criminais|||ESEG441
+857 ||Armas de fogo|||ESEG442
+858 ||Armas não letais|||ESEG443
+859 ||Atendimento ao público|||ESEG444
+860 ||Busca e apreensão|||ESEG445
+861 ||Códigos de conduta profissional|||ESEG446
+862 ||Condução e operação de viaturas|||ESEG447
+863 ||Controle de distúrbios civis|||ESEG448
+864 ||Defesa pessoal|||ESEG449
+865 ||Direção defensiva|||ESEG4410
+866 ||Educação Ambiental (Direito ambiental, Crimes Ambientais)|||ESEG4411
+867 ||Enfrentamento ao racismo|||ESEG4412
+868 ||Enfrentamento à LGBTQI+fobia|||ESEG4413
+869 ||Legislação de trânsito|||ESEG4414
+870 ||Legislação penal|||ESEG4415
+871 ||Inteligência policial|||ESEG4416
+872 ||Mediação de conflitos|||ESEG4417
+873 ||Polícia comunitária|||ESEG4418
+874 ||Preservação do local do crime|||ESEG4419
+875 ||Prevenção ao uso de substâncias psicoativas|||ESEG4420
+876 ||Primeiros socorros|||ESEG4421
+877 ||Uso diferenciado da força|||ESEG4422
+878 ||Violência doméstica e de gênero|||ESEG4423
+879 ||Outros temas|||ESEG4424
+880 ||Não houve capacitação em 2022|||ESEG4425
+881 ||Não sabe informar|||ESEG4426
+883 A Polícia Militar possui página na internet|||||ESEG45
+884 |Disponibiliza na página o conteúdo de seus Procedimentos Operacionais Padrão||||ESEG451
+885 ||Total ou Parcial|||ESEG4511
+887 A Polícia Militar disponibiliza:
+888 |Assistência à saúde aos profissionais||||ESEG461
+889 |Assistência à saúde aos profissionais e familiares||||ESEG462
+890 |Assistência à saúde mental dos profissionais||||ESEG463
+891 |Assistência à saúde mental do profissionais e familiares||||ESEG464
+892 |Seguro de vida para os profissionais||||ESEG465
+893 |Seguro de acidentes de trabalho e incapacitante para a profissão||||ESEG466
+894 |Não disponibiliza assistência à saúde física e psicológica nem seguro de vida e de acidentes||||ESEG467
+896 A Polícia Militar desenvolve ações de prevençaõ da violência e da criminalidade voltadas para a população (18)|||||ESEG47
+897 |Temas:
+898 ||Prevenção ao uso de substâncias psicoativas, como drogas lícitas (álcool, medicamentos, etc.) e ilícitas (maconha, cocaína, ecstasy, etc.)|||ESEG481
+899 ||Inclusão social (orientações sobre direitos de cidadania, emissão de documentos, acesso à justiça, orientação jurídica, orientação à população em situação de rua, orientação para pessoas com deficiência, etc.)|||ESEG482
+900 ||Proteção a crianças, adolescentes e jovens em situação de vulnerabilidade social|||ESEG483
+901 ||Enfrentamento à violência doméstica e de gênero|||ESEG484
+902 ||Enfrentamento da exploração sexual|||ESEG485
+903 ||Enfrentamento ao preconceito e à violência racial |||ESEG486
+904 ||Enfrentamento à LGBTQIA+fobia|||ESEG487
+905 ||Prevenção à pirataria |||ESEG488
+906 ||Proteção ao meio ambiente|||ESEG489
+907 ||Prevenção e/ou redução de homicídios|||ESEG4810
+908 ||Prevenção ao dano do patrimônio público|||ESEG4811
+909 ||Enfrentamento ao tráfico de seres humanos|||ESEG4812
+910 ||Orientação às populações localizadas em áreas de risco|||ESEG4813
+911 ||Outros|||ESEG4814
+912 ||Não desenvolveu ação em 2022|||ESEG4815
+913 ||Não sabe informar|||ESEG4816
+915 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+916 (18) Tipos de ações desenvolvidas: campanha educativa, palestra, seminário ou afim, atividade lúdica (teatro, música, dança), produção de material. informativo/educativo (cartilhas, panfletos)
+918 6.4 Polícia civil
+919 Efetivo existente em 31 de dezembro de 2022:
+920 |Homens||||ESEG491
+921 |Mulheres||||ESEG492
+922 |Total||||ESEG493
+924 A Perícia Oficial é vinculada a esta Polícia Civil|||||ESEG50
+926 Quantidade de Unidades Policiais e/ou Delegacias existentes em 31 de dezembro de 2022:
+927 |Capital:
+928 ||Delegacias distritais
+929 |||Total||ESEG5111
+930 |||Com acesso à internet ||ESEG5112
+931 |||Com carceragem ||ESEG5113
+932 ||Delegacias especializadas
+933 |||Total||ESEG5114
+934 |||Com acesso à internet ||ESEG5115
+935 |||Com carceragem ||ESEG5116
+936 |Outros municípios:
+937 ||Delegacias distritais
+938 |||Total||ESEG5121
+939 |||Com acesso à internet ||ESEG5122
+940 |||Com carceragem ||ESEG5123
+941 ||Delegacias especializadas
+942 |||Total||ESEG5124
+943 |||Com acesso à internet ||ESEG5125
+944 |||Com carceragem ||ESEG5126
+945 |Total:
+946 ||Delegacias distritais
+947 |||Total||ESEG5131
+948 |||Com acesso à internet ||ESEG5132
+949 |||Com carceragem ||ESEG5133
+950 ||Delegacias especializadas
+951 |||Total||ESEG5134
+952 |||Com acesso à internet ||ESEG5135
+953 |||Com carceragem ||ESEG5136
+955 Serviço de recebimento de reclamações, sugestões, elogios a profissionais:
+956 |Sim, administrado pela própria Polícia Civil||||ESEG521
+957 |Sim, administrado por outra instituição||||ESEG522
+958 |Não possui||||ESEG523
+960 A corregedoria responsável pela Polícia Civil|||||ESEG53
+962 Forma de registro das ocorrências realizadas|||||ESEG54
+963 |Abrangência do sistema informatizado de registro de ocorrências:
+964 ||Capital|||ESEG551
+965 ||Municípios da região metropolitana|||ESEG552
+966 |||Todos ou parte dos municípios||ESEG5521
+967 ||Outros municípios|||ESEG553
+968 |||Todos ou parte dos municípios||ESEG5531
+969 |O sistema informatizado de registros de ocorrências da Polícia Civil é||||ESEG56
+971 Curso de formação dos profissionais:
+972 |Realizado em unidade própria desta Polícia Civil||||ESEG571
+973 |Realizado em unidade conveniada/parceira||||ESEG572
+974 |Não possui curso de formação||||ESEG573
+976 Existe algum programa de capacitação continuada oferecido aos profissionais|||||ESEG58
+977 |Periodicidade||||ESEG581
+978 |Temas da capacitação em 2022:
+979 ||Análise estatística de dados criminais|||ESEG591
+980 ||Armas de fogo|||ESEG592
+981 ||Armas não letais|||ESEG593
+982 ||Atendimento ao público|||ESEG594
+983 ||Busca e apreensão|||ESEG595
+984 ||Códigos de conduta profissional|||ESEG596
+985 ||Condução e operação de viaturas|||ESEG597
+986 ||Controle de distúrbios civis|||ESEG598
+987 ||Defesa pessoal|||ESEG599
+988 ||Direção defensiva|||ESEG5910
+989 ||Educação Ambiental (Direito ambiental, Crimes Ambientais)|||ESEG5911
+990 ||Enfrentamento ao racismo|||ESEG5912
+991 ||Enfrentamento à LGBTfobia|||ESEG5913
+992 ||Legislação de trânsito|||ESEG5914
+993 ||Legislação penal|||ESEG5915
+994 ||Inteligência policial|||ESEG5916
+995 ||Mediação de conflitos|||ESEG5917
+996 ||Polícia comunitária|||ESEG5918
+997 ||Preservação do local do crime|||ESEG5919
+998 ||Prevenção ao uso de substâncias psicoativas|||ESEG5920
+999 ||Primeiros socorros|||ESEG5921
+1000 ||Uso diferenciado da força|||ESEG5922
+1001 ||Violência doméstica e de gênero|||ESEG5923
+1002 ||Outros temas|||ESEG5924
+1003 ||Não houve capacitação em 2022|||ESEG5925
+1004 ||Não sabe informar|||ESEG5926
+1006 Existe plano de carreira para os policiais civis|||||ESEG60
+1008 A Polícia Civil disponibiliza:
+1009 |Assistência à saúde aos profissionais||||ESEG611
+1010 |Assistência à saúde aos profissionais e familiares||||ESEG612
+1011 |Assistência à saúde mental dos profissionais||||ESEG613
+1012 |Assistência à saúde mental do profissionais e familiares||||ESEG614
+1013 |Seguro de vida para os profissionais||||ESEG615
+1014 |Seguro de acidentes de trabalho e incapacitante para a profissão||||ESEG616
+1015 |Não disponibiliza assistência à saúde física e psicológica nem seguro de vida e de acidentes||||ESEG617
+1017 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1020 7. DIREITOS HUMANOS
+1021 7.1 Órgão gestor dos direitos humanos e perfil do gestor|||||subtítulo link
+1022 7.2 Legislação estadual|||||subtítulo link
+1023 7.3 Conselhos estaduais|||||subtítulo link
+1024 7.4 Comitês e comissões|||||subtítulo link
+1025 7.5 Conferências estaduais|||||subtítulo link
+1026 7.6 Fundo estadual|||||subtítulo link
+1027 7.7 Políticas ou programas na área de direitos humanos|||||subtítulo link
+1028 7.8 Direitos das crianças e adolescentes|||||subtítulo link
+1029 7.9 Direitos das pessoas com deficiência|||||subtítulo link
+1030 7.10 Direitos da pessoa idosa|||||subtítulo link
+1031 7.11 Direitos da pessoa em situação de rua|||||subtítulo link
+1032 7.12 Acampamento cigano|||||subtítulo link
+1033 7.13 Comunidades tradicionais|||||subtítulo link
+1034 7.14 Denúncias de violação dos direitos humanos|||||subtítulo link
+1036 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1038 7. Direitos Humanos
+1039 7.1 Órgão gestor dos direitos humanos e perfil do gestor
+1040 Caracterização do órgão gestor de direitos humanos|||||EDHU01
+1041 |Secretaria ou setor está associada ou subordinada:
+1042 ||Assistência social|||EDHU021
+1043 ||Educação|||EDHU022
+1044 ||Justiça|||EDHU023
+1045 ||Saúde|||EDHU024
+1046 ||Segurança pública|||EDHU025
+1047 ||Outra|||EDHU026
+1049 Per do gestor:
+1050 |Sexo ||||EDHU04
+1051 |Idade||||EDHU05
+1052 |Cor/raça ||||EDHU06
+1053 ||Foi respondido pelo próprio titular do órgão gestor|||EDHU061
+1054 |Escolaridade ||||EDHU07
+1056 Executa programas e ações para grupos específicos:
+1057 |Ciganos||||EDHU081
+1058 |Crianças e adolescentes||||EDHU082
+1059 |Mulheres||||EDHU083
+1060 |Pessoas idosas||||EDHU084
+1061 |Pessoa com deficiência||||EDHU085
+1062 |LGBT||||EDHU086
+1063 |População em situação de rua||||EDHU087
+1064 |População negra||||EDHU088
+1065 |Povos indígenas||||EDHU089
+1066 |Comunidades quilombolas||||EDHU0810
+1067 |Povos de terreiro/matriz africana||||EDHU0811
+1068 |Outros povos e comunidades tradicionais||||EDHU0812
+1069 |Não executa ||||EDHU0813
+1071 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1073 7.2 Legislação estadual
+1074 O tema direitos humanos é tratado:
+1075 |Lei orgânica||||EDHU091
+1076 |Plano plurianual||||EDHU092
+1077 |Lei Orçamentária Anual||||EDHU093
+1078 |Lei de Diretrizes orçamentárias ||||EDHU094
+1079 |Nenhum item citado||||EDHU095
+1081 Legislação específica:
+1082 |Enfrentamento à violência sexual contra crianças e adolescentes||||EDHU101
+1083 ||Lei |||EDHU1011a
+1084 ||Ano de criação|||EDHU1011b
+1085 |Enfrentamento à violência contra a mulher||||EDHU102
+1086 ||Lei |||EDHU1021a
+1087 ||Ano de criação|||EDHU1021b
+1088 |Atendimento socioeducativo||||EDHU103
+1089 ||Lei |||EDHU1031a
+1090 ||Ano de criação|||EDHU1031b
+1091 |Promoção do Direito de crianças e adolescentes à convivência familiar e comunitária||||EDHU104
+1092 ||Lei |||EDHU1041a
+1093 ||Ano de criação|||EDHU1041b
+1094 |Proteção Integral a Primeira Infância||||EDHU105
+1095 ||Lei |||EDHU1051a
+1096 ||Ano de criação|||EDHU1051b
+1097 |Promoção da igualdade racial e/ou de enfrentamento ao racismo||||EDHU106
+1098 ||Lei |||EDHU1061a
+1099 ||Ano de criação|||EDHU1061b
+1100 |Combate à discriminação racial no âmbito da administração pública||||EDHU107
+1101 ||Lei |||EDHU1071a
+1102 ||Ano de criação|||EDHU1071b
+1103 |Política para a população em situação de rua||||EDHU108
+1104 ||Lei |||EDHU1081a
+1105 ||Ano de criação|||EDHU1081b
+1106 |Proteção dos direitos de lésbicas, gays, bissexuais, travestis e transexuais||||EDHU109
+1107 ||Lei |||EDHU1091a
+1108 ||Ano de criação|||EDHU1091b
+1109 |Reconhecimento do nome social de travestis e transexuais||||EDHU1010
+1110 ||Lei |||EDHU10101a
+1111 ||Ano de criação|||EDHU10101b
+1112 |Garantia de atendimento diferenciado a povos não falantes da língua portuguesa||||EDHU1011
+1113 ||Lei |||EDHU10111a
+1114 ||Ano de criação|||EDHU10111b
+1115 |Reconhecimento e proteção do patrimônio (19)||||EDHU1012
+1116 ||Lei |||EDHU10121a
+1117 ||Ano de criação|||EDHU10121b
+1118 |Adaptação de espaços públicos para facilitar a acessibilidade (20)||||EDHU1013
+1119 ||Lei |||EDHU10131a
+1120 ||Ano de criação|||EDHU10131b
+1121 |Promoção de direitos das pessoas idosas||||EDHU1014
+1122 ||Lei |||EDHU10141a
+1123 ||Ano de criação|||EDHU10141b
+1124 |Constituição de centros de referência e atendimento em direitos humanos||||EDHU1015
+1125 ||Lei |||EDHU10151a
+1126 ||Ano de criação|||EDHU10151b
+1127 |Garantia de passe livre a pessoa com deficiência no transporte coletivo||||EDHU1016
+1128 ||Lei |||EDHU10161a
+1129 ||Ano de criação|||EDHU10161b
+1130 |Nenhuma legislação||||EDHU1017
+1132 Plano estadual de direitos humanos - existência|||||EDHU11
+1133 |Instrumento de regulamentação||||EDHU111
+1134 |Número da legislação||||EDHU112a
+1135 |Ano da legislação||||EDHU112b
+1136 |Não regulamentado por instrumento legal - ano de elaboração||||EDHU113
+1138 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1139 (19) Reconhecimento e proteção do patrimônio das comunidades indígenas, quilombolas e outros povos e comunidades tradicionais.
+1140 (20) Adaptação de espaços públicos para facilitar a acessibilidade a pessoas com deficiência ou mobilidade reduzida.
+1142 7.3 Conselhos Estaduais
+1143 Conselho Estadual de Direitos Humanos - existência|||||EDHU12
+1144 |Lei de criação||||EDHU121a
+1145 |Ano de criação||||EDHU121b
+1146 |Formação ||||EDHU122
+1147 |Caráter:
+1148 ||Consultivo|||EDHU131
+1149 ||Deliberativo|||EDHU132
+1150 ||Normativo|||EDHU133
+1151 ||Fiscalizador|||EDHU134
+1152 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU14
+1153 |Número de conselheiros (titulares e suplentes)||||EDHU15
+1154 |Capacitação dos membros:
+1155 ||Periodicamente|||EDHU161
+1156 ||Ocasionalmente|||EDHU162
+1157 ||Não realiza|||EDHU163
+1158 |Estado disponibiliza infraestrutura ||||EDHU17
+1159 ||Sala |||EDHU1711
+1160 ||Computador|||EDHU1712
+1161 ||Impressora|||EDHU1713
+1162 ||Acesso à internet|||EDHU1714
+1163 ||Veículo|||EDHU1715
+1164 ||Telefone|||EDHU1716
+1165 ||Diárias|||EDHU1717
+1166 ||Dotação orçamentária própria|||EDHU1718
+1167 ||Transporte/Locomoção|||EDHU1719
+1169 Conselho Estadual de Direitos da Criança e do Adolescente - existência|||||EDHU18
+1170 |Lei de criação||||EDHU181a
+1171 |Ano de criação||||EDHU181b
+1172 |Formação ||||EDHU182
+1173 |Caráter:
+1174 ||Consultivo|||EDHU191
+1175 ||Deliberativo|||EDHU192
+1176 ||Normativo|||EDHU193
+1177 ||Fiscalizador|||EDHU194
+1178 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU20
+1179 |Número de conselheiros (titulares e suplentes)||||EDHU21
+1180 |Capacitação dos membros:
+1181 ||Periodicamente|||EDHU221
+1182 ||Ocasionalmente|||EDHU222
+1183 ||Não realiza|||EDHU223
+1184 |Estado disponibiliza infraestrutura ||||EDHU23
+1185 ||Sala |||EDHU2311
+1186 ||Computador|||EDHU2312
+1187 ||Impressora|||EDHU2313
+1188 ||Acesso à internet|||EDHU2314
+1189 ||Veículo|||EDHU2315
+1190 ||Telefone|||EDHU2316
+1191 ||Diárias|||EDHU2317
+1192 ||Dotação orçamentária própria|||EDHU2318
+1193 ||Transporte/Locomoção|||EDHU2319
+1195 Conselho Estadual de Direitos da Pessoa Idosa - existência|||||EDHU24
+1196 |Lei de criação||||EDHU241a
+1197 |Ano de criação||||EDHU241b
+1198 |Formação ||||EDHU242
+1199 |Caráter:
+1200 ||Consultivo|||EDHU251
+1201 ||Deliberativo|||EDHU252
+1202 ||Normativo|||EDHU253
+1203 ||Fiscalizador|||EDHU254
+1204 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU26
+1205 |Número de conselheiros (titulares e suplentes)||||EDHU27
+1206 |Capacitação dos membros:
+1207 ||Periodicamente|||EDHU281
+1208 ||Ocasionalmente|||EDHU282
+1209 ||Não realiza|||EDHU283
+1210 |Estado disponibiliza infraestrutura ||||EDHU29
+1211 ||Sala |||EDHU2911
+1212 ||Computador|||EDHU2912
+1213 ||Impressora|||EDHU2913
+1214 ||Acesso à internet|||EDHU2914
+1215 ||Veículo|||EDHU2915
+1216 ||Telefone|||EDHU2916
+1217 ||Diárias|||EDHU2917
+1218 ||Dotação orçamentária própria|||EDHU2918
+1219 ||Transporte/Locomoção|||EDHU2919
+1221 Conselho Estadual de Direitos da Pessoa com Deficiência - existência|||||EDHU30
+1222 |Lei de criação||||EDHU301a
+1223 |Ano de criação||||EDHU301b
+1224 |Formação ||||EDHU302
+1225 |Caráter:
+1226 ||Consultivo|||EDHU311
+1227 ||Deliberativo|||EDHU312
+1228 ||Normativo|||EDHU313
+1229 ||Fiscalizador|||EDHU314
+1230 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU32
+1231 |Número de conselheiros (titulares e suplentes)||||EDHU33
+1232 |Capacitação dos membros:
+1233 ||Periodicamente|||EDHU341
+1234 ||Ocasionalmente|||EDHU342
+1235 ||Não realiza|||EDHU343
+1236 |Estado disponibiliza infraestrutura ||||EDHU35
+1237 ||Sala |||EDHU3511
+1238 ||Computador|||EDHU3512
+1239 ||Impressora|||EDHU3513
+1240 ||Acesso à internet|||EDHU3514
+1241 ||Veículo|||EDHU3515
+1242 ||Telefone|||EDHU3516
+1243 ||Diárias|||EDHU3517
+1244 ||Dotação orçamentária própria|||EDHU3518
+1245 ||Transporte/Locomoção|||EDHU3519
+1247 Conselho Estadual de Direitos de Lésbicas, Gays, Bissexuais, Travestis e Transexuais - existência|||||EDHU36
+1248 |Lei de criação||||EDHU361a
+1249 |Ano de criação||||EDHU361b
+1250 |Formação ||||EDHU362
+1251 |Caráter:
+1252 ||Consultivo|||EDHU371
+1253 ||Deliberativo|||EDHU372
+1254 ||Normativo|||EDHU373
+1255 ||Fiscalizador|||EDHU374
+1256 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU38
+1257 |Número de conselheiros (titulares e suplentes)||||EDHU39
+1258 |Capacitação dos membros:
+1259 ||Periodicamente|||EDHU401
+1260 ||Ocasionalmente|||EDHU402
+1261 ||Não realiza|||EDHU403
+1262 |Estado disponibiliza infraestrutura ||||EDHU41
+1263 ||Sala |||EDHU4111
+1264 ||Computador|||EDHU4112
+1265 ||Impressora|||EDHU4113
+1266 ||Acesso à internet|||EDHU4114
+1267 ||Veículo|||EDHU4115
+1268 ||Telefone|||EDHU4116
+1269 ||Diárias|||EDHU4117
+1270 ||Dotação orçamentária própria|||EDHU4118
+1271 ||Transporte/Locomoção|||EDHU4119
+1273 Conselho Estadual de Igualdade Racial - existência|||||EDHU42
+1274 |Lei de criação||||EDHU421a
+1275 |Ano de criação||||EDHU421b
+1276 |Formação ||||EDHU422
+1277 |Caráter:
+1278 ||Consultivo|||EDHU431
+1279 ||Deliberativo|||EDHU432
+1280 ||Normativo|||EDHU433
+1281 ||Fiscalizador|||EDHU434
+1282 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU44
+1283 |Número de conselheiros (titulares e suplentes)||||EDHU45
+1284 |Capacitação dos membros:
+1285 ||Periodicamente|||EDHU461
+1286 ||Ocasionalmente|||EDHU462
+1287 ||Não realiza|||EDHU463
+1288 |Estado disponibiliza infraestrutura ||||EDHU47
+1289 ||Sala |||EDHU4711
+1290 ||Computador|||EDHU4712
+1291 ||Impressora|||EDHU4713
+1292 ||Acesso à internet|||EDHU4714
+1293 ||Veículo|||EDHU4715
+1294 ||Telefone|||EDHU4716
+1295 ||Diárias|||EDHU4717
+1296 ||Dotação orçamentária própria|||EDHU4718
+1297 ||Transporte/Locomoção|||EDHU4719
+1299 Conselho Estadual dos Povos e Comunidades Tradicionais - existência|||||EDHU48
+1300 |Lei de criação||||EDHU481a
+1301 |Ano de criação||||EDHU481b
+1302 |Formação ||||EDHU482
+1303 |Caráter:
+1304 ||Consultivo|||EDHU491
+1305 ||Deliberativo|||EDHU492
+1306 ||Normativo|||EDHU493
+1307 ||Fiscalizador|||EDHU494
+1308 |Quantidade de reuniões (presenciais ou remotas) nos últimos 12 meses ||||EDHU50
+1309 |Número de conselheiros (titulares e suplentes)||||EDHU51
+1310 |Capacitação dos membros:
+1311 ||Periodicamente|||EDHU521
+1312 ||Ocasionalmente|||EDHU522
+1313 ||Não realiza|||EDHU523
+1314 |Estado disponibiliza infraestrutura ||||EDHU53
+1315 ||Sala |||EDHU5311
+1316 ||Computador|||EDHU5312
+1317 ||Impressora|||EDHU5313
+1318 ||Acesso à internet|||EDHU5314
+1319 ||Veículo|||EDHU5315
+1320 ||Telefone|||EDHU5316
+1321 ||Diárias|||EDHU5317
+1322 ||Dotação orçamentária própria|||EDHU5318
+1323 ||Transporte/Locomoção|||EDHU5319
+1325 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1327 7.4 Comitês e comissões
+1328 Comissão para para a implantação e acompanhamento do plano de promoção do direito de crianças e adolescentes à convivência familiar e comunitária - existência|||||EDHU541
+1329 |Lei de criação||||EDHU5411a
+1330 |Ano||||EDHU5411b
+1331 |Quantidade de reuniões nos últimos 12 meses||||EDHU5412
+1332 Comitê gestor para para o enfrentamento e erradicação do subregistro de nascimento e a ampliação do acesso à do_xFFFE_cumentação básica - existência|||||EDHU542
+1333 |Lei de criação||||EDHU5421a
+1334 |Ano||||EDHU5421b
+1335 |Quantidade de reuniões nos últimos 12 meses||||EDHU5422
+1336 Comitê Gestor do Programa Nacional de Documentação da Trabalhadora Rural - existência|||||EDHU543
+1337 |Lei de criação||||EDHU5431a
+1338 |Ano||||EDHU5431b
+1339 |Quantidade de reuniões nos últimos 12 meses||||EDHU5432
+1340 Comitê Gestor da política para a População em Situação de Rua - existência|||||EDHU544
+1341 |Lei de criação||||EDHU5441a
+1342 |Ano||||EDHU5441b
+1343 |Quantidade de reuniões nos últimos 12 meses||||EDHU5442
+1344 Comitê Permanente de Acessibilidade - existência|||||EDHU545
+1345 |Lei de criação||||EDHU5451a
+1346 |Ano||||EDHU5451b
+1347 |Quantidade de reuniões nos últimos 12 meses||||EDHU5452
+1348 Comitê para o enfrentamento à violência sexual contra crianças e adolescentes - existência|||||EDHU546
+1349 |Lei de criação||||EDHU5461a
+1350 |Ano||||EDHU5461b
+1351 |Quantidade de reuniões nos últimos 12 meses||||EDHU5462
+1352 Comitê em Defesa da Liberdade Religiosa ou similar - existência|||||EDHU547
+1353 |Lei de criação||||EDHU5471A
+1354 |Ano||||EDHU5471B
+1355 |Quantidade de reuniões nos últimos 12 meses||||EDHU5472
+1356 Comitê ou comissão de Gestão Orçamentária Participativa - existência|||||EDHU548
+1357 |Lei de criação||||EDHU5481a
+1358 |Ano||||EDHU5481b
+1359 |Quantidade de reuniões nos últimos 12 meses||||EDHU5482
+1360 Comitê ou comissão de Enfrentamento do Trabalho Escravo - existência|||||EDHU549
+1361 |Lei de criação||||EDHU5491a
+1362 |Ano||||EDHU5491b
+1363 |Quantidade de reuniões nos últimos 12 meses||||EDHU5492
+1364 Comitê gestor de enfrentamento à violência LGBTfóbica - existência|||||EDHU5410
+1365 |Lei de criação||||EDHU54101a
+1366 |Ano||||EDHU54101b
+1367 |Quantidade de reuniões nos últimos 12 meses||||EDHU54102
+1368 Nenhum comitê ou comissão citado|||||EDHU5411
+1370 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1372 7.5 Conferências estaduais
+1373 Temas de conferências realizadas nos últimos quatro anos pelo governo estadual:
+1374 |Direitos humanos||||EDHU551
+1375 |Direitos ou política para a criança e o adolescente||||EDHU552
+1376 |Direitos ou política para a pessoa idosa||||EDHU553
+1377 |Direitos ou políticas para lésbicas, gays, bissexuais, travestis e transexuais||||EDHU554
+1378 |Direitos ou política para mulheres||||EDHU555
+1379 |Direitos ou política para pessoa deficiência||||EDHU556
+1380 |Direitos ou política para igualdade racial||||EDHU557
+1381 |Direitos ou política para população em situação de rua||||EDHU558
+1382 |Direitos ou política para povos e comunidades tradicionais||||EDHU559
+1383 |Direitos ou política para juventude||||EDHU5510
+1384 |Nenhum tema citado||||EDHU5511
+1386 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1388 7.6 Fundo estadual
+1389 Direitos humanos|||||EDHU561
+1390 Direitos da criança e do adolescente|||||EDHU562
+1391 Direitos do idoso|||||EDHU563
+1392 Direitos da pessoa com deficiência|||||EDHU564
+1393 Promoção da igualdade racial|||||EDHU565
+1394 Nenhum dos fundos citados|||||EDHU566
+1396 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1398 7.7 Políticas ou programas na área de direitos humanos
+1399  Proteção de mulheres vítimas de violência doméstica|||||EDHU571
+1400  Promoção à igualdade racial e/ou enfrentamento ao racismo|||||EDHU572
+1401  Proteção às vítimas diretas e/ou indiretas da violência|||||EDHU573
+1402  Proteção às pessoas vítimas de violência ou conflitos agrários e outros conflitos territoriais|||||EDHU574
+1403  Enfrentamento ao sub-registro civil de nascimento e emissão de documentação básica |||||EDHU575
+1404 Promoção de Direitos de Lésbicas, Gays, Bissexuais, Travestis e Transexuais e/ou de Enfrentamento à LGBTFobia|||||EDHU576
+1405  Atendimento a pessoas com transtorno mental|||||EDHU577
+1406  Promoção da diversidade religiosa|||||EDHU578
+1407  Documentação de trabalhadoras rurais|||||EDHU579
+1408  Enfrentamento do trabalho forçado ou escravo e reinserção de suas vítimas|||||EDHU5710
+1409  Enfrentamento à violência contra jovens|||||EDHU5711
+1410  Proteção às pessoas vítimas de violência por intolerância religiosa|||||EDHU5712
+1411  Documentação de indivíduos pertencentes a povos e comunidades tradicionais|||||EDHU5713
+1412  Reconhecimento do patrimônio afro-brasileiro|||||EDHU5714
+1413  Atendimento a indivíduos falantes de línguas indígenas, línguas ciganas ou da língua pomerana|||||EDHU5715
+1414 Nenhuma das políticas ou programas citados|||||EDHU5716
+1416 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1418 7.8 Direitos das crianças e adolescentes
+1419 Desenvolvimento de política ou programa de promoção dos direitos e defesa das crianças e adolescentes - existência|||||EDHU58
+1420 |Ações ou medidas da política ou programa de promoção dos direitos das crianças e adolescentes:
+1421 ||Lazer para crianças e adolescentes|||EDHU591
+1422 ||Promoção do voluntariado, protagonismo juvenil e da participação cidadã |||EDHU592
+1423 ||Vacinação contra o vírus do papiloma humano (HPV)|||EDHU593
+1424 ||Incentivo ao esporte seguro e inclusivo|||EDHU594
+1425 ||Acolhimento institucional de crianças e adolescentes|||EDHU595
+1426 ||Acolhimento de crianças e adolescentes por famílias acolhedoras|||EDHU596
+1427 ||Prevenção de acidentes e autodefesa|||EDHU597
+1428 ||Planejamento da proteção de crianças e adolescentes em contexto de desastres|||EDHU598
+1429 ||Instâncias formais de participação política de adolescentes|||EDHU599
+1430 ||Apoio à formação e organização de redes de adolescentes|||EDHU5910
+1431 ||Cursos preparatórios e outras formas de apoio a adotantes|||EDHU5911
+1432 ||Promoção do protagonismo da juventude de povos e comunidades tradicionais|||EDHU5912
+1433 ||Nenhuma das ações ou medidas citadas|||EDHU5913
+1434 |Ações ou medidas da política ou programa de defesa dos direitos das crianças e adolescentes:
+1435 ||Enfrentamento ao bullying|||EDHU601
+1436 ||Enfrentamento e erradicação do trabalho infantil|||EDHU602
+1437 ||Enfrentamento à violência física contra crianças e adolescentes|||EDHU603
+1438 ||Enfrentamento à violência sexual contra crianças e adolescentes|||EDHU604
+1439 ||Proteção de crianças e adolescentes ameaçados de morte|||EDHU605
+1440 ||Atendimento à criança e ao adolescente em situação de rua|||EDHU606
+1441 ||Atendimento socioeducativo ao adolescente em conflito com a lei |||EDHU607
+1442 ||Busca e localização de desaparecidos|||EDHU608
+1443 ||Combate ao uso de drogas|||EDHU609
+1444 ||Nenhuma das ações ou medidas citadas|||EDHU6010
+1446 Quantidade de unidades para o cumprimento de medidas socioeducativas existem no estado:
+1447 |Internação||||EDHU611
+1448 |Internação provisória||||EDHU612
+1449 |Semiliberdade||||EDHU613
+1451 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1453 7.9 Direitos das pessoas com deficiência
+1454 Existência de política ou programa de promoção de direitos da pessoa com deficiência|||||EDHU62
+1455 |Ações ou medidas da política ou programa de promoção de direitos da pessoa com deficiência:
+1456 || Melhoria de acessibilidade a espaços públicos|||EDHU631
+1457 || Melhoria e garantia de acessibilidade de transporte público|||EDHU632
+1458 || Distribuição de órteses e próteses|||EDHU633
+1459 || Geração de trabalho e renda ou inclusão no mercado de trabalho|||EDHU634
+1460 || Inclusão no ambiente escolar|||EDHU635
+1461 || Turismo acessível|||EDHU636
+1462 || Prevenção à discriminação|||EDHU637
+1463 || Acesso ao lazer|||EDHU638
+1464 || Promoção de acessibilidade digital|||EDHU639
+1465 ||Nenhuma das ações ou medidas citadas|||EDHU6310
+1467 Acessibilidade na sede do governo estadual:
+1468 |Rampas de acesso||||EDHU641
+1469 |Elevadores, plataformas elevatórias e outros||||EDHU642
+1470 |Sanitário acessível||||EDHU643
+1471 |Piso tátil||||EDHU644
+1472 |Elevadores com braile e sonorização||||EDHU645
+1473 |Telefone público adaptado||||EDHU646
+1474 |Mobiliário de recepção adaptado||||EDHU647
+1475 |Pessoal capacitado para atendimento||||EDHU648
+1476 |Pessoal capacitado em acessibilidade digital||||EDHU649
+1477 |Área especial de (des)embarque ||||EDHU6410
+1478 |Reserva de vaga para veículos||||EDHU6411
+1479 |Sinalização de atendimento prioritário||||EDHU6412
+1480 |Admissão de cão guia||||EDHU6413
+1481 |Rampa externa e rebaixamento de calçadas para travessia de pedestre||||EDHU6414
+1482 |Pessoal capacitado para atendimento nas línguas indígenas||||EDHU6415
+1483 |Pessoal capacitado para atendimento nas línguas ciganas||||EDHU6416
+1484 |Pessoal capacitado para atendimento na língua pomerana||||EDHU6417
+1485 |Pessoal capacitado para atendimento em LIBRAS||||EDHU6418
+1486 |Nenhum dos itens citados||||EDHU6419
+1488 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1490 7.10 Direitos da pessoa idosa
+1491 Existência de política ou programa de promoção de direitos da pessoa idosa|||||EDHU65
+1492 |Ações ou medidas da política ou programa de promoção de direitos da pessoa idosa:
+1493 ||Enfrentamento à violência|||EDHU661
+1494 ||Vacinação contra a gripe e pneumonia|||EDHU662
+1495 ||Promoção da saúde e do cuidado de si|||EDHU663
+1496 ||Promoção da acessibilidade ou isenção de tarifas no transporte público|||EDHU664
+1497 ||Promoção à participação e integração na comunidade|||EDHU665
+1498 ||Capacitação de cuidador|||EDHU666
+1499 ||Acesso à recreação, ao lazer e aos bens culturais|||EDHU667
+1500 ||Garantia de alimentação adequada|||EDHU668
+1501 ||Nenhuma das ações ou medidas citadas|||EDHU669
+1503 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1505 7.11 Direitos da pessoa em situação de rua
+1506 Existência de política ou programa de promoção de direitos da pessoa em situação de rua|||||EDHU67
+1507 |Ações ou medidas da política ou programa de promoção de direitos da pessoa em situação de rua:
+1508 ||Enfrentamento à violência|||EDHU681
+1509 ||Acesso à profissionalização especializada|||EDHU682
+1510 ||Acesso a serviços saúde|||EDHU683
+1511 ||Garantia de alimentação adequada|||EDHU684
+1512 ||Acesso a programas de habitação|||EDHU685
+1513 ||Proteção a crianças adolescentes em situação de rua|||EDHU686
+1514 ||Acesso à documentação básica|||EDHU687
+1515 ||Busca ativa para inclusão no CADÚNICO|||EDHU688
+1516 ||Nenhuma das ações ou medidas citadas|||EDHU689
+1518 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1520 7.13 Comunidades tradicionais
+1521 Existência de protocolo que defina os procedimentos para a consulta livre, prévia e esclarecida aos povos e comunidades tradicionais (21)|||||EDHU69
+1523 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1524 (21) Existência de protocolo que defina os procedimentos para a consulta livre, prévia e esclarecida aos povos e comunidades tradicionais para os casos de medidas administrativas ou legislativas de qualquer natureza que lhes afete, incluindo obras de infraestrutura
+1526 7.14 Denúncias de violação dos direitos humanos
+1527 Natureza do órgão responsável por receber, registrar e acompanhar denúncias de violação de direitos:
+1528 |Ouvidoria de direitos humanos||||EDHU701
+1529 |Ouvidoria policial ou de serviço de segurança||||EDHU702
+1530 |Conselhos, comitês, comissões de cidadania||||EDHU703
+1531 |Serviço de assistência jurídica||||EDHU704
+1532 |Serviço de defesa ao cidadão||||EDHU705
+1533 |Serviço de assistência social||||EDHU706
+1534 |Outros||||EDHU707
+1535 |Não existe órgão responsável||||EDHU708
+1536 |Instrumentos utilizados para receber denúncias de violação de direitos:
+1537 ||Telefone|||EDHU711
+1538 ||Balcão de atendimento|||EDHU712
+1539 ||Telefone gratuito|||EDHU713
+1540 ||Página na internet|||EDHU714
+1541 ||Correio|||EDHU715
+1542 ||E-mail|||EDHU716
+1543 ||Outros|||EDHU717
+1545 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1548 8. PRIMEIRA INFÂNCIA
+1549 8.1 Plano Estadual pela Primeira Infância |||||subtítulo link
+1550 8.2 Comitê Intersetorial de Políticas Públicas para a Primeira Infância|||||subtítulo link
+1551 8.3 Política ou programa especificamente direcionados à promoção e defesa de direitos das crianças de 0 a 6 anos|||||subtítulo link
+1552 8.4 - Legislação estadual específica sobre extensão da licença maternidade e/ou paternidade
+1554 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1556 8. PRIMEIRA INFÂNCIA
+1557 8.1 Plano Estadual pela Primeira Infância 
+1558 Plano Estadual pela Primeira Infância - existência|||||EPRI01
+1559 |Por qual instrumento||||EPRI011
+1560 ||Número|||EPRI012a
+1561 ||Ano|||EPRI012b
+1562 |Ano em que foi elaborado||||EPRI013
+1563 |Foi criada uma Comissão para a elaboração do Plano||||EPRI014
+1565 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1567 8.2 Comitê Intersetorial de Políticas Públicas para a Primeira Infância
+1568 Comitê Intersetorial de Políticas Públicas para a Primeira Infância - existência|||||EPRI02
+1569 |É composto por representantes:
+1570 ||Do governo estadual da área de:
+1571 |||Assistência social||EPRI031
+1572 |||Educação||EPRI032
+1573 |||Saúde||EPRI033
+1574 |||Outras áreas||EPRI034
+1575 ||Do Conselho Estadual dos Direitos da Criança e do Adolescente|||EPRI035
+1576 ||Da sociedade civil:
+1577 |||Organização da Sociedade Civil (OS, OSCIP, associações etc.)||EPRI036
+1578 |||Setor privado||EPRI037
+1579 |||Universidades||EPRI038
+1580 |||Crianças e adolescentes||EPRI039
+1581 |||Outras áreas||EPRI0310
+1582 |Quantidade de reuniões (presenciais ou remotas) realizadas nos últimos 12 meses||||EPRI04
+1584 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1586 8.3 Política ou programa especificamente direcionados à promoção e defesa de direitos das crianças de 0 a 6 anos
+1587 A gestão estadual desenvolve política ou programa especificamente direcionados à promoção e defesa de direitos das crianças de 0 a 6 anos|||||EPRI05
+1588 |Ações ou medidas:
+1589 ||Acesso a serviços de saúde|||EPRI061
+1590 ||Acolhimento institucional|||EPRI062
+1591 ||Acolhimento por famílias acolhedoras|||EPRI063
+1592 ||Criação e/ou manutenção de parques infantis/praças com brinquedos para a primeira infância|||EPRI064
+1593 ||Garantia de alimentação adequada|||EPRI065
+1594 ||Incentivo à paternidade responsável|||EPRI066
+1595 ||Incentivo ao aleitamento materno|||EPRI067
+1596 ||Oferta de Educação Infantil|||EPRI068
+1597 ||Prevenção de acidentes|||EPRI069
+1598 ||Promoção de arte e cultura|||EPRI0610
+1599 ||Promoção do brincar|||EPRI0611
+1600 ||Promoção do Direito à Convivência Familiar e Comunitária|||EPRI0612
+1601 ||Proteção a crianças em situação de rua|||EPRI0613
+1602 ||Proteção à exposição precoce das crianças aos meios de comunicação|||EPRI0614
+1603 ||Proteção contra violências|||EPRI0615
+1605 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023
+1607 8.4 - Legislação estadual específica sobre extensão da licença maternidade e/ou paternidade
+1608 Legislação estadual específica sobre extensão da licença maternidade e/ou paternidade para os servidores e servidoras da gestão estadual - existência|||||EPRI07
+1609 |Número  da lei||||EPRI071a
+1610 |Ano da lei||||EPRI071b
+1612 Fonte: IBGE, Pesquisa de Informações Básicas Estaduais 2023

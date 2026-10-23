@@ -1,0 +1,281 @@
+{
+ "at": "2026-10-21T22:54:18.158Z",
+ "profiles": [
+  {
+   "kind": "estado",
+   "id": 32,
+   "label": "ES",
+   "filtros": null,
+   "queries": 6,
+   "wallMs": 130.9,
+   "dbMs": 238.4,
+   "json_bytes": 1119226,
+   "metricas": {
+    "sim": 28,
+    "renaest": 54,
+    "prf": 22
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP",
+   "filtros": null,
+   "queries": 6,
+   "wallMs": 162.2,
+   "dbMs": 245.3,
+   "json_bytes": 1013668,
+   "metricas": {
+    "sim": 28,
+    "renaest": 46,
+    "prf": 22
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "estado",
+   "id": 53,
+   "label": "DF",
+   "filtros": null,
+   "queries": 6,
+   "wallMs": 50.9,
+   "dbMs": 119.7,
+   "json_bytes": 1065337,
+   "metricas": {
+    "sim": 28,
+    "renaest": 54,
+    "prf": 22
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "estado",
+   "id": 16,
+   "label": "AP (sem RENAEST)",
+   "filtros": null,
+   "queries": 6,
+   "wallMs": 37.2,
+   "dbMs": 78.9,
+   "json_bytes": 765470,
+   "metricas": {
+    "sim": 28,
+    "renaest": 49,
+    "prf": 22
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP — só frota anual",
+   "filtros": {
+    "sources": [
+     "frota"
+    ],
+    "frequency": "A"
+   },
+   "queries": 4,
+   "wallMs": 133.8,
+   "dbMs": 136,
+   "json_bytes": 16876,
+   "metricas": {
+    "sim": 0,
+    "renaest": 0,
+    "prf": 0
+   },
+   "pontosFrota": 14
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP — só PRF desde 2024",
+   "filtros": {
+    "sources": [
+     "prf"
+    ],
+    "from": "2024-01-01"
+   },
+   "queries": 4,
+   "wallMs": 3.7,
+   "dbMs": 7.6,
+   "json_bytes": 68860,
+   "metricas": {
+    "sim": 0,
+    "renaest": 0,
+    "prf": 22
+   },
+   "pontosFrota": 0
+  },
+  {
+   "kind": "municipio",
+   "id": 3205309,
+   "label": "Vitória/ES",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 9.6,
+   "dbMs": 23.6,
+   "json_bytes": 276372,
+   "metricas": {
+    "sim": 28,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "municipio",
+   "id": 3550308,
+   "label": "São Paulo/SP",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 12.2,
+   "dbMs": 33.5,
+   "json_bytes": 283368,
+   "metricas": {
+    "sim": 28,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "municipio",
+   "id": 3304557,
+   "label": "Rio de Janeiro/RJ",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 15.1,
+   "dbMs": 37,
+   "json_bytes": 282208,
+   "metricas": {
+    "sim": 28,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "municipio",
+   "id": 3200359,
+   "label": "Alto Rio Novo/ES",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 10.1,
+   "dbMs": 26.6,
+   "json_bytes": 255894,
+   "metricas": {
+    "sim": 23,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "municipio",
+   "id": 5101837,
+   "label": "Boa Esperança do Norte/MT",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 3.7,
+   "dbMs": 10.7,
+   "json_bytes": 183024,
+   "metricas": {
+    "sim": 13,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 15
+  },
+  {
+   "kind": "municipio",
+   "id": 5300108,
+   "label": "Brasília/DF",
+   "filtros": null,
+   "queries": 7,
+   "wallMs": 10.3,
+   "dbMs": 26,
+   "json_bytes": 281860,
+   "metricas": {
+    "sim": 28,
+    "renaest": 5,
+    "prf": 11
+   },
+   "pontosFrota": 165
+  },
+  {
+   "kind": "municipio",
+   "id": 3550308,
+   "label": "São Paulo — só SIM desde 2020",
+   "filtros": {
+    "sources": [
+     "sim"
+    ],
+    "from": "2020-01-01"
+   },
+   "queries": 5,
+   "wallMs": 2.9,
+   "dbMs": 4.7,
+   "json_bytes": 35007,
+   "metricas": {
+    "sim": 27,
+    "renaest": 0,
+    "prf": 0
+   },
+   "pontosFrota": 0
+  }
+ ],
+ "plans": [
+  {
+   "name": "séries do território em exec_ind_value (município)",
+   "executionMs": 0.901,
+   "plan": [
+    "Index Scan on exec_ind_value_pkey"
+   ]
+  },
+  {
+   "name": "frota do município (série mensal completa)",
+   "executionMs": 0.221,
+   "plan": [
+    "Sort",
+    "Bitmap Heap Scan on exec_tra_frota_mun_mes",
+    "Bitmap Index Scan on exec_tra_frota_mun_mes_pkey"
+   ]
+  },
+  {
+   "name": "frota da UF agregada por competência (SP)",
+   "executionMs": 159.002,
+   "plan": [
+    "Aggregate",
+    "Gather Merge",
+    "Sort",
+    "Aggregate",
+    "Hash Join",
+    "Seq Scan on exec_tra_frota_mun_mes",
+    "Hash",
+    "Bitmap Heap Scan on exec_entity",
+    "Bitmap Index Scan on exec_entity_uf_code_kind_idx"
+   ]
+  },
+  {
+   "name": "cobertura RENAEST/PRF da UF",
+   "executionMs": 0.63,
+   "plan": [
+    "Sort",
+    "Seq Scan on exec_tra_cov"
+   ]
+  },
+  {
+   "name": "códigos de infração do último mês da UF",
+   "executionMs": 0.681,
+   "plan": [
+    "Limit",
+    "Result",
+    "Limit",
+    "Index Only Scan on exec_tra_infr_uf_mes_pkey",
+    "Sort",
+    "Index Scan on exec_tra_infr_uf_mes_competence_idx"
+   ]
+  }
+ ]
+}

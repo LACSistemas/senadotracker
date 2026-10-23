@@ -1,0 +1,68 @@
+{
+  "geradoEm": "2026-10-23T18:22:22.859Z",
+  "nota": "mediana de 5 execuções após aquecimento, PostgreSQL de produção; 1 consulta por escopo (sem N+1)",
+  "brasil": {
+    "ms_median": 26.8,
+    "ms_max": 27.8
+  },
+  "uf_31": {
+    "ms_median": 5,
+    "ms_max": 9.7
+  },
+  "uf_32": {
+    "ms_median": 4.2,
+    "ms_max": 4.5
+  },
+  "uf_33": {
+    "ms_median": 5.9,
+    "ms_max": 6.2
+  },
+  "uf_35": {
+    "ms_median": 4.4,
+    "ms_max": 5.1
+  },
+  "uf_43": {
+    "ms_median": 5.3,
+    "ms_max": 5.5
+  },
+  "uf_26": {
+    "ms_median": 4,
+    "ms_max": 4.6
+  },
+  "uf_53": {
+    "ms_median": 3.8,
+    "ms_max": 5.9
+  },
+  "municipio_3106200": {
+    "ms_median": 0.6,
+    "ms_max": 0.7
+  },
+  "municipio_3205309": {
+    "ms_median": 0.6,
+    "ms_max": 0.6
+  },
+  "municipio_3205002": {
+    "ms_median": 0.5,
+    "ms_max": 0.5
+  },
+  "municipio_3200359": {
+    "ms_median": 0.3,
+    "ms_max": 0.4
+  },
+  "municipio_3304557": {
+    "ms_median": 2.8,
+    "ms_max": 3.1
+  },
+  "municipio_3550308": {
+    "ms_median": 1.3,
+    "ms_max": 1.3
+  },
+  "municipio_4314902": {
+    "ms_median": 2.3,
+    "ms_max": 2.5
+  },
+  "municipio_2611606": {
+    "ms_median": 0.7,
+    "ms_max": 0.7
+  }
+}

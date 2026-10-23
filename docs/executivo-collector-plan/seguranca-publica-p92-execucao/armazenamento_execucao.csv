@@ -1,0 +1,24 @@
+﻿medida,momento,valor,observacao
+postgres_banco_bytes,antes,22264155283,pg_database_size
+postgres_banco_bytes,depois,23065676947,pg_database_size
+postgres_schema_civica_exec_bytes,antes,6065315840,
+postgres_schema_civica_exec_bytes,depois,6858096640,
+exec_tra_frota_mun_mes_total_bytes,depois,150773760,"heap 115859456 + índices 34856960; 919256 linhas"
+exec_tra_infr_uf_mes_total_bytes,depois,35586048,425724 linhas
+exec_tra_cov_total_bytes,depois,1007616,9099 linhas
+exec_ind_value_total_bytes,depois,1676681216,heap 797966336 + índices 878477312
+exec_ind_latest_total_bytes,depois,111091712,
+exec_change_log_total_bytes,depois,3428687872,0 linhas de log pertencem ao trânsito
+linhas_exec_ind_value_trânsito,depois,3267659,SIM 849105 · frota 223886 · RENAEST 1718178 · PRF 473979 · infrações 2511
+bytes_por_linha_frota_larga_medido,depois,164.0171617046829,inclui índices
+wal_bytes_gerados,delta,2815156667,pg_stat_wal.wal_bytes (todo o cluster no período)
+raw_ssd_senatran-frota_bytes,depois,148383525,
+raw_ssd_senatran-frota-uf_bytes,depois,453317,
+raw_ssd_prf_bytes,depois,72299565,
+raw_ssd_renaest_bytes,depois,2301438,
+raw_ssd_senatran-infracoes_bytes,depois,6924305,
+staging_ssd_bytes,depois,369553945,caches JSON agregados + downloads transitórios
+ssd_livre_gib,antes,440.5,
+ssd_livre_gib,depois,433.4,
+disco_postgres_livre_gib,antes,40.6,
+disco_postgres_livre_gib,depois,31,

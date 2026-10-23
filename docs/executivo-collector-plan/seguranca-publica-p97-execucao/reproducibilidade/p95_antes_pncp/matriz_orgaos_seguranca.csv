@@ -1,0 +1,1053 @@
+ente,nivel,codigo,nome_mais_recente,pai,primeiro_exercicio,ultimo_exercicio,exercicios_com_nome,nomes_distintos,linhas_funcao_06,pago_funcao_06_centavos,identidade,recorte
+Pernambuco,3,110401,SECRETARIA DA CASA MILITAR,,2026,2026,1,1,511,19208840557,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,110402,SECRETARIA EXECUTIVA DE PROTECAO E DEFESA CIVIL,,2023,2023,1,1,164,1063830756,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,290101,RECURSOS SOB SUPERVISAO DA SARE,,2018,2018,1,1,9,104191604,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390201,SECRETARIA EXECUTIVA DE PROTECAO E DEFESA CIVIL,,2026,2026,1,1,62,570826073,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390301,DIRETORIA DE ADMINISTRAÇÃO GERAL - SDS,,2026,2026,1,1,1529,393406504006,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390401,POLICIA MILITAR - SDS,,2026,2026,1,1,776,2141924809016,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390501,POLICIA CIVIL - SDS,,2026,2026,1,1,902,1216388043666,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390601,CORPO DE BOMBEIROS - SDS,,2026,2026,1,1,789,355453940699,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390801,CORREGEDORIA GERAL - SDS,,2026,2026,1,1,350,826464610,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,390901,FUNDO ESTADUAL DE SEGURANCA PUBLICA E DEFESA SOCIAL,,2026,2026,1,1,298,17304442707,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,420401,AGENCIA ESTADUAL DE TECNOLOGIA DA INFORMAÇÃO,,2024,2024,1,1,17,263230255,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,420801,PERNAMBUCO PARTICIPAÇÕES E INVESTIMENTOS S/A,,2020,2020,1,1,4,59735900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,610201,FUNDAÇÃO DE AMPARO A CIÊNCIA E A TECNOLOGIA,,2017,2017,1,1,7,40000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,610601,AUTARQUIA TERRITORIAL DISTRITO ESTADUAL DE FERNANDO DE NORONHA,,2021,2021,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pernambuco,3,651101,COMPANHIA ESTADUAL DE HABITAÇÃO E OBRAS,,2026,2026,1,1,15,6472105152,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Brasil,3,01101,CAMARA DOS DEPUTADOS,30108,2024,2024,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,10101,SUPREMO TRIBUNAL FEDERAL,30108,2014,2026,6,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,11101,SUPERIOR TRIBUNAL DE JUSTICA,30108,2017,2025,5,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,12101,JUSTICA FEDERAL DE PRIMEIRO GRAU,30108,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,12102,TRIBUNAL REGIONAL FEDERAL DA 1A. REGIAO,30108,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,12104,TRIBUNAL REGIONAL FEDERAL DA 3A. REGIAO,30108,2022,2024,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,14101,TRIBUNAL SUPERIOR ELEITORAL,30108,2017,2025,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,14103,TRIBUNAL REGIONAL ELEITORAL DE ALAGOAS,30802,2025,2025,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,15101,TRIBUNAL SUPERIOR DO TRABALHO,30108,2017,2017,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,15113,TRIBUNAL REGIONAL DO TRABALHO DA 12A. REGIAO,30802,2017,2018,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,16101,TRIBUNAL DE JUSTICA DO DISTRITO FEDERAL,30911,2017,2018,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,17101,CONSELHO NACIONAL DE JUSTICA,30000,2021,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20101,PRESIDENCIA DA REPUBLICA,20101,2014,2026,8,1,97,13722160493,código oficial (União),função 06
+Brasil,3,20118,AGENCIA BRASILEIRA DE INTELIGENCIA - ABIN,20101,2014,2026,13,1,1421,461548097800,código oficial (União),função 06
+Brasil,3,20121,SECRETARIA ESPECIAL DE DIREITOS HUMANOS,30000,2014,2019,5,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20122,SECRETARIA NAC. DE POLITICAS P/MULHERES - SPM,30000,2017,2018,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20126,SECRETRIA ESP. POL. PROM DA IGUALDADE RACIAL,30000,2014,2014,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20209,AUTORIDADE NACIONAL DE PROTECAO DE DADOS,30212,2022,2024,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20415,EMPRESA BRASIL DE COMUNICACAO,30000,2026,2026,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20926,FUNDO NACIONAL ANTIDROGAS - FUNAD,30912,2014,2019,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20927,FUNDO DE IMPRENSA NACIONAL,30000,2025,2026,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,20928,FUNDO NACIONAL PARA A CRIANCA E ADOLESCENTE,30000,2017,2019,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,22101,MINISTERIO DA AGRICULTURA E PECUARIA,30802,2017,2025,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,22201,INST. NACIONAL DE COLONIZ. E REFORMA AGRARIA,30802,2021,2023,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,24204,COMISSAO NACIONAL DE ENERGIA NUCLEAR - CNEN,30211,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25101,MINISTERIO DA FAZENDA,30108,2020,2026,5,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25103,SEC ESPECIAL DA RECEITA FEDERAL DO BRASIL,30802,2021,2025,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25104,PROCURADORIA GERAL DA FAZENDA NACIONAL,30108,2024,2026,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25201,BANCO CENTRAL DO BRASIL,30000,2020,2021,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25203,COMISSAO DE VALORES MOBILIARIOS,30108,2020,2020,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,25302,FUNDACAO ESCOLA DE ADMINISTRACAO PUBLICA-ENAP,30000,2021,2024,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26101,MINISTERIO DA EDUCACAO,30108,2017,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26236,UNIVERSIDADE FEDERAL FLUMINENSE,30211,2024,2025,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26238,UNIVERSIDADE FEDERAL DE MINAS GERAIS,30108,2023,2026,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26250,UNIVERSIDADE FEDERAL DE RORAIMA,30802,2023,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26252,UNIVERSIDADE FEDERAL DE CAMPINA GRANDE,30000,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26255,UNIVERSIDADE FED.VALES JEQUITINHONHA E MUCURI,30802,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26266,FUNDACAO UNIVERSIDADE FEDERAL DO PAMPA,30802,2018,2022,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26267,UNIVERS. FEDERAL DA INTEG. LATINO AMERICANA,30802,2021,2021,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26271,FUNDACAO UNIVERSIDADE DE BRASILIA,30108,2025,2025,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26278,FUNDACAO UNIVERSIDADE FEDERAL DE PELOTAS,30211,2017,2023,5,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26281,FUNDACAO UNIVERSIDADE FEDERAL DE SERGIPE,30211,2024,2024,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26290,INEP-INST.NAC.DE ESTUDOS E PESQ.EDUCACIONAIS,30802,2014,2026,13,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26291,FUND.COORD.DE APERF.DE PESSOAL NIVEL SUPERIOR,30000,2024,2026,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26406,"INST.FED.DE EDUC.,CIENC.E TEC.DO ESP.SANTO",30802,2014,2014,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26409,"INST.FED.DE EDUC.,CIENC.E TEC.DE MINAS GERAIS",30211,2026,2026,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26416,"INST.FED.DE EDUC.,CIENC.E TEC.DO PARA",30000,2022,2023,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26417,"INST.FED.DE EDUC.,CIENC.E TEC.DA PARAIBA",30211,2023,2023,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26419,"INST.FED.DE EDUC.,CIENC.E TEC.DO RS",30802,2023,2023,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26431,"INST.FED.DE EDUC.,CIENC.E TEC.DO PIAUI",30802,2021,2022,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26435,"INST.FED.DE EDUC.,CIENC.E TEC.DO RN",30000,2015,2015,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,26449,UNIVERSIDADE FEDERAL DO CARIRI - UFCA,30211,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30101,MINISTERIO DA JUSTICA E SEGURANCA PUBLICA,30000,2014,2026,13,1,4928,519479952547,código oficial (União),função 06
+Brasil,3,30103,ARQUIVO NACIONAL,30000,2014,2023,10,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30107,DEPARTAMENTO DE POLICIA RODOVIARIA FEDERAL,30802,2014,2026,13,1,4214,3868471326039,código oficial (União),função 06
+Brasil,3,30108,DEPARTAMENTO DE POLICIA FEDERAL,30108,2014,2026,13,1,3887,6174526495190,código oficial (União),função 06
+Brasil,3,30109,DEFENSORIA PUBLICA DA UNIAO,30000,2014,2014,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30202,FUNDACAO NACIONAL DOS POVOS INDIGENAS,30108,2016,2023,6,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30211,CONSELHO ADMINISTRATIVO DE DEFESA ECONOMICA,30211,2014,2026,13,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30212,AUTORIDADE NACIONAL DE PROTECAO DE DADOS-ANPD,30212,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30905,FUNDO DE DEFESA DOS DIREITOS DIFUSOS,30211,2014,2026,13,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,30907,FUNDO PENITENCIARIO NACIONAL - FUNPEN,30907,2014,2026,13,1,900,170856943208,código oficial (União),função 06
+Brasil,3,30909,FUNDO P/APAR. E OPERAC. ATIV.-FIM POL.FEDERAL,30108,2014,2019,6,1,125,0,código oficial (União),função 06
+Brasil,3,30911,FUNDO NACIONAL DE SEGURANCA PUBLICA - FNSP,30911,2014,2026,13,1,2408,1235322896316,código oficial (União),função 06
+Brasil,3,30912,FUNDO NACIONAL ANTIDROGAS,30000,2014,2026,13,1,309,10176932279,código oficial (União),função 06
+Brasil,3,32202,COMPANHIA DE PESQUISA DE RECURSOS MINERAIS,30000,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,32314,EMPRESA DE PESQUISA ENERGETICA - EPE,30802,2023,2023,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,32396,AGENCIA NACIONAL DE MINERACAO,30802,2025,2025,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,34101,MINISTERIO PUBLICO FEDERAL,30108,2015,2026,8,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,34104,MINISTERIO PUBLICO DO TRABALHO,30802,2014,2022,8,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,35101,MINISTERIO DAS RELACOES EXTERIORES,30108,2024,2026,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,36212,AGENCIA NACIONAL DE VIGILANCIA SANITARIA,30108,2017,2021,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,36213,AGENCIA NACIONAL DE SAUDE SUPLEMENTAR,30211,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,36901,FUNDO NACIONAL DE SAUDE,30802,2014,2026,8,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,37101,CONTROLADORIA GERAL DA UNIAO,30211,2018,2025,7,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,39101,MINISTERIO DOS TRANSPORTES,30802,2022,2023,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,39250,AGENCIA NAC. DE TRANSPORTES TERRESTRES - ANTT,30802,2014,2024,10,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,39252,DEPTO.NAC.DE INFRA-ESTRUTURA DE TRANSPORTES,30802,2016,2025,10,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,39253,EMPRESA DE PLANEJAMENTO E LOGISTICA S.A-EPL,30802,2014,2014,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,39905,FUNDO NACIONAL DE SEG. E EDUCACAO DO TRANSITO,30802,2022,2022,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,40101,MINISTERIO DO TRABALHO E EMPREGO,30000,2026,2026,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,42101,MINISTERIO DA CULTURA,30000,2014,2014,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,42204,INSTITUTO DO PATRIMONIO HIST. E ART. NACIONAL,30108,2023,2024,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,44101,MINIST. DO MEIO AMBIENTE E MUDANCA DO CLIMA,30108,2022,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,44201,INST.BRAS.DO MEIO AMB.E REC.NAT.RENOVAVEIS,30802,2014,2026,11,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,44901,FUNDO NACIONAL DO MEIO AMBIENTE,30108,2014,2018,5,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,46101,MINIST.DA GESTAO E DA INOVACAO EM SERV.PUBLIC,30911,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,46102,ARQUIVO NACIONAL,30000,2023,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,46201,FUNDACAO ESCOLA NACIONAL DE ADM.PUBLICA-ENAP,30212,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,47101,MINISTERIO DO PLANEJAMENTO E ORCAMENTO,30802,2014,2023,6,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,47204,INSTITUTO DE PESQUISA ECONOMICA APLICADA,30000,2017,2017,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,47205,FUNDACAO INST.BRAS.DE GEOGRAFIA E ESTATISTICA,25205,2016,2018,3,1,36,31794489,código oficial (União),função 06
+Brasil,3,49101,MINIST.DO DESENVOLV.AGRARIO E AGRI.FAMILIAR,30108,2014,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,49201,INSTITUTO NAC. DE COLONIZACAO E REF. AGRARIA,30108,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,51101,MINISTERIO DO ESPORTE,30911,2017,2026,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,52101,MINISTERIO DA DEFESA,30911,2014,2025,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,53101,MIN. DA INTEGR. E DO DESENVOLVIMENTO REGIONAL,53000,2014,2026,13,1,2342,1473210945430,código oficial (União),função 06
+Brasil,3,53202,SUPERINTEND.DO DESENVOLV.DA AMAZONIA-SUDAM,26239,2014,2017,4,1,6,0,código oficial (União),função 06
+Brasil,3,53203,SUPERINT. DO DESENVOLV. DO NORDESTE - SUDENE,53203,2014,2017,2,1,4,0,código oficial (União),função 06
+Brasil,3,54101,MINISTERIO DO TURISMO,30108,2015,2016,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,54206,INST. DO PATRIM. HIST. E ARTISTICO NACIONAL,30000,2022,2024,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,55101,"MIN.DESENV.E ASSIT.SOCIAL,FAM.E COMBATE FOME",30802,2019,2021,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,56101,MINISTERIO DAS CIDADES,56000,2023,2026,4,1,35,1602769784,código oficial (União),função 06
+Brasil,3,57101,"MIN.DAS MULH., DA IG.RACIAL E DOS DIR.HUMANOS",30000,2016,2018,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,63101,ADVOCACIA-GERAL DA UNIAO - AGU,30211,2023,2026,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,64101,MINIST. DOS DIREITOS HUMANOS E DA CIDADANIA,30802,2014,2017,4,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,64902,FUNDO NACIONAL DO IDOSO - FNI,30000,2017,2017,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,65101,MINISTERIO DAS MULHERES,30211,2017,2024,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,67101,MINISTERIO DA IGUALDADE RACIAL,30912,2014,2025,7,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,68101,MINISTERIO DE PORTOS E AEROPORTOS,30211,2025,2026,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,68201,AGENCIA NAC. DE TRANSPORTES AQUAVIARIOS-ANTAQ,30211,2025,2025,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,81101,MINISTERIO DOS DIREITOS HUMANOS - MDH,30802,2021,2023,3,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,82101,MINISTERIO DA SEGURANCA PUBLICA,30000,2019,2019,1,1,8,-286279647,código oficial (União),função 06
+Brasil,3,82102,DEPARTAMENTO DE POLICIA FEDERAL,30108,2019,2019,1,1,33,-85911855,código oficial (União),função 06
+Brasil,3,82103,DEPARTAMENTO DE POLICIA RODOVIARIA FEDERAL,30802,2019,2019,1,1,20,0,código oficial (União),função 06
+Brasil,3,82901,FUNDO PENITENCIARIO NACIONAL - FUNPEN,30907,2019,2019,1,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,82902,FUNDO NACIONAL DE SEGURANCA PUBLICA - FNSP,30911,2019,2019,1,1,6,0,código oficial (União),função 06
+Brasil,3,93176,REC. SOB. SUPERV. AG. BRAS. INTELIG. - ABIN,20101,2020,2021,2,1,4,0,código oficial (União),função 06
+Brasil,3,93360,REC. SOB SUP. MINIST.JUS.SEG.PUB. - ADM. DIR.,30000,2020,2021,2,1,3,0,código oficial (União),função 06
+Brasil,3,93361,RECURSOS SOB SUPERVISAO DO ARQUIVO NACIONAL,30000,2020,2021,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,93362,REC. SOB. SUP. DEPART. POLICIA RODOV. FED.,30802,2020,2021,2,1,6,0,código oficial (União),função 06
+Brasil,3,93363,REC. SOB. SUP. DEPARTAMENTO DE POLICIA FED.,30108,2020,2021,2,1,4,0,código oficial (União),função 06
+Brasil,3,93365,REC. SOB. SUP. CONS. ADM. DEF. ECON. - CADE,30211,2020,2021,2,1,0,0,código oficial (União),institucional (MJSP)
+Brasil,3,93409,REC. SOB SUP. MINIST.DESENV.REG. - ADM. DIR.,52121,2020,2021,2,1,20,0,código oficial (União),função 06
+Brasil,3,93445,RECURSOS DO FUNDO NACIONAL ANTIDROGAS,30912,2021,2021,1,1,0,0,código oficial (União),institucional (MJSP)
+Aceguá,3,1,UNIDADE ADMINISTRATIVA DA SEC. GERAL DE GOVERNO,,2026,2026,1,1,33,241377266,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Aceguá,3,2,UNIDADE FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Água Santa,3,1,GABINETE DO PREFEITO,,2019,2019,1,1,23,32910436,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Água Santa,3,2,DEFESA CIVIL E SEGURANÇA PÚBLICA,,2025,2025,1,1,45,27511400,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Agudo,3,1,Estrutura do Gabinete,,2026,2026,1,1,52,170753782,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Agudo,3,2,Estr de Infra. e Obras Serv e Transito,,2026,2026,1,1,170,96731302,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ajuricaba,3,1,SECRETARIA MUN. OBRAS E  SANEAMENTO,,2024,2024,1,1,23,69221499,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ajuricaba,3,2,SEC.MUN.OBRAS E SANEAMENTO-REC.VINCULADO,,2026,2026,1,1,13,66880472,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ajuricaba,3,3,SERVICOS DE TRANSITO,,2026,2026,1,1,158,24829410,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alecrim,3,1,ENCARGOS GERAIS DO MUNICIPIO,,2026,2026,1,1,47,2575200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alegrete,3,1,"SECRETARIA DE SEGURANCA PUBLICA, MOB. E",,2025,2025,1,1,784,4970388711,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alegrete,3,3,GABINETE DA PREFEITA,,2017,2017,1,1,7,627525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alegrete,3,8,DEFESA CIVIL,,2024,2024,1,1,3,17736731,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alegria,3,1,SECRETARIA DE ADMINISTRACAO,,2026,2026,1,1,25,78161964,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Almirante Tamandaré do Sul,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,257,71202369,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alto Alegre,3,1,DEPARTAMENTO DE ATIVIDADES URBANAS,,2025,2025,1,1,56,7470265,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alto Feliz,3,1,SECRETARIA MUN DE OBRAS E VIACAO,,2026,2026,1,1,300,319796244,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alvorada,3,1,GABINETE SECRETARIO,,2025,2025,1,1,47,3416874,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alvorada,3,10,DEPARTAMENTO DE SEGURANÇA PUBLICA,,2026,2026,1,1,42,383724144,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alvorada,3,4,DEPTO DE DIREITOS HUMANOS,,2025,2025,1,1,7,36285135,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alvorada,3,5,DEPARTAMENTO DE SEGURANCA PUBLICA,,2026,2026,1,1,592,7296072180,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Alvorada,3,7,DEPARTAMENTO DE SEGURANÇA PÚBLICA,,2025,2025,1,1,76,567838123,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Amaral Ferrador,3,1,"SECRETARIA DE OBRAS, VIACAO, URBANISMO E",,2026,2026,1,1,19,97738983,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ametista do Sul,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,18,19960700,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+André da Rocha,3,1,SERVICOS DE ADMINISTRACAO,,2026,2026,1,1,38,12506051,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Anta Gorda,3,1,Gabinete do Prefeito,,2026,2026,1,1,171,386467298,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Anta Gorda,3,2,Fundo Municipal da Defesa Civil-FUNMDEC,,2026,2026,1,1,24,70476261,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Antônio Prado,3,1,SECRETARIA DE ADMINISTRAÇÃO,,2026,2026,1,1,2,3122350,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Antônio Prado,3,2,DEFESA CIVIL,,2026,2026,1,1,70,151429762,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arambaré,3,1,DIVISAO DO PLANEJAMENTO,,2026,2026,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Araricá,3,10,MANUTENÇÃO DA SECRETARIA,,2026,2026,1,1,102,136969375,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Araricá,3,20,ASSESSORIA ADMINISTRATIVA,,2019,2019,1,1,16,618255,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Aratiba,3,1,"SECRETARIA MUNICIPAL DE OBRAS, TRANSITO E URBANISMO",,2021,2021,1,1,10,3831320,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Aratiba,3,2,GESTÃO DA SEGURANÇA PÚBLICA,,2026,2026,1,1,505,159617000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Aratiba,3,6,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,89,216492745,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Sal,3,1,GABINETE DA SECRETARIA DO TURISMO,,2025,2025,1,1,16,6374043,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Sal,3,3,DEPARTAMENTO DE SEGURANCA PUBLICA,,2026,2026,1,1,244,175376783,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Padre,3,5,Fundo Municipal da Defesa Cívil,,2025,2025,1,1,15,52628841,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio dos Ratos,3,4,DEFESA CIVIL,,2025,2025,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Tigre,3,1,SEC DE OBRAS E VIAÇÃO,,2026,2026,1,1,24,19505459,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Tigre,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,37,312164181,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Tigre,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,72,283935762,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio do Tigre,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL,,2022,2022,1,1,8,24690141,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arroio Grande,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO,,2024,2024,1,1,20,1815090,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Arvorezinha,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,74,1098487925,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Augusto Pestana,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,13,61660240,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Áurea,3,1,SECRETARIA DA ADMINISTRACAO,,2025,2025,1,1,22,6297984,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bagé,3,1,ADMINISTRATIVO - SEFIR,,2026,2026,1,1,114,322699305,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bagé,3,2,ENCARGOS GERAIS DO MUNICÍPIO,,2025,2025,1,1,119,87394251,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bagé,3,3,DESENVOLVIMENTO DE TRÂNSITO,,2025,2025,1,1,58,312607329,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bagé,3,4,"SEGURANÇA PÚBLICA, PROTEÇÃO E DEFESA CIVIL",,2026,2026,1,1,229,804440502,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Balneário Pinhal,3,1,UNIDADES SUBORDINADA,,2026,2026,1,1,62,28737971,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barão,3,1,SECRET MUNIC DA FAZENDA,,2026,2026,1,1,8,3630700,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barão,3,2,FUNDO MUNICIPAL DE SEGURANCA,,2022,2022,1,1,13,9577391,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barão de Cotegipe,3,1,SECRETARIA DA AGRICULTURA,,2024,2024,1,1,35,10080525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barão de Cotegipe,3,3,SECRETARIA ADJUNTA DE AGRICULTURA E MEIO AMBIENTE - AGRICULTURA,,2025,2025,1,1,5,362072,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barão do Triunfo,3,1,GABINETE DO PREFEITO E ORGAOS AUXILIARES.,,2025,2025,1,1,21,7407900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barracão,3,1,ENCARGOS GERAIS,,2026,2026,1,1,59,58423690,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barra do Quaraí,3,1,Manutenção das Atividades da Secretaria,,2017,2017,1,1,8,795600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barra do Ribeiro,3,2,Sec.M.Obras Trans. e Planej.-Vinculados,,2024,2024,1,1,4,35200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barra do Rio Azul,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,82,470136235,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barra do Rio Azul,3,2,DEPARTAMENTO URBANISMO E DESENVOLVIMENTO,,2026,2026,1,1,14,271697080,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barra Funda,3,1,ADMINISTRACAO,,2026,2026,1,1,230,69826925,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Barros Cassal,3,1,GABINETE DO PREFEITO MUNICIPAL,,2019,2019,1,1,1,600000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Benjamin Constant do Sul,3,1,OPERAÇOES ESPECIAIS,,2026,2026,1,1,134,26895441,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Benjamin Constant do Sul,3,4,DEFESA CIVIL,,2026,2026,1,1,68,248206548,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bento Gonçalves,3,1,SECRETARIA MUNICIPAL DE SEGURANCA PUBLICA,,2026,2026,1,1,632,5787798718,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bento Gonçalves,3,2,FUNDO MUNICIPAL DE SEGURANCA PUBLICA,,2025,2025,1,1,24,10241831,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bento Gonçalves,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,44,1347189029,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bento Gonçalves,3,4,FUNDO MUNICIPAL DE REAPARELHAMENTO DOS BOMBEIROS,,2026,2026,1,1,227,503855611,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista das Missões,3,1,MANUT. DAS ATIV. DO GABINETE DO PREFEITO,,2026,2026,1,1,118,10864005,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Buricá,3,1,Secretaria Municipal de Servicos Urbanos,,2026,2026,1,1,116,6176382,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Buricá,3,3,DEFESA CIVIL,,2026,2026,1,1,3,84000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Cadeado,3,1,ADMINISTRACAO E PLANEJAMENTO,,2026,2026,1,1,296,72127816,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Incra,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,1,9000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Sul,3,1,SEC. MUN. DE ADMINISTR. E PLANEJAMENTO,,2026,2026,1,1,211,65111506,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Sul,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL-FUNDEC DO MUNICIPIO DE BOA VISTA DO SUL,,2026,2026,1,1,14,5934400,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boa Vista do Sul,3,4,SEGURANÇA PÚBLICA,,2026,2026,1,1,6,1089150,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Jesus,3,2,DEPARTAMENTO ADMINISTRATIVO,,2022,2022,1,1,96,11014571,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Princípio,3,1,ADMINISTRACAO GERAL,,2026,2026,1,1,287,278114287,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Princípio,3,2,DEFESA CIVIL,,2026,2026,1,1,101,712541938,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Princípio,3,7,DEFESA CIVIL,,2018,2018,1,1,64,14781866,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Retiro do Sul,3,1,Gabinete do Prefeito,,2025,2025,1,1,98,100944731,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bom Retiro do Sul,3,3,Fundo Municipal de Segurança Pública,,2026,2026,1,1,96,557745092,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Boqueirão do Leão,3,1,"SECRETARIA DE OBRAS, VIAÇÃO E SERVIÇOS PÚBLICOS",,2022,2022,1,1,5,4987900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bozano,3,1,Gabinete do Prefeito,,2026,2026,1,1,128,13400566,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Bozano,3,2,Fundo Mun. de Protecao e Defesa Civil,,2025,2025,1,1,34,70190519,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Braga,3,1,GABINETE E ORGAOS SUBORDINADOS -ADMINISTRAÇAO,,2019,2019,1,1,4,323500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Braga,3,3,SEGURANCA PUBLICA,,2026,2026,1,1,70,8969081,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Brochier,3,1,SECRETARIA DE VIACAO E INTERIOR,,2026,2026,1,1,179,265570171,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Brochier,3,5,COORDENADORIA DEFESA CIVIL,,2021,2021,1,1,2,21900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Butiá,3,1,SECR.ESP.SEG. PUBL.TRANS. E DEFESA CIVIL,,2026,2026,1,1,245,253731378,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Butiá,3,2,NUCLEO DE TRANSITO,,2026,2026,1,1,165,73950994,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Butiá,3,3,NUCLEO DE TRANSITO,,2022,2022,1,1,97,25064134,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caçapava do Sul,3,1,COORDENACAO DA INFRA-ESTRUTURA MUNICIPAL,,2026,2026,1,1,302,206344897,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caçapava do Sul,3,3,PROTECAO E DEFESA DO CIDADAO,,2026,2026,1,1,6,24017097,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cacequi,3,1,SECRETARIA MUNICIPAL DE PLANEJAMENTO INDUSTRIA E COMERCIO,,2026,2026,1,1,12,48840525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeira do Sul,3,1,GABINETE DO PREFEITO E UNID SUBORD,,2026,2026,1,1,160,164846087,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeira do Sul,3,2,Fundo Municipal de Protecao e Defesa Civ,,2026,2026,1,1,18,294685719,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeira do Sul,3,3,FUNDO MUN REEQ CORPO BOMBEIROS-FUMREBOM,,2026,2026,1,1,150,51584799,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeira do Sul,3,4,GAB DE GESTAO INTEGR DE SEGUR PUBLICA,,2026,2026,1,1,72,26894956,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeira do Sul,3,6,FUNDO DE PROTECAO E DEFESA CIVIL,,2025,2025,1,1,11,172417950,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeirinha,3,1,SECRETARIA MUNICIPAL DE SEGURANÇA PÚBLICA,,2026,2026,1,1,444,5189175232,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeirinha,3,2,FUNDO MUNICIPAL DE REEQUIP DO CORPO DE BOMBEIROS,,2024,2024,1,1,27,7370622,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeirinha,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,486,6775124327,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeirinha,3,4,FUNDO MUNICIPAL DE REEQUIPAMENTO DO CORPO DE BOMBEIROS,,2023,2023,1,1,111,138955012,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cachoeirinha,3,7,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cacique Doble,3,1,ENCARGOS GERAIS,,2021,2021,1,1,11,780000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caibaté,3,1,GOVERNO MUNICIPAL E UNIDADE SUBORDINADA,,2025,2025,1,1,15,90094310,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caiçara,3,1,Habitação e Urbanismo,,2020,2020,1,1,5,957291,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Camaquã,3,1,Secretaria Especial de Governo,,2026,2026,1,1,316,512859221,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Camaquã,3,2,Funrebomcam,,2026,2026,1,1,314,466153339,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Camargo,3,1,Secret. Municipal de Administracao,,2026,2026,1,1,268,306364677,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cambará do Sul,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO,,2026,2026,1,1,71,39960000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campestre da Serra,3,1,"SEC. MUNIC. ADM, PLANEJ, DESENVOLV. E TURISMO",,2026,2026,1,1,131,80282820,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campina das Missões,3,1,SEC. DE ADMINISTRACAO E PLANEJAMENTO,,2025,2025,1,1,6,4342301,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campina das Missões,3,4,FUNDEC - FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,12,87103328,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campinas do Sul,3,2,DEPARTAMENTO DE TRANSITO,,2026,2026,1,1,84,95289162,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campinas do Sul,3,3,DEPARTAMENTO DE DEFESA CIVIL,,2023,2023,1,1,33,7858121,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campinas do Sul,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,18,52735112,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,1,Secretaria de Finanças,,2026,2026,1,1,402,648340259,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,2,Divisão da Guarda Municipal,,2026,2026,1,1,252,2520862663,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,3,Divisão Adminitrativa,,2022,2022,1,1,65,92863139,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,4,Fundo Municipal de Segurança Pública,,2025,2025,1,1,215,190971636,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,5,Fundo Municipal de Segurança Pública,,2021,2021,1,1,57,66119827,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Bom,3,7,Coordenadoria Municipal de Proteção e Defesa Civil,,2026,2026,1,1,236,934014592,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campo Novo,3,1,"GESTÃO, MANUTENÇÃO E SERVIÇO DO GABINETE",,2025,2025,1,1,95,19564281,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Campos Borges,3,1,GAB. DO SECRET. E ORGAOS SUBORDINADOS,,2026,2026,1,1,50,14257075,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Candelária,3,1,Gabinete do Prefeito,,2026,2026,1,1,31,30177049,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Candelária,3,6,Coordenadoria Municipal de Defesa Civil,,2026,2026,1,1,176,885358277,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cândido Godói,3,3,DEPARTAMENTO DE TRANSITO,,2017,2017,1,1,1,10000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canela,3,1,SECRETARIA-GERAL DE GOVERNO,,2026,2026,1,1,286,770221826,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canela,3,2,FUNDO MUNICIPAL DE PROTECAO E DEFESA CIVIL DE CANELA,,2026,2026,1,1,28,897413241,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canela,3,3,FUNDO MUNICIPAL DE PROTECAO E DEFESA CIVIL DE CANELA,,2026,2026,1,1,7,4277398,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canguçu,3,1,GABINETE DO PREFEITO MUNICIPAL,,2026,2026,1,1,68,44473395,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canoas,3,1,GABINETE DO SECRETARIO DIRECAO E APOIO,,2026,2026,1,1,1126,19168471316,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canoas,3,2,FUNDO MUNICIPAL DE PROTECAO E DEFESA CIVIL DO MUNICIPIO DE CANOAS,,2026,2026,1,1,178,10465783851,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canoas,3,3,FUNDO MUNICIPAL DE REEQUIPAMENTO DE BOMBEIROS,,2017,2017,1,1,35,25972377,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Canudos do Vale,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,54,733784026,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão Bonito do Sul,3,1,"SM DE ADMINISTRAÇÃO, PLAN E FINANÇAS",,2023,2023,1,1,7,243149,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão Bonito do Sul,3,3,DEFESA CIVIL,,2026,2026,1,1,2,491244,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão da Canoa,3,1,Gabinete do Prefeito,,2018,2018,1,1,53,37646853,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão da Canoa,3,2,Fundo de Reaparelhamento do Corpo de Bombeiros,,2026,2026,1,1,158,138064303,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão da Canoa,3,3,Fundo Municipal de Segurança Pública,,2026,2026,1,1,96,1516236492,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão da Canoa,3,7,Fundo Municipal de Defesa Civil,,2022,2022,1,1,48,8675970,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capão do Leão,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,25,12639374,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capivari do Sul,3,63,DEP. DE SERVIÇOS PUBLICOS,,2026,2026,1,1,112,29509170,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capela de Santana,3,3,UNIDADES SUBORDINADAS,,2018,2018,1,1,2,39900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capitão,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,25,155297257,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Capitão,3,2,DEFESA CIVIL,,2025,2025,1,1,3,579500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carazinho,3,1,GABINETE DA SECRETARIA,,2026,2026,1,1,70,67966948,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carazinho,3,2,GABINETE DE GESTÃO INTEGRADA MUNICIPAL - GGIM,,2026,2026,1,1,394,518294448,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carazinho,3,5,DEPTO. MUNICIPAL DE HABITAÇÃO E DEFESA CIVIL,,2026,2026,1,1,243,164855392,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carazinho,3,6,SETOR DE TRÂNSITO,,2018,2018,1,1,51,51496102,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caraá,3,1,"SEC. ADMINISTR, FAZENDA E PLANEJAMENTO",,2026,2026,1,1,37,10350000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caraá,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,69,212502105,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carlos Barbosa,3,1,COORDENADORIA DE SEGURANCA,,2026,2026,1,1,717,1811366244,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carlos Barbosa,3,2,COORDENADORIA DE TRANSITO E DEFESA CIVIL,,2026,2026,1,1,4,7750000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carlos Barbosa,3,4,GUARDA MUNICIPAL,,2026,2026,1,1,6,12015021,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Carlos Gomes,3,1,ENCARGOS GERAIS,,2026,2026,1,1,247,21457255,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Casca,3,2,Departamento de Segurança Pública,,2026,2026,1,1,8,4006361,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Casca,3,4,DEPARTAMENTO DE SERVIÇOS URBANOS,,2026,2026,1,1,138,79058248,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caseiros,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,146,22382438,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Catuípe,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,8,6053799,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Caxias do Sul,3,21,Secretaria Municipal da Segurança Pública e Proteção Social,,2026,2026,1,1,1067,26502321389,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Centenário,3,1,SECRETARIA DE OBRAS E VIAÇÃO,,2026,2026,1,1,23,9727277,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cerrito,3,1,"Sec. de Serviços Urbanos, Trânsito e Meio Ambiente",,2026,2026,1,1,135,204602442,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cerro Branco,3,3,FUMDEC - FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,74,459889246,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cerro Grande,3,1,SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO,,2026,2026,1,1,8,26035682,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cerro Grande do Sul,3,3,Encargos Gerais - Emenda Impositiva,,2023,2023,1,1,8,1959491,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cerro Largo,3,1,Unidades Subordinadas,,2025,2025,1,1,20,15519285,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Chapada,3,3,TRANSITO,,2026,2026,1,1,113,41475852,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Charqueadas,3,1,SECRETARIA MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,26,148259331,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Charqueadas,3,2,FUNDO DE DEFESA CIVIL,,2025,2025,1,1,69,239709563,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Charrua,3,1,ENCARGOS ESPECIAIS DO MUNICÍPIO,,2026,2026,1,1,34,30403800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Charrua,3,2,OBRAS E SERVIÇOS URBANOS,,2026,2026,1,1,83,58462421,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Chiapetta,3,1,SEGURANÇA COMUNITÁRIA,,2019,2019,1,1,32,2352500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Chiapetta,3,8,DEPTO DE TRANSITO E MOBILIDADE,,2026,2026,1,1,133,38937492,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Chuvisca,3,1,GABINETE DO PREFEITO E VICE PREFEITO,,2026,2026,1,1,3,465939,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Chuvisca,3,10,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,6,15338669,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cidreira,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,180,396577413,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cidreira,3,6,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,3,99660,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ciríaco,3,1,SECRETARIA D ADMINISTRAÇAO E FAZEND,,2022,2022,1,1,6,1960000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Colinas,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,172,605599752,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Colorado,3,2,Serviços Publicos,,2023,2023,1,1,49,8565558,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Condor,3,1,"INFRA-ESTRUTURA, MOBILIDADE E PATRIMONIO",,2023,2023,1,1,30,5770455,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Condor,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,1,5395162,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Constantina,3,1,Secretaria de Administração,,2025,2025,1,1,99,20270059,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coqueiro Baixo,3,1,SECRETARIA GERAL DO MUNICIPIO,,2026,2026,1,1,263,306270439,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coqueiros do Sul,3,2,MANUTENÇAO DA SEC.ADM.IND,,2026,2026,1,1,126,26516385,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coqueiros do Sul,3,3,DEPTO. DEFESA CIVIL,,2026,2026,1,1,8,12823924,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coronel Barros,3,1,SEC.ADM.PLANEJ.E FINANCAS,,2026,2026,1,1,189,54827093,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coronel Pilar,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,357,61068638,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coronel Pilar,3,3,FUNDO MUNICIPAL DE PROTEÇÃO DA DEFESA CIVIL,,2026,2026,1,1,17,210361502,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cotiporã,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,50,13632590,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cotiporã,3,2,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2026,2026,1,1,25,786814049,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coxilha,3,1,SECRETARIA MUNICIPAL DE PLANEJAMENTO,,2026,2026,1,1,5,18211700,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Coxilha,3,2,SEGURANCA,,2026,2026,1,1,111,34687941,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Crissiumal,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,10,4582168,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Crissiumal,3,2,HABITAÇÃO E URBANISMO,,2025,2025,1,1,25,2148262,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Crissiumal,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2024,2024,1,1,33,101595903,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cristal,3,4,DEFESA  CIVIL,,2024,2024,1,1,41,86663714,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cristal,3,5,FUMPDEC - Recursos Proprios,,2025,2025,1,1,21,17193817,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cristal,3,6,FUMPDEC - Recursos do Estado,,2025,2025,1,1,15,70574091,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cristal,3,7,FUMPDEC - Recursos da Uniao,,2025,2025,1,1,9,30819446,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cristal do Sul,3,1,Gabinete do Prefeito,,2026,2026,1,1,112,187663407,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruz Alta,3,1,Unidade Subordinada,,2024,2024,1,1,183,963889242,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruz Alta,3,2,Segurança Pública - FUREBOM,,2026,2026,1,1,259,224316543,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruz Alta,3,3,Fundo Municipal de Proteção e Defesa Civil - FUMPDEC,,2026,2026,1,1,31,104367993,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruz Alta,3,4,Defesa Civil,,2019,2019,1,1,3,442000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruzaltense,3,3,FUNDO MUNICIPAL DA DEFESA CIVIL - FUMDEC,,2026,2026,1,1,13,31381466,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruzeiro do Sul,3,1,S M O S U,,2020,2020,1,1,2,115036800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruzeiro do Sul,3,2,FUNDO MUN.ASSIST.SOCIAL (FMAS),,2026,2026,1,1,2,2380000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Cruzeiro do Sul,3,5,FUNDO MUNICIPAL DEFESA CIVIL,,2026,2026,1,1,76,826056486,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+David Canabarro,3,1,SECRETARIA DE ADMINISTRAÇÃO,,2026,2026,1,1,139,56401486,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Derrubadas,3,1,DEPARTAMENTO DE APOIO ADMINISTRATIVO,,2023,2023,1,1,10,8872984,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dilermando de Aguiar,3,4,SEGURANÇA PÚBLICA,,2026,2026,1,1,83,107705210,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dilermando de Aguiar,3,5,SEGURANÇA PÚBLICA,,2021,2021,1,1,29,9990599,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dilermando de Aguiar,3,7,FUNDO MUNICIPAL DE DEFESA CIVIL,,2024,2024,1,1,3,19996918,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dois Irmãos,3,2,Conselhos Municipais,,2026,2026,1,1,84,76689045,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dois Irmãos,3,3,Segurança Pública,,2026,2026,1,1,363,652009005,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dois Irmãos das Missões,3,1,Secretaria M. Industria e Comercio,,2025,2025,1,1,86,34550475,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dois Lajeados,3,1,Sec Mun da Administração e Planejamento,,2026,2026,1,1,96,46220523,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Feliciano,3,4,FUNDO MUNICIPAL DE DEFESA CIVIL - FMDC,,2026,2026,1,1,2,9990000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Pedrito,3,1,GABINETE DO PREFEITO,,2017,2017,1,1,60,18526432,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Pedrito,3,3,FUNDO MUNICIPAL DE BOMBEIROS,,2026,2026,1,1,269,66574143,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Pedrito,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,82,75688954,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Pedrito,3,6,FUNDO MUNICIPAL DE DEFESA CIVIL,,2017,2017,1,1,10,298493,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dom Pedrito,3,7,EQUIP.CONTR.EXEC.CONV.E  ATIVIDADE INTER,,2017,2017,1,1,3,2400000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Dona Francisca,3,2,EXECUCAO DAS ATIVIDADES DA SMOU,,2026,2026,1,1,81,9494561,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Doutor Maurício Cardoso,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO E FAZENDA,,2026,2026,1,1,56,10914280,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Doutor Maurício Cardoso,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2023,2023,1,1,21,37211905,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Doutor Ricardo,3,1,SECRETARIA DE ADMINISTRACAO E PLANEJMTO,,2026,2026,1,1,197,38882789,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Doutor Ricardo,3,2,FUNDO MUNICIPAL PROTECAO E DEFESA CIVIL,,2026,2026,1,1,70,477643100,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Eldorado do Sul,3,2,FUNDO MUNICIPAL  DEFESA CIVIL - FUMDECI,,2026,2026,1,1,7,548238503,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Encantado,3,1,DEPARTAMENTO ADMINISTRATIVO,,2026,2026,1,1,449,1722271352,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Encantado,3,2,FUNDO MUNICIPAL DA SAÚDE - RECURSO FEDERAL,,2024,2024,1,1,4,4599165,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Encruzilhada do Sul,3,1,Gabinete do Prefeito,,2026,2026,1,1,170,569401706,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Entre-Ijuís,3,2,"TRANSP, OBRAS PUBLICAS E SERVICOS GERAIS",,2026,2026,1,1,136,46486397,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Entre-Ijuís,3,4,FUNDO MUN DE HABITACAO,,2024,2024,1,1,39,8704333,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Entre-Ijuís,3,5,FUNDO MUNIC DE PROTECAO E DEFESA CIVIL,,2026,2026,1,1,14,20649040,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Entre Rios do Sul,3,1,ENCARGOS GERAIS DO MUNICIPIO,,2026,2026,1,1,135,18576239,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Entre Rios do Sul,3,3,Fundo Municipal de Defesa Civil,,2026,2026,1,1,66,250723739,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erebango,3,2,DEFESA CIVIL,,2026,2026,1,1,26,15501284,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erebango,3,3,ENCARGOS GERAIS DA ADMINISTRACAO,,2026,2026,1,1,124,16394587,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erechim,3,1,SECRETARIA MUNICIPAL DE SEGURANCA PUBLICA E PROTECAO SOCIAL,,2020,2020,1,1,348,1570565209,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erechim,3,2,UNIDADE DE SEGURANCA PUBLICA E PROTECAO SOCIAL,,2026,2026,1,1,26,183519482,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erechim,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,134,2267611061,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erechim,3,7,UNIDADE DE SEGURANCA PUBLICA E PROTECAO SOCIAL,,2026,2026,1,1,736,4500204077,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erechim,3,9,FUNDO MUNICIPAL DE DEFESA CIVIL,,2023,2023,1,1,55,165814456,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ernestina,3,1,SECRETARIA DA ADMINISTRACAO,,2026,2026,1,1,1,4000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ernestina,3,3,JUNTA DO SERVICO MILITAR,,2026,2026,1,1,38,2917679,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ernestina,3,7,RECURSOS VINCULADOS ESTADO,,2020,2020,1,1,6,10866200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erval Grande,3,1,ENCARGOS GERAIS,,2026,2026,1,1,13,40061127,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erval Grande,3,5,DEFESA CIVIL,,2026,2026,1,1,15,111029914,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erval Seco,3,1,SECRETARIA MUNICIPAL DE ADMINISTRAÇÃO,,2025,2025,1,1,98,23190000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Erval Seco,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,27,84002831,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esperança do Sul,3,1,ADMINISTRACAO PLANEJAMENTO E TURISMO,,2026,2026,1,1,23,96297385,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esperança do Sul,3,2,SEGURANCA PUBLICA,,2026,2026,1,1,335,171120922,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Espumoso,3,2,SETOR DE ESTRADAS E VIAS URBANAS,,2026,2026,1,1,413,971539324,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Espumoso,3,3,Corpo de Bombeiros,,2018,2018,1,1,21,4650000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Espumoso,3,4,Transito Urbano,,2018,2018,1,1,101,107770327,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estação,3,1,ADMINISTRACAO,,2025,2025,1,1,113,15245441,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estação,3,2,DEFESA CIVIL,,2026,2026,1,1,34,15615631,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estância Velha,3,2,COORDENADORIA MUN.DE DEFESA CIVIL,,2026,2026,1,1,101,52504606,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estância Velha,3,5,DEPTO DE TRANSITO E SEGURANCA,,2026,2026,1,1,537,4553359133,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,1,Gabinete do Secretário,,2026,2026,1,1,704,879638204,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,10,Fundo Municipal de Apoio às Atividades de Segurança - FUNSEG,,2026,2026,1,1,134,90674145,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,12,Fundo Municipal de Defesa Civil,,2025,2025,1,1,46,7449098,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,13,Fundo Mun. de Reequip. do Corpo de Bombeiros - FUMREBOM,,2025,2025,1,1,48,30731543,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,2,Defesa Civil,,2026,2026,1,1,105,1766006715,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,3,Segurança Pública,,2021,2021,1,1,216,1445344186,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,4,Diretoria de Segurança e Trânsito,,2023,2023,1,1,77,56207784,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,5,Unidade de Videomonitoramento,,2026,2026,1,1,98,109375521,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,7,Fundo Municipal de Defesa Civil,,2019,2019,1,1,13,822964,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Esteio,3,8,Guarda Municipal,,2026,2026,1,1,158,2091702150,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,1,SECRETARIA MUN INFRAESTRUTURA,,2026,2026,1,1,68,67031486,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,2,GABINETE DE SEGURANÇA PUBLICA,,2022,2022,1,1,59,31594928,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,3,GABINETE DE SEGURANÇA PÚBLICA,,2026,2026,1,1,687,1844218523,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,4,FUNDO MUNICIPAL DA DEFESA CIVIL,,2025,2025,1,1,35,5610015,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,5,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,131,60974821,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Estrela,3,8,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,29,176463116,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Eugênio de Castro,3,3,AREA URBANA,,2019,2019,1,1,3,930520,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Fagundes Varela,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,256,204860253,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Fagundes Varela,3,2,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,1,199200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Farroupilha,3,1,Secretaria de Gestão e Governo,,2026,2026,1,1,297,1191602698,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Farroupilha,3,2,FUNREBOM,,2022,2022,1,1,129,206523836,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Farroupilha,3,3,Departamento de Trânsito,,2025,2025,1,1,13,1262649,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Farroupilha,3,4,Departamento da Guarda Civil,,2026,2026,1,1,250,420553319,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Farroupilha,3,5,Departamento de Defesa Civil,,2025,2025,1,1,19,175125719,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Faxinal do Soturno,3,1,SEC DE ADMINISTRACAO E GESTAO FINANCEIRA,,2026,2026,1,1,148,557375468,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Faxinal do Soturno,3,3,FUNDO MINIC. DE PROTECAO E DEFESA CIVIL,,2026,2026,1,1,25,125716287,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Faxinalzinho,3,1,ENCARGOS GERAIS DO MUNICÍIO,,2026,2026,1,1,138,28215069,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Faxinalzinho,3,4,DEFESA CIVIL,,2026,2026,1,1,48,98218588,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Fazenda Vilanova,3,2,"PLANEJAMENTO, HABITACAO E SEGURANCA",,2026,2026,1,1,179,69014136,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Feliz,3,1,SMI E ORGAOS AUXILIARES,,2026,2026,1,1,190,85233758,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Feliz,3,2,SMSAS - DEFESA CIVIL,,2026,2026,1,1,127,504519122,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Feliz,3,6,SMS - DEFESA CIVIL,,2024,2024,1,1,314,421569943,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Flores da Cunha,3,1,Segurança Pública Municipal,,2026,2026,1,1,402,1803217490,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Flores da Cunha,3,2,FUNREBOM,,2026,2026,1,1,177,115154491,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Floriano Peixoto,3,10,SETOR DO DEPARTAMENTO DE TRANSITO,,2025,2025,1,1,6,574444,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Floriano Peixoto,3,11,SETOR DA COORDENADORIA MUNICIPAL DE DEFESA CIVIL - COMPDEC,,2026,2026,1,1,11,6557517,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Fontoura Xavier,3,1,SECRETARIA MUNICIPAL SERVIÇOS URBANOS TRÂNSITO E MEIO AMBIENTE,,2025,2025,1,1,18,24249550,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Formigueiro,3,1,SEC. MUNIC. DE ADMINISTRACAO,,2026,2026,1,1,50,26230182,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Formigueiro,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL -FUNDEC,,2025,2025,1,1,7,10000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Forquetinha,3,1,SECR. MUN. ADMINISTRAÇÃO E FAZENDA,,2026,2026,1,1,28,12370101,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Fortaleza dos Valos,3,5,FUNDO MUNICIPAL DE PROTECAO DA DEFESA CIVIL - FUMDEC,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Frederico Westphalen,3,1,MANUT. DA SEC. DE COORDENAÇÃO E PLANEJAMENTO,,2026,2026,1,1,455,356276122,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Garibaldi,3,1,SEC. MUN. DE SEGURANÇA E MOBILIDADE URBANA,,2026,2026,1,1,619,1866238333,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Garibaldi,3,2,ASSISTÊNCIA COMUNITÁRIA,,2026,2026,1,1,30,104500192,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gaurama,3,1,GABINETE,,2025,2025,1,1,95,36763079,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+General Câmara,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,87,109519588,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gentil,3,1,SEC. DA CIDADE SEG. PUBL. TRANSIT TURISMO E HABITAÇÃO,,2026,2026,1,1,221,76719703,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Getúlio Vargas,3,1,SETOR DO GABINETE DO PREFEITO MUNICIPAL,,2024,2024,1,1,7,62103920,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Getúlio Vargas,3,7,SETOR DA SEGURANCA PUBLICA,,2026,2026,1,1,163,134160925,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Giruá,3,1,COORDENACAO ADMINISTRATIVA DO GABINETE DO PREFEITO,,2025,2025,1,1,197,170740063,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Giruá,3,3,FUNDO MUNICIPAL DE SEGURANCA PUBLICA,,2025,2025,1,1,12,49704280,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Glorinha,3,1,SECR.MUN.ADMINISTR.EORGAOS SUBORDINADOS,,2026,2026,1,1,255,81404750,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Glorinha,3,6,UNIDADE DA DEFESA CIVIL,,2026,2026,1,1,51,10709608,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado,3,1,SECRETARIA MUN. DE TRÂNSITO E MOBILIDADE URBANA,,2026,2026,1,1,286,713291797,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado,3,2,MOBILIDADE URBANA,,2025,2025,1,1,191,151891295,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado,3,3,SEGURANÇA PÚBLICA,,2026,2026,1,1,306,649365224,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado,3,4,TRÂNSITO,,2026,2026,1,1,358,2196986880,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado,3,8,SECRETARIA MUNICIPAL DE PLANEJAMENTO,,2021,2021,1,1,6,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado dos Loureiros,3,1,ENCARGOS GERAIS DO MUNICÍPIO,,2025,2025,1,1,65,6285000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gramado Xavier,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,57,79060629,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gravataí,3,1,Gabinete do Secretario,,2026,2026,1,1,631,16598346571,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gravataí,3,2,Diretoria da Guarda Municipal,,2026,2026,1,1,581,1107646689,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Gravataí,3,3,Fundo Municipal de Segurança Pública - FuMSeg,,2026,2026,1,1,51,287874154,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guabiju,3,1,"SECRETARIA DE OBRAS, VIAÇÃO E TRANSITO",,2026,2026,1,1,120,16996707,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaíba,3,1,DEPTO DE APOIO LEGISLATIVO,,2026,2026,1,1,59,35232949,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaíba,3,3,DEPTO DE SEGURANÇA,,2023,2023,1,1,127,168739163,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaíba,3,5,DEPTO DE SEGURANÇA,,2026,2026,1,1,100,116641098,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaíba,3,6,FUNDO MUNICIPAL DE PREVENÇÃO A VIOLÊNCIA,,2025,2025,1,1,20,35075244,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,1,SECRETARIA M. DE SEGURANCA PUBLICA,,2026,2026,1,1,221,206710240,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,2,SERVICO M. TRANSITO,,2026,2026,1,1,395,396818009,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,3,SISTEMA MUN. DEFESA CIVIL,,2026,2026,1,1,181,181419157,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,4,FUNDO M. DEFESA CIVIL,,2026,2026,1,1,7,6855653,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,8,SISTEMA MUN. DEFESA CIVIL,,2025,2025,1,1,127,143285088,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guaporé,3,9,FUNDO M. DEFESA CIVIL,,2025,2025,1,1,41,204467262,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Guarani das Missões,3,3,"SECRET. DE OBRAS, SANEAMENTO E TRANSITO",,2026,2026,1,1,47,27377725,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Harmonia,3,1,"SEC MUN DE ADM, TRÂNSITO E SERV COMUNIT",,2026,2026,1,1,77,106316696,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Harmonia,3,3,SEGURANÇA PÚBLICA,,2026,2026,1,1,4,546350,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Herveiras,3,1,GAB. SECRETARIO E ORGÃOS SUBORDINADOS,,2025,2025,1,1,11,9268400,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Humaitá,3,4,COMDEC- DEFESA CIVIL,,2025,2025,1,1,43,79705477,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibarama,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,162,36265638,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibarama,3,2,FUNMPDEC-FUNDO MUN DE PROTEÇÃO E DEFESA CIVIL,,2026,2026,1,1,98,223113743,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibiaçá,3,1,ENCARGOS GERAIS DO MUNICÍPIO,,2026,2026,1,1,56,32401325,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibiraiaras,3,1,Secretaria Geral,,2026,2026,1,1,11,9020000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibiraiaras,3,2,Setor de Servicos Urbanos,,2024,2024,1,1,6,7055000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirapuitã,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,59,11465423,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirapuitã,3,2,DEFESA CIVIL,,2021,2021,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirubá,3,1,Departamento Administrativo,,2017,2017,1,1,74,59926548,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirubá,3,3,Corpo de Bombeiros,,2016,2016,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirubá,3,5,CONVÊNIO FUNREBOM,,2026,2026,1,1,922,753348828,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ibirubá,3,6,Divisão de Trânsito,,2018,2018,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Igrejinha,3,1,Secretaria de Obras e Transito,,2026,2026,1,1,134,529069800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Igrejinha,3,2,Fundo Municipal de Defesa Civil,,2026,2026,1,1,564,1328537608,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ijuí,3,1,Coordenadoria Administrativa,,2026,2026,1,1,197,193761722,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ijuí,3,2,Coordenadoria da Defesa Civil,,2025,2025,1,1,13,79076850,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ijuí,3,3,Coordenadoria de Transito,,2026,2026,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ilópolis,3,2,DEPARTAMENTO DE SERVIÇOS URBANOS,,2025,2025,1,1,13,18723515,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Imbé,3,2,EXECUTIVO MUNICIPAL,,2026,2026,1,1,701,4684376528,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Imigrante,3,2,FUNDO MUNICIPAL DA SEGURANCA,,2026,2026,1,1,136,156770898,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Independência,3,1,ENCARGOS ESPECIAIS,,2025,2025,1,1,19,9000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Independência,3,5,FUNDEC - FUNDO DE DEFESA CIVIL,,2026,2026,1,1,46,138097735,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Inhacorá,3,2,Obras e Servicos,,2026,2026,1,1,78,18254271,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ipê,3,1,ADMINISTRACAO,,2026,2026,1,1,100,83013408,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ipiranga do Sul,3,1,SECRETARIA DE OBRAS,,2026,2026,1,1,89,16635563,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Iraí,3,1,SEC. MUNIC. ADMINISTRAÇÃO E ÓRGÃOS LIGADOS,,2026,2026,1,1,42,5612776,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Iraí,3,2,FUNDO MUNIC. PROTEÇÃO E DEFESA CILVIL - FUMPDEC,,2025,2025,1,1,11,88679485,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaara,3,1,MANUTENCAO DO GABINETE DO PREFEITO,,2026,2026,1,1,45,25958838,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaara,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL - FUNDEC,,2024,2024,1,1,12,356375,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaara,3,3,FUNDO MUNICIPAL DA DEFESA CIVIL - FUNDEC,,2019,2019,1,1,23,8344732,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itapuca,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,59,49417684,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaqui,3,1,GABINETE DE GESTAO INTEGRADA,,2026,2026,1,1,409,350242996,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaqui,3,2,PROCURADORIA GERAL DO MUNICIPIO,,2024,2024,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaqui,3,4,DIVISAO DE TRANSITO,,2022,2022,1,1,99,78005834,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itaqui,3,6,DIR. SEG PUB. DEF.CIVIL E DIR. TRANSITO,,2026,2026,1,1,116,203058525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itatiba do Sul,3,1,SEC DA GESTAO E PLANEJ. E PARTICIP.,,2023,2023,1,1,4,12097241,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Itatiba do Sul,3,2,SERVICOS RODOVIARIOS - DMER,,2024,2024,1,1,11,67230006,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ivorá,3,1,NUCLEO DE SERVICOS URBANOS,,2026,2026,1,1,50,42915541,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ivoti,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,397,543876370,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jacuizinho,3,1,GABINETE DO PREFEITO E CHEFIA DE GABINET,,2023,2023,1,1,9,24650503,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaguarão,3,1,NÚCLEO ADMINISTRATIVO,,2016,2016,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaguarão,3,2,SETOR DE DEFESA CIVIL,,2024,2024,1,1,135,59288959,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaguarão,3,4,SETOR DE DEFESA CIVIL,,2025,2025,1,1,35,93518061,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaguari,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,59,281455742,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaguari,3,4,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,17,390460918,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jaquirana,3,1,SECRETARIA MUNICIPAL DA ADMINISTRAÇÃO,,2026,2026,1,1,132,80983828,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jari,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,20,33035399,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Jóia,3,1,Gabinete do Prefeito,,2026,2026,1,1,14,16707516,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Júlio de Castilhos,3,1,"AGRICULTURA , TURISMO E MEIO AMBIENTE",,2026,2026,1,1,181,184861280,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Bonita do Sul,3,1,Encargos especiais,,2025,2025,1,1,8,7429600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Bonita do Sul,3,3,Fundo Municipal de Defesa Civil,,2025,2025,1,1,32,82467875,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoão,3,1,SECRETARIA DA ADMINISTRACAO,,2024,2024,1,1,33,10267627,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa dos Três Cantos,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,83,69411504,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,1,SEC. MUN. DO PLANEJAMENTO,,2017,2017,1,1,6,26675570,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,2,ENCARGOS SEGURANÇA PÚBLICA,,2026,2026,1,1,210,124475080,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,3,DEPARTAMENTO DE TRÂNSITO,,2026,2026,1,1,350,387373451,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,4,FUNDO MUN REAP CORPO BOMBEIROS,,2022,2022,1,1,139,89430634,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,5,FUNDO MUNICIPAL REAPARELHAMENTO CORPO BOMBEIROS,,2023,2023,1,1,22,2779473,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lagoa Vermelha,3,6,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2026,2026,1,1,17,16534682,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lajeado,3,1,SECRETARIA MUNICIPAL DA SEGURANÇA PÚBLICA,,2026,2026,1,1,833,2228107506,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lajeado,3,2,COORDENADORIA DE TRÂNSITO E TRANSPORTES URBANOS,,2026,2026,1,1,2,704186,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lajeado,3,4,FUNDO MUNICIPAL DE REEQUIPAMENTO DE BOMBEIROS,,2025,2025,1,1,20,4947860,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lajeado,3,5,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,126,1354102611,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lajeado do Bugre,3,3,APOIO A BRIGADA MILITAR,,2026,2026,1,1,121,13358039,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lavras do Sul,3,1,MANUT SECRETARIA DE TRANSITO E SEG. PUBL,,2026,2026,1,1,16,6500343,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lavras do Sul,3,2,MANUTENCAO DO DEMUT,,2026,2026,1,1,1,17500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lindolfo Collor,3,1,COORDENADORIA ADMINISTRATIVA,,2026,2026,1,1,2,262450,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Lindolfo Collor,3,5,MANUTENCAO DA DEFESA CIVIL,,2025,2025,1,1,45,7171762,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Linha Nova,3,6,DEPARTAMENTO DA DEFESA CÍVIL,,2025,2025,1,1,5,556879,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Machadinho,3,1,SEC MUNICIPAL DE ASSISTENCIA SOCIAL,,2025,2025,1,1,12,55206082,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maçambará,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,33,43084596,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mampituba,3,1,"Departamento de Administração, Fazenda e Planejame",,2026,2026,1,1,3,600000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mampituba,3,5,Fundo Municipal de Proteção e Defesa Civil-FUMPDEC,,2025,2025,1,1,4,20407520,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Manoel Viana,3,1,ADMINISTRACAO GERAL FAZENDA,,2019,2019,1,1,2,5970000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Manoel Viana,3,4,DEFESA CIVIL,,2026,2026,1,1,77,219204660,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maquiné,3,1,SEC MUN DE OBRAS-ORGAOS SUBOR,,2026,2026,1,1,35,123584725,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maquiné,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL - FMDC,,2025,2025,1,1,4,1090250,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maratá,3,1,GABINETE DO PREFEITO E ÓRGÃOS AUXILIARES,,2026,2026,1,1,172,8564811,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maratá,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL-FUMDEC,,2026,2026,1,1,81,255818229,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marau,3,1,ORGAOS SUBORDINADOS,,2026,2026,1,1,358,2447106218,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marau,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,7,51707980,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marcelino Ramos,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,21,91738272,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mariana Pimentel,3,1,MANUTENÇÃO DA SECRETARIA DA ADMINISTRAÇÃO E PLANEJAMENTO,,2026,2026,1,1,3,149600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mariana Pimentel,3,2,DEPARTAMENTO DE OBRAS PUBLICAS,,2019,2019,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mariano Moro,3,2,DEPARTAMENTO MUNICIPAL DE TRANSITO,,2026,2026,1,1,61,28513313,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mariano Moro,3,6,FUNDO MUNICIPAL DE PROT. E DEFESA CIVIL,,2025,2025,1,1,28,48269090,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marques de Souza,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,178,694427662,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marques de Souza,3,2,"CULTURA, DESPORTO E TURISMO",,2026,2026,1,1,14,14507882,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Marques de Souza,3,3,FUNDO MUNICIPAL DA ASSISTÊNCIA SOCIAL,,2025,2025,1,1,8,23827898,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mato Leitão,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,256,91927525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mato Leitão,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,3,63000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mato Queimado,3,1,Gabinete do Prefeito,,2026,2026,1,1,5,13172600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Maximiliano de Almeida,3,1,ENCARGOS GERAIS,,2024,2024,1,1,107,7348672,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Minas do Leão,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO,,2026,2026,1,1,115,109555539,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Minas do Leão,3,2,Fundo Municipal de Defesa Civil - FUMDEC,,2026,2026,1,1,2,200000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montauri,3,1,"Secretaria Municipal de Obras, Saneam. e Transito",,2026,2026,1,1,44,8184509,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Monte Alegre dos Campos,3,1,GABINETE DO PREFEITO MUNICIPAL,,2026,2026,1,1,38,29035068,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Monte Alegre dos Campos,3,3,CONSEPRO,,2026,2026,1,1,2,1160500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Monte Belo do Sul,3,4,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2025,2025,1,1,18,46754961,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montenegro,3,1,SMAD - ADMINISTRAÇÃO,,2016,2016,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montenegro,3,10,DEPARTAMENTO DA GUARDA,,2026,2026,1,1,31,234582321,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montenegro,3,6,QUINTO BPM E CORPO DE BOMBEIROS,,2026,2026,1,1,205,456320682,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montenegro,3,7,FUMREBOM,,2026,2026,1,1,103,45261764,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Montenegro,3,9,FUNDO MUNICIPAL DE DEFESA CIVIL - FUNDEC,,2026,2026,1,1,6,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Morrinhos do Sul,3,1,Gabinete do Prefeito,,2017,2017,1,1,23,4200000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Morro Redondo,3,1,"Secretaria Municipal de Obras,Urbanismo",,2026,2026,1,1,133,140017353,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Morro Reuter,3,1,"DEPTO DE GOV, PLAN, GESTAO E PARCERIAS",,2026,2026,1,1,74,56339382,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Morro Reuter,3,2,MANUT.DA JARI-JUNTA ADMINISTRATIVA,,2022,2022,1,1,47,1593993,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Morro Reuter,3,6,DEFESA CIVIL MUNICIPAL,,2026,2026,1,1,28,55380579,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mostardas,3,1,GABINETE DO SECRETARIO,,2025,2025,1,1,103,29969193,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Mostardas,3,5,DEFESA CIVIL,,2025,2025,1,1,6,18707259,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Muçum,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO,,2022,2022,1,1,47,25199062,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Muçum,3,2,SERVIÇOS DE UTILIDADE PUBLICA,,2026,2026,1,1,13,49349560,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Muitos Capões,3,1,ADMINISTRAÇÃO,,2026,2026,1,1,119,56584546,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Muliterno,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,1,92500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Não-Me-Toque,3,2,Gabinete do Prefeito e Órgãos de Coop. e Assessoramento,,2026,2026,1,1,478,205841086,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Não-Me-Toque,3,5,Gabinete do Vice-Prefeito,,2026,2026,1,1,75,44533341,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nicolau Vergueiro,3,1,Gabinete do Prefeito Municipal,,2026,2026,1,1,100,40952796,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nonoai,3,1,ENCARGOS GERAIS,,2026,2026,1,1,338,132602204,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Alvorada,3,3,DEPARTAMENTO DE SEGURANÇA E TRANSITO,,2026,2026,1,1,358,185175180,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Araçá,3,1,SECRETARIA DA ADMINISTRAÇÃO,,2026,2026,1,1,102,41390418,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Bassano,3,1,UNIDADE SUBORDINADA,,2026,2026,1,1,180,108603420,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Bassano,3,2,RECURSOS VINCULADOS - OBRAS,,2017,2017,1,1,5,117000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Bassano,3,3,DEFESA CIVIL,,2026,2026,1,1,35,277897287,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Boa Vista,3,2,DEFESA CIVIL,,2026,2026,1,1,24,104947692,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Boa Vista,3,3,TRANSITO,,2026,2026,1,1,132,20659511,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Bréscia,3,1,ENCARGOS GERAIS DO MUNICIPIO,,2025,2025,1,1,12,82202213,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Bréscia,3,2,SETOR DE SERVICOS URBANOS,,2026,2026,1,1,47,5350164,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Candelária,3,1,SECRETARIA DE ADMINISTRACAO PLANEJAMENTO E FINANCAS,,2025,2025,1,1,26,47098766,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Candelária,3,2,SERVIÇOS URBANOS,,2019,2019,1,1,46,406017,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Candelária,3,3,TRANSITO MUNICIPAL,,2021,2021,1,1,24,266950,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Candelária,3,4,TRANSITO MUNICIPAL,,2025,2025,1,1,48,1295965,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Esperança do Sul,3,1,ATIVIDADES ADMINISTRATIVAS E DE GESTAO,,2025,2025,1,1,16,2353174,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Esperança do Sul,3,2,APOIO AOS ORGAOS CONVENIADOS,,2026,2026,1,1,2,312274,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Esperança do Sul,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUNDEC,,2026,2026,1,1,45,138930830,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Hartz,3,1,SEC. MUN. DE MOB. URBANA E SEGURANCA PUB,,2017,2017,1,1,30,22472000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Hartz,3,3,DEPART MUNIC DE MOB URBANA E SEG PUBLICA,,2026,2026,1,1,224,379365532,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Pádua,3,1,SECRETARIA DE ADMINISTRACAO E FAZENDA,,2026,2026,1,1,55,27218726,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Pádua,3,2,"Mobilidade, Segurança e Saneamento",,2026,2026,1,1,3,68100,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Palma,3,1,GABINETE DO PREFEITO E ORGAOS SUBORDINAD,,2025,2025,1,1,47,123314860,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Palma,3,2,FUNDO MUNICIPAL DE PROT. E DEFESA CIVIL,,2026,2026,1,1,45,397269779,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Petrópolis,3,1,Gabinete do Prefeito,,2026,2026,1,1,407,850827095,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Petrópolis,3,2,Fundo Municip.de Protecao e Defesa Civil,,2026,2026,1,1,4,11050671,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Prata,3,1,SEC MUN DE URB.  E MOB. URBANA,,2026,2026,1,1,50,111440432,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Prata,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL - FUNDEC,,2025,2025,1,1,22,2086566,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Ramada,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,103,7216793,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Ramada,3,2,FUMDEC - FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,53,57781650,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Roma do Sul,3,1,SECRETARIA DA ADMINISTRACAO,,2026,2026,1,1,28,11919000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Roma do Sul,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUNDEC,,2025,2025,1,1,8,55540456,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Santa Rita,3,1,ORGAOS SUBORDINADOS,,2017,2017,1,1,30,31804414,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Santa Rita,3,2,Unidade de Segurança Pública,,2026,2026,1,1,660,1896995307,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Nova Santa Rita,3,3,Unidade de Serviços Públicos,,2024,2024,1,1,108,129370212,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Cabrais,3,1,GABINETE DO PREFEITO,,2023,2023,1,1,74,5660000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Cabrais,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2025,2025,1,1,55,138139603,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Hamburgo,3,10,Diretoria da Defesa Civil,,2026,2026,1,1,18,174949166,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Hamburgo,3,2,Diretoria da Guarda Municipal,,2026,2026,1,1,1017,23667221493,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Hamburgo,3,5,Fundo Mun. de Reequipamento do Corpo de Bombeiros - FUNREBOM,,2026,2026,1,1,120,113228274,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Tiradentes,3,1,Gabinete do  Prefeito,,2017,2017,1,1,2,750000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Novo Xingu,3,1,Adm. Planej. Financas - Admin. Sist. Go,,2025,2025,1,1,29,16032322,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Osório,3,25,ASSESSORIA ADMINISTRATIVA,,2024,2024,1,1,11,3146553,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paim Filho,3,1,"SEC URBANISMO, TRANSITO, IND, COM E TURISMO",,2026,2026,1,1,58,15580238,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Palmeira das Missões,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,37,32183910,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Palmeira das Missões,3,2,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,271,98534879,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Palmitinho,3,1,Gabinete do Prefeito,,2026,2026,1,1,9,68412915,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Panambi,3,1,Unidades Subordinadas,,2026,2026,1,1,173,174166091,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Panambi,3,2,Fundo Municipal de Proteção da Defesa Civil de Panambi-RS,,2026,2026,1,1,360,199132132,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pantano Grande,3,1,SEC MUN SEG PUBLICA TRANSITO E DEF CIVIL,,2026,2026,1,1,265,274525077,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pantano Grande,3,2,FUNDO MUNIC DE PROTECAO E  DEFESA CIVIL,,2025,2025,1,1,16,122381661,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paraí,3,3,SEGURANÇA PÚBLICA,,2026,2026,1,1,215,66020809,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paraíso do Sul,3,1,Manutencao do Gabinete,,2026,2026,1,1,94,150697642,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pareci Novo,3,1,GABINETE DO PREFEITO MUNICIPAL,,2026,2026,1,1,97,61568830,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Parobé,3,1,"DIRETORIA DE SEGURANÇA, CIDADANIA E MOBILIDADE URBANA",,2026,2026,1,1,895,1776822520,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Parobé,3,2,DIRETORIA  DE DEFESA CIVIL,,2025,2025,1,1,281,578023195,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Passa Sete,3,3,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,11,17280650,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Passo do Sobrado,3,2,FUNDOS MUNICIPAIS VINCULADOS AO GABINETE,,2026,2026,1,1,56,206961056,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Passo Fundo,3,1,Secretaria de Segurança Pública,,2026,2026,1,1,868,15319121580,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paulo Bento,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,4,1077500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paulo Bento,3,9,ENCARGOS GERAIS,,2019,2019,1,1,2,230500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paverama,3,1,"ADMINISTRAÇÃO, FAZENDA E PLANEJAMENTO",,2026,2026,1,1,4,383037,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paverama,3,3,SERVIÇOS DE UTILIDADE PÚBLICA,,2026,2026,1,1,280,76780498,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Paverama,3,4,DEFESA CIVIL,,2026,2026,1,1,2,350000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pedras Altas,3,1,DEPART. OBRAS - URBANO,,2024,2024,1,1,7,2152251,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pedras Altas,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,101,120783825,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pedras Altas,3,4,FUNDO MUN. DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,3,367153,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pejuçara,3,1,Secretaria de Administracao,,2026,2026,1,1,84,14595349,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,11,CHEFIA DE GABINETE,,2017,2017,1,1,7,319278,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,15,GABINETE DO VICE PREFEITO,,2017,2017,1,1,2,14162,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,16,Chefia de Gabinete,,2025,2025,1,1,24,79798,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,26,SECRETARIA MUNICIPAL DE SEGURANCA PUBLICA,,2017,2017,1,1,53,866370621,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,27,Secretaria Municipal de Transporte e Trânsito SMTT,,2016,2016,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,40,SECRETARIA MUNICIPAL DE GESTAO ADMINISTRATIVA E FINANCEIRA,,2017,2017,1,1,16,17659757,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,44,Secretaria Municipal da Fazenda,,2025,2025,1,1,180,291389886,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,45,GUARDA MUNICIPAL,,2017,2017,1,1,35,264924702,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,52,SMC - Administração,,2019,2019,1,1,4,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,69,Secretaria Municipal de Segurança Pública,,2026,2026,1,1,649,9220440632,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,89,Guarda Municipal,,2023,2023,1,1,82,1052173053,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,90,Secretaria Municipal de Gestão Administrativa e Financeira,,2023,2023,1,1,47,41344188,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,93,Gabinete do Vice Prefeito,,2016,2016,1,1,17,2928633,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pelotas,3,99,Coord. p/ Ef. Qualific. dos Servidores Públicos,,2018,2018,1,1,21,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Picada Café,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,176,576978078,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Picada Café,3,4,FUNDO MUNICIPAL PROTECAO E DEFESA CIVIL,,2026,2026,1,1,3,6421907,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinhal,3,1,UNIDADES SUBORDINADAS,,2021,2021,1,1,1,1100000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinhal Grande,3,1,"OBRAS, VIACÃO E SERVICOS PUBLICOS",,2018,2018,1,1,26,17565491,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinhal Grande,3,3,DEPT OBRAS E SERV PUB - SET DE SERV URBA,,2026,2026,1,1,82,40623537,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinhal Grande,3,4,FUNDO MUNICIPAL DA SEGURANÇA PÚBLICA,,2017,2017,1,1,3,163690,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinhal Grande,3,6,FUNDO MUNICIPAL DE SEGURANÇA PUBLICA,,2026,2026,1,1,2,198569,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinheirinho do Vale,3,1,UNIDADES SUBORDINADAS,,2024,2024,1,1,16,139776970,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinheirinho do Vale,3,2,Fundo Municipal de Proteção e Defesa Civil,,2025,2025,1,1,10,65424892,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinheiro Machado,3,3,Fundo de Reaparelhamento dos Bombeiros,,2025,2025,1,1,8,4860158,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinto Bandeira,3,1,"SECRETARIA DE OBRAS, SANEAMENTO E MOBILIDADE",,2017,2017,1,1,39,7489563,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pinto Bandeira,3,2,FUNDO MUNI SEGURANÇA PUBLICA E CONSEPRO,,2026,2026,1,1,105,24750578,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pirapó,3,1,Gabinete do Prefeito,,2026,2026,1,1,32,13447526,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Piratini,3,1,SECRETARIA DE GABINETE,,2025,2025,1,1,30,6342043,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Planalto,3,1,CENTRO ADMINISTRATIVO,,2025,2025,1,1,27,4642486,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Planalto,3,2,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,26,108694646,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Poço das Antas,3,1,SECRETARIA DA ADMINIST.IND. E COMERCIO,,2026,2026,1,1,96,54159953,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Poço das Antas,3,2,ENCARGOS GERAIS DO MUNICIPIO,,2026,2026,1,1,135,25601990,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Poço das Antas,3,4,FUNDEC - FUNDO MUNICIPAL DE DEFESA CIVIL,,2024,2024,1,1,1,104460,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pontão,3,1,Secretaria da Administracao,,2025,2025,1,1,26,10569600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Pontão,3,2,SERVICOS URBANOS,,2026,2026,1,1,4,580000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,1,"SEGURANCA DE PROPRIOS, SEGURANCA COMUNITARIA E PREVENCAO A VIOLENCIA",,2026,2026,1,1,869,41686380130,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,14,SISTEMA MUNICIPAL DE PROTECAO E DEFESA CIVIL,,2025,2025,1,1,22,93728456,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,15,FUNDO MUNICIPAL DE REAPARELHAMENTO DO CORPO DE BOMBEIROS   FUNREBOM,,2024,2024,1,1,5,1238021236,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,2,SECRETARIA MUNICIPAL GERAL DE GOVERNO,,2026,2026,1,1,83,520660633,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,3,SECRETARIA MUNICIPAL GERAL DE GOVERNO,,2025,2025,1,1,59,466270737,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,4,FUNDO MUNICIPAL DE SEGURANCA  FUMSEG,,2025,2025,1,1,13,57019790,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Alegre,3,99,"SEGURANÇA DE PRÓPRIOS, SEGURANÇA COMUNITÁRIA E PREVENÇÃO À VIOLÊNCIA",,2020,2020,1,1,260,14354338145,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Lucena,3,1,DEPARTAMENTO DE GESTAO ADMINISTRATIVA,,2025,2025,1,1,30,130206129,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Lucena,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,2,70500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Mauá,3,1,"MANUTENCAO DA SEC DE OBRAS, TRANSPORTE, URBANISMO E TRANSITO",,2022,2022,1,1,5,29260,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Vera Cruz,3,1,GABINETE DO PREFEITO,,2023,2023,1,1,5,32000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Vera Cruz,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL-FUMDEC,,2024,2024,1,1,27,44700878,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Vera Cruz,3,3,DIVISAO DE TRANSITO,,2026,2026,1,1,215,52301593,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Xavier,3,1,ASSESSORIA DE GABINETE,,2026,2026,1,1,23,30995903,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Xavier,3,4,DEPARTAMENTO DE SERVICOS URBANOS,,2022,2022,1,1,17,49828,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Porto Xavier,3,6,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,83,323977050,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Presidente Lucena,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,19,5044083,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Presidente Lucena,3,2,DPTO DE SERVIÇOS PÚBLICOS,,2026,2026,1,1,33,9312880,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Progresso,3,1,SECRETARIA ADMINISTRACAO PLANEJAMENTO,,2025,2025,1,1,100,20147754,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Protásio Alves,3,1,SEC. MUNIC. DE ADMINISTRAÇÃO,,2026,2026,1,1,37,7491500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Putinga,3,1,"OBRAS, VIACAO E SANEAMENTO",,2026,2026,1,1,173,553334780,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Putinga,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,20,302440655,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quaraí,3,1,SECRETARIA E UNIDADES SUBORDINADAS,,2025,2025,1,1,3,1000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quatro Irmãos,3,1,GABINETE,,2026,2026,1,1,100,25657833,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quinze de Novembro,3,1,"SECRETARIA DE OBRAS, VIACAO E URBANISMO",,2026,2026,1,1,1,7000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quinze de Novembro,3,2,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quinze de Novembro,3,5,DPTO DE SEGURANCA E TRANSITO,,2025,2025,1,1,177,43302692,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quinze de Novembro,3,6,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,23,86761834,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Quinze de Novembro,3,7,DPTO DE SEGURANCA E TRANSITO,,2017,2017,1,1,47,7009500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Redentora,3,1,GABINETE DO PREFEITO,,2024,2024,1,1,6,6284761,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Redentora,3,2,MANUTENCAO DA SECRETARIA - PERIMETRO URBANO,,2025,2025,1,1,3,139900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Relvado,3,1,SECRETARIA GERAL DO MUNICÍPIO,,2026,2026,1,1,105,691200236,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Relvado,3,2,DIVISAO DO DESENVOLVIMENTO URBANO,,2020,2020,1,1,4,17626857,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Restinga Sêca,3,2,DEPTO DE MANUTENCAO PUBLICA,,2026,2026,1,1,314,444049490,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Restinga Sêca,3,3,DEPARTAMENTO DE MANUTENCAO PUBLICA,,2026,2026,1,1,3,632020,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio dos Índios,3,1,CENTRO ADMINISTRATIVO,,2023,2023,1,1,11,20960815,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio dos Índios,3,2,DEFESA CIVIL,,2025,2025,1,1,14,65320221,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Grande,3,1,GABINETE EXECUTIVO,,2026,2026,1,1,116,1450630051,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Grande,3,2,GABINETE DO VICE-PREFEITO,,2017,2017,1,1,8,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Grande,3,4,GABINETE DE GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA,,2021,2021,1,1,6,34500000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Grande,3,6,GABINETE DE GESTÃO INTEGRADA DE SEGURANÇA PÚBLICA,,2018,2018,1,1,44,265783683,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Pardo,3,1,SECRETARIA MUNICIPAL DE TRANSITO,,2026,2026,1,1,401,2269081371,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Pardo,3,2,FUNDO MUNICIP. REAPARELHAM. CORPO BOMBEI,,2026,2026,1,1,157,57998854,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Pardo,3,3,NUCLEO ATIVIDADE INTERESSE COMUM,,2026,2026,1,1,49,186667943,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rio Pardo,3,5,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,2,21260,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Riozinho,3,1,SECRETARIA MUNICIPAL DA ADMINISTRACAO,,2022,2022,1,1,54,60348506,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Roca Sales,3,1,Gabinete do Prefeito e Vice,,2026,2026,1,1,342,1829289700,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rodeio Bonito,3,1,Depto.de Obras e Servicos Publicos - Próprios,,2025,2025,1,1,15,3646112,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rodeio Bonito,3,4,Departamento de Obras e Serv. Públicos-Convênios,,2023,2023,1,1,5,1555000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolador,3,3,GABINETE - SETOR SEGURANCA DO CIDADAO APOIO AS FORCAS AUXILI,,2026,2026,1,1,122,49666975,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolador,3,4,GABINETE - SETOR DA DEFESA CIVIL,,2025,2025,1,1,41,95011500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolador,3,5,GABINETE - SETOR DA DEFESA CIVIL,,2021,2021,1,1,69,18280323,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolador,3,6,GABINETE - SETOR DA DEFESA CIVIL,,2020,2020,1,1,5,284810,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolante,3,1,DEPARTAMENTO DE GESTÃO ADMINISTRATIVA,,2026,2026,1,1,111,220870222,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolante,3,2,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2016,2016,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolante,3,5,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2026,2026,1,1,56,912008406,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolante,3,7,CONSELHOS MUNICIPAIS,,2017,2017,1,1,1,70954,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rolante,3,9,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2022,2022,1,1,72,367790603,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rondinha,3,1,SEC. MUNICIPAL DE OBRAS,,2026,2026,1,1,263,118508986,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Roque Gonzales,3,1,GABINETE DO SECRETARIO,,2025,2025,1,1,5,16667340,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Roque Gonzales,3,2,RECURSOS ESPECIAIS,,2016,2016,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rosário do Sul,3,3,FUNREBOM,,2025,2025,1,1,35,73940959,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rosário do Sul,3,7,FUNDO ESPECIAL MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,15,75679298,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Rosário do Sul,3,8,FUNDO ESPECIAL PRONASCI,,2019,2019,1,1,26,472208,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sagrada Família,3,1,FUNDO MUNICIPAL DE  ASSISTENCIA SOCIAL,,2024,2024,1,1,5,1338669,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sagrada Família,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL (FUMDEC),,2025,2025,1,1,28,89407463,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Saldanha Marinho,3,1,"GAB. DO SECRETARIO, DEP. ADM. E DO TRANSITO",,2026,2026,1,1,82,15003663,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salto do Jacuí,3,1,UNIDADES SUBORD. OBRAS E TRANSITO,,2026,2026,1,1,312,209592830,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador das Missões,3,1,Gabinete do Prefeito e Vice,,2025,2025,1,1,54,122347113,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador das Missões,3,4,Fundo Municipal de Defesa Civil do Municipio de SM,,2026,2026,1,1,1,10652920,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador do Sul,3,1,ATIVIDADES ADMINISTRATIVAS DO GABINETE,,2025,2025,1,1,70,64710690,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador do Sul,3,2,SEGURANÇA PÚBLICA,,2026,2026,1,1,45,6965155,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador do Sul,3,3,SEGURANÇA PÚBLICA,,2025,2025,1,1,36,40137045,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Salvador do Sul,3,4,FUMDEC - FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,11,23679040,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sananduva,3,1,ENCARGOS GERAIS,,2026,2026,1,1,108,143814176,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sananduva,3,3,DESENVOLVIMENTO ECONOMICO,,2023,2023,1,1,2,36800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Bárbara do Sul,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,70,77247839,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Bárbara do Sul,3,2,SETOR RODOVIÁRIOS,,2018,2018,1,1,5,5224462,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Bárbara do Sul,3,4,FUNDO MUN DE PROTECAO E DEFESA CIVIL - FUMPDEC,,2026,2026,1,1,17,25953418,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Bárbara do Sul,3,6,FUNDO MUN. DE DEFESA CIVIL - FUNDEC,,2020,2020,1,1,4,154800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Cecília do Sul,3,1,ENCARGOS GERAIS,,2026,2026,1,1,148,34764788,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Clara do Sul,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,91,70520170,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Cruz do Sul,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,886,11958668312,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Cruz do Sul,3,2,FUNDO MUNICIPAL DE REEQUIPAMENTO DE BOMBEIROS,,2026,2026,1,1,14,661311,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Maria,3,1,GP - Orgao Subordinado,,2026,2026,1,1,886,15752761307,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Maria,3,2,Fdo Reequipamento do Corpo de Bombeiros,,2026,2026,1,1,165,507975269,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Maria do Herval,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,132,133772416,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santana da Boa Vista,3,2,UNIDADE DE SERVICOS URBANOS,,2017,2017,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sant'Ana do Livramento,3,1,SEC DE OBRAS E UNIDADES SUBORDINADAS,,2021,2021,1,1,146,213670015,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,1,DEPTO ADMINISTR. DA SECR. MUNIC. DE ADMINISTRAÇÃO E FAZENDA,,2022,2022,1,1,19,17177986,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,10,FUNDO MUNIC. REEQUIP. E MANUT. DO CORPO DO BOMBEIRO - FUNREBOM,,2026,2026,1,1,170,81099336,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,11,COORDENADORIA DA INFRAESTRUTURA VIÁRIA,,2021,2021,1,1,228,456572972,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,2,GERÊNCIA DE TRÂNSITO,,2026,2026,1,1,122,117826172,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,5,COORDENADORIA DE INFRAESTRUTURA VIÁRIA,,2025,2025,1,1,113,138127393,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,6,COORDENADORIA ESTRUTURAL E ADMINISTRATIVA,,2026,2026,1,1,61,1649351960,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,7,Assessoria de Serviços de Vigia e Vigilantes,,2016,2016,1,1,16,290030818,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Rosa,3,8,SEÇÃO SERVIÇOS DE VIGILÂNCIA,,2021,2021,1,1,80,1725053412,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Tereza,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,46,12174292,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Tereza,3,2,SEGURANÇA PÚBLICA,,2026,2026,1,1,3,384897,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Tereza,3,5,FUNDO MUNICIPAL SEGURANCA PUBLICA,,2022,2022,1,1,35,4261887,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Tereza,3,7,FUNDO MUNICIPAL DE SEGURANÇA PUBLICA,,2022,2022,1,1,12,1738740,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santa Vitória do Palmar,3,1,SM ADMINISTRACAO,,2026,2026,1,1,684,1384406575,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santiago,3,1,OBRAS E VIACAO,,2025,2025,1,1,85,69699557,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Ângelo,3,1,DESENVOLVIMENTO SOCIAL E CIDADANIA,,2025,2025,1,1,51,249531489,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Ângelo,3,3,DEPARTAMENTO DE PROCESSAMENTO DE DADOS,,2017,2017,1,1,12,4750000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Ângelo,3,4,DEFESA CIVIL,,2020,2020,1,1,42,5157347,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Ângelo,3,5,DEFESA CIVIL,,2026,2026,1,1,9,41774127,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio do Palma,3,1,Secretaria da Administracao,,2026,2026,1,1,113,35490972,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio da Patrulha,3,1,DEPARTAMENTO DE TRANSITO E SEGURANÇA - DTS,,2026,2026,1,1,129,83190948,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio da Patrulha,3,2,FUNREBOM - F. M. R. CORPO DE BOMBEIROS,,2017,2017,1,1,20,7945954,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio da Patrulha,3,4,FUNDO DA DEFESA CIVIL,,2022,2022,1,1,78,5285261,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio da Patrulha,3,6,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,265,142022173,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Antônio do Planalto,3,7,Encargos Gerais,,2026,2026,1,1,133,14068425,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Augusto,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,113,102719036,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Augusto,3,6,FUNDO MUNICIPAL DE DEFESA CIVIL (FUMDEC),,2026,2026,1,1,2,117178,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Cristo,3,1,COORDENADORIA MUNICIPAL DE ADMINISTRACAO,,2020,2020,1,1,2,15000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Santo Expedito do Sul,3,1,ENCARGOS GERAIS,,2026,2026,1,1,51,40827792,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Borja,3,3,REGULARIZAÇÃO FUNDIÁRIA,,2022,2022,1,1,38,19474884,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Borja,3,4,SEGURANÇA PÚBLICA,,2026,2026,1,1,60,112209707,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Borja,3,5,SEGURANÇA PÚBLICA,,2025,2025,1,1,219,509965387,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Borja,3,6,MANUTENÇÃO DO FUNREBOM,,2025,2025,1,1,117,81129236,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Domingos do Sul,3,1,"SECRETARIA MUNICIPAL DE OBRAS, SERVIÇOS PUBLICOS E TRÂNSITO",,2026,2026,1,1,103,27340971,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Francisco de Assis,3,1,SEC. MUN. DE OBRAS E SANEAMENTO,,2026,2026,1,1,155,151815557,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Francisco de Assis,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FMDC,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Francisco de Paula,3,1,SECRETARIA MUNICIPAL DO INTERIOR,,2025,2025,1,1,26,33073090,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Francisco de Paula,3,4,SETORES DE SEGURANÇA E DEFESA CIVIL,,2026,2026,1,1,764,1671323613,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Gabriel,3,1,SECRETARIA MUN. DE SEGURANCA E CIDADANIA,,2024,2024,1,1,40,28356792,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Gabriel,3,7,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,27,200854369,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Jerônimo,3,1,MANUTENÇÃO DA SEC DA DEFESA CIVIL,,2026,2026,1,1,208,263986469,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São João do Polêsine,3,1,GABINETE DO PREFEITO,,2020,2020,1,1,22,7332368,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São João do Polêsine,3,11,Fundo Municipal de Defesa Civil - FUMDEC - Lei 1086 2024,,2026,2026,1,1,33,189304114,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São João do Polêsine,3,4,Conselho Municipal de Defesa Civil - COMDEC - Lei 1086 2024,,2025,2025,1,1,44,80492780,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Jorge,3,1,SEC. MUNICIPAL DE ADMINISTRAÇÃO,,2026,2026,1,1,181,24829800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Jorge,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,1,132500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Hortêncio,3,1,SECRETARIA DA ADMINISTRACAO E FAZENDA,,2026,2026,1,1,79,204448845,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Inhacorá,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,138,6733052,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Norte,3,1,SEC. MUNIC. DE ADMINISTRACAO,,2026,2026,1,1,112,941647199,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Norte,3,2,FUNDO MUNICIPAL DE SEGURANCA PUBLICA,,2026,2026,1,1,14,7041282,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Norte,3,3,FUNDO MUNICIPAL DA DEFESA CIVIL - FUNDEC,,2026,2026,1,1,3,713800,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Ouro,3,1,ENCARGOS GERAIS,,2026,2026,1,1,31,75062773,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Sul,3,1,"DPTO OBRAS, COORDEN.ENGENH E FISCALIZ.",,2016,2016,1,1,12,1200000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José do Sul,3,3,FUNDO MUNICIPAL PROTEÇÃO E DEFESA CIVIL,,2026,2026,1,1,84,298291941,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São José dos Ausentes,3,1,SECRETARIA MUNICIPAL DE ADMINSTRACAO,,2026,2026,1,1,54,113522737,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,1,ADMINISTRAÇÃO CENTRAL DO GABINETE,,2025,2025,1,1,318,3820288252,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,2,SUPERINTENDENCIA DA DEFESA CIVIL,,2026,2026,1,1,54,970745544,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,3,DEPARTAMENTO DA GUARDA CIVIL MUNICIPAL,,2025,2025,1,1,5,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,4,DIRETORIA  ADMINISTRATIVA,,2025,2025,1,1,206,997864580,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,5,DIRETORIA DE TRANSITO,,2026,2026,1,1,105,2289162857,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,6,DIRETORIA DE PLANEJAMENTO ESTRATEGICO,,2026,2026,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,7,DIRETORIA DE SERVIÇOS,,2025,2025,1,1,51,14071536,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Leopoldo,3,8,DIRETORIA DA GUARDA CIVIL MUNICIPAL,,2026,2026,1,1,148,463607803,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Lourenço do Sul,3,1,EXECUTIVO,,2026,2026,1,1,79,47902440,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Lourenço do Sul,3,6,FUNDO MUNICIPAL DE REEQUIPAMENTO DO CORP,,2024,2024,1,1,155,151647733,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Lourenço do Sul,3,7,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,58,90485662,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Lourenço do Sul,3,9,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,101,526494756,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Luiz Gonzaga,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,172,113274267,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Luiz Gonzaga,3,2,FUNDO MUNICIPAL DE REEQUIPAMENTO DO CORPO DE BOMBEIROS,,2025,2025,1,1,183,96995436,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Luiz Gonzaga,3,3,FUNDO MUNICIPAL DE REEQUIPAMENTO DO CORPO DE BOMBEIROS,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Luiz Gonzaga,3,5,GESTAO DA SEGURANCA PUBLICA,,2026,2026,1,1,2,106130,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Marcos,3,1,GABINETE DO PREFEITO,,2025,2025,1,1,107,155928420,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Marcos,3,2,DEFESA CIVIL,,2024,2024,1,1,98,41032886,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Marcos,3,4,FUNDO MUNICIPAL DE REAPARELHAMENTO DO CORPO DE BOMBEIROS - FUMREBOM,,2024,2024,1,1,30,2499718,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Martinho,3,1,UNIDADES SUBORDINADAS,,2018,2018,1,1,10,1047395,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Martinho,3,2,SECAO DE ESTRADAS E VIAS,,2026,2026,1,1,49,8652092,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Martinho da Serra,3,1,SECRETARIA DE OBRAS - RECURSOS PROPRIOS,,2026,2026,1,1,41,229646122,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Miguel das Missões,3,1,UNIDADE ADMINISTRATIVA SECRETARIA DA FAZENDA,,2026,2026,1,1,69,34139935,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Miguel das Missões,3,3,FUNDO MUNICIPAL DE PROTECAO DA DEFESA CIVIL,,2025,2025,1,1,5,15523504,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Nicolau,3,1,SETOR DA SAUDE,,2024,2024,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Pedro da Serra,3,1,SEC MUN DESENV URBANO E OBRAS PUBLICAS,,2026,2026,1,1,25,64806651,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Pedro do Butiá,3,1,SECRETARIA DE ADMINISTRACAO,,2026,2026,1,1,39,8849190,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Pedro do Butiá,3,2,CONVENIOS,,2026,2026,1,1,27,69199425,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Pedro do Butiá,3,3,SERVIÇOS SUBORDINADOS,,2023,2023,1,1,1,1000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Pedro do Sul,3,1,Secretaria Municipal de Obras e Trânsito,,2026,2026,1,1,141,40046272,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sebastião do Caí,3,6,FUNDO MUN. SEGURANÇA PÚBLICA E TRANSITO,,2026,2026,1,1,586,763210151,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sepé,3,18,Desenvolvimento,,2026,2026,1,1,102,455552584,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sepé,3,2,Governadoria,,2026,2026,1,1,65,255500382,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sepé,3,3,Secretaria Municipal de Administração,,2026,2026,1,1,2,469888,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sepé,3,4,SECRETARIA DE FINANCAS E PLANEJAMENTO,,2016,2016,1,1,6,1802290,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Sepé,3,6,Secretaria Municipal de Infraestrutura,,2026,2026,1,1,229,206673240,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Valentim,3,1,ENCARGOS GERAIS DO MUNICÍPIO,,2026,2026,1,1,45,37295460,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Valentim,3,6,DEFESA CIVIL,,2025,2025,1,1,23,58174638,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Valentim do Sul,3,1,Gabinete do Prefeito,,2026,2026,1,1,92,53659548,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Valentim do Sul,3,2,Fundo Municipal de Proteção e Defesa Civil,,2026,2026,1,1,18,14857408,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Valério do Sul,3,2,SEC. MUN. OBRAS- FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,24,5169054,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Vendelino,3,1,MANUT DO GABINETE DO PREFEITO,,2026,2026,1,1,55,1406847255,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Vicente do Sul,3,1,Secretaria Municipal de Administracao,,2020,2020,1,1,5,10275517,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Vicente do Sul,3,2,Secretaria Municipal de Planejamento,,2025,2025,1,1,6,1497685,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+São Vicente do Sul,3,5,Gabinete do Prefeito - Unidade de Tecnologia da Informação,,2025,2025,1,1,48,7328575,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapiranga,3,11,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2025,2025,1,1,223,99946319,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapiranga,3,2,DEPARTAMENTO DE SEGURANÇA PÚBLICA E DEFESA CIVIL,,2026,2026,1,1,24,115115984,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapiranga,3,3,FUNDO MUN. DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,25,18052534,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapiranga,3,5,FUNDO MUN.REEQ.CORPO BOMB.BRIGADA MILITAR-FUNREBOM,,2025,2025,1,1,149,98276402,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapucaia do Sul,3,1,SECRETARIA MUN. DE SEGURANÇA PÚBLICA  E TRÂNSITO,,2026,2026,1,1,228,307168380,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapucaia do Sul,3,2,MANUT. DA ATIV. DOS CONVÊNIOS E REPASSES,,2026,2026,1,1,65,131230779,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapucaia do Sul,3,3,FUMREBOM,,2022,2022,1,1,84,120044911,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sapucaia do Sul,3,4,COMDEC,,2026,2026,1,1,31,14039807,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sarandi,3,1,SECRETARIA MUN OBRAS URBANAS VIACAO,,2026,2026,1,1,179,255229185,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sarandi,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2026,2026,1,1,36,342198897,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sarandi,3,4,EMENDA PARLAMENTAR/BANCADA,,2025,2025,1,1,2,12000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Seberi,3,1,Secretaria de Administração e Planejamento e Unidades Subordinadas,,2024,2024,1,1,37,27722593,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Seberi,3,2,Fundo e Coordenadoria de Defesa Civil,,2026,2026,1,1,24,130670571,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sede Nova,3,2,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2021,2021,1,1,11,250608,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sede Nova,3,4,FUNDO MUNICIPAL DE PROTEÇÃO E DEFESA CIVIL,,2025,2025,1,1,34,159551888,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Segredo,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,15,8716665,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Selbach,3,2,"Coord. Ind., Comercio, Servicos, Empreg",,2026,2026,1,1,16,68979359,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Senador Salgado Filho,3,1,Coordenadoria da Defesa Civil,,2026,2026,1,1,179,187171980,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Senador Salgado Filho,3,2,Departamento de Habitação e Trânsito,,2026,2026,1,1,64,27668642,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Senador Salgado Filho,3,3,Departamento de Habitacao e Transito,,2018,2018,1,1,12,877399,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sentinela do Sul,3,3,DEFESA CIVIL,,2026,2026,1,1,7,1047900,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Serafina Corrêa,3,1,"Obras Públicas, Trânsito e Desenvolvimento Urbano",,2026,2026,1,1,251,257142176,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Serafina Corrêa,3,2,Defesa Civil,,2025,2025,1,1,85,146713206,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Serafina Corrêa,3,3,Fundo Municipal do Serviço Civil e Auxiliar de Bombeiro,,2026,2026,1,1,77,132615255,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Serafina Corrêa,3,4,Defesa Civil,,2026,2026,1,1,177,247066168,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sério,3,1,SEADP,,2022,2022,1,1,4,21685475,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sertão,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,14,11617981,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sertão,3,3,GASTOS NAO COMPUTADOS NO ENSINO,,2025,2025,1,1,5,9730000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sertão Santana,3,1,Administração e Planejamento,,2021,2021,1,1,30,6000000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sete de Setembro,3,2,"SERVICOS PUBLICOS, DE OBRAS E VIACAO",,2017,2017,1,1,7,303525,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Severiano de Almeida,3,1,CONSERVACAO DO MUNICIPIO,,2026,2026,1,1,95,102960253,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Silveira Martins,3,2,FUNDO MUNICIPAL DEFESA CIVIL,,2026,2026,1,1,21,46382895,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sinimbu,3,1,Gabinete do Prefeito,,2024,2024,1,1,21,55693979,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sinimbu,3,2,Fundo Municipal de Defesa Civil  - FUMDEC,,2026,2026,1,1,7,5660160,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sinimbu,3,5,Perimetro Urbano,,2026,2026,1,1,92,16988009,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sobradinho,3,1,DEPARTAMENTO DE OBRAS E VIAÇÃO,,2026,2026,1,1,49,15480901,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sobradinho,3,2,MANUTENÇÃO DOS ENCARGOS ESPECIAIS,,2024,2024,1,1,56,127648752,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sobradinho,3,3,MANUTENÇÃO DOS ENCARGOS ESPECIAIS,,2025,2025,1,1,8,35332000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Sobradinho,3,4,FUNDO DA DEFESA CIVIL,,2026,2026,1,1,2,4109600,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Soledade,3,1,ADMINISTRACAO,,2025,2025,1,1,98,108091103,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Soledade,3,6,DEPTO DE TRANSITO E SEGURANCA PUBLICA,,2026,2026,1,1,3,4085200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Soledade,3,7,FUNDO MUNICIPAL DA DEFESA CIVIL,,2025,2025,1,1,20,134961852,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tabaí,3,2,DEPARTAMENTO MUN.DE SERVIÇOS URBANOS,,2024,2024,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tabaí,3,4,DEPARTAMENTO MUN.DE TRÂNSITO - DMT,,2024,2024,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tabaí,3,6,DEPARTAMENTO DE SEGURANÇA PÚBLICA,,2026,2026,1,1,130,26046657,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tapejara,3,1,SERVICOS URBANOS,,2026,2026,1,1,158,179194840,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tapejara,3,3,DEFESA CIVIL,,2026,2026,1,1,3,9630000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tapera,3,4,TRANSITO,,2026,2026,1,1,408,164477006,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tapera,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2018,2018,1,1,2,69500,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tapes,3,1,SECRETARIA MUNICIPAL DA ADMINISTRACAO,,2026,2026,1,1,151,101274657,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Taquara,3,1,"Diretoria Geral de Segurança, Transito e Mobilidade Urbana",,2022,2022,1,1,135,87668664,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Taquara,3,3,"Diretoria de Trânsito, Segurança e Mobilidade Urbana",,2026,2026,1,1,69,245261011,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Taquari,3,1,SERVIÇOS URBANOS,,2026,2026,1,1,147,353513194,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Taquari,3,10,DEFESA CIVIL,,2026,2026,1,1,6,7613354,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Taquaruçu do Sul,3,2,SMF FUMPDEC,,2026,2026,1,1,17,95023174,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tenente Portela,3,1,Administração e Comunicação Social,,2024,2024,1,1,7,12327445,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Terra de Areia,3,1,ORGAOS SUBORDINADOS,,2020,2020,1,1,68,18882551,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Terra de Areia,3,2,GASTOS COM RECURSOS VINCULADOS,,2023,2023,1,1,38,8053870,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Teutônia,3,1,"SEC. MUN. DE PLANEJAMENTO, MOB. URBANA E SEGURANÇA PÚBLICA",,2026,2026,1,1,227,763102856,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Teutônia,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,2,75046481,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tio Hugo,3,1,GABINETE DO PREFEITO,,2018,2018,1,1,2,1539000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tiradentes do Sul,3,1,GABINETE DO PREFEITO,,2021,2021,1,1,30,1315761,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tiradentes do Sul,3,2,FUNDO MUNICIPAL DE HABITAÇÃO,,2016,2016,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tiradentes do Sul,3,6,SEGURANCA PUBLICA,,2026,2026,1,1,18,6361047,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Toropi,3,1,ADMINISTRAÇAO E COORDENAÇÃO,,2026,2026,1,1,41,8901735,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Torres,3,1,ADMINISTRAÇÃO E ATENDIMENTO AO CIDADÃO,,2026,2026,1,1,68,34414476,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Torres,3,2,SM FAZENDA - ADMINISTRAÇÃO TRIBUTÁRIA,,2020,2020,1,1,170,526291270,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Torres,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2017,2017,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Torres,3,4,FUNREBOM,,2025,2025,1,1,90,64085751,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tramandaí,3,1,"SECRETARIA MUN. SEGURANÇA, TRANSPORTE E TRÂNSITO",,2026,2026,1,1,291,469569046,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tramandaí,3,2,DEPARTAMENTO DE TRANSITO,,2017,2017,1,1,16,792000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tramandaí,3,3,FUNREBOM - FUNDO REAP. DO C. BOMBEIROS,,2022,2022,1,1,20,8251528,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Travesseiro,3,1,GABINETE DO PREFEITO,,2026,2026,1,1,30,188544203,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Arroios,3,2,Serviços Urbanos,,2026,2026,1,1,68,17894770,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Arroios,3,3,Fundo Municipal da Defesa Civil,,2025,2025,1,1,32,83141856,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Cachoeiras,3,1,ÓRGÃOS SUBORDINADOS,,2026,2026,1,1,253,72883258,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Cachoeiras,3,2,COORDENADORIA MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,19,7291685,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Coroas,3,1,"SECRETARIA MUN.OBRAS,VIACAO E TRANSITO",,2026,2026,1,1,356,1042687479,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Coroas,3,2,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,186,1220572846,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três de Maio,3,1,SECRETARIA MUNICIPAL DE GESTAO URBANA MEIO AMBIENTE E UNIDADES SUBORDINADAS,,2026,2026,1,1,38,22116740,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três de Maio,3,2,FUNDO MUNDE REEQUIPAMENTO DO CORPO DE BOMBEIROS - FUNREBOM,,2026,2026,1,1,491,421648615,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três de Maio,3,3,FUNDO MUNICIPAL DE DEFESA CIVIL - FUNDEC,,2025,2025,1,1,195,21382596,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Passos,3,1,SECRETARIA MUNICIPAL DE OBRAS E VIAÇÃO,,2026,2026,1,1,98,59666924,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Três Passos,3,2,FUNDO MUN. DE REEQ. CORPO DE BOMBEIROS - FUNREBOM,,2022,2022,1,1,75,53417570,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Trindade do Sul,3,1,ENCARGOS GERAIS,,2018,2018,1,1,17,4940000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Triunfo,3,1,"SEC. MUN. DO TRAB., HAB.  ASSIST. SOCIAL",,2026,2026,1,1,82,76583145,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Triunfo,3,2,GABINETE DO VICE-PREFEITO,,2020,2020,1,1,8,1449878,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Triunfo,3,5,FUNDO MUNICIPAL DE DEFESA CIVIL - FUMDEC,,2026,2026,1,1,23,755714719,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tucunduva,3,1,SECRETARIA DE ADMINISTRACAO,,2021,2021,1,1,1,10000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tupanci do Sul,3,1,ENCARGOS GERAIS,,2021,2021,1,1,2,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tupanciretã,3,1,GABINETE DO PREFEITO E ORGAOS AUXILIARES,,2026,2026,1,1,111,109950947,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tupanciretã,3,2,DIRETORIA DE APOIO A GESTAO,,2026,2026,1,1,193,668247707,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tupanciretã,3,4,FUNDO MUN DA RECONSTRUCAO E ADAPT CLIMAT,,2026,2026,1,1,1,0,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tupandi,3,1,SMAD - Administração,,2026,2026,1,1,310,151406116,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Tuparendi,3,2,GABINETE DO PREFEITO E DO  VICE PREFEITO,,2026,2026,1,1,17,24238476,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Turuçu,3,1,GABINETE DO PREFEITO,,2016,2016,1,1,3,2000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Ubiretama,3,1,UNIDADES SUBORDINADAS,,2024,2024,1,1,12,12234200,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+União da Serra,3,1,"DEPARTAMENTO DE OBRAS,SERVIÇOS PÚBLICOS E TRANSITO MUNICIPAL",,2026,2026,1,1,104,251636124,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+União da Serra,3,3,DEPARTAMENTO MUNICIAL DE SEGURANÇA,,2026,2026,1,1,69,4548988,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Unistalda,3,4,DEFESA CIVIL - SEDEC,,2025,2025,1,1,16,45944230,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Uruguaiana,3,1,Secretaria de Seguranca e Transito,,2026,2026,1,1,512,1311705895,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Uruguaiana,3,2,MANUTENCAO FUNREBOM,,2025,2025,1,1,103,161282624,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vacaria,3,1,SECRETARIA MUN. GESTAO E FINANCAS,,2025,2025,1,1,218,156509439,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Verde,3,1,GABINETE DO PREFEITO E VICE PREFEITO,,2026,2026,1,1,67,283849059,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Verde,3,3,Defesa Civil - 0001,,2016,2016,1,1,3,235420,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Verde,3,5,Contribuições - 0001,,2017,2017,1,1,11,1320000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Verde,3,6,DEFESA CIVIL = 0001,,2018,2018,1,1,5,2400000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Verde,3,7,SUBVENÇÕES SOCIAIS = 0001,,2018,2018,1,1,5,1200000,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale do Sol,3,1,"Sec. Mun. Agricultura, Meio Amb. Turismo",,2026,2026,1,1,167,177724319,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vale Real,3,1,ADMINISTRAÇÃO,,2026,2026,1,1,205,168690992,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vanini,3,1,Secretaria da Administração,,2026,2026,1,1,165,133139911,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Venâncio Aires,3,1,SECRETARIA DE SEGURANÇA PÚBLICA - SERVIÇOS SUBORDINADOS,,2026,2026,1,1,704,3597290087,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Venâncio Aires,3,5,FUNDO DE REEQUIPAÇÃO DOS BOMBEIROS,,2021,2021,1,1,134,194258670,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vera Cruz,3,1,Gabinete do Secret.e Órgãos Subordinados,,2026,2026,1,1,128,182014206,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vera Cruz,3,2,FUNREBOM,,2021,2021,1,1,90,23823898,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vera Cruz,3,4,UNIDADE MUNICIPAL DE TRANSITO,,2021,2021,1,1,11,6116400,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Veranópolis,3,1,UNIDADES SUBORDINADAS,,2026,2026,1,1,128,301154229,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Veranópolis,3,2,FUNREBOM,,2025,2025,1,1,288,148117238,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Veranópolis,3,6,FUNDO MUNICIPAL DA DEFESA CIVIL,,2026,2026,1,1,95,874626842,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vespasiano Corrêa,3,2,DPTO. SERVICOS URBANOS,,2025,2025,1,1,28,103202050,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Viadutos,3,1,SECRETARIA DE ADMINISTRACAO,,2025,2025,1,1,4,14861480,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Viamão,3,1,GAB. GESTAO E REL. INSTITUICIONAIS,,2026,2026,1,1,314,324949175,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Viamão,3,2,"DIV. REL.COM., COMUNIC.CAP.REC. E CONT.I",,2019,2019,1,1,8,2942020,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Viamão,3,5,DEPT. DE VIGILANCIA MUNICIPAL,,2025,2025,1,1,11,6732569,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vicente Dutra,3,2,COORDENADORIA DE DEFESA CIVIL,,2024,2024,1,1,17,130641868,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Victor Graeff,3,1,SMOT e Orgaos Subordinados,,2026,2026,1,1,51,2414676,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vila Flores,3,1,SECRETARIA DE OBRAS E TRÂNSITO,,2026,2026,1,1,22,4865139,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vila Lângaro,3,1,ENCARGOS GERAIS,,2026,2026,1,1,43,28934482,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vila Maria,3,1,SECRETARIA DE OBRAS,,2026,2026,1,1,244,90463856,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vila Maria,3,2,DEPTO SERVIÇOS URBANOS,,2017,2017,1,1,24,4897569,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vila Nova do Sul,3,1,SECRETARIA MUNICIPAL DE ADMINISTRACAO,,2026,2026,1,1,28,942860,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vista Alegre do Prata,3,1,"SECR. MUNIC. DE OBRAS, SAN. E TRANSITO",,2026,2026,1,1,29,2575373,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Vista Gaúcha,3,1,MANUT E DESENV DAS ATIVIDADES DA SECR DA FAZENDA,,2021,2021,1,1,4,1380905,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Westfália,3,1,"SEC.MUN.OBRAS, VIACAO E INTERIOR",,2025,2025,1,1,36,53267866,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Westfália,3,2,FUNDO MUNICIPAL DE DEFESA CIVIL,,2025,2025,1,1,13,114041170,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+Xangri-lá,3,1,Mobilidade Urbana e Segurança Pública,,2026,2026,1,1,55,445382848,código da unidade orçamentária informado pelo TCE-RS (município),função 06
+
+# Órgãos de segurança identificados por NOME nos contratos do PNCP (esfera, tipo, CNPJs distintos, contratos); confiança alta, não exata
+esfera,tipo_orgao,cnpjs_distintos,contratos
+D,1,2,108
+D,2,1,121
+D,3,1,137
+D,5,2,72
+E,1,48,21662
+E,2,41,15814
+E,3,31,4188
+E,4,29,6278
+E,5,18,43612
+E,6,8,945
+E,7,2,43
+E,9,9,399
+F,3,1,26
+F,4,1,578
+F,8,2,9511
+F,9,1,1
+M,2,7,44
+M,3,4,43
+M,4,47,1487
+M,7,104,2302
+M,9,57,389

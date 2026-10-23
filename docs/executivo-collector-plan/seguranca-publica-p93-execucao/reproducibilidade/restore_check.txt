@@ -1,0 +1,12 @@
+Backup antes da P9.3 (pg_dump -n civica_exec -Fc): D:\Civica\backups\pre-efetivos-p93-20261021.dump
+SHA-256: b5dae09545ac6daabae49122850a208779f5dc5302b7e74d8d7b3d74c3946b6b  (370.708.482 bytes)
+Restaurado em cluster isolado (D:\Civica\pgtest_p93, porta 55435) e contagens comparadas com a produção (idênticas):
+exec_entity=5631            (produção 5631)
+exec_ind_def=224            (produção 224)
+exec_ind_value=9468854      (produção 9468854)
+exec_ind_latest=543605      (produção 543605)
+exec_publication=28434      (produção 28434)
+exec_raw_manifest=19176     (produção 19176)
+exec_change_log=16134052    (produção 16134052)
+exec_territory_population=123073 (produção 123073)
+O mesmo cluster serviu de ensaio geral das ondas A–D e de alvo dos testes de integração (EXEC_TEST_ADMIN_URL). Foi removido ao final.

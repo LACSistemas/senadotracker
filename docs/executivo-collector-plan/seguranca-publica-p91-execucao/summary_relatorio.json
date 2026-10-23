@@ -1,0 +1,205 @@
+{
+ "at": "2026-10-21T20:27:14.042Z",
+ "sim": {
+  "ufs": 27,
+  "years": [
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "slicesResidence": 351,
+  "slicesOccurrence": 13,
+  "occurrenceYears": [
+   2013,
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "municipalitiesWithResidenceRows": 5570,
+  "municipalitiesWithResidenceDeaths": 5475,
+  "ignoredMunicipalityDeathsAgr": 9189,
+  "occurrenceUnplaced": [
+   {
+    "year": 2013,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2014,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2015,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2016,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2017,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2018,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2019,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2020,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2021,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2022,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2023,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2024,
+    "invalid": 0,
+    "unresolved": 0
+   },
+   {
+    "year": 2025,
+    "invalid": 0,
+    "unresolved": 0
+   }
+  ]
+ },
+ "atlas": {
+  "ufPairs": 324,
+  "ufIdentical": 324,
+  "munPairs": 55340,
+  "munIdentical": 53339,
+  "munAbsDiff": 19925
+ },
+ "vde": {
+  "ufs": 27,
+  "years": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025,
+   2026
+  ],
+  "competencesPublished": 141,
+  "firstMonth": 201501,
+  "lastMonth": 202609,
+  "eventsMunicipal": 11,
+  "eventsUfOnly": 20,
+  "indicatorsPublished": 41,
+  "covRows": 149606,
+  "ambiguousUfMonths": 42290,
+  "dupLines": 201686,
+  "rowsInIgnoredMunicipality": 633
+ },
+ "vdeReconciliation": {
+  "rows": 474,
+  "allMatch": true
+ },
+ "crosswalk": {
+  "yearsInspected": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2026
+  ],
+  "firstYear": 2015,
+  "totalPairs": 5597,
+  "validNamePairs": 5570,
+  "matchedDirect": 5564,
+  "matchedAlias": 6,
+  "unmatched": 0,
+  "unassignedPairs": 27,
+  "ibgeEntitiesWithoutVdePair": 1,
+  "entities": 5571
+ },
+ "storage": {
+  "dbBytesBefore": "21907737747",
+  "dbBytesAfter": "22264155283",
+  "schemaBytesBefore": 5709496320,
+  "schemaBytesAfter": 6065315840,
+  "indValueBytes": 1105723392,
+  "covBytes": 19152896,
+  "changeLogBytes": 3428687872,
+  "simRows": "866295",
+  "vdeRows": "1266767",
+  "covRows": "149606",
+  "rawSegBytes": 293133871,
+  "stagingBytes": 136927441,
+  "walDelta": "1500311839",
+  "runs": [
+   {
+    "dataset_id": 15,
+    "runs": 702,
+    "secs": "0.0",
+    "rows": "0"
+   },
+   {
+    "dataset_id": 16,
+    "runs": 26,
+    "secs": "0.0",
+    "rows": "0"
+   },
+   {
+    "dataset_id": 17,
+    "runs": 324,
+    "secs": "0.0",
+    "rows": "149606"
+   }
+  ]
+ }
+}

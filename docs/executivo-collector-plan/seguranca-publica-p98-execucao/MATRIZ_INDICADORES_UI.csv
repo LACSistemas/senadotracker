@@ -1,0 +1,463 @@
+indicator_id,onda,codigo,rotulo,uso_municipio,uso_estado,capitulo,onde_aparece,observacao
+3001,P9.1,IND-SEG-SIM-AGR-RES,Mortes por agressão (SIM) — por município de residência,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+3002,P9.1,IND-SEG-SIM-INT-RES,Mortes por intervenção legal (SIM) — por município de residência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3003,P9.1,IND-SEG-SIM-GUE-RES,Mortes por operações de guerra (SIM) — por município de residência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3004,P9.1,IND-SEG-SIM-IND-RES,Mortes de intenção indeterminada (SIM) — por município de residência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3005,P9.1,IND-SEG-SIM-ATL-RES,"Mortes por agressão e intervenção legal (recorte Atlas, SIM) — por município de residência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3006,P9.1,IND-SEG-SIM-AGR-TAXA,"Taxa de mortes por agressão (SIM, residência)",hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+3007,P9.1,IND-SEG-SIM-ATL-TAXA,"Taxa de mortes por agressão e intervenção legal (recorte Atlas, SIM, residência)",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3008,P9.1,IND-SEG-SIM-IND-PROP,"Proporção de mortes violentas com intenção indeterminada (SIM, residência)",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3011,P9.1,IND-SEG-SIM-AGR-OCO,Mortes por agressão (SIM) — por município de ocorrência,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3012,P9.1,IND-SEG-SIM-INT-OCO,Mortes por intervenção legal (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3013,P9.1,IND-SEG-SIM-GUE-OCO,Mortes por operações de guerra (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3014,P9.1,IND-SEG-SIM-IND-OCO,Mortes de intenção indeterminada (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3015,P9.1,IND-SEG-SIM-ATL-OCO,"Mortes por agressão e intervenção legal (recorte Atlas, SIM) — por município de ocorrência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3101,P9.1,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+3102,P9.1,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3103,P9.1,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3104,P9.1,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3105,P9.1,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3106,P9.1,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3107,P9.1,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3108,P9.1,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3109,P9.1,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3110,P9.1,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-F,Mortes no trânsito em rodovias federais — Polícia Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3111,P9.1,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+3112,P9.1,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3113,P9.1,IND-SEG-VDE-MANDADO-PRISAO-F,Mandado de prisão cumprido — Polícia Federal,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3114,P9.1,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3115,P9.1,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3116,P9.1,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3117,P9.1,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3118,P9.1,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3119,P9.1,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3120,P9.1,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3121,P9.1,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3122,P9.1,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3123,P9.1,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3124,P9.1,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3125,P9.1,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3126,P9.1,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3127,P9.1,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+3128,P9.1,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3129,P9.1,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3130,P9.1,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3131,P9.1,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3132,P9.1,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3133,P9.1,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3134,P9.1,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3135,P9.1,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3136,P9.1,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3137,P9.1,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3138,P9.1,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3139,P9.1,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3140,P9.1,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3141,P9.1,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+3201,P9.1,IND-SEG-VDE-HOMICIDIO-DOLOSO-TAXA,"Homicídio doloso: taxa anual (VDE, Estadual)",hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+3202,P9.1,IND-SEG-VDE-TENTATIVA-HOMICIDIO-TAXA,"Tentativa de homicídio: taxa anual (VDE, Estadual)",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3203,P9.1,IND-SEG-VDE-LATROCINIO-TAXA,"Roubo seguido de morte (latrocínio): taxa anual (VDE, Estadual)",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3204,P9.1,IND-SEG-VDE-LESAO-CORPORAL-MORTE-TAXA,"Lesão corporal seguida de morte: taxa anual (VDE, Estadual)",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3205,P9.1,IND-SEG-VDE-SUICIDIO-TAXA,"Suicídio: taxa anual (VDE, Estadual)",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3206,P9.1,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-TAXA,"Morte no trânsito ou em decorrência dele (exceto homicídio doloso): taxa anual (VDE, Estadual)",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+3207,P9.1,IND-SEG-VDE-ESTUPRO-TAXA,"Estupro: taxa anual (VDE, Estadual)",contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+3208,P9.1,IND-SEG-VDE-ESTUPRO-VULNERAVEL-TAXA,"Estupro de vulnerável: taxa anual (VDE, Estadual)",contexto,capitulo,criminalidade,Capítulo criminalidade,Só existe para a UF: aparece no município identificado como contexto estadual.
+4001,P9.2,IND-TRA-SIM-TT-RES,Mortes em acidentes de transporte terrestre (SIM) — por município de residência,hero,hero,transito,Panorama (indicador-chave) e transito,
+4002,P9.2,IND-TRA-SIM-AT-RES,"Mortes em acidentes de transporte, total (SIM) — por município de residência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4003,P9.2,IND-TRA-SIM-OUT-RES,"Mortes em outros acidentes de transporte — água, ar e demais (SIM) — por município de residência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4004,P9.2,IND-TRA-SIM-SEQ-RES,Mortes por sequelas de acidente com veículo a motor (SIM) — por município de residência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4011,P9.2,IND-TRA-SIM-CAT-PED-RES,Mortes — Pedestre (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4012,P9.2,IND-TRA-SIM-CAT-CIC-RES,Mortes — Ciclista (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4013,P9.2,IND-TRA-SIM-CAT-MOT-RES,Mortes — Motociclista (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4014,P9.2,IND-TRA-SIM-CAT-TRI-RES,Mortes — Ocupante de triciclo motorizado (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4015,P9.2,IND-TRA-SIM-CAT-AUT-RES,Mortes — Ocupante de automóvel (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4016,P9.2,IND-TRA-SIM-CAT-CAM-RES,Mortes — Ocupante de camionete (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4017,P9.2,IND-TRA-SIM-CAT-PES-RES,Mortes — Ocupante de veículo de transporte pesado (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4018,P9.2,IND-TRA-SIM-CAT-ONI-RES,Mortes — Ocupante de ônibus (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4019,P9.2,IND-TRA-SIM-CAT-OTE-RES,Mortes — Outros acidentes de transporte terrestre (SIM) — por município de residência,capitulo,capitulo,transito,Capítulo transito,
+4021,P9.2,IND-TRA-SIM-TT-TAXA,"Taxa de mortes em acidentes de transporte terrestre (SIM, residência)",hero,hero,transito,Panorama (indicador-chave) e transito,
+4022,P9.2,IND-TRA-SIM-AT-TAXA,"Taxa de mortes em acidentes de transporte (SIM, residência)",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4101,P9.2,IND-TRA-SIM-TT-OCO,Mortes em acidentes de transporte terrestre (SIM) — por município de ocorrência,capitulo,capitulo,transito,Capítulo transito,
+4102,P9.2,IND-TRA-SIM-AT-OCO,"Mortes em acidentes de transporte, total (SIM) — por município de ocorrência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4103,P9.2,IND-TRA-SIM-OUT-OCO,"Mortes em outros acidentes de transporte — água, ar e demais (SIM) — por município de ocorrência",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4104,P9.2,IND-TRA-SIM-SEQ-OCO,Mortes por sequelas de acidente com veículo a motor (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4111,P9.2,IND-TRA-SIM-CAT-PED-OCO,Mortes — Pedestre (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4112,P9.2,IND-TRA-SIM-CAT-CIC-OCO,Mortes — Ciclista (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4113,P9.2,IND-TRA-SIM-CAT-MOT-OCO,Mortes — Motociclista (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4114,P9.2,IND-TRA-SIM-CAT-TRI-OCO,Mortes — Ocupante de triciclo motorizado (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4115,P9.2,IND-TRA-SIM-CAT-AUT-OCO,Mortes — Ocupante de automóvel (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4116,P9.2,IND-TRA-SIM-CAT-CAM-OCO,Mortes — Ocupante de camionete (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4117,P9.2,IND-TRA-SIM-CAT-PES-OCO,Mortes — Ocupante de veículo de transporte pesado (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4118,P9.2,IND-TRA-SIM-CAT-ONI-OCO,Mortes — Ocupante de ônibus (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4119,P9.2,IND-TRA-SIM-CAT-OTE-OCO,Mortes — Outros acidentes de transporte terrestre (SIM) — por município de ocorrência,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4201,P9.2,IND-TRA-FROTA-1000,Veículos registrados por 1.000 habitantes,capitulo,capitulo,transito,Capítulo transito,
+4202,P9.2,IND-TRA-FROTA-MOTO,Participação de motocicletas e motonetas na frota registrada,capitulo,capitulo,transito,Capítulo transito,
+4203,P9.2,IND-TRA-FROTA-AUTO,Participação de automóveis na frota registrada,capitulo,capitulo,transito,Capítulo transito,
+4301,P9.2,IND-TRA-REN-SIN,Sinistros reportados (RENAEST),capitulo,capitulo,transito,Capítulo transito,
+4302,P9.2,IND-TRA-REN-SIN-FATAL,Sinistros com óbito (RENAEST),capitulo,capitulo,transito,Capítulo transito,
+4303,P9.2,IND-TRA-REN-OBITOS,Óbitos em sinistros (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4304,P9.2,IND-TRA-REN-ENVOLVIDOS,Pessoas envolvidas em sinistros (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4305,P9.2,IND-TRA-REN-FERIDOS-ILESOS,Pessoas feridas ou ilesas em sinistros (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4310,P9.2,IND-TRA-REN-TP-ACIDENTEPESSOALDETRANSITOCOMPEDESTRE,Sinistros por tipo: acidente pessoal de transito com pedestre (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4311,P9.2,IND-TRA-REN-TP-ATROPELAMENTOCOMANIMAIS,Sinistros por tipo: atropelamento com animais (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4312,P9.2,IND-TRA-REN-TP-ATROPELAMENTOCOMPEDESTRE,Sinistros por tipo: atropelamento com pedestre (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4313,P9.2,IND-TRA-REN-TP-CAPOTAMENTO,Sinistros por tipo: capotamento (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4314,P9.2,IND-TRA-REN-TP-CHOQUE,Sinistros por tipo: choque (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4315,P9.2,IND-TRA-REN-TP-COLISAO,Sinistros por tipo: colisao (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4316,P9.2,IND-TRA-REN-TP-COLISAOFRONTAL,Sinistros por tipo: colisao frontal (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4317,P9.2,IND-TRA-REN-TP-COLISAOLATERAL,Sinistros por tipo: colisao lateral (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4318,P9.2,IND-TRA-REN-TP-COLISAOTRANSVERSAL,Sinistros por tipo: colisao transversal (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4319,P9.2,IND-TRA-REN-TP-COLISAOTRASEIRA,Sinistros por tipo: colisao traseira (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4320,P9.2,IND-TRA-REN-TP-DESCONHECIDO,Sinistros por tipo: desconhecido (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4321,P9.2,IND-TRA-REN-TP-ENGAVETAMENTO,Sinistros por tipo: engavetamento (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4322,P9.2,IND-TRA-REN-TP-NAOINFORMADO,Sinistros por tipo: nao informado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4323,P9.2,IND-TRA-REN-TP-OUTROSACIDENTESDETRANSITO,Sinistros por tipo: outros acidentes de transito (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4324,P9.2,IND-TRA-REN-TP-QUEDA,Sinistros por tipo: queda (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4325,P9.2,IND-TRA-REN-TP-TOMBAMENTO,Sinistros por tipo: tombamento (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4330,P9.2,IND-TRA-REN-GRAV-DESCONHECIDO,Pessoas envolvidas por gravidade da lesão: desconhecido (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4331,P9.2,IND-TRA-REN-GRAV-GRAVE,Pessoas envolvidas por gravidade da lesão: grave (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4332,P9.2,IND-TRA-REN-GRAV-LEVE,Pessoas envolvidas por gravidade da lesão: leve (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4333,P9.2,IND-TRA-REN-GRAV-NAOINFORMADO,Pessoas envolvidas por gravidade da lesão: nao informado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4334,P9.2,IND-TRA-REN-GRAV-OBITO,Pessoas envolvidas por gravidade da lesão: obito (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4335,P9.2,IND-TRA-REN-GRAV-SEMFERIMENTO,Pessoas envolvidas por gravidade da lesão: sem ferimento (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4340,P9.2,IND-TRA-REN-ENV-DESCONHECIDO,Pessoas envolvidas por tipo de envolvido: desconhecido (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4341,P9.2,IND-TRA-REN-ENV-MOTORISTA,Pessoas envolvidas por tipo de envolvido: motorista (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4342,P9.2,IND-TRA-REN-ENV-NAOINFORMADO,Pessoas envolvidas por tipo de envolvido: nao informado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4343,P9.2,IND-TRA-REN-ENV-OUTRO,Pessoas envolvidas por tipo de envolvido: outro (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4344,P9.2,IND-TRA-REN-ENV-PASSAGEIROS,Pessoas envolvidas por tipo de envolvido: passageiros (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4345,P9.2,IND-TRA-REN-ENV-PEDESTRE,Pessoas envolvidas por tipo de envolvido: pedestre (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4350,P9.2,IND-TRA-REN-VEIC-AUTOMOVEL,Veículos envolvidos por tipo: automovel (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4351,P9.2,IND-TRA-REN-VEIC-BICICLETA,Veículos envolvidos por tipo: bicicleta (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4352,P9.2,IND-TRA-REN-VEIC-BONDE,Veículos envolvidos por tipo: bonde (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4353,P9.2,IND-TRA-REN-VEIC-CAMINHAO,Veículos envolvidos por tipo: caminhao (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4354,P9.2,IND-TRA-REN-VEIC-CAMINHAOTRATOR,Veículos envolvidos por tipo: caminhao-trator (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4355,P9.2,IND-TRA-REN-VEIC-CAMINHONETE,Veículos envolvidos por tipo: caminhonete (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4356,P9.2,IND-TRA-REN-VEIC-CAMIONETA,Veículos envolvidos por tipo: camioneta (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4357,P9.2,IND-TRA-REN-VEIC-CARRODEMAO,Veículos envolvidos por tipo: carro de mao (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4358,P9.2,IND-TRA-REN-VEIC-CARROCA,Veículos envolvidos por tipo: carroca (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4359,P9.2,IND-TRA-REN-VEIC-CHARRETE,Veículos envolvidos por tipo: charrete (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4360,P9.2,IND-TRA-REN-VEIC-CICLO,Veículos envolvidos por tipo: ciclo (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4361,P9.2,IND-TRA-REN-VEIC-CICLOMOTOR,Veículos envolvidos por tipo: ciclomotor (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4362,P9.2,IND-TRA-REN-VEIC-DESCONHECIDO,Veículos envolvidos por tipo: desconhecido (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4363,P9.2,IND-TRA-REN-VEIC-METRO,Veículos envolvidos por tipo: metro (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4364,P9.2,IND-TRA-REN-VEIC-MICROONIBUS,Veículos envolvidos por tipo: micro-onibus (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4365,P9.2,IND-TRA-REN-VEIC-MOTOCICLETA,Veículos envolvidos por tipo: motocicleta (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4366,P9.2,IND-TRA-REN-VEIC-MOTONETA,Veículos envolvidos por tipo: motoneta (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4367,P9.2,IND-TRA-REN-VEIC-MOTORCASAMOTORHOME,Veículos envolvidos por tipo: motorcasa(motorhome) (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4368,P9.2,IND-TRA-REN-VEIC-NAOINFORMADO,Veículos envolvidos por tipo: nao informado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4369,P9.2,IND-TRA-REN-VEIC-ONIBUS,Veículos envolvidos por tipo: onibus (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4370,P9.2,IND-TRA-REN-VEIC-PATINETEPATINETEELETRICO,Veículos envolvidos por tipo: patinete/patinete eletrico (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4371,P9.2,IND-TRA-REN-VEIC-QUADRICICLO,Veículos envolvidos por tipo: quadriciclo (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4372,P9.2,IND-TRA-REN-VEIC-REBOQUE,Veículos envolvidos por tipo: reboque (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4373,P9.2,IND-TRA-REN-VEIC-SEMIRREBOQUE,Veículos envolvidos por tipo: semirreboque (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4374,P9.2,IND-TRA-REN-VEIC-TRAILER,Veículos envolvidos por tipo: trailer (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4375,P9.2,IND-TRA-REN-VEIC-TRATOR,Veículos envolvidos por tipo: trator (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4376,P9.2,IND-TRA-REN-VEIC-TREM,Veículos envolvidos por tipo: trem (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4377,P9.2,IND-TRA-REN-VEIC-TREMINHAO,Veículos envolvidos por tipo: treminhao (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4378,P9.2,IND-TRA-REN-VEIC-TRICICLO,Veículos envolvidos por tipo: triciclo (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4379,P9.2,IND-TRA-REN-VEIC-TROLEBUS,Veículos envolvidos por tipo: trolebus (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4380,P9.2,IND-TRA-REN-VEIC-UTILITARIO,Veículos envolvidos por tipo: utilitario (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4381,P9.2,IND-TRA-REN-VEIC-VEICULOARTICULADO,Veículos envolvidos por tipo: veiculo articulado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4382,P9.2,IND-TRA-REN-VEIC-VEICULOCONJUGADO,Veículos envolvidos por tipo: veiculo conjugado (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4383,P9.2,IND-TRA-REN-VEIC-VEICULODESERVICO,Veículos envolvidos por tipo: veiculo de servico (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4384,P9.2,IND-TRA-REN-VEIC-VEICULOMISTO,Veículos envolvidos por tipo: veiculo misto (RENAEST),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4601,P9.2,IND-TRA-PRF-M-SINISTROS,"Sinistros registrados pela PRF — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4602,P9.2,IND-TRA-PRF-M-FATAIS,"Sinistros com vítimas fatais (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4603,P9.2,IND-TRA-PRF-M-FERIDAS,"Sinistros com vítimas feridas, sem óbito (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4604,P9.2,IND-TRA-PRF-M-SEM-VITIMAS,"Sinistros sem vítimas (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4605,P9.2,IND-TRA-PRF-M-COMVITIMAS,"Sinistros com vítimas (fatais + feridas) (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4606,P9.2,IND-TRA-PRF-M-MORTOS,"Mortos em sinistros registrados pela PRF — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4607,P9.2,IND-TRA-PRF-M-FERIDOS-LEVES,"Feridos leves (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4608,P9.2,IND-TRA-PRF-M-FERIDOS-GRAVES,"Feridos graves (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4609,P9.2,IND-TRA-PRF-M-ILESOS,"Ilesos (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4610,P9.2,IND-TRA-PRF-M-PESSOAS,"Pessoas envolvidas (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4611,P9.2,IND-TRA-PRF-M-VEICULOS,"Veículos envolvidos (PRF) — mensal, UF",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+4621,P9.2,IND-TRA-PRF-A-SINISTROS,Sinistros registrados pela PRF — anual,capitulo,capitulo,transito,Capítulo transito,
+4622,P9.2,IND-TRA-PRF-A-FATAIS,Sinistros com vítimas fatais (PRF) — anual,capitulo,capitulo,transito,Capítulo transito,
+4623,P9.2,IND-TRA-PRF-A-FERIDAS,"Sinistros com vítimas feridas, sem óbito (PRF) — anual",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4624,P9.2,IND-TRA-PRF-A-SEM-VITIMAS,Sinistros sem vítimas (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4625,P9.2,IND-TRA-PRF-A-COMVITIMAS,Sinistros com vítimas (fatais + feridas) (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4626,P9.2,IND-TRA-PRF-A-MORTOS,Mortos em sinistros registrados pela PRF — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4627,P9.2,IND-TRA-PRF-A-FERIDOS-LEVES,Feridos leves (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4628,P9.2,IND-TRA-PRF-A-FERIDOS-GRAVES,Feridos graves (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4629,P9.2,IND-TRA-PRF-A-ILESOS,Ilesos (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4630,P9.2,IND-TRA-PRF-A-PESSOAS,Pessoas envolvidas (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4631,P9.2,IND-TRA-PRF-A-VEICULOS,Veículos envolvidos (PRF) — anual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+4701,P9.2,IND-TRA-INF-NP,Infrações com notificação de penalidade (por UF de jurisdição do veículo),capitulo,capitulo,transito,Capítulo transito,
+5001,P9.3,IND-EFE-FBSP-PM,Efetivo da ativa — Polícia Militar (FBSP),hero,hero,estrutura,Panorama (indicador-chave) e estrutura,
+5002,P9.3,IND-EFE-FBSP-CBM,Efetivo da ativa — Corpo de Bombeiros Militar (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5003,P9.3,IND-EFE-FBSP-PC,Efetivo da ativa — Polícia Civil (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5004,P9.3,IND-EFE-FBSP-PERICIA,Efetivo da ativa — Perícia Oficial (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5005,P9.3,IND-EFE-FBSP-POLICIA_PENAL,Efetivo da ativa — Polícia Penal estadual (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5006,P9.3,IND-EFE-FBSP-PF,Efetivo da ativa — Polícia Federal (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5007,P9.3,IND-EFE-FBSP-PRF,Efetivo da ativa — Polícia Rodoviária Federal (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5008,P9.3,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,Efetivo da ativa — Polícia Penal Federal (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5009,P9.3,IND-EFE-FBSP-POLICIA_LEGISLATIVA,Efetivo da ativa — Polícia Legislativa (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5010,P9.3,IND-EFE-FBSP-GCM,Efetivo da ativa — Guardas Civis Municipais (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5011,P9.3,IND-EFE-FBSP-PM-PREV,Efetivo previsto — Polícia Militar (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5012,P9.3,IND-EFE-FBSP-PC-PREV,Efetivo previsto — Polícia Civil (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5013,P9.3,IND-EFE-FBSP-POLICIA_PENAL-PREV,Efetivo previsto — Polícia Penal estadual (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5014,P9.3,IND-EFE-FBSP-PM-OCUP,Ocupação do quadro previsto — Polícia Militar (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5015,P9.3,IND-EFE-FBSP-PC-OCUP,Ocupação do quadro previsto — Polícia Civil (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5016,P9.3,IND-EFE-FBSP-POLICIA_PENAL-OCUP,Ocupação do quadro previsto — Polícia Penal estadual (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5017,P9.3,IND-EFE-FBSP-PM-DIF,Diferença previsto − existente — Polícia Militar (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5018,P9.3,IND-EFE-FBSP-PC-DIF,Diferença previsto − existente — Polícia Civil (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5019,P9.3,IND-EFE-FBSP-POLICIA_PENAL-DIF,Diferença previsto − existente — Polícia Penal estadual (FBSP),capitulo,capitulo,estrutura,Capítulo estrutura,
+5020,P9.3,IND-EFE-FBSP-GCM-MUN,Municípios com guarda municipal — contagem final FBSP,capitulo,capitulo,estrutura,Capítulo estrutura,
+5021,P9.3,IND-EFE-FBSP-GCM-RAIS-EF,"Efetivo de guardas municipais — RAIS 2024 (FBSP, Tabela 15)",capitulo,capitulo,estrutura,Capítulo estrutura,
+5022,P9.3,IND-EFE-FBSP-GCM-RAIS-MUN,"Municípios com guarda municipal — RAIS 2024 (FBSP, Tabela 15)",capitulo,capitulo,estrutura,Capítulo estrutura,
+5031,P9.3,IND-EFE-FBSP-PM-TAXA,Polícia Militar por 100 mil habitantes (FBSP 2025 ÷ população da UF),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5032,P9.3,IND-EFE-FBSP-CBM-TAXA,Corpo de Bombeiros Militar por 100 mil habitantes (FBSP 2025 ÷ população da UF),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5033,P9.3,IND-EFE-FBSP-PC-TAXA,Polícia Civil por 100 mil habitantes (FBSP 2025 ÷ população da UF),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5034,P9.3,IND-EFE-FBSP-GCM-TAXA,Guardas Civis Municipais por 100 mil habitantes (FBSP 2025 ÷ população da UF),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5101,P9.3,IND-EFE-ESTADIC-ESEG273,Efetivo existente da Polícia Militar (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5102,P9.3,IND-EFE-ESTADIC-ESEG271,Efetivo existente da Polícia Militar — homens (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5103,P9.3,IND-EFE-ESTADIC-ESEG272,Efetivo existente da Polícia Militar — mulheres (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5104,P9.3,IND-EFE-ESTADIC-ESEG493,Efetivo existente da Polícia Civil (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5105,P9.3,IND-EFE-ESTADIC-ESEG491,Efetivo existente da Polícia Civil — homens (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5106,P9.3,IND-EFE-ESTADIC-ESEG492,Efetivo existente da Polícia Civil — mulheres (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5107,P9.3,IND-EFE-ESTADIC-ESEG3031,Unidades operacionais da Polícia Militar (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5108,P9.3,IND-EFE-ESTADIC-ESEG5131,Delegacias distritais da Polícia Civil (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5109,P9.3,IND-EFE-ESTADIC-ESEG5134,Delegacias especializadas da Polícia Civil (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5110,P9.3,IND-EFE-ESTADIC-ESEG50,Perícia Oficial vinculada à Polícia Civil (ESTADIC),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5201,P9.3,IND-EFE-MUNIC-MSEG27,Município possui guarda municipal (MUNIC),hero,hero,estrutura,Panorama (indicador-chave) e estrutura,
+5202,P9.3,IND-EFE-MUNIC-MSEG283,Efetivo da guarda municipal — total (MUNIC),hero,hero,estrutura,Panorama (indicador-chave) e estrutura,
+5203,P9.3,IND-EFE-MUNIC-MSEG281,Efetivo da guarda municipal — homens (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5204,P9.3,IND-EFE-MUNIC-MSEG282,Efetivo da guarda municipal — mulheres (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5211,P9.3,IND-EFE-MUNIC-MSEG161,Município possui delegacia de Polícia Civil (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5212,P9.3,IND-EFE-MUNIC-MSEG162,Município possui delegacia de homicídios (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5213,P9.3,IND-EFE-MUNIC-MSEG163,Município possui delegacia de proteção à pessoa idosa (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5214,P9.3,IND-EFE-MUNIC-MSEG164,Município possui delegacia de proteção à criança e ao adolescente — DPCA (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5215,P9.3,IND-EFE-MUNIC-MSEG165,Município possui delegacia da criança e do adolescente — DCA (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5216,P9.3,IND-EFE-MUNIC-MSEG166,"Município possui delegacia da criança e do adolescente, especialidades não separadas (MUNIC)",capitulo,capitulo,estrutura,Capítulo estrutura,
+5217,P9.3,IND-EFE-MUNIC-MSEG167,Município possui delegacia de proteção ao meio ambiente (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5218,P9.3,IND-EFE-MUNIC-MSEG168,Município possui delegacia especializada no atendimento à mulher (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5219,P9.3,IND-EFE-MUNIC-MSEG169,Município possui delegacia especializada em pessoas desaparecidas (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5220,P9.3,IND-EFE-MUNIC-MSEG1610,Município possui delegacia de repressão aos crimes de informática (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5221,P9.3,IND-EFE-MUNIC-MSEG1611,Município declarou nenhuma das delegacias citadas (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5222,P9.3,IND-EFE-MUNIC-MSEG17,Município possui Instituto Médico Legal (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5223,P9.3,IND-EFE-MUNIC-MSEG18,Município é sede de comarca (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5224,P9.3,IND-EFE-MUNIC-MSEG19,Município possui unidade do Corpo de Bombeiros (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5231,P9.3,IND-EFE-MUNIC-UF-GCM-MUN,Municípios da UF com guarda municipal (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5232,P9.3,IND-EFE-MUNIC-UF-GCM-EF,Efetivo de guardas municipais na UF — soma dos municípios (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5233,P9.3,IND-EFE-MUNIC-UF-GCM-NI,Municípios da UF que não informaram se têm guarda municipal (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5234,P9.3,IND-EFE-MUNIC-UF-DPC-MUN,Municípios da UF com delegacia de Polícia Civil (MUNIC),capitulo,capitulo,estrutura,Capítulo estrutura,
+5301,P9.3,IND-EFE-SIAPE-PF-VINC,Registros de vínculo no cadastro SIAPE — Polícia Federal (Departamento de Polícia Federal),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5302,P9.3,IND-EFE-SIAPE-PF-CARGO,"Registros de vínculo de tipo ""Cargo"" no cadastro SIAPE — Polícia Federal (Departamento de Polícia Federal)",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5303,P9.3,IND-EFE-SIAPE-PRF-VINC,Registros de vínculo no cadastro SIAPE — Polícia Rodoviária Federal (Departamento de Polícia Rodoviária Federal),deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+5304,P9.3,IND-EFE-SIAPE-PRF-CARGO,"Registros de vínculo de tipo ""Cargo"" no cadastro SIAPE — Polícia Rodoviária Federal (Departamento de Polícia Rodoviária Federal)",deep_dive,deep_dive,,"Modo ""Explorar os dados""",Sem série municipal: no município serve só de contexto.
+6001,P9.4,IND-PRI-E-UNITS,Estabelecimentos prisionais (celas físicas) — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6002,P9.4,IND-PRI-E-CAP,Capacidade (vagas) em celas físicas — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6003,P9.4,IND-PRI-E-POP,População em celas físicas — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6004,P9.4,IND-PRI-E-OCC,Taxa de ocupação das celas físicas — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6005,P9.4,IND-PRI-E-EXC_NET,Excedente líquido de ocupação — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6006,P9.4,IND-PRI-E-EXC_GROSS,Excedente bruto (soma dos excedentes positivos por unidade) — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6007,P9.4,IND-PRI-E-NO_CAP,Estabelecimentos com população e sem capacidade utilizável — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6008,P9.4,IND-PRI-E-ELIGIBLE,Estabelecimentos elegíveis à taxa de ocupação — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6020,P9.4,IND-PRI-E-CAP_M,Capacidade masculina em celas físicas — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6021,P9.4,IND-PRI-E-CAP_F,Capacidade feminina em celas físicas — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6022,P9.4,IND-PRI-E-POP_M,População masculina em celas físicas — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6023,P9.4,IND-PRI-E-POP_F,População feminina em celas físicas — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6024,P9.4,IND-PRI-E-POP_PROV,População em celas físicas — Presos provisórios (sem condenação) — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6025,P9.4,IND-PRI-E-POP_FECHADO,População em celas físicas — Presos sentenciados - regime fechado — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6026,P9.4,IND-PRI-E-POP_SEMI,População em celas físicas — Presos sentenciados - regime semiaberto — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6027,P9.4,IND-PRI-E-POP_ABERTO,População em celas físicas — Presos sentenciados - regime aberto — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6028,P9.4,IND-PRI-E-POP_MSI,População em celas físicas — Medida de segurança - internação — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6029,P9.4,IND-PRI-E-POP_MSA,População em celas físicas — Medida de segurança - tratamento ambulatorial — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6030,P9.4,IND-PRI-E-CAP_PROV,Capacidade em celas físicas — Presos provisórios — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6031,P9.4,IND-PRI-E-CAP_FECHADO,Capacidade em celas físicas — Regime fechado — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6032,P9.4,IND-PRI-E-CAP_SEMI,Capacidade em celas físicas — Regime semiaberto — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6033,P9.4,IND-PRI-E-CAP_ABERTO,Capacidade em celas físicas — Regime aberto — sistema estadual,capitulo,capitulo,prisional,Capítulo prisional,
+6034,P9.4,IND-PRI-E-CAP_RDD,Capacidade em celas físicas — Regime Disciplinar Diferenciado (RDD) — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6035,P9.4,IND-PRI-E-CAP_MS,Capacidade em celas físicas — Medidas de segurança de internação — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6036,P9.4,IND-PRI-E-CAP_OUTROS,Capacidade em celas físicas — Outro(s). Qual(is)? — sistema estadual,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6040,P9.4,IND-PRI-D-UNITS_COM,Estabelecimentos domiciliares com monitoramento eletrônico,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6041,P9.4,IND-PRI-D-POP_COM,Pessoas em prisão domiciliar com monitoramento eletrônico,capitulo,capitulo,prisional,Capítulo prisional,
+6042,P9.4,IND-PRI-D-UNITS_SEM,Estabelecimentos domiciliares sem monitoramento eletrônico,capitulo,capitulo,prisional,Capítulo prisional,
+6043,P9.4,IND-PRI-D-POP_SEM,Pessoas em prisão domiciliar sem monitoramento eletrônico,capitulo,capitulo,prisional,Capítulo prisional,
+6101,P9.4,IND-PRI-F-UNITS,Estabelecimentos prisionais (celas físicas) — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6102,P9.4,IND-PRI-F-CAP,Capacidade (vagas) em celas físicas — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6103,P9.4,IND-PRI-F-POP,População em celas físicas — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6104,P9.4,IND-PRI-F-OCC,Taxa de ocupação das celas físicas — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6105,P9.4,IND-PRI-F-EXC_NET,Excedente líquido de ocupação — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6106,P9.4,IND-PRI-F-EXC_GROSS,Excedente bruto (soma dos excedentes positivos por unidade) — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6107,P9.4,IND-PRI-F-NO_CAP,Estabelecimentos com população e sem capacidade utilizável — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+6108,P9.4,IND-PRI-F-ELIGIBLE,Estabelecimentos elegíveis à taxa de ocupação — sistema federal (unidades localizadas no território),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7001,P9.5,IND-FIN-DCA-SEG-EMP,Despesa empenhada na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7002,P9.5,IND-FIN-DCA-SEG-LIQ,Despesa liquidada na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7003,P9.5,IND-FIN-DCA-SEG-PAG,Despesa paga na função Segurança Pública,hero,hero,financas,Panorama (indicador-chave) e financas,
+7004,P9.5,IND-FIN-DCA-SEG-RPNP,Restos a pagar não processados inscritos na função Segurança Pública,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7005,P9.5,IND-FIN-DCA-SEG-RPP,Restos a pagar processados inscritos na função Segurança Pública,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7006,P9.5,IND-FIN-DCA-TOT-EMP,Despesa total empenhada do ente (exceto intra-orçamentárias),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7007,P9.5,IND-FIN-DCA-TOT-PAG,Despesa total paga do ente (exceto intra-orçamentárias),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7011,P9.5,IND-FIN-DCA-SUB-122-EMP,Despesa empenhada em Segurança Pública: Administração Geral,capitulo,capitulo,financas,Capítulo financas,
+7012,P9.5,IND-FIN-DCA-SUB-122-PAG,Despesa paga em Segurança Pública: Administração Geral,capitulo,capitulo,financas,Capítulo financas,
+7013,P9.5,IND-FIN-DCA-SUB-181-EMP,Despesa empenhada em Segurança Pública: Policiamento,capitulo,capitulo,financas,Capítulo financas,
+7014,P9.5,IND-FIN-DCA-SUB-181-PAG,Despesa paga em Segurança Pública: Policiamento,capitulo,capitulo,financas,Capítulo financas,
+7015,P9.5,IND-FIN-DCA-SUB-182-EMP,Despesa empenhada em Segurança Pública: Defesa Civil,capitulo,capitulo,financas,Capítulo financas,
+7016,P9.5,IND-FIN-DCA-SUB-182-PAG,Despesa paga em Segurança Pública: Defesa Civil,capitulo,capitulo,financas,Capítulo financas,
+7017,P9.5,IND-FIN-DCA-SUB-183-EMP,Despesa empenhada em Segurança Pública: Informação e Inteligência,capitulo,capitulo,financas,Capítulo financas,
+7018,P9.5,IND-FIN-DCA-SUB-183-PAG,Despesa paga em Segurança Pública: Informação e Inteligência,capitulo,capitulo,financas,Capítulo financas,
+7019,P9.5,IND-FIN-DCA-SUB-OUT-EMP,Despesa empenhada em Segurança Pública: demais subfunções,capitulo,capitulo,financas,Capítulo financas,
+7020,P9.5,IND-FIN-DCA-SUB-OUT-PAG,Despesa paga em Segurança Pública: demais subfunções,capitulo,capitulo,financas,Capítulo financas,
+7021,P9.5,IND-FIN-DCA-SEG-RP-PAGOS,Restos a pagar pagos na função Segurança Pública,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7022,P9.5,IND-FIN-DCA-SEG-RP-CANCELADOS,Restos a pagar cancelados na função Segurança Pública,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7031,P9.5,IND-FIN-DCA-SEG-SHARE-EMP,Participação da função Segurança Pública na despesa total empenhada,capitulo,capitulo,financas,Capítulo financas,
+7032,P9.5,IND-FIN-DCA-SEG-PAG-PC,Despesa paga na função Segurança Pública por habitante,hero,hero,financas,Panorama (indicador-chave) e financas,
+7033,P9.5,IND-FIN-DCA-SEG-EMP-PC,Despesa empenhada na função Segurança Pública por habitante,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7034,P9.5,IND-FIN-DCA-SEG-PAYRATE,Taxa de pagamento da função Segurança Pública,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7041,P9.5,IND-FIN-RREO-SEG-DOTINI,Dotação inicial da função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7042,P9.5,IND-FIN-RREO-SEG-DOTATU,Dotação atualizada da função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7043,P9.5,IND-FIN-RREO-SEG-EMPATE,Despesa empenhada até o bimestre na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7044,P9.5,IND-FIN-RREO-SEG-LIQATE,Despesa liquidada até o bimestre na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7045,P9.5,IND-FIN-RREO-SEG-EXEC-EMP,Execução da dotação atualizada: empenhado na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7046,P9.5,IND-FIN-RREO-SEG-EXEC-LIQ,Execução da dotação atualizada: liquidado na função Segurança Pública,capitulo,capitulo,financas,Capítulo financas,
+7061,P9.5,IND-FIN-PNCP-ORG-N,Contratos de órgãos de segurança,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7062,P9.5,IND-FIN-PNCP-ORG-VAL,Valor global contratado por órgãos de segurança,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7063,P9.5,IND-FIN-PNCP-ORG-FORN,Fornecedores (pessoa jurídica) de órgãos de segurança,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7064,P9.5,IND-FIN-PNCP-TEMA-N,Contratos com tema de segurança derivado do objeto,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7065,P9.5,IND-FIN-PNCP-TEMA-VAL,Valor global contratado em contratos de tema de segurança derivado,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7066,P9.5,IND-FIN-PNCP-ORG-EMPENHO,Contratos de órgãos de segurança do tipo Empenho (com referência de empenho),deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7071,P9.5,IND-FIN-TRF-N,Convênios e contratos de repasse do MJSP firmados com o ente,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7072,P9.5,IND-FIN-TRF-GLOBAL,Valor global dos convênios do MJSP firmados com o ente,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7073,P9.5,IND-FIN-TRF-REPASSE,Valor de repasse dos convênios do MJSP firmados com o ente,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+7074,P9.5,IND-FIN-TRF-DESEMB,Valor já desembolsado pela União nos convênios do MJSP firmados com o ente,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8001,P9.6,IND-CRIME-ISP-RJ-HOM-DOLOSO,Homicídio doloso — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8002,P9.6,IND-CRIME-ISP-RJ-LESAO-CORP-MORTE,Lesão corporal seguida de morte — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8003,P9.6,IND-CRIME-ISP-RJ-LATROCINIO,Latrocínio (roubo seguido de morte) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8004,P9.6,IND-CRIME-ISP-RJ-CVLI,Crimes Violentos Letais Intencionais (CVLI) — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,Composto da fonte: não é soma dos componentes exibidos.
+8005,P9.6,IND-CRIME-ISP-RJ-HOM-POR-INTERV-POLICIAL,Morte por intervenção de agente do Estado — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8006,P9.6,IND-CRIME-ISP-RJ-FEMINICIDIO,Feminicídio — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8007,P9.6,IND-CRIME-ISP-RJ-LETALIDADE-VIOLENTA,Letalidade violenta — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Composto da fonte: não é soma dos componentes exibidos.
+8008,P9.6,IND-CRIME-ISP-RJ-TENTAT-HOM,Tentativa de homicídio — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8009,P9.6,IND-CRIME-ISP-RJ-TENTATIVA-FEMINICIDIO,Tentativa de feminicídio — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8010,P9.6,IND-CRIME-ISP-RJ-LESAO-CORP-DOLOSA,Lesão corporal dolosa — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8011,P9.6,IND-CRIME-ISP-RJ-ESTUPRO,Estupro — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8012,P9.6,IND-CRIME-ISP-RJ-HOM-CULPOSO,Homicídio culposo (trânsito) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8013,P9.6,IND-CRIME-ISP-RJ-LESAO-CORP-CULPOSA,Lesão corporal culposa (trânsito) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8014,P9.6,IND-CRIME-ISP-RJ-ROUBO-TRANSEUNTE,Roubo a transeunte — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8015,P9.6,IND-CRIME-ISP-RJ-ROUBO-CELULAR,Roubo de telefone celular — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8016,P9.6,IND-CRIME-ISP-RJ-ROUBO-EM-COLETIVO,Roubo em coletivo — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8017,P9.6,IND-CRIME-ISP-RJ-ROUBO-RUA,Roubo de rua — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",Composto da fonte: não é soma dos componentes exibidos.
+8018,P9.6,IND-CRIME-ISP-RJ-ROUBO-VEICULO,Roubo de veículo — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8019,P9.6,IND-CRIME-ISP-RJ-ROUBO-CARGA,Roubo de carga — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8020,P9.6,IND-CRIME-ISP-RJ-ROUBO-COMERCIO,Roubo a estabelecimento comercial — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8021,P9.6,IND-CRIME-ISP-RJ-ROUBO-RESIDENCIA,Roubo a residência — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8022,P9.6,IND-CRIME-ISP-RJ-ROUBO-BANCO,Roubo a banco — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8023,P9.6,IND-CRIME-ISP-RJ-ROUBO-CX-ELETRONICO,Roubo de caixa eletrônico — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8024,P9.6,IND-CRIME-ISP-RJ-ROUBO-CONDUCAO-SAQUE,Roubo com condução da vítima para saque em instituição financeira — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8025,P9.6,IND-CRIME-ISP-RJ-ROUBO-APOS-SAQUE,Roubo após saque em instituição financeira — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8026,P9.6,IND-CRIME-ISP-RJ-ROUBO-BICICLETA,Roubo de bicicleta — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8027,P9.6,IND-CRIME-ISP-RJ-OUTROS-ROUBOS,Outros roubos — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8028,P9.6,IND-CRIME-ISP-RJ-TOTAL-ROUBOS,Total de roubos — ISP-RJ,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,Composto da fonte: não é soma dos componentes exibidos.
+8029,P9.6,IND-CRIME-ISP-RJ-FURTO-VEICULOS,Furto de veículo — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8030,P9.6,IND-CRIME-ISP-RJ-FURTO-TRANSEUNTE,Furto a transeunte — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8031,P9.6,IND-CRIME-ISP-RJ-FURTO-COLETIVO,Furto em coletivo — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8032,P9.6,IND-CRIME-ISP-RJ-FURTO-CELULAR,Furto de telefone celular — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8033,P9.6,IND-CRIME-ISP-RJ-FURTO-BICICLETA,Furto de bicicleta — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8034,P9.6,IND-CRIME-ISP-RJ-OUTROS-FURTOS,Outros furtos — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8035,P9.6,IND-CRIME-ISP-RJ-TOTAL-FURTOS,Total de furtos — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,Composto da fonte: não é soma dos componentes exibidos.
+8036,P9.6,IND-CRIME-ISP-RJ-SEQUESTRO,Extorsão mediante sequestro (sequestro clássico) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8037,P9.6,IND-CRIME-ISP-RJ-EXTORSAO,Extorsão — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8038,P9.6,IND-CRIME-ISP-RJ-SEQUESTRO-RELAMPAGO,Extorsão com momentânea privação da liberdade (sequestro relâmpago) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8039,P9.6,IND-CRIME-ISP-RJ-ESTELIONATO,Estelionato — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8040,P9.6,IND-CRIME-ISP-RJ-APREENSAO-DROGAS,Apreensão de drogas — ISP-RJ,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8041,P9.6,IND-CRIME-ISP-RJ-POSSE-DROGAS,Registros com título de posse de drogas — ISP-RJ,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8042,P9.6,IND-CRIME-ISP-RJ-TRAFICO-DROGAS,Registros com título de tráfico de drogas — ISP-RJ,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8043,P9.6,IND-CRIME-ISP-RJ-APREENSAO-DROGAS-SEM-AUTOR,Registros com título de apreensão de drogas sem autor — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8044,P9.6,IND-CRIME-ISP-RJ-RECUPERACAO-VEICULOS,Recuperação de veículo — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8045,P9.6,IND-CRIME-ISP-RJ-APF,Auto de Prisão em Flagrante — ISP-RJ,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8046,P9.6,IND-CRIME-ISP-RJ-AAAPAI,Auto de Apreensão de Adolescente por Prática de Ato Infracional — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8047,P9.6,IND-CRIME-ISP-RJ-CMP,Cumprimento de Mandado de Prisão — ISP-RJ,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8048,P9.6,IND-CRIME-ISP-RJ-CMBA,Cumprimento de Mandado de Busca e Apreensão — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""","Unidade inconsistente na fonte (ISP-RJ): só no explorador, com a nota do catálogo."
+8049,P9.6,IND-CRIME-ISP-RJ-AMEACA,Ameaça — ISP-RJ,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8050,P9.6,IND-CRIME-ISP-RJ-PESSOAS-DESAPARECIDAS,Pessoas desaparecidas — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8051,P9.6,IND-CRIME-ISP-RJ-ENCONTRO-CADAVER,Encontro de cadáver — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8052,P9.6,IND-CRIME-ISP-RJ-ENCONTRO-OSSADA,Encontro de ossada — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8053,P9.6,IND-CRIME-ISP-RJ-POL-MILITARES-MORTOS-SERV,Policiais militares mortos em serviço — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8054,P9.6,IND-CRIME-ISP-RJ-POL-CIVIS-MORTOS-SERV,Policiais civis mortos em serviço — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8055,P9.6,IND-CRIME-ISP-RJ-REGISTRO-OCORRENCIAS,Registro de ocorrências (total divulgado no mês) — ISP-RJ,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8101,P9.6,IND-CRIME-SEJUSP-MG-HOMICIDIO-CONSUMADO-VITIMAS,Homicídio consumado (vítimas) — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8102,P9.6,IND-CRIME-SEJUSP-MG-HOMICIDIO-CONSUMADO-REGISTROS,Homicídio consumado (registros) — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8103,P9.6,IND-CRIME-SEJUSP-MG-FEMINICIDIO-CONSUMADO-REGISTROS,Feminicídio consumado (registros) — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8104,P9.6,IND-CRIME-SEJUSP-MG-HOMICIDIO-TENTADO,Homicídio tentado — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8105,P9.6,IND-CRIME-SEJUSP-MG-FEMINICIDIO-TENTADO,Feminicídio tentado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8106,P9.6,IND-CRIME-SEJUSP-MG-LESAO-CORPORAL,Lesão corporal consumada — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8107,P9.6,IND-CRIME-SEJUSP-MG-ESTUPRO-CONSUMADO,Estupro consumado — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8108,P9.6,IND-CRIME-SEJUSP-MG-ESTUPRO-TENTADO,Estupro tentado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8109,P9.6,IND-CRIME-SEJUSP-MG-ESTUPRO-DE-VULNERAVEL-CONSUMADO,Estupro de vulnerável consumado — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8110,P9.6,IND-CRIME-SEJUSP-MG-ESTUPRO-DE-VULNERAVEL-TENTADO,Estupro de vulnerável tentado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8111,P9.6,IND-CRIME-SEJUSP-MG-ROUBO-CONSUMADO,Roubo consumado — SEJUSP-MG,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8112,P9.6,IND-CRIME-SEJUSP-MG-ROUBO-TENTADO,Roubo tentado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8113,P9.6,IND-CRIME-SEJUSP-MG-FURTO,Furto consumado — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8114,P9.6,IND-CRIME-SEJUSP-MG-EXTORSAO-CONSUMADO,Extorsão consumada — SEJUSP-MG,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8115,P9.6,IND-CRIME-SEJUSP-MG-EXTORSAO-TENTADO,Extorsão tentada — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8116,P9.6,IND-CRIME-SEJUSP-MG-EXTORSAO-MEDIANTE-SEQUESTRO-CONSUMADO,Extorsão mediante sequestro consumada — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8117,P9.6,IND-CRIME-SEJUSP-MG-SEQUESTRO-E-CARCERE-PRIVADO-CONSUMADO,Sequestro e cárcere privado consumado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8118,P9.6,IND-CRIME-SEJUSP-MG-SEQUESTRO-E-CARCERE-PRIVADO-TENTADO,Sequestro e cárcere privado tentado — SEJUSP-MG,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8201,P9.6,IND-CRIME-SESP-ES-ESTELIONATO-FRAUDE,Estelionato/fraude — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8202,P9.6,IND-CRIME-SESP-ES-CRIMES-INFORMATICOS,Crimes informáticos — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8203,P9.6,IND-CRIME-SESP-ES-ROUBO-PESSOA-VIA-PUBLICA,Roubo: a pessoa em via pública — SESP-ES,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8204,P9.6,IND-CRIME-SESP-ES-ROUBO-TRANSPORTE-COLETIVO,Roubo: em transporte coletivo — SESP-ES,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8205,P9.6,IND-CRIME-SESP-ES-ROUBO-ESTABELECIMENTO-COMERCIAL,Roubo: em estabelecimento comercial — SESP-ES,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8206,P9.6,IND-CRIME-SESP-ES-ROUBO-RESIDENCIA-CONDOMINIO,Roubo: em residência/condomínio — SESP-ES,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8207,P9.6,IND-CRIME-SESP-ES-FURTO-PESSOA-VIA-PUBLICA,Furto: a pessoa em via pública — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8208,P9.6,IND-CRIME-SESP-ES-FURTO-TRANSPORTE-COLETIVO,Furto: em transporte coletivo — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8209,P9.6,IND-CRIME-SESP-ES-FURTO-ESTABELECIMENTO-COMERCIAL,Furto: em estabelecimento comercial — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8210,P9.6,IND-CRIME-SESP-ES-FURTO-RESIDENCIA-CONDOMINIO,Furto: em residência/condomínio — SESP-ES,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8301,P9.6,IND-CRIME-SSP-RS-HOMICIDIO-DOLOSO,Homicídio doloso — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8302,P9.6,IND-CRIME-SSP-RS-VITIMAS-HOMICIDIO-DOLOSO,Vítimas de homicídio doloso — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8303,P9.6,IND-CRIME-SSP-RS-LATROCINIO,Latrocínio — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8304,P9.6,IND-CRIME-SSP-RS-VITIMAS-LATROCINIO,Vítimas de latrocínio — SSP-RS,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8305,P9.6,IND-CRIME-SSP-RS-VITIMAS-LESAO-CORPORAL-SEGUIDA-DE-MORTE,Vítimas de lesão corporal seguida de morte — SSP-RS,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8306,P9.6,IND-CRIME-SSP-RS-VITIMAS-CVLI,Total de vítimas de CVLI — SSP-RS,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8307,P9.6,IND-CRIME-SSP-RS-FURTO,Furtos — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8308,P9.6,IND-CRIME-SSP-RS-ABIGEATO,Abigeato — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8309,P9.6,IND-CRIME-SSP-RS-FURTO-VEICULO,Furto de veículo — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8310,P9.6,IND-CRIME-SSP-RS-ROUBO,Roubos — SSP-RS,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8311,P9.6,IND-CRIME-SSP-RS-ROUBO-VEICULO,Roubo de veículo — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8312,P9.6,IND-CRIME-SSP-RS-ESTELIONATO,Estelionato — SSP-RS,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8313,P9.6,IND-CRIME-SSP-RS-ARMAS-MUNICOES,Delitos relacionados a armas e munições — SSP-RS,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8314,P9.6,IND-CRIME-SSP-RS-ENTORPECENTES-POSSE,Entorpecentes: posse — SSP-RS,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8315,P9.6,IND-CRIME-SSP-RS-ENTORPECENTES-TRAFICO,Entorpecentes: tráfico — SSP-RS,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8401,P9.6,IND-CRIME-SSPDS-CE-HOMICIDIO-DOLOSO,CVLI: homicídio doloso (vítimas) — SSPDS-CE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8402,P9.6,IND-CRIME-SSPDS-CE-FEMINICIDIO,CVLI: feminicídio (vítimas) — SSPDS-CE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8403,P9.6,IND-CRIME-SSPDS-CE-LESAO-CORPORAL-SEGUIDA-DE-MORTE,CVLI: lesão corporal seguida de morte (vítimas) — SSPDS-CE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8404,P9.6,IND-CRIME-SSPDS-CE-ROUBO-SEGUIDO-DE-MORTE-LATROCINIO,CVLI: roubo seguido de morte (latrocínio) (vítimas) — SSPDS-CE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8405,P9.6,IND-CRIME-SSPDS-CE-CVP-TOTAL,"Crimes violentos contra o patrimônio (CVP), total — SSPDS-CE",hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8501,P9.6,IND-CRIME-SDS-PE-HOMICIDIO,CVLI: homicídio (vítimas) — SDS-PE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8502,P9.6,IND-CRIME-SDS-PE-LATROCINIO,CVLI: latrocínio (vítimas) — SDS-PE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8503,P9.6,IND-CRIME-SDS-PE-FEMINICIDIO,CVLI: feminicídio (vítimas) — SDS-PE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8504,P9.6,IND-CRIME-SDS-PE-LESOES-CORPORAIS-SEGUIDA-DE-MORTE,CVLI: lesão corporal seguida de morte (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8505,P9.6,IND-CRIME-SDS-PE-ESTUPRO-VULNERAVEL-COM-RESULTADO-MORTE,CVLI: estupro de vulnerável com resultado morte (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8506,P9.6,IND-CRIME-SDS-PE-INFANTICIDIO,CVLI: infanticídio (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8507,P9.6,IND-CRIME-SDS-PE-CVP-TOTAL,"Crimes violentos contra o patrimônio (CVP), total — SDS-PE",hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8508,P9.6,IND-CRIME-SDS-PE-ESTUPRO,Estupro (vítimas) — SDS-PE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8509,P9.6,IND-CRIME-SDS-PE-ESTUPRO-DE-VULNERAVEL,Estupro de vulnerável (vítimas) — SDS-PE,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8510,P9.6,IND-CRIME-SDS-PE-ESTUPRO-POR-VIOLENCIA-DOMESTICA-FAMILIAR,Estupro por violência doméstica/familiar (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8511,P9.6,IND-CRIME-SDS-PE-ESTUPRO-DE-VULNERAVEL-POR-VIOLENCIA-DOMESTICA-FAMILIAR,Estupro de vulnerável por violência doméstica/familiar (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8512,P9.6,IND-CRIME-SDS-PE-ESTUPRO-COLETIVO,Estupro coletivo (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8513,P9.6,IND-CRIME-SDS-PE-ESTUPRO-CORRETIVO,Estupro corretivo (vítimas) — SDS-PE,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8701,P9.6,IND-CRIME-SSP-SP-HOMICIDIO-DOLOSO,Homicídio doloso (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8702,P9.6,IND-CRIME-SSP-SP-HOMICIDIO-DOLOSO-POR-ACIDENTE-DE-TRANSITO,Homicídio doloso por acidente de trânsito (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8703,P9.6,IND-CRIME-SSP-SP-LATROCINIO,Latrocínio (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8704,P9.6,IND-CRIME-SSP-SP-LESAO-CORPORAL-SEGUIDA-DE-MORTE,Lesão corporal seguida de morte (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8705,P9.6,IND-CRIME-SSP-SP-TENTATIVA-DE-HOMICIDIO,Tentativa de homicídio (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8706,P9.6,IND-CRIME-SSP-SP-LESAO-CORPORAL-DOLOSA,Lesão corporal dolosa (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8707,P9.6,IND-CRIME-SSP-SP-LESAO-CORPORAL-CULPOSA-POR-ACIDENTE-DE-TRANSITO,Lesão corporal culposa por acidente de trânsito (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8708,P9.6,IND-CRIME-SSP-SP-LESAO-CORPORAL-CULPOSA-OUTRAS,"Lesão corporal culposa, outras (B.O.) — SSP-SP",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8709,P9.6,IND-CRIME-SSP-SP-HOMICIDIO-CULPOSO-POR-ACIDENTE-DE-TRANSITO,Homicídio culposo por acidente de trânsito (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8710,P9.6,IND-CRIME-SSP-SP-HOMICIDIO-CULPOSO-OUTROS,"Homicídio culposo, outros (B.O.) — SSP-SP",deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8711,P9.6,IND-CRIME-SSP-SP-ESTUPRO,Estupro (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8712,P9.6,IND-CRIME-SSP-SP-ESTUPRO-DE-VULNERAVEL,Estupro de vulnerável (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8713,P9.6,IND-CRIME-SSP-SP-ROUBO-OUTROS,"Roubo, outros (B.O.) — SSP-SP",hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8714,P9.6,IND-CRIME-SSP-SP-ROUBO-DE-VEICULO,Roubo de veículo (B.O.) — SSP-SP,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8715,P9.6,IND-CRIME-SSP-SP-ROUBO-DE-CARGA,Roubo de carga (B.O.) — SSP-SP,hero,hero,criminalidade,Panorama (indicador-chave) e criminalidade,
+8716,P9.6,IND-CRIME-SSP-SP-FURTO-OUTROS,"Furto, outros (B.O.) — SSP-SP",capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8717,P9.6,IND-CRIME-SSP-SP-FURTO-DE-VEICULO,Furto de veículo (B.O.) — SSP-SP,capitulo,capitulo,criminalidade,Capítulo criminalidade,
+8718,P9.6,IND-CRIME-SSP-SP-FURTO-DE-CARGA,Furto de carga (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8719,P9.6,IND-CRIME-SSP-SP-EXTORSAO-MEDIANTE-SEQUESTRO,Extorsão mediante sequestro (B.O.) — SSP-SP,deep_dive,deep_dive,,"Modo ""Explorar os dados""",
+8720,P9.6,IND-CRIME-SSP-SP-TRAFICO-DE-ENTORPECENTES,Tráfico de entorpecentes (B.O.) — SSP-SP,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8721,P9.6,IND-CRIME-SSP-SP-PORTE-DE-ENTORPECENTES,Porte de entorpecentes (B.O.) — SSP-SP,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8722,P9.6,IND-CRIME-SSP-SP-APREENSAO-DE-ENTORPECENTES,Apreensão de entorpecentes (B.O.) — SSP-SP,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8723,P9.6,IND-CRIME-SSP-SP-PORTE-DE-ARMA,Porte de arma (B.O.) — SSP-SP,capitulo,capitulo,apreensoes,Capítulo apreensoes,
+8724,P9.6,IND-CRIME-SSP-SP-ROUBO-A-BANCO,Roubo a banco (B.O.) — SSP-SP,hero,hero,,Panorama (indicador-chave) e capítulo,

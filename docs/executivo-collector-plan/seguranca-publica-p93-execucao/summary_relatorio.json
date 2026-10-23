@@ -1,0 +1,110 @@
+{
+ "at": "2026-10-22T00:06:23.808Z",
+ "fbspRows": 719,
+ "estadicRows": 540,
+ "guardasRows": 5571,
+ "delegaciasRows": 5571,
+ "rate": {
+  "within": 80,
+  "total": 80,
+  "worst": []
+ },
+ "regression": [
+  {
+   "label": "Vitória/ES",
+   "expected": 427,
+   "got": 427,
+   "ok": true
+  },
+  {
+   "label": "Vila Velha/ES",
+   "expected": 286,
+   "got": 286,
+   "ok": true
+  },
+  {
+   "label": "Serra/ES",
+   "expected": 142,
+   "got": 142,
+   "ok": true
+  },
+  {
+   "label": "Cariacica/ES",
+   "expected": 43,
+   "got": 43,
+   "ok": true
+  },
+  {
+   "label": "Alto Rio Novo/ES",
+   "expected": null,
+   "got": null,
+   "ok": true
+  },
+  {
+   "label": "São Paulo/SP",
+   "expected": 5800,
+   "got": 5800,
+   "ok": true
+  },
+  {
+   "label": "Rio de Janeiro/RJ",
+   "expected": 7238,
+   "got": 7238,
+   "ok": true
+  }
+ ],
+ "siapeMonths": 9,
+ "totals": {
+  "values_n": 152944,
+  "indicators": 62,
+  "entities": 5598
+ },
+ "byFamily": [
+  {
+   "fam": "ESTADIC",
+   "n": 540,
+   "ind": 10
+  },
+  {
+   "fam": "FBSP",
+   "n": 611,
+   "ind": 26
+  },
+  {
+   "fam": "MUNIC",
+   "n": 151757,
+   "ind": 22
+  },
+  {
+   "fam": "SIAPE",
+   "n": 36,
+   "ind": 4
+  }
+ ],
+ "publications": [
+  {
+   "dataset_id": 24,
+   "slices": 1,
+   "mn": 202501,
+   "mx": 202501
+  },
+  {
+   "dataset_id": 25,
+   "slices": 2,
+   "mn": 201901,
+   "mx": 202301
+  },
+  {
+   "dataset_id": 26,
+   "slices": 54,
+   "mn": 201901,
+   "mx": 202301
+  },
+  {
+   "dataset_id": 27,
+   "slices": 9,
+   "mn": 202001,
+   "mx": 202608
+  }
+ ]
+}

@@ -1,0 +1,475 @@
+﻿ano,codigo,evento,granularidade,unidade,total_arquivo,total_uf_banco,soma_municipios_mais_ignorado,valor_no_municipio_ignorado,resultado
+2015,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,48374,48374,48374,94,igual
+2015,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,45099,45099,45099,125,igual
+2015,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,2118,2118,2118,12,igual
+2015,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,700,700,700,5,igual
+2015,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,542,542,542,6,igual
+2015,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,480,480,480,0,igual
+2015,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,8668,8668,8668,24,igual
+2015,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,12177,12177,12177,52,igual
+2015,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,24489,24489,24489,125,igual
+2015,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,6866,6866,6866,0,igual
+2015,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,121789,121789,121789,9242,igual
+2015,IND-SEG-VDE-MANDADO-PRISAO-F,Mandado de prisão cumprido — Polícia Federal,municipio,mandados cumpridos,0,0,0,0,igual
+2015,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,33085,33085,,0,igual
+2015,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,19496,19496,,0,igual
+2015,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,150717,150717,,0,igual
+2015,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,6264,6264,,0,igual
+2015,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,240365,240365,,0,igual
+2015,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,224512,224512,,0,igual
+2015,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,18138,18138,,0,igual
+2015,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,1060,1060,,0,igual
+2015,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,107636,107636,,0,igual
+2015,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1806,1806,,0,igual
+2015,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),29703.965,29703.965000000004,,0,igual
+2015,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),27222.504,27222.504000000008,,0,igual
+2015,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),430809.99799999996,430809.99799999996,,0,igual
+2015,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),677692.5500000004,677692.5499999998,,0,igual
+2015,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,298,298,,0,igual
+2015,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2015,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,50,50,,0,igual
+2015,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,3,3,,0,igual
+2015,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,2609,2609,,0,igual
+2015,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,7,7,,0,igual
+2015,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,0,0,,0,igual
+2015,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,82734,82734,,0,igual
+2015,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,45466,45466,,0,igual
+2015,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,852881,852881,,0,igual
+2015,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,287690,287690,,0,igual
+2015,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,158442,158442,,0,igual
+2015,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,503881,503881,,0,igual
+2015,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,802457,802457,,0,igual
+2016,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,53655,53655,53655,98,igual
+2016,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,45744,45744,45744,114,igual
+2016,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,2538,2538,2538,5,igual
+2016,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,761,761,761,5,igual
+2016,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,809,809,809,3,igual
+2016,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,603,603,603,0,igual
+2016,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,9894,9894,9894,33,igual
+2016,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,13938,13938,13938,40,igual
+2016,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,25961,25961,25961,82,igual
+2016,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,6398,6398,6398,0,igual
+2016,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,143315,143315,143315,10712,igual
+2016,IND-SEG-VDE-MANDADO-PRISAO-F,Mandado de prisão cumprido — Polícia Federal,municipio,mandados cumpridos,0,0,0,0,igual
+2016,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,33595,33595,,0,igual
+2016,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,26003,26003,,0,igual
+2016,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,147992,147992,,0,igual
+2016,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,4970,4970,,0,igual
+2016,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,258236,258236,,0,igual
+2016,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,266107,266107,,0,igual
+2016,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,23163,23163,,0,igual
+2016,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,926,926,,0,igual
+2016,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,110989,110989,,0,igual
+2016,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1891,1891,,0,igual
+2016,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),42206.007999999994,42206.008000000016,,0,igual
+2016,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),41471.62499999999,41471.625000000015,,0,igual
+2016,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),528692.1580000003,528692.1579999999,,0,igual
+2016,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),434359.9590000001,434359.95900000003,,0,igual
+2016,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,335,335,,0,igual
+2016,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2016,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,71,71,,0,igual
+2016,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2016,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,3424,3424,,0,igual
+2016,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2016,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,0,0,,0,igual
+2016,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,80357,80357,,0,igual
+2016,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,44288,44288,,0,igual
+2016,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,816106,816106,,0,igual
+2016,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,327430,327430,,0,igual
+2016,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,183790,183790,,0,igual
+2016,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,726874,726874,,0,igual
+2016,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,843246,843246,,0,igual
+2017,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,55881,55881,55881,220,igual
+2017,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,43316,43316,43316,147,igual
+2017,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,2349,2349,2349,7,igual
+2017,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,937,937,937,6,igual
+2017,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1048,1048,1048,3,igual
+2017,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,773,773,773,0,igual
+2017,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,10633,10633,10633,51,igual
+2017,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,12805,12805,12805,18,igual
+2017,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,26473,26473,26473,48,igual
+2017,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,6248,6248,6248,0,igual
+2017,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,176826,176826,176826,12243,igual
+2017,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,29423,29423,,0,igual
+2017,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,36002,36002,,0,igual
+2017,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,172462,172462,,0,igual
+2017,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,4824,4824,,0,igual
+2017,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,265631,265631,,0,igual
+2017,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,283787,283787,,0,igual
+2017,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,25672,25672,,0,igual
+2017,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,979,979,,0,igual
+2017,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,109886,109886,,0,igual
+2017,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1996,1996,,0,igual
+2017,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),69841.76400000001,69841.76400000001,,0,igual
+2017,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),48047.19800000001,48047.197999999975,,0,igual
+2017,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),890741.8950000004,890741.8949999998,,0,igual
+2017,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),927148.5530000001,927148.5529999995,,0,igual
+2017,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,396,396,,0,igual
+2017,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2017,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,106,106,,0,igual
+2017,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2017,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,4218,4218,,0,igual
+2017,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2017,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,0,0,,0,igual
+2017,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,80506,80506,,0,igual
+2017,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,47149,47149,,0,igual
+2017,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,869519,869519,,0,igual
+2017,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,375154,375154,,0,igual
+2017,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,219044,219044,,0,igual
+2017,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,765722,765722,,0,igual
+2017,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,931354,931354,,0,igual
+2018,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,48517,48517,48517,342,igual
+2018,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,41399,41399,41399,193,igual
+2018,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1988,1988,1988,16,igual
+2018,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,833,833,833,9,igual
+2018,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1176,1176,1176,4,igual
+2018,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,1314,1314,1314,0,igual
+2018,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,11444,11444,11444,51,igual
+2018,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,12557,12557,12557,16,igual
+2018,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,25170,25170,25170,26,igual
+2018,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5274,5274,5274,0,igual
+2018,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,209415,209415,209415,11879,igual
+2018,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,27789,27789,,0,igual
+2018,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,45074,45074,,0,igual
+2018,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,189928,189928,,0,igual
+2018,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,5739,5739,,0,igual
+2018,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,248059,248059,,0,igual
+2018,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,250709,250709,,0,igual
+2018,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,21683,21683,,0,igual
+2018,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,764,764,,0,igual
+2018,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,107768,107768,,0,igual
+2018,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,2020,2020,,0,igual
+2018,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),27133.948000000015,27133.947999999997,,0,igual
+2018,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),79174.98199999999,79174.982,,0,igual
+2018,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),571191.2149999999,571191.2150000001,,0,igual
+2018,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),558485.361,558485.3609999997,,0,igual
+2018,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,350,350,,0,igual
+2018,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2018,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,135,135,,0,igual
+2018,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2018,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,5239,5239,,0,igual
+2018,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2018,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,0,0,,0,igual
+2018,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,81097,81097,,0,igual
+2018,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,49203,49203,,0,igual
+2018,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,932334,932334,,0,igual
+2018,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,375637,375637,,0,igual
+2018,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,224827,224827,,0,igual
+2018,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1073738,1073738,,0,igual
+2018,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,1222284,1222284,,0,igual
+2019,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,39228,39228,39228,0,igual
+2019,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,42354,42354,42354,1,igual
+2019,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1603,1603,1603,0,igual
+2019,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,752,752,752,0,igual
+2019,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1331,1331,1331,0,igual
+2019,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,2340,2340,2340,0,igual
+2019,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,12853,12853,12853,3,igual
+2019,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,12910,12910,12910,4,igual
+2019,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,23341,23341,23341,0,igual
+2019,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5338,5338,5338,0,igual
+2019,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,220735,220735,220735,9198,igual
+2019,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,28358,28358,,0,igual
+2019,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,49252,49252,,0,igual
+2019,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,195042,195042,,0,igual
+2019,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,4446,4446,,0,igual
+2019,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,229954,229954,,0,igual
+2019,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,189895,189895,,0,igual
+2019,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,17683,17683,,0,igual
+2019,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,394,394,,0,igual
+2019,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,110575,110575,,0,igual
+2019,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1675,1675,,0,igual
+2019,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),72862.83300000001,72862.83300000001,,0,igual
+2019,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),104582.79800000001,104582.79799999998,,0,igual
+2019,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),776993.8389999997,776993.8389999999,,0,igual
+2019,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),741718.3620000005,741718.3620000003,,0,igual
+2019,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,197,197,,0,igual
+2019,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2019,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,105,105,,0,igual
+2019,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,3,3,,0,igual
+2019,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,5627,5627,,0,igual
+2019,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2019,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,0,0,,0,igual
+2019,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,81306,81306,,0,igual
+2019,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,49827,49827,,0,igual
+2019,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,998901,998901,,0,igual
+2019,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,412071,412071,,0,igual
+2019,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,284246,284246,,0,igual
+2019,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1201898,1201898,,0,igual
+2019,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,1192754,1192754,,0,igual
+2020,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,41595,41595,41595,7,igual
+2020,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,38296,38296,38296,0,igual
+2020,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1461,1461,1461,0,igual
+2020,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,685,685,685,0,igual
+2020,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1346,1346,1346,0,igual
+2020,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,2209,2209,2209,0,igual
+2020,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,13164,13164,13164,7,igual
+2020,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,11336,11336,11336,2,igual
+2020,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,22704,22704,22704,9,igual
+2020,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5292,5292,5292,0,igual
+2020,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,195693,195693,195693,7001,igual
+2020,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,21817,21817,,0,igual
+2020,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,45316,45316,,0,igual
+2020,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,195992,195992,,0,igual
+2020,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,3340,3340,,0,igual
+2020,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,177800,177800,,0,igual
+2020,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,143984,143984,,0,igual
+2020,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,13283,13283,,0,igual
+2020,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,272,272,,0,igual
+2020,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,111034,111034,,0,igual
+2020,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1401,1401,,0,igual
+2020,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),59331.84299999999,59331.84300000001,,0,igual
+2020,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),91232.52899999998,91232.52900000001,,0,igual
+2020,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1352148.3249999986,1352148.325,,0,igual
+2020,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),1239716.0649999992,1239716.0650000004,,0,igual
+2020,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,214,214,,0,igual
+2020,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2020,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,115,115,,0,igual
+2020,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2020,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6517,6517,,0,igual
+2020,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,3,3,,0,igual
+2020,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,22,22,,0,igual
+2020,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,63151,63151,,0,igual
+2020,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,37561,37561,,0,igual
+2020,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,826666,826666,,0,igual
+2020,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,416466,416466,,0,igual
+2020,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,284502,284502,,0,igual
+2020,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1062612,1062612,,0,igual
+2020,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,819746,819746,,0,igual
+2021,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,39286,39286,39286,5,igual
+2021,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,36004,36004,36004,2,igual
+2021,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1458,1458,1458,0,igual
+2021,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,541,541,541,0,igual
+2021,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1366,1366,1366,0,igual
+2021,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,2262,2262,2262,0,igual
+2021,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,14655,14655,14655,13,igual
+2021,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,10186,10186,10186,2,igual
+2021,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,23227,23227,23227,35,igual
+2021,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5398,5398,5398,0,igual
+2021,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,210183,210183,210183,7342,igual
+2021,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,21717,21717,,0,igual
+2021,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,51021,51021,,0,igual
+2021,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,192447,192447,,0,igual
+2021,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,3377,3377,,0,igual
+2021,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,192865,192865,,0,igual
+2021,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,141971,141971,,0,igual
+2021,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,13563,13563,,0,igual
+2021,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,290,290,,0,igual
+2021,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,110249,110249,,0,igual
+2021,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,1938,1938,,0,igual
+2021,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),84629.96899999997,84629.96899999998,,0,igual
+2021,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),93420.41800000002,93420.41799999998,,0,igual
+2021,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1414094.2950000004,1414094.2950000004,,0,igual
+2021,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),1023561.8589999999,1023561.8589999999,,0,igual
+2021,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,201,201,,0,igual
+2021,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2021,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,132,132,,0,igual
+2021,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2021,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6548,6548,,0,igual
+2021,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2021,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,44,44,,0,igual
+2021,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,67362,67362,,0,igual
+2021,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,39139,39139,,0,igual
+2021,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,880426,880426,,0,igual
+2021,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,454568,454568,,0,igual
+2021,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,288033,288033,,0,igual
+2021,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1239150,1239150,,0,igual
+2021,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,865146,865146,,0,igual
+2022,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,38575,38575,38575,3,igual
+2022,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,36864,36864,36864,3,igual
+2022,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1243,1243,1243,0,igual
+2022,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,620,620,620,0,igual
+2022,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1456,1456,1456,0,igual
+2022,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,2887,2887,2887,0,igual
+2022,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,16013,16013,16013,1,igual
+2022,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,9004,9004,9004,2,igual
+2022,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,24258,24258,24258,28,igual
+2022,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5440,5440,5440,0,igual
+2022,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,236534,236534,236534,7177,igual
+2022,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,23227,23227,,0,igual
+2022,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,57310,57310,,0,igual
+2022,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,166718,166718,,0,igual
+2022,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,4232,4232,,0,igual
+2022,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,229498,229498,,0,igual
+2022,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,148135,148135,,0,igual
+2022,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,13126,13126,,0,igual
+2022,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,212,212,,0,igual
+2022,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,103685,103685,,0,igual
+2022,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,2033,2033,,0,igual
+2022,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),121314.62200000006,121314.622,,0,igual
+2022,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),96642.82599999997,96642.826,,0,igual
+2022,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1220365.8879999998,1220365.888,,0,igual
+2022,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),1058105.5620000002,1058105.5620000002,,0,igual
+2022,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,187,187,,0,igual
+2022,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2022,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,133,133,,0,igual
+2022,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2022,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6459,6459,,0,igual
+2022,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,3,3,,0,igual
+2022,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,35,35,,0,igual
+2022,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,76898,76898,,0,igual
+2022,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,45394,45394,,0,igual
+2022,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,1015198,1015198,,0,igual
+2022,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,483682,483682,,0,igual
+2022,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,264770,264770,,0,igual
+2022,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1292323,1292323,,0,igual
+2022,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,758239,758239,,0,igual
+2023,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,37331,37331,37331,7,igual
+2023,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,34944,34944,34944,0,igual
+2023,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,1004,1004,1004,0,igual
+2023,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,625,625,625,0,igual
+2023,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1478,1478,1478,0,igual
+2023,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,3039,3039,3039,0,igual
+2023,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,16471,16471,16471,9,igual
+2023,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,13106,13106,13106,0,igual
+2023,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,23781,23781,23781,56,igual
+2023,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,5596,5596,5596,0,igual
+2023,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,256730,256730,256730,6686,igual
+2023,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,24062,24062,,0,igual
+2023,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,63835,63835,,0,igual
+2023,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,179893,179893,,0,igual
+2023,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,3850,3850,,0,igual
+2023,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,220898,220898,,0,igual
+2023,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,134108,134108,,0,igual
+2023,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,11807,11807,,0,igual
+2023,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,108,108,,0,igual
+2023,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,105388,105388,,0,igual
+2023,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,4495,4495,,0,igual
+2023,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),128617.16700000002,128617.16700000002,,0,igual
+2023,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),72379.293,72379.293,,0,igual
+2023,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1259965.815,1259965.815,,0,igual
+2023,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),833180.0939999998,833180.094,,0,igual
+2023,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,184,184,,0,igual
+2023,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2023,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,166,166,,0,igual
+2023,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,4,4,,0,igual
+2023,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6397,6397,,0,igual
+2023,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2023,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,8,8,,0,igual
+2023,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,78168,78168,,0,igual
+2023,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,52199,52199,,0,igual
+2023,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,1011705,1011705,,0,igual
+2023,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,499397,499397,,0,igual
+2023,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,273244,273244,,0,igual
+2023,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1341915,1341915,,0,igual
+2023,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,717261,717261,,0,igual
+2024,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,35136,35136,35136,5,igual
+2024,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,36973,36973,36973,1,igual
+2024,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,967,967,967,2,igual
+2024,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,770,770,770,0,igual
+2024,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1501,1501,1501,0,igual
+2024,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,3862,3862,3862,0,igual
+2024,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,16412,16412,16412,10,igual
+2024,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,13987,13987,13987,2,igual
+2024,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,26212,26212,26212,45,igual
+2024,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,6160,6160,6160,0,igual
+2024,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,278192,278192,278192,7664,igual
+2024,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,25168,25168,,0,igual
+2024,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,64018,64018,,0,igual
+2024,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,184328,184328,,0,igual
+2024,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,4190,4190,,0,igual
+2024,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,215809,215809,,0,igual
+2024,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,126255,126255,,0,igual
+2024,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,10344,10344,,0,igual
+2024,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,102,102,,0,igual
+2024,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,103152,103152,,0,igual
+2024,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,2741,2741,,0,igual
+2024,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),139237.04200000007,139237.04199999996,,0,igual
+2024,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),74506.57400000001,74506.57400000002,,0,igual
+2024,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1410442.5259999991,1410442.526,,0,igual
+2024,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),1217106.7610000004,1217106.7610000004,,0,igual
+2024,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,200,200,,0,igual
+2024,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2024,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,155,155,,0,igual
+2024,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2024,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6236,6236,,0,igual
+2024,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2024,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,12,12,,0,igual
+2024,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,81580,81580,,0,igual
+2024,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,55964,55964,,0,igual
+2024,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,1022509,1022509,,0,igual
+2024,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,428968,428968,,0,igual
+2024,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,351611,351611,,0,igual
+2024,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1475819,1475819,,0,igual
+2024,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,724303,724303,,0,igual
+2025,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,31518,31518,31518,4,igual
+2025,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,33881,33881,33881,2,igual
+2025,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,805,805,805,1,igual
+2025,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,643,643,643,0,igual
+2025,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1578,1578,1578,0,igual
+2025,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,4190,4190,4190,0,igual
+2025,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,16592,16592,16592,2,igual
+2025,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,13537,13537,13537,2,igual
+2025,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,25074,25074,25074,40,igual
+2025,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-F,Mortes no trânsito em rodovias federais — Polícia Federal,municipio,vítimas,13,13,13,13,igual
+2025,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,6043,6043,6043,0,igual
+2025,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,294560,294560,294560,2260,igual
+2025,IND-SEG-VDE-MANDADO-PRISAO-F,Mandado de prisão cumprido — Polícia Federal,municipio,mandados cumpridos,3091,3091,3091,17,igual
+2025,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,19909,19909,,0,igual
+2025,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,63690,63690,,0,igual
+2025,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,215948,215948,,0,igual
+2025,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,3817,3817,,0,igual
+2025,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,201925,201925,,0,igual
+2025,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,104539,104539,,0,igual
+2025,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,8565,8565,,0,igual
+2025,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,58,58,,0,igual
+2025,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,107889,107889,,0,igual
+2025,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,2471,2471,,0,igual
+2025,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),127740.51100000003,127740.511,,0,igual
+2025,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),72496.361,72496.36099999998,,0,igual
+2025,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1454573.986,1454573.986,,0,igual
+2025,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),1291135.4319999993,1291135.4320000007,,0,igual
+2025,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,192,192,,0,igual
+2025,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,0,0,,0,igual
+2025,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,135,135,,0,igual
+2025,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,3,3,,0,igual
+2025,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,6589,6589,,0,igual
+2025,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,1,1,,0,igual
+2025,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,11,11,,0,igual
+2025,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,85066,85066,,0,igual
+2025,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,57672,57672,,0,igual
+2025,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,1054625,1054625,,0,igual
+2025,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,523603,523603,,0,igual
+2025,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,348520,348520,,0,igual
+2025,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1770049,1770049,,0,igual
+2025,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,760400,760400,,0,igual
+2026,IND-SEG-VDE-HOMICIDIO-DOLOSO-E,Homicídio doloso — Estadual,municipio,vítimas,20723,20723,20723,5,igual
+2026,IND-SEG-VDE-TENTATIVA-HOMICIDIO-E,Tentativa de homicídio — Estadual,municipio,vítimas,25038,25038,25038,1,igual
+2026,IND-SEG-VDE-LATROCINIO-E,Roubo seguido de morte (latrocínio) — Estadual,municipio,vítimas,448,448,448,0,igual
+2026,IND-SEG-VDE-LESAO-CORPORAL-MORTE-E,Lesão corporal seguida de morte — Estadual,municipio,vítimas,409,409,409,0,igual
+2026,IND-SEG-VDE-FEMINICIDIO-E,Feminicídio — Estadual,municipio,vítimas,1082,1082,1082,0,igual
+2026,IND-SEG-VDE-TENTATIVA-FEMINICIDIO-E,Tentativa de feminicídio — Estadual,municipio,vítimas,3350,3350,3350,0,igual
+2026,IND-SEG-VDE-SUICIDIO-E,Suicídio — Estadual,municipio,vítimas,12265,12265,12265,5,igual
+2026,IND-SEG-VDE-MORTES-A-ESCLARECER-E,Mortes a esclarecer (sem indício de crime) — Estadual,municipio,vítimas,12064,12064,12064,5,igual
+2026,IND-SEG-VDE-MORTE-TRANSITO-EXCETO-HD-E,Morte no trânsito ou em decorrência dele (exceto homicídio doloso) — Estadual,municipio,vítimas,18919,18919,18919,70,igual
+2026,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-F,Mortes no trânsito em rodovias federais — Polícia Federal,municipio,vítimas,0,0,0,0,igual
+2026,IND-SEG-VDE-MORTES-TRANSITO-RODOVIA-FEDERAL-R,Mortes no trânsito em rodovias federais — Polícia Rodoviária Federal,municipio,vítimas,4120,4120,4120,0,igual
+2026,IND-SEG-VDE-MANDADO-PRISAO-E,Mandado de prisão cumprido — Estadual,municipio,mandados cumpridos,229663,229663,229663,1959,igual
+2026,IND-SEG-VDE-MANDADO-PRISAO-F,Mandado de prisão cumprido — Polícia Federal,municipio,mandados cumpridos,931,931,931,0,igual
+2026,IND-SEG-VDE-ESTUPRO-E,Estupro — Estadual,uf,vítimas,15304,15304,,0,igual
+2026,IND-SEG-VDE-ESTUPRO-VULNERAVEL-E,Estupro de vulnerável — Estadual,uf,vítimas,47152,47152,,0,igual
+2026,IND-SEG-VDE-TRAFICO-DROGAS-E,Tráfico de drogas — Estadual,uf,ocorrências,172522,172522,,0,igual
+2026,IND-SEG-VDE-TRAFICO-DROGAS-F,Tráfico de drogas — Polícia Federal,uf,ocorrências,2890,2890,,0,igual
+2026,IND-SEG-VDE-FURTO-VEICULO-E,Furto de veículo — Estadual,uf,ocorrências,136268,136268,,0,igual
+2026,IND-SEG-VDE-ROUBO-VEICULO-E,Roubo de veículo — Estadual,uf,ocorrências,60509,60509,,0,igual
+2026,IND-SEG-VDE-ROUBO-CARGA-E,Roubo de carga — Estadual,uf,ocorrências,5186,5186,,0,igual
+2026,IND-SEG-VDE-ROUBO-INSTITUICAO-FINANCEIRA-E,Roubo a instituição financeira — Estadual,uf,ocorrências,19,19,,0,igual
+2026,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-E,Arma de fogo apreendida — Estadual,uf,armas,76511,76511,,0,igual
+2026,IND-SEG-VDE-ARMA-FOGO-APREENDIDA-F,Arma de fogo apreendida — Polícia Federal,uf,armas,2774,2774,,0,igual
+2026,IND-SEG-VDE-APREENSAO-COCAINA-E,Apreensão de cocaína (peso) — Estadual,uf,peso informado (unidade do arquivo),86760.39199999998,86760.39200000002,,0,igual
+2026,IND-SEG-VDE-APREENSAO-COCAINA-F,Apreensão de cocaína (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),55982.732000000025,55982.73199999999,,0,igual
+2026,IND-SEG-VDE-APREENSAO-MACONHA-E,Apreensão de maconha (peso) — Estadual,uf,peso informado (unidade do arquivo),1052891.3819999998,1052891.3820000002,,0,igual
+2026,IND-SEG-VDE-APREENSAO-MACONHA-F,Apreensão de maconha (peso) — Polícia Federal,uf,peso informado (unidade do arquivo),731649.6840000001,731649.6840000001,,0,igual
+2026,IND-SEG-VDE-MORTE-AGENTE-ESTADO-E,Morte de agente do Estado — Estadual,uf,vítimas,77,77,,0,igual
+2026,IND-SEG-VDE-MORTE-AGENTE-ESTADO-F,Morte de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2026,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-E,Suicídio de agente do Estado — Estadual,uf,vítimas,78,78,,0,igual
+2026,IND-SEG-VDE-SUICIDIO-AGENTE-ESTADO-F,Suicídio de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2026,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-E,Morte por intervenção de agente do Estado — Estadual,uf,vítimas,4865,4865,,0,igual
+2026,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-F,Morte por intervenção de agente do Estado — Polícia Federal,uf,vítimas,2,2,,0,igual
+2026,IND-SEG-VDE-MORTE-INTERVENCAO-AGENTE-ESTADO-R,Morte por intervenção de agente do Estado — Polícia Rodoviária Federal,uf,vítimas,5,5,,0,igual
+2026,IND-SEG-VDE-PESSOA-DESAPARECIDA-E,Pessoa desaparecida — Estadual,uf,pessoas,67085,67085,,0,igual
+2026,IND-SEG-VDE-PESSOA-LOCALIZADA-E,Pessoa localizada — Estadual,uf,pessoas,44241,44241,,0,igual
+2026,IND-SEG-VDE-ATENDIMENTO-PRE-HOSPITALAR-E,Atendimento pré-hospitalar (bombeiros) — Estadual,uf,atendimentos,751776,751776,,0,igual
+2026,IND-SEG-VDE-BUSCA-SALVAMENTO-E,Busca e salvamento (bombeiros) — Estadual,uf,ocorrências,412205,412205,,0,igual
+2026,IND-SEG-VDE-COMBATE-INCENDIOS-E,Combate a incêndios (bombeiros) — Estadual,uf,ocorrências,217300,217300,,0,igual
+2026,IND-SEG-VDE-ALVARAS-LICENCA-E,Emissão de alvarás de licença (bombeiros) — Estadual,uf,alvarás,1249791,1249791,,0,igual
+2026,IND-SEG-VDE-VISTORIAS-E,Realização de vistorias (bombeiros) — Estadual,uf,vistorias,477416,477416,,0,igual

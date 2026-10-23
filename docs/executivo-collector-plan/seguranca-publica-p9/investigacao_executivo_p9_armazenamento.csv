@@ -1,0 +1,48 @@
+﻿cenario,tipo,componente,linhas,bytes_por_linha,bytes_dados_indices,formula,premissas
+A,postgres,"SIM agregado (agressão, indeterminada, intervenção, trânsito, suicídio) por município×ano",362050,196,70961800,5.570 municípios × 13 anos × 5 medidas,tabela de indicadores existente (exec_ind_value)
+A,postgres,"VDE não-zero (município e UF), 2015–2026",1240524,196,243142704,"≈ 103 mil linhas não-zero/ano (12,4 % de 832 mil) × 12 anos",zeros não persistidos; marcador de universo por UF×mês
+A,postgres,RJ ISP município/mês,281520,196,55177920,14.076 linhas × ~50 medidas × 40 % não-zero,fatos esparsos
+A,postgres,MG crimes violentos e patrimônio,299403,196,58682988,133 mil linhas/ano × 15 anos × 15 % não-zero,zero-fill descartado
+A,postgres,ES SESP ocorrências município×tipo×mês,49140,196,9631440,78 × 10 tipos × 105 meses × 60 %,
+A,postgres,RS indicadores município/mês,268380,196,52602480,497 × 12 medidas × 12 meses × 15 anos × 25 %,
+A,postgres,CE/PE/AL/DF agregados,200000,196,39200000,estimativa de 200 mil linhas,extrapolação sem teste completo
+A,postgres,"Frota Senatran (total + 6 tipos) município, dezembro/ano + último mês",546056,196,107026976,5.572 × 7 × 14 pontos,
+A,postgres,RENAEST município×mês (3 medidas),840000,196,164640000,2.800 municípios médios × 3 × 100 meses,medido: 79 municípios ES em 2024; 854 em MG
+A,postgres,PRF município×mês (4 medidas),998400,196,195686400,1.600 municípios × 4 × 12 × 13 anos,estimado
+A,postgres,Siconfi função 06 (4 subfunções × 3 colunas × 10 exercícios × 5.600 entes),672000,70,47040000,672 mil linhas em exec_fin_fact (BIGINT valor; 70 B/linha medida do desenho),compartilhado com Saúde/Educação
+A,postgres,"Efetivo, guarda municipal, delegacias (MUNIC/ESTADIC/FBSP)",12000,196,2352000,27 UF × 20 + 1.322 × 5 + 5.570 × 1,
+B,postgres,RJ por CISP/delegacia (38.410 linhas × 50 medidas × 40 %),768200,196,150567200,,
+B,postgres,Unidades policiais e prisionais (cadastros) + SISDEPEN largo (1.532 × 19 ciclos × ~60 colunas),29108,600,17464800,29 mil linhas largas de ~600 B,tabela especializada
+B,postgres,SP por delegacia/seccional (1.200 × 60 rubricas × 57 meses × 25 %),1026000,196,201096000,,
+B,postgres,Estrutura Detran e fluxos de infrações por UF/mês,32400,196,6350400,,
+C,postgres,SP município×rubrica×mês completo,661770,196,129706920,,inclui rubricas raras
+C,postgres,"RENAEST por tipo de acidente, condições e via",3500000,196,686000000,"3,5 milhões",estimativa
+C,postgres,PRF por BR×km×mês,2000000,196,392000000,,estimativa
+C,postgres,Contratos e recursos relacionáveis (P3/P4) filtrados por órgão de segurança,1000000,150,150000000,,estimativa
+C,postgres,"Outras UFs com microdados agregados (CE, PE, AL, BA, GO…) em nível de bairro/AIS",1500000,196,294000000,,bairro apenas se política de privacidade permitir
+A,postgres,TOTAL acumulado cenário A (dados+índices),5769473,,1046144708,soma dos componentes,sem exec_change_log
+A,postgres,exec_change_log do carregamento inicial (retenção completa),5769473,227,1309670371,"linhas × 227 B (medido: 3,43 GB / 15,09 M)",a retenção de 12 meses planejada limita o crescimento; ainda é o maior consumidor do schema (78 %)
+A,postgres,exec_ind_latest + exec_story + manifestos,0,,83691576,8 % do cenário,"medido: ind_latest 61 MB / 4,07 M linhas de ind_value = 1,5 %; folga para stories e proveniência"
+B,postgres,TOTAL acumulado cenário B (dados+índices),7625181,,1421623108,soma dos componentes,sem exec_change_log
+B,postgres,exec_change_log do carregamento inicial (retenção completa),7625181,227,1730916087,"linhas × 227 B (medido: 3,43 GB / 15,09 M)",a retenção de 12 meses planejada limita o crescimento; ainda é o maior consumidor do schema (78 %)
+B,postgres,exec_ind_latest + exec_story + manifestos,0,,113729848,8 % do cenário,"medido: ind_latest 61 MB / 4,07 M linhas de ind_value = 1,5 %; folga para stories e proveniência"
+C,postgres,TOTAL acumulado cenário C (dados+índices),16286951,,3073330028,soma dos componentes,sem exec_change_log
+C,postgres,exec_change_log do carregamento inicial (retenção completa),16286951,227,3697137877,"linhas × 227 B (medido: 3,43 GB / 15,09 M)",a retenção de 12 meses planejada limita o crescimento; ainda é o maior consumidor do schema (78 %)
+C,postgres,exec_ind_latest + exec_story + manifestos,0,,245866402,8 % do cenário,"medido: ind_latest 61 MB / 4,07 M linhas de ind_value = 1,5 %; folga para stories e proveniência"
+A,raw_ssd,VDE (12 anos) + 12 versões do ano corrente,,,912680550,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,SP SPDados 2022–2026,,,2619930050,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,RENAEST (3 snapshots iniciais + 4/ano),,,3929895075,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,MG CSV (4 arquivos × versões mensais),,,1282047737,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,"ES S3 (3 arquivos, versões mensais)",,,2093796556,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,RS XLSX + ZIPs,,,322122547,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,SISDEPEN 21 ciclos (CSV+XLSX),,,429496729,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,Senatran frota/infrações mensais,,,429496729,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,PRF 13 anos,,,42949672,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,RJ ISP + DF + CE + PE + AL,,,161061273,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,"Portal da Transparência SIAPE (mensal, 83 MB)",,,1073741824,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A,raw_ssd,"Siconfi função 06 (RREO/RGF por UF×ano; estimativa, reaproveita coleta de Saúde)",,,1073741824,tamanhos medidos nos testes; Siconfi e versões futuras são estimativas,versões preservadas por hash
+A-C,staging,"Decodificação em streaming (RENAEST, SPDados, SIAPE)",,,2147483648,sem extração em disco; pandas/zip stream; pico por arquivo ≤ 2 GiB,DBC do SIM já tem staging do P1
+A-C,wal,WAL do carregamento inicial,,,3226996529,"≈ 1× a 2× o volume de linhas escritas (max_wal_size = 1 GiB medido; premissa de projeção, não medida)",não exige mudar parâmetros; monitorar
+A-C,backup,pg_dump -Fc do acréscimo (premissa: compressão 4×),,,768332507,"premissa; o banco hoje ocupa 20,4 GiB medidos",no SSD
+crescimento,postgres,Atualização mensal (VDE + MG + ES + RJ + RENAEST + Senatran + PRF),150000,196,352800000,≈ 150 mil linhas/mês × 12,"sem log: 0,35 GiB/ano; com log: 0,8 GiB/ano"
+crescimento,raw_ssd,Versões mensais preservadas,,,8053063680,"SP, RENAEST, MG, ES, VDE","≈ 7,5 GiB/ano"

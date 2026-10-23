@@ -1,0 +1,62 @@
+{
+ "geradoEm": "2026-10-23T10:30:01.205Z",
+ "nota": "p50/p95 sobre execuções sequenciais com cache quente do PostgreSQL de produção; sem N+1 (no máximo 6 consultas por perfil)",
+ "consultas": [
+  {
+   "name": "getSecurityFinanceMunicipality(Vitória)",
+   "runs": 15,
+   "p50_ms": 9.6,
+   "p95_ms": 76,
+   "max_ms": 76,
+   "payload_bytes": 132171
+  },
+  {
+   "name": "getSecurityFinanceMunicipality(São Paulo)",
+   "runs": 15,
+   "p50_ms": 9,
+   "p95_ms": 11.1,
+   "max_ms": 11.1,
+   "payload_bytes": 130336
+  },
+  {
+   "name": "getSecurityFinanceMunicipality(município pequeno ES)",
+   "runs": 15,
+   "p50_ms": 6.1,
+   "p95_ms": 8.9,
+   "max_ms": 8.9,
+   "payload_bytes": 24290
+  },
+  {
+   "name": "getSecurityFinanceState(ES)",
+   "runs": 15,
+   "p50_ms": 4.6,
+   "p95_ms": 5.7,
+   "max_ms": 5.7,
+   "payload_bytes": 124052
+  },
+  {
+   "name": "getSecurityFinanceState(SP)",
+   "runs": 15,
+   "p50_ms": 4.8,
+   "p95_ms": 5.1,
+   "max_ms": 5.1,
+   "payload_bytes": 132057
+  },
+  {
+   "name": "getSecurityFinanceNational",
+   "runs": 15,
+   "p50_ms": 4.5,
+   "p95_ms": 5.7,
+   "max_ms": 5.7,
+   "payload_bytes": 118158
+  },
+  {
+   "name": "getSecurityFinanceUnion",
+   "runs": 8,
+   "p50_ms": 26.7,
+   "p95_ms": 31,
+   "max_ms": 31,
+   "payload_bytes": 51876
+  }
+ ]
+}

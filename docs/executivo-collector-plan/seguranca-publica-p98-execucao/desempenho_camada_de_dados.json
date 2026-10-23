@@ -1,0 +1,271 @@
+{
+ "generatedAt": "2026-10-23T20:47:33.338Z",
+ "iterations": 20,
+ "note": "tempos da camada de dados (SQL + montagem), sem rede nem renderização; frio = cache de leituras estaduais limpo a cada requisição",
+ "rows": [
+  {
+   "label": "Vitória/ES",
+   "sqlStatements": 57,
+   "jsonKB": 98,
+   "coldMs": {
+    "p50": 107,
+    "p95": 118
+   },
+   "dbWallMs": {
+    "p50": 103,
+    "p95": 113
+   },
+   "warmMs": {
+    "p50": 45,
+    "p95": 52
+   },
+   "statementMs": {
+    "p50": 43,
+    "p95": 64,
+    "max": 96
+   }
+  },
+  {
+   "label": "Serra/ES",
+   "sqlStatements": 62,
+   "jsonKB": 102,
+   "coldMs": {
+    "p50": 110,
+    "p95": 127
+   },
+   "dbWallMs": {
+    "p50": 105,
+    "p95": 122
+   },
+   "warmMs": {
+    "p50": 59,
+    "p95": 63
+   },
+   "statementMs": {
+    "p50": 19,
+    "p95": 60,
+    "max": 75
+   }
+  },
+  {
+   "label": "Alto Rio Novo/ES",
+   "sqlStatements": 53,
+   "jsonKB": 80,
+   "coldMs": {
+    "p50": 66,
+    "p95": 71
+   },
+   "dbWallMs": {
+    "p50": 64,
+    "p95": 69
+   },
+   "warmMs": {
+    "p50": 21,
+    "p95": 23
+   },
+   "statementMs": {
+    "p50": 38,
+    "p95": 50,
+    "max": 54
+   }
+  },
+  {
+   "label": "São Paulo/SP",
+   "sqlStatements": 58,
+   "jsonKB": 123,
+   "coldMs": {
+    "p50": 140,
+    "p95": 163
+   },
+   "dbWallMs": {
+    "p50": 135,
+    "p95": 157
+   },
+   "warmMs": {
+    "p50": 94,
+    "p95": 115
+   },
+   "statementMs": {
+    "p50": 40,
+    "p95": 69,
+    "max": 98
+   }
+  },
+  {
+   "label": "Rio de Janeiro/RJ",
+   "sqlStatements": 58,
+   "jsonKB": 159,
+   "coldMs": {
+    "p50": 147,
+    "p95": 171
+   },
+   "dbWallMs": {
+    "p50": 137,
+    "p95": 161
+   },
+   "warmMs": {
+    "p50": 103,
+    "p95": 117
+   },
+   "statementMs": {
+    "p50": 57,
+    "p95": 97,
+    "max": 120
+   }
+  },
+  {
+   "label": "Belo Horizonte/MG",
+   "sqlStatements": 62,
+   "jsonKB": 106,
+   "coldMs": {
+    "p50": 272,
+    "p95": 311
+   },
+   "dbWallMs": {
+    "p50": 267,
+    "p95": 303
+   },
+   "warmMs": {
+    "p50": 211,
+    "p95": 277
+   },
+   "statementMs": {
+    "p50": 28,
+    "p95": 70,
+    "max": 118
+   }
+  },
+  {
+   "label": "Recife/PE",
+   "sqlStatements": 62,
+   "jsonKB": 99,
+   "coldMs": {
+    "p50": 161,
+    "p95": 235
+   },
+   "dbWallMs": {
+    "p50": 157,
+    "p95": 228
+   },
+   "warmMs": {
+    "p50": 106,
+    "p95": 108
+   },
+   "statementMs": {
+    "p50": 26,
+    "p95": 70,
+    "max": 96
+   }
+  },
+  {
+   "label": "Porto Alegre/RS",
+   "sqlStatements": 62,
+   "jsonKB": 130,
+   "coldMs": {
+    "p50": 245,
+    "p95": 269
+   },
+   "dbWallMs": {
+    "p50": 239,
+    "p95": 258
+   },
+   "warmMs": {
+    "p50": 200,
+    "p95": 262
+   },
+   "statementMs": {
+    "p50": 27,
+    "p95": 71,
+    "max": 112
+   }
+  },
+  {
+   "label": "Salvador/BA",
+   "sqlStatements": 58,
+   "jsonKB": 94,
+   "coldMs": {
+    "p50": 88,
+    "p95": 100
+   },
+   "dbWallMs": {
+    "p50": 85,
+    "p95": 97
+   },
+   "warmMs": {
+    "p50": 41,
+    "p95": 46
+   },
+   "statementMs": {
+    "p50": 16,
+    "p95": 62,
+    "max": 78
+   }
+  },
+  {
+   "label": "ES",
+   "sqlStatements": 39,
+   "jsonKB": 161,
+   "coldMs": {
+    "p50": 151,
+    "p95": 200
+   },
+   "dbWallMs": {
+    "p50": 139,
+    "p95": 187
+   },
+   "warmMs": {
+    "p50": 8,
+    "p95": 9
+   },
+   "statementMs": {
+    "p50": 39,
+    "p95": 95,
+    "max": 179
+   }
+  },
+  {
+   "label": "SP",
+   "sqlStatements": 39,
+   "jsonKB": 180,
+   "coldMs": {
+    "p50": 218,
+    "p95": 273
+   },
+   "dbWallMs": {
+    "p50": 204,
+    "p95": 256
+   },
+   "warmMs": {
+    "p50": 98,
+    "p95": 171
+   },
+   "statementMs": {
+    "p50": 42,
+    "p95": 156,
+    "max": 264
+   }
+  },
+  {
+   "label": "MG",
+   "sqlStatements": 39,
+   "jsonKB": 164,
+   "coldMs": {
+    "p50": 178,
+    "p95": 214
+   },
+   "dbWallMs": {
+    "p50": 163,
+    "p95": 200
+   },
+   "warmMs": {
+    "p50": 16,
+    "p95": 18
+   },
+   "statementMs": {
+    "p50": 39,
+    "p95": 100,
+    "max": 172
+   }
+  }
+ ]
+}

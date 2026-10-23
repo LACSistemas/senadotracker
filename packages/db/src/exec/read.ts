@@ -81,7 +81,7 @@ export interface PublicationCoverage { datasetId: number; label: string; firstCo
 export async function getCoverage(q: Q, ufCode: number): Promise<PublicationCoverage[]> {
   const r = await q.query(`SELECT p.dataset_id, rc.label, min(p.competence)::int first, max(p.competence)::int last, count(*)::int n, max(p.stage)::int stage, max(p.activated_at) at
     FROM civica_exec.exec_publication p LEFT JOIN civica_exec.exec_ref_code rc ON rc.domain = 0 AND rc.code = p.dataset_id::text
-    WHERE p.uf IN ($1, 0) GROUP BY p.dataset_id, rc.label ORDER BY p.dataset_id`, [ufCode]);
+    WHERE p.uf IN ($1, 0) AND p.dataset_id < 15 GROUP BY p.dataset_id, rc.label ORDER BY p.dataset_id`, [ufCode]);   // datasets 15–17 (Segurança) têm cobertura própria em getSegState().sources
   return r.rows.map(x => ({ datasetId: Number(x.dataset_id), label: String(x.label ?? x.dataset_id), firstCompetence: Number(x.first), lastCompetence: Number(x.last), slices: Number(x.n), stage: Number(x.stage), activatedAt: new Date(x.at).toISOString() }));
 }
 

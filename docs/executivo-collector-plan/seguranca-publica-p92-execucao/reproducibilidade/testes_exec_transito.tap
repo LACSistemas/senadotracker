@@ -1,0 +1,470 @@
+TAP version 13
+# Subtest: migrations: 25 tabelas (v2 = exec_seg_cov; v3 = trânsito), idempotentes
+ok 1 - migrations: 25 tabelas (v2 = exec_seg_cov; v3 = trânsito), idempotentes
+  ---
+  duration_ms: 5991.4843
+  type: 'test'
+  ...
+# Subtest: fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+ok 2 - fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+  ---
+  duration_ms: 12.471
+  type: 'test'
+  ...
+# Subtest: restrições de integridade rejeitam dados inválidos
+ok 3 - restrições de integridade rejeitam dados inválidos
+  ---
+  duration_ms: 511.1026
+  type: 'test'
+  ...
+# Subtest: T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+ok 4 - T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+  ---
+  duration_ms: 505.6259
+  type: 'test'
+  ...
+# Subtest: T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+ok 5 - T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+  ---
+  duration_ms: 170.8399
+  type: 'test'
+  ...
+# Subtest: idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+ok 6 - idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+  ---
+  duration_ms: 3.6573
+  type: 'test'
+  ...
+# Subtest: falha injetada no meio: nada parcial, run registrado como FALHO
+ok 7 - falha injetada no meio: nada parcial, run registrado como FALHO
+  ---
+  duration_ms: 28.8664
+  type: 'test'
+  ...
+# Subtest: rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+ok 8 - rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+  ---
+  duration_ms: 64.5418
+  type: 'test'
+  ...
+# Subtest: T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+ok 9 - T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+  ---
+  duration_ms: 312.4302
+  type: 'test'
+  ...
+# Subtest: publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+ok 10 - publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+  ---
+  duration_ms: 1026.5404
+  type: 'test'
+  ...
+# Subtest: T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+ok 11 - T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+  ---
+  duration_ms: 36.9209
+  type: 'test'
+  ...
+# Subtest: T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+ok 12 - T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+  ---
+  duration_ms: 34.3391
+  type: 'test'
+  ...
+# Subtest: derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+ok 13 - derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+  ---
+  duration_ms: 140.9799
+  type: 'test'
+  ...
+# (node:34540) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+ok 14 - migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+  ---
+  duration_ms: 5492.7878
+  type: 'test'
+  ...
+# Subtest: SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+ok 15 - SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+  ---
+  duration_ms: 353.2627
+  type: 'test'
+  ...
+# Subtest: SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+ok 16 - SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+  ---
+  duration_ms: 212.5062
+  type: 'test'
+  ...
+# Subtest: VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+ok 17 - VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+  ---
+  duration_ms: 505.4299
+  type: 'test'
+  ...
+# Subtest: VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+ok 18 - VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+  ---
+  duration_ms: 216.7371
+  type: 'test'
+  ...
+# Subtest: contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+ok 19 - contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+  ---
+  duration_ms: 414.1832
+  type: 'test'
+  ...
+# (node:28400) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v3: três tabelas tipadas sem dado pessoal; idempotente; 122 definições de trânsito
+ok 20 - migração v3: três tabelas tipadas sem dado pessoal; idempotente; 122 definições de trânsito
+  ---
+  duration_ms: 5789.2837
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: bootstrap, NO_CHANGE, republicação com log, rollback exato, falha injetada e reconciliação que barra
+ok 21 - SIM trânsito: bootstrap, NO_CHANGE, republicação com log, rollback exato, falha injetada e reconciliação que barra
+  ---
+  duration_ms: 908.8607
+  type: 'test'
+  ...
+# Subtest: frota: tabela larga por município × mês publicada como instantâneo; troca de arquivo substitui; rollback exato; total divergente barra
+ok 22 - frota: tabela larga por município × mês publicada como instantâneo; troca de arquivo substitui; rollback exato; total divergente barra
+  ---
+  duration_ms: 414.9887
+  type: 'test'
+  ...
+# Subtest: RENAEST: fatia UF × ano; conteúdo igual com arquivo novo = NO_CHANGE; revisão de mês antigo troca só aquela fatia; cobertura persistida; rollback exato
+ok 23 - RENAEST: fatia UF × ano; conteúdo igual com arquivo novo = NO_CHANGE; revisão de mês antigo troca só aquela fatia; cobertura persistida; rollback exato
+  ---
+  duration_ms: 256.8218
+  type: 'test'
+  ...
+# Subtest: PRF: mensal (UF) e anual (município) coerentes; reconciliação mensal × anual; republicação e rollback exatos
+ok 24 - PRF: mensal (UF) e anual (município) coerentes; reconciliação mensal × anual; republicação e rollback exatos
+  ---
+  duration_ms: 863.4673
+  type: 'test'
+  ...
+# Subtest: infrações: tabela por UF de jurisdição × mês × código; soma confere com o indicador; republicação substitui a fatia
+ok 25 - infrações: tabela por UF de jurisdição × mês × código; soma confere com o indicador; republicação substitui a fatia
+  ---
+  duration_ms: 100.3798
+  type: 'test'
+  ...
+# Subtest: contratos de leitura: seções separadas por fonte, poucas consultas, ausência explicada (RENAEST nunca vira zero; SIM/PRF só com fatia publicada)
+ok 26 - contratos de leitura: seções separadas por fonte, poucas consultas, ausência explicada (RENAEST nunca vira zero; SIM/PRF só com fatia publicada)
+  ---
+  duration_ms: 224.9303
+  type: 'test'
+  ...
+# Subtest: sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+ok 27 - sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+  ---
+  duration_ms: 3.2331
+  type: 'test'
+  ...
+# Subtest: com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+ok 28 - com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+  ---
+  duration_ms: 0.575
+  type: 'test'
+  ...
+# Subtest: volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+ok 29 - volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+  ---
+  duration_ms: 89.9195
+  type: 'test'
+  ...
+# Subtest: orçamento de RAW excedido interrompe com BudgetError (retomável)
+ok 30 - orçamento de RAW excedido interrompe com BudgetError (retomável)
+  ---
+  duration_ms: 5.3133
+  type: 'test'
+  ...
+# Subtest: registerLocalRaw é idempotente e não duplica entradas do manifesto
+ok 31 - registerLocalRaw é idempotente e não duplica entradas do manifesto
+  ---
+  duration_ms: 28.2281
+  type: 'test'
+  ...
+# (node:36012) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+ok 32 - XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+  ---
+  duration_ms: 285.6205
+  type: 'test'
+  ...
+# Subtest: XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+ok 33 - XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+  ---
+  duration_ms: 742.3637
+  type: 'test'
+  ...
+# Subtest: DBC inválido do SIM falha sem produzir agregados
+ok 34 - DBC inválido do SIM falha sem produzir agregados
+  ---
+  duration_ms: 336.4617
+  type: 'test'
+  ...
+# Subtest: arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+ok 35 - arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+  ---
+  duration_ms: 9.7473
+  type: 'test'
+  ...
+# Subtest: definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+ok 36 - definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+  ---
+  duration_ms: 26.4959
+  type: 'test'
+  ...
+# Subtest: download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+ok 37 - download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+  ---
+  duration_ms: 57399.0124
+  type: 'test'
+  ...
+# Subtest: cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+ok 38 - cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+  ---
+  duration_ms: 138.5026
+  type: 'test'
+  ...
+# Subtest: SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+ok 39 - SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+  ---
+  duration_ms: 14.0476
+  type: 'test'
+  ...
+# Subtest: CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+ok 40 - CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+  ---
+  duration_ms: 3.0602
+  type: 'test'
+  ...
+# Subtest: normalização de nomes: determinística, idempotente e sem apagar o nome original
+ok 41 - normalização de nomes: determinística, idempotente e sem apagar o nome original
+  ---
+  duration_ms: 0.5571
+  type: 'test'
+  ...
+# Subtest: crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+ok 42 - crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+  ---
+  duration_ms: 7.0451
+  type: 'test'
+  ...
+# Subtest: resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+ok 43 - resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+  ---
+  duration_ms: 0.3446
+  type: 'test'
+  ...
+# Subtest: SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+ok 44 - SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+  ---
+  duration_ms: 6.7232
+  type: 'test'
+  ...
+# Subtest: SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+ok 45 - SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+  ---
+  duration_ms: 2.7253
+  type: 'test'
+  ...
+# Subtest: SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+ok 46 - SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+  ---
+  duration_ms: 0.5737
+  type: 'test'
+  ...
+# Subtest: SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+ok 47 - SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+  ---
+  duration_ms: 1.6719
+  type: 'test'
+  ...
+# Subtest: VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+ok 48 - VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+  ---
+  duration_ms: 0.8169
+  type: 'test'
+  ...
+# Subtest: VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+ok 49 - VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+  ---
+  duration_ms: 5.5114
+  type: 'test'
+  ...
+# Subtest: VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+ok 50 - VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+  ---
+  duration_ms: 1.8043
+  type: 'test'
+  ...
+# Subtest: VDE: meses futuros preenchidos com zero não são publicados
+ok 51 - VDE: meses futuros preenchidos com zero não são publicados
+  ---
+  duration_ms: 1.2751
+  type: 'test'
+  ...
+# Subtest: VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+ok 52 - VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+  ---
+  duration_ms: 2.7254
+  type: 'test'
+  ...
+# Subtest: VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+ok 53 - VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+  ---
+  duration_ms: 2.0375
+  type: 'test'
+  ...
+# Subtest: VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+ok 54 - VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+  ---
+  duration_ms: 0.9118
+  type: 'test'
+  ...
+# Subtest: VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+ok 55 - VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+  ---
+  duration_ms: 0.3868
+  type: 'test'
+  ...
+# (node:29648) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: PRF: 1 linha = 1 sinistro (id repetida conta uma vez), três formatos de data, só somas na saída — sem id, km, coordenadas ou horário
+ok 56 - PRF: 1 linha = 1 sinistro (id repetida conta uma vez), três formatos de data, só somas na saída — sem id, km, coordenadas ou horário
+  ---
+  duration_ms: 551.5859
+  type: 'test'
+  ...
+# Subtest: frota: XLSX com título, fórmula e cabeçalho repetido → linhas de município, vazio ≠ 0, UF/MUNICIPIO e ruído ignorados
+ok 57 - frota: XLSX com título, fórmula e cabeçalho repetido → linhas de município, vazio ≠ 0, UF/MUNICIPIO e ruído ignorados
+  ---
+  duration_ms: 1135.4956
+  type: 'test'
+  ...
+# Subtest: infrações: layouts wide UTF-16, wide com aspas duplicadas e long com colunas em outra ordem dão o mesmo resultado; milhar com ponto; vazio ≠ 0
+ok 58 - infrações: layouts wide UTF-16, wide com aspas duplicadas e long com colunas em outra ordem dão o mesmo resultado; milhar com ponto; vazio ≠ 0
+  ---
+  duration_ms: 409.0058
+  type: 'test'
+  ...
+# Subtest: RENAEST: agregação em fluxo sem dado pessoal; veículo órfão e código IBGE inválido são contados; saída sem endereço, CEP, coordenadas, hora ou número do acidente
+ok 59 - RENAEST: agregação em fluxo sem dado pessoal; veículo órfão e código IBGE inválido são contados; saída sem endereço, CEP, coordenadas, hora ou número do acidente
+  ---
+  duration_ms: 305.5279
+  type: 'test'
+  ...
+# Subtest: portal que devolve HTML (limite de taxa) é rejeitado, nada vai ao RAW nem ao manifesto, e a tentativa seguinte recupera o arquivo
+ok 60 - portal que devolve HTML (limite de taxa) é rejeitado, nada vai ao RAW nem ao manifesto, e a tentativa seguinte recupera o arquivo
+  ---
+  duration_ms: 3238.7852
+  type: 'test'
+  ...
+# Subtest: retomada real de download parcial: o servidor derruba a conexão em 1 MiB; o curl retoma com Range e o arquivo final é idêntico (SHA-256)
+ok 61 - retomada real de download parcial: o servidor derruba a conexão em 1 MiB; o curl retoma com Range e o arquivo final é idêntico (SHA-256)
+  ---
+  duration_ms: 3321.3522
+  type: 'test'
+  ...
+# Subtest: fonte republicada: mesmo conteúdo em outra pasta não duplica (dedupeByHash); conteúdo diferente vira nova versão
+ok 62 - fonte republicada: mesmo conteúdo em outra pasta não duplica (dedupeByHash); conteúdo diferente vira nova versão
+  ---
+  duration_ms: 124.8035
+  type: 'test'
+  ...
+# Subtest: SSD ausente ou trocado: nenhuma coleta de trânsito lê o banco nem grava
+ok 63 - SSD ausente ou trocado: nenhuma coleta de trânsito lê o banco nem grava
+  ---
+  duration_ms: 15.2168
+  type: 'test'
+  ...
+# (node:38652) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CID de trânsito: terrestre V01–V89 por categoria, V90–V99 à parte, Y85.0 é sequela e nunca entra no evento agudo
+ok 64 - CID de trânsito: terrestre V01–V89 por categoria, V90–V99 à parte, Y85.0 é sequela e nunca entra no evento agudo
+  ---
+  duration_ms: 4.9878
+  type: 'test'
+  ...
+# Subtest: chave compacta: determinística e sem fuzzy; crosswalk valida 48 aliases contra o IBGE e não tem colisões
+ok 65 - chave compacta: determinística e sem fuzzy; crosswalk valida 48 aliases contra o IBGE e não tem colisões
+  ---
+  duration_ms: 40.0241
+  type: 'test'
+  ...
+# Subtest: inventário da frota: competência identificada em todos os 165 nomes reais de arquivo (2013-01 a 2026-09), um por mês
+ok 66 - inventário da frota: competência identificada em todos os 165 nomes reais de arquivo (2013-01 a 2026-09), um por mês
+  ---
+  duration_ms: 5.1724
+  type: 'test'
+  ...
+# Subtest: páginas da PRF e das infrações: links repetidos/trocados não enganam o parser; HTML nunca é aceito como arquivo
+ok 67 - páginas da PRF e das infrações: links repetidos/trocados não enganam o parser; HTML nunca é aceito como arquivo
+  ---
+  duration_ms: 5.1373
+  type: 'test'
+  ...
+# Subtest: RENAEST: escolhe o recurso cumulativo mais recente pelo mês do nome (não pela ordem da lista)
+ok 68 - RENAEST: escolhe o recurso cumulativo mais recente pelo mês do nome (não pela ordem da lista)
+  ---
+  duration_ms: 0.6525
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: totais com zero explícito, categorias só quando > 0, sequela separada, V90–V99 fora do terrestre, nada vaza entre UFs
+ok 69 - SIM trânsito: totais com zero explícito, categorias só quando > 0, sequela separada, V90–V99 fora do terrestre, nada vaza entre UFs
+  ---
+  duration_ms: 5.5355
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: ocorrência é perspectiva distinta (indicadores próprios, sem taxa); sem município fica fora e declarado
+ok 70 - SIM trânsito: ocorrência é perspectiva distinta (indicadores próprios, sem taxa); sem município fica fora e declarado
+  ---
+  duration_ms: 31.0088
+  type: 'test'
+  ...
+# Subtest: frota: cabeçalho esperado, município ignorado e não conciliado preservados na UF, total e tipos sem perda
+ok 71 - frota: cabeçalho esperado, município ignorado e não conciliado preservados na UF, total e tipos sem perda
+  ---
+  duration_ms: 4.1281
+  type: 'test'
+  ...
+# Subtest: RENAEST: UF = Σ municípios + ignorado; sem registro não vira zero; escopo restrito a fatais é inferido e rotulado; mês sem registro gera cobertura
+ok 72 - RENAEST: UF = Σ municípios + ignorado; sem registro não vira zero; escopo restrito a fatais é inferido e rotulado; mês sem registro gera cobertura
+  ---
+  duration_ms: 5.2759
+  type: 'test'
+  ...
+# Subtest: PRF: mensal por UF com zero explícito dentro do período do arquivo; anual por município; nome sem correspondência vai ao ignorado; UF nula não é inferida
+ok 73 - PRF: mensal por UF com zero explícito dentro do período do arquivo; anual por município; nome sem correspondência vai ao ignorado; UF nula não é inferida
+  ---
+  duration_ms: 4.2303
+  type: 'test'
+  ...
+# Subtest: infrações: UF de jurisdição por nome, soma por UF = soma das linhas, nomes de UF desconhecidos são declarados
+ok 74 - infrações: UF de jurisdição por nome, soma por UF = soma das linhas, nomes de UF desconhecidos são declarados
+  ---
+  duration_ms: 1.0534
+  type: 'test'
+  ...
+# Subtest: definições: ids únicos, códigos únicos, famílias e granularidades coerentes
+ok 75 - definições: ids únicos, códigos únicos, famílias e granularidades coerentes
+  ---
+  duration_ms: 0.8026
+  type: 'test'
+  ...
+1..75
+# tests 75
+# suites 0
+# pass 75
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 60841.8257

@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-10-23",
+  "pncp_p95": { "status": ["PUBLISHED", "RECONCILED", "NO_CHANGE_VERIFIED"], "2025": { "retidos": 69733, "noBanco": 69733, "noChange": true }, "2026_parcial_jan_out": { "lidos": 1712181, "retidos": 52279, "noBanco": 52279, "noChange": true }, "tarefaAgendada": "Civica-P95-PNCP-Finish desabilitada após DONE", "relatoriosP95Atualizados": true, "g8_p95": "PASS_WITH_CAVEATS" },
+  "tests": { "total": 472, "pass": 442, "fail": 0, "skipped": 30, "novosArquivos": ["tests/integration/crime-p96.test.ts (5)", "tests/integration/organized-crime-p97.test.ts (4)"], "nota": "o script npm test NÃO listava crime-p96.test.ts: corrigido nesta etapa (a execução da P9.6 reportou 463 testes sem ele; ele havia sido rodado à parte)", "ambiente": "o cluster de teste novo herdou mensagens do Postgres em português e 3 testes antigos (que casam mensagens em inglês) falharam até lc_messages=C; não era regressão" },
+  "fingerprints": { "antesVsDepois": "TODAS IGUAIS (fingerprints_antes.json × fingerprints_depois.json)", "restoreVsProducao": "iguais em todo o civica_exec (esquema legislativo fora do dump por desenho)", "p93": "hash 5001..5399 igual ao baseline da P9.6 (lacuna fechada)", "cobertura": ["saúde", "P9.1", "P9.2", "P9.3", "P9.4", "P9.5", "P9.6", "entidades", "publicações", "migrations", "legislativo"] },
+  "backup": { "arquivo": "D:/Civica/backups/pre-crime-organizado-p97-20261023.dump", "bytes": 521089284, "restore": "p97_restore em cluster isolado, exit 0" },
+  "familias": { "total": 9, "indicadoresReaproveitados": 22, "idsNovos": 0, "migrations": 0, "linhasNovas": 0 },
+  "fontes": { "investigadas": 16, "operacionaisReuso": 4, "naoOperacionalizaveis": 12 },
+  "reconciliacao": { "indicadores": 14, "celulasComDivergencia": 0 },
+  "readModels": { "funcoes": ["getOrganizedCrimeNational", "getOrganizedCrimeState", "getOrganizedCrimeMunicipality"], "ms_mediana": "0,3 a 27" },
+  "gates": {
+    "G_PNCP_CONTINUITY": "PASS", "G0_INFRASTRUCTURE_SAFETY": "PASS", "G1_ORGANIZED_CRIME_SEMANTICS": "PASS", "G2_OFFICIAL_SOURCE_CATALOG": "PASS_WITH_CAVEATS", "G3_DRUG_SEIZURES": "PASS_WITH_CAVEATS",
+    "G4_WEAPONS_SEIZURES": "PARTIAL", "G5_POLICE_OPERATIONS": "DISCOVERY_ONLY", "G6_FINANCIAL_CRIME": "DISCOVERY_ONLY", "G7_OFFICIAL_ORGANIZATION_EVIDENCE": "PASS_WITH_CAVEATS", "G8_EXISTING_SECURITY_REUSE": "PASS",
+    "G9_TERRITORIAL_CONTRACT": "PASS", "G10_TEMPORAL_AND_COVERAGE": "PASS", "G11_PRIVACY_AND_SECURITY": "PASS", "G12_INDICATOR_CONTRACT": "PASS", "G13_BACKFILL": "PARTIAL", "G14_SOURCE_RECONCILIATION": "PASS_WITH_CAVEATS",
+    "G15_PERSISTENCE": "PASS", "G16_SERVING": "PASS", "G17_TESTS_AND_REGRESSION": "PASS_WITH_CAVEATS", "G18_STORAGE_AND_PERFORMANCE": "PASS", "G19_FRONTEND_READINESS": "PASS_WITH_CAVEATS"
+  },
+  "g17_ressalvas": "30 testes ignorados (sem banco/ambiente) registrados à parte e não contados como aprovados; build isolado do Next não executado (nenhuma mudança de UI); CNJ/DataJud não testado",
+  "naoFeito": ["nenhum dado novo carregado (sem fonte que sustente)", "munições apreendidas", "operações policiais", "indicadores financeiros", "mapa ou atribuição de facções", "frontend"]
+}

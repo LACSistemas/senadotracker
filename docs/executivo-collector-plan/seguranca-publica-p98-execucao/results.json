@@ -1,0 +1,24 @@
+{
+  "phase": "P9.8",
+  "date": "2026-10-23",
+  "tests": { "unit": "14/14", "integration_p98": "7/7", "e2e": "13/13", "npm_test": { "total": 493, "pass": 463, "fail": 0, "skipped": 30 }, "tsc": "clean" },
+  "territories_validated": 17,
+  "overflow_widths": [1440, 1280, 768, 390, 360],
+  "overflow_total": 0,
+  "console_errors": 0,
+  "a11y": { "contrast_failures": 0, "heading_skips": 0, "svg_unlabeled": 0, "focus_missing": "0/40", "targets_below_24px_per_page": "8-9 (site global)" },
+  "performance": { "sql_per_page": "39-62", "data_p95_ms": "71-311", "initial_json_kb": "80-180", "html_kb_raw_gzip": "364/56", "js_kb_raw_gzip": "661/204", "ttfb_ms": 460 },
+  "indicators": { "catalogued": 462, "hero": 24, "chapter": 185, "context": 8, "deep_dive": 245 },
+  "data_changed": false,
+  "migrations_created": 0,
+  "gates": {
+    "G_EDITORIAL_STORYTELLING": "PASS", "G_HERO_SELECTION": "PASS", "G_PROGRESSIVE_DISCLOSURE": "PASS",
+    "G_CITIZEN_COMPREHENSION": "PASS_WITH_CAVEATS", "G_EXPERT_EXPLORATION": "PASS", "G_INTERACTION_QUALITY": "PASS",
+    "G_BENCHMARK_METHODOLOGY": "PASS", "G_CRIME_STORYTELLING": "PASS", "G_STRUCTURE_STORYTELLING": "PASS_WITH_CAVEATS",
+    "G_TRAFFIC_STORYTELLING": "PASS_WITH_CAVEATS", "G_PRISON_STORYTELLING": "PASS_WITH_CAVEATS", "G_FINANCE_STORYTELLING": "PASS",
+    "G_POLICE_ACTIVITY_STORYTELLING": "PASS", "G_DATA_STATES": "PASS", "G_VISUAL_QUALITY": "PASS_WITH_CAVEATS",
+    "G_CHART_USABILITY": "PASS", "G_ROUTING_INTEGRATION": "PASS", "G_PERFORMANCE": "PASS_WITH_CAVEATS",
+    "G_RESPONSIVE_ACCESSIBILITY": "PASS_WITH_CAVEATS", "G_TERRITORIAL_CASES": "PASS", "G_TESTS": "PASS_WITH_CAVEATS",
+    "G_ENVIRONMENT_SAFETY": "PASS", "G_USER_QUESTIONS": "PASS_WITH_CAVEATS"
+  }
+}

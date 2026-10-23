@@ -1,0 +1,1179 @@
+{
+ "generatedAt": "2026-10-23T20:54:24.287Z",
+ "base": "http://127.0.0.1:3102",
+ "results": [
+  {
+   "label": "Vitória/ES",
+   "path": "/municipios/3205309/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 923,
+     "overflowPx": 0,
+     "height": 19773,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 929,
+     "overflowPx": 0,
+     "height": 18910,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 945,
+     "overflowPx": 0,
+     "height": 15010,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 981,
+     "overflowPx": 0,
+     "height": 12997,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1190,
+     "overflowPx": 0,
+     "height": 12997,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Serra/ES",
+   "path": "/municipios/3205002/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 979,
+     "overflowPx": 0,
+     "height": 21383,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 990,
+     "overflowPx": 0,
+     "height": 20518,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1050,
+     "overflowPx": 0,
+     "height": 16562,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1004,
+     "overflowPx": 0,
+     "height": 14560,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1009,
+     "overflowPx": 0,
+     "height": 14560,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Alto Rio Novo/ES",
+   "path": "/municipios/3200359/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 919,
+     "overflowPx": 0,
+     "height": 17577,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 956,
+     "overflowPx": 0,
+     "height": 16800,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 987,
+     "overflowPx": 0,
+     "height": 13815,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 955,
+     "overflowPx": 0,
+     "height": 11637,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 976,
+     "overflowPx": 0,
+     "height": 11637,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 3
+  },
+  {
+   "label": "São Paulo/SP",
+   "path": "/municipios/3550308/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1197,
+     "overflowPx": 0,
+     "height": 27327,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 990,
+     "overflowPx": 0,
+     "height": 26048,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1052,
+     "overflowPx": 0,
+     "height": 20297,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1115,
+     "overflowPx": 0,
+     "height": 17740,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1104,
+     "overflowPx": 0,
+     "height": 17740,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Rio de Janeiro/RJ",
+   "path": "/municipios/3304557/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1027,
+     "overflowPx": 0,
+     "height": 32841,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 1029,
+     "overflowPx": 0,
+     "height": 31356,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1058,
+     "overflowPx": 0,
+     "height": 23413,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1090,
+     "overflowPx": 0,
+     "height": 20246,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1262,
+     "overflowPx": 0,
+     "height": 20246,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Belo Horizonte/MG",
+   "path": "/municipios/3106200/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1091,
+     "overflowPx": 0,
+     "height": 24129,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 1074,
+     "overflowPx": 0,
+     "height": 23062,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1132,
+     "overflowPx": 0,
+     "height": 18207,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1144,
+     "overflowPx": 0,
+     "height": 15529,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1283,
+     "overflowPx": 0,
+     "height": 15529,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Recife/PE",
+   "path": "/municipios/2611606/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1044,
+     "overflowPx": 0,
+     "height": 23628,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 986,
+     "overflowPx": 0,
+     "height": 22667,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 994,
+     "overflowPx": 0,
+     "height": 17816,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1017,
+     "overflowPx": 0,
+     "height": 15312,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1076,
+     "overflowPx": 0,
+     "height": 15312,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Porto Alegre/RS",
+   "path": "/municipios/4314902/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1094,
+     "overflowPx": 0,
+     "height": 25568,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 1092,
+     "overflowPx": 0,
+     "height": 24483,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1120,
+     "overflowPx": 0,
+     "height": 19473,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1134,
+     "overflowPx": 0,
+     "height": 16921,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1200,
+     "overflowPx": 0,
+     "height": 16921,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Salvador/BA",
+   "path": "/municipios/2927408/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 915,
+     "overflowPx": 0,
+     "height": 23516,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 919,
+     "overflowPx": 0,
+     "height": 22701,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1019,
+     "overflowPx": 0,
+     "height": 17918,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 968,
+     "overflowPx": 0,
+     "height": 15472,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 972,
+     "overflowPx": 0,
+     "height": 15472,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "Curitiba/PR",
+   "path": "/municipios/4106902/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 933,
+     "overflowPx": 0,
+     "height": 22404,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 919,
+     "overflowPx": 0,
+     "height": 21531,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 28,
+     "targetsBelow24px": 9
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 942,
+     "overflowPx": 0,
+     "height": 17353,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 9
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 970,
+     "overflowPx": 0,
+     "height": 14929,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 37,
+     "targetsBelow24px": 9
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1004,
+     "overflowPx": 0,
+     "height": 14929,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 36,
+     "targetsBelow24px": 9
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "ES",
+   "path": "/estados/ES/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 913,
+     "overflowPx": 0,
+     "height": 26404,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 899,
+     "overflowPx": 0,
+     "height": 25445,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 953,
+     "overflowPx": 0,
+     "height": 20704,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 928,
+     "overflowPx": 0,
+     "height": 16814,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1013,
+     "overflowPx": 0,
+     "height": 16814,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 35,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "SP",
+   "path": "/estados/SP/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 1028,
+     "overflowPx": 0,
+     "height": 28879,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 1040,
+     "overflowPx": 0,
+     "height": 27706,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 1017,
+     "overflowPx": 0,
+     "height": 22621,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 1030,
+     "overflowPx": 0,
+     "height": 18650,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1195,
+     "overflowPx": 0,
+     "height": 18650,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "RJ",
+   "path": "/estados/RJ/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 948,
+     "overflowPx": 0,
+     "height": 29309,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 924,
+     "overflowPx": 0,
+     "height": 28220,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 955,
+     "overflowPx": 0,
+     "height": 23064,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 996,
+     "overflowPx": 0,
+     "height": 19046,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1111,
+     "overflowPx": 0,
+     "height": 19046,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "MG",
+   "path": "/estados/MG/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 928,
+     "overflowPx": 0,
+     "height": 26446,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 923,
+     "overflowPx": 0,
+     "height": 25491,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 971,
+     "overflowPx": 0,
+     "height": 20821,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 987,
+     "overflowPx": 0,
+     "height": 16852,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1156,
+     "overflowPx": 0,
+     "height": 16852,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "PE",
+   "path": "/estados/PE/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 922,
+     "overflowPx": 0,
+     "height": 26426,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 923,
+     "overflowPx": 0,
+     "height": 25406,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 949,
+     "overflowPx": 0,
+     "height": 20742,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 955,
+     "overflowPx": 0,
+     "height": 16852,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1055,
+     "overflowPx": 0,
+     "height": 16852,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "CE",
+   "path": "/estados/CE/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 945,
+     "overflowPx": 0,
+     "height": 26153,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 909,
+     "overflowPx": 0,
+     "height": 25130,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 935,
+     "overflowPx": 0,
+     "height": 20646,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 939,
+     "overflowPx": 0,
+     "height": 16741,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 35,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1132,
+     "overflowPx": 0,
+     "height": 16741,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  },
+  {
+   "label": "BA",
+   "path": "/estados/BA/seguranca",
+   "widths": {
+    "360": {
+     "status": 200,
+     "loadMs": 930,
+     "overflowPx": 0,
+     "height": 26314,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "390": {
+     "status": 200,
+     "loadMs": 926,
+     "overflowPx": 0,
+     "height": 25267,
+     "networkKB": 12,
+     "jsKB": 0,
+     "requests": 26,
+     "targetsBelow24px": 8
+    },
+    "768": {
+     "status": 200,
+     "loadMs": 941,
+     "overflowPx": 0,
+     "height": 20725,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 32,
+     "targetsBelow24px": 8
+    },
+    "1280": {
+     "status": 200,
+     "loadMs": 955,
+     "overflowPx": 0,
+     "height": 16819,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    },
+    "1440": {
+     "status": 200,
+     "loadMs": 1128,
+     "overflowPx": 0,
+     "height": 16819,
+     "networkKB": 7,
+     "jsKB": 0,
+     "requests": 34,
+     "targetsBelow24px": 8
+    }
+   },
+   "errors": [],
+   "forbidden": [],
+   "chapters": {
+    "panorama": true,
+    "criminalidade": true,
+    "estrutura": true,
+    "transito": true,
+    "prisional": true,
+    "financas": true,
+    "apreensoes": true,
+    "explorar": true
+   },
+   "kpis": 4
+  }
+ ]
+}

@@ -1,0 +1,17 @@
+medida,antes,depois,delta,unidade,observacao
+banco_bytes,23065676947,23097082383,31405436,bytes,pg_database_size
+schema_civica_exec_bytes,6858096640,6889480192,31383552,bytes,tabelas+índices+toast
+exec_ind_value_linhas,9468854,9621798,152944,linhas,62 indicadores novos (5001-5304)
+exec_ind_latest_linhas,543605,628103,84498,linhas,
+exec_publication_linhas,28434,28500,66,linhas,24=1 25=2 26=54 27=9 fatias
+exec_raw_manifest_linhas,19176,19199,23,linhas,5 fontes + 9 agregados + 9 originais descartados
+exec_change_log_linhas,16134052,16134052,0,linhas,primeiras cargas são bootstrap; sem retenção aplicada
+wal_bytes_gerados,32098315689,32244151888,145836199,bytes,pg_stat_wal.wal_bytes (inclui consultas de relatório)
+wal_registros,188267342,189439710,1172368,registros,
+checkpoints_requisitados,49,49,0,contagem,nenhum checkpoint forçado pela carga
+livre_C_GiB,60.9,60.7,-0.2,GiB,reserva mínima 20 GiB preservada
+livre_D_GiB,440.2,439.8,-0.4,GiB,RAW +49 MB; backup +370 MB; cluster de ensaio (~7 GB) e cópias exploratórias removidos
+raw_efetivos_MB,0,49,49,MB,D:\Civica\raw\seguranca\efetivos (5 fontes + 9 agregados SIAPE)
+backup_novo_bytes,0,370708482,370708482,bytes,D:\Civica\backups\pre-efetivos-p93-20261021.dump (SHA-256 em .sha256)
+siape_originais_baixados_MB,0,731,0,MB,9 zips baixados ao staging e descartados após agregar (state=3)
+duracao_carga_producao_s,,,~140,s,FBSP 0s; ESTADIC 0s; MUNIC 21s; SIAPE 1s (agregados já no RAW) após ensaio geral em cluster isolado

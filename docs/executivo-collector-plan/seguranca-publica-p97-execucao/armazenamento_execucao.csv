@@ -1,0 +1,14 @@
+medida,antes_p97,depois_p97,nota
+banco_projetoeleitor_db_bytes,24071031955,24764017811,"antes = G0 da P9.6 (23/10 10:32); a diferença (+693 MB) vem da P9.6 final e do PNCP 2026, não da P9.7"
+schema_civica_exec_bytes,7863214080,8556101632,"a P9.7 não criou tabela, coluna, migration nem linha de indicador"
+exec_change_log_bytes,,3447406592,"sem retenção aplicada"
+exec_ind_value_bytes,,2531319808,"14,17 milhões de linhas; faixa 8000 = 3.856.129"
+exec_fin_contract_bytes,,40140800,"2021–2026: 165.150 linhas"
+wal_bytes_acumulado,,36830357586,"contador do pg_stat_wal desde o último reset"
+raw_D_MB,,37735,"D:\Civica\raw, inclui PNCP 2026 completo; nada apagado"
+staging_D_MB,,1373,
+backups_D_MB,,4663,"inclui pre-crime-organizado-p97-20261023.dump (521 MB, sha256 ao lado)"
+C_livre_GiB,57.5,56,"reserva mínima de 20 GiB respeitada"
+D_livre_GiB,418.3,415,
+linhas_publicadas_novas_p97,,0,"famílias são leitura sobre ids existentes"
+restore_teste_banco_MB,,8325,"cluster isolado D:\Civica\pgtest_p97, banco p97_restore"

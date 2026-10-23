@@ -1,0 +1,720 @@
+uf,territorio,corporacao,natureza_medida,indicador,indicator_id,ano_publicacao,data_base_inicio,data_base_fim,valor,numerador,denominador,unidade,estado,flags,tabela_fonte
+RO,Rondônia,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,4801,4801,,servidores,reported,,Tabela 2
+AC,Acre,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,2375,2375,,servidores,reported,,Tabela 2
+AM,Amazonas,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,8646,8646,,servidores,reported,,Tabela 2
+RR,Roraima,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,2490,2490,,servidores,reported,,Tabela 2
+PA,Pará,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,16352,16352,,servidores,reported,,Tabela 2
+AP,Amapá,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,3588,3588,,servidores,reported,,Tabela 2
+TO,Tocantins,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,3145,3145,,servidores,reported,,Tabela 2
+MA,Maranhão,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,11274,11274,,servidores,reported,,Tabela 2
+PI,Piauí,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,6951,6951,,servidores,reported,,Tabela 2
+CE,Ceará,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,23793,23793,,servidores,reported,,Tabela 2
+RN,Rio Grande do Norte,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,9068,9068,,servidores,reported,,Tabela 2
+PB,Paraíba,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,10309,10309,,servidores,reported,,Tabela 2
+PE,Pernambuco,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,15738,15738,,servidores,reported,,Tabela 2
+AL,Alagoas,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,7673,7673,,servidores,reported,,Tabela 2
+SE,Sergipe,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,5640,5640,,servidores,reported,,Tabela 2
+BA,Bahia,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,30491,30491,,servidores,reported,,Tabela 2
+MG,Minas Gerais,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,37261,37261,,servidores,reported,,Tabela 2
+ES,Espírito Santo,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,9231,9231,,servidores,reported,,Tabela 2
+RJ,Rio de Janeiro,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,42543,42543,,servidores,reported,refDateUncertain,Tabela 2
+SP,São Paulo,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,82250,82250,,servidores,reported,composite,Tabela 2
+PR,Paraná,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,16068,16068,,servidores,reported,,Tabela 2
+SC,Santa Catarina,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,9465,9465,,servidores,reported,,Tabela 2
+RS,Rio Grande do Sul,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,18360,18360,,servidores,reported,,Tabela 2
+MS,Mato Grosso do Sul,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,5948,5948,,servidores,reported,,Tabela 2
+MT,Mato Grosso,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,7094,7094,,servidores,reported,,Tabela 2
+GO,Goiás,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,11856,11856,,servidores,reported,,Tabela 2
+DF,Distrito Federal,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,10909,10909,,servidores,reported,,Tabela 2
+BR,Brasil,PM,existente,IND-EFE-FBSP-PM,5001,2026,2025-03-01,2025-04-01,413319,413319,,servidores,reported,,Tabela 2
+RO,Rondônia,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,709,709,,servidores,reported,,Tabela 2
+AC,Acre,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,680,680,,servidores,reported,,Tabela 2
+AM,Amazonas,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1335,1335,,servidores,reported,,Tabela 2
+RR,Roraima,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,503,503,,servidores,reported,,Tabela 2
+PA,Pará,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,2519,2519,,servidores,reported,,Tabela 2
+AP,Amapá,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1358,1358,,servidores,reported,,Tabela 2
+TO,Tocantins,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,657,657,,servidores,reported,,Tabela 2
+MA,Maranhão,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1529,1529,,servidores,reported,,Tabela 2
+PI,Piauí,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,509,509,,servidores,reported,,Tabela 2
+CE,Ceará,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1963,1963,,servidores,reported,,Tabela 2
+RN,Rio Grande do Norte,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,913,913,,servidores,reported,,Tabela 2
+PB,Paraíba,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1474,1474,,servidores,reported,,Tabela 2
+PE,Pernambuco,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,2274,2274,,servidores,reported,,Tabela 2
+AL,Alagoas,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1182,1182,,servidores,reported,,Tabela 2
+SE,Sergipe,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,922,922,,servidores,reported,,Tabela 2
+BA,Bahia,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,3748,3748,,servidores,reported,,Tabela 2
+MG,Minas Gerais,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,5940,5940,,servidores,reported,,Tabela 2
+ES,Espírito Santo,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1342,1342,,servidores,reported,,Tabela 2
+RJ,Rio de Janeiro,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,12875,12875,,servidores,reported,,Tabela 2
+SP,São Paulo,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,,,,servidores,included_in_other,composite,Tabela 2
+PR,Paraná,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,3193,3193,,servidores,reported,,Tabela 2
+SC,Santa Catarina,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,2573,2573,,servidores,reported,,Tabela 2
+RS,Rio Grande do Sul,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,2995,2995,,servidores,reported,,Tabela 2
+MS,Mato Grosso do Sul,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1674,1674,,servidores,reported,,Tabela 2
+MT,Mato Grosso,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,1480,1480,,servidores,reported,,Tabela 2
+GO,Goiás,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,2921,2921,,servidores,reported,,Tabela 2
+DF,Distrito Federal,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,5734,5734,,servidores,reported,,Tabela 2
+BR,Brasil,CBM,existente,IND-EFE-FBSP-CBM,5002,2026,2025-03-01,2025-04-01,63002,63002,,servidores,reported,,Tabela 2
+RO,Rondônia,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1501,1501,,servidores,reported,,Tabela 2
+AC,Acre,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,994,994,,servidores,reported,,Tabela 2
+AM,Amazonas,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1891,1891,,servidores,reported,,Tabela 2
+RR,Roraima,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,606,606,,servidores,reported,,Tabela 2
+PA,Pará,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3379,3379,,servidores,reported,,Tabela 2
+AP,Amapá,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1220,1220,,servidores,reported,,Tabela 2
+TO,Tocantins,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1034,1034,,servidores,reported,,Tabela 2
+MA,Maranhão,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1720,1720,,servidores,reported,,Tabela 2
+PI,Piauí,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1636,1636,,servidores,reported,,Tabela 2
+CE,Ceará,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,4392,4392,,servidores,reported,,Tabela 2
+RN,Rio Grande do Norte,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1788,1788,,servidores,reported,,Tabela 2
+PB,Paraíba,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,2169,2169,,servidores,reported,,Tabela 2
+PE,Pernambuco,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,4326,4326,,servidores,reported,,Tabela 2
+AL,Alagoas,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,2069,2069,,servidores,reported,,Tabela 2
+SE,Sergipe,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1417,1417,,servidores,reported,,Tabela 2
+BA,Bahia,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,5700,5700,,servidores,reported,,Tabela 2
+MG,Minas Gerais,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,8935,8935,,servidores,reported,,Tabela 2
+ES,Espírito Santo,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1764,1764,,servidores,reported,,Tabela 2
+RJ,Rio de Janeiro,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,6024,6024,,servidores,reported,,Tabela 2
+SP,São Paulo,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,19420,19420,,servidores,reported,,Tabela 2
+PR,Paraná,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3791,3791,,servidores,reported,,Tabela 2
+SC,Santa Catarina,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3023,3023,,servidores,reported,,Tabela 2
+RS,Rio Grande do Sul,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,5771,5771,,servidores,reported,,Tabela 2
+MS,Mato Grosso do Sul,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,1945,1945,,servidores,reported,,Tabela 2
+MT,Mato Grosso,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3209,3209,,servidores,reported,,Tabela 2
+GO,Goiás,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3448,3448,,servidores,reported,,Tabela 2
+DF,Distrito Federal,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,3730,3730,,servidores,reported,,Tabela 2
+BR,Brasil,PC,existente,IND-EFE-FBSP-PC,5003,2026,2025-03-01,2025-04-01,96902,96902,,servidores,reported,,Tabela 2
+RO,Rondônia,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,359,359,,servidores,reported,,Tabela 2
+AC,Acre,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,78,78,,servidores,reported,,Tabela 2
+AM,Amazonas,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,159,159,,servidores,reported,,Tabela 2
+RR,Roraima,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,129,129,,servidores,reported,,Tabela 2
+PA,Pará,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,801,801,,servidores,reported,,Tabela 2
+AP,Amapá,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,193,193,,servidores,reported,,Tabela 2
+TO,Tocantins,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,352,352,,servidores,reported,,Tabela 2
+MA,Maranhão,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,274,274,,servidores,reported,,Tabela 2
+PI,Piauí,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,212,212,,servidores,reported,,Tabela 2
+CE,Ceará,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,682,682,,servidores,reported,,Tabela 2
+RN,Rio Grande do Norte,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,579,579,,servidores,reported,,Tabela 2
+PB,Paraíba,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,626,626,,servidores,reported,,Tabela 2
+PE,Pernambuco,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,901,901,,servidores,reported,,Tabela 2
+AL,Alagoas,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,245,245,,servidores,reported,,Tabela 2
+SE,Sergipe,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,215,215,,servidores,reported,,Tabela 2
+BA,Bahia,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,754,754,,servidores,reported,,Tabela 2
+MG,Minas Gerais,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,989,989,,servidores,reported,,Tabela 2
+ES,Espírito Santo,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,388,388,,servidores,reported,,Tabela 2
+RJ,Rio de Janeiro,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,980,980,,servidores,reported,,Tabela 2
+SP,São Paulo,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,4785,4785,,servidores,reported,,Tabela 2
+PR,Paraná,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,1000,1000,,servidores,reported,,Tabela 2
+SC,Santa Catarina,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,841,841,,servidores,reported,,Tabela 2
+RS,Rio Grande do Sul,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,825,825,,servidores,reported,,Tabela 2
+MS,Mato Grosso do Sul,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,742,742,,servidores,reported,,Tabela 2
+MT,Mato Grosso,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,671,671,,servidores,reported,,Tabela 2
+GO,Goiás,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,1000,1000,,servidores,reported,,Tabela 2
+DF,Distrito Federal,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,560,560,,servidores,reported,,Tabela 2
+BR,Brasil,PERICIA,existente,IND-EFE-FBSP-PERICIA,5004,2026,2025-03-01,2025-04-01,19340,19340,,servidores,reported,,Tabela 2
+RO,Rondônia,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2221,2221,,servidores,reported,,Tabela 2
+AC,Acre,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1155,1155,,servidores,reported,,Tabela 2
+AM,Amazonas,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,39,39,,servidores,reported,,Tabela 2
+RR,Roraima,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,690,690,,servidores,reported,,Tabela 2
+PA,Pará,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,3302,3302,,servidores,reported,,Tabela 2
+AP,Amapá,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1153,1153,,servidores,reported,,Tabela 2
+TO,Tocantins,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1056,1056,,servidores,reported,,Tabela 2
+MA,Maranhão,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,603,603,,servidores,reported,,Tabela 2
+PI,Piauí,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,824,824,,servidores,reported,,Tabela 2
+CE,Ceará,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,3479,3479,,servidores,reported,,Tabela 2
+RN,Rio Grande do Norte,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1425,1425,,servidores,reported,,Tabela 2
+PB,Paraíba,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1649,1649,,servidores,reported,,Tabela 2
+PE,Pernambuco,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2019,2019,,servidores,reported,,Tabela 2
+AL,Alagoas,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,852,852,,servidores,reported,,Tabela 2
+SE,Sergipe,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,799,799,,servidores,reported,,Tabela 2
+BA,Bahia,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1087,1087,,servidores,reported,,Tabela 2
+MG,Minas Gerais,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,16572,16572,,servidores,reported,,Tabela 2
+ES,Espírito Santo,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2129,2129,,servidores,reported,,Tabela 2
+RJ,Rio de Janeiro,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,5068,5068,,servidores,reported,,Tabela 2
+SP,São Paulo,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,24898,24898,,servidores,reported,,Tabela 2
+PR,Paraná,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2556,2556,,servidores,reported,,Tabela 2
+SC,Santa Catarina,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,3591,3591,,servidores,reported,,Tabela 2
+RS,Rio Grande do Sul,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,6036,6036,,servidores,reported,,Tabela 2
+MS,Mato Grosso do Sul,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1916,1916,,servidores,reported,,Tabela 2
+MT,Mato Grosso,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2758,2758,,servidores,reported,,Tabela 2
+GO,Goiás,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,1731,1731,,servidores,reported,,Tabela 2
+DF,Distrito Federal,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,2242,2242,,servidores,reported,,Tabela 2
+BR,Brasil,POLICIA_PENAL,existente,IND-EFE-FBSP-POLICIA_PENAL,5005,2026,2025-03-01,2025-04-01,91850,91850,,servidores,reported,,Tabela 2
+BR,Brasil,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,12536,12536,,servidores,reported,,Tabela 2
+BR,Brasil,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,12328,12328,,servidores,reported,,Tabela 2
+BR,Brasil,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,1224,1224,,servidores,reported,,Tabela 2
+BR,Brasil,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,563,563,,servidores,reported,refDateUncertain,Tabela 2
+RO,Rondônia,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,67,67,,servidores,reported,refDateUncertain,Tabela 2
+AC,Acre,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,0,0,,servidores,inexistent,inexistent|refDateUncertain,Tabela 2
+AM,Amazonas,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,2580,2580,,servidores,reported,refDateUncertain,Tabela 2
+RR,Roraima,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,615,615,,servidores,reported,refDateUncertain,Tabela 2
+PA,Pará,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,2794,2794,,servidores,reported,refDateUncertain,Tabela 2
+AP,Amapá,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1234,1234,,servidores,reported,refDateUncertain,Tabela 2
+TO,Tocantins,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,308,308,,servidores,reported,refDateUncertain,Tabela 2
+MA,Maranhão,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,3020,3020,,servidores,reported,refDateUncertain,Tabela 2
+PI,Piauí,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,480,480,,servidores,reported,refDateUncertain,Tabela 2
+CE,Ceará,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,6420,6420,,servidores,reported,refDateUncertain,Tabela 2
+RN,Rio Grande do Norte,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1113,1113,,servidores,reported,refDateUncertain,Tabela 2
+PB,Paraíba,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1551,1551,,servidores,reported,refDateUncertain,Tabela 2
+PE,Pernambuco,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,6111,6111,,servidores,reported,refDateUncertain,Tabela 2
+AL,Alagoas,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,2576,2576,,servidores,reported,refDateUncertain,Tabela 2
+SE,Sergipe,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1339,1339,,servidores,reported,refDateUncertain,Tabela 2
+BA,Bahia,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,10031,10031,,servidores,reported,refDateUncertain,Tabela 2
+MG,Minas Gerais,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,5676,5676,,servidores,reported,refDateUncertain,Tabela 2
+ES,Espírito Santo,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1905,1905,,servidores,reported,refDateUncertain,Tabela 2
+RJ,Rio de Janeiro,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,15809,15809,,servidores,reported,refDateUncertain,Tabela 2
+SP,São Paulo,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,30184,30184,,servidores,reported,refDateUncertain,Tabela 2
+PR,Paraná,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,4498,4498,,servidores,reported,refDateUncertain,Tabela 2
+SC,Santa Catarina,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1311,1311,,servidores,reported,refDateUncertain,Tabela 2
+RS,Rio Grande do Sul,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,2436,2436,,servidores,reported,refDateUncertain,Tabela 2
+MS,Mato Grosso do Sul,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,1797,1797,,servidores,reported,refDateUncertain,Tabela 2
+MT,Mato Grosso,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,287,287,,servidores,reported,refDateUncertain,Tabela 2
+GO,Goiás,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,3315,3315,,servidores,reported,refDateUncertain,Tabela 2
+DF,Distrito Federal,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,0,0,,servidores,inexistent,inexistent|refDateUncertain,Tabela 2
+BR,Brasil,GCM,existente,IND-EFE-FBSP-GCM,5010,2026,2025-01-01,2026-01-01,107457,107457,,servidores,reported,refDateUncertain,Tabela 2
+RO,Rondônia,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,8364,8364,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AC,Acre,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,4734,4734,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AM,Amazonas,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,15000,15000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RR,Roraima,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,3500,3500,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PA,Pará,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,32500,32500,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AP,Amapá,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,7932,7932,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+TO,Tocantins,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,9000,9000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MA,Maranhão,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,15393,15393,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PI,Piauí,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,12284,12284,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+CE,Ceará,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,23703,23703,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,14085,14085,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PB,Paraíba,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,18935,18935,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PE,Pernambuco,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,27953,27953,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AL,Alagoas,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,13267,13267,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SE,Sergipe,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,6845,6845,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BA,Bahia,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,47194,47194,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MG,Minas Gerais,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,51669,51669,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+ES,Espírito Santo,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,11299,11299,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,60448,60448,,cargos previstos,reported,refDateUncertain,"Tabelas 3, 4 e 5"
+SP,São Paulo,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,93802,93802,,cargos previstos,reported,composite,"Tabelas 3, 4 e 5"
+PR,Paraná,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,23675,23675,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SC,Santa Catarina,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,20766,20766,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,32186,32186,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,10602,10602,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MT,Mato Grosso,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,13211,13211,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+GO,Goiás,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,31712,31712,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+DF,Distrito Federal,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,18673,18673,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BR,Brasil,PM,previsto,IND-EFE-FBSP-PM-PREV,5011,2026,2025-03-01,2025-04-01,628732,628732,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RO,Rondônia,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5340,5340,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AC,Acre,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,1750,1750,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AM,Amazonas,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,3155,3155,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RR,Roraima,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,1340,1340,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PA,Pará,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5150,5150,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AP,Amapá,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,1240,1240,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+TO,Tocantins,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,2147,2147,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MA,Maranhão,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,2450,2450,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PI,Piauí,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,3300,3300,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+CE,Ceará,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5485,5485,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5150,5150,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PB,Paraíba,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,6300,6300,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PE,Pernambuco,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,10000,10000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AL,Alagoas,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,4656,4656,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SE,Sergipe,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,1541,1541,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BA,Bahia,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,11330,11330,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MG,Minas Gerais,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,16178,16178,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+ES,Espírito Santo,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,3063,3063,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,17606,17606,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SP,São Paulo,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,24332,24332,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PR,Paraná,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,6575,6575,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SC,Santa Catarina,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5839,5839,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,9587,9587,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,2970,2970,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MT,Mato Grosso,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,5600,5600,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+GO,Goiás,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,6144,6144,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+DF,Distrito Federal,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,7249,7249,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BR,Brasil,PC,previsto,IND-EFE-FBSP-PC-PREV,5012,2026,2025-03-01,2025-04-01,175477,175477,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RO,Rondônia,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,6200,6200,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AC,Acre,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,1403,1403,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AM,Amazonas,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,35,35,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RR,Roraima,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,691,691,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PA,Pará,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,3000,3000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AP,Amapá,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,1223,1223,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+TO,Tocantins,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,1095,1095,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MA,Maranhão,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,906,906,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PI,Piauí,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,2100,2100,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+CE,Ceará,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,,,,cargos previstos,unavailable,unavailable,"Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,2000,2000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PB,Paraíba,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,2400,2400,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PE,Pernambuco,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,4000,4000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+AL,Alagoas,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,1500,1500,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SE,Sergipe,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,816,816,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BA,Bahia,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,1790,1790,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MG,Minas Gerais,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,17665,17665,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+ES,Espírito Santo,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,3654,3654,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,7000,7000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SP,São Paulo,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,34784,34784,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+PR,Paraná,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,9750,9750,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+SC,Santa Catarina,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,5100,5100,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,14455,14455,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,2400,2400,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+MT,Mato Grosso,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,3504,3504,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+GO,Goiás,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,3693,3693,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+DF,Distrito Federal,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,3000,3000,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+BR,Brasil,POLICIA_PENAL,previsto,IND-EFE-FBSP-POLICIA_PENAL-PREV,5013,2026,2025-03-01,2025-04-01,134164,134164,,cargos previstos,reported,,"Tabelas 3, 4 e 5"
+RO,Rondônia,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,57.40076518412243,4801,8364,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,50.168990283058726,2375,4734,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,57.64,8646,15000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,71.14285714285714,2490,3500,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,50.31384615384616,16352,32500,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,45.23449319213313,3588,7932,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,34.94444444444444,3145,9000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,73.24108360943285,11274,15393,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,56.58580267014002,6951,12284,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+CE,Ceará,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,100.37969877230731,23793,23703,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,64.38054668086617,9068,14085,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,54.44415104304199,10309,18935,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,56.301649196866165,15738,27953,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,57.83523027059621,7673,13267,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,82.39590942293646,5640,6845,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,64.60778912573633,30491,47194,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,72.1148077183611,37261,51669,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,81.69749535357111,9231,11299,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,70.3794997353097,42543,60448,% do quadro previsto,reported,refDateUncertain,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,87.68469755442315,82250,93802,% do quadro previsto,reported,composite,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,67.86906019007391,16068,23675,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,45.57931233747472,9465,20766,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,57.043435033865656,18360,32186,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,56.10262214676476,5948,10602,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,53.69767617894179,7094,13211,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,37.38647830474268,11856,31712,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,58.42124993305843,10909,18673,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,PM,ocupacao,IND-EFE-FBSP-PM-OCUP,5014,2026,2025-03-01,2025-04-01,65.73850225533295,413319,628732,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,28.10861423220974,1501,5340,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,56.8,994,1750,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,59.93660855784469,1891,3155,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,45.223880597014926,606,1340,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,65.61165048543688,3379,5150,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,98.38709677419355,1220,1240,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,48.16022356776898,1034,2147,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,70.20408163265306,1720,2450,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,49.57575757575757,1636,3300,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+CE,Ceará,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,80.07292616226071,4392,5485,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,34.71844660194175,1788,5150,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,34.42857142857143,2169,6300,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,43.26,4326,10000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,44.437285223367695,2069,4656,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,91.95327709279688,1417,1541,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,50.30891438658429,5700,11330,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,55.229323773025094,8935,16178,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,57.59059745347699,1764,3063,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,34.21560831534704,6024,17606,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,79.81259247082032,19420,24332,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,57.657794676806084,3791,6575,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,51.7725637951704,3023,5839,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,60.19609888390529,5771,9587,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,65.48821548821549,1945,2970,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,57.30357142857143,3209,5600,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,56.119791666666664,3448,6144,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,51.455373154917915,3730,7249,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,PC,ocupacao,IND-EFE-FBSP-PC-OCUP,5015,2026,2025-03-01,2025-04-01,55.22205189284066,96902,175477,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,35.82258064516129,2221,6200,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,82.32359230220955,1155,1403,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,111.42857142857143,39,35,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,99.85528219971056,690,691,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,110.06666666666666,3302,3000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,94.27636958299263,1153,1223,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,96.43835616438356,1056,1095,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,66.55629139072848,603,906,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,39.23809523809524,824,2100,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,71.25,1425,2000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,68.70833333333334,1649,2400,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,50.475,2019,4000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,56.8,852,1500,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,97.91666666666666,799,816,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,60.726256983240226,1087,1790,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,93.81262383243703,16572,17665,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,58.26491516146689,2129,3654,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,72.39999999999999,5068,7000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,71.57888684452622,24898,34784,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,26.21538461538461,2556,9750,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,70.41176470588235,3591,5100,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,41.757177447250086,6036,14455,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,79.83333333333333,1916,2400,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,78.71004566210046,2758,3504,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,46.87246141348497,1731,3693,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,74.73333333333333,2242,3000,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,POLICIA_PENAL,ocupacao,IND-EFE-FBSP-POLICIA_PENAL-OCUP,5016,2026,2025-03-01,2025-04-01,68.46098804448287,91850,134164,% do quadro previsto,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,3563,8364,4801,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,2359,4734,2375,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,6354,15000,8646,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,1010,3500,2490,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,16148,32500,16352,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,4344,7932,3588,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,5855,9000,3145,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,4119,15393,11274,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,5333,12284,6951,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+CE,Ceará,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,-90,23703,23793,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,5017,14085,9068,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,8626,18935,10309,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,12215,27953,15738,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,5594,13267,7673,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,1205,6845,5640,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,16703,47194,30491,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,14408,51669,37261,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,2068,11299,9231,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,17905,60448,42543,cargos,reported,refDateUncertain,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,11552,93802,82250,cargos,reported,composite,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,7607,23675,16068,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,11301,20766,9465,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,13826,32186,18360,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,4654,10602,5948,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,6117,13211,7094,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,19856,31712,11856,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,7764,18673,10909,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,PM,diferenca,IND-EFE-FBSP-PM-DIF,5017,2026,2025-03-01,2025-04-01,215413,628732,413319,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,3839,5340,1501,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,756,1750,994,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1264,3155,1891,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,734,1340,606,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1771,5150,3379,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,20,1240,1220,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1113,2147,1034,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,730,2450,1720,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1664,3300,1636,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+CE,Ceará,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1093,5485,4392,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,3362,5150,1788,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,4131,6300,2169,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,5674,10000,4326,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,2587,4656,2069,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,124,1541,1417,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,5630,11330,5700,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,7243,16178,8935,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1299,3063,1764,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,11582,17606,6024,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,4912,24332,19420,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,2784,6575,3791,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,2816,5839,3023,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,3816,9587,5771,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,1025,2970,1945,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,2391,5600,3209,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,2696,6144,3448,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,3519,7249,3730,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,PC,diferenca,IND-EFE-FBSP-PC-DIF,5018,2026,2025-03-01,2025-04-01,78575,175477,96902,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,3979,6200,2221,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AC,Acre,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,248,1403,1155,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AM,Amazonas,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,-4,35,39,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RR,Roraima,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1,691,690,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PA,Pará,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,-302,3000,3302,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AP,Amapá,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,70,1223,1153,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+TO,Tocantins,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,39,1095,1056,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MA,Maranhão,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,303,906,603,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PI,Piauí,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1276,2100,824,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RN,Rio Grande do Norte,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,575,2000,1425,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PB,Paraíba,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,751,2400,1649,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PE,Pernambuco,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1981,4000,2019,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+AL,Alagoas,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,648,1500,852,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SE,Sergipe,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,17,816,799,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BA,Bahia,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,703,1790,1087,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MG,Minas Gerais,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1093,17665,16572,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+ES,Espírito Santo,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1525,3654,2129,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RJ,Rio de Janeiro,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1932,7000,5068,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SP,São Paulo,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,9886,34784,24898,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+PR,Paraná,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,7194,9750,2556,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+SC,Santa Catarina,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1509,5100,3591,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RS,Rio Grande do Sul,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,8419,14455,6036,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MS,Mato Grosso do Sul,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,484,2400,1916,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+MT,Mato Grosso,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,746,3504,2758,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+GO,Goiás,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,1962,3693,1731,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+DF,Distrito Federal,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,758,3000,2242,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+BR,Brasil,POLICIA_PENAL,diferenca,IND-EFE-FBSP-POLICIA_PENAL-DIF,5019,2026,2025-03-01,2025-04-01,42314,134164,91850,cargos,reported,,"derivado das Tabelas 3, 4 e 5"
+RO,Rondônia,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,2,2,,municípios,reported,refDateUncertain,Tabela 15
+AC,Acre,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,0,0,,municípios,inexistent,inexistent|refDateUncertain,Tabela 15
+AM,Amazonas,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,46,46,,municípios,reported,refDateUncertain,Tabela 15
+RR,Roraima,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,6,6,,municípios,reported,refDateUncertain,Tabela 15
+PA,Pará,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,34,34,,municípios,reported,refDateUncertain,Tabela 15
+AP,Amapá,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,6,6,,municípios,reported,refDateUncertain,Tabela 15
+TO,Tocantins,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,8,8,,municípios,reported,refDateUncertain,Tabela 15
+MA,Maranhão,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,110,110,,municípios,reported,refDateUncertain,Tabela 15
+PI,Piauí,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,16,16,,municípios,reported,refDateUncertain,Tabela 15
+CE,Ceará,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,96,96,,municípios,reported,refDateUncertain,Tabela 15
+RN,Rio Grande do Norte,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,41,41,,municípios,reported,refDateUncertain,Tabela 15
+PB,Paraíba,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,55,55,,municípios,reported,refDateUncertain,Tabela 15
+PE,Pernambuco,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,98,98,,municípios,reported,refDateUncertain,Tabela 15
+AL,Alagoas,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,65,65,,municípios,reported,refDateUncertain,Tabela 15
+SE,Sergipe,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,26,26,,municípios,reported,refDateUncertain,Tabela 15
+BA,Bahia,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,234,234,,municípios,reported,refDateUncertain,Tabela 15
+MG,Minas Gerais,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,85,85,,municípios,reported,refDateUncertain,Tabela 15
+ES,Espírito Santo,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,17,17,,municípios,reported,refDateUncertain,Tabela 15
+RJ,Rio de Janeiro,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,82,82,,municípios,reported,refDateUncertain,Tabela 15
+SP,São Paulo,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,222,222,,municípios,reported,refDateUncertain,Tabela 15
+PR,Paraná,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,43,43,,municípios,reported,refDateUncertain,Tabela 15
+SC,Santa Catarina,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,18,18,,municípios,reported,refDateUncertain,Tabela 15
+RS,Rio Grande do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,36,36,,municípios,reported,refDateUncertain,Tabela 15
+MS,Mato Grosso do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,8,8,,municípios,reported,refDateUncertain,Tabela 15
+MT,Mato Grosso,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,7,7,,municípios,reported,refDateUncertain,Tabela 15
+GO,Goiás,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,23,23,,municípios,reported,refDateUncertain,Tabela 15
+DF,Distrito Federal,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,0,0,,municípios,inexistent,inexistent|refDateUncertain,Tabela 15
+BR,Brasil,GCM,agregado_uf,IND-EFE-FBSP-GCM-MUN,5020,2026,2025-01-01,2026-01-01,1384,1384,,municípios,reported,refDateUncertain,Tabela 15
+RO,Rondônia,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,25,25,,guardas,reported,,Tabela 15
+AC,Acre,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,0,0,,guardas,inexistent,inexistent,Tabela 15
+AM,Amazonas,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2253,2253,,guardas,reported,,Tabela 15
+RR,Roraima,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,610,610,,guardas,reported,,Tabela 15
+PA,Pará,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2668,2668,,guardas,reported,,Tabela 15
+AP,Amapá,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1229,1229,,guardas,reported,,Tabela 15
+TO,Tocantins,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,333,333,,guardas,reported,,Tabela 15
+MA,Maranhão,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2574,2574,,guardas,reported,,Tabela 15
+PI,Piauí,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,483,483,,guardas,reported,,Tabela 15
+CE,Ceará,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,6378,6378,,guardas,reported,,Tabela 15
+RN,Rio Grande do Norte,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,999,999,,guardas,reported,,Tabela 15
+PB,Paraíba,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1491,1491,,guardas,reported,,Tabela 15
+PE,Pernambuco,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,6031,6031,,guardas,reported,,Tabela 15
+AL,Alagoas,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2285,2285,,guardas,reported,,Tabela 15
+SE,Sergipe,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1345,1345,,guardas,reported,,Tabela 15
+BA,Bahia,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,9765,9765,,guardas,reported,,Tabela 15
+MG,Minas Gerais,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,5527,5527,,guardas,reported,,Tabela 15
+ES,Espírito Santo,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1948,1948,,guardas,reported,,Tabela 15
+RJ,Rio de Janeiro,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,14775,14775,,guardas,reported,,Tabela 15
+SP,São Paulo,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,29393,29393,,guardas,reported,,Tabela 15
+PR,Paraná,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,3888,3888,,guardas,reported,,Tabela 15
+SC,Santa Catarina,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1144,1144,,guardas,reported,,Tabela 15
+RS,Rio Grande do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2121,2121,,guardas,reported,,Tabela 15
+MS,Mato Grosso do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,1799,1799,,guardas,reported,,Tabela 15
+MT,Mato Grosso,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,486,486,,guardas,reported,,Tabela 15
+GO,Goiás,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,2953,2953,,guardas,reported,,Tabela 15
+DF,Distrito Federal,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,0,0,,guardas,inexistent,inexistent,Tabela 15
+BR,Brasil,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-EF,5021,2026,2024-01-01,2025-01-01,102503,102503,,guardas,reported,,Tabela 15
+RO,Rondônia,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,2,2,,municípios,reported,,Tabela 15
+AC,Acre,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,0,0,,municípios,inexistent,inexistent,Tabela 15
+AM,Amazonas,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,39,39,,municípios,reported,,Tabela 15
+RR,Roraima,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,6,6,,municípios,reported,,Tabela 15
+PA,Pará,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,30,30,,municípios,reported,,Tabela 15
+AP,Amapá,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,4,4,,municípios,reported,,Tabela 15
+TO,Tocantins,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,11,11,,municípios,reported,,Tabela 15
+MA,Maranhão,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,100,100,,municípios,reported,,Tabela 15
+PI,Piauí,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,17,17,,municípios,reported,,Tabela 15
+CE,Ceará,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,93,93,,municípios,reported,,Tabela 15
+RN,Rio Grande do Norte,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,38,38,,municípios,reported,,Tabela 15
+PB,Paraíba,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,55,55,,municípios,reported,,Tabela 15
+PE,Pernambuco,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,92,92,,municípios,reported,,Tabela 15
+AL,Alagoas,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,53,53,,municípios,reported,,Tabela 15
+SE,Sergipe,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,28,28,,municípios,reported,,Tabela 15
+BA,Bahia,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,241,241,,municípios,reported,,Tabela 15
+MG,Minas Gerais,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,86,86,,municípios,reported,,Tabela 15
+ES,Espírito Santo,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,25,25,,municípios,reported,,Tabela 15
+RJ,Rio de Janeiro,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,76,76,,municípios,reported,,Tabela 15
+SP,São Paulo,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,217,217,,municípios,reported,,Tabela 15
+PR,Paraná,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,39,39,,municípios,reported,,Tabela 15
+SC,Santa Catarina,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,16,16,,municípios,reported,,Tabela 15
+RS,Rio Grande do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,37,37,,municípios,reported,,Tabela 15
+MS,Mato Grosso do Sul,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,9,9,,municípios,reported,,Tabela 15
+MT,Mato Grosso,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,14,14,,municípios,reported,,Tabela 15
+GO,Goiás,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,29,29,,municípios,reported,,Tabela 15
+DF,Distrito Federal,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,0,0,,municípios,inexistent,inexistent,Tabela 15
+BR,Brasil,GCM,agregado_uf,IND-EFE-FBSP-GCM-RAIS-MUN,5022,2026,2024-01-01,2025-01-01,1357,1357,,municípios,reported,,Tabela 15
+RO,Rondônia,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,274.03750107023603,4801,1751950,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AC,Acre,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,268.5521477387344,2375,884372,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AM,Amazonas,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,200.06405011458676,8646,4321616,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RR,Roraima,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,337.045800328112,2490,738772,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PA,Pará,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,187.71245647555168,16352,8711196,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AP,Amapá,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,444.8759294596394,3588,806517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+TO,Tocantins,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,198.19026139058352,3145,1586859,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MA,Maranhão,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,160.6392284301512,11274,7018211,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PI,Piauí,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,205.3746040459772,6951,3384547,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+CE,Ceará,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,256.6988994087283,23793,9268836,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RN,Rio Grande do Norte,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,262.4422760124055,9068,3455236,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PB,Paraíba,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,247.54662540329278,10309,4164468,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PE,Pernambuco,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,164.58887762788711,15738,9562007,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AL,Alagoas,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,238.22918684768732,7673,3220848,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SE,Sergipe,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,245.27871098209337,5640,2299425,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+BA,Bahia,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,205.03793077315322,30491,14870907,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MG,Minas Gerais,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,174.1702047837933,37261,21393441,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+ES,Espírito Santo,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,223.68128361216557,9231,4126854,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RJ,Rio de Janeiro,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,247.00487071565453,42543,17223547,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+SP,São Paulo,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,178.48694759130618,82250,46081801,servidores por 100 mil habitantes,reported,composite,Tabela 2 ÷ população 2025 (IBGE)
+PR,Paraná,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,135.13289623991957,16068,11890517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SC,Santa Catarina,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,115.6097040819081,9465,8187029,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RS,Rio Grande do Sul,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,163.44315983699482,18360,11233263,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MS,Mato Grosso do Sul,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,203.3760840256429,5948,2924631,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MT,Mato Grosso,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,182.19366410874707,7094,3893659,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+GO,Goiás,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,159.7062568724811,11856,7423629,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+DF,Distrito Federal,PM,taxa,IND-EFE-FBSP-PM-TAXA,5031,2026,2025-03-01,2025-04-01,364.00959792105107,10909,2996899,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RO,Rondônia,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,40.46919147235938,709,1751950,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AC,Acre,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,76.89072019466921,680,884372,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AM,Amazonas,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,30.891222172446604,1335,4321616,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RR,Roraima,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,68.08595886146199,503,738772,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PA,Pará,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,28.9168100453715,2519,8711196,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AP,Amapá,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,168.3783478835536,1358,806517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+TO,Tocantins,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,41.4025442714192,657,1586859,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MA,Maranhão,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,21.786178842442894,1529,7018211,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PI,Piauí,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,15.038940218587598,509,3384547,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+CE,Ceará,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,21.178495336415487,1963,9268836,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RN,Rio Grande do Norte,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,26.423665416776164,913,3455236,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PB,Paraíba,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,35.3946770631927,1474,4164468,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PE,Pernambuco,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,23.781618231402675,2274,9562007,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AL,Alagoas,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,36.69840985976364,1182,3220848,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SE,Sergipe,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,40.09698076693086,922,2299425,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+BA,Bahia,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,25.203573662319318,3748,14870907,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MG,Minas Gerais,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,27.765519347729054,5940,21393441,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+ES,Espírito Santo,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,32.51871764787415,1342,4126854,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RJ,Rio de Janeiro,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,74.7523143751981,12875,17223547,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PR,Paraná,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,26.853331945112227,3193,11890517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SC,Santa Catarina,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,31.42776213446905,2573,8187029,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RS,Rio Grande do Sul,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,26.661888001732002,2995,11233263,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MS,Mato Grosso do Sul,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,57.237990023356794,1674,2924631,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MT,Mato Grosso,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,38.01051915434813,1480,3893659,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+GO,Goiás,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,39.34733268594107,2921,7423629,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+DF,Distrito Federal,CBM,taxa,IND-EFE-FBSP-CBM-TAXA,5032,2026,2025-03-01,2025-04-01,191.33110591981912,5734,2996899,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RO,Rondônia,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,85.67596107194841,1501,1751950,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AC,Acre,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,112.39614099044293,994,884372,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AM,Amazonas,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,43.756779871233356,1891,4321616,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RR,Roraima,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,82.02801405575738,606,738772,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PA,Pará,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,38.78916281989293,3379,8711196,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AP,Amapá,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,151.267735212029,1220,806517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+TO,Tocantins,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,65.16016860981347,1034,1586859,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MA,Maranhão,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,24.507670117071143,1720,7018211,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PI,Piauí,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,48.33734027035228,1636,3384547,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+CE,Ceará,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,47.38459068646807,4392,9268836,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RN,Rio Grande do Norte,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,51.74755067381794,1788,3455236,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PB,Paraíba,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,52.08348341252712,2169,4164468,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PE,Pernambuco,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,45.24154813942303,4326,9562007,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+AL,Alagoas,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,64.23774111662519,2069,3220848,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SE,Sergipe,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,61.62410167759331,1417,2299425,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+BA,Bahia,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,38.32987456649416,5700,14870907,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MG,Minas Gerais,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,41.765137268006576,8935,21393441,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+ES,Espírito Santo,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,42.74442468766765,1764,4126854,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RJ,Rio de Janeiro,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,34.97537412009269,6024,17223547,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SP,São Paulo,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,42.14245011821478,19420,46081801,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+PR,Paraná,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,31.882549766339004,3791,11890517,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+SC,Santa Catarina,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,36.924261536144556,3023,8187029,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RS,Rio Grande do Sul,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,51.37420890083318,5771,11233263,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MS,Mato Grosso do Sul,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,66.50411624577596,1945,2924631,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+MT,Mato Grosso,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,82.41605132858321,3209,3893659,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+GO,Goiás,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,46.44628658032345,3448,7423629,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+DF,Distrito Federal,PC,taxa,IND-EFE-FBSP-PC-TAXA,5033,2026,2025-03-01,2025-04-01,124.46198553905221,3730,2996899,servidores por 100 mil habitantes,reported,,Tabela 2 ÷ população 2025 (IBGE)
+RO,Rondônia,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,3.824310054510688,67,1751950,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+AM,Amazonas,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,59.69989004113276,2580,4321616,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+RR,Roraima,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,83.24625188826865,615,738772,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+PA,Pará,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,32.07366703722428,2794,8711196,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+AP,Amapá,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,153.0035944685605,1234,806517,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+TO,Tocantins,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,19.40941192632742,308,1586859,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+MA,Maranhão,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,43.030909159043524,3020,7018211,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+PI,Piauí,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,14.182104724797735,480,3384547,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+CE,Ceará,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,69.26436070289732,6420,9268836,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+RN,Rio Grande do Norte,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,32.21198204695714,1113,3455236,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+PB,Paraíba,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,37.24365273067292,1551,4164468,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+PE,Pernambuco,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,63.909177226078164,6111,9562007,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+AL,Alagoas,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,79.97893722398572,2576,3220848,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+SE,Sergipe,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,58.231949291670745,1339,2299425,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+BA,Bahia,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,67.4538546976321,10031,14870907,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+MG,Minas Gerais,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,26.531496265607764,5676,21393441,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+ES,Espírito Santo,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,46.161070878688705,1905,4126854,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+RJ,Rio de Janeiro,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,91.78713304524324,15809,17223547,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+SP,São Paulo,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,65.50091217137975,30184,46081801,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+PR,Paraná,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,37.82846448140144,4498,11890517,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+SC,Santa Catarina,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,16.01313492354797,1311,8187029,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+RS,Rio Grande do Sul,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,21.685595716934607,2436,11233263,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+MS,Mato Grosso do Sul,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,61.44364878851383,1797,2924631,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+MT,Mato Grosso,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,7.370958781958051,287,3893659,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+GO,Goiás,GCM,taxa,IND-EFE-FBSP-GCM-TAXA,5034,2026,2025-01-01,2026-01-01,44.65470998079241,3315,7423629,servidores por 100 mil habitantes,reported,refDateUncertain,Tabela 2 ÷ população 2025 (IBGE)
+RO,RO,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AC,AC,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AM,AM,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RR,RR,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PA,PA,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AP,AP,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+TO,TO,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MA,MA,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PI,PI,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+CE,CE,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RN,RN,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PB,PB,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PE,PE,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AL,AL,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SE,SE,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+BA,BA,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MG,MG,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+ES,ES,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RJ,RJ,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SP,SP,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PR,PR,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SC,SC,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RS,RS,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MS,MS,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MT,MT,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+GO,GO,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+DF,DF,PF,existente,IND-EFE-FBSP-PF,5006,2026,2025-04-01,2025-05-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RO,RO,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AC,AC,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AM,AM,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RR,RR,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PA,PA,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AP,AP,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+TO,TO,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MA,MA,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PI,PI,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+CE,CE,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RN,RN,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PB,PB,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PE,PE,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AL,AL,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SE,SE,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+BA,BA,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MG,MG,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+ES,ES,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RJ,RJ,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SP,SP,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PR,PR,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SC,SC,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RS,RS,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MS,MS,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MT,MT,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+GO,GO,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+DF,DF,PRF,existente,IND-EFE-FBSP-PRF,5007,2026,2025-03-01,2025-04-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RO,RO,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AC,AC,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AM,AM,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RR,RR,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PA,PA,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AP,AP,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+TO,TO,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MA,MA,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PI,PI,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+CE,CE,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RN,RN,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PB,PB,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PE,PE,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AL,AL,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SE,SE,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+BA,BA,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MG,MG,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+ES,ES,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RJ,RJ,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SP,SP,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PR,PR,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SC,SC,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RS,RS,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MS,MS,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MT,MT,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+GO,GO,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+DF,DF,POLICIA_PENAL_FEDERAL,existente,IND-EFE-FBSP-POLICIA_PENAL_FEDERAL,5008,2026,2023-06-01,2023-07-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RO,RO,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AC,AC,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AM,AM,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RR,RR,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PA,PA,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AP,AP,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+TO,TO,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MA,MA,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PI,PI,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+CE,CE,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RN,RN,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PB,PB,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PE,PE,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+AL,AL,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SE,SE,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+BA,BA,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MG,MG,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+ES,ES,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RJ,RJ,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SP,SP,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+PR,PR,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+SC,SC,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+RS,RS,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MS,MS,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+MT,MT,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+GO,GO,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"
+DF,DF,POLICIA_LEGISLATIVA,existente,IND-EFE-FBSP-POLICIA_LEGISLATIVA,5009,2026,2025-01-01,2026-01-01,,,,servidores,indisponivel_na_fonte_por_uf,,"Tabela 2 (""..."": informação não disponível)"

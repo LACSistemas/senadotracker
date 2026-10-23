@@ -1,0 +1,1160 @@
+{
+ "geradoEm": "2026-10-23T18:12:09.950Z",
+ "cobertura": {
+  "dcaYears": [
+   2014,
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "linhasCobertura": 81786
+ },
+ "matrizDca": [
+  {
+   "y": 2014,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5223,
+   "comFuncao06": 2208,
+   "semLinha06": 3015,
+   "naoDeclararam": 374,
+   "comRessalva": 0
+  },
+  {
+   "y": 2015,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5468,
+   "comFuncao06": 2383,
+   "semLinha06": 3085,
+   "naoDeclararam": 129,
+   "comRessalva": 0
+  },
+  {
+   "y": 2016,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5474,
+   "comFuncao06": 2323,
+   "semLinha06": 3151,
+   "naoDeclararam": 123,
+   "comRessalva": 0
+  },
+  {
+   "y": 2017,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5584,
+   "comFuncao06": 2421,
+   "semLinha06": 3163,
+   "naoDeclararam": 13,
+   "comRessalva": 0
+  },
+  {
+   "y": 2018,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5567,
+   "comFuncao06": 2528,
+   "semLinha06": 3039,
+   "naoDeclararam": 30,
+   "comRessalva": 0
+  },
+  {
+   "y": 2019,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5583,
+   "comFuncao06": 2549,
+   "semLinha06": 3034,
+   "naoDeclararam": 14,
+   "comRessalva": 0
+  },
+  {
+   "y": 2020,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5587,
+   "comFuncao06": 2621,
+   "semLinha06": 2966,
+   "naoDeclararam": 10,
+   "comRessalva": 0
+  },
+  {
+   "y": 2021,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5592,
+   "comFuncao06": 2659,
+   "semLinha06": 2933,
+   "naoDeclararam": 5,
+   "comRessalva": 0
+  },
+  {
+   "y": 2022,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5586,
+   "comFuncao06": 2801,
+   "semLinha06": 2785,
+   "naoDeclararam": 11,
+   "comRessalva": 0
+  },
+  {
+   "y": 2023,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5586,
+   "comFuncao06": 2904,
+   "semLinha06": 2682,
+   "naoDeclararam": 11,
+   "comRessalva": 0
+  },
+  {
+   "y": 2024,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5575,
+   "comFuncao06": 2958,
+   "semLinha06": 2617,
+   "naoDeclararam": 22,
+   "comRessalva": 0
+  },
+  {
+   "y": 2025,
+   "esperados": 5598,
+   "respostas": 5597,
+   "declarantes": 5530,
+   "comFuncao06": 3038,
+   "semLinha06": 2492,
+   "naoDeclararam": 67,
+   "comRessalva": 0
+  }
+ ],
+ "indicadores": {
+  "definicoes": 39,
+  "linhasPublicadas": 473866
+ },
+ "invariantes": [
+  {
+   "exercicio": 2014,
+   "source": 1,
+   "n": 2209,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2015,
+   "source": 1,
+   "n": 2384,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2016,
+   "source": 1,
+   "n": 2324,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2017,
+   "source": 1,
+   "n": 2422,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2018,
+   "source": 1,
+   "n": 2529,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2019,
+   "source": 1,
+   "n": 2550,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2020,
+   "source": 1,
+   "n": 2622,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2021,
+   "source": 1,
+   "n": 2660,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2022,
+   "source": 1,
+   "n": 2802,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2023,
+   "source": 1,
+   "n": 2905,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2024,
+   "source": 1,
+   "n": 2959,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2025,
+   "source": 1,
+   "n": 3039,
+   "soma_funcoes": 0,
+   "soma_subfuncoes": 0,
+   "duplicadas": 0,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2015,
+   "source": 2,
+   "n": 519,
+   "soma_funcoes": 160,
+   "soma_subfuncoes": 234,
+   "duplicadas": 1,
+   "rotulo_desconhecido": 235
+  },
+  {
+   "exercicio": 2016,
+   "source": 2,
+   "n": 529,
+   "soma_funcoes": 170,
+   "soma_subfuncoes": 236,
+   "duplicadas": 1,
+   "rotulo_desconhecido": 237
+  },
+  {
+   "exercicio": 2017,
+   "source": 2,
+   "n": 564,
+   "soma_funcoes": 176,
+   "soma_subfuncoes": 255,
+   "duplicadas": 1,
+   "rotulo_desconhecido": 255
+  },
+  {
+   "exercicio": 2018,
+   "source": 2,
+   "n": 620,
+   "soma_funcoes": 4,
+   "soma_subfuncoes": 0,
+   "duplicadas": 5,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2019,
+   "source": 2,
+   "n": 626,
+   "soma_funcoes": 4,
+   "soma_subfuncoes": 1,
+   "duplicadas": 6,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2020,
+   "source": 2,
+   "n": 628,
+   "soma_funcoes": 3,
+   "soma_subfuncoes": 1,
+   "duplicadas": 4,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2021,
+   "source": 2,
+   "n": 631,
+   "soma_funcoes": 1,
+   "soma_subfuncoes": 0,
+   "duplicadas": 5,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2022,
+   "source": 2,
+   "n": 651,
+   "soma_funcoes": 3,
+   "soma_subfuncoes": 0,
+   "duplicadas": 8,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2023,
+   "source": 2,
+   "n": 658,
+   "soma_funcoes": 5,
+   "soma_subfuncoes": 0,
+   "duplicadas": 9,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2024,
+   "source": 2,
+   "n": 662,
+   "soma_funcoes": 6,
+   "soma_subfuncoes": 0,
+   "duplicadas": 11,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2025,
+   "source": 2,
+   "n": 661,
+   "soma_funcoes": 6,
+   "soma_subfuncoes": 0,
+   "duplicadas": 12,
+   "rotulo_desconhecido": 0
+  },
+  {
+   "exercicio": 2026,
+   "source": 2,
+   "n": 646,
+   "soma_funcoes": 9,
+   "soma_subfuncoes": 0,
+   "duplicadas": 13,
+   "rotulo_desconhecido": 0
+  }
+ ],
+ "dcaRreo": {
+  "pares": 6048,
+  "distribuicao": {
+   "empenhada: idêntico": 5444,
+   "liquidada: idêntico": 5469,
+   "empenhada: mais de 1%": 345,
+   "liquidada: mais de 1%": 327,
+   "liquidada: até 1%": 86,
+   "empenhada: até 1%": 101,
+   "empenhada: até R$ 1,00": 158,
+   "liquidada: até R$ 1,00": 150
+  },
+  "divergentes": 1167
+ },
+ "idaEVolta": {
+  "pacotes": 336,
+  "entes": 66367,
+  "divergencias": 0
+ },
+ "federal": [
+  {
+   "exercicio": 2014,
+   "meses": 12,
+   "f_emp": "805740339089",
+   "f_liq": "652435883388",
+   "f_pago": "640670195523",
+   "d_emp": "805740445289",
+   "d_liq": "652435955388",
+   "d_pago": "640670267523"
+  },
+  {
+   "exercicio": 2015,
+   "meses": 12,
+   "f_emp": "811630744775",
+   "f_liq": "698145819516",
+   "f_pago": "686583621472",
+   "d_emp": "811644148555",
+   "d_liq": "698146137676",
+   "d_pago": "686583939632"
+  },
+  {
+   "exercicio": 2016,
+   "meses": 12,
+   "f_emp": "881608556502",
+   "f_liq": "755311203686",
+   "f_pago": "752997686508",
+   "d_emp": "881608556502",
+   "d_liq": "755311203687",
+   "d_pago": "752997686509"
+  },
+  {
+   "exercicio": 2017,
+   "meses": 12,
+   "f_emp": "975164760265",
+   "f_liq": "809742536761",
+   "f_pago": "806090486344",
+   "d_emp": "975164760265",
+   "d_liq": "809742536761",
+   "d_pago": "806090486344"
+  },
+  {
+   "exercicio": 2018,
+   "meses": 12,
+   "f_emp": "1136168313815",
+   "f_liq": "821644560458",
+   "f_pago": "774388126636",
+   "d_emp": "1136198313816",
+   "d_liq": "821644560458",
+   "d_pago": "774388126636"
+  },
+  {
+   "exercicio": 2019,
+   "meses": 12,
+   "f_emp": "1000498227418",
+   "f_liq": "843096885318",
+   "f_pago": "792969019489",
+   "d_emp": "1023371955461",
+   "d_liq": "844923256933",
+   "d_pago": "793392025642"
+  },
+  {
+   "exercicio": 2020,
+   "meses": 12,
+   "f_emp": "1248204719968",
+   "f_liq": "987205278944",
+   "f_pago": "936424084284",
+   "d_emp": "1248204719968",
+   "d_liq": "987205278944",
+   "d_pago": "936424084284"
+  },
+  {
+   "exercicio": 2021,
+   "meses": 12,
+   "f_emp": "1186609429178",
+   "f_liq": "961351189583",
+   "f_pago": "903980074636",
+   "d_emp": "1186609429179",
+   "d_liq": "961351189583",
+   "d_pago": "903980074636"
+  },
+  {
+   "exercicio": 2022,
+   "meses": 12,
+   "f_emp": "1305675077530",
+   "f_liq": "1098192881042",
+   "f_pago": "1030398509248",
+   "d_emp": "1305676201502",
+   "d_liq": "1098194005014",
+   "d_pago": "1030399633221"
+  },
+  {
+   "exercicio": 2023,
+   "meses": 12,
+   "f_emp": "1499958630120",
+   "f_liq": "1239562441041",
+   "f_pago": "1173452777977",
+   "d_emp": "1500053630131",
+   "d_liq": "1239657441046",
+   "d_pago": "1173452777982"
+  },
+  {
+   "exercicio": 2024,
+   "meses": 12,
+   "f_emp": "1957508453545",
+   "f_liq": "1604849672867",
+   "f_pago": "1517893255770",
+   "d_emp": "1957545365486",
+   "d_liq": "1604887252162",
+   "d_pago": "1517922954634"
+  },
+  {
+   "exercicio": 2025,
+   "meses": 12,
+   "f_emp": "1655133004742",
+   "f_liq": "1386394496597",
+   "f_pago": "1298333669314",
+   "d_emp": "1658132841850",
+   "d_liq": "1389308528647",
+   "d_pago": "1301231327606"
+  },
+  {
+   "exercicio": 2026,
+   "meses": 10,
+   "f_emp": "1614367189636",
+   "f_liq": "1079700291024",
+   "f_pago": "1055625487543",
+   "d_emp": null,
+   "d_liq": null,
+   "d_pago": null
+  }
+ ],
+ "orcamentoRealizado": [
+  {
+   "exercicio": 2014,
+   "real": "723323706717",
+   "pago": "723323634717",
+   "oe": "894518529887",
+   "emp": "894518423687"
+  },
+  {
+   "exercicio": 2015,
+   "real": "775371948382",
+   "pago": "775371630222",
+   "oe": "903595143595",
+   "emp": "903581739815"
+  },
+  {
+   "exercicio": 2016,
+   "real": "842310106763",
+   "pago": "842310106763",
+   "oe": "971549247872",
+   "emp": "971549247872"
+  },
+  {
+   "exercicio": 2017,
+   "real": "913321444206",
+   "pago": "913321444206",
+   "oe": "1086087023363",
+   "emp": "1086087023363"
+  },
+  {
+   "exercicio": 2018,
+   "real": "882009777788",
+   "pago": "882009777788",
+   "oe": "1245125185348",
+   "emp": "1245125185348"
+  },
+  {
+   "exercicio": 2019,
+   "real": "901761363127",
+   "pago": "901761363127",
+   "oe": "1110580319925",
+   "emp": "1110580319925"
+  },
+  {
+   "exercicio": 2020,
+   "real": "1071716276218",
+   "pago": "1071716276218",
+   "oe": "1384433111000",
+   "emp": "1384433111000"
+  },
+  {
+   "exercicio": 2021,
+   "real": "1044091776149",
+   "pago": "1044091776149",
+   "oe": "1327426916853",
+   "emp": "1327426916853"
+  },
+  {
+   "exercicio": 2022,
+   "real": "1172861416848",
+   "pago": "1172861416848",
+   "oe": "1449367726754",
+   "emp": "1449367726754"
+  },
+  {
+   "exercicio": 2023,
+   "real": "1320941705871",
+   "pago": "1320941705871",
+   "oe": "1648617903573",
+   "emp": "1648677103654"
+  },
+  {
+   "exercicio": 2024,
+   "real": "1668030825409",
+   "pago": "1668030825409",
+   "oe": "2108570537009",
+   "emp": "2108570537009"
+  },
+  {
+   "exercicio": 2025,
+   "real": "1441129447371",
+   "pago": "1441129447371",
+   "oe": "1810322558001",
+   "emp": "1810322558001"
+  },
+  {
+   "exercicio": 2026,
+   "real": "1165100092486",
+   "pago": "1171708717384",
+   "oe": "1756569951807",
+   "emp": "1783002275880"
+  }
+ ],
+ "rs": {
+  "municipiosAnos": 3648,
+  "distribuicao": {
+   "empenhada: idêntico": 2924,
+   "liquidada: idêntico": 2909,
+   "paga: idêntico": 2900,
+   "empenhada: mais de 1%": 282,
+   "liquidada: mais de 1%": 288,
+   "paga: mais de 1%": 284,
+   "sem DCA no ano": 1219,
+   "empenhada: até 1%": 46,
+   "liquidada: até 1%": 44,
+   "paga: até 1%": 48
+  },
+  "divergentes": 992
+ },
+ "pe": {
+  "anos": 13,
+  "dif": [
+   {
+    "y": 2014,
+    "emp": "38578472056"
+   },
+   {
+    "y": 2015,
+    "emp": "39696431391"
+   },
+   {
+    "y": 2016,
+    "emp": "42105169972"
+   },
+   {
+    "y": 2017,
+    "emp": "50450796026"
+   },
+   {
+    "y": 2018,
+    "emp": "54096621755"
+   },
+   {
+    "y": 2019,
+    "emp": "69003290396"
+   },
+   {
+    "y": 2020,
+    "emp": "59070875783"
+   },
+   {
+    "y": 2021,
+    "emp": "18603667667"
+   },
+   {
+    "y": 2022,
+    "emp": "20806436204"
+   },
+   {
+    "y": 2023,
+    "emp": "22082116455"
+   },
+   {
+    "y": 2024,
+    "emp": "22381335979"
+   },
+   {
+    "y": 2025,
+    "emp": "23607921296"
+   },
+   {
+    "y": 2026,
+    "emp": null
+   }
+  ],
+  "pessoal": [
+   {
+    "exercicio": 2014,
+    "pessoalPagoCentavos": "196328239875",
+    "pagoCentavos": "208063403413"
+   },
+   {
+    "exercicio": 2015,
+    "pessoalPagoCentavos": "205040344349",
+    "pagoCentavos": "213321233436"
+   },
+   {
+    "exercicio": 2016,
+    "pessoalPagoCentavos": "208508346159",
+    "pagoCentavos": "230237734524"
+   },
+   {
+    "exercicio": 2017,
+    "pessoalPagoCentavos": "240524832284",
+    "pagoCentavos": "290718219549"
+   },
+   {
+    "exercicio": 2018,
+    "pessoalPagoCentavos": "275212497660",
+    "pagoCentavos": "331258841203"
+   },
+   {
+    "exercicio": 2019,
+    "pessoalPagoCentavos": "301325091237",
+    "pagoCentavos": "357931469260"
+   },
+   {
+    "exercicio": 2020,
+    "pessoalPagoCentavos": "285714407787",
+    "pagoCentavos": "346734852201"
+   },
+   {
+    "exercicio": 2021,
+    "pessoalPagoCentavos": "238151320672",
+    "pagoCentavos": "306417029363"
+   },
+   {
+    "exercicio": 2022,
+    "pessoalPagoCentavos": "273642329693",
+    "pagoCentavos": "352423085225"
+   },
+   {
+    "exercicio": 2023,
+    "pessoalPagoCentavos": "288561226112",
+    "pagoCentavos": "360989895822"
+   },
+   {
+    "exercicio": 2024,
+    "pessoalPagoCentavos": "297103220217",
+    "pagoCentavos": "390858345403"
+   },
+   {
+    "exercicio": 2025,
+    "pessoalPagoCentavos": "313489648819",
+    "pagoCentavos": "425194096320"
+   },
+   {
+    "exercicio": 2026,
+    "pessoalPagoCentavos": "246027866088",
+    "pagoCentavos": "338898799282"
+   }
+  ]
+ },
+ "pncp": {
+  "anos": {
+   "2021": {
+    "lidos": 5308,
+    "retidos": 135,
+    "inst": 127,
+    "tema": 0,
+    "ambos": 8,
+    "meses": 12
+   },
+   "2022": {
+    "lidos": 40643,
+    "retidos": 806,
+    "inst": 740,
+    "tema": 34,
+    "ambos": 32,
+    "meses": 12
+   },
+   "2023": {
+    "lidos": 242956,
+    "retidos": 2304,
+    "inst": 1836,
+    "tema": 328,
+    "ambos": 140,
+    "meses": 12
+   },
+   "2024": {
+    "lidos": 1087184,
+    "retidos": 39893,
+    "inst": 36303,
+    "tema": 1943,
+    "ambos": 1647,
+    "meses": 12
+   },
+   "2025": {
+    "lidos": 2023034,
+    "retidos": 69733,
+    "inst": 62919,
+    "tema": 2806,
+    "ambos": 4008,
+    "meses": 12
+   },
+   "2026": {
+    "lidos": 1712181,
+    "retidos": 52279,
+    "inst": 46464,
+    "tema": 2658,
+    "ambos": 3157,
+    "meses": 10
+   }
+  }
+ },
+ "transferencias": {
+  "desemb_maior_repasse": 6,
+  "repasse_maior_global": 0,
+  "n": 26161,
+  "com_ente": 15013,
+  "ente_tipo": 23293
+ },
+ "orgaos": {
+  "unidades": 1028,
+  "tiposPncp": [
+   {
+    "esfera": "D",
+    "org_kind": 1,
+    "orgaos": 2,
+    "contratos": 177
+   },
+   {
+    "esfera": "D",
+    "org_kind": 2,
+    "orgaos": 1,
+    "contratos": 209
+   },
+   {
+    "esfera": "D",
+    "org_kind": 3,
+    "orgaos": 2,
+    "contratos": 359
+   },
+   {
+    "esfera": "D",
+    "org_kind": 5,
+    "orgaos": 2,
+    "contratos": 113
+   },
+   {
+    "esfera": "E",
+    "org_kind": 1,
+    "orgaos": 55,
+    "contratos": 32981
+   },
+   {
+    "esfera": "E",
+    "org_kind": 2,
+    "orgaos": 48,
+    "contratos": 20509
+   },
+   {
+    "esfera": "E",
+    "org_kind": 3,
+    "orgaos": 33,
+    "contratos": 6108
+   },
+   {
+    "esfera": "E",
+    "org_kind": 4,
+    "orgaos": 34,
+    "contratos": 9463
+   },
+   {
+    "esfera": "E",
+    "org_kind": 5,
+    "orgaos": 20,
+    "contratos": 64271
+   },
+   {
+    "esfera": "E",
+    "org_kind": 6,
+    "orgaos": 8,
+    "contratos": 1315
+   },
+   {
+    "esfera": "E",
+    "org_kind": 7,
+    "orgaos": 2,
+    "contratos": 43
+   },
+   {
+    "esfera": "E",
+    "org_kind": 9,
+    "orgaos": 12,
+    "contratos": 594
+   },
+   {
+    "esfera": "F",
+    "org_kind": 1,
+    "orgaos": 1,
+    "contratos": 13
+   },
+   {
+    "esfera": "F",
+    "org_kind": 2,
+    "orgaos": 1,
+    "contratos": 7
+   },
+   {
+    "esfera": "F",
+    "org_kind": 3,
+    "orgaos": 1,
+    "contratos": 42
+   },
+   {
+    "esfera": "F",
+    "org_kind": 4,
+    "orgaos": 2,
+    "contratos": 939
+   },
+   {
+    "esfera": "F",
+    "org_kind": 8,
+    "orgaos": 4,
+    "contratos": 13857
+   },
+   {
+    "esfera": "F",
+    "org_kind": 9,
+    "orgaos": 1,
+    "contratos": 1
+   },
+   {
+    "esfera": "M",
+    "org_kind": 2,
+    "orgaos": 9,
+    "contratos": 55
+   },
+   {
+    "esfera": "M",
+    "org_kind": 3,
+    "orgaos": 4,
+    "contratos": 44
+   },
+   {
+    "esfera": "M",
+    "org_kind": 4,
+    "orgaos": 52,
+    "contratos": 2052
+   },
+   {
+    "esfera": "M",
+    "org_kind": 7,
+    "orgaos": 130,
+    "contratos": 3707
+   },
+   {
+    "esfera": "M",
+    "org_kind": 9,
+    "orgaos": 78,
+    "contratos": 522
+   }
+  ]
+ },
+ "armazenamento": [
+  [
+   "banco_bytes",
+   "23303261331",
+   "24764017811",
+   "pg_database_size"
+  ],
+  [
+   "schema_civica_exec_bytes",
+   7090397184,
+   8556101632,
+   "Σ tabelas+índices"
+  ],
+  [
+   "wal_bytes_acumulados_desde_o_reinicio",
+   "",
+   "36828837888",
+   "pg_stat_wal"
+  ],
+  [
+   "c_livre_gib",
+   60.5,
+   55.1,
+   "reserva mínima 20 GiB"
+  ],
+  [
+   "d_livre_gib",
+   439.1,
+   423.3,
+   "SSD D:"
+  ],
+  [
+   "raw_total_bytes",
+   "",
+   39517896828,
+   "D:\\Civica\\raw"
+  ],
+  [
+   "raw_siconfi_bytes",
+   "",
+   269286377,
+   "pacotes JSONL.gz por UF × exercício"
+  ],
+  [
+   "raw_federal_bytes",
+   "",
+   1102859236,
+   "zips do Portal da Transparência"
+  ],
+  [
+   "raw_pncp_bytes",
+   "",
+   993333780,
+   "pacotes mensais"
+  ],
+  [
+   "raw_tcers_bytes",
+   "",
+   11403672051,
+   "empenhos municipais RS"
+  ],
+  [
+   "raw_transferegov_bytes",
+   "",
+   216069518,
+   "siconv_proposta/convenio"
+  ],
+  [
+   "staging_bytes",
+   "",
+   1435939834,
+   "caches de extração"
+  ],
+  [
+   "tabela:exec_change_log",
+   "",
+   "3447406592",
+   "linhas estimadas 15086184"
+  ],
+  [
+   "tabela:exec_ind_value",
+   "",
+   "2531319808",
+   "linhas estimadas 14172050"
+  ],
+  [
+   "tabela:exec_fin_fact",
+   "",
+   "588865536",
+   "linhas estimadas 5481475"
+  ],
+  [
+   "tabela:exec_ind_latest",
+   "",
+   "144842752",
+   "linhas estimadas 755250"
+  ],
+  [
+   "tabela:exec_fin_contract",
+   "",
+   "40140800",
+   "linhas estimadas 165150"
+  ],
+  [
+   "tabela:exec_fin_exec",
+   "",
+   "28557312",
+   "linhas estimadas 127736"
+  ],
+  [
+   "tabela:exec_fin_cov",
+   "",
+   "10944512",
+   "linhas estimadas 81786"
+  ],
+  [
+   "tabela:exec_fin_transfer",
+   "",
+   "3760128",
+   "linhas estimadas 26161"
+  ],
+  [
+   "tabela:exec_fin_supplier",
+   "",
+   "2883584",
+   "linhas estimadas 26209"
+  ],
+  [
+   "tabela:exec_fin_org",
+   "",
+   "786432",
+   "linhas estimadas 1187"
+  ],
+  [
+   "tabela:exec_ind_def",
+   "",
+   "745472",
+   "linhas estimadas 502"
+  ],
+  [
+   "tabela:exec_fin_dot",
+   "",
+   "409600",
+   "linhas estimadas 2030"
+  ],
+  [
+   "tabela:exec_ref_code",
+   "",
+   "81920",
+   "linhas estimadas 117"
+  ]
+ ],
+ "desempenho": [
+  {
+   "name": "getSecurityFinanceMunicipality(Vitória)",
+   "runs": 15,
+   "p50_ms": 9.9,
+   "p95_ms": 81.6,
+   "max_ms": 81.6,
+   "payload_bytes": 132171
+  },
+  {
+   "name": "getSecurityFinanceMunicipality(São Paulo)",
+   "runs": 15,
+   "p50_ms": 9.6,
+   "p95_ms": 26.8,
+   "max_ms": 26.8,
+   "payload_bytes": 130336
+  },
+  {
+   "name": "getSecurityFinanceMunicipality(município pequeno ES)",
+   "runs": 15,
+   "p50_ms": 5.9,
+   "p95_ms": 18.3,
+   "max_ms": 18.3,
+   "payload_bytes": 24290
+  },
+  {
+   "name": "getSecurityFinanceState(ES)",
+   "runs": 15,
+   "p50_ms": 4.3,
+   "p95_ms": 5.7,
+   "max_ms": 5.7,
+   "payload_bytes": 124052
+  },
+  {
+   "name": "getSecurityFinanceState(SP)",
+   "runs": 15,
+   "p50_ms": 4.9,
+   "p95_ms": 5.8,
+   "max_ms": 5.8,
+   "payload_bytes": 132057
+  },
+  {
+   "name": "getSecurityFinanceNational",
+   "runs": 15,
+   "p50_ms": 4.5,
+   "p95_ms": 14.9,
+   "max_ms": 14.9,
+   "payload_bytes": 118158
+  },
+  {
+   "name": "getSecurityFinanceUnion",
+   "runs": 8,
+   "p50_ms": 28.4,
+   "p95_ms": 34.7,
+   "max_ms": 34.7,
+   "payload_bytes": 51876
+  }
+ ]
+}

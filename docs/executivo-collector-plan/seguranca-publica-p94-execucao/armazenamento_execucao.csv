@@ -1,0 +1,17 @@
+medida,antes,depois,delta,unidade,observacao
+banco_bytes,23096724627,23303261331,206536704,bytes,pg_database_size
+schema_civica_exec_bytes,6889480192,7090397184,200916992,bytes,6 tabelas novas + indicadores
+exec_pri_fact_bytes,0,94560256,94560256,bytes,1.129.488 linhas (só células preenchidas)
+exec_pri_xwalk_bytes,0,6717440,6717440,bytes,28.825 linhas
+exec_pri_obs_bytes,0,5136384,5136384,bytes,28.825 linhas
+exec_pri_unit_bytes,0,393216,393216,bytes,2.357 unidades
+exec_ind_value_linhas_6000_6199,0,458577,458577,linhas,37 indicadores territoriais × 19 ciclos
+exec_publication_linhas_28_29,0,532,532,linhas,513 fatias UF×ciclo + 19 nacionais
+exec_change_log_linhas,16134052,16134052,0,linhas,primeiras cargas bootstrap; sem retenção aplicada
+wal_bytes_gerados,,,634750405,bytes,pg_stat_wal (carga + replay + relatórios)
+checkpoints_requisitados,49,50,1,contagem,
+livre_C_GiB,60.7,60.5,-0.2,GiB,reserva mínima 20 GiB preservada
+livre_D_GiB,439.8,438.9,-0.9,GiB,RAW +151 MB; backup +372 MB; cluster de ensaio e cópias exploratórias removidos
+raw_prisional_MB,0,151,151,MB,19 CSV oficiais (~141 MB) + 6 relatórios PDF e anuário (controles externos)
+backup_novo_bytes,0,371544053,371544053,bytes,D:\Civica\backups\pre-prisional-p94-20261021.dump
+duracao_carga_producao_s,,,~122,s,publicação de 513+19 fatias (RAW e extração já em cache do ensaio geral); fetch dos 19 ciclos ~137 s

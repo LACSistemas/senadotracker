@@ -1,0 +1,18 @@
+ano,vinculo,contratos,valor_global_contratado_centavos,com_referencia_de_empenho,com_fornecedor_pj,fornecedores_distintos,entes,classe_do_vinculo
+2021,"institucional (órgão de segurança, por nome)",127,317450729,117,127,99,1,vínculo institucional de alta confiança (não exato)
+2021,institucional + temático,8,14155054,8,8,5,1,vínculo institucional de alta confiança (não exato)
+2022,"institucional (órgão de segurança, por nome)",740,1553697349,679,737,505,3,vínculo institucional de alta confiança (não exato)
+2022,temático derivado (objeto),34,50543067,31,30,28,5,"derivado, não é despesa oficial da função 06"
+2022,institucional + temático,32,71152515,29,32,26,2,vínculo institucional de alta confiança (não exato)
+2023,"institucional (órgão de segurança, por nome)",1836,249427584057,1108,1818,1204,38,vínculo institucional de alta confiança (não exato)
+2023,temático derivado (objeto),328,4386994225,183,319,195,76,"derivado, não é despesa oficial da função 06"
+2023,institucional + temático,140,213289264169,64,139,119,16,vínculo institucional de alta confiança (não exato)
+2024,"institucional (órgão de segurança, por nome)",36303,1551354650488,18570,35290,7945,138,vínculo institucional de alta confiança (não exato)
+2024,temático derivado (objeto),1943,112215152737,670,1894,1078,548,"derivado, não é despesa oficial da função 06"
+2024,institucional + temático,1647,164565295136,662,1572,893,84,vínculo institucional de alta confiança (não exato)
+2025,"institucional (órgão de segurança, por nome)",62919,2203599531192,31727,61089,12740,175,vínculo institucional de alta confiança (não exato)
+2025,temático derivado (objeto),2806,172404759083,957,2670,1458,690,"derivado, não é despesa oficial da função 06"
+2025,institucional + temático,4008,103817897344678,1391,3886,1518,115,vínculo institucional de alta confiança (não exato)
+2026,"institucional (órgão de segurança, por nome)",46464,14688490712813,23529,43902,10921,184,vínculo institucional de alta confiança (não exato)
+2026,temático derivado (objeto),2658,129924289283,837,2570,1485,739,"derivado, não é despesa oficial da função 06"
+2026,institucional + temático,3157,79853313546548,1080,2986,1272,127,vínculo institucional de alta confiança (não exato)

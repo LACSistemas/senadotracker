@@ -1,0 +1,42 @@
+{
+  "geradoEm": "2026-10-23",
+  "nota": "Contrato para a P9.8. Todos os read models são SOMENTE SELECT, recebem um Pool/cliente (`Q`) e já devolvem as restrições de apresentação no payload (`restrictions`/equivalente). Entidade = código IBGE (UF: 2 dígitos; município: 7 dígitos). Ids de indicador nunca são renumerados.",
+  "readModels": [
+    { "onda": "P9.1", "funcoes": [
+      { "nome": "getSegState(q, ufCode, opt?)", "escopo": "uf", "retorna": "SegState" },
+      { "nome": "getSegMunicipality(q, entityId, opt?)", "escopo": "municipio", "retorna": "SegMunicipality | null" } ], "fontes": ["SIM (óbitos, município)", "VDE/Sinesp (UF mensal; município só em 11 de 31 eventos)"], "periodicidade": "SIM anual; VDE mensal", "ultimaCompetencia": "VDE 2026-09; SIM 2025 preliminar" },
+    { "onda": "P9.2", "funcoes": [
+      { "nome": "getTrafficState(q, ufCode, o?)", "escopo": "uf", "retorna": "TrafficState" },
+      { "nome": "getTrafficMunicipality(q, entityId, o?)", "escopo": "municipio", "retorna": "TrafficMunicipality | null" } ], "fontes": ["Senatran (frota)", "RENAEST", "PRF datatran", "SIM"], "ultimaCompetencia": "2026-09 (frota/PRF); RENAEST sem AP, MA, PA, RN em 2024" },
+    { "onda": "P9.3", "funcoes": [
+      { "nome": "getSecurityStaffingNational(q)", "escopo": "brasil", "retorna": "StaffNational | null" },
+      { "nome": "getSecurityStaffingState(q, ufCode)", "escopo": "uf", "retorna": "StaffUfState | null" },
+      { "nome": "getSecurityStructureMunicipality(q, ibge7)", "escopo": "municipio", "retorna": "StaffMunicipality | null" } ], "fontes": ["FBSP 2025", "ESTADIC 2018/2022", "MUNIC 2019/2023", "SIAPE"], "regraDeExibicao": "efetivo estadual NÃO é lotação municipal; fontes lado a lado, nunca somadas", "ultimaCompetencia": "2023–2025 (edições)" },
+    { "onda": "P9.4", "funcoes": [
+      { "nome": "getPrisonNational(q)", "escopo": "brasil", "retorna": "PrisonNational | null" },
+      { "nome": "getPrisonState(q, ufCode)", "escopo": "uf", "retorna": "PrisonState | null" },
+      { "nome": "getPrisonMunicipality(q, ibge7)", "escopo": "municipio", "retorna": "PrisonMunicipality | null" } ], "fontes": ["SISDEPEN/SENAPPEN"], "ultimaCompetencia": "2025-07 (semestral)" },
+    { "onda": "P9.5", "funcoes": [
+      { "nome": "getSecurityFinanceNational(q, {from?, to?})", "escopo": "brasil", "retorna": "FinanceProfile | null" },
+      { "nome": "getSecurityFinanceState(q, ufCode, {from?, to?})", "escopo": "uf", "retorna": "FinanceProfile | null" },
+      { "nome": "getSecurityFinanceMunicipality(q, ibge7, {from?, to?})", "escopo": "municipio", "retorna": "MunicipalFinance | null" },
+      { "nome": "getSecurityFinanceUnion(q)", "escopo": "brasil (União)", "retorna": "ver tipo exportado" },
+      { "nome": "getSecurityFinanceOrgans(q, ...)", "escopo": "órgãos", "retorna": "ver tipo exportado" } ], "fontes": ["Siconfi DCA/RREO", "Portal da Transparência", "TCE-PE", "TCE-RS", "PNCP 2021–2026 (parcial em 2026)", "Transferegov"], "regraDeExibicao": "estágios (empenhada, liquidada, paga) e esferas nunca se somam; valor contratado não é pago", "ultimaCompetencia": "DCA 2025; RREO 2026 (4º bim.); PNCP 2026-10" },
+    { "onda": "P9.6", "funcoes": [
+      { "nome": "getStateCrimeState(q, ufCode)", "escopo": "uf", "retorna": "StateCrimePayload (source, series[], restrictions, coverage)" },
+      { "nome": "getStateCrimeMunicipality(q, ibge7)", "escopo": "municipio", "retorna": "StateCrimePayload; fonte = a da UF do município; vazio = ausência, não zero" } ], "fontes": ["ISP-RJ", "SEJUSP-MG", "SESP-ES", "SSP-RS", "SDS-PE", "SSPDS-CE", "SSP-SP"], "regraDeExibicao": "uma fonte por UF; sem alinhar UFs lado a lado sem aviso (comparability)", "ultimaCompetencia": "2026-07 (MG) a 2026-09" },
+    { "onda": "P9.7", "funcoes": [
+      { "nome": "getOrganizedCrimeNational(q)", "escopo": "brasil", "retorna": "séries anuais Σ-UF só do VDE, com ufsWithData e complete; stateSourcesOnly" },
+      { "nome": "getOrganizedCrimeState(q, ufCode)", "escopo": "uf", "retorna": "OcPayload (families[].series[] mensais, VDE Estadual e PF/PRF separados + fonte estadual da UF)" },
+      { "nome": "getOrganizedCrimeMunicipality(q, ibge7)", "escopo": "municipio", "retorna": "OcPayload (só indicadores com município na fonte)" } ], "fontes": ["VDE", "ISP-RJ", "SSP-RS", "SSP-SP"], "regraDeExibicao": "atividade policial registrada ≠ organização criminosa; nunca somar Estadual com PF/PRF, nem fontes, nem massa com contagem", "ultimaCompetencia": "2026-09 (VDE/RJ/RS); 2026-08 (SP)" }
+  ],
+  "regrasGlobaisDeExibicao": [
+    "Ausência (sem linha) nunca é zero; zero só quando a fonte declara grade completa (RJ, MG, RS) ou o VDE reporta zero.",
+    "Último mês de fontes de microdado (ES, PE, CE, SP) é preliminar e vem com flag.",
+    "Células sensíveis pequenas aparecem suprimidas (valor nulo + flag): mostrar 'suprimido', não zero.",
+    "Estados só se comparam com equivalência oficial; nenhuma comprovada: usar uma fonte por UF.",
+    "Taxa por 100 mil só com população do mesmo ano; sem 2022–2023; nenhuma taxa foi criada na P9.6/P9.7.",
+    "Sem mapa, ranking ou texto que sugira facção, controle territorial ou culpa."
+  ],
+  "casosDeProntidao": "ver prontidao_casos_p98.json"
+}

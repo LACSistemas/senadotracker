@@ -1,0 +1,169 @@
+{
+ "at": "2026-10-21T20:19:09.942Z",
+ "profiles": [
+  {
+   "kind": "estado",
+   "id": 32,
+   "label": "ES",
+   "queries": 5,
+   "wallMs": 39.3,
+   "dbMs": 76.6,
+   "metrics": 62,
+   "points": 5530,
+   "json_bytes": 785127
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP",
+   "queries": 5,
+   "wallMs": 34.6,
+   "dbMs": 34.3,
+   "metrics": 62,
+   "points": 5785,
+   "json_bytes": 794586
+  },
+  {
+   "kind": "estado",
+   "id": 53,
+   "label": "DF",
+   "queries": 5,
+   "wallMs": 35.7,
+   "dbMs": 36.3,
+   "metrics": 62,
+   "points": 5788,
+   "json_bytes": 818143
+  },
+  {
+   "kind": "estado",
+   "id": 14,
+   "label": "RR",
+   "queries": 5,
+   "wallMs": 34.8,
+   "dbMs": 31.9,
+   "metrics": 62,
+   "points": 5788,
+   "json_bytes": 830296
+  },
+  {
+   "kind": "municipio",
+   "id": 3205309,
+   "label": "Vitória/ES",
+   "queries": 6,
+   "wallMs": 9.1,
+   "dbMs": 15.9,
+   "metrics": 32,
+   "points": 1701,
+   "json_bytes": 241927
+  },
+  {
+   "kind": "municipio",
+   "id": 3550308,
+   "label": "São Paulo/SP",
+   "queries": 6,
+   "wallMs": 12.1,
+   "dbMs": 13.4,
+   "metrics": 32,
+   "points": 1819,
+   "json_bytes": 251737
+  },
+  {
+   "kind": "municipio",
+   "id": 3304557,
+   "label": "Rio de Janeiro/RJ",
+   "queries": 6,
+   "wallMs": 10.7,
+   "dbMs": 17.8,
+   "metrics": 32,
+   "points": 1823,
+   "json_bytes": 253349
+  },
+  {
+   "kind": "municipio",
+   "id": 3200359,
+   "label": "Alto Rio Novo/ES (pequeno)",
+   "queries": 6,
+   "wallMs": 5.8,
+   "dbMs": 8,
+   "metrics": 30,
+   "points": 1668,
+   "json_bytes": 237405
+  },
+  {
+   "kind": "municipio",
+   "id": 5101837,
+   "label": "Boa Esperança do Norte/MT",
+   "queries": 6,
+   "wallMs": 5.1,
+   "dbMs": 6.9,
+   "metrics": 13,
+   "points": 1604,
+   "json_bytes": 215475
+  },
+  {
+   "kind": "municipio",
+   "id": 5300108,
+   "label": "Brasília/DF",
+   "queries": 6,
+   "wallMs": 11,
+   "dbMs": 10.8,
+   "metrics": 32,
+   "points": 1823,
+   "json_bytes": 257544
+  }
+ ],
+ "plans": [
+  {
+   "name": "série de um território (estado ou município): todos os indicadores de Segurança",
+   "executionMs": 0.607,
+   "planningMs": 0.119,
+   "plan": [
+    "Index Scan on exec_ind_value_pkey"
+   ]
+  },
+  {
+   "name": "série de uma UF (município de grande porte ou UF)",
+   "executionMs": 3.323,
+   "planningMs": 0.094,
+   "plan": [
+    "Sort",
+    "Bitmap Heap Scan on exec_ind_value",
+    "Bitmap Index Scan on exec_ind_value_entity_id_indicator_id_period_start_idx"
+   ]
+  },
+  {
+   "name": "cobertura mensal do VDE da UF",
+   "executionMs": 2.628,
+   "planningMs": 0.095,
+   "plan": [
+    "Sort",
+    "Bitmap Heap Scan on exec_seg_cov",
+    "Bitmap Index Scan on exec_seg_cov_pkey"
+   ]
+  },
+  {
+   "name": "fontes publicadas (SIM e VDE)",
+   "executionMs": 0.191,
+   "planningMs": 0.07,
+   "plan": [
+    "Aggregate",
+    "Index Scan on exec_publication_pkey"
+   ]
+  },
+  {
+   "name": "último valor (exec_ind_latest) de um indicador para todos os municípios de uma UF",
+   "executionMs": 0.273,
+   "planningMs": 2.622,
+   "plan": [
+    "Nested Loop",
+    "Bitmap Heap Scan on exec_entity",
+    "Bitmap Index Scan on exec_entity_uf_code_kind_idx",
+    "Index Scan on exec_ind_latest_entity_id_indicator_id_idx"
+   ]
+  }
+ ],
+ "contractIds": {
+  "sim": 13,
+  "vde": 49
+ }
+}

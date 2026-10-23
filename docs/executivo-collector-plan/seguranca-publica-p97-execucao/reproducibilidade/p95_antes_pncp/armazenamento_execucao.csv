@@ -1,0 +1,26 @@
+medida,antes,depois,nota
+banco_bytes,23303261331,24071031955,pg_database_size
+schema_civica_exec_bytes,7090397184,7863214080,Σ tabelas+índices
+wal_bytes_acumulados_desde_o_reinicio,,35405646872,pg_stat_wal
+c_livre_gib,60.5,57.5,reserva mínima 20 GiB
+d_livre_gib,439.1,418.4,SSD D:
+raw_total_bytes,,38274355319,D:\Civica\raw
+raw_siconfi_bytes,,269286377,pacotes JSONL.gz por UF × exercício
+raw_federal_bytes,,1102859236,zips do Portal da Transparência
+raw_pncp_bytes,,871254107,pacotes mensais
+raw_tcers_bytes,,11403672051,empenhos municipais RS
+raw_transferegov_bytes,,216069518,siconv_proposta/convenio
+staging_bytes,,1126070180,caches de extração
+tabela:exec_change_log,,3447406592,linhas estimadas 15086184
+tabela:exec_ind_value,,1863311360,linhas estimadas 10081515
+tabela:exec_fin_fact,,588865536,linhas estimadas 5481475
+tabela:exec_ind_latest,,136560640,linhas estimadas 724000
+tabela:exec_fin_exec,,28557312,linhas estimadas 127736
+tabela:exec_fin_contract,,27738112,linhas estimadas 112871
+tabela:exec_fin_cov,,10944512,linhas estimadas 81786
+tabela:exec_fin_transfer,,3760128,linhas estimadas 26161
+tabela:exec_fin_supplier,,2211840,linhas estimadas 20126
+tabela:exec_fin_org,,786432,linhas estimadas 1187
+tabela:exec_ind_def,,516096,linhas estimadas 362
+tabela:exec_fin_dot,,409600,linhas estimadas 2030
+tabela:exec_ref_code,,81920,linhas estimadas 117

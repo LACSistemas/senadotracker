@@ -1,0 +1,144 @@
+{
+ "pares": 5597,
+ "casam": 5564,
+ "nao_casam": 33,
+ "nao_casam_amostra": [
+  [
+   "AC",
+   "NÃO INFORMADO"
+  ],
+  [
+   "AL",
+   "NÃO INFORMADO"
+  ],
+  [
+   "AM",
+   "NÃO INFORMADO"
+  ],
+  [
+   "AP",
+   "NÃO INFORMADO"
+  ],
+  [
+   "BA",
+   "NÃO INFORMADO"
+  ],
+  [
+   "CE",
+   "NÃO INFORMADO"
+  ],
+  [
+   "DF",
+   "NÃO INFORMADO"
+  ],
+  [
+   "ES",
+   "NÃO INFORMADO"
+  ],
+  [
+   "GO",
+   "NÃO INFORMADO"
+  ],
+  [
+   "MA",
+   "NÃO INFORMADO"
+  ],
+  [
+   "MG",
+   "BARÃO DE MONTE ALTO"
+  ],
+  [
+   "MG",
+   "NÃO INFORMADO"
+  ],
+  [
+   "MS",
+   "NÃO INFORMADO"
+  ],
+  [
+   "MT",
+   "NÃO INFORMADO"
+  ],
+  [
+   "MT",
+   "SANTO ANTÔNIO DO LEVERGER"
+  ],
+  [
+   "PA",
+   "NÃO INFORMADO"
+  ],
+  [
+   "PB",
+   "NÃO INFORMADO"
+  ],
+  [
+   "PE",
+   "NÃO INFORMADO"
+  ],
+  [
+   "PI",
+   "NÃO INFORMADO"
+  ],
+  [
+   "PR",
+   "NÃO INFORMADO"
+  ],
+  [
+   "RJ",
+   "NÃO INFORMADO"
+  ],
+  [
+   "RN",
+   "ARÊS"
+  ],
+  [
+   "RN",
+   "AÇU"
+  ],
+  [
+   "RN",
+   "NÃO INFORMADO"
+  ],
+  [
+   "RO",
+   "NÃO INFORMADO"
+  ],
+  [
+   "RR",
+   "NÃO INFORMADO"
+  ],
+  [
+   "RR",
+   "SÃO LUIZ"
+  ],
+  [
+   "RS",
+   "NÃO INFORMADO"
+  ],
+  [
+   "SC",
+   "NÃO INFORMADO"
+  ],
+  [
+   "SE",
+   "GRACHO CARDOSO"
+  ],
+  [
+   "SE",
+   "NÃO INFORMADO"
+  ],
+  [
+   "SP",
+   "NÃO INFORMADO"
+  ],
+  [
+   "TO",
+   "NÃO INFORMADO"
+  ]
+ ],
+ "ibge_colisoes": 0,
+ "ES": {
+  "pares": 79,
+  "casam": 78
+ }
+}

@@ -1,0 +1,238 @@
+{
+ "generatedAt": "2026-10-23T20:54:37.199Z",
+ "base": "http://127.0.0.1:3102",
+ "reducedMotionEmulated": true,
+ "results": [
+  {
+   "path": "/municipios/3205309/seguranca",
+   "width": 1440,
+   "controls": 138,
+   "unnamed": [
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 13,
+   "svgNoLabel": 0,
+   "contrastChecked": 813,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/municipios/3205309\">Vitória",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe"
+   ],
+   "targetsBelow24Count": 9,
+   "controlsBelow32px": 87,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  },
+  {
+   "path": "/municipios/3205309/seguranca",
+   "width": 390,
+   "controls": 114,
+   "unnamed": [
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 13,
+   "svgNoLabel": 0,
+   "contrastChecked": 743,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/municipios/3205309\">Vitória",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe"
+   ],
+   "targetsBelow24Count": 9,
+   "controlsBelow32px": 81,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  },
+  {
+   "path": "/estados/ES/seguranca",
+   "width": 1440,
+   "controls": 202,
+   "unnamed": [
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 24,
+   "svgNoLabel": 0,
+   "contrastChecked": 1111,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe",
+    "<a class=\"underline\" href=\"https://dadosabertos.camara.leg.br/\">Câmara dos Deput"
+   ],
+   "targetsBelow24Count": 8,
+   "controlsBelow32px": 152,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  },
+  {
+   "path": "/estados/ES/seguranca",
+   "width": 390,
+   "controls": 178,
+   "unnamed": [
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a aria-current=\"page\" class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 24,
+   "svgNoLabel": 0,
+   "contrastChecked": 1036,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe",
+    "<a class=\"underline\" href=\"https://dadosabertos.camara.leg.br/\">Câmara dos Deput"
+   ],
+   "targetsBelow24Count": 8,
+   "controlsBelow32px": 146,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  },
+  {
+   "path": "/municipios/3200359/seguranca",
+   "width": 1440,
+   "controls": 125,
+   "unnamed": [
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 10,
+   "svgNoLabel": 0,
+   "contrastChecked": 679,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/municipios/3200359\">Alto Ri",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe"
+   ],
+   "targetsBelow24Count": 9,
+   "controlsBelow32px": 77,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  },
+  {
+   "path": "/municipios/3200359/seguranca",
+   "width": 390,
+   "controls": 104,
+   "unnamed": [
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<a class=\"focus-ring rounded-xl px-3 py-2 text-sm font-semibold aria-[current=page]:bg-sec",
+    "<button type=\"button\" aria-pressed=\"true\" class=\"rounded-full border px-2.5 py-1 text-[0.7"
+   ],
+   "headingSkips": 0,
+   "h1": 1,
+   "svgImg": 10,
+   "svgNoLabel": 0,
+   "contrastChecked": 627,
+   "contrastFails": [],
+   "contrastFailCount": 0,
+   "targetsBelow24": [
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados\">Estados</a>",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/estados/ES\">Espírito Santo<",
+    "<a class=\"hover:text-primary hover:underline\" href=\"/municipios/3200359\">Alto Ri",
+    "<button type=\"button\" class=\"font-semibold text-primary underline\">por 100 mil h",
+    "<a class=\"underline\" href=\"/legislativo\">Legislativo</a>",
+    "<a class=\"underline\" href=\"/comparar\">Comparar</a>",
+    "<a class=\"underline\" href=\"/metodologia\">Metodologia</a>",
+    "<a class=\"underline\" href=\"https://www12.senado.leg.br/dados-abertos/\">Senado Fe"
+   ],
+   "targetsBelow24Count": 9,
+   "controlsBelow32px": 71,
+   "landmarks": {
+    "main": 1,
+    "nav": 7
+   },
+   "lang": "pt-BR",
+   "keyboard": {
+    "tabbed": 40,
+    "withoutVisibleFocus": 0
+   }
+  }
+ ]
+}

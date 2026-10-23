@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-10-23T12:10:58.162Z",
+  "note": "leitura = 1 consulta por entidade × indicadores da fonte da UF; medianas de 5 execuções após aquecimento",
+  "uf_31": {
+    "series": 18,
+    "ms_median": 6.3,
+    "ms_max": 16
+  },
+  "uf_32": {
+    "series": 10,
+    "ms_median": 3.6,
+    "ms_max": 3.7
+  },
+  "uf_33": {
+    "series": 55,
+    "ms_median": 24.2,
+    "ms_max": 25.5
+  },
+  "uf_35": {
+    "series": 24,
+    "ms_median": 3.8,
+    "ms_max": 4.4
+  },
+  "uf_43": {
+    "series": 15,
+    "ms_median": 7.2,
+    "ms_max": 8.1
+  },
+  "uf_26": {
+    "series": 13,
+    "ms_median": 5.2,
+    "ms_max": 5.5
+  },
+  "uf_23": {
+    "series": 5,
+    "ms_median": 0.4,
+    "ms_max": 0.4
+  },
+  "municipio_3106200": {
+    "series": 18,
+    "ms_median": 5,
+    "ms_max": 5.7
+  },
+  "municipio_3205309": {
+    "series": 10,
+    "ms_median": 3.1,
+    "ms_max": 3.3
+  },
+  "municipio_3304557": {
+    "series": 55,
+    "ms_median": 22.2,
+    "ms_max": 26
+  },
+  "municipio_3550308": {
+    "series": 24,
+    "ms_median": 3.6,
+    "ms_max": 4
+  },
+  "municipio_4314902": {
+    "series": 15,
+    "ms_median": 7.6,
+    "ms_max": 8
+  },
+  "municipio_2611606": {
+    "series": 11,
+    "ms_median": 4.9,
+    "ms_max": 7.5
+  }
+}

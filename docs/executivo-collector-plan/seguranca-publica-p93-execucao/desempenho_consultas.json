@@ -1,0 +1,176 @@
+{
+ "at": "2026-10-22T00:04:34.834Z",
+ "profiles": [
+  {
+   "kind": "estado",
+   "id": 32,
+   "label": "ES",
+   "queries": 3,
+   "dbMs": 1.7,
+   "bytes": 42344,
+   "points": 56,
+   "wallMsMedian": 2.3,
+   "wallMsMax": 6.6,
+   "wallMsFirst": 207.3
+  },
+  {
+   "kind": "estado",
+   "id": 35,
+   "label": "SP",
+   "queries": 3,
+   "dbMs": 2.4,
+   "bytes": 41893,
+   "points": 55,
+   "wallMsMedian": 2.1,
+   "wallMsMax": 2.5,
+   "wallMsFirst": 2.5
+  },
+  {
+   "kind": "estado",
+   "id": 11,
+   "label": "RO",
+   "queries": 3,
+   "dbMs": 1.4,
+   "bytes": 42527,
+   "points": 56,
+   "wallMsMedian": 1.4,
+   "wallMsMax": 1.5,
+   "wallMsFirst": 1.5
+  },
+  {
+   "kind": "estado",
+   "id": 53,
+   "label": "DF",
+   "queries": 3,
+   "dbMs": 1.6,
+   "bytes": 41733,
+   "points": 55,
+   "wallMsMedian": 1.3,
+   "wallMsMax": 1.5,
+   "wallMsFirst": 1.4
+  },
+  {
+   "kind": "municipio",
+   "id": 3205309,
+   "label": "Vitória/ES",
+   "queries": 4,
+   "dbMs": 2,
+   "bytes": 28472,
+   "points": 36,
+   "wallMsMedian": 1.8,
+   "wallMsMax": 5.8,
+   "wallMsFirst": 41.7
+  },
+  {
+   "kind": "municipio",
+   "id": 3550308,
+   "label": "São Paulo/SP",
+   "queries": 4,
+   "dbMs": 2,
+   "bytes": 28508,
+   "points": 36,
+   "wallMsMedian": 1.6,
+   "wallMsMax": 1.7,
+   "wallMsFirst": 2.5
+  },
+  {
+   "kind": "municipio",
+   "id": 3304557,
+   "label": "Rio de Janeiro/RJ",
+   "queries": 4,
+   "dbMs": 2.7,
+   "bytes": 28521,
+   "points": 36,
+   "wallMsMedian": 1.4,
+   "wallMsMax": 1.7,
+   "wallMsFirst": 1.3
+  },
+  {
+   "kind": "municipio",
+   "id": 3200359,
+   "label": "Alto Rio Novo/ES",
+   "queries": 4,
+   "dbMs": 1.9,
+   "bytes": 24716,
+   "points": 30,
+   "wallMsMedian": 1.3,
+   "wallMsMax": 2.1,
+   "wallMsFirst": 1.8
+  },
+  {
+   "kind": "municipio",
+   "id": 1100015,
+   "label": "Alta Floresta D'Oeste/RO",
+   "queries": 4,
+   "dbMs": 2,
+   "bytes": 24725,
+   "points": 30,
+   "wallMsMedian": 1.2,
+   "wallMsMax": 1.3,
+   "wallMsFirst": 1.6
+  },
+  {
+   "kind": "brasil",
+   "id": 0,
+   "label": "Brasil",
+   "queries": 3,
+   "dbMs": 1.9,
+   "bytes": 10232,
+   "points": 10,
+   "wallMsMedian": 1.4,
+   "wallMsMax": 1.8,
+   "wallMsFirst": 1.4
+  }
+ ],
+ "plans": [
+  {
+   "name": "UF: todos os indicadores de efetivo de uma UF (entidade × indicadores)",
+   "executionMs": 0.155,
+   "node": "Index Scan",
+   "index": "exec_ind_value_pkey",
+   "rows": 50,
+   "sharedHit": 103,
+   "sharedRead": 0
+  },
+  {
+   "name": "município: indicadores municipais (guarda, delegacias, estruturas) de um município",
+   "executionMs": 0.066,
+   "node": "Index Scan",
+   "index": "exec_ind_value_pkey",
+   "rows": 34,
+   "sharedHit": 88,
+   "sharedRead": 0
+  },
+  {
+   "name": "Brasil: totais nacionais e série SIAPE",
+   "executionMs": 0.099,
+   "node": "Index Scan",
+   "index": "exec_ind_value_pkey",
+   "rows": 58,
+   "sharedHit": 72,
+   "sharedRead": 0
+  },
+  {
+   "name": "publicações das fontes de efetivos",
+   "executionMs": 0.036,
+   "node": "Aggregate",
+   "index": null,
+   "rows": 4,
+   "sharedHit": 4,
+   "sharedRead": 0
+  },
+  {
+   "name": "contraprova: último valor de \"município possui guarda\" para todos os municípios de uma UF (lista, não perfil)",
+   "executionMs": 0.375,
+   "node": "Nested Loop",
+   "index": null,
+   "rows": 78,
+   "sharedHit": 314,
+   "sharedRead": 2
+  }
+ ],
+ "contract": {
+  "indicators": 62,
+  "municipalIndicators": 18
+ }
+}

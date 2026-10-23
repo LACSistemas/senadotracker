@@ -1,0 +1,325 @@
+﻿uf,familia,fonte,estado,evidencia,granularidade,periodo
+AC,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 164 vítimas; latrocínio 6; lesão seguida de morte 1; mortes a esclarecer 116; 21 municípios com ≥ 1 vítima; mortes por intervenção 9,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+AC,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 183; intervenção Y35 1; causa indeterminada Y10–Y34 16; 19 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+AC,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+AC,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 2.375; ESTADIC 2022: PM 2556 e PC 1069,UF (sem município nem unidade),2022 e 2025
+AC,guarda_municipal,S08,READY_FOR_CONTRACT,0 de 22 municípios com guarda; efetivo 0 (31/12/2022),município (IBGE),2023
+AC,unidades_prisionais,S50,READY_WITH_CAVEATS,14 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+AC,frota,S70,READY_WITH_CAVEATS,22 municípios; 406065 veículos (set/2026),município (nome),2026-09
+AC,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 4346 sinistros; 53 óbitos; 20 municípios com registro,município (IBGE),2018-01..2026-05
+AC,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+AC,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran AC – Departamento Estadual de Trânsito),UF,n/a
+AC,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+AC,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+AL,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 903 vítimas; latrocínio 6; lesão seguida de morte 8; mortes a esclarecer 741; 82 municípios com ≥ 1 vítima; mortes por intervenção 109,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+AL,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 1107; intervenção Y35 9; causa indeterminada Y10–Y34 225; 88 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+AL,crime_estadual,S28,READY_WITH_CAVEATS,CVLI por cidade 2012-01..2026-08,município,ver fonte
+AL,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 7.673; ESTADIC 2022: PM 6810 e PC 1859,UF (sem município nem unidade),2022 e 2025
+AL,guarda_municipal,S08,READY_FOR_CONTRACT,64 de 102 municípios com guarda; efetivo 2718 (31/12/2022),município (IBGE),2023
+AL,unidades_prisionais,S50,READY_WITH_CAVEATS,12 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+AL,frota,S70,READY_WITH_CAVEATS,102 municípios; 1305075 veículos (set/2026),município (nome),2026-09
+AL,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 3517 sinistros; 796 óbitos; 94 municípios com registro,município (IBGE),2018-01..2026-05
+AL,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+AL,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Portal de Serviços - Departamento Estadual de Trân),UF,n/a
+AL,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+AL,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+AM,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 707 vítimas; latrocínio 19; lesão seguida de morte 14; mortes a esclarecer 4; 55 municípios com ≥ 1 vítima; mortes por intervenção 43,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+AM,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 842; intervenção Y35 6; causa indeterminada Y10–Y34 207; 57 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+AM,crime_estadual,S37,NEEDS_VALIDATION,Anuário 2026 em PDF,a validar,ver fonte
+AM,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 8.646; ESTADIC 2022: PM 7980 e PC 1848,UF (sem município nem unidade),2022 e 2025
+AM,guarda_municipal,S08,READY_FOR_CONTRACT,44 de 62 municípios com guarda; efetivo 2091 (31/12/2022),município (IBGE),2023
+AM,unidades_prisionais,S50,READY_WITH_CAVEATS,33 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+AM,frota,S70,READY_WITH_CAVEATS,62 municípios; 1344764 veículos (set/2026),município (nome),2026-09
+AM,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 273 sinistros; 196 óbitos; 27 municípios com registro,município (IBGE),2018-01..2026-05
+AM,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+AM,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran-AM - Departamento Estadual de Trânsito do A),UF,n/a
+AM,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+AM,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+AP,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 185 vítimas; latrocínio 4; lesão seguida de morte 6; mortes a esclarecer 8; 15 municípios com ≥ 1 vítima; mortes por intervenção 138,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+AP,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 232; intervenção Y35 110; causa indeterminada Y10–Y34 25; 15 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+AP,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+AP,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 3.588; ESTADIC 2022: PM 3112 e PC 998,UF (sem município nem unidade),2022 e 2025
+AP,guarda_municipal,S08,READY_FOR_CONTRACT,6 de 16 municípios com guarda; efetivo 750 (31/12/2022),município (IBGE),2023
+AP,unidades_prisionais,S50,READY_WITH_CAVEATS,10 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+AP,frota,S70,READY_WITH_CAVEATS,16 municípios; 298022 veículos (set/2026),município (nome),2026-09
+AP,sinistros_renaest,S72,NEEDS_VALIDATION,sem relato no RENAEST em 2024 (nenhuma linha com uf_acidente = AP),município (IBGE),2018-01..2026-05
+AP,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+AP,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (),UF,n/a
+AP,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+AP,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+BA,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 3663 vítimas; latrocínio 60; lesão seguida de morte 78; mortes a esclarecer 873; 336 municípios com ≥ 1 vítima; mortes por intervenção 1570,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+BA,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 4549; intervenção Y35 801; causa indeterminada Y10–Y34 1347; 365 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+BA,crime_estadual,S29,NEEDS_VALIDATION,"XLSX de mortes violentas 2023, anuário e microdados CVLI (a validar série mensal)",a validar,ver fonte
+BA,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 30.491; ESTADIC 2022: PM 29678 e PC 5397,UF (sem município nem unidade),2022 e 2025
+BA,guarda_municipal,S08,READY_FOR_CONTRACT,214 de 417 municípios com guarda; efetivo 9524 (31/12/2022),município (IBGE),2023
+BA,unidades_prisionais,S50,READY_WITH_CAVEATS,27 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+BA,frota,S70,READY_WITH_CAVEATS,417 municípios; 5968990 veículos (set/2026),município (nome),2026-09
+BA,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 49818 sinistros; 1762 óbitos; 407 municípios com registro,município (IBGE),2018-01..2026-05
+BA,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+BA,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Início | detran - Departamento Estadual de Trânsit),UF,n/a
+BA,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+BA,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+CE,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 2927 vítimas; latrocínio 25; lesão seguida de morte 22; mortes a esclarecer 383; 166 municípios com ≥ 1 vítima; mortes por intervenção 200,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+CE,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2588; intervenção Y35 30; causa indeterminada Y10–Y34 2264; 170 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+CE,crime_estadual,S26,READY_WITH_CAVEATS,CVLI/CVP/etc. por município (XLSX mensal 2026),município,ver fonte
+CE,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 23.793; ESTADIC 2022: PM 22930 e PC 4129,UF (sem município nem unidade),2022 e 2025
+CE,guarda_municipal,S08,READY_FOR_CONTRACT,90 de 184 municípios com guarda; efetivo 5589 (31/12/2022),município (IBGE),2023
+CE,unidades_prisionais,S50,READY_WITH_CAVEATS,34 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+CE,frota,S70,READY_WITH_CAVEATS,184 municípios; 4257868 veículos (set/2026),município (nome),2026-09
+CE,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 12350 sinistros; 557 óbitos; 158 municípios com registro,município (IBGE),2018-01..2026-05
+CE,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+CE,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Pagina Inicial - Departamento Estadual de Trânsito),UF,n/a
+CE,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+CE,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+DF,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 221 vítimas; latrocínio 12; lesão seguida de morte 6; mortes a esclarecer 0; 1 municípios com ≥ 1 vítima; mortes por intervenção 15,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+DF,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 260; intervenção Y35 12; causa indeterminada Y10–Y34 264; 1 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+DF,crime_estadual,S30,READY_WITH_CAVEATS,Região Administrativa e RISP 2014..2026 (XLSX),município,ver fonte
+DF,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 10.909; ESTADIC 2022: PM 10589 e PC 3863,UF (sem município nem unidade),2022 e 2025
+DF,guarda_municipal,S08,READY_FOR_CONTRACT,0 de 1 municípios com guarda; efetivo 0 (31/12/2022),município (IBGE),2023
+DF,unidades_prisionais,S50,READY_WITH_CAVEATS,10 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+DF,frota,S70,READY_WITH_CAVEATS,1 municípios; 2314160 veículos (set/2026),município (nome),2026-09
+DF,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 47983 sinistros; 222 óbitos; 1 municípios com registro; apenas 1 município (DF) — não comparável,município (IBGE),2018-01..2026-05
+DF,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+DF,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Departamento de Trânsito),UF,n/a
+DF,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+DF,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+ES,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 762 vítimas; latrocínio 25; lesão seguida de morte 13; mortes a esclarecer 239; 66 municípios com ≥ 1 vítima; mortes por intervenção 76,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+ES,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 919; intervenção Y35 33; causa indeterminada Y10–Y34 160; 71 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+ES,crime_estadual,S24,READY_WITH_CAVEATS,"ocorrência→município×tipo×mês 2018-01..2026-09 (patrimônio, estelionato, informáticos)",município,ver fonte
+ES,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 9.231; ESTADIC 2022: PM 7938 e PC 2279,UF (sem município nem unidade),2022 e 2025
+ES,guarda_municipal,S08,READY_FOR_CONTRACT,18 de 78 municípios com guarda; efetivo 1680 (31/12/2022),município (IBGE),2023
+ES,unidades_prisionais,S50,READY_WITH_CAVEATS,56 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+ES,frota,S70,READY_WITH_CAVEATS,78 municípios; 2776700 veículos (set/2026),município (nome),2026-09
+ES,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 47190 sinistros; 968 óbitos; 79 municípios com registro,município (IBGE),2018-01..2026-05
+ES,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+ES,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN|ES - Departamento Estadual de Trânsito do E),UF,n/a
+ES,financas_seguranca,S80,READY_FOR_CONTRACT,"RREO anexo 02 (função 06) lido para ES 2024: R$ 2,54 bi empenhados; demais UFs: API acessível, não consultadas",ente×exercício×bimestre,2015..2026
+ES,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+GO,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 757 vítimas; latrocínio 19; lesão seguida de morte 30; mortes a esclarecer 517; 133 municípios com ≥ 1 vítima; mortes por intervenção 362,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+GO,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 1102; intervenção Y35 137; causa indeterminada Y10–Y34 235; 157 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+GO,crime_estadual,S31,NEEDS_VALIDATION,"PDF anual 2018..2025; CKAN (CBM, Delegacia Virtual, Detran)",a validar,ver fonte
+GO,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 11.856; ESTADIC 2022: PM 11068 e PC 3133,UF (sem município nem unidade),2022 e 2025
+GO,guarda_municipal,S08,READY_FOR_CONTRACT,23 de 246 municípios com guarda; efetivo 3132 (31/12/2022),município (IBGE),2023
+GO,unidades_prisionais,S50,READY_WITH_CAVEATS,81 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+GO,frota,S70,READY_WITH_CAVEATS,246 municípios; 5318503 veículos (set/2026),município (nome),2026-09
+GO,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 108395 sinistros; 1072 óbitos; 246 municípios com registro,município (IBGE),2018-01..2026-05
+GO,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+GO,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran GO),UF,n/a
+GO,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+GO,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+MA,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 1815 vítimas; latrocínio 59; lesão seguida de morte 16; mortes a esclarecer 123; 195 municípios com ≥ 1 vítima; mortes por intervenção 142,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+MA,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2135; intervenção Y35 8; causa indeterminada Y10–Y34 155; 193 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+MA,crime_estadual,S37,NEEDS_VALIDATION,apenas Grande São Luís,a validar,ver fonte
+MA,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 11.274; ESTADIC 2022: PM 11176 e PC 1813,UF (sem município nem unidade),2022 e 2025
+MA,guarda_municipal,S08,READY_FOR_CONTRACT,108 de 217 municípios com guarda; efetivo 3023 (31/12/2022),município (IBGE),2023
+MA,unidades_prisionais,S50,READY_WITH_CAVEATS,56 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+MA,frota,S70,READY_WITH_CAVEATS,217 municípios; 2511602 veículos (set/2026),município (nome),2026-09
+MA,sinistros_renaest,S72,NEEDS_VALIDATION,sem relato no RENAEST em 2024 (nenhuma linha com uf_acidente = MA),município (IBGE),2018-01..2026-05
+MA,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+MA,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran-MA),UF,n/a
+MA,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+MA,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+MG,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 2317 vítimas; latrocínio 44; lesão seguida de morte 26; mortes a esclarecer 0; 424 municípios com ≥ 1 vítima; mortes por intervenção 208,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+MG,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2175; intervenção Y35 42; causa indeterminada Y10–Y34 4292; 435 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+MG,crime_estadual,S22,READY_WITH_CAVEATS,município (IBGE 6 díg.) mensal 2012..2026; truncar zero futuro,município,ver fonte
+MG,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 37.261; ESTADIC 2022: PM 37196 e PC 11498,UF (sem município nem unidade),2022 e 2025
+MG,guarda_municipal,S08,READY_FOR_CONTRACT,83 de 853 municípios com guarda; efetivo 5176 (31/12/2022),município (IBGE),2023
+MG,unidades_prisionais,S50,READY_WITH_CAVEATS,216 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+MG,frota,S70,READY_WITH_CAVEATS,853 municípios; 14952189 veículos (set/2026),município (nome),2026-09
+MG,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 298644 sinistros; 2110 óbitos; 854 municípios com registro,município (IBGE),2018-01..2026-05
+MG,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+MG,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (TRÂNSITO-MG),UF,n/a
+MG,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+MG,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+MS,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 309 vítimas; latrocínio 5; lesão seguida de morte 7; mortes a esclarecer 345; 58 municípios com ≥ 1 vítima; mortes por intervenção 59,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+MS,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 437; intervenção Y35 58; causa indeterminada Y10–Y34 107; 66 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+MS,crime_estadual,S36,NEEDS_VALIDATION,portal recusou conexão a partir deste ponto de rede,a validar,ver fonte
+MS,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 5.948; ESTADIC 2022: PM 5435 e PC 1987,UF (sem município nem unidade),2022 e 2025
+MS,guarda_municipal,S08,READY_FOR_CONTRACT,8 de 79 municípios com guarda; efetivo 1795 (31/12/2022),município (IBGE),2023
+MS,unidades_prisionais,S50,READY_WITH_CAVEATS,51 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+MS,frota,S70,READY_WITH_CAVEATS,79 municípios; 2088226 veículos (set/2026),município (nome),2026-09
+MS,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 23318 sinistros; 198 óbitos; 79 municípios com registro,município (IBGE),2018-01..2026-05
+MS,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+MS,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran MS - Departamento Estadual de Trânsito de M),UF,n/a
+MS,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+MS,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+MT,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 675 vítimas; latrocínio 15; lesão seguida de morte 6; mortes a esclarecer 417; 104 municípios com ≥ 1 vítima; mortes por intervenção 143,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+MT,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 795; intervenção Y35 42; causa indeterminada Y10–Y34 94; 103 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+MT,crime_estadual,S35,NEEDS_VALIDATION,RISP em abas incorporadas; anuários,a validar,ver fonte
+MT,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 7.094; ESTADIC 2022: PM 6734 e PC 2904,UF (sem município nem unidade),2022 e 2025
+MT,guarda_municipal,S08,READY_FOR_CONTRACT,9 de 141 municípios com guarda; efetivo 274 (31/12/2022),município (IBGE),2023
+MT,unidades_prisionais,S50,READY_WITH_CAVEATS,42 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+MT,frota,S70,READY_WITH_CAVEATS,142 municípios; 3073962 veículos (set/2026),município (nome),2026-09
+MT,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 4570 sinistros; 960 óbitos; 135 municípios com registro,município (IBGE),2018-01..2026-05
+MT,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+MT,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN),UF,n/a
+MT,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+MT,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+PA,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 1683 vítimas; latrocínio 72; lesão seguida de morte 30; mortes a esclarecer 274; 137 municípios com ≥ 1 vítima; mortes por intervenção 634,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+PA,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2168; intervenção Y35 189; causa indeterminada Y10–Y34 96; 138 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+PA,crime_estadual,S33,NEEDS_VALIDATION,dashboard e exportação em codec.segup.pa.gov.br (não testada),a validar,ver fonte
+PA,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 16.352; ESTADIC 2022: PM 16307 e PC 3835,UF (sem município nem unidade),2022 e 2025
+PA,guarda_municipal,S08,READY_FOR_CONTRACT,33 de 144 municípios com guarda; efetivo 2918 (31/12/2022),município (IBGE),2023
+PA,unidades_prisionais,S50,READY_WITH_CAVEATS,56 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+PA,frota,S70,READY_WITH_CAVEATS,144 municípios; 3192768 veículos (set/2026),município (nome),2026-09
+PA,sinistros_renaest,S72,NEEDS_VALIDATION,sem relato no RENAEST em 2024 (nenhuma linha com uf_acidente = PA),município (IBGE),2018-01..2026-05
+PA,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+PA,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN-PA | Departamento de Trânsito do Estado do ),UF,n/a
+PA,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+PA,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+PB,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 899 vítimas; latrocínio 20; lesão seguida de morte 9; mortes a esclarecer 63; 136 municípios com ≥ 1 vítima; mortes por intervenção 61,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+PB,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 1006; intervenção Y35 3; causa indeterminada Y10–Y34 66; 146 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+PB,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+PB,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 10.309; ESTADIC 2022: PM 8838 e PC 1640,UF (sem município nem unidade),2022 e 2025
+PB,guarda_municipal,S08,READY_FOR_CONTRACT,53 de 223 municípios com guarda; efetivo 1804 (31/12/2022),município (IBGE),2023
+PB,unidades_prisionais,S50,READY_WITH_CAVEATS,64 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+PB,frota,S70,READY_WITH_CAVEATS,223 municípios; 1888139 veículos (set/2026),município (nome),2026-09
+PB,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 2975 sinistros; 857 óbitos; 194 municípios com registro,município (IBGE),2018-01..2026-05
+PB,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+PB,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Home - DETRAN | Departamento Estadual de Trânsito ),UF,n/a
+PB,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+PB,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+PE,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 2883 vítimas; latrocínio 58; lesão seguida de morte 28; mortes a esclarecer 239; 172 municípios com ≥ 1 vítima; mortes por intervenção 90,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+PE,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 3146; intervenção Y35 10; causa indeterminada Y10–Y34 783; 176 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+PE,crime_estadual,S27,READY_WITH_CAVEATS,CVLI por município 2004-01..2026-09,município,ver fonte
+PE,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 15.738; ESTADIC 2022: PM 16471 e PC 5245,UF (sem município nem unidade),2022 e 2025
+PE,guarda_municipal,S08,READY_FOR_CONTRACT,91 de 185 municípios com guarda; efetivo 6293 (31/12/2022),município (IBGE),2023
+PE,unidades_prisionais,S50,READY_WITH_CAVEATS,70 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+PE,frota,S70,READY_WITH_CAVEATS,185 municípios; 4090089 veículos (set/2026),município (nome),2026-09
+PE,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 13988 sinistros; 1602 óbitos; 185 municípios com registro,município (IBGE),2018-01..2026-05
+PE,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+PE,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN-PE | Departamento Estadual de Trânsito de P),UF,n/a
+PE,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+PE,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+PI,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 489 vítimas; latrocínio 15; lesão seguida de morte 9; mortes a esclarecer 3; 102 municípios com ≥ 1 vítima; mortes por intervenção 20,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+PI,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 542; intervenção Y35 5; causa indeterminada Y10–Y34 55; 110 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+PI,crime_estadual,S34,NEEDS_VALIDATION,"DataSSP (painel, trimestral, feminicídios): sem arquivo localizado",a validar,ver fonte
+PI,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 6.951; ESTADIC 2022: PM 6742 e PC 1818,UF (sem município nem unidade),2022 e 2025
+PI,guarda_municipal,S08,READY_FOR_CONTRACT,15 de 224 municípios com guarda; efetivo 543 (31/12/2022),município (IBGE),2023
+PI,unidades_prisionais,S50,READY_WITH_CAVEATS,18 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+PI,frota,S70,READY_WITH_CAVEATS,224 municípios; 1702728 veículos (set/2026),município (nome),2026-09
+PI,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 11166 sinistros; 270 óbitos; 213 municípios com registro,município (IBGE),2018-01..2026-05
+PI,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+PI,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Departamento Estadual de Trânsito – DETRAN),UF,n/a
+PI,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+PI,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+PR,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 1183 vítimas; latrocínio 44; lesão seguida de morte 48; mortes a esclarecer 22; 235 municípios com ≥ 1 vítima; mortes por intervenção 490,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+PR,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 1473; intervenção Y35 391; causa indeterminada Y10–Y34 354; 273 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+PR,crime_estadual,S32,NEEDS_VALIDATION,PDF (drogas por município; estatísticas 2007..2025) e BI,a validar,ver fonte
+PR,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 16.068; ESTADIC 2022: PM 16658 e PC 4019,UF (sem município nem unidade),2022 e 2025
+PR,guarda_municipal,S08,READY_FOR_CONTRACT,38 de 399 municípios com guarda; efetivo 4383 (31/12/2022),município (IBGE),2023
+PR,unidades_prisionais,S50,READY_WITH_CAVEATS,129 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+PR,frota,S70,READY_WITH_CAVEATS,399 municípios; 10052350 veículos (set/2026),município (nome),2026-09
+PR,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 107642 sinistros; 1125 óbitos; 399 municípios com registro,município (IBGE),2018-01..2026-05
+PR,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+PR,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN/PR),UF,n/a
+PR,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+PR,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+RJ,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 3342 vítimas; latrocínio 77; lesão seguida de morte 66; mortes a esclarecer 2924; 91 municípios com ≥ 1 vítima; mortes por intervenção 808,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+RJ,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2798; intervenção Y35 188; causa indeterminada Y10–Y34 3866; 92 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+RJ,crime_estadual,S20,READY_FOR_CONTRACT,município IBGE mensal 2014-01..2026-09 (62 colunas) + CISP 2003+,município,ver fonte
+RJ,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 42.543; ESTADIC 2022: PM 43761 e PC 7979,UF (sem município nem unidade),2022 e 2025
+RJ,guarda_municipal,S08,READY_FOR_CONTRACT,80 de 92 municípios com guarda; efetivo 16076 (31/12/2022),município (IBGE),2023
+RJ,unidades_prisionais,S50,READY_WITH_CAVEATS,53 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+RJ,frota,S70,READY_WITH_CAVEATS,92 municípios; 8501235 veículos (set/2026),município (nome),2026-09
+RJ,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 16182 sinistros; 1033 óbitos; 92 municípios com registro,município (IBGE),2018-01..2026-05
+RJ,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+RJ,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran-RJ),UF,n/a
+RJ,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+RJ,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+RN,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 824 vítimas; latrocínio 15; lesão seguida de morte 12; mortes a esclarecer 607; 119 municípios com ≥ 1 vítima; mortes por intervenção 137,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+RN,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 877; intervenção Y35 18; causa indeterminada Y10–Y34 234; 117 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+RN,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+RN,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 18.360; ESTADIC 2022: PM 8208 e PC 1596,UF (sem município nem unidade),2022 e 2025
+RN,guarda_municipal,S08,READY_FOR_CONTRACT,35 de 167 municípios com guarda; efetivo 1426 (31/12/2022),município (IBGE),2023
+RN,unidades_prisionais,S50,READY_WITH_CAVEATS,28 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+RN,frota,S70,READY_WITH_CAVEATS,167 municípios; 1791072 veículos (set/2026),município (nome),2026-09
+RN,sinistros_renaest,S72,NEEDS_VALIDATION,sem relato no RENAEST em 2024 (nenhuma linha com uf_acidente = RN),município (IBGE),2018-01..2026-05
+RN,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+RN,detran,S74,NEEDS_VALIDATION,portal HTTP 503 (Site temporariamente suspenso — Período Eleitoral ),UF,n/a
+RN,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+RN,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+RO,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 414 vítimas; latrocínio 4; lesão seguida de morte 2; mortes a esclarecer 468; 42 municípios com ≥ 1 vítima; mortes por intervenção 47,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+RO,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 505; intervenção Y35 14; causa indeterminada Y10–Y34 77; 47 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+RO,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+RO,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 4.801; ESTADIC 2022: PM None e PC None; RO não informou ao IBGE,UF (sem município nem unidade),2022 e 2025
+RO,guarda_municipal,S08,READY_FOR_CONTRACT,2 de 52 municípios com guarda; efetivo 87 (31/12/2022),município (IBGE),2023
+RO,unidades_prisionais,S50,READY_WITH_CAVEATS,76 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+RO,frota,S70,READY_WITH_CAVEATS,52 municípios; 1340753 veículos (set/2026),município (nome),2026-09
+RO,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 17314 sinistros; 446 óbitos; 52 municípios com registro,município (IBGE),2018-01..2026-05
+RO,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+RO,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Página Inicial - Portal DETRAN-RO),UF,n/a
+RO,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+RO,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+RR,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 127 vítimas; latrocínio 4; lesão seguida de morte 8; mortes a esclarecer 101; 14 municípios com ≥ 1 vítima; mortes por intervenção 4,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+RR,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 217; intervenção Y35 2; causa indeterminada Y10–Y34 68; 12 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+RR,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+RR,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 2.490; ESTADIC 2022: PM 2398 e PC 759,UF (sem município nem unidade),2022 e 2025
+RR,guarda_municipal,S08,READY_FOR_CONTRACT,5 de 15 municípios com guarda; efetivo 459 (31/12/2022),município (IBGE),2023
+RR,unidades_prisionais,S50,READY_WITH_CAVEATS,9 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+RR,frota,S70,READY_WITH_CAVEATS,15 municípios; 317819 veículos (set/2026),município (nome),2026-09
+RR,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 4104 sinistros; 83 óbitos; 16 municípios com registro,município (IBGE),2018-01..2026-05
+RR,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+RR,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Detran Roraima – Departamento Estadual de Trânsito),UF,n/a
+RR,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+RR,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+RS,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 1052 vítimas; latrocínio 32; lesão seguida de morte 45; mortes a esclarecer 1057; 212 municípios com ≥ 1 vítima; mortes por intervenção 80,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+RS,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 1246; intervenção Y35 2; causa indeterminada Y10–Y34 245; 220 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+RS,crime_estadual,S23,READY_WITH_CAVEATS,município (nome) mensal 2011..2026-09 (XLSX) + ZIP de ocorrências,município,ver fonte
+RS,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM extração manual necessária (linha da tabela 2 não separável); ESTADIC 2022: PM 17281 e PC 5328,UF (sem município nem unidade),2022 e 2025
+RS,guarda_municipal,S08,READY_FOR_CONTRACT,37 de 497 municípios com guarda; efetivo 2855 (31/12/2022),município (IBGE),2023
+RS,unidades_prisionais,S50,READY_WITH_CAVEATS,113 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+RS,frota,S70,READY_WITH_CAVEATS,497 municípios; 8681516 veículos (set/2026),município (nome),2026-09
+RS,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 1511 sinistros; 1644 óbitos; 333 municípios com registro; só sinistros fatais reportados,município (IBGE),2018-01..2026-05
+RS,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+RS,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DetranRS - em defesa da vida),UF,n/a
+RS,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+RS,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+SC,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 429 vítimas; latrocínio 18; lesão seguida de morte 23; mortes a esclarecer 0; 127 municípios com ≥ 1 vítima; mortes por intervenção 100,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+SC,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 538; intervenção Y35 70; causa indeterminada Y10–Y34 225; 143 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+SC,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+SC,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 9.465; ESTADIC 2022: PM 9315 e PC 3485,UF (sem município nem unidade),2022 e 2025
+SC,guarda_municipal,S08,READY_FOR_CONTRACT,17 de 295 municípios com guarda; efetivo 1020 (31/12/2022),município (IBGE),2023
+SC,unidades_prisionais,S50,READY_WITH_CAVEATS,55 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+SC,frota,S70,READY_WITH_CAVEATS,295 municípios; 6859830 veículos (set/2026),município (nome),2026-09
+SC,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 162441 sinistros; 546 óbitos; 295 municípios com registro,município (IBGE),2018-01..2026-05
+SC,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+SC,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (DETRAN – SC),UF,n/a
+SC,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+SC,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+SE,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 284 vítimas; latrocínio 8; lesão seguida de morte 4; mortes a esclarecer 367; 51 municípios com ≥ 1 vítima; mortes por intervenção 193,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+SE,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 495; intervenção Y35 2; causa indeterminada Y10–Y34 89; 60 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+SE,crime_estadual,S38,NEEDS_VALIDATION,nenhum arquivo estruturado localizado nas páginas testadas (não prova inexistência),a validar,ver fonte
+SE,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 5.640; ESTADIC 2022: PM 5616 e PC 1320,UF (sem município nem unidade),2022 e 2025
+SE,guarda_municipal,S08,READY_FOR_CONTRACT,24 de 75 municípios com guarda; efetivo 1322 (31/12/2022),município (IBGE),2023
+SE,unidades_prisionais,S50,READY_WITH_CAVEATS,11 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+SE,frota,S70,READY_WITH_CAVEATS,75 municípios; 1120222 veículos (set/2026),município (nome),2026-09
+SE,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 1463 sinistros; 106 óbitos; 65 municípios com registro,município (IBGE),2018-01..2026-05
+SE,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+SE,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Departamento Estadual de Trânsito de Sergipe - Det),UF,n/a
+SE,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+SE,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+SP,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 2257 vítimas; latrocínio 131; lesão seguida de morte 122; mortes a esclarecer 3283; 340 municípios com ≥ 1 vítima; mortes por intervenção 838,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+SP,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 2598; intervenção Y35 221; causa indeterminada Y10–Y34 5376; 376 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+SP,crime_estadual,S25,LOCAL_INTEGRATION_REQUIRED,BO com município e coordenadas 2022..2026 (XLSX 200 MB/ano),a validar,ver fonte
+SP,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM extração manual necessária (linha da tabela 2 não separável); ESTADIC 2022: PM 79943 e PC 26215,UF (sem município nem unidade),2022 e 2025
+SP,guarda_municipal,S08,READY_FOR_CONTRACT,219 de 645 municípios com guarda; efetivo 26608 (31/12/2022),município (IBGE),2023
+SP,unidades_prisionais,S50,READY_WITH_CAVEATS,181 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+SP,frota,S70,READY_WITH_CAVEATS,646 municípios; 36174176 veículos (set/2026),município (nome),2026-09
+SP,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 197247 sinistros; 6221 óbitos; 643 municípios com registro,município (IBGE),2018-01..2026-05
+SP,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+SP,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Portal - Detran-SP),UF,n/a
+SP,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+SP,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024
+TO,crime_nacional_vde,S01,READY_WITH_CAVEATS,2025: homicídio doloso 247 vítimas; latrocínio 8; lesão seguida de morte 4; mortes a esclarecer 363; 78 municípios com ≥ 1 vítima; mortes por intervenção 25,UF (todos os eventos) + município por nome (11 eventos),2015-01..2026-09
+TO,mortes_violentas_sim,S04,READY_FOR_CONTRACT,2025 prelim: agressões X85–Y09 298; intervenção Y35 14; causa indeterminada Y10–Y34 54; 93 municípios com ≥ 1 óbito,município (código IBGE) por residência e ocorrência,2013..2024 + 2025 prelim (RAW local)
+TO,crime_estadual,S37,NEEDS_VALIDATION,PDF por ano 2019..2021,a validar,ver fonte
+TO,efetivo_uf,S06+S07,READY_WITH_CAVEATS,FBSP 2025 PM 3.145; ESTADIC 2022: PM 3715 e PC 1952,UF (sem município nem unidade),2022 e 2025
+TO,guarda_municipal,S08,READY_FOR_CONTRACT,6 de 139 municípios com guarda; efetivo 308 (31/12/2022),município (IBGE),2023
+TO,unidades_prisionais,S50,READY_WITH_CAVEATS,27 estabelecimentos no 19º ciclo (2025-2S),"estabelecimento (Código IBGE em 99,8 %)",2016-2S..2025-2S
+TO,frota,S70,READY_WITH_CAVEATS,139 municípios; 1009016 veículos (set/2026),município (nome),2026-09
+TO,sinistros_renaest,S72,READY_WITH_CAVEATS,2024: 5690 sinistros; 303 óbitos; 132 municípios com registro,município (IBGE),2018-01..2026-05
+TO,sinistros_prf,S43,READY_WITH_CAVEATS,datatran 2026 contém a UF (27 UFs; 48.712 ocorrências até 31/08/2026),município (nome) + BR/km + delegacia/UOP,2007..2026
+TO,detran,S74,LOCAL_INTEGRATION_REQUIRED,portal HTTP 200 (Aviso de Suspensão - Governo do Tocantins),UF,n/a
+TO,financas_seguranca,S80,READY_WITH_CAVEATS,API Siconfi acessível (testada para ES e Vitória); consulta por ente não executada nesta fase,ente×exercício×bimestre,2015..2026
+TO,organizacoes_criminosas,S60,NOT_FEASIBLE_WITH_PUBLIC_DATA,sem dado estruturado público por UF (mapa oficial é sigiloso; só versão resumida nacional),n/a,2022..2024

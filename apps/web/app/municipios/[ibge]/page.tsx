@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { HealthPanel } from '@/components/territory/health-panel';
+import { Suspense } from 'react';
+import { SecuritySummary } from '@/components/security/security-summary';
 import { THEMES, formatInt } from '@/components/territory/territory-ui';
 import { loadMunicipalityPage } from '@/components/territory/municipality-loader';
 import { loadMunicipality, ymLabel } from '@/lib/exec-territory';
@@ -22,8 +24,9 @@ export default async function MunicipioPage({ params }: Props) {
       <Link href={`/estados/${m.uf}/representacao`} className="rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground">Quem representa {m.stateName}</Link></>}>
     {hasHealth && <div><HealthPanel scope={m.name} kind="municipio" ufCode={m.ufCode!} ufName={m.stateName} values={values} vaccines={vaccines} facilities={null} bench={bench} cnesLabel="" compact />
       <p className="mt-3 text-sm"><Link href={`${base}/saude`} className="font-semibold text-primary hover:underline">Rede, hospitais, leitos, vacinas e séries históricas →</Link></p></div>}
+    <Suspense fallback={null}><SecuritySummary kind="municipio" code={String(m.entityId)} /></Suspense>
     <section aria-labelledby="areas"><h2 id="areas" className="section-hairline pt-3 font-display text-2xl">Áreas temáticas</h2>
-      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{THEMES.map(t => <li key={t.slug}><Link href={`${base}/${t.slug}`} className="card-lift flex h-full flex-col rounded-xl border bg-card p-4"><span className="font-display text-lg">{t.label}</span><span className="mt-1 text-xs text-muted-foreground">{t.ready ? (hasHealth ? 'Dados publicados' : 'Coleta pendente neste município') : 'Em preparação, sem dados'}</span></Link></li>)}</ul></section>
+      <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{THEMES.map(t => <li key={t.slug}><Link href={`${base}/${t.slug}`} className="card-lift flex h-full flex-col rounded-xl border bg-card p-4"><span className="font-display text-lg">{t.label}</span><span className="mt-1 text-xs text-muted-foreground">{t.ready ? (t.slug !== 'saude' || hasHealth ? 'Dados publicados' : 'Coleta pendente neste município') : 'Em preparação, sem dados'}</span></Link></li>)}</ul></section>
     <section className="rounded-xl border bg-card p-5 text-sm"><h2 className="font-display text-xl">Território</h2>
       <dl className="mt-2 grid gap-2 sm:grid-cols-3"><div><dt className="text-xs text-muted-foreground">Código IBGE</dt><dd className="font-semibold">{m.entityId}</dd></div><div><dt className="text-xs text-muted-foreground">Estado</dt><dd className="font-semibold">{m.stateName}</dd></div><div><dt className="text-xs text-muted-foreground">População</dt><dd className="font-semibold">{formatInt(m.population?.value ?? null)} ({m.population?.year ?? 's/d'})</dd></div></dl>
       {!m.installationDateProven && <p className="mt-2 text-xs text-muted-foreground">A data de instalação do município não foi comprovada em fonte; por isso não é exibida.</p>}

@@ -1,0 +1,387 @@
+{
+ "at": "2026-10-23T10:32:19.439Z",
+ "database": {
+  "db": "projetoeleitor_db",
+  "usr": "projetoeleitor_user",
+  "v": "PostgreSQL 17.4 on x86_64-windows, compiled by msvc-19.42.34436, 64-bit",
+  "size": "22 GB",
+  "bytes": "24071031955"
+ },
+ "execSchemaBytes": 7863214080,
+ "activeSessions": [
+  {
+   "pid": 6908,
+   "state": "active",
+   "wait_event_type": null,
+   "running": {
+    "milliseconds": 551.284
+   },
+   "q": "COPY civica_exec.exec_change_log (run_id, seq, table_id, op, pk, old_row) TO std"
+  }
+ ],
+ "ungrantedLocks": 0,
+ "advisoryLocks": 0,
+ "runsRunning": 0,
+ "walBytes": {
+  "b": "35405646972",
+  "r": "214161072"
+ },
+ "settings": {
+  "checkpoint_timeout": "300s",
+  "maintenance_work_mem": "65536kB",
+  "max_wal_size": "1024MB",
+  "shared_buffers": "1310728kB",
+  "work_mem": "32768kB"
+ },
+ "checkpoints": {
+  "num_timed": "17412",
+  "num_requested": "51"
+ },
+ "publicationsByDataset": [
+  {
+   "dataset_id": 1,
+   "slices": 2,
+   "last": "2026-10-20T01:27:09.934Z"
+  },
+  {
+   "dataset_id": 2,
+   "slices": 595,
+   "last": "2026-10-21T15:33:01.926Z"
+  },
+  {
+   "dataset_id": 3,
+   "slices": 4455,
+   "last": "2026-10-21T03:04:09.760Z"
+  },
+  {
+   "dataset_id": 4,
+   "slices": 4455,
+   "last": "2026-10-21T03:04:14.987Z"
+  },
+  {
+   "dataset_id": 5,
+   "slices": 4455,
+   "last": "2026-10-21T03:04:17.255Z"
+  },
+  {
+   "dataset_id": 6,
+   "slices": 378,
+   "last": "2026-10-21T04:06:09.298Z"
+  },
+  {
+   "dataset_id": 7,
+   "slices": 351,
+   "last": "2026-10-21T00:44:42.343Z"
+  },
+  {
+   "dataset_id": 8,
+   "slices": 351,
+   "last": "2026-10-21T00:44:42.309Z"
+  },
+  {
+   "dataset_id": 9,
+   "slices": 27,
+   "last": "2026-10-20T21:26:56.283Z"
+  },
+  {
+   "dataset_id": 10,
+   "slices": 4401,
+   "last": "2026-10-21T04:39:30.391Z"
+  },
+  {
+   "dataset_id": 11,
+   "slices": 163,
+   "last": "2026-10-21T12:03:19.417Z"
+  },
+  {
+   "dataset_id": 15,
+   "slices": 351,
+   "last": "2026-10-21T20:16:21.851Z"
+  },
+  {
+   "dataset_id": 16,
+   "slices": 13,
+   "last": "2026-10-21T20:16:21.880Z"
+  },
+  {
+   "dataset_id": 17,
+   "slices": 324,
+   "last": "2026-10-21T20:12:45.389Z"
+  },
+  {
+   "dataset_id": 18,
+   "slices": 351,
+   "last": "2026-10-21T22:27:17.718Z"
+  },
+  {
+   "dataset_id": 19,
+   "slices": 13,
+   "last": "2026-10-21T22:27:17.836Z"
+  },
+  {
+   "dataset_id": 20,
+   "slices": 4455,
+   "last": "2026-10-21T22:40:35.875Z"
+  },
+  {
+   "dataset_id": 21,
+   "slices": 243,
+   "last": "2026-10-21T22:48:07.032Z"
+  },
+  {
+   "dataset_id": 22,
+   "slices": 540,
+   "last": "2026-10-21T22:29:19.430Z"
+  },
+  {
+   "dataset_id": 23,
+   "slices": 2511,
+   "last": "2026-10-21T22:35:07.426Z"
+  },
+  {
+   "dataset_id": 24,
+   "slices": 1,
+   "last": "2026-10-22T00:03:02.011Z"
+  },
+  {
+   "dataset_id": 25,
+   "slices": 2,
+   "last": "2026-10-22T00:03:03.099Z"
+  },
+  {
+   "dataset_id": 26,
+   "slices": 54,
+   "last": "2026-10-22T00:03:28.283Z"
+  },
+  {
+   "dataset_id": 27,
+   "slices": 9,
+   "last": "2026-10-22T00:03:30.220Z"
+  },
+  {
+   "dataset_id": 28,
+   "slices": 513,
+   "last": "2026-10-22T02:02:48.054Z"
+  },
+  {
+   "dataset_id": 29,
+   "slices": 19,
+   "last": "2026-10-22T02:02:48.142Z"
+  },
+  {
+   "dataset_id": 30,
+   "slices": 324,
+   "last": "2026-10-23T04:44:31.548Z"
+  },
+  {
+   "dataset_id": 31,
+   "slices": 351,
+   "last": "2026-10-22T17:56:34.069Z"
+  },
+  {
+   "dataset_id": 32,
+   "slices": 324,
+   "last": "2026-10-22T18:28:26.339Z"
+  },
+  {
+   "dataset_id": 33,
+   "slices": 12,
+   "last": "2026-10-23T04:44:31.641Z"
+  },
+  {
+   "dataset_id": 34,
+   "slices": 13,
+   "last": "2026-10-22T17:56:34.232Z"
+  },
+  {
+   "dataset_id": 35,
+   "slices": 12,
+   "last": "2026-10-22T18:28:26.434Z"
+  },
+  {
+   "dataset_id": 36,
+   "slices": 13,
+   "last": "2026-10-22T13:16:18.746Z"
+  },
+  {
+   "dataset_id": 37,
+   "slices": 13,
+   "last": "2026-10-22T13:16:18.694Z"
+  },
+  {
+   "dataset_id": 38,
+   "slices": 131,
+   "last": "2026-10-23T10:24:55.271Z"
+  },
+  {
+   "dataset_id": 39,
+   "slices": 508,
+   "last": "2026-10-22T13:25:04.924Z"
+  },
+  {
+   "dataset_id": 40,
+   "slices": 11,
+   "last": "2026-10-23T05:37:11.491Z"
+  },
+  {
+   "dataset_id": 41,
+   "slices": 13,
+   "last": "2026-10-22T13:46:19.353Z"
+  }
+ ],
+ "runsByStatus": [
+  {
+   "status": 9,
+   "n": 31354
+  }
+ ],
+ "migrations": [
+  {
+   "version": 1,
+   "name": "civica_exec_ddl_v1_revisao2"
+  },
+  {
+   "version": 2,
+   "name": "civica_exec_ddl_v2_seguranca_cobertura_vde"
+  },
+  {
+   "version": 3,
+   "name": "civica_exec_ddl_v3_transito"
+  },
+  {
+   "version": 4,
+   "name": "civica_exec_ddl_v4_prisional"
+  },
+  {
+   "version": 5,
+   "name": "civica_exec_ddl_v5_financas_seguranca"
+  },
+  {
+   "version": 6,
+   "name": "civica_exec_ddl_v6_contratos_transferencias"
+  },
+  {
+   "version": 7,
+   "name": "civica_exec_ddl_v7_refcode_sequence"
+  }
+ ],
+ "fingerprints": {
+  "saudeDefs": "fd49e58c0cfefd94bfdd9769b1d9fc23",
+  "saudePublications": "23080024788634f0ebcea2b58073dda6",
+  "saudeIndValues": "ec65675ebfcb107aa5b476fb1b78b63c",
+  "saudeIndCount": 4068133,
+  "p91IndValues": {
+   "h": "f842ebd952b7ffb53d40b27af41c588c",
+   "n": 2133062
+  },
+  "p92IndValues": {
+   "h": "3ea64d70512bb958ea41b043febd4eed",
+   "n": 3267659
+  },
+  "p93IndValues": {
+   "h": "49025be73b2314a0830e6c4d73ff20c3",
+   "n": 152944
+  },
+  "p91Cov": {
+   "h": "b447da81be7f61866de77511eeaf9844",
+   "n": 149606
+  },
+  "p91Publications": {
+   "h": "f8007dd7fab5dafc562c1cd9fc014f13",
+   "n": 688
+  },
+  "entities": {
+   "h": "c67c4dfdce799c6d24cae241001cff87",
+   "n": 5631
+  },
+  "sharedContracts": "0eb27fde644d3ff418ecb8c1b6fea278",
+  "legislativeSchema": {
+   "tables": 59,
+   "live_rows": "639746"
+  }
+ },
+ "populationYears": [
+  2001,
+  2002,
+  2003,
+  2004,
+  2005,
+  2006,
+  2008,
+  2009,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2024,
+  2025,
+  2026
+ ],
+ "pgFreeGiB": 57.5,
+ "ssd": {
+  "rawDir": "D:\\Civica\\raw",
+  "expectedGuid": "54b8f375-0000-0000-0000-100000000000",
+  "volumeGuid": "54b8f375-0000-0000-0000-100000000000",
+  "match": true,
+  "freeGiB": 418.3,
+  "marker": true,
+  "assertVolume": "PASS"
+ },
+ "backups": [
+  {
+   "file": "pre-nacional-p1-20261020.dump",
+   "bytes": 2184893721,
+   "mtime": "2026-10-20T20:46:47.914Z"
+  },
+  {
+   "file": "pre-seguranca-p91-20261021.dump",
+   "bytes": 306987135,
+   "mtime": "2026-10-21T19:00:59.448Z"
+  },
+  {
+   "file": "pre-transito-p92-20261021.dump",
+   "bytes": 320965905,
+   "mtime": "2026-10-21T20:51:39.534Z"
+  },
+  {
+   "file": "pre-efetivos-p93-20261021.dump",
+   "bytes": 370708482,
+   "mtime": "2026-10-21T23:16:39.342Z"
+  },
+  {
+   "file": "pre-prisional-p94-20261021.dump",
+   "bytes": 371544053,
+   "mtime": "2026-10-22T00:35:32.705Z"
+  }
+ ],
+ "rawSim": {
+  "manifestEntries": 351,
+  "definitivo": 324,
+  "prelim": 27,
+  "missing": 0,
+  "sizeMismatch": 0,
+  "hashed": 0,
+  "hashMismatch": 0
+ },
+ "processes": [
+  "python.exe 11200",
+  "python.exe 15948",
+  "python.exe 14820",
+  "python.exe 10296",
+  "node.exe 23240",
+  "node.exe 12416",
+  "node.exe 15880",
+  "node.exe 23004",
+  "node.exe 13512",
+  "node.exe 11044",
+  "pg_dump.exe 11736",
+  "node.exe 17228"
+ ]
+}

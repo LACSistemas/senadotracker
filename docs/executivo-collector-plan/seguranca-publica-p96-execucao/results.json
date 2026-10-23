@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-10-23",
+  "contract": "crime-state-v1",
+  "tests": { "total": 463, "pass": 433, "fail": 0, "skipped": 30, "newFile": "tests/integration/crime-p96.test.ts (5 testes)" },
+  "fingerprints": { "saude": "IGUAL", "p91": "IGUAL", "p92": "IGUAL", "p91Cov(indicator_id<8000)": "IGUAL", "entities": "IGUAL", "note": "p91Cov total cresceu apenas pelas linhas de cobertura da criminalidade (ids 8000+); p93 sem verificação nesta rodada (script G0 usado não o calcula)" },
+  "sources": {
+    "ISP-RJ": { "status": "PUBLISHED", "rows": 758601, "municipalities": 92, "from": "2014-01", "to": "2026-09" },
+    "SEJUSP-MG": { "status": "PUBLISHED", "rows": 1491084, "municipalities": 853, "from": "2012-01", "to": "2026-07" },
+    "SESP-ES": { "status": "PUBLISHED", "rows": 34710, "municipalities": 78, "from": "2018-01", "to": "2026-09" },
+    "SSP-RS": { "status": "PUBLISHED", "rows": 1266288, "municipalities": 494, "from": "2012-01", "to": "2026-09" },
+    "SDS-PE": { "status": "PUBLISHED", "rows": 70131, "municipalities": 185, "from": "2004-01", "to": "2026-09", "suppressedCells": 16735 },
+    "SSPDS-CE": { "status": "PUBLISHED_WITH_CAVEATS", "rows": 1262, "municipalities": 173, "from": "2026-01", "to": "2026-09" },
+    "SSP-SP": { "status": "PUBLISHED", "rows": 234053, "municipalities": 645, "from": "2022-01", "to": "2026-08", "suppressedCells": 15972 },
+    "SSP-AL": "PROVEN_EXTERNAL_BLOCKER", "SSP-DF": "READY_WITH_CAVEATS_NOT_PUBLISHED", "SSP-BA": "NEEDS_VALIDATION",
+    "others": "NOT_FOUND_AFTER_TARGETED_DISCOVERY (GO, PR, PA, SC, MT, MS, PI, TO, AM, MA)"
+  },
+  "reconciliation": { "rjStateDiffs": 152, "rjCompositeViolations": 1578, "others": 0 },
+  "idempotence": "NO_CHANGE provado em PE e SP (cluster de teste) e ES (teste de integração); rollback por falha injetada provado (ES)",
+  "pncp": { "collectorPreserved": true, "scheduledTask": "Civica-P95-PNCP-Finish (30 min)", "missingMonthsAtClose": ["2026-03 (em andamento)", "2026-04", "2026-05", "2026-06", "2026-07", "2026-08", "2026-09"], "published": false }
+}

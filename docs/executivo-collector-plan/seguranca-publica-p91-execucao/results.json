@@ -1,0 +1,176 @@
+{
+ "etapa": "P9.1 — Criminalidade nacional (SIM + Sinesp VDE)",
+ "executado_em": "2026-10-21",
+ "commit": false,
+ "push": false,
+ "gates": {
+  "G0_INFRASTRUCTURE_SAFETY": "PASS",
+  "G1_P9_CONTRACT_RECONCILIATION": "PASS",
+  "G2_CRIME_SEMANTICS": "PASS",
+  "G3_SIM_NATIONAL": "PASS_WITH_CAVEATS",
+  "G4_SIM_RECONCILIATION": "PASS_WITH_CAVEATS",
+  "G5_VDE_RAW": "PASS",
+  "G6_VDE_PARSER": "PASS",
+  "G7_VDE_TERRITORIAL": "PASS",
+  "G8_PERSISTENCE": "PASS",
+  "G9_SIM_PUBLISHED": "PASS",
+  "G10_VDE_PUBLISHED": "PASS_WITH_CAVEATS",
+  "G11_RATES_AND_DENOMINATORS": "PASS_WITH_CAVEATS",
+  "G12_SERVING_CONTRACT": "PASS",
+  "G13_PRIVACY": "PASS",
+  "G14_STORAGE": "PASS",
+  "G15_REGRESSION": "PASS",
+  "G16_TESTS": "PASS_WITH_CAVEATS"
+ },
+ "gates_resumo": {
+  "PASS": 12,
+  "PASS_WITH_CAVEATS": 5
+ },
+ "gates_evidencias": {
+  "G0_INFRASTRUCTURE_SAFETY": "banco correto, sem sessões/locks/runs; logs sem PANIC; backup restaurado em cluster descartável com contagens idênticas; volume D: = GUID esperado; 351 arquivos do SIM verificados por SHA-256; fingerprints registrados",
+  "G1_P9_CONTRACT_RECONCILIATION": "errata na origem: gates 5/10/7 verificados por programa; denominadores do crosswalk (5.597 / 5.570 / 5.564 / 6 / 0 / 27); calendário 5.571 × 5.570; correções de leitura da P9",
+  "G2_CRIME_SEMANTICS": "contratos tipados em código, SIM ≠ VDE, vítima/ocorrência/mandado/peso separados, proibições de equivalência cobertas por testes",
+  "G3_SIM_NATIONAL": "27 UFs × 13 anos, 351 fatias reconciliadas com o arquivo; 2025 preliminar; ocorrência exclui residentes no exterior (DOEX não preservado)",
+  "G4_SIM_RECONCILIATION": "UF × ano: 324/324 idênticos ao Atlas (controles do ES exatos); município: 53.339/55.340, com 2.000 divergências em 2020 por inconsistência interna do Atlas e 1 por Y36",
+  "G5_VDE_RAW": "12 arquivos, SHA-256, manifesto, pasta datada, dedupe por hash, User-Agent; 2026 com 9 meses sem preenchimento futuro",
+  "G6_VDE_PARSER": "layout validado nos 12 anos; medidas por evento fixadas e verificadas; zeros, nulos e linhas repetidas tratados; eventos novos interrompem a carga",
+  "G7_VDE_TERRITORIAL": "5.570/5.570 nomes válidos conciliados, 0 não conciliados, 27 NÃO INFORMADO na UF; totais estaduais preservados em todas as fatias",
+  "G8_PERSISTENCE": "modelo D reutilizado; única estrutura nova (exec_seg_cov) mínima, testada em cluster isolado, reversível, com backup restaurável; Saúde intacta",
+  "G9_SIM_PUBLISHED": "351 fatias de residência + 13 de ocorrência; Σ municípios + ignorado = UF = arquivo; idempotência, replay e retomada comprovados",
+  "G10_VDE_PUBLISHED": "324 fatias, 141 competências, 474/474 totais iguais ao arquivo; zero ambíguo em 28,3 % dos UF × evento × mês; 2026 provisório",
+  "G11_RATES_AND_DENOMINATORS": "taxas só com denominador do mesmo ano; 2022–2023 sem estimativa; sem taxa por 100 mil mulheres",
+  "G12_SERVING_CONTRACT": "contratos tipados de estado e município, cobertura explícita, 5–6 consultas, 5–40 ms",
+  "G13_PRIVACY": "somente agregados; nenhum registro individual persistido; nenhum endpoint novo; RAW do SIM não duplicado",
+  "G14_STORAGE": "PostgreSQL +340 MiB, SSD +358 MB, WAL ≈ 1,5 GB, medidos",
+  "G15_REGRESSION": "fingerprints de Saúde e entidades idênticos; páginas de estado/município/Saúde byte a byte iguais; Legislativo intacto; typecheck limpo",
+  "G16_TESTS": "64/64 sem ignorados; suíte completa 344 aprovados, 0 falhas, 30 ignorados (legislativos); retomada de download parcial não testada"
+ },
+ "sim": {
+  "ufs": "27/27",
+  "anos": "13/13",
+  "fatias_residencia": 351,
+  "fatias_ocorrencia": 13,
+  "municipios_com_serie": 5570,
+  "municipios_com_obito_agressao": 5475,
+  "obitos_agressao_total_13_anos": 655690,
+  "municipio_ignorado_residencia": 9189,
+  "municipio_ignorado_ocorrencia": 71,
+  "recorte_atlas": "X85–Y09 + Y35 (Y36 em indicador próprio)"
+ },
+ "vde": {
+  "ufs": "27/27",
+  "anos": "12/12",
+  "competencias": 141,
+  "primeiro_mes": 201501,
+  "ultimo_mes": 202609,
+  "fatias": 324,
+  "eventos_municipais": 11,
+  "eventos_somente_uf": 20,
+  "indicadores_contagem": 41,
+  "indicadores_taxa": 8,
+  "zero_ambiguo_uf_evento_mes": 42290,
+  "registros_cobertura": 149606,
+  "linhas_repetidas_somadas": 201686
+ },
+ "crosswalk": {
+  "yearsInspected": [
+   2015,
+   2016,
+   2017,
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2026
+  ],
+  "firstYear": 2015,
+  "totalPairs": 5597,
+  "validNamePairs": 5570,
+  "matchedDirect": 5564,
+  "matchedAlias": 6,
+  "unmatched": 0,
+  "unassignedPairs": 27,
+  "ibgeEntitiesWithoutVdePair": 1,
+  "entities": 5571
+ },
+ "atlas": {
+  "ufPairs": 324,
+  "ufIdentical": 324,
+  "munPairs": 55340,
+  "munIdentical": 53339,
+  "munAbsDiff": 19925
+ },
+ "reconciliacao_vde": {
+  "rows": 474,
+  "allMatch": true
+ },
+ "persistencia": {
+  "indicadores_definidos": 62,
+  "valores": 2133062,
+  "valores_sim": 866295,
+  "valores_vde": 1266767,
+  "cobertura": 149606,
+  "tabela_nova": "exec_seg_cov",
+  "migration": 2
+ },
+ "armazenamento": {
+  "postgres_antes_bytes": 21907737747,
+  "postgres_depois_bytes": 22264155283,
+  "schema_antes_bytes": 5709496320,
+  "schema_depois_bytes": 6065315840,
+  "ind_value_total_bytes": 1105723392,
+  "cov_bytes": 19152896,
+  "change_log_bytes": 3428687872,
+  "raw_vde_bytes": 293133871,
+  "raw_atlas_bytes": 64653700,
+  "raw_sim_duplicado_bytes": 0,
+  "staging_bytes": 136927441,
+  "wal_bytes": 1500311839,
+  "ssd_livre_gib_antes": 435.2,
+  "ssd_livre_gib_depois": 434.8
+ },
+ "testes": {
+  "executivo_seguranca": {
+   "total": 64,
+   "aprovados": 64,
+   "falhas": 0,
+   "ignorados": 0
+  },
+  "suite_completa": {
+   "total": 374,
+   "aprovados": 344,
+   "falhas": 0,
+   "ignorados": 30,
+   "observacao": "ignorados = legislativos/Pix que exigem o banco local; não são evidência"
+  }
+ },
+ "regressao": {
+  "fingerprints_identicos": true,
+  "ssr_identico": [
+   "/estados/ES",
+   "/estados/ES/saude",
+   "/municipios/3205309",
+   "/municipios/3205309/saude",
+   "/quem-me-representa"
+  ],
+  "typecheck": "sem erros"
+ },
+ "ressalvas": [
+  "zero ambíguo no VDE (28,3 % dos UF × evento × mês)",
+  "Atlas municipal 2020 internamente inconsistente",
+  "2022 e 2023 sem população oficial: sem taxa",
+  "ocorrência exclui residentes no exterior",
+  "SIM 2025 e VDE 2026 provisórios",
+  "sem taxa por 100 mil mulheres",
+  "download parcial retomável não testado"
+ ],
+ "nao_executado": [
+  "P9.2–P9.7",
+  "página de Segurança",
+  "retenção do change log",
+  "agendamento"
+ ]
+}

@@ -1,0 +1,398 @@
+TAP version 13
+# Subtest: migrations: 22 tabelas (v2 = exec_seg_cov), idempotentes
+ok 1 - migrations: 22 tabelas (v2 = exec_seg_cov), idempotentes
+  ---
+  duration_ms: 1327.3057
+  type: 'test'
+  ...
+# Subtest: fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+ok 2 - fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+  ---
+  duration_ms: 4.7891
+  type: 'test'
+  ...
+# Subtest: restrições de integridade rejeitam dados inválidos
+ok 3 - restrições de integridade rejeitam dados inválidos
+  ---
+  duration_ms: 117.7228
+  type: 'test'
+  ...
+# Subtest: T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+ok 4 - T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+  ---
+  duration_ms: 79.1222
+  type: 'test'
+  ...
+# Subtest: T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+ok 5 - T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+  ---
+  duration_ms: 36.1537
+  type: 'test'
+  ...
+# Subtest: idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+ok 6 - idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+  ---
+  duration_ms: 1.643
+  type: 'test'
+  ...
+# Subtest: falha injetada no meio: nada parcial, run registrado como FALHO
+ok 7 - falha injetada no meio: nada parcial, run registrado como FALHO
+  ---
+  duration_ms: 12.6472
+  type: 'test'
+  ...
+# Subtest: rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+ok 8 - rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+  ---
+  duration_ms: 23.4578
+  type: 'test'
+  ...
+# Subtest: T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+ok 9 - T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+  ---
+  duration_ms: 144.6205
+  type: 'test'
+  ...
+# Subtest: publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+ok 10 - publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+  ---
+  duration_ms: 662.6962
+  type: 'test'
+  ...
+# Subtest: T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+ok 11 - T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+  ---
+  duration_ms: 19.0671
+  type: 'test'
+  ...
+# Subtest: T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+ok 12 - T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+  ---
+  duration_ms: 46.4829
+  type: 'test'
+  ...
+# Subtest: derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+ok 13 - derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+  ---
+  duration_ms: 77.7858
+  type: 'test'
+  ...
+# (node:30392) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+ok 14 - migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+  ---
+  duration_ms: 1177.3385
+  type: 'test'
+  ...
+# Subtest: SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+ok 15 - SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+  ---
+  duration_ms: 90.0578
+  type: 'test'
+  ...
+# Subtest: SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+ok 16 - SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+  ---
+  duration_ms: 48.7356
+  type: 'test'
+  ...
+# Subtest: VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+ok 17 - VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+  ---
+  duration_ms: 73.5834
+  type: 'test'
+  ...
+# Subtest: VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+ok 18 - VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+  ---
+  duration_ms: 70.4896
+  type: 'test'
+  ...
+# Subtest: contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+ok 19 - contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+  ---
+  duration_ms: 181.4014
+  type: 'test'
+  ...
+# Subtest: sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+ok 20 - sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+  ---
+  duration_ms: 1.7919
+  type: 'test'
+  ...
+# Subtest: com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+ok 21 - com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+  ---
+  duration_ms: 0.4113
+  type: 'test'
+  ...
+# Subtest: volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+ok 22 - volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+  ---
+  duration_ms: 55.9314
+  type: 'test'
+  ...
+# Subtest: orçamento de RAW excedido interrompe com BudgetError (retomável)
+ok 23 - orçamento de RAW excedido interrompe com BudgetError (retomável)
+  ---
+  duration_ms: 5.2923
+  type: 'test'
+  ...
+# Subtest: registerLocalRaw é idempotente e não duplica entradas do manifesto
+ok 24 - registerLocalRaw é idempotente e não duplica entradas do manifesto
+  ---
+  duration_ms: 18.0504
+  type: 'test'
+  ...
+# Subtest: aritmética de competência: dezembro → janeiro e janeiro → dezembro
+ok 25 - aritmética de competência: dezembro → janeiro e janeiro → dezembro
+  ---
+  duration_ms: 3.0959
+  type: 'test'
+  ...
+# Subtest: T1 dez/2024 → jan/2025: intervalo semiaberto fecha em 202501 e dezembro continua com o valor antigo
+ok 26 - T1 dez/2024 → jan/2025: intervalo semiaberto fecha em 202501 e dezembro continua com o valor antigo
+  ---
+  duration_ms: 0.979
+  type: 'test'
+  ...
+# Subtest: T2 mudança de leitos numa competência não duplica competências iguais
+ok 27 - T2 mudança de leitos numa competência não duplica competências iguais
+  ---
+  duration_ms: 0.3817
+  type: 'test'
+  ...
+# Subtest: T3/T4 desaparecimento e reaparecimento (e lacuna recusada)
+ok 28 - T3/T4 desaparecimento e reaparecimento (e lacuna recusada)
+  ---
+  duration_ms: 0.5965
+  type: 'test'
+  ...
+# Subtest: T5 correção retroativa de uma competência antiga é igual a reconstruir do zero
+ok 29 - T5 correção retroativa de uma competência antiga é igual a reconstruir do zero
+  ---
+  duration_ms: 20.0527
+  type: 'test'
+  ...
+# Subtest: quintil descreve a posição na distribuição pelos cortes p20/p40/p60/p80
+ok 30 - quintil descreve a posição na distribuição pelos cortes p20/p40/p60/p80
+  ---
+  duration_ms: 2.2555
+  type: 'test'
+  ...
+# Subtest: benchmark só compara valor elegível, no mesmo período e com grupo de tamanho mínimo
+ok 31 - benchmark só compara valor elegível, no mesmo período e com grupo de tamanho mínimo
+  ---
+  duration_ms: 0.9156
+  type: 'test'
+  ...
+# Subtest: tendência exige os dois pontos e ignora pequeno número; variação < 0,5 % é estável
+ok 32 - tendência exige os dois pontos e ignora pequeno número; variação < 0,5 % é estável
+  ---
+  duration_ms: 0.3716
+  type: 'test'
+  ...
+# Subtest: vacinas: metas do PNI, acima de 100 % conta como na meta e ausente fica fora da contagem
+ok 33 - vacinas: metas do PNI, acima de 100 % conta como na meta e ausente fica fora da contagem
+  ---
+  duration_ms: 21.0494
+  type: 'test'
+  ...
+# Subtest: lede usa só fatos comparativos e cita vacinas abaixo da meta
+ok 34 - lede usa só fatos comparativos e cita vacinas abaixo da meta
+  ---
+  duration_ms: 11.5777
+  type: 'test'
+  ...
+# Subtest: média móvel de 3 anos soma numeradores e denominadores e respeita o mínimo de denominador
+ok 35 - média móvel de 3 anos soma numeradores e denominadores e respeita o mínimo de denominador
+  ---
+  duration_ms: 1.9087
+  type: 'test'
+  ...
+# Subtest: variação relativa usa o ponto de 5 anos antes e ignora lacunas
+ok 36 - variação relativa usa o ponto de 5 anos antes e ignora lacunas
+  ---
+  duration_ms: 1.3085
+  type: 'test'
+  ...
+# Subtest: aba de evolução compara com a mediana do estado e do Brasil e marca anos sem população
+ok 37 - aba de evolução compara com a mediana do estado e do Brasil e marca anos sem população
+  ---
+  duration_ms: 32.0445
+  type: 'test'
+  ...
+# Subtest: hospitais: concentração, parcela e índice de polo regional
+ok 38 - hospitais: concentração, parcela e índice de polo regional
+  ---
+  duration_ms: 1.453
+  type: 'test'
+  ...
+# Subtest: residentes: janela de 12 meses, calendário por índice e fallback para município pequeno
+ok 39 - residentes: janela de 12 meses, calendário por índice e fallback para município pequeno
+  ---
+  duration_ms: 2.6693
+  type: 'test'
+  ...
+# Subtest: faixas do calendário
+ok 40 - faixas do calendário
+  ---
+  duration_ms: 0.3486
+  type: 'test'
+  ...
+# (node:27748) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+ok 41 - XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+  ---
+  duration_ms: 145.6597
+  type: 'test'
+  ...
+# Subtest: XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+ok 42 - XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+  ---
+  duration_ms: 384.6871
+  type: 'test'
+  ...
+# Subtest: DBC inválido do SIM falha sem produzir agregados
+ok 43 - DBC inválido do SIM falha sem produzir agregados
+  ---
+  duration_ms: 213.5272
+  type: 'test'
+  ...
+# Subtest: arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+ok 44 - arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+  ---
+  duration_ms: 12.6355
+  type: 'test'
+  ...
+# Subtest: definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+ok 45 - definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+  ---
+  duration_ms: 25.5832
+  type: 'test'
+  ...
+# Subtest: download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+ok 46 - download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+  ---
+  duration_ms: 27340.8368
+  type: 'test'
+  ...
+# Subtest: cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+ok 47 - cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+  ---
+  duration_ms: 107.7789
+  type: 'test'
+  ...
+# Subtest: SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+ok 48 - SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+  ---
+  duration_ms: 9.4845
+  type: 'test'
+  ...
+# Subtest: CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+ok 49 - CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+  ---
+  duration_ms: 1.473
+  type: 'test'
+  ...
+# Subtest: normalização de nomes: determinística, idempotente e sem apagar o nome original
+ok 50 - normalização de nomes: determinística, idempotente e sem apagar o nome original
+  ---
+  duration_ms: 0.2138
+  type: 'test'
+  ...
+# Subtest: crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+ok 51 - crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+  ---
+  duration_ms: 0.8413
+  type: 'test'
+  ...
+# Subtest: resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+ok 52 - resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+  ---
+  duration_ms: 0.2106
+  type: 'test'
+  ...
+# Subtest: SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+ok 53 - SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+  ---
+  duration_ms: 2.184
+  type: 'test'
+  ...
+# Subtest: SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+ok 54 - SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+  ---
+  duration_ms: 0.3728
+  type: 'test'
+  ...
+# Subtest: SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+ok 55 - SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+  ---
+  duration_ms: 0.2933
+  type: 'test'
+  ...
+# Subtest: SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+ok 56 - SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+  ---
+  duration_ms: 0.5796
+  type: 'test'
+  ...
+# Subtest: VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+ok 57 - VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+  ---
+  duration_ms: 0.3975
+  type: 'test'
+  ...
+# Subtest: VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+ok 58 - VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+  ---
+  duration_ms: 2.4663
+  type: 'test'
+  ...
+# Subtest: VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+ok 59 - VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+  ---
+  duration_ms: 1.6961
+  type: 'test'
+  ...
+# Subtest: VDE: meses futuros preenchidos com zero não são publicados
+ok 60 - VDE: meses futuros preenchidos com zero não são publicados
+  ---
+  duration_ms: 0.7495
+  type: 'test'
+  ...
+# Subtest: VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+ok 61 - VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+  ---
+  duration_ms: 0.8918
+  type: 'test'
+  ...
+# Subtest: VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+ok 62 - VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+  ---
+  duration_ms: 0.7724
+  type: 'test'
+  ...
+# Subtest: VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+ok 63 - VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+  ---
+  duration_ms: 0.3709
+  type: 'test'
+  ...
+# Subtest: VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+ok 64 - VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+  ---
+  duration_ms: 0.1734
+  type: 'test'
+  ...
+1..64
+# tests 64
+# suites 0
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 29197.7788

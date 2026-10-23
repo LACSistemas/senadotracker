@@ -1,0 +1,289 @@
+{
+ "etapa": "P9.2 — Trânsito e Segurança Viária",
+ "executado_em": "2026-10-21",
+ "commit": false,
+ "push": false,
+ "gates": {
+  "G0_INFRASTRUCTURE_SAFETY": "PASS",
+  "G1_TRAFFIC_SEMANTICS": "PASS",
+  "G2_SIM_TRAFFIC": "PASS_WITH_CAVEATS",
+  "G3_SENATRAN_FLEET": "PASS_WITH_CAVEATS",
+  "G4_RENAEST": "PASS_WITH_CAVEATS",
+  "G5_PRF": "PASS_WITH_CAVEATS",
+  "G6_SENATRAN_INFRACTIONS": "PASS_WITH_CAVEATS",
+  "G7_TERRITORIAL_RECONCILIATION": "PASS",
+  "G8_PERSISTENCE_CONTRACT": "PASS",
+  "G9_DERIVED_INDICATORS": "PASS_WITH_CAVEATS",
+  "G10_SOURCE_COMPARABILITY": "PASS",
+  "G11_SERVING_CONTRACT": "PASS",
+  "G12_PRIVACY": "PASS_WITH_CAVEATS",
+  "G13_REPUBLICATION": "PASS_WITH_CAVEATS",
+  "G14_TESTS_AND_REGRESSION": "PASS_WITH_CAVEATS",
+  "G15_PERFORMANCE_AND_STORAGE": "PASS_WITH_CAVEATS"
+ },
+ "gates_resumo": {
+  "PASS": 6,
+  "PASS_WITH_CAVEATS": 10
+ },
+ "familias": {
+  "sim": {
+   "slicesRes": 351,
+   "slicesOcc": 13,
+   "checks": 1404,
+   "checksOk": 1404,
+   "municipalitiesWithData": 5570,
+   "years": [
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ]
+  },
+  "frota": {
+   "competences": 165,
+   "rows": 919256,
+   "checks": 165,
+   "checksOk": 165,
+   "ufChecks": 378,
+   "ufChecksOk": 378,
+   "first": 201301,
+   "last": 202609,
+   "brasilUltimo": 133337839,
+   "municipalitiesEver": 5571
+  },
+  "renaest": {
+   "acidentes": 8659572,
+   "vitimas": 13200418,
+   "veiculosOrfaos": 213797,
+   "checks": 660,
+   "checksOk": 660,
+   "ufYears": [
+    [
+     2018,
+     25
+    ],
+    [
+     2019,
+     27
+    ],
+    [
+     2020,
+     26
+    ],
+    [
+     2021,
+     26
+    ],
+    [
+     2022,
+     26
+    ],
+    [
+     2023,
+     25
+    ],
+    [
+     2024,
+     23
+    ],
+    [
+     2025,
+     23
+    ],
+    [
+     2026,
+     19
+    ]
+   ],
+   "fatalScopeUfMonths": 168,
+   "fatalScopeUfs": [
+    "AM",
+    "MA",
+    "AL",
+    "SP",
+    "RS",
+    "MT"
+   ],
+   "lastMonth": 202605,
+   "es2023": {
+    "renaestObitos": 972,
+    "renaestSinistros": 45369,
+    "simResidenciaAT": 818,
+    "simOcorrenciaAT": 847
+   },
+   "original": {
+    "source_url": "https://dados.transportes.gov.br/dataset/42e2320b-ea67-4fdc-896f-71363e043fc6/resource/675d49a4-91bf-44a8-82da-faa19a62c53f/download/renaest_dabertos_20260912.zip",
+    "bytes": "529020946",
+    "sha": "4aa84ea561130f3125c82e36a94e523475493c66b998303f9bb179fc3d98232e",
+    "competence": 202605,
+    "state": 3
+   }
+  },
+  "prf": {
+   "years": [
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+   ],
+   "checks": 220,
+   "checksOk": 220,
+   "unknownUf": [
+    "2007: 5",
+    "2008: 3",
+    "2012: 4"
+   ],
+   "unmatchedSinistros": 118,
+   "slices": 540
+  },
+  "infracoes": {
+   "competences": 93,
+   "first": 201901,
+   "last": 202609,
+   "layouts": {
+    "wide": 51,
+    "long": 42
+   },
+   "checks": 93,
+   "checksOk": 93,
+   "rows": 425724,
+   "totalUltimo": 8227613
+  }
+ },
+ "crosswalk": {
+  "version": "tra-xw-v1",
+  "aliases": 48,
+  "aliasRows": 63,
+  "naoConciliados": [
+   "prf:PB:NOVA SERRANA",
+   "prf:PB:SAO BENTO DE POMBAL",
+   "prf:PR:VILA ALTA",
+   "senatran_frota:SP:IBITIUVA"
+  ],
+  "naoInformado": 6,
+  "ibgeComMesesSemLinha": 5
+ },
+ "persistencia": {
+  "indicadores_definidos": 122,
+  "valores_exec_ind_value": 3267659,
+  "frota_linhas": 919256,
+  "infracoes_linhas": 425724,
+  "cobertura_linhas": 9099,
+  "fatias_publicadas": 8113,
+  "migration": 3,
+  "tabelas_novas": [
+   "exec_tra_frota_mun_mes",
+   "exec_tra_infr_uf_mes",
+   "exec_tra_cov"
+  ],
+  "change_log_linhas_transito": 0
+ },
+ "armazenamento": {
+  "postgres_antes_bytes": 22264155283,
+  "postgres_depois_bytes": 23065676947,
+  "schema_antes_bytes": 6065315840,
+  "schema_depois_bytes": 6858096640,
+  "tabelas_bytes": {
+   "frota": 150773760,
+   "infr": 35586048,
+   "cov": 1007616,
+   "indValue": 1676681216,
+   "changeLog": 3428687872
+  },
+  "wal_bytes": 2815156667,
+  "raw_bytes": {
+   "raw_ssd_senatran-frota_bytes": 148383525,
+   "raw_ssd_senatran-frota-uf_bytes": 453317,
+   "raw_ssd_prf_bytes": 72299565,
+   "raw_ssd_renaest_bytes": 2301438,
+   "raw_ssd_senatran-infracoes_bytes": 6924305
+  },
+  "ssd_livre_gib_antes": 440.5,
+  "ssd_livre_gib_depois": 433.4,
+  "c_livre_gib_antes": 40.6,
+  "c_livre_gib_depois": 31
+ },
+ "arquivos_raw_novos": 293,
+ "tempo_carga_real_s": {
+  "total": 1490,
+  "sim": 246,
+  "prf": 116,
+  "infracoes": 348,
+  "frota": 328,
+  "renaest": 452
+ },
+ "testes": {
+  "executivo_seguranca_transito": {
+   "total": 75,
+   "aprovados": 75,
+   "falhas": 0,
+   "ignorados": 0
+  },
+  "suite_completa": {
+   "total": 401,
+   "aprovados": 371,
+   "falhas": 0,
+   "ignorados": 30,
+   "observacao": "ignorados = legislativos/Pix; não são evidência"
+  },
+  "typecheck": "sem erros",
+  "next_build": "não executado (protege o .next do servidor do usuário na porta 3000)"
+ },
+ "regressao": {
+  "fingerprints_saude_p91_identicos": true,
+  "ssr_identico": [
+   "/estados/ES",
+   "/estados/ES/saude",
+   "/municipios/3205309",
+   "/municipios/3205309/saude"
+  ],
+  "quem_me_representa": "200"
+ },
+ "privacidade": {
+  "renaest_original": "descartado após agregar (state 3 no manifesto)",
+  "prf_zip": "mantido no RAW (sem dado pessoal)",
+  "persistido": "apenas contagens e códigos"
+ },
+ "ressalvas": [
+  "sem frota municipal antes de 2013 localizada",
+  "IBITIUVA/SP e 3 nomes da PRF não conciliados",
+  "RENAEST: cobertura desigual e escopo só inferido; revisão real de pacote antigo não observada",
+  "PRF: quebra de série em 2016; 12 sinistros sem UF",
+  "infrações: série irregular em 2020–2021; UF de jurisdição",
+  "SIM: ocorrência sem DOEX; 2025 preliminar; sem taxa em 2022–2023",
+  "next build não rodado",
+  "30 testes legislativos ignorados"
+ ],
+ "nao_executado": [
+  "P9.3–P9.7",
+  "página de Segurança",
+  "agendamento",
+  "retenção do change log",
+  "integrações Detran"
+ ]
+}

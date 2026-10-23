@@ -3,7 +3,15 @@ import type { Pool } from 'pg';
 /** Domínios de indicador (exec_ind_def.domain). */
 export const DOMAIN = { saude: 1, educacao: 2, seguranca: 3, bem_estar: 4, infraestrutura: 5 } as const;
 /** Bits de flags (exec_ind_value.flags). */
-export const FLAG = { smallN: 1, preliminary: 2, partialCoverage: 4, suppressed: 8, denominatorDivergent: 16, above100: 32, noDenominator: 64 } as const;
+export const FLAG = { smallN: 1, preliminary: 2, partialCoverage: 4, suppressed: 8, denominatorDivergent: 16, above100: 32, noDenominator: 64, zeroAmbiguous: 128,
+  /** Efetivos (P9.3): estados de informação ausente. Valor NULL + um destes bits = a fonte não trouxe o número (nunca zero). */
+  unavailable: 256, notInformed: 512, refused: 1024,
+  /** "-" da fonte: fenômeno inexistente por definição (ex.: UF sem guarda municipal); value = 0. */
+  inexistent: 2048,
+  /** O número desta linha inclui outra corporação (SP: bombeiros somados à PM), ou, com valor NULL, está somado a outra linha. */
+  composite: 4096,
+  /** A data-base da linha é incerta ou divergente dentro da própria fonte (ver nota do indicador). */
+  refDateUncertain: 8192 } as const;
 
 export interface IndDef { id: number; code: string; version?: number; label: string; unit: string; grain: 'M' | 'Q' | 'S' | 'A'; sort: number; numerator: string; denominator: string; minDenominator?: number; note: string; ranking?: boolean; aggregation?: boolean }
 
