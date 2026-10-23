@@ -28,7 +28,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - [x] 2.1 `components/cracha-hero.tsx` (pílulas de carreira e de honestidade)
 - [x] 2.2 `KpiStripCracha`
 - [x] 2.3 "Em resumo, em {ano}": `lib/person-themes.ts` + `components/person-themes.tsx` (temas atribuídos pela Casa, barras tocáveis → `/legislativo/proposicoes/explorar?autor=&tema=`, cobertura "N de M têm tema", temas frequentes sem proposta). Falta: linha de votos/partido (a fonte não publica orientação) e filtro de votos por tema
-- [ ] 2.4 Abas client-side com `?secao=`
+- [~] 2.4 Abas: mantidas como 4 rotas deep-linkáveis (já compartilháveis), com skeleton de navegação; abas client-side exigem unificar o carregamento de dados (decisão pendente, ver Log)
 - [ ] 2.5 Aceite mobile
 ### Fase 1 — busca
 - [x] 1.1 `components/global-search.tsx` (`/` ou ⌘K, `<dialog>`, combobox/listbox) + `app/api/busca/route.ts` (2 SELECTs com LIMIT, sem facetas)
@@ -56,3 +56,4 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - Não feito ainda: 2.3 (temas clicáveis), 2.4 (abas client-side — hoje são 4 rotas com gating CSS, intocado de propósito), Fase 4, 5.3 nas rotas profundas, Fase 6, 3.3 fora do crachá/home.
 - Bugs achados na validação visual e corrigidos: `NaN%`/`undefined` nos tiles do senador (campos `undefined`, não `null`); pílula "Faltam N dados" divergia entre rotas por causa do gating (agora só na visão geral). Teste de regressão no E2E.
 - Decisão sobre 2.4: abas client-side exigem carregar custos, atividade e histórico numa só chamada (hoje cada rota carrega só o seu). Isso é uma mudança de camada de dados com custo de desempenho; não foi feita. Recomendação: manter 4 rotas com prefetch + skeleton (feito) ou aprovar a mudança de dados.
+- A11y própria (`scripts/security/a11y-check.mjs`, `A11Y_PAGES=...`) em home, perfil de deputado, gastos de senador e /investigar, 1440 e 390: 0 pulos de título, 1 `<h1>`, 0 svg sem rótulo, foco visível em 38–40 de 39–40 abas. Ressalvas: 5 falhas de contraste no cartão "Fontes oficiais conectadas" do hero (já existia; o cartão é claro sobre gradiente translúcido, provável falso positivo da heurística — não verificado); 1 elemento sem foco visível na home e no /investigar (não identificado); alvos < 24 px em links do rodapé e das tabelas de notas (já existiam). Os 12 botões de mês da cota foram ajustados para ≥ 24 px.

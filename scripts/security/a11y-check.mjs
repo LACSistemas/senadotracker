@@ -4,7 +4,7 @@ import { writeFileSync } from 'node:fs';
  * Verificações de acessibilidade em navegador real (sem axe): nomes acessíveis, hierarquia de títulos, gráficos com rótulo, contraste WCAG calculado, foco visível por teclado, alvos de toque.
  * Uso: node scripts/security/a11y-check.mjs <base> <saida.json>
  */
-const [base, out] = process.argv.slice(2); const PAGES = ['/municipios/3205309/seguranca', '/estados/ES/seguranca', '/municipios/3200359/seguranca']; const VIEWS = [{ w: 1440, h: 900, touch: false }, { w: 390, h: 800, touch: true }];
+const [base, out] = process.argv.slice(2); const PAGES = process.env.A11Y_PAGES ? process.env.A11Y_PAGES.split(',') : ['/municipios/3205309/seguranca', '/estados/ES/seguranca', '/municipios/3200359/seguranca']; const VIEWS = [{ w: 1440, h: 900, touch: false }, { w: 390, h: 800, touch: true }];
 const browser = await chromium.launch({ channel: 'chrome' }); const results = [];
 for (const path of PAGES) for (const v of VIEWS) {
   const ctx = await browser.newContext({ viewport: { width: v.w, height: v.h }, hasTouch: v.touch, locale: 'pt-BR', reducedMotion: 'reduce' }); const page = await ctx.newPage(); await page.goto(base + path, { waitUntil: 'networkidle', timeout: 120000 });
