@@ -66,4 +66,12 @@ test.describe('busca global e crachá', () => {
     await tema.click();
     await expect(page).toHaveURL(/proposicoes\/explorar\?.*tema=/);
   });
+
+  test('histórico: aparece só onde há dados (atuação), com abas só das séries carregadas', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379/atuacao-parlamentar');
+    await expect(page.getByRole('heading', { name: /Como isso mudou/ })).toBeVisible();
+    await expect(page.getByRole('tab', { name: /Presença/ })).toBeVisible();
+    await page.goto('/legislativo/deputados/204379/carreira-politica');
+    await expect(page.getByRole('heading', { name: /Como isso mudou/ })).toBeHidden();
+  });
 });

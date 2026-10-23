@@ -7,8 +7,8 @@
    o grupo escolhido na navegação lateral. */
 .profile-section-content[data-profile-section="overview"] > :not(#visao-geral),
 .profile-section-content[data-profile-section="costs"] > :not(:has(#custos)):not(:has(#gabinete)):not(#cobertura-despesas),
-.profile-section-content[data-profile-section="activity"] > :not(:has(#participacao)):not(:has(#producao)):not(:has(#atuacao)):not(:has(#emendas-pix)):not(:has(#votos)),
-.profile-section-content[data-profile-section="career"] > :not(#visao-geral):not(:has(#eleicoes)):not(:has(#historico)) {
+.profile-section-content[data-profile-section="activity"] > :not(:has(#participacao)):not(:has(#producao)):not(:has(#atuacao)):not(:has(#emendas-pix)):not(:has(#votos)):not(:has(#historico)),
+.profile-section-content[data-profile-section="career"] > :not(#visao-geral):not(:has(#eleicoes)) {
   display: none;
 }
 
