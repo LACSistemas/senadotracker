@@ -10,6 +10,6 @@ export function Breadcrumb({items}:{items:Crumb[]}){
     <ol className="flex flex-wrap items-center gap-x-1 gap-y-1">{parents.map(item=><li key={item.label} className="flex items-center gap-1">
       {item.href?<Link href={item.href} className="focus-ring inline-flex min-h-11 items-center gap-1 font-semibold text-primary no-underline hover:underline"><ChevronLeft size={14} aria-hidden="true"/>{item.label}</Link>:<span>{item.label}</span>}
     </li>)}
-    {current&&<li aria-current="page" className="font-bold text-foreground"><span className="px-1 text-muted-foreground" aria-hidden="true">/</span>{current.label}</li>}</ol>
+    {current&&<li aria-current="page" className="font-bold text-foreground">{current.label}</li>}</ol>
   </nav>;
 }

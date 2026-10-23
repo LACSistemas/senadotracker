@@ -43,11 +43,16 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 5 — IA/navegação
 - [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")
 - [x] 5.2 `/investigar` (7 ferramentas, nenhuma rota removida)
-- [~] 5.3 `components/breadcrumb.tsx` criado e usado em `/investigar`; falta aplicar nas rotas profundas
+- [x] 5.3 `components/breadcrumb.tsx` em `/investigar` e nos perfis de senador/deputado ("‹ Parlamentares ‹ Deputados federais"); estados/municípios já têm navegação própria
 ### Fase 6 — polimento
-- [ ] 6.1–6.6
+- [x] 6.1 Skeleton do perfil (`loading.tsx` de deputados/senadores) e da busca
+- [x] 6.3 Dica do atalho `/` no botão de busca e no painel (↑ ↓ Enter Esc)
+- [x] 6.5 Metadados de compartilhamento do perfil (og:title/description/image, twitter card)
+- [ ] 6.2 Transições entre abas (dependem de 2.4), 6.4 estados vazios revisados, 6.6 Lighthouse/axe (só verificações próprias: 1 `<h1>`, foco, alvos ≥ 44 px nos controles novos)
 
 ## Log
 - Fase 0/3/2.1/2.2: ver commits.
 - Validação: servidor de dev isolado (`NEXT_DIST_DIR=.next-ux`, porta 3105) para não tocar o `.next` do servidor em uso. Typecheck (web + testes) limpo; E2E de busca/crachá 4/4.
 - Não feito ainda: 2.3 (temas clicáveis), 2.4 (abas client-side — hoje são 4 rotas com gating CSS, intocado de propósito), Fase 4, 5.3 nas rotas profundas, Fase 6, 3.3 fora do crachá/home.
+- Bugs achados na validação visual e corrigidos: `NaN%`/`undefined` nos tiles do senador (campos `undefined`, não `null`); pílula "Faltam N dados" divergia entre rotas por causa do gating (agora só na visão geral). Teste de regressão no E2E.
+- Decisão sobre 2.4: abas client-side exigem carregar custos, atividade e histórico numa só chamada (hoje cada rota carrega só o seu). Isso é uma mudança de camada de dados com custo de desempenho; não foi feita. Recomendação: manter 4 rotas com prefetch + skeleton (feito) ou aprovar a mudança de dados.
