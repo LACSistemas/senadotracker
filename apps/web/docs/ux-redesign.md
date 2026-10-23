@@ -22,7 +22,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 3 — linguagem simples
 - [x] 3.1 `lib/glossario.ts`
 - [x] 3.2 `components/termo-explicado.tsx`
-- [x] 3.3 Rótulos do crachá em linguagem simples (perfil); home e demais KPIs pendentes
+- [x] 3.3 Rótulos em linguagem simples no crachá e nas seções de custos/participação/produção do perfil; home e páginas de Casa/ranking pendentes
 - [ ] 3.4 Revisão com leigo
 ### Fase 2 — crachá
 - [x] 2.1 `components/cracha-hero.tsx` (pílulas de carreira e de honestidade)
@@ -38,7 +38,7 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 ### Fase 4 — drilldowns
 - [x] 4.1 Cota mês a mês tocável (`components/quota-explorer.tsx`, agregação testada em `lib/quota-explorer.ts`); seletor de ano; mês sem registro = tracejado e desabilitado
 - [x] 4.2 "Com o que gastou em {ano}" (categorias ordenadas por valor)
-- [ ] 4.3 "Ano a ano": BLOQUEADO por dados gateados por rota — a cota anual só carrega na rota `costs` e presença/participação por ano só na `activity` (ver `metricYears` em `lib/data-postgres.ts`); uma tabela única mostraria "—" falso. Depende de 2.4 (carregar tudo uma vez). Achado pré-existente: o bloco "Como isso mudou ao longo do tempo" aparece na rota `career` mas seus dados só existem em `activity`/`costs`, então lá mostra "Indisponível"
+- [~] 4.3 "Ano a ano" na visão geral com as duas séries que existem para todos os anos (cota gasta, com meses publicados, e propostas apresentadas; `lib/person-years.ts`). Presença/participação por ano seguem bloqueadas pelo gating por rota (ver 2.4)
 - [~] 4.4 Temas tocáveis levam às propostas; filtro de votos por tema não feito
 ### Fase 5 — IA/navegação
 - [x] 5.1 Header: Início · Parlamentares · Estados · Partidos · Investigar · Sobre ("Assuntos" → "Partidos"; "Legislativo" segue acessível por "Explorar")

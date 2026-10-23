@@ -58,4 +58,12 @@ test.describe('busca global e crachá', () => {
     const body = await page.locator('main').innerText();
     expect(body).not.toMatch(/NaN|undefined/);
   });
+
+  test('visão geral: temas tocáveis levam às proposições e há tabela Ano a ano', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379');
+    await expect(page.getByRole('table', { name: 'Ano a ano' })).toBeVisible();
+    const tema = page.getByRole('link', { name: /propostas?$/ }).first();
+    await tema.click();
+    await expect(page).toHaveURL(/proposicoes\/explorar\?.*tema=/);
+  });
 });
