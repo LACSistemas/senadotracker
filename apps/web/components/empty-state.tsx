@@ -26,6 +26,6 @@ export function EmptyState({title,description,page=false,children}:{title:string
     {note&&<p className="mx-auto mt-2 max-w-md text-sm leading-6 text-muted-foreground">{note}</p>}
     {children?<div className="mt-5 flex flex-wrap justify-center gap-3">{children}</div>:page&&<div className="mt-5 flex flex-wrap justify-center gap-3 text-sm font-bold">
       <Link href="/" className="focus-ring inline-flex min-h-11 items-center rounded-full border px-4 no-underline hover:bg-muted">Ir para o início</Link>
-      <Link href="/legislativo/parlamentares" className="focus-ring inline-flex min-h-11 items-center rounded-full border px-4 no-underline hover:bg-muted">Ver parlamentares</Link>
+      <Link href="/legislativo" className="focus-ring inline-flex min-h-11 items-center rounded-full border px-4 no-underline hover:bg-muted">Explorar o Legislativo</Link>
     </div>}
   </div></CardContent></Card>}

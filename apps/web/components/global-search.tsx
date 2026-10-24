@@ -63,7 +63,7 @@ export function GlobalSearch({variant='header'}:{variant?:'header'|'hero'}){
           {status==='idle'&&<p className="p-4 text-sm text-muted-foreground">Digite um nome, partido ou estado. Use ↑ ↓ para escolher e Enter para abrir.</p>}
           {status==='loading'&&!hits.length&&<div aria-hidden="true" className="space-y-2 p-2">{[0,1,2].map(i=><div key={i} className="h-12 animate-pulse rounded-xl bg-muted"/>)}</div>}
           {status==='loading'&&<span className="sr-only">Buscando…</span>}
-          {status==='error'&&<p className="p-4 text-sm text-muted-foreground">A busca está indisponível agora. Tente de novo em instantes ou use a lista de <a className="font-bold text-primary underline" href="/legislativo/parlamentares">parlamentares</a>.</p>}
+          {status==='error'&&<p className="p-4 text-sm text-muted-foreground">A busca está indisponível agora. Tente de novo em instantes ou use a lista de <a className="font-bold text-primary underline" href="/legislativo">Legislativo</a>.</p>}
           {status==='done'&&!hits.length&&<p className="p-4 text-sm text-muted-foreground">Nada encontrado para “{q.trim()}”. Tente só o sobrenome ou a sigla do partido.</p>}
           <ul id={listId} role="listbox" aria-label="Resultados">{hits.map((hit,index)=>
             <li key={hit.id} id={optionId(index)} role="option" aria-selected={index===active} onMouseEnter={()=>setActive(index)} onClick={()=>go(hit)} className={cn('flex min-h-14 cursor-pointer items-center gap-3 rounded-xl px-3 py-2',index===active&&'bg-secondary')}>

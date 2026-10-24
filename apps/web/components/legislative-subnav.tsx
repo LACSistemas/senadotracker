@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';import { usePathname } from 'next/navigation';
-const links=[['/legislativo/parlamentares','Parlamentares'],['/legislativo/senadores','Senadores'],['/legislativo/deputados','Deputados federais'],['/legislativo/estaduais','Deputados estaduais'],['/legislativo/partidos','Partidos'],['/legislativo/rankings','Rankings'],['/legislativo/fornecedores','Fornecedores'],['/legislativo/patrimonio','Patrimônio'],['/legislativo/proposicoes','Proposições'],['/quem-me-representa','Estados']] as const;
+const links=[['/legislativo/senadores','Senadores'],['/legislativo/deputados','Deputados federais'],['/legislativo/estaduais','Deputados estaduais'],['/legislativo/partidos','Partidos'],['/legislativo/rankings','Rankings'],['/legislativo/fornecedores','Fornecedores'],['/legislativo/patrimonio','Patrimônio'],['/legislativo/proposicoes','Proposições'],['/quem-me-representa','Estados']] as const;
 const active=(pathname:string,href:string)=>pathname===href||pathname.startsWith(`${href}/`);
 export function LegislativeSubnav(){const pathname=usePathname();return <nav aria-label="Navegação do Legislativo" className="overflow-x-auto border-b bg-card"><div className="page-shell flex min-w-max">{links.map(([href,label])=><Link key={href} href={href} prefetch={false} aria-current={active(pathname,href)?'page':undefined} className="focus-ring border-b-2 border-transparent px-4 py-3 text-sm font-semibold text-muted-foreground aria-[current=page]:border-primary aria-[current=page]:text-primary">{label}</Link>)}</div></nav>}
 
