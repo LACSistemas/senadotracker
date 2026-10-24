@@ -88,3 +88,8 @@ button,input,select { font:inherit; }
 .hemi-party { transition:opacity .2s ease; animation:hemi-in .6s cubic-bezier(.2,.7,.2,1) backwards; animation-delay:var(--d,0ms); }
 .hemi-party circle { stroke:var(--card); stroke-width:.5; }
 @media (prefers-reduced-motion:reduce) { .hemi-party { animation:none; } }
+
+/* Troca de aba do perfil: a seção que passa de display:none a visível reinicia a animação (só depois da 1ª troca, para não animar a carga). */
+@keyframes tab-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+.profile-section-content[data-animate="true"] > * { animation:tab-in .26s cubic-bezier(.2,.7,.2,1) both; }
+@media (prefers-reduced-motion:reduce) { .profile-section-content[data-animate="true"] > * { animation:none; } }

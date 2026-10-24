@@ -29,7 +29,7 @@ export default async function PropositionPage({ params, searchParams }: { params
   if (!['senado', 'camara'].includes(route.source)) notFound();
   const source = route.source as Source, id = decodeURIComponent(route.id);
   const result = await propositionDetail(source, id, amendmentQuery);
-  if (result.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Proposição indisponível" description={result.message} /></main></>;
+  if (result.status === 'unavailable') return <><LegislativeSubnav /><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Proposição indisponível" description={result.message} /></main></>;
   if (!result.data) notFound();
   const item = result.data as any;
   const proposal = item.proposal;

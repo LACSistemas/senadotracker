@@ -31,7 +31,7 @@ const ufs='AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR 
 export default async function ComparePage({searchParams}:{searchParams:Promise<Params>}){
   const query=await searchParams,mode=scalar(query.modo)==='partidos'?'partidos':scalar(query.modo)==='estados'?'estados':'parlamentares',source:Source=scalar(query.casa)==='camara'?'camara':'senado';
   const [setup,other]=await Promise.all([personComparisonSetup(source),personComparisonSetup(source==='senado'?'camara':'senado')]);
-  if(setup.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Comparação indisponível" description={setup.message}/></main></>;
+  if(setup.status==='unavailable')return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Comparação indisponível" description={setup.message}/></main></>;
   const years=[...new Set([...setup.data.years,...(other.status==='available'?other.data.years:[])])].sort((a,b)=>b-a),requested=Number(scalar(query.ano)),year=Number.isInteger(requested)&&years.includes(requested)?requested:(years[0]??new Date().getFullYear());
   const ids=scalar(query.pessoas)?list(scalar(query.pessoas)):[1,2,3,4].map(index=>scalar(query[`pessoa${index}`])).filter((item):item is string=>Boolean(item));
   const selectedParties=query.partidos?list(scalar(query.partidos)):list(Array.isArray(query.partido)?query.partido.join(','):scalar(query.partido));

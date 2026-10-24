@@ -28,7 +28,7 @@ export default async function SupplierExplorerPage({searchParams}:{searchParams:
   const direction:'asc'|'desc'=directionParam==='asc'?'asc':'desc';
   const query:SupplierExplorerQuery={year:Number.isSafeInteger(year)?year:new Date().getFullYear(),page,pageSize:25,search,activity,house,sort,direction};
   const result=await supplierExplorer(query);
-  if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Explorador indisponível" description={result.message}/></main></>;
+  if(result.status==='unavailable')return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Explorador indisponível" description={result.message}/></main></>;
   const data=result.data;
 
   const overviewResult=await congressSupplierOverview({year:data.year,house});

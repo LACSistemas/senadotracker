@@ -20,7 +20,7 @@ export default async function PatrimonyPage({searchParams}:{searchParams:Promise
   const params=await searchParams,rawPage=Number(scalar(params.pagina)??1),page=Number.isSafeInteger(rawPage)&&rawPage>0?rawPage:1,pageSize=25;
   const wanted=scalar(params.correcao)==='ipca';
   const result=await Promise.resolve(patrimonyRanking(wanted));
-  if(result.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Ranking patrimonial indisponível" description={result.message}/></main></>;
+  if(result.status==='unavailable')return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Ranking patrimonial indisponível" description={result.message}/></main></>;
   const data=result.data,deflator=data.deflator,available=data.deflatorAvailable;
   type Item=(typeof data.items)[number];
   const fromLabel=deflator?`${data.fromYear} corrigido`:String(data.fromYear),toLabel=String(data.toYear);

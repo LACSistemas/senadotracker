@@ -52,7 +52,7 @@ export default async function StatePage({searchParams}:{searchParams:Promise<Par
     </section></main></>;
   }
   const data=await Promise.resolve(stateRepresentation(uf,compareUf));
-  if(data.status==='unavailable') return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Representação indisponível" description={data.message}/></main></>;
+  if(data.status==='unavailable') return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Representação indisponível" description={data.message}/></main></>;
   const {representation,comparison}=data.data;
   const topics=subject?data.data.topics.filter(item=>searchText(item.label).includes(searchText(subject))):data.data.topics;
   const {summary,year}=representation;

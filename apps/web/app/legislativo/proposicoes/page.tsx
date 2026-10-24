@@ -33,7 +33,7 @@ export default async function PropositionsPage({ searchParams }: { searchParams:
   const year = Number.isInteger(yearValue) && yearValue >= 1900 && yearValue <= 2100 ? yearValue : undefined;
   const casa = scalar(query.casa), initialScope: ScopeKey = casa === 'camara' || casa === 'senado' ? casa : 'congresso';
   const result = await propositionOperationalBundle(year);
-  if (result.status === 'unavailable') return <><LegislativeSubnav /><main id="conteudo" tabIndex={-1} className="page-shell py-16"><EmptyState title="Proposições indisponíveis" description={result.message} /></main></>;
+  if (result.status === 'unavailable') return <><LegislativeSubnav /><main id="conteudo" tabIndex={-1} className="page-shell py-16"><EmptyState page title="Proposições indisponíveis" description={result.message} /></main></>;
   const bundle = result.data;
   return <>
     <LegislativeSubnav />

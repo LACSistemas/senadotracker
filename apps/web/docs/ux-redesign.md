@@ -49,7 +49,9 @@ Norte: politicometro.org. Princípio: divulgação progressiva — resposta em 1
 - [x] 6.3 Dica do atalho `/` no botão de busca e no painel (↑ ↓ Enter Esc)
 - [x] 6.5 Metadados de compartilhamento do perfil (og:title/description/image, twitter card)
 - [x] 6.6 Lighthouse real (v. do `npx`, instalado em D:\Civica	ools11y) no build de produção, emulação móvel: acessibilidade 100, boas práticas 100, SEO 100 na home e 91–92 nos perfis (falha única: `canonical` relativo — resolve definindo `NEXT_PUBLIC_SITE_URL`, que agora vira `metadataBase`), desempenho 90–93 (LCP 2,9–3,2 s, TBT 40–190 ms, CLS 0). axe-core: 0 violações nas 9 páginas × 2 larguras após as correções
-- [ ] 6.2 Transições entre abas (CSS), 6.4 estados vazios revisados
+- [x] 6.2 Transição entre abas só com CSS (`tab-in`, reinicia quando a seção passa de `display:none` a visível; só depois da 1ª troca; desligada com `prefers-reduced-motion`)
+- [x] 6.4 `EmptyState` com três tons inferidos do título (indisponível = "não conseguimos carregar agora, isso não quer dizer que não existam"; não encontrado; vazio), `role=alert/status`, `h1` + saídas (início, parlamentares) nas 23 páginas inteiras, e `id="conteudo"` no `<main>` dessas páginas (o link "Pular para o conteúdo" não tinha alvo)
+- [x] 3.3 (restante) Textos das páginas de Casa (`parliamentary-house-page`), `/legislativo` e rankings: "identificado/universo nominal/lote" → linguagem simples; o termo oficial continua nos detalhes
 
 ## Log
 - Fase 0/3/2.1/2.2: ver commits.

@@ -127,4 +127,24 @@ test.describe('busca global e crachá', () => {
     await expect(page).toHaveURL(/votoTema=/);
     await expect(page.getByText(/Votações nominais sobre Finanças Públicas e Orçamento/)).toBeVisible();
   });
+
+  test('troca de aba anima a seção que entra (CSS) e respeita movimento reduzido', async ({ page }) => {
+    await page.goto('/legislativo/deputados/204379');
+    const content = page.locator('.profile-section-content');
+    await expect(content).toHaveAttribute('data-animate', 'false');
+    await page.getByRole('navigation', { name: 'Seções do perfil' }).getByRole('link', { name: 'Carreira política' }).click();
+    await expect(content).toHaveAttribute('data-animate', 'true');
+    const name = await page.locator('.profile-section-content > :visible').first().evaluate((el) => getComputedStyle(el).animationName);
+    expect(name).toBe('tab-in');
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    const reduced = await page.locator('.profile-section-content > :visible').first().evaluate((el) => getComputedStyle(el).animationName);
+    expect(reduced).toBe('none');
+  });
+
+  test('estado vazio de página inteira: um h1, mensagem honesta e saídas', async ({ page }) => {
+    await page.goto('/legislativo/fornecedores-parlamentares/parlamentar/xx/1');
+    await expect(page.getByRole('heading', { level: 1, name: 'Casa inválida' })).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Ir para o início' })).toBeVisible();
+    await expect(page.getByRole('status')).toBeVisible();
+  });
 });

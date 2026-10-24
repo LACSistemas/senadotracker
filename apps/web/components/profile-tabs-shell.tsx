@@ -14,11 +14,11 @@ const tabOfPath=(pathname:string,root:string):ProfileTab|null=>{
 // (`data-profile-section`) mostra só a ativa. Cada aba continua tendo URL própria (history.pushState), então
 // o link é compartilhável, o botão Voltar funciona e, sem JavaScript, a rota correspondente abre a aba certa.
 export function ProfileTabsShell({initial,root,children}:{initial:ProfileTab;root:string;children:ReactNode}){
-  const [active,setActive]=useState<ProfileTab>(initial),content=useRef<HTMLDivElement>(null);
+  const [active,setActive]=useState<ProfileTab>(initial),[animate,setAnimate]=useState(false),content=useRef<HTMLDivElement>(null);
   const reduced=()=>typeof window!=='undefined'&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const show=useCallback((tab:ProfileTab,url:string|null,hash:string)=>{
-    setActive(tab);
+    setActive(tab);setAnimate(true);
     if(url&&`${location.pathname}${location.search}`!==url.split('#')[0])history.pushState(null,'',url);
     requestAnimationFrame(()=>{
       const target=hash?document.getElementById(hash.slice(1)):null,el=target??content.current;
@@ -27,7 +27,7 @@ export function ProfileTabsShell({initial,root,children}:{initial:ProfileTab;roo
   },[]);
 
   useEffect(()=>{
-    const onPop=()=>{const tab=tabOfPath(location.pathname,root);if(tab)setActive(tab)};
+    const onPop=()=>{const tab=tabOfPath(location.pathname,root);if(tab){setActive(tab);setAnimate(true)}};
     window.addEventListener('popstate',onPop);return()=>window.removeEventListener('popstate',onPop);
   },[root]);
 
@@ -61,6 +61,6 @@ export function ProfileTabsShell({initial,root,children}:{initial:ProfileTab;roo
         </div>
       </nav>
     </aside>
-    <div ref={content} data-profile-section={active} className="profile-section-content min-w-0 scroll-mt-24 space-y-16">{children}</div>
+    <div ref={content} data-profile-section={active} data-animate={animate} className="profile-section-content min-w-0 scroll-mt-24 space-y-16">{children}</div>
   </div>;
 }

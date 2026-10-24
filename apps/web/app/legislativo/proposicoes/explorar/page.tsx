@@ -28,7 +28,7 @@ export default async function ExplorePage({ searchParams }: { searchParams: Prom
   const year = Number(scalar(q.ano_numero) ?? scalar(q.ano)), validYear = Number.isInteger(year) && year > 0 ? year : undefined, page = Math.max(1, Number(scalar(q.pagina) ?? 1));
   const filters = { ...(search ? { search } : {}), ...(source ? { source } : {}), ...(type ? { type } : {}), ...(theme ? { theme } : {}), ...(author ? { author } : {}), ...(validYear ? { identifierYear: validYear } : {}) };
   const response = await propositionListing({ page, pageSize: 12, ...filters, ...(group ? { group } : {}) });
-  if (response.status === 'unavailable') return <><LegislativeSubnav /><main className="page-shell py-12"><EmptyState title="Exploração indisponível" description={response.message} /></main></>;
+  if (response.status === 'unavailable') return <><LegislativeSubnav /><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Exploração indisponível" description={response.message} /></main></>;
   const { result } = response.data;
   const composition = await propositionResultComposition(filters);
   const entries = composition.status === 'available' ? composeEntries(composition.data.groups.map(item => ({ ...item, topTypes: [] })), composition.data.total) : [];

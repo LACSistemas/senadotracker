@@ -19,8 +19,8 @@ const houseName=(institution:string)=>institution==='CAMARA'?'Câmara dos Deputa
 
 export default async function GlobalSupplierPage({params,searchParams}:{params:Promise<{id:string}>;searchParams:Promise<Params>}){
   const {id}=await params,p=await searchParams,data=await supplierGlobalDetail(id);
-  if(data.status==='unavailable')return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor indisponível" description={data.message}/></main></>;
-  if(!data.data)return <><LegislativeSubnav/><main className="page-shell py-12"><EmptyState title="Fornecedor não encontrado" description="Não há uma identidade pública compatível com este identificador."/></main></>;
+  if(data.status==='unavailable')return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Fornecedor indisponível" description={data.message}/></main></>;
+  if(!data.data)return <><LegislativeSubnav/><main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Fornecedor não encontrado" description="Não há uma identidade pública compatível com este identificador."/></main></>;
   const detail=data.data;
   const parliamentaryRows=detail.parliamentary as Array<{year:number;institution:string;net_value_scaled:number|null;records:number;parliamentarians:number;ufs:number;parties:number}>;
   const institutionalRows=detail.institutional as Array<{year:number;institution:string;committed_scaled:number|null;liquidated_scaled:number|null;paid_scaled:number|null}>;

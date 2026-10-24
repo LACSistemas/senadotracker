@@ -53,7 +53,7 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
   const rawPage = Number(scalar(params.pagina) ?? 1);
   const page = Number.isSafeInteger(rawPage) && rawPage > 0 ? rawPage : 1;
   const data = await Promise.resolve(legislativeOverview({ page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}), ...(sort?{sort}:{}) }));
-  if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState title="Entrada legislativa indisponível" description={data.message} /></main>;
+  if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Entrada legislativa indisponível" description={data.message} /></main>;
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;
   const stateNumbers = await getStateLegislativeNumbers();
@@ -142,7 +142,7 @@ function HousePanorama({ source, year, data, monthlyCost, processingTime }: { so
   const senate = source === 'senado';
   const cells = [
     { icon: Users, value: data.roster.parliamentarians.toLocaleString('pt-BR'), label: senate ? 'senadores' : 'deputados federais', detail: senate ? 'representação dos estados e do DF' : 'representando todo o país' },
-    { icon: ReceiptText, value: monthlyCost.totalCents === null ? '—' : money.format(monthlyCost.totalCents / 100), label: 'custo mensal identificado', detail: 'subsídios + cota + gabinetes no período comum' },
+    { icon: ReceiptText, value: monthlyCost.totalCents === null ? '—' : money.format(monthlyCost.totalCents / 100), label: 'custo por mês', detail: 'salário do cargo + cota + gabinete no período comum' },
     { icon: ReceiptText, value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents / 100), label: 'custo médio mensal', detail: `subsídio + cota + gabinete · n=${monthlyCost.sampleSize}` },
     { icon: FileText, value: processingTime.meanDays === null ? 'N/D' : `${Math.round(processingTime.meanDays).toLocaleString('pt-BR')} dias`, label: 'tempo médio de tramitação', detail: processingTime.meanDays===null?processingTime.note:`até decisão final · n=${processingTime.sampleSize}` },
     { icon: BarChart3, value: ratio(data.participation.meanRatio), label: 'participação em votações nominais', detail: `média entre parlamentares observáveis · ${year} · n=${data.participation.coverage.sampleSize??0}` },
@@ -156,8 +156,8 @@ function StatePanorama({ numbers }: { numbers: StateLegislativeNumbers }) {
   const { cost, proposals } = numbers;
   const cells = [
     { icon: Users, value: numbers.deputies.toLocaleString('pt-BR'), label: 'deputados estaduais', detail: `${numbers.houses} Casas · inclui ${numbers.districtDeputies} distritais (CLDF)` },
-    { icon: ReceiptText, value: cost ? money.format(cost.totalCents / 100) : '—', label: 'custo mensal identificado', detail: cost ? `subsídios + cotas · ${cost.houses.length} de ${numbers.houses} Casas · ${monthLabel(cost.month)}` : 'sem mês comum utilizável' },
-    { icon: ReceiptText, value: cost ? money.format(cost.meanCents / 100) : '—', label: 'custo médio mensal', detail: cost ? `subsídio + cota · n=${cost.deputies.toLocaleString('pt-BR')}` : '—' },
+    { icon: ReceiptText, value: cost ? money.format(cost.totalCents / 100) : '—', label: 'custo por mês', detail: cost ? `salário do cargo + cota · ${cost.houses.length} de ${numbers.houses} Casas · ${monthLabel(cost.month)}` : 'sem mês comum utilizável' },
+    { icon: ReceiptText, value: cost ? money.format(cost.meanCents / 100) : '—', label: 'custo médio mensal', detail: cost ? `salário + cota · n=${cost.deputies.toLocaleString('pt-BR')}` : '—' },
     { icon: FileText, value: proposals ? proposals.perHouse.toLocaleString('pt-BR') : 'N/D', label: 'proposições por Assembleia', detail: proposals ? `média de ${proposals.total.toLocaleString('pt-BR')} proposições em ${proposals.houses} Assembleias · ${proposals.year}` : 'sem proposições publicadas' },
     { icon: Building2, value: numbers.parties.toLocaleString('pt-BR'), label: 'partidos nas Assembleias', detail: `partidos distintos nas ${numbers.houses} Casas` },
   ];
