@@ -1,0 +1,11 @@
+{
+ "ies_linhas": 2580,
+ "ies_unicas": 2580,
+ "cursos_linhas": 671610,
+ "co_curso_distintos": 46317,
+ "co_curso_repetidos": 10509,
+ "chave_ies_curso_municipio_unica": false,
+ "soma_qt_mat": 9977217,
+ "ies_com_curso": 2580,
+ "bytes_rede": 38411625
+}

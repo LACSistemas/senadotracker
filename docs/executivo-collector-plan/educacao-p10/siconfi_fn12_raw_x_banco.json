@@ -1,0 +1,326 @@
+[
+ {
+  "ano": 2014,
+  "estagio": "EMP",
+  "entes_raw": 5204,
+  "entes_banco": 5204,
+  "soma_raw_centavos": 30754841140283,
+  "soma_banco_centavos": 30754841140283,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2014,
+  "estagio": "LIQ",
+  "entes_raw": 5204,
+  "entes_banco": 5204,
+  "soma_raw_centavos": 28875547560350,
+  "soma_banco_centavos": 28875547560350,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2014,
+  "estagio": "PAG",
+  "entes_raw": 5204,
+  "entes_banco": 5201,
+  "soma_raw_centavos": 27777400191911,
+  "soma_banco_centavos": 27777400191911,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2015,
+  "estagio": "EMP",
+  "entes_raw": 5444,
+  "entes_banco": 5444,
+  "soma_raw_centavos": 33384531668676,
+  "soma_banco_centavos": 33384531668676,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2015,
+  "estagio": "LIQ",
+  "entes_raw": 5444,
+  "entes_banco": 5442,
+  "soma_raw_centavos": 31602157787104,
+  "soma_banco_centavos": 31602157787104,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2015,
+  "estagio": "PAG",
+  "entes_raw": 5444,
+  "entes_banco": 5439,
+  "soma_raw_centavos": 30229287718953,
+  "soma_banco_centavos": 30229287718953,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2016,
+  "estagio": "EMP",
+  "entes_raw": 5446,
+  "entes_banco": 5445,
+  "soma_raw_centavos": 34784145153973,
+  "soma_banco_centavos": 34784145153973,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2016,
+  "estagio": "LIQ",
+  "entes_raw": 5446,
+  "entes_banco": 5443,
+  "soma_raw_centavos": 33178301121041,
+  "soma_banco_centavos": 33178301121041,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2016,
+  "estagio": "PAG",
+  "entes_raw": 5446,
+  "entes_banco": 5440,
+  "soma_raw_centavos": 31993849855103,
+  "soma_banco_centavos": 31993849855103,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2017,
+  "estagio": "EMP",
+  "entes_raw": 5556,
+  "entes_banco": 5556,
+  "soma_raw_centavos": 36239942440418,
+  "soma_banco_centavos": 36239942440418,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2017,
+  "estagio": "LIQ",
+  "entes_raw": 5556,
+  "entes_banco": 5555,
+  "soma_raw_centavos": 34603970409967,
+  "soma_banco_centavos": 34603970409967,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2017,
+  "estagio": "PAG",
+  "entes_raw": 5556,
+  "entes_banco": 5555,
+  "soma_raw_centavos": 33182490507690,
+  "soma_banco_centavos": 33182490507690,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2018,
+  "estagio": "EMP",
+  "entes_raw": 5552,
+  "entes_banco": 5552,
+  "soma_raw_centavos": 37585315488105,
+  "soma_banco_centavos": 37585315488105,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2018,
+  "estagio": "LIQ",
+  "entes_raw": 5552,
+  "entes_banco": 5551,
+  "soma_raw_centavos": 36124688731624,
+  "soma_banco_centavos": 36124688731624,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2018,
+  "estagio": "PAG",
+  "entes_raw": 5552,
+  "entes_banco": 5551,
+  "soma_raw_centavos": 34267628249527,
+  "soma_banco_centavos": 34267628249527,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2019,
+  "estagio": "EMP",
+  "entes_raw": 5565,
+  "entes_banco": 5565,
+  "soma_raw_centavos": 39672887815977,
+  "soma_banco_centavos": 39672887815977,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2019,
+  "estagio": "LIQ",
+  "entes_raw": 5565,
+  "entes_banco": 5564,
+  "soma_raw_centavos": 37454606913209,
+  "soma_banco_centavos": 37454606913209,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2019,
+  "estagio": "PAG",
+  "entes_raw": 5565,
+  "entes_banco": 5564,
+  "soma_raw_centavos": 35715469659168,
+  "soma_banco_centavos": 35715469659168,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2020,
+  "estagio": "EMP",
+  "entes_raw": 5579,
+  "entes_banco": 5579,
+  "soma_raw_centavos": 38054339745554,
+  "soma_banco_centavos": 38054339745554,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2020,
+  "estagio": "LIQ",
+  "entes_raw": 5579,
+  "entes_banco": 5578,
+  "soma_raw_centavos": 35568735383423,
+  "soma_banco_centavos": 35568735383423,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2020,
+  "estagio": "PAG",
+  "entes_raw": 5579,
+  "entes_banco": 5576,
+  "soma_raw_centavos": 34204134188632,
+  "soma_banco_centavos": 34204134188632,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2021,
+  "estagio": "EMP",
+  "entes_raw": 5580,
+  "entes_banco": 5580,
+  "soma_raw_centavos": 45323110997880,
+  "soma_banco_centavos": 45323110997880,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2021,
+  "estagio": "LIQ",
+  "entes_raw": 5580,
+  "entes_banco": 5580,
+  "soma_raw_centavos": 41421386547594,
+  "soma_banco_centavos": 41421386547594,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2021,
+  "estagio": "PAG",
+  "entes_raw": 5580,
+  "entes_banco": 5580,
+  "soma_raw_centavos": 39301034576467,
+  "soma_banco_centavos": 39301034576467,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2022,
+  "estagio": "EMP",
+  "entes_raw": 5582,
+  "entes_banco": 5582,
+  "soma_raw_centavos": 57386637706225,
+  "soma_banco_centavos": 57386637706225,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2022,
+  "estagio": "LIQ",
+  "entes_raw": 5582,
+  "entes_banco": 5582,
+  "soma_raw_centavos": 53511644067450,
+  "soma_banco_centavos": 53511644067450,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2022,
+  "estagio": "PAG",
+  "entes_raw": 5582,
+  "entes_banco": 5581,
+  "soma_raw_centavos": 51323002121277,
+  "soma_banco_centavos": 51323002121277,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2023,
+  "estagio": "EMP",
+  "entes_raw": 5582,
+  "entes_banco": 5582,
+  "soma_raw_centavos": 64401373518490,
+  "soma_banco_centavos": 64401373518490,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2023,
+  "estagio": "LIQ",
+  "entes_raw": 5582,
+  "entes_banco": 5582,
+  "soma_raw_centavos": 61011531056133,
+  "soma_banco_centavos": 61011531056133,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2023,
+  "estagio": "PAG",
+  "entes_raw": 5582,
+  "entes_banco": 5581,
+  "soma_raw_centavos": 58484955706340,
+  "soma_banco_centavos": 58484955706340,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2024,
+  "estagio": "EMP",
+  "entes_raw": 5571,
+  "entes_banco": 5571,
+  "soma_raw_centavos": 72027882919237,
+  "soma_banco_centavos": 72027882919237,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2024,
+  "estagio": "LIQ",
+  "entes_raw": 5571,
+  "entes_banco": 5570,
+  "soma_raw_centavos": 68273491249042,
+  "soma_banco_centavos": 68273491249042,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2024,
+  "estagio": "PAG",
+  "entes_raw": 5571,
+  "entes_banco": 5568,
+  "soma_raw_centavos": 65738606466758,
+  "soma_banco_centavos": 65738606466758,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2025,
+  "estagio": "EMP",
+  "entes_raw": 5530,
+  "entes_banco": 5530,
+  "soma_raw_centavos": 79570521922521,
+  "soma_banco_centavos": 79570521922521,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2025,
+  "estagio": "LIQ",
+  "entes_raw": 5530,
+  "entes_banco": 5530,
+  "soma_raw_centavos": 75536633790834,
+  "soma_banco_centavos": 75536633790834,
+  "resultado": "IGUAL"
+ },
+ {
+  "ano": 2025,
+  "estagio": "PAG",
+  "entes_raw": 5530,
+  "entes_banco": 5529,
+  "soma_raw_centavos": 72898087397495,
+  "soma_banco_centavos": 72898087397495,
+  "resultado": "IGUAL"
+ }
+]

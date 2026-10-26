@@ -1,0 +1,46 @@
+{
+ "year": 2025,
+ "uf": 32,
+ "schoolsInSlice": 2986,
+ "s0": {
+  "offer": "6e3c4f46f0af1681568d6254e2b7266e",
+  "agg": "579583aa8f2666d9c412954f54750030",
+  "cov": "e1a02855e9e07edb3544a61cc69ed83d"
+ },
+ "replaySame": "NO_CHANGE",
+ "logAfterReplay": 0,
+ "stateAfterReplay": true,
+ "changed": {
+  "nPartition": 5,
+  "nIntegral": 2,
+  "inep": [
+   32002416,
+   32002602,
+   32002947,
+   32002955,
+   32002980,
+   32003781,
+   32003790
+  ]
+ },
+ "retification": "PUBLISHED",
+ "logByTableOp": [
+  "t83:U=7",
+  "t84:U=3"
+ ],
+ "logRowsAdded": 10,
+ "retificationRunId": 32732,
+ "stateAfterRetificationDiffers": true,
+ "rollback": "ROLLED_BACK",
+ "stateAfterRollbackEqualsReference": true,
+ "publicationActiveAfterRollback": {
+  "run_id": 32236,
+  "state": 1
+ },
+ "injectedFailureThrew": true,
+ "stateAfterInjectedFailureEqualsReference": true,
+ "logAfterInjectedFailure": 0,
+ "republishOriginal": "NO_CHANGE",
+ "finalStateEqualsReference": true,
+ "cadastroP101Unchanged": true
+}

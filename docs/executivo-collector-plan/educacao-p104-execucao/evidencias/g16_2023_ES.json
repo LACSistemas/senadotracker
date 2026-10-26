@@ -1,0 +1,83 @@
+{
+ "year": 2023,
+ "uf": 32,
+ "ideb": {
+  "changedInputRows": 5,
+  "replay": "NO_CHANGE",
+  "logAfterReplay": 0,
+  "stateAfterReplay": true,
+  "log": [
+   "t93:U=5"
+  ],
+  "stateDiffers": true,
+  "rollback": "ROLLED_BACK",
+  "stateAfterRollbackEqualsReference": true,
+  "injectedFailureThrew": true,
+  "stateAfterFailureEqualsReference": true,
+  "logAfterFailure": 0
+ },
+ "saeb": {
+  "changedInputRows": 5,
+  "replay": "NO_CHANGE",
+  "logAfterReplay": 0,
+  "stateAfterReplay": true,
+  "log": [
+   "t96:U=5"
+  ],
+  "stateDiffers": true,
+  "rollback": "ROLLED_BACK",
+  "stateAfterRollbackEqualsReference": true,
+  "injectedFailureThrew": true,
+  "stateAfterFailureEqualsReference": true,
+  "logAfterFailure": 0
+ },
+ "flow": {
+  "changedInputRows": 5,
+  "replay": "NO_CHANGE",
+  "logAfterReplay": 0,
+  "stateAfterReplay": true,
+  "log": [
+   "t98:U=5",
+   "t100:U=1"
+  ],
+  "stateDiffers": true,
+  "rollback": "ROLLED_BACK",
+  "stateAfterRollbackEqualsReference": true,
+  "injectedFailureThrew": true,
+  "stateAfterFailureEqualsReference": true,
+  "logAfterFailure": 0
+ },
+ "trn": {
+  "changedInputRows": 5,
+  "replay": "NO_CHANGE",
+  "logAfterReplay": 0,
+  "stateAfterReplay": true,
+  "log": [
+   "t101:U=5"
+  ],
+  "stateDiffers": true,
+  "rollback": "ROLLED_BACK",
+  "stateAfterRollbackEqualsReference": true,
+  "injectedFailureThrew": true,
+  "stateAfterFailureEqualsReference": true,
+  "logAfterFailure": 0
+ },
+ "inse": {
+  "changedInputRows": 5,
+  "replay": "NO_CHANGE",
+  "logAfterReplay": 0,
+  "stateAfterReplay": true,
+  "log": [
+   "t103:U=5"
+  ],
+  "stateDiffers": true,
+  "rollback": "ROLLED_BACK",
+  "stateAfterRollbackEqualsReference": true,
+  "injectedFailureThrew": true,
+  "stateAfterFailureEqualsReference": true,
+  "logAfterFailure": 0
+ },
+ "finalStateAfterAll": true,
+ "priorWavesUnchanged": true,
+ "nota": "ideb, flow, trn e inse: 1ª execução completa; saeb: reexecução isolada (a 1ª teve o rollback recusado porque republicar o mesmo conteúdo reativa o run antigo, que deixa de ser o mais novo da UF; corrigido com SHAs únicos por execução)"
+}

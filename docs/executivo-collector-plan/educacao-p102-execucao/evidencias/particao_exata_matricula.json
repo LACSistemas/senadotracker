@@ -1,0 +1,34 @@
+{
+ "2023": {
+  "escolas_com_matricula": 178476,
+  "partição_exata": 178476,
+  "campos_profissionais": [
+   "QT_MAT_PROF_TEC_CONC",
+   "QT_MAT_PROF_TEC_SUBS",
+   "QT_MAT_PROF_FIC_CONC"
+  ],
+  "diferenca_total": 0
+ },
+ "2024": {
+  "escolas_com_matricula": 179286,
+  "partição_exata": 179286,
+  "campos_profissionais": [
+   "QT_MAT_PROF_TEC_CONC",
+   "QT_MAT_PROF_TEC_SUBS",
+   "QT_MAT_PROF_FIC_CONC"
+  ],
+  "diferenca_total": 0
+ },
+ "2025": {
+  "escolas_com_matricula": 178766,
+  "partição_exata": 178766,
+  "campos_profissionais": [
+   "QT_MAT_PROF_TEC_CONC",
+   "QT_MAT_PROF_TEC_SUBS",
+   "QT_MAT_PROF_FIC_CONC",
+   "QT_MAT_PROF_TEC_IFTP_CT",
+   "QT_MAT_PROF_IFTP_QP"
+  ],
+  "diferenca_total": 0
+ }
+}

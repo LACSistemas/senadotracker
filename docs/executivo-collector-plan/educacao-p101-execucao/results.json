@@ -1,0 +1,82 @@
+{
+ "fase": "P10.1",
+ "data": "2026-10-24",
+ "commit": false,
+ "push": false,
+ "gates": {
+  "G0_SAFETY": "PASS",
+  "G1_SCHEMA_EFFICIENCY": "PASS",
+  "G2_MIGRATION_VALIDATION": "PASS",
+  "G3_CENSO_2025_RECONCILIATION": "PASS",
+  "G4_SCHOOL_IDENTITY_2021_2025": "PASS",
+  "G5_HISTORICAL_BACKFILL": "PASS_WITH_CAVEATS",
+  "G6_SCHOOL_COVERAGE": "PASS",
+  "G7_PRIVACY": "PASS",
+  "G8_COLLECTOR": "PASS_WITH_CAVEATS",
+  "G9_STORAGE_BUDGET": "PASS",
+  "G10_HISTORICAL_RECONCILIATION": "PASS",
+  "G11_IDEMPOTENCY_ROLLBACK": "PASS",
+  "G12_SERVING": "PASS",
+  "G13_TERRITORIAL_TESTS": "PASS",
+  "G14_REGRESSION": "PASS",
+  "G15_DOWNSTREAM_READINESS": "PASS"
+ },
+ "numeros": {
+  "escolas_distintas_2007_2025": 299547,
+  "snapshots": 4272656,
+  "fatias_publicadas": 513,
+  "edicoes": 19,
+  "linhas_2025": 214192,
+  "recorte_sinopse_2025": 178766,
+  "decomposicao_2025": {
+   "ativa_com_matricula": 178766,
+   "ativa_sem_matricula": 1774,
+   "paralisada": 29780,
+   "extinta": 3872
+  },
+  "rejeitadas": 0,
+  "divergencias_sinopse": 0,
+  "mudancas": {
+   "name_events": 241153,
+   "schools_changed_name": 139403,
+   "municipality_events": 757,
+   "schools_changed_municipality": 653,
+   "dependency_events": 3472,
+   "schools_changed_dependency": 3243,
+   "location_events": 4452,
+   "situation_events": 140177,
+   "schools_reappeared_after_absence": 33784,
+   "reappearance_events": 40694
+  },
+  "escolas_com_mudanca_nome_municipio_dependencia": 140168,
+  "armazenamento": {
+   "banco_crescimento_bytes": 554090496,
+   "tabelas_bytes": 364100000.0,
+   "indices_bytes": 189200000.0,
+   "change_log_linhas_adicionadas": 0,
+   "wal_total_bytes": 1618571592,
+   "wal_dir_pico_bytes": 855638016,
+   "c_livre_minimo_gib": 48.05,
+   "bytes_por_snapshot": 124.8,
+   "raw_inep_bytes": 736342647
+  },
+  "testes": {
+   "npm_test": {
+    "total": 512,
+    "pass": 482,
+    "fail": 0,
+    "skipped": 30
+   },
+   "unit_p101": 8,
+   "integration_p101": 6,
+   "territoriais": "17/17 conferem com a Sinopse"
+  }
+ },
+ "limitacoes": [
+  "licenca e termos do INEP nao lidos",
+  "2007-2010 so listam escolas em atividade",
+  "1995-2006 fora do escopo",
+  "sem tabela oficial de fusoes de escolas",
+  "carga inicial sem change log (recuperacao por replay)"
+ ]
+}

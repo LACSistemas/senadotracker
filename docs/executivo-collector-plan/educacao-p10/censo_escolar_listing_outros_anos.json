@@ -1,0 +1,591 @@
+[
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_1995.zip",
+  "tamanho_zip": 36095512,
+  "chamadas_range": 3,
+  "bytes_lidos": 1148,
+  "entradas": [
+   {
+    "nome": "microdados_educaç╞o_básica_1995/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/DADOS/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/DADOS/CENSOESC_1995.CSV",
+    "compactado": 16813266,
+    "descompactado": 188645583
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/DADOS/DADOSCURSO_1995.CSV",
+    "compactado": 604509,
+    "descompactado": 3624282
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/DADOS/DADOS_DESP_1995.CSV",
+    "compactado": 895377,
+    "descompactado": 6117459
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/DADOS/MD5_microdados_ed_basica_1995.txt",
+    "compactado": 122,
+    "descompactado": 163
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/LEIA-ME/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_1995/LEIA-ME/Leia-me_1995.pdf",
+    "compactado": 17780508,
+    "descompactado": 18043642
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2000.zip",
+  "tamanho_zip": 47009984,
+  "chamadas_range": 3,
+  "bytes_lidos": 1280,
+  "entradas": [
+   {
+    "nome": "microdados_educaç╞o_básica_2000/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/CENSOESC_2000.CSV",
+    "compactado": 23106578,
+    "descompactado": 332956758
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/INDICESC_2000.CSV",
+    "compactado": 15876662,
+    "descompactado": 86982546
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/INDICREG_2000.CSV",
+    "compactado": 6352270,
+    "descompactado": 40060876
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/MD5_microdados_ed_basica_2000.txt",
+    "compactado": 147,
+    "descompactado": 211
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Dados/MEDPROF_2000.CSV",
+    "compactado": 485862,
+    "descompactado": 3829022
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2000/Leia-me/Leia-me_2000.pdf",
+    "compactado": 1186523,
+    "descompactado": 1315361
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2006.zip",
+  "tamanho_zip": 51058446,
+  "chamadas_range": 3,
+  "bytes_lidos": 1140,
+  "entradas": [
+   {
+    "nome": "microdados_educaç╞o_básica_2006/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/DADOS/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/DADOS/CENSOESC_2006.CSV",
+    "compactado": 48371155,
+    "descompactado": 1163111895
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/DADOS/EDUCPROF_2006.CSV",
+    "compactado": 275439,
+    "descompactado": 1648422
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/DADOS/EM22_2006.CSV",
+    "compactado": 7848,
+    "descompactado": 32430
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/DADOS/MD5_microdados_ed_basica_2006.txt",
+    "compactado": 118,
+    "descompactado": 155
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/LEIA_ME/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_educaç╞o_básica_2006/LEIA_ME/Leia_me_2006.pdf",
+    "compactado": 2402172,
+    "descompactado": 2753156
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2007.zip",
+  "tamanho_zip": 21262154,
+  "chamadas_range": 3,
+  "bytes_lidos": 2299,
+  "entradas": [
+   {
+    "nome": "microdados_ed_basica_2007/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 53703,
+    "descompactado": 68150
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO II - Questionários do Censo da Educaç╞o Básica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO II - Questionários do Censo da Educaç╞o Básica/Aluno.pdf",
+    "compactado": 674269,
+    "descompactado": 677811
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO II - Questionários do Censo da Educaç╞o Básica/Escola.pdf",
+    "compactado": 424368,
+    "descompactado": 430038
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO II - Questionários do Censo da Educaç╞o Básica/Profissional_Escolar.pdf",
+    "compactado": 568217,
+    "descompactado": 571757
+   },
+   {
+    "nome": "microdados_ed_basica_2007/Anexos/ANEXO II - Questionários do Censo da Educaç╞o Básica/Turma.pdf",
+    "compactado": 547759,
+    "descompactado": 551583
+   },
+   {
+    "nome": "microdados_ed_basica_2007/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/dados/md5_microdados_ed_basica_2007.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "microdados_ed_basica_2007/dados/microdados_ed_basica_2007.csv",
+    "compactado": 18730477,
+    "descompactado": 144898082
+   },
+   {
+    "nome": "microdados_ed_basica_2007/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2007/leia-me/Leia-me.pdf",
+    "compactado": 161483,
+    "descompactado": 180248
+   },
+   {
+    "nome": "microdados_ed_basica_2007/leia-me/Nota.pdf",
+    "compactado": 98145,
+    "descompactado": 119844
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2010.zip",
+  "tamanho_zip": 22915352,
+  "chamadas_range": 3,
+  "bytes_lidos": 2304,
+  "entradas": [
+   {
+    "nome": "microdados_ed_basica_2010/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 53703,
+    "descompactado": 68150
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 62270,
+    "descompactado": 67086
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 131792,
+    "descompactado": 152654
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional_Escolar.pdf",
+    "compactado": 107355,
+    "descompactado": 116253
+   },
+   {
+    "nome": "microdados_ed_basica_2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 74304,
+    "descompactado": 79015
+   },
+   {
+    "nome": "microdados_ed_basica_2010/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/dados/md5_microdados_ed_basica_2010.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "microdados_ed_basica_2010/dados/microdados_ed_basica_2010.csv",
+    "compactado": 22222924,
+    "descompactado": 192692441
+   },
+   {
+    "nome": "microdados_ed_basica_2010/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2010/leia-me/Leia-me.pdf",
+    "compactado": 161116,
+    "descompactado": 179908
+   },
+   {
+    "nome": "microdados_ed_basica_2010/leia-me/Nota.pdf",
+    "compactado": 98145,
+    "descompactado": 119844
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2015.zip",
+  "tamanho_zip": 26651713,
+  "chamadas_range": 3,
+  "bytes_lidos": 2482,
+  "entradas": [
+   {
+    "nome": "microdados_ed_basica_2015/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 53703,
+    "descompactado": 68150
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 300148,
+    "descompactado": 313094
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 303377,
+    "descompactado": 316128
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional_Escolar.pdf",
+    "compactado": 302257,
+    "descompactado": 310457
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Thumbs.db",
+    "compactado": 99691,
+    "descompactado": 103936
+   },
+   {
+    "nome": "microdados_ed_basica_2015/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 289032,
+    "descompactado": 294426
+   },
+   {
+    "nome": "microdados_ed_basica_2015/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/dados/md5_microdados_ed_basica_2015.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "microdados_ed_basica_2015/dados/microdados_ed_basica_2015.csv",
+    "compactado": 25039598,
+    "descompactado": 225243680
+   },
+   {
+    "nome": "microdados_ed_basica_2015/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2015/leia-me/Leia-me.pdf",
+    "compactado": 161715,
+    "descompactado": 180473
+   },
+   {
+    "nome": "microdados_ed_basica_2015/leia-me/Nota.pdf",
+    "compactado": 98145,
+    "descompactado": 119844
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2019.zip",
+  "tamanho_zip": 26219731,
+  "chamadas_range": 3,
+  "bytes_lidos": 2491,
+  "entradas": [
+   {
+    "nome": "microdados_ed_basica_2019/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 53703,
+    "descompactado": 68150
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 51410,
+    "descompactado": 61308
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 65667,
+    "descompactado": 75704
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Gestor_Escolar.pdf",
+    "compactado": 48810,
+    "descompactado": 58792
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional_Escolar.pdf",
+    "compactado": 57464,
+    "descompactado": 70214
+   },
+   {
+    "nome": "microdados_ed_basica_2019/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 41416,
+    "descompactado": 48247
+   },
+   {
+    "nome": "microdados_ed_basica_2019/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/dados/md5_microdados_ed_basica_2019.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "microdados_ed_basica_2019/dados/microdados_ed_basica_2019.csv",
+    "compactado": 25637434,
+    "descompactado": 217066579
+   },
+   {
+    "nome": "microdados_ed_basica_2019/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2019/leia-me/Leia-me.pdf",
+    "compactado": 161617,
+    "descompactado": 180398
+   },
+   {
+    "nome": "microdados_ed_basica_2019/leia-me/Nota.pdf",
+    "compactado": 98145,
+    "descompactado": 119844
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2021.zip",
+  "tamanho_zip": 25942916,
+  "chamadas_range": 3,
+  "bytes_lidos": 2865,
+  "entradas": [
+   {
+    "nome": "microdados_ed_basica_2021/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 53703,
+    "descompactado": 68150
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO I - Dicionário de Dados/~$Dicionário de Dados da Educaç╞o Básica.xlsx",
+    "compactado": 82,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 61,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 51436,
+    "descompactado": 61660
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 66340,
+    "descompactado": 76431
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Gestor_Escolar.pdf",
+    "compactado": 47136,
+    "descompactado": 55986
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional_Escolar.pdf",
+    "compactado": 55658,
+    "descompactado": 68001
+   },
+   {
+    "nome": "microdados_ed_basica_2021/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 43590,
+    "descompactado": 47706
+   },
+   {
+    "nome": "microdados_ed_basica_2021/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/dados/md5_microdados_ed_basica_2021.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "microdados_ed_basica_2021/dados/microdados_ed_basica_2021.csv",
+    "compactado": 25360928,
+    "descompactado": 210559443
+   },
+   {
+    "nome": "microdados_ed_basica_2021/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_ed_basica_2021/leia-me/Leia-me.pdf",
+    "compactado": 161128,
+    "descompactado": 179942
+   },
+   {
+    "nome": "microdados_ed_basica_2021/leia-me/Nota.pdf",
+    "compactado": 98145,
+    "descompactado": 119844
+   }
+  ]
+ }
+]

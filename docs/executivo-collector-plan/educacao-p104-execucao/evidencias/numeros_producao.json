@@ -1,0 +1,2264 @@
+{
+ "at": "2026-10-26T02:25:21.942Z",
+ "idebEscolas": [
+  {
+   "year": 2005,
+   "stage": 1,
+   "com_ideb": 27849,
+   "linhas": 27849,
+   "com_meta": 0
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "com_ideb": 18613,
+   "linhas": 18613,
+   "com_meta": 0
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "com_ideb": 37261,
+   "linhas": 38581,
+   "com_meta": 27849
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "com_ideb": 27155,
+   "linhas": 27856,
+   "com_meta": 18613
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "com_ideb": 43497,
+   "linhas": 48439,
+   "com_meta": 38581
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "com_ideb": 31841,
+   "linhas": 34638,
+   "com_meta": 27856
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "com_ideb": 40381,
+   "linhas": 51638,
+   "com_meta": 48335
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "com_ideb": 30841,
+   "linhas": 36990,
+   "com_meta": 34525
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "com_ideb": 38829,
+   "linhas": 53780,
+   "com_meta": 51541
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "com_ideb": 30990,
+   "linhas": 38759,
+   "com_meta": 36853
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "com_ideb": 38461,
+   "linhas": 55339,
+   "com_meta": 53720
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "com_ideb": 29863,
+   "linhas": 40145,
+   "com_meta": 38657
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "com_ideb": 41515,
+   "linhas": 59705,
+   "com_meta": 55300
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "com_ideb": 25530,
+   "linhas": 43432,
+   "com_meta": 40046
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "com_ideb": 9597,
+   "linhas": 19616,
+   "com_meta": 0
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "com_ideb": 42149,
+   "linhas": 61732,
+   "com_meta": 59183
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "com_ideb": 29718,
+   "linhas": 44794,
+   "com_meta": 42698
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "com_ideb": 12079,
+   "linhas": 19792,
+   "com_meta": 9597
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "com_ideb": 32736,
+   "linhas": 63070,
+   "com_meta": 61503
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "com_ideb": 22212,
+   "linhas": 45841,
+   "com_meta": 44426
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "com_ideb": 7195,
+   "linhas": 19916,
+   "com_meta": 14984
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "com_ideb": 41295,
+   "linhas": 43487,
+   "com_meta": 0
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "com_ideb": 31092,
+   "linhas": 35442,
+   "com_meta": 0
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "com_ideb": 14457,
+   "linhas": 18686,
+   "com_meta": 0
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "com_ideb": 42454,
+   "linhas": 43400,
+   "com_meta": 0
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "com_ideb": 33448,
+   "linhas": 34938,
+   "com_meta": 0
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "com_ideb": 17584,
+   "linhas": 19023,
+   "com_meta": 0
+  }
+ ],
+ "idebMunicipiosPublica": [
+  {
+   "year": 2005,
+   "stage": 1,
+   "com_ideb": 5022
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "com_ideb": 5171
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "com_ideb": 5483
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "com_ideb": 5525
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "com_ideb": 5404
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "com_ideb": 5450
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "com_ideb": 5227
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "com_ideb": 5357
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "com_ideb": 5304
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "com_ideb": 5380
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "com_ideb": 5280
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "com_ideb": 5236
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "com_ideb": 5477
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "com_ideb": 5462
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "com_ideb": 5278
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "com_ideb": 5419
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "com_ideb": 5287
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "com_ideb": 4774
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "com_ideb": 5073
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "com_ideb": 4818
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "com_ideb": 3376
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "com_ideb": 5430
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "com_ideb": 5382
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "com_ideb": 5065
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "com_ideb": 5478
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "com_ideb": 5491
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "com_ideb": 5428
+  }
+ ],
+ "idebMunicipiosQualquerRede": [
+  {
+   "year": 2005,
+   "stage": 1,
+   "municipios": 5022
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "municipios": 5187
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "municipios": 5483
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "municipios": 5525
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "municipios": 5404
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "municipios": 5450
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "municipios": 5394
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "municipios": 5389
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "municipios": 5310
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "municipios": 5394
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "municipios": 5290
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "municipios": 5252
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "municipios": 5480
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "municipios": 5486
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "municipios": 5295
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "municipios": 5421
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "municipios": 5293
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "municipios": 4780
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "municipios": 5084
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "municipios": 4834
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "municipios": 3419
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "municipios": 5432
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "municipios": 5384
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "municipios": 5076
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "municipios": 5479
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "municipios": 5492
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "municipios": 5433
+  }
+ ],
+ "idebUfRegiaoBrasil": [
+  {
+   "year": 2005,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2005,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2005,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2005,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2005,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2005,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2007,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2007,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2007,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2009,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2009,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2009,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2011,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2011,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2011,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2013,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2013,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2013,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2015,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2015,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2015,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "kind": 3,
+   "territorios": 27
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "kind": 1,
+   "territorios": 1
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "kind": 2,
+   "territorios": 5
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "kind": 3,
+   "territorios": 27
+  }
+ ],
+ "idebBrasilTotal": [
+  {
+   "year": 2005,
+   "stage": 1,
+   "ideb": 3.8,
+   "meta": null,
+   "n": "4.577",
+   "p": "0.8279"
+  },
+  {
+   "year": 2005,
+   "stage": 2,
+   "ideb": 3.5,
+   "meta": null,
+   "n": "4.522",
+   "p": "0.7720"
+  },
+  {
+   "year": 2005,
+   "stage": 3,
+   "ideb": 3.4,
+   "meta": null,
+   "n": "4.356",
+   "p": "0.7719"
+  },
+  {
+   "year": 2007,
+   "stage": 1,
+   "ideb": 4.2,
+   "meta": 3.9,
+   "n": "4.857",
+   "p": "0.8641"
+  },
+  {
+   "year": 2007,
+   "stage": 2,
+   "ideb": 3.8,
+   "meta": 3.5,
+   "n": "4.701",
+   "p": "0.7995"
+  },
+  {
+   "year": 2007,
+   "stage": 3,
+   "ideb": 3.5,
+   "meta": 3.4,
+   "n": "4.435",
+   "p": "0.7784"
+  },
+  {
+   "year": 2009,
+   "stage": 1,
+   "ideb": 4.6,
+   "meta": 4.2,
+   "n": "5.218",
+   "p": "0.8882"
+  },
+  {
+   "year": 2009,
+   "stage": 2,
+   "ideb": 4,
+   "meta": 3.7,
+   "n": "4.879",
+   "p": "0.8153"
+  },
+  {
+   "year": 2009,
+   "stage": 3,
+   "ideb": 3.6,
+   "meta": 3.5,
+   "n": "4.572",
+   "p": "0.7953"
+  },
+  {
+   "year": 2011,
+   "stage": 1,
+   "ideb": 5,
+   "meta": 4.6,
+   "n": "5.435",
+   "p": "0.9128"
+  },
+  {
+   "year": 2011,
+   "stage": 2,
+   "ideb": 4.1,
+   "meta": 3.9,
+   "n": "4.966",
+   "p": "0.8349"
+  },
+  {
+   "year": 2011,
+   "stage": 3,
+   "ideb": 3.7,
+   "meta": 3.7,
+   "n": "4.570",
+   "p": "0.8022"
+  },
+  {
+   "year": 2013,
+   "stage": 1,
+   "ideb": 5.2,
+   "meta": 4.9,
+   "n": "5.562",
+   "p": "0.9279"
+  },
+  {
+   "year": 2013,
+   "stage": 2,
+   "ideb": 4.2,
+   "meta": 4.4,
+   "n": "4.956",
+   "p": "0.8522"
+  },
+  {
+   "year": 2013,
+   "stage": 3,
+   "ideb": 3.7,
+   "meta": 3.9,
+   "n": "4.437",
+   "p": "0.8233"
+  },
+  {
+   "year": 2015,
+   "stage": 1,
+   "ideb": 5.5,
+   "meta": 5.2,
+   "n": "5.929",
+   "p": "0.9323"
+  },
+  {
+   "year": 2015,
+   "stage": 2,
+   "ideb": 4.5,
+   "meta": 4.7,
+   "n": "5.187",
+   "p": "0.8579"
+  },
+  {
+   "year": 2015,
+   "stage": 3,
+   "ideb": 3.7,
+   "meta": 4.3,
+   "n": "4.458",
+   "p": "0.8343"
+  },
+  {
+   "year": 2017,
+   "stage": 1,
+   "ideb": 5.8,
+   "meta": 5.5,
+   "n": "6.147",
+   "p": "0.9402"
+  },
+  {
+   "year": 2017,
+   "stage": 2,
+   "ideb": 4.7,
+   "meta": 5,
+   "n": "5.360",
+   "p": "0.8728"
+  },
+  {
+   "year": 2017,
+   "stage": 3,
+   "ideb": 3.8,
+   "meta": 4.7,
+   "n": "4.510",
+   "p": "0.8389"
+  },
+  {
+   "year": 2019,
+   "stage": 1,
+   "ideb": 5.9,
+   "meta": 5.7,
+   "n": "6.221",
+   "p": "0.9517"
+  },
+  {
+   "year": 2019,
+   "stage": 2,
+   "ideb": 4.9,
+   "meta": 5.2,
+   "n": "5.458",
+   "p": "0.9004"
+  },
+  {
+   "year": 2019,
+   "stage": 3,
+   "ideb": 4.2,
+   "meta": 5,
+   "n": "4.786",
+   "p": "0.8708"
+  },
+  {
+   "year": 2021,
+   "stage": 1,
+   "ideb": 5.8,
+   "meta": 6,
+   "n": "5.892",
+   "p": "0.9765"
+  },
+  {
+   "year": 2021,
+   "stage": 2,
+   "ideb": 5.1,
+   "meta": 5.5,
+   "n": "5.317",
+   "p": "0.9575"
+  },
+  {
+   "year": 2021,
+   "stage": 3,
+   "ideb": 4.2,
+   "meta": 5.2,
+   "n": "4.624",
+   "p": "0.9009"
+  },
+  {
+   "year": 2023,
+   "stage": 1,
+   "ideb": 6,
+   "meta": null,
+   "n": "6.149",
+   "p": "0.9724"
+  },
+  {
+   "year": 2023,
+   "stage": 2,
+   "ideb": 5,
+   "meta": null,
+   "n": "5.330",
+   "p": "0.9400"
+  },
+  {
+   "year": 2023,
+   "stage": 3,
+   "ideb": 4.3,
+   "meta": null,
+   "n": "4.667",
+   "p": "0.9198"
+  },
+  {
+   "year": 2025,
+   "stage": 1,
+   "ideb": 6.3,
+   "meta": null,
+   "n": "6.391",
+   "p": "0.9825"
+  },
+  {
+   "year": 2025,
+   "stage": 2,
+   "ideb": 5.3,
+   "meta": null,
+   "n": "5.469",
+   "p": "0.9622"
+  },
+  {
+   "year": 2025,
+   "stage": 3,
+   "ideb": 4.5,
+   "meta": null,
+   "n": "4.789",
+   "p": "0.9480"
+  }
+ ],
+ "saebPorEdicao": [
+  {
+   "year": 2017,
+   "linhas": 247156,
+   "series": 3,
+   "disciplinas": 2,
+   "com_media": 247156,
+   "com_niveis": 247156
+  },
+  {
+   "year": 2019,
+   "linhas": 316258,
+   "series": 3,
+   "disciplinas": 2,
+   "com_media": 316200,
+   "com_niveis": 314276
+  },
+  {
+   "year": 2021,
+   "linhas": 354462,
+   "series": 6,
+   "disciplinas": 4,
+   "com_media": 287733,
+   "com_niveis": 354271
+  },
+  {
+   "year": 2023,
+   "linhas": 443078,
+   "series": 6,
+   "disciplinas": 4,
+   "com_media": 338446,
+   "com_niveis": 433956
+  },
+  {
+   "year": 2025,
+   "linhas": 459620,
+   "series": 5,
+   "disciplinas": 2,
+   "com_media": 339128,
+   "com_niveis": 445134
+  }
+ ],
+ "saeb2025SerieDisciplina": [
+  {
+   "grade": 5,
+   "subj": 1,
+   "linhas": 59341,
+   "territorios": 5572,
+   "com_media": 59341
+  },
+  {
+   "grade": 5,
+   "subj": 2,
+   "linhas": 59341,
+   "territorios": 5572,
+   "com_media": 59341
+  },
+  {
+   "grade": 9,
+   "subj": 1,
+   "linhas": 59110,
+   "territorios": 5558,
+   "com_media": 59110
+  },
+  {
+   "grade": 9,
+   "subj": 2,
+   "linhas": 59110,
+   "territorios": 5558,
+   "com_media": 59110
+  },
+  {
+   "grade": 12,
+   "subj": 1,
+   "linhas": 48560,
+   "territorios": 5392,
+   "com_media": 48560
+  },
+  {
+   "grade": 12,
+   "subj": 2,
+   "linhas": 48560,
+   "territorios": 5392,
+   "com_media": 48560
+  },
+  {
+   "grade": 13,
+   "subj": 1,
+   "linhas": 12764,
+   "territorios": 1458,
+   "com_media": 1147
+  },
+  {
+   "grade": 13,
+   "subj": 2,
+   "linhas": 12764,
+   "territorios": 1458,
+   "com_media": 1147
+  },
+  {
+   "grade": 14,
+   "subj": 1,
+   "linhas": 50035,
+   "territorios": 5467,
+   "com_media": 1406
+  },
+  {
+   "grade": 14,
+   "subj": 2,
+   "linhas": 50035,
+   "territorios": 5467,
+   "com_media": 1406
+  }
+ ],
+ "saeb2025Brasil": [
+  {
+   "grade": 5,
+   "subj": 1,
+   "media": "219.34"
+  },
+  {
+   "grade": 5,
+   "subj": 2,
+   "media": "232.32"
+  },
+  {
+   "grade": 9,
+   "subj": 1,
+   "media": "262.17"
+  },
+  {
+   "grade": 9,
+   "subj": 2,
+   "media": "262.74"
+  },
+  {
+   "grade": 12,
+   "subj": 1,
+   "media": "279.01"
+  },
+  {
+   "grade": 12,
+   "subj": 2,
+   "media": "276.52"
+  },
+  {
+   "grade": 13,
+   "subj": 1,
+   "media": "295.81"
+  },
+  {
+   "grade": 13,
+   "subj": 2,
+   "media": "290.85"
+  },
+  {
+   "grade": 14,
+   "subj": 1,
+   "media": "281.24"
+  },
+  {
+   "grade": 14,
+   "subj": 2,
+   "media": "278.41"
+  }
+ ],
+ "saebAlfabetizacao": [
+  {
+   "year": 2017,
+   "linhas": 0
+  },
+  {
+   "year": 2019,
+   "linhas": 0
+  },
+  {
+   "year": 2021,
+   "linhas": 1579
+  },
+  {
+   "year": 2023,
+   "linhas": 1358
+  },
+  {
+   "year": 2025,
+   "linhas": 0
+  }
+ ],
+ "fluxoEscolas": [
+  {
+   "year": 2007,
+   "escolas": 158130,
+   "com_aprovacao_fund": 151007,
+   "com_distorcao_fund": 147946,
+   "com_aprovacao_medio": 23806
+  },
+  {
+   "year": 2008,
+   "escolas": 158758,
+   "com_aprovacao_fund": 152183,
+   "com_distorcao_fund": 146936,
+   "com_aprovacao_medio": 25014
+  },
+  {
+   "year": 2009,
+   "escolas": 156791,
+   "com_aprovacao_fund": 150401,
+   "com_distorcao_fund": 144922,
+   "com_aprovacao_medio": 25581
+  },
+  {
+   "year": 2010,
+   "escolas": 153832,
+   "com_aprovacao_fund": 146828,
+   "com_distorcao_fund": 141723,
+   "com_aprovacao_medio": 26012
+  },
+  {
+   "year": 2011,
+   "escolas": 151274,
+   "com_aprovacao_fund": 144551,
+   "com_distorcao_fund": 137923,
+   "com_aprovacao_medio": 26582
+  },
+  {
+   "year": 2012,
+   "escolas": 150185,
+   "com_aprovacao_fund": 143924,
+   "com_distorcao_fund": 136053,
+   "com_aprovacao_medio": 27024
+  },
+  {
+   "year": 2013,
+   "escolas": 147075,
+   "com_aprovacao_fund": 140493,
+   "com_distorcao_fund": 132095,
+   "com_aprovacao_medio": 27375
+  },
+  {
+   "year": 2014,
+   "escolas": 143695,
+   "com_aprovacao_fund": 136697,
+   "com_distorcao_fund": 126602,
+   "com_aprovacao_medio": 27615
+  },
+  {
+   "year": 2015,
+   "escolas": 140906,
+   "com_aprovacao_fund": 133190,
+   "com_distorcao_fund": 134077,
+   "com_aprovacao_medio": 27846
+  },
+  {
+   "year": 2016,
+   "escolas": 139832,
+   "com_aprovacao_fund": 131698,
+   "com_distorcao_fund": 132707,
+   "com_aprovacao_medio": 28155
+  },
+  {
+   "year": 2017,
+   "escolas": 137367,
+   "com_aprovacao_fund": 129028,
+   "com_distorcao_fund": 129825,
+   "com_aprovacao_medio": 28413
+  },
+  {
+   "year": 2018,
+   "escolas": 134487,
+   "com_aprovacao_fund": 125709,
+   "com_distorcao_fund": 126639,
+   "com_aprovacao_medio": 28523
+  },
+  {
+   "year": 2019,
+   "escolas": 132493,
+   "com_aprovacao_fund": 123320,
+   "com_distorcao_fund": 124479,
+   "com_aprovacao_medio": 28642
+  },
+  {
+   "year": 2020,
+   "escolas": 131247,
+   "com_aprovacao_fund": 120943,
+   "com_distorcao_fund": 123161,
+   "com_aprovacao_medio": 28633
+  },
+  {
+   "year": 2021,
+   "escolas": 130163,
+   "com_aprovacao_fund": 120350,
+   "com_distorcao_fund": 121913,
+   "com_aprovacao_medio": 28861
+  },
+  {
+   "year": 2022,
+   "escolas": 129323,
+   "com_aprovacao_fund": 119818,
+   "com_distorcao_fund": 120858,
+   "com_aprovacao_medio": 29205
+  },
+  {
+   "year": 2023,
+   "escolas": 128393,
+   "com_aprovacao_fund": 118498,
+   "com_distorcao_fund": 119753,
+   "com_aprovacao_medio": 29508
+  },
+  {
+   "year": 2024,
+   "escolas": 128105,
+   "com_aprovacao_fund": 118003,
+   "com_distorcao_fund": 119375,
+   "com_aprovacao_medio": 29727
+  },
+  {
+   "year": 2025,
+   "escolas": 126708,
+   "com_aprovacao_fund": 116885,
+   "com_distorcao_fund": 117669,
+   "com_aprovacao_medio": 30086
+  }
+ ],
+ "fluxoTerritorios": [
+  {
+   "year": 2006,
+   "municipios": 0,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 578
+  },
+  {
+   "year": 2007,
+   "municipios": 5564,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 65916
+  },
+  {
+   "year": 2008,
+   "municipios": 5564,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66016
+  },
+  {
+   "year": 2009,
+   "municipios": 5565,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66056
+  },
+  {
+   "year": 2010,
+   "municipios": 5565,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66030
+  },
+  {
+   "year": 2011,
+   "municipios": 5565,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66164
+  },
+  {
+   "year": 2012,
+   "municipios": 5565,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66212
+  },
+  {
+   "year": 2013,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66226
+  },
+  {
+   "year": 2014,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66192
+  },
+  {
+   "year": 2015,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66334
+  },
+  {
+   "year": 2016,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66415
+  },
+  {
+   "year": 2017,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66374
+  },
+  {
+   "year": 2018,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66326
+  },
+  {
+   "year": 2019,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66295
+  },
+  {
+   "year": 2020,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66250
+  },
+  {
+   "year": 2021,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66161
+  },
+  {
+   "year": 2022,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66182
+  },
+  {
+   "year": 2023,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66230
+  },
+  {
+   "year": 2024,
+   "municipios": 5570,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66184
+  },
+  {
+   "year": 2025,
+   "municipios": 5571,
+   "ufs": 27,
+   "brasil_regioes": 6,
+   "linhas": 66259
+  }
+ ],
+ "brasilFluxo": [
+  {
+   "year": 2006,
+   "ap_fund": null,
+   "rp_fund": null,
+   "ab_fund": null,
+   "td_fund": "28.6",
+   "ap_med": null,
+   "td_med": "44.9"
+  },
+  {
+   "year": 2007,
+   "ap_fund": "83.1",
+   "rp_fund": "12.1",
+   "ab_fund": "4.8",
+   "td_fund": "27.7",
+   "ap_med": "74.1",
+   "td_med": "42.5"
+  },
+  {
+   "year": 2008,
+   "ap_fund": "83.8",
+   "rp_fund": "11.8",
+   "ab_fund": "4.4",
+   "td_fund": "22.1",
+   "ap_med": "74.9",
+   "td_med": "33.7"
+  },
+  {
+   "year": 2009,
+   "ap_fund": "85.2",
+   "rp_fund": "11.1",
+   "ab_fund": "3.7",
+   "td_fund": "23.3",
+   "ap_med": "75.9",
+   "td_med": "34.4"
+  },
+  {
+   "year": 2010,
+   "ap_fund": "86.6",
+   "rp_fund": "10.3",
+   "ab_fund": "3.1",
+   "td_fund": "23.6",
+   "ap_med": "77.2",
+   "td_med": "34.5"
+  },
+  {
+   "year": 2011,
+   "ap_fund": "87.6",
+   "rp_fund": "9.6",
+   "ab_fund": "2.8",
+   "td_fund": "22.9",
+   "ap_med": "77.4",
+   "td_med": "32.8"
+  },
+  {
+   "year": 2012,
+   "ap_fund": "88.2",
+   "rp_fund": "9.1",
+   "ab_fund": "2.7",
+   "td_fund": "22.0",
+   "ap_med": "78.7",
+   "td_med": "31.1"
+  },
+  {
+   "year": 2013,
+   "ap_fund": "89.3",
+   "rp_fund": "8.5",
+   "ab_fund": "2.2",
+   "td_fund": "21.0",
+   "ap_med": "80.1",
+   "td_med": "29.5"
+  },
+  {
+   "year": 2014,
+   "ap_fund": "89.2",
+   "rp_fund": "8.6",
+   "ab_fund": "2.2",
+   "td_fund": "20.0",
+   "ap_med": "80.3",
+   "td_med": "28.2"
+  },
+  {
+   "year": 2015,
+   "ap_fund": "89.9",
+   "rp_fund": "8.2",
+   "ab_fund": "1.9",
+   "td_fund": "19.2",
+   "ap_med": "81.7",
+   "td_med": "27.4"
+  },
+  {
+   "year": 2016,
+   "ap_fund": "89.8",
+   "rp_fund": "8.3",
+   "ab_fund": "1.9",
+   "td_fund": "18.6",
+   "ap_med": "81.5",
+   "td_med": "28.0"
+  },
+  {
+   "year": 2017,
+   "ap_fund": "91.0",
+   "rp_fund": "7.4",
+   "ab_fund": "1.6",
+   "td_fund": "18.1",
+   "ap_med": "83.1",
+   "td_med": "28.2"
+  },
+  {
+   "year": 2018,
+   "ap_fund": "91.5",
+   "rp_fund": "7.0",
+   "ab_fund": "1.5",
+   "td_fund": "17.2",
+   "ap_med": "83.4",
+   "td_med": "28.2"
+  },
+  {
+   "year": 2019,
+   "ap_fund": "92.8",
+   "rp_fund": "6.0",
+   "ab_fund": "1.2",
+   "td_fund": "16.2",
+   "ap_med": "86.1",
+   "td_med": "26.2"
+  },
+  {
+   "year": 2020,
+   "ap_fund": "98.2",
+   "rp_fund": "0.8",
+   "ab_fund": "1.0",
+   "td_fund": "15.5",
+   "ap_med": "95.0",
+   "td_med": "26.2"
+  },
+  {
+   "year": 2021,
+   "ap_fund": "96.8",
+   "rp_fund": "2.0",
+   "ab_fund": "1.2",
+   "td_fund": "13.7",
+   "ap_med": "90.8",
+   "td_med": "25.3"
+  },
+  {
+   "year": 2022,
+   "ap_fund": "94.2",
+   "rp_fund": "4.7",
+   "ab_fund": "1.1",
+   "td_fund": "12.3",
+   "ap_med": "86.6",
+   "td_med": "22.2"
+  },
+  {
+   "year": 2023,
+   "ap_fund": "95.8",
+   "rp_fund": "3.5",
+   "ab_fund": "0.7",
+   "td_fund": "11.7",
+   "ap_med": "91.3",
+   "td_med": "19.5"
+  },
+  {
+   "year": 2024,
+   "ap_fund": "96.0",
+   "rp_fund": "3.4",
+   "ab_fund": "0.6",
+   "td_fund": "10.9",
+   "ap_med": "91.7",
+   "td_med": "17.8"
+  },
+  {
+   "year": 2025,
+   "ap_fund": "97.4",
+   "rp_fund": "2.1",
+   "ab_fund": "0.5",
+   "td_fund": "10.0",
+   "ap_med": "94.8",
+   "td_med": "16.0"
+  }
+ ],
+ "transicaoTerritorios": [
+  {
+   "year": 2007,
+   "municipios": 5564,
+   "ufs": 27,
+   "linhas": 24119
+  },
+  {
+   "year": 2008,
+   "municipios": 5564,
+   "ufs": 27,
+   "linhas": 24113
+  },
+  {
+   "year": 2009,
+   "municipios": 5565,
+   "ufs": 27,
+   "linhas": 24084
+  },
+  {
+   "year": 2010,
+   "municipios": 5565,
+   "ufs": 27,
+   "linhas": 24050
+  },
+  {
+   "year": 2011,
+   "municipios": 5565,
+   "ufs": 27,
+   "linhas": 24046
+  },
+  {
+   "year": 2012,
+   "municipios": 5565,
+   "ufs": 27,
+   "linhas": 24049
+  },
+  {
+   "year": 2013,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 24051
+  },
+  {
+   "year": 2014,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 24025
+  },
+  {
+   "year": 2015,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 24023
+  },
+  {
+   "year": 2016,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 24021
+  },
+  {
+   "year": 2017,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 23989
+  },
+  {
+   "year": 2018,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 23962
+  },
+  {
+   "year": 2019,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 23944
+  },
+  {
+   "year": 2020,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 23930
+  },
+  {
+   "year": 2021,
+   "municipios": 5570,
+   "ufs": 27,
+   "linhas": 23898
+  }
+ ],
+ "brasilTransicao": [
+  {
+   "year": 2007,
+   "pro": "79.9",
+   "rep": "13.5",
+   "eva": "5.0",
+   "mej": "1.6"
+  },
+  {
+   "year": 2008,
+   "pro": "81.0",
+   "rep": "13.3",
+   "eva": "4.1",
+   "mej": "1.6"
+  },
+  {
+   "year": 2009,
+   "pro": "82.2",
+   "rep": "12.3",
+   "eva": "3.9",
+   "mej": "1.6"
+  },
+  {
+   "year": 2010,
+   "pro": "83.7",
+   "rep": "11.2",
+   "eva": "3.6",
+   "mej": "1.5"
+  },
+  {
+   "year": 2011,
+   "pro": "84.9",
+   "rep": "10.4",
+   "eva": "3.3",
+   "mej": "1.4"
+  },
+  {
+   "year": 2012,
+   "pro": "85.6",
+   "rep": "9.8",
+   "eva": "3.2",
+   "mej": "1.4"
+  },
+  {
+   "year": 2013,
+   "pro": "86.7",
+   "rep": "9.0",
+   "eva": "3.0",
+   "mej": "1.3"
+  },
+  {
+   "year": 2014,
+   "pro": "86.7",
+   "rep": "9.0",
+   "eva": "3.0",
+   "mej": "1.3"
+  },
+  {
+   "year": 2015,
+   "pro": "87.5",
+   "rep": "8.6",
+   "eva": "2.7",
+   "mej": "1.2"
+  },
+  {
+   "year": 2016,
+   "pro": "87.5",
+   "rep": "8.7",
+   "eva": "2.5",
+   "mej": "1.3"
+  },
+  {
+   "year": 2017,
+   "pro": "88.7",
+   "rep": "7.8",
+   "eva": "2.4",
+   "mej": "1.1"
+  },
+  {
+   "year": 2018,
+   "pro": "89.2",
+   "rep": "7.3",
+   "eva": "2.4",
+   "mej": "1.1"
+  },
+  {
+   "year": 2019,
+   "pro": "90.6",
+   "rep": "6.4",
+   "eva": "2.0",
+   "mej": "1.0"
+  },
+  {
+   "year": 2020,
+   "pro": "95.2",
+   "rep": "2.3",
+   "eva": "2.1",
+   "mej": "0.4"
+  },
+  {
+   "year": 2021,
+   "pro": "93.6",
+   "rep": "3.2",
+   "eva": "2.6",
+   "mej": "0.6"
+  }
+ ],
+ "inse": [
+  {
+   "year": 2019,
+   "escolas": 68868,
+   "media_das_medias_escola": "4.701"
+  },
+  {
+   "year": 2021,
+   "escolas": 69820,
+   "media_das_medias_escola": "4.769"
+  },
+  {
+   "year": 2023,
+   "escolas": 69756,
+   "media_das_medias_escola": "4.804"
+  }
+ ],
+ "inseTerritorios": [
+  {
+   "year": 2019,
+   "municipios": 5568,
+   "ufs": 27
+  },
+  {
+   "year": 2021,
+   "municipios": 5522,
+   "ufs": 27
+  },
+  {
+   "year": 2023,
+   "municipios": 5558,
+   "ufs": 27
+  }
+ ],
+ "escolasDistintas": {
+  "ideb": 85970,
+  "fluxo": 198932,
+  "inse": 75758,
+  "cadastro": 299547
+ },
+ "ideb2005Escolas": {
+  "com_ideb": 46462,
+  "linhas": 46462
+ },
+ "celulasSuprimidas": [
+  {
+   "fam": "transicao",
+   "n": 71588
+  },
+  {
+   "fam": "fluxo",
+   "n": 0
+  },
+  {
+   "fam": "ideb",
+   "n": 0
+  },
+  {
+   "fam": "saeb",
+   "n": 0
+  },
+  {
+   "fam": "inse",
+   "n": 0
+  }
+ ],
+ "publicacoes": [
+  {
+   "dataset_id": 75,
+   "fatias": 308
+  },
+  {
+   "dataset_id": 76,
+   "fatias": 140
+  },
+  {
+   "dataset_id": 77,
+   "fatias": 560
+  },
+  {
+   "dataset_id": 78,
+   "fatias": 420
+  },
+  {
+   "dataset_id": 79,
+   "fatias": 83
+  }
+ ]
+}

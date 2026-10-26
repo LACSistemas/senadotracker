@@ -1,0 +1,138 @@
+{
+ "OBRAS_1_2": {
+  "n": 110,
+  "universo": 10888,
+  "nao_educacional": 3,
+  "indeterminado": 1,
+  "precisao": 0.9724770642201835,
+  "ic95": [
+   0.922187623329776,
+   0.9905963145087516
+  ],
+  "categoria_primaria_correta": 0.9622641509433962
+ },
+ "MANUT_TERCEIR_3_13": {
+  "n": 110,
+  "universo": 17359,
+  "nao_educacional": 6,
+  "indeterminado": 0,
+  "precisao": 0.9454545454545454,
+  "ic95": [
+   0.8860807276826671,
+   0.9747645169379288
+  ],
+  "categoria_primaria_correta": 0.9615384615384616
+ },
+ "ALIMENTACAO_8": {
+  "n": 110,
+  "universo": 116768,
+  "nao_educacional": 2,
+  "indeterminado": 1,
+  "precisao": 0.981651376146789,
+  "ic95": [
+   0.9355541544090205,
+   0.9949537433875367
+  ],
+  "categoria_primaria_correta": 1
+ },
+ "TRANSPORTE_9": {
+  "n": 70,
+  "universo": 32532,
+  "nao_educacional": 3,
+  "indeterminado": 0,
+  "precisao": 0.9571428571428572,
+  "ic95": [
+   0.8814013892581987,
+   0.9853187251488565
+  ],
+  "categoria_primaria_correta": 1
+ },
+ "EQUIP_TEC_4_7_14_15": {
+  "n": 70,
+  "universo": 30622,
+  "nao_educacional": 1,
+  "indeterminado": 1,
+  "precisao": 0.9855072463768116,
+  "ic95": [
+   0.9223669266494263,
+   0.9974371413556695
+  ],
+  "categoria_primaria_correta": 0.9705882352941176
+ },
+ "DIDATICO_UNIF_SERV_10_12": {
+  "n": 70,
+  "universo": 30175,
+  "nao_educacional": 2,
+  "indeterminado": 1,
+  "precisao": 0.9710144927536232,
+  "ic95": [
+   0.9003322653873425,
+   0.9920149647668551
+  ],
+  "categoria_primaria_correta": 0.9552238805970149
+ },
+ "INSTITUCIONAL_SEM_TEMA": {
+  "n": 70,
+  "universo": 146013,
+  "nao_educacional": 1,
+  "indeterminado": 0,
+  "precisao": 0.9857142857142858,
+  "ic95": [
+   0.9234163029607309,
+   0.9974738185967649
+  ],
+  "categoria_primaria_correta": 1
+ },
+ "POSSIBLE": {
+  "n": 70,
+  "universo": 44604,
+  "educacional": 26,
+  "nao_educacional": 18,
+  "indeterminado": 26,
+  "precisao_entre_decididos": 0.5909090909090909,
+  "limites_precisao": [
+   0.37142857142857144,
+   0.7428571428571429
+  ]
+ },
+ "NEG_COM_TERMO_ESCOLAR": {
+  "n": 110,
+  "universo": 11581,
+  "falsos_negativos": 8,
+  "indeterminados": 6,
+  "taxa": 0.07272727272727272,
+  "ic95": [
+   0.03730997379864304,
+   0.13698132217752035
+  ]
+ },
+ "NEG_ALEATORIO": {
+  "n": 220,
+  "universo": 844,
+  "falsos_negativos": 3,
+  "indeterminados": 5,
+  "taxa": 0.013636363636363636,
+  "ic95": [
+   0.004648152891035448,
+   0.0393186522068552
+  ]
+ },
+ "ESTRATIFICADO_ALTA_CONFIANCA": {
+  "universo": 384357,
+  "precisao_ponderada": 0.9786978779250691,
+  "categoria_primaria_ponderada": 0.9913354297372214,
+  "categoria_primaria_sem_institucional": 0.9860273880085474
+ },
+ "DELTA_V5_NOVOS": {
+  "n": 150,
+  "nao_educacional": 0,
+  "categoria_errada": 3
+ },
+ "DELTA_V9_NOVOS": {
+  "n": 100,
+  "nao_educacional": 1,
+  "categoria_errada": 57
+ },
+ "itens_persistidos": 1260,
+ "duplicados_descartados": 0
+}

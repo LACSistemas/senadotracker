@@ -1,0 +1,885 @@
+{
+ "at": "2026-10-25T04:49:26.947Z",
+ "nacional2025": {
+  "totals": {
+   "matriculas": 46018380,
+   "turmas": 2233976,
+   "escolas": 178772,
+   "matPorTurma": 20.6
+  },
+  "stages": [
+   {
+    "code": "INF_CRE",
+    "label": "Creche",
+    "matriculas": 4182646,
+    "turmas": 307160,
+    "matPorTurma": 13.62,
+    "escolas": null
+   },
+   {
+    "code": "INF_PRE",
+    "label": "Pré-escola",
+    "matriculas": 5103536,
+    "turmas": 307233,
+    "matPorTurma": 16.61,
+    "escolas": null
+   },
+   {
+    "code": "FUND_AI",
+    "label": "Ensino fundamental – anos iniciais",
+    "matriculas": 14514244,
+    "turmas": 683563,
+    "matPorTurma": 21.23,
+    "escolas": null
+   },
+   {
+    "code": "FUND_AF",
+    "label": "Ensino fundamental – anos finais",
+    "matriculas": 11292523,
+    "turmas": 489788,
+    "matPorTurma": 23.06,
+    "escolas": null
+   },
+   {
+    "code": "MED",
+    "label": "Ensino médio",
+    "matriculas": 7370879,
+    "turmas": 278513,
+    "matPorTurma": 26.47,
+    "escolas": null
+   },
+   {
+    "code": "EJA",
+    "label": "Educação de Jovens e Adultos",
+    "matriculas": 2252069,
+    "turmas": 113184,
+    "matPorTurma": 19.9,
+    "escolas": null
+   },
+   {
+    "code": "PROF_NI",
+    "label": "Educação profissional não integrada (derivada)",
+    "matriculas": 1302483,
+    "turmas": 54535,
+    "matPorTurma": 23.88,
+    "escolas": null
+   }
+  ],
+  "byDependency": [
+   {
+    "key": 1,
+    "label": "Federal",
+    "escolas": 716,
+    "matriculas": 383526,
+    "turmas": 14198,
+    "matPorTurma": 27.01
+   },
+   {
+    "key": 2,
+    "label": "Estadual",
+    "escolas": 29733,
+    "matriculas": 13330302,
+    "turmas": 515570,
+    "matPorTurma": 25.86
+   },
+   {
+    "key": 3,
+    "label": "Municipal",
+    "escolas": 106572,
+    "matriculas": 23059168,
+    "turmas": 1152596,
+    "matPorTurma": 20.01
+   },
+   {
+    "key": 4,
+    "label": "Privada",
+    "escolas": 41751,
+    "matriculas": 9245384,
+    "turmas": 551612,
+    "matPorTurma": 16.76
+   }
+  ],
+  "byLocation": [
+   {
+    "key": 1,
+    "label": "Urbana",
+    "escolas": 128043,
+    "matriculas": 40871166,
+    "turmas": 1907470,
+    "matPorTurma": 21.43
+   },
+   {
+    "key": 2,
+    "label": "Rural",
+    "escolas": 50729,
+    "matriculas": 5147214,
+    "turmas": 326506,
+    "matPorTurma": 15.76
+   }
+  ],
+  "special": {
+   "educacaoEspecial": {
+    "classesComuns": 2298005,
+    "classesExclusivas": 160154,
+    "total": 2458159
+   },
+   "educacaoProfissionalTotal": 3187976,
+   "tempoIntegral": {
+    "infantil": 3476726,
+    "fundamental": 4824584,
+    "medio": 1809737,
+    "total": 10111047
+   },
+   "noturno": 3240654,
+   "ead": 646713
+  }
+ },
+ "stageDep": [
+  {
+   "dep": 1,
+   "inf": "2220",
+   "fund": "23684",
+   "med": "251008",
+   "eja": "9598",
+   "prof_ni": "97016",
+   "bas": "383526",
+   "t_inf": "192",
+   "t_fund": "969",
+   "t_med": "8227",
+   "t_eja": "601",
+   "t_bas": "14198"
+  },
+  {
+   "dep": 2,
+   "inf": "57648",
+   "fund": "5865509",
+   "med": "6046720",
+   "eja": "985011",
+   "prof_ni": "375414",
+   "bas": "13330302",
+   "t_inf": "4000",
+   "t_fund": "227518",
+   "t_med": "225884",
+   "t_eja": "44669",
+   "t_bas": "515570"
+  },
+  {
+   "dep": 3,
+   "inf": "6770806",
+   "fund": "15145609",
+   "med": "36496",
+   "eja": "1090338",
+   "prof_ni": "15919",
+   "bas": "23059168",
+   "t_inf": "404535",
+   "t_fund": "686509",
+   "t_med": "1637",
+   "t_eja": "59147",
+   "t_bas": "1152596"
+  },
+  {
+   "dep": 4,
+   "inf": "2455508",
+   "fund": "4771965",
+   "med": "1036655",
+   "eja": "167122",
+   "prof_ni": "814134",
+   "bas": "9245384",
+   "t_inf": "205666",
+   "t_fund": "258355",
+   "t_med": "42765",
+   "t_eja": "8767",
+   "t_bas": "551612"
+  }
+ ],
+ "stageLoc": [
+  {
+   "loc": 1,
+   "bas": "40871166",
+   "t_bas": "1907470",
+   "inf": "8260088",
+   "fund": "22682195",
+   "med": "6927113"
+  },
+  {
+   "loc": 2,
+   "bas": "5147214",
+   "t_bas": "326506",
+   "inf": "1026094",
+   "fund": "3124572",
+   "med": "443766"
+  }
+ ],
+ "series": [
+  {
+   "year": 2007,
+   "mat": "53028928",
+   "tur": "2098756",
+   "escolas": "198397",
+   "inf": "6574369",
+   "fund": "32346623",
+   "med": "8372175",
+   "eja": "5034606",
+   "prof_total": "1007237",
+   "prof_ni": "701155",
+   "esp": "654606",
+   "int_fund": "377823",
+   "t_inf": "361579",
+   "t_fund": "1292614",
+   "t_med": "243755",
+   "t_eja": "171577"
+  },
+  {
+   "year": 2008,
+   "mat": "53232868",
+   "tur": "2138582",
+   "escolas": "199761",
+   "inf": "6784955",
+   "fund": "32288826",
+   "med": "8368868",
+   "eja": "4989808",
+   "prof_total": "1149929",
+   "prof_ni": "800411",
+   "esp": "695699",
+   "int_fund": "775495",
+   "t_inf": "380278",
+   "t_fund": "1309803",
+   "t_med": "248553",
+   "t_eja": "167477"
+  },
+  {
+   "year": 2009,
+   "mat": "52580452",
+   "tur": "2145029",
+   "escolas": "197468",
+   "inf": "6810379",
+   "fund": "31868172",
+   "med": "8338423",
+   "eja": "4701245",
+   "prof_total": "1257291",
+   "prof_ni": "862233",
+   "esp": "639718",
+   "int_fund": "1055504",
+   "t_inf": "384941",
+   "t_fund": "1310662",
+   "t_med": "251684",
+   "t_eja": "162040"
+  },
+  {
+   "year": 2010,
+   "mat": "51549889",
+   "tur": "2150472",
+   "escolas": "194939",
+   "inf": "6792095",
+   "fund": "31148207",
+   "med": "8358647",
+   "eja": "4325587",
+   "prof_total": "1376824",
+   "prof_ni": "925353",
+   "esp": "702603",
+   "int_fund": "1332374",
+   "t_inf": "393727",
+   "t_fund": "1305662",
+   "t_med": "257915",
+   "t_eja": "155809"
+  },
+  {
+   "year": 2011,
+   "mat": "50972619",
+   "tur": "2155952",
+   "escolas": "193047",
+   "inf": "7003802",
+   "fund": "30490476",
+   "med": "8401829",
+   "eja": "4082528",
+   "prof_total": "1483643",
+   "prof_ni": "993984",
+   "esp": "752305",
+   "int_fund": "1761627",
+   "t_inf": "408466",
+   "t_fund": "1291275",
+   "t_med": "263829",
+   "t_eja": "151327"
+  },
+  {
+   "year": 2012,
+   "mat": "50545050",
+   "tur": "2173607",
+   "escolas": "192676",
+   "inf": "7314164",
+   "fund": "29826627",
+   "med": "8377942",
+   "eja": "3961925",
+   "prof_total": "1605608",
+   "prof_ni": "1064392",
+   "esp": "820433",
+   "int_fund": "2189446",
+   "t_inf": "430040",
+   "t_fund": "1283681",
+   "t_med": "267053",
+   "t_eja": "149322"
+  },
+  {
+   "year": 2013,
+   "mat": "50042448",
+   "tur": "2186922",
+   "escolas": "190706",
+   "inf": "7607577",
+   "fund": "29187602",
+   "med": "8314048",
+   "eja": "3830207",
+   "prof_total": "1667685",
+   "prof_ni": "1103014",
+   "esp": "843342",
+   "int_fund": "3176207",
+   "t_inf": "450977",
+   "t_fund": "1270946",
+   "t_med": "268626",
+   "t_eja": "150366"
+  },
+  {
+   "year": 2014,
+   "mat": "49771371",
+   "tur": "2186920",
+   "escolas": "188673",
+   "inf": "7869869",
+   "fund": "28571512",
+   "med": "8301380",
+   "eja": "3653530",
+   "prof_total": "1945006",
+   "prof_ni": "1375080",
+   "esp": "886815",
+   "int_fund": "4481024",
+   "t_inf": "467486",
+   "t_fund": "1247709",
+   "t_med": "270148",
+   "t_eja": "145331"
+  },
+  {
+   "year": 2015,
+   "mat": "48796512",
+   "tur": "2164640",
+   "escolas": "186441",
+   "inf": "7972230",
+   "fund": "27931210",
+   "med": "8076150",
+   "eja": "3491869",
+   "prof_total": "1917192",
+   "prof_ni": "1325053",
+   "esp": "930683",
+   "int_fund": "4651898",
+   "t_inf": "478510",
+   "t_fund": "1225832",
+   "t_med": "267382",
+   "t_eja": "136857"
+  },
+  {
+   "year": 2016,
+   "mat": "48817479",
+   "tur": "2171013",
+   "escolas": "186081",
+   "inf": "8279104",
+   "fund": "27691478",
+   "med": "8133040",
+   "eja": "3482174",
+   "prof_total": "1859940",
+   "prof_ni": "1231683",
+   "esp": "971372",
+   "int_fund": "2512062",
+   "t_inf": "500130",
+   "t_fund": "1216886",
+   "t_med": "266795",
+   "t_eja": "138871"
+  },
+  {
+   "year": 2017,
+   "mat": "48608093",
+   "tur": "2169220",
+   "escolas": "184145",
+   "inf": "8508731",
+   "fund": "27348080",
+   "med": "7930384",
+   "eja": "3598716",
+   "prof_total": "1831003",
+   "prof_ni": "1222182",
+   "esp": "1066446",
+   "int_fund": "3793985",
+   "t_inf": "516888",
+   "t_fund": "1204695",
+   "t_med": "260698",
+   "t_eja": "139919"
+  },
+  {
+   "year": 2018,
+   "mat": "48455867",
+   "tur": "2163997",
+   "escolas": "181939",
+   "inf": "8745184",
+   "fund": "27183970",
+   "med": "7709929",
+   "eja": "3545988",
+   "prof_total": "1903230",
+   "prof_ni": "1270796",
+   "esp": "1181276",
+   "int_fund": "2555602",
+   "t_inf": "531905",
+   "t_fund": "1191180",
+   "t_med": "255575",
+   "t_eja": "137144"
+  },
+  {
+   "year": 2019,
+   "mat": "47874246",
+   "tur": "2160089",
+   "escolas": "180610",
+   "inf": "8972778",
+   "fund": "26923730",
+   "med": "7465891",
+   "eja": "3273668",
+   "prof_total": "1914749",
+   "prof_ni": "1238179",
+   "esp": "1250967",
+   "int_fund": "2536040",
+   "t_inf": "550692",
+   "t_fund": "1181967",
+   "t_med": "252117",
+   "t_eja": "126791"
+  },
+  {
+   "year": 2020,
+   "mat": "47295294",
+   "tur": "2142065",
+   "escolas": "179533",
+   "inf": "8829795",
+   "fund": "26718830",
+   "med": "7550753",
+   "eja": "3002749",
+   "prof_total": "1936094",
+   "prof_ni": "1193167",
+   "esp": "1308900",
+   "int_fund": "1940752",
+   "t_inf": "554439",
+   "t_fund": "1175347",
+   "t_med": "249610",
+   "t_eja": "117149"
+  },
+  {
+   "year": 2021,
+   "mat": "46668401",
+   "tur": "2128776",
+   "escolas": "178370",
+   "inf": "8319399",
+   "fund": "26515601",
+   "med": "7770557",
+   "eja": "2962322",
+   "prof_total": "1892458",
+   "prof_ni": "1100522",
+   "esp": "1350921",
+   "int_fund": "2333849",
+   "t_inf": "536684",
+   "t_fund": "1170584",
+   "t_med": "257848",
+   "t_eja": "119625"
+  },
+  {
+   "year": 2022,
+   "mat": "47382074",
+   "tur": "2190502",
+   "escolas": "178346",
+   "inf": "9028764",
+   "fund": "26452228",
+   "med": "7866695",
+   "eja": "2774428",
+   "prof_total": "2152506",
+   "prof_ni": "1259959",
+   "esp": "1527794",
+   "int_fund": "3300905",
+   "t_inf": "573730",
+   "t_fund": "1180040",
+   "t_med": "266874",
+   "t_eja": "120833"
+  },
+  {
+   "year": 2023,
+   "mat": "47304632",
+   "tur": "2212677",
+   "escolas": "178476",
+   "inf": "9461155",
+   "fund": "26108208",
+   "med": "7676743",
+   "eja": "2589815",
+   "prof_total": "2413825",
+   "prof_ni": "1468711",
+   "esp": "1771430",
+   "int_fund": "3893409",
+   "t_inf": "597651",
+   "t_fund": "1172188",
+   "t_med": "267239",
+   "t_eja": "119322"
+  },
+  {
+   "year": 2024,
+   "mat": "47088922",
+   "tur": "2224054",
+   "escolas": "179286",
+   "inf": "9491894",
+   "fund": "26002356",
+   "med": "7790396",
+   "eja": "2391319",
+   "prof_total": "2576293",
+   "prof_ni": "1412957",
+   "esp": "2076825",
+   "int_fund": "4215478",
+   "t_inf": "611402",
+   "t_fund": "1172407",
+   "t_med": "269484",
+   "t_eja": "113918"
+  },
+  {
+   "year": 2025,
+   "mat": "46018380",
+   "tur": "2233976",
+   "escolas": "178772",
+   "inf": "9286182",
+   "fund": "25806767",
+   "med": "7370879",
+   "eja": "2252069",
+   "prof_total": "3187976",
+   "prof_ni": "1302483",
+   "esp": "2458159",
+   "int_fund": "4824584",
+   "t_inf": "614393",
+   "t_fund": "1173351",
+   "t_med": "278513",
+   "t_eja": "113184"
+  }
+ ],
+ "schools": {
+  "cadastro": 299547,
+  "com_oferta_alguma_edicao": 265591,
+  "linhas_oferta": 3547666,
+  "linhas_cadastro": 4272656,
+  "oferta_nas_19": 125331,
+  "mat_e_tur_2025": 178766,
+  "so_turma_2025": 6,
+  "cadastro_2025": 214192,
+  "oferta_2025": 178772
+ },
+ "bit0": {
+  "fatias": 513,
+  "iguais": 513
+ },
+ "rej": {
+  "rows_in": 3547666,
+  "valid": 3547666,
+  "rejected": 0
+ },
+ "rowsByYear": [
+  {
+   "year": 2007,
+   "rows_in": 198397,
+   "valid": 198397,
+   "rejected": 0,
+   "with_mat": 198397,
+   "with_tur": 198397,
+   "only_tur": 0
+  },
+  {
+   "year": 2008,
+   "rows_in": 199761,
+   "valid": 199761,
+   "rejected": 0,
+   "with_mat": 199761,
+   "with_tur": 199761,
+   "only_tur": 0
+  },
+  {
+   "year": 2009,
+   "rows_in": 197468,
+   "valid": 197468,
+   "rejected": 0,
+   "with_mat": 197468,
+   "with_tur": 197468,
+   "only_tur": 0
+  },
+  {
+   "year": 2010,
+   "rows_in": 194939,
+   "valid": 194939,
+   "rejected": 0,
+   "with_mat": 194939,
+   "with_tur": 194939,
+   "only_tur": 0
+  },
+  {
+   "year": 2011,
+   "rows_in": 193047,
+   "valid": 193047,
+   "rejected": 0,
+   "with_mat": 193047,
+   "with_tur": 193047,
+   "only_tur": 0
+  },
+  {
+   "year": 2012,
+   "rows_in": 192676,
+   "valid": 192676,
+   "rejected": 0,
+   "with_mat": 192676,
+   "with_tur": 192676,
+   "only_tur": 0
+  },
+  {
+   "year": 2013,
+   "rows_in": 190706,
+   "valid": 190706,
+   "rejected": 0,
+   "with_mat": 190706,
+   "with_tur": 190706,
+   "only_tur": 0
+  },
+  {
+   "year": 2014,
+   "rows_in": 188673,
+   "valid": 188673,
+   "rejected": 0,
+   "with_mat": 188673,
+   "with_tur": 188673,
+   "only_tur": 0
+  },
+  {
+   "year": 2015,
+   "rows_in": 186441,
+   "valid": 186441,
+   "rejected": 0,
+   "with_mat": 186441,
+   "with_tur": 186441,
+   "only_tur": 0
+  },
+  {
+   "year": 2016,
+   "rows_in": 186081,
+   "valid": 186081,
+   "rejected": 0,
+   "with_mat": 186081,
+   "with_tur": 186081,
+   "only_tur": 0
+  },
+  {
+   "year": 2017,
+   "rows_in": 184145,
+   "valid": 184145,
+   "rejected": 0,
+   "with_mat": 184145,
+   "with_tur": 184145,
+   "only_tur": 0
+  },
+  {
+   "year": 2018,
+   "rows_in": 181939,
+   "valid": 181939,
+   "rejected": 0,
+   "with_mat": 181939,
+   "with_tur": 181939,
+   "only_tur": 0
+  },
+  {
+   "year": 2019,
+   "rows_in": 180610,
+   "valid": 180610,
+   "rejected": 0,
+   "with_mat": 180610,
+   "with_tur": 180610,
+   "only_tur": 0
+  },
+  {
+   "year": 2020,
+   "rows_in": 179533,
+   "valid": 179533,
+   "rejected": 0,
+   "with_mat": 179533,
+   "with_tur": 179533,
+   "only_tur": 0
+  },
+  {
+   "year": 2021,
+   "rows_in": 178370,
+   "valid": 178370,
+   "rejected": 0,
+   "with_mat": 178370,
+   "with_tur": 178370,
+   "only_tur": 0
+  },
+  {
+   "year": 2022,
+   "rows_in": 178346,
+   "valid": 178346,
+   "rejected": 0,
+   "with_mat": 178346,
+   "with_tur": 178346,
+   "only_tur": 0
+  },
+  {
+   "year": 2023,
+   "rows_in": 178476,
+   "valid": 178476,
+   "rejected": 0,
+   "with_mat": 178476,
+   "with_tur": 178476,
+   "only_tur": 0
+  },
+  {
+   "year": 2024,
+   "rows_in": 179286,
+   "valid": 179286,
+   "rejected": 0,
+   "with_mat": 179286,
+   "with_tur": 179286,
+   "only_tur": 0
+  },
+  {
+   "year": 2025,
+   "rows_in": 178772,
+   "valid": 178772,
+   "rejected": 0,
+   "with_mat": 178766,
+   "with_tur": 178772,
+   "only_tur": 6
+  }
+ ],
+ "nulls": [
+  {
+   "year": 2007,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 198397
+  },
+  {
+   "year": 2008,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 199761
+  },
+  {
+   "year": 2009,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 197468
+  },
+  {
+   "year": 2010,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 194939
+  },
+  {
+   "year": 2011,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 193047
+  },
+  {
+   "year": 2012,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 192676
+  },
+  {
+   "year": 2013,
+   "noturno": 0,
+   "ead": 0,
+   "tur_int": 0,
+   "mat_int": 190706
+  },
+  {
+   "year": 2014,
+   "noturno": 188673,
+   "ead": 188673,
+   "tur_int": 0,
+   "mat_int": 188673
+  },
+  {
+   "year": 2015,
+   "noturno": 186441,
+   "ead": 186441,
+   "tur_int": 0,
+   "mat_int": 186441
+  },
+  {
+   "year": 2016,
+   "noturno": 186081,
+   "ead": 186081,
+   "tur_int": 0,
+   "mat_int": 186081
+  },
+  {
+   "year": 2017,
+   "noturno": 184145,
+   "ead": 184145,
+   "tur_int": 0,
+   "mat_int": 184145
+  },
+  {
+   "year": 2018,
+   "noturno": 181939,
+   "ead": 181939,
+   "tur_int": 0,
+   "mat_int": 181939
+  },
+  {
+   "year": 2019,
+   "noturno": 180610,
+   "ead": 180610,
+   "tur_int": 0,
+   "mat_int": 180610
+  },
+  {
+   "year": 2020,
+   "noturno": 179533,
+   "ead": 179533,
+   "tur_int": 0,
+   "mat_int": 179533
+  },
+  {
+   "year": 2021,
+   "noturno": 178370,
+   "ead": 178370,
+   "tur_int": 0,
+   "mat_int": 178370
+  },
+  {
+   "year": 2022,
+   "noturno": 178346,
+   "ead": 178346,
+   "tur_int": 0,
+   "mat_int": 178346
+  },
+  {
+   "year": 2023,
+   "noturno": 178476,
+   "ead": 178476,
+   "tur_int": 178476,
+   "mat_int": 178476
+  },
+  {
+   "year": 2024,
+   "noturno": 179286,
+   "ead": 179286,
+   "tur_int": 179286,
+   "mat_int": 179286
+  },
+  {
+   "year": 2025,
+   "noturno": 178766,
+   "ead": 178766,
+   "tur_int": 178772,
+   "mat_int": 178766
+  }
+ ]
+}

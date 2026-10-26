@@ -1,0 +1,724 @@
+{
+ "2007": {
+  "brasil_sinopse": 198397,
+  "brasil_cadastro_recorte": 198397,
+  "soma_municipios_sinopse": 198397,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 235,
+    "cadastro": 235
+   },
+   "2": {
+    "sinopse": 33114,
+    "cadastro": 33114
+   },
+   "3": {
+    "sinopse": 132454,
+    "cadastro": 132454
+   },
+   "4": {
+    "sinopse": 32594,
+    "cadastro": 32594
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2007",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2008": {
+  "brasil_sinopse": 199761,
+  "brasil_cadastro_recorte": 199761,
+  "soma_municipios_sinopse": 199761,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 265,
+    "cadastro": 265
+   },
+   "2": {
+    "sinopse": 32792,
+    "cadastro": 32792
+   },
+   "3": {
+    "sinopse": 131566,
+    "cadastro": 131566
+   },
+   "4": {
+    "sinopse": 35138,
+    "cadastro": 35138
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2008",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2009": {
+  "brasil_sinopse": 197468,
+  "brasil_cadastro_recorte": 197468,
+  "soma_municipios_sinopse": 197468,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 300,
+    "cadastro": 300
+   },
+   "2": {
+    "sinopse": 32437,
+    "cadastro": 32437
+   },
+   "3": {
+    "sinopse": 129046,
+    "cadastro": 129046
+   },
+   "4": {
+    "sinopse": 35685,
+    "cadastro": 35685
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2009",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2010": {
+  "brasil_sinopse": 194939,
+  "brasil_cadastro_recorte": 194939,
+  "soma_municipios_sinopse": 194939,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 344,
+    "cadastro": 344
+   },
+   "2": {
+    "sinopse": 32160,
+    "cadastro": 32160
+   },
+   "3": {
+    "sinopse": 126146,
+    "cadastro": 126146
+   },
+   "4": {
+    "sinopse": 36289,
+    "cadastro": 36289
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2010",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2011": {
+  "brasil_sinopse": 193047,
+  "brasil_cadastro_recorte": 193047,
+  "soma_municipios_sinopse": 193047,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 451,
+    "cadastro": 451
+   },
+   "2": {
+    "sinopse": 32104,
+    "cadastro": 32104
+   },
+   "3": {
+    "sinopse": 123609,
+    "cadastro": 123609
+   },
+   "4": {
+    "sinopse": 36883,
+    "cadastro": 36883
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2011",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2012": {
+  "brasil_sinopse": 192676,
+  "brasil_cadastro_recorte": 192676,
+  "soma_municipios_sinopse": 192676,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 490,
+    "cadastro": 490
+   },
+   "2": {
+    "sinopse": 31397,
+    "cadastro": 31397
+   },
+   "3": {
+    "sinopse": 122729,
+    "cadastro": 122729
+   },
+   "4": {
+    "sinopse": 38060,
+    "cadastro": 38060
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5565,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61215,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2012",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2013": {
+  "brasil_sinopse": 190706,
+  "brasil_cadastro_recorte": 190706,
+  "soma_municipios_sinopse": 190706,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 512,
+    "cadastro": 512
+   },
+   "2": {
+    "sinopse": 30891,
+    "cadastro": 30891
+   },
+   "3": {
+    "sinopse": 120481,
+    "cadastro": 120481
+   },
+   "4": {
+    "sinopse": 38822,
+    "cadastro": 38822
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2013",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2014": {
+  "brasil_sinopse": 188673,
+  "brasil_cadastro_recorte": 188673,
+  "soma_municipios_sinopse": 188673,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 543,
+    "cadastro": 543
+   },
+   "2": {
+    "sinopse": 30758,
+    "cadastro": 30758
+   },
+   "3": {
+    "sinopse": 117797,
+    "cadastro": 117797
+   },
+   "4": {
+    "sinopse": 39575,
+    "cadastro": 39575
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2014",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2015": {
+  "brasil_sinopse": 186441,
+  "brasil_cadastro_recorte": 186441,
+  "soma_municipios_sinopse": 186441,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 636,
+    "cadastro": 636
+   },
+   "2": {
+    "sinopse": 30787,
+    "cadastro": 30787
+   },
+   "3": {
+    "sinopse": 115687,
+    "cadastro": 115687
+   },
+   "4": {
+    "sinopse": 39331,
+    "cadastro": 39331
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2015",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2016": {
+  "brasil_sinopse": 186081,
+  "brasil_cadastro_recorte": 186081,
+  "soma_municipios_sinopse": 186081,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 687,
+    "cadastro": 687
+   },
+   "2": {
+    "sinopse": 30659,
+    "cadastro": 30659
+   },
+   "3": {
+    "sinopse": 114719,
+    "cadastro": 114719
+   },
+   "4": {
+    "sinopse": 40016,
+    "cadastro": 40016
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2016",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2017": {
+  "brasil_sinopse": 184145,
+  "brasil_cadastro_recorte": 184145,
+  "soma_municipios_sinopse": 184145,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 699,
+    "cadastro": 699
+   },
+   "2": {
+    "sinopse": 30519,
+    "cadastro": 30519
+   },
+   "3": {
+    "sinopse": 112899,
+    "cadastro": 112899
+   },
+   "4": {
+    "sinopse": 40028,
+    "cadastro": 40028
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2017",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2018": {
+  "brasil_sinopse": 181939,
+  "brasil_cadastro_recorte": 181939,
+  "soma_municipios_sinopse": 181939,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 701,
+    "cadastro": 701
+   },
+   "2": {
+    "sinopse": 30377,
+    "cadastro": 30377
+   },
+   "3": {
+    "sinopse": 110220,
+    "cadastro": 110220
+   },
+   "4": {
+    "sinopse": 40641,
+    "cadastro": 40641
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2018",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2019": {
+  "brasil_sinopse": 180610,
+  "brasil_cadastro_recorte": 180610,
+  "soma_municipios_sinopse": 180610,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 698,
+    "cadastro": 698
+   },
+   "2": {
+    "sinopse": 30160,
+    "cadastro": 30160
+   },
+   "3": {
+    "sinopse": 108318,
+    "cadastro": 108318
+   },
+   "4": {
+    "sinopse": 41434,
+    "cadastro": 41434
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2019",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2020": {
+  "brasil_sinopse": 179533,
+  "brasil_cadastro_recorte": 179533,
+  "soma_municipios_sinopse": 179533,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 700,
+    "cadastro": 700
+   },
+   "2": {
+    "sinopse": 29888,
+    "cadastro": 29888
+   },
+   "3": {
+    "sinopse": 107899,
+    "cadastro": 107899
+   },
+   "4": {
+    "sinopse": 41046,
+    "cadastro": 41046
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2020",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2021": {
+  "brasil_sinopse": 178370,
+  "brasil_cadastro_recorte": 178370,
+  "soma_municipios_sinopse": 178370,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 696,
+    "cadastro": 696
+   },
+   "2": {
+    "sinopse": 29675,
+    "cadastro": 29675
+   },
+   "3": {
+    "sinopse": 107457,
+    "cadastro": 107457
+   },
+   "4": {
+    "sinopse": 40542,
+    "cadastro": 40542
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2021",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2022": {
+  "brasil_sinopse": 178346,
+  "brasil_cadastro_recorte": 178346,
+  "soma_municipios_sinopse": 178346,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 700,
+    "cadastro": 700
+   },
+   "2": {
+    "sinopse": 29536,
+    "cadastro": 29536
+   },
+   "3": {
+    "sinopse": 107099,
+    "cadastro": 107099
+   },
+   "4": {
+    "sinopse": 41011,
+    "cadastro": 41011
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2022",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2023": {
+  "brasil_sinopse": 178476,
+  "brasil_cadastro_recorte": 178476,
+  "soma_municipios_sinopse": 178476,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 706,
+    "cadastro": 706
+   },
+   "2": {
+    "sinopse": 29508,
+    "cadastro": 29508
+   },
+   "3": {
+    "sinopse": 106707,
+    "cadastro": 106707
+   },
+   "4": {
+    "sinopse": 41555,
+    "cadastro": 41555
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2023",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2024": {
+  "brasil_sinopse": 179286,
+  "brasil_cadastro_recorte": 179286,
+  "soma_municipios_sinopse": 179286,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 708,
+    "cadastro": 708
+   },
+   "2": {
+    "sinopse": 29277,
+    "cadastro": 29277
+   },
+   "3": {
+    "sinopse": 106859,
+    "cadastro": 106859
+   },
+   "4": {
+    "sinopse": 42442,
+    "cadastro": 42442
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5570,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61270,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2024",
+   "Notas:     1 - O mesmo estabelecimento pode oferecer mais de uma Etapa de Ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ },
+ "2025": {
+  "brasil_sinopse": 178766,
+  "brasil_cadastro_recorte": 178766,
+  "soma_municipios_sinopse": 178766,
+  "diferenca_brasil": 0,
+  "dependencia": {
+   "1": {
+    "sinopse": 716,
+    "cadastro": 716
+   },
+   "2": {
+    "sinopse": 29732,
+    "cadastro": 29732
+   },
+   "3": {
+    "sinopse": 106572,
+    "cadastro": 106572
+   },
+   "4": {
+    "sinopse": 41746,
+    "cadastro": 41746
+   }
+  },
+  "ufs_comparadas": 27,
+  "ufs_divergentes": [],
+  "municipios_sinopse": 5571,
+  "municipios_so_no_cadastro": [],
+  "municipios_so_na_sinopse_com_escola": [],
+  "celulas_comparadas": 61281,
+  "celulas_divergentes": 0,
+  "exemplos_divergencia": [],
+  "notas_sinopse": [
+   "Fonte: INEP – Censo Escolar da Educação Básica 2025",
+   "Notas:     1 - Inclui somente os estabelecimentos em atividade na data de referência do Censo Escolar (última quarta-feira do mês de maio) e com pelo menos uma matrícula registrada em qualquer etapa de ensino.",
+   "2 - Não inclui estabelecimentos com turmas exclusivas de Atividade Complementar ou Atendimento Educacional Especializado (AEE)."
+  ],
+  "aba": "3.2"
+ }
+}

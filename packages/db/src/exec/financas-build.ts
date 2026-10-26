@@ -20,15 +20,15 @@ function put(p: ParsedFin, conta: string, col: string, v: number | null, label?:
   p.facts.set(k, c); if (label && !p.labels.has(conta)) p.labels.set(conta, label);
 }
 /** Mantém TODAS as funções (denominadores e comparações) e, da função 06, as subfunções. Serve ao Anexo I-E (estágios do exercício) e ao I-G (restos a pagar), que têm a mesma estrutura de contas. */
-function parseDcaAnexo(items: SiconfiItem[], anexo: string, colFn: (c: string) => string | null): ParsedFin {
+function parseDcaAnexo(items: SiconfiItem[], anexo: string, colFn: (c: string) => string | null, target = SEC): ParsedFin {
   const p = fresh();
   for (const it of items) {
     if (it.anexo !== anexo || it.cod_conta !== 'TotalDespesas') { p.ignored++; continue; }
     const col = colFn(it.coluna); if (!col) { p.ignored++; continue; }
     const n = it.conta; let m: RegExpExecArray | null;
-    if ((m = DCA_SUB.exec(n))) { if (m[1] === SEC) put(p, `${m[1]}.${m[2]}`, col, it.valor, m[3]); else p.ignored++; }
+    if ((m = DCA_SUB.exec(n))) { if (m[1] === target) put(p, `${m[1]}.${m[2]}`, col, it.valor, m[3]); else p.ignored++; }
     else if ((m = DCA_FN.exec(n))) { put(p, m[1]!, col, it.valor, m[2]); p.functionsSeen.add(m[1]!); }
-    else if ((m = DCA_DEMAIS.exec(n))) { if (m[1] === SEC) put(p, 'FU06', col, it.valor, 'Demais Subfunções'); else p.ignored++; }
+    else if ((m = DCA_DEMAIS.exec(n))) { if (m[1] === target) put(p, `FU${target}`, col, it.valor, 'Demais Subfunções'); else p.ignored++; }
     else if (/^DESPESAS EXCETO INTRA/.test(normLabel(n))) put(p, 'TOT', col, it.valor);
     else if (/^DESPESAS INTRA/.test(normLabel(n))) put(p, 'INTRA', col, it.valor);
     else { p.ignored++; }
@@ -36,6 +36,7 @@ function parseDcaAnexo(items: SiconfiItem[], anexo: string, colFn: (c: string) =
   return p;
 }
 export const parseDcaIE = (items: SiconfiItem[]): ParsedFin => parseDcaAnexo(items, 'DCA-Anexo I-E', dcaIeColumn);
+export const parseDcaIEEducation = (items: SiconfiItem[]): ParsedFin => parseDcaAnexo(items, 'DCA-Anexo I-E', dcaIeColumn, '12');
 export const parseDcaIG = (items: SiconfiItem[]): ParsedFin => parseDcaAnexo(items, 'DCA-Anexo I-G', dcaIgColumn);
 const FN_BY_NORM = new Map(FUNCTIONS.map(([c, n]) => [normLabel(n), c]));
 /** RREO Anexo 02: as linhas não trazem código; função = nome oficial, subfunção = linhas seguintes (ordem estável dentro de cada coluna). Só o bloco "exceto intra-orçamentárias". */
@@ -136,5 +137,32 @@ export function buildFinSlice(a: FinSliceArgs): FinSlice {
   }
   counts.facts = facts.length; counts.indicators = indicators.length;
   return { facts, cov, indicators, codes: collectCodes(parsedAll), failures, quality: { source: a.source, year: a.year, periodo: a.periodo, ...counts, invariantFailures: failures.length } };
+}
+
+/** Versão aditiva da DCA para a função 12. Mantém os fatos no contrato compartilhado,
+ * mas publica em dataset/tabela separados e nunca altera a fatia histórica da função 06. */
+export function buildEducationFinSlice(a: FinSliceArgs): FinSlice {
+  if (a.source !== FIN_SOURCE.dcaIE) throw new Error('Educação usa somente DCA I-E nesta fase');
+  const cols = DCA_IE_COLUMNS; const facts: Row[] = []; const cov: Row[] = []; const indicators: IndicatorRow[] = []; const failures: FinSlice['failures'] = [];
+  const parsedAll: ParsedFin[] = []; const ps = `${a.year}-01-01`; const pe = `${a.year + 1}-01-01`;
+  const counts: Record<string, number> = { entes: 0, notReported: 0, withFn12: 0, noFn12: 0, caveats: 0, facts: 0, indicators: 0 };
+  for (const e of a.entities) {
+    counts.entes!++;
+    if (e.status !== 200) { cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: a.periodo, status: COV.SOURCE_UNAVAILABLE, items: 0, fn06: 0, fn12: 0, stages: 0, caveats: 0 }); continue; }
+    if (!e.items.length) { counts.notReported!++; cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: a.periodo, status: COV.NOT_REPORTED, items: 0, fn06: 0, fn12: 0, stages: 0, caveats: 0 }); continue; }
+    const p = parseDcaIEEducation(e.items); parsedAll.push(p);
+    const fn12 = [...p.facts.keys()].some(k => k.startsWith('12|')); const detail: Array<{ col: string; check: string; a: number; b: number }> = [];
+    for (const col of cols.map(x => x.code)) { const f = p.facts.get(`12|${col}`); if (f === undefined) continue; let s = 0; for (const [k, v] of p.facts) if (k.endsWith(`|${col}`) && (/^12\.\d{3}\|/.test(k) || k.startsWith('FU12|'))) s += v; if (s && Math.abs(s - f) > 100) detail.push({ col, check: 'sumSubfunctionsNeFunction12', a: s, b: f }); }
+    const caveats = p.caveats | (detail.length ? COV_CAVEAT.sumSubfunctionsNeFunction : 0); failures.push(...detail.map(d => ({ entityId: e.entityId, ...d })));
+    const status = !fn12 ? COV.DECLARED_WITHOUT_FUNCTION : caveats ? COV.PUBLISHED_WITH_CAVEATS : COV.PUBLISHED; if (fn12) counts.withFn12!++; else counts.noFn12!++; if (caveats) counts.caveats!++;
+    cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: a.periodo, status, items: e.items.length, fn06: 0, fn12: fn12 ? 1 : 0, stages: cols.reduce((m, c) => m | (p.facts.has(`12|${c.code}`) ? c.bit : 0), 0), caveats });
+    for (const [k, v] of p.facts) { const [conta, col] = k.split('|') as [string, string]; if (!(conta === '12' || conta.startsWith('12.') || conta === 'FU12')) continue; facts.push({ entity_id: e.entityId, exercicio: a.year, periodo: a.periodo, conta_id: a.ids.conta(conta), coluna_id: a.ids.col(col), valor: v }); }
+    const mk = (id: number, num: number | null, den: number | null, value: number | null, flags = 0) => indicators.push({ indicator_id: id, entity_id: e.entityId, period_start: ps, period_end: pe, status: 2, numerator: num, denominator: den, value, flags });
+    const money = (id: number, key: string) => { const v = p.facts.get(key); if (v !== undefined) mk(id, v / 100, null, v / 100); return v; };
+    const emp = money(7101, '12|EMP'); money(7102, '12|LIQ'); const pag = money(7103, '12|PAG'); money(7104, '12|RPNP_INSC'); money(7105, '12|RPP_INSC'); const totalEmp = money(7106, 'TOT|EMP'); money(7107, 'TOT|PAG');
+    const subs = ['122','361','362','363','364','365','366','367','368']; subs.forEach((c, i) => { money(7120 + i * 2, `12.${c}|EMP`); money(7121 + i * 2, `12.${c}|PAG`); });
+    const pop = a.pop.get(e.entityId); if (emp !== undefined && totalEmp !== undefined && totalEmp > 0) mk(7108, emp / 100, totalEmp / 100, emp / totalEmp * 100); if (emp !== undefined && pop != null && pop > 0) mk(7110, emp / 100, pop, emp / 100 / pop); if (pag !== undefined && pop != null && pop > 0) mk(7111, pag / 100, pop, pag / 100 / pop); if (emp !== undefined && pag !== undefined && emp > 0) mk(7109, pag / 100, emp / 100, pag / emp * 100);
+  }
+  counts.facts = facts.length; counts.indicators = indicators.length; return { facts, cov, indicators, codes: collectCodes(parsedAll), failures, quality: { source: a.source, functionCode: '12', year: a.year, periodo: a.periodo, ...counts, invariantFailures: failures.length } };
 }
 void FUNCTION_BY_NAME;

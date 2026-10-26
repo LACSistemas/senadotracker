@@ -1,0 +1,4313 @@
+{
+ "at": "2026-10-25T19:13:34.522Z",
+ "A_cellsFileVsDb": [
+  {
+   "year": 2007,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 536624,
+   "cellsDb": 536624,
+   "equal": true
+  },
+  {
+   "year": 2007,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 356609,
+   "cellsDb": 356609,
+   "equal": true
+  },
+  {
+   "year": 2008,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 540568,
+   "cellsDb": 540568,
+   "equal": true
+  },
+  {
+   "year": 2008,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 356554,
+   "cellsDb": 356554,
+   "equal": true
+  },
+  {
+   "year": 2009,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 539907,
+   "cellsDb": 539907,
+   "equal": true
+  },
+  {
+   "year": 2009,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 355600,
+   "cellsDb": 355600,
+   "equal": true
+  },
+  {
+   "year": 2010,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 535136,
+   "cellsDb": 535136,
+   "equal": true
+  },
+  {
+   "year": 2010,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 355275,
+   "cellsDb": 355275,
+   "equal": true
+  },
+  {
+   "year": 2010,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 491967,
+   "cellsDb": 491967,
+   "equal": true
+  },
+  {
+   "year": 2010,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 353946,
+   "cellsDb": 353946,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 533759,
+   "cellsDb": 533759,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 356006,
+   "cellsDb": 356006,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 492366,
+   "cellsDb": 492366,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 354604,
+   "cellsDb": 354604,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 636628,
+   "cellsDb": 636628,
+   "equal": true
+  },
+  {
+   "year": 2011,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 403686,
+   "cellsDb": 403686,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 538415,
+   "cellsDb": 538415,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 356416,
+   "cellsDb": 356416,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 498761,
+   "cellsDb": 498761,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 354993,
+   "cellsDb": 354993,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 639314,
+   "cellsDb": 639314,
+   "equal": true
+  },
+  {
+   "year": 2012,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 403956,
+   "cellsDb": 403956,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 539883,
+   "cellsDb": 539883,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 357235,
+   "cellsDb": 357235,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 503227,
+   "cellsDb": 503227,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 355879,
+   "cellsDb": 355879,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 638142,
+   "cellsDb": 638142,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 405248,
+   "cellsDb": 405248,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2565230,
+   "cellsDb": 2565230,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1699875,
+   "cellsDb": 1699875,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2242314,
+   "cellsDb": 2242314,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1338198,
+   "cellsDb": 1338198,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 173261,
+   "cellsDb": 173261,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 268396,
+   "cellsDb": 268396,
+   "equal": true
+  },
+  {
+   "year": 2013,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 190706,
+   "cellsDb": 190706,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 534116,
+   "cellsDb": 534116,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 357607,
+   "cellsDb": 357607,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 499505,
+   "cellsDb": 499505,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356206,
+   "cellsDb": 356206,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 629021,
+   "cellsDb": 629021,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 405443,
+   "cellsDb": 405443,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2515385,
+   "cellsDb": 2515385,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1696005,
+   "cellsDb": 1696005,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2190768,
+   "cellsDb": 2190768,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1332276,
+   "cellsDb": 1332276,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 171353,
+   "cellsDb": 171353,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 2332,
+   "cellsDb": 2332,
+   "equal": true
+  },
+  {
+   "year": 2014,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 188673,
+   "cellsDb": 188673,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 527779,
+   "cellsDb": 527779,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 357997,
+   "cellsDb": 357997,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 495045,
+   "cellsDb": 495045,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356624,
+   "cellsDb": 356624,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 619029,
+   "cellsDb": 619029,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 405385,
+   "cellsDb": 405385,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2458610,
+   "cellsDb": 2458610,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1692305,
+   "cellsDb": 1692305,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2140908,
+   "cellsDb": 2140908,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1328526,
+   "cellsDb": 1328526,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 169825,
+   "cellsDb": 169825,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 2340,
+   "cellsDb": 2340,
+   "equal": true
+  },
+  {
+   "year": 2015,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 186441,
+   "cellsDb": 186441,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 531475,
+   "cellsDb": 531475,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358300,
+   "cellsDb": 358300,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 500034,
+   "cellsDb": 500034,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356940,
+   "cellsDb": 356940,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 617948,
+   "cellsDb": 617948,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 405382,
+   "cellsDb": 405382,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2438340,
+   "cellsDb": 2438340,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1692985,
+   "cellsDb": 1692985,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2118660,
+   "cellsDb": 2118660,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1324032,
+   "cellsDb": 1324032,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 169991,
+   "cellsDb": 169991,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 2340,
+   "cellsDb": 2340,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 186081,
+   "cellsDb": 186081,
+   "equal": true
+  },
+  {
+   "year": 2016,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 410550,
+   "cellsDb": 410550,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 536322,
+   "cellsDb": 536322,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 359057,
+   "cellsDb": 359057,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 501046,
+   "cellsDb": 501046,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 357383,
+   "cellsDb": 357383,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 615522,
+   "cellsDb": 615522,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 405573,
+   "cellsDb": 405573,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2413470,
+   "cellsDb": 2413470,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1690125,
+   "cellsDb": 1690125,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2077956,
+   "cellsDb": 2077956,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1319880,
+   "cellsDb": 1319880,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 168859,
+   "cellsDb": 168859,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 2340,
+   "cellsDb": 2340,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 184145,
+   "cellsDb": 184145,
+   "equal": true
+  },
+  {
+   "year": 2017,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 409758,
+   "cellsDb": 409758,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 544155,
+   "cellsDb": 544155,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358527,
+   "cellsDb": 358527,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 498462,
+   "cellsDb": 498462,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356900,
+   "cellsDb": 356900,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 612449,
+   "cellsDb": 612449,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 414510,
+   "cellsDb": 414510,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2363785,
+   "cellsDb": 2363785,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1677935,
+   "cellsDb": 1677935,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 2030070,
+   "cellsDb": 2030070,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1314912,
+   "cellsDb": 1314912,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 167236,
+   "cellsDb": 167236,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 2344,
+   "cellsDb": 2344,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 181939,
+   "cellsDb": 181939,
+   "equal": true
+  },
+  {
+   "year": 2018,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 409458,
+   "cellsDb": 409458,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 532577,
+   "cellsDb": 532577,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358496,
+   "cellsDb": 358496,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 500425,
+   "cellsDb": 500425,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356620,
+   "cellsDb": 356620,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 608621,
+   "cellsDb": 608621,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 413299,
+   "cellsDb": 413299,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2333545,
+   "cellsDb": 2333545,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1669235,
+   "cellsDb": 1669235,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1996428,
+   "cellsDb": 1996428,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1309920,
+   "cellsDb": 1309920,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 166177,
+   "cellsDb": 166177,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 270064,
+   "cellsDb": 270064,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 180610,
+   "cellsDb": 180610,
+   "equal": true
+  },
+  {
+   "year": 2019,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 408618,
+   "cellsDb": 408618,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 529017,
+   "cellsDb": 529017,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358399,
+   "cellsDb": 358399,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 497467,
+   "cellsDb": 497467,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 356522,
+   "cellsDb": 356522,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 601165,
+   "cellsDb": 601165,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 411665,
+   "cellsDb": 411665,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2306655,
+   "cellsDb": 2306655,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1660260,
+   "cellsDb": 1660260,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1974210,
+   "cellsDb": 1974210,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1306122,
+   "cellsDb": 1306122,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 166467,
+   "cellsDb": 166467,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 270208,
+   "cellsDb": 270208,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 179533,
+   "cellsDb": 179533,
+   "equal": true
+  },
+  {
+   "year": 2020,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 408246,
+   "cellsDb": 408246,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 524900,
+   "cellsDb": 524900,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 357204,
+   "cellsDb": 357204,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 494026,
+   "cellsDb": 494026,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 355456,
+   "cellsDb": 355456,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 597549,
+   "cellsDb": 597549,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 409498,
+   "cellsDb": 409498,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2296165,
+   "cellsDb": 2296165,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1651410,
+   "cellsDb": 1651410,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1954740,
+   "cellsDb": 1954740,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1302480,
+   "cellsDb": 1302480,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 165853,
+   "cellsDb": 165853,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 269852,
+   "cellsDb": 269852,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 178370,
+   "cellsDb": 178370,
+   "equal": true
+  },
+  {
+   "year": 2021,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 407334,
+   "cellsDb": 407334,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 529736,
+   "cellsDb": 529736,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358382,
+   "cellsDb": 358382,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 600982,
+   "cellsDb": 600982,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 362611,
+   "cellsDb": 362611,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 602109,
+   "cellsDb": 602109,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 410847,
+   "cellsDb": 410847,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2292365,
+   "cellsDb": 2292365,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1654140,
+   "cellsDb": 1654140,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1938402,
+   "cellsDb": 1938402,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1298676,
+   "cellsDb": 1298676,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 165721,
+   "cellsDb": 165721,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 269728,
+   "cellsDb": 269728,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 178346,
+   "cellsDb": 178346,
+   "equal": true
+  },
+  {
+   "year": 2022,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 407340,
+   "cellsDb": 407340,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 532268,
+   "cellsDb": 532268,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358581,
+   "cellsDb": 358581,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 601286,
+   "cellsDb": 601286,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 362598,
+   "cellsDb": 362598,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 604091,
+   "cellsDb": 604091,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 410506,
+   "cellsDb": 410506,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2284555,
+   "cellsDb": 2284555,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1647275,
+   "cellsDb": 1647275,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1921728,
+   "cellsDb": 1921728,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1297074,
+   "cellsDb": 1297074,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 165521,
+   "cellsDb": 165521,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 269484,
+   "cellsDb": 269484,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 178476,
+   "cellsDb": 178476,
+   "equal": true
+  },
+  {
+   "year": 2023,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 407334,
+   "cellsDb": 407334,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 535515,
+   "cellsDb": 535515,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358385,
+   "cellsDb": 358385,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 603101,
+   "cellsDb": 603101,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 362267,
+   "cellsDb": 362267,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 605003,
+   "cellsDb": 605003,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 409223,
+   "cellsDb": 409223,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2276810,
+   "cellsDb": 2276810,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1637015,
+   "cellsDb": 1637015,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1915614,
+   "cellsDb": 1915614,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1292880,
+   "cellsDb": 1292880,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 165527,
+   "cellsDb": 165527,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 269192,
+   "cellsDb": 269192,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 179286,
+   "cellsDb": 179286,
+   "equal": true
+  },
+  {
+   "year": 2024,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 407022,
+   "cellsDb": 407022,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "ATU",
+   "level": "escolas",
+   "cellsFile": 533931,
+   "cellsDb": 533931,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "ATU",
+   "level": "terr",
+   "cellsFile": 358783,
+   "cellsDb": 358783,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "HAD",
+   "level": "escolas",
+   "cellsFile": 597499,
+   "cellsDb": 597499,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "HAD",
+   "level": "terr",
+   "cellsFile": 362497,
+   "cellsDb": 362497,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "DSU",
+   "level": "escolas",
+   "cellsFile": 639524,
+   "cellsDb": 639524,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "DSU",
+   "level": "terr",
+   "cellsFile": 465458,
+   "cellsDb": 465458,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "AFD",
+   "level": "escolas",
+   "cellsFile": 2261755,
+   "cellsDb": 2261755,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "AFD",
+   "level": "terr",
+   "cellsFile": 1634265,
+   "cellsDb": 1634265,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "IED",
+   "level": "escolas",
+   "cellsFile": 1893072,
+   "cellsDb": 1893072,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "IED",
+   "level": "terr",
+   "cellsFile": 1292988,
+   "cellsDb": 1292988,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "IRD",
+   "level": "escolas",
+   "cellsFile": 164577,
+   "cellsDb": 164577,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "IRD",
+   "level": "terr",
+   "cellsFile": 268704,
+   "cellsDb": 268704,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "ICG",
+   "level": "escolas",
+   "cellsFile": 178766,
+   "cellsDb": 178766,
+   "equal": true
+  },
+  {
+   "year": 2025,
+   "family": "ICG",
+   "level": "terr",
+   "cellsFile": 407478,
+   "cellsDb": 407478,
+   "equal": true
+  }
+ ],
+ "B_sumTo100": [
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2013,
+   "rows": 98337,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2014,
+   "rows": 97932,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2015,
+   "rows": 97171,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2016,
+   "rows": 99028,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2017,
+   "rows": 100135,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2018,
+   "rows": 100591,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2019,
+   "rows": 101359,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2020,
+   "rows": 100676,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2021,
+   "rows": 100595,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2022,
+   "rows": 101810,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2023,
+   "rows": 103354,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2024,
+   "rows": 104526,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (escola)",
+   "year": 2025,
+   "rows": 104536,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2013,
+   "rows": 52124,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2014,
+   "rows": 52258,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2015,
+   "rows": 52211,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2016,
+   "rows": 52305,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2017,
+   "rows": 52367,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2018,
+   "rows": 52341,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2019,
+   "rows": 52186,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2020,
+   "rows": 52180,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2021,
+   "rows": 51998,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2022,
+   "rows": 52153,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2023,
+   "rows": 52137,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2024,
+   "rows": 52138,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_inf soma 100 (território)",
+   "year": 2025,
+   "rows": 52190,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2013,
+   "rows": 142706,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2014,
+   "rows": 139219,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2015,
+   "rows": 135614,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2016,
+   "rows": 134286,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2017,
+   "rows": 131490,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2018,
+   "rows": 128122,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2019,
+   "rows": 126006,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2020,
+   "rows": 124806,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2021,
+   "rows": 123527,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2022,
+   "rows": 122324,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2023,
+   "rows": 121269,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2024,
+   "rows": 120870,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (escola)",
+   "year": 2025,
+   "rows": 119171,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2013,
+   "rows": 63797,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2014,
+   "rows": 63531,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2015,
+   "rows": 63297,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2016,
+   "rows": 63089,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2017,
+   "rows": 62809,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2018,
+   "rows": 62539,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2019,
+   "rows": 62274,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2020,
+   "rows": 62137,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2021,
+   "rows": 61916,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2022,
+   "rows": 61757,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2023,
+   "rows": 61663,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2024,
+   "rows": 61490,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_fun soma 100 (território)",
+   "year": 2025,
+   "rows": 61356,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2013,
+   "rows": 106214,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2014,
+   "rows": 104311,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2015,
+   "rows": 102075,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2016,
+   "rows": 101301,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2017,
+   "rows": 98785,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2018,
+   "rows": 94974,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2019,
+   "rows": 93520,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2020,
+   "rows": 93293,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2021,
+   "rows": 92142,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2022,
+   "rows": 91105,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2023,
+   "rows": 89510,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2024,
+   "rows": 89244,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (escola)",
+   "year": 2025,
+   "rows": 87808,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2013,
+   "rows": 57935,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2014,
+   "rows": 57546,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2015,
+   "rows": 57331,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2016,
+   "rows": 57076,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2017,
+   "rows": 56868,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2018,
+   "rows": 55790,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2019,
+   "rows": 55675,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2020,
+   "rows": 55801,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2021,
+   "rows": 55621,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2022,
+   "rows": 55345,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2023,
+   "rows": 54979,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2024,
+   "rows": 54730,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_ai soma 100 (território)",
+   "year": 2025,
+   "rows": 54550,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2013,
+   "rows": 95984,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2014,
+   "rows": 93075,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2015,
+   "rows": 90268,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2016,
+   "rows": 88559,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2017,
+   "rows": 87010,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2018,
+   "rows": 84926,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2019,
+   "rows": 83126,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2020,
+   "rows": 81902,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2021,
+   "rows": 80788,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2022,
+   "rows": 79854,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2023,
+   "rows": 79273,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2024,
+   "rows": 78638,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (escola)",
+   "year": 2025,
+   "rows": 77770,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2013,
+   "rows": 58989,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2014,
+   "rows": 58667,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2015,
+   "rows": 58355,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2016,
+   "rows": 58003,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2017,
+   "rows": 57767,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2018,
+   "rows": 57532,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2019,
+   "rows": 57297,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2020,
+   "rows": 57058,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2021,
+   "rows": 56773,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2022,
+   "rows": 56528,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2023,
+   "rows": 56430,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2024,
+   "rows": 56154,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_af soma 100 (território)",
+   "year": 2025,
+   "rows": 56042,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2013,
+   "rows": 27447,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2014,
+   "rows": 27737,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2015,
+   "rows": 27960,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2016,
+   "rows": 28298,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2017,
+   "rows": 28531,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2018,
+   "rows": 28652,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2019,
+   "rows": 28833,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2020,
+   "rows": 28901,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2021,
+   "rows": 29132,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2022,
+   "rows": 29289,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2023,
+   "rows": 29626,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2024,
+   "rows": 29861,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (escola)",
+   "year": 2025,
+   "rows": 30244,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2013,
+   "rows": 42020,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2014,
+   "rows": 42132,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2015,
+   "rows": 42250,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2016,
+   "rows": 42339,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2017,
+   "rows": 42475,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2018,
+   "rows": 42511,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2019,
+   "rows": 42538,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2020,
+   "rows": 42626,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2021,
+   "rows": 42637,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2022,
+   "rows": 42667,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2023,
+   "rows": 42959,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2024,
+   "rows": 42980,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_med soma 100 (território)",
+   "year": 2025,
+   "rows": 43408,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2013,
+   "rows": 33318,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2014,
+   "rows": 31742,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2015,
+   "rows": 29231,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2016,
+   "rows": 26693,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2017,
+   "rows": 26879,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2018,
+   "rows": 25768,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2019,
+   "rows": 24288,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2020,
+   "rows": 22614,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2021,
+   "rows": 23859,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2022,
+   "rows": 24847,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2023,
+   "rows": 24684,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2024,
+   "rows": 23247,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (escola)",
+   "year": 2025,
+   "rows": 24227,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2013,
+   "rows": 41441,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2014,
+   "rows": 40941,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2015,
+   "rows": 39710,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2016,
+   "rows": 39725,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2017,
+   "rows": 39031,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2018,
+   "rows": 38286,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2019,
+   "rows": 37187,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2020,
+   "rows": 36207,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2021,
+   "rows": 35401,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2022,
+   "rows": 35683,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2023,
+   "rows": 35047,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2024,
+   "rows": 33853,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_fun soma 100 (território)",
+   "year": 2025,
+   "rows": 33867,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2013,
+   "rows": 9040,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2014,
+   "rows": 9061,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2015,
+   "rows": 9403,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2016,
+   "rows": 9503,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2017,
+   "rows": 9864,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2018,
+   "rows": 9724,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2019,
+   "rows": 9577,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2020,
+   "rows": 9139,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2021,
+   "rows": 9190,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2022,
+   "rows": 9244,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2023,
+   "rows": 9195,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2024,
+   "rows": 8976,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (escola)",
+   "year": 2025,
+   "rows": 8595,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2013,
+   "rows": 23669,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2014,
+   "rows": 24126,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2015,
+   "rows": 25307,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2016,
+   "rows": 26060,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2017,
+   "rows": 26708,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2018,
+   "rows": 26588,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2019,
+   "rows": 26690,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2020,
+   "rows": 26043,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2021,
+   "rows": 25936,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2022,
+   "rows": 26695,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2023,
+   "rows": 26240,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2024,
+   "rows": 26058,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "afd_eja_med soma 100 (território)",
+   "year": 2025,
+   "rows": 25440,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2013,
+   "rows": 143170,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2014,
+   "rows": 139484,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2015,
+   "rows": 135901,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2016,
+   "rows": 134500,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2017,
+   "rows": 131595,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2018,
+   "rows": 128366,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2019,
+   "rows": 126166,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2020,
+   "rows": 124840,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2021,
+   "rows": 123585,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2022,
+   "rows": 122459,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2023,
+   "rows": 121346,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2024,
+   "rows": 120935,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (escola)",
+   "year": 2025,
+   "rows": 119244,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2013,
+   "rows": 63870,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2014,
+   "rows": 63576,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2015,
+   "rows": 63337,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2016,
+   "rows": 63126,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2017,
+   "rows": 62820,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2018,
+   "rows": 62578,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2019,
+   "rows": 62308,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2020,
+   "rows": 62148,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2021,
+   "rows": 61944,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2022,
+   "rows": 61788,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2023,
+   "rows": 61690,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2024,
+   "rows": 61513,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_fun soma 100 (território)",
+   "year": 2025,
+   "rows": 61380,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2013,
+   "rows": 106681,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2014,
+   "rows": 104571,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2015,
+   "rows": 102405,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2016,
+   "rows": 101550,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2017,
+   "rows": 99097,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2018,
+   "rows": 96236,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2019,
+   "rows": 94493,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2020,
+   "rows": 93345,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2021,
+   "rows": 92219,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2022,
+   "rows": 91270,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2023,
+   "rows": 89623,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2024,
+   "rows": 89335,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (escola)",
+   "year": 2025,
+   "rows": 87897,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2013,
+   "rows": 58011,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2014,
+   "rows": 57592,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2015,
+   "rows": 57392,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2016,
+   "rows": 57127,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2017,
+   "rows": 56897,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2018,
+   "rows": 56475,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2019,
+   "rows": 56124,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2020,
+   "rows": 55836,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2021,
+   "rows": 55689,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2022,
+   "rows": 55415,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2023,
+   "rows": 55046,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2024,
+   "rows": 54791,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_ai soma 100 (território)",
+   "year": 2025,
+   "rows": 54608,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2013,
+   "rows": 96389,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2014,
+   "rows": 93304,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2015,
+   "rows": 90499,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2016,
+   "rows": 88711,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2017,
+   "rows": 87078,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2018,
+   "rows": 85071,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2019,
+   "rows": 83219,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2020,
+   "rows": 81917,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2021,
+   "rows": 80819,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2022,
+   "rows": 79928,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2023,
+   "rows": 79402,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2024,
+   "rows": 78755,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (escola)",
+   "year": 2025,
+   "rows": 77823,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2013,
+   "rows": 59102,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2014,
+   "rows": 58719,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2015,
+   "rows": 58408,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2016,
+   "rows": 58037,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2017,
+   "rows": 57775,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2018,
+   "rows": 57578,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2019,
+   "rows": 57331,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2020,
+   "rows": 57066,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2021,
+   "rows": 56790,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2022,
+   "rows": 56550,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2023,
+   "rows": 56447,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2024,
+   "rows": 56169,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_af soma 100 (território)",
+   "year": 2025,
+   "rows": 56067,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2013,
+   "rows": 27479,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2014,
+   "rows": 27769,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2015,
+   "rows": 28013,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2016,
+   "rows": 28349,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2017,
+   "rows": 28556,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2018,
+   "rows": 28672,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2019,
+   "rows": 28860,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2020,
+   "rows": 28933,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2021,
+   "rows": 29167,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2022,
+   "rows": 29410,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2023,
+   "rows": 29917,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2024,
+   "rows": 30244,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (escola)",
+   "year": 2025,
+   "rows": 30548,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2013,
+   "rows": 42050,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2014,
+   "rows": 42159,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2015,
+   "rows": 42284,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2016,
+   "rows": 42382,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2017,
+   "rows": 42488,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2018,
+   "rows": 42521,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2019,
+   "rows": 42557,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2020,
+   "rows": 42637,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2021,
+   "rows": 42657,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2022,
+   "rows": 42693,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2023,
+   "rows": 42996,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2024,
+   "rows": 43007,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ied_med soma 100 (território)",
+   "year": 2025,
+   "rows": 43443,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2016,
+   "rows": 68425,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2017,
+   "rows": 68293,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2018,
+   "rows": 68243,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2019,
+   "rows": 68103,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2020,
+   "rows": 68041,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2021,
+   "rows": 67889,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2022,
+   "rows": 67890,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2023,
+   "rows": 67889,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2024,
+   "rows": 67837,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "icg_n1..6 soma 100 (território)",
+   "year": 2025,
+   "rows": 67913,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2013,
+   "rows": 67099,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2014,
+   "rows": 583,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2015,
+   "rows": 585,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2016,
+   "rows": 585,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2017,
+   "rows": 585,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2018,
+   "rows": 586,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2019,
+   "rows": 67516,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2020,
+   "rows": 67552,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2021,
+   "rows": 67463,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2022,
+   "rows": 67432,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2023,
+   "rows": 67371,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2024,
+   "rows": 67298,
+   "outsideTolerance": 0
+  },
+  {
+   "check": "ird_b1..4 soma 100 (território)",
+   "year": 2025,
+   "rows": 67176,
+   "outsideTolerance": 0
+  }
+ ],
+ "C_atuVsOffer": [
+  {
+   "year": 2007,
+   "escolas": 190666,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2008,
+   "escolas": 192187,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2009,
+   "escolas": 190274,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2010,
+   "escolas": 187732,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2011,
+   "escolas": 188860,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2012,
+   "escolas": 188371,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 0
+  },
+  {
+   "year": 2013,
+   "escolas": 191132,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 426
+  },
+  {
+   "year": 2014,
+   "escolas": 188951,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 278
+  },
+  {
+   "year": 2015,
+   "escolas": 186655,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 214
+  },
+  {
+   "year": 2016,
+   "escolas": 186270,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 189
+  },
+  {
+   "year": 2017,
+   "escolas": 184339,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 194
+  },
+  {
+   "year": 2018,
+   "escolas": 182125,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 35742,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 186
+  },
+  {
+   "year": 2019,
+   "escolas": 180831,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 221
+  },
+  {
+   "year": 2020,
+   "escolas": 179715,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 182
+  },
+  {
+   "year": 2021,
+   "escolas": 178541,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 171
+  },
+  {
+   "year": 2022,
+   "escolas": 178519,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 173
+  },
+  {
+   "year": 2023,
+   "escolas": 178601,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 125
+  },
+  {
+   "year": 2024,
+   "escolas": 179436,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 150
+  },
+  {
+   "year": 2025,
+   "escolas": 178892,
+   "atu_ai_sem_matricula": 0,
+   "atu_af_sem_matricula": 0,
+   "atu_med_sem_matricula": 0,
+   "atu_cre_sem_matricula": 0,
+   "atu_pre_sem_matricula": 0,
+   "sem_oferta": 120
+  }
+ ],
+ "D_atuVsDerived": [
+  {
+   "year": 2007,
+   "atu_inf10": 181,
+   "atu_fun10": 255,
+   "atu_med10": 344,
+   "deriv_inf": "18.2",
+   "deriv_fun": "25.0",
+   "deriv_med": "34.3"
+  },
+  {
+   "year": 2008,
+   "atu_inf10": 177,
+   "atu_fun10": 251,
+   "atu_med10": 337,
+   "deriv_inf": "17.8",
+   "deriv_fun": "24.7",
+   "deriv_med": "33.7"
+  },
+  {
+   "year": 2009,
+   "atu_inf10": 175,
+   "atu_fun10": 247,
+   "atu_med10": 332,
+   "deriv_inf": "17.7",
+   "deriv_fun": "24.3",
+   "deriv_med": "33.1"
+  },
+  {
+   "year": 2010,
+   "atu_inf10": 170,
+   "atu_fun10": 242,
+   "atu_med10": 324,
+   "deriv_inf": "17.3",
+   "deriv_fun": "23.9",
+   "deriv_med": "32.4"
+  },
+  {
+   "year": 2011,
+   "atu_inf10": 169,
+   "atu_fun10": 239,
+   "atu_med10": 319,
+   "deriv_inf": "17.1",
+   "deriv_fun": "23.6",
+   "deriv_med": "31.8"
+  },
+  {
+   "year": 2012,
+   "atu_inf10": 168,
+   "atu_fun10": 236,
+   "atu_med10": 314,
+   "deriv_inf": "17.0",
+   "deriv_fun": "23.2",
+   "deriv_med": "31.4"
+  },
+  {
+   "year": 2013,
+   "atu_inf10": 167,
+   "atu_fun10": 233,
+   "atu_med10": 310,
+   "deriv_inf": "16.9",
+   "deriv_fun": "23.0",
+   "deriv_med": "31.0"
+  },
+  {
+   "year": 2014,
+   "atu_inf10": 167,
+   "atu_fun10": 232,
+   "atu_med10": 307,
+   "deriv_inf": "16.8",
+   "deriv_fun": "22.9",
+   "deriv_med": "30.7"
+  },
+  {
+   "year": 2015,
+   "atu_inf10": 165,
+   "atu_fun10": 231,
+   "atu_med10": 302,
+   "deriv_inf": "16.7",
+   "deriv_fun": "22.8",
+   "deriv_med": "30.2"
+  },
+  {
+   "year": 2016,
+   "atu_inf10": 164,
+   "atu_fun10": 231,
+   "atu_med10": 305,
+   "deriv_inf": "16.6",
+   "deriv_fun": "22.8",
+   "deriv_med": "30.5"
+  },
+  {
+   "year": 2017,
+   "atu_inf10": 163,
+   "atu_fun10": 230,
+   "atu_med10": 304,
+   "deriv_inf": "16.5",
+   "deriv_fun": "22.7",
+   "deriv_med": "30.4"
+  },
+  {
+   "year": 2018,
+   "atu_inf10": 163,
+   "atu_fun10": 231,
+   "atu_med10": 302,
+   "deriv_inf": "16.4",
+   "deriv_fun": "22.8",
+   "deriv_med": "30.2"
+  },
+  {
+   "year": 2019,
+   "atu_inf10": 162,
+   "atu_fun10": 230,
+   "atu_med10": 296,
+   "deriv_inf": "16.3",
+   "deriv_fun": "22.8",
+   "deriv_med": "29.6"
+  },
+  {
+   "year": 2020,
+   "atu_inf10": 158,
+   "atu_fun10": 230,
+   "atu_med10": 303,
+   "deriv_inf": "15.9",
+   "deriv_fun": "22.7",
+   "deriv_med": "30.3"
+  },
+  {
+   "year": 2021,
+   "atu_inf10": 154,
+   "atu_fun10": 229,
+   "atu_med10": 301,
+   "deriv_inf": "15.5",
+   "deriv_fun": "22.7",
+   "deriv_med": "30.1"
+  },
+  {
+   "year": 2022,
+   "atu_inf10": 156,
+   "atu_fun10": 227,
+   "atu_med10": 295,
+   "deriv_inf": "15.7",
+   "deriv_fun": "22.4",
+   "deriv_med": "29.5"
+  },
+  {
+   "year": 2023,
+   "atu_inf10": 157,
+   "atu_fun10": 225,
+   "atu_med10": 287,
+   "deriv_inf": "15.8",
+   "deriv_fun": "22.3",
+   "deriv_med": "28.7"
+  },
+  {
+   "year": 2024,
+   "atu_inf10": 154,
+   "atu_fun10": 224,
+   "atu_med10": 289,
+   "deriv_inf": "15.5",
+   "deriv_fun": "22.2",
+   "deriv_med": "28.9"
+  },
+  {
+   "year": 2025,
+   "atu_inf10": 151,
+   "atu_fun10": 222,
+   "atu_med10": 284,
+   "deriv_inf": "15.1",
+   "deriv_fun": "22.0",
+   "deriv_med": "26.5"
+  }
+ ],
+ "E_infraTotals": [
+  {
+   "year": 2007,
+   "escolas": 198507,
+   "internet_sim": 58137,
+   "internet_nao": 140370,
+   "biblioteca_sim": null,
+   "biblioteca_nao": null,
+   "labinf_sim": 41777,
+   "labinf_nao": 156730,
+   "quadra_sim": 49782,
+   "quadra_nao": 148725,
+   "agua_sim": 123590,
+   "agua_nao": 74917,
+   "esgoto_sim": 77965,
+   "esgoto_nao": 120542
+  },
+  {
+   "year": 2008,
+   "escolas": 205699,
+   "internet_sim": 70955,
+   "internet_nao": 134744,
+   "biblioteca_sim": null,
+   "biblioteca_nao": null,
+   "labinf_sim": 52608,
+   "labinf_nao": 153091,
+   "quadra_sim": 53911,
+   "quadra_nao": 151788,
+   "agua_sim": 125774,
+   "agua_nao": 79925,
+   "esgoto_sim": 79461,
+   "esgoto_nao": 126238
+  },
+  {
+   "year": 2009,
+   "escolas": 203455,
+   "internet_sim": 83251,
+   "internet_nao": 120204,
+   "biblioteca_sim": 64601,
+   "biblioteca_nao": 138854,
+   "labinf_sim": 59329,
+   "labinf_nao": 144126,
+   "quadra_sim": 54897,
+   "quadra_nao": 148558,
+   "agua_sim": 127632,
+   "agua_nao": 75823,
+   "esgoto_sim": 81109,
+   "esgoto_nao": 122346
+  },
+  {
+   "year": 2010,
+   "escolas": 200876,
+   "internet_sim": 93504,
+   "internet_nao": 107372,
+   "biblioteca_sim": 65145,
+   "biblioteca_nao": 135731,
+   "labinf_sim": 69412,
+   "labinf_nao": 131464,
+   "quadra_sim": 55563,
+   "quadra_nao": 145313,
+   "agua_sim": 128980,
+   "agua_nao": 71896,
+   "esgoto_sim": 82890,
+   "esgoto_nao": 117986
+  },
+  {
+   "year": 2011,
+   "escolas": 194932,
+   "internet_sim": 101723,
+   "internet_nao": 93209,
+   "biblioteca_sim": 65553,
+   "biblioteca_nao": 129379,
+   "labinf_sim": 79577,
+   "labinf_nao": 115355,
+   "quadra_sim": 51924,
+   "quadra_nao": 143008,
+   "agua_sim": 129723,
+   "agua_nao": 65209,
+   "esgoto_sim": 84600,
+   "esgoto_nao": 110332
+  },
+  {
+   "year": 2012,
+   "escolas": 194695,
+   "internet_sim": 109329,
+   "internet_nao": 85366,
+   "biblioteca_sim": 66486,
+   "biblioteca_nao": 128209,
+   "labinf_sim": 85723,
+   "labinf_nao": 108972,
+   "quadra_sim": 57599,
+   "quadra_nao": 137096,
+   "agua_sim": 131794,
+   "agua_nao": 62901,
+   "esgoto_sim": 86779,
+   "esgoto_nao": 107916
+  },
+  {
+   "year": 2013,
+   "escolas": 192678,
+   "internet_sim": 112485,
+   "internet_nao": 80193,
+   "biblioteca_sim": 67231,
+   "biblioteca_nao": 125447,
+   "labinf_sim": 85950,
+   "labinf_nao": 106728,
+   "quadra_sim": 60139,
+   "quadra_nao": 132539,
+   "agua_sim": 132918,
+   "agua_nao": 59760,
+   "esgoto_sim": 87990,
+   "esgoto_nao": 104688
+  },
+  {
+   "year": 2014,
+   "escolas": 190553,
+   "internet_sim": 116903,
+   "internet_nao": 73650,
+   "biblioteca_sim": 67909,
+   "biblioteca_nao": 122644,
+   "labinf_sim": 85358,
+   "labinf_nao": 105195,
+   "quadra_sim": 61523,
+   "quadra_nao": 129030,
+   "agua_sim": 133628,
+   "agua_nao": 56925,
+   "esgoto_sim": 89288,
+   "esgoto_nao": 101265
+  },
+  {
+   "year": 2015,
+   "escolas": 188689,
+   "internet_sim": 123912,
+   "internet_nao": 64777,
+   "biblioteca_sim": 69474,
+   "biblioteca_nao": 119215,
+   "labinf_sim": 83886,
+   "labinf_nao": 104803,
+   "quadra_sim": 63023,
+   "quadra_nao": 125666,
+   "agua_sim": 134547,
+   "agua_nao": 54142,
+   "esgoto_sim": 90444,
+   "esgoto_nao": 98245
+  },
+  {
+   "year": 2016,
+   "escolas": 187891,
+   "internet_sim": 128969,
+   "internet_nao": 58922,
+   "biblioteca_sim": 69822,
+   "biblioteca_nao": 118069,
+   "labinf_sim": 79591,
+   "labinf_nao": 108300,
+   "quadra_sim": 63955,
+   "quadra_nao": 123936,
+   "agua_sim": 135599,
+   "agua_nao": 52292,
+   "esgoto_sim": 92734,
+   "esgoto_nao": 95157
+  },
+  {
+   "year": 2017,
+   "escolas": 185925,
+   "internet_sim": 125784,
+   "internet_nao": 60141,
+   "biblioteca_sim": 68517,
+   "biblioteca_nao": 117408,
+   "labinf_sim": 74093,
+   "labinf_nao": 111832,
+   "quadra_sim": 64345,
+   "quadra_nao": 121580,
+   "agua_sim": 136262,
+   "agua_nao": 49663,
+   "esgoto_sim": 92546,
+   "esgoto_nao": 93379
+  },
+  {
+   "year": 2018,
+   "escolas": 183746,
+   "internet_sim": 133869,
+   "internet_nao": 49877,
+   "biblioteca_sim": 67112,
+   "biblioteca_nao": 116634,
+   "labinf_sim": 69268,
+   "labinf_nao": 114478,
+   "quadra_sim": 64398,
+   "quadra_nao": 119348,
+   "agua_sim": 136044,
+   "agua_nao": 47702,
+   "esgoto_sim": 93693,
+   "esgoto_nao": 90053
+  },
+  {
+   "year": 2019,
+   "escolas": 182468,
+   "internet_sim": 137776,
+   "internet_nao": 44692,
+   "biblioteca_sim": 66757,
+   "biblioteca_nao": 115711,
+   "labinf_sim": 63875,
+   "labinf_nao": 118593,
+   "quadra_sim": 65631,
+   "quadra_nao": 116837,
+   "agua_sim": 137107,
+   "agua_nao": 45361,
+   "esgoto_sim": 103204,
+   "esgoto_nao": 79264
+  },
+  {
+   "year": 2020,
+   "escolas": 181279,
+   "internet_sim": 144594,
+   "internet_nao": 36685,
+   "biblioteca_sim": 65901,
+   "biblioteca_nao": 115378,
+   "labinf_sim": 62478,
+   "labinf_nao": 118801,
+   "quadra_sim": 66334,
+   "quadra_nao": 114945,
+   "agua_sim": 136977,
+   "agua_nao": 44302,
+   "esgoto_sim": 102814,
+   "esgoto_nao": 78465
+  },
+  {
+   "year": 2021,
+   "escolas": 180057,
+   "internet_sim": 149185,
+   "internet_nao": 30872,
+   "biblioteca_sim": 65982,
+   "biblioteca_nao": 114075,
+   "labinf_sim": 60293,
+   "labinf_nao": 119764,
+   "quadra_sim": 67054,
+   "quadra_nao": 113003,
+   "agua_sim": 136742,
+   "agua_nao": 43315,
+   "esgoto_sim": 102208,
+   "esgoto_nao": 77849
+  },
+  {
+   "year": 2022,
+   "escolas": 184332,
+   "internet_sim": 157477,
+   "internet_nao": 22596,
+   "biblioteca_sim": 65504,
+   "biblioteca_nao": 114569,
+   "labinf_sim": 55861,
+   "labinf_nao": 124212,
+   "quadra_sim": 67377,
+   "quadra_nao": 112696,
+   "agua_sim": 137931,
+   "agua_nao": 42142,
+   "esgoto_sim": 102771,
+   "esgoto_nao": 77302
+  },
+  {
+   "year": 2023,
+   "escolas": 180230,
+   "internet_sim": 163855,
+   "internet_nao": 16375,
+   "biblioteca_sim": 65882,
+   "biblioteca_nao": 114348,
+   "labinf_sim": 54470,
+   "labinf_nao": 125760,
+   "quadra_sim": 68578,
+   "quadra_nao": 111652,
+   "agua_sim": 139366,
+   "agua_nao": 40864,
+   "esgoto_sim": 103320,
+   "esgoto_nao": 76910
+  },
+  {
+   "year": 2024,
+   "escolas": 181065,
+   "internet_sim": 166771,
+   "internet_nao": 14294,
+   "biblioteca_sim": 66569,
+   "biblioteca_nao": 114496,
+   "labinf_sim": 53511,
+   "labinf_nao": 127554,
+   "quadra_sim": 69907,
+   "quadra_nao": 111158,
+   "agua_sim": 140976,
+   "agua_nao": 40089,
+   "esgoto_sim": 105239,
+   "esgoto_nao": 75826
+  },
+  {
+   "year": 2025,
+   "escolas": 180540,
+   "internet_sim": 170762,
+   "internet_nao": 9778,
+   "biblioteca_sim": 66522,
+   "biblioteca_nao": 114018,
+   "labinf_sim": 52102,
+   "labinf_nao": 128438,
+   "quadra_sim": 72800,
+   "quadra_nao": 107740,
+   "agua_sim": 141839,
+   "agua_nao": 38701,
+   "esgoto_sim": 105366,
+   "esgoto_nao": 75174
+  }
+ ],
+ "F_infraInvariants": [
+  {
+   "year": 2007,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2008,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2009,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2010,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2011,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2012,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2013,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2014,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2015,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2016,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2017,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2018,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2019,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2020,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2021,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2022,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2023,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2024,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  },
+  {
+   "year": 2025,
+   "agua_inexistente_e_rede": 0,
+   "energia_inexistente_e_rede": 0,
+   "esgoto_inexistente_e_rede": 0,
+   "banda_larga_sem_internet": 0,
+   "internet_alunos_sem_internet": 0,
+   "biblioteca_sem_biblioteca_ou_leitura": 0
+  }
+ ]
+}

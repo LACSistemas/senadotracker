@@ -1,0 +1,286 @@
+[
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip",
+  "tamanho_zip": 456807449,
+  "chamadas_range": 3,
+  "bytes_lidos": 1613,
+  "entradas": [
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educação_superior.xlsx",
+    "compactado": 54534,
+    "descompactado": 54534
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO ALUNO 2024.pdf",
+    "compactado": 489647,
+    "descompactado": 489647
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO CURSO 2024.pdf",
+    "compactado": 445409,
+    "descompactado": 445409
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO DOCENTE 2024.pdf",
+    "compactado": 450610,
+    "descompactado": 450610
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO IES 2024.pdf",
+    "compactado": 563055,
+    "descompactado": 563055
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/dados/md5_microdados_ed_superior_2024.txt",
+    "compactado": 139,
+    "descompactado": 139
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/dados/MICRODADOS_CADASTRO_CURSOS_2024.CSV",
+    "compactado": 452844981,
+    "descompactado": 452844981
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/dados/MICRODADOS_ED_SUP_IES_2024.CSV",
+    "compactado": 1000086,
+    "descompactado": 1000086
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/leia-me/Leia_me.pdf",
+    "compactado": 827272,
+    "descompactado": 827272
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2024/leia-me/Nota informativa.pdf",
+    "compactado": 128640,
+    "descompactado": 128640
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2023.zip",
+  "tamanho_zip": 38411202,
+  "chamadas_range": 3,
+  "bytes_lidos": 5162,
+  "entradas": [
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educação_superior.xlsx",
+    "compactado": 39595,
+    "descompactado": 50758
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO I - Dicionário de Dados/Thumbs.db",
+    "compactado": 13785,
+    "descompactado": 18432
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO I - Dicionário de Dados/~$Dicionário de Dados da Educação Básica.xlsx",
+    "compactado": 82,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educação_superior.xlsx",
+    "compactado": 73,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO II - Questionários do Censo da Educação Superior/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO ALUNO 2023.pdf",
+    "compactado": 82198,
+    "descompactado": 91952
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO CURSO 2023.pdf",
+    "compactado": 63062,
+    "descompactado": 70882
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO DOCENTE 2023.pdf",
+    "compactado": 64597,
+    "descompactado": 72640
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/Anexos/ANEXO II - Questionários do Censo da Educação Superior/ANEXO II - MÓDULO IES 2023.pdf",
+    "compactado": 153624,
+    "descompactado": 170117
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/dados/md5_microdados_ed_superior_2023.txt",
+    "compactado": 108,
+    "descompactado": 139
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/dados/MICRODADOS_CADASTRO_CURSOS_2023.CSV",
+    "compactado": 37333093,
+    "descompactado": 392720227
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/dados/MICRODADOS_ED_SUP_IES_2023.CSV",
+    "compactado": 312058,
+    "descompactado": 1007474
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/Leia_me.pdf",
+    "compactado": 162563,
+    "descompactado": 179762
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/Nota Informativa 02.pdf",
+    "compactado": 73400,
+    "descompactado": 87173
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/Nota informativa.pdf",
+    "compactado": 103689,
+    "descompactado": 128640
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/~$eia_me.doc",
+    "compactado": 113,
+    "descompactado": 162
+   },
+   {
+    "nome": "microdados_censo_da_educacao_superior_2023/leia-me/~$eia_me.docx",
+    "compactado": 132,
+    "descompactado": 162
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2010.zip",
+  "tamanho_zip": 5113986,
+  "chamadas_range": 3,
+  "bytes_lidos": 3651,
+  "entradas": [
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_superior.xlsx",
+    "compactado": 36969,
+    "descompactado": 46062
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO I - Dicionário de Dados/~$Dicionário de Dados da Educaç╞o Básica.xlsx",
+    "compactado": 82,
+    "descompactado": 165
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educaç╞o_superior.xlsx",
+    "compactado": 73,
+    "descompactado": 165
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educaç╞o_superior_V1_clodoaldo.xlsx",
+    "compactado": 73,
+    "descompactado": 165
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/ANEXO II - MαDULO ALUNO 2010.pdf",
+    "compactado": 38542,
+    "descompactado": 43149
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/ANEXO II - MαDULO CURSO 2010.pdf",
+    "compactado": 37705,
+    "descompactado": 42408
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/ANEXO II - MαDULO DOCENTE 2010.pdf",
+    "compactado": 37896,
+    "descompactado": 42701
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/ANEXO II - MαDULO IES 2010.pdf",
+    "compactado": 58357,
+    "descompactado": 66773
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/dados/md5_microdados_ed_superior_2010.txt",
+    "compactado": 108,
+    "descompactado": 139
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/dados/MICRODADOS_CADASTRO_CURSOS_2010.CSV",
+    "compactado": 4365666,
+    "descompactado": 31456396
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/dados/MICRODADOS_CADASTRO_IES_2010.CSV",
+    "compactado": 267560,
+    "descompactado": 898535
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/leia-me/Leia_me.pdf",
+    "compactado": 161041,
+    "descompactado": 178795
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/leia-me/Nota informativa.pdf",
+    "compactado": 103689,
+    "descompactado": 128640
+   },
+   {
+    "nome": "Microdados do Censo da Educaç╞o Superior 2010/leia-me/~$eia_me.doc",
+    "compactado": 113,
+    "descompactado": 162
+   }
+  ]
+ }
+]

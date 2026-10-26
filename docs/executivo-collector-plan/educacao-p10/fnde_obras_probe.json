@@ -1,0 +1,85 @@
+[
+ {
+  "url": "https://dados.gov.br/dados/api/publico/conjuntos-dados?pagina=1&nomeConjuntoDados=fnde",
+  "status": 401,
+  "erro": "HTTP 401",
+  "trecho": "",
+  "segundos": 0.12
+ },
+ {
+  "url": "http://dadosabertos.fnde.gov.br/",
+  "status": null,
+  "erro": "URLError(gaierror(11001, 'getaddrinfo failed'))",
+  "segundos": 0.02
+ },
+ {
+  "url": "https://dadosabertos.fnde.gov.br/",
+  "status": null,
+  "erro": "URLError(gaierror(11001, 'getaddrinfo failed'))",
+  "segundos": 0.0
+ },
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/pddeinfo/escola/consultar?ano=2025&co_escola=32087608",
+  "status": 200,
+  "tipo": "text/html; charset=ISO-8859-1",
+  "tamanho": null,
+  "trecho": "ï»¿<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\r     \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"pt-BR\" lang=\"pt-BR\">\r     <head>\r                 \r         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" /> <meta http-equi",
+  "segundos": 0.51
+ },
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/pddeinfo/escola/consultar?ano=2024&co_escola=32087608",
+  "status": 200,
+  "tipo": "text/html; charset=ISO-8859-1",
+  "tamanho": null,
+  "trecho": "ï»¿<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\r     \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"pt-BR\" lang=\"pt-BR\">\r     <head>\r                 \r         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" /> <meta http-equi",
+  "segundos": 0.53
+ },
+ {
+  "url": "https://www.tesourotransparente.gov.br/ckan/api/3/action/package_search?q=fundeb&rows=5",
+  "status": 200,
+  "tipo": "application/json;charset=utf-8",
+  "tamanho": "273889",
+  "trecho": "{\"help\": \"https://www.tesourotransparente.gov.br/ckan/api/3/action/help_show?name=package_search\", \"success\": true, \"result\": {\"count\": 4, \"sort\": \"score desc, metadata_modified desc\", \"facets\": {}, \"results\": [{\"license_title\": \"Licen\\u00e7a Aberta para Bases de Dados (ODbL) do Open Data Commons\", ",
+  "segundos": 0.4
+ },
+ {
+  "url": "https://portaldatransparencia.gov.br/download-de-dados/transferencias/202510",
+  "status": 200,
+  "tipo": "application/x-zip-compressed",
+  "tamanho": "4699882",
+  "trecho": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000\\uW]ÑpY¥2¶G\u0000ë_Ò\b\u0019\u0000\u0000\u0000202510_Transferencias.csvìÍªÔ0\u0014Ç÷ï\u0010\\)DÍw\u001a]Å63\u0006:MM[\u0011wã'\u0003ê£¯æN\\\b+@\\\b/àÊ¤u\u001cgü\u0016gÑpïí´''iÒþî9=ÿÂ½ÇtåÀi0yÞ\u001c;{¬µµ\u0003­×U32þy[½4ôEçMn\u000b\u0017,Ý(lò\u001d;0é*¿¨­\u0003Õ#\u001b\u001a*71+óÊó¥\u001f?]÷\u001aL+Ð§Ð\u0001cÓ´Îë¥×yå?êªg±ÿà6\u001c­ZîÜC4lúÔÞ½,Oõù±þ¬çÇýÒVãNÍ\u0004äqFOWã}W;P¦6Ír°\rãê¹BÃt]Ú<\f¾Ùõ»>«Li&¦",
+  "segundos": 0.43
+ },
+ {
+  "url": "https://api.obrasgov.gestao.gov.br/obrasgov/api/projeto-investimento?uf=ES&pagina=0&tamanhoDaPagina=5",
+  "status": 200,
+  "tipo": "application/json",
+  "tamanho": null,
+  "trecho": "{\"content\":[{\"idUnico\":\"82919.32-12\",\"nome\":\"CMEI Guilherme de Almeida Filho\",\"cep\":null,\"endereco\":null,\"descricao\":\"CMEI Guilherme de Almeida Filho Creche PrÃ©-Escola - Tipo 2\",\"funcaoSocial\":\"CMEI Guilherme de Almeida Filho\",\"metaGlobal\":\"Creche PrÃ©-Escola - Tipo 2\",\"dataInicialPrevista\":\"2017-0",
+  "segundos": 1.55
+ },
+ {
+  "url": "https://api.obrasgov.gestao.gov.br/obrasgov/api/execucao-fisica?pagina=0&tamanhoDaPagina=3",
+  "status": 200,
+  "tipo": "application/json",
+  "tamanho": null,
+  "trecho": "{\"content\":[{\"idUnico\":\"01.31-16\",\"percentual\":35,\"dataSituacao\":\"2022-07-14T19:30:53.395512\",\"situacao\":\"Cadastrada\",\"observacoes\":\"teste\",\"emOperacao\":true,\"justificativaEmOperacao\":\"testeaasdfkjashfdklsjfdhsjkfhlSUKIFHIWEUWEHLÃUFHÃSAFKNs.dfnSKFHSJDLFBSDJ,HFBSDHJFBSHDJFBASDHFBF\",\"cancelamentosPa",
+  "segundos": 0.54
+ },
+ {
+  "url": "https://www.fnde.gov.br/sigefweb/index.php/liberacoes",
+  "status": 200,
+  "tipo": "text/html; charset=ISO-8859-1",
+  "tamanho": null,
+  "trecho": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\r     \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\r <html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"pt-BR\" lang=\"pt-BR\">\r     <head>\r                 \r         <meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" /> <meta http-equiv=\"",
+  "segundos": 0.58
+ },
+ {
+  "url": "https://simec.mec.gov.br/",
+  "status": 200,
+  "tipo": "text/html; charset=ISO-8859-1",
+  "tamanho": null,
+  "trecho": "    <script> window.location.href=\"/login.php\";</script>  <script>window.__CF$cv$params={r:'a4f8fb7238035cb6',t:'MTc5Mjg0NDkxNQ==',u:'01a16de26381765fb5dd259d7a8d8030',ut:'_ZOqxOrXyxbzbsAweE16urGMbOcFEoibH2eagqHaO38-1792844915-1.2.1.1-CD8y27EFlhr6Sac6fwanQ.2Z0Y3Kf9oQ.0BQApasXKFtNji8g7SuZY3B5VjIawJ6W",
+  "segundos": 0.18
+ }
+]

@@ -1,0 +1,58 @@
+{
+  "phase": "P10.6",
+  "generatedAt": "2026-10-26T12:12:48-03:00",
+  "database": "projetoeleitor_db",
+  "migration": 15,
+  "rawPolicy": "RAW files remain on D:\\Civica; PostgreSQL stores normalized facts, hashes and manifest metadata only",
+  "portal": {
+    "source": "Portal da Transparência / transferências",
+    "fiscalYear": 2025,
+    "months": 12,
+    "rows": 563222,
+    "programs": {
+      "00PI": {"rows": 85511, "amountCents": "551393917061", "municipalities": 5538, "beneficiaries": 5565},
+      "00SB": {"rows": 47621, "amountCents": "5731840723916", "municipalities": 4467, "beneficiaries": 4490},
+      "0515": {"rows": 412355, "amountCents": "210126509793", "municipalities": 5428, "beneficiaries": 113752},
+      "0969": {"rows": 17735, "amountCents": "88045109305", "municipalities": 5273, "beneficiaries": 5287}
+    },
+    "ufs": 27,
+    "rejectedRows": 0
+  },
+  "pdde": {
+    "source": "FNDE PDDE Info",
+    "fiscalYear": 2025,
+    "municipalitiesAttempted": 78,
+    "filesDownloaded": 69,
+    "http400": 9,
+    "publishedCohort": "Alto Rio Novo/ES",
+    "schools": 10,
+    "dueAmountCents": "12255600",
+    "paidAmountCents": "7276500",
+    "rows": 66
+  },
+  "siopeCompatibility": {"activeSlices": 243, "historicalParserVersions": ["siope-v1", "siope-v2"], "incrementalParserVersion": "siope-v3", "noChangeReplay": true},
+  "storage": {"beforeBytes": "30908124307", "afterBytes": "31497890963", "deltaBytes": "589766656", "deltaGiB": 0.55, "limitGiB": 5},
+  "tests": {"targeted": "PASS", "fullTests": 562, "fullPass": 454, "fullSkipped": 64, "fullFail": 44, "failuresClassified": "preexisting pool/fixture failures"},
+  "gates": {
+    "G0_SAFETY": "PASS_WITH_CAVEATS",
+    "G1_SOURCES": "PASS_WITH_CAVEATS",
+    "G2_PDDE": "PASS_WITH_CAVEATS",
+    "G3_PNAE": "PASS_WITH_CAVEATS",
+    "G4_PNATE": "PASS_WITH_CAVEATS",
+    "G5_FUNDEB": "PASS_WITH_CAVEATS",
+    "G6_DATA_MODEL": "PASS",
+    "G7_PUBLICATION_RECONCILIATION": "PASS_WITH_CAVEATS",
+    "G8_DATABASE_5GB": "PASS",
+    "G9_SERVING": "PASS",
+    "G10_REGRESSION": "PASS_WITH_CAVEATS",
+    "G11_P107_READINESS": "PASS_WITH_CAVEATS"
+  },
+  "finalStatus": "PASS_WITH_CAVEATS",
+  "internalWorkRemaining": "YES",
+  "readyForP107": "YES_WITH_CAVEATS",
+  "p107Started": "NO",
+  "frontendTouched": "NO",
+  "labTouched": "NO",
+  "sqliteTouched": "NO",
+  "productionTouched": "NO"
+}

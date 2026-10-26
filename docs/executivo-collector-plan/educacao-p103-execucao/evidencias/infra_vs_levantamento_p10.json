@@ -1,0 +1,272 @@
+[
+ {
+  "year": "2021",
+  "var": "IN_INTERNET",
+  "p10_sim": 149185,
+  "banco_sim": 149185,
+  "p10_nao": 30872,
+  "banco_nao": 30872,
+  "igual": true
+ },
+ {
+  "year": "2021",
+  "var": "IN_BIBLIOTECA",
+  "p10_sim": 65982,
+  "banco_sim": 65982,
+  "p10_nao": 114075,
+  "banco_nao": 114075,
+  "igual": true
+ },
+ {
+  "year": "2021",
+  "var": "IN_LABORATORIO_INFORMATICA",
+  "p10_sim": 60293,
+  "banco_sim": 60293,
+  "p10_nao": 119764,
+  "banco_nao": 119764,
+  "igual": true
+ },
+ {
+  "year": "2021",
+  "var": "IN_QUADRA_ESPORTES",
+  "p10_sim": 67054,
+  "banco_sim": 67054,
+  "p10_nao": 113003,
+  "banco_nao": 113003,
+  "igual": true
+ },
+ {
+  "year": "2021",
+  "var": "IN_AGUA_REDE_PUBLICA",
+  "p10_sim": 136742,
+  "banco_sim": 136742,
+  "p10_nao": 43315,
+  "banco_nao": 43315,
+  "igual": true
+ },
+ {
+  "year": "2021",
+  "var": "IN_ESGOTO_REDE_PUBLICA",
+  "p10_sim": 102208,
+  "banco_sim": 102208,
+  "p10_nao": 77849,
+  "banco_nao": 77849,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_INTERNET",
+  "p10_sim": 157477,
+  "banco_sim": 157477,
+  "p10_nao": 22596,
+  "banco_nao": 22596,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_BIBLIOTECA",
+  "p10_sim": 65504,
+  "banco_sim": 65504,
+  "p10_nao": 114569,
+  "banco_nao": 114569,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_LABORATORIO_INFORMATICA",
+  "p10_sim": 55861,
+  "banco_sim": 55861,
+  "p10_nao": 124212,
+  "banco_nao": 124212,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_QUADRA_ESPORTES",
+  "p10_sim": 67377,
+  "banco_sim": 67377,
+  "p10_nao": 112696,
+  "banco_nao": 112696,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_AGUA_REDE_PUBLICA",
+  "p10_sim": 137931,
+  "banco_sim": 137931,
+  "p10_nao": 42142,
+  "banco_nao": 42142,
+  "igual": true
+ },
+ {
+  "year": "2022",
+  "var": "IN_ESGOTO_REDE_PUBLICA",
+  "p10_sim": 102771,
+  "banco_sim": 102771,
+  "p10_nao": 77302,
+  "banco_nao": 77302,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_INTERNET",
+  "p10_sim": 163855,
+  "banco_sim": 163855,
+  "p10_nao": 16375,
+  "banco_nao": 16375,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_BIBLIOTECA",
+  "p10_sim": 65882,
+  "banco_sim": 65882,
+  "p10_nao": 114348,
+  "banco_nao": 114348,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_LABORATORIO_INFORMATICA",
+  "p10_sim": 54470,
+  "banco_sim": 54470,
+  "p10_nao": 125760,
+  "banco_nao": 125760,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_QUADRA_ESPORTES",
+  "p10_sim": 68578,
+  "banco_sim": 68578,
+  "p10_nao": 111652,
+  "banco_nao": 111652,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_AGUA_REDE_PUBLICA",
+  "p10_sim": 139366,
+  "banco_sim": 139366,
+  "p10_nao": 40864,
+  "banco_nao": 40864,
+  "igual": true
+ },
+ {
+  "year": "2023",
+  "var": "IN_ESGOTO_REDE_PUBLICA",
+  "p10_sim": 103320,
+  "banco_sim": 103320,
+  "p10_nao": 76910,
+  "banco_nao": 76910,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_INTERNET",
+  "p10_sim": 166771,
+  "banco_sim": 166771,
+  "p10_nao": 14294,
+  "banco_nao": 14294,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_BIBLIOTECA",
+  "p10_sim": 66569,
+  "banco_sim": 66569,
+  "p10_nao": 114496,
+  "banco_nao": 114496,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_LABORATORIO_INFORMATICA",
+  "p10_sim": 53511,
+  "banco_sim": 53511,
+  "p10_nao": 127554,
+  "banco_nao": 127554,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_QUADRA_ESPORTES",
+  "p10_sim": 69907,
+  "banco_sim": 69907,
+  "p10_nao": 111158,
+  "banco_nao": 111158,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_AGUA_REDE_PUBLICA",
+  "p10_sim": 140976,
+  "banco_sim": 140976,
+  "p10_nao": 40089,
+  "banco_nao": 40089,
+  "igual": true
+ },
+ {
+  "year": "2024",
+  "var": "IN_ESGOTO_REDE_PUBLICA",
+  "p10_sim": 105239,
+  "banco_sim": 105239,
+  "p10_nao": 75826,
+  "banco_nao": 75826,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_INTERNET",
+  "p10_sim": 170762,
+  "banco_sim": 170762,
+  "p10_nao": 9778,
+  "banco_nao": 9778,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_BIBLIOTECA",
+  "p10_sim": 66522,
+  "banco_sim": 66522,
+  "p10_nao": 114018,
+  "banco_nao": 114018,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_LABORATORIO_INFORMATICA",
+  "p10_sim": 52102,
+  "banco_sim": 52102,
+  "p10_nao": 128438,
+  "banco_nao": 128438,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_QUADRA_ESPORTES",
+  "p10_sim": 72800,
+  "banco_sim": 72800,
+  "p10_nao": 107740,
+  "banco_nao": 107740,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_AGUA_REDE_PUBLICA",
+  "p10_sim": 141839,
+  "banco_sim": 141839,
+  "p10_nao": 38701,
+  "banco_nao": 38701,
+  "igual": true
+ },
+ {
+  "year": "2025",
+  "var": "IN_ESGOTO_REDE_PUBLICA",
+  "p10_sim": 105366,
+  "banco_sim": 105366,
+  "p10_nao": 75174,
+  "banco_nao": 75174,
+  "igual": true
+ }
+]

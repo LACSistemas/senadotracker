@@ -1,0 +1,6 @@
+source_dataset,program_code,year,competences,ufs,municipalities,beneficiaries,schools,source_rows,parsed_rows,published_rows,rejected_rows,unresolved_rows,financial_stage,amount_cents,notes
+portal_transferencias,00PI,2025,12,27,5538,5565,0,85511,85511,85511,0,0,TRANSFERRED,551393917061,PNAE em nível de beneficiário/favorecido
+portal_transferencias,00SB,2025,12,27,4467,4490,0,47621,47621,47621,0,0,TRANSFERRED,5731840723916,Apenas complemento Fundeb observado
+portal_transferencias,0515,2025,12,27,5428,113752,0,412355,412355,412355,0,0,TRANSFERRED,210126509793,PDDE Portal
+portal_transferencias,0969,2025,12,27,5273,5287,0,17735,17735,17735,0,0,TRANSFERRED,88045109305,PNATE em nível de transferência
+pdde_info,PDDE,2025,1,1,1,,10,66,66,66,0,0,DUE|PAID,19532100,Piloto Alto Rio Novo ES; DUE e PAID separados

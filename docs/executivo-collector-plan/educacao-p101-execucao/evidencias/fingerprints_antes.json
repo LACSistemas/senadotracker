@@ -1,0 +1,187 @@
+{
+ "at": "2026-10-24T13:51:16.664Z",
+ "skipFin": false,
+ "indicatorValues": {
+  "saude": {
+   "h": "4d5b43a0d874c898a4d0695a36b6d7be",
+   "n": 4068133
+  },
+  "p91_seguranca": {
+   "h": "d21b65b4542bc7f48d2088d64c49b607",
+   "n": 2133062
+  },
+  "p92_transito": {
+   "h": "d5a3e747f60d9d6482ddede2f97a65dc",
+   "n": 3267659
+  },
+  "p93_efetivos": {
+   "h": "49025be73b2314a0830e6c4d73ff20c3",
+   "n": 152944
+  },
+  "p94_prisional": {
+   "h": "652730847186c9b22aa8a159b2f0ddfb",
+   "n": 458577
+  },
+  "p95_financas": {
+   "h": "85e8799a5a746153fba244ad60165027",
+   "n": 473866
+  },
+  "p96_criminalidade": {
+   "h": "0a82b52014e1a27d013c8fc6575ec666",
+   "n": 3856129
+  }
+ },
+ "indicatorDefs": {
+  "saude": {
+   "h": "fd49e58c0cfefd94bfdd9769b1d9fc23",
+   "n": 40
+  },
+  "p91_seguranca": {
+   "h": "7f24e6f7f5c40f8df8c7811dee272dd2",
+   "n": 62
+  },
+  "p92_transito": {
+   "h": "a0189be8c81a15d99da4eeb1f2627f2e",
+   "n": 122
+  },
+  "p93_efetivos": {
+   "h": "b7e54503f5aa8906b4277e3e37e8b5fa",
+   "n": 62
+  },
+  "p94_prisional": {
+   "h": "d1b52feea931d1e41343ef14e98ff0c4",
+   "n": 37
+  },
+  "p95_financas": {
+   "h": "ac722f9c0d5001508818dd162e89e174",
+   "n": 39
+  },
+  "p96_criminalidade": {
+   "h": "c15a933cfc0a9c3fe73ee1d3c38945cf",
+   "n": 140
+  }
+ },
+ "tables": {
+  "exec_pri_fact": {
+   "n": "1129488",
+   "s": "-13681509806"
+  },
+  "exec_pri_obs": {
+   "n": "28825",
+   "s": "-330820410619"
+  },
+  "exec_pri_unit": {
+   "n": "2357",
+   "s": "127854870322"
+  },
+  "exec_tra_cov": {
+   "n": "9099",
+   "s": "-160262044550"
+  },
+  "exec_tra_frota_mun_mes": {
+   "n": "919256",
+   "s": "-2324382705520"
+  },
+  "exec_tra_infr_uf_mes": {
+   "n": "425724",
+   "s": "-895606175312"
+  },
+  "exec_fin_fact": {
+   "n": "5717541",
+   "s": "-1596787430729"
+  },
+  "exec_fin_exec": {
+   "n": "127736",
+   "s": "-60582974178"
+  },
+  "exec_fin_dot": {
+   "n": "2030",
+   "s": "30582708418"
+  },
+  "exec_fin_org": {
+   "n": "1187",
+   "s": "11000781110"
+  },
+  "exec_fin_transfer": {
+   "n": "26161",
+   "s": "-158624951806"
+  },
+  "exec_fin_cov": {
+   "n": "81786",
+   "s": "241619202428"
+  },
+  "exec_sau_cnes_estab": {
+   "n": "639010",
+   "s": "1100649865079"
+  },
+  "exec_sau_sih_mun_mes": {
+   "n": "907599",
+   "s": "-2784134590460"
+  },
+  "exec_crime_indicator": {
+   "n": "140",
+   "s": "-8978184097"
+  },
+  "exec_territory_population": {
+   "n": "123073",
+   "s": "-673270601607"
+  }
+ },
+ "segCovBelow8000": {
+  "h": "b447da81be7f61866de77511eeaf9844",
+  "n": 149606
+ },
+ "entities": {
+  "h": "c67c4dfdce799c6d24cae241001cff87",
+  "n": 5631
+ },
+ "publicationsBelow42": {
+  "h": "3fd6df62db02a82ca14901bbcbdf7502",
+  "n": 30785
+ },
+ "publicationsCrime": {
+  "h": "11f3beda89fafd22f34a96bcebe07569",
+  "n": 81
+ },
+ "migrations": [
+  {
+   "version": 1,
+   "name": "civica_exec_ddl_v1_revisao2"
+  },
+  {
+   "version": 2,
+   "name": "civica_exec_ddl_v2_seguranca_cobertura_vde"
+  },
+  {
+   "version": 3,
+   "name": "civica_exec_ddl_v3_transito"
+  },
+  {
+   "version": 4,
+   "name": "civica_exec_ddl_v4_prisional"
+  },
+  {
+   "version": 5,
+   "name": "civica_exec_ddl_v5_financas_seguranca"
+  },
+  {
+   "version": 6,
+   "name": "civica_exec_ddl_v6_contratos_transferencias"
+  },
+  {
+   "version": 7,
+   "name": "civica_exec_ddl_v7_refcode_sequence"
+  },
+  {
+   "version": 8,
+   "name": "civica_exec_ddl_v8_criminalidade_estadual"
+  }
+ ],
+ "legislativeSchema": {
+  "tables": 59,
+  "live_rows": "639746"
+ },
+ "sharedContracts": {
+  "h": "248070c446fd49b81d9b18a077d89c3c"
+ }
+}

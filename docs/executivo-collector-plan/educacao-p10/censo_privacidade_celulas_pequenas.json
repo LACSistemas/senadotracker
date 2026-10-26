@@ -1,0 +1,34 @@
+{
+ "gestor_2025": {
+  "escolas": 180540,
+  "distribuicao_qt_gest_bas(5=5+)": {
+   "1": 172173,
+   "2": 6633,
+   "3": 1734
+  },
+  "bytes_rede": 54528837
+ },
+ "matricula_2024": {
+  "escolas_com_matricula": 179286,
+  "escolas_com_menos_de_10_matriculas": 3395,
+  "escolas_com_menos_de_5_matriculas": 571,
+  "celulas_1_a_4_por_variavel": {
+   "QT_MAT_BAS_FEM": 3980,
+   "QT_MAT_BAS_INDIGENA": 25684,
+   "QT_MAT_ESP": 52401,
+   "QT_MAT_BAS_PRETA": 55470,
+   "QT_MAT_BAS_AMARELA": 47861,
+   "QT_MAT_BAS_0_3": 11013
+  },
+  "escolas_com_valor_positivo_por_variavel": {
+   "QT_MAT_BAS_FEM": 178855,
+   "QT_MAT_BAS_INDIGENA": 33462,
+   "QT_MAT_BAS_PRETA": 135548,
+   "QT_MAT_ESP": 145376,
+   "QT_MAT_BAS_AMARELA": 56319,
+   "QT_MAT_BAS_0_3": 81039
+  },
+  "escolas_com_1_a_3_docentes": 25285,
+  "docente_celulas_1_a_4": {}
+ }
+}

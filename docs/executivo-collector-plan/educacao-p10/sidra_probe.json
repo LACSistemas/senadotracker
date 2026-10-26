@@ -1,0 +1,18 @@
+[
+ {
+  "url": "https://apisidra.ibge.gov.br/values/t/9514/n6/3205309/v/93/p/2022/c2/6794/c287/all/c286/113635",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "tamanho": "51868",
+  "trecho": "[\r   {\r     \"NC\": \"NÃ­vel Territorial (CÃ³digo)\",\r     \"NN\": \"NÃ­vel Territorial\",\r     \"MC\": \"Unidade de Medida (CÃ³digo)\",\r     \"MN\": \"Unidade de Medida\",\r     \"V\": \"Valor\",\r     \"D1C\": \"MunicÃ­pio (CÃ³digo)\",\r     \"D1N\": \"MunicÃ­pio\",\r     \"D2C\": \"VariÃ¡vel (CÃ³digo)\",\r     \"D2N\": \"VariÃ¡vel\",\r  ",
+  "segundos": 0.43
+ },
+ {
+  "url": "https://apisidra.ibge.gov.br/values/t/9514/n1/1/v/93/p/2022/c2/6794/c287/6563,6564,6565/c286/113635",
+  "status": 200,
+  "tipo": "application/json; charset=utf-8",
+  "tamanho": "1649",
+  "trecho": "[\r   {\r     \"NC\": \"NÃ­vel Territorial (CÃ³digo)\",\r     \"NN\": \"NÃ­vel Territorial\",\r     \"MC\": \"Unidade de Medida (CÃ³digo)\",\r     \"MN\": \"Unidade de Medida\",\r     \"V\": \"Valor\",\r     \"D1C\": \"Brasil (CÃ³digo)\",\r     \"D1N\": \"Brasil\",\r     \"D2C\": \"VariÃ¡vel (CÃ³digo)\",\r     \"D2N\": \"VariÃ¡vel\",\r     \"D3C\"",
+  "segundos": 0.21
+ }
+]

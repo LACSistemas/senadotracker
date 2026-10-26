@@ -1,0 +1,47 @@
+{
+ "year": 2023,
+ "uf": 32,
+ "antes": {
+  "n": 0,
+  "s": "0",
+  "h": "d41d8cd98f00b204e9800998ecf8427e"
+ },
+ "falha_injetada": "falhou como esperado: falha injetada após aplicar as tabelas",
+ "depois_da_falha": {
+  "n": 0,
+  "s": "0",
+  "h": "d41d8cd98f00b204e9800998ecf8427e"
+ },
+ "sem_rastro_da_falha": true,
+ "publicacao": [
+  "PUBLISHED"
+ ],
+ "apos_publicar": {
+  "n": 25,
+  "s": "3159162026",
+  "h": "7df8772c0cf28bd03ee47d0edb246345"
+ },
+ "replay": [
+  "NO_CHANGE"
+ ],
+ "replay_sem_log": true,
+ "retificacao": "PUBLISHED",
+ "apos_retificacao": {
+  "n": 24,
+  "s": "3156562246",
+  "h": "c650e21ace6c7f09256a4399408a35f9"
+ },
+ "change_log_gerado": 4,
+ "retificacao_alterou": true,
+ "rollback": {
+  "status": "ROLLED_BACK",
+  "runId": 36816,
+  "restoredHash": "8cd1907336ab27282b48d6720106637b1717540fac1f3d6608dde18542fb905e"
+ },
+ "apos_rollback": {
+  "n": 25,
+  "s": "3159162026",
+  "h": "7df8772c0cf28bd03ee47d0edb246345"
+ },
+ "rollback_restaurou": true
+}

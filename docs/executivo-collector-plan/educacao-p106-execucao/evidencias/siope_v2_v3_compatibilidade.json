@@ -1,0 +1,95 @@
+{
+  "generatedAt": "2026-10-26T15:07:41.081Z",
+  "database": {
+    "db": "projetoeleitor_db",
+    "bytes": "31497890963"
+  },
+  "activeSlices": [
+    {
+      "slices": 243,
+      "first_comp": 201706,
+      "last_comp": 202506,
+      "ufs": 27
+    }
+  ],
+  "parserVersions": [
+    {
+      "parser_version": "(null)",
+      "runs": 1,
+      "rows_out": null
+    },
+    {
+      "parser_version": "siope-v1",
+      "runs": 50,
+      "rows_out": "1154378"
+    },
+    {
+      "parser_version": "siope-v2",
+      "runs": 244,
+      "rows_out": "3402998"
+    },
+    {
+      "parser_version": "siope-v3",
+      "runs": 3,
+      "rows_out": "20271"
+    }
+  ],
+  "activeRunVersions": [
+    {
+      "parser_version": "siope-v2",
+      "active_slices": 242
+    },
+    {
+      "parser_version": "siope-v3",
+      "active_slices": 1
+    }
+  ],
+  "factsByYear": [
+    {
+      "exercicio": 2017,
+      "rows": "362390",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2018,
+      "rows": "364527",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2019,
+      "rows": "364803",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2020,
+      "rows": "344974",
+      "entities": 5591
+    },
+    {
+      "exercicio": 2021,
+      "rows": "346175",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2022,
+      "rows": "399065",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2023,
+      "rows": "400058",
+      "entities": 5592
+    },
+    {
+      "exercicio": 2024,
+      "rows": "401857",
+      "entities": 5591
+    },
+    {
+      "exercicio": 2025,
+      "rows": "411420",
+      "entities": 5585
+    }
+  ],
+  "conclusion": "HISTORICAL_V1_V2_PRESERVED; V3_INCREMENTAL_COMPATIBLE_BY_NO_CHANGE_REPLAY; no active slice overwritten by P106"
+}

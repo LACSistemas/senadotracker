@@ -1,0 +1,163 @@
+{
+ "Consulta por Escola": {
+  "dimensao": null,
+  "linhas": [
+   {
+    "D": "Ministério da Educação - MEC"
+   },
+   {
+    "D": "Fundo Nacional de Desenvolvimento da Educação - FNDE"
+   },
+   {
+    "D": "Coordenação do Dinheiro Direto na Escola - CODDE"
+   },
+   {
+    "D": "Relatório de Situação de Escolas quanto à Prestação de Contas, Atualização Cadastral e Pagamentos referentes ao Exercício de 2025"
+   },
+   {
+    "D": "Ano: 2025"
+   },
+   {
+    "D": "UF: ES"
+   },
+   {
+    "D": "Município: ALTO RIO NOVO (ES)"
+   },
+   {
+    "A": "UF",
+    "B": "Município",
+    "C": "Rede de Ensino",
+    "D": "Cod. Escola",
+    "E": "Nome Escola",
+    "F": "CNPJ UEx",
+    "G": "Unidade Executora",
+    "H": "Situação Receita Federal - UEx",
+    "I": "CNPJ EEx/EM",
+    "J": "Situação Receita Federal - EEx/EM",
+    "K": "Telefone",
+    "L": "Prestação de Contas",
+    "M": "Dados Cadastrais - PDDEWeb",
+    "N": "Destinação",
+    "O": "Vl Devido Custeio",
+    "P": "Vl Devido Capital",
+    "Q": "Vl Devido Total",
+    "R": "Vl Ajuste Custeio",
+    "S": "Vl Ajuste Capital",
+    "T": "Vl Ajuste Total",
+    "U": "Vl Final Devido Total",
+    "V": "Vl Pago Custeio",
+    "W": "Vl Pago Capital",
+    "X": "Valor Pago Total",
+    "Y": "Data da Ordem de Pagamento"
+   },
+   {
+    "A": "ES",
+    "B": "ALTO RIO NOVO",
+    "C": "ADMINISTRAÇÃO PÚBLICA MUNICIPAL",
+    "D": "32008953",
+    "E": "EPMEIEF ALTO CAPIM",
+    "F": "",
+    "G": "",
+    "H": "Indisponível para consulta",
+    "I": "31.796.659/0001-20",
+    "J": "Indisponível para consulta",
+    "K": "",
+    "L": "UEx: Informação de prestação de contas indisponível. | EEx/EM: Não foi identificada pendência de prestação de contas no exercício consultado.",
+    "M": "Atualmente essa unidade escolar não possui UEx cadastrada no sistema PDDEweb, o recebimento dos recursos do PDDE é realizado por meio de sua Entidade Executora - EEx",
+    "N": "PDDE / PDDE Basico - 2 Parcela",
+    "O": "1110",
+    "P": "0",
+    "Q": "1110",
+    "R": "0",
+    "S": "0",
+    "T": "0",
+    "U": "1110",
+    "V": "1110",
+    "W": "0",
+    "X": "1110",
+    "Y": "26/09/2025"
+   }
+  ]
+ },
+ "Contas UEx e EM": {
+  "dimensao": null,
+  "linhas": [
+   {
+    "A": "Contas bancárias da UEx e da Entidade Mantenedora (todos os programas)"
+   },
+   {
+    "A": "Saldo atual da entidade; contas da mantenedora podem atender várias escolas. Saldo da mantenedora indisponível não representa zero."
+   },
+   {
+    "A": "Código Escola",
+    "B": "CNPJ Titular",
+    "C": "Programa/Ação",
+    "D": "Banco",
+    "E": "Agência",
+    "F": "Conta",
+    "G": "Saldo (R$)",
+    "H": "Titular"
+   },
+   {
+    "A": "32009003",
+    "B": "09.226.159/0001-01",
+    "C": "PDDE",
+    "D": "001",
+    "E": "2387",
+    "F": "0000266787",
+    "G": "6316.14",
+    "H": "UEx"
+   },
+   {
+    "A": "32009003",
+    "B": "09.226.159/0001-01",
+    "C": "PDDE EQUIDADE",
+    "D": "001",
+    "E": "2387",
+    "F": "0000308153",
+    "G": "0",
+    "H": "UEx"
+   },
+   {
+    "A": "32009003",
+    "B": "09.226.159/0001-01",
+    "C": "PDDE QUALIDADE",
+    "D": "001",
+    "E": "2387",
+    "F": "0000262552",
+    "G": "13.45",
+    "H": "UEx"
+   },
+   {
+    "A": "32009011",
+    "B": "07.477.905/0001-04",
+    "C": "PDDE",
+    "D": "001",
+    "E": "2387",
+    "F": "0000261009",
+    "G": "1782.78",
+    "H": "UEx"
+   },
+   {
+    "A": "32009011",
+    "B": "07.477.905/0001-04",
+    "C": "PDDE QUALIDADE",
+    "D": "001",
+    "E": "2387",
+    "F": "0000262536",
+    "G": "3240.2",
+    "H": "UEx"
+   },
+   {
+    "A": "32009011",
+    "B": "07.477.905/0001-04",
+    "C": "PDDE-EDUCAÇÃO INTEGRAL",
+    "D": "001",
+    "E": "2387",
+    "F": "0000184659",
+    "G": "0.07",
+    "H": "UEx"
+   }
+  ]
+ }
+}

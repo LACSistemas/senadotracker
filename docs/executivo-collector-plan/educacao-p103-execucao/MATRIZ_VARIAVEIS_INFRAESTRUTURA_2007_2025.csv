@@ -1,0 +1,101 @@
+﻿codigo;coluna_oficial;tipo;familia;nome;vigencia_de;vigencia_ate;comparabilidade;primeiro_ano_com_valor;ultimo_ano_com_valor;conferencia;2007;2008;2009;2010;2011;2012;2013;2014;2015;2016;2017;2018;2019;2020;2021;2022;2023;2024;2025;nota
+agua_rede;IN_AGUA_REDE_PUBLICA;flag;A_SERVICOS;Água da rede pública;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+agua_poco;IN_AGUA_POCO_ARTESIANO;flag;A_SERVICOS;Água de poço artesiano;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+agua_cacimba;IN_AGUA_CACIMBA;flag;A_SERVICOS;Água de cacimba, cisterna ou poço;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+agua_rio;IN_AGUA_FONTE_RIO;flag;A_SERVICOS;Água de fonte, rio, igarapé ou córrego;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+agua_inexistente;IN_AGUA_INEXISTENTE;flag;A_SERVICOS;Sem abastecimento de água;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+agua_pipa;IN_AGUA_CARRO_PIPA;flag;A_SERVICOS;Água por carro-pipa;2024;2025;NEW_VARIABLE;2024;2025;OK;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;V;V;
+agua_filtrada;IN_AGUA_FILTRADA;flag;A_SERVICOS;Água filtrada para os alunos;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;Redefinida em 2019 (IN_AGUA_POTAVEL): pergunta diferente, não comparar.
+agua_potavel;IN_AGUA_POTAVEL;flag;A_SERVICOS;Fornece água potável para consumo;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;Substitui IN_AGUA_FILTRADA em 2019 (pergunta redefinida).
+energia_rede;IN_ENERGIA_REDE_PUBLICA;flag;A_SERVICOS;Energia da rede pública;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+energia_inexistente;IN_ENERGIA_INEXISTENTE;flag;A_SERVICOS;Sem energia elétrica;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+energia_gerador;IN_ENERGIA_GERADOR;flag;A_SERVICOS;Gerador;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;Em 2019 vira gerador a combustível fóssil.
+energia_gerador_fossil;IN_ENERGIA_GERADOR_FOSSIL;flag;A_SERVICOS;Gerador movido a combustível fóssil;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+energia_alternativa;IN_ENERGIA_OUTROS;flag;A_SERVICOS;Outras fontes de energia;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;Em 2019 vira fontes renováveis ou alternativas.
+energia_renovavel;IN_ENERGIA_RENOVAVEL;flag;A_SERVICOS;Fontes de energia renováveis ou alternativas;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+esgoto_rede;IN_ESGOTO_REDE_PUBLICA;flag;A_SERVICOS;Esgoto na rede pública;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+esgoto_fossa;IN_ESGOTO_FOSSA;flag;A_SERVICOS;Esgoto em fossa;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+esgoto_fossa_septica;IN_ESGOTO_FOSSA_SEPTICA;flag;A_SERVICOS;Esgoto em fossa séptica;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+esgoto_fossa_comum;IN_ESGOTO_FOSSA_COMUM;flag;A_SERVICOS;Esgoto em fossa rudimentar ou comum;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+esgoto_inexistente;IN_ESGOTO_INEXISTENTE;flag;A_SERVICOS;Sem esgotamento sanitário;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+lixo_coleta;IN_LIXO_SERVICO_COLETA;flag;A_SERVICOS;Lixo recolhido por serviço de coleta;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+lixo_queima;IN_LIXO_QUEIMA;flag;A_SERVICOS;Lixo queimado;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+lixo_enterra;IN_LIXO_ENTERRA;flag;A_SERVICOS;Lixo enterrado;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+banheiro;IN_BANHEIRO;flag;A_SERVICOS;Banheiro na escola;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;Substitui banheiro dentro/fora do prédio (até 2018).
+banheiro_dentro;IN_BANHEIRO_DENTRO_PREDIO;flag;A_SERVICOS;Banheiro dentro do prédio;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;
+banheiro_fora;IN_BANHEIRO_FORA_PREDIO;flag;A_SERVICOS;Banheiro fora do prédio;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;
+banheiro_ei;IN_BANHEIRO_EI;flag;A_SERVICOS;Banheiro adequado à educação infantil;2009;2025;COMPARABLE_ACROSS_YEARS;2009;2025;OK;E;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+banheiro_func;IN_BANHEIRO_FUNCIONARIOS;flag;A_SERVICOS;Banheiro exclusivo para funcionários;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+banheiro_chuveiro;IN_BANHEIRO_CHUVEIRO;flag;A_SERVICOS;Banheiro ou vestiário com chuveiro;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+internet;IN_INTERNET;flag;B_CONECTIVIDADE;Acesso à internet;2007;2025;COMPARABLE_WITH_CAVEATS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;"Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco."
+banda_larga;IN_BANDA_LARGA;flag;B_CONECTIVIDADE;Internet banda larga;2008;2025;COMPARABLE_WITH_CAVEATS;2008;2025;OK;E;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;"Definição de banda larga do questionário; não é velocidade medida."
+internet_alunos;IN_INTERNET_ALUNOS;flag;B_CONECTIVIDADE;Internet para uso dos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+internet_admin;IN_INTERNET_ADMINISTRATIVO;flag;B_CONECTIVIDADE;Internet para uso administrativo;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+internet_aprendizagem;IN_INTERNET_APRENDIZAGEM;flag;B_CONECTIVIDADE;Internet para ensino e aprendizagem;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;"Uso declarado nos processos de ensino e aprendizagem; não equivale a ""escola conectada para aprender""."
+internet_comunidade;IN_INTERNET_COMUNIDADE;flag;B_CONECTIVIDADE;Internet para uso da comunidade;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+internet_comp_aluno;IN_ACESSO_INTERNET_COMPUTADOR;flag;B_CONECTIVIDADE;Alunos acessam a internet por computadores da escola;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+internet_disp_pessoal;IN_ACES_INTERNET_DISP_PESSOAIS;flag;B_CONECTIVIDADE;Alunos acessam a internet por dispositivos pessoais;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+computador;IN_COMPUTADOR;flag;B_CONECTIVIDADE;Computador para uso técnico e administrativo;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+lab_informatica;IN_LABORATORIO_INFORMATICA;flag;B_CONECTIVIDADE;Laboratório de informática;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+desktop_aluno;IN_DESKTOP_ALUNO;flag;B_CONECTIVIDADE;Computador de mesa em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+portatil_aluno;IN_COMP_PORTATIL_ALUNO;flag;B_CONECTIVIDADE;Computador portátil em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+tablet_aluno;IN_TABLET_ALUNO;flag;B_CONECTIVIDADE;Tablet em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+equip_tv;IN_EQUIP_TV;flag;B_CONECTIVIDADE;Televisão;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_dvd;IN_EQUIP_DVD;flag;B_CONECTIVIDADE;DVD ou Blu-ray;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_som;IN_EQUIP_SOM;flag;B_CONECTIVIDADE;Aparelho de som;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_multimidia;IN_EQUIP_MULTIMIDIA;flag;B_CONECTIVIDADE;Projetor multimídia;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_lousa_digital;IN_EQUIP_LOUSA_DIGITAL;flag;B_CONECTIVIDADE;Lousa digital;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+equip_impressora;IN_EQUIP_IMPRESSORA;flag;B_CONECTIVIDADE;Impressora;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_copiadora;IN_EQUIP_COPIADORA;flag;B_CONECTIVIDADE;Copiadora;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+equip_scanner;IN_EQUIP_SCANNER;flag;B_CONECTIVIDADE;Scanner;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+equip_parabolica;IN_EQUIP_PARABOLICA;flag;B_CONECTIVIDADE;Antena parabólica;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+biblioteca;IN_BIBLIOTECA;flag;C_AMBIENTES;Biblioteca;2009;2025;COMPARABLE_ACROSS_YEARS;2009;2025;OK;E;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+sala_leitura;IN_SALA_LEITURA;flag;C_AMBIENTES;Sala de leitura;2009;2025;COMPARABLE_ACROSS_YEARS;2009;2025;OK;E;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+biblioteca_ou_leitura;IN_BIBLIOTECA_SALA_LEITURA;flag;C_AMBIENTES;Biblioteca e/ou sala de leitura;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;"Única variável de leitura presente nas 19 edições; 2007–2008 não separam biblioteca de sala de leitura."
+lab_ciencias;IN_LABORATORIO_CIENCIAS;flag;C_AMBIENTES;Laboratório de ciências;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+lab_educ_prof;IN_LABORATORIO_EDUC_PROF;flag;C_AMBIENTES;Laboratório de educação profissional;2022;2025;NEW_VARIABLE;2022;2025;OK;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;V;V;V;V;
+quadra;IN_QUADRA_ESPORTES;flag;C_AMBIENTES;Quadra de esportes;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+quadra_coberta;IN_QUADRA_ESPORTES_COBERTA;flag;C_AMBIENTES;Quadra de esportes coberta;2011;2025;COMPARABLE_ACROSS_YEARS;2011;2025;OK;E;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+quadra_descoberta;IN_QUADRA_ESPORTES_DESCOBERTA;flag;C_AMBIENTES;Quadra de esportes descoberta;2011;2025;COMPARABLE_ACROSS_YEARS;2011;2025;OK;E;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+parque_infantil;IN_PARQUE_INFANTIL;flag;C_AMBIENTES;Parque infantil;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+patio_coberto;IN_PATIO_COBERTO;flag;C_AMBIENTES;Pátio coberto;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+patio_descoberto;IN_PATIO_DESCOBERTO;flag;C_AMBIENTES;Pátio descoberto;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+piscina;IN_PISCINA;flag;C_AMBIENTES;Piscina;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+auditorio;IN_AUDITORIO;flag;C_AMBIENTES;Auditório;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+sala_artes;IN_SALA_ATELIE_ARTES;flag;C_AMBIENTES;Sala ou ateliê de artes;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+sala_musica;IN_SALA_MUSICA_CORAL;flag;C_AMBIENTES;Sala de música ou coral;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+sala_danca;IN_SALA_ESTUDIO_DANCA;flag;C_AMBIENTES;Sala ou estúdio de dança;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+sala_multiuso;IN_SALA_MULTIUSO;flag;C_AMBIENTES;Sala multiuso;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+sala_professor;IN_SALA_PROFESSOR;flag;C_AMBIENTES;Sala de professores;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+sala_diretoria;IN_SALA_DIRETORIA;flag;C_AMBIENTES;Sala de diretoria;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+sala_aee;IN_SALA_ATENDIMENTO_ESPECIAL;flag;C_AMBIENTES;Sala de recursos multifuncionais (AEE);2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+cozinha;IN_COZINHA;flag;D_ALIMENTACAO;Cozinha;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+refeitorio;IN_REFEITORIO;flag;D_ALIMENTACAO;Refeitório;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+despensa;IN_DESPENSA;flag;D_ALIMENTACAO;Despensa;2012;2025;COMPARABLE_ACROSS_YEARS;2012;2025;OK;E;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+predio_compartilhado;IN_PREDIO_COMPARTILHADO;flag;F_INSTALACOES;Prédio compartilhado com outra escola;2007;2025;COMPARABLE_ACROSS_YEARS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;
+banheiro_pne;IN_BANHEIRO_PNE;flag;E_ACESSIBILIDADE;Banheiro acessível a pessoas com deficiência ou mobilidade reduzida;2007;2025;COMPARABLE_WITH_CAVEATS;2007;2025;OK;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;Redação do item mudou em 2019 (dependência existente e utilizada).
+dependencias_pne;IN_DEPENDENCIAS_PNE;flag;E_ACESSIBILIDADE;Dependências e vias adequadas a pessoas com deficiência;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;Substituída em 2019 pelos recursos de acessibilidade detalhados.
+acess_corrimao;IN_ACESSIBILIDADE_CORRIMAO;flag;E_ACESSIBILIDADE;Corrimão e guarda-corpos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_elevador;IN_ACESSIBILIDADE_ELEVADOR;flag;E_ACESSIBILIDADE;Elevador;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_piso_tatil;IN_ACESSIBILIDADE_PISOS_TATEIS;flag;E_ACESSIBILIDADE;Pisos táteis;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_vao_livre;IN_ACESSIBILIDADE_VAO_LIVRE;flag;E_ACESSIBILIDADE;Portas com vão livre de 80 cm;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_rampa;IN_ACESSIBILIDADE_RAMPAS;flag;E_ACESSIBILIDADE;Rampas;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_sinal_sonoro;IN_ACESSIBILIDADE_SINAL_SONORO;flag;E_ACESSIBILIDADE;Sinalização sonora;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_sinal_tatil;IN_ACESSIBILIDADE_SINAL_TATIL;flag;E_ACESSIBILIDADE;Sinalização tátil;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_sinal_visual;IN_ACESSIBILIDADE_SINAL_VISUAL;flag;E_ACESSIBILIDADE;Sinalização visual;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+acess_sinalizacao;IN_ACESSIBILIDADE_SINALIZACAO;flag;E_ACESSIBILIDADE;Sinalização de acessibilidade (geral);2024;2025;NEW_VARIABLE;2024;2025;OK;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;M;V;V;
+acess_inexistente;IN_ACESSIBILIDADE_INEXISTENTE;flag;E_ACESSIBILIDADE;Nenhum recurso de acessibilidade;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+salas_existentes;QT_SALAS_EXISTENTES;count;F_INSTALACOES;Salas de aula existentes;2007;2018;DISCONTINUED;2007;2018;OK;U;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;Até 2018: salas existentes. De 2019 só as utilizadas: série descontínua.
+salas_utilizadas;QT_SALAS_UTILIZADAS;count;F_INSTALACOES;Salas de aula utilizadas (dentro e fora do prédio);2007;2025;COMPARABLE_WITH_CAVEATS;2007;2025;OK;U;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;V;"Presente nas 19 edições; o conceito de ""utilizada"" passa a ser explícito em 2019."
+salas_dentro;QT_SALAS_UTILIZADAS_DENTRO;count;F_INSTALACOES;Salas de aula utilizadas dentro do prédio;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+salas_fora;QT_SALAS_UTILIZADAS_FORA;count;F_INSTALACOES;Salas de aula utilizadas fora do prédio;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+salas_climatizadas;QT_SALAS_UTILIZA_CLIMATIZADAS;count;F_INSTALACOES;Salas de aula climatizadas;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+salas_acessiveis;QT_SALAS_UTILIZADAS_ACESSIVEIS;count;F_INSTALACOES;Salas de aula acessíveis;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+qt_comp_aluno;QT_COMP_ALUNO;count;B_CONECTIVIDADE;Computadores em uso pelos alunos;2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;"Série interrompida em 2018; de 2019 vem separada por tipo (desktop, portátil, tablet)."
+qt_computador;QT_COMPUTADOR;count;B_CONECTIVIDADE;Computadores na escola (total);2007;2018;DISCONTINUED;2007;2018;OK;V;V;V;V;V;V;V;V;V;V;V;V;Z;Z;Z;E;M;M;M;
+qt_desktop_aluno;QT_DESKTOP_ALUNO;count;B_CONECTIVIDADE;Computadores de mesa em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+qt_portatil_aluno;QT_COMP_PORTATIL_ALUNO;count;B_CONECTIVIDADE;Computadores portáteis em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+qt_tablet_aluno;QT_TABLET_ALUNO;count;B_CONECTIVIDADE;Tablets em uso pelos alunos;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;
+qt_tv;QT_EQUIP_TV;count;B_CONECTIVIDADE;Televisores;2013;2025;COMPARABLE_ACROSS_YEARS;2013;2025;OK;E;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;
+qt_multimidia;QT_EQUIP_MULTIMIDIA;count;B_CONECTIVIDADE;Projetores multimídia;2013;2025;COMPARABLE_ACROSS_YEARS;2013;2025;OK;E;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;V;V;V;V;V;V;
+qt_lousa_digital;QT_EQUIP_LOUSA_DIGITAL;count;B_CONECTIVIDADE;Lousas digitais;2019;2025;NEW_VARIABLE;2019;2025;OK;E;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;Z;V;V;V;V;V;V;V;

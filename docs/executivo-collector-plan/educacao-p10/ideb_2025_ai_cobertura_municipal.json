@@ -1,0 +1,41 @@
+{
+ "tot": {
+  "('Estadual', 'sem')": 2389,
+  "('Municipal', 'com')": 5320,
+  "('P\u00fablica', 'com')": 5478,
+  "('Estadual', 'com')": 1094,
+  "('P\u00fablica', 'sem')": 90,
+  "('Federal', 'com')": 15,
+  "('Municipal', 'sem')": 130,
+  "('Federal', 'sem')": 1,
+  "(None, 'sem')": 17
+ },
+ "por_uf_municipal_com_ideb": {
+  "RO": 50,
+  "AC": 22,
+  "AM": 62,
+  "RR": 15,
+  "PA": 144,
+  "AP": 16,
+  "TO": 137,
+  "MA": 216,
+  "PI": 223,
+  "CE": 183,
+  "RN": 165,
+  "PB": 219,
+  "PE": 184,
+  "AL": 102,
+  "SE": 75,
+  "BA": 416,
+  "MG": 795,
+  "ES": 78,
+  "RJ": 92,
+  "SP": 621,
+  "PR": 399,
+  "SC": 269,
+  "RS": 385,
+  "MS": 76,
+  "MT": 135,
+  "GO": 241
+ }
+}

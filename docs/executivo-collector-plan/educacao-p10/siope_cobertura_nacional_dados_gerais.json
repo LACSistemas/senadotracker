@@ -1,0 +1,60 @@
+{
+ "2016": {
+  "entes_total": 0,
+  "municipios": 0,
+  "ufs_sem_dados": [
+   "AC",
+   "AL",
+   "AP",
+   "AM",
+   "BA",
+   "CE",
+   "DF",
+   "ES",
+   "GO",
+   "MA",
+   "MT",
+   "MS",
+   "MG",
+   "PA",
+   "PB",
+   "PR",
+   "PE",
+   "PI",
+   "RJ",
+   "RN",
+   "RS",
+   "RO",
+   "RR",
+   "SC",
+   "SP",
+   "SE",
+   "TO"
+  ],
+  "bytes": 3753,
+  "segundos": 25.3
+ },
+ "2017": {
+  "entes_total": 5592,
+  "municipios": 5566,
+  "ufs_sem_dados": [],
+  "bytes": 7111241,
+  "segundos": 33.7
+ },
+ "2024": {
+  "entes_total": 5591,
+  "municipios": 5564,
+  "ufs_sem_dados": [],
+  "bytes": 7155400,
+  "segundos": 32.7
+ },
+ "2025": {
+  "entes_total": 5559,
+  "municipios": 5559,
+  "ufs_sem_dados": [
+   "DF"
+  ],
+  "bytes": 7313964,
+  "segundos": 34.1
+ }
+}

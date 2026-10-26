@@ -1,0 +1,1205 @@
+{
+ "at": "2026-10-26T21:00:34.186Z",
+ "repeticoes": 8,
+ "cenarios": [
+  {
+   "cenario": "Brasil",
+   "leitura": "territorio",
+   "p50_ms": 432.3,
+   "p95_ms": 628.4,
+   "max_ms": 628.4,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 383710,
+      "withValue": 383710,
+      "withoutValue": 0,
+      "outliers": 5,
+      "contractedValue": 214670128768.18
+     },
+     "possible": {
+      "contracts": 44482,
+      "withValue": 44482,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 22908311797.39
+     }
+    },
+    "anos": 6,
+    "categorias": 192
+   }
+  },
+  {
+   "cenario": "Brasil",
+   "leitura": "lista(50)",
+   "p50_ms": 460.2,
+   "p95_ms": 529,
+   "max_ms": 529,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Brasil",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 845.8,
+   "p95_ms": 1221.1,
+   "max_ms": 1221.1,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "UF 11",
+   "leitura": "territorio",
+   "p50_ms": 233.2,
+   "p95_ms": 349.3,
+   "max_ms": 349.3,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 2519,
+      "withValue": 2519,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 1516125895.91
+     },
+     "possible": {
+      "contracts": 614,
+      "withValue": 614,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 46953403.07
+     }
+    },
+    "anos": 4,
+    "categorias": 63
+   }
+  },
+  {
+   "cenario": "UF 12",
+   "leitura": "territorio",
+   "p50_ms": 139.5,
+   "p95_ms": 284.6,
+   "max_ms": 284.6,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 880,
+      "withValue": 880,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 928214419.98
+     },
+     "possible": {
+      "contracts": 42,
+      "withValue": 42,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 6844545.31
+     }
+    },
+    "anos": 3,
+    "categorias": 41
+   }
+  },
+  {
+   "cenario": "UF 13",
+   "leitura": "territorio",
+   "p50_ms": 142.1,
+   "p95_ms": 247.9,
+   "max_ms": 247.9,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 1464,
+      "withValue": 1464,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 3367225734.86
+     },
+     "possible": {
+      "contracts": 95,
+      "withValue": 95,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 24615043.25
+     }
+    },
+    "anos": 5,
+    "categorias": 48
+   }
+  },
+  {
+   "cenario": "UF 14",
+   "leitura": "territorio",
+   "p50_ms": 209.4,
+   "p95_ms": 233,
+   "max_ms": 233,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 209,
+      "withValue": 209,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 382640934.59
+     },
+     "possible": {
+      "contracts": 47,
+      "withValue": 47,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 77081348.48
+     }
+    },
+    "anos": 4,
+    "categorias": 45
+   }
+  },
+  {
+   "cenario": "UF 15",
+   "leitura": "territorio",
+   "p50_ms": 249.6,
+   "p95_ms": 331.8,
+   "max_ms": 331.8,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 6963,
+      "withValue": 6963,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 15789036045.25
+     },
+     "possible": {
+      "contracts": 693,
+      "withValue": 693,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 212482281.63
+     }
+    },
+    "anos": 5,
+    "categorias": 85
+   }
+  },
+  {
+   "cenario": "UF 16",
+   "leitura": "territorio",
+   "p50_ms": 202.4,
+   "p95_ms": 235.4,
+   "max_ms": 235.4,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 129,
+      "withValue": 129,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 160745980.96
+     },
+     "possible": {
+      "contracts": 11,
+      "withValue": 11,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 5865368.21
+     }
+    },
+    "anos": 3,
+    "categorias": 29
+   }
+  },
+  {
+   "cenario": "UF 17",
+   "leitura": "territorio",
+   "p50_ms": 228.3,
+   "p95_ms": 322.7,
+   "max_ms": 322.7,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 1292,
+      "withValue": 1292,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 1406810738.54
+     },
+     "possible": {
+      "contracts": 124,
+      "withValue": 124,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 56378284.65
+     }
+    },
+    "anos": 5,
+    "categorias": 62
+   }
+  },
+  {
+   "cenario": "UF 21",
+   "leitura": "territorio",
+   "p50_ms": 209.8,
+   "p95_ms": 324.1,
+   "max_ms": 324.1,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 9283,
+      "withValue": 9283,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 23582479204.43
+     },
+     "possible": {
+      "contracts": 1530,
+      "withValue": 1530,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 7855956613.18
+     }
+    },
+    "anos": 5,
+    "categorias": 83
+   }
+  },
+  {
+   "cenario": "UF 22",
+   "leitura": "territorio",
+   "p50_ms": 151.1,
+   "p95_ms": 355.7,
+   "max_ms": 355.7,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 1196,
+      "withValue": 1196,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 2920091701.23
+     },
+     "possible": {
+      "contracts": 71,
+      "withValue": 71,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 27843034.72
+     }
+    },
+    "anos": 4,
+    "categorias": 56
+   }
+  },
+  {
+   "cenario": "UF 23",
+   "leitura": "territorio",
+   "p50_ms": 200,
+   "p95_ms": 266.7,
+   "max_ms": 266.7,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 66547,
+      "withValue": 66547,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 18749625505.67
+     },
+     "possible": {
+      "contracts": 1839,
+      "withValue": 1839,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 4496104036.57
+     }
+    },
+    "anos": 5,
+    "categorias": 93
+   }
+  },
+  {
+   "cenario": "UF 24",
+   "leitura": "territorio",
+   "p50_ms": 137.7,
+   "p95_ms": 257.3,
+   "max_ms": 257.3,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 2020,
+      "withValue": 2020,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 1081037955.34
+     },
+     "possible": {
+      "contracts": 400,
+      "withValue": 400,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 64353275.18
+     }
+    },
+    "anos": 5,
+    "categorias": 68
+   }
+  },
+  {
+   "cenario": "UF 25",
+   "leitura": "territorio",
+   "p50_ms": 232.8,
+   "p95_ms": 321.5,
+   "max_ms": 321.5,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 5016,
+      "withValue": 5016,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 2702290380.12
+     },
+     "possible": {
+      "contracts": 760,
+      "withValue": 760,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 566363978.26
+     }
+    },
+    "anos": 5,
+    "categorias": 97
+   }
+  },
+  {
+   "cenario": "UF 26",
+   "leitura": "territorio",
+   "p50_ms": 145.5,
+   "p95_ms": 327.2,
+   "max_ms": 327.2,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 7628,
+      "withValue": 7628,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 7777487723.85
+     },
+     "possible": {
+      "contracts": 515,
+      "withValue": 515,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 574361621.35
+     }
+    },
+    "anos": 5,
+    "categorias": 88
+   }
+  },
+  {
+   "cenario": "UF 27",
+   "leitura": "territorio",
+   "p50_ms": 197,
+   "p95_ms": 328.7,
+   "max_ms": 328.7,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 1009,
+      "withValue": 1009,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 2571123904.96
+     },
+     "possible": {
+      "contracts": 79,
+      "withValue": 79,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 1095945242.56
+     }
+    },
+    "anos": 4,
+    "categorias": 51
+   }
+  },
+  {
+   "cenario": "UF 28",
+   "leitura": "territorio",
+   "p50_ms": 193.7,
+   "p95_ms": 324,
+   "max_ms": 324,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 2297,
+      "withValue": 2297,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 2845198614.42
+     },
+     "possible": {
+      "contracts": 84,
+      "withValue": 84,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 23707420.57
+     }
+    },
+    "anos": 4,
+    "categorias": 59
+   }
+  },
+  {
+   "cenario": "UF 29",
+   "leitura": "territorio",
+   "p50_ms": 170,
+   "p95_ms": 299,
+   "max_ms": 299,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 20358,
+      "withValue": 20358,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 14215989172.43
+     },
+     "possible": {
+      "contracts": 1039,
+      "withValue": 1039,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 1643433619.38
+     }
+    },
+    "anos": 5,
+    "categorias": 103
+   }
+  },
+  {
+   "cenario": "UF 31",
+   "leitura": "territorio",
+   "p50_ms": 244.2,
+   "p95_ms": 366.4,
+   "max_ms": 366.4,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 28178,
+      "withValue": 28178,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 18237883828.19
+     },
+     "possible": {
+      "contracts": 3422,
+      "withValue": 3422,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 589928303
+     }
+    },
+    "anos": 6,
+    "categorias": 108
+   }
+  },
+  {
+   "cenario": "UF 32",
+   "leitura": "territorio",
+   "p50_ms": 174.5,
+   "p95_ms": 326.3,
+   "max_ms": 326.3,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 3922,
+      "withValue": 3922,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 4952779000.84
+     },
+     "possible": {
+      "contracts": 514,
+      "withValue": 514,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 171204347.28
+     }
+    },
+    "anos": 4,
+    "categorias": 64
+   }
+  },
+  {
+   "cenario": "UF 33",
+   "leitura": "territorio",
+   "p50_ms": 174.4,
+   "p95_ms": 355.2,
+   "max_ms": 355.2,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 3687,
+      "withValue": 3687,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 8559011858.29
+     },
+     "possible": {
+      "contracts": 283,
+      "withValue": 283,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 291175710.57
+     }
+    },
+    "anos": 4,
+    "categorias": 69
+   }
+  },
+  {
+   "cenario": "UF 35",
+   "leitura": "territorio",
+   "p50_ms": 283.5,
+   "p95_ms": 297.8,
+   "max_ms": 297.8,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 69049,
+      "withValue": 69049,
+      "withoutValue": 0,
+      "outliers": 1,
+      "contractedValue": 32346060415.45
+     },
+     "possible": {
+      "contracts": 17532,
+      "withValue": 17532,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 818589841.78
+     }
+    },
+    "anos": 5,
+    "categorias": 110
+   }
+  },
+  {
+   "cenario": "UF 41",
+   "leitura": "territorio",
+   "p50_ms": 237.4,
+   "p95_ms": 321.5,
+   "max_ms": 321.5,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 17890,
+      "withValue": 17890,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 14365877186.98
+     },
+     "possible": {
+      "contracts": 3892,
+      "withValue": 3892,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 2475515827.49
+     }
+    },
+    "anos": 5,
+    "categorias": 110
+   }
+  },
+  {
+   "cenario": "UF 42",
+   "leitura": "territorio",
+   "p50_ms": 225.7,
+   "p95_ms": 367.6,
+   "max_ms": 367.6,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 34950,
+      "withValue": 34950,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 3269201110.5
+     },
+     "possible": {
+      "contracts": 1822,
+      "withValue": 1822,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 439907329.03
+     }
+    },
+    "anos": 5,
+    "categorias": 106
+   }
+  },
+  {
+   "cenario": "UF 43",
+   "leitura": "territorio",
+   "p50_ms": 230.6,
+   "p95_ms": 324.5,
+   "max_ms": 324.5,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 31781,
+      "withValue": 31781,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 9506706439.7
+     },
+     "possible": {
+      "contracts": 4048,
+      "withValue": 4048,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 437147463.49
+     }
+    },
+    "anos": 5,
+    "categorias": 113
+   }
+  },
+  {
+   "cenario": "UF 50",
+   "leitura": "territorio",
+   "p50_ms": 222.6,
+   "p95_ms": 309.8,
+   "max_ms": 309.8,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 12985,
+      "withValue": 12985,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 1307470459.82
+     },
+     "possible": {
+      "contracts": 433,
+      "withValue": 433,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 93789070.43
+     }
+    },
+    "anos": 4,
+    "categorias": 64
+   }
+  },
+  {
+   "cenario": "UF 51",
+   "leitura": "territorio",
+   "p50_ms": 195.9,
+   "p95_ms": 287.8,
+   "max_ms": 287.8,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 2340,
+      "withValue": 2340,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 8108845154.89
+     },
+     "possible": {
+      "contracts": 249,
+      "withValue": 249,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 123176575.32
+     }
+    },
+    "anos": 5,
+    "categorias": 72
+   }
+  },
+  {
+   "cenario": "UF 52",
+   "leitura": "territorio",
+   "p50_ms": 313.8,
+   "p95_ms": 340.6,
+   "max_ms": 340.6,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 45792,
+      "withValue": 45792,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 5277723464.89
+     },
+     "possible": {
+      "contracts": 3439,
+      "withValue": 3439,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 128254919.85
+     }
+    },
+    "anos": 5,
+    "categorias": 93
+   }
+  },
+  {
+   "cenario": "UF 53",
+   "leitura": "territorio",
+   "p50_ms": 219.9,
+   "p95_ms": 295.5,
+   "max_ms": 295.5,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 206,
+      "withValue": 206,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 844826928.41
+     },
+     "possible": {
+      "contracts": 12,
+      "withValue": 12,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 77706589.72
+     }
+    },
+    "anos": 4,
+    "categorias": 23
+   }
+  },
+  {
+   "cenario": "Vitória",
+   "leitura": "territorio",
+   "p50_ms": 1.8,
+   "p95_ms": 52,
+   "max_ms": 52,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 219,
+      "withValue": 219,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 210197726.31
+     },
+     "possible": {
+      "contracts": 17,
+      "withValue": 17,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 23902278.92
+     }
+    },
+    "anos": 4,
+    "categorias": 32
+   }
+  },
+  {
+   "cenario": "Vitória",
+   "leitura": "lista(50)",
+   "p50_ms": 2.4,
+   "p95_ms": 2.7,
+   "max_ms": 2.7,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Vitória",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 1.7,
+   "p95_ms": 1.9,
+   "max_ms": 1.9,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Serra",
+   "leitura": "territorio",
+   "p50_ms": 1.4,
+   "p95_ms": 1.6,
+   "max_ms": 1.6,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 38,
+      "withValue": 38,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 504269107.03
+     },
+     "possible": {
+      "contracts": 0,
+      "withValue": 0,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 0
+     }
+    },
+    "anos": 2,
+    "categorias": 8
+   }
+  },
+  {
+   "cenario": "Serra",
+   "leitura": "lista(50)",
+   "p50_ms": 1.9,
+   "p95_ms": 2,
+   "max_ms": 2,
+   "resultado": {
+    "linhas": 38,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Serra",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 0.9,
+   "p95_ms": 1,
+   "max_ms": 1,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Alto Rio Novo",
+   "leitura": "territorio",
+   "p50_ms": 1.1,
+   "p95_ms": 1.5,
+   "max_ms": 1.5,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 2,
+      "withValue": 2,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 161184.71
+     },
+     "possible": {
+      "contracts": 0,
+      "withValue": 0,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 0
+     }
+    },
+    "anos": 2,
+    "categorias": 2
+   }
+  },
+  {
+   "cenario": "Alto Rio Novo",
+   "leitura": "lista(50)",
+   "p50_ms": 1,
+   "p95_ms": 1.3,
+   "max_ms": 1.3,
+   "resultado": {
+    "linhas": 2,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Alto Rio Novo",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 0.8,
+   "p95_ms": 0.9,
+   "max_ms": 0.9,
+   "resultado": {
+    "linhas": 1,
+    "total": null
+   }
+  },
+  {
+   "cenario": "São Paulo",
+   "leitura": "territorio",
+   "p50_ms": 6.1,
+   "p95_ms": 7,
+   "max_ms": 7,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 3212,
+      "withValue": 3212,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 9019812655.09
+     },
+     "possible": {
+      "contracts": 32,
+      "withValue": 32,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 3083629.05
+     }
+    },
+    "anos": 4,
+    "categorias": 59
+   }
+  },
+  {
+   "cenario": "São Paulo",
+   "leitura": "lista(50)",
+   "p50_ms": 46.5,
+   "p95_ms": 159.6,
+   "max_ms": 159.6,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "São Paulo",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 52.3,
+   "p95_ms": 135.8,
+   "max_ms": 135.8,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Rio de Janeiro",
+   "leitura": "territorio",
+   "p50_ms": 1.9,
+   "p95_ms": 2,
+   "max_ms": 2,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 235,
+      "withValue": 235,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 1561382761.14
+     },
+     "possible": {
+      "contracts": 22,
+      "withValue": 22,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 38099515.28
+     }
+    },
+    "anos": 3,
+    "categorias": 33
+   }
+  },
+  {
+   "cenario": "Rio de Janeiro",
+   "leitura": "lista(50)",
+   "p50_ms": 2.3,
+   "p95_ms": 3.4,
+   "max_ms": 3.4,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Rio de Janeiro",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 1.7,
+   "p95_ms": 2,
+   "max_ms": 2,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Belo Horizonte",
+   "leitura": "territorio",
+   "p50_ms": 3.6,
+   "p95_ms": 42,
+   "max_ms": 42,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 764,
+      "withValue": 764,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 693484403.01
+     },
+     "possible": {
+      "contracts": 3,
+      "withValue": 3,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 29796.97
+     }
+    },
+    "anos": 4,
+    "categorias": 25
+   }
+  },
+  {
+   "cenario": "Belo Horizonte",
+   "leitura": "lista(50)",
+   "p50_ms": 4.3,
+   "p95_ms": 5.8,
+   "max_ms": 5.8,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Belo Horizonte",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 3.2,
+   "p95_ms": 3.7,
+   "max_ms": 3.7,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Recife",
+   "leitura": "territorio",
+   "p50_ms": 2.5,
+   "p95_ms": 15.8,
+   "max_ms": 15.8,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 204,
+      "withValue": 204,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 720894836.86
+     },
+     "possible": {
+      "contracts": 3,
+      "withValue": 3,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 340734.24
+     }
+    },
+    "anos": 4,
+    "categorias": 28
+   }
+  },
+  {
+   "cenario": "Recife",
+   "leitura": "lista(50)",
+   "p50_ms": 2.4,
+   "p95_ms": 2.7,
+   "max_ms": 2.7,
+   "resultado": {
+    "linhas": 50,
+    "total": null
+   }
+  },
+  {
+   "cenario": "Recife",
+   "leitura": "fornecedores(20)",
+   "p50_ms": 1.6,
+   "p95_ms": 1.9,
+   "max_ms": 1.9,
+   "resultado": {
+    "linhas": 20,
+    "total": null
+   }
+  },
+  {
+   "cenario": "menor município com contratos (1100080)",
+   "leitura": "territorio",
+   "p50_ms": 2,
+   "p95_ms": 3,
+   "max_ms": 3,
+   "resultado": {
+    "total": {
+     "highAndConfirmed": {
+      "contracts": 1,
+      "withValue": 1,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 763174.8
+     },
+     "possible": {
+      "contracts": 0,
+      "withValue": 0,
+      "withoutValue": 0,
+      "outliers": 0,
+      "contractedValue": 0
+     }
+    },
+    "anos": 1,
+    "categorias": 1
+   }
+  },
+  {
+   "cenario": "fornecedor com mais contratos",
+   "leitura": "fornecedor",
+   "p50_ms": 8.9,
+   "p95_ms": 10.2,
+   "max_ms": 10.2,
+   "resultado": {
+    "ok": true
+   }
+  },
+  {
+   "cenario": "órgão com mais contratos",
+   "leitura": "órgão",
+   "p50_ms": 153.7,
+   "p95_ms": 169.7,
+   "max_ms": 169.7,
+   "resultado": {
+    "ok": true
+   }
+  },
+  {
+   "cenario": "maior contrato",
+   "leitura": "detalhe",
+   "p50_ms": 1.4,
+   "p95_ms": 4.3,
+   "max_ms": 4.3,
+   "resultado": {
+    "ok": true
+   }
+  },
+  {
+   "cenario": "cobertura",
+   "leitura": "cobertura",
+   "p50_ms": 0.5,
+   "p95_ms": 1.8,
+   "max_ms": 1.8,
+   "resultado": {
+    "linhas": 137,
+    "total": null
+   }
+  }
+ ],
+ "resumo": {
+  "leituras": 56,
+  "p50_mediana_ms": 145.5,
+  "p95_maximo_ms": 1221.1,
+  "p95_acima_de_500ms": [
+   "Brasil/territorio=628.4ms",
+   "Brasil/lista(50)=529ms",
+   "Brasil/fornecedores(20)=1221.1ms"
+  ]
+ }
+}

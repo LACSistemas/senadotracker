@@ -1,0 +1,667 @@
+{
+ "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados": {
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados": [],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2025": [
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/saeb_2025_brasil_estados_municipios_censitario.xlsx",
+    "texto": "Planilha de resultados do Saeb 2025"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2023": [
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/planilha_de_resultados_2023.rar",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) | Saeb 2023"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2023.zip",
+    "texto": "Microdados Saeb 2023"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2023_educacao_infantil.zip",
+    "texto": "Microdados Saeb 2023 - Educação Infantil"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/nota_tecnica_base_amostral_saeb2023.pdf",
+    "texto": "Nota Técnica Saeb 2023"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/relatorio-saeb_volume_1_2023.pdf",
+    "texto": "Resultados Saeb 2023 – Volume 1: Dados de proficiência"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/relatorio-saeb_volume_2_2023.pdf",
+    "texto": "Resultados Saeb 2023 – Volume 2: Eixos de qualidade da educação"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/relatorio-saeb_volume_3_2023.pdf",
+    "texto": "Resultados Saeb 2023 – Volume 3: Educação infantil"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2021": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2021/resultados/relatorio_de_resultados_do_saeb_2021_volume_1.pdf",
+    "texto": "Relatório de Resultados do Saeb 2021 | Volume 1 | 5º e 9º anos do Ensino Fundamental e sér"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2021/resultados/relatorio_de_resultados_do_saeb_2021_volume_2.pdf",
+    "texto": "Relatório de Resultados do Saeb 2021 | Volume 2 | 2º ano do Ensino Fundamental – Língua Po"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2021/resultados/relatorio_de_resultados_do_saeb_2021_volume_3.pdf",
+    "texto": "Relatório de Resultados do Saeb 2021 | Volume 3 | 9º ano do Ensino Fundamental – Ciências "
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2021/resultados/relatorio_de_resultados_do_saeb_2021_volume_4.pdf",
+    "texto": "Relatório de Resultados do Saeb 2021 | Volume 4 | Educação Infantil"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2021_educacao_infantil.zip",
+    "texto": "Microdados da Educação Infantil | Saeb 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2021_ensino_fundamental_e_medio.zip",
+    "texto": "Microdados do Ensino fundamental e médio | Saeb 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/outros_documentos/nota_explicativa_saeb_2021.pdf",
+    "texto": "Nota Explicativa | Resultados | Saeb 2021 (Atualizado em 26/12/2022 – retificação de erros"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/saeb_2021_brasil_estados_municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) | Saeb 2021 (Atualizado em 26/12/20"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/saeb_2021_brasil_estados_municipios_c_tx_alfabetizado.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) Resultados Agregados | Saeb 2021 (A"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/apresentacao_saeb_2021.pdf",
+    "texto": "Apresentação da Coletiva de Imprensa | Saeb 2021 (Atualizado em 27/2/2023 – retificação de"
+   },
+   {
+    "href": "https://download.inep.gov.br/saeb/resultados/press_kit_saeb_2021.pdf",
+    "texto": "Press Kit | Saeb 2021 (Atualizado em 2/3/2023 – retificação de erros secundários nos resul"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2019": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/relatorio_de_resultados_do_saeb_2019_volume_1.pdf",
+    "texto": "Relatório de Resultados do Saeb 2019 | Volume 1 | 5º e 9º anos do Ensino Fundamental e sér"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/relatorio_de_resultados_do_saeb_2019_volume_2.pdf",
+    "texto": "Relatório de Resultados do Saeb 2019 | Volume 2 | 2º ano do Ensino Fundamental – Língua Po"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/relatorio_de_resultados_do_saeb_2019_volume_3.pdf",
+    "texto": "Relatório de Resultados do Saeb 2019 | Volume 3 | 9º ano do Ensino Fundamental – Ciências "
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/Resultados_Saeb_2019_Brasil_Estados_Municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) | Saeb 2019"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2019.zip",
+    "texto": "Microdados do Saeb 2019"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/Resultados_Saeb_2019_Brasil_Estados_Municipios.xlsx",
+    "texto": ""
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/portal_ideb/documentos/2020/Apresentacao_Coletiva_Imprensa_Saeb_2019.pdf",
+    "texto": "Apresentação da Coletiva de Imprensa | Saeb e Ideb 2019"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2020/documentos/Apresentacao_Resultados_Amostrais_Saeb_2019.pdf",
+    "texto": "Apresentação do Seminário (Resultados das aplicações amostrais para 2º e 9º ano do ensino "
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/presskit/PressKit_Saeb_2019.pdf",
+    "texto": "Press Kit | Saeb 2019"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2017": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2019/resultados/Resultados_Saeb_2017_Brasil_Estados_Municipios.zip",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) | Saeb 2017"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_saeb_ana_2016_panorama_do_brasil_e_dos_estados.pdf",
+    "texto": "Relatório Saeb (ANA) 2016: panorama do Brasil e dos estados"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_saeb_2017.pdf",
+    "texto": "Relatório – Saeb 2017"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2017.zip",
+    "texto": "Microdados do Saeb 2017"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2016": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_saeb_ana_2016_panorama_do_brasil_e_dos_estados.pdf",
+    "texto": "Relatório: panorama do Brasil e dos estados – Saeb/ANA 2016"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2015": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/aneb_anresc/resultados/resultados_municipais_saeb_2015.xls",
+    "texto": "Planilha de Resultados (Municípios) | Saeb 2015"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/aneb_anresc/resultados/resultados_estaduais_saeb_2015.xlsx",
+    "texto": "Planilha de Resultados (Estado) | Saeb 2015"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/aneb_anresc/resultados/resumo_dos_resultados_saeb_2015.pdf",
+    "texto": "Resumo dos resultados – Saeb/Aneb/Anresc 2015 (apresentação)"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/aneb_anresc/resultados/resumo_dos_resultados_saeb_2015.pdf",
+    "texto": ""
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2018/documentos/livro_saeb_2005_2015_completo.pdf",
+    "texto": "Relatório: panorama da década – Saeb/Aneb/Anresc 2005 a 2015"
+   },
+   {
+    "href": "http:// https://download.inep.gov.br/microdados/microdados_saeb_2015.zip",
+    "texto": "Microdados do Saeb 2015"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2014": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_ana_2013_da_concepcao_a_realizacao.pdf",
+    "texto": "Relatório Volume 1: da concepção à realização – Saeb/ANA 2013/2014"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_ana_2013_2014_analise_dos_resultados.pdf",
+    "texto": "Relatório Volume 2: análise dos resultados – Saeb/ANA 2013/2014"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2013": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2013/resultado/resultados_saeb_2013_brasil_estados_municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) |"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Saeb/Prova Brasil 2013"
+   },
+   {
+    "href": "https://download.inep.gov.br/mailing/2014/nota_explicativa_prova_brasil_2013.pdf",
+    "texto": "Nota explicativa – Resultados Prova Brasil 2013"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2013/caderno2013_v2016.pdf",
+    "texto": "Caderno Pedagógico 2013"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_ana_2013_da_concepcao_a_realizacao.pdf",
+    "texto": "Relatório Saeb (ANA) 2013 – 2014 – Volume 1: da concepção à realização"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_ana_2013_2014_analise_dos_resultados.pdf",
+    "texto": "Relatório Saeb (ANA) 2013 – 2014 – Volume 2: análise dos resultados"
+   },
+   {
+    "href": "http:// https://download.inep.gov.br/microdados/microdados_saeb_2013.zip",
+    "texto": "Microdados do Saeb 2013"
+   },
+   {
+    "href": "http://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2013/caderno2013_v2016.pdf",
+    "texto": "Relatório de Resultado – Prova Brasil | 2013"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2011": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2011/resultado/resultados_saeb_2011_brasil_estados_municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios)” |"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Saeb/Prova Brasil 2011"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Primeiros resultados – Saeb/Prova Brasil 2011"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Sinopse SAEB/Prova Brasil 2011"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2011.zip",
+    "texto": "Microdados do Saeb 2011"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2009": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2009/resultado/resultados_saeb_2009_brasil__regioes_estados_municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) |"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Saeb/Prova Brasil 2009"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2007": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/saeb/2007/resultado/resultados_saeb_2007_brasil_estados_municipios.xlsx",
+    "texto": "Planilhas de Resultados (Brasil, estados e municípios) |"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2012/Saeb_2011_primeiros_resultados_site_Inep.pdf",
+    "texto": "Saeb/Prova Brasil 2007"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2005": [
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/SAEB1995_2005.pdf",
+    "texto": "Primeiros resultados – Saeb/Prova Brasil 2005"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/matematica-uf(urb_s_fed)95-05-4a.xls",
+    "texto": "Resultados Matemática 5º ano do Ensino Fundamental: Brasil, regiões, estados e municípios "
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/matematica-uf(urb_s_fed)95-05-8a.xls",
+    "texto": "Resultados Matemática 9º ano do Ensino Fundamental: Brasil, regiões, estados e municípios "
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/matematica-uf(urb_s_fed)95-05-11a.xls",
+    "texto": "Resultados Matemática 3ª série do Ensino Médio: Brasil, regiões, estados e municípios – Sa"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/portugues-uf-(urb_s_fed)95-05-4a.xls",
+    "texto": "Resultados Português 5º ano do Ensino Fundamental: Brasil, regiões, estados e municípios –"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/portugues-uf-(urb_s_fed)95-05-8a.xls",
+    "texto": "Resultados Português 9º ano do Ensino Fundamental: Brasil, regiões, estados e municípios –"
+   },
+   {
+    "href": "https://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/portugues-uf-(urb_s_fed)95-05-11a.xls",
+    "texto": "Resultados Português 3ª série do Ensino Médio: Brasil, regiões, estados e municípios – Sae"
+   },
+   {
+    "href": "http:// https://download.inep.gov.br/microdados/microdados_saeb_2005.zip",
+    "texto": "Microdados do Saeb 2005"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2003": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_nacional_do_saeb_2003.pdf",
+    "texto": "Relatório – Saeb 2003"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2003.zip",
+    "texto": "Microdados do Saeb 2003"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/2001": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/relatorio_saeb_2001_matematica.pdf",
+    "texto": "Relatório: matemática – Saeb 2001"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb2001.zip",
+    "texto": "Microdados do Saeb 2001"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/1999": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_99_dados_de_contexto_brasil_regioes_e_unidades_da_federacao.pdf",
+    "texto": "Resultados: dados de contexto – Brasil, regiões e unidades da Federação – Saeb 1999"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_99_relatorio.pdf",
+    "texto": "Relatório – Saeb 1999"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1999.zip",
+    "texto": "Microdados do Saeb 1999"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/1997": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/saeb_97_primeiros_resultados.pdf",
+    "texto": "Primeiros resultados – Saeb 1997"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/saeb_97_estudo_comparativo_dos_resultados_do_saeb_1995_1997.pdf",
+    "texto": "Estudo comparativo dos resultados – Saeb 1995 – 1997"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1997.zip",
+    "texto": "Microdados do Saeb 1997"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/resultados/1995": [
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_escalas_de_proficiencia.pdf",
+    "texto": "Resultados: Escalas de Proficiência – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_saeb_95_escalas_de_proficiencia_2_ed.pdf",
+    "texto": "Resultados: Escalas de Proficiência – 2ª edição – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_acre.pdf",
+    "texto": "Resultados: Acre – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_alagoas.pdf",
+    "texto": "Resultados: Alagoas – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_amazonas.pdf",
+    "texto": "Resultados: Amazonas – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_amapa.pdf",
+    "texto": "Resultados: Amapá – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_da_bahia.pdf",
+    "texto": "Resultados: Bahia – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_ceara.pdf",
+    "texto": "Resultados: Ceará – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_distrito_federal.pdf",
+    "texto": "Resultados: Distrito Federal – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_espirito_santo.pdf",
+    "texto": "Resultados: Espírito Santo – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_goias.pdf",
+    "texto": "Resultados: Goiás – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_maranhao.pdf",
+    "texto": "Resultados: Maranhão – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_minas_gerais.pdf",
+    "texto": "Resultados: Minas Gerais – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_mato_grosso_do_sul.pdf",
+    "texto": "Resultados: Mato Grosso do Sul – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_mato_grosso.pdf",
+    "texto": "Resultados: Mato Grosso – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_para.pdf",
+    "texto": "Resultados: Pará – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_da_paraiba.pdf",
+    "texto": "Resultados: Paraíba – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_pernambuco.pdf",
+    "texto": "Resultados: Pernambuco – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_piaui.pdf",
+    "texto": "Resultados: Piauí – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_parana.pdf",
+    "texto": "Resultados: Paraná – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_rio_de_janeiro.pdf",
+    "texto": "Resultados: Rio de Janeiro – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_rio_grande_do_norte.pdf",
+    "texto": "Resultados: Rio Grande do Norte – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_rondonia.pdf",
+    "texto": "Resultados: Rondônia – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_roraima.pdf",
+    "texto": "Resultados: Roraima – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_rio_grande_do_sul.pdf",
+    "texto": "Resultados: Rio Grande do Sul – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_santa_catarina.pdf",
+    "texto": "Resultados: Santa Catarina – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_sergipe.pdf",
+    "texto": "Resultados: Sergipe – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_de_sao_paulo.pdf",
+    "texto": "Resultados: São Paulo – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/resultados_do_saeb_95_estado_do_tocantins.pdf",
+    "texto": "Resultados: Tocantins – Saeb 1995"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1995.zip",
+    "texto": "Microdados do Saeb 1995"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais": []
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior": [
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip",
+    "texto": "Microdados do Censo da Educação Superior 2024"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2023.zip",
+    "texto": "Microdados do Censo da Educação Superior 2023"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2022.zip",
+    "texto": "Microdados do Censo da Educação Superior 2022"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2021.zip",
+    "texto": "Microdados do Censo da Educação Superior 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2020.zip",
+    "texto": "Microdados do Censo da Educação Superior 2020 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2019.zip",
+    "texto": "Microdados do Censo da Educação Superior 2019 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2018.zip",
+    "texto": "Microdados do Censo da Educação Superior 2018 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2017.zip",
+    "texto": "Microdados do Censo da Educação Superior 2017 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2016.zip",
+    "texto": "Microdados do Censo da Educação Superior 2016 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2015.zip",
+    "texto": "Microdados do Censo da Educação Superior 2015 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2014.zip",
+    "texto": "Microdados do Censo da Educação Superior 2014 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2013.zip",
+    "texto": "Microdados do Censo da Educação Superior 2013 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2012.zip",
+    "texto": "Microdados do Censo da Educação Superior 2012 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2011.zip",
+    "texto": "Microdados do Censo da Educação Superior 2011 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2010.zip",
+    "texto": "Microdados do Censo da Educação Superior 2010 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2009.zip",
+    "texto": "Microdados do Censo da Educação Superior 2009 (Atualizado em 4/11/2022)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2008.zip",
+    "texto": "Microdados do Censo da Educação Superior 2008"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2007.zip",
+    "texto": "Microdados do Censo da Educação Superior 2007"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2006.zip",
+    "texto": "Microdados do Censo da Educação Superior 2006"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2005.zip",
+    "texto": "Microdados do Censo da Educação Superior 2005"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2004.zip",
+    "texto": "Microdados do Censo da Educação Superior 2004"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2003.zip",
+    "texto": "Microdados do Censo da Educação Superior 2003"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2002.zip",
+    "texto": "Microdados do Censo da Educação Superior 2002"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2001.zip",
+    "texto": "Microdados do Censo da Educação Superior 2001"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2000.zip",
+    "texto": "Microdados do Censo da Educação Superior 2000"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1999.zip",
+    "texto": "Microdados do Censo da Educação Superior 1999"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1998.zip",
+    "texto": "Microdados do Censo da Educação Superior 1998"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1997.zip",
+    "texto": "Microdados do Censo da Educação Superior 1997"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1996.zip",
+    "texto": "Microdados do Censo da Educação Superior 1996"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1995.zip",
+    "texto": "Microdados do Censo da Educação Superior 1995"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/saeb": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/saeb": [
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2023.zip",
+    "texto": "Microdados Saeb 2023"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2023_educacao_infantil.zip",
+    "texto": "Microdados Saeb 2023 - Educação Infantil"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2021_ensino_fundamental_e_medio.zip",
+    "texto": "Microdados Saeb 2021 - Ensino fundamental e médio (Atualizado em 05/05/2023)"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2021_educacao_infantil.zip",
+    "texto": "Microdados Saeb 2021 - Educação Infantil"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2019.zip",
+    "texto": "Microdados do Saeb 2019"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2017.zip",
+    "texto": "Microdados do Saeb 2017"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2015.zip",
+    "texto": "Microdados do Saeb 2015"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2013.zip",
+    "texto": "Microdados do Saeb 2013"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2011.zip",
+    "texto": "Microdados do Saeb 2011"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/MICRODADOS_SAEB_2009_RECALCULADO.zip",
+    "texto": "Microdados do Saeb 2009"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/MICRODADOS_SAEB_2007_RECALCULADO.zip",
+    "texto": "Microdados do Saeb 2007"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2005.zip",
+    "texto": "Microdados do Saeb 2005"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/microdados_saeb_2003.zip",
+    "texto": "Microdados do Saeb 2003"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb2001.zip",
+    "texto": "Microdados do Saeb 2001"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1999.zip",
+    "texto": "Microdados do Saeb 1999"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1997.zip",
+    "texto": "Microdados do Saeb 1997"
+   },
+   {
+    "href": "https://download.inep.gov.br/microdados/micro_saeb1995.zip",
+    "texto": "Microdados do Saeb 1995"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses-estatisticas": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses-estatisticas": []
+ }
+}

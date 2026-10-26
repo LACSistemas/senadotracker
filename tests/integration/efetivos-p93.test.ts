@@ -36,7 +36,7 @@ const val = async (ind: number, e: number | string, start?: string) => (await po
 
 test('sem migração: as tabelas do modelo D bastam (versões 1–3 inalteradas); 62 definições, idempotentes, sem tocar indicadores anteriores', async () => {
   const before = await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 5000`);
-  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
   assert.equal(await seedEfetivosDefs(pool), EFE_DEFS.length); assert.equal(await seedEfetivosDefs(pool), EFE_DEFS.length);
   assert.equal((await pool.query(`SELECT count(*)::int n FROM civica_exec.exec_ind_def WHERE indicator_id BETWEEN 5000 AND 5399`)).rows[0].n, 62);
   assert.equal(await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 5000`), before);

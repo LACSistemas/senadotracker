@@ -30,7 +30,7 @@ const id = (r: { status: string; runId?: number }) => r.status === 'PUBLISHED' ?
 const ind = async (i: number, e: number, y = 2024) => (await pool.query(`SELECT value, numerator, denominator, flags, status FROM civica_exec.exec_ind_value WHERE indicator_id = $1 AND entity_id = $2 AND period_start = make_date($3, 1, 1)`, [i, e, y])).rows[0];
 
 test('migrações v5 e v6 aplicam, são idempotentes e as definições financeiras entram sem tocar os demais domínios', async () => {
-  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
   const other = await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 7000`);
   const n = await seedFinancasDefs(pool); assert.equal(await seedFinancasDefs(pool), n); assert.equal(await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 7000`), other);
   const cols = (await pool.query(`SELECT column_name FROM information_schema.columns WHERE table_schema = 'civica_exec' AND table_name IN ('exec_fin_cov', 'exec_fin_org', 'exec_fin_exec', 'exec_fin_dot', 'exec_fin_contract', 'exec_fin_supplier', 'exec_fin_transfer')`)).rows.map(r => r.column_name);

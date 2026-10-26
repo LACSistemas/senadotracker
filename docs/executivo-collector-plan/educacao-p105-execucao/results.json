@@ -1,0 +1,16 @@
+{
+  "phase": "P10.5",
+  "database": "projetoeleitor_db",
+  "targetProof": {"current_database": "projetoeleitor_db", "current_user": "projetoeleitor_user"},
+  "migration": {"from": 13, "to": 14, "aditive": true},
+  "siconfi": {"source": "DCA RAW existing", "years": [2014, 2025], "slices": 336, "missing": 0, "factsObserved": 354807, "semanticCaveats": true},
+  "siope": {"source": "FNDE OData", "years": "2017-2025", "components": ["Dados_Gerais_Siope", "Despesas_Funcao_Educacao_Siope", "Indicadores_Siope", "Informacoes_Complementares_Siope"], "pilot": {"uf": "ES", "year": 2024, "facts": 10216}, "nationalRun": {"status": "COMPLETED", "slices": 243, "components": 972, "facts": 3395269, "coverageRows": 972, "rawBytesReceived": 1207315452, "rawFilesOnD": 972, "parserVersion": "siope-v2"}, "semanticReplay": {"parserVersion": "siope-v3", "year": 2024, "uf": "ES", "facts": 6753, "status": "NO_CHANGE"}},
+  "indicators": {"educationDcaIds": [7101,7102,7103,7104,7105,7106,7107,7108,7109,7110,7111]},
+  "readModels": ["getEducationFinanceByEntity", "getEducationFinanceSummary", "getSiopeEducationSummary", "getEducationFinanceCoverage"],
+  "tests": {"typecheck_db": "PASS", "typecheck_collector": "PASS", "typecheck_all_workspaces": "PASS", "financas_p95_unit": "PASS", "siope_replay_es_2024": "PASS_NO_CHANGE", "explain_analyze": "PASS_6.37MS", "full_suite": {"tests": 562, "pass": 454, "skipped": 64, "fail": 44, "status": "FAIL_PREEXISTING_INTEGRATION_FIXTURES"}, "frontend_changed": false},
+  "storage": {"baselineBytes": 28664106131, "finalBytes": 30908124307, "deltaBytes": 2244018176, "maxDeltaBytes": 5000000000, "headroomGate": "PASS", "rawRoot": "D:/Civica/raw/siope", "rawFiles": 972},
+  "gates": {"G0_DATABASE_GUARD": "PASS", "G1_SOURCE_REUSE": "PASS", "G2_CANONICAL_SCHEMA": "PASS", "G3_FINANCIAL_SEMANTICS": "PASS", "G4_RAW_PROVENANCE": "PASS", "G5_RECONCILIATION": "PASS_WITH_DOCUMENTED_CAVEATS", "G6_READ_MODELS": "PASS", "G7_IDEMPOTENCY": "PASS_SEMANTIC_REPLAY_ES2024", "G8_SIOPE_OPERATIONAL": "PASS_NATIONAL_WITH_V2_HISTORY_AND_V3_INCREMENTAL", "G9_REGRESSION": "PASS_TARGETED_WITH_PREEXISTING_FULL_SUITE_FAILURES"},
+  "prohibitedTouched": {"frontend": false, "lab": false, "sqlite": false, "p106": false, "p107": false, "commits": false, "push": false},
+  "readyForP106": "YES_WITH_DOCUMENTED_FULL_SUITE_LIMITATION",
+  "internalWorkRemaining": "NO"
+}

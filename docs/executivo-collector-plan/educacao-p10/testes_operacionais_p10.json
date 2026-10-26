@@ -1,0 +1,286 @@
+{
+ "gerado_em": "2026-10-24",
+ "producao_modificada": false,
+ "testes": [
+  {
+   "id": "T01",
+   "gate": "G0",
+   "o_que": "Banco, schema, versão, tamanho",
+   "como": "psql somente SELECT",
+   "resultado": "PostgreSQL 17.4; projetoeleitor_db 23 GB; schema civica_exec; 40 tabelas",
+   "artefato": "—"
+  },
+  {
+   "id": "T02",
+   "gate": "G0",
+   "o_que": "Espaço e identidade dos volumes",
+   "como": "Get-Volume",
+   "resultado": "C: 51,5 GB livres; D: 422,7 GB livres (volume \"Dados\", GUID {54b8f375-…})",
+   "artefato": "planejamento_recursos_educacao.md"
+  },
+  {
+   "id": "T03",
+   "gate": "G0",
+   "o_que": "Jobs e processos",
+   "como": "Get-ScheduledTask / Get-Process",
+   "resultado": "Civica-P95-PNCP-Finish desabilitada; node/python existentes não tocados",
+   "artefato": "—"
+  },
+  {
+   "id": "T04",
+   "gate": "G1",
+   "o_que": "Auditoria de 35 componentes",
+   "como": "leitura de código + SELECT",
+   "resultado": "20 R, 6 A, 2 P, 2 E, 5 N",
+   "artefato": "inventario_reuso_civica_educacao.md"
+  },
+  {
+   "id": "T05",
+   "gate": "G2",
+   "o_que": "HEAD dos ZIPs do Censo Escolar 1995–2025",
+   "como": "curl -I",
+   "resultado": "31/31 HTTP 200; Accept-Ranges bytes; 2025 com URL _2025_.zip",
+   "artefato": "censo_escolar_listing_*.json"
+  },
+  {
+   "id": "T06",
+   "gate": "G2",
+   "o_que": "Diretório central de 12 ZIPs por Range",
+   "como": "zip_remote_listing.py",
+   "resultado": "2025: 6 tabelas STORED; 2007–2024: CSV único; ~3 KB de rede por listagem",
+   "artefato": "censo_escolar_listing_*.json"
+  },
+  {
+   "id": "T07",
+   "gate": "G2",
+   "o_que": "Cabeçalho + 1ª linha de 8 tabelas por Range",
+   "como": "censo_headers_probe.py",
+   "resultado": "colunas 290/218/263/184/88/49 (2025), 426/408 (2024/2023); ISO-8859-1",
+   "artefato": "censo_escolar_headers.json"
+  },
+  {
+   "id": "T08",
+   "gate": "G2",
+   "o_que": "Dicionário XLSX 2025 (6 abas, variável × ano 2007–2025)",
+   "como": "dicionario_xlsx.py + dicionario_matriz.py",
+   "resultado": "1.180 entradas; quebra de 2019 (121 de 370 variáveis de Escola começam em 2019)",
+   "artefato": "censo_escolar_variaveis_x_ano.csv"
+  },
+  {
+   "id": "T09",
+   "gate": "G2/G3",
+   "o_que": "Leitura em fluxo das tabelas de escola 2021–2025",
+   "como": "censo_escola_stream.py",
+   "resultado": "linhas: 221.140; 224.649; 217.625; 215.545; 214.192 (2025); rede ≈ 385 MB",
+   "artefato": "censo_identidade_escolas_2021_2025.json"
+  },
+  {
+   "id": "T10",
+   "gate": "G3",
+   "o_que": "Identidade: unicidade, formato, transições",
+   "como": "censo_identidade_analise.py",
+   "resultado": "0 duplicados/vazios/fora do padrão; 239.155 códigos; 198.819 nos 5 anos; mun. mudou 15–40/ano; dep. mudou 110–153/ano; ausência intermitente 1.675 (2023) e 605 (2024)",
+   "artefato": "contrato_identidade_escolas.md"
+  },
+  {
+   "id": "T11",
+   "gate": "G4",
+   "o_que": "Reconciliação Σ escolas = município = UF = Brasil = Sinopse",
+   "como": "leitura Tabela_Matricula 2025 + Sinopse 1.1/1.2",
+   "resultado": "46.018.380 = 46.018.380; dependências iguais; Vitória 77.662 = Sinopse",
+   "artefato": "censo_2025_reconciliacao_matriculas.json"
+  },
+  {
+   "id": "T12",
+   "gate": "G5",
+   "o_que": "Docentes: Σ escolas × total oficial",
+   "como": "QT_DOC_BAS 2023/2024 × Sinopse 2.1 (2025)",
+   "resultado": "Σ escolas 2.939.002 (2024) × 2.407.049 docentes únicos (2025): soma superconta ~22%",
+   "artefato": "contrato_infraestrutura_docentes.md"
+  },
+  {
+   "id": "T13",
+   "gate": "G5",
+   "o_que": "Semântica de vazio em flags de infraestrutura",
+   "como": "TSV 2021–2025",
+   "resultado": "2022: 4.259 escolas ativas com IN_INTERNET vazio; demais anos 0",
+   "artefato": "censo_infra_semantica_nulos_2021_2025.json"
+  },
+  {
+   "id": "T14",
+   "gate": "G5",
+   "o_que": "Arquivos INEP Indicadores",
+   "como": "gov_links.py + head_sizes.py",
+   "resultado": "494 arquivos, 494 HTTP 200; 7,03 GB (2025: 512 MB)",
+   "artefato": "inep_indicadores_arquivos.csv"
+  },
+  {
+   "id": "T15",
+   "gate": "G6",
+   "o_que": "Ideb 2025: lista de arquivos e leitura",
+   "como": "gov_links.py; download e leitura de Brasil/UFs/Municípios AI",
+   "resultado": "11 arquivos; 3 baixados (26 MB) e lidos; escolas por dimensão (A1:EG66164)",
+   "artefato": "ideb_2025_*.json"
+  },
+  {
+   "id": "T16",
+   "gate": "G6",
+   "o_que": "Saeb 2025: baixar e ler",
+   "como": "curl + xlsx_local_head.py",
+   "resultado": "24,3 MB; abas Brasil/Estados/Municípios (69.778 linhas); dicionário 119 variáveis",
+   "artefato": "saeb_2025_head.json"
+  },
+  {
+   "id": "T17",
+   "gate": "G6",
+   "o_que": "Cobertura municipal do Ideb AI 2025 por UF",
+   "como": "leitura completa do XLSX municipal",
+   "resultado": "5.320 redes municipais com Ideb; mínimo por UF 15 (RR); DF sem rede municipal",
+   "artefato": "ideb_2025_ai_cobertura_municipal.json"
+  },
+  {
+   "id": "T18",
+   "gate": "G7",
+   "o_que": "Função 12 no RAW do Siconfi (12 anos × 28 UFs)",
+   "como": "siconfi_fn12_raw_scan.py",
+   "resultado": "subfunções 12.122, 361–368 e FU12 presentes; 5.204–5.582 entes/ano",
+   "artefato": "siconfi_fn12_raw_scan.json"
+  },
+  {
+   "id": "T19",
+   "gate": "G7",
+   "o_que": "RAW × banco (soma em centavos, 12 anos × 3 estágios)",
+   "como": "psql + comparação",
+   "resultado": "36/36 idênticas",
+   "artefato": "siconfi_fn12_raw_x_banco.json"
+  },
+  {
+   "id": "T20",
+   "gate": "G7",
+   "o_que": "Invariante Σ subfunções 12.xxx (+FU12) = função 12",
+   "como": "siconfi_fn12_invariantes.py",
+   "resultado": "198.497/198.536 (99,98%); 39 divergências em 13 entes de 2017",
+   "artefato": "siconfi_fn12_invariantes.json"
+  },
+  {
+   "id": "T21",
+   "gate": "G8",
+   "o_que": "SIOPE: metadados e 17 chamadas reais",
+   "como": "siope_probe.py",
+   "resultado": "funções e parâmetros; ES 2017+; 69 MB/47 s em Despesas_Siope",
+   "artefato": "siope_prova.json"
+  },
+  {
+   "id": "T22",
+   "gate": "G8",
+   "o_que": "SIOPE: 27 UFs × 4 exercícios (Dados Gerais)",
+   "como": "script inline",
+   "resultado": "2016: 0; 2017: 5.592; 2024: 5.591; 2025: 5.559 (DF vazio)",
+   "artefato": "siope_cobertura_nacional_dados_gerais.json"
+  },
+  {
+   "id": "T23",
+   "gate": "G8",
+   "o_que": "SIOPE × Siconfi, Vitória 2024",
+   "como": "SIOPE função educação sem subtotal × DCA",
+   "resultado": "SIOPE EMP 873,11 mi × Siconfi 805,77 mi (+8,4%); subfunções divergem",
+   "artefato": "contrato_siope.md"
+  },
+  {
+   "id": "T24",
+   "gate": "G9",
+   "o_que": "Portal Transferências: leitura de 2025-10 e HEAD de 165 meses",
+   "como": "download + head_sizes",
+   "resultado": "153 meses com arquivo (2014-01…2026-09, 514 MB); ações de educação com município; HTTP 405 após ~170 requisições",
+   "artefato": "portal_transferencias_tamanhos.json"
+  },
+  {
+   "id": "T25",
+   "gate": "G9",
+   "o_que": "PDDE Info: 2023/2024/2025",
+   "como": "http_probe.py + xlsx_local_head.py",
+   "resultado": "UF 2023 e 2024 OK; UF 2025 HTTP 500 (ORA-01722); município 2025 OK; planilha com contas bancárias",
+   "artefato": "pdde_reprova_2026.json"
+  },
+  {
+   "id": "T26",
+   "gate": "G9",
+   "o_que": "Bloqueios",
+   "como": "http_probe.py",
+   "resultado": "dados.gov.br 401; dadosabertos.fnde.gov.br DNS; dadosabertos.mec.gov.br 403",
+   "artefato": "fnde_obras_probe.json"
+  },
+  {
+   "id": "T27",
+   "gate": "G9",
+   "o_que": "Execução federal 2025 por ação (RAW local)",
+   "como": "leitura de 12 zips",
+   "resultado": "Fundeb 51.561,5; PNAE 5.536,3; PDDE 1.873,0; PNATE 853,5 (R$ mi); sem município",
+   "artefato": "contratos_fnde_programas.md"
+  },
+  {
+   "id": "T28",
+   "gate": "G10",
+   "o_que": "Varredura do RAW do PNCP (regras v1)",
+   "como": "pncp_educacao_raw_scan.py",
+   "resultado": "5.111.306 contratos; 0 duplicados; 8 páginas não-200",
+   "artefato": "pncp_educacao_raw_scan.json"
+  },
+  {
+   "id": "T29",
+   "gate": "G10",
+   "o_que": "Varredura refinada (v2) + auditoria manual por amostra",
+   "como": "pncp_educacao_raw_scan_v2.py",
+   "resultado": "núcleo 286.736 (R$ 179,9 bi contratado); superior 326.461; 692 também em Segurança; unidade_escolar 3/12 antes das exclusões; servico_educacional ~3/12",
+   "artefato": "pncp_educacao_refinado.json"
+  },
+  {
+   "id": "T30",
+   "gate": "G11",
+   "o_que": "Obrasgov: ES completo",
+   "como": "varredura até página vazia",
+   "resultado": "1.879 projetos; 332 de educação; dataFinalEfetiva 0/332; valor ≤ 0,01 em 138; paginação enganosa",
+   "artefato": "obrasgov_prova_es.json"
+  },
+  {
+   "id": "T31",
+   "gate": "G12",
+   "o_que": "Censo Superior: 30 ZIPs, cabeçalhos 2024, identidade 2023",
+   "como": "zip_remote_listing + stream",
+   "resultado": "750 MB; IES 84 col, cursos 223 col; 2.580 IES únicas; 671.610 linhas; 461 duplicatas na chave",
+   "artefato": "censo_superior_2023_identidade.json"
+  },
+  {
+   "id": "T32",
+   "gate": "G14",
+   "o_que": "Reidentificação: gestor e células pequenas",
+   "como": "stream Gestor 2025 e Censo 2024",
+   "resultado": "95,4% das escolas com 1 gestor; 3.395 escolas < 10 matrículas; 41–85% das células sensíveis são 1–4",
+   "artefato": "censo_privacidade_celulas_pequenas.json"
+  },
+  {
+   "id": "T33",
+   "gate": "G16",
+   "o_que": "Tamanhos por HEAD e modelo de armazenamento",
+   "como": "head_sizes.py + estimativa_armazenamento.py",
+   "resultado": "provável: banco+log 16,8 GB; RAW 7,9 GB; pessimista 65,8 GB (não cabe no C:)",
+   "artefato": "estimativa_armazenamento_educacao.csv"
+  },
+  {
+   "id": "T34",
+   "gate": "G15",
+   "o_que": "DOMAIN.educacao já reservado; 35 componentes; ids livres",
+   "como": "leitura de indicator-defs.ts + SELECT",
+   "resultado": "domínio 2 sem definições; ids ≥ 9001 livres",
+   "artefato": "arquitetura_educacao_modelo_d.md"
+  },
+  {
+   "id": "T35",
+   "gate": "extra",
+   "o_que": "SIDRA 9514 por município",
+   "como": "http_probe.py",
+   "resultado": "HTTP 200 (Vitória e Brasil)",
+   "artefato": "sidra_probe.json"
+  }
+ ]
+}

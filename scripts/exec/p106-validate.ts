@@ -1,0 +1,15 @@
+import { openPool } from './db.ts';
+const p = openPool(2); const q = async (sql: string, args: unknown[] = []) => (await p.query(sql, args)).rows;
+const out: Record<string, unknown> = { database: (await q('select current_database() db'))[0] };
+const checks: Record<string, boolean> = {};
+checks.database = out.database && (out.database as any).db === 'projetoeleitor_db';
+checks.migration15 = Number((await q("select count(*) n from civica_exec.schema_migrations where version=15"))[0].n) === 1;
+checks.portalPublications12 = Number((await q('select count(*) n from civica_exec.exec_publication where dataset_id=112'))[0].n) === 12;
+checks.portalFacts = Number((await q("select count(*) n from civica_exec.exec_edu_program_fact where source_dataset='portal_transferencias'"))[0].n) > 500000;
+checks.programsSeparated = Number((await q("select count(distinct program_code) n from civica_exec.exec_edu_program_fact where source_dataset='portal_transferencias'"))[0].n) === 4;
+checks.noNullAmounts = Number((await q('select count(*) n from civica_exec.exec_edu_program_fact where amount_cents is null'))[0].n) === 0;
+checks.noDuplicateKeys = Number((await q('select count(*) n from (select source_key from civica_exec.exec_edu_program_fact group by source_key having count(*)>1) x'))[0].n) === 0;
+checks.pddeStagesSeparated = Number((await q("select count(distinct financial_stage) n from civica_exec.exec_edu_program_fact where source_dataset='pdde_info'"))[0].n) === 2;
+checks.noSiopeOverwrite = Number((await q("select count(*) n from civica_exec.exec_publication where dataset_id=108"))[0].n) === 243;
+out.metrics = { facts: await q("select source_dataset,program_code,financial_stage,count(*)::int rows,sum(amount_cents)::bigint amount_cents,count(distinct school_inep)::int schools from civica_exec.exec_edu_program_fact group by 1,2,3 order by 1,2,3"), coverage: await q("select source_dataset,count(*)::int rows,min(competence)::int first_comp,max(competence)::int last_comp from civica_exec.exec_edu_program_cov group by 1 order by 1"), siope: await q("select parser_version,count(*)::int runs,sum(rows_out)::bigint rows_out from civica_exec.exec_ingestion_run where dataset_id=108 group by 1 order by 1") };
+out.checks = checks; out.status = Object.values(checks).every(Boolean) ? 'PASS' : 'FAIL'; console.log(JSON.stringify(out, null, 2)); await p.end(); if (out.status !== 'PASS') process.exitCode = 1;

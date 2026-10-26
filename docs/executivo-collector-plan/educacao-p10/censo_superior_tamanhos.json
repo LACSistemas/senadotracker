@@ -1,0 +1,152 @@
+[
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1995.zip",
+  "status": 200,
+  "bytes": 2250098
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1996.zip",
+  "status": 200,
+  "bytes": 2364272
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1997.zip",
+  "status": 200,
+  "bytes": 1753933
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1998.zip",
+  "status": 200,
+  "bytes": 6690113
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_1999.zip",
+  "status": 200,
+  "bytes": 1861482
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2000.zip",
+  "status": 200,
+  "bytes": 4112095
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2001.zip",
+  "status": 200,
+  "bytes": 3042963
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2002.zip",
+  "status": 200,
+  "bytes": 4587034
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2003.zip",
+  "status": 200,
+  "bytes": 4412448
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2004.zip",
+  "status": 200,
+  "bytes": 5862999
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2005.zip",
+  "status": 200,
+  "bytes": 4989796
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2006.zip",
+  "status": 200,
+  "bytes": 7523019
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2007.zip",
+  "status": 200,
+  "bytes": 12648668
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2008.zip",
+  "status": 200,
+  "bytes": 11802030
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2009.zip",
+  "status": 200,
+  "bytes": 4583371
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2010.zip",
+  "status": 200,
+  "bytes": 5113986
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2011.zip",
+  "status": 200,
+  "bytes": 5855660
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2012.zip",
+  "status": 200,
+  "bytes": 10033479
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2013.zip",
+  "status": 200,
+  "bytes": 6526456
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2014.zip",
+  "status": 200,
+  "bytes": 8534227
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2015.zip",
+  "status": 200,
+  "bytes": 8400033
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2016.zip",
+  "status": 200,
+  "bytes": 9099395
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2017.zip",
+  "status": 200,
+  "bytes": 10668382
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2018.zip",
+  "status": 200,
+  "bytes": 13216969
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2019.zip",
+  "status": 200,
+  "bytes": 16905590
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2020.zip",
+  "status": 200,
+  "bytes": 22263418
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2021.zip",
+  "status": 200,
+  "bytes": 26554655
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2022.zip",
+  "status": 200,
+  "bytes": 33161794
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2023.zip",
+  "status": 200,
+  "bytes": 38411202
+ },
+ {
+  "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip",
+  "status": 200,
+  "bytes": 456807449
+ }
+]

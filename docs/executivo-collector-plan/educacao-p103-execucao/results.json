@@ -1,0 +1,47 @@
+{
+  "wave": "P10.3",
+  "date": "2026-10-25",
+  "commit_or_push": false,
+  "gates": {
+    "G0_SAFETY": "PASS",
+    "G1_INFRASTRUCTURE_TAXONOMY": "PASS",
+    "G2_TEMPORAL_COMPARABILITY": "PASS",
+    "G3_DENOMINATOR_CONTRACT": "PASS",
+    "G4_CENSO_INFRASTRUCTURE": "PASS",
+    "G5_TEACHER_SEMANTICS": "PASS",
+    "G6_OFFICIAL_EDUCATIONAL_INDICATORS": "PASS_WITH_CAVEATS",
+    "G7_CLASS_SIZE_CONTRACT": "PASS",
+    "G8_PERSISTENCE": "PASS",
+    "G9_HISTORICAL_PUBLICATION": "PASS",
+    "G10_INFRASTRUCTURE_RECONCILIATION": "PASS_WITH_CAVEATS",
+    "G11_TEACHER_RECONCILIATION": "PASS_WITH_CAVEATS",
+    "G12_PRIVACY_AND_PUBLICATION": "PASS_WITH_CAVEATS",
+    "G13_SERVING": "PASS_WITH_CAVEATS",
+    "G14_BENCHMARK_FOUNDATION": "PASS_WITH_CAVEATS",
+    "G15_STORAGE_BUDGET": "PASS",
+    "G16_IDEMPOTENCY_ROLLBACK": "PASS",
+    "G17_REGRESSION": "PASS",
+    "G18_TERRITORIAL_TESTS": "PASS",
+    "G19_P104_READINESS": "PASS"
+  },
+  "publication": {
+    "migrations": [11, 12],
+    "datasets": { "edu_infra": 72, "edu_ind": 73, "edu_doc": 74 },
+    "table_ids": { "infra_year": 86, "infra_agg": 87, "infra_cov": 88, "ind_school": 89, "ind_terr": 90, "ind_cov": 91, "doc_terr": 92 },
+    "slices": { "infra": 513, "indicadores": 532, "docentes": 532 },
+    "rows": { "infra_year": 3597617, "ind_school": 3512097, "ind_terr": 1287807, "doc_terr": 106333 },
+    "rejected_rows": 0,
+    "replay_no_change": 1577,
+    "infra_variables": 100,
+    "indicator_measures": 96
+  },
+  "nacional_2025": { "escolas_em_atividade": 180540, "internet": 170762, "biblioteca_ou_leitura": 100293, "lab_informatica": 52102, "docentes_distintos": 2407049 },
+  "reconciliation": { "infra_vs_levantamento_p10": "30/30", "cells_raw_vs_db": "201/201", "sum_to_100_checks": 24, "sum_to_100_violations": 0, "internal_contradictions": 0 },
+  "storage": { "db_growth_mb": 1315.1, "change_log_growth_rows": 0, "wal_generated_gb": 3.72, "pg_wal_peak_mb": 1074, "c_free_min_gib": 51.78, "new_raw_gb": 4.17, "cumulative_p101_p102_p103_gb": 2.53 },
+  "tests": { "total": 539, "passed": 509, "failed": 0, "skipped": 30 },
+  "legal_pending": [
+    "exibicao por escola e download/API de tabelas derivadas: NEEDS_LEGAL_VALIDATION",
+    "NT 12/2023 da ANPD conhecida por resumo secundario; PDF integral nao lido",
+    "notas tecnicas dos indicadores do INEP (retificacao AFD, atualizacao da formacao docente) nao lidas"
+  ]
+}

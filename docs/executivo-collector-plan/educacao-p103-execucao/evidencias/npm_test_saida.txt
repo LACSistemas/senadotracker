@@ -1,0 +1,3379 @@
+
+> senadotracker@0.1.0 test
+> node --import tsx --test tests/unit/p052-rapporteur-semantics.test.ts tests/unit/exec-ym-intervals.test.ts tests/unit/exec-storage.test.ts tests/unit/health-bench.test.ts tests/unit/health-story.test.ts tests/integration/exec-publication.test.ts tests/unit/seguranca-p91.test.ts tests/unit/seguranca-p91-faults.test.ts tests/integration/seguranca-p91.test.ts tests/unit/transito-p92.test.ts tests/unit/transito-p92-faults.test.ts tests/integration/transito-p92.test.ts tests/unit/efetivos-p93.test.ts tests/unit/efetivos-p93-faults.test.ts tests/integration/efetivos-p93.test.ts tests/unit/prisional-p94.test.ts tests/unit/prisional-p94-faults.test.ts tests/integration/prisional-p94.test.ts tests/unit/financas-p95.test.ts tests/unit/pncp-p95.test.ts tests/integration/financas-p95.test.ts tests/integration/financas-p95-ondas.test.ts tests/integration/crime-p96.test.ts tests/integration/organized-crime-p97.test.ts tests/integration/security-bench-p98.test.ts tests/integration/security-page-real-p98.test.ts tests/unit/educacao-p101.test.ts tests/integration/educacao-p101.test.ts tests/unit/educacao-oferta-p102.test.ts tests/unit/educacao-infra-p103.test.ts tests/integration/educacao-oferta-p102.test.ts tests/integration/educacao-p103.test.ts tests/unit/security-p98.test.ts tests/unit/quota-explorer.test.ts tests/unit/presence-votes.test.ts tests/unit/commission-membership.test.ts tests/contracts/sources.test.ts tests/contracts/votes.test.ts tests/contracts/elections.test.ts tests/contracts/tse-import.test.ts tests/contracts/camara-cabinet.test.ts tests/unit/benchmarks.test.ts tests/unit/eval-color.test.ts tests/unit/format.test.ts tests/unit/ideology.test.ts tests/unit/lede.test.ts tests/unit/normative-values.test.ts tests/unit/patrimony.test.ts tests/unit/price-index.test.ts tests/unit/state-map.test.ts tests/unit/cli.test.ts tests/unit/http.test.ts tests/unit/house-operations.test.ts tests/unit/expenses.test.ts tests/unit/expense-intelligence.test.ts tests/unit/comparisons.test.ts tests/unit/cabinet.test.ts tests/unit/cabinet-data.test.ts tests/unit/camara-agenda.test.ts tests/unit/panorama.test.ts tests/unit/parties.test.ts tests/unit/propositions.test.ts tests/unit/proposition-operations.test.ts tests/unit/principal-resolver.test.ts tests/unit/proposition-graph.test.ts tests/unit/principal-depth.test.ts tests/unit/temporal.test.ts tests/unit/camara-presented.test.ts tests/unit/senado-presented.test.ts tests/unit/authorship.test.ts tests/unit/overview-year-semantics.test.ts tests/unit/public-info.test.ts tests/unit/rankings.test.ts tests/unit/rankings-mode.test.ts tests/unit/states.test.ts tests/unit/themes.test.ts tests/unit/senate-processes.test.ts tests/unit/senate-agenda.test.ts tests/unit/vote-ui.test.ts tests/unit/vote-participation.test.ts tests/unit/supplier-detail.test.ts tests/unit/supplier-identity.test.ts tests/unit/suppliers.test.ts tests/unit/institutional-cli.test.ts tests/unit/institutional-http.test.ts tests/unit/institutional-normalize.test.ts tests/unit/chamber-procurement.test.ts tests/unit/chamber-contract-details.test.ts tests/unit/chamber-financial-execution.test.ts tests/unit/senate-procurement.test.ts tests/unit/senate-planning.test.ts tests/unit/senate-contract-details.test.ts tests/unit/senate-instrument-details.test.ts tests/unit/senate-financial-execution.test.ts tests/unit/pncp-enrichment.test.ts tests/unit/financial-reconciliation.test.ts tests/unit/supplier-market.test.ts tests/unit/congress-supplier-overview.test.ts tests/integration/cadastro.test.ts tests/integration/ui-reconciliation.test.ts tests/unit/pix-domain.test.ts tests/unit/pix-budget-db.test.ts tests/unit/pix-identity-db.test.ts tests/unit/pix-real-data.test.ts tests/unit/pix-profile.test.ts tests/unit/hemicycle.test.ts tests/unit/state-house-story.test.ts tests/unit/portrait-mirror.test.ts tests/unit/state-legislative-numbers.test.ts
+
+TAP version 13
+# (node:15952) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: snapshot da Camara usa URI oficial e rejeita unidade generica
+ok 1 - snapshot da Camara usa URI oficial e rejeita unidade generica
+  ---
+  duration_ms: 3.3971
+  type: 'test'
+  ...
+# Subtest: verba preserva limite proporcional, gasto e meses
+ok 2 - verba preserva limite proporcional, gasto e meses
+  ---
+  duration_ms: 2.6966
+  type: 'test'
+  ...
+# Subtest: pagina individual do Senado preserva categorias, fcodigo e remove tabela responsiva duplicada
+ok 3 - pagina individual do Senado preserva categorias, fcodigo e remove tabela responsiva duplicada
+  ---
+  duration_ms: 2.339
+  type: 'test'
+  ...
+# Subtest: Senado preserva estagiário e classifica lotações da base ativa
+ok 4 - Senado preserva estagiário e classifica lotações da base ativa
+  ---
+  duration_ms: 1.7632
+  type: 'test'
+  ...
+# (node:9332) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: resultado simplificado preserva chave, voto e situação literal
+ok 5 - resultado simplificado preserva chave, voto e situação literal
+  ---
+  duration_ms: 2.1343
+  type: 'test'
+  ...
+# Subtest: bens e contas preservam centavos, contraparte e versão
+ok 6 - bens e contas preservam centavos, contraparte e versão
+  ---
+  duration_ms: 1.1138
+  type: 'test'
+  ...
+# Subtest: nome sozinho não confirma e duplicidade fica ambígua
+ok 7 - nome sozinho não confirma e duplicidade fica ambígua
+  ---
+  duration_ms: 1.1394
+  type: 'test'
+  ...
+# Subtest: lote eleitoral mantém versões e só consulta vínculo confirmado
+ok 8 - lote eleitoral mantém versões e só consulta vínculo confirmado
+  ---
+  duration_ms: 197.458
+  type: 'test'
+  ...
+# Subtest: Senado: suplência e exercício são dimensões diferentes
+ok 9 - Senado: suplência e exercício são dimensões diferentes
+  ---
+  duration_ms: 1.4443
+  type: 'test'
+  ...
+# Subtest: Senado: resposta preserva exercícios encerrados e lacuna entre filiações
+ok 10 - Senado: resposta preserva exercícios encerrados e lacuna entre filiações
+  ---
+  duration_ms: 0.3039
+  type: 'test'
+  ...
+# Subtest: Câmara: o link next conecta duas páginas, sem repetir identidades
+ok 11 - Câmara: o link next conecta duas páginas, sem repetir identidades
+  ---
+  duration_ms: 0.4417
+  type: 'test'
+  ...
+# Subtest: Câmara: evento nulo após fim de mandato não equivale a exercício
+ok 12 - Câmara: evento nulo após fim de mandato não equivale a exercício
+  ---
+  duration_ms: 0.3159
+  type: 'test'
+  ...
+# Subtest: fixtures têm integridade e proveniência de respostas oficiais, sem representar cobertura completa
+ok 13 - fixtures têm integridade e proveniência de respostas oficiais, sem representar cobertura completa
+  ---
+  duration_ms: 75.6426
+  type: 'test'
+  ...
+# (node:4716) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: leitor TSE trata Windows-1252, aspas e cabecalho divergente
+ok 14 - leitor TSE trata Windows-1252, aspas e cabecalho divergente
+  ---
+  duration_ms: 23.6317
+  type: 'test'
+  ...
+# Subtest: complemento preserva estados e valores documentados
+ok 15 - complemento preserva estados e valores documentados
+  ---
+  duration_ms: 0.8174
+  type: 'test'
+  ...
+# Subtest: vínculo eleitoral usa nome, UF e cargo mesmo sem histórico partidário do pleito
+ok 16 - vínculo eleitoral usa nome, UF e cargo mesmo sem histórico partidário do pleito
+  ---
+  duration_ms: 2.2313
+  type: 'test'
+  ...
+# Subtest: dry-run reconcilia os tres layouts sem publicar
+ok 17 - dry-run reconcilia os tres layouts sem publicar
+  ---
+  duration_ms: 192.0453
+  type: 'test'
+  ...
+# Subtest: Senado distingue matéria, deliberação, resultado e voto individual
+ok 18 - Senado distingue matéria, deliberação, resultado e voto individual
+  ---
+  duration_ms: 2.1952
+  type: 'test'
+  ...
+# Subtest: Câmara conserva votação alfanumérica e voto contextual
+ok 19 - Câmara conserva votação alfanumérica e voto contextual
+  ---
+  duration_ms: 0.3481
+  type: 'test'
+  ...
+# Subtest: parsers só publicam identidades conhecidas e ligam voto à deliberação
+ok 20 - parsers só publicam identidades conhecidas e ligam voto à deliberação
+  ---
+  duration_ms: 1.8567
+  type: 'test'
+  ...
+# Subtest: Câmara separa âncora, última apresentação e objeto efetivamente votado
+ok 21 - Câmara separa âncora, última apresentação e objeto efetivamente votado
+  ---
+  duration_ms: 1.0978
+  type: 'test'
+  ...
+# Subtest: oito votações da PEC 221 nunca viram votações próprias do REQ 2940
+ok 22 - oito votações da PEC 221 nunca viram votações próprias do REQ 2940
+  ---
+  duration_ms: 3.5208
+  type: 'test'
+  ...
+# (node:5896) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: identidades não colidem entre Casas; números imprecisos e datas impossíveis são rejeitados
+ok 23 - identidades não colidem entre Casas; números imprecisos e datas impossíveis são rejeitados
+  ---
+  duration_ms: 4.011
+  type: 'test'
+  ...
+# Subtest: parser do Senado preserva suplência, filiação e limites ausentes; diagnostica campos novos
+ok 24 - parser do Senado preserva suplência, filiação e limites ausentes; diagnostica campos novos
+  ---
+  duration_ms: 2.549
+  type: 'test'
+  ...
+# Subtest: histórico da Câmara não cria exercício/filiação após fim de mandato e conserva nulo
+ok 25 - histórico da Câmara não cria exercício/filiação após fim de mandato e conserva nulo
+  ---
+  duration_ms: 23.4183
+  type: 'test'
+  ...
+# Subtest: paginação percorre todas as páginas e rejeita repetição, ciclo e vazio
+ok 26 - paginação percorre todas as páginas e rejeita repetição, ciclo e vazio
+  ---
+  duration_ms: 4.7455
+  type: 'test'
+  ...
+# Subtest: migrações são repetíveis e chaves estrangeiras/identidades duplicadas são protegidas
+ok 27 - migrações são repetíveis e chaves estrangeiras/identidades duplicadas são protegidas
+  ---
+  duration_ms: 202.122
+  type: 'test'
+  ...
+# Subtest: lease recusa concorrência, expira e impede publicação pelo dono anterior
+ok 28 - lease recusa concorrência, expira e impede publicação pelo dono anterior
+  ---
+  duration_ms: 167.0762
+  type: 'test'
+  ...
+# Subtest: brutos têm hash verificável, conteúdo imutável e metadados por requisição
+ok 29 - brutos têm hash verificável, conteúdo imutável e metadados por requisição
+  ---
+  duration_ms: 167.007
+  type: 'test'
+  ...
+# Subtest: staging repetido não duplica; somente lote validado torna-se público
+ok 30 - staging repetido não duplica; somente lote validado torna-se público
+  ---
+  duration_ms: 170.4859
+  type: 'test'
+  ...
+# Subtest: retificação mantém pessoa e lote anterior; falha no meio da publicação faz rollback
+ok 31 - retificação mantém pessoa e lote anterior; falha no meio da publicação faz rollback
+  ---
+  duration_ms: 147.1975
+  type: 'test'
+  ...
+# Subtest: lote vazio/incompleto ou alterado na fonte é rejeitado sem apagar lote publicado
+ok 32 - lote vazio/incompleto ou alterado na fonte é rejeitado sem apagar lote publicado
+  ---
+  duration_ms: 112.9362
+  type: 'test'
+  ...
+# Subtest: jornada completa coleta → bruto → staging → validação → publicação é repetível offline
+ok 33 - jornada completa coleta → bruto → staging → validação → publicação é repetível offline
+  ---
+  duration_ms: 131.1734
+  type: 'test'
+  ...
+# Subtest: falha de integração registra erro e libera lease
+ok 34 - falha de integração registra erro e libera lease
+  ---
+  duration_ms: 102.6326
+  type: 'test'
+  ...
+# Subtest: reimportação financeira troca lote ativo sem duplicar a consulta publicada
+ok 35 - reimportação financeira troca lote ativo sem duplicar a consulta publicada
+  ---
+  duration_ms: 116.2445
+  type: 'test'
+  ...
+# Subtest: atividade preserva coautoria e troca lote ativo sem inferir lei
+ok 36 - atividade preserva coautoria e troca lote ativo sem inferir lei
+  ---
+  duration_ms: 124.5077
+  type: 'test'
+  ...
+# Subtest: presenca ignora sessoes fora do exercicio e datas futuras
+ok 37 - presenca ignora sessoes fora do exercicio e datas futuras
+  ---
+  duration_ms: 128.3517
+  type: 'test'
+  ...
+# Subtest: complemento troca lote ativo e recusa chaves repetidas sem afetar o anterior
+ok 38 - complemento troca lote ativo e recusa chaves repetidas sem afetar o anterior
+  ---
+  duration_ms: 128.4529
+  type: 'test'
+  ...
+# (node:9524) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v8 e catálogo: ids por fonte em faixa própria, sem colisão, composto declarado e idempotência
+ok 39 - migração v8 e catálogo: ids por fonte em faixa própria, sem colisão, composto declarado e idempotência
+  ---
+  duration_ms: 8350.0425
+  type: 'test'
+  ...
+# Subtest: adaptadores: descoberta de links, aliases, truncamento de meses futuros e códigos
+ok 40 - adaptadores: descoberta de links, aliases, truncamento de meses futuros e códigos
+  ---
+  duration_ms: 1.422
+  type: 'test'
+  ...
+# Subtest: fonte de eventos (ES): sem zero inventado, município fora do IBGE vai ao ignorado, Σ = UF, rollback por falha injetada e NO_CHANGE
+ok 41 - fonte de eventos (ES): sem zero inventado, município fora do IBGE vai ao ignorado, Σ = UF, rollback por falha injetada e NO_CHANGE
+  ---
+  duration_ms: 1171.1145
+  type: 'test'
+  ...
+# Subtest: derivado de microdado (PE): células sensíveis pequenas são suprimidas (NULL + flag), a UF mantém o total, categoria não sensível fica
+ok 42 - derivado de microdado (PE): células sensíveis pequenas são suprimidas (NULL + flag), a UF mantém o total, categoria não sensível fica
+  ---
+  duration_ms: 51.8328
+  type: 'test'
+  ...
+# Subtest: fonte com grade completa (MG): zero declarado de mês fechado publica, mês futuro não; a leitura nunca mistura fontes nem vira ausência em zero
+ok 43 - fonte com grade completa (MG): zero declarado de mês fechado publica, mês futuro não; a leitura nunca mistura fontes nem vira ausência em zero
+  ---
+  duration_ms: 44.124
+  type: 'test'
+  ...
+# (node:20272) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v10: três tabelas aditivas, FK composta para o cadastro da P10.1, sem coluna pessoal, idempotente
+ok 44 - migração v10: três tabelas aditivas, FK composta para o cadastro da P10.1, sem coluna pessoal, idempotente
+  ---
+  duration_ms: 7977.4118
+  type: 'test'
+  ...
+# Subtest: publicação: oferta exige o cadastro da P10.1 (FK), CHECKs de partição, NO_CHANGE sem log, soma agregada = soma das escolas
+ok 45 - publicação: oferta exige o cadastro da P10.1 (FK), CHECKs de partição, NO_CHANGE sem log, soma agregada = soma das escolas
+  ---
+  duration_ms: 1170.9115
+  type: 'test'
+  ...
+# Subtest: consistência com o bit0 da P10.1: escola do cadastro com matrícula e sem oferta bloqueia a fatia inteira (nada parcial)
+ok 46 - consistência com o bit0 da P10.1: escola do cadastro com matrícula e sem oferta bloqueia a fatia inteira (nada parcial)
+  ---
+  duration_ms: 140.4809
+  type: 'test'
+  ...
+# Subtest: retificação: só o diferente entra no log; rollback exato; falha injetada sem rastro; cadastro P10.1 intocado
+ok 47 - retificação: só o diferente entra no log; rollback exato; falha injetada sem rastro; cadastro P10.1 intocado
+  ---
+  duration_ms: 346.5187
+  type: 'test'
+  ...
+# Subtest: dependência da P10.1: o cadastro não pode apagar escola que tem oferta (FK); republicar o cadastro igual é NO_CHANGE
+ok 48 - dependência da P10.1: o cadastro não pode apagar escola que tem oferta (FK); republicar o cadastro igual é NO_CHANGE
+  ---
+  duration_ms: 26.4354
+  type: 'test'
+  ...
+# Subtest: read models: município, UF, Brasil, escola; etapas somam o total; transversais separadas; razões e entradas inválidas
+ok 49 - read models: município, UF, Brasil, escola; etapas somam o total; transversais separadas; razões e entradas inválidas
+  ---
+  duration_ms: 354.3026
+  type: 'test'
+  ...
+# (node:2352) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v9: três tabelas aditivas, idempotente, sem tocar exec_entity nem colunas pessoais
+ok 50 - migração v9: três tabelas aditivas, idempotente, sem tocar exec_entity nem colunas pessoais
+  ---
+  duration_ms: 7904.5657
+  type: 'test'
+  ...
+# Subtest: publicação por UF × edição: contagens, identidade global, NO_CHANGE sem novo log, FK adiada, cobertura
+ok 51 - publicação por UF × edição: contagens, identidade global, NO_CHANGE sem novo log, FK adiada, cobertura
+  ---
+  duration_ms: 80.5436
+  type: 'test'
+  ...
+# Subtest: republicação com mudança: só o diferente entra no log; transições, lacunas e rollback exato; ausência não vira fechamento
+ok 52 - republicação com mudança: só o diferente entra no log; transições, lacunas e rollback exato; ausência não vira fechamento
+  ---
+  duration_ms: 1616.4343
+  type: 'test'
+  ...
+# Subtest: lacuna real: escola presente em 2023 e 2025 e ausente em 2024 → lacuna declarada, sem fechamento
+ok 53 - lacuna real: escola presente em 2023 e 2025 e ausente em 2024 → lacuna declarada, sem fechamento
+  ---
+  duration_ms: 136.1133
+  type: 'test'
+  ...
+# Subtest: read models territoriais: resumo por dependência, universo ≠ cadastro, filtros, busca, paginação limitada, vazios e entradas inválidas
+ok 54 - read models territoriais: resumo por dependência, universo ≠ cadastro, filtros, busca, paginação limitada, vazios e entradas inválidas
+  ---
+  duration_ms: 167.3936
+  type: 'test'
+  ...
+# Subtest: edições antigas: a nota de 2007–2010 (só escolas em atividade) aparece na cobertura
+ok 55 - edições antigas: a nota de 2007–2010 (só escolas em atividade) aparece na cobertura
+  ---
+  duration_ms: 35.7393
+  type: 'test'
+  ...
+# (node:9784) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migrações v11 e v12: tabelas aditivas, FK composta para o cadastro, sem coluna pessoal, idempotente
+ok 56 - migrações v11 e v12: tabelas aditivas, FK composta para o cadastro, sem coluna pessoal, idempotente
+  ---
+  duration_ms: 7594.2306
+  type: 'test'
+  ...
+# Subtest: infraestrutura: publicação por UF × edição, NO_CHANGE sem log, NULL ≠ "não", FK e CHECK do banco
+ok 57 - infraestrutura: publicação por UF × edição, NO_CHANGE sem log, NULL ≠ "não", FK e CHECK do banco
+  ---
+  duration_ms: 1345.505
+  type: 'test'
+  ...
+# Subtest: infraestrutura: retificação só registra o diferente; rollback exato; falha injetada sem rastro
+ok 58 - infraestrutura: retificação só registra o diferente; rollback exato; falha injetada sem rastro
+  ---
+  duration_ms: 488.4424
+  type: 'test'
+  ...
+# Subtest: read models de infraestrutura: percentual = sim ÷ (sim + não); sem resposta à parte; vigência; escola
+ok 59 - read models de infraestrutura: percentual = sim ÷ (sim + não); sem resposta à parte; vigência; escola
+  ---
+  duration_ms: 233.9727
+  type: 'test'
+  ...
+# Subtest: indicadores oficiais do INEP: escola e território publicados como vieram; "--" = NULL; leitura em escala real; rollback
+ok 60 - indicadores oficiais do INEP: escola e território publicados como vieram; "--" = NULL; leitura em escala real; rollback
+  ---
+  duration_ms: 88.0506
+  type: 'test'
+  ...
+# Subtest: docentes oficiais: total distinto não é a soma das redes; Brasil na fatia 0; leitura com notas
+ok 61 - docentes oficiais: total distinto não é a soma das redes; Brasil na fatia 0; leitura com notas
+  ---
+  duration_ms: 28.1322
+  type: 'test'
+  ...
+# (node:19120) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: sem migração: as tabelas do modelo D bastam (versões 1–3 inalteradas); 62 definições, idempotentes, sem tocar indicadores anteriores
+ok 62 - sem migração: as tabelas do modelo D bastam (versões 1–3 inalteradas); 62 definições, idempotentes, sem tocar indicadores anteriores
+  ---
+  duration_ms: 7612.0078
+  type: 'test'
+  ...
+# Subtest: FBSP: bootstrap, NO_CHANGE, republicação com log só das linhas alteradas, rollback exato, falha injetada e reconciliação que barra
+ok 63 - FBSP: bootstrap, NO_CHANGE, republicação com log só das linhas alteradas, rollback exato, falha injetada e reconciliação que barra
+  ---
+  duration_ms: 1487.0774
+  type: 'test'
+  ...
+# Subtest: ESTADIC: edições 2019 e 2023 coexistem em janelas disjuntas; recusa de RO é estado; republicar uma não toca a outra; rollback exato
+ok 64 - ESTADIC: edições 2019 e 2023 coexistem em janelas disjuntas; recusa de RO é estado; republicar uma não toca a outra; rollback exato
+  ---
+  duration_ms: 473.2317
+  type: 'test'
+  ...
+# Subtest: MUNIC: UF × edição; "-" sem linha; agregados da UF reconciliados; remoção no arquivo apaga a linha; rollback exato; 2019 e 2023 não se misturam
+ok 65 - MUNIC: UF × edição; "-" sem linha; agregados da UF reconciliados; remoção no arquivo apaga a linha; rollback exato; 2019 e 2023 não se misturam
+  ---
+  duration_ms: 213.7919
+  type: 'test'
+  ...
+# Subtest: SIAPE: mês a mês no Brasil; republicar um mês não toca os outros; rollback exato; nada além de contagens agregadas é gravado
+ok 66 - SIAPE: mês a mês no Brasil; republicar um mês não toca os outros; rollback exato; nada além de contagens agregadas é gravado
+  ---
+  duration_ms: 254.5023
+  type: 'test'
+  ...
+# Subtest: contratos de leitura: UF, município e Brasil — estados explícitos, fontes lado a lado, contexto estadual rotulado, no máximo 4 consultas por chamada
+ok 67 - contratos de leitura: UF, município e Brasil — estados explícitos, fontes lado a lado, contexto estadual rotulado, no máximo 4 consultas por chamada
+  ---
+  duration_ms: 104.418
+  type: 'test'
+  ...
+# Subtest: migrations: 52 tabelas (v2 = exec_seg_cov; v3 = trânsito; v4 = prisional; v5 = finanças; v6 = contratos e transferências; v9 = escolas; v10 = oferta; v11 = infraestrutura; v12 = indicadores e docentes oficiais), idempotentes
+ok 68 - migrations: 52 tabelas (v2 = exec_seg_cov; v3 = trânsito; v4 = prisional; v5 = finanças; v6 = contratos e transferências; v9 = escolas; v10 = oferta; v11 = infraestrutura; v12 = indicadores e docentes oficiais), idempotentes
+  ---
+  duration_ms: 7360.5762
+  type: 'test'
+  ...
+# Subtest: fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+ok 69 - fundação territorial: tipos, município ignorado, DF, Boa Esperança do Norte sem data inventada
+  ---
+  duration_ms: 18.2785
+  type: 'test'
+  ...
+# Subtest: restrições de integridade rejeitam dados inválidos
+ok 70 - restrições de integridade rejeitam dados inválidos
+  ---
+  duration_ms: 249.4975
+  type: 'test'
+  ...
+# Subtest: T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+ok 71 - T1 dez/2024 → jan/2025 no banco: série contígua, intervalo fecha em 202501
+  ---
+  duration_ms: 924.9452
+  type: 'test'
+  ...
+# Subtest: T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+ok 72 - T2/T3/T4 mudança, desaparecimento, reaparecimento e lacuna recusada
+  ---
+  duration_ms: 142.1473
+  type: 'test'
+  ...
+# Subtest: idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+ok 73 - idempotência: reenviar a mesma fatia é NO_CHANGE e não escreve
+  ---
+  duration_ms: 2.0615
+  type: 'test'
+  ...
+# Subtest: falha injetada no meio: nada parcial, run registrado como FALHO
+ok 74 - falha injetada no meio: nada parcial, run registrado como FALHO
+  ---
+  duration_ms: 27.3012
+  type: 'test'
+  ...
+# Subtest: rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+ok 75 - rollback exato: hash idêntico ao anterior; segunda reversão e reversão de run antigo são recusadas
+  ---
+  duration_ms: 50.1758
+  type: 'test'
+  ...
+# Subtest: T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+ok 76 - T5 correção retroativa (REPLAY_FROM) em transação é igual a reconstruir tudo do zero; falha no replay não deixa estado parcial
+  ---
+  duration_ms: 487.2175
+  type: 'test'
+  ...
+# Subtest: publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+ok 77 - publicações de UFs diferentes não se bloqueiam; a mesma UF espera pelo lock
+  ---
+  duration_ms: 905.5418
+  type: 'test'
+  ...
+# Subtest: T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+ok 78 - T6 duas versões metodológicas do mesmo indicador, sem sobreposição, com lacuna declarada
+  ---
+  duration_ms: 22.8266
+  type: 'test'
+  ...
+# Subtest: T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+ok 79 - T7 preliminar substituída por definitiva; rollback restaura a preliminar e o exec_ind_latest
+  ---
+  duration_ms: 22.9432
+  type: 'test'
+  ...
+# Subtest: derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+ok 80 - derivados na mesma transação: falha no derivado não deixa indicador nem fato; rollback remove ambos
+  ---
+  duration_ms: 86.3998
+  type: 'test'
+  ...
+# (node:14752) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: contratos do PNCP: fatia UF × ano com fornecedor PJ, indicadores, ausência ≠ zero; NO_CHANGE; contrato some → some; rollback exato; PF nunca persistida; sem classificação barra
+ok 81 - contratos do PNCP: fatia UF × ano com fornecedor PJ, indicadores, ausência ≠ zero; NO_CHANGE; contrato some → some; rollback exato; PF nunca persistida; sem classificação barra
+  ---
+  duration_ms: 7389.2934
+  type: 'test'
+  ...
+# Subtest: transferências: indicadores só para convênios assinados com ente identificado; origem de financiamento não cria nem altera fato de despesa
+ok 82 - transferências: indicadores só para convênios assinados com ente identificado; origem de financiamento não cria nem altera fato de despesa
+  ---
+  duration_ms: 45.7226
+  type: 'test'
+  ...
+# Subtest: TCE-RS: exercício pela data da operação (remessa tardia), só a prefeitura "PM DE", restos a pagar pagos à parte, natureza pela rubrica; câmara e nome sem município são relatados; fatia estadual não toca a federal
+ok 83 - TCE-RS: exercício pela data da operação (remessa tardia), só a prefeitura "PM DE", restos a pagar pagos à parte, natureza pela rubrica; câmara e nome sem município são relatados; fatia estadual não toca a federal
+  ---
+  duration_ms: 559.7011
+  type: 'test'
+  ...
+# (node:588) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migrações v5 e v6 aplicam, são idempotentes e as definições financeiras entram sem tocar os demais domínios
+ok 84 - migrações v5 e v6 aplicam, são idempotentes e as definições financeiras entram sem tocar os demais domínios
+  ---
+  duration_ms: 6587.3199
+  type: 'test'
+  ...
+# Subtest: DCA: publicação por UF × exercício com fatos exatos, cobertura, indicadores e verificação; NO_CHANGE; republicação com log; rollback exato; falha injetada
+ok 85 - DCA: publicação por UF × exercício com fatos exatos, cobertura, indicadores e verificação; NO_CHANGE; republicação com log; rollback exato; falha injetada
+  ---
+  duration_ms: 1990.8174
+  type: 'test'
+  ...
+# Subtest: reconciliação barra: indicador que não bate com o fato da função 06 cancela a publicação inteira
+ok 86 - reconciliação barra: indicador que não bate com o fato da função 06 cancela a publicação inteira
+  ---
+  duration_ms: 1238.3993
+  type: 'test'
+  ...
+# Subtest: fatias disjuntas: RREO não é apagado por republicar a DCA da mesma UF e exercício; União isolada das UFs; acumulado do RREO não é somado
+ok 87 - fatias disjuntas: RREO não é apagado por republicar a DCA da mesma UF e exercício; União isolada das UFs; acumulado do RREO não é somado
+  ---
+  duration_ms: 600.0075
+  type: 'test'
+  ...
+# Subtest: leitura: valor exato em centavos, estágio, cobertura, revisão, limitações; município com contexto ESTADUAL rotulado; variação nominal; per capita só com população do ano
+ok 88 - leitura: valor exato em centavos, estágio, cobertura, revisão, limitações; município com contexto ESTADUAL rotulado; variação nominal; per capita só com população do ano
+  ---
+  duration_ms: 63.3915
+  type: 'test'
+  ...
+# Subtest: federal: órgãos, execução mensal (fluxo), dotação anual e modalidade; leitura separa funcional × institucional e não funde totais
+ok 89 - federal: órgãos, execução mensal (fluxo), dotação anual e modalidade; leitura separa funcional × institucional e não funde totais
+  ---
+  duration_ms: 378.5467
+  type: 'test'
+  ...
+# Subtest: registro de famílias: todo id aponta indicador existente, com unidade coerente e sem id novo (P9.1/P9.6 não renumerados)
+ok 90 - registro de famílias: todo id aponta indicador existente, com unidade coerente e sem id novo (P9.1/P9.6 não renumerados)
+  ---
+  duration_ms: 5205.1109
+  type: 'test'
+  ...
+# Subtest: Brasil: soma só partições do mesmo indicador; Estadual e PF/PRF nunca se somam; parcial não é "completo"; fonte estadual não tem total nacional
+ok 91 - Brasil: soma só partições do mesmo indicador; Estadual e PF/PRF nunca se somam; parcial não é "completo"; fonte estadual não tem total nacional
+  ---
+  duration_ms: 16.089
+  type: 'test'
+  ...
+# Subtest: UF e município: fonte da UF certa, ausência não vira zero, mês sem linha continua sem linha, município sem fonte vem vazio
+ok 92 - UF e município: fonte da UF certa, ausência não vira zero, mês sem linha continua sem linha, município sem fonte vem vazio
+  ---
+  duration_ms: 13.2234
+  type: 'test'
+  ...
+# Subtest: privacidade e escopo: nenhuma tabela/coluna individual, nem território de organização, e o catálogo não cria entidades novas
+ok 93 - privacidade e escopo: nenhuma tabela/coluna individual, nem território de organização, e o catálogo não cria entidades novas
+  ---
+  duration_ms: 21.6427
+  type: 'test'
+  ...
+# (node:11884) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v4: seis tabelas; idempotente; definições (indicadores + 71 medidas) sem tocar outros domínios
+ok 94 - migração v4: seis tabelas; idempotente; definições (indicadores + 71 medidas) sem tocar outros domínios
+  ---
+  duration_ms: 6299.0899
+  type: 'test'
+  ...
+# Subtest: publicação por UF × ciclo: invariantes, NO_CHANGE, republicação com log, rollback exato, falha injetada, reconciliação que barra, Brasil = Σ UFs; 2 ciclos independentes
+ok 95 - publicação por UF × ciclo: invariantes, NO_CHANGE, republicação com log, rollback exato, falha injetada, reconciliação que barra, Brasil = Σ UFs; 2 ciclos independentes
+  ---
+  duration_ms: 4013.3303
+  type: 'test'
+  ...
+# Subtest: contratos de leitura: UF (série, cobertura sem universo esperado), município (unidades, ocupação por unidade, histórico) e Brasil; no máximo 4 consultas
+ok 96 - contratos de leitura: UF (série, cobertura sem universo esperado), município (unidades, ocupação por unidade, histórico) e Brasil; no máximo 4 consultas
+  ---
+  duration_ms: 43.3465
+  type: 'test'
+  ...
+# Subtest: benchmark de fonte estadual: só vale com população do mesmo ano, 12 meses, cobertura ≥ 80%, sem células suprimidas e grupo mínimo; cada falha tem motivo próprio
+ok 97 - benchmark de fonte estadual: só vale com população do mesmo ano, 12 meses, cobertura ≥ 80%, sem células suprimidas e grupo mínimo; cada falha tem motivo próprio
+  ---
+  duration_ms: 7346.9095
+  type: 'test'
+  ...
+# Subtest: benchmark de taxa publicada: exclui pequeno número e suprimidos, respeita faixa de porte e exige grupo mínimo
+ok 98 - benchmark de taxa publicada: exclui pequeno número e suprimidos, respeita faixa de porte e exige grupo mínimo
+  ---
+  duration_ms: 74.694
+  type: 'test'
+  ...
+# Subtest: leituras de apoio: população só dos anos oficiais, índice de explorável, série bruta e contratos sem objeto nem pessoa física
+ok 99 - leituras de apoio: população só dos anos oficiais, índice de explorável, série bruta e contratos sem objeto nem pessoa física
+  ---
+  duration_ms: 221.1289
+  type: 'test'
+  ...
+# Subtest: Vitória (ES, município com fonte estadual municipalizada): 4 indicadores-chave, comparação válida, orçamento de SQL e payload enxutos
+ok 100 - Vitória (ES, município com fonte estadual municipalizada): 4 indicadores-chave, comparação válida, orçamento de SQL e payload enxutos
+  ---
+  duration_ms: 1600.5986
+  type: 'test'
+  ...
+# Subtest: Alto Rio Novo (ES, 9 mil habitantes): sem comparação de taxa por instabilidade e sem guarda municipal declarada
+ok 101 - Alto Rio Novo (ES, 9 mil habitantes): sem comparação de taxa por instabilidade e sem guarda municipal declarada
+  ---
+  duration_ms: 894.6001
+  type: 'test'
+  ...
+# Subtest: Salvador (BA) e Curitiba (PR): sem fonte P9.6 publicada, sem "roubos" no herói e sem inventar dado municipal
+ok 102 - Salvador (BA) e Curitiba (PR): sem fonte P9.6 publicada, sem "roubos" no herói e sem inventar dado municipal
+  ---
+  duration_ms: 2442.1229
+  type: 'test'
+  ...
+# Subtest: Estado (ES): usa fontes do próprio estado; São Paulo: células suprimidas não viram zero (supressão aparece nas opções de violência sexual)
+ok 103 - Estado (ES): usa fontes do próprio estado; São Paulo: células suprimidas não viram zero (supressão aparece nas opções de violência sexual)
+  ---
+  duration_ms: 3631.1816
+  type: 'test'
+  ...
+# (node:18144) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+ok 104 - migração v2: exec_seg_cov criada, idempotente, sem dados pessoais; 62 definições de Segurança no domínio 3
+  ---
+  duration_ms: 6274.5579
+  type: 'test'
+  ...
+# Subtest: SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+ok 105 - SIM: primeira carga (bootstrap), idempotência, substituição por arquivo novo com change log, rollback exato
+  ---
+  duration_ms: 210.4005
+  type: 'test'
+  ...
+# Subtest: SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+ok 106 - SIM: falha após aplicar não deixa nada; total municipal ≠ UF barra a publicação
+  ---
+  duration_ms: 524.2597
+  type: 'test'
+  ...
+# Subtest: VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+ok 107 - VDE: publica valores e cobertura; arquivo reescrito pela fonte substitui a fatia sem duplicar; rollback exato
+  ---
+  duration_ms: 305.9374
+  type: 'test'
+  ...
+# Subtest: VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+ok 108 - VDE: falha após aplicar, evento desconhecido e perda de total por município são barrados sem efeito
+  ---
+  duration_ms: 248.0764
+  type: 'test'
+  ...
+# Subtest: contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+ok 109 - contrato de leitura: poucas consultas, cobertura explícita, residência/ocorrência separadas, zero reportado ≠ sem relato
+  ---
+  duration_ms: 187.6899
+  type: 'test'
+  ...
+# (node:8400) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migração v3: três tabelas tipadas sem dado pessoal; idempotente; 122 definições de trânsito
+ok 110 - migração v3: três tabelas tipadas sem dado pessoal; idempotente; 122 definições de trânsito
+  ---
+  duration_ms: 6207.2753
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: bootstrap, NO_CHANGE, republicação com log, rollback exato, falha injetada e reconciliação que barra
+ok 111 - SIM trânsito: bootstrap, NO_CHANGE, republicação com log, rollback exato, falha injetada e reconciliação que barra
+  ---
+  duration_ms: 982.3586
+  type: 'test'
+  ...
+# Subtest: frota: tabela larga por município × mês publicada como instantâneo; troca de arquivo substitui; rollback exato; total divergente barra
+ok 112 - frota: tabela larga por município × mês publicada como instantâneo; troca de arquivo substitui; rollback exato; total divergente barra
+  ---
+  duration_ms: 1213.6178
+  type: 'test'
+  ...
+# Subtest: RENAEST: fatia UF × ano; conteúdo igual com arquivo novo = NO_CHANGE; revisão de mês antigo troca só aquela fatia; cobertura persistida; rollback exato
+ok 113 - RENAEST: fatia UF × ano; conteúdo igual com arquivo novo = NO_CHANGE; revisão de mês antigo troca só aquela fatia; cobertura persistida; rollback exato
+  ---
+  duration_ms: 1019.1883
+  type: 'test'
+  ...
+# Subtest: PRF: mensal (UF) e anual (município) coerentes; reconciliação mensal × anual; republicação e rollback exatos
+ok 114 - PRF: mensal (UF) e anual (município) coerentes; reconciliação mensal × anual; republicação e rollback exatos
+  ---
+  duration_ms: 637.4738
+  type: 'test'
+  ...
+# Subtest: infrações: tabela por UF de jurisdição × mês × código; soma confere com o indicador; republicação substitui a fatia
+ok 115 - infrações: tabela por UF de jurisdição × mês × código; soma confere com o indicador; republicação substitui a fatia
+  ---
+  duration_ms: 210.5399
+  type: 'test'
+  ...
+# Subtest: contratos de leitura: seções separadas por fonte, poucas consultas, ausência explicada (RENAEST nunca vira zero; SIM/PRF só com fatia publicada)
+ok 116 - contratos de leitura: seções separadas por fonte, poucas consultas, ausência explicada (RENAEST nunca vira zero; SIM/PRF só com fatia publicada)
+  ---
+  duration_ms: 235.031
+  type: 'test'
+  ...
+# (node:9524) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: KPIs, tabelas e distribuições da interface reconciliam com o SQLite publicado
+ok 117 - KPIs, tabelas e distribuições da interface reconciliam com o SQLite publicado # SKIP
+  ---
+  duration_ms: 0.7154
+  type: 'test'
+  ...
+# Subtest: Altineu Côrtes: PRL é relatoria; REQ, PEC e EMP têm papéis distintos
+ok 118 - Altineu Côrtes: PRL é relatoria; REQ, PEC e EMP têm papéis distintos
+  ---
+  duration_ms: 1.8396
+  type: 'test'
+  ...
+# Subtest: comissões e órgãos nunca viram parlamentares/autores legislativos
+ok 119 - comissões e órgãos nunca viram parlamentares/autores legislativos
+  ---
+  duration_ms: 0.5092
+  type: 'test'
+  ...
+# Subtest: coautor/apoio não é tratado como proponente principal
+ok 120 - coautor/apoio não é tratado como proponente principal
+  ---
+  duration_ms: 0.1356
+  type: 'test'
+  ...
+# Subtest: institucional, procedimental e ambíguo ficam fora dos rankings de proposições
+ok 121 - institucional, procedimental e ambíguo ficam fora dos rankings de proposições
+  ---
+  duration_ms: 0.2116
+  type: 'test'
+  ...
+# Subtest: relatoria e peças do relator são D, não "emenda apresentada" nem "proposição"
+ok 122 - relatoria e peças do relator são D, não "emenda apresentada" nem "proposição"
+  ---
+  duration_ms: 0.183
+  type: 'test'
+  ...
+# Subtest: Senado: senador autor de PL/REQ, Câmara e Presidência como institucional, comissão como comissão
+ok 123 - Senado: senador autor de PL/REQ, Câmara e Presidência como institucional, comissão como comissão
+  ---
+  duration_ms: 0.3184
+  type: 'test'
+  ...
+# (node:1280) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a distribuição da Casa reproduz exatamente a matriz do painel de rankings
+ok 124 - a distribuição da Casa reproduz exatamente a matriz do painel de rankings
+  ---
+  duration_ms: 298.6713
+  type: 'test'
+  ...
+# Subtest: percentil é exato e empates não contam como abaixo
+ok 125 - percentil é exato e empates não contam como abaixo
+  ---
+  duration_ms: 0.4881
+  type: 'test'
+  ...
+# Subtest: as UFs são agrupadas dentro da Casa e nunca somadas entre Casas
+ok 126 - as UFs são agrupadas dentro da Casa e nunca somadas entre Casas
+  ---
+  duration_ms: 179.709
+  type: 'test'
+  ...
+# Subtest: coroplético inclui as 27 UFs e respeita o piso de amostra por estado
+ok 127 - coroplético inclui as 27 UFs e respeita o piso de amostra por estado
+  ---
+  duration_ms: 130.8786
+  type: 'test'
+  ...
+# Subtest: escala encurta sem repetir tom quando há poucos valores distintos
+ok 128 - escala encurta sem repetir tom quando há poucos valores distintos
+  ---
+  duration_ms: 121.5967
+  type: 'test'
+  ...
+# Subtest: bancadas são agrupadas dentro da Casa, simétrico a UF, e nunca somadas entre Casas
+ok 129 - bancadas são agrupadas dentro da Casa, simétrico a UF, e nunca somadas entre Casas
+  ---
+  duration_ms: 165.3868
+  type: 'test'
+  ...
+# Subtest: HHI vale 1 com bancada de partido único e discrimina 5+1+1+1 de 2+2+2+2
+ok 130 - HHI vale 1 com bancada de partido único e discrimina 5+1+1+1 de 2+2+2+2
+  ---
+  duration_ms: 317.8238
+  type: 'test'
+  ...
+# Subtest: piso de amostra da bancada é por partido, não o piso maior da Casa
+ok 131 - piso de amostra da bancada é por partido, não o piso maior da Casa
+  ---
+  duration_ms: 65.0926
+  type: 'test'
+  ...
+# Subtest: desligar patrimônio não altera as outras colunas
+ok 132 - desligar patrimônio não altera as outras colunas
+  ---
+  duration_ms: 66.4842
+  type: 'test'
+  ...
+# (node:7940) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: snapshot publica somente atribuição confirmada e deriva desatualização
+ok 133 - snapshot publica somente atribuição confirmada e deriva desatualização
+  ---
+  duration_ms: 61.4172
+  type: 'test'
+  ...
+# Subtest: snapshot rejeita atribuição ambígua e preserva atomicidade
+ok 134 - snapshot rejeita atribuição ambígua e preserva atomicidade
+  ---
+  duration_ms: 57.0947
+  type: 'test'
+  ...
+# Subtest: verba mensal preserva limite proporcional, nulo e lote anterior
+ok 135 - verba mensal preserva limite proporcional, nulo e lote anterior
+  ---
+  duration_ms: 63.1661
+  type: 'test'
+  ...
+# (node:16544) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: folha agrega gabinete por competência e mantém rubricas separadas
+ok 136 - folha agrega gabinete por competência e mantém rubricas separadas
+  ---
+  duration_ms: 4.0145
+  type: 'test'
+  ...
+# (node:9804) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: normaliza pauta deliberativa da Câmara com o escopo do evento
+ok 137 - normaliza pauta deliberativa da Câmara com o escopo do evento
+  ---
+  duration_ms: 1.6974
+  type: 'test'
+  ...
+# (node:11764) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: monthWindows divide o intervalo em meses, respeitando o limite de 3 meses da API
+ok 138 - monthWindows divide o intervalo em meses, respeitando o limite de 3 meses da API
+  ---
+  duration_ms: 11.5153
+  type: 'test'
+  ...
+# Subtest: coletor por apresentação: insere o que falta, é idempotente e reconcilia COMPLETE
+ok 139 - coletor por apresentação: insere o que falta, é idempotente e reconcilia COMPLETE # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.2225
+  type: 'test'
+  ...
+# (node:9856) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: parser da página contratual distingue aditivos, documentos e empenhos
+ok 140 - parser da página contratual distingue aditivos, documentos e empenhos
+  ---
+  duration_ms: 6.6877
+  type: 'test'
+  ...
+# (node:2352) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: parser financeiro mantém fase e sinal publicados
+ok 141 - parser financeiro mantém fase e sinal publicados
+  ---
+  duration_ms: 9.8256
+  type: 'test'
+  ...
+# (node:1124) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: publica os cinco conjuntos da Câmara e é idempotente por chave natural
+ok 142 - publica os cinco conjuntos da Câmara e é idempotente por chave natural
+  ---
+  duration_ms: 219.1054
+  type: 'test'
+  ...
+# Subtest: CLI real exibe ajuda, encerra com zero e não inicia coleta
+ok 143 - CLI real exibe ajuda, encerra com zero e não inicia coleta
+  ---
+  duration_ms: 996.1525
+  type: 'test'
+  ...
+# Subtest: CLI rejeita comando desconhecido com stderr e exit code 2
+ok 144 - CLI rejeita comando desconhecido com stderr e exit code 2
+  ---
+  duration_ms: 1285.9618
+  type: 'test'
+  ...
+# Subtest: CLI não esconde argumento inválido acompanhado de --help
+ok 145 - CLI não esconde argumento inválido acompanhado de --help
+  ---
+  duration_ms: 1076.94
+  type: 'test'
+  ...
+# (node:13476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: snapshot completo encerra pessoa que desapareceu
+ok 146 - snapshot completo encerra pessoa que desapareceu
+  ---
+  duration_ms: 2.7493
+  type: 'test'
+  ...
+# Subtest: snapshot parcial não encerra membros antigos
+ok 147 - snapshot parcial não encerra membros antigos
+  ---
+  duration_ms: 0.9987
+  type: 'test'
+  ...
+# Subtest: mudança de função encerra a função anterior e mantém a nova
+ok 148 - mudança de função encerra a função anterior e mantém a nova
+  ---
+  duration_ms: 0.2928
+  type: 'test'
+  ...
+# Subtest: dois papéis publicados permanecem ativos
+ok 149 - dois papéis publicados permanecem ativos
+  ---
+  duration_ms: 0.1528
+  type: 'test'
+  ...
+# (node:15132) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:15132) ExperimentalWarning: The MockTimers API is an experimental feature and might change at any time
+# Subtest: comparação vazia não fabrica média zero e valida recorte
+ok 150 - comparação vazia não fabrica média zero e valida recorte
+  ---
+  duration_ms: 193.4399
+  type: 'test'
+  ...
+# Subtest: comparação nominal exige de duas a quatro pessoas distintas
+ok 151 - comparação nominal exige de duas a quatro pessoas distintas
+  ---
+  duration_ms: 127.3125
+  type: 'test'
+  ...
+# Subtest: concordância exclui ausência e não voto do denominador
+ok 152 - concordância exclui ausência e não voto do denominador
+  ---
+  duration_ms: 1.5873
+  type: 'test'
+  ...
+# Subtest: abreviações de ausência do Senado ficam fora do voto direcional
+ok 153 - abreviações de ausência do Senado ficam fora do voto direcional
+  ---
+  duration_ms: 0.5492
+  type: 'test'
+  ...
+# Subtest: obstrução é posição na Câmara e não no Senado
+ok 154 - obstrução é posição na Câmara e não no Senado
+  ---
+  duration_ms: 0.2695
+  type: 'test'
+  ...
+# Subtest: votos sem direção observável não sustentam concordância
+ok 155 - votos sem direção observável não sustentam concordância
+  ---
+  duration_ms: 0.3037
+  type: 'test'
+  ...
+# Subtest: comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez
+ok 156 - comparação de custo soma parcelas identificadas e agrega categorias líquidas uma vez
+  ---
+  duration_ms: 222.3507
+  type: 'test'
+  ...
+# (node:20384) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: hub unificado soma parlamentar+institucional sem deduplicar por valor e rankeia por dimensão
+ok 157 - hub unificado soma parlamentar+institucional sem deduplicar por valor e rankeia por dimensão
+  ---
+  duration_ms: 156.7983
+  type: 'test'
+  ...
+# Subtest: mix de categorias unifica parlamentar e institucional sem fundir Casas, reconciliando top+outros+sem-classificacao com o total
+ok 158 - mix de categorias unifica parlamentar e institucional sem fundir Casas, reconciliando top+outros+sem-classificacao com o total
+  ---
+  duration_ms: 134.0727
+  type: 'test'
+  ...
+# Subtest: filtro por Casa restringe totais e ranking à Casa escolhida
+ok 159 - filtro por Casa restringe totais e ranking à Casa escolhida
+  ---
+  duration_ms: 146.2688
+  type: 'test'
+  ...
+# Subtest: catálogo: códigos e colunas oficiais únicos; 2019 separa famílias redefinidas em colunas distintas
+ok 160 - catálogo: códigos e colunas oficiais únicos; 2019 separa famílias redefinidas em colunas distintas
+  ---
+  duration_ms: 1.9946
+  type: 'test'
+  ...
+# Subtest: fora da vigência da variável o valor do arquivo é descartado (NULL), mesmo que venha 0 ou 1: o ZIP histórico preenche colunas futuras
+ok 161 - fora da vigência da variável o valor do arquivo é descartado (NULL), mesmo que venha 0 ou 1: o ZIP histórico preenche colunas futuras
+  ---
+  duration_ms: 2.8759
+  type: 'test'
+  ...
+# Subtest: branco = não informado (NULL), 0 = "não" declarado; escola sem nenhuma resposta aplicável é contada como sem resposta, não como "sem infraestrutura"
+ok 162 - branco = não informado (NULL), 0 = "não" declarado; escola sem nenhuma resposta aplicável é contada como sem resposta, não como "sem infraestrutura"
+  ---
+  duration_ms: 1.9802
+  type: 'test'
+  ...
+# Subtest: códigos oficiais especiais: 9 = não informado e 88888 = valor extremo viram NULL, contados à parte e nunca somados; 9 em outra variável é erro
+ok 163 - códigos oficiais especiais: 9 = não informado e 88888 = valor extremo viram NULL, contados à parte e nunca somados; 9 em outra variável é erro
+  ---
+  duration_ms: 1.273
+  type: 'test'
+  ...
+# Subtest: universo = escola em atividade com identidade no cadastro; demais situações não geram linha e não são rejeição
+ok 164 - universo = escola em atividade com identidade no cadastro; demais situações não geram linha e não são rejeição
+  ---
+  duration_ms: 0.993
+  type: 'test'
+  ...
+# Subtest: rejeições classificadas: código, duplicado, fora do cadastro (ativa), valor e faixa
+ok 165 - rejeições classificadas: código, duplicado, fora do cadastro (ativa), valor e faixa
+  ---
+  duration_ms: 1.6853
+  type: 'test'
+  ...
+# Subtest: agregados por dependência × localização: sim e não por variável; soma e nº de escolas com valor para quantidades
+ok 166 - agregados por dependência × localização: sim e não por variável; soma e nº de escolas com valor para quantidades
+  ---
+  duration_ms: 1.2316
+  type: 'test'
+  ...
+# Subtest: impressão da fatia muda com qualquer célula, com o parser e com os arquivos de origem
+ok 167 - impressão da fatia muda com qualquer célula, com o parser e com os arquivos de origem
+  ---
+  duration_ms: 2.5865
+  type: 'test'
+  ...
+# Subtest: catálogo: toda coluna gravada tem medida; partições e transversais declaradas; derivadas sem coluna
+ok 168 - catálogo: toda coluna gravada tem medida; partições e transversais declaradas; derivadas sem coluna
+  ---
+  duration_ms: 3.8581
+  type: 'test'
+  ...
+# Subtest: linha válida vira oferta; o resto da partição (profissional não integrada) nunca é negativo; universo = matrícula ou turma > 0
+ok 169 - linha válida vira oferta; o resto da partição (profissional não integrada) nunca é negativo; universo = matrícula ou turma > 0
+  ---
+  duration_ms: 3.4295
+  type: 'test'
+  ...
+# Subtest: rejeições classificadas: código, duplicado, fora do cadastro, valor, partição, especial > básica, turno, resto negativo
+ok 170 - rejeições classificadas: código, duplicado, fora do cadastro, valor, partição, especial > básica, turno, resto negativo
+  ---
+  duration_ms: 3.3923
+  type: 'test'
+  ...
+# Subtest: disponibilidade por edição: turno antes de 2014 e tempo integral de turmas antes de 2023 viram NULL (nunca zero); depois ficam
+ok 171 - disponibilidade por edição: turno antes de 2014 e tempo integral de turmas antes de 2023 viram NULL (nunca zero); depois ficam
+  ---
+  duration_ms: 0.543
+  type: 'test'
+  ...
+# Subtest: EJA de turmas pelo total: fundamental + médio pode ser menor que o total em 2025 sem rejeitar (turma de EJA sem etapa classificada)
+ok 172 - EJA de turmas pelo total: fundamental + médio pode ser menor que o total em 2025 sem rejeitar (turma de EJA sem etapa classificada)
+  ---
+  duration_ms: 0.376
+  type: 'test'
+  ...
+# Subtest: agregados por UF × dependência × localização: soma, escolas, NULL mantido quando todas as parcelas são NULL
+ok 173 - agregados por UF × dependência × localização: soma, escolas, NULL mantido quando todas as parcelas são NULL
+  ---
+  duration_ms: 1.4157
+  type: 'test'
+  ...
+# Subtest: impressão da fatia estável com outra ordem e sensível a valor, arquivo e versão
+ok 174 - impressão da fatia estável com outra ordem e sensível a valor, arquivo e versão
+  ---
+  duration_ms: 4.8029
+  type: 'test'
+  ...
+# Subtest: competência e layout: referência de maio; 2025+ em tabelas
+ok 175 - competência e layout: referência de maio; 2025+ em tabelas
+  ---
+  duration_ms: 3.0854
+  type: 'test'
+  ...
+# Subtest: flags: com matrícula = QT_MAT_BAS > 0; recorte = em atividade E com matrícula; paralisada/extinta nunca entram
+ok 176 - flags: com matrícula = QT_MAT_BAS > 0; recorte = em atividade E com matrícula; paralisada/extinta nunca entram
+  ---
+  duration_ms: 2.5312
+  type: 'test'
+  ...
+# Subtest: rejeições: código inválido/duplicado, município inexistente, UF incompatível, dependência/situação/localização inválidas; cadastro histórico NÃO é descartado por sit
+ok 177 - rejeições: código inválido/duplicado, município inexistente, UF incompatível, dependência/situação/localização inválidas; cadastro histórico NÃO é descartado por sit
+  ---
+  duration_ms: 1.3475
+  type: 'test'
+  ...
+# Subtest: localização vazia vira NULL; nome vazio é marcado e recebe rótulo neutro; município e UF vêm da entidade
+ok 178 - localização vazia vira NULL; nome vazio é marcado e recebe rótulo neutro; município e UF vêm da entidade
+  ---
+  duration_ms: 1.5624
+  type: 'test'
+  ...
+# Subtest: impressão da fatia: estável com ordem diferente e muda com qualquer atributo, versão ou arquivo
+ok 179 - impressão da fatia: estável com ordem diferente e muda com qualquer atributo, versão ou arquivo
+  ---
+  duration_ms: 1.2512
+  type: 'test'
+  ...
+# Subtest: transições: nome, município, dependência, localização e situação entre edições consecutivas; sem mudança → nenhuma
+ok 180 - transições: nome, município, dependência, localização e situação entre edições consecutivas; sem mudança → nenhuma
+  ---
+  duration_ms: 1.1766
+  type: 'test'
+  ...
+# Subtest: lacunas: edição publicada sem a escola é AUSENTE_NA_EDICAO, nunca fechamento; antes da 1ª e depois da última não é lacuna
+ok 181 - lacunas: edição publicada sem a escola é AUSENTE_NA_EDICAO, nunca fechamento; antes da 1ª e depois da última não é lacuna
+  ---
+  duration_ms: 1.2121
+  type: 'test'
+  ...
+# Subtest: links do INEP: lê a página (a URL de 2025 tem underscore final) e ignora lixo
+ok 182 - links do INEP: lê a página (a URL de 2025 tem underscore final) e ignora lixo
+  ---
+  duration_ms: 0.5051
+  type: 'test'
+  ...
+# (node:19076) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SSD ausente ou trocado: nenhuma coleta de efetivos baixa, grava ou consulta o banco (VolumeError retomável)
+ok 183 - SSD ausente ou trocado: nenhuma coleta de efetivos baixa, grava ou consulta o banco (VolumeError retomável)
+  ---
+  duration_ms: 43.4741
+  type: 'test'
+  ...
+# Subtest: extração: arquivo corrompido (PDF/XLSX inválido) falha com a causa e não deixa cache de staging
+ok 184 - extração: arquivo corrompido (PDF/XLSX inválido) falha com a causa e não deixa cache de staging
+  ---
+  duration_ms: 3984.7471
+  type: 'test'
+  ...
+# Subtest: fontes: três arquivos oficiais e as duas edições IBGE têm URL oficial, caminho no RAW próprio e assinatura de arquivo conferida
+ok 185 - fontes: três arquivos oficiais e as duas edições IBGE têm URL oficial, caminho no RAW próprio e assinatura de arquivo conferida
+  ---
+  duration_ms: 0.9638
+  type: 'test'
+  ...
+# Subtest: definições: ids únicos e estáveis, sem indicador que some corporações, sem taxa sem corporação, textos de método preenchidos
+ok 186 - definições: ids únicos e estáveis, sem indicador que some corporações, sem taxa sem corporação, textos de método preenchidos
+  ---
+  duration_ms: 3.0307
+  type: 'test'
+  ...
+# Subtest: parseAnswer: vocabulário das duas edições; "-" é pergunta não aplicável; valor desconhecido não é adivinhado
+ok 187 - parseAnswer: vocabulário das duas edições; "-" é pergunta não aplicável; valor desconhecido não é adivinhado
+  ---
+  duration_ms: 1.7653
+  type: 'test'
+  ...
+# Subtest: statusOf: valor nulo nunca vira zero; inexistente vale zero por definição
+ok 188 - statusOf: valor nulo nunca vira zero; inexistente vale zero por definição
+  ---
+  duration_ms: 0.3106
+  type: 'test'
+  ...
+# Subtest: FBSP: reconciliações (41), controles nacionais e UFs, marcas de SP/RJ/CE/AC e sem linhas por UF para PF/PRF
+ok 189 - FBSP: reconciliações (41), controles nacionais e UFs, marcas de SP/RJ/CE/AC e sem linhas por UF para PF/PRF
+  ---
+  duration_ms: 6.7093
+  type: 'test'
+  ...
+# Subtest: FBSP: layout alterado e inconsistências barram a carga (célula vazia inesperada, existente ≠ Tabela 2, % impressa, Σ UFs, linha ausente)
+ok 190 - FBSP: layout alterado e inconsistências barram a carga (célula vazia inesperada, existente ≠ Tabela 2, % impressa, Σ UFs, linha ausente)
+  ---
+  duration_ms: 18.1615
+  type: 'test'
+  ...
+# Subtest: FBSP: corporações — cada uma com data-base própria e nota; nenhuma definida como soma de outras
+ok 191 - FBSP: corporações — cada uma com data-base própria e nota; nenhuma definida como soma de outras
+  ---
+  duration_ms: 0.3142
+  type: 'test'
+  ...
+# Subtest: ESTADIC: recusa e "não informou" são estados (nunca zero); soma H+M; respondentes; edições 2019 e 2023 em janelas disjuntas
+ok 192 - ESTADIC: recusa e "não informou" são estados (nunca zero); soma H+M; respondentes; edições 2019 e 2023 em janelas disjuntas
+  ---
+  duration_ms: 3.9248
+  type: 'test'
+  ...
+# Subtest: ESTADIC: dicionário alterado, edição trocada, H+M≠total, valor desconhecido e UF repetida barram a carga
+ok 193 - ESTADIC: dicionário alterado, edição trocada, H+M≠total, valor desconhecido e UF repetida barram a carga
+  ---
+  duration_ms: 2.8157
+  type: 'test'
+  ...
+# Subtest: MUNIC: existência, efetivo (Σ H+M), "-" sem linha, não informou como estado, zero declarado marcado, agregados da UF
+ok 194 - MUNIC: existência, efetivo (Σ H+M), "-" sem linha, não informou como estado, zero declarado marcado, agregados da UF
+  ---
+  duration_ms: 2.3541
+  type: 'test'
+  ...
+# Subtest: MUNIC: município fora da UF é ignorado; código sem entidade vira "unmatched" (não é inventado); controles ES (Vitória 427, Vila Velha 286, Alto Rio Novo sem guarda)
+ok 195 - MUNIC: município fora da UF é ignorado; código sem entidade vira "unmatched" (não é inventado); controles ES (Vitória 427, Vila Velha 286, Alto Rio Novo sem guarda)
+  ---
+  duration_ms: 1.1952
+  type: 'test'
+  ...
+# Subtest: MUNIC: edição 2019 — "Recusa" e "Não soube informar", sem pergunta "nenhuma das citadas", efetivo com data-base incerta
+ok 196 - MUNIC: edição 2019 — "Recusa" e "Não soube informar", sem pergunta "nenhuma das citadas", efetivo com data-base incerta
+  ---
+  duration_ms: 0.4995
+  type: 'test'
+  ...
+# Subtest: MUNIC: efetivo sem guarda, valor desconhecido, município repetido, dicionário e edição errada barram a carga
+ok 197 - MUNIC: efetivo sem guarda, valor desconhecido, município repetido, dicionário e edição errada barram a carga
+  ---
+  duration_ms: 1.5499
+  type: 'test'
+  ...
+# Subtest: assertDictionary: {Y} é o ano da data-base
+ok 198 - assertDictionary: {Y} é o ano da data-base
+  ---
+  duration_ms: 0.3314
+  type: 'test'
+  ...
+# Subtest: SIAPE: contagem agregada de PF e PRF (registros e tipo Cargo) como Brasil, janela do mês; órgão ausente, nome trocado e Σ por tipo barram
+ok 199 - SIAPE: contagem agregada de PF e PRF (registros e tipo Cargo) como Brasil, janela do mês; órgão ausente, nome trocado e Σ por tipo barram
+  ---
+  duration_ms: 1.7186
+  type: 'test'
+  ...
+# Subtest: extrator IBGE: lê só a aba de Segurança Pública + dicionário; exige variáveis obrigatórias e o número de linhas
+ok 200 - extrator IBGE: lê só a aba de Segurança Pública + dicionário; exige variáveis obrigatórias e o número de linhas
+  ---
+  duration_ms: 3920.2135
+  type: 'test'
+  ...
+# Subtest: extrator SIAPE: saída só com contagens por órgão — nenhum nome, CPF, matrícula ou identificador; arquivo sem coluna esperada falha
+ok 201 - extrator SIAPE: saída só com contagens por órgão — nenhum nome, CPF, matrícula ou identificador; arquivo sem coluna esperada falha
+  ---
+  duration_ms: 641.9795
+  type: 'test'
+  ...
+# Subtest: custo alto acende e custo baixo fica em verde
+ok 202 - custo alto acende e custo baixo fica em verde
+  ---
+  duration_ms: 3.0428
+  type: 'test'
+  ...
+# Subtest: presença baixa acende: a cauda de alerta acompanha a direção da métrica
+ok 203 - presença baixa acende: a cauda de alerta acompanha a direção da métrica
+  ---
+  duration_ms: 0.8685
+  type: 'test'
+  ...
+# Subtest: cobertura insuficiente nunca recebe verde nem vermelho
+ok 204 - cobertura insuficiente nunca recebe verde nem vermelho
+  ---
+  duration_ms: 0.3336
+  type: 'test'
+  ...
+# Subtest: universo sem caudas não emite juízo, só posição relativa
+ok 205 - universo sem caudas não emite juízo, só posição relativa
+  ---
+  duration_ms: 0.3189
+  type: 'test'
+  ...
+# Subtest: seta segue a direção para a cor nunca viajar sozinha
+ok 206 - seta segue a direção para a cor nunca viajar sozinha
+  ---
+  duration_ms: 0.3633
+  type: 'test'
+  ...
+# Subtest: tokens de tom são estáveis e a legenda cobre o indisponível
+ok 207 - tokens de tom são estáveis e a legenda cobre o indisponível
+  ---
+  duration_ms: 1.4584
+  type: 'test'
+  ...
+# Subtest: sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+ok 208 - sem CIVICA_EXEC_ROOT mantém o comportamento original (disco interno, sem guarda de volume)
+  ---
+  duration_ms: 2.0947
+  type: 'test'
+  ...
+# Subtest: com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+ok 209 - com raiz configurada, raw/staging/logs derivam dela e a reserva padrão é de 50 GiB
+  ---
+  duration_ms: 0.4214
+  type: 'test'
+  ...
+# Subtest: volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+ok 210 - volume diferente do esperado bloqueia com VolumeError antes de qualquer gravação
+  ---
+  duration_ms: 61.8416
+  type: 'test'
+  ...
+# Subtest: orçamento de RAW excedido interrompe com BudgetError (retomável)
+ok 211 - orçamento de RAW excedido interrompe com BudgetError (retomável)
+  ---
+  duration_ms: 4.166
+  type: 'test'
+  ...
+# Subtest: registerLocalRaw é idempotente e não duplica entradas do manifesto
+ok 212 - registerLocalRaw é idempotente e não duplica entradas do manifesto
+  ---
+  duration_ms: 15.2392
+  type: 'test'
+  ...
+# Subtest: aritmética de competência: dezembro → janeiro e janeiro → dezembro
+ok 213 - aritmética de competência: dezembro → janeiro e janeiro → dezembro
+  ---
+  duration_ms: 3.3086
+  type: 'test'
+  ...
+# Subtest: T1 dez/2024 → jan/2025: intervalo semiaberto fecha em 202501 e dezembro continua com o valor antigo
+ok 214 - T1 dez/2024 → jan/2025: intervalo semiaberto fecha em 202501 e dezembro continua com o valor antigo
+  ---
+  duration_ms: 1.5455
+  type: 'test'
+  ...
+# Subtest: T2 mudança de leitos numa competência não duplica competências iguais
+ok 215 - T2 mudança de leitos numa competência não duplica competências iguais
+  ---
+  duration_ms: 1.4722
+  type: 'test'
+  ...
+# Subtest: T3/T4 desaparecimento e reaparecimento (e lacuna recusada)
+ok 216 - T3/T4 desaparecimento e reaparecimento (e lacuna recusada)
+  ---
+  duration_ms: 0.9183
+  type: 'test'
+  ...
+# Subtest: T5 correção retroativa de uma competência antiga é igual a reconstruir do zero
+ok 217 - T5 correção retroativa de uma competência antiga é igual a reconstruir do zero
+  ---
+  duration_ms: 30.0812
+  type: 'test'
+  ...
+# (node:20552) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: detalhamento reconcilia categorias, meses, fornecedor e benchmarks no mesmo lote
+ok 218 - detalhamento reconcilia categorias, meses, fornecedor e benchmarks no mesmo lote
+  ---
+  duration_ms: 192.1229
+  type: 'test'
+  ...
+# Subtest: detalhe invertido do fornecedor reconcilia pessoas, dimensões e concentração
+ok 219 - detalhe invertido do fornecedor reconcilia pessoas, dimensões e concentração
+  ---
+  duration_ms: 142.9457
+  type: 'test'
+  ...
+# Subtest: ano sem lote permanece indisponível em vez de fabricar zeros
+ok 220 - ano sem lote permanece indisponível em vez de fabricar zeros
+  ---
+  duration_ms: 125.8078
+  type: 'test'
+  ...
+# Subtest: centavos preservam vírgula, ponto, sinal e valor sem zero inicial
+ok 221 - centavos preservam vírgula, ponto, sinal e valor sem zero inicial
+  ---
+  duration_ms: 1.9718
+  type: 'test'
+  ...
+# Subtest: CEAPS mantém valor reembolsado e vínculo conservador
+ok 222 - CEAPS mantém valor reembolsado e vínculo conservador
+  ---
+  duration_ms: 11.6858
+  type: 'test'
+  ...
+# Subtest: CEAP mantém bruto, glosa, líquido e documento
+ok 223 - CEAP mantém bruto, glosa, líquido e documento
+  ---
+  duration_ms: 24.0775
+  type: 'test'
+  ...
+# Subtest: contrato: indicadores 7001–7046 únicos, partidos entre DCA e RREO, sem agregação nem ranking, com nota de função 06 e de esferas
+ok 224 - contrato: indicadores 7001–7046 únicos, partidos entre DCA e RREO, sem agregação nem ranking, com nota de função 06 e de esferas
+  ---
+  duration_ms: 4.8195
+  type: 'test'
+  ...
+# Subtest: colunas: estágios reconhecidos apesar de acento corrompido; RP processados ≠ não processados; coluna desconhecida é ignorada
+ok 225 - colunas: estágios reconhecidos apesar de acento corrompido; RP processados ≠ não processados; coluna desconhecida é ignorada
+  ---
+  duration_ms: 1.59
+  type: 'test'
+  ...
+# Subtest: DCA I-E: função 06, subfunções e totais; centavos exatos; intra e demais anexos ficam fora da função
+ok 226 - DCA I-E: função 06, subfunções e totais; centavos exatos; intra e demais anexos ficam fora da função
+  ---
+  duration_ms: 1.8015
+  type: 'test'
+  ...
+# Subtest: invariantes: Σ funções = total e Σ subfunções (com "Demais") = função 06; quebra vira ressalva, não ajuste
+ok 227 - invariantes: Σ funções = total e Σ subfunções (com "Demais") = função 06; quebra vira ressalva, não ajuste
+  ---
+  duration_ms: 1.762
+  type: 'test'
+  ...
+# Subtest: cobertura: ausência ≠ zero; resposta vazia, declaração sem função 06, fonte indisponível e valor zero declarado são estados distintos
+ok 228 - cobertura: ausência ≠ zero; resposta vazia, declaração sem função 06, fonte indisponível e valor zero declarado são estados distintos
+  ---
+  duration_ms: 4.2451
+  type: 'test'
+  ...
+# Subtest: indicadores DCA: estágios separados, restos inscritos fora do pago, participação, taxa de pagamento e per capita só com população do ano
+ok 229 - indicadores DCA: estágios separados, restos inscritos fora do pago, participação, taxa de pagamento e per capita só com população do ano
+  ---
+  duration_ms: 2.3216
+  type: 'test'
+  ...
+# Subtest: RREO Anexo 02: função pelo nome oficial, subfunções pela posição, só o bloco exceto-intra, colunas acumuladas; invariantes e execução
+ok 230 - RREO Anexo 02: função pelo nome oficial, subfunções pela posição, só o bloco exceto-intra, colunas acumuladas; invariantes e execução
+  ---
+  duration_ms: 3.66
+  type: 'test'
+  ...
+# Subtest: RREO parcial (bimestre < 6): preliminar; subfunção desconhecida na função 06 vira ressalva
+ok 231 - RREO parcial (bimestre < 6): preliminar; subfunção desconhecida na função 06 vira ressalva
+  ---
+  duration_ms: 2.0319
+  type: 'test'
+  ...
+# Subtest: DCA I-G (restos a pagar): colunas reconhecidas, pagos e cancelados em indicadores próprios, nunca somados às despesas pagas do exercício
+ok 232 - DCA I-G (restos a pagar): colunas reconhecidas, pagos e cancelados em indicadores próprios, nunca somados às despesas pagas do exercício
+  ---
+  duration_ms: 1.9556
+  type: 'test'
+  ...
+# (node:5200) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: reconcilia estorno com sinal e não soma fontes paralelas
+ok 233 - reconcilia estorno com sinal e não soma fontes paralelas
+  ---
+  duration_ms: 2.9439
+  type: 'test'
+  ...
+# Subtest: pagamento acima do liquidado não é publicado silenciosamente
+ok 234 - pagamento acima do liquidado não é publicado silenciosamente
+  ---
+  duration_ms: 0.4313
+  type: 'test'
+  ...
+# Subtest: ausência é explícita e nunca vira zero
+ok 235 - ausência é explícita e nunca vira zero
+  ---
+  duration_ms: 1.9845
+  type: 'test'
+  ...
+# Subtest: moeda respeita centavos e o número de dígitos pedido
+ok 236 - moeda respeita centavos e o número de dígitos pedido
+  ---
+  duration_ms: 0.4772
+  type: 'test'
+  ...
+# Subtest: razão vira percentual e múltiplo ganha o sinal de vezes
+ok 237 - razão vira percentual e múltiplo ganha o sinal de vezes
+  ---
+  duration_ms: 0.6693
+  type: 'test'
+  ...
+# Subtest: unidade da métrica escolhe o formato, para a régua não conhecer centavos
+ok 238 - unidade da métrica escolhe o formato, para a régua não conhecer centavos
+  ---
+  duration_ms: 0.7268
+  type: 'test'
+  ...
+# Subtest: quintil descreve a posição na distribuição pelos cortes p20/p40/p60/p80
+ok 239 - quintil descreve a posição na distribuição pelos cortes p20/p40/p60/p80
+  ---
+  duration_ms: 2.7287
+  type: 'test'
+  ...
+# Subtest: benchmark só compara valor elegível, no mesmo período e com grupo de tamanho mínimo
+ok 240 - benchmark só compara valor elegível, no mesmo período e com grupo de tamanho mínimo
+  ---
+  duration_ms: 0.9843
+  type: 'test'
+  ...
+# Subtest: tendência exige os dois pontos e ignora pequeno número; variação < 0,5 % é estável
+ok 241 - tendência exige os dois pontos e ignora pequeno número; variação < 0,5 % é estável
+  ---
+  duration_ms: 0.4499
+  type: 'test'
+  ...
+# Subtest: vacinas: metas do PNI, acima de 100 % conta como na meta e ausente fica fora da contagem
+ok 242 - vacinas: metas do PNI, acima de 100 % conta como na meta e ausente fica fora da contagem
+  ---
+  duration_ms: 23.0716
+  type: 'test'
+  ...
+# Subtest: lede usa só fatos comparativos e cita vacinas abaixo da meta
+ok 243 - lede usa só fatos comparativos e cita vacinas abaixo da meta
+  ---
+  duration_ms: 14.2193
+  type: 'test'
+  ...
+# Subtest: média móvel de 3 anos soma numeradores e denominadores e respeita o mínimo de denominador
+ok 244 - média móvel de 3 anos soma numeradores e denominadores e respeita o mínimo de denominador
+  ---
+  duration_ms: 2.0544
+  type: 'test'
+  ...
+# Subtest: variação relativa usa o ponto de 5 anos antes e ignora lacunas
+ok 245 - variação relativa usa o ponto de 5 anos antes e ignora lacunas
+  ---
+  duration_ms: 2.3402
+  type: 'test'
+  ...
+# Subtest: aba de evolução compara com a mediana do estado e do Brasil e marca anos sem população
+ok 246 - aba de evolução compara com a mediana do estado e do Brasil e marca anos sem população
+  ---
+  duration_ms: 48.065
+  type: 'test'
+  ...
+# Subtest: hospitais: concentração, parcela e índice de polo regional
+ok 247 - hospitais: concentração, parcela e índice de polo regional
+  ---
+  duration_ms: 1.9391
+  type: 'test'
+  ...
+# Subtest: residentes: janela de 12 meses, calendário por índice e fallback para município pequeno
+ok 248 - residentes: janela de 12 meses, calendário por índice e fallback para município pequeno
+  ---
+  duration_ms: 7.9947
+  type: 'test'
+  ...
+# Subtest: faixas do calendário
+ok 249 - faixas do calendário
+  ---
+  duration_ms: 0.2101
+  type: 'test'
+  ...
+# Subtest: layout: uma cadeira por parlamentar, contagem exata por partido, tudo dentro do semicírculo
+ok 250 - layout: uma cadeira por parlamentar, contagem exata por partido, tudo dentro do semicírculo
+  ---
+  duration_ms: 5.1474
+  type: 'test'
+  ...
+# Subtest: layout: cadeiras não se sobrepõem em nenhuma fileira (513, 81 e casos pequenos)
+ok 251 - layout: cadeiras não se sobrepõem em nenhuma fileira (513, 81 e casos pequenos)
+  ---
+  duration_ms: 20.9693
+  type: 'test'
+  ...
+# Subtest: layout: cada partido ocupa uma fatia contínua, da esquerda para a direita, na ordem dada
+ok 252 - layout: cada partido ocupa uma fatia contínua, da esquerda para a direita, na ordem dada
+  ---
+  duration_ms: 1.5303
+  type: 'test'
+  ...
+# Subtest: composição: contagem por partido a partir do cadastro, ordenada, sem partido agrupado
+ok 253 - composição: contagem por partido a partir do cadastro, ordenada, sem partido agrupado
+  ---
+  duration_ms: 24.5152
+  type: 'test'
+  ...
+# Subtest: cores: estáveis por partido, distintas entre os partidos da Câmara e neutras para "Sem partido"
+ok 254 - cores: estáveis por partido, distintas entre os partidos da Câmara e neutras para "Sem partido"
+  ---
+  duration_ms: 1.0341
+  type: 'test'
+  ...
+# Subtest: custo zero: a composição reaproveita o cadastro já carregado, sem consulta nova
+ok 255 - custo zero: a composição reaproveita o cadastro já carregado, sem consulta nova
+  ---
+  duration_ms: 20.1237
+  type: 'test'
+  ...
+# Subtest: dados reais: cadeiras do hemiciclo = parlamentares em exercício do cadastro ativo (uma consulta)
+ok 256 - dados reais: cadeiras do hemiciclo = parlamentares em exercício do cadastro ativo (uma consulta) # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.2456
+  type: 'test'
+  ...
+# (node:1528) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: tramitação usa primeiro desfecho terminal datado, calcula média e mediana
+ok 257 - tramitação usa primeiro desfecho terminal datado, calcula média e mediana
+  ---
+  duration_ms: 3.907
+  type: 'test'
+  ...
+# Subtest: tramitação exclui eventos sem data e matérias abertas
+ok 258 - tramitação exclui eventos sem data e matérias abertas
+  ---
+  duration_ms: 0.3386
+  type: 'test'
+  ...
+# Subtest: situação terminal repetida não transforma evento antigo em desfecho
+ok 259 - situação terminal repetida não transforma evento antigo em desfecho
+  ---
+  duration_ms: 0.3146
+  type: 'test'
+  ...
+# Subtest: HTTP 429 e 503 têm retry limitado, preservando também respostas de falha
+ok 260 - HTTP 429 e 503 têm retry limitado, preservando também respostas de falha
+  ---
+  duration_ms: 43.1897
+  type: 'test'
+  ...
+# Subtest: HTML com status 200 é arquivado e rejeitado; não é cadastro vazio
+ok 261 - HTML com status 200 é arquivado e rejeitado; não é cadastro vazio
+  ---
+  duration_ms: 1.529
+  type: 'test'
+  ...
+# Subtest: timeout aborta requisição e tentativas param no limite
+ok 262 - timeout aborta requisição e tentativas param no limite
+  ---
+  duration_ms: 33.0164
+  type: 'test'
+  ...
+# Subtest: 404 não é repetido; destino não oficial nunca é requisitado
+ok 263 - 404 não é repetido; destino não oficial nunca é requisitado
+  ---
+  duration_ms: 1.371
+  type: 'test'
+  ...
+# Subtest: Retry-After excessivo é limitado a 30s e UTF-8 inválido é rejeitado
+ok 264 - Retry-After excessivo é limitado a 30s e UTF-8 inválido é rejeitado
+  ---
+  duration_ms: 1.999
+  type: 'test'
+  ...
+# (node:21316) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: o primeiro eixo separa blocos que votam em sentidos opostos
+ok 265 - o primeiro eixo separa blocos que votam em sentidos opostos
+  ---
+  duration_ms: 245.7574
+  type: 'test'
+  ...
+# Subtest: a orientação do eixo é determinística entre execuções
+ok 266 - a orientação do eixo é determinística entre execuções
+  ---
+  duration_ms: 344.2183
+  type: 'test'
+  ...
+# Subtest: quem vota pouco é omitido em vez de posicionado no zero
+ok 267 - quem vota pouco é omitido em vez de posicionado no zero
+  ---
+  duration_ms: 186.8479
+  type: 'test'
+  ...
+# Subtest: votação unânime não entra na matriz e universo curto fica indisponível
+ok 268 - votação unânime não entra na matriz e universo curto fica indisponível
+  ---
+  duration_ms: 208.7243
+  type: 'test'
+  ...
+# Subtest: obstrução posiciona na Câmara e desaparece no Senado
+ok 269 - obstrução posiciona na Câmara e desaparece no Senado
+  ---
+  duration_ms: 341.7985
+  type: 'test'
+  ...
+# Subtest: CLI institucional aceita recorte e controles comuns
+ok 270 - CLI institucional aceita recorte e controles comuns
+  ---
+  duration_ms: 2.6987
+  type: 'test'
+  ...
+# Subtest: CLI aceita backfill financeiro anual das duas Casas
+ok 271 - CLI aceita backfill financeiro anual das duas Casas
+  ---
+  duration_ms: 0.4252
+  type: 'test'
+  ...
+# Subtest: CLI institucional rejeita período e concorrência inválidos
+ok 272 - CLI institucional rejeita período e concorrência inválidos
+  ---
+  duration_ms: 0.6753
+  type: 'test'
+  ...
+# Subtest: allowlist bloqueia host não oficial
+ok 273 - allowlist bloqueia host não oficial
+  ---
+  duration_ms: 2.6159
+  type: 'test'
+  ...
+# Subtest: retry institucional respeita Retry-After e devolve bytes
+ok 274 - retry institucional respeita Retry-After e devolve bytes
+  ---
+  duration_ms: 53.432
+  type: 'test'
+  ...
+# Subtest: vazio e tipo inválido falham sem virar conjunto vazio
+ok 275 - vazio e tipo inválido falham sem virar conjunto vazio
+  ---
+  duration_ms: 1.8578
+  type: 'test'
+  ...
+# Subtest: normaliza data, moeda e chave sem perder precisão
+ok 276 - normaliza data, moeda e chave sem perder precisão
+  ---
+  duration_ms: 2.1007
+  type: 'test'
+  ...
+# Subtest: movimentos de anulação e estorno têm sinal negativo
+ok 277 - movimentos de anulação e estorno têm sinal negativo
+  ---
+  duration_ms: 1.4755
+  type: 'test'
+  ...
+# (node:19816) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: escolhe a métrica de percentil mais extremo
+ok 278 - escolhe a métrica de percentil mais extremo
+  ---
+  duration_ms: 4.6401
+  type: 'test'
+  ...
+# Subtest: some quando nenhuma métrica tem referencial
+ok 279 - some quando nenhuma métrica tem referencial
+  ---
+  duration_ms: 0.7152
+  type: 'test'
+  ...
+# Subtest: nunca afirma "abaixo de X%" nem enuncia percentual tautológico
+ok 280 - nunca afirma "abaixo de X%" nem enuncia percentual tautológico
+  ---
+  duration_ms: 1.1428
+  type: 'test'
+  ...
+# Subtest: empate desconta o desvio: um zero compartilhado não vence a manchete
+ok 281 - empate desconta o desvio: um zero compartilhado não vence a manchete
+  ---
+  duration_ms: 0.6434
+  type: 'test'
+  ...
+# Subtest: é determinística e liga para a rota da seção, nunca só para o hash
+ok 282 - é determinística e liga para a rota da seção, nunca só para o hash
+  ---
+  duration_ms: 4.4035
+  type: 'test'
+  ...
+# Subtest: cada métrica aponta para a seção que a originou
+ok 283 - cada métrica aponta para a seção que a originou
+  ---
+  duration_ms: 1.5458
+  type: 'test'
+  ...
+# Subtest: a lede da Casa enuncia mediana e n, e não recebe tom
+ok 284 - a lede da Casa enuncia mediana e n, e não recebe tom
+  ---
+  duration_ms: 6.0808
+  type: 'test'
+  ...
+# Subtest: a âncora humana some sem valor de referência publicado
+ok 285 - a âncora humana some sem valor de referência publicado
+  ---
+  duration_ms: 0.6333
+  type: 'test'
+  ...
+# Subtest: a contagem do percentil bate com percentileOf do domain
+ok 286 - a contagem do percentil bate com percentileOf do domain
+  ---
+  duration_ms: 1.2437
+  type: 'test'
+  ...
+# (node:336) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: valor normativo respeita a vigência e nunca cai no mais recente
+ok 287 - valor normativo respeita a vigência e nunca cai no mais recente
+  ---
+  duration_ms: 131.1732
+  type: 'test'
+  ...
+# Subtest: kind e applies_to desconhecidos devolvem null em vez de outro valor
+ok 288 - kind e applies_to desconhecidos devolvem null em vez de outro valor
+  ---
+  duration_ms: 121.0165
+  type: 'test'
+  ...
+# Subtest: o subsídio parlamentar mantém o comportamento anterior
+ok 289 - o subsídio parlamentar mantém o comportamento anterior
+  ---
+  duration_ms: 140.571
+  type: 'test'
+  ...
+# Subtest: números de /proposicoes: presentedYear inclui ano do número nulo, suporte fica fora, somas e ritmo reconciliam
+ok 290 - números de /proposicoes: presentedYear inclui ano do número nulo, suporte fica fora, somas e ritmo reconciliam # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.5932
+  type: 'test'
+  ...
+# Subtest: autoria legislativa não inclui relatoria: PRL do Altineu é relatoria, PEC é autoria legislativa
+ok 291 - autoria legislativa não inclui relatoria: PRL do Altineu é relatoria, PEC é autoria legislativa
+  ---
+  duration_ms: 1.2411
+  type: 'test'
+  ...
+# Subtest: textos: presented_at usa "apresentadas"; identifier_year nunca
+ok 292 - textos: presented_at usa "apresentadas"; identifier_year nunca
+  ---
+  duration_ms: 0.5143
+  type: 'test'
+  ...
+# Subtest: componentes de /proposicoes derivam o texto anual da base temporal (sem "apresentadas" fixo)
+ok 293 - componentes de /proposicoes derivam o texto anual da base temporal (sem "apresentadas" fixo)
+  ---
+  duration_ms: 9.928
+  type: 'test'
+  ...
+# Subtest: P0.5.2: Câmara appointment date is latest status unless an explicit basis says otherwise
+ok 294 - P0.5.2: Câmara appointment date is latest status unless an explicit basis says otherwise
+  ---
+  duration_ms: 1.1932
+  type: 'test'
+  ...
+# Subtest: P0.5.2: annual relatoria uses matter year and does not imply start date
+ok 295 - P0.5.2: annual relatoria uses matter year and does not imply start date
+  ---
+  duration_ms: 0.5379
+  type: 'test'
+  ...
+# (node:6620) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: distribuição usa interpolação linear e vazio permanece nulo
+ok 296 - distribuição usa interpolação linear e vazio permanece nulo
+  ---
+  duration_ms: 2.7166
+  type: 'test'
+  ...
+# Subtest: série histórica preserva lacuna como null
+ok 297 - série histórica preserva lacuna como null
+  ---
+  duration_ms: 0.4717
+  type: 'test'
+  ...
+# Subtest: panorama de senado limita o universo a observações compatíveis
+ok 298 - panorama de senado limita o universo a observações compatíveis
+  ---
+  duration_ms: 171.0372
+  type: 'test'
+  ...
+# Subtest: panorama de camara limita o universo a observações compatíveis
+ok 299 - panorama de camara limita o universo a observações compatíveis
+  ---
+  duration_ms: 129.3944
+  type: 'test'
+  ...
+# (node:12676) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: filiação partidária é resolvida na data da observação
+ok 300 - filiação partidária é resolvida na data da observação
+  ---
+  duration_ms: 1.6698
+  type: 'test'
+  ...
+# Subtest: comportamento partidário agrega apenas votos registrados
+ok 301 - comportamento partidário agrega apenas votos registrados
+  ---
+  duration_ms: 2.0275
+  type: 'test'
+  ...
+# (node:4712) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a correção monetária não reordena o ranking, só muda o sinal
+ok 302 - a correção monetária não reordena o ranking, só muda o sinal
+  ---
+  duration_ms: 138.4819
+  type: 'test'
+  ...
+# Subtest: sem deflator os campos reais ficam nulos, nunca iguais ao nominal
+ok 303 - sem deflator os campos reais ficam nulos, nunca iguais ao nominal
+  ---
+  duration_ms: 140.6323
+  type: 'test'
+  ...
+# Subtest: quem tem um só pleito fica fora e a cobertura diz quantos são
+ok 304 - quem tem um só pleito fica fora e a cobertura diz quantos são
+  ---
+  duration_ms: 126.4749
+  type: 'test'
+  ...
+# Subtest: bem com versão conflitante é excluído e contado na cobertura
+ok 305 - bem com versão conflitante é excluído e contado na cobertura
+  ---
+  duration_ms: 129.0651
+  type: 'test'
+  ...
+# Subtest: o mês de referência vem da data da eleição, não de constante
+ok 306 - o mês de referência vem da data da eleição, não de constante
+  ---
+  duration_ms: 129.8047
+  type: 'test'
+  ...
+# Subtest: recarga idempotente: carregar duas vezes não duplica nada e o código da emenda é único
+ok 307 - recarga idempotente: carregar duas vezes não duplica nada e o código da emenda é único # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.4651
+  type: 'test'
+  ...
+# Subtest: plano ligado à emenda correta; uma emenda com vários planos; Portal ↔ Transferegov pelo código de 12 dígitos
+ok 308 - plano ligado à emenda correta; uma emenda com vários planos; Portal ↔ Transferegov pelo código de 12 dígitos # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.3363
+  type: 'test'
+  ...
+# Subtest: perfil: EXACT revisado é visível; HIGH reviewed=false e não resolvido ficam fora do perfil
+ok 309 - perfil: EXACT revisado é visível; HIGH reviewed=false e não resolvido ficam fora do perfil # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1285
+  type: 'test'
+  ...
+# Subtest: o código não resolvido (modelo do 1270) nunca devolve pessoa; a CHECK impede reviewed sem pessoa
+ok 310 - o código não resolvido (modelo do 1270) nunca devolve pessoa; a CHECK impede reviewed sem pessoa # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1237
+  type: 'test'
+  ...
+# Subtest: CONFLICT e AMBIGUOUS com pessoa candidata nunca atribuem, mesmo com reviewed=false/true bloqueado pela CHECK
+ok 311 - CONFLICT e AMBIGUOUS com pessoa candidata nunca atribuem, mesmo com reviewed=false/true bloqueado pela CHECK # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1205
+  type: 'test'
+  ...
+# Subtest: pago ≠ execução; pago do Portal por emenda (sem DH, como 2020–2022); DH+OB por plano (2023+)
+ok 312 - pago ≠ execução; pago do Portal por emenda (sem DH, como 2020–2022); DH+OB por plano (2023+) # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1222
+  type: 'test'
+  ...
+# Subtest: pessoa com dois códigos SIOP em Casas diferentes: união só com identity_links CONFIRMADO
+ok 313 - pessoa com dois códigos SIOP em Casas diferentes: união só com identity_links CONFIRMADO # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1373
+  type: 'test'
+  ...
+# Subtest: validade datada do código: mesma pessoa/código fora do período não atribui
+ok 314 - validade datada do código: mesma pessoa/código fora do período não atribui # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.137
+  type: 'test'
+  ...
+# Subtest: beneficiário: autores só aparecem atribuídos quando o crosswalk está revisado
+ok 315 - beneficiário: autores só aparecem atribuídos quando o crosswalk está revisado # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.3731
+  type: 'test'
+  ...
+# Subtest: o domínio é separado de proposições: nenhuma FK/tabela de civica_budget aponta para civica_poc
+ok 316 - o domínio é separado de proposições: nenhuma FK/tabela de civica_budget aponta para civica_poc # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 5.1197
+  type: 'test'
+  ...
+# Subtest: código da emenda: 12 dígitos, autor SIOP nas posições 5–8; formas inválidas viram null
+ok 317 - código da emenda: 12 dígitos, autor SIOP nas posições 5–8; formas inválidas viram null
+  ---
+  duration_ms: 2.4474
+  type: 'test'
+  ...
+# Subtest: decimal brasileiro, ente e UF não inventam valor
+ok 318 - decimal brasileiro, ente e UF não inventam valor
+  ---
+  duration_ms: 1.0679
+  type: 'test'
+  ...
+# Subtest: áreas de política pública viram pares função/subfunção
+ok 319 - áreas de política pública viram pares função/subfunção
+  ---
+  duration_ms: 1.62
+  type: 'test'
+  ...
+# Subtest: EXACT: nome exato + UF + exercício na janela de autoria em todos os anos
+ok 320 - EXACT: nome exato + UF + exercício na janela de autoria em todos os anos
+  ---
+  duration_ms: 2.2274
+  type: 'test'
+  ...
+# Subtest: o código SIOP numérico nunca casa com id da Câmara/Senado
+ok 321 - o código SIOP numérico nunca casa com id da Câmara/Senado
+  ---
+  duration_ms: 0.4609
+  type: 'test'
+  ...
+# Subtest: homônimos pai/filho: o período decide (Átila Lira), sem AMBIGUOUS
+ok 322 - homônimos pai/filho: o período decide (Átila Lira), sem AMBIGUOUS
+  ---
+  duration_ms: 0.7574
+  type: 'test'
+  ...
+# Subtest: AMBIGUOUS quando dois homônimos têm exercício na janela do mesmo ano
+ok 323 - AMBIGUOUS quando dois homônimos têm exercício na janela do mesmo ano
+  ---
+  duration_ms: 0.4567
+  type: 'test'
+  ...
+# Subtest: troca de Casa: a mesma pessoa tem um código por Casa e o ano da emenda segue a janela de autoria
+ok 324 - troca de Casa: a mesma pessoa tem um código por Casa e o ano da emenda segue a janela de autoria
+  ---
+  duration_ms: 1.9623
+  type: 'test'
+  ...
+# Subtest: HIGH: exercício só no ano da emenda (suplente que assume), nunca EXACT
+ok 325 - HIGH: exercício só no ano da emenda (suplente que assume), nunca EXACT
+  ---
+  duration_ms: 0.6729
+  type: 'test'
+  ...
+# Subtest: HIGH: UF da emenda (aplicação) diferente da UF do parlamentar; HIGH: nome com tratamento removido
+ok 326 - HIGH: UF da emenda (aplicação) diferente da UF do parlamentar; HIGH: nome com tratamento removido
+  ---
+  duration_ms: 1.0502
+  type: 'test'
+  ...
+# Subtest: sem exercício datado não há atribuição: nome achado + histórico vazio = CONFLICT sem pessoa (caso 1270)
+ok 327 - sem exercício datado não há atribuição: nome achado + histórico vazio = CONFLICT sem pessoa (caso 1270)
+  ---
+  duration_ms: 0.5123
+  type: 'test'
+  ...
+# Subtest: janela de autoria: ago–dez do ano anterior
+ok 328 - janela de autoria: ago–dez do ano anterior
+  ---
+  duration_ms: 0.1524
+  type: 'test'
+  ...
+# Subtest: regra de uso: só revisado, EXACT|HIGH e com pessoa é atribuível a perfil
+ok 329 - regra de uso: só revisado, EXACT|HIGH e com pessoa é atribuível a perfil
+  ---
+  duration_ms: 0.1891
+  type: 'test'
+  ...
+# Subtest: candidatos Câmara↔Senado por nome civil completo exato; nome de uma palavra não vira candidato
+ok 330 - candidatos Câmara↔Senado por nome civil completo exato; nome de uma palavra não vira candidato
+  ---
+  duration_ms: 0.4439
+  type: 'test'
+  ...
+# Subtest: CSV do Portal: aspas, delimitador e quebra de linha dentro do campo
+ok 331 - CSV do Portal: aspas, delimitador e quebra de linha dentro do campo
+  ---
+  duration_ms: 0.398
+  type: 'test'
+  ...
+# Subtest: Portal: só Transferências Especiais; valores brasileiros; código/autor como texto
+ok 332 - Portal: só Transferências Especiais; valores brasileiros; código/autor como texto
+  ---
+  duration_ms: 2.0955
+  type: 'test'
+  ...
+# Subtest: homônimo parcial (caso 1270): outra pessoa ativa cujo nome oficial começa pelo nome do autor → AMBIGUOUS, sem pessoa
+ok 333 - homônimo parcial (caso 1270): outra pessoa ativa cujo nome oficial começa pelo nome do autor → AMBIGUOUS, sem pessoa
+  ---
+  duration_ms: 0.6348
+  type: 'test'
+  ...
+# Subtest: pai e filho com nome oficial próprio (Otto Alencar × Otto Alencar Filho): nome mais longo reivindicado por outro código não vira concorrente
+ok 334 - pai e filho com nome oficial próprio (Otto Alencar × Otto Alencar Filho): nome mais longo reivindicado por outro código não vira concorrente
+  ---
+  duration_ms: 0.3785
+  type: 'test'
+  ...
+# (node:19032) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: roster histórico + crosswalk: troca de Casa gera dois códigos, EXACT revisado, HIGH não, sem pessoa para o não resolvido; idempotente
+ok 335 - roster histórico + crosswalk: troca de Casa gera dois códigos, EXACT revisado, HIGH não, sem pessoa para o não resolvido; idempotente # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.2813
+  type: 'test'
+  ...
+# Subtest: o lote histórico nunca é publicado como ativo (telas atuais seguem vendo só o roster ativo)
+ok 336 - o lote histórico nunca é publicado como ativo (telas atuais seguem vendo só o roster ativo) # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.213
+  type: 'test'
+  ...
+# Subtest: exercício da Câmara: eventos simultâneos de mesma situação não criam lacuna; licença e fim de mandato fecham
+ok 337 - exercício da Câmara: eventos simultâneos de mesma situação não criam lacuna; licença e fim de mandato fecham
+  ---
+  duration_ms: 24.5811
+  type: 'test'
+  ...
+# Subtest: revisão humana positiva sobrevive a nova execução mesmo que a resolução automática piore; CONFLICT não atribui
+ok 338 - revisão humana positiva sobrevive a nova execução mesmo que a resolução automática piore; CONFLICT não atribui # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1426
+  type: 'test'
+  ...
+# Subtest: perfil sem Pix não quebra: pessoa desconhecida e pessoa sem autoria viram estado vazio explicado
+ok 339 - perfil sem Pix não quebra: pessoa desconhecida e pessoa sem autoria viram estado vazio explicado # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.4093
+  type: 'test'
+  ...
+# Subtest: estado "autoria em revisão": linha da pessoa ainda não revisada não entra, mas explica o vazio
+ok 340 - estado "autoria em revisão": linha da pessoa ainda não revisada não entra, mas explica o vazio # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.2304
+  type: 'test'
+  ...
+# Subtest: somente reviewed=true entra; AMBIGUOUS/CONFLICT/outro parlamentar nunca; totais batem com os planos
+ok 341 - somente reviewed=true entra; AMBIGUOUS/CONFLICT/outro parlamentar nunca; totais batem com os planos # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.2399
+  type: 'test'
+  ...
+# Subtest: funções: valor só por plano de área única; planos multiárea ficam à parte e não são repartidos
+ok 342 - funções: valor só por plano de área única; planos multiárea ficam à parte e não são repartidos # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1712
+  type: 'test'
+  ...
+# Subtest: pessoa com mais de um author_code: agrega os dois e mostra Casa/anos; link candidato não une
+ok 343 - pessoa com mais de um author_code: agrega os dois e mostra Casa/anos; link candidato não une # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.175
+  type: 'test'
+  ...
+# Subtest: modelo de apresentação: moeda, proporção, nomes e paginação sem inventar
+ok 344 - modelo de apresentação: moeda, proporção, nomes e paginação sem inventar
+  ---
+  duration_ms: 46.0927
+  type: 'test'
+  ...
+# Subtest: estrutura: a seção é consultada uma vez no perfil unificado (abas client-side) e nenhuma regra de identidade existe no web
+ok 345 - estrutura: a seção é consultada uma vez no perfil unificado (abas client-side) e nenhuma regra de identidade existe no web
+  ---
+  duration_ms: 7.2781
+  type: 'test'
+  ...
+# Subtest: 1270 (João Carlos Bacelar) não tem pessoa e nenhuma emenda dele é atribuída a perfil
+ok 346 - 1270 (João Carlos Bacelar) não tem pessoa e nenhuma emenda dele é atribuída a perfil # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+  ---
+  duration_ms: 1.3916
+  type: 'test'
+  ...
+# Subtest: só linhas revisadas atribuem: EXACT por regra, HIGH só com revisão humana registrada; AMBIGUOUS/CONFLICT nunca
+ok 347 - só linhas revisadas atribuem: EXACT por regra, HIGH só com revisão humana registrada; AMBIGUOUS/CONFLICT nunca # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+  ---
+  duration_ms: 0.2215
+  type: 'test'
+  ...
+# Subtest: 4454 (Rafael Simões) só atribui se o histórico oficial resolveu; nunca por força
+ok 348 - 4454 (Rafael Simões) só atribui se o histórico oficial resolveu; nunca por força # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+  ---
+  duration_ms: 0.1526
+  type: 'test'
+  ...
+# Subtest: troca de Casa real: cada um dos seis tem um código na Câmara e outro no Senado, em pessoas distintas até o link ser confirmado
+ok 349 - troca de Casa real: cada um dos seis tem um código na Câmara e outro no Senado, em pessoas distintas até o link ser confirmado # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+  ---
+  duration_ms: 0.145
+  type: 'test'
+  ...
+# Subtest: cobertura real de atribuição e integridade da carga
+ok 350 - cobertura real de atribuição e integridade da carga # SKIP requer a carga real de Emendas Pix (npm run pix -- collect / identity)
+  ---
+  duration_ms: 0.1519
+  type: 'test'
+  ...
+# (node:12184) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: PNCP é enriquecimento publicável sem inferir pagamento
+ok 351 - PNCP é enriquecimento publicável sem inferir pagamento
+  ---
+  duration_ms: 207.0007
+  type: 'test'
+  ...
+# Subtest: falha do PNCP permanece pendente e não derruba a execução das Casas
+ok 352 - falha do PNCP permanece pendente e não derruba a execução das Casas
+  ---
+  duration_ms: 137.548
+  type: 'test'
+  ...
+# Subtest: órgão de segurança por nome e esfera; segurança alimentar/do trabalho, Defesa Nacional e prefeitura genérica ficam de fora
+ok 353 - órgão de segurança por nome e esfera; segurança alimentar/do trabalho, Defesa Nacional e prefeitura genérica ficam de fora
+  ---
+  duration_ms: 4.253
+  type: 'test'
+  ...
+# Subtest: tema do objeto: palavras fortes valem sozinhas; genéricas exigem contexto policial; vigilância patrimonial é fora do tema
+ok 354 - tema do objeto: palavras fortes valem sozinhas; genéricas exigem contexto policial; vigilância patrimonial é fora do tema
+  ---
+  duration_ms: 3.1178
+  type: 'test'
+  ...
+# Subtest: contrato: vínculo institucional × temático, PF nunca persistida, empenho só no tipo Empenho, valor em centavos, sem texto do objeto
+ok 355 - contrato: vínculo institucional × temático, PF nunca persistida, empenho só no tipo Empenho, valor em centavos, sem texto do objeto
+  ---
+  duration_ms: 3.0971
+  type: 'test'
+  ...
+# Subtest: indicadores de contratos e transferências: ausência não é zero, valores em reais, preliminar no ano corrente
+ok 356 - indicadores de contratos e transferências: ausência não é zero, valores em reais, preliminar no ano corrente
+  ---
+  duration_ms: 1.3044
+  type: 'test'
+  ...
+# (node:21308) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: retrato: host fora da lista é recusado e o nome do arquivo depende só da URL
+ok 357 - retrato: host fora da lista é recusado e o nome do arquivo depende só da URL
+  ---
+  duration_ms: 2.511
+  type: 'test'
+  ...
+# Subtest: retrato: redirecionamento só entre hosts permitidos (Senado http→https→legis)
+ok 358 - retrato: redirecionamento só entre hosts permitidos (Senado http→https→legis)
+  ---
+  duration_ms: 36.6499
+  type: 'test'
+  ...
+# Subtest: retrato: baixa, reduz, grava; 304 não regrava; falha preserva a última foto boa
+ok 359 - retrato: baixa, reduz, grava; 304 não regrava; falha preserva a última foto boa
+  ---
+  duration_ms: 140.1849
+  type: 'test'
+  ...
+# Subtest: retrato: conteúdo que não é imagem e host proibido não são gravados
+ok 360 - retrato: conteúdo que não é imagem e host proibido não são gravados
+  ---
+  duration_ms: 19.1411
+  type: 'test'
+  ...
+# Subtest: retrato: o lote só busca o que falta ou está velho
+ok 361 - retrato: o lote só busca o que falta ou está velho
+  ---
+  duration_ms: 422.3573
+  type: 'test'
+  ...
+# Subtest: retrato: cadastro antigo de SP (host da API, que dá 404) aponta para o host que serve a foto
+ok 362 - retrato: cadastro antigo de SP (host da API, que dá 404) aponta para o host que serve a foto
+  ---
+  duration_ms: 0.4792
+  type: 'test'
+  ...
+# Subtest: kindOf classifica os status literais da Câmara
+ok 363 - kindOf classifica os status literais da Câmara
+  ---
+  duration_ms: 1.7158
+  type: 'test'
+  ...
+# Subtest: cleanStatus só remove o rótulo duplicado da fonte
+ok 364 - cleanStatus só remove o rótulo duplicado da fonte
+  ---
+  duration_ms: 0.2846
+  type: 'test'
+  ...
+# (node:588) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: deflator é o quociente dos números-índice dos dois meses
+ok 365 - deflator é o quociente dos números-índice dos dois meses
+  ---
+  duration_ms: 135.3037
+  type: 'test'
+  ...
+# Subtest: mês ausente não é estimado: a série nunca é completada
+ok 366 - mês ausente não é estimado: a série nunca é completada
+  ---
+  duration_ms: 131.9625
+  type: 'test'
+  ...
+# Subtest: publicação rejeita lote inválido em vez de gravar dado ruim
+ok 367 - publicação rejeita lote inválido em vez de gravar dado ruim
+  ---
+  duration_ms: 127.1778
+  type: 'test'
+  ...
+# Subtest: o parser do SIDRA descarta período e valor não numéricos
+ok 368 - o parser do SIDRA descarta período e valor não numéricos
+  ---
+  duration_ms: 25.5632
+  type: 'test'
+  ...
+# (node:20008) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: cadeia oficial de 7 níveis é resolvida até a raiz; limite não é ilimitado; ciclo não trava
+ok 369 - cadeia oficial de 7 níveis é resolvida até a raiz; limite não é ilimitado; ciclo não trava # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 1.1918
+  type: 'test'
+  ...
+# (node:20596) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: resolver deduplica pais, preserva ano real, percorre cadeia e é idempotente
+ok 370 - resolver deduplica pais, preserva ano real, percorre cadeia e é idempotente
+  ---
+  duration_ms: 211.2264
+  type: 'test'
+  ...
+# Subtest: falha do pai fica registrada sem criar suporte nem lançar a coleta
+ok 371 - falha do pai fica registrada sem criar suporte nem lançar a coleta
+  ---
+  duration_ms: 179.6997
+  type: 'test'
+  ...
+# (node:10184) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SSD ausente ou trocado: nenhuma coleta prisional baixa, grava ou consulta o banco (VolumeError retomável)
+ok 372 - SSD ausente ou trocado: nenhuma coleta prisional baixa, grava ou consulta o banco (VolumeError retomável)
+  ---
+  duration_ms: 30.7008
+  type: 'test'
+  ...
+# Subtest: download: portal que devolve HTML (limite de taxa) é rejeitado e não deixa arquivo no RAW; ciclo oficial com cabeçalho válido é aceito
+ok 373 - download: portal que devolve HTML (limite de taxa) é rejeitado e não deixa arquivo no RAW; ciclo oficial com cabeçalho válido é aceito
+  ---
+  duration_ms: 411.2635
+  type: 'test'
+  ...
+# Subtest: extração: CSV corrompido ou com cabeçalho diferente falha com a causa e não deixa JSON parcial em staging; valor não inteiro é recusado
+ok 374 - extração: CSV corrompido ou com cabeçalho diferente falha com a causa e não deixa JSON parcial em staging; valor não inteiro é recusado
+  ---
+  duration_ms: 544.6429
+  type: 'test'
+  ...
+# Subtest: ciclos: 19 arquivos oficiais, referências 2016/2 a 2025/2 sem lacuna, URLs de gov.br/senappen
+ok 375 - ciclos: 19 arquivos oficiais, referências 2016/2 a 2025/2 sem lacuna, URLs de gov.br/senappen
+  ---
+  duration_ms: 1.2936
+  type: 'test'
+  ...
+# Subtest: semestres: 19 ciclos de 2016/2 a 2025/2, janelas e competência; referência inválida barra
+ok 376 - semestres: 19 ciclos de 2016/2 a 2025/2, janelas e competência; referência inválida barra
+  ---
+  duration_ms: 3.4936
+  type: 'test'
+  ...
+# Subtest: contrato: 27 medidas de capacidade + 44 de população, ids únicos; indicadores com fórmula; ocupação e excedentes não aditivos
+ok 377 - contrato: 27 medidas de capacidade + 44 de população, ids únicos; indicadores com fórmula; ocupação e excedentes não aditivos
+  ---
+  duration_ms: 0.6376
+  type: 'test'
+  ...
+# Subtest: checkCycle: layout alterado, referências misturadas, ciclo ≠ referência e linhas não validadas/inativas ficam fora (sem presumir encerramento)
+ok 378 - checkCycle: layout alterado, referências misturadas, ciclo ≠ referência e linhas não validadas/inativas ficam fora (sem presumir encerramento)
+  ---
+  duration_ms: 3.2034
+  type: 'test'
+  ...
+# Subtest: capacidade utilizável: célula vazia só é "não aplicável" em unidade de um único sexo; incompleta ≠ zero
+ok 379 - capacidade utilizável: célula vazia só é "não aplicável" em unidade de um único sexo; incompleta ≠ zero
+  ---
+  duration_ms: 0.4676
+  type: 'test'
+  ...
+# Subtest: agregados: ocupação = Σ pop ÷ Σ cap (não média das taxas); excedente líquido ≠ bruto; sem capacidade fica fora; domiciliar e federal separados
+ok 380 - agregados: ocupação = Σ pop ÷ Σ cap (não média das taxas); excedente líquido ≠ bruto; sem capacidade fica fora; domiciliar e federal separados
+  ---
+  duration_ms: 3.7044
+  type: 'test'
+  ...
+# Subtest: identidade histórica: exato, renomeação por CEP, mudança de município, homônimos separados, ausência ≠ encerramento, primeiro ciclo tudo novo
+ok 381 - identidade histórica: exato, renomeação por CEP, mudança de município, homônimos separados, ausência ≠ encerramento, primeiro ciclo tudo novo
+  ---
+  duration_ms: 26.6547
+  type: 'test'
+  ...
+# Subtest: identidade: homônimos no mesmo ciclo com candidatos viram unidades separadas (método 9, revisão); reaparecimento após ausência volta à mesma unidade
+ok 382 - identidade: homônimos no mesmo ciclo com candidatos viram unidades separadas (método 9, revisão); reaparecimento após ausência volta à mesma unidade
+  ---
+  duration_ms: 1.5281
+  type: 'test'
+  ...
+# Subtest: fatia UF: fatos só com célula preenchida (zero declarado fica), município não conciliado vai à UF e ao resto; Σ municípios + resto = UF; Brasil = Σ UFs
+ok 383 - fatia UF: fatos só com célula preenchida (zero declarado fica), município não conciliado vai à UF e ao resto; Σ municípios + resto = UF; Brasil = Σ UFs
+  ---
+  duration_ms: 4.4813
+  type: 'test'
+  ...
+# Subtest: dedupeAuthors remove repetição do mesmo parlamentar e preserva coautores distintos
+ok 384 - dedupeAuthors remove repetição do mesmo parlamentar e preserva coautores distintos
+  ---
+  duration_ms: 1.7948
+  type: 'test'
+  ...
+# Subtest: dedupeAuthors ignora acentos e caixa ao comparar nomes
+ok 385 - dedupeAuthors ignora acentos e caixa ao comparar nomes
+  ---
+  duration_ms: 0.3086
+  type: 'test'
+  ...
+# Subtest: o schema do grafo cria o índice pai → filhos e as tabelas de suporte, de forma idempotente
+ok 386 - o schema do grafo cria o índice pai → filhos e as tabelas de suporte, de forma idempotente
+  ---
+  duration_ms: 1.864
+  type: 'test'
+  ...
+# Subtest: o parser do pai histórico preserva o ano real e marca a matéria como suporte
+ok 387 - o parser do pai histórico preserva o ano real e marca a matéria como suporte
+  ---
+  duration_ms: 1.7822
+  type: 'test'
+  ...
+# (node:13640) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: a taxonomia da web e a ordem do banco descrevem os mesmos dez grupos, na mesma ordem
+ok 388 - a taxonomia da web e a ordem do banco descrevem os mesmos dez grupos, na mesma ordem
+  ---
+  duration_ms: 2.9494
+  type: 'test'
+  ...
+# Subtest: composição funcional: contagens por grupo, anos e universo não comparável quando o Senado é recorte
+ok 389 - composição funcional: contagens por grupo, anos e universo não comparável quando o Senado é recorte
+  ---
+  duration_ms: 156.3702
+  type: 'test'
+  ...
+# Subtest: composição funcional: Congresso agrega quando os dois universos são completos
+ok 390 - composição funcional: Congresso agrega quando os dois universos são completos
+  ---
+  duration_ms: 127.4036
+  type: 'test'
+  ...
+# Subtest: composição funcional: ano sem dados vira cobertura indisponível, não zero fabricado
+ok 391 - composição funcional: ano sem dados vira cobertura indisponível, não zero fabricado
+  ---
+  duration_ms: 152.6498
+  type: 'test'
+  ...
+# Subtest: rio de tramitação: só evidência estruturada; rito segue indisponível
+ok 392 - rio de tramitação: só evidência estruturada; rito segue indisponível
+  ---
+  duration_ms: 277.7902
+  type: 'test'
+  ...
+# Subtest: rio de tramitação: ano sem matérias principais devolve cobertura indisponível e nenhuma etapa
+ok 393 - rio de tramitação: ano sem matérias principais devolve cobertura indisponível e nenhuma etapa
+  ---
+  duration_ms: 124.4753
+  type: 'test'
+  ...
+# Subtest: tempo sem movimentação: âncora no último registro, encerradas fora e sem-histórico contadas à parte
+ok 394 - tempo sem movimentação: âncora no último registro, encerradas fora e sem-histórico contadas à parte
+  ---
+  duration_ms: 137.9193
+  type: 'test'
+  ...
+# Subtest: tempo sem movimentação: desarquivamento reabre a matéria e norma resultante a encerra
+ok 395 - tempo sem movimentação: desarquivamento reabre a matéria e norma resultante a encerra
+  ---
+  duration_ms: 135.833
+  type: 'test'
+  ...
+# Subtest: DNA por partido: proposições distintas diferem de vínculos e "autor principal" é null quando a Casa não publica a marca
+ok 396 - DNA por partido: proposições distintas diferem de vínculos e "autor principal" é null quando a Casa não publica a marca
+  ---
+  duration_ms: 139.779
+  type: 'test'
+  ...
+# Subtest: DNA por parlamentar: parlamentares com poucas proposições ficam fora e a contagem de exclusão é publicada
+ok 397 - DNA por parlamentar: parlamentares com poucas proposições ficam fora e a contagem de exclusão é publicada
+  ---
+  duration_ms: 282.6254
+  type: 'test'
+  ...
+# Subtest: ritmo: proposições por mês de apresentação e eventos por mês de ocorrência, cada um no grupo da proposição
+ok 398 - ritmo: proposições por mês de apresentação e eventos por mês de ocorrência, cada um no grupo da proposição
+  ---
+  duration_ms: 283.5375
+  type: 'test'
+  ...
+# Subtest: calendário: contagem diária, exemplos e janela de cobertura explícita
+ok 399 - calendário: contagem diária, exemplos e janela de cobertura explícita
+  ---
+  duration_ms: 291.7196
+  type: 'test'
+  ...
+# Subtest: eventos recentes: a janela termina no último registro desses tipos e cada matéria conta uma vez por tipo
+ok 400 - eventos recentes: a janela termina no último registro desses tipos e cada matéria conta uma vez por tipo
+  ---
+  duration_ms: 305.7051
+  type: 'test'
+  ...
+# Subtest: estado observado da proposição usa o mesmo dado do rio e da inatividade
+ok 401 - estado observado da proposição usa o mesmo dado do rio e da inatividade
+  ---
+  duration_ms: 157.5418
+  type: 'test'
+  ...
+# Subtest: frases editoriais: derivadas dos números, sempre com base e sem linguagem de ranking
+ok 402 - frases editoriais: derivadas dos números, sempre com base e sem linguagem de ranking
+  ---
+  duration_ms: 175.447
+  type: 'test'
+  ...
+# Subtest: frases editoriais: com uma Casa só, a tese diz isso em vez de comparar
+ok 403 - frases editoriais: com uma Casa só, a tese diz isso em vez de comparar
+  ---
+  duration_ms: 164.5837
+  type: 'test'
+  ...
+# Subtest: composição do resultado da busca usa os mesmos filtros da listagem e ignora o filtro de grupo
+ok 404 - composição do resultado da busca usa os mesmos filtros da listagem e ignora o filtro de grupo
+  ---
+  duration_ms: 139.0874
+  type: 'test'
+  ...
+# (node:13560) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: busca de proposições combina texto e autoria com ordem determinística
+ok 405 - busca de proposições combina texto e autoria com ordem determinística
+  ---
+  duration_ms: 150.8941
+  type: 'test'
+  ...
+# Subtest: detalhe mantém complementos ausentes e votação ausente como lacunas
+ok 406 - detalhe mantém complementos ausentes e votação ausente como lacunas
+  ---
+  duration_ms: 148.2242
+  type: 'test'
+  ...
+# Subtest: detalhe não vincula votação da Câmara por rótulo legado sem objeto comprovado
+ok 407 - detalhe não vincula votação da Câmara por rótulo legado sem objeto comprovado
+  ---
+  duration_ms: 129.5732
+  type: 'test'
+  ...
+# Subtest: classifica siglas em grupos funcionais e usa grupo especial como fallback
+ok 408 - classifica siglas em grupos funcionais e usa grupo especial como fallback
+  ---
+  duration_ms: 0.5474
+  type: 'test'
+  ...
+# Subtest: busca por identificador usa tipo, numero e ano da proposicao
+ok 409 - busca por identificador usa tipo, numero e ano da proposicao
+  ---
+  duration_ms: 127.5663
+  type: 'test'
+  ...
+# (node:9804) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: subsídio normativo respeita vigência e preserva a base legal
+ok 410 - subsídio normativo respeita vigência e preserva a base legal
+  ---
+  duration_ms: 130.9705
+  type: 'test'
+  ...
+# Subtest: frescor cadastral expõe estado desatualizado
+ok 411 - frescor cadastral expõe estado desatualizado
+  ---
+  duration_ms: 126.4531
+  type: 'test'
+  ...
+# Subtest: mês sem registro é null (não zero); mês com registro soma líquido menos reembolso
+ok 412 - mês sem registro é null (não zero); mês com registro soma líquido menos reembolso
+  ---
+  duration_ms: 2.5373
+  type: 'test'
+  ...
+# Subtest: categorias ordenadas por valor, só positivas; anos do mais novo ao mais antigo
+ok 413 - categorias ordenadas por valor, só positivas; anos do mais novo ao mais antigo
+  ---
+  duration_ms: 1.6807
+  type: 'test'
+  ...
+# Subtest: prettyCategory só muda a apresentação de CAIXA ALTA
+ok 414 - prettyCategory só muda a apresentação de CAIXA ALTA
+  ---
+  duration_ms: 0.199
+  type: 'test'
+  ...
+# Subtest: queryHref carrega o modo em ordenação e paginação, e o omite em Parlamentares
+ok 415 - queryHref carrega o modo em ordenação e paginação, e o omite em Parlamentares
+  ---
+  duration_ms: 4.592
+  type: 'test'
+  ...
+# Subtest: queryHref aceita um caminho alternativo, para o CSV reusar a mesma leitura de query
+ok 416 - queryHref aceita um caminho alternativo, para o CSV reusar a mesma leitura de query
+  ---
+  duration_ms: 0.7463
+  type: 'test'
+  ...
+# Subtest: parseMode cai em Parlamentares para qualquer valor que não seja um dos três modos
+ok 417 - parseMode cai em Parlamentares para qualquer valor que não seja um dos três modos
+  ---
+  duration_ms: 0.4183
+  type: 'test'
+  ...
+# Subtest: trocar de sujeito descarta filtro de pessoa e preserva Casa, ano e ordenação
+ok 418 - trocar de sujeito descarta filtro de pessoa e preserva Casa, ano e ordenação
+  ---
+  duration_ms: 1.7217
+  type: 'test'
+  ...
+# Subtest: modeHref para um modo agregado sem Casa assume a Câmara, o maior universo
+ok 419 - modeHref para um modo agregado sem Casa assume a Câmara, o maior universo
+  ---
+  duration_ms: 0.6992
+  type: 'test'
+  ...
+# Subtest: dashboardQuery ignora ordenação desconhecida e cai em nome
+ok 420 - dashboardQuery ignora ordenação desconhecida e cai em nome
+  ---
+  duration_ms: 0.1686
+  type: 'test'
+  ...
+# (node:14104) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ranking de cota ordena, filtra e informa a amostra observada
+ok 421 - ranking de cota ordena, filtra e informa a amostra observada
+  ---
+  duration_ms: 137.071
+  type: 'test'
+  ...
+# Subtest: painel de rankings filtra e não inventa custo ou presença sem lotes compatíveis
+ok 422 - painel de rankings filtra e não inventa custo ou presença sem lotes compatíveis
+  ---
+  duration_ms: 178.5749
+  type: 'test'
+  ...
+# (node:10476) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: estados de dado: zero declarado, ausência, suprimido, preliminar e ano parcial são distintos e nunca viram zero
+ok 423 - estados de dado: zero declarado, ausência, suprimido, preliminar e ano parcial são distintos e nunca viram zero
+  ---
+  duration_ms: 6.4972
+  type: 'test'
+  ...
+# Subtest: agregação anual e taxa: ano incompleto é parcial; sem população do mesmo ano não há taxa (2022–2023 não são interpolados)
+ok 424 - agregação anual e taxa: ano incompleto é parcial; sem população do mesmo ano não há taxa (2022–2023 não são interpolados)
+  ---
+  duration_ms: 1.6913
+  type: 'test'
+  ...
+# Subtest: família de roubo: soma só categorias exclusivas da mesma fonte e se recusa a somar quando falta uma parte
+ok 425 - família de roubo: soma só categorias exclusivas da mesma fonte e se recusa a somar quando falta uma parte
+  ---
+  duration_ms: 2.7312
+  type: 'test'
+  ...
+# Subtest: capítulo de criminalidade: só a opção inicial vem completa; as demais chegam como esboço (lazy) e o dado só do estado é identificado como tal
+ok 426 - capítulo de criminalidade: só a opção inicial vem completa; as demais chegam como esboço (lazy) e o dado só do estado é identificado como tal
+  ---
+  duration_ms: 3.8998
+  type: 'test'
+  ...
+# Subtest: benchmark: frase de posição sem ranking e régua só quando há comparação válida
+ok 427 - benchmark: frase de posição sem ranking e régua só quando há comparação válida
+  ---
+  duration_ms: 1.0466
+  type: 'test'
+  ...
+# Subtest: estrutura: PM/PC do estado nunca aparecem como efetivo municipal; "sem guarda" é declaração, o Detran não tem número inventado
+ok 428 - estrutura: PM/PC do estado nunca aparecem como efetivo municipal; "sem guarda" é declaração, o Detran não tem número inventado
+  ---
+  duration_ms: 2.6043
+  type: 'test'
+  ...
+# Subtest: sistema prisional: município sem unidade usa a formulação compatível com a cobertura e o contexto estadual vem rotulado
+ok 429 - sistema prisional: município sem unidade usa a formulação compatível com a cobertura e o contexto estadual vem rotulado
+  ---
+  duration_ms: 2.7006
+  type: 'test'
+  ...
+# Subtest: finanças: etapas ficam separadas (nunca somadas); exercício corrente é preliminar e sem "pago"; narrativa em reais correntes
+ok 430 - finanças: etapas ficam separadas (nunca somadas); exercício corrente é preliminar e sem "pago"; narrativa em reais correntes
+  ---
+  duration_ms: 3.3534
+  type: 'test'
+  ...
+# Subtest: trânsito: PRF só rodovias federais com marco de mudança de método; frota é estoque; infrações só na UF; RENAEST declara cobertura
+ok 431 - trânsito: PRF só rodovias federais com marco de mudança de método; frota é estoque; infrações só na UF; RENAEST declara cobertura
+  ---
+  duration_ms: 3.0159
+  type: 'test'
+  ...
+# Subtest: atuação policial: contexto sem insinuar organização criminosa; Estadual e PF/PRF ficam em gráficos separados
+ok 432 - atuação policial: contexto sem insinuar organização criminosa; Estadual e PF/PRF ficam em gráficos separados
+  ---
+  duration_ms: 1.9061
+  type: 'test'
+  ...
+# Subtest: nenhuma narrativa atribui causa: sem "por causa de", "devido a", "graças a" nem "resultado de"
+ok 433 - nenhuma narrativa atribui causa: sem "por causa de", "devido a", "graças a" nem "resultado de"
+  ---
+  duration_ms: 0.4083
+  type: 'test'
+  ...
+# Subtest: hero: escolhe 3–4 indicadores de dimensões diferentes, sem tom bom/ruim, e registra o que rejeitou e por quê (prisional e apreensões)
+ok 434 - hero: escolhe 3–4 indicadores de dimensões diferentes, sem tom bom/ruim, e registra o que rejeitou e por quê (prisional e apreensões)
+  ---
+  duration_ms: 2.2761
+  type: 'test'
+  ...
+# Subtest: gráfico: renderiza no servidor sem NaN para série vazia, de um ponto, com benchmark e com valor suprimido
+ok 435 - gráfico: renderiza no servidor sem NaN para série vazia, de um ponto, com benchmark e com valor suprimido
+  ---
+  duration_ms: 50.5925
+  type: 'test'
+  ...
+# Subtest: ano de fonte de eventos: mês sem linha NÃO torna o ano parcial; só o fim da cobertura da fonte torna
+ok 436 - ano de fonte de eventos: mês sem linha NÃO torna o ano parcial; só o fim da cobertura da fonte torna
+  ---
+  duration_ms: 0.7068
+  type: 'test'
+  ...
+# (node:1124) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+ok 437 - XLSX válido: soma linhas repetidas, preserva vazio ≠ zero, separa vítimas/total/peso e lista só chaves ≠ 0
+  ---
+  duration_ms: 241.7072
+  type: 'test'
+  ...
+# Subtest: XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+ok 438 - XLSX corrompido ou sem colunas obrigatórias falha com código ≠ 0 e não deixa saída parcial
+  ---
+  duration_ms: 875.3046
+  type: 'test'
+  ...
+# Subtest: DBC inválido do SIM falha sem produzir agregados
+ok 439 - DBC inválido do SIM falha sem produzir agregados
+  ---
+  duration_ms: 491.8859
+  type: 'test'
+  ...
+# Subtest: arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+ok 440 - arquivo incompleto no RAW (tamanho ≠ manifesto) é recusado antes de decodificar
+  ---
+  duration_ms: 9.7692
+  type: 'test'
+  ...
+# Subtest: definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+ok 441 - definitivo substitui preliminar na escolha do arquivo; preliminar mais recente vence entre preliminares
+  ---
+  duration_ms: 28.9953
+  type: 'test'
+  ...
+# Subtest: download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+ok 442 - download interrompido/indisponível: erro, nenhum arquivo parcial e nenhuma entrada no manifesto
+  ---
+  duration_ms: 57367.7309
+  type: 'test'
+  ...
+# Subtest: cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+ok 443 - cache de extração do VDE é reaproveitado (hash do arquivo + versão do parser) e a extração é a do arquivo certo
+  ---
+  duration_ms: 118.31
+  type: 'test'
+  ...
+# Subtest: SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+ok 444 - SSD ausente ou trocado: a coleta aborta com VolumeError antes de qualquer leitura de banco ou gravação
+  ---
+  duration_ms: 9.5794
+  type: 'test'
+  ...
+# Subtest: CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+ok 445 - CID-10: agressão, indeterminada, intervenção legal e guerra são grupos separados; trânsito e demais causas ficam fora
+  ---
+  duration_ms: 2.3446
+  type: 'test'
+  ...
+# Subtest: normalização de nomes: determinística, idempotente e sem apagar o nome original
+ok 446 - normalização de nomes: determinística, idempotente e sem apagar o nome original
+  ---
+  duration_ms: 0.4179
+  type: 'test'
+  ...
+# Subtest: crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+ok 447 - crosswalk: 6 aliases validados resolvem para o município canônico; colisão de nome no IBGE é erro
+  ---
+  duration_ms: 6.3842
+  type: 'test'
+  ...
+# Subtest: resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+ok 448 - resolveIbge6: DF por região administrativa vai a Brasília; xx0000 é município ignorado; código inexistente não resolve
+  ---
+  duration_ms: 0.3441
+  type: 'test'
+  ...
+# Subtest: SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+ok 449 - SIM residência: universo com zero explícito, município ignorado preservado, nenhuma perda no total da UF
+  ---
+  duration_ms: 3.5575
+  type: 'test'
+  ...
+# Subtest: SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+ok 450 - SIM: recorte Atlas é X85–Y09 + Y35; operações de guerra (Y36) ficam em indicador próprio e fora da soma
+  ---
+  duration_ms: 0.5902
+  type: 'test'
+  ...
+# Subtest: SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+ok 451 - SIM residência: 2025 preliminar leva status 1 e sinal; município sem instalação comprovada só entra se houver óbito
+  ---
+  duration_ms: 0.4575
+  type: 'test'
+  ...
+# Subtest: SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+ok 452 - SIM ocorrência é perspectiva separada: o óbito de residente do ES ocorrido no RJ conta no RJ; sem município fica fora e é declarado
+  ---
+  duration_ms: 0.9112
+  type: 'test'
+  ...
+# Subtest: VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+ok 453 - VDE: contrato de 41 indicadores (evento × abrangência) + 8 taxas; ids únicos; zero estrutural não vira indicador
+  ---
+  duration_ms: 0.8288
+  type: 'test'
+  ...
+# Subtest: VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+ok 454 - VDE: município nominal, "NÃO INFORMADO" no município ignorado, evento só-UF apenas na UF, total estadual preservado
+  ---
+  duration_ms: 4.2886
+  type: 'test'
+  ...
+# Subtest: VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+ok 455 - VDE: cobertura distingue mês com registros (1) de mês zerado (2) e conta linhas repetidas (DF por região administrativa)
+  ---
+  duration_ms: 1.0816
+  type: 'test'
+  ...
+# Subtest: VDE: meses futuros preenchidos com zero não são publicados
+ok 456 - VDE: meses futuros preenchidos com zero não são publicados
+  ---
+  duration_ms: 1.0404
+  type: 'test'
+  ...
+# Subtest: VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+ok 457 - VDE: taxa anual só em ano civil completo, com denominador do mesmo ano e sem taxa em município sem registro
+  ---
+  duration_ms: 1.5413
+  type: 'test'
+  ...
+# Subtest: VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+ok 458 - VDE: evento desconhecido, medida inesperada, só-UF com município e zero estrutural com valor falham em vez de serem gravados
+  ---
+  duration_ms: 1.1245
+  type: 'test'
+  ...
+# Subtest: VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+ok 459 - VDE: nome municipal sem correspondência vai ao município ignorado e é declarado (nunca vira zero nem município inventado)
+  ---
+  duration_ms: 0.6828
+  type: 'test'
+  ...
+# Subtest: VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+ok 460 - VDE: alias de grafia (SÃO LUIZ → São Luiz do Anauá) é aplicado e contado
+  ---
+  duration_ms: 0.2625
+  type: 'test'
+  ...
+# (node:10232) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: identificação do Senado: sigla, número e ano, inclusive com sufixo de comissão
+ok 461 - identificação do Senado: sigla, número e ano, inclusive com sufixo de comissão
+  ---
+  duration_ms: 4.0034
+  type: 'test'
+  ...
+# Subtest: autores do Senado: código do parlamentar, partido, UF só de senadores e órgãos sem código
+ok 462 - autores do Senado: código do parlamentar, partido, UF só de senadores e órgãos sem código
+  ---
+  duration_ms: 2.1557
+  type: 'test'
+  ...
+# Subtest: coletor universal do Senado: matérias de qualquer origem, número anterior, idempotência e COMPLETE
+ok 463 - coletor universal do Senado: matérias de qualquer origem, número anterior, idempotência e COMPLETE # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1406
+  type: 'test'
+  ...
+# (node:3400) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: normaliza itens de pauta e respeita o recorte publicado
+ok 464 - normaliza itens de pauta e respeita o recorte publicado
+  ---
+  duration_ms: 3.013
+  type: 'test'
+  ...
+# (node:12100) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fallback do Senado separa cobrança, documento fiscal, empenho e liquidação
+ok 465 - fallback do Senado separa cobrança, documento fiscal, empenho e liquidação
+  ---
+  duration_ms: 7.3001
+  type: 'test'
+  ...
+# Subtest: PagamentoDto é cobrança e filhos preservam documento fiscal e empenho
+ok 466 - PagamentoDto é cobrança e filhos preservam documento fiscal e empenho
+  ---
+  duration_ms: 210.098
+  type: 'test'
+  ...
+# (node:11880) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: execução do Senado distingue empenhado, liquidado e pago pela NE exata
+ok 467 - execução do Senado distingue empenhado, liquidado e pago pela NE exata
+  ---
+  duration_ms: 3.5339
+  type: 'test'
+  ...
+# Subtest: detalhe SIAFI preserva data, exercício, restos e anulação
+ok 468 - detalhe SIAFI preserva data, exercício, restos e anulação
+  ---
+  duration_ms: 3.211
+  type: 'test'
+  ...
+# Subtest: linhas da mesma NE por elemento de despesa são somadas antes do vínculo
+ok 469 - linhas da mesma NE por elemento de despesa são somadas antes do vínculo
+  ---
+  duration_ms: 0.5005
+  type: 'test'
+  ...
+# Subtest: detalhe divergente não substitui o total oficial agregado
+ok 470 - detalhe divergente não substitui o total oficial agregado
+  ---
+  duration_ms: 0.3444
+  type: 'test'
+  ...
+# (node:8732) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: detalha ata sem converter garantia ou cobrança em pagamento
+ok 471 - detalha ata sem converter garantia ou cobrança em pagamento
+  ---
+  duration_ms: 217.8275
+  type: 'test'
+  ...
+# Subtest: endpoint opcional indisponível é ausência de cobertura, não ausência factual
+ok 472 - endpoint opcional indisponível é ausência de cobertura, não ausência factual
+  ---
+  duration_ms: 167.3512
+  type: 'test'
+  ...
+# (node:13936) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: PCA mantém planejamento separado de contratação e gasto
+ok 473 - PCA mantém planejamento separado de contratação e gasto
+  ---
+  duration_ms: 2.4587
+  type: 'test'
+  ...
+# Subtest: penalidade preserva fornecedor, espécie e vigência
+ok 474 - penalidade preserva fornecedor, espécie e vigência
+  ---
+  duration_ms: 1.0371
+  type: 'test'
+  ...
+# (node:9884) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: identifica o processo na resposta de detalhe do Senado
+ok 475 - identifica o processo na resposta de detalhe do Senado
+  ---
+  duration_ms: 1.6146
+  type: 'test'
+  ...
+# Subtest: normaliza assuntos e tramitação do processo do Senado
+ok 476 - normaliza assuntos e tramitação do processo do Senado
+  ---
+  duration_ms: 2.6197
+  type: 'test'
+  ...
+# (node:2984) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: publica conjuntos estruturados do Senado sem confundir instrumento e pagamento
+ok 477 - publica conjuntos estruturados do Senado sem confundir instrumento e pagamento
+  ---
+  duration_ms: 208.5686
+  type: 'test'
+  ...
+# (node:792) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: financeLabelSemantics: categoria real, favorecido e rótulo inutilizável
+ok 478 - financeLabelSemantics: categoria real, favorecido e rótulo inutilizável
+  ---
+  duration_ms: 2.5652
+  type: 'test'
+  ...
+# Subtest: readStateHouseStory: sem tabela de agregados devolve vazio (nada quebra a página)
+ok 479 - readStateHouseStory: sem tabela de agregados devolve vazio (nada quebra a página)
+  ---
+  duration_ms: 1.6807
+  type: 'test'
+  ...
+# Subtest: readStateHouseStory: agregado só é "fresco" se a chave de revisões ativas bate
+ok 480 - readStateHouseStory: agregado só é "fresco" se a chave de revisões ativas bate
+  ---
+  duration_ms: 4.7603
+  type: 'test'
+  ...
+# Subtest: refreshStateHouseStory: não escreve fora do schema de agregados
+ok 481 - refreshStateHouseStory: não escreve fora do schema de agregados
+  ---
+  duration_ms: 2.3695
+  type: 'test'
+  ...
+# Subtest: readStateHouseGlances: junta seções por Casa e tolera schema ausente
+ok 482 - readStateHouseGlances: junta seções por Casa e tolera schema ausente
+  ---
+  duration_ms: 38.223
+  type: 'test'
+  ...
+# Subtest: control-plane: afterPublication roda só quando uma revisão foi ativada e nunca em dry-run
+ok 483 - control-plane: afterPublication roda só quando uma revisão foi ativada e nunca em dry-run
+  ---
+  duration_ms: 332.698
+  type: 'test'
+  ...
+# Subtest: control-plane: falha no afterPublication vira aviso e não derruba a coleta
+ok 484 - control-plane: falha no afterPublication vira aviso e não derruba a coleta
+  ---
+  duration_ms: 3.1319
+  type: 'test'
+  ...
+# Subtest: reconcileStateHouseStories: recalcula só Casas defasadas, respeita a trava e isola falhas
+ok 485 - reconcileStateHouseStories: recalcula só Casas defasadas, respeita a trava e isola falhas
+  ---
+  duration_ms: 5.7099
+  type: 'test'
+  ...
+# Subtest: financeiro: normalização ignora acento, caixa, pontuação e "Dep.", mas não inventa nomes
+ok 486 - financeiro: normalização ignora acento, caixa, pontuação e "Dep.", mas não inventa nomes
+  ---
+  duration_ms: 1.3038
+  type: 'test'
+  ...
+# Subtest: financeiro: id do cadastro > chave oficial > nome exato único > nome sem tratamento
+ok 487 - financeiro: id do cadastro > chave oficial > nome exato único > nome sem tratamento
+  ---
+  duration_ms: 1.9297
+  type: 'test'
+  ...
+# Subtest: financeiro: nome ambíguo, desconhecido ou só parecido nunca é ligado
+ok 488 - financeiro: nome ambíguo, desconhecido ou só parecido nunca é ligado
+  ---
+  duration_ms: 0.442
+  type: 'test'
+  ...
+# Subtest: financeiro: ponte oficial de SP lê matrícula do portal da ALESP
+ok 489 - financeiro: ponte oficial de SP lê matrícula do portal da ALESP
+  ---
+  duration_ms: 0.38
+  type: 'test'
+  ...
+# Subtest: custo = subsídio × parlamentares + cotas do mês comum; sem gabinete; mesmo universo na média
+ok 490 - custo = subsídio × parlamentares + cotas do mês comum; sem gabinete; mesmo universo na média
+  ---
+  duration_ms: 5.3445
+  type: 'test'
+  ...
+# Subtest: Casa com saldos misturados a despesas e Casa com poucos lançamentos ficam fora, com motivo
+ok 491 - Casa com saldos misturados a despesas e Casa com poucos lançamentos ficam fora, com motivo
+  ---
+  duration_ms: 0.9124
+  type: 'test'
+  ...
+# Subtest: subsídio vigente no mês: troca de tabela e referência judicial não entram
+ok 492 - subsídio vigente no mês: troca de tabela e referência judicial não entram
+  ---
+  duration_ms: 0.3334
+  type: 'test'
+  ...
+# Subtest: proposições por Assembleia: só Casas operacionais com volume mínimo; média sobre essas Casas
+ok 493 - proposições por Assembleia: só Casas operacionais com volume mínimo; média sobre essas Casas
+  ---
+  duration_ms: 0.4038
+  type: 'test'
+  ...
+# Subtest: deputados: total e distritais; sem Casas devolve zeros sem quebrar
+ok 494 - deputados: total e distritais; sem Casas devolve zeros sem quebrar
+  ---
+  duration_ms: 0.5374
+  type: 'test'
+  ...
+# Subtest: o mapa base mantém as 27 UFs e a navegação por href
+ok 495 - o mapa base mantém as 27 UFs e a navegação por href
+  ---
+  duration_ms: 1.8524
+  type: 'test'
+  ...
+# Subtest: cada UF pintada alcança path e o disco de chamada na mesma regra
+ok 496 - cada UF pintada alcança path e o disco de chamada na mesma regra
+  ---
+  duration_ms: 2.6616
+  type: 'test'
+  ...
+# Subtest: UF sem valor recebe o cinza de ausência, nunca o tom mais claro da rampa
+ok 497 - UF sem valor recebe o cinza de ausência, nunca o tom mais claro da rampa
+  ---
+  duration_ms: 2.1986
+  type: 'test'
+  ...
+# Subtest: tom escuro troca a tinta do rótulo e o halo protege o meio-tom
+ok 498 - tom escuro troca a tinta do rótulo e o halo protege o meio-tom
+  ---
+  duration_ms: 1.8006
+  type: 'test'
+  ...
+# Subtest: tooltip nativo e aria-label carregam o valor; o href pode ser redirecionado
+ok 499 - tooltip nativo e aria-label carregam o valor; o href pode ser redirecionado
+  ---
+  duration_ms: 1.9581
+  type: 'test'
+  ...
+# Subtest: texto injetado é escapado para não romper o SVG
+ok 500 - texto injetado é escapado para não romper o SVG
+  ---
+  duration_ms: 1.5991
+  type: 'test'
+  ...
+# (node:2096) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: consulta por UF separa Casas e não transforma métricas ausentes em zero
+ok 501 - consulta por UF separa Casas e não transforma métricas ausentes em zero
+  ---
+  duration_ms: 189.0257
+  type: 'test'
+  ...
+# Subtest: comparação estadual usa o mesmo ano e omite UF sem representantes
+ok 502 - comparação estadual usa o mesmo ano e omite UF sem representantes
+  ---
+  duration_ms: 125.5404
+  type: 'test'
+  ...
+# Subtest: supplier detail accepts only CNPJ with valid check digits
+ok 503 - supplier detail accepts only CNPJ with valid check digits
+  ---
+  duration_ms: 1.7818
+  type: 'test'
+  ...
+# Subtest: normaliza CNPJ sem destruir letras
+ok 504 - normaliza CNPJ sem destruir letras
+  ---
+  duration_ms: 3.0776
+  type: 'test'
+  ...
+# Subtest: mantém compatibilidade com CNPJ numérico e rejeita sentinela
+ok 505 - mantém compatibilidade com CNPJ numérico e rejeita sentinela
+  ---
+  duration_ms: 0.3558
+  type: 'test'
+  ...
+# Subtest: CPF tem tipo próprio e documento mascarado não produz match forte
+ok 506 - CPF tem tipo próprio e documento mascarado não produz match forte
+  ---
+  duration_ms: 0.6179
+  type: 'test'
+  ...
+# Subtest: documento desconhecido não vira identidade forte
+ok 507 - documento desconhecido não vira identidade forte
+  ---
+  duration_ms: 0.3309
+  type: 'test'
+  ...
+# (node:14456) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: explorador separa universos e não expõe CPF
+ok 508 - explorador separa universos e não expõe CPF
+  ---
+  duration_ms: 132.1062
+  type: 'test'
+  ...
+# (node:1548) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: backfill global une CNPJ forte, preserva aliases e ignora sentinela/ausente
+ok 509 - backfill global une CNPJ forte, preserva aliases e ignora sentinela/ausente
+  ---
+  duration_ms: 178.4459
+  type: 'test'
+  ...
+# Subtest: identifierYear: 0, nulo e lixo viram null; anos reais passam
+ok 510 - identifierYear: 0, nulo e lixo viram null; anos reais passam
+  ---
+  duration_ms: 1.5815
+  type: 'test'
+  ...
+# Subtest: regressão do carregador: Number(null) era 0; a normalização devolve null (ano e número)
+ok 511 - regressão do carregador: Number(null) era 0; a normalização devolve null (ano e número)
+  ---
+  duration_ms: 0.3638
+  type: 'test'
+  ...
+# Subtest: presentedYear usa America/Sao_Paulo: a meia-noite BRT (03:00Z) é o novo ano
+ok 512 - presentedYear usa America/Sao_Paulo: a meia-noite BRT (03:00Z) é o novo ano
+  ---
+  duration_ms: 52.2715
+  type: 'test'
+  ...
+# Subtest: Câmara: data local sem fuso é interpretada em Brasília
+ok 513 - Câmara: data local sem fuso é interpretada em Brasília
+  ---
+  duration_ms: 0.7942
+  type: 'test'
+  ...
+# Subtest: temporalBasis: identifier_year nunca é descrita como "apresentadas"
+ok 514 - temporalBasis: identifier_year nunca é descrita como "apresentadas"
+  ---
+  duration_ms: 1.2956
+  type: 'test'
+  ...
+# Subtest: banco: a guarda impede gravar year = 0 e presented_year acompanha o fuso (transação revertida)
+ok 515 - banco: a guarda impede gravar year = 0 e presented_year acompanha o fuso (transação revertida) # SKIP requer o PostgreSQL local (DB_*)
+  ---
+  duration_ms: 0.1915
+  type: 'test'
+  ...
+# (node:4092) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: temas anuais da Câmara vinculam somente proposições ativas e preservam o nome oficial
+ok 516 - temas anuais da Câmara vinculam somente proposições ativas e preservam o nome oficial
+  ---
+  duration_ms: 1.9009
+  type: 'test'
+  ...
+# (node:19076) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: PRF: 1 linha = 1 sinistro (id repetida conta uma vez), três formatos de data, só somas na saída — sem id, km, coordenadas ou horário
+ok 517 - PRF: 1 linha = 1 sinistro (id repetida conta uma vez), três formatos de data, só somas na saída — sem id, km, coordenadas ou horário
+  ---
+  duration_ms: 312.7439
+  type: 'test'
+  ...
+# Subtest: frota: XLSX com título, fórmula e cabeçalho repetido → linhas de município, vazio ≠ 0, UF/MUNICIPIO e ruído ignorados
+ok 518 - frota: XLSX com título, fórmula e cabeçalho repetido → linhas de município, vazio ≠ 0, UF/MUNICIPIO e ruído ignorados
+  ---
+  duration_ms: 659.863
+  type: 'test'
+  ...
+# Subtest: infrações: layouts wide UTF-16, wide com aspas duplicadas e long com colunas em outra ordem dão o mesmo resultado; milhar com ponto; vazio ≠ 0
+ok 519 - infrações: layouts wide UTF-16, wide com aspas duplicadas e long com colunas em outra ordem dão o mesmo resultado; milhar com ponto; vazio ≠ 0
+  ---
+  duration_ms: 258.4099
+  type: 'test'
+  ...
+# Subtest: RENAEST: agregação em fluxo sem dado pessoal; veículo órfão e código IBGE inválido são contados; saída sem endereço, CEP, coordenadas, hora ou número do acidente
+ok 520 - RENAEST: agregação em fluxo sem dado pessoal; veículo órfão e código IBGE inválido são contados; saída sem endereço, CEP, coordenadas, hora ou número do acidente
+  ---
+  duration_ms: 216.6854
+  type: 'test'
+  ...
+# Subtest: portal que devolve HTML (limite de taxa) é rejeitado, nada vai ao RAW nem ao manifesto, e a tentativa seguinte recupera o arquivo
+ok 521 - portal que devolve HTML (limite de taxa) é rejeitado, nada vai ao RAW nem ao manifesto, e a tentativa seguinte recupera o arquivo
+  ---
+  duration_ms: 3128.0918
+  type: 'test'
+  ...
+# Subtest: retomada real de download parcial: o servidor derruba a conexão em 1 MiB; o curl retoma com Range e o arquivo final é idêntico (SHA-256)
+ok 522 - retomada real de download parcial: o servidor derruba a conexão em 1 MiB; o curl retoma com Range e o arquivo final é idêntico (SHA-256)
+  ---
+  duration_ms: 3268.1316
+  type: 'test'
+  ...
+# Subtest: fonte republicada: mesmo conteúdo em outra pasta não duplica (dedupeByHash); conteúdo diferente vira nova versão
+ok 523 - fonte republicada: mesmo conteúdo em outra pasta não duplica (dedupeByHash); conteúdo diferente vira nova versão
+  ---
+  duration_ms: 103.8199
+  type: 'test'
+  ...
+# Subtest: SSD ausente ou trocado: nenhuma coleta de trânsito lê o banco nem grava
+ok 524 - SSD ausente ou trocado: nenhuma coleta de trânsito lê o banco nem grava
+  ---
+  duration_ms: 10.3793
+  type: 'test'
+  ...
+# (node:20592) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: CID de trânsito: terrestre V01–V89 por categoria, V90–V99 à parte, Y85.0 é sequela e nunca entra no evento agudo
+ok 525 - CID de trânsito: terrestre V01–V89 por categoria, V90–V99 à parte, Y85.0 é sequela e nunca entra no evento agudo
+  ---
+  duration_ms: 3.8794
+  type: 'test'
+  ...
+# Subtest: chave compacta: determinística e sem fuzzy; crosswalk valida 48 aliases contra o IBGE e não tem colisões
+ok 526 - chave compacta: determinística e sem fuzzy; crosswalk valida 48 aliases contra o IBGE e não tem colisões
+  ---
+  duration_ms: 24.5752
+  type: 'test'
+  ...
+# Subtest: inventário da frota: competência identificada em todos os 165 nomes reais de arquivo (2013-01 a 2026-09), um por mês
+ok 527 - inventário da frota: competência identificada em todos os 165 nomes reais de arquivo (2013-01 a 2026-09), um por mês
+  ---
+  duration_ms: 3.8069
+  type: 'test'
+  ...
+# Subtest: páginas da PRF e das infrações: links repetidos/trocados não enganam o parser; HTML nunca é aceito como arquivo
+ok 528 - páginas da PRF e das infrações: links repetidos/trocados não enganam o parser; HTML nunca é aceito como arquivo
+  ---
+  duration_ms: 4.6711
+  type: 'test'
+  ...
+# Subtest: RENAEST: escolhe o recurso cumulativo mais recente pelo mês do nome (não pela ordem da lista)
+ok 529 - RENAEST: escolhe o recurso cumulativo mais recente pelo mês do nome (não pela ordem da lista)
+  ---
+  duration_ms: 0.6331
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: totais com zero explícito, categorias só quando > 0, sequela separada, V90–V99 fora do terrestre, nada vaza entre UFs
+ok 530 - SIM trânsito: totais com zero explícito, categorias só quando > 0, sequela separada, V90–V99 fora do terrestre, nada vaza entre UFs
+  ---
+  duration_ms: 4.9197
+  type: 'test'
+  ...
+# Subtest: SIM trânsito: ocorrência é perspectiva distinta (indicadores próprios, sem taxa); sem município fica fora e declarado
+ok 531 - SIM trânsito: ocorrência é perspectiva distinta (indicadores próprios, sem taxa); sem município fica fora e declarado
+  ---
+  duration_ms: 21.5055
+  type: 'test'
+  ...
+# Subtest: frota: cabeçalho esperado, município ignorado e não conciliado preservados na UF, total e tipos sem perda
+ok 532 - frota: cabeçalho esperado, município ignorado e não conciliado preservados na UF, total e tipos sem perda
+  ---
+  duration_ms: 2.9429
+  type: 'test'
+  ...
+# Subtest: RENAEST: UF = Σ municípios + ignorado; sem registro não vira zero; escopo restrito a fatais é inferido e rotulado; mês sem registro gera cobertura
+ok 533 - RENAEST: UF = Σ municípios + ignorado; sem registro não vira zero; escopo restrito a fatais é inferido e rotulado; mês sem registro gera cobertura
+  ---
+  duration_ms: 4.0936
+  type: 'test'
+  ...
+# Subtest: PRF: mensal por UF com zero explícito dentro do período do arquivo; anual por município; nome sem correspondência vai ao ignorado; UF nula não é inferida
+ok 534 - PRF: mensal por UF com zero explícito dentro do período do arquivo; anual por município; nome sem correspondência vai ao ignorado; UF nula não é inferida
+  ---
+  duration_ms: 3.1372
+  type: 'test'
+  ...
+# Subtest: infrações: UF de jurisdição por nome, soma por UF = soma das linhas, nomes de UF desconhecidos são declarados
+ok 535 - infrações: UF de jurisdição por nome, soma por UF = soma das linhas, nomes de UF desconhecidos são declarados
+  ---
+  duration_ms: 0.5967
+  type: 'test'
+  ...
+# Subtest: definições: ids únicos, códigos únicos, famílias e granularidades coerentes
+ok 536 - definições: ids únicos, códigos únicos, famílias e granularidades coerentes
+  ---
+  duration_ms: 0.3318
+  type: 'test'
+  ...
+# (node:18928) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Senado conta posições de voto e exclui estados sem voto registrado
+ok 537 - Senado conta posições de voto e exclui estados sem voto registrado
+  ---
+  duration_ms: 1.5439
+  type: 'test'
+  ...
+# Subtest: Câmara conta obstrução, mas não vazio ou Artigo 17
+ok 538 - Câmara conta obstrução, mas não vazio ou Artigo 17
+  ---
+  duration_ms: 0.299
+  type: 'test'
+  ...
+# Subtest: cores de voto distinguem sim, não e códigos sem inferir desconhecidos
+ok 539 - cores de voto distinguem sim, não e códigos sem inferir desconhecidos
+  ---
+  duration_ms: 1.824
+  type: 'test'
+  ...
+1..539
+# tests 539
+# suites 0
+# pass 509
+# fail 0
+# cancelled 0
+# skipped 30
+# todo 0
+# duration_ms 100951.1583

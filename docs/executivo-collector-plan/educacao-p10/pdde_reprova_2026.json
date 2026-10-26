@@ -1,0 +1,33 @@
+[
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/situacaoprestacaoconta/situacaoprestacaoconta/excel?an_exercicio=2023&sg_uf=ES&tpRelatorio=1",
+  "status": 200,
+  "tipo": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "tamanho": "366482",
+  "trecho": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000±KX]ÕkõkI\u0001\u0000\u0000n\u0004\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xml­TÉnÂ0\u0010½ó\u0015¯Ubè¡ªª\u0004\u000e]-\u0007ú\u0001n<I,¼Éc¶¿ï$@¥\"5\u0005/^fÞâ'ÙÅlk\r[CDí]É'ù3pWÚ5%ÿ\\¼eaNIã\u001d|\u0007ÈgÓQ±Ø\u0005@F`%oS OB`Õû\u0000*µV&ÚÆF\u0004Y-e\u0003â~<~\u0010w\t\\ÊRÇÁ§#F£xZ®Lb¯[ªíÝ\u0010\u0007gÏûæN¯ä2\u0004£+¨,ºªø\u001b\u001cÁà\u0000zíÔÏìà1'dß­\u000ex÷LpÍ¶ÝE»ó#ìòZ\u0001ËÞ¥¥&¡|5> \u0011!\u001f¾é×\u000e\u0005\"4üv;(Kü«úºÖ\u0015\u0010Ç",
+  "segundos": 4.04
+ },
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/situacaoprestacaoconta/situacaoprestacaoconta/excel?an_exercicio=2024&sg_uf=ES&tpRelatorio=1",
+  "status": 200,
+  "tipo": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "tamanho": "372212",
+  "trecho": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000´KX]ÕkõkI\u0001\u0000\u0000n\u0004\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xml­TÉnÂ0\u0010½ó\u0015¯Ubè¡ªª\u0004\u000e]-\u0007ú\u0001n<I,¼Éc¶¿ï$@¥\"5\u0005/^fÞâ'ÙÅlk\r[CDí]É'ù3pWÚ5%ÿ\\¼eaNIã\u001d|\u0007ÈgÓQ±Ø\u0005@F`%oS OB`Õû\u0000*µV&ÚÆF\u0004Y-e\u0003â~<~\u0010w\t\\ÊRÇÁ§#F£xZ®Lb¯[ªíÝ\u0010\u0007gÏûæN¯ä2\u0004£+¨,ºªø\u001b\u001cÁà\u0000zíÔÏìà1'dß­\u000ex÷LpÍ¶ÝE»ó#ìòZ\u0001ËÞ¥¥&¡|5> \u0011!\u001f¾é×\u000e\u0005\"4üv;(Kü«úºÖ\u0015\u0010Ç",
+  "segundos": 4.26
+ },
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/situacaoprestacaoconta/situacaoprestacaoconta/excel?an_exercicio=2025&sg_uf=ES&tpRelatorio=1",
+  "status": 500,
+  "erro": "HTTP 500",
+  "trecho": "Erro ao gerar arquivo Excel: SQLSTATE[HY000]: General error: 1722 OCIStmtExecute: ORA-01722: invalid number  (/root/php-5.2.17/ext/pdo_oci/oci_statement.c:146)",
+  "segundos": 2.66
+ },
+ {
+  "url": "https://www.fnde.gov.br/pddeinfo/pddeinfo/escola/excelall?ano=2025&SG_UF=ES&CO_MUNICIPIO_FNDE=320035",
+  "status": 200,
+  "tipo": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "tamanho": "39210",
+  "trecho": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000¶KX]!íPS\u0001\u0000\u0000ñ\u0004\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xmlÅËnÂ0\u0010E÷|åm\u0018XTUÀ¢eË~\u001bO\u0012\u000b¿ä1¯¿ï$@¥\"@j6N2¾÷\u001eÏH.¦\u001bkØ \"jïJ>Ê«¼Ò®)ùÇü5{à\ftJ\u001aï ä[@>\fù6\u00002\u0012;,yRx\u0014\u0002«\u0016¬ÄÜ\u0007pT©}´2ÑglDÕB6 ÆÃá½¨¼KàR:\u000f>\u00190zg¨åÒ$ö²¡Ú<8{ÚmîòJ.C0ºÊ¢«ßÅ\u0011\fP¯:âÌö9)û=ØêwÄ\u0004×\u001c¥hÛ\u001d´û½S£VÀf2¦7iiP¾E\u001f\u0011!?}Ò\u0013¬:\u000bd\u00041iøI{2ü/Oõu",
+  "segundos": 1.11
+ }
+]

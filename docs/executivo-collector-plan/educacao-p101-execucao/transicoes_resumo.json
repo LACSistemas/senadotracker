@@ -1,0 +1,237 @@
+{
+ "at": "2026-10-24T18:45:11.975Z",
+ "publishedEditions": [
+  2007,
+  2008,
+  2009,
+  2010,
+  2011,
+  2012,
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "distinctSchools": 299547,
+ "snapshots": 4272656,
+ "schoolsLatestEdition": {
+  "year": 2025,
+  "n": 214192
+ },
+ "changes": {
+  "name_events": 241153,
+  "schools_changed_name": 139403,
+  "municipality_events": 757,
+  "schools_changed_municipality": 653,
+  "dependency_events": 3472,
+  "schools_changed_dependency": 3243,
+  "location_events": 4452,
+  "situation_events": 140177,
+  "schools_reappeared_after_absence": 33784,
+  "reappearance_events": 40694
+ },
+ "schoolsWithAnyChange": 140168,
+ "rowsByYear": [
+  {
+   "year": 2007,
+   "rows_in": 198507,
+   "valid": 198507,
+   "rejected": 0,
+   "active": 198507,
+   "with_mat": 198397,
+   "univ": 198397
+  },
+  {
+   "year": 2008,
+   "rows_in": 205699,
+   "valid": 205699,
+   "rejected": 0,
+   "active": 205699,
+   "with_mat": 199761,
+   "univ": 199761
+  },
+  {
+   "year": 2009,
+   "rows_in": 203455,
+   "valid": 203455,
+   "rejected": 0,
+   "active": 203455,
+   "with_mat": 197468,
+   "univ": 197468
+  },
+  {
+   "year": 2010,
+   "rows_in": 200876,
+   "valid": 200876,
+   "rejected": 0,
+   "active": 200876,
+   "with_mat": 194939,
+   "univ": 194939
+  },
+  {
+   "year": 2011,
+   "rows_in": 242147,
+   "valid": 242147,
+   "rejected": 0,
+   "active": 194932,
+   "with_mat": 193047,
+   "univ": 193047
+  },
+  {
+   "year": 2012,
+   "rows_in": 242136,
+   "valid": 242136,
+   "rejected": 0,
+   "active": 194695,
+   "with_mat": 192676,
+   "univ": 192676
+  },
+  {
+   "year": 2013,
+   "rows_in": 242680,
+   "valid": 242680,
+   "rejected": 0,
+   "active": 192678,
+   "with_mat": 190706,
+   "univ": 190706
+  },
+  {
+   "year": 2014,
+   "rows_in": 242929,
+   "valid": 242929,
+   "rejected": 0,
+   "active": 190553,
+   "with_mat": 188673,
+   "univ": 188673
+  },
+  {
+   "year": 2015,
+   "rows_in": 237879,
+   "valid": 237879,
+   "rejected": 0,
+   "active": 188689,
+   "with_mat": 186441,
+   "univ": 186441
+  },
+  {
+   "year": 2016,
+   "rows_in": 237506,
+   "valid": 237506,
+   "rejected": 0,
+   "active": 187891,
+   "with_mat": 186081,
+   "univ": 186081
+  },
+  {
+   "year": 2017,
+   "rows_in": 236481,
+   "valid": 236481,
+   "rejected": 0,
+   "active": 185925,
+   "with_mat": 184145,
+   "univ": 184145
+  },
+  {
+   "year": 2018,
+   "rows_in": 236460,
+   "valid": 236460,
+   "rejected": 0,
+   "active": 183746,
+   "with_mat": 181939,
+   "univ": 181939
+  },
+  {
+   "year": 2019,
+   "rows_in": 228521,
+   "valid": 228521,
+   "rejected": 0,
+   "active": 182468,
+   "with_mat": 180610,
+   "univ": 180610
+  },
+  {
+   "year": 2020,
+   "rows_in": 224229,
+   "valid": 224229,
+   "rejected": 0,
+   "active": 181279,
+   "with_mat": 179533,
+   "univ": 179533
+  },
+  {
+   "year": 2021,
+   "rows_in": 221140,
+   "valid": 221140,
+   "rejected": 0,
+   "active": 180057,
+   "with_mat": 178370,
+   "univ": 178370
+  },
+  {
+   "year": 2022,
+   "rows_in": 224649,
+   "valid": 224649,
+   "rejected": 0,
+   "active": 184332,
+   "with_mat": 178346,
+   "univ": 178346
+  },
+  {
+   "year": 2023,
+   "rows_in": 217625,
+   "valid": 217625,
+   "rejected": 0,
+   "active": 180230,
+   "with_mat": 178476,
+   "univ": 178476
+  },
+  {
+   "year": 2024,
+   "rows_in": 215545,
+   "valid": 215545,
+   "rejected": 0,
+   "active": 181065,
+   "with_mat": 179286,
+   "univ": 179286
+  },
+  {
+   "year": 2025,
+   "rows_in": 214192,
+   "valid": 214192,
+   "rejected": 0,
+   "active": 180540,
+   "with_mat": 178766,
+   "univ": 178766
+  }
+ ],
+ "statusByYear": {
+  "2007": "RECONCILIADO_SINOPSE",
+  "2008": "RECONCILIADO_SINOPSE",
+  "2009": "RECONCILIADO_SINOPSE",
+  "2010": "RECONCILIADO_SINOPSE",
+  "2011": "RECONCILIADO_SINOPSE",
+  "2012": "RECONCILIADO_SINOPSE",
+  "2013": "RECONCILIADO_SINOPSE",
+  "2014": "RECONCILIADO_SINOPSE",
+  "2015": "RECONCILIADO_SINOPSE",
+  "2016": "RECONCILIADO_SINOPSE",
+  "2017": "RECONCILIADO_SINOPSE",
+  "2018": "RECONCILIADO_SINOPSE",
+  "2019": "RECONCILIADO_SINOPSE",
+  "2020": "RECONCILIADO_SINOPSE",
+  "2021": "RECONCILIADO_SINOPSE",
+  "2022": "RECONCILIADO_SINOPSE",
+  "2023": "RECONCILIADO_SINOPSE",
+  "2024": "RECONCILIADO_SINOPSE",
+  "2025": "RECONCILIADO_SINOPSE"
+ }
+}

@@ -1,0 +1,313 @@
+{
+  "generatedAt": "2026-10-26T15:05:59.282Z",
+  "database": {
+    "db": "projetoeleitor_db",
+    "bytes": "31497890963"
+  },
+  "queries": {
+    "program_summary": [
+      {
+        "Plan": {
+          "Node Type": "Aggregate",
+          "Strategy": "Sorted",
+          "Partial Mode": "Finalize",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 66463.23,
+          "Total Cost": 66489.78,
+          "Plan Rows": 180,
+          "Plan Width": 30,
+          "Actual Startup Time": 281.343,
+          "Actual Total Time": 303.836,
+          "Actual Rows": 46,
+          "Actual Loops": 1,
+          "Group Key": [
+            "program_code",
+            "financial_stage",
+            "month"
+          ],
+          "Plans": [
+            {
+              "Node Type": "Gather Merge",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 66463.23,
+              "Total Cost": 66483.93,
+              "Plan Rows": 180,
+              "Plan Width": 58,
+              "Actual Startup Time": 281.334,
+              "Actual Total Time": 303.787,
+              "Actual Rows": 90,
+              "Actual Loops": 1,
+              "Workers Planned": 1,
+              "Workers Launched": 1,
+              "Plans": [
+                {
+                  "Node Type": "Sort",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 65463.22,
+                  "Total Cost": 65463.67,
+                  "Plan Rows": 180,
+                  "Plan Width": 58,
+                  "Actual Startup Time": 256.556,
+                  "Actual Total Time": 256.558,
+                  "Actual Rows": 45,
+                  "Actual Loops": 2,
+                  "Sort Key": [
+                    "program_code",
+                    "financial_stage",
+                    "month"
+                  ],
+                  "Sort Method": "quicksort",
+                  "Sort Space Used": 28,
+                  "Sort Space Type": "Memory",
+                  "Workers": [
+                    {
+                      "Worker Number": 0,
+                      "Sort Method": "quicksort",
+                      "Sort Space Used": 28,
+                      "Sort Space Type": "Memory"
+                    }
+                  ],
+                  "Plans": [
+                    {
+                      "Node Type": "Aggregate",
+                      "Strategy": "Hashed",
+                      "Partial Mode": "Partial",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 65454.23,
+                      "Total Cost": 65456.48,
+                      "Plan Rows": 180,
+                      "Plan Width": 58,
+                      "Actual Startup Time": 256.466,
+                      "Actual Total Time": 256.484,
+                      "Actual Rows": 45,
+                      "Actual Loops": 2,
+                      "Group Key": [
+                        "program_code",
+                        "financial_stage",
+                        "month"
+                      ],
+                      "Planned Partitions": 0,
+                      "HashAgg Batches": 1,
+                      "Peak Memory Usage": 64,
+                      "Disk Usage": 0,
+                      "Workers": [
+                        {
+                          "Worker Number": 0,
+                          "HashAgg Batches": 1,
+                          "Peak Memory Usage": 64,
+                          "Disk Usage": 0
+                        }
+                      ],
+                      "Plans": [
+                        {
+                          "Node Type": "Seq Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": true,
+                          "Async Capable": false,
+                          "Relation Name": "exec_edu_program_fact",
+                          "Alias": "exec_edu_program_fact",
+                          "Startup Cost": 0,
+                          "Total Cost": 61306.62,
+                          "Plan Rows": 331809,
+                          "Plan Width": 26,
+                          "Actual Startup Time": 0.014,
+                          "Actual Total Time": 129.828,
+                          "Actual Rows": 281644,
+                          "Actual Loops": 2,
+                          "Filter": "(year = 2025)",
+                          "Rows Removed by Filter": 0,
+                          "Workers": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Planning Time": 3.385,
+        "Triggers": [],
+        "Execution Time": 303.998
+      }
+    ],
+    "municipal_transfer": [
+      {
+        "Plan": {
+          "Node Type": "Aggregate",
+          "Strategy": "Hashed",
+          "Partial Mode": "Simple",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 70122.89,
+          "Total Cost": 70968.99,
+          "Plan Rows": 56407,
+          "Plan Width": 20,
+          "Actual Startup Time": 326.487,
+          "Actual Total Time": 328.087,
+          "Actual Rows": 5455,
+          "Actual Loops": 1,
+          "Group Key": [
+            "uf",
+            "municipality_siafi"
+          ],
+          "Planned Partitions": 0,
+          "HashAgg Batches": 1,
+          "Peak Memory Usage": 3601,
+          "Disk Usage": 0,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "exec_edu_program_fact",
+              "Alias": "exec_edu_program_fact",
+              "Startup Cost": 0,
+              "Total Cost": 67030.33,
+              "Plan Rows": 412341,
+              "Plan Width": 20,
+              "Actual Startup Time": 0.015,
+              "Actual Total Time": 196.824,
+              "Actual Rows": 412355,
+              "Actual Loops": 1,
+              "Filter": "((year = 2025) AND (source_dataset = 'portal_transferencias'::text) AND (program_code = '0515'::text))",
+              "Rows Removed by Filter": 150933
+            }
+          ]
+        },
+        "Planning Time": 0.178,
+        "Triggers": [],
+        "Execution Time": 328.967
+      }
+    ],
+    "pdde_school": [
+      {
+        "Plan": {
+          "Node Type": "Aggregate",
+          "Strategy": "Sorted",
+          "Partial Mode": "Simple",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 17.97,
+          "Total Cost": 18,
+          "Plan Rows": 1,
+          "Plan Width": 23,
+          "Actual Startup Time": 0.103,
+          "Actual Total Time": 0.122,
+          "Actual Rows": 20,
+          "Actual Loops": 1,
+          "Group Key": [
+            "school_inep",
+            "financial_stage"
+          ],
+          "Plans": [
+            {
+              "Node Type": "Sort",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 17.97,
+              "Total Cost": 17.97,
+              "Plan Rows": 1,
+              "Plan Width": 23,
+              "Actual Startup Time": 0.096,
+              "Actual Total Time": 0.099,
+              "Actual Rows": 66,
+              "Actual Loops": 1,
+              "Sort Key": [
+                "school_inep",
+                "financial_stage"
+              ],
+              "Sort Method": "quicksort",
+              "Sort Space Used": 27,
+              "Sort Space Type": "Memory",
+              "Plans": [
+                {
+                  "Node Type": "Bitmap Heap Scan",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Relation Name": "exec_edu_program_fact",
+                  "Alias": "exec_edu_program_fact",
+                  "Startup Cost": 13.94,
+                  "Total Cost": 17.96,
+                  "Plan Rows": 1,
+                  "Plan Width": 23,
+                  "Actual Startup Time": 0.046,
+                  "Actual Total Time": 0.067,
+                  "Actual Rows": 66,
+                  "Actual Loops": 1,
+                  "Recheck Cond": "((source_dataset = 'pdde_info'::text) AND (year = 2025) AND (school_inep IS NOT NULL))",
+                  "Rows Removed by Index Recheck": 0,
+                  "Exact Heap Blocks": 9,
+                  "Lossy Heap Blocks": 0,
+                  "Plans": [
+                    {
+                      "Node Type": "BitmapAnd",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Startup Cost": 13.94,
+                      "Total Cost": 13.94,
+                      "Plan Rows": 1,
+                      "Plan Width": 0,
+                      "Actual Startup Time": 0.037,
+                      "Actual Total Time": 0.037,
+                      "Actual Rows": 0,
+                      "Actual Loops": 1,
+                      "Plans": [
+                        {
+                          "Node Type": "Bitmap Index Scan",
+                          "Parent Relationship": "Member",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Index Name": "exec_edu_program_fact_scope_idx",
+                          "Startup Cost": 0,
+                          "Total Cost": 4.99,
+                          "Plan Rows": 75,
+                          "Plan Width": 0,
+                          "Actual Startup Time": 0.026,
+                          "Actual Total Time": 0.026,
+                          "Actual Rows": 66,
+                          "Actual Loops": 1,
+                          "Index Cond": "(source_dataset = 'pdde_info'::text)"
+                        },
+                        {
+                          "Node Type": "Bitmap Index Scan",
+                          "Parent Relationship": "Member",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Index Name": "exec_edu_program_fact_school_idx",
+                          "Startup Cost": 0,
+                          "Total Cost": 8.71,
+                          "Plan Rows": 75,
+                          "Plan Width": 0,
+                          "Actual Startup Time": 0.009,
+                          "Actual Total Time": 0.009,
+                          "Actual Rows": 66,
+                          "Actual Loops": 1,
+                          "Index Cond": "(year = 2025)"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "Planning Time": 0.154,
+        "Triggers": [],
+        "Execution Time": 0.17
+      }
+    ]
+  }
+}

@@ -32,7 +32,7 @@ const firstOf = async (ds: number, uf: number, comp: number) => (await pool.quer
 const val = async (ind: number, ent: number | string, start: string) => (await pool.query(`SELECT v.value, v.flags FROM civica_exec.exec_ind_value v JOIN civica_exec.exec_entity x USING (entity_id) WHERE v.indicator_id = $1 AND ${typeof ent === 'number' ? 'x.ibge7 = $2::int' : "x.kind = 3 AND x.uf = $2::text"} AND v.period_start = $3`, [ind, ent, start])).rows[0] as { value: number | null; flags: number } | undefined;
 
 test('migração v4: seis tabelas; idempotente; definições (indicadores + 71 medidas) sem tocar outros domínios', async () => {
-  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8]);
+  assert.deepEqual(await applyExecMigrations(pool), []); assert.deepEqual((await pool.query(`SELECT version FROM civica_exec.schema_migrations ORDER BY 1`)).rows.map(r => r.version), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]);
   const other = await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 6000`);
   assert.equal(await seedPrisionalDefs(pool), PRI_DEFS.length); assert.equal(await seedPrisionalDefs(pool), PRI_DEFS.length);
   assert.equal((await pool.query(`SELECT count(*)::int n FROM civica_exec.exec_pri_measure`)).rows[0].n, 71); assert.equal(await hash(`SELECT * FROM civica_exec.exec_ind_def WHERE indicator_id < 6000`), other);

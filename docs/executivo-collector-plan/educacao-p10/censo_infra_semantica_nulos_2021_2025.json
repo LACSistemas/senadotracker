@@ -1,0 +1,138 @@
+{
+ "2021": {
+  "IN_INTERNET": {
+   "0": 30872,
+   "1": 149185
+  },
+  "IN_BIBLIOTECA": {
+   "0": 114075,
+   "1": 65982
+  },
+  "IN_LABORATORIO_INFORMATICA": {
+   "0": 119764,
+   "1": 60293
+  },
+  "IN_QUADRA_ESPORTES": {
+   "0": 113003,
+   "1": 67054
+  },
+  "IN_AGUA_REDE_PUBLICA": {
+   "0": 43315,
+   "1": 136742
+  },
+  "IN_ESGOTO_REDE_PUBLICA": {
+   "0": 77849,
+   "1": 102208
+  }
+ },
+ "2022": {
+  "IN_INTERNET": {
+   "0": 22596,
+   "1": 157477,
+   "(vazio)": 4259
+  },
+  "IN_BIBLIOTECA": {
+   "0": 114569,
+   "1": 65504,
+   "(vazio)": 4259
+  },
+  "IN_LABORATORIO_INFORMATICA": {
+   "0": 124212,
+   "1": 55861,
+   "(vazio)": 4259
+  },
+  "IN_QUADRA_ESPORTES": {
+   "0": 112696,
+   "1": 67377,
+   "(vazio)": 4259
+  },
+  "IN_AGUA_REDE_PUBLICA": {
+   "0": 42142,
+   "1": 137931,
+   "(vazio)": 4259
+  },
+  "IN_ESGOTO_REDE_PUBLICA": {
+   "0": 77302,
+   "1": 102771,
+   "(vazio)": 4259
+  }
+ },
+ "2023": {
+  "IN_INTERNET": {
+   "1": 163855,
+   "0": 16375
+  },
+  "IN_BIBLIOTECA": {
+   "1": 65882,
+   "0": 114348
+  },
+  "IN_LABORATORIO_INFORMATICA": {
+   "1": 54470,
+   "0": 125760
+  },
+  "IN_QUADRA_ESPORTES": {
+   "0": 111652,
+   "1": 68578
+  },
+  "IN_AGUA_REDE_PUBLICA": {
+   "0": 40864,
+   "1": 139366
+  },
+  "IN_ESGOTO_REDE_PUBLICA": {
+   "1": 103320,
+   "0": 76910
+  }
+ },
+ "2024": {
+  "IN_INTERNET": {
+   "1": 166771,
+   "0": 14294
+  },
+  "IN_BIBLIOTECA": {
+   "0": 114496,
+   "1": 66569
+  },
+  "IN_LABORATORIO_INFORMATICA": {
+   "0": 127554,
+   "1": 53511
+  },
+  "IN_QUADRA_ESPORTES": {
+   "0": 111158,
+   "1": 69907
+  },
+  "IN_AGUA_REDE_PUBLICA": {
+   "0": 40089,
+   "1": 140976
+  },
+  "IN_ESGOTO_REDE_PUBLICA": {
+   "0": 75826,
+   "1": 105239
+  }
+ },
+ "2025": {
+  "IN_INTERNET": {
+   "1": 170762,
+   "0": 9778
+  },
+  "IN_BIBLIOTECA": {
+   "0": 114018,
+   "1": 66522
+  },
+  "IN_LABORATORIO_INFORMATICA": {
+   "0": 128438,
+   "1": 52102
+  },
+  "IN_QUADRA_ESPORTES": {
+   "0": 107740,
+   "1": 72800
+  },
+  "IN_AGUA_REDE_PUBLICA": {
+   "0": 38701,
+   "1": 141839
+  },
+  "IN_ESGOTO_REDE_PUBLICA": {
+   "0": 75174,
+   "1": 105366
+  }
+ }
+}

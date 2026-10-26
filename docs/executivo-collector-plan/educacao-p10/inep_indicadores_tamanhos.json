@@ -1,0 +1,2472 @@
+[
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 280203
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 23561400
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 60052921
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 279757
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 23350816
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 59881556
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 280012
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 23417192
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 59860403
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 279399
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 23472229
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 59511457
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 262760
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 19449584
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 46973805
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 284092
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 23843901
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 59442899
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 264097
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 19845459
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 47989946
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 306273
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 24261079
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 61136824
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 288463
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 20085529
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 83478222
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_BRASIL_REGIOES_UF.zip",
+  "status": 200,
+  "bytes": 378592
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 21689695
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 52159284
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2015.zip",
+  "status": 200,
+  "bytes": 391201
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2015.zip",
+  "status": 200,
+  "bytes": 21339798
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2015.zip",
+  "status": 200,
+  "bytes": 64147329
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2014.zip",
+  "status": 200,
+  "bytes": 184398
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2014.zip",
+  "status": 200,
+  "bytes": 14047664
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2014.zip",
+  "status": 200,
+  "bytes": 36560315
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2013.zip",
+  "status": 200,
+  "bytes": 183185
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2013.zip",
+  "status": 200,
+  "bytes": 14056629
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2013.zip",
+  "status": 200,
+  "bytes": 36701498
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 216310
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18432710
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 38563187
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 216737
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18451150
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 38888877
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 216667
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18495887
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 38840887
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 217268
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18534006
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 39032819
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 206396
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15332541
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 31657433
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 210263
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15668673
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 31615262
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 224687
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15353518
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 31653725
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 237542
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18731377
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 39964719
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 228487
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15546663
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 32784452
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 334088
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 16777182
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 34932124
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_brasil_regioes_ufs_2015.zip",
+  "status": 200,
+  "bytes": 291326
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_municipios_2015.zip",
+  "status": 200,
+  "bytes": 20424929
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_escolas_2015.zip",
+  "status": 200,
+  "bytes": 42175531
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_brasil_regioes_ufs_2014.zip",
+  "status": 200,
+  "bytes": 143008
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_municipios_2014.zip",
+  "status": 200,
+  "bytes": 10579830
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_escolas_2014.zip",
+  "status": 200,
+  "bytes": 23365728
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_brasil_regioes_ufs_2013.zip",
+  "status": 200,
+  "bytes": 143643
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_municipios_2013.zip",
+  "status": 200,
+  "bytes": 10539364
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_escolas_2013.zip",
+  "status": 200,
+  "bytes": 23610394
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 91421
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6917855
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18182692
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 91258
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6908718
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18276813
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 91145
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6887420
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18069441
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 91142
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6890745
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18095429
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 99925
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6077787
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15719774
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 101860
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 5706603
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15712304
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 115997
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6119572
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15727723
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 108169
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6956770
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18334193
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 115486
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 5935985
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15966722
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 210301
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 5848690
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15567579
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2015.zip",
+  "status": 200,
+  "bytes": 150986
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2015.zip",
+  "status": 200,
+  "bytes": 7096902
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2015.zip",
+  "status": 200,
+  "bytes": 17870452
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2014.zip",
+  "status": 200,
+  "bytes": 81594
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2014.zip",
+  "status": 200,
+  "bytes": 3900802
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2014.zip",
+  "status": 200,
+  "bytes": 8567012
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2013.zip",
+  "status": 200,
+  "bytes": 81496
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2013.zip",
+  "status": 200,
+  "bytes": 3910434
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2013.zip",
+  "status": 200,
+  "bytes": 8435742
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 78322
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 5993130
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 20129296
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 78460
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6037119
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 20218450
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 78270
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6033218
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 20187757
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 81096
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6044184
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 20263711
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 90612
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 4964099
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 15783893
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 92446
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 4954300
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 17642165
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 145744
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 4952384
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 17566734
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 137158
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 6084554
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 20409498
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 144175
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 4977950
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 18830958
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 237977
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 4967328
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 19624288
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2015.zip",
+  "status": 200,
+  "bytes": 138037
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2015.zip",
+  "status": 200,
+  "bytes": 6197339
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2015.zip",
+  "status": 200,
+  "bytes": 21438053
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2014.zip",
+  "status": 200,
+  "bytes": 74111
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2014.zip",
+  "status": 200,
+  "bytes": 3191105
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2014.zip",
+  "status": 200,
+  "bytes": 10557813
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2013.zip",
+  "status": 200,
+  "bytes": 73714
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2013.zip",
+  "status": 200,
+  "bytes": 3178281
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2013.zip",
+  "status": 200,
+  "bytes": 10416024
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 168657
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14418115
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 34465795
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 169224
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14506127
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 34988097
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 170214
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14598143
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 35125615
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 172134
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14627876
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 35400577
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 164834
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11781942
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 29161531
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 169487
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 12314621
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 29543998
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 216166
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11922140
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 29805661
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 221389
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14943602
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 38375961
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 215666
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 12083874
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 31353001
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 306132
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 12618818
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 33189506
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_brasil_regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 251153
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_municipios_2015.zip",
+  "status": 200,
+  "bytes": 12657678
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_escolas_2015.zip",
+  "status": 200,
+  "bytes": 43680611
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_brasil_regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 74970
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_municipios_2014.zip",
+  "status": 200,
+  "bytes": 8295414
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_escolas_2014.zip",
+  "status": 200,
+  "bytes": 20863959
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_brasil_regioes_UFs_2013.zip",
+  "status": 200,
+  "bytes": 77750
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_municipios_2013.zip",
+  "status": 200,
+  "bytes": 8323708
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_escolas_2013.zip",
+  "status": 200,
+  "bytes": 23776344
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_brasil_regioes_UFs_2012.zip",
+  "status": 200,
+  "bytes": 74968
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_municipios_2012.zip",
+  "status": 200,
+  "bytes": 8036000
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_escolas_2012.zip",
+  "status": 200,
+  "bytes": 22504422
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_brasil_regioes_UFs_2011.zip",
+  "status": 200,
+  "bytes": 74911
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_municipios_2011.zip",
+  "status": 200,
+  "bytes": 4728088
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_escolas_2011.zip",
+  "status": 200,
+  "bytes": 16885269
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/tdi_brasil_regioes_UFs_2010.zip",
+  "status": 200,
+  "bytes": 78769
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/dados_tdi_municipios_2010.zip",
+  "status": 200,
+  "bytes": 5239550
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/tdi_escolas_2010.zip",
+  "status": 200,
+  "bytes": 19493882
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/tdi_brasil_regioes_UFs_2009.zip",
+  "status": 200,
+  "bytes": 75242
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/dados_tdi_municipios_2009.zip",
+  "status": 200,
+  "bytes": 4711501
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/dados_tdi_escolas_2009.zip",
+  "status": 200,
+  "bytes": 16256108
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tdi_brasil_regioes_UFs_2008.zip",
+  "status": 200,
+  "bytes": 77225
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tdi_municipios_2008.zip",
+  "status": 200,
+  "bytes": 5095726
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tx_tdi_escolas_2008.zip",
+  "status": 200,
+  "bytes": 19594092
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_brasil_regioes_UFs_2007.zip",
+  "status": 200,
+  "bytes": 77507
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_municipios_2007.zip",
+  "status": 200,
+  "bytes": 5257809
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_escolas_2007.zip",
+  "status": 200,
+  "bytes": 19884685
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2006/tdi_brasil_regioes_UFs_2006.zip",
+  "status": 200,
+  "bytes": 63165
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2006/tdi_municipios_2006.zip",
+  "status": 200,
+  "bytes": 4154905
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_brasil_regioes_ufs_2025.zip",
+  "status": 200,
+  "bytes": 376867
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_municipios_2025.zip",
+  "status": 200,
+  "bytes": 32853597
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_escolas_2025.zip",
+  "status": 200,
+  "bytes": 66870247
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_brasil_regioes_ufs_2024.zip",
+  "status": 200,
+  "bytes": 388235
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_municipios_2024.zip",
+  "status": 200,
+  "bytes": 34487202
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_escolas_2024.zip",
+  "status": 200,
+  "bytes": 69731077
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_brasil_regioes_ufs_2023.zip",
+  "status": 200,
+  "bytes": 389928
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_municipios_2023.zip",
+  "status": 200,
+  "bytes": 34538780
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_escolas_2023.zip",
+  "status": 200,
+  "bytes": 70080905
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_brasil_regioes_ufs_2022.zip",
+  "status": 200,
+  "bytes": 407358
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_municipios_2022.zip",
+  "status": 200,
+  "bytes": 35558134
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_escolas_2022.zip",
+  "status": 200,
+  "bytes": 72330158
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_brasil_regioes_ufs_2021.zip",
+  "status": 200,
+  "bytes": 400223
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_municipios_2021.zip",
+  "status": 200,
+  "bytes": 33942286
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_escolas_2021.zip",
+  "status": 200,
+  "bytes": 69251035
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_brasil_regioes_ufs_2020.zip",
+  "status": 200,
+  "bytes": 381215
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_municipios_2020.zip",
+  "status": 200,
+  "bytes": 31782123
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_escolas_2020.zip",
+  "status": 200,
+  "bytes": 65567019
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_brasil_regioes_ufs_2019.zip",
+  "status": 200,
+  "bytes": 367101
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_municipios_2019.zip",
+  "status": 200,
+  "bytes": 29418757
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_escolas_2019.zip",
+  "status": 200,
+  "bytes": 60826063
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_BRASIL_REGIOES_UFS_2018.zip",
+  "status": 200,
+  "bytes": 369426
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_MUNICIPIOS_2018.zip",
+  "status": 200,
+  "bytes": 30162460
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_ESCOLAS_2018.zip",
+  "status": 200,
+  "bytes": 61728360
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 403520
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 29838374
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 62879373
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 526989
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 31712705
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 69325109
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 482450
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_municipios_2015.zip",
+  "status": 200,
+  "bytes": 39414545
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_escolas_2015.zip",
+  "status": 200,
+  "bytes": 86863471
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 229458
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_municipios_2014.zip",
+  "status": 200,
+  "bytes": 21564605
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_escolas_2014.zip",
+  "status": 200,
+  "bytes": 49682047
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2013.zip",
+  "status": 200,
+  "bytes": 230519
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_municipios_2013.zip",
+  "status": 200,
+  "bytes": 21427053
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_escolas_2013.zip",
+  "status": 200,
+  "bytes": 49047432
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_brasil_regioes_UFs_2012.zip",
+  "status": 200,
+  "bytes": 229990
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_municipios_2012.zip",
+  "status": 200,
+  "bytes": 20509161
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_escolas_2012.zip",
+  "status": 200,
+  "bytes": 48900356
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_brasil_regioes_UFs_2011_2.zip",
+  "status": 200,
+  "bytes": 134571
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_municipios_2011_2.zip",
+  "status": 200,
+  "bytes": 9504767
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_escolas_2011_2.zip",
+  "status": 200,
+  "bytes": 27341132
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_brasil_regioes_UFs_2010.zip",
+  "status": 200,
+  "bytes": 146826
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_municipios_2010.zip",
+  "status": 200,
+  "bytes": 11100643
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_escolas_2010_19082011.zip",
+  "status": 200,
+  "bytes": 29069923
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_brasil_regioes_UFs_2009.zip",
+  "status": 200,
+  "bytes": 148569
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_municipios_2009.zip",
+  "status": 200,
+  "bytes": 11295614
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_escola_2009.zip",
+  "status": 200,
+  "bytes": 33603914
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_brasil_regioes_UFs_2008.zip",
+  "status": 200,
+  "bytes": 147935
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_municipios_2008.zip",
+  "status": 200,
+  "bytes": 11471131
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_escola_2008.zip",
+  "status": 200,
+  "bytes": 30756995
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_brasil_regioes_UFs_2007.zip",
+  "status": 200,
+  "bytes": 161927
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_municipios_2007.zip",
+  "status": 200,
+  "bytes": 12509356
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_escolas_2007.zip",
+  "status": 200,
+  "bytes": 40276162
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2021_2022.zip",
+  "status": 200,
+  "bytes": 165841
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2021_2022.zip",
+  "status": 200,
+  "bytes": 16674294
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2020_2021.zip",
+  "status": 200,
+  "bytes": 161771
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2020_2021.zip",
+  "status": 200,
+  "bytes": 16241881
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2019_2020.zip",
+  "status": 200,
+  "bytes": 169526
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2019_2020.zip",
+  "status": 200,
+  "bytes": 17273274
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2018_2019.zip",
+  "status": 200,
+  "bytes": 171230
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2018_2019.zip",
+  "status": 200,
+  "bytes": 17593395
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2017_2018.zip",
+  "status": 200,
+  "bytes": 172130
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2017_2018.zip",
+  "status": 200,
+  "bytes": 17681736
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2016_2017.zip",
+  "status": 200,
+  "bytes": 173671
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2016_2017.zip",
+  "status": 200,
+  "bytes": 18072452
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2015_2016.zip",
+  "status": 200,
+  "bytes": 174369
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2015_2016.zip",
+  "status": 200,
+  "bytes": 18061780
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2014_2015.zip",
+  "status": 200,
+  "bytes": 175431
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2014_2015.zip",
+  "status": 200,
+  "bytes": 18136275
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2013_2014.zip",
+  "status": 200,
+  "bytes": 175505
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2013_2014.zip",
+  "status": 200,
+  "bytes": 17898604
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2012_2013.zip",
+  "status": 200,
+  "bytes": 176917
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2012_2013.zip",
+  "status": 200,
+  "bytes": 18079136
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2011_2012.zip",
+  "status": 200,
+  "bytes": 175897
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2011_2012.zip",
+  "status": 200,
+  "bytes": 18169620
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2010_2011.zip",
+  "status": 200,
+  "bytes": 175384
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2010_2011.zip",
+  "status": 200,
+  "bytes": 18315143
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2009_2010.zip",
+  "status": 200,
+  "bytes": 178504
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2009_2010.zip",
+  "status": 200,
+  "bytes": 18497447
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2008_2009.zip",
+  "status": 200,
+  "bytes": 179662
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2008_2009.zip",
+  "status": 200,
+  "bytes": 18676941
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2007_2008.zip",
+  "status": 200,
+  "bytes": 180263
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2007_2008.zip",
+  "status": 200,
+  "bytes": 18760274
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_brasil.xlsx",
+  "status": 200,
+  "bytes": 15647
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_escolas.xlsx",
+  "status": 200,
+  "bytes": 8790081
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_municipios.xlsx",
+  "status": 200,
+  "bytes": 11483563
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_estados.xlsx",
+  "status": 200,
+  "bytes": 153139
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021__brasil.xlsx",
+  "status": 200,
+  "bytes": 15851
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_escolas.xlsx",
+  "status": 200,
+  "bytes": 9072769
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_municipios.xlsx",
+  "status": 200,
+  "bytes": 6568528
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_estados.xlsx",
+  "status": 200,
+  "bytes": 156517
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_ESCOLAS.xlsx",
+  "status": 200,
+  "bytes": 8950782
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_MUNICIPIOS.xlsx",
+  "status": 200,
+  "bytes": 5906477
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_ESTADOS.xlsx",
+  "status": 200,
+  "bytes": 163460
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/nivel_socioeconomico/Indicador_Inse_2015.zip",
+  "status": 200,
+  "bytes": 4456726
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011_2013/nivel_socioeconomico/Indicador_INSE_por_Escola.zip",
+  "status": 200,
+  "bytes": 6742125
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 118258
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11254737
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 32290248
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 117584
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11132787
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 32479863
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 118195
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11097081
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 32238971
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 118154
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11135907
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 32236510
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 120904
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 9226118
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 26780049
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 123511
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 9704833
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 26897782
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 123194
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 9533992
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 26921920
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 139803
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 8095766
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 27643822
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 140255
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 8014745
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 27760217
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 228445
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 8665267
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 27687165
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 173117
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_municipios_2015.zip",
+  "status": 200,
+  "bytes": 10227869
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_escolas_2015.zip",
+  "status": 200,
+  "bytes": 32595813
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 62746
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_municipios_2014.zip",
+  "status": 200,
+  "bytes": 6013770
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_escolas_2014.zip",
+  "status": 200,
+  "bytes": 19600376
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2013.zip",
+  "status": 200,
+  "bytes": 64155
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_municipios_2013.zip",
+  "status": 200,
+  "bytes": 5732760
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_escolas_2013.zip",
+  "status": 200,
+  "bytes": 18762064
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2012.zip",
+  "status": 200,
+  "bytes": 64638
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_municipios_2012.zip",
+  "status": 200,
+  "bytes": 5728748
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_escolas_2012.zip",
+  "status": 200,
+  "bytes": 18857974
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2011.zip",
+  "status": 200,
+  "bytes": 64863
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_municipios_2011.zip",
+  "status": 200,
+  "bytes": 5895609
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_escolas_2011.zip",
+  "status": 200,
+  "bytes": 19120068
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 193024
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18043953
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 50956363
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 193755
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18049510
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 51100699
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 194185
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18086993
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 50755413
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 198113
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18120878
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 51091323
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 183437
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14512691
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 40836106
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 224987
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15186436
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 40949435
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 260139
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 18803922
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 52199086
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 199677
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14962709
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 41758141
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 197777
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14866418
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 41835912
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 291413
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15422034
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 42919000
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 270114
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_municipios_2015.zip",
+  "status": 200,
+  "bytes": 14621196
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_escolas_2015.zip",
+  "status": 200,
+  "bytes": 52625585
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 79461
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_municipios_2014.zip",
+  "status": 200,
+  "bytes": 9965386
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_escolas_2014.zip",
+  "status": 200,
+  "bytes": 27159776
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2013.zip",
+  "status": 200,
+  "bytes": 82902
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_municipios_2013.zip",
+  "status": 200,
+  "bytes": 9575087
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_escolas_2013.zip",
+  "status": 200,
+  "bytes": 25543965
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2012.zip",
+  "status": 200,
+  "bytes": 80448
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_municipios_2012.zip",
+  "status": 200,
+  "bytes": 9605454
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_escolas_2012.zip",
+  "status": 200,
+  "bytes": 26160532
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_brasil_regioes_UFs_2011.zip",
+  "status": 200,
+  "bytes": 80155
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_municipios_2011.zip",
+  "status": 200,
+  "bytes": 5150506
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_escolas_2011.zip",
+  "status": 200,
+  "bytes": 18851019
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_brasil_regioes_ufs_2010_3.zip",
+  "status": 200,
+  "bytes": 79657
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_municipios_2010_3.zip",
+  "status": 200,
+  "bytes": 5218870
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_escolas_2010_3.zip",
+  "status": 200,
+  "bytes": 19018662
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_brasil_regioes_ufs_2009.zip",
+  "status": 200,
+  "bytes": 81014
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_municipios_2009.zip",
+  "status": 200,
+  "bytes": 5230624
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_escolas_2009.zip",
+  "status": 200,
+  "bytes": 19006156
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_brasil_regioes_ufs_2008.zip",
+  "status": 200,
+  "bytes": 80461
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_municipios_2008.zip",
+  "status": 200,
+  "bytes": 5268098
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_escolas_2008.zip",
+  "status": 200,
+  "bytes": 19214607
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_brasil_regioes_ufs_2007.zip",
+  "status": 200,
+  "bytes": 81125
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_municipios_2007.zip",
+  "status": 200,
+  "bytes": 5305266
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_escolas_2007.zip",
+  "status": 200,
+  "bytes": 19063059
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 156782
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14842805
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 42082695
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 157655
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14800705
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 42362294
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 161598
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 15312900
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 44855470
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 84853
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 14552148
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 41905778
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 138482
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 10460519
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 28605781
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 141126
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 11000417
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 28567823
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 154899
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 10313835
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 27581919
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 155717
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 10339384
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 28141750
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 156043
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 10357323
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 28352073
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_BRASIL_REGIOES_UFS.zip",
+  "status": 200,
+  "bytes": 245957
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_MUNICIPIOS.zip",
+  "status": 200,
+  "bytes": 10952274
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_ESCOLAS.zip",
+  "status": 200,
+  "bytes": 29217015
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 208699
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_municipios_2015.zip",
+  "status": 200,
+  "bytes": 14779834
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_escolas_2015.zip",
+  "status": 200,
+  "bytes": 42941636
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 74599
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_municipios_2014.zip",
+  "status": 200,
+  "bytes": 8362725
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_escolas_2014.zip",
+  "status": 200,
+  "bytes": 20657967
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2013.zip",
+  "status": 200,
+  "bytes": 77322
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_municipios_2013.zip",
+  "status": 200,
+  "bytes": 7761506
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_escolas_2013.zip",
+  "status": 200,
+  "bytes": 22118044
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2012.zip",
+  "status": 200,
+  "bytes": 74521
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_municipios_2012.zip",
+  "status": 200,
+  "bytes": 7699058
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_escolas_2012.zip",
+  "status": 200,
+  "bytes": 20949518
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2011.zip",
+  "status": 200,
+  "bytes": 74579
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_municipios_2011.zip",
+  "status": 200,
+  "bytes": 4378545
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_escolas_2011.zip",
+  "status": 200,
+  "bytes": 15749208
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/horas_aula_brasil_regioes_UFs_2010.zip",
+  "status": 200,
+  "bytes": 79070
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/media_horas_aula_municipios_2010.zip",
+  "status": 200,
+  "bytes": 4972314
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/media_horas_aula_escolas_2010.zip",
+  "status": 200,
+  "bytes": 18971681
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_total.zip",
+  "status": 200,
+  "bytes": 131736
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_direto.zip",
+  "status": 200,
+  "bytes": 130894
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_valor_real.zip",
+  "status": 200,
+  "bytes": 133700
+ },
+ {
+  "url": "https://download.inep.gov.br//informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_valor_nominal.zip",
+  "status": 200,
+  "bytes": 131506
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_duracao_teorica.zip",
+  "status": 200,
+  "bytes": 135001
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_per_capita.zip",
+  "status": 200,
+  "bytes": 131290
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_total_gps_nivel.zip",
+  "status": 200,
+  "bytes": 132791
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/proporcao_natureza_despesa.zip",
+  "status": 200,
+  "bytes": 135521
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/proporcao_nivel_ensino.zip",
+  "status": 200,
+  "bytes": 129758
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/variacao_investimento.zip",
+  "status": 200,
+  "bytes": 138421
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/remuneracao_docentes_brasil_regioes_ufs_2021.zip",
+  "status": 200,
+  "bytes": 127727
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/remuneracao_docentes_municipios_2021.zip",
+  "status": 200,
+  "bytes": 4102167
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_brasil_2020.zip",
+  "status": 200,
+  "bytes": 31356
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_uf_2020.zip",
+  "status": 200,
+  "bytes": 96061
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_municipios_2020.zip",
+  "status": 200,
+  "bytes": 4125975
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_brasil_2019.zip",
+  "status": 200,
+  "bytes": 31308
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_uf_2019.zip",
+  "status": 200,
+  "bytes": 96233
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_municipios_2019.zip",
+  "status": 200,
+  "bytes": 4221320
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_brasil_2018.zip",
+  "status": 200,
+  "bytes": 45707
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_uf_2018.zip",
+  "status": 200,
+  "bytes": 103593
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_municipios_2018.zip",
+  "status": 200,
+  "bytes": 3615552
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2017.zip",
+  "status": 200,
+  "bytes": 176965
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2017.zip",
+  "status": 200,
+  "bytes": 3627379
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2016.zip",
+  "status": 200,
+  "bytes": 175968
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2016.zip",
+  "status": 200,
+  "bytes": 3602169
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2015.zip",
+  "status": 200,
+  "bytes": 155951
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2015.zip",
+  "status": 200,
+  "bytes": 3662200
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2014.zip",
+  "status": 200,
+  "bytes": 156106
+ },
+ {
+  "url": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2014.zip",
+  "status": 200,
+  "bytes": 3581756
+ }
+]

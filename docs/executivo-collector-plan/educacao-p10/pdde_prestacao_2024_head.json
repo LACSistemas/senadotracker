@@ -1,0 +1,76 @@
+{
+ "Prestação de Contas": {
+  "dimensao": "A1:O4900",
+  "linhas": [
+   {
+    "D": "Ministério da Educação - MEC"
+   },
+   {
+    "D": "Fundo Nacional de Desenvolvimento da Educação - FNDE"
+   },
+   {
+    "D": "Situação de Prestação de Contas"
+   },
+   {
+    "D": "Ano: 2024"
+   },
+   {
+    "D": "UF: ES"
+   },
+   {
+    "D": "Tipo de Relatório: Detalhado por Escola"
+   },
+   {
+    "A": "Ano",
+    "B": "Programa",
+    "C": "Região",
+    "D": "UF",
+    "E": "Município",
+    "F": "Entidade Executora - EEx",
+    "G": "CNPJ EEx",
+    "H": "Situação Prestação de Contas EEx",
+    "I": "Suspensão de Pagamento EEx",
+    "J": "Nome da Escola",
+    "K": "Código da Escola",
+    "L": "CNPJ da Executora",
+    "M": "Situação Prestação de Contas UEx",
+    "N": "Suspensão de Pagamento UEx",
+    "O": "Valor Total Previsto"
+   },
+   {
+    "A": "2024",
+    "B": "PDDE QUALIDADE",
+    "C": "SUDESTE",
+    "D": "ES",
+    "E": "AFONSO CLAUDIO",
+    "F": "SECRETARIA DE EDUCACAO DO ESTADO DO ESPIRITO SANTO",
+    "G": "27080563000193",
+    "H": "Adimplente",
+    "I": "NAO",
+    "J": "CEEFMTI AFONSO CLAUDIO",
+    "K": "32025920",
+    "L": "03322664000165",
+    "M": "Adimplente",
+    "N": "NAO",
+    "O": "3.328,00"
+   },
+   {
+    "A": "2024",
+    "B": "PDDE",
+    "C": "SUDESTE",
+    "D": "ES",
+    "E": "AFONSO CLAUDIO",
+    "F": "SECRETARIA DE EDUCACAO DO ESTADO DO ESPIRITO SANTO",
+    "G": "27080563000193",
+    "H": "Adimplente",
+    "I": "NAO",
+    "J": "CEEFMTI AFONSO CLAUDIO",
+    "K": "32025920",
+    "L": "03322664000165",
+    "M": "Adimplente",
+    "N": "NAO",
+    "O": "6.910,00"
+   }
+  ]
+ }
+}

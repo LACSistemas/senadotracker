@@ -1,0 +1,619 @@
+[
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.16,
+  "bytes": 100566,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 79,
+  "proxima_pagina": false,
+  "entes": 79
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2014,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.79,
+  "bytes": 139,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 0,
+  "proxima_pagina": false,
+  "entes": 0
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2020,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.14,
+  "bytes": 98033,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 79,
+  "proxima_pagina": false,
+  "entes": 79
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2025,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.05,
+  "bytes": 99125,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 78,
+  "proxima_pagina": false,
+  "entes": 78
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2025,
+  "periodo": 3,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.1,
+  "bytes": 95541,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 78,
+  "proxima_pagina": false,
+  "entes": 78
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2026,
+  "periodo": 1,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.02,
+  "bytes": 86359,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 75,
+  "proxima_pagina": false,
+  "entes": 75
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2026,
+  "periodo": 2,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.02,
+  "bytes": 86770,
+  "erro": null,
+  "label": "cobertura de exercício/período",
+  "linhas": 75,
+  "proxima_pagina": false,
+  "entes": 75
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.08,
+  "bytes": 100566,
+  "erro": null,
+  "label": "Vitória",
+  "linhas": 79,
+  "proxima_pagina": false,
+  "entes": 79,
+  "vitoria": [
+   {
+    "NUM_ANO": 2024,
+    "NUM_PERI": 6,
+    "COD_MUNI": 320530,
+    "NOM_MUNI": "Vitória",
+    "NUM_POPU": 348265,
+    "VAL_RECE_REAL": "3569046965.85",
+    "VAL_DESP_DOTA_ATUA": "3860307647.14",
+    "VAL_DESP_EMPE": "3433405227.29",
+    "VAL_DESP_LIQU": "3108383039.25",
+    "VAL_DESP_PAGA": "3054578156.47",
+    "IDN_DECL_RETI": "N",
+    "IDN_TIPO_DECL": "1",
+    "DAT_DECL": "2025-03-06"
+   }
+  ],
+  "alto_rio_novo": [
+   {
+    "COD_MUNI": 320035,
+    "NOM_MUNI": "Alto Rio Novo",
+    "VAL_DESP_PAGA": "26542413.65",
+    "VAL_DESP_EMPE": "35483518.64",
+    "NUM_POPU": 7841
+   }
+  ]
+ },
+ {
+  "funcao": "Despesas_Funcao_Educacao_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.02,
+  "bytes": 153757,
+  "erro": null,
+  "label": "ES 2024",
+  "linhas": 647,
+  "proxima_pagina": false,
+  "entes": 79,
+  "amostra_vitoria": [
+   {
+    "NUM_ORDE": "1",
+    "DES_SUBF": "122",
+    "VAL_DESP_EMPE": "57621534.24",
+    "VAL_DESP_LIQU": "54582577.16",
+    "VAL_DESP_PAGA": "54413436.89"
+   },
+   {
+    "NUM_ORDE": "6",
+    "DES_SUBF": "306",
+    "VAL_DESP_EMPE": "6425075.72",
+    "VAL_DESP_LIQU": "6259190",
+    "VAL_DESP_PAGA": "5765125.74"
+   },
+   {
+    "NUM_ORDE": "7",
+    "DES_SUBF": "361",
+    "VAL_DESP_EMPE": "468015114.45",
+    "VAL_DESP_LIQU": "437069959.92",
+    "VAL_DESP_PAGA": "429070857"
+   },
+   {
+    "NUM_ORDE": "11",
+    "DES_SUBF": "365",
+    "VAL_DESP_EMPE": "155376998.6",
+    "VAL_DESP_LIQU": "146798282.27",
+    "VAL_DESP_PAGA": "145090539.26"
+   },
+   {
+    "NUM_ORDE": "12",
+    "DES_SUBF": "365",
+    "VAL_DESP_EMPE": "108166076.25",
+    "VAL_DESP_LIQU": "100634365.67",
+    "VAL_DESP_PAGA": "99268601.33"
+   },
+   {
+    "NUM_ORDE": "13",
+    "DES_SUBF": "365",
+    "VAL_DESP_EMPE": "263543074.85",
+    "VAL_DESP_LIQU": "247432647.94",
+    "VAL_DESP_PAGA": "244359140.59"
+   },
+   {
+    "NUM_ORDE": "14",
+    "DES_SUBF": "366",
+    "VAL_DESP_EMPE": "19075765.75",
+    "VAL_DESP_LIQU": "17758332.8",
+    "VAL_DESP_PAGA": "17601718.46"
+   },
+   {
+    "NUM_ORDE": "15",
+    "DES_SUBF": "367",
+    "VAL_DESP_EMPE": "58425753",
+    "VAL_DESP_LIQU": "57270640",
+    "VAL_DESP_PAGA": "56893666"
+   }
+  ]
+ },
+ {
+  "funcao": "Indicadores_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 2.79,
+  "bytes": 1073401,
+  "erro": null,
+  "label": "ES 2024",
+  "linhas": 3198,
+  "proxima_pagina": false,
+  "entes": 79,
+  "amostra_vitoria": [
+   {
+    "COD_INDI": 24,
+    "NOM_INDI": "Percentual de aplicação das receitas de impostos e transferências vinculadas à educação em MDE (mínimo de 25% para estados, DF e municípios)",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "30.36"
+   },
+   {
+    "COD_INDI": 27,
+    "NOM_INDI": "Percentual das receitas do  FUNDEB não aplicadas no exercício (máximo de 10%)",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 28,
+    "NOM_INDI": "Percentual dos recursos do FUNDEB aplicados na educação infantil",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "17.24"
+   },
+   {
+    "COD_INDI": 29,
+    "NOM_INDI": "Percentual dos recursos do FUNDEB aplicados no ensino fundamental",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "70.63"
+   },
+   {
+    "COD_INDI": 30,
+    "NOM_INDI": "Percentual dos recursos do FUNDEB aplicados no ensino médio",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 31,
+    "NOM_INDI": "Percentual das despesas com educação infantil em relação à despesa total com educação",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "35.14"
+   },
+   {
+    "COD_INDI": 32,
+    "NOM_INDI": "Percentual das despesas com ensino fundamental em relação à despesa total com educação",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "58.47"
+   },
+   {
+    "COD_INDI": 33,
+    "NOM_INDI": "Percentual das despesas com ensino médio em relação à despesa total com educação",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 34,
+    "NOM_INDI": "Percentual das despesas com educação superior em relação à despesa total com educação",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 35,
+    "NOM_INDI": "Percentual das despesas em educação em relação às despesas de todas as áreas",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "25.24"
+   },
+   {
+    "COD_INDI": 36,
+    "NOM_INDI": "Percentual das despesas com alimentação escolar em relação à despesa total com educação",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 38,
+    "NOM_INDI": "Percentual das despesas com aposentadorias e pensões da área educacional em relação às despesas totais com MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 39,
+    "NOM_INDI": "Percentual das despesas com pessoal e encargos sociais da área educacional em relação à despesa total com MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 42,
+    "NOM_INDI": "Percentual das despesas com recursos do FUNDEB com professores em relação à despesa total com MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 43,
+    "NOM_INDI": "Percentual das despesas com recursos do FUNDEB com profissionais não docentes em relação à despesa total com MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 44,
+    "NOM_INDI": "Investimento educacional por aluno da educação infantil",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "21905.65"
+   },
+   {
+    "COD_INDI": 45,
+    "NOM_INDI": "Investimento educacional por aluno do ensino fundamental",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "21818.44"
+   },
+   {
+    "COD_INDI": 46,
+    "NOM_INDI": "Investimento educacional por aluno do ensino médio",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 47,
+    "NOM_INDI": "Investimento com material didático por aluno da educação básica",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "116"
+   },
+   {
+    "COD_INDI": 48,
+    "NOM_INDI": "Percentual de despesas correntes em educação em relação à despesa total em MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 49,
+    "NOM_INDI": "Percentual de investimentos de capital em educação em relação à despesa total em MDE",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 52,
+    "NOM_INDI": "Investimento educacional por aluno da educação superior",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 53,
+    "NOM_INDI": "Investimento educacional por aluno da educação de jovens e adultos",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "15606.29"
+   },
+   {
+    "COD_INDI": 54,
+    "NOM_INDI": "Investimento educacional por aluno da educação especial",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "19456.96"
+   },
+   {
+    "COD_INDI": 55,
+    "NOM_INDI": "Investimento educacional por aluno da educação profissional",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 56,
+    "NOM_INDI": "Investimento educacional por aluno da educação básica",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "21016.93"
+   },
+   {
+    "COD_INDI": 57,
+    "NOM_INDI": "Investimento educacional por aluno",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "21016.93"
+   },
+   {
+    "COD_INDI": 58,
+    "NOM_INDI": "Despesa com professores por aluno da educação básica",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "7332.76"
+   },
+   {
+    "COD_INDI": 59,
+    "NOM_INDI": "Despesas com profissionais não docentes da área educacional por aluno da educação básica",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 60,
+    "NOM_INDI": "Percentual de investimento por aluno da educação superior em relação ao investimento por aluno da educação básica",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 61,
+    "NOM_INDI": "Percentual de investimento por aluno em relação ao PIB per capita",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 62,
+    "NOM_INDI": "Percentual das receitas de transferências realizadas pelo FNDE em relação à receita total",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 63,
+    "NOM_INDI": "Percentual das receitas de impostos em relação à receita total.",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 64,
+    "NOM_INDI": "Percentual das receitas de transferências constitucionais em relação à receita total.",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 67,
+    "NOM_INDI": "Percentual de aplicação do FUNDEB na remuneração dos profissionais da educação (mínimo de 70%) - Inciso XXII, Portaria Conjunta MGI/MF/CGU Nº 33 de30-08-2023",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "100"
+   },
+   {
+    "COD_INDI": 68,
+    "NOM_INDI": "Percentual de aplicação do FUNDEB em despesas com MDE, que não remuneração dos profissionais da educação (máximo de 30%)",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 69,
+    "NOM_INDI": "Superávit/Déficit do ente federado no exercício",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "135641738.56"
+   },
+   {
+    "COD_INDI": 70,
+    "NOM_INDI": "Saldo financeiro do FUNDEB no exercício atual",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "1634849.68"
+   },
+   {
+    "COD_INDI": 84,
+    "NOM_INDI": "Investimento educacional por aluno da educação infantil - creche",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "0"
+   },
+   {
+    "COD_INDI": 85,
+    "NOM_INDI": "Investimento educacional por aluno da educação infantil - pre-escola",
+    "NOM_GRUP_INDI": "Indicadores de Dispêndio com Pessoal",
+    "VAL_INDI": "22483.91"
+   }
+  ]
+ },
+ {
+  "funcao": "Despesas_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 47.28,
+  "bytes": 68922323,
+  "erro": null,
+  "label": "ES 2024",
+  "linhas": 155037,
+  "proxima_pagina": false,
+  "entes": 79,
+  "amostra_vitoria_n": 4634,
+  "campos": [
+   "COD_EXIB",
+   "COD_EXIB_FORMATADO",
+   "COD_FONTE",
+   "COD_MUNI",
+   "COD_PAST",
+   "COD_SUBF",
+   "COD_UF",
+   "IDN_CLAS",
+   "IDN_EXIB_CODI",
+   "NOM_COLU",
+   "NOM_ITEM",
+   "NOM_MUNI",
+   "NOM_PAST",
+   "NUM_ANO",
+   "NUM_NIVE",
+   "NUM_ORDE",
+   "NUM_PERI",
+   "SIG_UF",
+   "TIPO",
+   "TIP_PASTA",
+   "VAL_DECL"
+  ]
+ },
+ {
+  "funcao": "Receita_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 14.62,
+  "bytes": 11679267,
+  "erro": null,
+  "label": "ES 2024",
+  "linhas": 35234,
+  "proxima_pagina": false,
+  "entes": 79
+ },
+ {
+  "funcao": "Informacoes_Complementares_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.26,
+  "bytes": 879104,
+  "erro": null,
+  "label": "ES 2024",
+  "linhas": 4050,
+  "proxima_pagina": false,
+  "entes": 79
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "SP",
+  "extra": "",
+  "status": 200,
+  "segundos": 1.44,
+  "bytes": 893173,
+  "erro": null,
+  "label": "São Paulo",
+  "linhas": 645,
+  "proxima_pagina": false,
+  "entes": 645,
+  "sp_capital": [
+   {
+    "COD_MUNI": 355030,
+    "NOM_MUNI": "São Paulo",
+    "VAL_DESP_PAGA": "116470674407.46",
+    "VAL_DESP_EMPE": "123909183626.77"
+   }
+  ]
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "&$filter=COD_MUNI%20eq%20320530",
+  "status": 200,
+  "segundos": 0.91,
+  "bytes": 1369,
+  "erro": null,
+  "label": "$filter COD_MUNI",
+  "linhas": 1,
+  "proxima_pagina": false,
+  "entes": 1
+ },
+ {
+  "funcao": "Dados_Gerais_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "&$top=5&$skip=5",
+  "status": 200,
+  "segundos": 0.91,
+  "bytes": 6222,
+  "erro": null,
+  "label": "$top/$skip",
+  "linhas": 5,
+  "proxima_pagina": false,
+  "entes": 5
+ },
+ {
+  "funcao": "Despesas_Siope",
+  "ano": 2024,
+  "periodo": 6,
+  "uf": "ES",
+  "extra": "&$filter=COD_MUNI%20eq%20320530",
+  "status": 200,
+  "segundos": 2.52,
+  "bytes": 2083023,
+  "erro": null,
+  "label": "Despesas $filter município",
+  "linhas": 4634,
+  "proxima_pagina": false,
+  "entes": 1
+ },
+ {
+  "funcao": "Remuneracao_Siope",
+  "nota": "NÃO CONSULTADA de propósito: o esquema traz NO_PROFISSIONAL (nome), CO_ESCOLA e salário individual. Fora do escopo de ingestão (privacidade)."
+ }
+]

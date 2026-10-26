@@ -1,0 +1,513 @@
+{
+ "paginas_nao_200": 8,
+ "linhas_brutas_por_ano": {
+  "2021": 5308,
+  "2022": 40643,
+  "2023": 242956,
+  "2024": 1087184,
+  "2025": 2023034,
+  "2026": 1712181
+ },
+ "linhas_brutas_por_mes": {
+  "2021-01": 0,
+  "2021-02": 0,
+  "2021-03": 0,
+  "2021-04": 0,
+  "2021-05": 0,
+  "2021-06": 0,
+  "2021-07": 0,
+  "2021-08": 0,
+  "2021-09": 281,
+  "2021-10": 1071,
+  "2021-11": 1563,
+  "2021-12": 2393,
+  "2022-01": 203,
+  "2022-02": 536,
+  "2022-03": 1072,
+  "2022-04": 1881,
+  "2022-05": 2392,
+  "2022-06": 3538,
+  "2022-07": 3679,
+  "2022-08": 4665,
+  "2022-09": 5731,
+  "2022-10": 4569,
+  "2022-11": 5387,
+  "2022-12": 6990,
+  "2023-01": 3343,
+  "2023-02": 3287,
+  "2023-03": 5529,
+  "2023-04": 7225,
+  "2023-05": 32293,
+  "2023-06": 21217,
+  "2023-07": 24119,
+  "2023-08": 30856,
+  "2023-09": 25752,
+  "2023-10": 27183,
+  "2023-11": 31159,
+  "2023-12": 30993,
+  "2024-01": 35909,
+  "2024-02": 54144,
+  "2024-03": 65217,
+  "2024-04": 80651,
+  "2024-05": 75003,
+  "2024-06": 102249,
+  "2024-07": 107656,
+  "2024-08": 109165,
+  "2024-09": 122651,
+  "2024-10": 123002,
+  "2024-11": 115029,
+  "2024-12": 96508,
+  "2025-01": 116208,
+  "2025-02": 152466,
+  "2025-03": 144105,
+  "2025-04": 165683,
+  "2025-05": 165499,
+  "2025-06": 157542,
+  "2025-07": 184039,
+  "2025-08": 182272,
+  "2025-09": 197481,
+  "2025-10": 201695,
+  "2025-11": 180660,
+  "2025-12": 175384,
+  "2026-01": 145935,
+  "2026-02": 177590,
+  "2026-03": 211893,
+  "2026-04": 178095,
+  "2026-05": 162589,
+  "2026-06": 169395,
+  "2026-07": 175838,
+  "2026-08": 179297,
+  "2026-09": 175549,
+  "2026-10": 136000
+ },
+ "contratos_unicos_total": 5111306,
+ "por_ano": {
+  "2021": {
+   "contratos_unicos": 6072,
+   "n_inst_superior": 1571,
+   "valor_inst_superior_centavos": 1220435732,
+   "inst_universidade_if": 1571,
+   "n_inst_nucleo": 138,
+   "valor_inst_nucleo_centavos": 2012514780,
+   "n_NUCLEO_EDUCACAO": 175,
+   "valor_NUCLEO_EDUCACAO_centavos": 2608453079,
+   "inst_departamento_educacao": 76,
+   "n_tema_amplo": 11,
+   "valor_tema_amplo_centavos": 5433179,
+   "n_inst_e_tema": 23,
+   "valor_inst_e_tema_centavos": 18038786,
+   "tema_servico_educacional": 16,
+   "n_inst_superior_hospitalar": 48,
+   "valor_inst_superior_hospitalar_centavos": 20484512,
+   "inst_universidade_if_hospitalar": 48,
+   "inst_fnde": 39,
+   "inst_unidade_escolar": 13,
+   "n_tema_nucleo": 39,
+   "valor_tema_nucleo_centavos": 599626419,
+   "tema_alimentacao_escolar": 18,
+   "inst_secretaria_educacao": 8,
+   "tema_mobiliario_equip_escolar": 1,
+   "tema_obra_escolar": 5,
+   "tema_transporte_escolar": 15,
+   "inst_fundo_educacao": 2,
+   "nucleo_sobreposto_a_seguranca": 1,
+   "tema_manutencao_escolar": 1
+  },
+  "2022": {
+   "contratos_unicos": 44229,
+   "n_inst_superior": 7426,
+   "valor_inst_superior_centavos": 64774349876,
+   "inst_universidade_if": 7426,
+   "n_tema_amplo": 76,
+   "valor_tema_amplo_centavos": 1022122951,
+   "n_inst_e_tema": 87,
+   "valor_inst_e_tema_centavos": 1152581077,
+   "tema_servico_educacional": 86,
+   "n_inst_nucleo": 548,
+   "valor_inst_nucleo_centavos": 17105418760,
+   "n_NUCLEO_EDUCACAO": 807,
+   "valor_NUCLEO_EDUCACAO_centavos": 18787846379,
+   "inst_departamento_educacao": 273,
+   "inst_fundo_educacao": 81,
+   "n_inst_superior_hospitalar": 415,
+   "valor_inst_superior_hospitalar_centavos": 264721564,
+   "inst_universidade_if_hospitalar": 415,
+   "inst_unidade_escolar": 77,
+   "n_tema_nucleo": 271,
+   "valor_tema_nucleo_centavos": 2457702567,
+   "tema_alimentacao_escolar": 85,
+   "tema_transporte_escolar": 65,
+   "inst_secretaria_educacao": 77,
+   "tema_manutencao_escolar": 9,
+   "inst_fnde": 65,
+   "tema_mobiliario_equip_escolar": 15,
+   "tema_material_didatico": 80,
+   "tema_obra_escolar": 15,
+   "nucleo_sobreposto_a_seguranca": 1,
+   "tema_tecnologia_educacional": 3,
+   "outlier_acima_10bi": 1
+  },
+  "2023": {
+   "contratos_unicos": 284773,
+   "n_inst_nucleo": 3611,
+   "valor_inst_nucleo_centavos": 141140163665,
+   "n_NUCLEO_EDUCACAO": 5792,
+   "valor_NUCLEO_EDUCACAO_centavos": 198841801206,
+   "inst_fundo_educacao": 1879,
+   "n_tema_nucleo": 2704,
+   "valor_tema_nucleo_centavos": 67076862215,
+   "tema_manutencao_escolar": 129,
+   "n_tema_amplo": 955,
+   "valor_tema_amplo_centavos": 39539036471,
+   "n_inst_e_tema": 1122,
+   "valor_inst_e_tema_centavos": 36427540865,
+   "tema_servico_educacional": 1188,
+   "n_inst_superior": 21478,
+   "valor_inst_superior_centavos": 872896435054,
+   "inst_universidade_if": 21478,
+   "tema_alimentacao_escolar": 977,
+   "n_inst_superior_hospitalar": 2199,
+   "valor_inst_superior_hospitalar_centavos": 168750029259,
+   "inst_universidade_if_hospitalar": 2199,
+   "tema_transporte_escolar": 1000,
+   "inst_unidade_escolar": 319,
+   "tema_obra_escolar": 216,
+   "inst_fnde": 131,
+   "tema_mobiliario_equip_escolar": 298,
+   "inst_secretaria_educacao": 1241,
+   "inst_departamento_educacao": 392,
+   "tema_material_didatico": 86,
+   "nucleo_sobreposto_a_seguranca": 6,
+   "tema_tecnologia_educacional": 4,
+   "outlier_acima_10bi": 2
+  },
+  "2024": {
+   "contratos_unicos": 1226981,
+   "n_inst_superior": 67893,
+   "valor_inst_superior_centavos": 1838322956094,
+   "inst_universidade_if": 67893,
+   "n_inst_nucleo": 39428,
+   "valor_inst_nucleo_centavos": 2895638654745,
+   "n_NUCLEO_EDUCACAO": 61131,
+   "valor_NUCLEO_EDUCACAO_centavos": 3550246029702,
+   "inst_secretaria_educacao": 21374,
+   "n_tema_nucleo": 33398,
+   "valor_tema_nucleo_centavos": 1298998758380,
+   "tema_mobiliario_equip_escolar": 2179,
+   "n_tema_amplo": 5636,
+   "valor_tema_amplo_centavos": 504268038908,
+   "tema_servico_educacional": 8463,
+   "tema_material_didatico": 861,
+   "inst_fundo_educacao": 13403,
+   "tema_alimentacao_escolar": 20275,
+   "n_inst_e_tema": 14348,
+   "valor_inst_e_tema_centavos": 896318398338,
+   "tema_transporte_escolar": 6643,
+   "inst_fnde": 243,
+   "tema_manutencao_escolar": 1371,
+   "tema_obra_escolar": 2206,
+   "inst_unidade_escolar": 2893,
+   "n_inst_superior_hospitalar": 5711,
+   "valor_inst_superior_hospitalar_centavos": 225236584137,
+   "inst_universidade_if_hospitalar": 5711,
+   "inst_departamento_educacao": 2441,
+   "outlier_acima_10bi": 19,
+   "nucleo_sobreposto_a_seguranca": 279,
+   "tema_tecnologia_educacional": 48
+  },
+  "2025": {
+   "contratos_unicos": 2029626,
+   "n_inst_nucleo": 75402,
+   "valor_inst_nucleo_centavos": 4020708898799,
+   "n_tema_amplo": 8721,
+   "valor_tema_amplo_centavos": 1555995086065,
+   "n_inst_e_tema": 26866,
+   "valor_inst_e_tema_centavos": 1820395021849,
+   "n_NUCLEO_EDUCACAO": 119521,
+   "valor_NUCLEO_EDUCACAO_centavos": 8367866917767,
+   "inst_fundo_educacao": 25782,
+   "tema_servico_educacional": 14100,
+   "n_tema_nucleo": 66800,
+   "valor_tema_nucleo_centavos": 5462895321550,
+   "nucleo_sobreposto_a_seguranca": 270,
+   "tema_material_didatico": 1542,
+   "inst_secretaria_educacao": 41778,
+   "tema_manutencao_escolar": 3176,
+   "inst_unidade_escolar": 4235,
+   "tema_alimentacao_escolar": 43122,
+   "n_inst_superior": 147144,
+   "valor_inst_superior_centavos": 2459718964219,
+   "inst_universidade_if": 147144,
+   "tema_mobiliario_equip_escolar": 4742,
+   "tema_transporte_escolar": 10361,
+   "tema_obra_escolar": 4150,
+   "n_inst_superior_hospitalar": 12718,
+   "valor_inst_superior_hospitalar_centavos": 424962141124,
+   "inst_universidade_if_hospitalar": 12718,
+   "inst_departamento_educacao": 4862,
+   "outlier_acima_10bi": 76,
+   "inst_fnde": 621,
+   "tema_tecnologia_educacional": 100
+  },
+  "2026": {
+   "contratos_unicos": 1519492,
+   "n_inst_nucleo": 65114,
+   "valor_inst_nucleo_centavos": 4352684826531,
+   "n_tema_nucleo": 57660,
+   "valor_tema_nucleo_centavos": 3033020764202,
+   "n_inst_e_tema": 27009,
+   "valor_inst_e_tema_centavos": 2009793196045,
+   "n_NUCLEO_EDUCACAO": 99310,
+   "valor_NUCLEO_EDUCACAO_centavos": 5851930437797,
+   "inst_secretaria_educacao": 37357,
+   "tema_alimentacao_escolar": 38618,
+   "tema_transporte_escolar": 8635,
+   "tema_obra_escolar": 3407,
+   "inst_fundo_educacao": 21305,
+   "n_inst_superior": 80949,
+   "valor_inst_superior_centavos": 2808368006107,
+   "inst_universidade_if": 80949,
+   "outlier_acima_10bi": 20,
+   "n_tema_amplo": 7321,
+   "valor_tema_amplo_centavos": 937433197797,
+   "tema_servico_educacional": 12004,
+   "n_inst_superior_hospitalar": 10801,
+   "valor_inst_superior_hospitalar_centavos": 109433470325,
+   "inst_universidade_if_hospitalar": 10801,
+   "tema_material_didatico": 1029,
+   "tema_mobiliario_equip_escolar": 3525,
+   "inst_departamento_educacao": 3790,
+   "tema_manutencao_escolar": 2673,
+   "inst_fnde": 362,
+   "inst_unidade_escolar": 3331,
+   "tema_tecnologia_educacional": 77,
+   "nucleo_sobreposto_a_seguranca": 135
+  },
+  "2027": {
+   "contratos_unicos": 34,
+   "n_tema_nucleo": 3,
+   "valor_tema_nucleo_centavos": 10199250,
+   "n_NUCLEO_EDUCACAO": 3,
+   "valor_NUCLEO_EDUCACAO_centavos": 10199250,
+   "tema_alimentacao_escolar": 3,
+   "n_inst_superior": 1,
+   "valor_inst_superior_centavos": 428998,
+   "inst_universidade_if": 1,
+   "n_inst_nucleo": 1,
+   "valor_inst_nucleo_centavos": 1784000,
+   "n_inst_e_tema": 1,
+   "valor_inst_e_tema_centavos": 1784000,
+   "inst_fundo_educacao": 1,
+   "tema_servico_educacional": 1
+  },
+  "2028": {
+   "contratos_unicos": 14
+  },
+  "2029": {
+   "contratos_unicos": 8,
+   "n_tema_nucleo": 2,
+   "valor_tema_nucleo_centavos": 2762300,
+   "n_NUCLEO_EDUCACAO": 2,
+   "valor_NUCLEO_EDUCACAO_centavos": 2762300,
+   "tema_alimentacao_escolar": 2
+  },
+  "2030": {
+   "contratos_unicos": 1
+  },
+  "2031": {
+   "contratos_unicos": 1
+  },
+  "2032": {
+   "contratos_unicos": 1
+  },
+  "2033": {
+   "contratos_unicos": 1,
+   "n_tema_nucleo": 1,
+   "valor_tema_nucleo_centavos": 72000000,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 72000000,
+   "tema_alimentacao_escolar": 1
+  },
+  "2036": {
+   "contratos_unicos": 1
+  },
+  "2052": {
+   "contratos_unicos": 2,
+   "n_tema_nucleo": 1,
+   "valor_tema_nucleo_centavos": 81585,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 81585,
+   "tema_mobiliario_equip_escolar": 1
+  },
+  "2055": {
+   "contratos_unicos": 3
+  },
+  "2062": {
+   "contratos_unicos": 2
+  },
+  "2202": {
+   "contratos_unicos": 2
+  },
+  "2203": {
+   "contratos_unicos": 1
+  },
+  "2204": {
+   "contratos_unicos": 1
+  },
+  "2206": {
+   "contratos_unicos": 3,
+   "n_inst_nucleo": 1,
+   "valor_inst_nucleo_centavos": 3729550,
+   "n_tema_nucleo": 1,
+   "valor_tema_nucleo_centavos": 3729550,
+   "n_inst_e_tema": 1,
+   "valor_inst_e_tema_centavos": 3729550,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 3729550,
+   "inst_secretaria_educacao": 1,
+   "tema_alimentacao_escolar": 1,
+   "tema_servico_educacional": 1
+  },
+  "2302": {
+   "contratos_unicos": 1
+  },
+  "2525": {
+   "contratos_unicos": 1
+  },
+  "2651": {
+   "contratos_unicos": 1
+  },
+  "2692": {
+   "contratos_unicos": 1,
+   "n_tema_nucleo": 1,
+   "valor_tema_nucleo_centavos": 2164800,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 2164800,
+   "tema_alimentacao_escolar": 1
+  },
+  "2702": {
+   "contratos_unicos": 1
+  },
+  "2925": {
+   "contratos_unicos": 1
+  },
+  "2950": {
+   "contratos_unicos": 1
+  },
+  "3025": {
+   "contratos_unicos": 1
+  },
+  "3035": {
+   "contratos_unicos": 1
+  },
+  "4761": {
+   "contratos_unicos": 1
+  },
+  "4792": {
+   "contratos_unicos": 1
+  },
+  "4881": {
+   "contratos_unicos": 3
+  },
+  "5539": {
+   "contratos_unicos": 1
+  },
+  "5555": {
+   "contratos_unicos": 1,
+   "n_inst_nucleo": 1,
+   "valor_inst_nucleo_centavos": 14622000,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 14622000,
+   "inst_fundo_educacao": 1
+  },
+  "5720": {
+   "contratos_unicos": 1
+  },
+  "6026": {
+   "contratos_unicos": 1
+  },
+  "8197": {
+   "contratos_unicos": 11
+  },
+  "8202": {
+   "contratos_unicos": 1
+  },
+  "9999": {
+   "contratos_unicos": 1
+  },
+  "10488": {
+   "contratos_unicos": 1
+  },
+  "20024": {
+   "contratos_unicos": 3
+  },
+  "20025": {
+   "contratos_unicos": 1
+  },
+  "20203": {
+   "contratos_unicos": 1
+  },
+  "20204": {
+   "contratos_unicos": 1
+  },
+  "20223": {
+   "contratos_unicos": 1
+  },
+  "20224": {
+   "contratos_unicos": 1
+  },
+  "20225": {
+   "contratos_unicos": 1
+  },
+  "20240": {
+   "contratos_unicos": 1
+  },
+  "20241": {
+   "contratos_unicos": 2
+  },
+  "20247": {
+   "contratos_unicos": 1
+  },
+  "20252": {
+   "contratos_unicos": 2
+  },
+  "20255": {
+   "contratos_unicos": 1
+  },
+  "20258": {
+   "contratos_unicos": 1,
+   "n_tema_nucleo": 1,
+   "valor_tema_nucleo_centavos": 77953500,
+   "n_NUCLEO_EDUCACAO": 1,
+   "valor_NUCLEO_EDUCACAO_centavos": 77953500,
+   "tema_alimentacao_escolar": 1
+  },
+  "20262": {
+   "contratos_unicos": 1
+  },
+  "20265": {
+   "contratos_unicos": 1
+  },
+  "22024": {
+   "contratos_unicos": 1
+  },
+  "103224": {
+   "contratos_unicos": 1
+  },
+  "202527": {
+   "contratos_unicos": 1
+  },
+  "15012026": {
+   "contratos_unicos": 1
+  },
+  "20062025": {
+   "contratos_unicos": 1
+  },
+  "24062025": {
+   "contratos_unicos": 1
+  },
+  "26042024": {
+   "contratos_unicos": 1
+  }
+ }
+}

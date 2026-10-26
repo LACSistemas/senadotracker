@@ -1,0 +1,8 @@
+id;codigo;fonte;descricao;unidade;semantica
+7101;IND-FIN-DCA-EDU-EDU-EMP;SICONFI DCA;Despesa empenhada função 12;R$;fluxo anual exceto intra
+7102;IND-FIN-DCA-EDU-EDU-LIQ;SICONFI DCA;Despesa liquidada função 12;R$;estágio distinto
+7103;IND-FIN-DCA-EDU-EDU-PAG;SICONFI DCA;Despesa paga função 12;R$;pagamento do exercício
+7108;IND-FIN-DCA-EDU-EDU-SHARE-EMP;SICONFI DCA;Participação da função 12 na despesa total;%;mesmo ente e estágio
+7109;IND-FIN-DCA-EDU-EDU-PAYRATE;SICONFI DCA;Taxa paga/empenhada função 12;%;não é MDE/Fundeb
+7110;IND-FIN-DCA-EDU-EDU-EMP-PC;SICONFI DCA;Empenhado por habitante;R$/hab.;população IBGE
+7111;IND-FIN-DCA-EDU-EDU-PAG-PC;SICONFI DCA;Pago por habitante;R$/hab.;população IBGE

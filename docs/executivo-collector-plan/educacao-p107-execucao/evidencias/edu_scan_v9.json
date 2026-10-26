@@ -1,0 +1,463 @@
+{
+ "version": {
+  "classify": "edu-ctr-v7",
+  "publish": "edu-ctr-pub-1"
+ },
+ "seed": 20261026,
+ "total_contratos_raw": 5111306,
+ "educacionais": 431788,
+ "ensino_superior_excluido": 366199,
+ "objeto_excluido_por_regra": 549850,
+ "sem_valor": 0,
+ "nao_classificados_com_termo_escolar": 11581,
+ "material_expediente_escolar_generico_nao_classificado": 97123,
+ "por_ano": {
+  "2021": {
+   "contratos": 32,
+   "valor_reais": 273692.74,
+   "outliers_acima_10bi": 0
+  },
+  "2022": {
+   "contratos": 514,
+   "valor_reais": 16110917.89,
+   "outliers_acima_10bi": 0
+  },
+  "2023": {
+   "contratos": 6460,
+   "valor_reais": 1183769967.08,
+   "outliers_acima_10bi": 0
+  },
+  "2024": {
+   "contratos": 92836,
+   "valor_reais": 43123096761.29,
+   "outliers_acima_10bi": 1
+  },
+  "2025": {
+   "contratos": 170432,
+   "valor_reais": 100410350175.02,
+   "outliers_acima_10bi": 2
+  },
+  "2026": {
+   "contratos": 161514,
+   "valor_reais": 94413549108.32,
+   "outliers_acima_10bi": 3
+  }
+ },
+ "por_categoria_confianca": {
+  "10:CONFIRMED_OFFICIAL": {
+   "contratos": 28,
+   "valor_reais": 13839459.3,
+   "outliers_acima_10bi": 0
+  },
+  "10:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 22325,
+   "valor_reais": 16064622644.17,
+   "outliers_acima_10bi": 0
+  },
+  "10:POSSIBLE_EDUCATION": {
+   "contratos": 293,
+   "valor_reais": 103603889.53,
+   "outliers_acima_10bi": 0
+  },
+  "11:CONFIRMED_OFFICIAL": {
+   "contratos": 10,
+   "valor_reais": 7395509.89,
+   "outliers_acima_10bi": 0
+  },
+  "11:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 4545,
+   "valor_reais": 3557599252.93,
+   "outliers_acima_10bi": 0
+  },
+  "11:POSSIBLE_EDUCATION": {
+   "contratos": 309,
+   "valor_reais": 62019110.35,
+   "outliers_acima_10bi": 0
+  },
+  "12:CONFIRMED_OFFICIAL": {
+   "contratos": 15,
+   "valor_reais": 143174042.88,
+   "outliers_acima_10bi": 0
+  },
+  "12:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 6263,
+   "valor_reais": 7548307915.09,
+   "outliers_acima_10bi": 0
+  },
+  "12:POSSIBLE_EDUCATION": {
+   "contratos": 250,
+   "valor_reais": 12532384.82,
+   "outliers_acima_10bi": 0
+  },
+  "13:CONFIRMED_OFFICIAL": {
+   "contratos": 13,
+   "valor_reais": 2497547.84,
+   "outliers_acima_10bi": 0
+  },
+  "13:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 14595,
+   "valor_reais": 25545541740.11,
+   "outliers_acima_10bi": 0
+  },
+  "13:POSSIBLE_EDUCATION": {
+   "contratos": 976,
+   "valor_reais": 1555114620.1,
+   "outliers_acima_10bi": 0
+  },
+  "14:CONFIRMED_OFFICIAL": {
+   "contratos": 25,
+   "valor_reais": 1280312.11,
+   "outliers_acima_10bi": 0
+  },
+  "14:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 2633,
+   "valor_reais": 2782838664.94,
+   "outliers_acima_10bi": 0
+  },
+  "14:POSSIBLE_EDUCATION": {
+   "contratos": 142,
+   "valor_reais": 22816189.63,
+   "outliers_acima_10bi": 0
+  },
+  "15:CONFIRMED_OFFICIAL": {
+   "contratos": 38,
+   "valor_reais": 14717411.06,
+   "outliers_acima_10bi": 0
+  },
+  "15:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 961,
+   "valor_reais": 479403785.96,
+   "outliers_acima_10bi": 0
+  },
+  "15:POSSIBLE_EDUCATION": {
+   "contratos": 16,
+   "valor_reais": 15589620.19,
+   "outliers_acima_10bi": 0
+  },
+  "16:CONFIRMED_OFFICIAL": {
+   "contratos": 2386,
+   "valor_reais": 6282396872.67,
+   "outliers_acima_10bi": 0
+  },
+  "16:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 146354,
+   "valor_reais": 60542560996.79,
+   "outliers_acima_10bi": 2
+  },
+  "16:POSSIBLE_EDUCATION": {
+   "contratos": 20922,
+   "valor_reais": 18582875404.34,
+   "outliers_acima_10bi": 0
+  },
+  "1:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 5460,
+   "valor_reais": 32299977423.69,
+   "outliers_acima_10bi": 0
+  },
+  "1:POSSIBLE_EDUCATION": {
+   "contratos": 89,
+   "valor_reais": 94591820.86,
+   "outliers_acima_10bi": 0
+  },
+  "2:CONFIRMED_OFFICIAL": {
+   "contratos": 1,
+   "valor_reais": 397419.62,
+   "outliers_acima_10bi": 0
+  },
+  "2:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 5864,
+   "valor_reais": 14640751143.12,
+   "outliers_acima_10bi": 0
+  },
+  "2:POSSIBLE_EDUCATION": {
+   "contratos": 89,
+   "valor_reais": 38691378.15,
+   "outliers_acima_10bi": 0
+  },
+  "3:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 6050,
+   "valor_reais": 22135314200.22,
+   "outliers_acima_10bi": 0
+  },
+  "3:POSSIBLE_EDUCATION": {
+   "contratos": 1057,
+   "valor_reais": 103217866.78,
+   "outliers_acima_10bi": 1
+  },
+  "4:CONFIRMED_OFFICIAL": {
+   "contratos": 4,
+   "valor_reais": 4476641,
+   "outliers_acima_10bi": 0
+  },
+  "4:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 11523,
+   "valor_reais": 4374212227.29,
+   "outliers_acima_10bi": 0
+  },
+  "4:POSSIBLE_EDUCATION": {
+   "contratos": 201,
+   "valor_reais": 27210877.47,
+   "outliers_acima_10bi": 0
+  },
+  "5:CONFIRMED_OFFICIAL": {
+   "contratos": 92,
+   "valor_reais": 262162.98,
+   "outliers_acima_10bi": 0
+  },
+  "5:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 12585,
+   "valor_reais": 5613028732.01,
+   "outliers_acima_10bi": 0
+  },
+  "5:POSSIBLE_EDUCATION": {
+   "contratos": 968,
+   "valor_reais": 43044437.74,
+   "outliers_acima_10bi": 0
+  },
+  "6:CONFIRMED_OFFICIAL": {
+   "contratos": 16,
+   "valor_reais": 1980047.75,
+   "outliers_acima_10bi": 0
+  },
+  "6:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 4833,
+   "valor_reais": 2955799057.01,
+   "outliers_acima_10bi": 0
+  },
+  "6:POSSIBLE_EDUCATION": {
+   "contratos": 127,
+   "valor_reais": 20798622.63,
+   "outliers_acima_10bi": 0
+  },
+  "7:CONFIRMED_OFFICIAL": {
+   "contratos": 5,
+   "valor_reais": 4654024.76,
+   "outliers_acima_10bi": 0
+  },
+  "7:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 750,
+   "valor_reais": 544595770.64,
+   "outliers_acima_10bi": 0
+  },
+  "7:POSSIBLE_EDUCATION": {
+   "contratos": 80,
+   "valor_reais": 5399989.28,
+   "outliers_acima_10bi": 0
+  },
+  "8:CONFIRMED_OFFICIAL": {
+   "contratos": 226,
+   "valor_reais": 48650409.48,
+   "outliers_acima_10bi": 0
+  },
+  "8:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 117287,
+   "valor_reais": 19285530095.69,
+   "outliers_acima_10bi": 1
+  },
+  "8:POSSIBLE_EDUCATION": {
+   "contratos": 19149,
+   "valor_reais": 3483967648.84,
+   "outliers_acima_10bi": 0
+  },
+  "9:CONFIRMED_OFFICIAL": {
+   "contratos": 9,
+   "valor_reais": 507624086.02,
+   "outliers_acima_10bi": 0
+  },
+  "9:HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 33818,
+   "valor_reais": 19961957162.34,
+   "outliers_acima_10bi": 2
+  },
+  "9:POSSIBLE_EDUCATION": {
+   "contratos": 480,
+   "valor_reais": 443549243.8,
+   "outliers_acima_10bi": 0
+  }
+ },
+ "por_confianca": {
+  "CONFIRMED_OFFICIAL": {
+   "contratos": 2827,
+   "valor_reais": 7016945238.71,
+   "outliers_acima_10bi": 0
+  },
+  "HIGH_CONFIDENCE_DERIVED": {
+   "contratos": 384357,
+   "valor_reais": 209011751355.24,
+   "outliers_acima_10bi": 5
+  },
+  "POSSIBLE_EDUCATION": {
+   "contratos": 44604,
+   "valor_reais": 23118454028.39,
+   "outliers_acima_10bi": 1
+  }
+ },
+ "por_comprador": {
+  "0": {
+   "contratos": 199845,
+   "valor_reais": 113049885842.94,
+   "outliers_acima_10bi": 3
+  },
+  "1": {
+   "contratos": 2827,
+   "valor_reais": 7016945238.71,
+   "outliers_acima_10bi": 0
+  },
+  "2": {
+   "contratos": 102255,
+   "valor_reais": 91301257124.15,
+   "outliers_acima_10bi": 1
+  },
+  "3": {
+   "contratos": 65275,
+   "valor_reais": 25320713927.53,
+   "outliers_acima_10bi": 1
+  },
+  "4": {
+   "contratos": 9656,
+   "valor_reais": 881501074.18,
+   "outliers_acima_10bi": 0
+  },
+  "5": {
+   "contratos": 51930,
+   "valor_reais": 1576847414.83,
+   "outliers_acima_10bi": 1
+  }
+ },
+ "por_esfera": {
+  "D": {
+   "contratos": 217,
+   "valor_reais": 921962518.13,
+   "outliers_acima_10bi": 0
+  },
+  "E": {
+   "contratos": 97281,
+   "valor_reais": 69933793226.25,
+   "outliers_acima_10bi": 1
+  },
+  "F": {
+   "contratos": 5013,
+   "valor_reais": 8381245710.74,
+   "outliers_acima_10bi": 0
+  },
+  "M": {
+   "contratos": 325681,
+   "valor_reais": 158341439110.45,
+   "outliers_acima_10bi": 5
+  },
+  "N": {
+   "contratos": 3596,
+   "valor_reais": 1568710056.77,
+   "outliers_acima_10bi": 0
+  }
+ },
+ "por_faixa": {
+  "ALIMENTACAO_8": {
+   "contratos": 116768,
+   "valor_reais": 18721960928.89,
+   "outliers_acima_10bi": 1
+  },
+  "CONFIRMED_OFFICIAL": {
+   "contratos": 2827,
+   "valor_reais": 7016945238.71,
+   "outliers_acima_10bi": 0
+  },
+  "DIDATICO_UNIF_SERV_10_12": {
+   "contratos": 30175,
+   "valor_reais": 24342738679.42,
+   "outliers_acima_10bi": 0
+  },
+  "EQUIP_TEC_4_7_14_15": {
+   "contratos": 30622,
+   "valor_reais": 13670584208.39,
+   "outliers_acima_10bi": 0
+  },
+  "INSTITUCIONAL_SEM_TEMA": {
+   "contratos": 146013,
+   "valor_reais": 60022713267.26,
+   "outliers_acima_10bi": 2
+  },
+  "MANUT_TERCEIR_3_13": {
+   "contratos": 17359,
+   "valor_reais": 26239488563.22,
+   "outliers_acima_10bi": 0
+  },
+  "OBRAS_1_2": {
+   "contratos": 10888,
+   "valor_reais": 46332945088.75,
+   "outliers_acima_10bi": 0
+  },
+  "POSSIBLE": {
+   "contratos": 44604,
+   "valor_reais": 23118454028.39,
+   "outliers_acima_10bi": 1
+  },
+  "TRANSPORTE_9": {
+   "contratos": 32532,
+   "valor_reais": 19681320619.31,
+   "outliers_acima_10bi": 2
+  }
+ },
+ "por_tipo_contrato": {
+  "1": {
+   "contratos": 241528,
+   "valor_reais": 226701678339.29,
+   "outliers_acima_10bi": 6
+  },
+  "2": {
+   "contratos": 190,
+   "valor_reais": 49647285.99,
+   "outliers_acima_10bi": 0
+  },
+  "3": {
+   "contratos": 33,
+   "valor_reais": 5939915.15,
+   "outliers_acima_10bi": 0
+  },
+  "4": {
+   "contratos": 62,
+   "valor_reais": 1252981713.56,
+   "outliers_acima_10bi": 0
+  },
+  "5": {
+   "contratos": 654,
+   "valor_reais": 1953377272.97,
+   "outliers_acima_10bi": 0
+  },
+  "6": {
+   "contratos": 16,
+   "valor_reais": 2470756.71,
+   "outliers_acima_10bi": 0
+  },
+  "7": {
+   "contratos": 155484,
+   "valor_reais": 2615653376.84,
+   "outliers_acima_10bi": 0
+  },
+  "8": {
+   "contratos": 32866,
+   "valor_reais": 6191812737.36,
+   "outliers_acima_10bi": 0
+  },
+  "9": {
+   "contratos": 1,
+   "valor_reais": 200000,
+   "outliers_acima_10bi": 0
+  },
+  "10": {
+   "contratos": 1,
+   "valor_reais": 14700,
+   "outliers_acima_10bi": 0
+  },
+  "11": {
+   "contratos": 1,
+   "valor_reais": 3,
+   "outliers_acima_10bi": 0
+  },
+  "12": {
+   "contratos": 952,
+   "valor_reais": 373374521.47,
+   "outliers_acima_10bi": 0
+  }
+ }
+}

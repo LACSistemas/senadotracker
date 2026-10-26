@@ -1,6 +1,6 @@
 import type { Pool, PoolClient } from 'pg';
 import {
-  DATASET, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildFinSlice, collectCodes, ensureRefCodes, parseDcaIE, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
+  DATASET, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_EDU_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildEducationFinSlice, buildFinSlice, collectCodes, ensureRefCodes, parseDcaIE, parseDcaIEEducation, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
   type FinEnteInput, type FinSlice, type SiconfiItem,
 } from '@senadotracker/db';
 import { UF_CODE } from './cnes.ts';
@@ -83,6 +83,25 @@ async function verifyFinSlice(c: PoolClient, l: FinLoaded, slice: FinSlice, sour
 }
 
 export interface FinRunOptions { kind: Kind; years: number[]; ufs?: string[]; log?: Log; failAfterApply?: boolean; includeUniao?: boolean }
+
+/** Publica a função orçamentária 12 (Educação) a partir dos mesmos RAW Siconfi já coletados no P9.5. */
+export async function collectEducationFinancas(pool: Pool, cfg: StorageConfig, o: Omit<FinRunOptions, 'kind'>): Promise<{ results: FinPublishResult[]; missing: Array<{ year: number; uf: number }> }> {
+  await assertVolume(cfg); await assertPgHeadroom(cfg); const emap = await loadSiconfiEntityMap(pool); const results: FinPublishResult[] = []; const missing: Array<{ year: number; uf: number }> = [];
+  const ufs = (o.ufs?.length ? o.ufs.map(u => u.toUpperCase()) : ALL_UFS).map(u => ({ name: u, code: u === 'BR' ? 0 : UF_CODE[u]! })); if (o.includeUniao && !ufs.some(u => u.code === 0)) ufs.push({ name: 'BR', code: 0 });
+  for (const year of o.years) { const pop = await loadPopulation(pool, year); for (const u of ufs) {
+    const l = await loadFinBundle(cfg, emap, 'dca', year, u.code); if (!l) { missing.push({ year, uf: u.code }); continue; }
+    const parsed = l.entes.filter(e => e.items.length).map(e => parseDcaIEEducation(e.items));
+    const contaMap = await ensureRefCodes(pool, FIN_DOMAIN.conta, [...collectCodes(parsed)].map(([code, label]) => ({ code, label, attrs: { source: 'Siconfi', note: 'função orçamentária' } })));
+    const colMap = await ensureRefCodes(pool, FIN_DOMAIN.colDcaIE, DCA_IE_COLUMNS.map(c => ({ code: c.code, label: c.label, attrs: { unit: 'centavos', semantic: c.semantic, demonstrativo: ANEXO.dca } })));
+    const need = (m: Map<string, number>, c: string) => { const v = m.get(c); if (v === undefined) throw new Error(`código ${c} fora do dicionário`); return v; };
+    const slice = buildEducationFinSlice({ source: FIN_SOURCE.dcaIE, year, periodo: l.periodo, pop, entities: l.entes, ids: { conta: c => need(contaMap, c), col: c => need(colMap, c) } });
+    const br = u.code === 0; const dataset = br ? DATASET.fin_edu_dca_br : DATASET.fin_edu_dca_uf; const factSpec = br ? SPECS.fin_edu_fact_dca_br : SPECS.fin_edu_fact_dca; const covSpec = br ? SPECS.fin_edu_cov_dca_br : SPECS.fin_edu_cov_dca; const first = await isFirstPublication(pool, dataset, u.code, year * 100 + 12);
+    const fingerprint = sha256(`${l.sha256}:edu-fn12-v2:${FIN_VERSION.publish}:${year}:${u.code}`);
+    const r = await publishSlice(pool, { datasetId: dataset, uf: u.code, competence: year * 100 + 12, stage: 2, sourceHash: fingerprint, parserVersion: 'edu-fin-v2', bootstrap: first, tables: [{ spec: factSpec, rows: slice.facts }, { spec: covSpec, rows: slice.cov }], inputs: { anexo: ANEXO.dca, function: '12', year, file: l.relPath, sha256: l.sha256, entes: l.entes.length }, quality: slice.quality, derive: async (c, runId) => { await replaceIndicatorsBulk(c, runId, { indicatorIds: FIN_EDU_DCA_IDS, ufCode: u.code, from: `${year}-01-01`, to: `${year + 1}-01-01`, ...(br ? { nationalOnly: true } : {}) }, slice.indicators, !first); } });
+    const covBy: Record<string, number> = {}; for (const c of slice.cov) covBy[String(c.status)] = (covBy[String(c.status)] ?? 0) + 1; results.push({ kind: 'dca', year, uf: u.code, status: r.status, facts: slice.facts.length, indicators: slice.indicators.length, cov: covBy, failures: slice.failures.length }); o.log?.(JSON.stringify({ financas: 'education_fn12', year, uf: u.name, status: r.status, facts: slice.facts.length, indicators: slice.indicators.length, cov: covBy, invariantFailures: slice.failures.length }));
+  } }
+  return { results, missing };
+}
 /** Publica os pacotes RAW já coletados. UFs/anos sem pacote são relatados como `missing` (não são zero). */
 export async function collectFinancas(pool: Pool, cfg: StorageConfig, o: FinRunOptions): Promise<{ results: FinPublishResult[]; missing: Array<{ year: number; uf: number }> }> {
   await assertVolume(cfg); await assertPgHeadroom(cfg);

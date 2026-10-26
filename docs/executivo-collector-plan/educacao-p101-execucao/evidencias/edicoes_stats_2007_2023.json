@@ -1,0 +1,632 @@
+{
+ "2007": {
+  "linhas": 198507,
+  "codigos_distintos": 198507,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 198507
+  },
+  "dependencia": {
+   "2": 33121,
+   "3": 132548,
+   "4": 32603,
+   "1": 235
+  },
+  "localizacao": {
+   "2": 88393,
+   "1": 110114
+  },
+  "situacao": {
+   "1": 198507
+  },
+  "matricula": {
+   "pos": 198397,
+   "vazio": 110
+  },
+  "situacao_x_matricula": {
+   "1|pos": 198397,
+   "1|vazio": 110
+  },
+  "ufs": 27,
+  "municipios": 5564,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 198397
+ },
+ "2008": {
+  "linhas": 205699,
+  "codigos_distintos": 205699,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 205699
+  },
+  "dependencia": {
+   "2": 32925,
+   "3": 132384,
+   "4": 40119,
+   "1": 271
+  },
+  "localizacao": {
+   "2": 86868,
+   "1": 118831
+  },
+  "situacao": {
+   "1": 205699
+  },
+  "matricula": {
+   "pos": 199761,
+   "zero": 5938
+  },
+  "situacao_x_matricula": {
+   "1|pos": 199761,
+   "1|zero": 5938
+  },
+  "ufs": 27,
+  "municipios": 5564,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 199761
+ },
+ "2009": {
+  "linhas": 203455,
+  "codigos_distintos": 203455,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 203455
+  },
+  "dependencia": {
+   "2": 32611,
+   "3": 130020,
+   "4": 40522,
+   "1": 302
+  },
+  "localizacao": {
+   "2": 83353,
+   "1": 120102
+  },
+  "situacao": {
+   "1": 203455
+  },
+  "matricula": {
+   "pos": 197468,
+   "zero": 5987
+  },
+  "situacao_x_matricula": {
+   "1|pos": 197468,
+   "1|zero": 5987
+  },
+  "ufs": 27,
+  "municipios": 5565,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 197468
+ },
+ "2010": {
+  "linhas": 200876,
+  "codigos_distintos": 200876,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 200876
+  },
+  "dependencia": {
+   "2": 32399,
+   "3": 127207,
+   "4": 40916,
+   "1": 354
+  },
+  "localizacao": {
+   "2": 79723,
+   "1": 121153
+  },
+  "situacao": {
+   "1": 200876
+  },
+  "matricula": {
+   "pos": 194939,
+   "zero": 5937
+  },
+  "situacao_x_matricula": {
+   "1|pos": 194939,
+   "1|zero": 5937
+  },
+  "ufs": 27,
+  "municipios": 5565,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 194939
+ },
+ "2011": {
+  "linhas": 242147,
+  "codigos_distintos": 242147,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 242147
+  },
+  "dependencia": {
+   "2": 35341,
+   "3": 159720,
+   "4": 46616,
+   "1": 470
+  },
+  "localizacao": {
+   "2": 109933,
+   "1": 132214
+  },
+  "situacao": {
+   "1": 194932,
+   "2": 42506,
+   "3": 4709
+  },
+  "matricula": {
+   "pos": 193047,
+   "zero": 49100
+  },
+  "situacao_x_matricula": {
+   "1|pos": 193047,
+   "1|zero": 1885,
+   "2|zero": 42506,
+   "3|zero": 4709
+  },
+  "ufs": 27,
+  "municipios": 5565,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 193047
+ },
+ "2012": {
+  "linhas": 242136,
+  "codigos_distintos": 242136,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 242136
+  },
+  "dependencia": {
+   "2": 35412,
+   "3": 158305,
+   "4": 47901,
+   "1": 518
+  },
+  "localizacao": {
+   "2": 107550,
+   "1": 134586
+  },
+  "situacao": {
+   "1": 194695,
+   "2": 42421,
+   "3": 5020
+  },
+  "matricula": {
+   "pos": 192676,
+   "zero": 49460
+  },
+  "situacao_x_matricula": {
+   "1|pos": 192676,
+   "1|zero": 2019,
+   "2|zero": 42421,
+   "3|zero": 5020
+  },
+  "ufs": 27,
+  "municipios": 5565,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 192676
+ },
+ "2013": {
+  "linhas": 242680,
+  "codigos_distintos": 242680,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 242680
+  },
+  "dependencia": {
+   "2": 34777,
+   "3": 157561,
+   "4": 49819,
+   "1": 523
+  },
+  "localizacao": {
+   "2": 105377,
+   "1": 137303
+  },
+  "situacao": {
+   "1": 192678,
+   "3": 4018,
+   "2": 45984
+  },
+  "matricula": {
+   "pos": 190706,
+   "zero": 51974
+  },
+  "situacao_x_matricula": {
+   "1|pos": 190706,
+   "1|zero": 1972,
+   "2|zero": 45984,
+   "3|zero": 4018
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 190706
+ },
+ "2014": {
+  "linhas": 242929,
+  "codigos_distintos": 242929,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 242929
+  },
+  "dependencia": {
+   "2": 34684,
+   "3": 156733,
+   "4": 50951,
+   "1": 561
+  },
+  "localizacao": {
+   "2": 103590,
+   "1": 139339
+  },
+  "situacao": {
+   "1": 190553,
+   "2": 46765,
+   "3": 5611
+  },
+  "matricula": {
+   "pos": 188673,
+   "zero": 54256
+  },
+  "situacao_x_matricula": {
+   "1|pos": 188673,
+   "1|zero": 1880,
+   "2|zero": 46765,
+   "3|zero": 5611
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 188673
+ },
+ "2015": {
+  "linhas": 237879,
+  "codigos_distintos": 237879,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 237879
+  },
+  "dependencia": {
+   "2": 34641,
+   "3": 152039,
+   "4": 50552,
+   "1": 647
+  },
+  "localizacao": {
+   "2": 98431,
+   "1": 139448
+  },
+  "situacao": {
+   "1": 188689,
+   "2": 42564,
+   "3": 6626
+  },
+  "matricula": {
+   "pos": 186441,
+   "zero": 51438
+  },
+  "situacao_x_matricula": {
+   "1|pos": 186441,
+   "1|zero": 2248,
+   "2|zero": 42564,
+   "3|zero": 6626
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 186441
+ },
+ "2016": {
+  "linhas": 237506,
+  "codigos_distintos": 237506,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 237506
+  },
+  "dependencia": {
+   "2": 34522,
+   "3": 150994,
+   "4": 51287,
+   "1": 703
+  },
+  "localizacao": {
+   "2": 96493,
+   "1": 141013
+  },
+  "situacao": {
+   "1": 187891,
+   "2": 45583,
+   "3": 4032
+  },
+  "matricula": {
+   "pos": 186081,
+   "zero": 51425
+  },
+  "situacao_x_matricula": {
+   "1|pos": 186081,
+   "1|zero": 1810,
+   "2|zero": 45583,
+   "3|zero": 4032
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 186081
+ },
+ "2017": {
+  "linhas": 236481,
+  "codigos_distintos": 236481,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 236481
+  },
+  "dependencia": {
+   "2": 34504,
+   "3": 149399,
+   "4": 51850,
+   "1": 728
+  },
+  "localizacao": {
+   "2": 94336,
+   "1": 142145
+  },
+  "situacao": {
+   "1": 185925,
+   "3": 3673,
+   "2": 46883
+  },
+  "matricula": {
+   "pos": 184145,
+   "zero": 52336
+  },
+  "situacao_x_matricula": {
+   "1|pos": 184145,
+   "1|zero": 1780,
+   "2|zero": 46883,
+   "3|zero": 3673
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 184145
+ },
+ "2018": {
+  "linhas": 236460,
+  "codigos_distintos": 236460,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 236460
+  },
+  "dependencia": {
+   "2": 34309,
+   "3": 148468,
+   "4": 52931,
+   "1": 752
+  },
+  "localizacao": {
+   "2": 92648,
+   "1": 143812
+  },
+  "situacao": {
+   "1": 183746,
+   "2": 42505,
+   "3": 10209
+  },
+  "matricula": {
+   "pos": 181939,
+   "zero": 54521
+  },
+  "situacao_x_matricula": {
+   "1|pos": 181939,
+   "1|zero": 1807,
+   "2|zero": 42505,
+   "3|zero": 10209
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 181939
+ },
+ "2019": {
+  "linhas": 228521,
+  "codigos_distintos": 228521,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 228521
+  },
+  "dependencia": {
+   "2": 33901,
+   "3": 141382,
+   "4": 52521,
+   "1": 717
+  },
+  "localizacao": {
+   "2": 85324,
+   "1": 143197
+  },
+  "situacao": {
+   "1": 182468,
+   "2": 40468,
+   "3": 5585
+  },
+  "matricula": {
+   "pos": 180610,
+   "zero": 47911
+  },
+  "situacao_x_matricula": {
+   "1|pos": 180610,
+   "1|zero": 1858,
+   "2|zero": 40468,
+   "3|zero": 5585
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 180610
+ },
+ "2020": {
+  "linhas": 224229,
+  "codigos_distintos": 224229,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 224229
+  },
+  "dependencia": {
+   "2": 33658,
+   "3": 138033,
+   "4": 51824,
+   "1": 714
+  },
+  "localizacao": {
+   "2": 81614,
+   "1": 142615
+  },
+  "situacao": {
+   "1": 181279,
+   "3": 6112,
+   "2": 36838
+  },
+  "matricula": {
+   "pos": 179533,
+   "zero": 44696
+  },
+  "situacao_x_matricula": {
+   "1|pos": 179533,
+   "1|zero": 1746,
+   "2|zero": 36838,
+   "3|zero": 6112
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 179533
+ },
+ "2021": {
+  "linhas": 221140,
+  "codigos_distintos": 221140,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 221140
+  },
+  "dependencia": {
+   "2": 33564,
+   "3": 134369,
+   "4": 52493,
+   "1": 714
+  },
+  "localizacao": {
+   "2": 77888,
+   "1": 143252
+  },
+  "situacao": {
+   "1": 180057,
+   "2": 36502,
+   "3": 4581
+  },
+  "matricula": {
+   "pos": 178370,
+   "zero": 42770
+  },
+  "situacao_x_matricula": {
+   "1|pos": 178370,
+   "1|zero": 1687,
+   "2|zero": 36502,
+   "3|zero": 4581
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 178370
+ },
+ "2022": {
+  "linhas": 224649,
+  "codigos_distintos": 224649,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 224649
+  },
+  "dependencia": {
+   "2": 33460,
+   "3": 132629,
+   "4": 57825,
+   "1": 735
+  },
+  "localizacao": {
+   "2": 75723,
+   "1": 148926
+  },
+  "situacao": {
+   "1": 184332,
+   "2": 36526,
+   "3": 3791
+  },
+  "matricula": {
+   "pos": 178346,
+   "vazio": 46303
+  },
+  "situacao_x_matricula": {
+   "1|pos": 178346,
+   "1|vazio": 5986,
+   "2|vazio": 36526,
+   "3|vazio": 3791
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 178346
+ },
+ "2023": {
+  "linhas": 217625,
+  "codigos_distintos": 217625,
+  "codigos_duplicados": 0,
+  "comprimento_codigo": {
+   "8": 217625
+  },
+  "dependencia": {
+   "2": 33546,
+   "3": 130709,
+   "4": 52645,
+   "1": 725
+  },
+  "localizacao": {
+   "1": 144162,
+   "2": 73463
+  },
+  "situacao": {
+   "1": 180230,
+   "2": 32083,
+   "3": 5312
+  },
+  "matricula": {
+   "pos": 178476,
+   "vazio": 39149
+  },
+  "situacao_x_matricula": {
+   "1|pos": 178476,
+   "1|vazio": 1754,
+   "2|vazio": 32083,
+   "3|vazio": 5312
+  },
+  "ufs": 27,
+  "municipios": 5570,
+  "nomes_vazios": 0,
+  "uf_incompativel_com_municipio": 0,
+  "recorte_ativa_com_matricula": 178476
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "lidos_es": 1879,
+ "paginas": 19,
+ "meta_paginacao_amostra": [
+  [
+   0,
+   100,
+   100,
+   1,
+   true
+  ],
+  [
+   1,
+   100,
+   200,
+   2,
+   true
+  ],
+  [
+   2,
+   100,
+   300,
+   3,
+   true
+  ],
+  [
+   18,
+   79,
+   1879,
+   19,
+   true
+  ],
+  [
+   19,
+   0,
+   0,
+   0,
+   true
+  ]
+ ],
+ "educacao_es": 332,
+ "situacoes": [
+  [
+   "Concluída",
+   143
+  ],
+  [
+   "Cadastrada",
+   138
+  ],
+  [
+   "Em execução",
+   38
+  ],
+  [
+   "Cancelada",
+   7
+  ],
+  [
+   "Paralisada",
+   5
+  ],
+  [
+   "Inativada",
+   1
+  ]
+ ]
+}

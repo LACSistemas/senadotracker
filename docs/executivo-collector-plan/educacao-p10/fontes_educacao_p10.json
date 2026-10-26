@@ -1,0 +1,250 @@
+{
+ "gerado_em": "2026-10-24",
+ "fontes": [
+  {
+   "id": "inep_censo_escolar",
+   "familia": "Cadastro/Matrículas/Turmas/Infraestrutura/Docentes",
+   "fase": [
+    "P10.1",
+    "P10.2",
+    "P10.3"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_AAAA.zip (2025: …_2025_.zip) — descobrir pela página",
+   "prova": "contagens 2021–2025, Range em 6 tabelas, reconciliação 46.018.380"
+  },
+  {
+   "id": "inep_sinopse",
+   "familia": "Totais oficiais para reconciliação",
+   "fase": [
+    "P10.2"
+   ],
+   "classe": "READY_FOR_BACKFILL",
+   "url": "https://download.inep.gov.br/dados_abertos/sinopses_estatisticas/sinopse_estatistica_censo_escolar_AAAA.zip",
+   "prova": "tabelas 1.1, 1.2 e 2.1 lidas; Vitória 77.662 e Brasil 46.018.380"
+  },
+  {
+   "id": "inep_ideb",
+   "familia": "Ideb/aprovação/Saeb por escola, município, UF, Brasil",
+   "fase": [
+    "P10.4"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_{brasil,regioes_ufs}_ideb_2025.zip e divulgacao_{anos_iniciais,anos_finais,ensino_medio}_{municipios,escolas}_2025.zip",
+   "prova": "Brasil, UFs e municípios AI lidos; dimensões das escolas"
+  },
+  {
+   "id": "inep_saeb_resultados",
+   "familia": "Saeb por Brasil/UF/município",
+   "fase": [
+    "P10.4"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://download.inep.gov.br/saeb/resultados/saeb_2025_brasil_estados_municipios_censitario.xlsx",
+   "prova": "arquivo de 24 MB baixado e lido"
+  },
+  {
+   "id": "inep_indicadores",
+   "familia": "AFD, IED, IRD, DSU, ICG, ATU, HAD, TDI, rendimento, transição, INSE",
+   "fase": [
+    "P10.3",
+    "P10.4"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "inep_indicadores_arquivos.csv (494 URLs, todas 200)",
+   "prova": "494/494 HEAD 200; soma de tamanhos"
+  },
+  {
+   "id": "siconfi_dca_fn12",
+   "familia": "Despesa função 12 e subfunções (DCA I-E)",
+   "fase": [
+    "P10.5"
+   ],
+   "classe": "READY_FOR_BACKFILL",
+   "url": "(RAW já coletado; sem download)",
+   "prova": "siconfi_fn12_raw_x_banco.json; siconfi_fn12_invariantes.json"
+  },
+  {
+   "id": "siconfi_rreo_fn12",
+   "familia": "Dotação e execução por bimestre (RREO Anexo 02)",
+   "fase": [
+    "P10.5"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "(RAW existente)",
+   "prova": "conferência Vitória 2024"
+  },
+  {
+   "id": "siope_olinda",
+   "familia": "Gasto declarado em educação (MDE/Fundeb) por ente",
+   "fase": [
+    "P10.5"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://www.fnde.gov.br/olinda-ide/servico/DADOS_ABERTOS_SIOPE/versao/v1/odata/{Dados_Gerais_Siope,Despesas_Funcao_Educacao_Siope,Indicadores_Siope,Informacoes_Complementares_Siope}(Ano_Consulta=A,Num_Peri=P,Sig_UF='UF')?$format=json",
+   "prova": "siope_prova.json; 27 UFs × 4 exercícios"
+  },
+  {
+   "id": "portal_transferencias",
+   "familia": "Transferências da União por ação (Fundeb compl., PDDE, PNATE, infraestrutura)",
+   "fase": [
+    "P10.6"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://portaldatransparencia.gov.br/download-de-dados/transferencias/AAAAMM",
+   "prova": "202510 lido; HEAD de 165 meses"
+  },
+  {
+   "id": "federal_execucao",
+   "familia": "Execução federal por ação (nacional)",
+   "fase": [
+    "P10.6"
+   ],
+   "classe": "READY_FOR_BACKFILL",
+   "url": "(RAW existente)",
+   "prova": "medição 2025"
+  },
+  {
+   "id": "pdde_info",
+   "familia": "PDDE por escola: previsto/devido/pago, UEx, prestação de contas",
+   "fase": [
+    "P10.6"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "…/escola/excelall?ano=A&SG_UF=UF&CO_MUNICIPIO_FNDE=M (município) | …/situacaoprestacaoconta/…/excel?an_exercicio=A&sg_uf=UF&tpRelatorio=1 (UF) | …/escola/consultar?ano=A&co_escola=INEP",
+   "prova": "2024 ES ok; 2025 município ok; UF 2025 500"
+  },
+  {
+   "id": "pnae_municipal",
+   "familia": "PNAE por ente/escola",
+   "fase": [
+    "P10.6"
+   ],
+   "classe": "NEEDS_VALIDATION",
+   "url": "https://www.fnde.gov.br/sigefweb/index.php/liberacoes (HTML, não analisado)",
+   "prova": "RAW federal confirma o total nacional; município não provado"
+  },
+  {
+   "id": "fundeb_tesouro",
+   "familia": "Fundeb receita por município (Tesouro)",
+   "fase": [
+    "P10.6"
+   ],
+   "classe": "NEEDS_VALIDATION",
+   "url": "…/ckan/dataset/transferencias-constitucionais-para-municipios (CSV mensal)",
+   "prova": "CSV 2026-10 lido"
+  },
+  {
+   "id": "pncp_contratos_edu",
+   "familia": "Contratos educacionais classificados",
+   "fase": [
+    "P10.7"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "(sem download)",
+   "prova": "5.111.306 contratos; núcleo 286.736"
+  },
+  {
+   "id": "obrasgov",
+   "familia": "Obras e projetos de investimento",
+   "fase": [
+    "P10.7"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://api.obrasgov.gestao.gov.br/obrasgov/api/projeto-investimento?uf=UF&pagina=P&tamanhoDaPagina=100",
+   "prova": "ES 1.879 projetos; 332 de educação"
+  },
+  {
+   "id": "censo_superior",
+   "familia": "IES e ofertas de curso",
+   "fase": [
+    "P10.8"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_AAAA.zip",
+   "prova": "2023: 2.580 IES, 671.610 linhas; 2024 headers por Range"
+  },
+  {
+   "id": "ibge_sidra_9514",
+   "familia": "População por idade (Censo 2022)",
+   "fase": [
+    "P10.9"
+   ],
+   "classe": "READY_WITH_CAVEATS",
+   "url": "https://apisidra.ibge.gov.br/values/t/9514/n6/{ibge7}/v/93/p/2022/c2/6794/c287/all/c286/113635",
+   "prova": "Vitória HTTP 200"
+  },
+  {
+   "id": "dados_gov_br_fnde",
+   "familia": "Catálogo FNDE no dados.gov.br",
+   "fase": [],
+   "classe": "PROVEN_EXTERNAL_BLOCKER",
+   "url": null,
+   "prova": "HTTP 401 (exige chave) em 2026-10-24 (fnde_obras_probe.json)"
+  },
+  {
+   "id": "dadosabertos_fnde_host",
+   "familia": "dadosabertos.fnde.gov.br",
+   "fase": [],
+   "classe": "PROVEN_EXTERNAL_BLOCKER",
+   "url": null,
+   "prova": "getaddrinfo failed (DNS) em http e https"
+  },
+  {
+   "id": "dadosabertos_mec",
+   "familia": "dadosabertos.mec.gov.br",
+   "fase": [],
+   "classe": "PROVEN_EXTERNAL_BLOCKER",
+   "url": null,
+   "prova": "HTTP 403"
+  },
+  {
+   "id": "simec_obras",
+   "familia": "Painel de obras SIMEC/FNDE",
+   "fase": [],
+   "classe": "NOT_SUITABLE",
+   "url": null,
+   "prova": "painel exige login; sem credencial; Obrasgov cobre parcialmente"
+  },
+  {
+   "id": "saeb_microdados",
+   "familia": "Microdados Saeb (aluno)",
+   "fase": [],
+   "classe": "NOT_SUITABLE",
+   "url": null,
+   "prova": "nível aluno; proibido pela política de privacidade (G14)"
+  },
+  {
+   "id": "siope_remuneracao",
+   "familia": "SIOPE Remuneracao_Siope",
+   "fase": [],
+   "classe": "NOT_SUITABLE",
+   "url": null,
+   "prova": "contém NO_PROFISSIONAL e salário individual (G14)"
+  },
+  {
+   "id": "siope_responsaveis",
+   "familia": "SIOPE Dados_Responsaveis",
+   "fase": [],
+   "classe": "NOT_SUITABLE",
+   "url": null,
+   "prova": "nomes, e-mails, telefones de agentes (G14)"
+  },
+  {
+   "id": "inep_geocodificacao",
+   "familia": "Coordenadas de escolas",
+   "fase": [],
+   "classe": "DISCOVERY_ONLY",
+   "url": null,
+   "prova": "Censo não traz latitude/longitude (P4 e esta fase); nenhuma fonte aberta provada"
+  },
+  {
+   "id": "inep_microdados_restritos",
+   "familia": "Microdados individuais via SEDAP",
+   "fase": [],
+   "classe": "NOT_SUITABLE",
+   "url": null,
+   "prova": "acesso mediante autorização; não é fonte aberta"
+  }
+ ]
+}

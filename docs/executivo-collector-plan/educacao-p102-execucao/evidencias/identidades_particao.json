@@ -1,0 +1,497 @@
+{
+ "2025": {
+  "linhas": 178772,
+  "ausentes": [],
+  "BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 178766,
+   "iguais": 28688,
+   "dif_soma": -4343652
+  },
+  "BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 178766,
+   "iguais": 161844,
+   "dif_soma": -2045647
+  },
+  "BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 178766,
+   "iguais": 165587,
+   "dif_soma": -1885493
+  },
+  "BAS=INF+FUND+MED+PROF_TEC+EJA+ESP_CE": {
+   "universo": 178766,
+   "iguais": 165906,
+   "dif_soma": -1347816
+  },
+  "BAS=INF+FUND+MED+EJA": {
+   "universo": 178766,
+   "iguais": 172767,
+   "dif_soma": 1302483
+  },
+  "BAS=D+N+EAD": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "BAS=FEM+MASC": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "BAS=idade(6 faixas)": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "BAS=cor(6)": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "INF=CRE+PRE": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "FUND=AI+AF": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "EJA=EJA_FUND+EJA_MED": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "ESP=CC+CE": {
+   "universo": 178766,
+   "iguais": 178766,
+   "dif_soma": 0
+  },
+  "PROF=PROF_TEC": {
+   "universo": 178766,
+   "iguais": 171857,
+   "dif_soma": 697831
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 178772,
+   "iguais": 28654,
+   "dif_soma": -1272781
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 178772,
+   "iguais": 162177,
+   "dif_soma": -96201
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 178772,
+   "iguais": 165920,
+   "dif_soma": -72309
+  },
+  "TUR_INF=CRE+PRE": {
+   "universo": 178772,
+   "iguais": 178772,
+   "dif_soma": 0
+  },
+  "TUR_FUND=AI+AF": {
+   "universo": 178772,
+   "iguais": 178772,
+   "dif_soma": 0
+  },
+  "TUR_ESP=CC+CE": {
+   "universo": 178772,
+   "iguais": 178772,
+   "dif_soma": 0
+  },
+  "totais": {
+   "QT_MAT_BAS": 46018380,
+   "QT_MAT_INF": 9286182,
+   "QT_MAT_FUND": 25806767,
+   "QT_MAT_MED": 7370879,
+   "QT_MAT_PROF": 3187976,
+   "QT_MAT_EJA": 2252069,
+   "QT_MAT_ESP": 2458159,
+   "QT_MAT_ESP_CC": 2298005,
+   "QT_MAT_ESP_CE": 160154,
+   "QT_TUR_BAS": 2233976,
+   "QT_TUR_INF": 614393,
+   "QT_TUR_FUND": 1173351,
+   "QT_TUR_MED": 278513,
+   "QT_TUR_PROF": 126844,
+   "QT_TUR_EJA": 113184,
+   "QT_TUR_ESP": 1200472,
+   "QT_MAT_BAS_INT": 10143262
+  }
+ },
+ "2024": {
+  "linhas": 215545,
+  "ausentes": [
+   "QT_MAT_BAS_INT"
+  ],
+  "BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 179286,
+   "iguais": 33619,
+   "dif_soma": -3240161
+  },
+  "BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 179286,
+   "iguais": 169026,
+   "dif_soma": -1316469
+  },
+  "BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 179286,
+   "iguais": 172036,
+   "dif_soma": -1163336
+  },
+  "BAS=INF+FUND+MED+PROF_TEC+EJA+ESP_CE": {
+   "universo": 179286,
+   "iguais": 169012,
+   "dif_soma": -1129630
+  },
+  "BAS=INF+FUND+MED+EJA": {
+   "universo": 179286,
+   "iguais": 173136,
+   "dif_soma": 1412957
+  },
+  "BAS=D+N+EAD": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "BAS=FEM+MASC": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "BAS=idade(6 faixas)": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "BAS=cor(6)": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "INF=CRE+PRE": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "FUND=AI+AF": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "EJA=EJA_FUND+EJA_MED": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "ESP=CC+CE": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "PROF=PROF_TEC": {
+   "universo": 179286,
+   "iguais": 177533,
+   "dif_soma": 186839
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 179286,
+   "iguais": 33619,
+   "dif_soma": -1123924
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 179286,
+   "iguais": 169026,
+   "dif_soma": -62507
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 179286,
+   "iguais": 172036,
+   "dif_soma": -40598
+  },
+  "TUR_INF=CRE+PRE": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "TUR_FUND=AI+AF": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "TUR_ESP=CC+CE": {
+   "universo": 179286,
+   "iguais": 179286,
+   "dif_soma": 0
+  },
+  "totais": {
+   "QT_MAT_BAS": 47088922,
+   "QT_MAT_INF": 9491894,
+   "QT_MAT_FUND": 26002356,
+   "QT_MAT_MED": 7790396,
+   "QT_MAT_PROF": 2576293,
+   "QT_MAT_EJA": 2391319,
+   "QT_MAT_ESP": 2076825,
+   "QT_MAT_ESP_CC": 1923692,
+   "QT_MAT_ESP_CE": 153133,
+   "QT_TUR_BAS": 2224054,
+   "QT_TUR_INF": 611402,
+   "QT_TUR_FUND": 1172407,
+   "QT_TUR_MED": 269484,
+   "QT_TUR_PROF": 97441,
+   "QT_TUR_EJA": 113918,
+   "QT_TUR_ESP": 1083326
+  }
+ },
+ "2015": {
+  "linhas": 237879,
+  "ausentes": [
+   "QT_MAT_BAS_INT"
+  ],
+  "BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 186441,
+   "iguais": 76866,
+   "dif_soma": -1522822
+  },
+  "BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 186441,
+   "iguais": 178755,
+   "dif_soma": -771839
+  },
+  "BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 186441,
+   "iguais": 182442,
+   "dif_soma": -592139
+  },
+  "BAS=INF+FUND+MED+PROF_TEC+EJA+ESP_CE": {
+   "universo": 186441,
+   "iguais": 179659,
+   "dif_soma": -680104
+  },
+  "BAS=INF+FUND+MED+EJA": {
+   "universo": 186441,
+   "iguais": 181159,
+   "dif_soma": 1325053
+  },
+  "BAS=D+N+EAD": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "BAS=FEM+MASC": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "BAS=idade(6 faixas)": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "BAS=cor(6)": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "INF=CRE+PRE": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "FUND=AI+AF": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "EJA=EJA_FUND+EJA_MED": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "ESP=CC+CE": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "PROF=PROF_TEC": {
+   "universo": 186441,
+   "iguais": 185062,
+   "dif_soma": 91735
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 186441,
+   "iguais": 76866,
+   "dif_soma": -538268
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 186441,
+   "iguais": 178755,
+   "dif_soma": -46108
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 186441,
+   "iguais": 182442,
+   "dif_soma": -22466
+  },
+  "TUR_INF=CRE+PRE": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "TUR_FUND=AI+AF": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "TUR_ESP=CC+CE": {
+   "universo": 186441,
+   "iguais": 186441,
+   "dif_soma": 0
+  },
+  "totais": {
+   "QT_MAT_BAS": 48796512,
+   "QT_MAT_INF": 7972230,
+   "QT_MAT_FUND": 27931210,
+   "QT_MAT_MED": 8076150,
+   "QT_MAT_PROF": 1917192,
+   "QT_MAT_EJA": 3491869,
+   "QT_MAT_ESP": 930683,
+   "QT_MAT_ESP_CC": 750983,
+   "QT_MAT_ESP_CE": 179700,
+   "QT_TUR_BAS": 2164640,
+   "QT_TUR_INF": 478510,
+   "QT_TUR_FUND": 1225832,
+   "QT_TUR_MED": 267382,
+   "QT_TUR_PROF": 78525,
+   "QT_TUR_EJA": 136857,
+   "QT_TUR_ESP": 515802
+  }
+ },
+ "2007": {
+  "linhas": 198507,
+  "ausentes": [
+   "QT_MAT_BAS_INT"
+  ],
+  "BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 198397,
+   "iguais": 138438,
+   "dif_soma": -960688
+  },
+  "BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 198397,
+   "iguais": 189890,
+   "dif_soma": -654552
+  },
+  "BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 198397,
+   "iguais": 196736,
+   "dif_soma": -306082
+  },
+  "BAS=INF+FUND+MED+PROF_TEC+EJA+ESP_CE": {
+   "universo": 198397,
+   "iguais": 189890,
+   "dif_soma": -654552
+  },
+  "BAS=INF+FUND+MED+EJA": {
+   "universo": 198397,
+   "iguais": 195020,
+   "dif_soma": 701155
+  },
+  "BAS=D+N+EAD": {
+   "universo": 198397,
+   "iguais": 18967,
+   "dif_soma": 24320570
+  },
+  "BAS=FEM+MASC": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "BAS=idade(6 faixas)": {
+   "universo": 198397,
+   "iguais": 198394,
+   "dif_soma": 3
+  },
+  "BAS=cor(6)": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "INF=CRE+PRE": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "FUND=AI+AF": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "EJA=EJA_FUND+EJA_MED": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "ESP=CC+CE": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "PROF=PROF_TEC": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP": {
+   "universo": 198397,
+   "iguais": 138438,
+   "dif_soma": -235794
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA+ESP_CE": {
+   "universo": 198397,
+   "iguais": 189890,
+   "dif_soma": -51679
+  },
+  "TUR_BAS=INF+FUND+MED+PROF+EJA": {
+   "universo": 198397,
+   "iguais": 196736,
+   "dif_soma": -9984
+  },
+  "TUR_INF=CRE+PRE": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "TUR_FUND=AI+AF": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "TUR_ESP=CC+CE": {
+   "universo": 198397,
+   "iguais": 198397,
+   "dif_soma": 0
+  },
+  "totais": {
+   "QT_MAT_BAS": 53028928,
+   "QT_MAT_INF": 6574369,
+   "QT_MAT_FUND": 32346623,
+   "QT_MAT_MED": 8372175,
+   "QT_MAT_PROF": 1007237,
+   "QT_MAT_EJA": 5034606,
+   "QT_MAT_ESP": 654606,
+   "QT_MAT_ESP_CC": 306136,
+   "QT_MAT_ESP_CE": 348470,
+   "QT_TUR_BAS": 2098756,
+   "QT_TUR_INF": 361579,
+   "QT_TUR_FUND": 1292614,
+   "QT_TUR_MED": 243755,
+   "QT_TUR_PROF": 39215,
+   "QT_TUR_EJA": 171577,
+   "QT_TUR_ESP": 225810
+  }
+ }
+}

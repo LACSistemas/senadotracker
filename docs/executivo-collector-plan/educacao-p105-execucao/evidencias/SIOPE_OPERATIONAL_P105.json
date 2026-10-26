@@ -1,0 +1,22 @@
+{
+  "provider": "FNDE/SIOPE OData",
+  "components_allowed": [
+    "Dados_Gerais_Siope",
+    "Despesas_Funcao_Educacao_Siope",
+    "Indicadores_Siope",
+    "Informacoes_Complementares_Siope"
+  ],
+  "period": 6,
+  "remuneracao_collected": false,
+  "responsaveis_collected": false,
+  "raw_storage": "D:/Civica/raw/siope",
+  "parser_version_national": "siope-v2",
+  "parser_version_current": "siope-v3",
+  "national_run_status_at_creation": "COMPLETED",
+  "national_slices": 243,
+  "national_components": 972,
+  "national_facts": 3395269,
+  "raw_files_verified": 972,
+  "raw_root_verified": "D:/Civica/raw/siope",
+  "semantic_replay": {"year": 2024, "uf": "ES", "facts": 6753, "status": "NO_CHANGE"}
+}

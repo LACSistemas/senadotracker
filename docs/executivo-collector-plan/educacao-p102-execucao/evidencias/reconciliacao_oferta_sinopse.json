@@ -1,0 +1,1139 @@
+{
+ "2007": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 53028928,
+    "brasil_banco": 53028928,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2007",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2098756,
+    "brasil_banco": 2098756,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2007",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 53028928,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2098756,
+    "exemplos": []
+   }
+  }
+ },
+ "2008": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 53232868,
+    "brasil_banco": 53232868,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2008",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2138582,
+    "brasil_banco": 2138582,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2008",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 53232868,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2138582,
+    "exemplos": []
+   }
+  }
+ },
+ "2009": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 52580452,
+    "brasil_banco": 52580452,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2009",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2145029,
+    "brasil_banco": 2145029,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2009",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 52580452,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2145029,
+    "exemplos": []
+   }
+  }
+ },
+ "2010": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 51549889,
+    "brasil_banco": 51549889,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2010",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2150472,
+    "brasil_banco": 2150472,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2010",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 51549889,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2150472,
+    "exemplos": []
+   }
+  }
+ },
+ "2011": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 50972619,
+    "brasil_banco": 50972619,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2011",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2155952,
+    "brasil_banco": 2155952,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2011",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 50972619,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2155952,
+    "exemplos": []
+   }
+  }
+ },
+ "2012": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 50545050,
+    "brasil_banco": 50545050,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2012",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83475,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2173607,
+    "brasil_banco": 2173607,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2012",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 50545050,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61215,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2173607,
+    "exemplos": []
+   }
+  }
+ },
+ "2013": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 50042448,
+    "brasil_banco": 50042448,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2013",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2186922,
+    "brasil_banco": 2186922,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2013",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 50042448,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2186922,
+    "exemplos": []
+   }
+  }
+ },
+ "2014": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 49771371,
+    "brasil_banco": 49771371,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2014",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2186920,
+    "brasil_banco": 2186920,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2014",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 49771371,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2186920,
+    "exemplos": []
+   }
+  }
+ },
+ "2015": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 48796512,
+    "brasil_banco": 48796512,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2015",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2164640,
+    "brasil_banco": 2164640,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2015",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 48796512,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2164640,
+    "exemplos": []
+   }
+  }
+ },
+ "2016": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 48817479,
+    "brasil_banco": 48817479,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2016",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2171013,
+    "brasil_banco": 2171013,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2016",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 48817479,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2171013,
+    "exemplos": []
+   }
+  }
+ },
+ "2017": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 48608093,
+    "brasil_banco": 48608093,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2017",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2169220,
+    "brasil_banco": 2169220,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2017",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 48608093,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2169220,
+    "exemplos": []
+   }
+  }
+ },
+ "2018": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 48455867,
+    "brasil_banco": 48455867,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2018",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2163997,
+    "brasil_banco": 2163997,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2018",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 48455867,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2163997,
+    "exemplos": []
+   }
+  }
+ },
+ "2019": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 47874246,
+    "brasil_banco": 47874246,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2019",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2160089,
+    "brasil_banco": 2160089,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2019",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 47874246,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2160089,
+    "exemplos": []
+   }
+  }
+ },
+ "2020": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 47295294,
+    "brasil_banco": 47295294,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2020",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2142065,
+    "brasil_banco": 2142065,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2020",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 47295294,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2142065,
+    "exemplos": []
+   }
+  }
+ },
+ "2021": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 46668401,
+    "brasil_banco": 46668401,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2021",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2128776,
+    "brasil_banco": 2128776,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2021",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 46668401,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2128776,
+    "exemplos": []
+   }
+  }
+ },
+ "2022": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 47382074,
+    "brasil_banco": 47382074,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2022",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2190502,
+    "brasil_banco": 2190502,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2022",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 47382074,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2190502,
+    "exemplos": []
+   }
+  }
+ },
+ "2023": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 47304632,
+    "brasil_banco": 47304632,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2023",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2212677,
+    "brasil_banco": 2212677,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2023",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 47304632,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2212677,
+    "exemplos": []
+   }
+  }
+ },
+ "2024": {
+  "tabelas": {
+   "t11": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 47088922,
+    "brasil_banco": 47088922,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2024",
+     "Notas:      1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "A",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83550,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 2224054,
+    "brasil_banco": 2224054,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2024",
+     "Notas:   1 - Não inclui turmas de Atividade Complementar e de Atendimento Educacional Especializado (AEE).",
+     "2 - Inclui todas as turmas de Ensino Regular e/ou EJA."
+    ]
+   },
+   "t12": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 47088922,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "A",
+    "celulas_municipio": 61270,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2224054,
+    "exemplos": []
+   }
+  }
+ },
+ "2025": {
+  "tabelas": {
+   "t11": {
+    "layout": "B",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83565,
+    "divergentes_municipio": 0,
+    "ufs_divergentes": 0,
+    "brasil_divergente": {},
+    "brasil_sinopse": 46018380,
+    "brasil_banco": 46018380,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2025",
+     "Notas: 1 - O mesmo aluno pode ter mais de uma matrícula.",
+     "2 - Não inclui matrículas de turmas de Atividade Complementar e Atendimento Educacional Especializado (AEE)."
+    ]
+   },
+   "t41": {
+    "layout": "B",
+    "colunas_comparadas": 15,
+    "celulas_municipio": 83565,
+    "divergentes_municipio": 528,
+    "ufs_divergentes": 21,
+    "brasil_divergente": {
+     "AG": {
+      "sinopse": 80528,
+      "banco": 75832
+     }
+    },
+    "brasil_sinopse": 2233976,
+    "brasil_banco": 2233976,
+    "municipios_so_sinopse_com_dado": [],
+    "municipios_so_banco": [],
+    "exemplos": [
+     {
+      "municipio": "1300029",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 26,
+      "banco": 9
+     },
+     {
+      "municipio": "1300060",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 22,
+      "banco": 11
+     },
+     {
+      "municipio": "1300201",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 31,
+      "banco": 19
+     },
+     {
+      "municipio": "1300631",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 23,
+      "banco": 12
+     },
+     {
+      "municipio": "1300706",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 34,
+      "banco": 21
+     },
+     {
+      "municipio": "1300805",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 69,
+      "banco": 60
+     },
+     {
+      "municipio": "1300839",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 14,
+      "banco": 10
+     },
+     {
+      "municipio": "1300904",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 21,
+      "banco": 10
+     },
+     {
+      "municipio": "1301001",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 34,
+      "banco": 23
+     },
+     {
+      "municipio": "1301100",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 40,
+      "banco": 25
+     },
+     {
+      "municipio": "1301308",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 8,
+      "banco": 7
+     },
+     {
+      "municipio": "1301506",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 14,
+      "banco": 13
+     },
+     {
+      "municipio": "1301605",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 35,
+      "banco": 24
+     },
+     {
+      "municipio": "1301704",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 30,
+      "banco": 29
+     },
+     {
+      "municipio": "1302009",
+      "col": "AG",
+      "medida": "tur_eja_fund",
+      "sinopse": 7,
+      "banco": 6
+     }
+    ],
+    "notas": [
+     "Fonte: INEP – Censo Escolar da Educação Básica 2025",
+     "Notas: 1 - Não inclui turmas exclusivas de Atividade Complementar ou de Atendimento Educacional Especializado (AEE).",
+     "2 - A Educação Infantil inclui as turmas de Creche, Pré-Escola e unificadas."
+    ]
+   },
+   "t12": {
+    "layout": "B",
+    "celulas_municipio": 61281,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 46018380,
+    "exemplos": []
+   },
+   "t42": {
+    "layout": "B",
+    "celulas_municipio": 61281,
+    "divergentes_municipio": 0,
+    "brasil_sinopse": 2233976,
+    "exemplos": []
+   }
+  }
+ }
+}

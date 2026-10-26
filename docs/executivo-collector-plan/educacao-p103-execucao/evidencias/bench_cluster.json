@@ -1,0 +1,902 @@
+{
+ "at": "2026-10-25T18:01:57.219Z",
+ "repeticoes": 20,
+ "casos": [
+  {
+   "caso": "infra Brasil (resumo + série 19 edições)",
+   "n": 20,
+   "p50": 16.1,
+   "p95": 20,
+   "max": 195.7
+  },
+  {
+   "caso": "infra Brasil sem série",
+   "n": 20,
+   "p50": 10.6,
+   "p95": 11.3,
+   "max": 12.2
+  },
+  {
+   "caso": "indicadores Brasil (recortes + série)",
+   "n": 20,
+   "p50": 2.8,
+   "p95": 4,
+   "max": 464
+  },
+  {
+   "caso": "infra UF ES",
+   "n": 20,
+   "p50": 10,
+   "p95": 11.3,
+   "max": 11.3
+  },
+  {
+   "caso": "indicadores UF ES",
+   "n": 20,
+   "p50": 2.4,
+   "p95": 2.9,
+   "max": 20.3
+  },
+  {
+   "caso": "infra UF SP",
+   "n": 20,
+   "p50": 9.7,
+   "p95": 11.1,
+   "max": 11.3
+  },
+  {
+   "caso": "indicadores UF SP",
+   "n": 20,
+   "p50": 2.4,
+   "p95": 3,
+   "max": 13.2
+  },
+  {
+   "caso": "infra UF RJ",
+   "n": 20,
+   "p50": 8.8,
+   "p95": 9.5,
+   "max": 10.4
+  },
+  {
+   "caso": "indicadores UF RJ",
+   "n": 20,
+   "p50": 2.5,
+   "p95": 3.1,
+   "max": 3.4
+  },
+  {
+   "caso": "infra UF MG",
+   "n": 20,
+   "p50": 8.6,
+   "p95": 9.4,
+   "max": 11.1
+  },
+  {
+   "caso": "indicadores UF MG",
+   "n": 20,
+   "p50": 2.6,
+   "p95": 3.4,
+   "max": 45.3
+  },
+  {
+   "caso": "infra UF PE",
+   "n": 20,
+   "p50": 8.9,
+   "p95": 9.8,
+   "max": 12.8
+  },
+  {
+   "caso": "indicadores UF PE",
+   "n": 20,
+   "p50": 2.5,
+   "p95": 3.5,
+   "max": 10.3
+  },
+  {
+   "caso": "infra UF RR",
+   "n": 20,
+   "p50": 8.8,
+   "p95": 9.8,
+   "max": 10.9
+  },
+  {
+   "caso": "indicadores UF RR",
+   "n": 20,
+   "p50": 2.3,
+   "p95": 2.7,
+   "max": 7.8
+  },
+  {
+   "caso": "infra UF DF",
+   "n": 20,
+   "p50": 8.4,
+   "p95": 10.5,
+   "max": 161.8
+  },
+  {
+   "caso": "indicadores UF DF",
+   "n": 20,
+   "p50": 2.6,
+   "p95": 3.1,
+   "max": 3.3
+  },
+  {
+   "caso": "infra município Vitória/ES (com série)",
+   "n": 20,
+   "p50": 26.2,
+   "p95": 28.8,
+   "max": 881.6
+  },
+  {
+   "caso": "infra município Vitória/ES (sem série)",
+   "n": 20,
+   "p50": 10.7,
+   "p95": 12.2,
+   "max": 13.2
+  },
+  {
+   "caso": "indicadores município Vitória/ES",
+   "n": 20,
+   "p50": 2.5,
+   "p95": 4.4,
+   "max": 67.1
+  },
+  {
+   "caso": "infra município Serra/ES (com série)",
+   "n": 20,
+   "p50": 78,
+   "p95": 174.8,
+   "max": 235.9
+  },
+  {
+   "caso": "infra município Serra/ES (sem série)",
+   "n": 20,
+   "p50": 11.8,
+   "p95": 12.6,
+   "max": 13
+  },
+  {
+   "caso": "indicadores município Serra/ES",
+   "n": 20,
+   "p50": 1.9,
+   "p95": 2.3,
+   "max": 19.2
+  },
+  {
+   "caso": "infra município Alto Rio Novo/ES (com série)",
+   "n": 20,
+   "p50": 15.2,
+   "p95": 16.5,
+   "max": 166.2
+  },
+  {
+   "caso": "infra município Alto Rio Novo/ES (sem série)",
+   "n": 20,
+   "p50": 7.8,
+   "p95": 9,
+   "max": 9
+  },
+  {
+   "caso": "indicadores município Alto Rio Novo/ES",
+   "n": 20,
+   "p50": 1.9,
+   "p95": 2.9,
+   "max": 46.1
+  },
+  {
+   "caso": "infra município São Paulo/SP (com série)",
+   "n": 20,
+   "p50": 781.5,
+   "p95": 1000.2,
+   "max": 4775.6
+  },
+  {
+   "caso": "infra município São Paulo/SP (sem série)",
+   "n": 20,
+   "p50": 289,
+   "p95": 487.2,
+   "max": 497.7
+  },
+  {
+   "caso": "indicadores município São Paulo/SP",
+   "n": 20,
+   "p50": 2.6,
+   "p95": 3.2,
+   "max": 121.1
+  },
+  {
+   "caso": "infra município Rio de Janeiro/RJ (com série)",
+   "n": 20,
+   "p50": 705.2,
+   "p95": 924.5,
+   "max": 935.2
+  },
+  {
+   "caso": "infra município Rio de Janeiro/RJ (sem série)",
+   "n": 20,
+   "p50": 261.7,
+   "p95": 378.5,
+   "max": 395.7
+  },
+  {
+   "caso": "indicadores município Rio de Janeiro/RJ",
+   "n": 20,
+   "p50": 2.3,
+   "p95": 2.9,
+   "max": 49.3
+  },
+  {
+   "caso": "infra município Belo Horizonte/MG (com série)",
+   "n": 20,
+   "p50": 422.8,
+   "p95": 660.1,
+   "max": 675.1
+  },
+  {
+   "caso": "infra município Belo Horizonte/MG (sem série)",
+   "n": 20,
+   "p50": 260.1,
+   "p95": 473.5,
+   "max": 481.1
+  },
+  {
+   "caso": "indicadores município Belo Horizonte/MG",
+   "n": 20,
+   "p50": 2.2,
+   "p95": 3.8,
+   "max": 31.6
+  },
+  {
+   "caso": "infra município Recife/PE (com série)",
+   "n": 20,
+   "p50": 415.2,
+   "p95": 573.9,
+   "max": 594.8
+  },
+  {
+   "caso": "infra município Recife/PE (sem série)",
+   "n": 20,
+   "p50": 270,
+   "p95": 364.4,
+   "max": 490.9
+  },
+  {
+   "caso": "indicadores município Recife/PE",
+   "n": 20,
+   "p50": 2.2,
+   "p95": 3.2,
+   "max": 33.9
+  },
+  {
+   "caso": "infra município Porto Alegre/RS (com série)",
+   "n": 20,
+   "p50": 436.5,
+   "p95": 563.9,
+   "max": 642.9
+  },
+  {
+   "caso": "infra município Porto Alegre/RS (sem série)",
+   "n": 20,
+   "p50": 233.7,
+   "p95": 453.2,
+   "max": 470.3
+  },
+  {
+   "caso": "indicadores município Porto Alegre/RS",
+   "n": 20,
+   "p50": 2,
+   "p95": 2.3,
+   "max": 68
+  },
+  {
+   "caso": "infra município Petrolina/PE (com série)",
+   "n": 20,
+   "p50": 59.9,
+   "p95": 186.3,
+   "max": 274
+  },
+  {
+   "caso": "infra município Petrolina/PE (sem série)",
+   "n": 20,
+   "p50": 13,
+   "p95": 14.3,
+   "max": 14.7
+  },
+  {
+   "caso": "indicadores município Petrolina/PE",
+   "n": 20,
+   "p50": 2.3,
+   "p95": 2.8,
+   "max": 54.3
+  },
+  {
+   "caso": "infra município Chapada de Areia/TO (com série)",
+   "n": 20,
+   "p50": 14.7,
+   "p95": 15.4,
+   "max": 42.6
+  },
+  {
+   "caso": "infra município Chapada de Areia/TO (sem série)",
+   "n": 20,
+   "p50": 7.3,
+   "p95": 8.2,
+   "max": 10
+  },
+  {
+   "caso": "indicadores município Chapada de Areia/TO",
+   "n": 20,
+   "p50": 2,
+   "p95": 2.3,
+   "max": 51.7
+  },
+  {
+   "caso": "infra município Brasília/DF (com série)",
+   "n": 20,
+   "p50": 404.2,
+   "p95": 563.2,
+   "max": 565.3
+  },
+  {
+   "caso": "infra município Brasília/DF (sem série)",
+   "n": 20,
+   "p50": 209.8,
+   "p95": 501.3,
+   "max": 516.5
+  },
+  {
+   "caso": "indicadores município Brasília/DF",
+   "n": 20,
+   "p50": 2.2,
+   "p95": 2.5,
+   "max": 58.1
+  },
+  {
+   "caso": "infra município Boa Vista/RR (com série)",
+   "n": 20,
+   "p50": 76.4,
+   "p95": 167.6,
+   "max": 175.9
+  },
+  {
+   "caso": "infra município Boa Vista/RR (sem série)",
+   "n": 20,
+   "p50": 12,
+   "p95": 13.2,
+   "max": 14.1
+  },
+  {
+   "caso": "indicadores município Boa Vista/RR",
+   "n": 20,
+   "p50": 3,
+   "p95": 3.3,
+   "max": 52.6
+  },
+  {
+   "caso": "infra município Vitória, só escolas com ensino médio",
+   "n": 20,
+   "p50": 25.3,
+   "p95": 31.1,
+   "max": 53.6
+  },
+  {
+   "caso": "infra escola (19 edições)",
+   "n": 20,
+   "p50": 1.2,
+   "p95": 1.6,
+   "max": 63.8
+  },
+  {
+   "caso": "indicadores escola",
+   "n": 20,
+   "p50": 0.5,
+   "p95": 0.8,
+   "max": 22.9
+  }
+ ],
+ "territorial": {
+  "brasilInfra2025": {
+   "agua_rede": {
+    "sim": 141839,
+    "nao": 38701,
+    "semResposta": 0,
+    "pct": 78.6
+   },
+   "esgoto_rede": {
+    "sim": 105366,
+    "nao": 75174,
+    "semResposta": 0,
+    "pct": 58.4
+   },
+   "internet": {
+    "sim": 170762,
+    "nao": 9778,
+    "semResposta": 0,
+    "pct": 94.6
+   },
+   "lab_informatica": {
+    "sim": 52102,
+    "nao": 128438,
+    "semResposta": 0,
+    "pct": 28.9
+   },
+   "biblioteca_ou_leitura": {
+    "sim": 100293,
+    "nao": 80247,
+    "semResposta": 0,
+    "pct": 55.6
+   },
+   "quadra": {
+    "sim": 72800,
+    "nao": 107740,
+    "semResposta": 0,
+    "pct": 40.3
+   }
+  },
+  "uf_ES": {
+   "escolas": 3046,
+   "internet": 97.6,
+   "biblioteca": 55.8
+  },
+  "uf_SP": {
+   "escolas": 30817,
+   "internet": 98.8,
+   "biblioteca": 51.9
+  },
+  "uf_RJ": {
+   "escolas": 11647,
+   "internet": 99.2,
+   "biblioteca": 73.8
+  },
+  "uf_MG": {
+   "escolas": 15910,
+   "internet": 97.4,
+   "biblioteca": 76
+  },
+  "uf_PE": {
+   "escolas": 7992,
+   "internet": 96.6,
+   "biblioteca": 63.4
+  },
+  "uf_RR": {
+   "escolas": 915,
+   "internet": 68.4,
+   "biblioteca": 27.5
+  },
+  "uf_DF": {
+   "escolas": 1332,
+   "internet": 100,
+   "biblioteca": 82.8
+  },
+  "mun_3205309": {
+   "nome": "Vitória/ES",
+   "escolasEmAtividade": 180,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 180,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 78.3,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 3
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 14
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 104
+    },
+    {
+     "dep": "Privada",
+     "escolas": 59
+    }
+   ]
+  },
+  "mun_3205002": {
+   "nome": "Serra/ES",
+   "escolasEmAtividade": 231,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 231,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 64.9,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 1
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 46
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 147
+    },
+    {
+     "dep": "Privada",
+     "escolas": 37
+    }
+   ]
+  },
+  "mun_3200359": {
+   "nome": "Alto Rio Novo/ES",
+   "escolasEmAtividade": 10,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 10,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 40,
+   "dependencias": [
+    {
+     "dep": "Estadual",
+     "escolas": 1
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 9
+    }
+   ]
+  },
+  "mun_3550308": {
+   "nome": "São Paulo/SP",
+   "escolasEmAtividade": 7310,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 7274,
+    "nao": 36,
+    "semResposta": 0,
+    "pct": 99.5
+   },
+   "biblioteca": 44.1,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 5
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 1131
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 1689
+    },
+    {
+     "dep": "Privada",
+     "escolas": 4485
+    }
+   ]
+  },
+  "mun_3304557": {
+   "nome": "Rio de Janeiro/RJ",
+   "escolasEmAtividade": 3897,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 3882,
+    "nao": 15,
+    "semResposta": 0,
+    "pct": 99.6
+   },
+   "biblioteca": 77.9,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 26
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 311
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 1577
+    },
+    {
+     "dep": "Privada",
+     "escolas": 1983
+    }
+   ]
+  },
+  "mun_3106200": {
+   "nome": "Belo Horizonte/MG",
+   "escolasEmAtividade": 1374,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 1374,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 83.1,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 5
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 229
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 321
+    },
+    {
+     "dep": "Privada",
+     "escolas": 819
+    }
+   ]
+  },
+  "mun_2611606": {
+   "nome": "Recife/PE",
+   "escolasEmAtividade": 1064,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 1060,
+    "nao": 4,
+    "semResposta": 0,
+    "pct": 99.6
+   },
+   "biblioteca": 80.7,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 3
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 157
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 340
+    },
+    {
+     "dep": "Privada",
+     "escolas": 564
+    }
+   ]
+  },
+  "mun_4314902": {
+   "nome": "Porto Alegre/RS",
+   "escolasEmAtividade": 955,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 948,
+    "nao": 7,
+    "semResposta": 0,
+    "pct": 99.3
+   },
+   "biblioteca": 65,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 5
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 241
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 100
+    },
+    {
+     "dep": "Privada",
+     "escolas": 609
+    }
+   ]
+  },
+  "mun_2611101": {
+   "nome": "Petrolina/PE",
+   "escolasEmAtividade": 357,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 356,
+    "nao": 1,
+    "semResposta": 0,
+    "pct": 99.7
+   },
+   "biblioteca": 54.3,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 2
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 49
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 237
+    },
+    {
+     "dep": "Privada",
+     "escolas": 69
+    }
+   ]
+  },
+  "mun_1705557": {
+   "nome": "Chapada de Areia/TO",
+   "escolasEmAtividade": 5,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 5,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 80,
+   "dependencias": [
+    {
+     "dep": "Estadual",
+     "escolas": 3
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 2
+    }
+   ]
+  },
+  "mun_5300108": {
+   "nome": "Brasília/DF",
+   "escolasEmAtividade": 1332,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 1332,
+    "nao": 0,
+    "semResposta": 0,
+    "pct": 100
+   },
+   "biblioteca": 82.8,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 11
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 711
+    },
+    {
+     "dep": "Privada",
+     "escolas": 610
+    }
+   ]
+  },
+  "mun_1400100": {
+   "nome": "Boa Vista/RR",
+   "escolasEmAtividade": 266,
+   "semResposta": 0,
+   "internet": {
+    "code": "internet",
+    "label": "Acesso à internet",
+    "family": "B_CONECTIVIDADE",
+    "comparability": "COMPARABLE_WITH_CAVEATS",
+    "note": "Declara acesso; não mede velocidade, estabilidade nem uso pedagógico. Em 2022, 4.259 escolas ativas deixaram em branco.",
+    "available": true,
+    "sim": 259,
+    "nao": 7,
+    "semResposta": 0,
+    "pct": 97.4
+   },
+   "biblioteca": 48.5,
+   "dependencias": [
+    {
+     "dep": "Federal",
+     "escolas": 4
+    },
+    {
+     "dep": "Estadual",
+     "escolas": 75
+    },
+    {
+     "dep": "Municipal",
+     "escolas": 142
+    },
+    {
+     "dep": "Privada",
+     "escolas": 45
+    }
+   ]
+  },
+  "vitoriaMedio": {
+   "escolas": 32,
+   "internet": 100
+  },
+  "escolaExemplo": {
+   "inep": 32039921,
+   "anos": 19
+  },
+  "casosEspeciais": {
+   "semInternet2025": 9778,
+   "campoNaoInformado2022": 4259,
+   "bibliotecaAntes2009": 0,
+   "escolaSemLinhaDeInfra2025": 33652,
+   "escolaParalisadaOuExtintaSemLinha2025": 33652,
+   "escolasMudaramDependencia2024a2025": 148,
+   "mediaDeSalasUtilizadasMax": 945
+  }
+ }
+}

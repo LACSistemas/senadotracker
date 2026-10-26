@@ -1,0 +1,55 @@
+{
+ "year": 2025,
+ "uf": 32,
+ "schoolsInSlice": 3847,
+ "s0": {
+  "school_year": "a56e01fc7da674e169b6ea60a2256322",
+  "school": "0779bed02e6a6a52bb91a2b8ca31e61b",
+  "cov": "4a84784d2abd6d782206572d666888eb"
+ },
+ "replaySame": "NO_CHANGE",
+ "logAfterReplay": 0,
+ "stateAfterReplay": true,
+ "changed": {
+  "renamed": [
+   32000146,
+   32000154,
+   32000162
+  ],
+  "movedMunicipality": [
+   32000170,
+   32000189
+  ],
+  "dependency": [
+   32000197,
+   32000200
+  ],
+  "removed": 32000219,
+  "added": 32999999
+ },
+ "retification": "PUBLISHED",
+ "logByTableOp": [
+  "t80:I=1",
+  "t81:D=1",
+  "t81:I=1",
+  "t81:U=7"
+ ],
+ "logRowsAdded": 10,
+ "retificationRunId": 31729,
+ "stateAfterRetification": {
+  "school_year": "db3b23b1272b3d15602e6bf82f491c79",
+  "school": "18ca3e3d0f44f8cb631b34ba22b52b9e",
+  "cov": "4a84784d2abd6d782206572d666888eb"
+ },
+ "rollback": "ROLLED_BACK",
+ "stateAfterRollbackEqualsReference": true,
+ "publicationActiveAfterRollback": {
+  "run_id": 31719,
+  "state": 1
+ },
+ "injectedFailureThrew": true,
+ "stateAfterInjectedFailureEqualsReference": true,
+ "logAfterInjectedFailure": 0,
+ "republishOriginal": "NO_CHANGE",
+ "finalStateEqualsReference": true
+}

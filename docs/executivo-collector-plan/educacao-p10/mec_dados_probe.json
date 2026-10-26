@@ -1,0 +1,23 @@
+[
+ {
+  "url": "https://dadosabertos.mec.gov.br/",
+  "status": 403,
+  "erro": "HTTP 403",
+  "trecho": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
+  "segundos": 0.21
+ },
+ {
+  "url": "https://dadosabertos.mec.gov.br/images/conteudo/ied/ied.html",
+  "status": 403,
+  "erro": "HTTP 403",
+  "trecho": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scal",
+  "segundos": 0.06
+ },
+ {
+  "url": "https://www.tesourotransparente.gov.br/ckan/api/3/action/package_show?id=transferencias-constitucionais-fundeb",
+  "status": 404,
+  "erro": "HTTP 404",
+  "trecho": "{\"help\": \"https://www.tesourotransparente.gov.br/ckan/api/3/action/help_show?name=package_show\", \"success\": false, \"error\": {\"message\": \"N\\u00e3o encontrado\", \"__type\": \"Not Found Error\"}}",
+  "segundos": 0.24
+ }
+]

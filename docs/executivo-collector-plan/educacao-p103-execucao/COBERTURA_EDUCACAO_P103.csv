@@ -1,0 +1,240 @@
+﻿ano;dataset;fonte;familia;nivel;linhas_arquivo;linhas_publicadas;rejeitadas;sem_valor;celulas_numericas;celulas_suprimidas;estado
+2007;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;198507;198507;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 198507 em atividade)"
+2008;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;205699;205699;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 205699 em atividade)"
+2009;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;203455;203455;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 203455 em atividade)"
+2010;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;200876;200876;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 200876 em atividade)"
+2011;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;242147;194932;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 194932 em atividade)"
+2012;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;242136;194695;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 194695 em atividade)"
+2013;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;242680;192678;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 192678 em atividade)"
+2014;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;242929;190553;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 190553 em atividade)"
+2015;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;237879;188689;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 188689 em atividade)"
+2016;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;237506;187891;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 187891 em atividade)"
+2017;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;236481;185925;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 185925 em atividade)"
+2018;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;236460;183746;0;0;;;"PUBLICADO_RECONCILIADO (0 extremos 88888; 0 codigo 9; 183746 em atividade)"
+2019;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;228521;182468;0;0;;;"PUBLICADO_RECONCILIADO (2226 extremos 88888; 6922 codigo 9; 182468 em atividade)"
+2020;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;224229;181279;0;0;;;"PUBLICADO_RECONCILIADO (2155 extremos 88888; 7792 codigo 9; 181279 em atividade)"
+2021;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;221140;180057;0;0;;;"PUBLICADO_RECONCILIADO (2201 extremos 88888; 3970 codigo 9; 180057 em atividade)"
+2022;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;224649;184332;0;4259;;;"PUBLICADO_RECONCILIADO (3218 extremos 88888; 8522 codigo 9; 184332 em atividade)"
+2023;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;217625;180230;0;0;;;"PUBLICADO_RECONCILIADO (3835 extremos 88888; 12634 codigo 9; 180230 em atividade)"
+2024;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;215545;181065;0;0;;;"PUBLICADO_RECONCILIADO (4134 extremos 88888; 8516 codigo 9; 181065 em atividade)"
+2025;72 infraestrutura;Censo Escolar - Tabela de Escola;infraestrutura;escola;214192;180540;0;0;;;"PUBLICADO_RECONCILIADO (3651 extremos 88888; 4064 codigo 9; 180540 em atividade)"
+2007;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;193158;190666;0;2492;536624;815482;PUBLICADO_RECONCILIADO
+2007;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67187;67084;0;103;356609;113700;PUBLICADO_RECONCILIADO
+2008;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;194718;192187;0;2531;540568;822458;PUBLICADO_RECONCILIADO
+2008;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67261;67153;0;108;356554;114273;PUBLICADO_RECONCILIADO
+2009;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;192881;190274;0;2607;539907;810260;PUBLICADO_RECONCILIADO
+2009;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67197;67071;0;126;355600;114779;PUBLICADO_RECONCILIADO
+2010;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;190508;187732;0;2776;535136;798420;PUBLICADO_RECONCILIADO
+2010;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67159;67001;0;158;355275;114838;PUBLICADO_RECONCILIADO
+2010;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;190508;150336;0;40172;491967;841589;PUBLICADO_RECONCILIADO
+2010;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67159;66114;0;1045;353946;116167;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;188636;185728;0;2908;533759;786693;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67290;67064;0;226;356006;115024;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;188636;150165;0;38471;492366;828086;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67290;66136;0;1154;354604;116426;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;191897;187710;0;4187;636628;898548;PUBLICADO_RECONCILIADO
+2011;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68148;67199;0;949;403686;141498;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;188463;185381;0;3082;538415;780826;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67285;67061;0;224;356416;114579;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;188463;151213;0;37250;498761;820480;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67285;66150;0;1135;354993;116002;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;191852;187549;0;4303;639314;895502;PUBLICADO_RECONCILIADO
+2012;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68147;67186;0;961;403956;141220;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;186496;183310;0;3186;539883;765589;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67291;67064;0;227;357235;113802;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;186496;152500;0;33996;503227;802245;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67291;66194;0;1097;355879;115158;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;190178;185786;0;4392;638142;883282;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68165;67219;0;946;405248;140072;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;187487;187487;0;0;2565230;3996815;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67915;67915;0;0;1699875;677150;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;149141;149141;0;0;2242314;1337070;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67051;67051;0;0;1338198;271026;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;173261;173261;0;0;173261;0;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67099;67099;0;0;268396;0;PUBLICADO_RECONCILIADO
+2013;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;190706;190706;0;0;190706;0;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;184635;180816;0;3819;534116;758329;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67282;67015;0;267;357607;113367;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;184635;151517;0;33118;499505;792940;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67282;66178;0;1104;356206;114768;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;188087;183155;0;4932;629021;875675;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68177;67179;0;998;405443;139970;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;184901;184901;0;0;2515385;3956150;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67915;67915;0;0;1696005;681020;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;145810;145810;0;0;2190768;1308672;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67020;67020;0;0;1332276;276204;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;171353;171353;0;0;171353;0;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;583;583;0;0;2332;0;PUBLICADO_RECONCILIADO
+2014;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;188673;188673;0;0;188673;0;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;179308;178449;0;859;527779;727377;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67126;67110;0;16;357997;111881;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;179305;150536;0;28769;495045;760090;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67125;66297;0;828;356624;113251;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;185845;180876;0;4969;619029;867731;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68327;67276;0;1051;405385;141231;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;182606;182606;0;0;2458610;3932600;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;68030;68030;0;0;1692305;688745;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;142695;142695;0;0;2140908;1283772;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67130;67130;0;0;1328526;282594;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;169825;169825;0;0;169825;0;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;585;585;0;0;2340;0;PUBLICADO_RECONCILIADO
+2015;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;186441;186441;0;0;186441;0;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;179315;178529;0;786;531475;723730;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67210;67192;0;18;358300;112170;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;152178;152178;0;0;500034;565212;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66399;66399;0;0;356940;107853;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;185529;180860;0;4669;617948;866284;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68405;67365;0;1040;405382;141876;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;182634;182634;0;0;2438340;3953850;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;68116;68116;0;0;1692985;691075;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;141594;141594;0;0;2118660;1279596;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67200;67200;0;0;1324032;288768;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;169991;169991;0;0;169991;0;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;585;585;0;0;2340;0;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;186081;186081;0;0;186081;0;PUBLICADO_RECONCILIADO
+2016;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;68425;68425;0;0;410550;0;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;177548;177548;0;0;536322;706514;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67184;67184;0;0;359057;111231;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;152704;152704;0;0;501046;567882;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66433;66433;0;0;357383;107648;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;183582;179133;0;4449;615522;853134;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68272;67331;0;941;405573;140603;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;180956;180956;0;0;2413470;3919990;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;68054;68054;0;0;1690125;691765;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;139095;139095;0;0;2077956;1260324;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67136;67136;0;0;1319880;291384;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;168859;168859;0;0;168859;0;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;585;585;0;0;2340;0;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;184145;184145;0;0;184145;0;PUBLICADO_RECONCILIADO
+2017;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;68293;68293;0;0;409758;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;177559;175385;0;2174;544155;698758;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67334;67155;0;179;358527;112811;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;152024;152024;0;0;498462;565706;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66359;66359;0;0;356900;502;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;181627;179126;0;2501;612449;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68239;68068;0;171;414510;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;178897;178897;0;0;2363785;3897610;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;68031;68031;0;0;1677935;703150;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;136177;136177;0;0;2030070;1238178;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;67078;67078;0;0;1314912;294960;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;167236;167236;0;0;167236;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;586;586;0;0;2344;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;181939;181939;0;0;181939;0;PUBLICADO_RECONCILIADO
+2018;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;68243;68243;0;0;409458;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;176386;174214;0;2172;532577;702125;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67268;67077;0;191;358496;111886;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;152509;152509;0;0;500425;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66274;66274;0;0;356620;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;180331;177878;0;2453;608621;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68096;67923;0;173;413299;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;177714;177714;0;0;2333545;3886445;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67899;67899;0;0;1669235;704950;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;134152;134152;0;0;1996428;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66997;66997;0;0;1309920;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;166177;166177;0;0;166177;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67516;67516;0;0;270064;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;180610;180610;0;0;180610;0;PUBLICADO_RECONCILIADO
+2019;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;68103;68103;0;0;408618;0;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;175338;173184;0;2154;529017;698349;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67221;67020;0;201;358399;112148;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;151922;151922;0;0;497467;565987;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66218;66218;0;0;356522;107004;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;179049;176634;0;2415;601165;1010276;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;68034;67885;0;149;411665;200641;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;176557;176557;0;0;2306655;3872840;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67880;67880;0;0;1660260;715540;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;132902;132902;0;0;1974210;1215438;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66971;66971;0;0;1306122;301182;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;166467;166467;0;0;166467;0;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67552;67552;0;0;270208;0;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;179533;179533;0;0;179533;0;PUBLICADO_RECONCILIADO
+2020;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;68041;68041;0;0;408246;0;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;174179;172031;0;2148;524900;694353;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67051;66859;0;192;357204;112153;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;151777;151777;0;0;494026;568413;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66135;66135;0;0;355456;107489;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;178126;175699;0;2427;597549;1005585;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;67881;67727;0;154;409498;201431;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;175593;175593;0;0;2296165;3849590;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67713;67713;0;0;1651410;718545;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;131804;131804;0;0;1954740;1208556;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66872;66872;0;0;1302480;302448;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;165853;165853;0;0;165853;0;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67463;67463;0;0;269852;0;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;178370;178370;0;0;178370;0;PUBLICADO_RECONCILIADO
+2021;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;67889;67889;0;0;407334;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;174319;172076;0;2243;529736;690497;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;67102;66902;0;200;358382;111332;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;173795;172064;0;1731;600982;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;67096;66902;0;194;362611;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;178111;175794;0;2317;602109;1000890;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;67888;67733;0;155;410847;200145;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;175522;175522;0;0;2292365;3850905;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67704;67704;0;0;1654140;715500;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;130907;130907;0;0;1938402;1203366;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66852;66852;0;0;1298676;305772;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;165721;165721;0;0;165721;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67432;67432;0;0;269728;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;178346;178346;0;0;178346;0;PUBLICADO_RECONCILIADO
+2022;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;67890;67890;0;0;407340;0;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;172146;172146;0;0;532268;672754;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;66924;66924;0;0;358581;109887;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;172137;172137;0;0;601286;603673;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66924;66924;0;0;362598;105870;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;178246;175875;0;2371;604091;1000123;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;67885;67748;0;137;410506;200459;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;175600;175600;0;0;2284555;3861445;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67722;67722;0;0;1647275;722995;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;130139;130139;0;0;1921728;1201608;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66900;66900;0;0;1297074;308526;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;165521;165521;0;0;165521;0;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67371;67371;0;0;269484;0;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;178476;178476;0;0;178476;0;PUBLICADO_RECONCILIADO
+2023;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;67889;67889;0;0;407334;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;172871;172871;0;0;535515;674582;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;66857;66857;0;0;358385;109614;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;172862;172862;0;0;603101;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66857;66857;0;0;362267;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;178997;176497;0;2500;605003;1005970;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;67835;67697;0;138;409223;201292;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;176267;176267;0;0;2276810;3892535;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67687;67687;0;0;1637015;732030;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;129900;129900;0;0;1915614;1201986;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66864;66864;0;0;1292880;311856;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;165527;165527;0;0;165527;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67298;67298;0;0;269192;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;179286;179286;0;0;179286;0;PUBLICADO_RECONCILIADO
+2024;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;67837;67837;0;0;407022;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;escola;172100;172100;0;0;533931;670769;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ATU;territorio;66886;66886;0;0;358783;109419;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;escola;172081;172081;0;0;597499;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);HAD;territorio;66884;66884;0;0;362497;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;escola;176127;176127;0;0;639524;1121746;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);DSU;territorio;67784;67784;0;0;465458;212382;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;escola;175683;175683;0;0;2261755;3887150;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);AFD;territorio;67766;67766;0;0;1634265;737545;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;escola;128508;128508;0;0;1893072;1191120;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IED;territorio;66916;66916;0;0;1292988;312996;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;escola;164577;164577;0;0;164577;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);IRD;territorio;67176;67176;0;0;268704;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;escola;178766;178766;0;0;178766;0;PUBLICADO_RECONCILIADO
+2025;73 indicadores INEP;Indicadores Educacionais (planilhas oficiais);ICG;territorio;67913;67913;0;0;407478;0;PUBLICADO_RECONCILIADO
+2007;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2008;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2009;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2010;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2011;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2012;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5593;5593;0;0;5593;;PUBLICADO_RECONCILIADO
+2013;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2014;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2015;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2016;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2017;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2018;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2019;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2020;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2021;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2022;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2023;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2024;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5598;5598;0;0;5598;;PUBLICADO_RECONCILIADO
+2025;74 docentes;Sinopse Estatistica 2.1 e 2.2;docentes distintos;territorio (Brasil, UF, municipio);5599;5599;0;0;5599;;PUBLICADO_RECONCILIADO

@@ -1,0 +1,311 @@
+{
+ "at": "2026-10-24T18:46:55.783Z",
+ "municipalities": [
+  {
+   "label": "Vitória/ES",
+   "ibge7": "3205309",
+   "ms": 6.1,
+   "registered": 226,
+   "active": 180,
+   "withEnrollment": 178,
+   "sinopseUniverseDb": 178,
+   "sinopse2025": 178,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:3",
+    "Estadual:18",
+    "Municipal:104",
+    "Privada:101"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 226,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Serra/ES",
+   "ibge7": "3205002",
+   "ms": 5.8,
+   "registered": 278,
+   "active": 231,
+   "withEnrollment": 230,
+   "sinopseUniverseDb": 230,
+   "sinopse2025": 230,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:1",
+    "Estadual:46",
+    "Municipal:155",
+    "Privada:76"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 278,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Alto Rio Novo/ES",
+   "ibge7": "3200359",
+   "ms": 3,
+   "registered": 13,
+   "active": 10,
+   "withEnrollment": 10,
+   "sinopseUniverseDb": 10,
+   "sinopse2025": 10,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Estadual:1",
+    "Municipal:11",
+    "Privada:1"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 13,
+   "pageTotal": 13,
+   "coverageEditions": 19
+  },
+  {
+   "label": "São Paulo/SP",
+   "ibge7": "3550308",
+   "ms": 71.7,
+   "registered": 7905,
+   "active": 7310,
+   "withEnrollment": 7187,
+   "sinopseUniverseDb": 7187,
+   "sinopse2025": 7187,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:5",
+    "Estadual:1231",
+    "Municipal:1712",
+    "Privada:4957"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 7905,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Rio de Janeiro/RJ",
+   "ibge7": "3304557",
+   "ms": 59.7,
+   "registered": 4057,
+   "active": 3897,
+   "withEnrollment": 3875,
+   "sinopseUniverseDb": 3875,
+   "sinopse2025": 3875,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:30",
+    "Estadual:355",
+    "Municipal:1606",
+    "Privada:2066"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 4057,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Belo Horizonte/MG",
+   "ibge7": "3106200",
+   "ms": 14.7,
+   "registered": 2052,
+   "active": 1374,
+   "withEnrollment": 1373,
+   "sinopseUniverseDb": 1373,
+   "sinopse2025": 1373,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:5",
+    "Estadual:255",
+    "Municipal:325",
+    "Privada:1467"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 2052,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Recife/PE",
+   "ibge7": "2611606",
+   "ms": 11.5,
+   "registered": 1258,
+   "active": 1064,
+   "withEnrollment": 1061,
+   "sinopseUniverseDb": 1061,
+   "sinopse2025": 1061,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:3",
+    "Estadual:159",
+    "Municipal:340",
+    "Privada:756"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 1258,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Porto Alegre/RS",
+   "ibge7": "4314902",
+   "ms": 10.7,
+   "registered": 997,
+   "active": 955,
+   "withEnrollment": 955,
+   "sinopseUniverseDb": 955,
+   "sinopse2025": 955,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:5",
+    "Estadual:246",
+    "Municipal:101",
+    "Privada:645"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 997,
+   "coverageEditions": 19
+  },
+  {
+   "label": "Chapada de Areia/TO (menor nº de escolas)",
+   "ibge7": "1704600",
+   "ms": 2.7,
+   "registered": 2,
+   "active": 2,
+   "withEnrollment": 2,
+   "sinopseUniverseDb": 2,
+   "sinopse2025": 2,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Municipal:2"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 2,
+   "pageTotal": 2,
+   "coverageEditions": 19
+  },
+  {
+   "label": "São Paulo (escolas que passaram de em atividade a paralisada)",
+   "ibge7": "3550308",
+   "ms": 80.5,
+   "registered": 7905,
+   "active": 7310,
+   "withEnrollment": 7187,
+   "sinopseUniverseDb": 7187,
+   "sinopse2025": 7187,
+   "matchesSinopse": true,
+   "byDependency": [
+    "Federal:5",
+    "Estadual:1231",
+    "Municipal:1712",
+    "Privada:4957"
+   ],
+   "seriesYears": 19,
+   "pageReturned": 50,
+   "pageTotal": 7905,
+   "coverageEditions": 19
+  }
+ ],
+ "states": [
+  {
+   "uf": 32,
+   "name": "Espírito Santo",
+   "summaryMs": 3.3,
+   "listFilteredSearchMs": 16.3,
+   "registered": 3847,
+   "sinopseUniverseDb": 2986,
+   "sinopse2025": 2986,
+   "matchesSinopse": true,
+   "listTotal": 132,
+   "seriesYears": 19
+  },
+  {
+   "uf": 35,
+   "name": "São Paulo",
+   "summaryMs": 19.6,
+   "listFilteredSearchMs": 130.6,
+   "registered": 33616,
+   "sinopseUniverseDb": 30439,
+   "sinopse2025": 30439,
+   "matchesSinopse": true,
+   "listTotal": 1601,
+   "seriesYears": 19
+  },
+  {
+   "uf": 33,
+   "name": "Rio de Janeiro",
+   "summaryMs": 7,
+   "listFilteredSearchMs": 44.9,
+   "registered": 13035,
+   "sinopseUniverseDb": 11557,
+   "sinopse2025": 11557,
+   "matchesSinopse": true,
+   "listTotal": 884,
+   "seriesYears": 19
+  },
+  {
+   "uf": 31,
+   "name": "Minas Gerais",
+   "summaryMs": 62.8,
+   "listFilteredSearchMs": 350.9,
+   "registered": 24069,
+   "sinopseUniverseDb": 15849,
+   "sinopse2025": 15849,
+   "matchesSinopse": true,
+   "listTotal": 1996,
+   "seriesYears": 19
+  },
+  {
+   "uf": 26,
+   "name": "Pernambuco",
+   "summaryMs": 9.8,
+   "listFilteredSearchMs": 40.6,
+   "registered": 9957,
+   "sinopseUniverseDb": 7968,
+   "sinopse2025": 7968,
+   "matchesSinopse": true,
+   "listTotal": 4717,
+   "seriesYears": 19
+  },
+  {
+   "uf": 14,
+   "name": "Roraima",
+   "summaryMs": 2,
+   "listFilteredSearchMs": 8.8,
+   "registered": 969,
+   "sinopseUniverseDb": 908,
+   "sinopse2025": 908,
+   "matchesSinopse": true,
+   "listTotal": 474,
+   "seriesYears": 19
+  },
+  {
+   "uf": 53,
+   "name": "Distrito Federal",
+   "summaryMs": 2,
+   "listFilteredSearchMs": 8.7,
+   "registered": 1471,
+   "sinopseUniverseDb": 1291,
+   "sinopse2025": 1291,
+   "matchesSinopse": true,
+   "listTotal": 0,
+   "seriesYears": 19
+  }
+ ],
+ "school": {
+  "inep": 32000146,
+  "getEducationSchoolMs": 0.7,
+  "historyMs": 0.6,
+  "editions": 15
+ },
+ "pagination": {
+  "deepPageMs": 214.3,
+  "emptyResultMs": 4.8,
+  "nullYear": null,
+  "invalid": null
+ },
+ "maxMs": 80.5,
+ "allMatchSinopse": true
+}

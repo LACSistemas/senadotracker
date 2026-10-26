@@ -1,0 +1,11 @@
+{
+  "database": "projetoeleitor_db",
+  "measuredAt": "2026-10-26T14:30:18.117Z",
+  "queries": [
+    {"name":"siconfi_summary","year":2024,"uf":32,"elapsedMs":2075.711,"explainExecutionMs":6.373},
+    {"name":"siope_summary","year":2024,"uf":32,"elapsedMs":972.955},
+    {"name":"coverage","year":2024,"uf":32,"elapsedMs":20.999}
+  ],
+  "nPlusOne": false,
+  "notes": "Siconfi elapsed inclui abertura do pool e materialização de 79 entidades; EXPLAIN da agregação foi 123.58 ms."
+}

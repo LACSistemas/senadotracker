@@ -1,0 +1,508 @@
+{
+ "2014": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 374,
+  "linhas_total_anexo": 940403,
+  "entes_com_funcao_12": 5204,
+  "linhas_por_conta": {
+   "12": 23955,
+   "12.361": 23051,
+   "12.362": 4784,
+   "12.363": 1954,
+   "12.364": 7475,
+   "12.365": 19429,
+   "12.366": 7646,
+   "12.367": 5701,
+   "12.368": 1678,
+   "12.999": 14113
+  },
+  "entes_por_conta": {
+   "12": 5204,
+   "12.361": 5079,
+   "12.362": 1355,
+   "12.363": 534,
+   "12.364": 2062,
+   "12.365": 4707,
+   "12.366": 2150,
+   "12.367": 1630,
+   "12.368": 416,
+   "12.999": 3404
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 30754841140283,
+   "LIQ": 28875547560350,
+   "PAG": 27777400191911
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 26471,
+   "Despesas Liquidadas": 26427,
+   "Despesas Pagas": 26343,
+   "Inscrição de RP Não Processados": 12845,
+   "Inscrição de RP Processados": 17700
+  }
+ },
+ "2015": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 129,
+  "linhas_total_anexo": 985006,
+  "entes_com_funcao_12": 5444,
+  "linhas_por_conta": {
+   "12": 24937,
+   "12.361": 24044,
+   "12.362": 4975,
+   "12.363": 1946,
+   "12.364": 7724,
+   "12.365": 20250,
+   "12.366": 7677,
+   "12.367": 5918,
+   "12.368": 1827,
+   "12.999": 15202
+  },
+  "entes_por_conta": {
+   "12": 5444,
+   "12.361": 5324,
+   "12.362": 1390,
+   "12.363": 524,
+   "12.364": 2123,
+   "12.365": 4936,
+   "12.366": 2152,
+   "12.367": 1686,
+   "12.368": 455,
+   "12.999": 3635
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 33384531668676,
+   "LIQ": 31602157787104,
+   "PAG": 30229287718953
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 27629,
+   "Despesas Liquidadas": 27597,
+   "Despesas Pagas": 27523,
+   "Inscrição de RP Não Processados": 12922,
+   "Inscrição de RP Processados": 18829
+  }
+ },
+ "2016": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 123,
+  "linhas_total_anexo": 943875,
+  "entes_com_funcao_12": 5446,
+  "linhas_por_conta": {
+   "12": 23797,
+   "12.122": 7427,
+   "12.361": 22770,
+   "12.362": 4514,
+   "12.363": 1756,
+   "12.364": 7126,
+   "12.365": 19167,
+   "12.366": 6647,
+   "12.367": 5769,
+   "12.368": 1573,
+   "12.999": 11127
+  },
+  "entes_por_conta": {
+   "12": 5446,
+   "12.122": 1887,
+   "12.361": 5303,
+   "12.362": 1316,
+   "12.363": 487,
+   "12.364": 2073,
+   "12.365": 4929,
+   "12.366": 1942,
+   "12.367": 1692,
+   "12.368": 423,
+   "12.999": 3027
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 34784145153973,
+   "LIQ": 33178301121041,
+   "PAG": 31993849855103
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 28491,
+   "Despesas Liquidadas": 28461,
+   "Despesas Pagas": 28414,
+   "Inscrição de RP Não Processados": 9653,
+   "Inscrição de RP Processados": 16654
+  }
+ },
+ "2017": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 13,
+  "linhas_total_anexo": 1012205,
+  "entes_com_funcao_12": 5556,
+  "linhas_por_conta": {
+   "12": 25430,
+   "12.122": 8899,
+   "12.361": 24610,
+   "12.362": 4647,
+   "12.363": 1817,
+   "12.364": 7729,
+   "12.365": 20508,
+   "12.366": 6640,
+   "12.367": 6061,
+   "12.368": 1730
+  },
+  "entes_por_conta": {
+   "12": 5556,
+   "12.122": 2093,
+   "12.361": 5465,
+   "12.362": 1312,
+   "12.363": 495,
+   "12.364": 2151,
+   "12.365": 5035,
+   "12.366": 1879,
+   "12.367": 1733,
+   "12.368": 426
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 36239942440418,
+   "LIQ": 34603970409967,
+   "PAG": 33182490507690
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 26145,
+   "Despesas Liquidadas": 26114,
+   "Despesas Pagas": 26051,
+   "Inscrição de Restos a Pagar Não Processa": 12115,
+   "Inscrição de Restos a Pagar Processados": 17646
+  }
+ },
+ "2018": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 30,
+  "linhas_total_anexo": 1043965,
+  "entes_com_funcao_12": 5552,
+  "linhas_por_conta": {
+   "12": 25814,
+   "12.122": 9679,
+   "12.361": 24920,
+   "12.362": 5046,
+   "12.363": 1920,
+   "12.364": 7960,
+   "12.365": 21111,
+   "12.366": 7211,
+   "12.367": 6736,
+   "12.368": 2283
+  },
+  "entes_por_conta": {
+   "12": 5552,
+   "12.122": 2235,
+   "12.361": 5438,
+   "12.362": 1386,
+   "12.363": 520,
+   "12.364": 2178,
+   "12.365": 5118,
+   "12.366": 2006,
+   "12.367": 1907,
+   "12.368": 562
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 37585315488105,
+   "LIQ": 36124688731624,
+   "PAG": 34267628249527
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 26902,
+   "Despesas Liquidadas": 26883,
+   "Despesas Pagas": 26835,
+   "Inscrição de Restos a Pagar Não Processa": 13176,
+   "Inscrição de Restos a Pagar Processados": 18884
+  }
+ },
+ "2019": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 14,
+  "linhas_total_anexo": 1036534,
+  "entes_com_funcao_12": 5565,
+  "linhas_por_conta": {
+   "12": 25099,
+   "12.122": 9953,
+   "12.361": 24450,
+   "12.362": 4714,
+   "12.363": 1774,
+   "12.364": 7794,
+   "12.365": 20748,
+   "12.366": 6765,
+   "12.367": 7115,
+   "12.368": 2158
+  },
+  "entes_por_conta": {
+   "12": 5565,
+   "12.122": 2358,
+   "12.361": 5495,
+   "12.362": 1345,
+   "12.363": 490,
+   "12.364": 2182,
+   "12.365": 5148,
+   "12.366": 1918,
+   "12.367": 2046,
+   "12.368": 551
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 39672887815977,
+   "LIQ": 37454606913209,
+   "PAG": 35715469659168
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 27090,
+   "Despesas Liquidadas": 27059,
+   "Despesas Pagas": 27009,
+   "Inscrição de Restos a Pagar Não Processa": 12205,
+   "Inscrição de Restos a Pagar Processados": 17207
+  }
+ },
+ "2020": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 10,
+  "linhas_total_anexo": 995218,
+  "entes_com_funcao_12": 5579,
+  "linhas_por_conta": {
+   "12": 24119,
+   "12.122": 9654,
+   "12.361": 23378,
+   "12.362": 3676,
+   "12.363": 1503,
+   "12.364": 6672,
+   "12.365": 19567,
+   "12.366": 5797,
+   "12.367": 6758,
+   "12.368": 1936
+  },
+  "entes_por_conta": {
+   "12": 5579,
+   "12.122": 2440,
+   "12.361": 5518,
+   "12.362": 1133,
+   "12.363": 438,
+   "12.364": 2029,
+   "12.365": 5131,
+   "12.366": 1731,
+   "12.367": 2031,
+   "12.368": 521
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 38054339745554,
+   "LIQ": 35568735383423,
+   "PAG": 34204134188632
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 26543,
+   "Despesas Liquidadas": 26513,
+   "Despesas Pagas": 26475,
+   "Inscrição de Restos a Pagar Não Processa": 9848,
+   "Inscrição de Restos a Pagar Processados": 13681
+  }
+ },
+ "2021": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 5,
+  "linhas_total_anexo": 1034922,
+  "entes_com_funcao_12": 5580,
+  "linhas_por_conta": {
+   "12": 25505,
+   "12.122": 10814,
+   "12.361": 24926,
+   "12.362": 3770,
+   "12.363": 1487,
+   "12.364": 6365,
+   "12.365": 21492,
+   "12.366": 6331,
+   "12.367": 7073,
+   "12.368": 1736
+  },
+  "entes_por_conta": {
+   "12": 5580,
+   "12.122": 2563,
+   "12.361": 5538,
+   "12.362": 1096,
+   "12.363": 421,
+   "12.364": 1837,
+   "12.365": 5283,
+   "12.366": 1837,
+   "12.367": 2064,
+   "12.368": 455
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 45323110997880,
+   "LIQ": 41421386547594,
+   "PAG": 39301034576467
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 26671,
+   "Despesas Liquidadas": 26617,
+   "Despesas Pagas": 26581,
+   "Inscrição de Restos a Pagar Não Processa": 13712,
+   "Inscrição de Restos a Pagar Processados": 15918
+  }
+ },
+ "2022": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 11,
+  "linhas_total_anexo": 1077866,
+  "entes_com_funcao_12": 5582,
+  "linhas_por_conta": {
+   "12": 25302,
+   "12.122": 11546,
+   "12.361": 24745,
+   "12.362": 4348,
+   "12.363": 1662,
+   "12.364": 7975,
+   "12.365": 22327,
+   "12.366": 7021,
+   "12.367": 7850,
+   "12.368": 1799
+  },
+  "entes_por_conta": {
+   "12": 5582,
+   "12.122": 2739,
+   "12.361": 5545,
+   "12.362": 1258,
+   "12.363": 465,
+   "12.364": 2257,
+   "12.365": 5428,
+   "12.366": 2005,
+   "12.367": 2253,
+   "12.368": 464
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 57386637706225,
+   "LIQ": 53511644067450,
+   "PAG": 51323002121277
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 27992,
+   "Despesas Liquidadas": 27961,
+   "Despesas Pagas": 27932,
+   "Inscrição de Restos a Pagar Não Processa": 13523,
+   "Inscrição de Restos a Pagar Processados": 17167
+  }
+ },
+ "2023": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 11,
+  "linhas_total_anexo": 1111539,
+  "entes_com_funcao_12": 5582,
+  "linhas_por_conta": {
+   "12": 25587,
+   "12.122": 12279,
+   "12.361": 25073,
+   "12.362": 4541,
+   "12.363": 1666,
+   "12.364": 8404,
+   "12.365": 22800,
+   "12.366": 7101,
+   "12.367": 8153,
+   "12.368": 1810
+  },
+  "entes_por_conta": {
+   "12": 5582,
+   "12.122": 2859,
+   "12.361": 5558,
+   "12.362": 1282,
+   "12.363": 457,
+   "12.364": 2325,
+   "12.365": 5442,
+   "12.366": 2035,
+   "12.367": 2321,
+   "12.368": 457
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 64401373518490,
+   "LIQ": 61011531056133,
+   "PAG": 58484955706340
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 28314,
+   "Despesas Liquidadas": 28278,
+   "Despesas Pagas": 28245,
+   "Inscrição de Restos a Pagar Não Processa": 14225,
+   "Inscrição de Restos a Pagar Processados": 18352
+  }
+ },
+ "2024": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 22,
+  "linhas_total_anexo": 1076203,
+  "entes_com_funcao_12": 5571,
+  "linhas_por_conta": {
+   "12": 25005,
+   "12.122": 11972,
+   "12.361": 24454,
+   "12.362": 4258,
+   "12.363": 1543,
+   "12.364": 8031,
+   "12.365": 22272,
+   "12.366": 6761,
+   "12.367": 7992,
+   "12.368": 1761
+  },
+  "entes_por_conta": {
+   "12": 5571,
+   "12.122": 2887,
+   "12.361": 5547,
+   "12.362": 1240,
+   "12.363": 427,
+   "12.364": 2307,
+   "12.365": 5467,
+   "12.366": 1974,
+   "12.367": 2311,
+   "12.368": 467
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 72027882919237,
+   "LIQ": 68273491249042,
+   "PAG": 65738606466758
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 28196,
+   "Despesas Liquidadas": 28164,
+   "Despesas Pagas": 28120,
+   "Inscrição de Restos a Pagar Não Processa": 12916,
+   "Inscrição de Restos a Pagar Processados": 16653
+  }
+ },
+ "2025": {
+  "entes_resposta": 5598,
+  "entes_resposta_vazia": 67,
+  "linhas_total_anexo": 1122562,
+  "entes_com_funcao_12": 5530,
+  "linhas_por_conta": {
+   "12": 25732,
+   "12.122": 12827,
+   "12.361": 24917,
+   "12.362": 4614,
+   "12.363": 1914,
+   "12.364": 8276,
+   "12.365": 22866,
+   "12.366": 7061,
+   "12.367": 8542,
+   "12.368": 1656
+  },
+  "entes_por_conta": {
+   "12": 5530,
+   "12.122": 2954,
+   "12.361": 5436,
+   "12.362": 1289,
+   "12.363": 501,
+   "12.364": 2307,
+   "12.365": 5375,
+   "12.366": 2026,
+   "12.367": 2412,
+   "12.368": 430
+  },
+  "soma_centavos_funcao_12": {
+   "EMP": 79570521922521,
+   "LIQ": 75536633790834,
+   "PAG": 72898087397495
+  },
+  "colunas_funcao_12": {
+   "Despesas Empenhadas": 28256,
+   "Despesas Liquidadas": 28225,
+   "Despesas Pagas": 28193,
+   "Inscrição de Restos a Pagar Não Processa": 15172,
+   "Inscrição de Restos a Pagar Processados": 18559
+  }
+ }
+}

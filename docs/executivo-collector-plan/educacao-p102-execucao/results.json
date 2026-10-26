@@ -1,0 +1,60 @@
+{
+  "wave": "P10.2",
+  "date": "2026-10-25",
+  "commit_or_push": false,
+  "gates": {
+    "G0_SAFETY": "PASS",
+    "G1_INEP_TERMS": "PASS_WITH_CAVEATS",
+    "G2_ENROLLMENT_SEMANTICS": "PASS",
+    "G3_CLASSES_AND_OFFER": "PASS",
+    "G4_PERSISTENCE": "PASS",
+    "G5_HISTORICAL_EXTRACTION": "PASS_WITH_CAVEATS",
+    "G6_NATIONAL_RECONCILIATION": "PASS_WITH_CAVEATS",
+    "G7_PUBLICATION": "PASS",
+    "G8_STORAGE_BUDGET": "PASS",
+    "G9_SERVING": "PASS",
+    "G10_PRIVACY": "PASS",
+    "G11_IDEMPOTENCY_ROLLBACK": "PASS",
+    "G12_COMPARABILITY_FOUNDATION": "PASS_WITH_CAVEATS",
+    "G13_TERRITORIAL_TESTS": "PASS",
+    "G14_REGRESSION": "PASS",
+    "G15_DOWNSTREAM_READINESS": "PASS"
+  },
+  "publication": {
+    "dataset_id": 71,
+    "migration": 10,
+    "table_ids": [83, 84, 85],
+    "slices": 513,
+    "offer_rows": 3547666,
+    "rejected_rows": 0,
+    "replay_no_change": 513,
+    "bit0_consistent_slices": 513
+  },
+  "nacional_2025": {
+    "matriculas": 46018380,
+    "turmas": 2233976,
+    "escolas_com_oferta": 178772,
+    "escolas_com_matricula_e_turma": 178766,
+    "escolas_so_turma": 6
+  },
+  "reconciliation": {
+    "matriculas_divergencias": 0,
+    "matriculas_comparacoes": 2750826,
+    "turmas_divergencias": 528,
+    "turmas_divergencias_explicadas": "EJA fundamental 2025 (Sinopse atribui 4.696 turmas de EJA nao classificadas ao fundamental)"
+  },
+  "storage": {
+    "db_growth_mb": 658.4,
+    "offer_year_mb": 656.1,
+    "change_log_growth_rows": 0,
+    "wal_stream_gb": 1.60,
+    "c_free_min_gib": 53.35,
+    "cumulative_p101_p102_gb": 1.21
+  },
+  "tests": { "total": 525, "passed": 495, "failed": 0, "skipped": 30 },
+  "legal_pending": [
+    "CC BY-ND do portal gov.br (aplicabilidade aos dados nao declarada)",
+    "educacao especial por escola: NEEDS_LEGAL_VALIDATION",
+    "NT ANPD 12/2023 nao lida"
+  ]
+}

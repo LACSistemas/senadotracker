@@ -1,0 +1,138 @@
+{
+ "2007": {
+  "escolas_com_mat": 198397,
+  "residuo_negativo": 0,
+  "residuo_soma": 701155,
+  "residuo_max": 5405,
+  "prof_total": 1007237
+ },
+ "2008": {
+  "escolas_com_mat": 199761,
+  "residuo_negativo": 0,
+  "residuo_soma": 800411,
+  "residuo_max": 6148,
+  "prof_total": 1149929
+ },
+ "2009": {
+  "escolas_com_mat": 197468,
+  "residuo_negativo": 0,
+  "residuo_soma": 862233,
+  "residuo_max": 8886,
+  "prof_total": 1257291
+ },
+ "2010": {
+  "escolas_com_mat": 194939,
+  "residuo_negativo": 0,
+  "residuo_soma": 925353,
+  "residuo_max": 5998,
+  "prof_total": 1376824
+ },
+ "2011": {
+  "escolas_com_mat": 193047,
+  "residuo_negativo": 0,
+  "residuo_soma": 993984,
+  "residuo_max": 4694,
+  "prof_total": 1483643
+ },
+ "2012": {
+  "escolas_com_mat": 192676,
+  "residuo_negativo": 0,
+  "residuo_soma": 1064392,
+  "residuo_max": 5026,
+  "prof_total": 1605608
+ },
+ "2013": {
+  "escolas_com_mat": 190706,
+  "residuo_negativo": 0,
+  "residuo_soma": 1103014,
+  "residuo_max": 3649,
+  "prof_total": 1667685
+ },
+ "2014": {
+  "escolas_com_mat": 188673,
+  "residuo_negativo": 0,
+  "residuo_soma": 1375080,
+  "residuo_max": 11720,
+  "prof_total": 1945006
+ },
+ "2015": {
+  "escolas_com_mat": 186441,
+  "residuo_negativo": 0,
+  "residuo_soma": 1325053,
+  "residuo_max": 7686,
+  "prof_total": 1917192
+ },
+ "2016": {
+  "escolas_com_mat": 186081,
+  "residuo_negativo": 0,
+  "residuo_soma": 1231683,
+  "residuo_max": 54380,
+  "prof_total": 1859940
+ },
+ "2017": {
+  "escolas_com_mat": 184145,
+  "residuo_negativo": 0,
+  "residuo_soma": 1222182,
+  "residuo_max": 54573,
+  "prof_total": 1831003
+ },
+ "2018": {
+  "escolas_com_mat": 181939,
+  "residuo_negativo": 0,
+  "residuo_soma": 1270796,
+  "residuo_max": 46798,
+  "prof_total": 1903230
+ },
+ "2019": {
+  "escolas_com_mat": 180610,
+  "residuo_negativo": 0,
+  "residuo_soma": 1238179,
+  "residuo_max": 30185,
+  "prof_total": 1914749
+ },
+ "2020": {
+  "escolas_com_mat": 179533,
+  "residuo_negativo": 0,
+  "residuo_soma": 1193167,
+  "residuo_max": 40619,
+  "prof_total": 1936094
+ },
+ "2021": {
+  "escolas_com_mat": 178370,
+  "residuo_negativo": 0,
+  "residuo_soma": 1100522,
+  "residuo_max": 36126,
+  "prof_total": 1892458
+ },
+ "2022": {
+  "escolas_com_mat": 178346,
+  "residuo_negativo": 0,
+  "residuo_soma": 1259959,
+  "residuo_max": 39634,
+  "prof_total": 2152506
+ },
+ "2023": {
+  "escolas_com_mat": 178476,
+  "residuo_negativo": 0,
+  "residuo_soma": 1468711,
+  "residuo_max": 50898,
+  "prof_total": 2413825,
+  "residuo_igual_prof_nao_integrada": 178476
+ },
+ "2024": {
+  "escolas_com_mat": 179286,
+  "residuo_negativo": 0,
+  "residuo_soma": 1412957,
+  "residuo_max": 36822,
+  "prof_total": 2576293,
+  "residuo_igual_prof_nao_integrada": 179286
+ },
+ "2025": {
+  "escolas_com_mat": 178766,
+  "residuo_negativo": 0,
+  "residuo_soma": 1302483,
+  "residuo_max": 41946,
+  "prof_total": 3187976,
+  "residuo_igual_prof_nao_integrada": 178226
+ }
+}

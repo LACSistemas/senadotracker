@@ -1,0 +1,389 @@
+[
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2025_.zip",
+  "tamanho_zip": 537217189,
+  "chamadas_range": 3,
+  "bytes_lidos": 2885,
+  "entradas": [
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educação_básica.xlsx",
+    "compactado": 240639,
+    "descompactado": 240639
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Aluno 2025.pdf",
+    "compactado": 71669,
+    "descompactado": 71669
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Cadastro Escola Nova 2025.pdf",
+    "compactado": 62684,
+    "descompactado": 62684
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Escola 2025.pdf",
+    "compactado": 98547,
+    "descompactado": 98547
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Gestor Escolar 2025.pdf",
+    "compactado": 75088,
+    "descompactado": 75088
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Profissional Escolar 2025.pdf",
+    "compactado": 87054,
+    "descompactado": 87054
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Turma 2025.pdf",
+    "compactado": 67779,
+    "descompactado": 67779
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/md5_microdados_ed_basica_2025.txt",
+    "compactado": 388,
+    "descompactado": 388
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Curso_Tecnico_2025_V2.csv",
+    "compactado": 8221173,
+    "descompactado": 8221173
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Docente_2025_V2.csv",
+    "compactado": 88344680,
+    "descompactado": 88344680
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Escola_2025_V2.csv",
+    "compactado": 141425160,
+    "descompactado": 141425160
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Gestor_Escolar_2025_v2.csv",
+    "compactado": 52458104,
+    "descompactado": 52458104
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Matricula_2025_V2.csv",
+    "compactado": 123318048,
+    "descompactado": 123318048
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/dados/Tabela_Turma_2025_V2.csv",
+    "compactado": 99920475,
+    "descompactado": 99920475
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/leia-me/Leia-me_v2.pdf",
+    "compactado": 422934,
+    "descompactado": 422934
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/leia-me/Nota Técnica nº 5 de 2021 - Recomendações do Termo de Execução Descentralizada nº 8750.pdf",
+    "compactado": 303899,
+    "descompactado": 303899
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/leia-me/Parecer Jurídico da Procuradoria Federal Especializada junto ao Inep (Projur) sobre a divulgação dos Microdados.pdf",
+    "compactado": 448948,
+    "descompactado": 448948
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/leia-me/RIP Relatório de Impacto à Proteção de Dados Pessoais dos Censos Educacionais.pdf",
+    "compactado": 673770,
+    "descompactado": 673770
+   },
+   {
+    "nome": "microdados_censo_escolar_2025_v2/leia-me/Termo de Execução Descentralizada (TED) firmado entre o Inep e a Universidade Federal de Minas Gerais (UFMG).pdf",
+    "compactado": 20970530,
+    "descompactado": 20970530
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2024.zip",
+  "tamanho_zip": 33829396,
+  "chamadas_range": 3,
+  "bytes_lidos": 3122,
+  "entradas": [
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educação_básica.xlsx",
+    "compactado": 106685,
+    "descompactado": 128513
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO I - Dicionário de Dados/~$Dicionário de Dados da Educação Básica.xlsx",
+    "compactado": 85,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educação_básica.xlsx",
+    "compactado": 57,
+    "descompactado": 165
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Aluno 2024.pdf",
+    "compactado": 69587,
+    "descompactado": 72648
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Escola 2024.pdf",
+    "compactado": 102199,
+    "descompactado": 106612
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Escola Nova 2024.pdf",
+    "compactado": 70008,
+    "descompactado": 72630
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Gestor Escolar 2024.pdf",
+    "compactado": 64726,
+    "descompactado": 67012
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Profissional Escolar 2024.pdf",
+    "compactado": 74372,
+    "descompactado": 77916
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/Anexos/ANEXO II -  Questionários do Censo da Educação Basica/Turma 2024.pdf",
+    "compactado": 82065,
+    "descompactado": 84586
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/dados/md5_microdados_ed_basica_2024.txt",
+    "compactado": 117,
+    "descompactado": 136
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/dados/microdados_ed_basica_2024.csv",
+    "compactado": 32546473,
+    "descompactado": 217925280
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/dados/suplemento_cursos_tecnicos_2024.csv",
+    "compactado": 532062,
+    "descompactado": 4717121
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2024_defeso/leia-me/Leia-me.pdf",
+    "compactado": 174810,
+    "descompactado": 193743
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2023.zip",
+  "tamanho_zip": 32094587,
+  "chamadas_range": 3,
+  "bytes_lidos": 2580,
+  "entradas": [
+   {
+    "nome": "microdados_censo_escolar_2023/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 97054,
+    "descompactado": 120630
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 68248,
+    "descompactado": 70811
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 98363,
+    "descompactado": 102360
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Gestor Escolar.pdf",
+    "compactado": 63141,
+    "descompactado": 65174
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional Escolar.pdf",
+    "compactado": 72099,
+    "descompactado": 75061
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 79820,
+    "descompactado": 82227
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/dados/md5_microdados_ed_basica_2023.txt",
+    "compactado": 111,
+    "descompactado": 136
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/dados/microdados_ed_basica_2023.csv",
+    "compactado": 30997525,
+    "descompactado": 210035219
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/dados/suplemento_cursos_tecnicos_2023.csv",
+    "compactado": 447910,
+    "descompactado": 4018614
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "microdados_censo_escolar_2023/leia-me/Leia-me.pdf",
+    "compactado": 166138,
+    "descompactado": 185395
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/dados_abertos/microdados_censo_escolar_2022.zip",
+  "tamanho_zip": 26394408,
+  "chamadas_range": 3,
+  "bytes_lidos": 3183,
+  "entradas": [
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO I - Dicionário de Dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO I - Dicionário de Dados/dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 52472,
+    "descompactado": 64880
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO I - Dicionário de Dados/~$Dicionário de Dados da Educaç╞o Básica.xlsx",
+    "compactado": 82,
+    "descompactado": 165
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO I - Dicionário de Dados/~$dicionário_dados_educaç╞o_básica.xlsx",
+    "compactado": 61,
+    "descompactado": 165
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Aluno.pdf",
+    "compactado": 66977,
+    "descompactado": 69745
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Escola.pdf",
+    "compactado": 120460,
+    "descompactado": 125537
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Gestor Escolar.pdf",
+    "compactado": 62684,
+    "descompactado": 64919
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Profissional Escolar.pdf",
+    "compactado": 71886,
+    "descompactado": 75056
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/Anexos/ANEXO II -  Questionários do Censo da Educaç╞o Basica/Turma.pdf",
+    "compactado": 77967,
+    "descompactado": 80311
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/dados/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/dados/md5_microdados_ed_basica_2022.txt",
+    "compactado": 65,
+    "descompactado": 65
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/dados/microdados_ed_basica_2022.csv",
+    "compactado": 25773914,
+    "descompactado": 190008267
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/leia-me/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "Microdados do Censo Escolar da Educaç╞o Básica 2022/leia-me/Leia-me.pdf",
+    "compactado": 162508,
+    "descompactado": 181265
+   }
+  ]
+ }
+]

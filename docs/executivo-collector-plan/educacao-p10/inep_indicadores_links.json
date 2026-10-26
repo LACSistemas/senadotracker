@@ -1,0 +1,2438 @@
+{
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/sobre": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nota_tecnica_atualizacao_indicador_formacao_docente.pdf",
+    "texto": "Nota Técnica | Atualização em campos de filtragem no Indicador de Adequação da Formação do"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nota_retificacao_afd_2020.pdf",
+    "texto": "Nota informativa sobre a retificação dos dados de AFD 2020"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/docente_formacao_legal/nota_tecnica_indicador_docente_formacao_legal.pdf",
+    "texto": "Nota Técnica | Indicador de adequação da formação do docente da educação básica"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/SEI_INEP_0644683_Nota_Tecnica.pdf",
+    "texto": "Nota Técnica | Atualização da metodologia de cálculo do indicador de adequação da formação"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/AFD_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/AFD_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/AFD_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/AFD_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/AFD_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs (Atualizado em 22/06/2021)"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_MUNICIPIOS.zip",
+    "texto": "Municípios (Atualizado em 22/06/2021)"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/AFD_2020_ESCOLAS.zip",
+    "texto": "Escolas (Atualizado em 22/06/2021)"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/AFD_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/AFD_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/AFD_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_BRASIL_REGIOES_UF.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/AFD_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/adequacao-da-formacao-docente/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_brasil_regioes_ufs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/adequacao_formacao_docente/adequacao_formacao_docente_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/sobre": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nota_tecnica_ajuste_indicador_esforco_docente.pdf",
+    "texto": "Nota Técnica | Ajuste no cálculo do Indicador de Esforço Docente"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/docente_esforco/nota_tecnica_indicador_docente_esforco.pdf",
+    "texto": "Nota Técnica | Indicador de Esforço Docente"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IED_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IED_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IED_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IED_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IED_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IED_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IED_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IED_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IED_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IED_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_brasil_regioes_ufs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/esforco_docente/esforco_docente_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2014-1": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_brasil_regioes_ufs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/esforco_docente/esforco_docente_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/esforco-docente/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_brasil_regioes_ufs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/esforco_docente/esforco_docente_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/sobre": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/escola_complexidade_gestao/nota_tecnica_indicador_escola_complexidade_gestao.pdf",
+    "texto": "Nota Técnica | Indicador para mensurar a complexidade da gestão nas escolas a partir dos d"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ICG_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ICG_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ICG_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ICG_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ICG_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ICG_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ICG_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ICG_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ICG_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ICG_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/complexidade-de-gestao-da-escola/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_brasil_regioes_ufs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/complexidade_gestao_escola/complexidade_gestao_escola_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/sobre": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nota_tecnica_atualizacao_indicador_regularidade_docente.pdf",
+    "texto": "Nota Técnica | Atualização em regras de filtragem no Indicador de Regularidade do Docente"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/docente_regularidade_vinculo/nota_tecnica_indicador_regularidade_2015.pdf",
+    "texto": "Nota Técnica | Indicador de regularidade do docente da Educação Básica"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/IRD_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/IRD_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/IRD_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/IRD_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/IRD_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/IRD_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/IRD_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/IRD_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/IRD_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/IRD_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/regularidade-do-corpo-docente/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_brasil_regioes_ufs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/regularidade_corpo_docente/regularidade_corpo_docente_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/TDI_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/TDI_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/TDI_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/TDI_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/TDI_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/TDI_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/TDI_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TDI_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TDI_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TDI_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_brasil_regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/distorcao_idade_serie/tdi_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_brasil_regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/distorcao_idade_serie/tdi_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_brasil_regioes_UFs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/distorcao_idade_serie/tdi_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_brasil_regioes_UFs_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_municipios_2012.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/distorcao_idade_serie/tdi_escolas_2012.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_brasil_regioes_UFs_2011.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_municipios_2011.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/distorcao_idade_serie/tdi_escolas_2011.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2010": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/tdi_brasil_regioes_UFs_2010.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/dados_tdi_municipios_2010.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2010/tdi_escolas_2010.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2009": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/tdi_brasil_regioes_UFs_2009.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/dados_tdi_municipios_2009.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2009/dados_tdi_escolas_2009.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2008": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tdi_brasil_regioes_UFs_2008.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tdi_municipios_2008.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2008/tx_tdi_escolas_2008.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2007": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_brasil_regioes_UFs_2007.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_municipios_2007.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2007/tdi_escolas_2007.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-distorcao-idade-serie/2006": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2006/tdi_brasil_regioes_UFs_2006.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_distorcao_idade_serie/2006/tdi_municipios_2006.zip",
+    "texto": "Municípios"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_brasil_regioes_ufs_2025.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_municipios_2025.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/tx_rend_escolas_2025.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_brasil_regioes_ufs_2024.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_municipios_2024.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/tx_rend_escolas_2024.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_brasil_regioes_ufs_2023.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_municipios_2023.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/tx_rend_escolas_2023.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_brasil_regioes_ufs_2022.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_municipios_2022.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/tx_rend_escolas_2022.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_brasil_regioes_ufs_2021.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_municipios_2021.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/tx_rend_escolas_2021.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_brasil_regioes_ufs_2020.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_municipios_2020.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/tx_rend_escolas_2020.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_brasil_regioes_ufs_2019.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_municipios_2019.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/tx_rend_escolas_2019.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_BRASIL_REGIOES_UFS_2018.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_MUNICIPIOS_2018.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/TX_REND_ESCOLAS_2018.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/TAXA_REND_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/TAXA_REND_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/taxa_rendimento/tx_rendimento_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/taxa_rendimento/tx_rendimento_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_brasil_regioes_UFs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/taxa_rendimento/tx_rendimento_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_brasil_regioes_UFs_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_municipios_2012.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/taxas_rendimento/tx_rendimento_escolas_2012.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_brasil_regioes_UFs_2011_2.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_municipios_2011_2.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2011/tx_rendimento_escolas_2011_2.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2010": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_brasil_regioes_UFs_2010.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_municipios_2010.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2010/tx_rendimento_escolas_2010_19082011.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2009": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_brasil_regioes_UFs_2009.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_municipios_2009.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2009/tx_rendimento_escola_2009.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2008": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_brasil_regioes_UFs_2008.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_municipios_2008.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2008/tx_rendimento_escola_2008.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-rendimento-escolar/2007": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_brasil_regioes_UFs_2007.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_municipios_2007.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/taxa_rendimento/2007/tx_rendimento_escolas_2007.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/sobre": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2007_2016/nota_tecnica_taxas_transicao_2007_2016.pdf",
+    "texto": "Nota Técnica | Estimativas de fluxo escolar a partir do acompanhamento longitudinal dos re"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2021-2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2021_2022.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2021_2022.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2020-2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2020_2021.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2020_2021.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2019-2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2019_2020.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2019_2020.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2018-2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2018_2019.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2018_2019.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2017-2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2017_2018.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2017_2018.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2016-2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2016_2017.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2016_2017.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2015-2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2015_2016.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2015_2016.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2014-2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2014_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2014_2015.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2013-2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2013_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2013_2014.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2012-2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2012_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2012_2013.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2011-2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2011_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2011_2012.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2010-2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2010_2011.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2010_2011.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2009-2010": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2009_2010.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2009_2010.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2008-2009": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2008_2009.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2008_2009.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/taxas-de-transicao/2007-2008": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_brasil_regioes_ufs_2007_2008.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/taxa_transicao/tx_transicao_municipios_2007_2008.zip",
+    "texto": "Municípios"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/sobre": [
+   {
+    "href": "http://download.inep.gov.br/educacao_basica/prova_brasil_saeb/resultados/2013/nota_tecnica_ondicador_de_nivel_socioeconomico_das_escolas_de_educacao_basica_inse.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2011"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011_2013/nivel_socioeconomico/nota_tecnica_indicador_nivel_socioeconomico.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2011 e 2013"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/nota_tecnica/nota_tecnica_inep_inse_2015.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2015"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/estatisticas_e_indicadores/indicador_nivel_socioeconomico_saeb_2019_nota_tecnica.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2019"
+   },
+   {
+    "href": "https://download.inep.gov.br/areas_de_atuacao/Indicadores_de_nivel_Nota_tenica_2021.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/publicacoes/institucionais/estatisticas_e_indicadores/indicador_nivel_socioeconomico_saeb_2023_nota_tecnica.pdf",
+    "texto": "Nota Técnica | Indicador de Nível Socioeconômico (Inse) | 2023"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_brasil.xlsx",
+    "texto": "Brasil"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_escolas.xlsx",
+    "texto": "Escolas"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_municipios.xlsx",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/nivel_socioeconomico/INSE_2023_estados.xlsx",
+    "texto": "Estados"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021__brasil.xlsx",
+    "texto": "Brasil (Atualizado em 10/05/2023)"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_escolas.xlsx",
+    "texto": "Escolas (Atualizado em 10/05/2023)"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_municipios.xlsx",
+    "texto": "Municípios (Atualizado em 10/05/2023)"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/nivel_socioeconomico/INSE_2021_estados.xlsx",
+    "texto": "Estados"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_ESCOLAS.xlsx",
+    "texto": "Escolas"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_MUNICIPIOS.xlsx",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/nivel_socioeconomico/INSE_2019_ESTADOS.xlsx",
+    "texto": "Estados"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/nivel_socioeconomico/Indicador_Inse_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/nivel-socioeconomico/2011-2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011_2013/nivel_socioeconomico/Indicador_INSE_por_Escola.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/DSU_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/DSU_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/DSU_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/DSU_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/DSU_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/DSU_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/DSU_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/DSU_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/DSU_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/DSU_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/proporcao_docentes_formacao_superior/dsu_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/proporcao_docentes_formacao_superior/dsu_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/proporcao_docentes_formacao_superior/dsu_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_municipios_2012.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/proporcao_docentes_formacao_superior/dsu_escolas_2012.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/percentual-de-docentes-com-curso-superior/2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_brasil_regioes_UFs_2011.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_municipios_2011.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/proporcao_docentes_formacao_superior/dsu_escolas_2011.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/ATU_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/ATU_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/ATU_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/ATU_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/ATU_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/ATU_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/ATU_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/ATU_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/ATU_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/ATU_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/alunos_turma/media_alunos_turma_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/alunos_turma/media_alunos_turma_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/alunos_turma/media_alunos_turma_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_brasil_regioes_UFs_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_municipios_2012.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/alunos_turma/media_alunos_turma_escolas_2012.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_brasil_regioes_UFs_2011.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_municipios_2011.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/alunos_turma/alunos_turma_escolas_2011.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2010": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_brasil_regioes_ufs_2010_3.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_municipios_2010_3.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2010/media_alunos_turma_escolas_2010_3.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2009": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_brasil_regioes_ufs_2009.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_municipios_2009.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2009/media_alunos_turma_escolas_2009.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2008": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_brasil_regioes_ufs_2008.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_municipios_2008.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2008/media_alunos_turma_escolas_2008.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-alunos-por-turma/2007": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_brasil_regioes_ufs_2007.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_municipios_2007.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_alunos_turma/2007/media_alunos_turma_escolas_2007.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2025": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2025/HAD_2025_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2024": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2024/HAD_2024_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2023": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2023/HAD_2023_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2022": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2022/HAD_2022_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/HAD_2021_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/HAD_2020_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/HAD_2019_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/HAD_2018_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/HAD_2017_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_BRASIL_REGIOES_UFS.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_MUNICIPIOS.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/HAD_2016_ESCOLAS.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_municipios_2015.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/horas_aula_diaria/horas_aula_escolas_2015.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_municipios_2014.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/horas_aula_diaria/horas_aula_escolas_2014.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2013": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2013.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_municipios_2013.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2013/horas_aula_diaria/horas_aula_escolas_2013.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2012": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2012.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_municipios_2012.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2012/horas_aula_diaria/horas_aula_escolas_2012.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2011": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_brasil_regioes_UFs_2011.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_municipios_2011.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2011/horas_aula_diaria/horas_aula_escolas_2011.zip",
+    "texto": "Escolas"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/media-de-horas-aula-diaria/2010": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/horas_aula_brasil_regioes_UFs_2010.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/media_horas_aula_municipios_2010.zip",
+    "texto": "Municípios"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/2011/indicadores_educacionais/media_hora_aula_diaria/2010/media_horas_aula_escolas_2010.zip",
+    "texto": "Escolas"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/indicadores-financeiros-educacionais": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/indicadores-financeiros-educacionais": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_total.zip",
+    "texto": "Percentual do investimento total em relação ao Produto Interno Bruto (PIB), por nível de e"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_direto.zip",
+    "texto": "Percentual do investimento direto em relação ao Produto Interno Bruto (PIB), por nível de "
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_valor_real.zip",
+    "texto": "Investimento público direto em educação por estudante em valores reais, por nível de ensin"
+   },
+   {
+    "href": "https://download.inep.gov.br//informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_valor_nominal.zip",
+    "texto": "Investimento público direto em educação por estudante em valores nominais, por nível de en"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_estudante_duracao_teorica.zip",
+    "texto": "Investimento público direto em educação cumulativo por estudante ao longo da duração teóri"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_pib_per_capita.zip",
+    "texto": "Percentual do investimento direto em relação ao Produto Interno Bruto (PIB) per capita, po"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/Investimento_total_gps_nivel.zip",
+    "texto": "Percentual do investimento total em relação ao Gasto Público Social (GPS), por nível de en"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/proporcao_natureza_despesa.zip",
+    "texto": "Proporção do Investimento público em educação, por natureza de despesa – 2000 a 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/proporcao_nivel_ensino.zip",
+    "texto": "Proporção do investimento público em educação, por nível de ensino – 2000 a 2021"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/investimentos_publicos_em_educacao/indicadores_financeiros_educacionais/variacao_investimento.zip",
+    "texto": "Variação do investimento público direto em educação, por nível de ensino – 2000 a 2021"
+   }
+  ]
+ },
+ "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes": {
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes": [],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/sobre": [
+   {
+    "href": "https://download.inep.gov.br/dados_abertos/indicadores_educacionais/nota_tecnica_remuneracao_media_docentes_educacao_basica.pdf",
+    "texto": "Nota Técnica | A remuneração média dos docentes em exercício na educação básica: pareament"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2021": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/remuneracao_docentes_brasil_regioes_ufs_2021.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2021/remuneracao_docentes_municipios_2021.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2020": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_brasil_2020.zip",
+    "texto": "Brasil"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_uf_2020.zip",
+    "texto": "Regiões e UFs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2020/remuneracao_media_docentes/remuneracao_docentes_municipios_2020.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2019": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_brasil_2019.zip",
+    "texto": "Brasil"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_uf_2019.zip",
+    "texto": "Regiões e UFs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2019/remuneracao_media_docentes/remuneracao_docentes_municipios_2019.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2018": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_brasil_2018.zip",
+    "texto": "Brasil"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_uf_2018.zip",
+    "texto": "Regiões e UFs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2018/remuneracao_media_docentes/remuneracao_docentes_municipios_2018.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2017": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2017.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2017/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2017.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2016": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2016.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2016/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2016.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2015": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2015.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2015/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2015.zip",
+    "texto": "Municípios"
+   }
+  ],
+  "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/indicadores-educacionais/remuneracao-media-dos-docentes/2014": [
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/remuneracao_media_docentes/Remuneracao_docentes_Brasil_Regioes_UFs_2014.zip",
+    "texto": "Brasil, regiões e Ufs"
+   },
+   {
+    "href": "https://download.inep.gov.br/informacoes_estatisticas/indicadores_educacionais/2014/remuneracao_media_docentes/Remuneracao_docentes_Municipios_2014.zip",
+    "texto": "Municípios"
+   }
+  ]
+ }
+}

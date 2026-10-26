@@ -1,0 +1,226 @@
+[
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_brasil_ideb_2025.zip",
+  "tamanho_zip": 85519,
+  "chamadas_range": 3,
+  "bytes_lidos": 624,
+  "entradas": [
+   {
+    "nome": "divulgacao_brasil_ideb_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_brasil_ideb_2025/divulgacao_brasil_ideb_2025.ods",
+    "compactado": 37038,
+    "descompactado": 37468
+   },
+   {
+    "nome": "divulgacao_brasil_ideb_2025/divulgacao_brasil_ideb_2025.xlsx",
+    "compactado": 47486,
+    "descompactado": 57635
+   },
+   {
+    "nome": "divulgacao_brasil_ideb_2025/md5_divulgacao_brasil_ideb_2025.txt",
+    "compactado": 105,
+    "descompactado": 135
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_regioes_ufs_ideb_2025.zip",
+  "tamanho_zip": 757970,
+  "chamadas_range": 3,
+  "bytes_lidos": 659,
+  "entradas": [
+   {
+    "nome": "divulgacao_regioes_ufs_ideb_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_regioes_ufs_ideb_2025/divulgacao_regioes_ufs_ideb_2025.ods",
+    "compactado": 417567,
+    "descompactado": 417720
+   },
+   {
+    "nome": "divulgacao_regioes_ufs_ideb_2025/divulgacao_regioes_ufs_ideb_2025.xlsx",
+    "compactado": 339334,
+    "descompactado": 350154
+   },
+   {
+    "nome": "divulgacao_regioes_ufs_ideb_2025/md5_divulgacao_regioes_ufs_ideb_2025.txt",
+    "compactado": 109,
+    "descompactado": 145
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_anos_iniciais_municipios_2025.zip",
+  "tamanho_zip": 25308289,
+  "chamadas_range": 3,
+  "bytes_lidos": 715,
+  "entradas": [
+   {
+    "nome": "divulgacao_anos_iniciais_municipios_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_municipios_2025/divulgacao_anos_iniciais_municipios_2025.ods",
+    "compactado": 13164203,
+    "descompactado": 13204272
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_municipios_2025/divulgacao_anos_iniciais_municipios_2025.xlsx",
+    "compactado": 12142899,
+    "descompactado": 12184943
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_municipios_2025/md5_divulgacao_anos_iniciais_municipios_2025.txt",
+    "compactado": 115,
+    "descompactado": 161
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_anos_finais_municipios_2025.zip",
+  "tamanho_zip": 24381009,
+  "chamadas_range": 3,
+  "bytes_lidos": 701,
+  "entradas": [
+   {
+    "nome": "divulgacao_anos_finais_municipios_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_anos_finais_municipios_2025/divulgacao_anos_finais_municipios_2025.ods",
+    "compactado": 12895669,
+    "descompactado": 12899388
+   },
+   {
+    "nome": "divulgacao_anos_finais_municipios_2025/divulgacao_anos_finais_municipios_2025.xlsx",
+    "compactado": 11484183,
+    "descompactado": 11507820
+   },
+   {
+    "nome": "divulgacao_anos_finais_municipios_2025/md5_divulgacao_anos_finais_municipios_2025.txt",
+    "compactado": 113,
+    "descompactado": 157
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_ensino_medio_municipios_2025.zip",
+  "tamanho_zip": 8531020,
+  "chamadas_range": 3,
+  "bytes_lidos": 708,
+  "entradas": [
+   {
+    "nome": "divulgacao_ensino_medio_municipios_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_ensino_medio_municipios_2025/divulgacao_ensino_medio_municipios_2025.ods",
+    "compactado": 4405793,
+    "descompactado": 4405793
+   },
+   {
+    "nome": "divulgacao_ensino_medio_municipios_2025/divulgacao_ensino_medio_municipios_2025.xlsx",
+    "compactado": 4124055,
+    "descompactado": 4137862
+   },
+   {
+    "nome": "divulgacao_ensino_medio_municipios_2025/md5_divulgacao_ensino_medio_municipios_2025.txt",
+    "compactado": 114,
+    "descompactado": 159
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_anos_iniciais_escolas_2025.zip",
+  "tamanho_zip": 112185922,
+  "chamadas_range": 3,
+  "bytes_lidos": 694,
+  "entradas": [
+   {
+    "nome": "divulgacao_anos_iniciais_escolas_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_escolas_2025/divulgacao_anos_iniciais_escolas_2025.ods",
+    "compactado": 56496860,
+    "descompactado": 56702703
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_escolas_2025/divulgacao_anos_iniciais_escolas_2025.xlsx",
+    "compactado": 55687921,
+    "descompactado": 55951332
+   },
+   {
+    "nome": "divulgacao_anos_iniciais_escolas_2025/md5_divulgacao_anos_iniciais_escolas_2025.txt",
+    "compactado": 111,
+    "descompactado": 155
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_anos_finais_escolas_2025.zip",
+  "tamanho_zip": 80112586,
+  "chamadas_range": 3,
+  "bytes_lidos": 680,
+  "entradas": [
+   {
+    "nome": "divulgacao_anos_finais_escolas_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_anos_finais_escolas_2025/divulgacao_anos_finais_escolas_2025.ods",
+    "compactado": 41742390,
+    "descompactado": 41808619
+   },
+   {
+    "nome": "divulgacao_anos_finais_escolas_2025/divulgacao_anos_finais_escolas_2025.xlsx",
+    "compactado": 38369085,
+    "descompactado": 38492355
+   },
+   {
+    "nome": "divulgacao_anos_finais_escolas_2025/md5_divulgacao_anos_finais_escolas_2025.txt",
+    "compactado": 109,
+    "descompactado": 151
+   }
+  ]
+ },
+ {
+  "url": "https://download.inep.gov.br/ideb/resultados/divulgacao_ensino_medio_escolas_2025.zip",
+  "tamanho_zip": 18989748,
+  "chamadas_range": 3,
+  "bytes_lidos": 687,
+  "entradas": [
+   {
+    "nome": "divulgacao_ensino_medio_escolas_2025/",
+    "compactado": 0,
+    "descompactado": 0
+   },
+   {
+    "nome": "divulgacao_ensino_medio_escolas_2025/divulgacao_ensino_medio_escolas_2025.ods",
+    "compactado": 10192447,
+    "descompactado": 10192447
+   },
+   {
+    "nome": "divulgacao_ensino_medio_escolas_2025/divulgacao_ensino_medio_escolas_2025.xlsx",
+    "compactado": 8796173,
+    "descompactado": 8809605
+   },
+   {
+    "nome": "divulgacao_ensino_medio_escolas_2025/md5_divulgacao_ensino_medio_escolas_2025.txt",
+    "compactado": 112,
+    "descompactado": 153
+   }
+  ]
+ }
+]

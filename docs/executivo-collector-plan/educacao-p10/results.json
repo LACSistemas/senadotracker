@@ -1,0 +1,62 @@
+{
+ "fase": "P10",
+ "gerado_em": "2026-10-24",
+ "producao_modificada": false,
+ "migrations": 0,
+ "backfill": false,
+ "publicacao": false,
+ "commit": false,
+ "push": false,
+ "gates": {
+  "G0_INFRASTRUCTURE_AUDITED": "PASS",
+  "G1_EXISTING_INFRASTRUCTURE_REUSE": "PASS",
+  "G2_CENSO_ESCOLAR_CONTRACT": "PASS_WITH_CAVEATS",
+  "G3_SCHOOL_IDENTITY": "PASS_WITH_CAVEATS",
+  "G4_ENROLLMENT_CONTRACT": "PASS",
+  "G5_INFRASTRUCTURE_STAFF_CONTRACT": "PASS_WITH_CAVEATS",
+  "G6_LEARNING_OUTCOMES": "PASS_WITH_CAVEATS",
+  "G7_SICONFI_REUSE": "PASS",
+  "G8_SIOPE_OPERATIONAL": "PASS_WITH_CAVEATS",
+  "G9_FNDE_PROGRAMS": "PARTIAL",
+  "G10_PNCP_REUSE": "PASS",
+  "G11_EDUCATION_WORKS": "PARTIAL",
+  "G12_HIGHER_EDUCATION": "PASS_WITH_CAVEATS",
+  "G13_COMPARABILITY": "PASS_WITH_CAVEATS",
+  "G14_EDUCATION_PRIVACY": "PASS",
+  "G15_EDUCATION_SCHEMA": "PASS_WITH_CAVEATS",
+  "G16_STORAGE_PLAN": "PASS",
+  "G17_BACKFILL_READINESS": "PASS_WITH_CAVEATS",
+  "G18_EXECUTION_ROADMAP": "PASS_WITH_CAVEATS"
+ },
+ "numeros": {
+  "q1_reuso_ready": "20/35 (57,1%)",
+  "q1_reuso_com_adaptacao": "26/35 (74,3%)",
+  "siconfi_raw_x_banco": "36/36",
+  "siconfi_invariante": "198497/198536 (99,98%)",
+  "pncp_contratos_raw": 5111306,
+  "pncp_nucleo_educacao": 286736,
+  "pncp_superior": 326461,
+  "censo_2025_linhas_escola": 214192,
+  "sinopse_2025_estabelecimentos_com_matricula": 178766,
+  "matricula_basica_2025": 46018380,
+  "codigos_escola_distintos_2021_2025": 239155,
+  "escolas_nos_5_anos": 198819,
+  "storage_gb_banco_log": {
+   "conservador": 5.7,
+   "provavel": 16.8,
+   "pessimista": 65.8
+  },
+  "storage_gb_raw": {
+   "conservador": 2.4,
+   "provavel": 7.9,
+   "pessimista": 17.8
+  }
+ },
+ "contratos_operacionais": 26,
+ "testes": 35,
+ "bloqueios_externos": [
+  "dados.gov.br 401",
+  "dadosabertos.fnde.gov.br DNS",
+  "dadosabertos.mec.gov.br 403"
+ ]
+}

@@ -1,0 +1,277 @@
+{
+ "descricao": "Veredictos da revisão manual (amostra estratificada, semente 20261026) das classificações educacionais do PNCP. verdict: 1 = educacional (classe correta) / 0 = não educacional / 2 = indeterminado. Nas faixas NEG_*, verdict 1 significa FALSO NEGATIVO (era educacional e não foi classificado). cat_ok=0 marca categoria primária errada (só nas faixas classificadas). Itens revisados e não listados = verdict 1 (positivas) ou 0 (negativas) sem observação.",
+ "revisor": "Claude (revisão manual item a item; sem segundo revisor humano)",
+ "data": "2026-10-26",
+ "regras_auditadas": "edu-ctr-v4 (amostra v6); delta v4→v5 auditado à parte (amostra de 150 contratos novos)",
+ "faixas": {
+  "OBRAS_1_2": {
+   "n": 110,
+   "universo_v7": 10888,
+   "fp": [
+    54,
+    56,
+    109
+   ],
+   "indeterminado": [
+    39
+   ],
+   "cat_errada": [
+    75,
+    79,
+    81,
+    95
+   ]
+  },
+  "MANUT_TERCEIR_3_13": {
+   "n": 110,
+   "universo_v7": 17359,
+   "fp": [
+    0,
+    21,
+    22,
+    38,
+    39,
+    43
+   ],
+   "indeterminado": [],
+   "cat_errada": [
+    4,
+    14,
+    33,
+    61
+   ]
+  },
+  "ALIMENTACAO_8": {
+   "n": 110,
+   "universo_v7": 116768,
+   "fp": [
+    57,
+    104
+   ],
+   "indeterminado": [
+    79
+   ],
+   "cat_errada": []
+  },
+  "TRANSPORTE_9": {
+   "n": 70,
+   "universo_v7": 32532,
+   "fp": [
+    2,
+    19,
+    68
+   ],
+   "indeterminado": [],
+   "cat_errada": []
+  },
+  "EQUIP_TEC_4_7_14_15": {
+   "n": 70,
+   "universo_v7": 30622,
+   "fp": [
+    62
+   ],
+   "indeterminado": [
+    20
+   ],
+   "cat_errada": [
+    5,
+    16
+   ]
+  },
+  "DIDATICO_UNIF_SERV_10_12": {
+   "n": 70,
+   "universo_v7": 30175,
+   "fp": [
+    4,
+    59
+   ],
+   "indeterminado": [
+    10
+   ],
+   "cat_errada": [
+    5,
+    28,
+    48
+   ]
+  },
+  "INSTITUCIONAL_SEM_TEMA": {
+   "n": 70,
+   "universo_v7": 146013,
+   "fp": [
+    16
+   ],
+   "indeterminado": [],
+   "cat_errada": []
+  },
+  "POSSIBLE": {
+   "n": 70,
+   "universo_v7": 44604,
+   "educacional": [
+    2,
+    3,
+    6,
+    7,
+    9,
+    10,
+    11,
+    12,
+    19,
+    24,
+    26,
+    28,
+    29,
+    36,
+    39,
+    41,
+    42,
+    48,
+    49,
+    50,
+    52,
+    53,
+    54,
+    55,
+    59,
+    69
+   ],
+   "nao_educacional": [
+    1,
+    5,
+    13,
+    16,
+    22,
+    23,
+    25,
+    27,
+    32,
+    34,
+    37,
+    38,
+    43,
+    44,
+    45,
+    46,
+    61,
+    65
+   ]
+  },
+  "NEG_COM_TERMO_ESCOLAR": {
+   "n": 110,
+   "universo_v7": 11581,
+   "falso_negativo": [
+    10,
+    16,
+    22,
+    32,
+    56,
+    66,
+    70,
+    86
+   ],
+   "indeterminado": [
+    6,
+    14,
+    39,
+    40,
+    52,
+    95
+   ]
+  },
+  "NEG_ALEATORIO": {
+   "n": 220,
+   "universo_v7": 844,
+   "falso_negativo": [
+    126,
+    140,
+    146
+   ],
+   "indeterminado": [
+    0,
+    22,
+    119,
+    168,
+    196
+   ]
+  }
+ },
+ "delta_v5": {
+  "n": 150,
+  "descricao": "contratos incluídos pela v5 e ausentes na v4 (54.034), amostra aleatória de 150; índice = ordem em delta_new_detail.json",
+  "fp": [],
+  "indeterminado": [],
+  "cat_errada": [
+   45,
+   101,
+   141
+  ]
+ },
+ "delta_v9": {
+  "n": 100,
+  "descricao": "contratos incluídos pela v7 das regras (edu-ctr-v7) e ausentes na v5 (9.235: comprador FDE, Colégio Pedro II, material didático de fundos municipais, frota/monitor/conjuntos escolares), amostra de 100; índice = ordem em delta2_new_detail.json",
+  "fp": [
+   29
+  ],
+  "indeterminado": [],
+  "cat_errada": [
+   11,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   22,
+   26,
+   27,
+   30,
+   32,
+   33,
+   34,
+   36,
+   40,
+   41,
+   42,
+   43,
+   44,
+   45,
+   48,
+   49,
+   54,
+   55,
+   63,
+   64,
+   65,
+   66,
+   67,
+   68,
+   69,
+   70,
+   71,
+   72,
+   73,
+   74,
+   75,
+   76,
+   78,
+   79,
+   80,
+   81,
+   82,
+   83,
+   84,
+   85,
+   86,
+   88,
+   90,
+   91,
+   92,
+   93,
+   94,
+   97,
+   98,
+   99
+  ],
+  "nota_categoria": "obras e manutenção de escolas da FDE saem em categoria 16 (comprador de educação sem tema) porque o objeto não cita a escola; a categoria 2/3 seria mais precisa"
+ },
+ "universos_finais": "universo_v7 = universo da varredura final (edu-ctr-v7 das regras; edu_scan_v9.json)"
+}

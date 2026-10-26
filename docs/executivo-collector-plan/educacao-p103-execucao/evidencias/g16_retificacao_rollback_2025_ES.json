@@ -1,0 +1,50 @@
+{
+ "year": 2025,
+ "uf": 32,
+ "infraSchools": 3046,
+ "infraReplay": "NO_CHANGE",
+ "logAfterReplay": 0,
+ "stateAfterReplay": true,
+ "infraChanged": {
+  "internet": 5,
+  "salas": 2
+ },
+ "infraLog": [
+  "t86:U=7",
+  "t87:U=3"
+ ],
+ "infraStateDiffers": true,
+ "infraRollback": "ROLLED_BACK",
+ "infraStateAfterRollbackEqualsReference": true,
+ "infraInjectedFailureThrew": true,
+ "infraStateAfterFailureEqualsReference": true,
+ "infraLogAfterFailure": 0,
+ "infraRepublishOriginal": "NO_CHANGE",
+ "indSlice": {
+  "school": 2987,
+  "terr": 1042
+ },
+ "indReplay": "NO_CHANGE",
+ "indChanged": {
+  "atu_fun": 5
+ },
+ "indLog": [
+  "t89:U=5"
+ ],
+ "indRollback": "ROLLED_BACK",
+ "indStateAfterRollbackEqualsReference": true,
+ "indInjectedFailureThrew": true,
+ "indStateAfterFailureEqualsReference": true,
+ "indRepublishOriginal": "NO_CHANGE",
+ "docRows": 79,
+ "docReplay": "NO_CHANGE",
+ "docLog": [
+  "t92:U=3"
+ ],
+ "docRollback": "ROLLED_BACK",
+ "docStateAfterRollbackEqualsReference": true,
+ "docRepublishOriginal": "NO_CHANGE",
+ "finalStateEqualsReference": true,
+ "p101p102Unchanged": true,
+ "activePublications": 3
+}

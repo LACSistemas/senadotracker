@@ -1,0 +1,226 @@
+{
+ "anos": [
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "por_ano": {
+  "2021": {
+   "linhas_unicas": 221140,
+   "duplicados_no_arquivo": 0,
+   "codigo_vazio": 0,
+   "codigo_fora_do_padrao_8_digitos": {},
+   "por_dependencia": {
+    "1": 714,
+    "2": 33564,
+    "3": 134369,
+    "4": 52493
+   },
+   "por_situacao_funcionamento": {
+    "1": 180057,
+    "2": 36502,
+    "3": 4581
+   },
+   "por_localizacao": {
+    "1": 143252,
+    "2": 77888
+   },
+   "municipios_distintos": 5570
+  },
+  "2022": {
+   "linhas_unicas": 224649,
+   "duplicados_no_arquivo": 0,
+   "codigo_vazio": 0,
+   "codigo_fora_do_padrao_8_digitos": {},
+   "por_dependencia": {
+    "1": 735,
+    "2": 33460,
+    "3": 132629,
+    "4": 57825
+   },
+   "por_situacao_funcionamento": {
+    "1": 184332,
+    "2": 36526,
+    "3": 3791
+   },
+   "por_localizacao": {
+    "1": 148926,
+    "2": 75723
+   },
+   "municipios_distintos": 5570
+  },
+  "2023": {
+   "linhas_unicas": 217625,
+   "duplicados_no_arquivo": 0,
+   "codigo_vazio": 0,
+   "codigo_fora_do_padrao_8_digitos": {},
+   "por_dependencia": {
+    "1": 725,
+    "2": 33546,
+    "3": 130709,
+    "4": 52645
+   },
+   "por_situacao_funcionamento": {
+    "1": 180230,
+    "2": 32083,
+    "3": 5312
+   },
+   "por_localizacao": {
+    "1": 144162,
+    "2": 73463
+   },
+   "municipios_distintos": 5570
+  },
+  "2024": {
+   "linhas_unicas": 215545,
+   "duplicados_no_arquivo": 0,
+   "codigo_vazio": 0,
+   "codigo_fora_do_padrao_8_digitos": {},
+   "por_dependencia": {
+    "1": 724,
+    "2": 33254,
+    "3": 128999,
+    "4": 52568
+   },
+   "por_situacao_funcionamento": {
+    "1": 181065,
+    "2": 31321,
+    "3": 3159
+   },
+   "por_localizacao": {
+    "1": 144456,
+    "2": 71089
+   },
+   "municipios_distintos": 5570
+  },
+  "2025": {
+   "linhas_unicas": 214192,
+   "duplicados_no_arquivo": 0,
+   "codigo_vazio": 0,
+   "codigo_fora_do_padrao_8_digitos": {},
+   "por_dependencia": {
+    "1": 728,
+    "2": 33561,
+    "3": 128145,
+    "4": 51758
+   },
+   "por_situacao_funcionamento": {
+    "1": 180540,
+    "2": 29780,
+    "3": 3872
+   },
+   "por_localizacao": {
+    "1": 144217,
+    "2": 69975
+   },
+   "municipios_distintos": 5571
+  }
+ },
+ "transicoes": {
+  "2021->2022": {
+   "em_ambos": 216559,
+   "so_no_ano_anterior": 4581,
+   "novos": 8090,
+   "mudou_municipio": 15,
+   "mudou_dependencia": 110,
+   "mudou_localizacao": 122,
+   "mudancas_de_situacao_top": {
+    "2->3": 3160,
+    "1->2": 2585,
+    "2->1": 935,
+    "1->3": 445
+   },
+   "situacao_no_ano_anterior_das_ausentes": {
+    "3": 4581
+   }
+  },
+  "2022->2023": {
+   "em_ambos": 214626,
+   "so_no_ano_anterior": 10023,
+   "novos": 2999,
+   "mudou_municipio": 21,
+   "mudou_dependencia": 153,
+   "mudou_localizacao": 104,
+   "mudancas_de_situacao_top": {
+    "2->3": 4750,
+    "1->2": 2636,
+    "2->1": 684,
+    "1->3": 550
+   },
+   "situacao_no_ano_anterior_das_ausentes": {
+    "1": 4386,
+    "2": 1846,
+    "3": 3791
+   }
+  },
+  "2023->2024": {
+   "em_ambos": 210581,
+   "so_no_ano_anterior": 7044,
+   "novos": 4964,
+   "mudou_municipio": 30,
+   "mudou_dependencia": 118,
+   "mudou_localizacao": 138,
+   "mudancas_de_situacao_top": {
+    "2->3": 2414,
+    "1->2": 2063,
+    "2->1": 581,
+    "1->3": 497
+   },
+   "situacao_no_ano_anterior_das_ausentes": {
+    "1": 771,
+    "2": 961,
+    "3": 5312
+   }
+  },
+  "2024->2025": {
+   "em_ambos": 209209,
+   "so_no_ano_anterior": 6336,
+   "novos": 4983,
+   "mudou_municipio": 40,
+   "mudou_dependencia": 148,
+   "mudou_localizacao": 162,
+   "mudancas_de_situacao_top": {
+    "2->3": 3231,
+    "1->2": 2782,
+    "2->1": 640,
+    "1->3": 446,
+    "3->1": 2
+   },
+   "situacao_no_ano_anterior_das_ausentes": {
+    "1": 1674,
+    "2": 1505,
+    "3": 3157
+   }
+  }
+ },
+ "ausencia_intermitente": {
+  "2022": {
+   "ausentes_so_neste_ano_e_presentes_antes_e_depois": 0,
+   "amostra_codigos": []
+  },
+  "2023": {
+   "ausentes_so_neste_ano_e_presentes_antes_e_depois": 1675,
+   "amostra_codigos": [
+    "29467748",
+    "43181309",
+    "23264950",
+    "31365610",
+    "43191720"
+   ]
+  },
+  "2024": {
+   "ausentes_so_neste_ano_e_presentes_antes_e_depois": 605,
+   "amostra_codigos": [
+    "25038389",
+    "53011708",
+    "13109693",
+    "23225238",
+    "23244895"
+   ]
+  }
+ },
+ "presentes_em_todos_os_anos": 198819,
+ "codigos_distintos_em_algum_ano": 239155
+}

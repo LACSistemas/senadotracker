@@ -1,0 +1,129 @@
+{
+ "at": "2026-10-26T20:58:04.128Z",
+ "raw_x_banco_por_ano": [
+  {
+   "ano": 2021,
+   "banco": 32,
+   "raw": 32,
+   "rejeitados_sem_ente_ou_cnpj": 0,
+   "igual_raw_menos_rejeitados": true,
+   "igual": true,
+   "soma_banco_centavos": 27369274,
+   "soma_raw_centavos": 27369274,
+   "soma_igual": true
+  },
+  {
+   "ano": 2022,
+   "banco": 514,
+   "raw": 514,
+   "rejeitados_sem_ente_ou_cnpj": 0,
+   "igual_raw_menos_rejeitados": true,
+   "igual": true,
+   "soma_banco_centavos": 1611091789,
+   "soma_raw_centavos": 1611091789,
+   "soma_igual": true
+  },
+  {
+   "ano": 2023,
+   "banco": 6460,
+   "raw": 6460,
+   "rejeitados_sem_ente_ou_cnpj": 0,
+   "igual_raw_menos_rejeitados": true,
+   "igual": true,
+   "soma_banco_centavos": 118376996708,
+   "soma_raw_centavos": 118376996708,
+   "soma_igual": true
+  },
+  {
+   "ano": 2024,
+   "banco": 92028,
+   "raw": 92836,
+   "rejeitados_sem_ente_ou_cnpj": 808,
+   "igual_raw_menos_rejeitados": true,
+   "igual": false,
+   "soma_banco_centavos": 4301106776143,
+   "soma_raw_centavos": 2994164110888,
+   "soma_igual": false
+  },
+  {
+   "ano": 2025,
+   "banco": 168756,
+   "raw": 170432,
+   "rejeitados_sem_ente_ou_cnpj": 1676,
+   "igual_raw_menos_rejeitados": true,
+   "igual": false,
+   "soma_banco_centavos": 9923246896986,
+   "soma_raw_centavos": 6832232746913,
+   "soma_igual": false
+  },
+  {
+   "ano": 2026,
+   "banco": 160402,
+   "raw": 161514,
+   "rejeitados_sem_ente_ou_cnpj": 1112,
+   "igual_raw_menos_rejeitados": true,
+   "igual": false,
+   "soma_banco_centavos": 9413474925657,
+   "soma_raw_centavos": 6977247564712,
+   "soma_igual": false
+  }
+ ],
+ "total": {
+  "raw_ids_unicos": 431788,
+  "banco": 428192
+ },
+ "integridade": {
+  "classe_sem_contrato": 0,
+  "contrato_sem_classe": 0,
+  "fornecedor_inexistente": 0,
+  "mesmo_contrato_duas_chaves": 0,
+  "classes_divergentes_da_varredura": 0,
+  "no_banco_e_fora_da_varredura": 0
+ },
+ "valores": {
+  "sem_valor": 0,
+  "outliers": 6,
+  "zerados": 4211,
+  "tipo_empenho": 155260
+ },
+ "por_confianca": [
+  {
+   "conf": 1,
+   "n": 2827,
+   "soma": "701694523871"
+  },
+  {
+   "conf": 2,
+   "n": 380883,
+   "soma": "20765318352947"
+  },
+  {
+   "conf": 3,
+   "n": 44482,
+   "soma": "2290831179739"
+  }
+ ],
+ "vinculos": {
+  "contratos_com_compra": 428192,
+  "compras_publicadas": 0,
+  "contratos_com_compra_publicada": 0,
+  "contratos_com_cipi": 17838,
+  "contratos_cipi_com_obra_publicada": 0,
+  "termos_publicados": 0,
+  "termos_sem_contrato": 0,
+  "obras": 0,
+  "empenhos_de_obras": 0,
+  "relacao_contrato_empenho_pagamento_comprovada": 0,
+  "nota": "O PNCP nao publica pagamento e o Obrasgov traz empenho, nao pago: nenhuma relacao contrato-empenho-pagamento e comprovada por chave oficial (mesmo CNPJ ou mesmo valor nao e prova)."
+ },
+ "dupla_contagem": {
+  "contratos_nos_dois": 995,
+  "valor_centavos": "17075712639"
+ },
+ "conferencia_independente": {
+  "amostra": 80,
+  "achados_no_raw": 80,
+  "divergencias": 0,
+  "detalhe": []
+ }
+}

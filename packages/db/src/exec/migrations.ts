@@ -7,6 +7,14 @@ import { EXEC_DDL_V5 } from './ddl-v5.ts';
 import { EXEC_DDL_V6 } from './ddl-v6.ts';
 import { EXEC_DDL_V7 } from './ddl-v7.ts';
 import { EXEC_DDL_V8 } from './ddl-v8.ts';
+import { EXEC_DDL_V9 } from './ddl-v9.ts';
+import { EXEC_DDL_V10 } from './ddl-v10.ts';
+import { EXEC_DDL_V11 } from './ddl-v11.ts';
+import { EXEC_DDL_V12 } from './ddl-v12.ts';
+import { EXEC_DDL_V13 } from './ddl-v13.ts';
+import { EXEC_DDL_V14 } from './ddl-v14.ts';
+import { EXEC_DDL_V15 } from './ddl-v15.ts';
+import { EXEC_DDL_V16 } from './ddl-v16.ts';
 
 export interface ExecMigration { version: number; name: string; sql: string }
 export const EXEC_MIGRATIONS: ExecMigration[] = [
@@ -18,6 +26,14 @@ export const EXEC_MIGRATIONS: ExecMigration[] = [
   { version: 6, name: 'civica_exec_ddl_v6_contratos_transferencias', sql: EXEC_DDL_V6 },
   { version: 7, name: 'civica_exec_ddl_v7_refcode_sequence', sql: EXEC_DDL_V7 },
   { version: 8, name: 'civica_exec_ddl_v8_criminalidade_estadual', sql: EXEC_DDL_V8 },
+  { version: 9, name: 'civica_exec_ddl_v9_educacao_escolas', sql: EXEC_DDL_V9 },
+  { version: 10, name: 'civica_exec_ddl_v10_educacao_oferta', sql: EXEC_DDL_V10 },
+  { version: 11, name: 'civica_exec_ddl_v11_educacao_infraestrutura', sql: EXEC_DDL_V11 },
+  { version: 12, name: 'civica_exec_ddl_v12_educacao_indicadores_inep', sql: EXEC_DDL_V12 },
+  { version: 13, name: 'civica_exec_ddl_v13_educacao_aprendizagem', sql: EXEC_DDL_V13 },
+  { version: 14, name: 'civica_exec_ddl_v14_financas_educacao_siope', sql: EXEC_DDL_V14 },
+  { version: 15, name: 'civica_exec_ddl_v15_programas_transferencias_educacionais', sql: EXEC_DDL_V15 },
+  { version: 16, name: 'civica_exec_ddl_v16_educacao_contratacoes_obras', sql: EXEC_DDL_V16 },
 ];
 
 /** Aplica as migrations do schema civica_exec de forma idempotente (lock consultivo + uma transação por versão). Nunca toca outros schemas. */

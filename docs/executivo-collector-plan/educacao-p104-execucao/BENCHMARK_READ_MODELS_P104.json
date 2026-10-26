@@ -1,0 +1,1302 @@
+{
+ "at": "2026-10-26T02:35:15.660Z",
+ "repeticoes": 30,
+ "casos": [
+  {
+   "caso": "Ideb Brasil",
+   "n": 30,
+   "p50": 4.1,
+   "p95": 6.2,
+   "max": 11.5
+  },
+  {
+   "caso": "Saeb Brasil",
+   "n": 30,
+   "p50": 32.5,
+   "p95": 47.9,
+   "max": 51.1
+  },
+  {
+   "caso": "rendimento+distorção Brasil",
+   "n": 30,
+   "p50": 5,
+   "p95": 6.5,
+   "max": 6.5
+  },
+  {
+   "caso": "transição Brasil",
+   "n": 30,
+   "p50": 3.9,
+   "p95": 5.7,
+   "max": 5.7
+  },
+  {
+   "caso": "INSE Brasil",
+   "n": 30,
+   "p50": 2.1,
+   "p95": 3.3,
+   "max": 3.7
+  },
+  {
+   "caso": "Ideb UF ES",
+   "n": 30,
+   "p50": 3.5,
+   "p95": 4.7,
+   "max": 5.8
+  },
+  {
+   "caso": "Saeb UF ES",
+   "n": 30,
+   "p50": 24.4,
+   "p95": 28.8,
+   "max": 29.5
+  },
+  {
+   "caso": "rendimento+distorção UF ES",
+   "n": 30,
+   "p50": 5.2,
+   "p95": 6.4,
+   "max": 6.6
+  },
+  {
+   "caso": "transição UF ES",
+   "n": 30,
+   "p50": 3.4,
+   "p95": 4,
+   "max": 4.3
+  },
+  {
+   "caso": "INSE UF ES",
+   "n": 30,
+   "p50": 3.1,
+   "p95": 4.9,
+   "max": 5.9
+  },
+  {
+   "caso": "Ideb UF SP",
+   "n": 30,
+   "p50": 3.3,
+   "p95": 4.5,
+   "max": 4.9
+  },
+  {
+   "caso": "Saeb UF SP",
+   "n": 30,
+   "p50": 27.4,
+   "p95": 31.5,
+   "max": 31.6
+  },
+  {
+   "caso": "rendimento+distorção UF SP",
+   "n": 30,
+   "p50": 4.8,
+   "p95": 7,
+   "max": 7.1
+  },
+  {
+   "caso": "transição UF SP",
+   "n": 30,
+   "p50": 2.5,
+   "p95": 3.3,
+   "max": 3.4
+  },
+  {
+   "caso": "INSE UF SP",
+   "n": 30,
+   "p50": 2.6,
+   "p95": 3.2,
+   "max": 3.6
+  },
+  {
+   "caso": "Ideb UF RJ",
+   "n": 30,
+   "p50": 3.1,
+   "p95": 4.5,
+   "max": 4.8
+  },
+  {
+   "caso": "Saeb UF RJ",
+   "n": 30,
+   "p50": 26.4,
+   "p95": 30.3,
+   "max": 31.1
+  },
+  {
+   "caso": "rendimento+distorção UF RJ",
+   "n": 30,
+   "p50": 5,
+   "p95": 7,
+   "max": 7
+  },
+  {
+   "caso": "transição UF RJ",
+   "n": 30,
+   "p50": 2.7,
+   "p95": 3.4,
+   "max": 3.6
+  },
+  {
+   "caso": "INSE UF RJ",
+   "n": 30,
+   "p50": 2.8,
+   "p95": 4.5,
+   "max": 4.5
+  },
+  {
+   "caso": "Ideb UF MG",
+   "n": 30,
+   "p50": 2.7,
+   "p95": 3.3,
+   "max": 5
+  },
+  {
+   "caso": "Saeb UF MG",
+   "n": 30,
+   "p50": 24.9,
+   "p95": 31.5,
+   "max": 32.6
+  },
+  {
+   "caso": "rendimento+distorção UF MG",
+   "n": 30,
+   "p50": 3.6,
+   "p95": 4.8,
+   "max": 5.4
+  },
+  {
+   "caso": "transição UF MG",
+   "n": 30,
+   "p50": 3.1,
+   "p95": 4.4,
+   "max": 4.8
+  },
+  {
+   "caso": "INSE UF MG",
+   "n": 30,
+   "p50": 2,
+   "p95": 2.7,
+   "max": 2.7
+  },
+  {
+   "caso": "Ideb UF PE",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 3.5,
+   "max": 4.5
+  },
+  {
+   "caso": "Saeb UF PE",
+   "n": 30,
+   "p50": 20.2,
+   "p95": 26,
+   "max": 29.8
+  },
+  {
+   "caso": "rendimento+distorção UF PE",
+   "n": 30,
+   "p50": 3.7,
+   "p95": 6.5,
+   "max": 6.8
+  },
+  {
+   "caso": "transição UF PE",
+   "n": 30,
+   "p50": 1.7,
+   "p95": 2.8,
+   "max": 3.1
+  },
+  {
+   "caso": "INSE UF PE",
+   "n": 30,
+   "p50": 2.1,
+   "p95": 2.9,
+   "max": 3.6
+  },
+  {
+   "caso": "Ideb UF RR",
+   "n": 30,
+   "p50": 2.6,
+   "p95": 5.3,
+   "max": 6
+  },
+  {
+   "caso": "Saeb UF RR",
+   "n": 30,
+   "p50": 18.4,
+   "p95": 24,
+   "max": 28.2
+  },
+  {
+   "caso": "rendimento+distorção UF RR",
+   "n": 30,
+   "p50": 4.1,
+   "p95": 7.2,
+   "max": 8.6
+  },
+  {
+   "caso": "transição UF RR",
+   "n": 30,
+   "p50": 1.7,
+   "p95": 3.9,
+   "max": 4.9
+  },
+  {
+   "caso": "INSE UF RR",
+   "n": 30,
+   "p50": 1.8,
+   "p95": 3.2,
+   "max": 3.5
+  },
+  {
+   "caso": "Ideb UF DF",
+   "n": 30,
+   "p50": 2.1,
+   "p95": 3,
+   "max": 3.1
+  },
+  {
+   "caso": "Saeb UF DF",
+   "n": 30,
+   "p50": 14.6,
+   "p95": 32.4,
+   "max": 57.7
+  },
+  {
+   "caso": "rendimento+distorção UF DF",
+   "n": 30,
+   "p50": 2.7,
+   "p95": 5.6,
+   "max": 7.7
+  },
+  {
+   "caso": "transição UF DF",
+   "n": 30,
+   "p50": 1.5,
+   "p95": 1.9,
+   "max": 2.4
+  },
+  {
+   "caso": "INSE UF DF",
+   "n": 30,
+   "p50": 1.2,
+   "p95": 1.8,
+   "max": 1.8
+  },
+  {
+   "caso": "Ideb município Vitória/ES",
+   "n": 30,
+   "p50": 1.5,
+   "p95": 2,
+   "max": 2.8
+  },
+  {
+   "caso": "Saeb município Vitória/ES",
+   "n": 30,
+   "p50": 3.5,
+   "p95": 5.3,
+   "max": 36.1
+  },
+  {
+   "caso": "rendimento+distorção município Vitória/ES",
+   "n": 30,
+   "p50": 2.5,
+   "p95": 3.4,
+   "max": 5.2
+  },
+  {
+   "caso": "transição município Vitória/ES",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 3.7,
+   "max": 4.7
+  },
+  {
+   "caso": "INSE município Vitória/ES",
+   "n": 30,
+   "p50": 0.9,
+   "p95": 1.1,
+   "max": 1.4
+  },
+  {
+   "caso": "Ideb município Serra/ES",
+   "n": 30,
+   "p50": 1.5,
+   "p95": 1.8,
+   "max": 1.8
+  },
+  {
+   "caso": "Saeb município Serra/ES",
+   "n": 30,
+   "p50": 3.4,
+   "p95": 4.5,
+   "max": 4.7
+  },
+  {
+   "caso": "rendimento+distorção município Serra/ES",
+   "n": 30,
+   "p50": 2.5,
+   "p95": 3.9,
+   "max": 4.1
+  },
+  {
+   "caso": "transição município Serra/ES",
+   "n": 30,
+   "p50": 1.3,
+   "p95": 1.9,
+   "max": 2.4
+  },
+  {
+   "caso": "INSE município Serra/ES",
+   "n": 30,
+   "p50": 0.6,
+   "p95": 1.2,
+   "max": 1.2
+  },
+  {
+   "caso": "Ideb município Alto Rio Novo/ES",
+   "n": 30,
+   "p50": 1,
+   "p95": 1.3,
+   "max": 1.3
+  },
+  {
+   "caso": "Saeb município Alto Rio Novo/ES",
+   "n": 30,
+   "p50": 2.1,
+   "p95": 2.8,
+   "max": 3
+  },
+  {
+   "caso": "rendimento+distorção município Alto Rio Novo/ES",
+   "n": 30,
+   "p50": 2,
+   "p95": 2.9,
+   "max": 3.1
+  },
+  {
+   "caso": "transição município Alto Rio Novo/ES",
+   "n": 30,
+   "p50": 1.8,
+   "p95": 2.8,
+   "max": 3
+  },
+  {
+   "caso": "INSE município Alto Rio Novo/ES",
+   "n": 30,
+   "p50": 0.9,
+   "p95": 1.4,
+   "max": 1.4
+  },
+  {
+   "caso": "Ideb município São Paulo/SP",
+   "n": 30,
+   "p50": 1.6,
+   "p95": 2.4,
+   "max": 2.6
+  },
+  {
+   "caso": "Saeb município São Paulo/SP",
+   "n": 30,
+   "p50": 3.3,
+   "p95": 4.2,
+   "max": 4.3
+  },
+  {
+   "caso": "rendimento+distorção município São Paulo/SP",
+   "n": 30,
+   "p50": 4.8,
+   "p95": 7.4,
+   "max": 7.5
+  },
+  {
+   "caso": "transição município São Paulo/SP",
+   "n": 30,
+   "p50": 1.8,
+   "p95": 2.6,
+   "max": 3.6
+  },
+  {
+   "caso": "INSE município São Paulo/SP",
+   "n": 30,
+   "p50": 0.9,
+   "p95": 1.3,
+   "max": 1.5
+  },
+  {
+   "caso": "Ideb município Rio de Janeiro/RJ",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 6,
+   "max": 11.7
+  },
+  {
+   "caso": "Saeb município Rio de Janeiro/RJ",
+   "n": 30,
+   "p50": 4.2,
+   "p95": 6.8,
+   "max": 7.1
+  },
+  {
+   "caso": "rendimento+distorção município Rio de Janeiro/RJ",
+   "n": 30,
+   "p50": 2.7,
+   "p95": 4.1,
+   "max": 4.1
+  },
+  {
+   "caso": "transição município Rio de Janeiro/RJ",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 3.6,
+   "max": 3.8
+  },
+  {
+   "caso": "INSE município Rio de Janeiro/RJ",
+   "n": 30,
+   "p50": 0.8,
+   "p95": 1.4,
+   "max": 1.5
+  },
+  {
+   "caso": "Ideb município Belo Horizonte/MG",
+   "n": 30,
+   "p50": 1.5,
+   "p95": 2.3,
+   "max": 2.4
+  },
+  {
+   "caso": "Saeb município Belo Horizonte/MG",
+   "n": 30,
+   "p50": 4.7,
+   "p95": 5.5,
+   "max": 6.3
+  },
+  {
+   "caso": "rendimento+distorção município Belo Horizonte/MG",
+   "n": 30,
+   "p50": 2.6,
+   "p95": 3.4,
+   "max": 4.2
+  },
+  {
+   "caso": "transição município Belo Horizonte/MG",
+   "n": 30,
+   "p50": 2.7,
+   "p95": 3.3,
+   "max": 3.4
+  },
+  {
+   "caso": "INSE município Belo Horizonte/MG",
+   "n": 30,
+   "p50": 1.3,
+   "p95": 1.8,
+   "max": 1.9
+  },
+  {
+   "caso": "Ideb município Recife/PE",
+   "n": 30,
+   "p50": 1.8,
+   "p95": 2.4,
+   "max": 2.9
+  },
+  {
+   "caso": "Saeb município Recife/PE",
+   "n": 30,
+   "p50": 4.1,
+   "p95": 5.7,
+   "max": 6.2
+  },
+  {
+   "caso": "rendimento+distorção município Recife/PE",
+   "n": 30,
+   "p50": 3.9,
+   "p95": 6,
+   "max": 6.2
+  },
+  {
+   "caso": "transição município Recife/PE",
+   "n": 30,
+   "p50": 2.3,
+   "p95": 3.9,
+   "max": 3.9
+  },
+  {
+   "caso": "INSE município Recife/PE",
+   "n": 30,
+   "p50": 1.1,
+   "p95": 1.7,
+   "max": 1.8
+  },
+  {
+   "caso": "Ideb município Porto Alegre/RS",
+   "n": 30,
+   "p50": 2.3,
+   "p95": 2.8,
+   "max": 3.1
+  },
+  {
+   "caso": "Saeb município Porto Alegre/RS",
+   "n": 30,
+   "p50": 3.3,
+   "p95": 4.6,
+   "max": 4.7
+  },
+  {
+   "caso": "rendimento+distorção município Porto Alegre/RS",
+   "n": 30,
+   "p50": 3,
+   "p95": 4.7,
+   "max": 4.7
+  },
+  {
+   "caso": "transição município Porto Alegre/RS",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 3.4,
+   "max": 5.3
+  },
+  {
+   "caso": "INSE município Porto Alegre/RS",
+   "n": 30,
+   "p50": 0.9,
+   "p95": 1.5,
+   "max": 1.6
+  },
+  {
+   "caso": "Ideb município Serra da Saudade/MG (menor município)",
+   "n": 30,
+   "p50": 1.1,
+   "p95": 1.6,
+   "max": 2
+  },
+  {
+   "caso": "Saeb município Serra da Saudade/MG (menor município)",
+   "n": 30,
+   "p50": 1.1,
+   "p95": 1.5,
+   "max": 2
+  },
+  {
+   "caso": "rendimento+distorção município Serra da Saudade/MG (menor município)",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 4.1,
+   "max": 4.2
+  },
+  {
+   "caso": "transição município Serra da Saudade/MG (menor município)",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 5.8,
+   "max": 6.7
+  },
+  {
+   "caso": "INSE município Serra da Saudade/MG (menor município)",
+   "n": 30,
+   "p50": 0.8,
+   "p95": 1.1,
+   "max": 1.1
+  },
+  {
+   "caso": "Ideb município Borá/SP (município muito pequeno)",
+   "n": 30,
+   "p50": 1.3,
+   "p95": 1.9,
+   "max": 2.4
+  },
+  {
+   "caso": "Saeb município Borá/SP (município muito pequeno)",
+   "n": 30,
+   "p50": 2.4,
+   "p95": 3.4,
+   "max": 3.7
+  },
+  {
+   "caso": "rendimento+distorção município Borá/SP (município muito pequeno)",
+   "n": 30,
+   "p50": 2.2,
+   "p95": 3.1,
+   "max": 3.5
+  },
+  {
+   "caso": "transição município Borá/SP (município muito pequeno)",
+   "n": 30,
+   "p50": 2.6,
+   "p95": 4.5,
+   "max": 4.6
+  },
+  {
+   "caso": "INSE município Borá/SP (município muito pequeno)",
+   "n": 30,
+   "p50": 1.2,
+   "p95": 1.6,
+   "max": 1.8
+  },
+  {
+   "caso": "Ideb município Brasília/DF",
+   "n": 30,
+   "p50": 1.4,
+   "p95": 2.1,
+   "max": 2.3
+  },
+  {
+   "caso": "Saeb município Brasília/DF",
+   "n": 30,
+   "p50": 4.9,
+   "p95": 6.3,
+   "max": 6.3
+  },
+  {
+   "caso": "rendimento+distorção município Brasília/DF",
+   "n": 30,
+   "p50": 4.2,
+   "p95": 6.6,
+   "max": 6.9
+  },
+  {
+   "caso": "transição município Brasília/DF",
+   "n": 30,
+   "p50": 2,
+   "p95": 2.7,
+   "max": 2.8
+  },
+  {
+   "caso": "INSE município Brasília/DF",
+   "n": 30,
+   "p50": 0.7,
+   "p95": 1.1,
+   "max": 1.1
+  },
+  {
+   "caso": "Ideb escola (11 edições)",
+   "n": 30,
+   "p50": 0.9,
+   "p95": 1.6,
+   "max": 1.7
+  },
+  {
+   "caso": "rendimento+distorção escola (19 edições)",
+   "n": 30,
+   "p50": 2.6,
+   "p95": 3.4,
+   "max": 3.5
+  },
+  {
+   "caso": "INSE escola",
+   "n": 30,
+   "p50": 0.8,
+   "p95": 1.1,
+   "max": 1.1
+  },
+  {
+   "caso": "cobertura (todas as famílias)",
+   "n": 30,
+   "p50": 2.8,
+   "p95": 3.8,
+   "max": 4
+  }
+ ],
+ "territorial": {
+  "brasil": {
+   "nome": "Brasil",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.7,
+   "ideb2025_AI_publica": 6.1,
+   "ideb2025_AF_publica": 5,
+   "ideb2025_EM_publica": 4.3,
+   "idebAI_total_2005": 3.8,
+   "ideb2025_AI_total": 6.3,
+   "ideb2025_AF_total": 5.3,
+   "ideb2025_EM_total": 4.5,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 219.34,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 97.4,
+   "distorcaoFund_ultima": 10,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2021,
+    2023
+   ]
+  },
+  "uf_ES": {
+   "nome": "Espírito Santo",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6.1,
+   "ideb2025_AI_publica": 6.4,
+   "ideb2025_AF_publica": 5.2,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 4.2,
+   "ideb2025_AI_total": 6.6,
+   "ideb2025_AF_total": 5.4,
+   "ideb2025_EM_total": 4.9,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 226.12,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 98,
+   "distorcaoFund_ultima": 9.6,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_SP": {
+   "nome": "São Paulo",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6.2,
+   "ideb2025_AI_publica": 6.5,
+   "ideb2025_AF_publica": 5.2,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 4.7,
+   "ideb2025_AI_total": 6.6,
+   "ideb2025_AF_total": 5.5,
+   "ideb2025_EM_total": 4.7,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 226.15,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 98.6,
+   "distorcaoFund_ultima": 4,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_RJ": {
+   "nome": "Rio de Janeiro",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.5,
+   "ideb2025_AI_publica": 5.8,
+   "ideb2025_AF_publica": 4.7,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 4.3,
+   "ideb2025_AI_total": 6.1,
+   "ideb2025_AF_total": 5.1,
+   "ideb2025_EM_total": 4.2,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 216.94,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 96,
+   "distorcaoFund_ultima": 15.9,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_MG": {
+   "nome": "Minas Gerais",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6.1,
+   "ideb2025_AI_publica": 6.4,
+   "ideb2025_AF_publica": 5.3,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 4.7,
+   "ideb2025_AI_total": 6.6,
+   "ideb2025_AF_total": 5.5,
+   "ideb2025_EM_total": 4.6,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 224.07,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 98.1,
+   "distorcaoFund_ultima": 6,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_PE": {
+   "nome": "Pernambuco",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.3,
+   "ideb2025_AI_publica": 5.8,
+   "ideb2025_AF_publica": 4.9,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 3.2,
+   "ideb2025_AI_total": 6,
+   "ideb2025_AF_total": 5.1,
+   "ideb2025_EM_total": 4.7,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 211.46,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 97.7,
+   "distorcaoFund_ultima": 11.9,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_RR": {
+   "nome": "Roraima",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.4,
+   "ideb2025_AI_publica": 5.7,
+   "ideb2025_AF_publica": 4.2,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 3.7,
+   "ideb2025_AI_total": 5.9,
+   "ideb2025_AF_total": 4.4,
+   "ideb2025_EM_total": 3.8,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 201.56,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 95.6,
+   "distorcaoFund_ultima": 17.2,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "uf_DF": {
+   "nome": "Distrito Federal",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.9,
+   "ideb2025_AI_publica": 6,
+   "ideb2025_AF_publica": 4.7,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": 4.8,
+   "ideb2025_AI_total": 6.4,
+   "ideb2025_AF_total": 5.1,
+   "ideb2025_EM_total": 4.1,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 224.91,
+   "fluxoEdicoes": 20,
+   "aprovacaoFund_ultima": 95.8,
+   "distorcaoFund_ultima": 10.4,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3205309": {
+   "nome": "Vitória",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6.1,
+   "ideb2025_AI_publica": 6.4,
+   "ideb2025_AF_publica": 5.3,
+   "ideb2025_EM_publica": 4.7,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 222.52,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 98.7,
+   "distorcaoFund_ultima": 6.5,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3205002": {
+   "nome": "Serra",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.6,
+   "ideb2025_AI_publica": 6,
+   "ideb2025_AF_publica": 5.2,
+   "ideb2025_EM_publica": 4.8,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 214.06,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 98,
+   "distorcaoFund_ultima": 12.1,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3200359": {
+   "nome": "Alto Rio Novo",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6.4,
+   "ideb2025_AI_publica": 7.7,
+   "ideb2025_AF_publica": 5.5,
+   "ideb2025_EM_publica": 5.6,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 259.84,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 98.3,
+   "distorcaoFund_ultima": 9.6,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3550308": {
+   "nome": "São Paulo",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.9,
+   "ideb2025_AI_publica": 6.2,
+   "ideb2025_AF_publica": 5,
+   "ideb2025_EM_publica": 4.3,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 214.87,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 98.5,
+   "distorcaoFund_ultima": 4.4,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3304557": {
+   "nome": "Rio de Janeiro",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 6,
+   "ideb2025_AI_publica": 6.2,
+   "ideb2025_AF_publica": 5.2,
+   "ideb2025_EM_publica": 3.8,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 214.16,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 98.8,
+   "distorcaoFund_ultima": 9.2,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3106200": {
+   "nome": "Belo Horizonte",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.9,
+   "ideb2025_AI_publica": 6.3,
+   "ideb2025_AF_publica": 5.2,
+   "ideb2025_EM_publica": 4.7,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 220.33,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 97.7,
+   "distorcaoFund_ultima": 6.4,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_2611606": {
+   "nome": "Recife",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.5,
+   "ideb2025_AI_publica": 5.8,
+   "ideb2025_AF_publica": 4.9,
+   "ideb2025_EM_publica": 4.6,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 206.93,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 99,
+   "distorcaoFund_ultima": 12,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_4314902": {
+   "nome": "Porto Alegre",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 4.9,
+   "ideb2025_AI_publica": 5.4,
+   "ideb2025_AF_publica": 4.7,
+   "ideb2025_EM_publica": 4.4,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 203.11,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 95,
+   "distorcaoFund_ultima": 13.8,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_3166600": {
+   "nome": "Serra da Saudade",
+   "idebEdicoes": 9,
+   "ideb2023_AI_publica": 6.1,
+   "ideb2025_AI_publica": null,
+   "ideb2025_AF_publica": null,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2023
+   ],
+   "saeb2025_5ano_LP_total": null,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 100,
+   "distorcaoFund_ultima": 7.5,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2021,
+    2023
+   ]
+  },
+  "mun_3507209": {
+   "nome": "Borá",
+   "idebEdicoes": 10,
+   "ideb2023_AI_publica": 7,
+   "ideb2025_AI_publica": 6.6,
+   "ideb2025_AF_publica": 5.3,
+   "ideb2025_EM_publica": null,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 220.24,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 99.1,
+   "distorcaoFund_ultima": 2.6,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "mun_5300108": {
+   "nome": "Brasília",
+   "idebEdicoes": 11,
+   "ideb2023_AI_publica": 5.9,
+   "ideb2025_AI_publica": 6,
+   "ideb2025_AF_publica": 4.7,
+   "ideb2025_EM_publica": 3.7,
+   "idebAI_total_2005": null,
+   "ideb2025_AI_total": null,
+   "ideb2025_AF_total": null,
+   "ideb2025_EM_total": null,
+   "saebEdicoes": [
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "saeb2025_5ano_LP_total": 217.36,
+   "fluxoEdicoes": 19,
+   "aprovacaoFund_ultima": 95.8,
+   "distorcaoFund_ultima": 10.4,
+   "anoUltimaAprovacao": 2025,
+   "transicaoEdicoes": 15,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "escolaExemplo": {
+   "inep": 32040164,
+   "idebEdicoes": [
+    2005,
+    2007,
+    2009,
+    2011,
+    2013,
+    2015,
+    2017,
+    2019,
+    2021,
+    2023,
+    2025
+   ],
+   "fluxoEdicoes": 19,
+   "inseEdicoes": [
+    2019,
+    2021,
+    2023
+   ]
+  },
+  "cobertura": {
+   "linhas": 125
+  },
+  "casosEspeciais": {
+   "escolasComIdebAI2025": 42454,
+   "escolasParticipantesSemIdebAI2025": 946,
+   "escolasComMetaAI2021": 61503,
+   "escolasComMetaAI2023": 0,
+   "idebEscola2005PublicadoSemCadastro": 0,
+   "idebTerritorial2005": 24493,
+   "celulasSuprimidasTransicao": 71588,
+   "celulasSuprimidasFluxo": 0,
+   "municipiosSemIdebAI2025": 92
+  }
+ }
+}

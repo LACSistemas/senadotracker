@@ -1,0 +1,638 @@
+{
+ "arquivos": [
+  {
+   "ano": "2021",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 43,
+   "paginas": 1,
+   "contratos": 0,
+   "paginas_nao_200": 1
+  },
+  {
+   "ano": "2021",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 51350,
+   "paginas": 1,
+   "contratos": 281,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2021",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 199114,
+   "paginas": 3,
+   "contratos": 1071,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2021",
+   "arquivo": "11.jsonl.gz",
+   "bytes": 291717,
+   "paginas": 4,
+   "contratos": 1563,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2021",
+   "arquivo": "12.jsonl.gz",
+   "bytes": 463897,
+   "paginas": 5,
+   "contratos": 2393,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 41867,
+   "paginas": 1,
+   "contratos": 203,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 114970,
+   "paginas": 2,
+   "contratos": 536,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 225617,
+   "paginas": 3,
+   "contratos": 1072,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 402621,
+   "paginas": 4,
+   "contratos": 1881,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 497278,
+   "paginas": 5,
+   "contratos": 2392,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 745090,
+   "paginas": 8,
+   "contratos": 3538,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 758579,
+   "paginas": 8,
+   "contratos": 3679,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 927157,
+   "paginas": 10,
+   "contratos": 4665,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 1127436,
+   "paginas": 12,
+   "contratos": 5731,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 880012,
+   "paginas": 10,
+   "contratos": 4569,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "11.jsonl.gz",
+   "bytes": 1090981,
+   "paginas": 11,
+   "contratos": 5387,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2022",
+   "arquivo": "12.jsonl.gz",
+   "bytes": 1234100,
+   "paginas": 14,
+   "contratos": 6990,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 530842,
+   "paginas": 7,
+   "contratos": 3343,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 650857,
+   "paginas": 7,
+   "contratos": 3287,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 1198881,
+   "paginas": 12,
+   "contratos": 5529,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 1417310,
+   "paginas": 15,
+   "contratos": 7225,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 3810869,
+   "paginas": 65,
+   "contratos": 32293,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 3408533,
+   "paginas": 43,
+   "contratos": 21217,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 4009859,
+   "paginas": 49,
+   "contratos": 24119,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 4788241,
+   "paginas": 62,
+   "contratos": 30856,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 3675165,
+   "paginas": 52,
+   "contratos": 25752,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 4135933,
+   "paginas": 55,
+   "contratos": 27183,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "11.jsonl.gz",
+   "bytes": 4592408,
+   "paginas": 63,
+   "contratos": 31159,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2023",
+   "arquivo": "12.jsonl.gz",
+   "bytes": 5166003,
+   "paginas": 62,
+   "contratos": 30993,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 4979932,
+   "paginas": 72,
+   "contratos": 35909,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 8132860,
+   "paginas": 109,
+   "contratos": 54144,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 10382561,
+   "paginas": 131,
+   "contratos": 65217,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 13852534,
+   "paginas": 162,
+   "contratos": 80651,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 14158722,
+   "paginas": 151,
+   "contratos": 75003,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 18080082,
+   "paginas": 205,
+   "contratos": 102249,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 19996070,
+   "paginas": 216,
+   "contratos": 107656,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 20528516,
+   "paginas": 219,
+   "contratos": 109165,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 22152724,
+   "paginas": 246,
+   "contratos": 122651,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 22475203,
+   "paginas": 247,
+   "contratos": 123002,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "11.jsonl.gz",
+   "bytes": 21223707,
+   "paginas": 231,
+   "contratos": 115029,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2024",
+   "arquivo": "12.jsonl.gz",
+   "bytes": 19907046,
+   "paginas": 194,
+   "contratos": 96508,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 21408009,
+   "paginas": 233,
+   "contratos": 116208,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 29372492,
+   "paginas": 305,
+   "contratos": 152466,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 27399802,
+   "paginas": 289,
+   "contratos": 144105,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 30902413,
+   "paginas": 332,
+   "contratos": 165683,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 31666098,
+   "paginas": 331,
+   "contratos": 165499,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 31302275,
+   "paginas": 316,
+   "contratos": 157542,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 36476806,
+   "paginas": 369,
+   "contratos": 184039,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 35749269,
+   "paginas": 365,
+   "contratos": 182272,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 38462277,
+   "paginas": 395,
+   "contratos": 197481,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 39432691,
+   "paginas": 404,
+   "contratos": 201695,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "11.jsonl.gz",
+   "bytes": 35470605,
+   "paginas": 362,
+   "contratos": 180660,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2025",
+   "arquivo": "12.jsonl.gz",
+   "bytes": 37185865,
+   "paginas": 351,
+   "contratos": 175384,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "01.jsonl.gz",
+   "bytes": 28392064,
+   "paginas": 292,
+   "contratos": 145935,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "02.jsonl.gz",
+   "bytes": 34217014,
+   "paginas": 356,
+   "contratos": 177590,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "03.jsonl.gz",
+   "bytes": 41579809,
+   "paginas": 424,
+   "contratos": 211893,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "04.jsonl.gz",
+   "bytes": 35400979,
+   "paginas": 357,
+   "contratos": 178095,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "05.jsonl.gz",
+   "bytes": 33323440,
+   "paginas": 326,
+   "contratos": 162589,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "06.jsonl.gz",
+   "bytes": 36847544,
+   "paginas": 339,
+   "contratos": 169395,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "07.jsonl.gz",
+   "bytes": 38072243,
+   "paginas": 352,
+   "contratos": 175838,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "08.jsonl.gz",
+   "bytes": 39460676,
+   "paginas": 359,
+   "contratos": 179297,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "09.jsonl.gz",
+   "bytes": 39164795,
+   "paginas": 352,
+   "contratos": 175549,
+   "paginas_nao_200": 0
+  },
+  {
+   "ano": "2026",
+   "arquivo": "10.jsonl.gz",
+   "bytes": 29739626,
+   "paginas": 272,
+   "contratos": 136000,
+   "paginas_nao_200": 0
+  }
+ ],
+ "por_ano": {
+  "2021": 5308,
+  "2022": 40643,
+  "2023": 242956,
+  "2024": 1087184,
+  "2025": 2023034,
+  "2026": 1712181
+ },
+ "tipoContrato": {
+  "Empenho": 1871828,
+  "Contrato (termo inicial)": 1843643,
+  "Outros": 1369771,
+  "Carta Contrato": 12326,
+  "Termo de Adesão": 8204,
+  "Comodato": 3249,
+  "Concessão": 1407,
+  "Arrendamento": 476,
+  "Convênio": 349,
+  "Termo de Compromisso": 37,
+  "Acordo de Cooperação Técnica (ACT)": 14,
+  "Termo de Execução Descentralizada (TED)": 2
+ },
+ "categoriaProcesso": {
+  "Compras": 3466007,
+  "Serviços": 1313811,
+  "Serviços de Saúde": 90538,
+  "Obras": 58464,
+  "Serviços de Engenharia": 45836,
+  "Locação Imóveis": 31740,
+  "Informática (TIC)": 31435,
+  "Cessão": 30487,
+  "Alienação de bens móveis/imóveis": 24350,
+  "Mão de Obra": 17897,
+  "Internacional": 741
+ },
+ "esfera": {
+  "M": 3597223,
+  "E": 747925,
+  "F": 659930,
+  "N": 101875,
+  "D": 4353
+ },
+ "poder": {
+  "N": 3009347,
+  "E": 1872246,
+  "L": 145907,
+  "J": 83806
+ },
+ "campos_nao_nulos": {
+  "numeroControlePncpCompra": 5111306,
+  "objetoContrato": 5111306,
+  "dataAssinatura": 5111306,
+  "dataVigenciaInicio": 5111306,
+  "numeroContratoEmpenho": 5111306,
+  "niFornecedor": 5111301,
+  "dataVigenciaFim": 5110290,
+  "processo": 5089426,
+  "valorGlobal": 5029267,
+  "valorInicial": 5029163,
+  "valorParcela": 3711297,
+  "valorAcumulado": 1278661,
+  "numeroControlePncpAta": 459906,
+  "informacaoComplementar": 330670,
+  "numeroRetificacao": 255538,
+  "identificadorCipi": 124947,
+  "receita": 58001,
+  "orgaoSubRogado": 12979,
+  "tipoPessoaSubContratada": 786,
+  "emendaParlamentar": 452
+ },
+ "total_contratos": 5111306,
+ "duplicados_numeroControlePNCP": 0,
+ "chaves_distintas": 5111306,
+ "paginas_nao_200": 8
+}

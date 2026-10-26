@@ -1,0 +1,19 @@
+{
+  "database": "projetoeleitor_db",
+  "current_user": "projetoeleitor_user",
+  "migration_version_before": 13,
+  "migration_version_after": 14,
+  "write_target_guard": "PASS",
+  "backup": {
+    "path": "artifacts/projetoeleitor_p105_prepublication_20261026.dump",
+    "format": "custom",
+    "status": "CREATED"
+  },
+  "lab_touched": false,
+  "sqlite_touched": false,
+  "frontend_touched": false,
+  "final_size_bytes": 30908124307,
+  "baseline_size_bytes": 28664106131,
+  "delta_bytes": 2244018176,
+  "headroom_limit_bytes": 5000000000
+}

@@ -1,0 +1,7963 @@
+{
+ "verificados": 1326,
+ "divergentes": 0,
+ "amostra_divergentes": [],
+ "casos": [
+  {
+   "caso": "ideb Recife etapa1 rede2 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2007 p",
+   "planilha": 0.820691,
+   "banco": 0.820691,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2007 nota_media",
+   "planilha": 4.636425,
+   "banco": 4.636425,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2013 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2013 p",
+   "planilha": 0.898651,
+   "banco": 0.898651,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2013 nota_media",
+   "planilha": 5.161321,
+   "banco": 5.161321,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2019 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2019 p",
+   "planilha": 0.971343,
+   "banco": 0.971343,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2019 nota_media",
+   "planilha": 6.019184,
+   "banco": 6.019184,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2023 ideb",
+   "planilha": 7.5,
+   "banco": 7.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2023 p",
+   "planilha": 0.99778,
+   "banco": 0.99778,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2023 nota_media",
+   "planilha": 7.515986,
+   "banco": 7.515986,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2025 ideb",
+   "planilha": 7.4,
+   "banco": 7.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede2 2025 nota_media",
+   "planilha": 7.398405,
+   "banco": 7.398405,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2007 p",
+   "planilha": 0.885085,
+   "banco": 0.885085,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2007 nota_media",
+   "planilha": 4.266016,
+   "banco": 4.266016,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2013 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2013 p",
+   "planilha": 0.89221,
+   "banco": 0.89221,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2013 nota_media",
+   "planilha": 4.74679,
+   "banco": 4.74679,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2019 p",
+   "planilha": 0.921801,
+   "banco": 0.921801,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2019 nota_media",
+   "planilha": 5.655992,
+   "banco": 5.655992,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2023 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2023 p",
+   "planilha": 0.985983,
+   "banco": 0.985983,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2023 nota_media",
+   "planilha": 5.559858,
+   "banco": 5.559858,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2025 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2025 p",
+   "planilha": 0.992991,
+   "banco": 0.992991,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede3 2025 nota_media",
+   "planilha": 5.834484,
+   "banco": 5.834484,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2007 p",
+   "planilha": 0.873185,
+   "banco": 0.873185,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2007 nota_media",
+   "planilha": 4.353783,
+   "banco": 4.353783,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2013 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2013 p",
+   "planilha": 0.892898,
+   "banco": 0.892898,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2013 nota_media",
+   "planilha": 4.786756,
+   "banco": 4.786756,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2019 p",
+   "planilha": 0.922432,
+   "banco": 0.922432,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2019 nota_media",
+   "planilha": 5.6629,
+   "banco": 5.6629,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2023 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2023 p",
+   "planilha": 0.985983,
+   "banco": 0.985983,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2023 nota_media",
+   "planilha": 5.577009,
+   "banco": 5.577009,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2025 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2025 p",
+   "planilha": 0.992991,
+   "banco": 0.992991,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa1 rede5 2025 nota_media",
+   "planilha": 5.846073,
+   "banco": 5.846073,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2007 ideb",
+   "planilha": 6.6,
+   "banco": 6.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2007 p",
+   "planilha": 0.979442,
+   "banco": 0.979442,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2007 nota_media",
+   "planilha": 6.709729,
+   "banco": 6.709729,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2013 ideb",
+   "planilha": 7.1,
+   "banco": 7.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2013 p",
+   "planilha": 0.966719,
+   "banco": 0.966719,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2013 nota_media",
+   "planilha": 7.332541,
+   "banco": 7.332541,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2019 ideb",
+   "planilha": 7.5,
+   "banco": 7.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2019 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2019 nota_media",
+   "planilha": 7.485932,
+   "banco": 7.485932,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2023 ideb",
+   "planilha": 7.4,
+   "banco": 7.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2023 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2023 nota_media",
+   "planilha": 7.414865,
+   "banco": 7.414865,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2025 ideb",
+   "planilha": 7.1,
+   "banco": 7.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede1 2025 nota_media",
+   "planilha": 7.078002,
+   "banco": 7.078002,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2007 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2007 p",
+   "planilha": 0.93808,
+   "banco": 0.93808,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2007 nota_media",
+   "planilha": 5.407908,
+   "banco": 5.407908,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2013 ideb",
+   "planilha": 6.3,
+   "banco": 6.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2013 p",
+   "planilha": 0.992594,
+   "banco": 0.992594,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2013 nota_media",
+   "planilha": 6.320727,
+   "banco": 6.320727,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2019 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2019 p",
+   "planilha": 0.993999,
+   "banco": 0.993999,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2019 nota_media",
+   "planilha": 6.40921,
+   "banco": 6.40921,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2023 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2023 p",
+   "planilha": 0.994599,
+   "banco": 0.994599,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2023 nota_media",
+   "planilha": 6.227097,
+   "banco": 6.227097,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2025 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2025 p",
+   "planilha": 0.996,
+   "banco": 0.996,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede2 2025 nota_media",
+   "planilha": 6.735363,
+   "banco": 6.735363,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2007 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2007 p",
+   "planilha": 0.914936,
+   "banco": 0.914936,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2007 nota_media",
+   "planilha": 4.792783,
+   "banco": 4.792783,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2013 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2013 p",
+   "planilha": 0.953769,
+   "banco": 0.953769,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2013 nota_media",
+   "planilha": 5.990827,
+   "banco": 5.990827,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2019 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2019 p",
+   "planilha": 0.961373,
+   "banco": 0.961373,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2019 nota_media",
+   "planilha": 6.267409,
+   "banco": 6.267409,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2023 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2023 p",
+   "planilha": 0.972527,
+   "banco": 0.972527,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2023 nota_media",
+   "planilha": 5.956681,
+   "banco": 5.956681,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2025 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2025 p",
+   "planilha": 0.984255,
+   "banco": 0.984255,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede3 2025 nota_media",
+   "planilha": 6.265418,
+   "banco": 6.265418,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2007 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2007 p",
+   "planilha": 0.926311,
+   "banco": 0.926311,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2007 nota_media",
+   "planilha": 5.135848,
+   "banco": 5.135848,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2013 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2013 p",
+   "planilha": 0.97049,
+   "banco": 0.97049,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2013 nota_media",
+   "planilha": 6.147319,
+   "banco": 6.147319,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2019 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2019 p",
+   "planilha": 0.973822,
+   "banco": 0.973822,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2019 nota_media",
+   "planilha": 6.325774,
+   "banco": 6.325774,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2023 ideb",
+   "planilha": 5.9,
+   "banco": 5.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2023 p",
+   "planilha": 0.979882,
+   "banco": 0.979882,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2023 nota_media",
+   "planilha": 6.066892,
+   "banco": 6.066892,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2025 ideb",
+   "planilha": 6.3,
+   "banco": 6.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2025 p",
+   "planilha": 0.987726,
+   "banco": 0.987726,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa1 rede5 2025 nota_media",
+   "planilha": 6.417418,
+   "banco": 6.417418,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2007 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2007 p",
+   "planilha": 0.900152,
+   "banco": 0.900152,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2007 nota_media",
+   "planilha": 4.858794,
+   "banco": 4.858794,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2013 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2013 p",
+   "planilha": 0.932688,
+   "banco": 0.932688,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2013 nota_media",
+   "planilha": 6.555146,
+   "banco": 6.555146,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2019 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2019 p",
+   "planilha": 0.970323,
+   "banco": 0.970323,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2019 nota_media",
+   "planilha": 6.368825,
+   "banco": 6.368825,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2023 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2023 p",
+   "planilha": 0.978921,
+   "banco": 0.978921,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2023 nota_media",
+   "planilha": 6.568741,
+   "banco": 6.568741,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2025 ideb",
+   "planilha": 7.7,
+   "banco": 7.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2025 p",
+   "planilha": 0.971199,
+   "banco": 0.971199,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede3 2025 nota_media",
+   "planilha": 7.914943,
+   "banco": 7.914943,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2007 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2007 p",
+   "planilha": 0.900152,
+   "banco": 0.900152,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2007 nota_media",
+   "planilha": 4.858794,
+   "banco": 4.858794,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2013 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2013 p",
+   "planilha": 0.932688,
+   "banco": 0.932688,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2013 nota_media",
+   "planilha": 6.555146,
+   "banco": 6.555146,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2019 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2019 p",
+   "planilha": 0.970323,
+   "banco": 0.970323,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2019 nota_media",
+   "planilha": 6.368825,
+   "banco": 6.368825,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2023 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2023 p",
+   "planilha": 0.978921,
+   "banco": 0.978921,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2023 nota_media",
+   "planilha": 6.568741,
+   "banco": 6.568741,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2025 ideb",
+   "planilha": 7.7,
+   "banco": 7.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2025 p",
+   "planilha": 0.971199,
+   "banco": 0.971199,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa1 rede5 2025 nota_media",
+   "planilha": 7.914943,
+   "banco": 7.914943,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2007 ideb",
+   "planilha": 3.7,
+   "banco": 3.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2007 p",
+   "planilha": 0.806098,
+   "banco": 0.806098,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2007 nota_media",
+   "planilha": 4.615079,
+   "banco": 4.615079,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2013 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2013 p",
+   "planilha": 0.932743,
+   "banco": 0.932743,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2013 nota_media",
+   "planilha": 5.404071,
+   "banco": 5.404071,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2019 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2019 p",
+   "planilha": 0.94139,
+   "banco": 0.94139,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2019 nota_media",
+   "planilha": 6.099491,
+   "banco": 6.099491,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2023 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2023 p",
+   "planilha": 0.98815,
+   "banco": 0.98815,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2023 nota_media",
+   "planilha": 6.307558,
+   "banco": 6.307558,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2025 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2025 p",
+   "planilha": 0.990994,
+   "banco": 0.990994,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede2 2025 nota_media",
+   "planilha": 6.592067,
+   "banco": 6.592067,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2007 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2007 p",
+   "planilha": 0.90518,
+   "banco": 0.90518,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2007 nota_media",
+   "planilha": 4.758291,
+   "banco": 4.758291,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2013 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2013 p",
+   "planilha": 0.9111,
+   "banco": 0.9111,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2013 nota_media",
+   "planilha": 4.988898,
+   "banco": 4.988898,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2019 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2019 p",
+   "planilha": 0.941654,
+   "banco": 0.941654,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2019 nota_media",
+   "planilha": 5.997666,
+   "banco": 5.997666,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2023 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2023 p",
+   "planilha": 0.951298,
+   "banco": 0.951298,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2023 nota_media",
+   "planilha": 5.756616,
+   "banco": 5.756616,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2025 ideb",
+   "planilha": 5.9,
+   "banco": 5.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2025 p",
+   "planilha": 0.981583,
+   "banco": 0.981583,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede3 2025 nota_media",
+   "planilha": 6.009748,
+   "banco": 6.009748,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2007 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2007 p",
+   "planilha": 0.886771,
+   "banco": 0.886771,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2007 nota_media",
+   "planilha": 4.714771,
+   "banco": 4.714771,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2013 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2013 p",
+   "planilha": 0.916926,
+   "banco": 0.916926,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2013 nota_media",
+   "planilha": 5.108505,
+   "banco": 5.108505,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2019 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2019 p",
+   "planilha": 0.941489,
+   "banco": 0.941489,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2019 nota_media",
+   "planilha": 6.020354,
+   "banco": 6.020354,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2023 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2023 p",
+   "planilha": 0.957179,
+   "banco": 0.957179,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2023 nota_media",
+   "planilha": 5.87404,
+   "banco": 5.87404,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2025 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2025 p",
+   "planilha": 0.982985,
+   "banco": 0.982985,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa1 rede5 2025 nota_media",
+   "planilha": 6.113114,
+   "banco": 6.113114,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2007 ideb",
+   "planilha": 3.2,
+   "banco": 3.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2007 p",
+   "planilha": 0.760368,
+   "banco": 0.760368,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2007 nota_media",
+   "planilha": 4.216738,
+   "banco": 4.216738,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2013 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2013 p",
+   "planilha": 0.635441,
+   "banco": 0.635441,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2013 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2019 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2023 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2025 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede2 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2007 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2007 p",
+   "planilha": 0.86994,
+   "banco": 0.86994,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2007 nota_media",
+   "planilha": 4.851116,
+   "banco": 4.851116,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2013 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2013 p",
+   "planilha": 0.925889,
+   "banco": 0.925889,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2013 nota_media",
+   "planilha": 5.400001,
+   "banco": 5.400001,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2019 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2019 p",
+   "planilha": 0.968065,
+   "banco": 0.968065,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2019 nota_media",
+   "planilha": 5.82709,
+   "banco": 5.82709,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2023 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2023 p",
+   "planilha": 0.970053,
+   "banco": 0.970053,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2023 nota_media",
+   "planilha": 6.296518,
+   "banco": 6.296518,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2025 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2025 p",
+   "planilha": 0.991759,
+   "banco": 0.991759,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede3 2025 nota_media",
+   "planilha": 6.478382,
+   "banco": 6.478382,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2007 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2007 p",
+   "planilha": 0.869677,
+   "banco": 0.869677,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2007 nota_media",
+   "planilha": 4.847389,
+   "banco": 4.847389,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2013 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2013 p",
+   "planilha": 0.92523,
+   "banco": 0.92523,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2013 nota_media",
+   "planilha": 5.400001,
+   "banco": 5.400001,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2019 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2019 p",
+   "planilha": 0.968065,
+   "banco": 0.968065,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2019 nota_media",
+   "planilha": 5.82709,
+   "banco": 5.82709,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2023 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2023 p",
+   "planilha": 0.970053,
+   "banco": 0.970053,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2023 nota_media",
+   "planilha": 6.296518,
+   "banco": 6.296518,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2025 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2025 p",
+   "planilha": 0.991759,
+   "banco": 0.991759,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa1 rede5 2025 nota_media",
+   "planilha": 6.478382,
+   "banco": 6.478382,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2007 ideb",
+   "planilha": 6.8,
+   "banco": 6.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2007 p",
+   "planilha": 0.944052,
+   "banco": 0.944052,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2007 nota_media",
+   "planilha": 7.174097,
+   "banco": 7.174097,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2013 ideb",
+   "planilha": 7.3,
+   "banco": 7.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2013 p",
+   "planilha": 0.946202,
+   "banco": 0.946202,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2013 nota_media",
+   "planilha": 7.674141,
+   "banco": 7.674141,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2019 ideb",
+   "planilha": 7.2,
+   "banco": 7.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2019 p",
+   "planilha": 0.965718,
+   "banco": 0.965718,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2019 nota_media",
+   "planilha": 7.501396,
+   "banco": 7.501396,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2023 ideb",
+   "planilha": 7.0,
+   "banco": 7.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2023 p",
+   "planilha": 0.976107,
+   "banco": 0.976107,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2023 nota_media",
+   "planilha": 7.137514,
+   "banco": 7.137514,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2025 ideb",
+   "planilha": 7.0,
+   "banco": 7.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2025 p",
+   "planilha": 0.978321,
+   "banco": 0.978321,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede1 2025 nota_media",
+   "planilha": 7.187542,
+   "banco": 7.187542,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2007 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2007 p",
+   "planilha": 0.922623,
+   "banco": 0.922623,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2007 nota_media",
+   "planilha": 5.533271,
+   "banco": 5.533271,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2013 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2013 p",
+   "planilha": 0.885518,
+   "banco": 0.885518,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2013 nota_media",
+   "planilha": 6.138407,
+   "banco": 6.138407,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2019 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2019 p",
+   "planilha": 0.950555,
+   "banco": 0.950555,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2019 nota_media",
+   "planilha": 6.371192,
+   "banco": 6.371192,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2023 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2023 p",
+   "planilha": 0.979575,
+   "banco": 0.979575,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2023 nota_media",
+   "planilha": 6.158692,
+   "banco": 6.158692,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2025 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2025 p",
+   "planilha": 0.971787,
+   "banco": 0.971787,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede2 2025 nota_media",
+   "planilha": 6.289135,
+   "banco": 6.289135,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2007 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2007 p",
+   "planilha": 0.934222,
+   "banco": 0.934222,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2007 nota_media",
+   "planilha": 4.864287,
+   "banco": 4.864287,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2013 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2013 p",
+   "planilha": 0.903064,
+   "banco": 0.903064,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2013 nota_media",
+   "planilha": 5.906291,
+   "banco": 5.906291,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2019 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2019 p",
+   "planilha": 0.956382,
+   "banco": 0.956382,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2019 nota_media",
+   "planilha": 6.024944,
+   "banco": 6.024944,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2023 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2023 p",
+   "planilha": 0.984849,
+   "banco": 0.984849,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2023 nota_media",
+   "planilha": 6.049419,
+   "banco": 6.049419,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2025 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2025 p",
+   "planilha": 0.995187,
+   "banco": 0.995187,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede3 2025 nota_media",
+   "planilha": 6.23455,
+   "banco": 6.23455,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2007 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2007 p",
+   "planilha": 0.934275,
+   "banco": 0.934275,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2007 nota_media",
+   "planilha": 4.904978,
+   "banco": 4.904978,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2013 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2013 p",
+   "planilha": 0.903436,
+   "banco": 0.903436,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2013 nota_media",
+   "planilha": 5.930886,
+   "banco": 5.930886,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2019 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2019 p",
+   "planilha": 0.956605,
+   "banco": 0.956605,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2019 nota_media",
+   "planilha": 6.04604,
+   "banco": 6.04604,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2023 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2023 p",
+   "planilha": 0.984654,
+   "banco": 0.984654,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2023 nota_media",
+   "planilha": 6.06488,
+   "banco": 6.06488,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2025 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2025 p",
+   "planilha": 0.994586,
+   "banco": 0.994586,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa1 rede5 2025 nota_media",
+   "planilha": 6.248329,
+   "banco": 6.248329,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2007 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2007 p",
+   "planilha": 0.880814,
+   "banco": 0.880814,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2007 nota_media",
+   "planilha": 5.797276,
+   "banco": 5.797276,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2013 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2013 p",
+   "planilha": 0.968594,
+   "banco": 0.968594,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2013 nota_media",
+   "planilha": 6.660656,
+   "banco": 6.660656,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2019 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2019 p",
+   "planilha": 0.989882,
+   "banco": 0.989882,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2019 nota_media",
+   "planilha": 6.720015,
+   "banco": 6.720015,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2023 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2023 p",
+   "planilha": 0.998592,
+   "banco": 0.998592,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2023 nota_media",
+   "planilha": 6.207613,
+   "banco": 6.207613,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2025 ideb",
+   "planilha": 6.8,
+   "banco": 6.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede3 2025 nota_media",
+   "planilha": 6.810009,
+   "banco": 6.810009,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2007 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2007 p",
+   "planilha": 0.880814,
+   "banco": 0.880814,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2007 nota_media",
+   "planilha": 5.797276,
+   "banco": 5.797276,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2013 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2013 p",
+   "planilha": 0.968594,
+   "banco": 0.968594,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2013 nota_media",
+   "planilha": 6.660656,
+   "banco": 6.660656,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2019 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2019 p",
+   "planilha": 0.989882,
+   "banco": 0.989882,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2019 nota_media",
+   "planilha": 6.720015,
+   "banco": 6.720015,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2023 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2023 p",
+   "planilha": 0.998592,
+   "banco": 0.998592,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2023 nota_media",
+   "planilha": 6.207613,
+   "banco": 6.207613,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2025 ideb",
+   "planilha": 6.8,
+   "banco": 6.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa1 rede5 2025 nota_media",
+   "planilha": 6.810009,
+   "banco": 6.810009,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2007 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2007 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2007 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2013 ideb",
+   "planilha": 6.6,
+   "banco": 6.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2013 p",
+   "planilha": 0.983941,
+   "banco": 0.983941,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2013 nota_media",
+   "planilha": 6.729325,
+   "banco": 6.729325,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2019 ideb",
+   "planilha": 7.4,
+   "banco": 7.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2019 p",
+   "planilha": 0.991492,
+   "banco": 0.991492,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2019 nota_media",
+   "planilha": 7.496985,
+   "banco": 7.496985,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2023 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2023 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2023 nota_media",
+   "planilha": 6.524896,
+   "banco": 6.524896,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2025 ideb",
+   "planilha": 8.2,
+   "banco": 8.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede1 2025 nota_media",
+   "planilha": 8.232371,
+   "banco": 8.232371,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2007 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2007 p",
+   "planilha": 0.960259,
+   "banco": 0.960259,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2007 nota_media",
+   "planilha": 4.767238,
+   "banco": 4.767238,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2013 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2013 p",
+   "planilha": 0.98007,
+   "banco": 0.98007,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2013 nota_media",
+   "planilha": 5.702328,
+   "banco": 5.702328,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2019 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2019 p",
+   "planilha": 0.988948,
+   "banco": 0.988948,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2019 nota_media",
+   "planilha": 6.567752,
+   "banco": 6.567752,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2023 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2023 p",
+   "planilha": 0.988595,
+   "banco": 0.988595,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2023 nota_media",
+   "planilha": 6.124565,
+   "banco": 6.124565,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2025 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2025 p",
+   "planilha": 0.985788,
+   "banco": 0.985788,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede2 2025 nota_media",
+   "planilha": 6.567375,
+   "banco": 6.567375,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2007 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2007 p",
+   "planilha": 0.926146,
+   "banco": 0.926146,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2007 nota_media",
+   "planilha": 4.597819,
+   "banco": 4.597819,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2013 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2013 p",
+   "planilha": 0.972575,
+   "banco": 0.972575,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2013 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2019 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2019 p",
+   "planilha": 0.982385,
+   "banco": 0.982385,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2019 nota_media",
+   "planilha": 6.110776,
+   "banco": 6.110776,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2023 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2023 p",
+   "planilha": 0.994799,
+   "banco": 0.994799,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2023 nota_media",
+   "planilha": 5.595691,
+   "banco": 5.595691,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2025 ideb",
+   "planilha": 5.8,
+   "banco": 5.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2025 p",
+   "planilha": 0.994398,
+   "banco": 0.994398,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede3 2025 nota_media",
+   "planilha": 5.867966,
+   "banco": 5.867966,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2007 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2007 p",
+   "planilha": 0.950398,
+   "banco": 0.950398,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2007 nota_media",
+   "planilha": 4.696167,
+   "banco": 4.696167,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2013 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2013 p",
+   "planilha": 0.97923,
+   "banco": 0.97923,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2013 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2019 ideb",
+   "planilha": 6.3,
+   "banco": 6.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2019 p",
+   "planilha": 0.986489,
+   "banco": 0.986489,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2019 nota_media",
+   "planilha": 6.372065,
+   "banco": 6.372065,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2023 ideb",
+   "planilha": 5.9,
+   "banco": 5.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2023 p",
+   "planilha": 0.991197,
+   "banco": 0.991197,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2023 nota_media",
+   "planilha": 5.91175,
+   "banco": 5.91175,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2025 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2025 p",
+   "planilha": 0.989995,
+   "banco": 0.989995,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa1 rede5 2025 nota_media",
+   "planilha": 6.22765,
+   "banco": 6.22765,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2007 ideb",
+   "planilha": 5.9,
+   "banco": 5.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2007 p",
+   "planilha": 0.967033,
+   "banco": 0.967033,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2007 nota_media",
+   "planilha": 6.14887,
+   "banco": 6.14887,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2013 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2013 p",
+   "planilha": 0.959967,
+   "banco": 0.959967,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2013 nota_media",
+   "planilha": 6.265112,
+   "banco": 6.265112,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2019 ideb",
+   "planilha": 7.8,
+   "banco": 7.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2019 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2019 nota_media",
+   "planilha": 7.752273,
+   "banco": 7.752273,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2023 ideb",
+   "planilha": 6.8,
+   "banco": 6.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2023 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2023 nota_media",
+   "planilha": 6.756998,
+   "banco": 6.756998,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2025 ideb",
+   "planilha": 6.8,
+   "banco": 6.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede1 2025 nota_media",
+   "planilha": 6.772298,
+   "banco": 6.772298,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2007 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2007 p",
+   "planilha": 0.82627,
+   "banco": 0.82627,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2007 nota_media",
+   "planilha": 5.004523,
+   "banco": 5.004523,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2013 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2013 p",
+   "planilha": 0.875173,
+   "banco": 0.875173,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2013 nota_media",
+   "planilha": 5.63471,
+   "banco": 5.63471,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2019 p",
+   "planilha": 0.883372,
+   "banco": 0.883372,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2019 nota_media",
+   "planilha": 5.909802,
+   "banco": 5.909802,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2023 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2023 p",
+   "planilha": 0.919163,
+   "banco": 0.919163,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2023 nota_media",
+   "planilha": 5.398402,
+   "banco": 5.398402,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2025 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2025 p",
+   "planilha": 0.95283,
+   "banco": 0.95283,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede2 2025 nota_media",
+   "planilha": 5.88685,
+   "banco": 5.88685,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2007 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2007 p",
+   "planilha": 0.852809,
+   "banco": 0.852809,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2007 nota_media",
+   "planilha": 4.558232,
+   "banco": 4.558232,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2013 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2013 p",
+   "planilha": 0.878316,
+   "banco": 0.878316,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2013 nota_media",
+   "planilha": 5.066527,
+   "banco": 5.066527,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2019 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2019 p",
+   "planilha": 0.888934,
+   "banco": 0.888934,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2019 nota_media",
+   "planilha": 5.480257,
+   "banco": 5.480257,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2023 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2023 p",
+   "planilha": 0.932974,
+   "banco": 0.932974,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2023 nota_media",
+   "planilha": 4.998385,
+   "banco": 4.998385,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2025 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2025 p",
+   "planilha": 0.934876,
+   "banco": 0.934876,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede3 2025 nota_media",
+   "planilha": 5.332028,
+   "banco": 5.332028,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2007 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2007 p",
+   "planilha": 0.834206,
+   "banco": 0.834206,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2007 nota_media",
+   "planilha": 4.901449,
+   "banco": 4.901449,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2013 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2013 p",
+   "planilha": 0.87602,
+   "banco": 0.87602,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2013 nota_media",
+   "planilha": 5.467115,
+   "banco": 5.467115,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2019 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2019 p",
+   "planilha": 0.885787,
+   "banco": 0.885787,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2019 nota_media",
+   "planilha": 5.775915,
+   "banco": 5.775915,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2023 p",
+   "planilha": 0.92418,
+   "banco": 0.92418,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2023 nota_media",
+   "planilha": 5.257737,
+   "banco": 5.257737,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2025 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2025 p",
+   "planilha": 0.94625,
+   "banco": 0.94625,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa1 rede5 2025 nota_media",
+   "planilha": 5.681962,
+   "banco": 5.681962,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2007 ideb",
+   "planilha": 7.5,
+   "banco": 7.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2007 p",
+   "planilha": 0.972417,
+   "banco": 0.972417,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2007 nota_media",
+   "planilha": 7.763,
+   "banco": 7.763,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2013 ideb",
+   "planilha": 7.2,
+   "banco": 7.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2013 p",
+   "planilha": 0.971845,
+   "banco": 0.971845,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2013 nota_media",
+   "planilha": 7.426833,
+   "banco": 7.426833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2019 ideb",
+   "planilha": 7.6,
+   "banco": 7.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2019 p",
+   "planilha": 0.977997,
+   "banco": 0.977997,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2019 nota_media",
+   "planilha": 7.722,
+   "banco": 7.722,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2023 ideb",
+   "planilha": 7.4,
+   "banco": 7.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2023 p",
+   "planilha": 0.971772,
+   "banco": 0.971772,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2023 nota_media",
+   "planilha": 7.577167,
+   "banco": 7.577167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2025 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2025 p",
+   "planilha": 0.963429,
+   "banco": 0.963429,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede1 2025 nota_media",
+   "planilha": 6.984667,
+   "banco": 6.984667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2007 ideb",
+   "planilha": 2.2,
+   "banco": 2.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2007 p",
+   "planilha": 0.551479,
+   "banco": 0.551479,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2007 nota_media",
+   "planilha": 4.0565,
+   "banco": 4.0565,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2013 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2013 p",
+   "planilha": 0.772554,
+   "banco": 0.772554,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2013 nota_media",
+   "planilha": 4.465667,
+   "banco": 4.465667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2019 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2019 p",
+   "planilha": 0.941409,
+   "banco": 0.941409,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2019 nota_media",
+   "planilha": 5.02,
+   "banco": 5.02,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2023 p",
+   "planilha": 0.957916,
+   "banco": 0.957916,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2023 nota_media",
+   "planilha": 5.074333,
+   "banco": 5.074333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2025 p",
+   "planilha": 0.981954,
+   "banco": 0.981954,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede2 2025 nota_media",
+   "planilha": 4.957,
+   "banco": 4.957,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2007 ideb",
+   "planilha": 2.5,
+   "banco": 2.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2007 p",
+   "planilha": 0.707638,
+   "banco": 0.707638,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2007 nota_media",
+   "planilha": 3.5345,
+   "banco": 3.5345,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2013 ideb",
+   "planilha": 3.2,
+   "banco": 3.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2013 p",
+   "planilha": 0.789924,
+   "banco": 0.789924,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2013 nota_media",
+   "planilha": 3.991833,
+   "banco": 3.991833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2019 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2019 p",
+   "planilha": 0.946235,
+   "banco": 0.946235,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2019 nota_media",
+   "planilha": 4.923667,
+   "banco": 4.923667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2023 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2023 p",
+   "planilha": 0.971186,
+   "banco": 0.971186,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2023 nota_media",
+   "planilha": 4.977,
+   "banco": 4.977,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2025 p",
+   "planilha": 0.984957,
+   "banco": 0.984957,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede3 2025 nota_media",
+   "planilha": 4.961667,
+   "banco": 4.961667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2007 ideb",
+   "planilha": 2.3,
+   "banco": 2.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2007 p",
+   "planilha": 0.587553,
+   "banco": 0.587553,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2007 nota_media",
+   "planilha": 3.994667,
+   "banco": 3.994667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2013 ideb",
+   "planilha": 3.5,
+   "banco": 3.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2013 p",
+   "planilha": 0.779336,
+   "banco": 0.779336,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2013 nota_media",
+   "planilha": 4.436,
+   "banco": 4.436,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2019 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2019 p",
+   "planilha": 0.942602,
+   "banco": 0.942602,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2019 nota_media",
+   "planilha": 5.0485,
+   "banco": 5.0485,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2023 p",
+   "planilha": 0.961941,
+   "banco": 0.961941,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2023 nota_media",
+   "planilha": 5.094833,
+   "banco": 5.094833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2025 p",
+   "planilha": 0.982459,
+   "banco": 0.982459,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa2 rede5 2025 nota_media",
+   "planilha": 4.993667,
+   "banco": 4.993667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2007 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2007 p",
+   "planilha": 0.87391,
+   "banco": 0.87391,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2007 nota_media",
+   "planilha": 6.306167,
+   "banco": 6.306167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2013 ideb",
+   "planilha": 6.9,
+   "banco": 6.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2013 p",
+   "planilha": 0.924518,
+   "banco": 0.924518,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2013 nota_media",
+   "planilha": 7.479,
+   "banco": 7.479,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2019 ideb",
+   "planilha": 7.2,
+   "banco": 7.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2019 p",
+   "planilha": 0.953155,
+   "banco": 0.953155,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2019 nota_media",
+   "planilha": 7.581333,
+   "banco": 7.581333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2023 ideb",
+   "planilha": 7.0,
+   "banco": 7.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2023 p",
+   "planilha": 0.939813,
+   "banco": 0.939813,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2023 nota_media",
+   "planilha": 7.480667,
+   "banco": 7.480667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2025 ideb",
+   "planilha": 7.5,
+   "banco": 7.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2025 p",
+   "planilha": 0.969941,
+   "banco": 0.969941,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede1 2025 nota_media",
+   "planilha": 7.7335,
+   "banco": 7.7335,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2007 p",
+   "planilha": 0.762601,
+   "banco": 0.762601,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2007 nota_media",
+   "planilha": 4.918333,
+   "banco": 4.918333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2013 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2013 p",
+   "planilha": 0.84629,
+   "banco": 0.84629,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2013 nota_media",
+   "planilha": 5.109667,
+   "banco": 5.109667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2019 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2019 p",
+   "planilha": 0.84739,
+   "banco": 0.84739,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2019 nota_media",
+   "planilha": 5.389,
+   "banco": 5.389,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2023 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2023 p",
+   "planilha": 0.884092,
+   "banco": 0.884092,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2023 nota_media",
+   "planilha": 4.983833,
+   "banco": 4.983833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2025 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2025 p",
+   "planilha": 0.949652,
+   "banco": 0.949652,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede2 2025 nota_media",
+   "planilha": 5.580333,
+   "banco": 5.580333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2007 p",
+   "planilha": 0.77564,
+   "banco": 0.77564,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2007 nota_media",
+   "planilha": 4.416833,
+   "banco": 4.416833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2013 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2013 p",
+   "planilha": 0.87313,
+   "banco": 0.87313,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2013 nota_media",
+   "planilha": 5.108833,
+   "banco": 5.108833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2019 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2019 p",
+   "planilha": 0.899382,
+   "banco": 0.899382,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2019 nota_media",
+   "planilha": 5.209333,
+   "banco": 5.209333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2023 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2023 p",
+   "planilha": 0.924242,
+   "banco": 0.924242,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2023 nota_media",
+   "planilha": 5.043,
+   "banco": 5.043,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2025 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2025 p",
+   "planilha": 0.958014,
+   "banco": 0.958014,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede3 2025 nota_media",
+   "planilha": 5.379167,
+   "banco": 5.379167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2007 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2007 p",
+   "planilha": 0.769542,
+   "banco": 0.769542,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2007 nota_media",
+   "planilha": 4.703833,
+   "banco": 4.703833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2013 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2013 p",
+   "planilha": 0.861376,
+   "banco": 0.861376,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2013 nota_media",
+   "planilha": 5.124333,
+   "banco": 5.124333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2019 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2019 p",
+   "planilha": 0.875412,
+   "banco": 0.875412,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2019 nota_media",
+   "planilha": 5.318667,
+   "banco": 5.318667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2023 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2023 p",
+   "planilha": 0.903773,
+   "banco": 0.903773,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2023 nota_media",
+   "planilha": 5.0295,
+   "banco": 5.0295,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2025 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2025 p",
+   "planilha": 0.953923,
+   "banco": 0.953923,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa2 rede5 2025 nota_media",
+   "planilha": 5.502333,
+   "banco": 5.502333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2007 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2007 p",
+   "planilha": 0.877261,
+   "banco": 0.877261,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2007 nota_media",
+   "planilha": 4.445667,
+   "banco": 4.445667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2013 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2013 p",
+   "planilha": 0.927913,
+   "banco": 0.927913,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2013 nota_media",
+   "planilha": 5.136667,
+   "banco": 5.136667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2019 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2019 p",
+   "planilha": 0.99447,
+   "banco": 0.99447,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2019 nota_media",
+   "planilha": 5.446333,
+   "banco": 5.446333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2023 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2023 p",
+   "planilha": 0.994666,
+   "banco": 0.994666,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2023 nota_media",
+   "planilha": 5.437167,
+   "banco": 5.437167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2025 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2025 p",
+   "planilha": 0.997735,
+   "banco": 0.997735,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede2 2025 nota_media",
+   "planilha": 5.503833,
+   "banco": 5.503833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2007 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2007 p",
+   "planilha": 0.941291,
+   "banco": 0.941291,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2007 nota_media",
+   "planilha": 4.131167,
+   "banco": 4.131167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2013 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2013 p",
+   "planilha": 0.92138,
+   "banco": 0.92138,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2013 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2019 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2019 p",
+   "planilha": 0.907306,
+   "banco": 0.907306,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2019 nota_media",
+   "planilha": 5.045333,
+   "banco": 5.045333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2023 p",
+   "planilha": 0.892654,
+   "banco": 0.892654,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2023 nota_media",
+   "planilha": 5.504833,
+   "banco": 5.504833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2025 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede3 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2007 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2007 p",
+   "planilha": 0.886324,
+   "banco": 0.886324,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2007 nota_media",
+   "planilha": 4.396833,
+   "banco": 4.396833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2013 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2013 p",
+   "planilha": 0.92906,
+   "banco": 0.92906,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2013 nota_media",
+   "planilha": 5.136667,
+   "banco": 5.136667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2019 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2019 p",
+   "planilha": 0.979742,
+   "banco": 0.979742,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2019 nota_media",
+   "planilha": 5.377833,
+   "banco": 5.377833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2023 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2023 p",
+   "planilha": 0.97877,
+   "banco": 0.97877,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2023 nota_media",
+   "planilha": 5.446333,
+   "banco": 5.446333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2025 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2025 p",
+   "planilha": 0.997735,
+   "banco": 0.997735,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa2 rede5 2025 nota_media",
+   "planilha": 5.503833,
+   "banco": 5.503833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2007 p",
+   "planilha": 0.766763,
+   "banco": 0.766763,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2007 nota_media",
+   "planilha": 4.406667,
+   "banco": 4.406667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2013 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2013 p",
+   "planilha": 0.80226,
+   "banco": 0.80226,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2013 nota_media",
+   "planilha": 4.487167,
+   "banco": 4.487167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2019 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2019 p",
+   "planilha": 0.875148,
+   "banco": 0.875148,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2019 nota_media",
+   "planilha": 5.139333,
+   "banco": 5.139333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2023 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2023 p",
+   "planilha": 0.971695,
+   "banco": 0.971695,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2023 nota_media",
+   "planilha": 5.2115,
+   "banco": 5.2115,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2025 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2025 p",
+   "planilha": 0.993244,
+   "banco": 0.993244,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede2 2025 nota_media",
+   "planilha": 5.498,
+   "banco": 5.498,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2007 p",
+   "planilha": 0.783725,
+   "banco": 0.783725,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2007 nota_media",
+   "planilha": 4.320667,
+   "banco": 4.320667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2013 ideb",
+   "planilha": 3.7,
+   "banco": 3.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2013 p",
+   "planilha": 0.800718,
+   "banco": 0.800718,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2013 nota_media",
+   "planilha": 4.636,
+   "banco": 4.636,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2019 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2019 p",
+   "planilha": 0.869977,
+   "banco": 0.869977,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2019 nota_media",
+   "planilha": 5.087833,
+   "banco": 5.087833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2023 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2023 p",
+   "planilha": 0.903114,
+   "banco": 0.903114,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2023 nota_media",
+   "planilha": 4.997833,
+   "banco": 4.997833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2025 p",
+   "planilha": 0.956266,
+   "banco": 0.956266,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede3 2025 nota_media",
+   "planilha": 5.0875,
+   "banco": 5.0875,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2007 p",
+   "planilha": 0.777596,
+   "banco": 0.777596,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2007 nota_media",
+   "planilha": 4.35,
+   "banco": 4.35,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2013 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2013 p",
+   "planilha": 0.799347,
+   "banco": 0.799347,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2013 nota_media",
+   "planilha": 4.565333,
+   "banco": 4.565333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2019 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2019 p",
+   "planilha": 0.872176,
+   "banco": 0.872176,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2019 nota_media",
+   "planilha": 5.115667,
+   "banco": 5.115667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2023 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2023 p",
+   "planilha": 0.937152,
+   "banco": 0.937152,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2023 nota_media",
+   "planilha": 5.119167,
+   "banco": 5.119167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2025 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2025 p",
+   "planilha": 0.973398,
+   "banco": 0.973398,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa2 rede5 2025 nota_media",
+   "planilha": 5.3015,
+   "banco": 5.3015,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2007 ideb",
+   "planilha": 2.7,
+   "banco": 2.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2007 p",
+   "planilha": 0.646567,
+   "banco": 0.646567,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2007 nota_media",
+   "planilha": 4.133833,
+   "banco": 4.133833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2013 ideb",
+   "planilha": 2.9,
+   "banco": 2.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2013 p",
+   "planilha": 0.696031,
+   "banco": 0.696031,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2013 nota_media",
+   "planilha": 4.191833,
+   "banco": 4.191833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2019 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2019 p",
+   "planilha": 0.866154,
+   "banco": 0.866154,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2019 nota_media",
+   "planilha": 4.89,
+   "banco": 4.89,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2023 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2023 p",
+   "planilha": 0.968198,
+   "banco": 0.968198,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2023 nota_media",
+   "planilha": 4.579833,
+   "banco": 4.579833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2025 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede2 2025 nota_media",
+   "planilha": 4.385833,
+   "banco": 4.385833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2007 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2007 p",
+   "planilha": 0.761485,
+   "banco": 0.761485,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2007 nota_media",
+   "planilha": 4.681833,
+   "banco": 4.681833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2013 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2013 p",
+   "planilha": 0.809176,
+   "banco": 0.809176,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2013 nota_media",
+   "planilha": 5.133667,
+   "banco": 5.133667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2019 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2019 p",
+   "planilha": 0.916352,
+   "banco": 0.916352,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2019 nota_media",
+   "planilha": 5.0515,
+   "banco": 5.0515,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2023 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2023 p",
+   "planilha": 0.930027,
+   "banco": 0.930027,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2023 nota_media",
+   "planilha": 5.351833,
+   "banco": 5.351833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2025 ideb",
+   "planilha": 5.4,
+   "banco": 5.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2025 p",
+   "planilha": 0.972528,
+   "banco": 0.972528,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede3 2025 nota_media",
+   "planilha": 5.540167,
+   "banco": 5.540167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2007 ideb",
+   "planilha": 3.5,
+   "banco": 3.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2007 p",
+   "planilha": 0.757004,
+   "banco": 0.757004,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2007 nota_media",
+   "planilha": 4.6575,
+   "banco": 4.6575,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2013 ideb",
+   "planilha": 4.0,
+   "banco": 4.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2013 p",
+   "planilha": 0.798571,
+   "banco": 0.798571,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2013 nota_media",
+   "planilha": 4.959,
+   "banco": 4.959,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2019 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2019 p",
+   "planilha": 0.913083,
+   "banco": 0.913083,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2019 nota_media",
+   "planilha": 5.022667,
+   "banco": 5.022667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2023 p",
+   "planilha": 0.931065,
+   "banco": 0.931065,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2023 nota_media",
+   "planilha": 5.2225,
+   "banco": 5.2225,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2025 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2025 p",
+   "planilha": 0.972785,
+   "banco": 0.972785,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa2 rede5 2025 nota_media",
+   "planilha": 5.400667,
+   "banco": 5.400667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2007 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2007 p",
+   "planilha": 0.85567,
+   "banco": 0.85567,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2007 nota_media",
+   "planilha": 7.135167,
+   "banco": 7.135167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2013 ideb",
+   "planilha": 6.4,
+   "banco": 6.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2013 p",
+   "planilha": 0.897734,
+   "banco": 0.897734,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2013 nota_media",
+   "planilha": 7.172167,
+   "banco": 7.172167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2019 ideb",
+   "planilha": 6.6,
+   "banco": 6.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2019 p",
+   "planilha": 0.936908,
+   "banco": 0.936908,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2019 nota_media",
+   "planilha": 7.0705,
+   "banco": 7.0705,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2023 ideb",
+   "planilha": 6.5,
+   "banco": 6.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2023 p",
+   "planilha": 0.947154,
+   "banco": 0.947154,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2023 nota_media",
+   "planilha": 6.881,
+   "banco": 6.881,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2025 ideb",
+   "planilha": 6.1,
+   "banco": 6.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2025 p",
+   "planilha": 0.939614,
+   "banco": 0.939614,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede1 2025 nota_media",
+   "planilha": 6.4845,
+   "banco": 6.4845,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2007 ideb",
+   "planilha": 2.5,
+   "banco": 2.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2007 p",
+   "planilha": 0.580352,
+   "banco": 0.580352,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2007 nota_media",
+   "planilha": 4.222167,
+   "banco": 4.222167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2013 ideb",
+   "planilha": 3.7,
+   "banco": 3.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2013 p",
+   "planilha": 0.777249,
+   "banco": 0.777249,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2013 nota_media",
+   "planilha": 4.707,
+   "banco": 4.707,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2019 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2019 p",
+   "planilha": 0.830252,
+   "banco": 0.830252,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2019 nota_media",
+   "planilha": 5.284667,
+   "banco": 5.284667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2023 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2023 p",
+   "planilha": 0.927971,
+   "banco": 0.927971,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2023 nota_media",
+   "planilha": 6.173167,
+   "banco": 6.173167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2025 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2025 p",
+   "planilha": 0.960419,
+   "banco": 0.960419,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede2 2025 nota_media",
+   "planilha": 5.906333,
+   "banco": 5.906333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2007 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2007 p",
+   "planilha": 0.924077,
+   "banco": 0.924077,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2007 nota_media",
+   "planilha": 4.616167,
+   "banco": 4.616167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2013 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2013 p",
+   "planilha": 0.861564,
+   "banco": 0.861564,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2013 nota_media",
+   "planilha": 5.066167,
+   "banco": 5.066167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2019 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2019 p",
+   "planilha": 0.921543,
+   "banco": 0.921543,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2019 nota_media",
+   "planilha": 5.275167,
+   "banco": 5.275167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2023 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2023 p",
+   "planilha": 0.968443,
+   "banco": 0.968443,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2023 nota_media",
+   "planilha": 5.354,
+   "banco": 5.354,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2025 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2025 p",
+   "planilha": 0.985719,
+   "banco": 0.985719,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede3 2025 nota_media",
+   "planilha": 5.2495,
+   "banco": 5.2495,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2007 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2007 p",
+   "planilha": 0.892682,
+   "banco": 0.892682,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2007 nota_media",
+   "planilha": 4.669667,
+   "banco": 4.669667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2013 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2013 p",
+   "planilha": 0.859534,
+   "banco": 0.859534,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2013 nota_media",
+   "planilha": 5.127833,
+   "banco": 5.127833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2019 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2019 p",
+   "planilha": 0.921144,
+   "banco": 0.921144,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2019 nota_media",
+   "planilha": 5.338667,
+   "banco": 5.338667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2023 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2023 p",
+   "planilha": 0.96746,
+   "banco": 0.96746,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2023 nota_media",
+   "planilha": 5.417333,
+   "banco": 5.417333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2025 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2025 p",
+   "planilha": 0.984221,
+   "banco": 0.984221,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa2 rede5 2025 nota_media",
+   "planilha": 5.295,
+   "banco": 5.295,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2007 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2007 p",
+   "planilha": 0.900463,
+   "banco": 0.900463,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2007 nota_media",
+   "planilha": 4.863667,
+   "banco": 4.863667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2013 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2013 p",
+   "planilha": 0.954189,
+   "banco": 0.954189,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2013 nota_media",
+   "planilha": 5.249833,
+   "banco": 5.249833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2019 p",
+   "planilha": 0.960871,
+   "banco": 0.960871,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2019 nota_media",
+   "planilha": 5.442333,
+   "banco": 5.442333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2023 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2023 p",
+   "planilha": 0.989322,
+   "banco": 0.989322,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2023 nota_media",
+   "planilha": 5.248,
+   "banco": 5.248,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2025 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2025 p",
+   "planilha": 0.978678,
+   "banco": 0.978678,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede2 2025 nota_media",
+   "planilha": 5.249833,
+   "banco": 5.249833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2007 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2007 p",
+   "planilha": 0.900463,
+   "banco": 0.900463,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2007 nota_media",
+   "planilha": 4.863667,
+   "banco": 4.863667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2013 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2013 p",
+   "planilha": 0.954189,
+   "banco": 0.954189,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2013 nota_media",
+   "planilha": 5.249833,
+   "banco": 5.249833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2019 p",
+   "planilha": 0.960871,
+   "banco": 0.960871,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2019 nota_media",
+   "planilha": 5.442333,
+   "banco": 5.442333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2023 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2023 p",
+   "planilha": 0.989322,
+   "banco": 0.989322,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2023 nota_media",
+   "planilha": 5.248,
+   "banco": 5.248,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2025 ideb",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2025 p",
+   "planilha": 0.978678,
+   "banco": 0.978678,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa2 rede5 2025 nota_media",
+   "planilha": 5.249833,
+   "banco": 5.249833,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2007 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2007 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2007 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2013 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2013 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2013 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2019 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2023 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2025 ideb",
+   "planilha": 7.6,
+   "banco": 7.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2025 p",
+   "planilha": 0.992938,
+   "banco": 0.992938,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede1 2025 nota_media",
+   "planilha": 7.679333,
+   "banco": 7.679333,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2007 p",
+   "planilha": 0.854996,
+   "banco": 0.854996,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2007 nota_media",
+   "planilha": 4.4405,
+   "banco": 4.4405,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2013 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2013 p",
+   "planilha": 0.896465,
+   "banco": 0.896465,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2013 nota_media",
+   "planilha": 4.525,
+   "banco": 4.525,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2019 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2019 p",
+   "planilha": 0.934551,
+   "banco": 0.934551,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2019 nota_media",
+   "planilha": 5.268833,
+   "banco": 5.268833,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2023 p",
+   "planilha": 0.956073,
+   "banco": 0.956073,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2023 nota_media",
+   "planilha": 5.101833,
+   "banco": 5.101833,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2025 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2025 p",
+   "planilha": 0.959413,
+   "banco": 0.959413,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede2 2025 nota_media",
+   "planilha": 5.252333,
+   "banco": 5.252333,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2007 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2007 p",
+   "planilha": 0.885485,
+   "banco": 0.885485,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2007 nota_media",
+   "planilha": 4.414333,
+   "banco": 4.414333,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2013 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2013 p",
+   "planilha": 0.942435,
+   "banco": 0.942435,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2013 nota_media",
+   "planilha": 4.663167,
+   "banco": 4.663167,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2019 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2019 p",
+   "planilha": 0.946645,
+   "banco": 0.946645,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2019 nota_media",
+   "planilha": 5.074333,
+   "banco": 5.074333,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2023 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2023 p",
+   "planilha": 0.987988,
+   "banco": 0.987988,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2023 nota_media",
+   "planilha": 4.864167,
+   "banco": 4.864167,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2025 p",
+   "planilha": 0.988239,
+   "banco": 0.988239,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede3 2025 nota_media",
+   "planilha": 4.938667,
+   "banco": 4.938667,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2007 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2007 p",
+   "planilha": 0.867283,
+   "banco": 0.867283,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2007 nota_media",
+   "planilha": 4.431167,
+   "banco": 4.431167,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2013 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2013 p",
+   "planilha": 0.914305,
+   "banco": 0.914305,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2013 nota_media",
+   "planilha": 4.576833,
+   "banco": 4.576833,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2019 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2019 p",
+   "planilha": 0.939418,
+   "banco": 0.939418,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2019 nota_media",
+   "planilha": 5.191667,
+   "banco": 5.191667,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2023 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2023 p",
+   "planilha": 0.97017,
+   "banco": 0.97017,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2023 nota_media",
+   "planilha": 4.998167,
+   "banco": 4.998167,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2025 ideb",
+   "planilha": 5.0,
+   "banco": 5.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2025 p",
+   "planilha": 0.971968,
+   "banco": 0.971968,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa2 rede5 2025 nota_media",
+   "planilha": 5.114167,
+   "banco": 5.114167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2007 ideb",
+   "planilha": 6.2,
+   "banco": 6.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2007 p",
+   "planilha": 0.881621,
+   "banco": 0.881621,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2007 nota_media",
+   "planilha": 7.0075,
+   "banco": 7.0075,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2013 ideb",
+   "planilha": 5.7,
+   "banco": 5.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2013 p",
+   "planilha": 0.896903,
+   "banco": 0.896903,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2013 nota_media",
+   "planilha": 6.359667,
+   "banco": 6.359667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2019 ideb",
+   "planilha": 6.9,
+   "banco": 6.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2019 p",
+   "planilha": 0.946754,
+   "banco": 0.946754,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2019 nota_media",
+   "planilha": 7.311333,
+   "banco": 7.311333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2023 ideb",
+   "planilha": 7.1,
+   "banco": 7.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2023 p",
+   "planilha": 0.962647,
+   "banco": 0.962647,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2023 nota_media",
+   "planilha": 7.343,
+   "banco": 7.343,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2025 ideb",
+   "planilha": 6.9,
+   "banco": 6.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2025 p",
+   "planilha": 0.94944,
+   "banco": 0.94944,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede1 2025 nota_media",
+   "planilha": 7.309,
+   "banco": 7.309,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2007 p",
+   "planilha": 0.684386,
+   "banco": 0.684386,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2007 nota_media",
+   "planilha": 4.9315,
+   "banco": 4.9315,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2013 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2013 p",
+   "planilha": 0.688741,
+   "banco": 0.688741,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2013 nota_media",
+   "planilha": 4.907333,
+   "banco": 4.907333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2019 ideb",
+   "planilha": 4.0,
+   "banco": 4.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2019 p",
+   "planilha": 0.776723,
+   "banco": 0.776723,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2019 nota_media",
+   "planilha": 5.115667,
+   "banco": 5.115667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2023 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2023 p",
+   "planilha": 0.856842,
+   "banco": 0.856842,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2023 nota_media",
+   "planilha": 4.8035,
+   "banco": 4.8035,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2025 p",
+   "planilha": 0.926545,
+   "banco": 0.926545,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede2 2025 nota_media",
+   "planilha": 5.3265,
+   "banco": 5.3265,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2007 ideb",
+   "planilha": 3.3,
+   "banco": 3.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2007 p",
+   "planilha": 0.782057,
+   "banco": 0.782057,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2007 nota_media",
+   "planilha": 4.2235,
+   "banco": 4.2235,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2013 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2013 p",
+   "planilha": 0.789042,
+   "banco": 0.789042,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2013 nota_media",
+   "planilha": 4.549333,
+   "banco": 4.549333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2019 ideb",
+   "planilha": 3.7,
+   "banco": 3.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2019 p",
+   "planilha": 0.792577,
+   "banco": 0.792577,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2019 nota_media",
+   "planilha": 4.696667,
+   "banco": 4.696667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2023 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2023 p",
+   "planilha": 0.877309,
+   "banco": 0.877309,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2023 nota_media",
+   "planilha": 4.369667,
+   "banco": 4.369667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2025 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2025 p",
+   "planilha": 0.888517,
+   "banco": 0.888517,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede3 2025 nota_media",
+   "planilha": 4.767667,
+   "banco": 4.767667,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2007 ideb",
+   "planilha": 3.4,
+   "banco": 3.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2007 p",
+   "planilha": 0.714903,
+   "banco": 0.714903,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2007 nota_media",
+   "planilha": 4.785333,
+   "banco": 4.785333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2013 ideb",
+   "planilha": 3.5,
+   "banco": 3.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2013 p",
+   "planilha": 0.718128,
+   "banco": 0.718128,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2013 nota_media",
+   "planilha": 4.839167,
+   "banco": 4.839167,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2019 ideb",
+   "planilha": 4.0,
+   "banco": 4.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2019 p",
+   "planilha": 0.783632,
+   "banco": 0.783632,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2019 nota_media",
+   "planilha": 5.057833,
+   "banco": 5.057833,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2023 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2023 p",
+   "planilha": 0.865114,
+   "banco": 0.865114,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2023 nota_media",
+   "planilha": 4.713333,
+   "banco": 4.713333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2025 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2025 p",
+   "planilha": 0.914172,
+   "banco": 0.914172,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa2 rede5 2025 nota_media",
+   "planilha": 5.190333,
+   "banco": 5.190333,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2019 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2019 p",
+   "planilha": 0.958262,
+   "banco": 0.958262,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2019 nota_media",
+   "planilha": 4.792491,
+   "banco": 4.792491,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2023 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2023 p",
+   "planilha": 0.954176,
+   "banco": 0.954176,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2023 nota_media",
+   "planilha": 4.817274,
+   "banco": 4.817274,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2025 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2025 p",
+   "planilha": 0.974153,
+   "banco": 0.974153,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede2 2025 nota_media",
+   "planilha": 4.785217,
+   "banco": 4.785217,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2019 p",
+   "planilha": 0.670272,
+   "banco": 0.670272,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2023 p",
+   "planilha": 0.802313,
+   "banco": 0.802313,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2025 ideb",
+   "planilha": 5.5,
+   "banco": 5.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2025 p",
+   "planilha": 0.854463,
+   "banco": 0.854463,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede1 2025 nota_media",
+   "planilha": 6.41207,
+   "banco": 6.41207,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2019 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2019 p",
+   "planilha": 0.854944,
+   "banco": 0.854944,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2019 nota_media",
+   "planilha": 4.937252,
+   "banco": 4.937252,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2023 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2023 p",
+   "planilha": 0.915464,
+   "banco": 0.915464,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2023 nota_media",
+   "planilha": 4.848548,
+   "banco": 4.848548,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2025 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2025 p",
+   "planilha": 0.93557,
+   "banco": 0.93557,
+   "ok": true
+  },
+  {
+   "caso": "ideb Recife etapa3 rede5 2025 nota_media",
+   "planilha": 4.895697,
+   "banco": 4.895697,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2019 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2019 p",
+   "planilha": 0.815596,
+   "banco": 0.815596,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2019 nota_media",
+   "planilha": 4.783895,
+   "banco": 4.783895,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2023 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2023 p",
+   "planilha": 0.826933,
+   "banco": 0.826933,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2023 nota_media",
+   "planilha": 4.545322,
+   "banco": 4.545322,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2025 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2025 p",
+   "planilha": 0.939103,
+   "banco": 0.939103,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede2 2025 nota_media",
+   "planilha": 4.788002,
+   "banco": 4.788002,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2019 ideb",
+   "planilha": 6.6,
+   "banco": 6.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2019 p",
+   "planilha": 0.929314,
+   "banco": 0.929314,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2019 nota_media",
+   "planilha": 7.111068,
+   "banco": 7.111068,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2023 p",
+   "planilha": 0.900009,
+   "banco": 0.900009,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2025 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2025 p",
+   "planilha": 0.9319,
+   "banco": 0.9319,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede1 2025 nota_media",
+   "planilha": 7.203457,
+   "banco": 7.203457,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2019 ideb",
+   "planilha": 4.0,
+   "banco": 4.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2019 p",
+   "planilha": 0.820766,
+   "banco": 0.820766,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2019 nota_media",
+   "planilha": 4.889717,
+   "banco": 4.889717,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2023 ideb",
+   "planilha": 4.0,
+   "banco": 4.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2023 p",
+   "planilha": 0.866122,
+   "banco": 0.866122,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2023 nota_media",
+   "planilha": 4.651394,
+   "banco": 4.651394,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2025 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2025 p",
+   "planilha": 0.952553,
+   "banco": 0.952553,
+   "ok": true
+  },
+  {
+   "caso": "ideb Belo Horizonte etapa3 rede5 2025 nota_media",
+   "planilha": 4.906256,
+   "banco": 4.906256,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2019 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2019 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2019 nota_media",
+   "planilha": 5.34828,
+   "banco": 5.34828,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2023 p",
+   "planilha": 0.995289,
+   "banco": 0.995289,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2023 nota_media",
+   "planilha": 4.921517,
+   "banco": 4.921517,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2025 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede2 2025 nota_media",
+   "planilha": 5.605806,
+   "banco": 5.605806,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2019 ideb",
+   "planilha": 5.3,
+   "banco": 5.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2019 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2019 nota_media",
+   "planilha": 5.34828,
+   "banco": 5.34828,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2023 p",
+   "planilha": 0.995289,
+   "banco": 0.995289,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2023 nota_media",
+   "planilha": 4.921517,
+   "banco": 4.921517,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2025 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2025 p",
+   "planilha": 1.0,
+   "banco": 1.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Alto Rio Novo etapa3 rede5 2025 nota_media",
+   "planilha": 5.605806,
+   "banco": 5.605806,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2019 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2019 p",
+   "planilha": 0.84858,
+   "banco": 0.84858,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2019 nota_media",
+   "planilha": 4.819339,
+   "banco": 4.819339,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2023 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2023 p",
+   "planilha": 0.945452,
+   "banco": 0.945452,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2023 nota_media",
+   "planilha": 4.743189,
+   "banco": 4.743189,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2025 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2025 p",
+   "planilha": 0.990991,
+   "banco": 0.990991,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede2 2025 nota_media",
+   "planilha": 4.862532,
+   "banco": 4.862532,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2019 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2023 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2025 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede1 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2019 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2019 p",
+   "planilha": 0.849126,
+   "banco": 0.849126,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2019 nota_media",
+   "planilha": 4.819339,
+   "banco": 4.819339,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2023 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2023 p",
+   "planilha": 0.945452,
+   "banco": 0.945452,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2023 nota_media",
+   "planilha": 4.743189,
+   "banco": 4.743189,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2025 ideb",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2025 p",
+   "planilha": 0.990991,
+   "banco": 0.990991,
+   "ok": true
+  },
+  {
+   "caso": "ideb Serra etapa3 rede5 2025 nota_media",
+   "planilha": 4.862532,
+   "banco": 4.862532,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2019 ideb",
+   "planilha": 4.5,
+   "banco": 4.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2019 p",
+   "planilha": 0.851656,
+   "banco": 0.851656,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2019 nota_media",
+   "planilha": 5.242135,
+   "banco": 5.242135,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2023 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2023 p",
+   "planilha": 0.95447,
+   "banco": 0.95447,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2023 nota_media",
+   "planilha": 5.113503,
+   "banco": 5.113503,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2025 ideb",
+   "planilha": 4.9,
+   "banco": 4.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2025 p",
+   "planilha": 0.993658,
+   "banco": 0.993658,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede2 2025 nota_media",
+   "planilha": 4.893286,
+   "banco": 4.893286,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2019 p",
+   "planilha": 0.882467,
+   "banco": 0.882467,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2023 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2025 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede1 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2019 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2019 p",
+   "planilha": 0.847581,
+   "banco": 0.847581,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2019 nota_media",
+   "planilha": 5.569988,
+   "banco": 5.569988,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2023 ideb",
+   "planilha": 4.6,
+   "banco": 4.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2023 p",
+   "planilha": 0.908666,
+   "banco": 0.908666,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2023 nota_media",
+   "planilha": 5.113503,
+   "banco": 5.113503,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2025 ideb",
+   "planilha": 4.7,
+   "banco": 4.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2025 p",
+   "planilha": 0.960961,
+   "banco": 0.960961,
+   "ok": true
+  },
+  {
+   "caso": "ideb Vitória etapa3 rede5 2025 nota_media",
+   "planilha": 4.893286,
+   "banco": 4.893286,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2019 ideb",
+   "planilha": 3.2,
+   "banco": 3.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2019 p",
+   "planilha": 0.730725,
+   "banco": 0.730725,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2019 nota_media",
+   "planilha": 4.387514,
+   "banco": 4.387514,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2023 ideb",
+   "planilha": 3.0,
+   "banco": 3.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2023 p",
+   "planilha": 0.750721,
+   "banco": 0.750721,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2023 nota_media",
+   "planilha": 4.062307,
+   "banco": 4.062307,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2025 ideb",
+   "planilha": 3.5,
+   "banco": 3.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2025 p",
+   "planilha": 0.896084,
+   "banco": 0.896084,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede2 2025 nota_media",
+   "planilha": 3.93348,
+   "banco": 3.93348,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2019 p",
+   "planilha": 0.861487,
+   "banco": 0.861487,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2023 p",
+   "planilha": 0.849036,
+   "banco": 0.849036,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2025 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2025 p",
+   "planilha": 0.902218,
+   "banco": 0.902218,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede1 2025 nota_media",
+   "planilha": 6.239692,
+   "banco": 6.239692,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2019 ideb",
+   "planilha": 3.5,
+   "banco": 3.5,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2019 p",
+   "planilha": 0.756963,
+   "banco": 0.756963,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2019 nota_media",
+   "planilha": 4.574623,
+   "banco": 4.574623,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2023 ideb",
+   "planilha": 3.2,
+   "banco": 3.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2023 p",
+   "planilha": 0.766941,
+   "banco": 0.766941,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2023 nota_media",
+   "planilha": 4.167204,
+   "banco": 4.167204,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2025 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2025 p",
+   "planilha": 0.919385,
+   "banco": 0.919385,
+   "ok": true
+  },
+  {
+   "caso": "ideb Rio de Janeiro etapa3 rede5 2025 nota_media",
+   "planilha": 4.086187,
+   "banco": 4.086187,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2019 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2019 p",
+   "planilha": 0.970286,
+   "banco": 0.970286,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2019 nota_media",
+   "planilha": 4.370978,
+   "banco": 4.370978,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2023 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2023 p",
+   "planilha": 0.932614,
+   "banco": 0.932614,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2023 nota_media",
+   "planilha": 4.421199,
+   "banco": 4.421199,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2025 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2025 p",
+   "planilha": 0.964607,
+   "banco": 0.964607,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede2 2025 nota_media",
+   "planilha": 4.583437,
+   "banco": 4.583437,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2019 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2019 p",
+   "planilha": 0.970286,
+   "banco": 0.970286,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2019 nota_media",
+   "planilha": 4.370978,
+   "banco": 4.370978,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2023 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2023 p",
+   "planilha": 0.932614,
+   "banco": 0.932614,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2023 nota_media",
+   "planilha": 4.421199,
+   "banco": 4.421199,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2025 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2025 p",
+   "planilha": 0.964607,
+   "banco": 0.964607,
+   "ok": true
+  },
+  {
+   "caso": "ideb Borá etapa3 rede5 2025 nota_media",
+   "planilha": 4.583437,
+   "banco": 4.583437,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2019 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2019 p",
+   "planilha": 0.854303,
+   "banco": 0.854303,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2019 nota_media",
+   "planilha": 4.592825,
+   "banco": 4.592825,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2023 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2023 p",
+   "planilha": 0.896169,
+   "banco": 0.896169,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2023 nota_media",
+   "planilha": 4.565442,
+   "banco": 4.565442,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2025 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2025 p",
+   "planilha": 0.924328,
+   "banco": 0.924328,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede2 2025 nota_media",
+   "planilha": 4.671205,
+   "banco": 4.671205,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2019 ideb",
+   "planilha": 6.7,
+   "banco": 6.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2019 p",
+   "planilha": 0.962292,
+   "banco": 0.962292,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2019 nota_media",
+   "planilha": 6.914886,
+   "banco": 6.914886,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2023 ideb",
+   "planilha": 6.0,
+   "banco": 6.0,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2023 p",
+   "planilha": 0.958503,
+   "banco": 0.958503,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2023 nota_media",
+   "planilha": 6.240664,
+   "banco": 6.240664,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2025 p",
+   "planilha": 0.941465,
+   "banco": 0.941465,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede1 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2019 ideb",
+   "planilha": 3.7,
+   "banco": 3.7,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2019 p",
+   "planilha": 0.85561,
+   "banco": 0.85561,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2019 nota_media",
+   "planilha": 4.285778,
+   "banco": 4.285778,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2023 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2023 p",
+   "planilha": 0.956757,
+   "banco": 0.956757,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2023 nota_media",
+   "planilha": 4.516742,
+   "banco": 4.516742,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2025 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2025 p",
+   "planilha": 0.972119,
+   "banco": 0.972119,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede3 2025 nota_media",
+   "planilha": 4.298211,
+   "banco": 4.298211,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2019 ideb",
+   "planilha": 4.1,
+   "banco": 4.1,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2019 p",
+   "planilha": 0.8853,
+   "banco": 0.8853,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2019 nota_media",
+   "planilha": 4.601447,
+   "banco": 4.601447,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2023 ideb",
+   "planilha": 4.2,
+   "banco": 4.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2023 p",
+   "planilha": 0.918187,
+   "banco": 0.918187,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2023 nota_media",
+   "planilha": 4.578743,
+   "banco": 4.578743,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2025 ideb",
+   "planilha": 4.3,
+   "banco": 4.3,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2025 p",
+   "planilha": 0.923,
+   "banco": 0.923,
+   "ok": true
+  },
+  {
+   "caso": "ideb São Paulo etapa3 rede5 2025 nota_media",
+   "planilha": 4.683861,
+   "banco": 4.683861,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2019 ideb",
+   "planilha": 3.9,
+   "banco": 3.9,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2019 p",
+   "planilha": 0.808955,
+   "banco": 0.808955,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2019 nota_media",
+   "planilha": 4.766477,
+   "banco": 4.766477,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2023 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2023 p",
+   "planilha": 0.805351,
+   "banco": 0.805351,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2023 nota_media",
+   "planilha": 4.496791,
+   "banco": 4.496791,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2025 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2025 p",
+   "planilha": 0.900852,
+   "banco": 0.900852,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede2 2025 nota_media",
+   "planilha": 4.916394,
+   "banco": 4.916394,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2019 ideb",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2019 p",
+   "planilha": 0.845707,
+   "banco": 0.845707,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2019 nota_media",
+   "planilha": 6.175976,
+   "banco": 6.175976,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2023 p",
+   "planilha": 0.916285,
+   "banco": 0.916285,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2025 ideb",
+   "planilha": 5.6,
+   "banco": 5.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2025 p",
+   "planilha": 0.902176,
+   "banco": 0.902176,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede1 2025 nota_media",
+   "planilha": 6.238106,
+   "banco": 6.238106,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2019 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2019 p",
+   "planilha": 0.681927,
+   "banco": 0.681927,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2019 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2023 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2023 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2023 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2025 ideb",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2025 p",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede3 2025 nota_media",
+   "planilha": null,
+   "banco": null,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2019 ideb",
+   "planilha": 3.8,
+   "banco": 3.8,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2019 p",
+   "planilha": 0.793554,
+   "banco": 0.793554,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2019 nota_media",
+   "planilha": 4.812122,
+   "banco": 4.812122,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2023 ideb",
+   "planilha": 3.6,
+   "banco": 3.6,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2023 p",
+   "planilha": 0.793133,
+   "banco": 0.793133,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2023 nota_media",
+   "planilha": 4.565984,
+   "banco": 4.565984,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2025 ideb",
+   "planilha": 4.4,
+   "banco": 4.4,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2025 p",
+   "planilha": 0.87376,
+   "banco": 0.87376,
+   "ok": true
+  },
+  {
+   "caso": "ideb Porto Alegre etapa3 rede5 2025 nota_media",
+   "planilha": 4.982294,
+   "banco": 4.982294,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Recife MEDIA_5_LP",
+   "planilha": 206.93,
+   "banco": 206.93,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Recife MEDIA_5_MT",
+   "planilha": 215.87,
+   "banco": 215.87,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Recife MEDIA_9_LP",
+   "planilha": 252.01000000000002,
+   "banco": 252.01,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Recife MEDIA_9_MT",
+   "planilha": 247.61,
+   "banco": 247.61,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Belo Horizonte MEDIA_5_LP",
+   "planilha": 220.33,
+   "banco": 220.33,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Belo Horizonte MEDIA_5_MT",
+   "planilha": 232.62,
+   "banco": 232.62,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Belo Horizonte MEDIA_9_LP",
+   "planilha": 266.87,
+   "banco": 266.87,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Belo Horizonte MEDIA_9_MT",
+   "planilha": 262.5,
+   "banco": 262.5,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Alto Rio Novo MEDIA_5_LP",
+   "planilha": 259.84000000000003,
+   "banco": 259.84,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Alto Rio Novo MEDIA_5_MT",
+   "planilha": 273.87,
+   "banco": 273.87,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Alto Rio Novo MEDIA_9_LP",
+   "planilha": 257.6,
+   "banco": 257.6,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Alto Rio Novo MEDIA_9_MT",
+   "planilha": 272.63,
+   "banco": 272.63,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Serra MEDIA_5_LP",
+   "planilha": 214.06,
+   "banco": 214.06,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Serra MEDIA_5_MT",
+   "planilha": 223.07,
+   "banco": 223.07,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Serra MEDIA_9_LP",
+   "planilha": 260.58,
+   "banco": 260.58,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Serra MEDIA_9_MT",
+   "planilha": 257.51,
+   "banco": 257.51,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Vitória MEDIA_5_LP",
+   "planilha": 222.52,
+   "banco": 222.52,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Vitória MEDIA_5_MT",
+   "planilha": 234.15,
+   "banco": 234.15,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Vitória MEDIA_9_LP",
+   "planilha": 263.31,
+   "banco": 263.31,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Vitória MEDIA_9_MT",
+   "planilha": 260.73,
+   "banco": 260.73,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Rio de Janeiro MEDIA_5_LP",
+   "planilha": 214.16,
+   "banco": 214.16,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Rio de Janeiro MEDIA_5_MT",
+   "planilha": 230.06,
+   "banco": 230.06,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Rio de Janeiro MEDIA_9_LP",
+   "planilha": 259.27,
+   "banco": 259.27,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Rio de Janeiro MEDIA_9_MT",
+   "planilha": 258.43,
+   "banco": 258.43,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Borá MEDIA_5_LP",
+   "planilha": 230.55,
+   "banco": 230.55,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Borá MEDIA_5_MT",
+   "planilha": 243.28,
+   "banco": 243.28,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Borá MEDIA_9_LP",
+   "planilha": 257.55,
+   "banco": 257.55,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Borá MEDIA_9_MT",
+   "planilha": 257.44,
+   "banco": 257.44,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 São Paulo MEDIA_5_LP",
+   "planilha": 214.87,
+   "banco": 214.87,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 São Paulo MEDIA_5_MT",
+   "planilha": 228.3,
+   "banco": 228.3,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 São Paulo MEDIA_9_LP",
+   "planilha": 255.72,
+   "banco": 255.72,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 São Paulo MEDIA_9_MT",
+   "planilha": 251.13,
+   "banco": 251.13,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Porto Alegre MEDIA_5_LP",
+   "planilha": 203.11,
+   "banco": 203.11,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Porto Alegre MEDIA_5_MT",
+   "planilha": 210.91,
+   "banco": 210.91,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Porto Alegre MEDIA_9_LP",
+   "planilha": 260.49,
+   "banco": 260.49,
+   "ok": true
+  },
+  {
+   "caso": "saeb2025 Porto Alegre MEDIA_9_MT",
+   "planilha": 250.93,
+   "banco": 250.93,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Recife aprovação EF",
+   "planilha": 98.1,
+   "banco": 98.1,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Belo Horizonte aprovação EF",
+   "planilha": 95.6,
+   "banco": 95.6,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Alto Rio Novo aprovação EF",
+   "planilha": 97.7,
+   "banco": 97.7,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Serra aprovação EF",
+   "planilha": 95.4,
+   "banco": 95.4,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Vitória aprovação EF",
+   "planilha": 96.7,
+   "banco": 96.7,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Rio de Janeiro aprovação EF",
+   "planilha": 97.8,
+   "banco": 97.8,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Borá aprovação EF",
+   "planilha": 99.5,
+   "banco": 99.5,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 São Paulo aprovação EF",
+   "planilha": 98.5,
+   "banco": 98.5,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2023 Porto Alegre aprovação EF",
+   "planilha": 92.5,
+   "banco": 92.5,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Recife aprovação EF (posicional)",
+   "planilha": 91.7,
+   "banco": 91.7,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Belo Horizonte aprovação EF (posicional)",
+   "planilha": 92.6,
+   "banco": 92.6,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Alto Rio Novo aprovação EF (posicional)",
+   "planilha": 88.5,
+   "banco": 88.5,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Serra aprovação EF (posicional)",
+   "planilha": 88.4,
+   "banco": 88.4,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Vitória aprovação EF (posicional)",
+   "planilha": 91.9,
+   "banco": 91.9,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Rio de Janeiro aprovação EF (posicional)",
+   "planilha": 91.4,
+   "banco": 91.4,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Borá aprovação EF (posicional)",
+   "planilha": 95.9,
+   "banco": 95.9,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 São Paulo aprovação EF (posicional)",
+   "planilha": 95.1,
+   "banco": 95.1,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2016 Porto Alegre aprovação EF (posicional)",
+   "planilha": 86.1,
+   "banco": 86.1,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Recife aprovação EF (posicional)",
+   "planilha": 88.0,
+   "banco": 88.0,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Belo Horizonte aprovação EF (posicional)",
+   "planilha": 92.3,
+   "banco": 92.3,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Alto Rio Novo aprovação EF (posicional)",
+   "planilha": 93.2,
+   "banco": 93.2,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Serra aprovação EF (posicional)",
+   "planilha": 87.3,
+   "banco": 87.3,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Vitória aprovação EF (posicional)",
+   "planilha": 89.7,
+   "banco": 89.7,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Rio de Janeiro aprovação EF (posicional)",
+   "planilha": 90.1,
+   "banco": 90.1,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Borá aprovação EF (posicional)",
+   "planilha": 96.1,
+   "banco": 96.1,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 São Paulo aprovação EF (posicional)",
+   "planilha": 95.3,
+   "banco": 95.3,
+   "ok": true
+  },
+  {
+   "caso": "rendimento 2013 Porto Alegre aprovação EF (posicional)",
+   "planilha": 84.1,
+   "banco": 84.1,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024372 média",
+   "planilha": 4.29,
+   "banco": 4.29,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024372 alunos",
+   "planilha": 12.0,
+   "banco": 12.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024372 nível4",
+   "planilha": 25.0,
+   "banco": 25.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024666 média",
+   "planilha": 4.88,
+   "banco": 4.88,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024666 alunos",
+   "planilha": 34.0,
+   "banco": 34.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024666 nível4",
+   "planilha": 33.01,
+   "banco": 33.01,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024682 média",
+   "planilha": 4.91,
+   "banco": 4.91,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024682 alunos",
+   "planilha": 166.0,
+   "banco": 166.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024682 nível4",
+   "planilha": 23.27,
+   "banco": 23.27,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024828 média",
+   "planilha": 5.03,
+   "banco": 5.03,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024828 alunos",
+   "planilha": 33.0,
+   "banco": 33.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024828 nível4",
+   "planilha": 45.85,
+   "banco": 45.85,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024968 média",
+   "planilha": 5.21,
+   "banco": 5.21,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024968 alunos",
+   "planilha": 146.0,
+   "banco": 146.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11024968 nível4",
+   "planilha": 24.41,
+   "banco": 24.41,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025280 média",
+   "planilha": 4.58,
+   "banco": 4.58,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025280 alunos",
+   "planilha": 30.0,
+   "banco": 30.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025280 nível4",
+   "planilha": 33.33,
+   "banco": 33.33,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025310 média",
+   "planilha": 4.98,
+   "banco": 4.98,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025310 alunos",
+   "planilha": 53.0,
+   "banco": 53.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025310 nível4",
+   "planilha": 21.39,
+   "banco": 21.39,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025352 média",
+   "planilha": 4.82,
+   "banco": 4.82,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025352 alunos",
+   "planilha": 40.0,
+   "banco": 40.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025352 nível4",
+   "planilha": 58.82,
+   "banco": 58.82,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025620 média",
+   "planilha": 4.62,
+   "banco": 4.62,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025620 alunos",
+   "planilha": 51.0,
+   "banco": 51.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025620 nível4",
+   "planilha": 25.53,
+   "banco": 25.53,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025638 média",
+   "planilha": 4.96,
+   "banco": 4.96,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025638 alunos",
+   "planilha": 191.0,
+   "banco": 191.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025638 nível4",
+   "planilha": 24.77,
+   "banco": 24.77,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025654 média",
+   "planilha": 5.13,
+   "banco": 5.13,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025654 alunos",
+   "planilha": 54.0,
+   "banco": 54.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11025654 nível4",
+   "planilha": 25.42,
+   "banco": 25.42,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11047461 média",
+   "planilha": 5.01,
+   "banco": 5.01,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11047461 alunos",
+   "planilha": 80.0,
+   "banco": 80.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11047461 nível4",
+   "planilha": 34.43,
+   "banco": 34.43,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11050594 média",
+   "planilha": 5.26,
+   "banco": 5.26,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11050594 alunos",
+   "planilha": 54.0,
+   "banco": 54.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11050594 nível4",
+   "planilha": 24.36,
+   "banco": 24.36,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006773 média",
+   "planilha": 5.07,
+   "banco": 5.07,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006773 alunos",
+   "planilha": 409.0,
+   "banco": 409.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006773 nível4",
+   "planilha": 31.17,
+   "banco": 31.17,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006846 média",
+   "planilha": 4.94,
+   "banco": 4.94,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006846 alunos",
+   "planilha": 218.0,
+   "banco": 218.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006846 nível4",
+   "planilha": 29.51,
+   "banco": 29.51,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006854 média",
+   "planilha": 4.89,
+   "banco": 4.89,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006854 alunos",
+   "planilha": 99.0,
+   "banco": 99.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006854 nível4",
+   "planilha": 33.8,
+   "banco": 33.8,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006889 média",
+   "planilha": 4.8,
+   "banco": 4.8,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006889 alunos",
+   "planilha": 494.0,
+   "banco": 494.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006889 nível4",
+   "planilha": 33.47,
+   "banco": 33.47,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006900 média",
+   "planilha": 4.67,
+   "banco": 4.67,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006900 alunos",
+   "planilha": 35.0,
+   "banco": 35.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11006900 nível4",
+   "planilha": 36.81,
+   "banco": 36.81,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007079 média",
+   "planilha": 4.98,
+   "banco": 4.98,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007079 alunos",
+   "planilha": 110.0,
+   "banco": 110.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007079 nível4",
+   "planilha": 29.47,
+   "banco": 29.47,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007168 média",
+   "planilha": 5.1,
+   "banco": 5.1,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007168 alunos",
+   "planilha": 215.0,
+   "banco": 215.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007168 nível4",
+   "planilha": 30.91,
+   "banco": 30.91,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007222 média",
+   "planilha": 4.67,
+   "banco": 4.67,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007222 alunos",
+   "planilha": 47.0,
+   "banco": 47.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007222 nível4",
+   "planilha": 28.21,
+   "banco": 28.21,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007249 média",
+   "planilha": 5.01,
+   "banco": 5.01,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007249 alunos",
+   "planilha": 50.0,
+   "banco": 50.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007249 nível4",
+   "planilha": 41.63,
+   "banco": 41.63,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007257 média",
+   "planilha": 4.77,
+   "banco": 4.77,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007257 alunos",
+   "planilha": 68.0,
+   "banco": 68.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007257 nível4",
+   "planilha": 27.04,
+   "banco": 27.04,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007281 média",
+   "planilha": 4.79,
+   "banco": 4.79,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007281 alunos",
+   "planilha": 108.0,
+   "banco": 108.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007281 nível4",
+   "planilha": 42.66,
+   "banco": 42.66,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007346 média",
+   "planilha": 4.85,
+   "banco": 4.85,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007346 alunos",
+   "planilha": 39.0,
+   "banco": 39.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007346 nível4",
+   "planilha": 27.7,
+   "banco": 27.7,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007443 média",
+   "planilha": 4.76,
+   "banco": 4.76,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007443 alunos",
+   "planilha": 45.0,
+   "banco": 45.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007443 nível4",
+   "planilha": 56.39,
+   "banco": 56.39,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007451 média",
+   "planilha": 4.78,
+   "banco": 4.78,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007451 alunos",
+   "planilha": 177.0,
+   "banco": 177.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007451 nível4",
+   "planilha": 29.53,
+   "banco": 29.53,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007508 média",
+   "planilha": 4.89,
+   "banco": 4.89,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007508 alunos",
+   "planilha": 93.0,
+   "banco": 93.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007508 nível4",
+   "planilha": 28.14,
+   "banco": 28.14,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007524 média",
+   "planilha": 5.24,
+   "banco": 5.24,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007524 alunos",
+   "planilha": 159.0,
+   "banco": 159.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007524 nível4",
+   "planilha": 25.22,
+   "banco": 25.22,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007605 média",
+   "planilha": 4.86,
+   "banco": 4.86,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007605 alunos",
+   "planilha": 73.0,
+   "banco": 73.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007605 nível4",
+   "planilha": 32.36,
+   "banco": 32.36,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007702 média",
+   "planilha": 4.59,
+   "banco": 4.59,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007702 alunos",
+   "planilha": 38.0,
+   "banco": 38.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007702 nível4",
+   "planilha": 40.98,
+   "banco": 40.98,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007710 média",
+   "planilha": 4.57,
+   "banco": 4.57,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007710 alunos",
+   "planilha": 102.0,
+   "banco": 102.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007710 nível4",
+   "planilha": 20.68,
+   "banco": 20.68,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007737 média",
+   "planilha": 4.64,
+   "banco": 4.64,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007737 alunos",
+   "planilha": 89.0,
+   "banco": 89.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007737 nível4",
+   "planilha": 23.59,
+   "banco": 23.59,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007834 média",
+   "planilha": 4.88,
+   "banco": 4.88,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007834 alunos",
+   "planilha": 55.0,
+   "banco": 55.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007834 nível4",
+   "planilha": 24.73,
+   "banco": 24.73,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007885 média",
+   "planilha": 5.2,
+   "banco": 5.2,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007885 alunos",
+   "planilha": 127.0,
+   "banco": 127.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007885 nível4",
+   "planilha": 22.54,
+   "banco": 22.54,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007893 média",
+   "planilha": 5.07,
+   "banco": 5.07,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007893 alunos",
+   "planilha": 335.0,
+   "banco": 335.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007893 nível4",
+   "planilha": 25.02,
+   "banco": 25.02,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007907 média",
+   "planilha": 5.29,
+   "banco": 5.29,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007907 alunos",
+   "planilha": 135.0,
+   "banco": 135.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11007907 nível4",
+   "planilha": 24.19,
+   "banco": 24.19,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041439 média",
+   "planilha": 4.86,
+   "banco": 4.86,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041439 alunos",
+   "planilha": 95.0,
+   "banco": 95.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041439 nível4",
+   "planilha": 25.4,
+   "banco": 25.4,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041986 média",
+   "planilha": 4.87,
+   "banco": 4.87,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041986 alunos",
+   "planilha": 25.0,
+   "banco": 25.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11041986 nível4",
+   "planilha": 21.67,
+   "banco": 21.67,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11048620 média",
+   "planilha": 4.68,
+   "banco": 4.68,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11048620 alunos",
+   "planilha": 191.0,
+   "banco": 191.0,
+   "ok": true
+  },
+  {
+   "caso": "inse2023 escola 11048620 nível4",
+   "planilha": 32.81,
+   "banco": 32.81,
+   "ok": true
+  }
+ ]
+}

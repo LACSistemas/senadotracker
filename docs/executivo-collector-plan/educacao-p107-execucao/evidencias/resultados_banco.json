@@ -1,0 +1,316 @@
+{
+ "por_ano": [
+  {
+   "year": 2021,
+   "contratos": 31,
+   "centavos": "27070774",
+   "outliers": 0
+  },
+  {
+   "year": 2022,
+   "contratos": 351,
+   "centavos": "984563973",
+   "outliers": 0
+  },
+  {
+   "year": 2023,
+   "contratos": 5760,
+   "centavos": "111096646288",
+   "outliers": 0
+  },
+  {
+   "year": 2024,
+   "contratos": 84217,
+   "centavos": "3353929940535",
+   "outliers": 1
+  },
+  {
+   "year": 2025,
+   "contratos": 150361,
+   "centavos": "8960188131678",
+   "outliers": 2
+  },
+  {
+   "year": 2026,
+   "contratos": 142990,
+   "centavos": "9040786523570",
+   "outliers": 2
+  }
+ ],
+ "por_categoria": [
+  {
+   "category": 1,
+   "contratos": 5419,
+   "centavos": "3229339987542"
+  },
+  {
+   "category": 2,
+   "contratos": 5704,
+   "centavos": "1461711936887"
+  },
+  {
+   "category": 3,
+   "contratos": 6031,
+   "centavos": "2212374975262"
+  },
+  {
+   "category": 4,
+   "contratos": 11511,
+   "centavos": "437848162858"
+  },
+  {
+   "category": 5,
+   "contratos": 12651,
+   "centavos": "558465823264"
+  },
+  {
+   "category": 6,
+   "contratos": 4809,
+   "centavos": "295720796148"
+  },
+  {
+   "category": 7,
+   "contratos": 754,
+   "centavos": "54923979538"
+  },
+  {
+   "category": 8,
+   "contratos": 115121,
+   "centavos": "1923104134126"
+  },
+  {
+   "category": 9,
+   "contratos": 33759,
+   "centavos": "1975363767472"
+  },
+  {
+   "category": 10,
+   "contratos": 22323,
+   "centavos": "1584578450699"
+  },
+  {
+   "category": 11,
+   "contratos": 4459,
+   "centavos": "356347248794"
+  },
+  {
+   "category": 12,
+   "contratos": 6267,
+   "centavos": "766894180520"
+  },
+  {
+   "category": 13,
+   "contratos": 14534,
+   "centavos": "2552889367564"
+  },
+  {
+   "category": 14,
+   "contratos": 2651,
+   "centavos": "278377421694"
+  },
+  {
+   "category": 15,
+   "contratos": 996,
+   "centavos": "49408619702"
+  },
+  {
+   "category": 16,
+   "contratos": 148198,
+   "centavos": "6657373386045"
+  }
+ ],
+ "por_confianca": [
+  {
+   "best_confidence": 1,
+   "contratos": 2827,
+   "centavos": "701694523871"
+  },
+  {
+   "best_confidence": 2,
+   "contratos": 380883,
+   "centavos": "20765318352947"
+  },
+  {
+   "best_confidence": 3,
+   "contratos": 44482,
+   "centavos": "2290831179739"
+  }
+ ],
+ "municipios_com_contrato": 3890,
+ "ufs_com_contrato": 27,
+ "fornecedores_pj": 75578,
+ "orgaos": 5585,
+ "contratos_pf_sem_fornecedor": 47282,
+ "compras": {
+  "n": 2030,
+  "sigilosas": 44,
+  "est": "80690967391054",
+  "hom": "78831052557739"
+ },
+ "termos": {
+  "n": 21,
+  "contratos": 6
+ },
+ "obras": [
+  {
+   "situacao": "Concluída",
+   "n": 3475,
+   "com_valor": 1062,
+   "placeholder": 2413,
+   "com_contrato_cipi": 2858
+  },
+  {
+   "situacao": "Cadastrada",
+   "n": 1957,
+   "com_valor": 1387,
+   "placeholder": 570,
+   "com_contrato_cipi": 904
+  },
+  {
+   "situacao": "Em execução",
+   "n": 779,
+   "com_valor": 443,
+   "placeholder": 336,
+   "com_contrato_cipi": 583
+  },
+  {
+   "situacao": "Cancelada",
+   "n": 287,
+   "com_valor": 64,
+   "placeholder": 223,
+   "com_contrato_cipi": 267
+  },
+  {
+   "situacao": "Paralisada",
+   "n": 135,
+   "com_valor": 11,
+   "placeholder": 124,
+   "com_contrato_cipi": 127
+  },
+  {
+   "situacao": "Inativada",
+   "n": 4,
+   "com_valor": 4,
+   "placeholder": 0,
+   "com_contrato_cipi": 0
+  }
+ ],
+ "obras_por_uf": [
+  {
+   "uf": 12,
+   "n": 348
+  },
+  {
+   "uf": 13,
+   "n": 609
+  },
+  {
+   "uf": 16,
+   "n": 178
+  },
+  {
+   "uf": 23,
+   "n": 1906
+  },
+  {
+   "uf": 27,
+   "n": 582
+  },
+  {
+   "uf": 29,
+   "n": 2440
+  },
+  {
+   "uf": 32,
+   "n": 329
+  },
+  {
+   "uf": 52,
+   "n": 60
+  },
+  {
+   "uf": 53,
+   "n": 185
+  }
+ ],
+ "contratos_cipi": {
+  "n": 17838,
+  "com_obra": 2
+ },
+ "top_fornecedores": [
+  {
+   "cnpj": "51754357000104",
+   "name": "IG4 BTG PACTUAL HEALTH INFRA FIP MULTIESTRATEGIA RESPONSABILIDADE LIMITADA",
+   "contratos": 1,
+   "centavos": "670500000000"
+  },
+  {
+   "cnpj": "25527559000103",
+   "name": "KBR CONSTRUTORA LTDA",
+   "contratos": 1,
+   "centavos": "648366701400"
+  },
+  {
+   "cnpj": "83310177000111",
+   "name": "CONSTRUTORA KARAJAS LTDA",
+   "contratos": 3,
+   "centavos": "587182484172"
+  },
+  {
+   "cnpj": "07158769000181",
+   "name": "H R ENGENHARIA E CONSTRUCOES LTDA",
+   "contratos": 6,
+   "centavos": "534204853804"
+  },
+  {
+   "cnpj": "37664917000109",
+   "name": "L F EDITORA E DISTRIBUIDORA DE LIVROS LTDA",
+   "contratos": 33,
+   "centavos": "496567953384"
+  }
+ ],
+ "casos": [
+  {
+   "name": "Recife",
+   "ibge7": 2611606,
+   "contratos": 204,
+   "centavos": "72089483686"
+  },
+  {
+   "name": "Belo Horizonte",
+   "ibge7": 3106200,
+   "contratos": 764,
+   "centavos": "69348440301"
+  },
+  {
+   "name": "Alto Rio Novo",
+   "ibge7": 3200359,
+   "contratos": 2,
+   "centavos": "16118471"
+  },
+  {
+   "name": "Serra",
+   "ibge7": 3205002,
+   "contratos": 38,
+   "centavos": "50426910703"
+  },
+  {
+   "name": "Vitória",
+   "ibge7": 3205309,
+   "contratos": 219,
+   "centavos": "21019772631"
+  },
+  {
+   "name": "Rio de Janeiro",
+   "ibge7": 3304557,
+   "contratos": 235,
+   "centavos": "156138276114"
+  },
+  {
+   "name": "São Paulo",
+   "ibge7": 3550308,
+   "contratos": 3212,
+   "centavos": "901981265509"
+  }
+ ]
+}

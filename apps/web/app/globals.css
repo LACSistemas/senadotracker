@@ -83,6 +83,11 @@ button,input,select { font:inherit; }
   .card-lift:hover { transform:none; }
 }
 
+/* Ponto "atual" na mini-linha do tempo de atuação (Onde atua?): pulso suave que marca a designação em curso. */
+@keyframes ap-pulse { 0%,100% { box-shadow:0 0 0 0 color-mix(in srgb, var(--primary) 55%, transparent); } 50% { box-shadow:0 0 0 4px color-mix(in srgb, var(--primary) 0%, transparent); } }
+.ap-pulse { animation:ap-pulse 2s ease-in-out infinite; }
+@media (prefers-reduced-motion:reduce) { .ap-pulse { animation:none; } }
+
 /* Hemiciclo de composição partidária: cada bancada surge em sequência, da esquerda para a direita; dim suave ao destacar uma bancada. */
 @keyframes hemi-in { from { opacity:0; transform:translateY(5px); } }
 .hemi-party { transition:opacity .2s ease; animation:hemi-in .6s cubic-bezier(.2,.7,.2,1) backwards; animation-delay:var(--d,0ms); }

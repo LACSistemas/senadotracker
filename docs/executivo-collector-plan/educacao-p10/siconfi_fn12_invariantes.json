@@ -1,0 +1,207 @@
+{
+ "2014": {
+  "estagios_conferidos_ok": 15609,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5204,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 0,
+   "p10": null,
+   "mediana": null,
+   "p90": null
+  }
+ },
+ "2015": {
+  "estagios_conferidos_ok": 16325,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5444,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 0,
+   "p10": null,
+   "mediana": null,
+   "p90": null
+  }
+ },
+ "2016": {
+  "estagios_conferidos_ok": 16328,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5445,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 0,
+   "p10": null,
+   "mediana": null,
+   "p90": null
+  }
+ },
+ "2017": {
+  "estagios_conferidos_ok": 16627,
+  "estagios_divergentes": 39,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5543,
+  "entes_com_divergencia": 13,
+  "exemplos": [
+   {
+    "ente": 1503093,
+    "estagio": "EMP",
+    "funcao12": 3933840375,
+    "soma_subfuncoes": 3807352590.0
+   },
+   {
+    "ente": 1503093,
+    "estagio": "LIQ",
+    "funcao12": 3933840375,
+    "soma_subfuncoes": 3807352590.0
+   },
+   {
+    "ente": 1503093,
+    "estagio": "PAG",
+    "funcao12": 3902135893,
+    "soma_subfuncoes": 3777350874.0
+   },
+   {
+    "ente": 3102852,
+    "estagio": "EMP",
+    "funcao12": 651704570,
+    "soma_subfuncoes": 631427194.0
+   },
+   {
+    "ente": 3102852,
+    "estagio": "LIQ",
+    "funcao12": 616739366,
+    "soma_subfuncoes": 596461990.0
+   },
+   {
+    "ente": 3102852,
+    "estagio": "PAG",
+    "funcao12": 561341447,
+    "soma_subfuncoes": 546801056.0
+   }
+  ],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5556,
+   "p10": 0.2128,
+   "mediana": 0.3002,
+   "p90": 0.442
+  }
+ },
+ "2018": {
+  "estagios_conferidos_ok": 16654,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5552,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5552,
+   "p10": 0.2038,
+   "mediana": 0.2912,
+   "p90": 0.4262
+  }
+ },
+ "2019": {
+  "estagios_conferidos_ok": 16693,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5565,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5565,
+   "p10": 0.202,
+   "mediana": 0.2892,
+   "p90": 0.426
+  }
+ },
+ "2020": {
+  "estagios_conferidos_ok": 16733,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5579,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5579,
+   "p10": 0.1678,
+   "mediana": 0.2466,
+   "p90": 0.3778
+  }
+ },
+ "2021": {
+  "estagios_conferidos_ok": 16740,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5580,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5580,
+   "p10": 0.1831,
+   "mediana": 0.2694,
+   "p90": 0.4002
+  }
+ },
+ "2022": {
+  "estagios_conferidos_ok": 16745,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5582,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5582,
+   "p10": 0.1938,
+   "mediana": 0.2792,
+   "p90": 0.4228
+  }
+ },
+ "2023": {
+  "estagios_conferidos_ok": 16745,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5582,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5582,
+   "p10": 0.1933,
+   "mediana": 0.2788,
+   "p90": 0.4293
+  }
+ },
+ "2024": {
+  "estagios_conferidos_ok": 16709,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5571,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5571,
+   "p10": 0.1861,
+   "mediana": 0.2712,
+   "p90": 0.4285
+  }
+ },
+ "2025": {
+  "estagios_conferidos_ok": 16589,
+  "estagios_divergentes": 0,
+  "estagios_sem_subfuncoes": 0,
+  "entes_todos_ok": 5530,
+  "entes_com_divergencia": 0,
+  "exemplos": [],
+  "participacao_funcao12_no_total_EMP": {
+   "n": 5530,
+   "p10": 0.1961,
+   "mediana": 0.2857,
+   "p90": 0.4514
+  }
+ }
+}

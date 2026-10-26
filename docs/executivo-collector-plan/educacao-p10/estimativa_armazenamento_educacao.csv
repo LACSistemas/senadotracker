@@ -1,0 +1,76 @@
+onda,item,tipo,cenario,linhas,bytes_por_linha,raw_gb,banco_gb,change_log_gb,premissa
+P10.1,exec_edu_school + snapshot + name + identity,db,conservador,2825000,130,0,0.367,0.154,9 edições × ~215 mil escolas; 130 B/linha com índices
+P10.1,RAW Censo Escolar (ZIPs),raw,conservador,0,0,0.3,0.0,0.0,2017–2025 | 2007–2025 | 1995–2025 (ZIPs medidos por HEAD)
+P10.1,staging TSV (whitelist) + temporários,stg,conservador,0,0,0.3,0.0,0.0,14 MB/ano compactado + 2× o maior arquivo em fluxo
+P10.2,exec_edu_school_offer_year,db,conservador,1935000,160,0,0.31,0.105,≈20 colunas inteiras + PK
+P10.2,exec_ind_value (município/UF/Brasil),db,conservador,1007640,170,0,0.171,0.055,20–45 indicadores × 5.598 entes × anos
+P10.2,RAW Sinopses (reconciliação),raw,conservador,0,0,0.23,0.0,0.0,"Sinopse 2025 = 232 MB; todas as edições ≈ 2,9 GB (extrapolação)"
+P10.3,exec_edu_school_infra_year,db,conservador,1935000,120,0,0.232,0.105,≈25 colunas smallint + PK
+P10.3,exec_ind_value (infra/docentes),db,conservador,1511460,170,0,0.257,0.082,30–70 indicadores × 5.598 entes × anos
+P10.3,"RAW INEP Indicadores (docentes, ATU, HAD, TDI, rendimento, ICG…)",raw,conservador,0,0,0.51,0.0,0.0,2025 | 2019+ | todos os anos (HEAD de 494 arquivos)
+P10.4,exec_edu_school_indicator (Ideb/N/P + indicadores INEP por escola),db,conservador,5500000,78,0,0.429,0.3,cons.: só Ideb; prov.: Ideb + 6 indicadores 2021–25; pess.: 9 indicadores 2013–25
+P10.4,exec_ind_value (Ideb/Saeb/rendimento territoriais),db,conservador,3694680,170,0,0.628,0.201,
+P10.4,RAW Ideb 2025 + Saeb 2025,raw,conservador,0,0,0.3,0.0,0.0,Ideb 2025 ≈ 270 MB + Saeb 24 MB (+ edições antigas no pessimista)
+P10.5,exec_fin_fact (subfunções 12.xxx),db,conservador,800000,102,0,0.082,0.044,5.570 entes × 12 anos × subfunções presentes × 5 colunas
+P10.5,exec_edu_siope_* (sem Remuneração),db,conservador,3000000,60,0,0.18,0.164,prov.: Dados Gerais + Função + Indicadores + Info. Complementares 2017–2026; pess. inclui Receita
+P10.5,exec_ind_value (finanças),db,conservador,2687040,170,0,0.457,0.146,40 indicadores × entes × 12 anos
+P10.5,RAW SIOPE (JSONL gz),raw,conservador,0,0,0.1,0.0,0.0,"prov.: 1,6 GB JSON ≈ 0,16 GB gz; pess.: com Receita (~8 GB JSON ≈ 1,5 GB gz)"
+P10.5,RAW Siconfi,raw,conservador,0,0,0.0,0.0,0.0,"reuso do RAW existente (260 MB), sem download"
+P10.6,"exec_edu_transfer (Portal, função 12)",db,conservador,3000000,80,0,0.24,0.164,≈ 62 mil linhas/mês em 2025 × 153 meses (anos antigos menores)
+P10.6,exec_edu_pdde + uex,db,conservador,1000000,70,0,0.07,0.054,escolas × programas × anos (PDDE Info)
+P10.6,RAW Portal Transferências + PDDE Info,raw,conservador,0,0,0.3,0.0,0.0,Portal 514 MB (2014–2026) + PDDE por município/UF
+P10.7,exec_fin_contract (+Educação) + class,db,conservador,290000,235,0,0.068,0.016,núcleo 286.736 (+ superior 326.461 no provável)
+P10.7,exec_edu_work + RAW Obrasgov,db,conservador,30000,120,0.1,0.004,0.002,
+P10.7,RAW PNCP incremental,raw,conservador,0,0,0.1,0.0,0.0,≈ 31 MB/mês
+P10.8,exec_edu_course_offer_year + ies,db,conservador,3400000,120,0,0.408,0.185,672 mil linhas/ano × 5 | 10 | 30 anos
+P10.8,RAW Censo Superior,raw,conservador,0,0,0.5,0.0,0.0,30 ZIPs = 750 MB (+ sinopses)
+P10.1,exec_edu_school + snapshot + name + identity,db,provavel,4975000,130,0,0.647,0.542,19 edições × ~215 mil escolas; 130 B/linha com índices
+P10.1,RAW Censo Escolar (ZIPs),raw,provavel,0,0,1.01,0.0,0.0,2017–2025 | 2007–2025 | 1995–2025 (ZIPs medidos por HEAD)
+P10.1,staging TSV (whitelist) + temporários,stg,provavel,0,0,0.6,0.0,0.0,14 MB/ano compactado + 2× o maior arquivo em fluxo
+P10.2,exec_edu_school_offer_year,db,provavel,4085000,160,0,0.654,0.445,≈20 colunas inteiras + PK
+P10.2,exec_ind_value (município/UF/Brasil),db,provavel,3190860,170,0,0.542,0.348,20–45 indicadores × 5.598 entes × anos
+P10.2,RAW Sinopses (reconciliação),raw,provavel,0,0,0.23,0.0,0.0,"Sinopse 2025 = 232 MB; todas as edições ≈ 2,9 GB (extrapolação)"
+P10.3,exec_edu_school_infra_year,db,provavel,4085000,120,0,0.49,0.445,≈25 colunas smallint + PK
+P10.3,exec_ind_value (infra/docentes),db,provavel,4786290,170,0,0.814,0.522,30–70 indicadores × 5.598 entes × anos
+P10.3,"RAW INEP Indicadores (docentes, ATU, HAD, TDI, rendimento, ICG…)",raw,provavel,0,0,3.39,0.0,0.0,2025 | 2019+ | todos os anos (HEAD de 494 arquivos)
+P10.4,exec_edu_school_indicator (Ideb/N/P + indicadores INEP por escola),db,provavel,18400000,78,0,1.435,2.006,cons.: só Ideb; prov.: Ideb + 6 indicadores 2021–25; pess.: 9 indicadores 2013–25
+P10.4,exec_ind_value (Ideb/Saeb/rendimento territoriais),db,provavel,8397000,170,0,1.427,0.915,
+P10.4,RAW Ideb 2025 + Saeb 2025,raw,provavel,0,0,0.3,0.0,0.0,Ideb 2025 ≈ 270 MB + Saeb 24 MB (+ edições antigas no pessimista)
+P10.5,exec_fin_fact (subfunções 12.xxx),db,provavel,1300000,102,0,0.133,0.142,5.570 entes × 12 anos × subfunções presentes × 5 colunas
+P10.5,exec_edu_siope_* (sem Remuneração),db,provavel,6000000,60,0,0.36,0.654,prov.: Dados Gerais + Função + Indicadores + Info. Complementares 2017–2026; pess. inclui Receita
+P10.5,exec_ind_value (finanças),db,provavel,2687040,170,0,0.457,0.293,40 indicadores × entes × 12 anos
+P10.5,RAW SIOPE (JSONL gz),raw,provavel,0,0,0.2,0.0,0.0,"prov.: 1,6 GB JSON ≈ 0,16 GB gz; pess.: com Receita (~8 GB JSON ≈ 1,5 GB gz)"
+P10.5,RAW Siconfi,raw,provavel,0,0,0.0,0.0,0.0,"reuso do RAW existente (260 MB), sem download"
+P10.6,"exec_edu_transfer (Portal, função 12)",db,provavel,6000000,80,0,0.48,0.654,≈ 62 mil linhas/mês em 2025 × 153 meses (anos antigos menores)
+P10.6,exec_edu_pdde + uex,db,provavel,3300000,70,0,0.231,0.36,escolas × programas × anos (PDDE Info)
+P10.6,RAW Portal Transferências + PDDE Info,raw,provavel,0,0,1.5,0.0,0.0,Portal 514 MB (2014–2026) + PDDE por município/UF
+P10.7,exec_fin_contract (+Educação) + class,db,provavel,613000,235,0,0.144,0.067,núcleo 286.736 (+ superior 326.461 no provável)
+P10.7,exec_edu_work + RAW Obrasgov,db,provavel,30000,120,0.1,0.004,0.003,
+P10.7,RAW PNCP incremental,raw,provavel,0,0,0.4,0.0,0.0,≈ 31 MB/mês
+P10.8,exec_edu_course_offer_year + ies,db,provavel,6700000,120,0,0.804,0.73,672 mil linhas/ano × 5 | 10 | 30 anos
+P10.8,RAW Censo Superior,raw,provavel,0,0,0.75,0.0,0.0,30 ZIPs = 750 MB (+ sinopses)
+P10.1,exec_edu_school + snapshot + name + identity,db,pessimista,7555000,130,0,0.982,1.647,31 edições × ~215 mil escolas; 130 B/linha com índices
+P10.1,RAW Censo Escolar (ZIPs),raw,pessimista,0,0,1.53,0.0,0.0,2017–2025 | 2007–2025 | 1995–2025 (ZIPs medidos por HEAD)
+P10.1,staging TSV (whitelist) + temporários,stg,pessimista,0,0,1.2,0.0,0.0,14 MB/ano compactado + 2× o maior arquivo em fluxo
+P10.2,exec_edu_school_offer_year,db,pessimista,6665000,160,0,1.066,1.453,≈20 colunas inteiras + PK
+P10.2,exec_ind_value (município/UF/Brasil),db,pessimista,4786290,170,0,0.814,1.043,20–45 indicadores × 5.598 entes × anos
+P10.2,RAW Sinopses (reconciliação),raw,pessimista,0,0,2.9,0.0,0.0,"Sinopse 2025 = 232 MB; todas as edições ≈ 2,9 GB (extrapolação)"
+P10.3,exec_edu_school_infra_year,db,pessimista,6665000,120,0,0.8,1.453,≈25 colunas smallint + PK
+P10.3,exec_ind_value (infra/docentes),db,pessimista,7445340,170,0,1.266,1.623,30–70 indicadores × 5.598 entes × anos
+P10.3,"RAW INEP Indicadores (docentes, ATU, HAD, TDI, rendimento, ICG…)",raw,pessimista,0,0,6.67,0.0,0.0,2025 | 2019+ | todos os anos (HEAD de 494 arquivos)
+P10.4,exec_edu_school_indicator (Ideb/N/P + indicadores INEP por escola),db,pessimista,80000000,78,0,6.24,17.44,cons.: só Ideb; prov.: Ideb + 6 indicadores 2021–25; pess.: 9 indicadores 2013–25
+P10.4,exec_ind_value (Ideb/Saeb/rendimento territoriais),db,pessimista,15954300,170,0,2.712,3.478,
+P10.4,RAW Ideb 2025 + Saeb 2025,raw,pessimista,0,0,0.6,0.0,0.0,Ideb 2025 ≈ 270 MB + Saeb 24 MB (+ edições antigas no pessimista)
+P10.5,exec_fin_fact (subfunções 12.xxx),db,pessimista,3300000,102,0,0.337,0.719,5.570 entes × 12 anos × subfunções presentes × 5 colunas
+P10.5,exec_edu_siope_* (sem Remuneração),db,pessimista,31000000,60,0,1.86,6.758,prov.: Dados Gerais + Função + Indicadores + Info. Complementares 2017–2026; pess. inclui Receita
+P10.5,exec_ind_value (finanças),db,pessimista,2687040,170,0,0.457,0.586,40 indicadores × entes × 12 anos
+P10.5,RAW SIOPE (JSONL gz),raw,pessimista,0,0,1.5,0.0,0.0,"prov.: 1,6 GB JSON ≈ 0,16 GB gz; pess.: com Receita (~8 GB JSON ≈ 1,5 GB gz)"
+P10.5,RAW Siconfi,raw,pessimista,0,0,0.0,0.0,0.0,"reuso do RAW existente (260 MB), sem download"
+P10.6,"exec_edu_transfer (Portal, função 12)",db,pessimista,10000000,80,0,0.8,2.18,≈ 62 mil linhas/mês em 2025 × 153 meses (anos antigos menores)
+P10.6,exec_edu_pdde + uex,db,pessimista,10000000,70,0,0.7,2.18,escolas × programas × anos (PDDE Info)
+P10.6,RAW Portal Transferências + PDDE Info,raw,pessimista,0,0,2.5,0.0,0.0,Portal 514 MB (2014–2026) + PDDE por município/UF
+P10.7,exec_fin_contract (+Educação) + class,db,pessimista,1000000,235,0,0.235,0.218,núcleo 286.736 (+ superior 326.461 no provável)
+P10.7,exec_edu_work + RAW Obrasgov,db,pessimista,30000,120,0.1,0.004,0.007,
+P10.7,RAW PNCP incremental,raw,pessimista,0,0,0.8,0.0,0.0,≈ 31 MB/mês
+P10.8,exec_edu_course_offer_year + ies,db,pessimista,20000000,120,0,2.4,4.36,672 mil linhas/ano × 5 | 10 | 30 anos
+P10.8,RAW Censo Superior,raw,pessimista,0,0,1.2,0.0,0.0,30 ZIPs = 750 MB (+ sinopses)

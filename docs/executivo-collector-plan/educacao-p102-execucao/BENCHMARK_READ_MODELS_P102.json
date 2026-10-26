@@ -1,0 +1,326 @@
+{
+ "at": "2026-10-25T04:57:58.368Z",
+ "municipalities": [
+  {
+   "label": "Vitória/ES",
+   "ibge7": "3205309",
+   "ms": 9.8,
+   "msSemSerie": 2.9,
+   "matriculas": 77662,
+   "sinopseMatriculas": 77662,
+   "turmas": 3344,
+   "sinopseTurmas": 3344,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 178,
+   "matPorTurma": 23.22,
+   "series": 19,
+   "redes": [
+    "Federal:2635",
+    "Estadual:11879",
+    "Municipal:40913",
+    "Privada:22235"
+   ]
+  },
+  {
+   "label": "Serra/ES",
+   "ibge7": "3205002",
+   "ms": 43.1,
+   "msSemSerie": 3,
+   "matriculas": 122802,
+   "sinopseMatriculas": 122802,
+   "turmas": 5115,
+   "sinopseTurmas": 5115,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 230,
+   "matPorTurma": 24.01,
+   "series": 19,
+   "redes": [
+    "Federal:656",
+    "Estadual:34052",
+    "Municipal:68712",
+    "Privada:19382"
+   ]
+  },
+  {
+   "label": "Alto Rio Novo/ES",
+   "ibge7": "3200359",
+   "ms": 3.3,
+   "msSemSerie": 1.8,
+   "matriculas": 1741,
+   "sinopseMatriculas": 1741,
+   "turmas": 83,
+   "sinopseTurmas": 83,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 10,
+   "matPorTurma": 20.98,
+   "series": 19,
+   "redes": [
+    "Estadual:803",
+    "Municipal:938"
+   ]
+  },
+  {
+   "label": "São Paulo/SP",
+   "ibge7": "3550308",
+   "ms": 472.5,
+   "msSemSerie": 110.2,
+   "matriculas": 2512355,
+   "sinopseMatriculas": 2512355,
+   "turmas": 118763,
+   "sinopseTurmas": 118763,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 7187,
+   "matPorTurma": 21.15,
+   "series": 19,
+   "redes": [
+    "Federal:3480",
+    "Estadual:874696",
+    "Municipal:702936",
+    "Privada:931243"
+   ]
+  },
+  {
+   "label": "Rio de Janeiro/RJ",
+   "ibge7": "3304557",
+   "ms": 517,
+   "msSemSerie": 113.4,
+   "matriculas": 1208798,
+   "sinopseMatriculas": 1208798,
+   "turmas": 53249,
+   "sinopseTurmas": 53249,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 3875,
+   "matPorTurma": 22.7,
+   "series": 19,
+   "redes": [
+    "Federal:19947",
+    "Estadual:167012",
+    "Municipal:586022",
+    "Privada:435817"
+   ]
+  },
+  {
+   "label": "Belo Horizonte/MG",
+   "ibge7": "3106200",
+   "ms": 175.1,
+   "msSemSerie": 157.6,
+   "matriculas": 480019,
+   "sinopseMatriculas": 480019,
+   "turmas": 23085,
+   "sinopseTurmas": 23085,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 1373,
+   "matPorTurma": 20.79,
+   "series": 19,
+   "redes": [
+    "Federal:4205",
+    "Estadual:143306",
+    "Municipal:160186",
+    "Privada:172322"
+   ]
+  },
+  {
+   "label": "Recife/PE",
+   "ibge7": "2611606",
+   "ms": 171.7,
+   "msSemSerie": 156.6,
+   "matriculas": 318487,
+   "sinopseMatriculas": 318487,
+   "turmas": 15300,
+   "sinopseTurmas": 15300,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 1061,
+   "matPorTurma": 20.82,
+   "series": 19,
+   "redes": [
+    "Federal:4351",
+    "Estadual:88947",
+    "Municipal:94975",
+    "Privada:130214"
+   ]
+  },
+  {
+   "label": "Porto Alegre/RS",
+   "ibge7": "4314902",
+   "ms": 168.1,
+   "msSemSerie": 5,
+   "matriculas": 291051,
+   "sinopseMatriculas": 291051,
+   "turmas": 13705,
+   "sinopseTurmas": 13705,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 955,
+   "matPorTurma": 21.24,
+   "series": 19,
+   "redes": [
+    "Federal:2914",
+    "Estadual:90718",
+    "Municipal:44862",
+    "Privada:152557"
+   ]
+  },
+  {
+   "label": "Chapada de Areia/TO (menor nº de escolas com oferta)",
+   "ibge7": "1704600",
+   "ms": 2.6,
+   "msSemSerie": 1.8,
+   "matriculas": 282,
+   "sinopseMatriculas": 282,
+   "turmas": 14,
+   "sinopseTurmas": 14,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 2,
+   "matPorTurma": 20.14,
+   "series": 19,
+   "redes": [
+    "Municipal:282"
+   ]
+  },
+  {
+   "label": "Belo Horizonte/MG (mais etapas e modalidades)",
+   "ibge7": "3106200",
+   "ms": 212.8,
+   "msSemSerie": 140.9,
+   "matriculas": 480019,
+   "sinopseMatriculas": 480019,
+   "turmas": 23085,
+   "sinopseTurmas": 23085,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 1373,
+   "matPorTurma": 20.79,
+   "series": 19,
+   "redes": [
+    "Federal:4205",
+    "Estadual:143306",
+    "Municipal:160186",
+    "Privada:172322"
+   ]
+  },
+  {
+   "label": "Petrolina/PE (escola que mudou de dependência 2024→2025)",
+   "ibge7": "2611101",
+   "ms": 63.7,
+   "msSemSerie": 3.1,
+   "matriculas": 107732,
+   "sinopseMatriculas": 107732,
+   "turmas": 4635,
+   "sinopseTurmas": 4635,
+   "ok": true,
+   "etapasSomamTotal": true,
+   "escolas": 357,
+   "matPorTurma": 23.24,
+   "series": 19,
+   "redes": [
+    "Federal:1639",
+    "Estadual:28805",
+    "Municipal:57940",
+    "Privada:19348"
+   ]
+  }
+ ],
+ "states": [
+  {
+   "uf": 32,
+   "name": "Espírito Santo",
+   "ms": 3.2,
+   "matriculas": 867017,
+   "sinopseMatriculas": 867017,
+   "turmas": 40541,
+   "sinopseTurmas": 40541,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 35,
+   "name": "São Paulo",
+   "ms": 3.1,
+   "matriculas": 9600318,
+   "sinopseMatriculas": 9600318,
+   "turmas": 441414,
+   "sinopseTurmas": 441414,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 33,
+   "name": "Rio de Janeiro",
+   "ms": 2.6,
+   "matriculas": 3319771,
+   "sinopseMatriculas": 3319771,
+   "turmas": 156695,
+   "sinopseTurmas": 156695,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 31,
+   "name": "Minas Gerais",
+   "ms": 3.3,
+   "matriculas": 4220829,
+   "sinopseMatriculas": 4220829,
+   "turmas": 208203,
+   "sinopseTurmas": 208203,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 26,
+   "name": "Pernambuco",
+   "ms": 2.7,
+   "matriculas": 2076655,
+   "sinopseMatriculas": 2076655,
+   "turmas": 96421,
+   "sinopseTurmas": 96421,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 14,
+   "name": "Roraima",
+   "ms": 2.5,
+   "matriculas": 186395,
+   "sinopseMatriculas": 186395,
+   "turmas": 9213,
+   "sinopseTurmas": 9213,
+   "ok": true,
+   "series": 19
+  },
+  {
+   "uf": 53,
+   "name": "Distrito Federal",
+   "ms": 2.4,
+   "matriculas": 620272,
+   "sinopseMatriculas": 620272,
+   "turmas": 29560,
+   "sinopseTurmas": 29560,
+   "ok": true,
+   "series": 19
+  }
+ ],
+ "brasil": {
+  "ms": 9,
+  "matriculas": 46018380,
+  "sinopse": 46018380,
+  "turmas": 2233976,
+  "sinopseTurmas": 2233976,
+  "ok": true,
+  "series": 19
+ },
+ "school": {
+  "inep": 32000243,
+  "ms": 0.8,
+  "anos": 19
+ },
+ "maxMs": 517,
+ "allMatchSinopse": true
+}

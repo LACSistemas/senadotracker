@@ -1,0 +1,1184 @@
+{
+ "buckets": {
+  "NUCLEO:inst_nucleo": {
+   "n": 184244,
+   "amostra": [
+    {
+     "id": "04564530000113-2-000069/2024",
+     "ano": 2024,
+     "orgao": "RONDONIA SECRETARIA DE ESTADO DA EDUCACAO",
+     "unidade": "ERO-SECRETARIA DE EST.DA EDUCAÇÃO DE RONDÔNIA",
+     "objeto": "Contratação emergencial de empresa especializada na prestação de serviços de contratação emergencial de empresa especializada na prestação de serviços de Vigilância Patrimonial Ostensiva (armada), com vistas a atender a necessidade das Unidades Educacionais vinculadas à Secretaria de Estado da Educa",
+     "valor": 4081512.96,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "1100205"
+    },
+    {
+     "id": "04564530000113-2-000286/2026",
+     "ano": 2026,
+     "orgao": "RONDONIA SECRETARIA DE ESTADO DA EDUCACAO",
+     "unidade": "ERO-SECRETARIA DE EST.DA EDUCAÇÃO DE RONDÔNIA",
+     "objeto": "Contratação de Serviços de Terceiros Pessoa Jurídica - Serviços Especializados em Arbitragem Esportiva, conforme condições, quantidades e exigências estabelecidas neste instrumento, em atendimento a Gerência de Esporte Escolar da Coordenadoria de Educação Física, Esporte e Cultura Escolar CEFACEE/DG",
+     "valor": 23796.0,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "1100205"
+    },
+    {
+     "id": "44563583000134-2-001856/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE IPAUSSU",
+     "unidade": "SECRETARIA DA EDUCAÇÃO",
+     "objeto": "Registro de Preços, pelo período de 12 meses, para eventuais aquisições de Gêneros Alimentícios - Carnes e derivados para a merenda escolar conforme Termo de Referência, Anexo I do Edital, expedido pela Secretaria Municipal de Educação.",
+     "valor": 6000.56,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3520905"
+    },
+    {
+     "id": "83102467000170-2-001310/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE CORUPA",
+     "unidade": "FUNDO MUNICIPAL DE ESPORTE E LAZER - FME",
+     "objeto": "O presente chamamento tem por objeto a concessão de autorização de uso temporário a título precário, não oneroso de espaço público em Corupá, para instalação e funcionamento de unidades móveis de alimentação (food trucks) durante o evento/campeonato \" Campeonato Municipal de Futsal 2025\", a ser real",
+     "valor": 0.01,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [],
+     "esfera": "M",
+     "ibge": "4204509"
+    },
+    {
+     "id": "01067271000127-2-000110/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE ITARUMA",
+     "unidade": "FUNDO MUNICIPAL DE EDUCACAO FME",
+     "objeto": "TEM POR OBJETO A CONTRATAÇÃO DE EMPRESA PARA A PRESTAÇÃO DE SERVIÇOS DE\nTRANSPORTE ESCOLAR COM MOTORISTA QUALIFICADO, VISANDO ATENDER AS NECESSIDADES DO FUNDO MUNICIPAL DE EDUCAÇÃO, PARA O ANO LETIVO DE 2024, CONFORME LINHAS E ROTEIROS DESCRITOS NO ANEXO I E DEMAIS ESPECIFICAÇÕES CONSTANTES DO TERMO",
+     "valor": 82494.294,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [
+      "transporte_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "5211305"
+    },
+    {
+     "id": "10572071000112-2-000233/2025",
+     "ano": 2025,
+     "orgao": "SECRETARIA DE EDUCACAO E ESPORTES",
+     "unidade": "[P]-SECRETARIA DE EDUCAÇÃO",
+     "objeto": "Fornecimento de fardamento",
+     "valor": 707951.9,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "2611606"
+    },
+    {
+     "id": "28983143000180-2-000021/2026",
+     "ano": 2026,
+     "orgao": "FUNDO MUNICIPAL DE EDUCACAO - FME",
+     "unidade": "FUNDO MUNICIPAL DE EDUCACAO FME",
+     "objeto": "CONTRATAÇÃO TEMPORÁRIA DE PROFISSIONAL PARA PRESTAÇÃO DE SERVIÇO DE APOIO ADMINISTRATIVO OPERACIONAL, VISANDO SUPRIR A NECESSIDADE EXCEPCIONAL E TRANSITÓRIA DE PESSOAL NO ÂMBITO DA SECRETARIA MUNICIPAL DE EDUCAÇÃO, DESPORTO E LAZER DE IPORÁ-GO.",
+     "valor": 8400.0,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [],
+     "esfera": "M",
+     "ibge": "5210208"
+    },
+    {
+     "id": "32440438000187-2-000037/2025",
+     "ano": 2025,
+     "orgao": "FUNDO MUNICIPAL DE EDUCACAO DE CANARANA - FME CANARANA",
+     "unidade": "FUNDO MUNICIPAL DE EDUCACAO DE CANARANA - FME CANARANA",
+     "objeto": "Contratação de empresas especializadas para o fornecimento de gêneros alimentícios, visando preparo de refeições que atenderão aos alunos matriculados na Rede Municipal de Ensino, que oferta a Educação Infantil e Ensino Fundamental, através do Programa Nacional de Alimentação Escolar – PNAE, em situ",
+     "valor": 216823.88,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [
+      "alimentacao_escolar",
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "2906204"
+    },
+    {
+     "id": "13761713000110-2-000169/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE PRADO",
+     "unidade": "FUNDO MUNICIPAL DE EDUCAÇÃO",
+     "objeto": "O presente termo tem por objeto o credenciamento para a prestação de serviço de transporte escolar da Rede Municipal de ensino do Município de Prado/BA, nas especialidades relacionadas no Termo de Referência, conforme as especificações e condições constantes no Edital",
+     "valor": 52658.1,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [
+      "transporte_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "2925501"
+    },
+    {
+     "id": "46190305000104-2-001029/2025",
+     "ano": 2025,
+     "orgao": "FUNDO MUNICIPAL DE EDUCACAO DE BELA VISTA DE GOIAS - FME",
+     "unidade": "FUNDO MUNICIPAL DE EDUCACAO - FME",
+     "objeto": "VALOR QUE SE EMPENHA PARA OCORRER DESPESAS COM GÊNEROS ALIMENTICIOS PARA ATENDER AS NECESSIDADES DAS ESCOLAS,CMEI´S E CRECHE A PEDIDO DA SEC MUN DE EDUCAÇÃO , CONFORME PREGÃO ELETRÔNICO Nº 004 /2024 DA ATA DE REGISTRO DE PREÇO Nº 004/2024 ORDEM Nº 138829",
+     "valor": 383.18,
+     "inst": [
+      "fundo_educacao"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "5203302"
+    },
+    {
+     "id": "46392114000125-2-000769/2025",
+     "ano": 2025,
+     "orgao": "SECRETARIA MUNICIPAL DE EDUCACAO",
+     "unidade": "PMSP - SECRETARIA MUNICIPAL DE EDUCAÇÃO",
+     "objeto": "CONTRATAÇÃO POR INEXIGIBILIDADE DE LICITAÇÃO, COM FULCRO NO ARTIGO 74, INCISO II, DA LEI FEDERAL Nº 14.133/2021, C/C O DECRETO MUNICIPAL Nº 62.100/2022,E PELA PORTARIA SME Nº 9.536, DE 18 DE OUTUBRO DE 2024, QUE \"DISPÕE SOBRE A CONTRATAÇÃO DE PROFISSIONAIS DO SETOR ARTÍSTICO E CULTURAL QUE NÃO PREEN",
+     "valor": 31500.0,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [],
+     "esfera": "M",
+     "ibge": "3550308"
+    },
+    {
+     "id": "34841195000114-2-000019/2026",
+     "ano": 2026,
+     "orgao": "SECRETARIA DE ESTADO DA EDUCACAO DO ESPORTE E DA CULTURA",
+     "unidade": "SECRETARIA DE ESTADO DA EDUCAÇÃO",
+     "objeto": "REGISTRO DE PREÇOS PARA AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS PARA AS ESCOLAS DA REDE PÚBLICA ESTADUAL DE ENSINO, VISANDO ATENDER AO PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR (PNAE)",
+     "valor": 145281.6,
+     "inst": [
+      "secretaria_educacao"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "E",
+     "ibge": "2800308"
+    }
+   ]
+  },
+  "NUCLEO:inst_superior": {
+   "n": 4032,
+   "amostra": [
+    {
+     "id": "10817343000105-2-000367/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DE RONDONIA",
+     "unidade": "INST.FED.DE EDUC.,CIENC.E TEC.DE RONDONIA",
+     "objeto": "AQUISIÇÃO DE ALIMENTOS DA AGRICULTURA FAMILIAR PARA ALIMENTAÇÃO ESCOLAR, PARA ESTUDANTES DA REDE DE EDUCAÇÃO BÁSICA PÚBLICA, COM RECURSOS REPASSADOS PELO FNDE, NO ÂMBITO DO PNAE.",
+     "valor": 110813.1,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar",
+      "servico_educacional"
+     ],
+     "esfera": "F",
+     "ibge": "1100205"
+    },
+    {
+     "id": "10635424000186-2-000837/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO CIENCIA E TECNOLOGIA CATARINENSE",
+     "unidade": "INST.FED.DE EDUC., CIENC. E TEC. CATARINENSE",
+     "objeto": "O OBJETO DO PRESENTE CONTRATO DE FORNECIMENTO É A AQUISIÇÃO DE ALIMENTOS DA AGRICULTURA FAMILIAR PARA ALIMENTAÇÃO ESCOLAR, PARA ESTUDANTES DA REDE DE EDUCAÇÃO BÁSICA PÚBLICA, COM RECURSOS REPASSADOS PELO FNDE, NO ÂMBITO DO PNAE, NAS CONDIÇÕES ESTABELECIDAS NO EDITAL DE CHAMADA PÚBLICA - DISPENSA DE ",
+     "valor": 82949.55,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar",
+      "servico_educacional"
+     ],
+     "esfera": "F",
+     "ibge": "4202404"
+    },
+    {
+     "id": "24365710000183-2-000535/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+     "unidade": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+     "objeto": "85.61 FNDE - PNAE/NEI\r\nSM 20392/2024\r\nGÊNEROS ALIMENTÍCIOS",
+     "valor": 89.7,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "2408102"
+    },
+    {
+     "id": "10764307000112-2-000367/2024",
+     "ano": 2024,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA BAHIA",
+     "unidade": "INST.FED.DE EDUC.TEC BAHIA/CAMP. PORTO SEGURO",
+     "objeto": "AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS PARA MERENDA ESCOLAR DOS ESTUDANTES DO IFBA - CAMPUS PORTO SEGURO REFERENTE AO PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR - PNAE-MC - MODALIDADE DE ENSINO: EDUCACAO PROFISSIONAL, CONF. PROC. 23282.000970/2024-77, NC 2024NC000135 (REI).",
+     "valor": 9204.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "2925303"
+    },
+    {
+     "id": "10779511000107-2-000036/2023",
+     "ano": 2023,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FLUMINENSE.",
+     "unidade": "INST FED.DE EDUC.CIENC.TEC.FLUMINENSE/CB.FRIO",
+     "objeto": "VALOR QUE SE EMPENHA PARA ATENDER AS DEMANDAS COM INSUMOS PARA A MERENDA DO IFF CAMPUS CABO FRIO. PREGAO 41/23. PROCESSO 23321.002650.2023-67.",
+     "valor": 10903.9,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "3300704"
+    },
+    {
+     "id": "10877412000168-2-000126/2023",
+     "ano": 2023,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO NORTE",
+     "unidade": "INST.FED.DO R.G.DO NORTE/CAMPUS CAICó",
+     "objeto": "DESPESA COM A AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS PARA A MERENDA ESCOLAR DOS DIS ENTES DO IFRN CAICÓ, CONFORME OFÍCIO Nº 113/2023 - COAES/DG/CA/RE/IFRN E DESPACHO 755/2023 - DG/CA/RE/IFRN. PR SRP 11/2023 (UASG 158366)",
+     "valor": 3042.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "2402006"
+    },
+    {
+     "id": "10817343000105-2-000249/2024",
+     "ano": 2024,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO,CIENCIA E TECNOLOGIA DE RONDONIA",
+     "unidade": "CAMPUS ZONA NORTE IFECT RO",
+     "objeto": "EMPENHO PARA ATENDER O PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR – PNAE, EDITAL DE LICITAÇÃO CHAMADA PÚBLICA 01/2024 (SEI Nº 2373104), DE ACORDO COM O RECONHECIMENTO E RATIFICAÇÃO DE DISPENSA (SEI Nº 2399060),  DISPENSA 119/2024 UASG 158148, CONFORME DECLARAÇÃO ORÇAMENTÁRIA PVZN - DPLAD (SEI Nº 24022",
+     "valor": 3040.65,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "1100205"
+    },
+    {
+     "id": "10779511000107-2-000101/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA FLUMINENSE.",
+     "unidade": "INST FED.DE EDUC.CIENC.TEC.FLUMINENSE/CB.FRIO",
+     "objeto": "VALOR QUE SE EMPENHA NA AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS PARA O FORNECIMENTO DA MERENDA ESCOLAR IFF CAMPUS CABO FRIO. PREEGÃO Nº 90041/2025. PROCESSO Nº 23321.000670.2026-46",
+     "valor": 2047.8,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "3300704"
+    },
+    {
+     "id": "95591764000105-2-000676/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE FEDERAL DE SANTA MARIA",
+     "unidade": "UNIVERSIDADE FEDERAL DE STA.MARIA/RS",
+     "objeto": "004822/2026 SIE - CENTRO DE EDUCACAO -  BANCO/AGENCIA/CONTA:748 00434 44174-1 - EMPENHO PARA CONTRATACAO DE SERVICO DE TRANSPORTE DE ESTUDANTES E DOCENTES DO CE EM VIAGEM DE ESTUDOS PARA CURSO DE FORMACAO DO PROJETO PRAEMA A SANTANA DO LIVRAMENTO, RS, DIA 20/06/2026, IDA E VOTLA NO MESMO DIA - CONFO",
+     "valor": 5156.2,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "transporte_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "4316907"
+    },
+    {
+     "id": "10877412000168-2-000759/2024",
+     "ano": 2024,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO RIO GRANDE DO NORTE",
+     "unidade": "INSTITUTO FEDERAL DO RN/CÂMPUS PARNAMIRIM",
+     "objeto": "EMPENHO DE DESPESA PARA AQUISIÇÃO DE GENEROS ALIMENTICIOS DESTINADOS AOS ALUNOS, CONFORME PARTICIPAÇÃO NO PREGÃO 30/2023 UASG 153103. PROCESSO 23424.002001.2024-99",
+     "valor": 3988.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "2403251"
+    },
+    {
+     "id": "10695891000100-2-000137/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO TRIANGULO MINEIRO",
+     "unidade": "INST.FED.TRIANGULO MINEIRO CAMPUS PATROCINIO",
+     "objeto": "AQUISIÇÃO DE ALIMENTOS DA AGRICULTURA FAMILIAR PARA ALIMENTAÇÃO ESCOLAR, PARA ESTUDANTES DA REDE DE EDUCAÇÃO BÁSICA PÚBLICA, COM RECURSOS REPASSADOS PELO FNDE, NO ÂMBITO DO PNAE.",
+     "valor": 20874.5,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar",
+      "servico_educacional"
+     ],
+     "esfera": "F",
+     "ibge": "3148103"
+    },
+    {
+     "id": "10729992000146-2-000167/2025",
+     "ano": 2025,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA SUL-RIO-GRANDENSE - RS",
+     "unidade": "INST FED.SUL R.GRANDENSE/CAMPUS PELOTAS",
+     "objeto": "PL-COAE. PREGÃO 90007/2024.PREÇO CIF.PRAZO DE ENTREGA DE ACORDO COM O EDITAL. AGENDAR ENTREGA PELO TELEFONE (53)2123-1093.PROCESSO SUAP 23206.001975.2025-19. PNAE 2025NC400069 FONTE 1133 PTRES 230446 PLANO INTERNO CFF53M9601N.",
+     "valor": 9433.9,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "4314407"
+    }
+   ]
+  },
+  "NUCLEO:inst_superior_hospitalar": {
+   "n": 6,
+   "amostra": [
+    {
+     "id": "77902914000172-2-000072/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE ESTADUAL DO CENTRO OESTE",
+     "unidade": "UNICENTRO - Universidade Estadual do Centro-Oeste",
+     "objeto": "CONTRATAÇÃO DE EMPRESA PARA EXECUÇÃO DA REFORMA DO CENTRO CIRÚRGICO DE GRANDES ANIMAIS E AMPLIAÇÃO DO CANIL DA CLÍNICA ESCOLA VETERINÁRIA DA UNICENTRO, COM RECURSOS DO TED 255/23 SETI E TC 53/21 SETI.",
+     "valor": 99372.77,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "E",
+     "ibge": "4109401"
+    },
+    {
+     "id": "77902914000172-2-000073/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE ESTADUAL DO CENTRO OESTE",
+     "unidade": "UNICENTRO - Universidade Estadual do Centro-Oeste",
+     "objeto": "CONTRATAÇÃO DE EMPRESA PARA EXECUÇÃO DA REFORMA DO CENTRO CIRÚRGICO DE GRANDES ANIMAIS E AMPLIAÇÃO DO CANIL DA CLÍNICA ESCOLA VETERINÁRIA DA UNICENTRO, COM RECURSOS DO TED 255/23 SETI E TC 53/21 SETI.",
+     "valor": 299703.25,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "E",
+     "ibge": "4109401"
+    },
+    {
+     "id": "17879859000115-2-000140/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+     "unidade": "UNIVERSIDADE FEDERAL DE ALFENAS",
+     "objeto": "IMPORTANCIA PARA OCORRER COM DESPESAS  DE EXECUÇÃO DE OBRA CIVIL, COM FORNECIMENTO DE MATERIAIS, PARA CONSTRUÇÃO DA 2ª FASE DO PRÉDIO DA FACULDADE DE ODONTOLOGIA DA UNIDADE EDUCACIONAL SANTA CLARA DA UNIFAL-MG",
+     "valor": 3000000.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "3101607"
+    },
+    {
+     "id": "17879859000115-2-001120/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+     "unidade": "UNIVERSIDADE FEDERAL DE ALFENAS",
+     "objeto": "CONTRATAÇÃO DE PESSOA JURÍDICA DE ENGENHARIA, ESPECIALIZADA NO RAMO, PARA EXECUÇÃO DE OBRA CIVIL, COM FORNECIMENTO DE MATERIAIS, PARA CONSTRUÇÃO DA 2ª FASE DO PRÉDIO DA FACULDADE DE ODONTOLOGIA DA UNIDADE EDUCACIONAL SANTA CLARA DA UNIFAL-MG",
+     "valor": 30240000.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "3101607"
+    },
+    {
+     "id": "09341233000122-2-000774/2025",
+     "ano": 2025,
+     "orgao": "FUNDACAO UNIVERSIDADE FEDERAL DO PAMPA - UNIPAMPA",
+     "unidade": "FUNDACAO UNIVERSIDADE FEDERAL DO PAMPA",
+     "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA EXECUÇÃO DOS SERVIÇOS NECESSÁRIOS DE REFORMA DOS LABORATÓRIOS 105 E 107 - FARMÁCIA ESCOLA - CAMPUS URUGUAIANA DA UNIPAMPA",
+     "valor": 552750.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "F",
+     "ibge": "4301602"
+    },
+    {
+     "id": "22675359000100-2-000060/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE ESTADUAL DE MONTES CLAROS",
+     "unidade": "SERVICO DE PLANEJAMENTO DE COMPRAS/HUCF",
+     "objeto": "Concorrência  - Reforma Escola Hospitalar Ciranda da Vida e Sala OPME - HUCF",
+     "valor": 136806.32,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [
+      "obra_escolar"
+     ],
+     "esfera": "E",
+     "ibge": "3143302"
+    }
+   ]
+  },
+  "NUCLEO:tema_nucleo": {
+   "n": 98465,
+   "amostra": [
+    {
+     "id": "46435921000188-2-000313/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE DIVINOLANDIA",
+     "unidade": "PREFEITURA MUNICIPAL",
+     "objeto": "REGISTRO DE PRECO PARA AQUISICAO FUTURA DE GENEROS ALIMENTICIOS PARA A MERENDA ESCOLAR PARA O ANO LETIVO DE 2024.",
+     "valor": 720.0,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3513900"
+    },
+    {
+     "id": "24859332000194-2-000066/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE CHAPADAO DO CEU",
+     "unidade": "FUNDO MUNICIPAL DE SAUDE DE CHAPADAO DO CEU-FMS",
+     "objeto": "AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS DA AGRICULTURA FAMILIAR E DO EMPREENDEDOR FAMILIAR RURAL DESTINADOS AO ATENDIMENTO DO PROGRAMA NACIONAL DE ALIMENTAÇÃO ESCOLAR – PNAE",
+     "valor": 27325.0,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "5205471"
+    },
+    {
+     "id": "53300356000107-2-002382/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE OSVALDO CRUZ",
+     "unidade": "SECRET MUNIC DE EDUCAÇÃO",
+     "objeto": "REGISTRO DE PREÇOS PARA AQUISIÇÃO DE GÊNEROS ALIMENTÍCIOS PARA ATENDER A MERENDA DAS ESCOLAS DA REDE MUNICIPAL DE ENSINO INFANTIL, FUNDAMENTAL E MÉDIO E DIVERSOS SETORES DAS SECRETARIAS DE SAÚDE E SOCIAL.",
+     "valor": 7695.6,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3534609"
+    },
+    {
+     "id": "46523197000144-2-000019/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE FERRAZ DE VASCONCELOS",
+     "unidade": "Ferraz de Vasconcelos",
+     "objeto": "Fornecimento de itens perecíveis de merenda escolar para atender os alunos da rede municipal de  ensino, pelo período de 12 (doze) meses, conforme quantitativos, especificações e estimativas relacionados no  Termo de Referência, com prestação de serviços de entrega ponto a ponto para o atendimento d",
+     "valor": 285960.0,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3515707"
+    },
+    {
+     "id": "01590291000188-2-000002/2025",
+     "ano": 2025,
+     "orgao": "CONS DA ESC EST DE 1 E 2 G P JOSE SOARES DE CARVALHO",
+     "unidade": "EPB-CONSELHO E E 1 E 2 G P J S. DE CARVALHO",
+     "objeto": "Aquisição de Gêneros Alimentícios para Alimentação Escolar para ECI ESTADUL DE ENSINO FUNDAMENTAL E MÉDIO JOSÉ SOARES DE CARVALHO alunos matriculados na Escola 383, com alimentação de qualidade e com as condições técnicas apontadas pela Resolução n.º 06/2020 – FNDE – considerando o ano letivo de 202",
+     "valor": 60613.8,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar",
+      "servico_educacional"
+     ],
+     "esfera": "N",
+     "ibge": "2506301"
+    },
+    {
+     "id": "01298975000100-2-000223/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE ALEXANIA",
+     "unidade": "PREFEITURA MUNICIPAL DE ALEXÂNIA",
+     "objeto": "EMPENHO EMITIDO PARA ATENDER DESPESAS COM AQUISIÇÃO DE MERENDA ESCOLAR PARA ATENDER A SME, DE ACORDO COM ORDEM DE COMPRAS N°14440.",
+     "valor": 62511.5,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "5200308"
+    },
+    {
+     "id": "01576782000174-2-000152/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE PRATANIA",
+     "unidade": "EDUCAÇÃO",
+     "objeto": "Registro de preços para aquisição de polpa de fruta congelada pelo período de 12 (doze) meses para atender às necessidades do setor de merenda escolar do município de Pratânia.",
+     "valor": 5464.5,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3541059"
+    },
+    {
+     "id": "82916800000111-2-000410/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE ICARA",
+     "unidade": "MUNICÍPIO DE IÇARA",
+     "objeto": "MOBILIÁRIO ESCOLAR - LEI 14.133/2021",
+     "valor": 14899.0,
+     "inst": [],
+     "tema": [
+      "mobiliario_equip_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "4207007"
+    },
+    {
+     "id": "88141460000180-2-000027/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE SANTANA DA BOA VISTA",
+     "unidade": "Setor de Compras",
+     "objeto": "TRANSPORTE ESCOLAR ",
+     "valor": 83600.0,
+     "inst": [],
+     "tema": [
+      "transporte_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "4317004"
+    },
+    {
+     "id": "44919918000104-2-000237/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE LUCELIA",
+     "unidade": "EDUCAÇÃO",
+     "objeto": "Registro de preços, pelo prazo de 12 (doze) meses, para contratação de empresa especializada para fornecimento de alimentos perecíveis e não perecíveis para a manutenção da Merenda Escolar ao qual será utilizado nas EMEIS, EMEFS e EEs, conforme quantidades e especificações descriminadas no Termo de ",
+     "valor": 6016.6,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "3527405"
+    },
+    {
+     "id": "95991071000100-2-000631/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE RIO RUFINO",
+     "unidade": "MUNICÍPIO DE RIO RUFINO",
+     "objeto": "Chamada pública para  aquisição de gêneros alimentícios da Agricultura Familiar e do Empreendedor Familiar Rural, através do Programa Nacional de Alimentação Escolar-PNAE para a alimentação escolar do ano letivo.",
+     "valor": 24493.82,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "4215059"
+    },
+    {
+     "id": "06104863000195-2-000025/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE CODO",
+     "unidade": "PREFEITURA MUNICIPAL DE CODO - MA",
+     "objeto": "Chamada Pública nº 001/2025 para aquisição de Gêneros Alimentícios provenientes da Agricultura Familiar e do Empreendedor Familiar Rural, destinado ao atendimento do Programa Nacional de Alimentação Escolar – PNAE, favorecendo as escolas da rede municipal de ensino de Codó – MA, para o período compr",
+     "valor": 279019.0,
+     "inst": [],
+     "tema": [
+      "alimentacao_escolar"
+     ],
+     "esfera": "M",
+     "ibge": "2103307"
+    }
+   ]
+  },
+  "outros:inst_superior": {
+   "n": 319357,
+   "amostra": [
+    {
+     "id": "24365710000183-2-000270/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+     "unidade": "UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE",
+     "objeto": "SM   6119/2026   UNIDADE  DE  CUSTO  11.32.36",
+     "valor": 3290.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "2408102"
+    },
+    {
+     "id": "48031918000124-2-005304/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO",
+     "unidade": "ESP-UNESP-INST.BIOC.LETRAS E C.EXATAS-C.SJRP",
+     "objeto": "AQUISIÇÃO DE MATERIAL PERMANENTE – NOBREAKS E BATERIAS PARA NOBREAKS",
+     "valor": 15784.84,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3549805"
+    },
+    {
+     "id": "79151312000156-2-000024/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE ESTADUAL DE MARINGA",
+     "unidade": "UEM - Universidade Estadual de Maringá",
+     "objeto": "Contratação de empresa especializada para Substituição da Cobertura do Bloco G56, localizada na Avenida Colombo n. 5790, Zona 7, Bairro Jardim Universitário, no Município de Maringá, Paraná, conforme planilha orçamentária de referência constante no Anexo XI do edital",
+     "valor": 285999.88,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "4115200"
+    },
+    {
+     "id": "10729992000146-2-000350/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA SUL-RIO-GRANDENSE - RS",
+     "unidade": "IFSUL RIO GRANDENSE /CAMPUS VENANCIO AIRES",
+     "objeto": "EMISSÃO DE EMPENHO REF. AQUISIÇÃO DE ALIMENTOS QUE SERÃO DISTRIBUIDOS NA MOVACI DE 2026.",
+     "valor": 4340.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4322608"
+    },
+    {
+     "id": "10764307000112-2-000204/2026",
+     "ano": 2026,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DA BAHIA",
+     "unidade": "INST.FED.DE EDUC.TEC BAHIA/CAMPUS VALENÇA",
+     "objeto": "EMPENHO PARA AQUISIÇÃO DE MATERIAIS DE EXPEDIENTE PARA ATENDER A DEMANDA DO IFBA CAMPUS VALENÇA. EXERCÍCIO 2026. PROCESSO SEI: 23280.001465/2026-21.",
+     "valor": 22303.9,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "2932903"
+    },
+    {
+     "id": "10806496000149-2-000882/2024",
+     "ano": 2024,
+     "orgao": "INSTITUTO FEDERAL DE EDUCACAO, CIENCIA E TECNOLOGIA DO PIAUI",
+     "unidade": "INST.FED.DE ED.,CIENC.E TEC.DO PIAUÍ",
+     "objeto": "VALOR EMPENHADO NA AQUISIÇÃO DE MATERIAL DE CONSUMO PARA ATENDER AO RESTAURANTE INSTITUCIONAL DO CAMPUS FLORIANO, CONF EDITAL E ANEXOS AO PE SRP 60/2023 UG 158146.",
+     "valor": 23500.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "2203909"
+    },
+    {
+     "id": "95591764000105-2-004432/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DE SANTA MARIA",
+     "unidade": "UNIVERSIDADE FEDERAL DE STA.MARIA/RS",
+     "objeto": "016098/2025 SIE  - DIPAT - REITORIA -  BANCO/AGENCIA/CONTA:336 00001  9750006-2 OS DADOS BANCÁRIOS DEVERÃO ESTAR DESTACADOS NA NOTA FISCAL FRETE CIF E CONFORME ITEM 2 DO EDITAL OS PRODUTOS DEVEM SER ENTREGUES DE ACORDO COM O DESCRITIVO DO TERMO DE REFERÊNCIA - COMPRA DE 5 CONDICIONADORES DE AR DE 24",
+     "valor": 17673.9,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4316907"
+    },
+    {
+     "id": "63025530000104-2-000202/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE DE SAO PAULO",
+     "unidade": "ESP-INSTITUTO MATEMATICA E ESTATISTICAS - USP",
+     "objeto": "Detector, Identificador Unidade de compra: Unidade Tipo: Identificador de circuitos e disjuntores elétricos Configuração: 01 transmissor e 01 receptor Distancia: de até 500 m em circuitos em 220v e 300 m em 127v Alimentação: 100 a 120 vac / 200 a 250vac, 50/60hz / 1x 9v Garantia: mínima 12 meses Con",
+     "valor": 444.82,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3550308"
+    },
+    {
+     "id": "48031918000124-2-004908/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE ESTADUAL PAULISTA JULIO DE MESQUITA FILHO",
+     "unidade": "ESP-UNESP-FACUL. CIEN. AGRAR. TECN-C.DRACENA",
+     "objeto": "Prestação de serviços de manutenção preventiva, revisão e testes no Grupo Gerador TG550182574, compreendendo a mão de obra especializada e o fornecimento/substituição de peças e insumos.",
+     "valor": 6048.68,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3514403"
+    },
+    {
+     "id": "75101873000190-2-001184/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA",
+     "unidade": "UNIVERSIDADE TECNOLOGICA FEDERAL DO PARANA",
+     "objeto": "PAGAMENTO DA TAXA DE INSCRIÇÃO DOS DOCENTES DA UTFPR LONDRINA RAFAEL HENRIQUE PALMA LIMA E EDSON LUIZ VALMORBIDA NO 44º ENEGEP (ENCONTRO NACIONAL DE ENGENHARIA DE PRODUÇÃO) - S.E. 113/2025",
+     "valor": 1584.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4113700"
+    },
+    {
+     "id": "46068425000133-2-000629/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE ESTADUAL DE CAMPINAS",
+     "unidade": "ESP-UNIVERSIDADE ESTADUAL DE CAMPINAS",
+     "objeto": "PECAS DE REPOSICAO PARA VENTILADOR PULMONAR; VALVULA EXALATORIA NEONATAL; AUTOCLAVAVEL;\nCOMPLETA COM TAMPA E MEMBRANA",
+     "valor": 55577.0,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3509502"
+    },
+    {
+     "id": "15180714000104-2-005873/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DA BAHIA",
+     "unidade": "COMPLEXO HOSPITALAR E DE SAUDE DA UFBA",
+     "objeto": "EMPENHO PARA AQUISIÇÃO DE MATERIAL PERMANENTE PARA O HOSPMEV, SAMS 4626/2025, PREGÃO 059/2025, CONF. PROCESSO 23066.085025/2025-72, CHS",
+     "valor": 6613.63,
+     "inst": [
+      "universidade_if"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "2927408"
+    }
+   ]
+  },
+  "outros:inst_superior_hospitalar": {
+   "n": 31736,
+   "amostra": [
+    {
+     "id": "16888315000157-2-000017/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DOS VALES DO JEQUITINHONHA E MUCURI",
+     "unidade": "UNIV.FED.DOS VALES DO JEQUITINHONHA E MUCURI",
+     "objeto": "AQUISIÇÃO DE MATERIAL DE CONSUMO PARA ATENDER A DEMANDA DO DEPARTAMENTO DE FARMÁCIAFCBS. HAVENDO DIVERGÊNCIA ENTRE A DESCRIÇÃO QUE CONSTA NO EMPENHO (CATMAT) E O TERMO DE\nREFERÊNCIA, PREVALECERÁ ESTE ÚLTIMO. ND: 255.",
+     "valor": 1100.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "3121605"
+    },
+    {
+     "id": "08885100000154-2-000056/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE ESTADUAL DO NORTE DO PARANA",
+     "unidade": "UENP - Universidade Estadual do Norte do Paraná",
+     "objeto": "aquisição de materiais hospitalares e laboratoriais, visando atender às necessidades da Pró Reitoria de Extensão e Cultura PROEC, com o Projeto Operação Rondon Edição 2025.",
+     "valor": 296.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "4111803"
+    },
+    {
+     "id": "75095679000149-2-000801/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DO PARANA",
+     "unidade": "UNIVERSIDADE FEDERAL DO PARANA",
+     "objeto": "MATERIAL HOSPITALAR - SD - 23075.012187/2025-82",
+     "valor": 134.5,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4106902"
+    },
+    {
+     "id": "46068425000133-2-007412/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE ESTADUAL DE CAMPINAS",
+     "unidade": "ESP-UNIVERSIDADE ESTADUAL DE CAMPINAS",
+     "objeto": "Item 4: REAGENTE BIOLOGICO; REAGENTE PARA BIOLOGIA MOLECULAR; PAINEL VIRAL RESPIRATORIO (RVP): O KIT DETECTA POR PCR EM TEMPO REAL OS ALVOS; SARS-COV-2, INFLUENZA A, INFLUENZA B E VSR (VIRUS SINCICIAL RESPIRATORIO).; ARMAZENAMENTO ENTRE 2 E 25 GRAUS CELSIUS; ROTULO COM NOME DO PRODUTO, NUMERO DE LOT",
+     "valor": 4320.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3509502"
+    },
+    {
+     "id": "75095679000149-2-001940/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE FEDERAL DO PARANA",
+     "unidade": "UNIVERSIDADE FEDERAL DO PARANA",
+     "objeto": "MATERIAL HOSPITALAR - TOLEDO - 23075.038556/2026-48",
+     "valor": 3880.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4106902"
+    },
+    {
+     "id": "07272636000131-2-000203/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE FEDERAL DO CEARA",
+     "unidade": "UNIVERSIDADE FEDERAL DO CEARA",
+     "objeto": "SETOR INTERESSADO: DEPARTAMENTO DE ODONTOLOGIA RESTAURADORA\r\nPROC DEMANDANTE: 23067.009799/2026-78\r\nBOLETIM Nº 775/2026",
+     "valor": 960.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "2304400"
+    },
+    {
+     "id": "32479123000143-2-001424/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DO ESPIRITO SANTO",
+     "unidade": "CENTRO DE CIÊNCIAS AGRÁRIAS DA UFES",
+     "objeto": "AQUISIÇÃO DE MEDICAMENTOS VETERINÁRIOS, MATERIAIS HOSPITALARES/FARMACOLÓGICOS E OUTROS PARA ATENDER ÀS DEMANDAS DO HOSPITAL VETERINÁRIO NO CENTRO DE CIÊNCIAS AGRÁRIAS E ENGENHARIA DA UFES.",
+     "valor": 3592.15,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "3200201"
+    },
+    {
+     "id": "63025530000104-2-000935/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE DE SAO PAULO",
+     "unidade": "ESP-FACULDADE DE ODONTOLOGIA - USP",
+     "objeto": "ANTICORPOS E REAGENTES PARA O SERVIÇO DE PATOLOGIA CIRÚRGICA DA FOUSP.",
+     "valor": 6275.67,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "3550308"
+    },
+    {
+     "id": "07954480000179-2-019631/2025",
+     "ano": 2025,
+     "orgao": "ESTADO DO CEARA",
+     "unidade": "FUNDACAO UNIVERSIDADE REGIONAL DO CARIRI",
+     "objeto": "Aquisição de material de consumo (médico hospitalar), para atender demandas dos cursos de saúde da URCA. A empresa arrematante deverá entregar todo o material no almoxarifado central, localizado na Rua Carolino Sucupira, s/n, Pimenta, Crato - CE, com frete CIF.",
+     "valor": 36431.9,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "E",
+     "ibge": "2304202"
+    },
+    {
+     "id": "25648387000118-2-000030/2024",
+     "ano": 2024,
+     "orgao": "UNIVERSIDADE FEDERAL DE UBERLANDIA",
+     "unidade": "FUNDACAO UNIVERSIDADE FEDERAL DE UBERLANDIA",
+     "objeto": "CONSUMO: MATERIAIS HOSPITALARES, FARMACOLÓGICOS, VETERINÁRIOS, LABORATORIAIS, QUÍMICOS E DE PROTEÇÃO E SEGURANÇA. OFÍCIO 15/2024/HOVET/REITO-UFU E INFORME DICOR 5144703. PROCESSO SEI 23117.006721/2024-05.",
+     "valor": 10456.2,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "3170206"
+    },
+    {
+     "id": "17879859000115-2-000617/2025",
+     "ano": 2025,
+     "orgao": "UNIVERSIDADE FEDERAL DE ALFENAS - UNIFAL-MG",
+     "unidade": "UNIVERSIDADE FEDERAL DE ALFENAS",
+     "objeto": "AQUISIÇÃO DE MATERIAL ODONTOLÓGICO - EE\r\nPRAZO DE ENTREGA: ATÉ 30 DIAS  A CONTAR DO RECEBIMENTO DA NOTA DE EMPENHO\r\nFRETE: CIF",
+     "valor": 72.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "3101607"
+    },
+    {
+     "id": "95591764000105-2-000892/2026",
+     "ano": 2026,
+     "orgao": "UNIVERSIDADE FEDERAL DE SANTA MARIA",
+     "unidade": "UNIVERSIDADE FEDERAL DE STA.MARIA/RS",
+     "objeto": "002085/2026 SIE  - UGR - CENTRO DE CIENCIAS DA SAUDE -  BANCO/AGENCIA/CONTA:341 00316 67885-3 OS DADOS BANCÁRIOS DEVERÃO ESTAR DESTACADOS NA NOTA FISCAL \r\nFRETE CIF E CONFORME ITEM 2 DO EDITAL OS PRODUTOS DEVEM SER ENTREGUES DE ACORDO COM O DESCRITIVO DO TERMO DE REFERÊNCIA - MATERIAL PERMANENTE PAR",
+     "valor": 4780.0,
+     "inst": [
+      "universidade_if_hospitalar"
+     ],
+     "tema": [],
+     "esfera": "F",
+     "ibge": "4316907"
+    }
+   ]
+  },
+  "outros:tema_amplo": {
+   "n": 15665,
+   "amostra": [
+    {
+     "id": "88546890000182-2-000101/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE SANTA ROSA",
+     "unidade": "SMEC -  DEPTO ADMINISTR. DA SECR. MUNIC. EDUCAÇÃO E CULTURA",
+     "objeto": "Aquisição de luminárias led tipo projetor para substituir as lâmpadas dos ginásios, quadras e áreas abertas e de convivência das EMEFs e Educação Infantil de rede municipal de ensino. Protocolo nº 54521/2024.",
+     "valor": 40200.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "4317202"
+    },
+    {
+     "id": "01614112000103-2-000078/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE BELTERRA",
+     "unidade": "SECRETARIA MUNICIPAL DE ADMINISTRACAO FINANCAS E P",
+     "objeto": "REGISTRO DE PREÇO PARA FUTURA E EVENTUAL AQUISIÇÃO DE COMBUSTÍVEL E DERIVADOS COM FORNECIMENTO CONTINUO E FRACIONADO, CONFORME DEMANDA, PARA ATENDER A SECRETARIA MUNICIPAL DE EDUCAÇÃO, CULTURA E DESPORTOSEMED E O FUNDO DE MANUTENÇÃO E DESENVOLVIMENTO DA EDUCAÇÃO BÁSICA E DE VALORIZAÇÃO DOS PROFISSIO",
+     "valor": 63350.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "1501451"
+    },
+    {
+     "id": "90898487000164-2-000099/2026",
+     "ano": 2026,
+     "orgao": "MUNICIPIO DE COTIPORA",
+     "unidade": "PM DE COTIPORÃ",
+     "objeto": "CONTRATAÇÃO DE EMPRESA ESPECIALIZADA PARA A DISPONIBILIZAÇÃO DE PROFISSIONAIS PARA A PRESTAÇÃO DE SERVIÇOS EDUCACIONAIS CONSISTENTES NA EXECUÇÃO DE OFICINAS PEDAGÓGICAS DESTINADAS AS CRIANÇAS DA EDUCAÇÃO INFANTIL E DOS ANOS INICIAIS DO ENSINO FUNDAMENTAL DA REDE MUNICIPAL DE ENSINO, BEM COMO AO PÚBL",
+     "valor": 69498.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "4305959"
+    },
+    {
+     "id": "24855058000185-2-001519/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE SIMOLANDIA",
+     "unidade": "MUNICIPIO DE SIMOLANDIA",
+     "objeto": "IMPORTÂNCIA QUE SE EMPENHA PARA OCORRER DESPESA COM AQUISIÇÃO DE ITENS TIPO MATERIAL DE LIMPEZA E UTENSÍLIOS DESTINADOS AO CENTRO MUNICIPAL DE EDUCAÇÃO INFANTIL JOSE DE FRANÇA BARBOSA (CMEI), CONFORME COMPROVANTES.",
+     "valor": 932.66,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "5220686"
+    },
+    {
+     "id": "07725138000105-2-000021/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE SANTA QUITERIA",
+     "unidade": "PREFEITURA MUNICIPAL DE SANTA QUITERIA",
+     "objeto": "Contratação de empresa para aquisição de botijões e fornecimento de recarga de gás de cozinha (GLP) - destinados a atender as necessidades da SECRETARIA MUNICIPAL DE EDUCAÇÃO BÁSICA vinculada a Prefeitura Municipal de Santa Quitéria-CE.",
+     "valor": 7947.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "2312205"
+    },
+    {
+     "id": "92123926000192-2-000081/2023",
+     "ano": 2023,
+     "orgao": "MUNICIPIO DE ALTO FELIZ",
+     "unidade": "PREFEITURA MUNICIPAL",
+     "objeto": "AQUISICAO DE DIVERSOS BRINQUEDOS EDUCATIVOS PARA A ESCOLA DE EDUCACAO INFANTIL",
+     "valor": 1025.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "4300570"
+    },
+    {
+     "id": "45135043000112-2-000059/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE RUBINEIA",
+     "unidade": "PREFEITURA MUNICIPAL DE RUBINEIA - SP",
+     "objeto": "CONTRATAÇÃO PARA REGISTRO DE PREÇOS PARA FUTURA E EVENTUAL AQUISIÇÃO DE MATERIAL HOSPITALAR E KIT CITOPATOLÓGICO (MÉTODO DE CITOLOGIA EM MEIO LIQUIDO BD SUREPATH) PARA ENFERMAGEM E PRODUTOS DE HIGIENE INFANTIL, PARA ATENDER ÀS NECESSIDADES DA UNIDADE DE SAÚDE E EDUCAÇÃO BASICA DO MUNICÍPIO, PARA ENT",
+     "valor": 22185.7,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "3544509"
+    },
+    {
+     "id": "75845537000151-2-000003/2024",
+     "ano": 2024,
+     "orgao": "MUNICIPIO DE GUARACI",
+     "unidade": "UNIDADE ADMINISTRATIVA",
+     "objeto": "CONTRATAÇÃO DE EMPRESA PARA FORNECIMENTO DE OVOS DE PÁSCOA DE CHOCOLATE, PARA DISTRIBUIÇÃO GRATUITA A TODOS OS ALUNOS DA REDE PÚBLICA MUNICIPAL DE ENSINO, ESCOLAS, CENTRO DE EDUCAÇÃO INFANTIL E GRUPO INFANTIL DE AÇÕES E ATENDIMENTO DO CRAS, DO MUNICÍPIO DE GUARACI-PR",
+     "valor": 12250.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "4109203"
+    },
+    {
+     "id": "32634420000116-2-000005/2024",
+     "ano": 2024,
+     "orgao": "TRIBUNAL DE CONTAS DOS MUNICIPIOS",
+     "unidade": "TRIBUNAL DE CONTAS DOS MUNICIPIOS DA BAHIA",
+     "objeto": "objeto a prestação de serviços educacionais pela FGV  para o CONTRATANTE, nas dependências da UNIVERSIDADE CORPORATIVA DO TRIBUNAL DE JUSTICA DO ESTADO DA BAHIA -UNICORP, referente a 01 (uma) turma especial do Curso de pós-graduação stricto sensu denominado  \"Mestrado Profissional em Gestão e Políti",
+     "valor": 335356.25,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "E",
+     "ibge": "2927408"
+    },
+    {
+     "id": "63104343000116-2-000046/2025",
+     "ano": 2025,
+     "orgao": "CONCEICAO DO JACUIPE CAMARA DE VEREADORES",
+     "unidade": "Câmara Municipal de Conceição do Jacuípe",
+     "objeto": "contratação de empresa especializada na\r\nprestação de serviços educacionais, com o objetivo de capacitar Vereadores e\r\nservidores através do 46° Congresso de Prefeitos, Vereadores e Assessores, na\r\ncidade de Aracaju/SE.",
+     "valor": 3992.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "2908507"
+    },
+    {
+     "id": "95725057000164-2-000199/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE ITAIPULANDIA",
+     "unidade": "Unidade administrativa",
+     "objeto": "Contratação de pessoa jurídica para a aquisição de brinquedos pedagógicos, destinados aos Centros Municipais de Educação Infantil (CMEIs) e escolas do município de Itaipulândia.",
+     "valor": 1982.23,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "4110953"
+    },
+    {
+     "id": "44518371000135-2-000004/2025",
+     "ano": 2025,
+     "orgao": "MUNICIPIO DE GARCA",
+     "unidade": "PREFEITURA DO MUNICÍPIO DE GARÇA",
+     "objeto": "AQUISIÇÃO DE PASSES ESCOLARES PARA ALUNOS DO ENSINO MÉDIO E DO ENSINO FUNDAMENTAL, ATÉ O FINAL DO ANO LETIVO DE 2025",
+     "valor": 473000.0,
+     "inst": [],
+     "tema": [
+      "servico_educacional"
+     ],
+     "esfera": "M",
+     "ibge": "3516705"
+    }
+   ]
+  }
+ }
+}

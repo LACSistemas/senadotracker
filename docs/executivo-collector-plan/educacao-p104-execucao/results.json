@@ -1,0 +1,110 @@
+{
+ "fase": "P10.4",
+ "titulo": "Aprendizagem, Ideb, Saeb e fluxo escolar",
+ "data": "2026-10-25/26",
+ "commit": false,
+ "push": false,
+ "frontend": false,
+ "p105_iniciada": false,
+ "gates": {
+  "G0_SAFETY": "PASS",
+  "G1_IDEB": "PASS_WITH_CAVEATS",
+  "G2_SAEB": "PASS_WITH_CAVEATS",
+  "G3_RENDIMENTO_DISTORCAO": "PASS",
+  "G4_TRANSICAO_INSE": "PASS_WITH_CAVEATS",
+  "G5_STORAGE_MODEL": "PASS",
+  "G6_PUBLICATION": "PASS",
+  "G7_RECONCILIATION": "PASS",
+  "G8_PRIVACY": "PASS",
+  "G9_SERVING": "PASS",
+  "G10_COMPARABILITY": "PASS_WITH_CAVEATS",
+  "G11_TESTS_REGRESSION": "PASS",
+  "G12_DATABASE_5GB_LIMIT": "PASS"
+ },
+ "armazenamento": {
+  "baseline_bytes": 27292101779,
+  "final_bytes": 28664106131,
+  "crescimento_bytes": 1372004352,
+  "limite_bytes": 5000000000,
+  "percentual_do_limite": 27.4,
+  "tabelas_e_indices_bytes": 1370693632,
+  "change_log_linhas_antes": 16161837,
+  "change_log_linhas_depois": 16161837,
+  "wal_lsn_bytes": 2950000000,
+  "pg_wal_dir_bytes": 1073741824,
+  "c_livre_gib_final": 50.2
+ },
+ "publicacao": {
+  "datasets": [
+   75,
+   76,
+   77,
+   78,
+   79
+  ],
+  "fatias_publicadas": 1511,
+  "fatias_no_change_no_replay": 1511,
+  "falhas": 0,
+  "linhas": 7961125,
+  "celulas": 207652333,
+  "table_ids": "93-105",
+  "migration": 13
+ },
+ "raw": {
+  "arquivos_manifesto": 174,
+  "bytes": 2971640523,
+  "staging_tsv_bytes": 2200000000
+ },
+ "reconciliacao": {
+  "tabelas_x_cobertura": "87/87 linhas e 87/87 células",
+  "spot_check_independente": {
+   "verificados": 1389,
+   "divergentes": 0
+  },
+  "quadro1_nota_informativa_ideb_2025": "idêntico",
+  "somas_100_rendimento": 38289809,
+  "somas_100_transicao": 5313318,
+  "fora_da_tolerancia": 0,
+  "divergencias_da_fonte": 6
+ },
+ "testes": {
+  "npm_test": {
+   "tests": 562,
+   "pass": 532,
+   "fail": 0,
+   "skipped": 30
+  },
+  "novos": 23,
+  "typecheck": "ok"
+ },
+ "g16": {
+  "familias": [
+   "ideb",
+   "saeb",
+   "flow",
+   "trn",
+   "inse"
+  ],
+  "replay": "NO_CHANGE",
+  "rollback": "ROLLED_BACK com estado idêntico",
+  "falha_injetada": "sem rastro",
+  "ondas_anteriores_intactas": true
+ },
+ "fingerprints": {
+  "campos": 73,
+  "identicos": 70,
+  "diferentes_esperados": [
+   "migrations",
+   "publicationsCrime.h",
+   "publicationsCrime.n"
+  ]
+ },
+ "serving": {
+  "casos": 99,
+  "p50_max_ms": 32.5,
+  "p95_max_ms": 47.9,
+  "repeticoes": 30
+ },
+ "publicacao_publica_autorizada": false,
+ "pendencia_juridica": "NT 12/2023 da ANPD e redistribuição de tabelas derivadas"
+}

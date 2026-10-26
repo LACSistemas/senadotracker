@@ -1,0 +1,11 @@
+{
+  "provider": "Siconfi/DCA",
+  "source_mode": "existing_RAW_reprocessing",
+  "function": 12,
+  "years": [2014, 2025],
+  "slices_expected": 336,
+  "slices_missing": 0,
+  "facts_observed": 354807,
+  "stage_semantics": ["EMP", "LIQ", "PAG", "RAP"],
+  "double_counting_guard": "PASS_WITH_DOCUMENTED_SUBFUNCTION_CAVEATS"
+}

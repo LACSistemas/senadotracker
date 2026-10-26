@@ -2,6 +2,8 @@ import { join } from 'node:path';
 import { appendFile, mkdir } from 'node:fs/promises';
 import { storageConfig } from '../../apps/collector/src/exec/storage.ts';
 import { collectFinancas } from '../../apps/collector/src/exec/financas.ts';
+import { collectEducationFinancas } from '../../apps/collector/src/exec/financas.ts';
+import { collectSiope } from '../../apps/collector/src/exec/siope.ts';
 import { applyExecMigrations, seedFinancasDefs } from '../../packages/db/src/exec/index.ts';
 import { openPool } from './db.ts';
 
@@ -13,13 +15,18 @@ import { openPool } from './db.ts';
  */
 const [cmd, kind, yearsArg, ufArg] = process.argv.slice(2);
 const cfg = storageConfig(); await mkdir(cfg.logsDir, { recursive: true });
-const log = (m: string) => { console.log(m); void appendFile(join(cfg.logsDir, `financas-${cmd}.jsonl`), m + '\n'); };
+const log = (m: string) => { console.log(m); void appendFile(join(cfg.logsDir, `financas-${cmd}.jsonl`), m + '\n').catch(() => undefined); };
 const pool = openPool(3);
 try {
   const t0 = Date.now();
   if (cmd === 'migrate') log(JSON.stringify({ applied: await applyExecMigrations(pool) }));
   else if (cmd === 'seed') log(JSON.stringify({ defs: await seedFinancasDefs(pool) }));
-  else if (cmd === 'publish') {
+  else if (cmd === 'publish-education') {
+    const years = (yearsArg ?? '').includes('-') ? (() => { const [a, b] = yearsArg!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => a! + i); })() : (yearsArg ?? '').split(',').map(Number);
+    const all = !ufArg || ufArg === 'all'; const ufs = all ? undefined : ufArg!.split(','); const r = await collectEducationFinancas(pool, cfg, { years, ...(ufs ? { ufs } : {}), includeUniao: all, log }); log(JSON.stringify({ slices: r.results.length, byStatus: Object.groupBy(r.results, x => x.status), missing: r.missing.length }));
+  } else if (cmd === 'publish-siope') {
+    const years = (yearsArg ?? '').includes('-') ? (() => { const [a, b] = yearsArg!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => a! + i); })() : (yearsArg ?? '').split(',').map(Number); const all = !ufArg || ufArg === 'all'; const ufs = all ? undefined : ufArg!.split(','); log(JSON.stringify(await collectSiope(pool, cfg, years, ufs)));
+  } else if (cmd === 'publish') {
     const years = (yearsArg ?? '').includes('-') ? (() => { const [a, b] = yearsArg!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => a! + i); })() : (yearsArg ?? '').split(',').map(Number);
     const all = !ufArg || ufArg === 'all'; const ufs = all ? undefined : ufArg!.split(',');
     const r = await collectFinancas(pool, cfg, { kind: kind as 'dca' | 'rreo' | 'dcarp', years, ...(ufs ? { ufs } : {}), includeUniao: all, log });

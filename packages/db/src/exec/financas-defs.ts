@@ -77,7 +77,7 @@ export function rreoColumn(coluna: string): string | null {
   return null;
 }
 
-export interface FinDef { id: number; code: string; label: string; unit: string; sort: number; numerator: string; denominator: string; source: 'DCA' | 'DCA_RP' | 'RREO' | 'PNCP' | 'TRANSFER'; stage: string; note: string; minDenominator?: number }
+export interface FinDef { id: number; code: string; label: string; unit: string; sort: number; numerator: string; denominator: string; source: 'DCA' | 'EDU_DCA' | 'DCA_RP' | 'RREO' | 'PNCP' | 'TRANSFER'; stage: string; note: string; minDenominator?: number }
 const NOTE_SCOPE = 'Despesa classificada na FUNÇÃO orçamentária 06 (Segurança Pública) pelo próprio ente: perspectiva funcional, NÃO é o gasto das corporações policiais (um órgão de segurança também executa Previdência e Administração, e a função 06 pode ser executada por órgão que não é secretaria de segurança). Exclui as despesas intra-orçamentárias. Estado e municípios NÃO se somam (há transferências entre esferas); município não recebe gasto estadual.';
 const NOTE_DCA = `${NOTE_SCOPE} Fonte: DCA (Siconfi), Anexo I-E, declaração anual do ente; valor exato em centavos em exec_fin_fact. Ente que não declarou a DCA do ano NÃO tem linha (nunca zero); ver exec_fin_cov.`;
 const NOTE_RREO = `${NOTE_SCOPE} Fonte: RREO (Siconfi), Anexo 02, snapshot do último bimestre publicado no exercício; valores ACUMULADOS até o bimestre (não são somáveis entre bimestres). Só publicam o RREO completo estados, DF, União e municípios com 50 mil habitantes ou mais (os demais publicam o simplificado, sem função): ausência não é zero. Exercício com bimestre < 6 é preliminar.`;
@@ -111,6 +111,27 @@ export const FIN_DEFS: FinDef[] = [
 export const FIN_DCA_IDS: number[] = FIN_DEFS.filter(d => d.source === 'DCA').map(d => d.id);
 export const FIN_RREO_IDS: number[] = FIN_DEFS.filter(d => d.source === 'RREO').map(d => d.id);
 
+const EDU_NOTE = 'Função orçamentária 12 (Educação), fonte DCA Anexo I-E do Siconfi. Mede a despesa funcional declarada pelo ente, não MDE do SIOPE, Fundeb, receita ou transferência. Empenhado, liquidado e pago são estágios distintos; ausência de linha não é zero.';
+const eduDca = (id: number, code: string, label: string, stage: string, num: string, extra = ''): FinDef => ({ id, code: `IND-FIN-DCA-EDU-${code}`, label, unit: 'R$', sort: id, numerator: num, denominator: 'não se aplica (valor monetário)', source: 'EDU_DCA', stage, note: `${EDU_NOTE} ${extra}`.trim() });
+export const FIN_EDU_DEFS: FinDef[] = [
+  eduDca(7101, 'EDU-EMP', 'Despesa empenhada na função Educação', 'empenhada', 'DCA I-E, função 12, Despesas Empenhadas'),
+  eduDca(7102, 'EDU-LIQ', 'Despesa liquidada na função Educação', 'liquidada', 'DCA I-E, função 12, Despesas Liquidadas'),
+  eduDca(7103, 'EDU-PAG', 'Despesa paga na função Educação', 'paga', 'DCA I-E, função 12, Despesas Pagas'),
+  eduDca(7104, 'EDU-RPNP', 'Restos a pagar não processados inscritos na função Educação', 'restos a pagar inscritos', 'DCA I-E, função 12, Inscrição de RP não processados'),
+  eduDca(7105, 'EDU-RPP', 'Restos a pagar processados inscritos na função Educação', 'restos a pagar inscritos', 'DCA I-E, função 12, Inscrição de RP processados'),
+  eduDca(7106, 'EDU-TOT-EMP', 'Despesa total empenhada do ente (exceto intra-orçamentárias)', 'empenhada', 'DCA I-E, total exceto intra, Despesas Empenhadas'),
+  eduDca(7107, 'EDU-TOT-PAG', 'Despesa total paga do ente (exceto intra-orçamentárias)', 'paga', 'DCA I-E, total exceto intra, Despesas Pagas'),
+  eduDca(7108, 'EDU-SHARE-EMP', 'Participação da função Educação na despesa total empenhada', 'participação', 'função 12 / total exceto intra', 'Percentual calculado somente quando ambos os estágios são publicados.'),
+  eduDca(7109, 'EDU-PAYRATE', 'Taxa de pagamento da função Educação', 'paga/empenhada', 'pago / empenhado da função 12', 'Não é execução de MDE nem taxa de pagamento de Fundeb.'),
+  eduDca(7110, 'EDU-EMP-PC', 'Despesa empenhada em Educação por habitante', 'empenhada', 'função 12 empenhada / população IBGE', 'Sem população válida a linha fica ausente.'),
+  eduDca(7111, 'EDU-PAG-PC', 'Despesa paga em Educação por habitante', 'paga', 'função 12 paga / população IBGE', 'Sem população válida a linha fica ausente.'),
+  ...([['122', 'Administração Geral'], ['361', 'Ensino Fundamental'], ['362', 'Ensino Médio'], ['363', 'Ensino Profissional'], ['364', 'Ensino Superior'], ['365', 'Educação Infantil'], ['366', 'Educação de Jovens e Adultos'], ['367', 'Educação Especial'], ['368', 'Educação Básica']] as const).flatMap(([c, nm], i) => [
+    eduDca(7120 + i * 2, `SUB-${c}-EMP`, `Despesa empenhada em Educação: ${nm}`, 'empenhada', `DCA I-E, subfunção 12.${c}, empenhadas`),
+    eduDca(7121 + i * 2, `SUB-${c}-PAG`, `Despesa paga em Educação: ${nm}`, 'paga', `DCA I-E, subfunção 12.${c}, pagas`),
+  ]),
+];
+export const FIN_EDU_DCA_IDS: number[] = FIN_EDU_DEFS.map(d => d.id);
+
 export const FIN_DCARP_DEFS: FinDef[] = [
   { id: 7021, code: 'IND-FIN-DCA-SEG-RP-PAGOS', label: 'Restos a pagar pagos na função Segurança Pública', unit: 'R$', sort: 7021, numerator: 'DCA I-G, função 06: RP não processados pagos + RP processados pagos', denominator: 'não se aplica (valor monetário)', source: 'DCA_RP', stage: 'restos a pagar pagos',
     note: 'Pagamento, no exercício, de restos a pagar inscritos em exercícios anteriores, na função 06. NÃO é despesa paga do exercício (7003) e não se soma a ela: o universo é outro (empenhos de anos anteriores). Fonte: DCA Anexo I-G. Só União, UFs e municípios com 100 mil habitantes ou mais foram coletados: ausência não é zero.' },
@@ -136,7 +157,7 @@ export const TRANSFER_DEFS: FinDef[] = [
   trf(7073, 'REPASSE', 'Valor de repasse dos convênios do MJSP firmados com o ente', 'R$', 'Σ v_repasse_conv (parte da União)'),
   trf(7074, 'DESEMB', 'Valor já desembolsado pela União nos convênios do MJSP firmados com o ente', 'R$', 'Σ v_desembolsado_conv (acumulado até a data do arquivo, imputado ao ano de assinatura)'),
 ];
-export const ALL_FIN_DEFS: FinDef[] = [...FIN_DEFS, ...FIN_DCARP_DEFS, ...PNCP_DEFS, ...TRANSFER_DEFS];
+export const ALL_FIN_DEFS: FinDef[] = [...FIN_DEFS, ...FIN_EDU_DEFS, ...FIN_DCARP_DEFS, ...PNCP_DEFS, ...TRANSFER_DEFS];
 export const FIN_PNCP_IDS: number[] = PNCP_DEFS.map(d => d.id);
 export const FIN_TRANSFER_IDS: number[] = TRANSFER_DEFS.map(d => d.id);
 
@@ -146,7 +167,7 @@ export async function seedFinancasDefs(pool: Pool, defs: FinDef[] = ALL_FIN_DEFS
     await pool.query(`INSERT INTO civica_exec.exec_ind_def (indicator_id, code, method_version, domain, sort_order, label, unit, grain, numerator_desc, denominator_desc, min_denominator, ranking_allowed, aggregation_allowed, null_semantics, methodology_note)
       VALUES ($1,$2,1,$3,$4,$5,$6,'A',$7,$8,$9,false,false,$10,$11)
       ON CONFLICT (indicator_id) DO UPDATE SET label = EXCLUDED.label, unit = EXCLUDED.unit, numerator_desc = EXCLUDED.numerator_desc, denominator_desc = EXCLUDED.denominator_desc, min_denominator = EXCLUDED.min_denominator, null_semantics = EXCLUDED.null_semantics, methodology_note = EXCLUDED.methodology_note`,
-      [d.id, d.code, DOMAIN.seguranca, d.sort, d.label, d.unit, d.numerator, d.denominator, d.minDenominator ?? null,
+      [d.id, d.code, d.source === 'EDU_DCA' ? DOMAIN.educacao : DOMAIN.seguranca, d.sort, d.label, d.unit, d.numerator, d.denominator, d.minDenominator ?? null,
         'sem linha = ente sem declaração do demonstrativo no exercício, declaração sem a linha da função 06, ou denominador ausente; consultar exec_fin_cov. Valor zero só quando a fonte declara zero. Valores monetários não somam entre esferas nem entre estágios.', d.note]);
   }
   return defs.length;
