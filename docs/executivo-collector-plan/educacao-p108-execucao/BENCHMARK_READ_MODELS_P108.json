@@ -1,0 +1,709 @@
+{
+  "generatedAt": "2026-10-27T11:01:47.597Z",
+  "repetitions": 5,
+  "scenarios": [
+    {
+      "name": "school_profile",
+      "budgetMs": 100,
+      "p50Ms": 13.1,
+      "p95Ms": 21.8,
+      "maxMs": 21.8,
+      "pass": true,
+      "samplePresent": true
+    },
+    {
+      "name": "municipality_vitoria",
+      "budgetMs": 200,
+      "p50Ms": 40.8,
+      "p95Ms": 49.3,
+      "maxMs": 49.3,
+      "pass": true,
+      "samplePresent": true
+    },
+    {
+      "name": "municipality_sao_paulo",
+      "budgetMs": 200,
+      "p50Ms": 667.7,
+      "p95Ms": 1003,
+      "maxMs": 1003,
+      "pass": false,
+      "samplePresent": true
+    },
+    {
+      "name": "state_es",
+      "budgetMs": 200,
+      "p50Ms": 65.4,
+      "p95Ms": 81.9,
+      "maxMs": 81.9,
+      "pass": true,
+      "samplePresent": true
+    },
+    {
+      "name": "state_sp",
+      "budgetMs": 200,
+      "p50Ms": 260,
+      "p95Ms": 289.5,
+      "maxMs": 289.5,
+      "pass": false,
+      "samplePresent": true
+    },
+    {
+      "name": "brazil",
+      "budgetMs": 300,
+      "p50Ms": 2073.9,
+      "p95Ms": 2776.5,
+      "maxMs": 2776.5,
+      "pass": false,
+      "samplePresent": true
+    },
+    {
+      "name": "benchmarks_vitoria",
+      "budgetMs": 200,
+      "p50Ms": 433,
+      "p95Ms": 557.3,
+      "maxMs": 557.3,
+      "pass": false,
+      "samplePresent": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "name": "contracts_rollup_brazil_2025",
+      "report": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Sorted",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 0.28,
+            "Total Cost": 15.51,
+            "Plan Rows": 5,
+            "Plan Width": 44,
+            "Actual Startup Time": 0.025,
+            "Actual Total Time": 0.087,
+            "Actual Rows": 49,
+            "Actual Loops": 1,
+            "Group Key": [
+              "category",
+              "confidence"
+            ],
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "exec_edu_contract_rollup_pkey",
+                "Relation Name": "exec_edu_contract_rollup",
+                "Alias": "exec_edu_contract_rollup",
+                "Startup Cost": 0.28,
+                "Total Cost": 15.39,
+                "Plan Rows": 5,
+                "Plan Width": 16,
+                "Actual Startup Time": 0.017,
+                "Actual Total Time": 0.031,
+                "Actual Rows": 49,
+                "Actual Loops": 1,
+                "Index Cond": "((scope = 1) AND (scope_key = 0) AND (year = '2025'::smallint))",
+                "Rows Removed by Index Recheck": 0,
+                "Shared Hit Blocks": 4,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.13,
+          "Triggers": [],
+          "Execution Time": 0.115
+        }
+      ]
+    },
+    {
+      "name": "programs_brazil_2025_rollup",
+      "report": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Sorted",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 0.42,
+            "Total Cost": 8.47,
+            "Plan Rows": 1,
+            "Plan Width": 64,
+            "Actual Startup Time": 0.04,
+            "Actual Total Time": 0.06,
+            "Actual Rows": 6,
+            "Actual Loops": 1,
+            "Group Key": [
+              "program_code",
+              "financial_stage"
+            ],
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Scan Direction": "Forward",
+                "Index Name": "exec_edu_program_rollup_query_idx",
+                "Relation Name": "exec_edu_program_rollup",
+                "Alias": "exec_edu_program_rollup",
+                "Startup Cost": 0.42,
+                "Total Cost": 8.44,
+                "Plan Rows": 1,
+                "Plan Width": 32,
+                "Actual Startup Time": 0.029,
+                "Actual Total Time": 0.036,
+                "Actual Rows": 46,
+                "Actual Loops": 1,
+                "Index Cond": "((scope = 1) AND (scope_key = 'BRASIL'::text) AND (year = '2025'::smallint))",
+                "Rows Removed by Index Recheck": 0,
+                "Shared Hit Blocks": 4,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.121,
+          "Triggers": [],
+          "Execution Time": 0.084
+        }
+      ]
+    },
+    {
+      "name": "siconfi_function12_brazil_2025",
+      "report": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Sorted",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 2495.67,
+            "Total Cost": 19827.43,
+            "Plan Rows": 167,
+            "Plan Width": 43,
+            "Actual Startup Time": 33.231,
+            "Actual Total Time": 66.599,
+            "Actual Rows": 5,
+            "Actual Loops": 1,
+            "Group Key": [
+              "k.code"
+            ],
+            "Shared Hit Blocks": 12819,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0,
+            "Plans": [
+              {
+                "Node Type": "Aggregate",
+                "Strategy": "Sorted",
+                "Partial Mode": "Simple",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 2495.67,
+                "Total Cost": 19822.42,
+                "Plan Rows": 167,
+                "Plan Width": 15,
+                "Actual Startup Time": 22.498,
+                "Actual Total Time": 60.825,
+                "Actual Rows": 25732,
+                "Actual Loops": 1,
+                "Group Key": [
+                  "k.code",
+                  "f.entity_id"
+                ],
+                "Shared Hit Blocks": 12819,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Incremental Sort",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Startup Cost": 2495.67,
+                    "Total Cost": 19819.5,
+                    "Plan Rows": 167,
+                    "Plan Width": 15,
+                    "Actual Startup Time": 22.494,
+                    "Actual Total Time": 49.901,
+                    "Actual Rows": 25732,
+                    "Actual Loops": 1,
+                    "Sort Key": [
+                      "k.code",
+                      "f.entity_id"
+                    ],
+                    "Presorted Key": [
+                      "k.code"
+                    ],
+                    "Full-sort Groups": {
+                      "Group Count": 5,
+                      "Sort Methods Used": [
+                        "quicksort"
+                      ],
+                      "Sort Space Memory": {
+                        "Average Sort Space Used": 27,
+                        "Peak Sort Space Used": 27
+                      }
+                    },
+                    "Pre-sorted Groups": {
+                      "Group Count": 5,
+                      "Sort Methods Used": [
+                        "quicksort"
+                      ],
+                      "Sort Space Memory": {
+                        "Average Sort Space Used": 368,
+                        "Peak Sort Space Used": 381
+                      }
+                    },
+                    "Shared Hit Blocks": 12819,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0,
+                    "Plans": [
+                      {
+                        "Node Type": "Nested Loop",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Join Type": "Inner",
+                        "Startup Cost": 21.16,
+                        "Total Cost": 19813.59,
+                        "Plan Rows": 167,
+                        "Plan Width": 15,
+                        "Actual Startup Time": 1.074,
+                        "Actual Total Time": 40.245,
+                        "Actual Rows": 25732,
+                        "Actual Loops": 1,
+                        "Inner Unique": false,
+                        "Shared Hit Blocks": 12819,
+                        "Shared Read Blocks": 0,
+                        "Shared Dirtied Blocks": 0,
+                        "Shared Written Blocks": 0,
+                        "Local Hit Blocks": 0,
+                        "Local Read Blocks": 0,
+                        "Local Dirtied Blocks": 0,
+                        "Local Written Blocks": 0,
+                        "Temp Read Blocks": 0,
+                        "Temp Written Blocks": 0,
+                        "Plans": [
+                          {
+                            "Node Type": "Index Scan",
+                            "Parent Relationship": "Outer",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Scan Direction": "Forward",
+                            "Index Name": "exec_ref_code_pkey",
+                            "Relation Name": "exec_ref_code",
+                            "Alias": "k",
+                            "Startup Cost": 0.14,
+                            "Total Cost": 11.79,
+                            "Plan Rows": 8,
+                            "Plan Width": 5,
+                            "Actual Startup Time": 0.01,
+                            "Actual Total Time": 0.02,
+                            "Actual Rows": 5,
+                            "Actual Loops": 1,
+                            "Index Cond": "(domain = 31)",
+                            "Rows Removed by Index Recheck": 0,
+                            "Shared Hit Blocks": 2,
+                            "Shared Read Blocks": 0,
+                            "Shared Dirtied Blocks": 0,
+                            "Shared Written Blocks": 0,
+                            "Local Hit Blocks": 0,
+                            "Local Read Blocks": 0,
+                            "Local Dirtied Blocks": 0,
+                            "Local Written Blocks": 0,
+                            "Temp Read Blocks": 0,
+                            "Temp Written Blocks": 0
+                          },
+                          {
+                            "Node Type": "Nested Loop",
+                            "Parent Relationship": "Inner",
+                            "Parallel Aware": false,
+                            "Async Capable": false,
+                            "Join Type": "Inner",
+                            "Startup Cost": 21.01,
+                            "Total Cost": 2468.49,
+                            "Plan Rows": 673,
+                            "Plan Width": 14,
+                            "Actual Startup Time": 0.883,
+                            "Actual Total Time": 7.53,
+                            "Actual Rows": 5146,
+                            "Actual Loops": 5,
+                            "Inner Unique": false,
+                            "Shared Hit Blocks": 12817,
+                            "Shared Read Blocks": 0,
+                            "Shared Dirtied Blocks": 0,
+                            "Shared Written Blocks": 0,
+                            "Local Hit Blocks": 0,
+                            "Local Read Blocks": 0,
+                            "Local Dirtied Blocks": 0,
+                            "Local Written Blocks": 0,
+                            "Temp Read Blocks": 0,
+                            "Temp Written Blocks": 0,
+                            "Plans": [
+                              {
+                                "Node Type": "Seq Scan",
+                                "Parent Relationship": "Outer",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Relation Name": "exec_ref_code",
+                                "Alias": "c",
+                                "Startup Cost": 0,
+                                "Total Cost": 5.64,
+                                "Plan Rows": 1,
+                                "Plan Width": 2,
+                                "Actual Startup Time": 0.01,
+                                "Actual Total Time": 0.019,
+                                "Actual Rows": 1,
+                                "Actual Loops": 5,
+                                "Filter": "((domain = 30) AND (code = '12'::text))",
+                                "Rows Removed by Filter": 127,
+                                "Shared Hit Blocks": 15,
+                                "Shared Read Blocks": 0,
+                                "Shared Dirtied Blocks": 0,
+                                "Shared Written Blocks": 0,
+                                "Local Hit Blocks": 0,
+                                "Local Read Blocks": 0,
+                                "Local Dirtied Blocks": 0,
+                                "Local Written Blocks": 0,
+                                "Temp Read Blocks": 0,
+                                "Temp Written Blocks": 0
+                              },
+                              {
+                                "Node Type": "Bitmap Heap Scan",
+                                "Parent Relationship": "Inner",
+                                "Parallel Aware": false,
+                                "Async Capable": false,
+                                "Relation Name": "exec_fin_fact",
+                                "Alias": "f",
+                                "Startup Cost": 21.01,
+                                "Total Cost": 2456.12,
+                                "Plan Rows": 673,
+                                "Plan Width": 16,
+                                "Actual Startup Time": 0.865,
+                                "Actual Total Time": 6.773,
+                                "Actual Rows": 5146,
+                                "Actual Loops": 5,
+                                "Recheck Cond": "((exercicio = '2025'::smallint) AND (conta_id = c.ref_id) AND (coluna_id = k.ref_id))",
+                                "Rows Removed by Index Recheck": 0,
+                                "Exact Heap Blocks": 12689,
+                                "Lossy Heap Blocks": 0,
+                                "Shared Hit Blocks": 12802,
+                                "Shared Read Blocks": 0,
+                                "Shared Dirtied Blocks": 0,
+                                "Shared Written Blocks": 0,
+                                "Local Hit Blocks": 0,
+                                "Local Read Blocks": 0,
+                                "Local Dirtied Blocks": 0,
+                                "Local Written Blocks": 0,
+                                "Temp Read Blocks": 0,
+                                "Temp Written Blocks": 0,
+                                "Plans": [
+                                  {
+                                    "Node Type": "Bitmap Index Scan",
+                                    "Parent Relationship": "Outer",
+                                    "Parallel Aware": false,
+                                    "Async Capable": false,
+                                    "Index Name": "exec_fin_fact_year_account_idx",
+                                    "Startup Cost": 0,
+                                    "Total Cost": 20.85,
+                                    "Plan Rows": 673,
+                                    "Plan Width": 0,
+                                    "Actual Startup Time": 0.562,
+                                    "Actual Total Time": 0.562,
+                                    "Actual Rows": 5146,
+                                    "Actual Loops": 5,
+                                    "Index Cond": "((exercicio = '2025'::smallint) AND (conta_id = c.ref_id) AND (coluna_id = k.ref_id))",
+                                    "Shared Hit Blocks": 113,
+                                    "Shared Read Blocks": 0,
+                                    "Shared Dirtied Blocks": 0,
+                                    "Shared Written Blocks": 0,
+                                    "Local Hit Blocks": 0,
+                                    "Local Read Blocks": 0,
+                                    "Local Dirtied Blocks": 0,
+                                    "Local Written Blocks": 0,
+                                    "Temp Read Blocks": 0,
+                                    "Temp Written Blocks": 0
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 4,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.452,
+          "Triggers": [],
+          "Execution Time": 66.737
+        }
+      ]
+    },
+    {
+      "name": "siope_brazil_2025",
+      "report": [
+        {
+          "Plan": {
+            "Node Type": "Aggregate",
+            "Strategy": "Hashed",
+            "Partial Mode": "Simple",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Startup Cost": 122564.98,
+            "Total Cost": 122869.18,
+            "Plan Rows": 24336,
+            "Plan Width": 90,
+            "Actual Startup Time": 795.596,
+            "Actual Total Time": 949.391,
+            "Actual Rows": 202515,
+            "Actual Loops": 1,
+            "Group Key": [
+              "exec_edu_siope_fact.componente",
+              "exec_edu_siope_fact.codigo",
+              "exec_edu_siope_fact.estagio"
+            ],
+            "Planned Partitions": 0,
+            "HashAgg Batches": 5,
+            "Peak Memory Usage": 65585,
+            "Disk Usage": 7792,
+            "Shared Hit Blocks": 13014,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 1099,
+            "Temp Written Blocks": 1998,
+            "Plans": [
+              {
+                "Node Type": "Aggregate",
+                "Strategy": "Hashed",
+                "Partial Mode": "Simple",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 114655.68,
+                "Total Cost": 117089.31,
+                "Plan Rows": 243363,
+                "Plan Width": 62,
+                "Actual Startup Time": 396.587,
+                "Actual Total Time": 544.02,
+                "Actual Rows": 411420,
+                "Actual Loops": 1,
+                "Group Key": [
+                  "exec_edu_siope_fact.entity_id",
+                  "exec_edu_siope_fact.componente",
+                  "exec_edu_siope_fact.codigo",
+                  "exec_edu_siope_fact.estagio"
+                ],
+                "Planned Partitions": 0,
+                "HashAgg Batches": 5,
+                "Peak Memory Usage": 75825,
+                "Disk Usage": 1680,
+                "Shared Hit Blocks": 13014,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 168,
+                "Temp Written Blocks": 330,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Heap Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Relation Name": "exec_edu_siope_fact",
+                    "Alias": "exec_edu_siope_fact",
+                    "Startup Cost": 8042.38,
+                    "Total Cost": 109652.53,
+                    "Plan Rows": 400252,
+                    "Plan Width": 62,
+                    "Actual Startup Time": 34.123,
+                    "Actual Total Time": 142.258,
+                    "Actual Rows": 411420,
+                    "Actual Loops": 1,
+                    "Recheck Cond": "(exercicio = '2025'::smallint)",
+                    "Rows Removed by Index Recheck": 0,
+                    "Exact Heap Blocks": 11482,
+                    "Lossy Heap Blocks": 0,
+                    "Shared Hit Blocks": 13014,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0,
+                    "Plans": [
+                      {
+                        "Node Type": "Bitmap Index Scan",
+                        "Parent Relationship": "Outer",
+                        "Parallel Aware": false,
+                        "Async Capable": false,
+                        "Index Name": "exec_edu_siope_fact_year_idx",
+                        "Startup Cost": 0,
+                        "Total Cost": 7942.32,
+                        "Plan Rows": 400252,
+                        "Plan Width": 0,
+                        "Actual Startup Time": 31.97,
+                        "Actual Total Time": 31.97,
+                        "Actual Rows": 411420,
+                        "Actual Loops": 1,
+                        "Index Cond": "(exercicio = '2025'::smallint)",
+                        "Shared Hit Blocks": 1532,
+                        "Shared Read Blocks": 0,
+                        "Shared Dirtied Blocks": 0,
+                        "Shared Written Blocks": 0,
+                        "Local Hit Blocks": 0,
+                        "Local Read Blocks": 0,
+                        "Local Dirtied Blocks": 0,
+                        "Local Written Blocks": 0,
+                        "Temp Read Blocks": 0,
+                        "Temp Written Blocks": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "Planning": {
+            "Shared Hit Blocks": 3,
+            "Shared Read Blocks": 0,
+            "Shared Dirtied Blocks": 0,
+            "Shared Written Blocks": 0,
+            "Local Hit Blocks": 0,
+            "Local Read Blocks": 0,
+            "Local Dirtied Blocks": 0,
+            "Local Written Blocks": 0,
+            "Temp Read Blocks": 0,
+            "Temp Written Blocks": 0
+          },
+          "Planning Time": 0.192,
+          "Triggers": [],
+          "Execution Time": 985.244
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "pass": false,
+    "failures": [
+      "municipality_sao_paulo",
+      "state_sp",
+      "brazil",
+      "benchmarks_vitoria"
+    ]
+  }
+}

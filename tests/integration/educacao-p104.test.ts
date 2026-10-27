@@ -3,7 +3,7 @@ import test from 'node:test';
 import type { Pool } from 'pg';
 import {
   DATASET, FLOW_COLS, IDEB_MEASURES, TDI_COLS, TRN_COLS, TXR_COLS, applyExecMigrations, buildEduYear, buildFlowYear, buildIdebYear, buildInseYear, buildSaebYear, eduCompetence,
-  getFlowSchool, getFlowTerritory, getIdebSchool, getIdebTerritory, getInseTerritory, getLearningCoverage, getSaebTerritory, getTransitionTerritory, rollbackRun,
+  getFlowSchool, getFlowSeries, getFlowTerritory, getIdebSchool, getIdebTerritory, getInseTerritory, getLearningCoverage, getSaebTerritory, getTransitionTerritory, rollbackRun,
   type CensoRow, type FlowFile, type FlowRaw, type IdebFile, type IdebRaw, type InseFile, type SaebFile, type SaebRaw,
 } from '../../packages/db/src/exec/index.ts';
 import { loadMunicipalities, publishEduSlice, type EduFiles } from '../../apps/collector/src/exec/educacao.ts';
@@ -98,6 +98,7 @@ test('Fluxo: rendimento + distorção em uma linha por escola, "***" suprimido f
   const school = await getFlowSchool(pool, 32000001); const c = school!.cuts[0]!; assert.equal(c.values.find(x => x.code === 'ap_fun')!.value, 90.5); assert.equal(c.values.find(x => x.code === 'td_fun')!.value, 12.3); assert.ok(!c.values.some(x => x.code === 'ap_ai'), 'suprimido não vira valor');
   const supp = (await pool.query(`SELECT sum(cells_supp)::int n FROM civica_exec.exec_edu_flow_cov`)).rows[0].n; assert.equal(supp, 1);
   const m = await getFlowTerritory(pool, { ibge7: VIT }); assert.equal(m!.series[0]!.values.ap_fun, 91); const b = await getFlowTerritory(pool, {}); assert.equal(b!.series[0]!.values.rp_fun, 6.5);
+  const fs = await getFlowSeries(pool, { ibge7: VIT, codes: ['ap_fun', 'ab_ai', 'nao_existe'] }); assert.equal(fs[0]!.values.ap_fun, 91); assert.deepEqual(Object.keys(fs[0]!.values), ['ap_fun', 'ab_ai'], 'código desconhecido é ignorado'); assert.deepEqual(await getFlowSeries(pool, { ibge7: '9999999', codes: ['ap_fun'] }), []);
   const trn: FlowFile[] = [{ family: 'TRN', level: 'uf', year: 2022, sha256: ['t'], rows: [fr('Brasil', 'Total', 'Total', { pro_fun: '93.6', rep_fun: '3.2', eva_fun: '2.2', mej_fun: '1' }, TRN_COLS)] }];
   for (const s of buildFlowYear(trn, ent, 'trn').values()) assert.equal((await publishFlowSlice(pool, { slice: s, mode: 'trn', fileShas: ['t'], relPaths: ['inep/indicadores/t.zip'], first: await firstOf(DATASET.edu_trn, s.uf, 202205) })).status, 'PUBLISHED');
   const t = await getTransitionTerritory(pool, {}); assert.equal(t!.series[0]!.values.pro_fun, 93.6); assert.equal(t!.editions[0], 2022);

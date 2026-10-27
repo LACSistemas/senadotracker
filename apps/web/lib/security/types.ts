@@ -15,7 +15,7 @@ export interface BenchView {
 }
 export interface ChartMarker { t: string; label: string }
 export interface ChartView {
-  id: string; title: string; unit: string; digits: number; grain: Grain; series: ChartSeries[]; /** mesma série em meses, quando o gráfico principal é anual */ monthly?: ChartSeries[] | undefined; bench?: BenchView | undefined; /** quando o benchmark é calculado sob demanda */ benchUrl?: string | undefined;
+  id: string; title: string; unit: string; digits: number; grain: Grain; /** anos entre pontos consecutivos quando a fonte é bienal etc. (padrão 1): a linha só se interrompe se faltar uma edição */ stepYears?: number | undefined; /** eixo vertical não começa em zero (escalas de proficiência, notas): evita que a variação real fique invisível */ zoom?: boolean | undefined; /** teto fixo do eixo (ex.: 100 para percentuais) */ yMax?: number | undefined; series: ChartSeries[]; /** mesma série em meses, quando o gráfico principal é anual */ monthly?: ChartSeries[] | undefined; bench?: BenchView | undefined; /** quando o benchmark é calculado sob demanda */ benchUrl?: string | undefined;
   /** rótulos próprios dos períodos (ex.: semestre 2025/2) */ periodNames?: Record<string, string> | undefined; markers?: ChartMarker[]; /** períodos sem estimativa oficial de população etc. */ gaps?: Array<{ from: string; to: string; label: string }>; notes: string[]; source: string; coverage: string;
 }
 

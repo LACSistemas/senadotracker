@@ -1,0 +1,13 @@
+{
+  "investigationDate": "2026-10-27",
+  "fullFilesDownloaded": false,
+  "rangeEvidenceReusedFromP10": true,
+  "directInepZipAttempts": [
+    {"url":"https://download.inep.gov.br/microdados/microdados_enem_2025.zip","result":"timeout/local network"},
+    {"url":"https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip","result":"502/local network"}
+  ],
+  "interpretation":"operational limitation of this investigation environment; not proof that official source is unavailable",
+  "eMEC":"public web/JS page observed; bulk/API not proven",
+  "CAPES":"official CKAN discovered; bulk retrieval not run"
+}
+

@@ -1,0 +1,9 @@
+{
+  "total": { "rows": 563222, "amountCents": "6581406260075" },
+  "categories": [
+    { "category": "LINKED_MUNICIPAL", "rows": 471356, "amountCents": "5416059247155" },
+    { "category": "NO_MUNICIPAL_CODE", "rows": 89547, "amountCents": "1142224700080" },
+    { "category": "UNRESOLVED_CODE", "rows": 2319, "amountCents": "23122312840" }
+  ],
+  "sumCategoriesEqualsTotal": true
+}

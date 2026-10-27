@@ -1,0 +1,43 @@
+edition,logical_field,source_file,status,exact_column(s),evidence_note
+2023,municipality_residence_code,participant,NOT_PUBLISHED,,No residence municipality columns in CSV; source is school municipality.
+2023,municipality_residence_name,participant,NOT_PUBLISHED,,Same limitation as residence code.
+2023,school_municipality_code,results,PRESENT_VALIDATED,CO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2023,school_municipality_name,results,PRESENT_VALIDATED,NO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2023,school_code,results,NOT_PUBLISHED,,Absent in 2023; 2024/2025 dictionary notes masking for schools with fewer than 10 participants.
+2023,school_uf_code,results,PRESENT_VALIDATED,CO_UF_ESC,Source-native school UF.
+2023,school_network_administrative_dependence,results,PRESENT_VALIDATED,TP_DEPENDENCIA_ADM_ESC,"1 federal, 2 estadual, 3 municipal, 4 privada; category labels in dictionary."
+2023,school_type_separate,participant/results,PRESENT_VALIDATED,TP_ESCOLA,Separate TP_ESCOLA exists only in 2023; 2024/2025 use administrative dependence for public/private.
+2023,presence_CN_CH_LC_MT,results,PRESENT_VALIDATED,TP_PRESENCA_CN; TP_PRESENCA_CH; TP_PRESENCA_LC; TP_PRESENCA_MT,"Presence categories validated against dictionary; 1=present, 0=absent, 2=eliminated."
+2023,notes_CN_CH_LC_MT,results,PRESENT_VALIDATED,NU_NOTA_CN; NU_NOTA_CH; NU_NOTA_LC; NU_NOTA_MT,Numeric scores; valid-note denominator is presence=1 and nonempty nonnegative score.
+2023,essay_status,results,PRESENT_VALIDATED,TP_STATUS_REDACAO,Status=1 (sem problemas) used for official valid essay denominator; all statuses retained in aggregate evidence.
+2023,essay_score,results,PRESENT_VALIDATED,NU_NOTA_REDACAO,Valid essay denominator restricted to status=1; no participant rows persisted.
+2023,high_school_conclusion,participant,PRESENT_VALIDATED,TP_ST_CONCLUSAO,Available in participant base; 2024/2025 participant and results bases have no common key.
+2023,participant_masked_id,participant,RESTRICTED,NU_INSCRICAO,Used only to verify schema; never persisted in aggregate outputs.
+2024,municipality_residence_code,participant,NOT_PUBLISHED,,INEP read-me states residence municipalities excluded from simplified public microdata.
+2024,municipality_residence_name,participant,NOT_PUBLISHED,,Same limitation as residence code.
+2024,school_municipality_code,results,PRESENT_VALIDATED,CO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2024,school_municipality_name,results,PRESENT_VALIDATED,NO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2024,school_code,results,PRESENT_WITH_LIMITATIONS,CO_ESCOLA,Absent in 2023; 2024/2025 dictionary notes masking for schools with fewer than 10 participants.
+2024,school_uf_code,results,PRESENT_VALIDATED,CO_UF_ESC,Source-native school UF.
+2024,school_network_administrative_dependence,results,PRESENT_VALIDATED,TP_DEPENDENCIA_ADM_ESC,"1 federal, 2 estadual, 3 municipal, 4 privada; category labels in dictionary."
+2024,school_type_separate,participant/results,NOT_PUBLISHED,,Separate TP_ESCOLA exists only in 2023; 2024/2025 use administrative dependence for public/private.
+2024,presence_CN_CH_LC_MT,results,PRESENT_VALIDATED,TP_PRESENCA_CN; TP_PRESENCA_CH; TP_PRESENCA_LC; TP_PRESENCA_MT,"Presence categories validated against dictionary; 1=present, 0=absent, 2=eliminated."
+2024,notes_CN_CH_LC_MT,results,PRESENT_VALIDATED,NU_NOTA_CN; NU_NOTA_CH; NU_NOTA_LC; NU_NOTA_MT,Numeric scores; valid-note denominator is presence=1 and nonempty nonnegative score.
+2024,essay_status,results,PRESENT_VALIDATED,TP_STATUS_REDACAO,Status=1 (sem problemas) used for official valid essay denominator; all statuses retained in aggregate evidence.
+2024,essay_score,results,PRESENT_VALIDATED,NU_NOTA_REDACAO,Valid essay denominator restricted to status=1; no participant rows persisted.
+2024,high_school_conclusion,participant,PRESENT_VALIDATED,TP_ST_CONCLUSAO,Available in participant base; 2024/2025 participant and results bases have no common key.
+2024,participant_masked_id,participant,RESTRICTED,NU_INSCRICAO,Used only to verify schema; never persisted in aggregate outputs.
+2025,municipality_residence_code,participant,NOT_PUBLISHED,,INEP read-me states residence municipalities excluded from simplified public microdata.
+2025,municipality_residence_name,participant,NOT_PUBLISHED,,Same limitation as residence code.
+2025,school_municipality_code,results,PRESENT_VALIDATED,CO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2025,school_municipality_name,results,PRESENT_VALIDATED,NO_MUNICIPIO_ESC,"Validated by header, dictionary and national reconciliation."
+2025,school_code,results,PRESENT_WITH_LIMITATIONS,CO_ESCOLA,Absent in 2023; 2024/2025 dictionary notes masking for schools with fewer than 10 participants.
+2025,school_uf_code,results,PRESENT_VALIDATED,CO_UF_ESC,Source-native school UF.
+2025,school_network_administrative_dependence,results,PRESENT_VALIDATED,TP_DEPENDENCIA_ADM_ESC,"1 federal, 2 estadual, 3 municipal, 4 privada; category labels in dictionary."
+2025,school_type_separate,participant/results,NOT_PUBLISHED,,Separate TP_ESCOLA exists only in 2023; 2024/2025 use administrative dependence for public/private.
+2025,presence_CN_CH_LC_MT,results,PRESENT_VALIDATED,TP_PRESENCA_CN; TP_PRESENCA_CH; TP_PRESENCA_LC; TP_PRESENCA_MT,"Presence categories validated against dictionary; 1=present, 0=absent, 2=eliminated."
+2025,notes_CN_CH_LC_MT,results,PRESENT_VALIDATED,NU_NOTA_CN; NU_NOTA_CH; NU_NOTA_LC; NU_NOTA_MT,Numeric scores; valid-note denominator is presence=1 and nonempty nonnegative score.
+2025,essay_status,results,PRESENT_VALIDATED,TP_STATUS_REDACAO,Status=1 (sem problemas) used for official valid essay denominator; all statuses retained in aggregate evidence.
+2025,essay_score,results,PRESENT_VALIDATED,NU_NOTA_REDACAO,Valid essay denominator restricted to status=1; no participant rows persisted.
+2025,high_school_conclusion,participant,PRESENT_VALIDATED,TP_ST_CONCLUSAO,Available in participant base; 2024/2025 participant and results bases have no common key.
+2025,participant_masked_id,participant,RESTRICTED,NU_INSCRICAO,Used only to verify schema; never persisted in aggregate outputs.

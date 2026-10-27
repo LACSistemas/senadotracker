@@ -1,0 +1,132 @@
+{
+  "generatedAt": "2026-10-27T14:02:51.487Z",
+  "method": {
+    "repetitions": 100,
+    "warmup": 1,
+    "cache": "warm",
+    "poolMax": 12
+  },
+  "scenarios": [
+    {
+      "name": "overview_brasil",
+      "budgetMs": 150,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.48,
+      "p90Ms": 0.61,
+      "p95Ms": 0.65,
+      "p99Ms": 1.06,
+      "maxMs": 1.07,
+      "payloadBytesUtf8": 11613,
+      "pass": true
+    },
+    {
+      "name": "overview_uf_sp",
+      "budgetMs": 100,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.43,
+      "p90Ms": 0.57,
+      "p95Ms": 0.68,
+      "p99Ms": 0.89,
+      "maxMs": 0.96,
+      "payloadBytesUtf8": 12912,
+      "pass": true
+    },
+    {
+      "name": "overview_municipio_grande",
+      "budgetMs": 100,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.22,
+      "p90Ms": 0.29,
+      "p95Ms": 0.37,
+      "p99Ms": 0.42,
+      "maxMs": 0.43,
+      "payloadBytesUtf8": 759,
+      "pass": true
+    },
+    {
+      "name": "overview_municipio_pequeno",
+      "budgetMs": 75,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.22,
+      "p90Ms": 0.31,
+      "p95Ms": 0.36,
+      "p99Ms": 0.54,
+      "maxMs": 0.67,
+      "payloadBytesUtf8": 745,
+      "pass": true
+    },
+    {
+      "name": "overview_escola_list",
+      "budgetMs": 200,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.83,
+      "p90Ms": 1,
+      "p95Ms": 1.06,
+      "p99Ms": 1.37,
+      "maxMs": 1.55,
+      "payloadBytesUtf8": 2307,
+      "pass": true
+    },
+    {
+      "name": "comparison_vitoria",
+      "budgetMs": 100,
+      "queries": 3,
+      "repetitions": 100,
+      "p50Ms": 0.95,
+      "p90Ms": 1.19,
+      "p95Ms": 1.38,
+      "p99Ms": 1.54,
+      "maxMs": 1.59,
+      "payloadBytesUtf8": 24312,
+      "pass": true
+    },
+    {
+      "name": "section_finance_sp",
+      "budgetMs": 150,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.45,
+      "p90Ms": 0.55,
+      "p95Ms": 0.63,
+      "p99Ms": 0.75,
+      "maxMs": 0.84,
+      "payloadBytesUtf8": 9870,
+      "pass": true
+    },
+    {
+      "name": "series_brasil",
+      "budgetMs": 200,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.27,
+      "p90Ms": 0.38,
+      "p95Ms": 0.41,
+      "p99Ms": 0.46,
+      "maxMs": 0.49,
+      "payloadBytesUtf8": 3003,
+      "pass": true
+    },
+    {
+      "name": "section_programs_municipio",
+      "budgetMs": 150,
+      "queries": 1,
+      "repetitions": 100,
+      "p50Ms": 0.19,
+      "p90Ms": 0.26,
+      "p95Ms": 0.28,
+      "p99Ms": 0.3,
+      "maxMs": 0.37,
+      "payloadBytesUtf8": 455,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "pass": true,
+    "failures": []
+  }
+}

@@ -1,0 +1,1 @@
+Evidence generated from official INEP ENEM 2023/2024/2025 ZIPs. Raw ZIPs and temporary 2025 RESULTADOS extraction remain on D:/Civica. No participant identifiers are present in evidence aggregates. National parity uses official Sinopse workbooks.

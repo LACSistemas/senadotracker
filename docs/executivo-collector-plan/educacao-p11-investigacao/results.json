@@ -1,0 +1,31 @@
+{
+  "phase": "P11",
+  "mode": "INVESTIGATION_ONLY",
+  "generatedAt": "2026-10-27",
+  "database": {"name":"projetoeleitor_db","currentDatabaseProved":true,"schema":"civica_exec","rawRoot":"D:\\Civica"},
+  "sourceClasses": {"PROVEN_OPERATIONAL":7,"PROVEN_WITH_LIMITATIONS":9,"DISCOVERY_ONLY":1,"BLOCKED_EXTERNAL":0,"NOT_AVAILABLE":1,"NEEDS_VALIDATION":3},
+  "gates": {
+    "G1_ENEM_FEASIBILITY":"PROVEN_WITH_LIMITATIONS",
+    "G2_IES_IDENTITY":"PROVEN_WITH_LIMITATIONS",
+    "G3_COURSES_ACCESS":"PROVEN_WITH_LIMITATIONS",
+    "G4_OFFICIAL_QUALITY":"PROVEN_WITH_LIMITATIONS",
+    "G5_FINANCE":"DISCOVERY_ONLY",
+    "G6_ACCESS_PROGRAMS":"PROVEN_WITH_LIMITATIONS",
+    "G7_GRADUATE_RESEARCH":"PROVEN_WITH_LIMITATIONS",
+    "G8_COVERAGE":"PROVEN_WITH_LIMITATIONS",
+    "G9_TERRITORIAL_PROOFS":"PROVEN_WITH_LIMITATIONS",
+    "G10_STORAGE_ARCHITECTURE":"PROVEN_WITH_LIMITATIONS"
+  },
+  "reusedP10Evidence": ["30 Censo Superior ZIPs 1995-2024", "Censo Superior 2024 headers", "Censo Superior 2023 identity", "civica_exec.exec_entity"],
+  "fullEnemCurrentFileValidated": false,
+  "collectorsChanged": false,
+  "migrationsChanged": false,
+  "databaseMutated": false,
+  "frontendChanged": false,
+  "commitOrPush": false,
+  "readyForP11_1": false,
+  "p11_1Started": false,
+  "internalWorkRemaining": "YES",
+  "reasonNotReady": "ENEM 2023-2025 current schemas and municipal fields require controlled validation in D:\\Civica before implementation"
+}
+

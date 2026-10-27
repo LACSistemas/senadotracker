@@ -1,0 +1,62 @@
+{
+  "phase": "P10.10",
+  "status": "PASS_WITH_CAVEATS",
+  "database": "projetoeleitor_db",
+  "routes": [
+    "/estados/[uf]/educacao",
+    "/municipios/[ibge]/educacao"
+  ],
+  "frontendChanged": true,
+  "externalSourceRequestsFromBrowser": 0,
+  "screenshots": {
+    "desktop": 6,
+    "mobile": 4,
+    "total": 10
+  },
+  "validation": {
+    "typecheck": "PASS",
+    "build": "PASS",
+    "targetedTests": { "passed": 6, "failed": 0, "skipped": 0 },
+    "routeSmoke": "PASS",
+    "desktop1440": "PASS",
+    "mobile390": "PASS",
+    "responsiveWidths": { "1440": "PASS", "1360": "PASS", "1280": "PASS", "390": "PASS", "375": "PASS", "320": "PASS" },
+    "horizontalOverflowPixels": 0,
+    "periodNetworkStageFilters": "PASS",
+    "benchmarkToggle": "PASS",
+    "municipalityMedianBenchmarks": "PASS",
+    "teacherMedianBenchmarks": "PASS",
+    "learningEvolutionComparison": "PASS",
+    "learningBenchmarkTooltip": "PASS",
+    "enrollmentEvolutionComparison": "PASS",
+    "teacherEvolutionComparison": "PASS",
+    "comparisonReadObservedMs": 558,
+    "schoolPagination": "PASS",
+    "securityRegression": "PASS"
+  },
+  "gates": {
+    "G0_repositoryDiscovery": "PASS",
+    "G1_dataContracts": "PASS",
+    "G2_statesEducation": "PASS",
+    "G3_municipalitiesEducation": "PASS",
+    "G4_editorialStorytelling": "PASS",
+    "G5_interactivity": "PASS_WITH_CAVEATS",
+    "G6_comparability": "PASS_WITH_CAVEATS",
+    "G7_dataCoverage": "PASS_WITH_CAVEATS",
+    "G8_privacy": "PASS_WITH_CAVEATS",
+    "G9_performance": "PASS_WITH_CAVEATS",
+    "G10_accessibility": "PASS_WITH_CAVEATS",
+    "G11_responsiveVisualQa": "PASS",
+    "G12_testsRegression": "PASS_WITH_CAVEATS",
+    "G13_finalProductReview": "PASS_WITH_CAVEATS"
+  },
+  "caveats": [
+    "smoke browser local, não suíte E2E de CI",
+    "TTFB/LCP de produção não medidos nesta fase",
+    "limitações de cobertura e validação jurídica do P10.9.1 permanecem",
+    "contrato observado não prova entrega educacional"
+  ],
+  "p10_11Started": false,
+  "commitOrPush": false,
+  "readyForReview": true
+}

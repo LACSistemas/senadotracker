@@ -1,0 +1,25 @@
+{
+  "page": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses-estatisticas/enem",
+  "http_status": 200,
+  "editions": {
+    "2023": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2023/sinopse_enem_2023.zip",
+      "bytes": 1971201,
+      "sha256": "E6B7BFA46694966C23BB2AC5E5B8EB504065D8B99C9B5303DBE5F9E03DAE81B2",
+      "last_modified": "2024-04-30T19:41:04Z"
+    },
+    "2024": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2024/sinopse_enem_2024.zip",
+      "bytes": 2057227,
+      "sha256": "4F3EBD2687C0F51F69EDB2C3D84AE4198117D577C787E2B2C7C44298478A02BC",
+      "last_modified": "2025-07-07T21:33:07Z"
+    },
+    "2025": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2025/sinopse_enem_2025.zip",
+      "bytes": 2077469,
+      "sha256": "149E001DD1C3265F29D9BA9EB10F69E55F486B7233D4794C32A53DE0569C05FF",
+      "last_modified": "2026-07-10T13:00:48Z"
+    }
+  },
+  "reconciliation": "national_inscritos_presence_math_essay_zero_delta"
+}

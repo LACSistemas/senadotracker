@@ -1,0 +1,14 @@
+{
+  "db": {
+    "db": "projetoeleitor_db",
+    "usr": "projetoeleitor_user",
+    "bytes": "32244108435",
+    "max_migration": 19
+  },
+  "cFreeBytes": 43446190080,
+  "dFreeBytes": null,
+  "clusters": {
+    "pgtestEdu7": false,
+    "pgtestT107": false
+  }
+}

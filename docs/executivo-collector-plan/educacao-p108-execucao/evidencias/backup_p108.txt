@@ -1,0 +1,6 @@
+path=artifacts/projetoeleitor_p108_prepublication_20261027.dump
+format=custom schema-only civica_exec
+sha256=e37b7ec24a98a942241b82a62e3d6df1ce0fcc7a9107c573b18b181114a37d94
+pg_restore_list=PASS
+database_before_bytes=31833500819
+raw_policy=D:\Civica (filesystem, not PostgreSQL)

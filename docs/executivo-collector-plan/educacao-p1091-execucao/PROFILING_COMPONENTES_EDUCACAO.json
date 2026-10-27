@@ -1,0 +1,460 @@
+{
+  "generatedAt": "2026-10-27T14:03:56.207Z",
+  "poolMax": 12,
+  "cache": "warm",
+  "rows": [
+    {
+      "name": "legacy_municipality_sao_paulo",
+      "totalMs": 686.123,
+      "queryCount": 48,
+      "queryMs": 3546.113,
+      "compositionMs": -2859.99,
+      "serializationMs": 2.755,
+      "payloadBytesUtf8": 499975,
+      "queries": [
+        {
+          "ms": 61.57,
+          "sql": "SELECT entity_id,kind,name,uf_code,ibge7::text FROM civica_exec.exec_entity WHERE kind=4 AND ibge7=$1::int"
+        },
+        {
+          "ms": 6.83,
+          "sql": "SELECT entity_id, ibge7::text AS ibge7, name, uf, uf_code FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1::int"
+        },
+        {
+          "ms": 11.968,
+          "sql": "SELECT array_agg(DISTINCT uf ORDER BY uf) ufs FROM civica_exec.exec_edu_ctr_cov WHERE kind=4 AND rows_out>0"
+        },
+        {
+          "ms": 8.917,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_cov ORDER BY year"
+        },
+        {
+          "ms": 9.464,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 14.137,
+          "sql": "SELECT y.dep, count(*)::int registered, count(*) FILTER (WHERE y.sit = 1)::int active, count(*) FILTER (WHERE (y.flags & 1) <> 0)::int with_mat, count(*) FILTER (WHERE (y.flags & 2"
+        },
+        {
+          "ms": 86.717,
+          "sql": "SELECT entity_id, name, uf_code FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1::int"
+        },
+        {
+          "ms": 74.272,
+          "sql": "SELECT c.year, c.layout, sum(c.rows_in)::int rows_in, sum(c.valid)::int valid, sum(c.rejected)::int rejected FROM civica_exec.exec_edu_cov c WHERE c.uf = $1 GROUP BY c.year, c.layo"
+        },
+        {
+          "ms": 99.442,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 17.884,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_offer_cov ORDER BY year"
+        },
+        {
+          "ms": 106.861,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 95.436,
+          "sql": "SELECT year, doc_total, doc_inf, doc_cre, doc_pre, doc_fun, doc_ai, doc_af, doc_med, doc_pub, doc_fed, doc_est, doc_mun, doc_priv, doc_urb, doc_rur FROM civica_exec.exec_edu_doc_te"
+        },
+        {
+          "ms": 12.563,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_trn_terr WHERE entity_id = $1 ORDER BY year"
+        },
+        {
+          "ms": 148.365,
+          "sql": "SELECT program_code,financial_stage,sum(rows)::int facts,sum(beneficiaries)::int beneficiaries,sum(amount_cents)::bigint amount FROM civica_exec.exec_edu_program_rollup WHERE scope"
+        },
+        {
+          "ms": 155.442,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 53.287,
+          "sql": "SELECT year, stage, dep, ap_tot, ap_1, ap_2, ap_3, ap_4, ap_5, p, nota_mt, nota_lp, nota_media, ideb, meta FROM civica_exec.exec_edu_ideb_terr WHERE entity_id = $1 AND ($2::smallin"
+        },
+        {
+          "ms": 50.207,
+          "sql": "SELECT dep, loc, pro_fun, pro_ai, pro_af, pro_f1, pro_f2, pro_f3, pro_f4, pro_f5, pro_f6, pro_f7, pro_f8, pro_f9, pro_med, pro_m1, pro_m2, pro_m3, rep_fun, rep_ai, rep_af, rep_f1, "
+        },
+        {
+          "ms": 3.319,
+          "sql": "SELECT year, pro_fun, rep_fun, eva_fun, mej_fun, pro_med, rep_med, eva_med, mej_med FROM civica_exec.exec_edu_trn_terr WHERE entity_id = $1 AND dep = 0 AND loc = 0 ORDER BY year"
+        },
+        {
+          "ms": 11.782,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_flow_terr WHERE entity_id = $1 ORDER BY year"
+        },
+        {
+          "ms": 7.902,
+          "sql": "SELECT dep, loc, ap_fun, ap_ai, ap_af, ap_f1, ap_f2, ap_f3, ap_f4, ap_f5, ap_f6, ap_f7, ap_f8, ap_f9, ap_med, ap_m1, ap_m2, ap_m3, ap_m4, ap_mns, rp_fun, rp_ai, rp_af, rp_f1, rp_f2"
+        },
+        {
+          "ms": 3.126,
+          "sql": "SELECT year, ap_fun, rp_fun, ab_fun, td_fun, ap_ai, ap_af, ap_med, rp_med, ab_med, td_ai, td_af, td_med FROM civica_exec.exec_edu_flow_terr WHERE entity_id = $1 AND dep = 0 AND loc"
+        },
+        {
+          "ms": 180.289,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 7.529,
+          "sql": "SELECT year, dep, loc, cap, qtd, media, nv1, nv2, nv3, nv4, nv5, nv6, nv7, nv8 FROM civica_exec.exec_edu_inse_terr WHERE entity_id = $1 ORDER BY year, dep, loc, cap"
+        },
+        {
+          "ms": 190.647,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 14.202,
+          "sql": "SELECT (c.best_confidence <= 2) AS firm, count(*)::int n, count(c.valor_global)::int n_valor, count(*) FILTER (WHERE c.outlier)::int n_out, coalesce(sum(c.valor_global) FILTER (WHE"
+        },
+        {
+          "ms": 1.734,
+          "sql": "SELECT c.year, count(*)::int n, count(c.valor_global)::int n_valor, count(*) FILTER (WHERE c.outlier)::int n_out, coalesce(sum(c.valor_global) FILTER (WHERE NOT c.outlier), 0)::num"
+        },
+        {
+          "ms": 211.88,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 8.776,
+          "sql": "SELECT k.year, k.category, k.confidence, count(*)::int n, count(k.valor)::int n_valor, count(*) FILTER (WHERE k.outlier)::int n_out, coalesce(sum(k.valor) FILTER (WHERE NOT k.outli"
+        },
+        {
+          "ms": 6.505,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_ind_cov ORDER BY year"
+        },
+        {
+          "ms": 10.609,
+          "sql": "SELECT dep, loc, atu_inf, atu_cre, atu_pre, atu_fun, atu_ai, atu_af, atu_med, had_inf, had_cre, had_pre, had_fun, had_ai, had_af, had_med, dsu_inf, dsu_cre, dsu_pre, dsu_fun, dsu_a"
+        },
+        {
+          "ms": 236.211,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 12.563,
+          "sql": "SELECT year, dep, loc, cap, grade, subj, media, tx_alf, nv0, nv1, nv2, nv3, nv4, nv5, nv6, nv7, nv8, nv9, nv10 FROM civica_exec.exec_edu_saeb_terr WHERE entity_id = $1 AND ($2::sma"
+        },
+        {
+          "ms": 151.585,
+          "sql": "SELECT y.dep, count(*)::bigint schools, sum(o.mat_bas)::bigint mat_bas, sum(o.tur_bas)::bigint tur_bas FROM civica_exec.exec_edu_offer_year o JOIN civica_exec.exec_edu_school_year "
+        },
+        {
+          "ms": 240.659,
+          "sql": "SELECT y.year, count(*)::int registered, count(*) FILTER (WHERE y.sit = 1)::int active, count(*) FILTER (WHERE (y.flags & 1) <> 0)::int with_mat, count(*) FILTER (WHERE (y.flags & "
+        },
+        {
+          "ms": 257.767,
+          "sql": "WITH x AS (SELECT f.entity_id,k.code stage,max(f.valor)::bigint amount FROM civica_exec.exec_fin_fact f JOIN civica_exec.exec_ref_code c ON c.ref_id=f.conta_id AND c.domain=30 AND "
+        },
+        {
+          "ms": 156.626,
+          "sql": "SELECT count(*)::bigint schools, sum(o.mat_bas)::bigint mat_bas, sum(o.mat_inf_cre)::bigint mat_inf_cre, sum(o.mat_inf_pre)::bigint mat_inf_pre, sum(o.mat_fund_ai)::bigint mat_fund"
+        },
+        {
+          "ms": 5.721,
+          "sql": "SELECT competence, run_id, activated_at FROM civica_exec.exec_publication WHERE dataset_id = 70 AND uf = $1"
+        },
+        {
+          "ms": 6.197,
+          "sql": "WITH x AS (SELECT entity_id,componente,codigo,estagio,max(valor_cents)::bigint amount FROM civica_exec.exec_edu_siope_fact WHERE exercicio=$1 GROUP BY entity_id,componente,codigo,e"
+        },
+        {
+          "ms": 2.985,
+          "sql": "SELECT count(*)::int n FROM civica_exec.exec_edu_school_year y WHERE y.year = $1 AND y.entity_id = $2"
+        },
+        {
+          "ms": 265.774,
+          "sql": "SELECT entity_id, name, uf_code FROM civica_exec.exec_entity WHERE kind = 4 AND ibge7 = $1"
+        },
+        {
+          "ms": 2.948,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_infra_cov ORDER BY year"
+        },
+        {
+          "ms": 169.316,
+          "sql": "SELECT coalesce(y.loc, 0) loc, count(*)::bigint schools, sum(o.mat_bas)::bigint mat_bas, sum(o.tur_bas)::bigint tur_bas FROM civica_exec.exec_edu_offer_year o JOIN civica_exec.exec"
+        },
+        {
+          "ms": 10.689,
+          "sql": "SELECT y.inep, y.year, y.entity_id, e.ibge7::text AS ibge7, e.name AS mun_name, e.uf, y.name, y.dep, y.loc, y.sit, y.flags FROM civica_exec.exec_edu_school_year y JOIN civica_exec."
+        },
+        {
+          "ms": 3.148,
+          "sql": "SELECT year, max(layout)::int layout, sum(rows_in)::int rows_in, sum(valid)::int valid, sum(rejected)::int rejected FROM civica_exec.exec_edu_offer_cov WHERE uf = $1 GROUP BY year "
+        },
+        {
+          "ms": 84.437,
+          "sql": "SELECT count(*)::bigint schools, count(*) FILTER (WHERE i.agua_rede)::bigint agua_rede_t, count(*) FILTER (WHERE NOT i.agua_rede)::bigint agua_rede_f, count(*) FILTER (WHERE i.agua"
+        },
+        {
+          "ms": 169.767,
+          "sql": "SELECT y.dep, count(*)::bigint schools, count(*) FILTER (WHERE i.agua_rede)::bigint agua_rede_t, count(*) FILTER (WHERE NOT i.agua_rede)::bigint agua_rede_f, count(*) FILTER (WHERE"
+        },
+        {
+          "ms": 46.47,
+          "sql": "SELECT coalesce(y.loc, 0) AS loc, count(*)::bigint schools, count(*) FILTER (WHERE i.agua_rede)::bigint agua_rede_t, count(*) FILTER (WHERE NOT i.agua_rede)::bigint agua_rede_f, co"
+        },
+        {
+          "ms": 51.588,
+          "sql": "SELECT count(*) FILTER (WHERE i.agua_rede IS NOT NULL OR i.agua_poco IS NOT NULL OR i.agua_cacimba IS NOT NULL OR i.agua_rio IS NOT NULL OR i.agua_inexistente IS NOT NULL OR i.agua"
+        }
+      ]
+    },
+    {
+      "name": "legacy_brasil",
+      "totalMs": 1528.843,
+      "queryCount": 39,
+      "queryMs": 1749.298,
+      "compositionMs": -220.455,
+      "serializationMs": 176.87,
+      "payloadBytesUtf8": 26182477,
+      "queries": [
+        {
+          "ms": 0.592,
+          "sql": "SELECT entity_id,kind,name,uf_code,ibge7::text FROM civica_exec.exec_entity WHERE kind=1"
+        },
+        {
+          "ms": 1.482,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_offer_cov ORDER BY year"
+        },
+        {
+          "ms": 1.557,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 1.769,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 2.034,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 2.239,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 2.434,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 2.729,
+          "sql": "SELECT entity_id,kind,name,uf_code,ibge7::text FROM civica_exec.exec_entity WHERE kind=1"
+        },
+        {
+          "ms": 3.024,
+          "sql": "SELECT program_code,financial_stage,sum(rows)::int facts,sum(beneficiaries)::int beneficiaries,sum(amount_cents)::bigint amount FROM civica_exec.exec_edu_program_rollup WHERE scope"
+        },
+        {
+          "ms": 2.478,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 3.839,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_infra_cov ORDER BY year"
+        },
+        {
+          "ms": 4.765,
+          "sql": "SELECT sum(valid)::int registered,sum(active)::int active,sum(with_mat)::int with_enrollment,sum(univ)::int sinopse_universe FROM civica_exec.exec_edu_cov WHERE year=$1"
+        },
+        {
+          "ms": 4.443,
+          "sql": "SELECT array_agg(DISTINCT uf ORDER BY uf) ufs FROM civica_exec.exec_edu_ctr_cov WHERE kind=4 AND rows_out>0"
+        },
+        {
+          "ms": 2.318,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_trn_terr WHERE entity_id = $1 ORDER BY year"
+        },
+        {
+          "ms": 4.796,
+          "sql": "SELECT stage,entities,amount_cents amount FROM civica_exec.exec_edu_finance_rollup WHERE scope=$1 AND scope_key=$2 AND source='SICONFI' AND year=$3 ORDER BY stage"
+        },
+        {
+          "ms": 5.109,
+          "sql": "SELECT entity_id, name, kind FROM civica_exec.exec_entity WHERE kind = 1"
+        },
+        {
+          "ms": 3.545,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_flow_terr WHERE entity_id = $1 ORDER BY year"
+        },
+        {
+          "ms": 5.42,
+          "sql": "SELECT year, stage, dep, ap_tot, ap_1, ap_2, ap_3, ap_4, ap_5, p, nota_mt, nota_lp, nota_media, ideb, meta FROM civica_exec.exec_edu_ideb_terr WHERE entity_id = $1 AND ($2::smallin"
+        },
+        {
+          "ms": 3.89,
+          "sql": "SELECT dep, loc, pro_fun, pro_ai, pro_af, pro_f1, pro_f2, pro_f3, pro_f4, pro_f5, pro_f6, pro_f7, pro_f8, pro_f9, pro_med, pro_m1, pro_m2, pro_m3, rep_fun, rep_ai, rep_af, rep_f1, "
+        },
+        {
+          "ms": 6.252,
+          "sql": "SELECT year,category,confidence,contracts,with_value,outliers,contracted_value FROM civica_exec.exec_edu_contract_rollup WHERE scope=$1 AND scope_key=$2 AND ($3::smallint IS NULL O"
+        },
+        {
+          "ms": 8.185,
+          "sql": "SELECT year, dep, loc, cap, qtd, media, nv1, nv2, nv3, nv4, nv5, nv6, nv7, nv8 FROM civica_exec.exec_edu_inse_terr WHERE entity_id = $1 ORDER BY year, dep, loc, cap"
+        },
+        {
+          "ms": 5.705,
+          "sql": "SELECT dep, loc, ap_fun, ap_ai, ap_af, ap_f1, ap_f2, ap_f3, ap_f4, ap_f5, ap_f6, ap_f7, ap_f8, ap_f9, ap_med, ap_m1, ap_m2, ap_m3, ap_m4, ap_mns, rp_fun, rp_ai, rp_af, rp_f1, rp_f2"
+        },
+        {
+          "ms": 10.352,
+          "sql": "SELECT sum(schools)::bigint schools, sum(mat_bas)::bigint mat_bas, sum(mat_inf_cre)::bigint mat_inf_cre, sum(mat_inf_pre)::bigint mat_inf_pre, sum(mat_fund_ai)::bigint mat_fund_ai,"
+        },
+        {
+          "ms": 6.931,
+          "sql": "SELECT DISTINCT year FROM civica_exec.exec_edu_ind_cov ORDER BY year"
+        },
+        {
+          "ms": 8.846,
+          "sql": "SELECT year, doc_total, doc_inf, doc_cre, doc_pre, doc_fun, doc_ai, doc_af, doc_med, doc_pub, doc_fed, doc_est, doc_mun, doc_priv, doc_urb, doc_rur FROM civica_exec.exec_edu_doc_te"
+        },
+        {
+          "ms": 2.636,
+          "sql": "SELECT refreshed_at, source_contract_rows, source_class_rows, source_fingerprint, coalesce((details->>'rollup_rows')::int, 0) rollup_rows FROM civica_exec.exec_edu_analytics_meta W"
+        },
+        {
+          "ms": 0.906,
+          "sql": "SELECT dep, sum(schools)::bigint schools, sum(mat_bas)::bigint mat_bas, sum(tur_bas)::bigint tur_bas FROM civica_exec.exec_edu_offer_agg WHERE year = $1 GROUP BY dep ORDER BY dep"
+        },
+        {
+          "ms": 4.387,
+          "sql": "SELECT year, pro_fun, rep_fun, eva_fun, mej_fun, pro_med, rep_med, eva_med, mej_med FROM civica_exec.exec_edu_trn_terr WHERE entity_id = $1 AND dep = 0 AND loc = 0 ORDER BY year"
+        },
+        {
+          "ms": 10.813,
+          "sql": "SELECT sum(schools)::bigint schools, sum(agua_rede_t)::bigint agua_rede_t, sum(agua_rede_f)::bigint agua_rede_f, sum(agua_poco_t)::bigint agua_poco_t, sum(agua_poco_f)::bigint agua"
+        },
+        {
+          "ms": 4.05,
+          "sql": "SELECT year, ap_fun, rp_fun, ab_fun, td_fun, ap_ai, ap_af, ap_med, rp_med, ab_med, td_ai, td_af, td_med FROM civica_exec.exec_edu_flow_terr WHERE entity_id = $1 AND dep = 0 AND loc"
+        },
+        {
+          "ms": 3.777,
+          "sql": "SELECT loc, sum(schools)::bigint schools, sum(mat_bas)::bigint mat_bas, sum(tur_bas)::bigint tur_bas FROM civica_exec.exec_edu_offer_agg WHERE year = $1 GROUP BY loc ORDER BY loc"
+        },
+        {
+          "ms": 35.803,
+          "sql": "SELECT year, dep, loc, cap, grade, subj, media, tx_alf, nv0, nv1, nv2, nv3, nv4, nv5, nv6, nv7, nv8, nv9, nv10 FROM civica_exec.exec_edu_saeb_terr WHERE entity_id = $1 AND ($2::sma"
+        },
+        {
+          "ms": 28.929,
+          "sql": "SELECT dep, loc, atu_inf, atu_cre, atu_pre, atu_fun, atu_ai, atu_af, atu_med, had_inf, had_cre, had_pre, had_fun, had_ai, had_af, had_med, dsu_inf, dsu_cre, dsu_pre, dsu_fun, dsu_a"
+        },
+        {
+          "ms": 26.671,
+          "sql": "SELECT year, sum(rows_in)::int rows_in, sum(active)::int active, sum(valid)::int valid, sum(rejected)::int rejected, sum(answered)::int answered, sum(unanswered)::int unanswered, s"
+        },
+        {
+          "ms": 26.522,
+          "sql": "SELECT year, sum(schools)::bigint schools, sum(mat_bas)::bigint mat_bas, sum(mat_inf_cre)::bigint mat_inf_cre, sum(mat_inf_pre)::bigint mat_inf_pre, sum(mat_fund_ai)::bigint mat_fu"
+        },
+        {
+          "ms": 2.16,
+          "sql": "SELECT year, max(layout)::int layout, sum(rows_in)::int rows_in, sum(valid)::int valid, sum(rejected)::int rejected FROM civica_exec.exec_edu_offer_cov GROUP BY year ORDER BY year"
+        },
+        {
+          "ms": 5.81,
+          "sql": "SELECT dep, sum(schools)::bigint schools, sum(agua_rede_t)::bigint agua_rede_t, sum(agua_rede_f)::bigint agua_rede_f, sum(agua_poco_t)::bigint agua_poco_t, sum(agua_poco_f)::bigint"
+        },
+        {
+          "ms": 4.149,
+          "sql": "SELECT loc, sum(schools)::bigint schools, sum(agua_rede_t)::bigint agua_rede_t, sum(agua_rede_f)::bigint agua_rede_f, sum(agua_poco_t)::bigint agua_poco_t, sum(agua_poco_f)::bigint"
+        },
+        {
+          "ms": 1487.951,
+          "sql": "SELECT component,code,stage,entities,amount_cents amount FROM civica_exec.exec_edu_finance_rollup WHERE scope=$1 AND scope_key=$2 AND source='SIOPE' AND year=$3 ORDER BY component,"
+        }
+      ]
+    },
+    {
+      "name": "compact_overview_brasil",
+      "totalMs": 14.972,
+      "queryCount": 1,
+      "queryMs": 14.783,
+      "compositionMs": 0.189,
+      "serializationMs": 0.071,
+      "payloadBytesUtf8": 11613,
+      "queries": [
+        {
+          "ms": 14.783,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        }
+      ]
+    },
+    {
+      "name": "compact_overview_municipality",
+      "totalMs": 0.633,
+      "queryCount": 1,
+      "queryMs": 0.563,
+      "compositionMs": 0.07,
+      "serializationMs": 0.016,
+      "payloadBytesUtf8": 759,
+      "queries": [
+        {
+          "ms": 0.563,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        }
+      ]
+    },
+    {
+      "name": "compact_comparison_vitoria",
+      "totalMs": 2.841,
+      "queryCount": 3,
+      "queryMs": 3.22,
+      "compositionMs": -0.379,
+      "serializationMs": 0.106,
+      "payloadBytesUtf8": 24312,
+      "queries": [
+        {
+          "ms": 0.351,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        },
+        {
+          "ms": 0.548,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        },
+        {
+          "ms": 2.321,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        }
+      ]
+    },
+    {
+      "name": "compact_section_finance_sp",
+      "totalMs": 0.693,
+      "queryCount": 1,
+      "queryMs": 0.572,
+      "compositionMs": 0.121,
+      "serializationMs": 0.048,
+      "payloadBytesUtf8": 9870,
+      "queries": [
+        {
+          "ms": 0.572,
+          "sql": "SELECT payload,refreshed_at,source_fingerprint FROM civica_exec.exec_edu_overview_rollup WHERE scope=$1 AND scope_key=$2 AND year=$3"
+        }
+      ]
+    },
+    {
+      "name": "compact_series_brasil",
+      "totalMs": 1.823,
+      "queryCount": 1,
+      "queryMs": 1.738,
+      "compositionMs": 0.085,
+      "serializationMs": 0.021,
+      "payloadBytesUtf8": 3003,
+      "queries": [
+        {
+          "ms": 1.738,
+          "sql": "SELECT indicator,scope,scope_key,year,value,unit,universe FROM civica_exec.exec_edu_series_rollup WHERE scope=$1 AND scope_key=$2 AND indicator=$3 AND ($4::smallint IS NULL OR year"
+        }
+      ]
+    }
+  ]
+}

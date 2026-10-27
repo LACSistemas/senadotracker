@@ -1,0 +1,108 @@
+{
+  "generatedAt": "2026-10-27T10:43:17.189Z",
+  "familyCounts": {
+    "ESCOLAS_OFERTA": 4,
+    "MATRICULAS_TURMAS": 6,
+    "INFRAESTRUTURA": 9,
+    "DOCENTES": 8,
+    "APRENDIZAGEM": 4,
+    "FLUXO_ESCOLAR": 7,
+    "FINANCIAMENTO": 5,
+    "PROGRAMAS_TRANSFERENCIAS": 4,
+    "CONTRATACOES": 2,
+    "OBRAS": 2
+  },
+  "indicatorCount": 51,
+  "coverageCounts": {
+    "municipalities": "5571",
+    "school_records_2025": "214192",
+    "school_municipalities_2025": "5571",
+    "offer_municipalities_2025": "5571",
+    "infrastructure_municipalities_2025": "5571",
+    "indicators_municipalities_2025": "5571",
+    "teachers_municipalities_2025": "5571",
+    "ideb_municipalities_2025": "5568",
+    "saeb_municipalities_2025": "5569",
+    "flow_municipalities_2025": "5571",
+    "siconfi_municipalities_2025": "5507",
+    "siope_municipalities_2025": "5559",
+    "programs_municipalities_2025": "0",
+    "contracts_municipalities_any": "3846",
+    "core_education_complete_2025": "5568",
+    "finance_both_sources_2025": "5497"
+  },
+  "checks": {
+    "national": true,
+    "municipalities": [
+      {
+        "ibge7": "3205309",
+        "ok": true
+      },
+      {
+        "ibge7": "3205002",
+        "ok": true
+      },
+      {
+        "ibge7": "3200359",
+        "ok": true
+      },
+      {
+        "ibge7": "3550308",
+        "ok": true
+      },
+      {
+        "ibge7": "3304557",
+        "ok": true
+      },
+      {
+        "ibge7": "3106200",
+        "ok": true
+      },
+      {
+        "ibge7": "2611606",
+        "ok": true
+      },
+      {
+        "ibge7": "4314902",
+        "ok": true
+      }
+    ],
+    "states": [
+      {
+        "uf": 32,
+        "ok": true
+      },
+      {
+        "uf": 35,
+        "ok": true
+      },
+      {
+        "uf": 33,
+        "ok": true
+      },
+      {
+        "uf": 31,
+        "ok": true
+      },
+      {
+        "uf": 26,
+        "ok": true
+      },
+      {
+        "uf": 14,
+        "ok": true
+      },
+      {
+        "uf": 53,
+        "ok": true
+      }
+    ],
+    "schools": {
+      "complete": true,
+      "without_ideb": true,
+      "without_resources": true
+    },
+    "benchmark": true,
+    "relations": true
+  }
+}

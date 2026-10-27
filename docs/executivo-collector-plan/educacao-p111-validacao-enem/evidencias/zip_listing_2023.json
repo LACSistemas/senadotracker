@@ -1,0 +1,42 @@
+{
+  "edition": "2023",
+  "zip_bytes": 549511687,
+  "files": [
+    {
+      "name": "microdados_enem_2023/DADOS/",
+      "size": 0,
+      "compressed": 0,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2023/DADOS/ITENS_PROVA_2023.csv",
+      "size": 330709,
+      "compressed": 56452,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2023/DADOS/MICRODADOS_ENEM_2023.csv",
+      "size": 1777162429,
+      "compressed": 412771057,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2023/DICIONÁRIO/",
+      "size": 0,
+      "compressed": 0,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.ods",
+      "size": 20639,
+      "compressed": 20387,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2023/DICIONÁRIO/Dicionário_Microdados_Enem_2023.xlsx",
+      "size": 32897,
+      "compressed": 29838,
+      "method": 8
+    }
+  ]
+}

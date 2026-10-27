@@ -90,6 +90,13 @@ export async function getFlowTerritory(q: Q, o: LearnTerritoryKey & { year?: num
     cuts: cuts.map(r => ({ year, dep: Number(r.dep), depLabel: REDE_LABEL[Number(r.dep)] ?? String(r.dep), loc: Number(r.loc), locLabel: LOC_LABEL[Number(r.loc)] ?? '', values: flowValues(r, FLOW_COLS, FLOW_SCALE) })),
     series: series.map(r => ({ year: Number(r.year), values: Object.fromEntries(FLOW_SERIES_CODES.map(c => [c, div(r[c], FLOW_SCALE)])) })) };
 }
+/** Série histórica de QUALQUER medida × segmento do rendimento/distorção (ex.: `ab_f9`, `ab_ai`, `rp_af`) para um território, numa só consulta, em uma rede × localização (padrão: total). */
+export async function getFlowSeries(q: Q, o: LearnTerritoryKey & { codes: string[]; dep?: number; loc?: number }): Promise<Array<{ year: number; values: Record<string, number | null> }>> {
+  const e = await resolveEntity(q, o); if (!e) return [];
+  const codes = [...new Set(o.codes)].filter(c => (FLOW_COLS as readonly string[]).includes(c)); if (!codes.length) return [];
+  const rows = (await q.query(`SELECT year, ${codes.join(', ')} FROM civica_exec.exec_edu_flow_terr WHERE entity_id = $1 AND dep = $2 AND loc = $3 ORDER BY year`, [e.entity_id, o.dep ?? 0, o.loc ?? 0])).rows;
+  return rows.map(r => ({ year: Number(r.year), values: Object.fromEntries(codes.map(c => [c, div(r[c], FLOW_SCALE)])) }));
+}
 /** Escola: rendimento e distorção por edição (todas as séries publicadas) — a escola é o próprio registro do INEP, não uma soma. */
 export async function getFlowSchool(q: Q, inep: number): Promise<FlowResult | null> {
   const name = await schoolName(q, inep); if (name == null) return null;

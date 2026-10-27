@@ -1,0 +1,48 @@
+{
+  "edition": "2024",
+  "zip_bytes": 526073856,
+  "files": [
+    {
+      "name": "microdados_enem_2024/DADOS/",
+      "size": 0,
+      "compressed": 0,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2024/DADOS/ITENS_PROVA_2024.csv",
+      "size": 330676,
+      "compressed": 34225,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2024/DADOS/PARTICIPANTES_2024.csv",
+      "size": 462022669,
+      "compressed": 100522980,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2024/DADOS/RESULTADOS_2024.csv",
+      "size": 1683449589,
+      "compressed": 403069272,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2024/DICIONÁRIO/",
+      "size": 0,
+      "compressed": 0,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2024/DICIONÁRIO/Dicionário_Microdados_Enem_2024.ods",
+      "size": 22458,
+      "compressed": 22210,
+      "method": 8
+    },
+    {
+      "name": "microdados_enem_2024/DICIONÁRIO/Dicionário_Microdados_Enem_2024.xlsx",
+      "size": 35781,
+      "compressed": 32297,
+      "method": 8
+    }
+  ]
+}

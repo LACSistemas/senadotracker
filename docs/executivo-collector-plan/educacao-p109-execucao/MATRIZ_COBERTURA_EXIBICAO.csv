@@ -1,0 +1,10 @@
+family,granularity,status,publication,through,evidence
+escolas_oferta,ESCOLA/UF/BRASIL,AVAILABLE,PUBLIC_DISPLAY_WITH_CONDITIONS,2025,Censo Escolar
+infraestrutura,ESCOLA/UF/MUNICIPIO,AVAILABLE,PUBLIC_DISPLAY_WITH_CONDITIONS,2025,variaveis oficiais e nao informado preservado
+aprendizagem_fluxo,UF/MUNICIPIO/BRASIL,AVAILABLE,PUBLIC_DISPLAY_WITH_CONDITIONS,2025,Ideb Saeb fluxo e Inse
+financiamento,UF/MUNICIPIO/BRASIL,AVAILABLE,NEEDS_LEGAL_VALIDATION,2025,Siconfi e Siope separados por fonte e estagio
+programas_transferencias,MUNICIPIO/UF/BRASIL,PARTIAL,NEEDS_LEGAL_VALIDATION,2025,5537 vinculos determinísticos e 30 códigos sem resolucao
+contratacoes,UF/MUNICIPIO/BRASIL,PARTIAL,PUBLIC_DISPLAY_WITH_CONDITIONS,2025,PNCP rollup e confiança separada
+obras,UF,PARTIAL,NEEDS_LEGAL_VALIDATION,2026,fonte nao fornece municipio escolar
+escola_pdde,ESCOLA,PARTIAL,NEEDS_LEGAL_VALIDATION,2025,piloto de escolas e cobertura declarada
+identidade_municipio,MUNICIPIO,PARTIAL,NEEDS_LEGAL_VALIDATION,2025,sem tabela oficial SIAFI-IBGE localizada

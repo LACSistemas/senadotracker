@@ -126,7 +126,7 @@ export function ThemeTabs({ base, active, themes }: { base: string; active: stri
 
 export const THEMES = [
   { slug: 'saude', label: 'Saúde', ready: true },
-  { slug: 'educacao', label: 'Educação', ready: false },
+  { slug: 'educacao', label: 'Educação', ready: true },
   { slug: 'seguranca', label: 'Segurança', ready: true },
   { slug: 'bem-estar', label: 'Bem-estar', ready: false },
   { slug: 'infraestrutura', label: 'Infraestrutura', ready: false },

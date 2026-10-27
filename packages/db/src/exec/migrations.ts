@@ -15,6 +15,11 @@ import { EXEC_DDL_V13 } from './ddl-v13.ts';
 import { EXEC_DDL_V14 } from './ddl-v14.ts';
 import { EXEC_DDL_V15 } from './ddl-v15.ts';
 import { EXEC_DDL_V16 } from './ddl-v16.ts';
+import { EXEC_DDL_V17 } from './ddl-v17.ts';
+import { EXEC_DDL_V18 } from './ddl-v18.ts';
+import { EXEC_DDL_V19 } from './ddl-v19.ts';
+import { EXEC_DDL_V20 } from './ddl-v20.ts';
+import { EXEC_DDL_V21 } from './ddl-v21.ts';
 
 export interface ExecMigration { version: number; name: string; sql: string }
 export const EXEC_MIGRATIONS: ExecMigration[] = [
@@ -34,6 +39,11 @@ export const EXEC_MIGRATIONS: ExecMigration[] = [
   { version: 14, name: 'civica_exec_ddl_v14_financas_educacao_siope', sql: EXEC_DDL_V14 },
   { version: 15, name: 'civica_exec_ddl_v15_programas_transferencias_educacionais', sql: EXEC_DDL_V15 },
   { version: 16, name: 'civica_exec_ddl_v16_educacao_contratacoes_obras', sql: EXEC_DDL_V16 },
+  { version: 17, name: 'civica_exec_ddl_v17_educacao_inteligencia', sql: EXEC_DDL_V17 },
+  { version: 18, name: 'civica_exec_ddl_v18_program_rollup_performance', sql: EXEC_DDL_V18 },
+  { version: 19, name: 'civica_exec_ddl_v19_finance_rollup_performance', sql: EXEC_DDL_V19 },
+  { version: 20, name: 'civica_exec_ddl_v20_program_municipality_identity', sql: EXEC_DDL_V20 },
+  { version: 21, name: 'civica_exec_ddl_v21_compact_education_serving', sql: EXEC_DDL_V21 },
 ];
 
 /** Aplica as migrations do schema civica_exec de forma idempotente (lock consultivo + uma transação por versão). Nunca toca outros schemas. */

@@ -1,0 +1,12 @@
+{
+  "repo": "C:\\Projetos\\senadotracker",
+  "claudeRoot": false,
+  "claudeApp": "apps/web/CLAUDE.md",
+  "p10EducationDir": "docs/executivo-collector-plan/educacao-p10",
+  "reusableTables": ["civica_exec.exec_entity", "civica_exec.exec_edu_school", "civica_exec.exec_edu_offer_year", "civica_exec.exec_edu_offer_agg", "civica_exec.exec_edu_offer_cov", "civica_exec.exec_edu_ideb_terr", "civica_exec.exec_edu_siope_fact", "civica_exec.exec_edu_contract"],
+  "existingSuperiorEvidence": ["censo_superior_listing.json", "censo_superior_tamanhos.json", "censo_superior_2024_headers.json", "censo_superior_2023_identidade.json", "contrato_educacao_superior.md"],
+  "p11CodeChanged": false,
+  "p11DatabaseChanged": false,
+  "p11FrontendChanged": false
+}
+

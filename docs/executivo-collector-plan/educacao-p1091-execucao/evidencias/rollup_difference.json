@@ -1,0 +1,10 @@
+{
+  "allSourcesRows": 141010,
+  "portalTransferenciasRows": 141006,
+  "extraRows": [
+    { "source": "pdde_info", "scope": 1, "scopeKey": "BRASIL", "program": "PDDE", "stage": "DUE", "rows": 33, "amountCents": "12255600" },
+    { "source": "pdde_info", "scope": 1, "scopeKey": "BRASIL", "program": "PDDE", "stage": "PAID", "rows": 33, "amountCents": "7276500" },
+    { "source": "pdde_info", "scope": 3, "scopeKey": "32", "program": "PDDE", "stage": "DUE", "rows": 33, "amountCents": "12255600" },
+    { "source": "pdde_info", "scope": 3, "scopeKey": "32", "program": "PDDE", "stage": "PAID", "rows": 33, "amountCents": "7276500" }
+  ]
+}

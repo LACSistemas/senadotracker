@@ -1,0 +1,7 @@
+{
+  "command": "SELECT current_database(), current_user; SELECT count(*) FROM civica_exec.exec_entity;",
+  "database": "projetoeleitor_db",
+  "user": "projetoeleitor_user",
+  "execEntityCount": 5631,
+  "mutation": false
+}

@@ -1,0 +1,8 @@
+command=node --import tsx --test tests/unit/educacao-p109.test.ts tests/unit/educacao-analytics-p108.test.ts tests/integration/educacao-p108.test.ts
+tests=11
+pass=8
+fail=0
+skipped=3
+skip_reason=EXEC_TEST_ADMIN_URL não definido
+typecheck=BLOCKED_PREEXISTING_SYNTAX
+typecheck_file=scripts/p5_rebuild_global_rollup.ts

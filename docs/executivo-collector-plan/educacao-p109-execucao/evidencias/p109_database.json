@@ -1,0 +1,312 @@
+{
+  "generatedAt": "2026-10-27T12:25:43.852Z",
+  "database": {
+    "database": "projetoeleitor_db",
+    "db_user": "projetoeleitor_user",
+    "database_bytes": "32270511251"
+  },
+  "migration": {
+    "max_migration": 20,
+    "migration_count": 20
+  },
+  "mapping": [
+    {
+      "status": "LINKED",
+      "rows": 5537,
+      "entities": 5537
+    },
+    {
+      "status": "UNRESOLVED",
+      "rows": 30,
+      "entities": 0
+    }
+  ],
+  "facts": {
+    "source_rows": 563222,
+    "source_municipalities": 5567,
+    "source_amount_cents": "6581406260075",
+    "rows_with_source_municipality": 473675
+  },
+  "linked": {
+    "linked_rows": 471356,
+    "linked_entities": 5537,
+    "linked_amount_cents": "5416059247155"
+  },
+  "rollup": {
+    "rows": 141006,
+    "scopes": 5565,
+    "amount_cents": "18578871767305"
+  },
+  "coverage": [
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202512,
+      "status": "PUBLISHED",
+      "source_rows": 70365,
+      "parsed_rows": 70365,
+      "published_rows": 70365,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202512,
+      "status": "PUBLISHED",
+      "source_rows": 3875,
+      "parsed_rows": 3875,
+      "published_rows": 3875,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202512,
+      "status": "PUBLISHED",
+      "source_rows": 6,
+      "parsed_rows": 6,
+      "published_rows": 6,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202512,
+      "status": "PUBLISHED",
+      "source_rows": 3252,
+      "parsed_rows": 3252,
+      "published_rows": 3252,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202511,
+      "status": "PUBLISHED",
+      "source_rows": 60445,
+      "parsed_rows": 60445,
+      "published_rows": 60445,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202511,
+      "status": "PUBLISHED",
+      "source_rows": 3799,
+      "parsed_rows": 3799,
+      "published_rows": 3799,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202511,
+      "status": "PUBLISHED",
+      "source_rows": 2,
+      "parsed_rows": 2,
+      "published_rows": 2,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202511,
+      "status": "PUBLISHED",
+      "source_rows": 0,
+      "parsed_rows": 0,
+      "published_rows": 0,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202510,
+      "status": "PUBLISHED",
+      "source_rows": 55456,
+      "parsed_rows": 55456,
+      "published_rows": 55456,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202510,
+      "status": "PUBLISHED",
+      "source_rows": 3799,
+      "parsed_rows": 3799,
+      "published_rows": 3799,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202510,
+      "status": "PUBLISHED",
+      "source_rows": 432,
+      "parsed_rows": 432,
+      "published_rows": 432,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202510,
+      "status": "PUBLISHED",
+      "source_rows": 0,
+      "parsed_rows": 0,
+      "published_rows": 0,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202509,
+      "status": "PUBLISHED",
+      "source_rows": 10858,
+      "parsed_rows": 10858,
+      "published_rows": 10858,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202509,
+      "status": "PUBLISHED",
+      "source_rows": 99697,
+      "parsed_rows": 99697,
+      "published_rows": 99697,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202509,
+      "status": "PUBLISHED",
+      "source_rows": 3892,
+      "parsed_rows": 3892,
+      "published_rows": 3892,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202509,
+      "status": "PUBLISHED",
+      "source_rows": 5015,
+      "parsed_rows": 5015,
+      "published_rows": 5015,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202508,
+      "status": "PUBLISHED",
+      "source_rows": 3313,
+      "parsed_rows": 3313,
+      "published_rows": 3313,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202508,
+      "status": "PUBLISHED",
+      "source_rows": 5139,
+      "parsed_rows": 5139,
+      "published_rows": 5139,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202508,
+      "status": "PUBLISHED",
+      "source_rows": 10091,
+      "parsed_rows": 10091,
+      "published_rows": 10091,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202508,
+      "status": "PUBLISHED",
+      "source_rows": 3892,
+      "parsed_rows": 3892,
+      "published_rows": 3892,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202507,
+      "status": "PUBLISHED",
+      "source_rows": 5473,
+      "parsed_rows": 5473,
+      "published_rows": 5473,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202507,
+      "status": "PUBLISHED",
+      "source_rows": 9981,
+      "parsed_rows": 9981,
+      "published_rows": 9981,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202507,
+      "status": "PUBLISHED",
+      "source_rows": 4,
+      "parsed_rows": 4,
+      "published_rows": 4,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    },
+    {
+      "source_dataset": "portal_transferencias",
+      "competence": 202507,
+      "status": "PUBLISHED",
+      "source_rows": 3892,
+      "parsed_rows": 3892,
+      "published_rows": 3892,
+      "rejected_rows": 0,
+      "unresolved_entity_rows": 0,
+      "unresolved_school_rows": 0
+    }
+  ],
+  "rules": {
+    "linkage": "EXACT_SOURCE_NAME_UF_UNIQUE",
+    "fuzzyMatching": false,
+    "unresolvedRemainNull": true,
+    "rawOnD": "CONFIRMED_D_CIVICA_MOUNT"
+  }
+}

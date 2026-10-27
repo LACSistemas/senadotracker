@@ -1,0 +1,12 @@
+{
+  "database": "projetoeleitor_db",
+  "currentUser": "projetoeleitor_user",
+  "postBytes": 32308554899,
+  "baselineBytes": 32244108435,
+  "deltaBytes": 64446464,
+  "maxMigration": 21,
+  "cFreeBytes": 3257856000,
+  "dFreeBytes": 422447976448,
+  "rawMount": "D:\\Civica",
+  "clusters": { "pgtestEdu7": false, "pgtestT107": false, "p109IsolatedStopped": true }
+}

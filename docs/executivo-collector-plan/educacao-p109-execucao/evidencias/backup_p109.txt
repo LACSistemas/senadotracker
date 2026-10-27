@@ -1,0 +1,18 @@
+P10.9 BACKUP/RESTORE EVIDENCE
+database=projetoeleitor_db
+dump=artifacts/projetoeleitor_p109_full_20261027.dump
+format=custom
+scope=full data
+bytes=3461602109
+sha256=3ef534704f57d0f71c3d1c2e37a336b7b3cf884fdfbd8c75a3f8be97b19a3176
+pg_restore_list=PASS
+isolated_cluster=.p109_pg_cluster
+isolated_port=55439
+isolated_restore_database=projetoeleitor_db
+isolated_fact_rows=563288
+isolated_rollup_rows_before_link=141834
+isolated_database_bytes=28946025619
+isolated_max_migration=19
+official_post_database_bytes=32270429331
+official_post_max_migration=20
+note=cluster isolated validated and stopped; directory retained for reproducibility

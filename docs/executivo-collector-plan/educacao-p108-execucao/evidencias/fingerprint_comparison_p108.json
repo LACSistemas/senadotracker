@@ -1,0 +1,7 @@
+{
+  "preDatabaseBytes": "31833500819",
+  "postDatabaseBytes": "32244108435",
+  "excludedP108Tables": ["exec_edu_analytics_meta", "exec_edu_contract_rollup", "exec_edu_program_rollup", "exec_edu_finance_rollup"],
+  "nonP108TableDiffs": 0,
+  "result": "PASS"
+}

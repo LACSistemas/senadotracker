@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-10-27T14:03:19.474Z",
+  "rows": [
+    {
+      "name": "brazil",
+      "poolAcquisitionMs": 30.33,
+      "coldQueryMs": 4.69,
+      "warmQueryMs": 1,
+      "payloadBytesUtf8": 11613
+    },
+    {
+      "name": "sp",
+      "poolAcquisitionMs": 21.71,
+      "coldQueryMs": 3.03,
+      "warmQueryMs": 0.78,
+      "payloadBytesUtf8": 12912
+    },
+    {
+      "name": "sao_paulo",
+      "poolAcquisitionMs": 141.52,
+      "coldQueryMs": 2.63,
+      "warmQueryMs": 0.97,
+      "payloadBytesUtf8": 759
+    }
+  ]
+}

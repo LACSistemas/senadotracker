@@ -1,0 +1,36 @@
+{
+  "edition": "2025",
+  "zip_bytes": 1035674693,
+  "files": [
+    {
+      "name": "microdados_enem_2025/DADOS/ITENS_PROVA_2025.csv",
+      "size": 365768,
+      "compressed": 365768,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2025/DADOS/PARTICIPANTES_2025.csv",
+      "size": 513113794,
+      "compressed": 513113794,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2025/DICIONÁRIO/Dicionário_Microdados_Enem_2025.ods",
+      "size": 26828,
+      "compressed": 26828,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2025/DICIONÁRIO/Dicionário_Microdados_Enem_2025.xlsx",
+      "size": 45516,
+      "compressed": 45516,
+      "method": 0
+    },
+    {
+      "name": "microdados_enem_2025/DADOS/RESULTADOS_2025.csv",
+      "size": 2115499721,
+      "compressed": 492087501,
+      "method": 9
+    }
+  ]
+}

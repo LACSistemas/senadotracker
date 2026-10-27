@@ -1,0 +1,55 @@
+edition,geo_level,municipality_code,geography,uf,results_rows,any_presence_rows,all_four_present_rows,valid_mt_rows,valid_essay_rows,school_code_rows,school_code_coverage,status,note
+2023,NATIONAL,,Brasil,,3933955,2840732,2678264,2692427,2704814,0,0.0,PRESENT_VALIDATED,Denominator is results rows; national parity checked against Sinopse 1.1/1.2/7.4.1/7.5.1.
+2023,UF,,ES,ES,20626,16919,16084,16127,16147,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,UF,,RJ,RJ,63842,51649,49406,49526,49672,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,UF,,PB,PB,24870,18610,18025,18082,17340,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,UF,,SP,SP,187067,148143,141339,141779,143998,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,UF,,MG,MG,66972,54975,52837,52957,53206,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,UF,,PE,PE,44881,35940,34652,34750,33654,0,0.0,PRESENT_VALIDATED,School-location geography; not residence.
+2023,MUNICIPALITY,3205309,Vitoria,ES,3104,2713,2621,2623,2619,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3205002,Serra,ES,2277,1811,1684,1693,1693,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3205200,Vila Velha,ES,2716,2299,2193,2200,2198,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3301009,Campos dos Goytacazes,RJ,1948,1529,1448,1450,1472,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3304557,Rio de Janeiro,RJ,26064,21463,20658,20697,20817,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,2507507,Joao Pessoa,PB,5301,4581,4477,4482,4388,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,2504009,Campina Grande,PB,2751,2372,2314,2319,2292,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3550308,Sao Paulo,SP,45215,36959,35416,35553,36057,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3106200,Belo Horizonte,MG,10302,9069,8808,8822,8885,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,2611606,Recife,PE,9620,8563,8337,8357,8175,0,0.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,NATIONAL,,Brasil,,4332944,3187672,2990093,3004981,3002710,1565797,0.36137,PRESENT_VALIDATED,Denominator is results rows; national parity checked against Sinopse 1.1/1.2/7.4.1/7.5.1.
+2024,UF,,ES,ES,29633,24798,23518,23566,23324,29633,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,UF,,RJ,RJ,97876,81176,77383,77584,76372,97876,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,UF,,PB,PB,37251,29923,28960,29046,27261,37251,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,UF,,SP,SP,285199,226937,217057,217717,220464,285199,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,UF,,MG,MG,129698,105943,101778,102009,102884,129698,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,UF,,PE,PE,78570,65871,63386,63571,59938,78570,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2024,MUNICIPALITY,3205309,Vitoria,ES,3888,3449,3311,3320,3252,3888,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3205002,Serra,ES,3448,2820,2655,2659,2634,3448,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3205200,Vila Velha,ES,3506,3001,2853,2859,2844,3506,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3301009,Campos dos Goytacazes,RJ,3017,2429,2317,2322,2250,3017,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3304557,Rio de Janeiro,RJ,35282,30503,29299,29370,28961,35282,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,2507507,Joao Pessoa,PB,7082,6155,5969,5983,5807,7082,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,2504009,Campina Grande,PB,3864,3273,3183,3190,3121,3864,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3550308,Sao Paulo,SP,68157,58210,56038,56235,56737,68157,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,3106200,Belo Horizonte,MG,15137,13496,13092,13111,13252,15137,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2024,MUNICIPALITY,2611606,Recife,PE,13588,12178,11827,11852,11236,13588,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,NATIONAL,,Brasil,,4810772,3477859,3244348,3260336,3245696,1739028,0.361486,PRESENT_VALIDATED,Denominator is results rows; national parity checked against Sinopse 1.1/1.2/7.4.1/7.5.1.
+2025,UF,,ES,ES,32921,26331,24645,24712,24143,32921,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,UF,,RJ,RJ,102255,84119,80315,80535,80110,102255,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,UF,,PB,PB,39803,32722,31649,31737,29086,39803,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,UF,,SP,SP,334995,252278,239181,239841,242859,334995,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,UF,,MG,MG,172350,128009,121868,122120,122124,172350,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,UF,,PE,PE,86247,71378,68665,68851,63924,86247,1.0,PRESENT_VALIDATED,School-location geography; not residence.
+2025,MUNICIPALITY,3205309,Vitoria,ES,4240,3693,3534,3539,3457,4240,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3205002,Serra,ES,3643,2856,2644,2653,2572,3643,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3205200,Vila Velha,ES,3944,3192,2981,2991,2977,3944,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3301009,Campos dos Goytacazes,RJ,3178,2413,2316,2319,2289,3178,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3304557,Rio de Janeiro,RJ,36760,31306,30054,30142,29933,36760,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,2507507,Joao Pessoa,PB,7662,6840,6626,6640,6322,7662,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,2504009,Campina Grande,PB,3969,3475,3379,3381,3285,3969,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3550308,Sao Paulo,SP,81260,65981,62966,63162,63731,81260,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,3106200,Belo Horizonte,MG,19521,16455,15846,15879,15968,19521,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2025,MUNICIPALITY,2611606,Recife,PE,15069,13243,12835,12863,12175,15069,1.0,PRESENT_VALIDATED,Municipality means school municipality; residence unavailable.
+2023,MUNICIPALITY,3200102,Afonso Claudio,ES,98,71,66,66,71,0,0,PRESENT_VALIDATED,"Small-municipality proof; school municipality, not residence. 2023 has no school code; 2024/2025 school code present."
+2024,MUNICIPALITY,3200102,Afonso Claudio,ES,167,128,122,122,128,167,1,PRESENT_VALIDATED,"Small-municipality proof; school municipality, not residence. 2023 has no school code; 2024/2025 school code present."
+2025,MUNICIPALITY,3200102,Afonso Claudio,ES,191,148,136,136,148,191,1,PRESENT_VALIDATED,"Small-municipality proof; school municipality, not residence. 2023 has no school code; 2024/2025 school code present."

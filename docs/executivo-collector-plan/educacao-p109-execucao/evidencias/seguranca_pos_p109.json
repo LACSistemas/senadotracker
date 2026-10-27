@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "currentUser": "projetoeleitor_user",
+  "databaseBytes": 32270429331,
+  "baselineBytes": 32244108435,
+  "deltaBytes": 26402816,
+  "maxMigration": 20,
+  "cFreeBytes": 9494114304,
+  "dFreeBytes": 422447976448,
+  "databaseGuard": "PASS",
+  "growthLimitBytes": 5368709120,
+  "growthWithinLimit": true,
+  "rawPolicy": "D:\\Civica",
+  "rawMountConfirmedInCurrentShell": true,
+  "postBytes": 32270511251
+}

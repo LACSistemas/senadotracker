@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-10-27T11:02:00.267Z",
+  "pass": true,
+  "checks": [
+    {
+      "id": "vitoria_offer",
+      "pass": true,
+      "expected": 77662,
+      "actual": 77662
+    },
+    {
+      "id": "vitoria_internet_ratio",
+      "pass": true,
+      "expected": 100,
+      "actual": 100
+    },
+    {
+      "id": "brasil_contract_firm",
+      "pass": true,
+      "expected": 150361,
+      "actual": 150361
+    },
+    {
+      "id": "brasil_contract_possible",
+      "pass": true,
+      "expected": 18395,
+      "actual": 18395
+    },
+    {
+      "id": "es_contract_firm",
+      "pass": true,
+      "expected": 1545,
+      "actual": 1545
+    },
+    {
+      "id": "es_contract_possible",
+      "pass": true,
+      "expected": 234,
+      "actual": 234
+    },
+    {
+      "id": "sp_contract_firm",
+      "pass": true,
+      "expected": 27909,
+      "actual": 27909
+    },
+    {
+      "id": "sp_contract_possible",
+      "pass": true,
+      "expected": 7781,
+      "actual": 7781
+    },
+    {
+      "id": "finance_sources_separate",
+      "pass": true,
+      "expected": "SOURCES_AND_FINANCIAL_STAGES_MUST_NOT_BE_ADDED",
+      "actual": "SOURCES_AND_FINANCIAL_STAGES_MUST_NOT_BE_ADDED"
+    },
+    {
+      "id": "brazil_works_partial",
+      "pass": true,
+      "expected": "PARTIAL",
+      "actual": "PARTIAL"
+    },
+    {
+      "id": "municipality_works_not_applicable",
+      "pass": true,
+      "expected": "NOT_APPLICABLE",
+      "actual": "NOT_APPLICABLE"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+[
+  {"id":"F01","url":"https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem","observed":"pagina oficial lista microdados ENEM 2011-2025 e descreve provas, gabaritos, notas e questionario","status":"PROVEN_WITH_LIMITATIONS"},
+  {"id":"F02","url":"https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior","observed":"pagina oficial lista Censo Superior 2024, 2023 e historico; P10 mediu 30 ZIPs 1995-2024","status":"PROVEN_OPERATIONAL"},
+  {"id":"F03","url":"https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/sinopses-estatisticas/educacao-superior","observed":"Sinopse Superior por municipio lista 1995-2024","status":"PROVEN_OPERATIONAL"},
+  {"id":"F04","url":"https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/indicadores-de-qualidade-da-educacao-superior","observed":"INEP documenta IGC, CPC, Conceito Enade e IDD","status":"PROVEN_WITH_LIMITATIONS"},
+  {"id":"F05","url":"https://dadosabertos.mec.gov.br/prouni","observed":"MEC lista CSVs anuais 2017-2026 por municipio, IES, curso, modalidade e tipo de bolsa","status":"PROVEN_OPERATIONAL"},
+  {"id":"F06","url":"https://dadosabertos.mec.gov.br/fies","observed":"MEC lista ofertas, inscricoes e resultados de processos 2019-2022","status":"PROVEN_WITH_LIMITATIONS"},
+  {"id":"F07","url":"https://dadosabertos.capes.gov.br/","observed":"portal CAPES possui conjuntos de avaliacao stricto sensu e bolsas","status":"PROVEN_WITH_LIMITATIONS"},
+  {"id":"F08","url":"https://emec.mec.gov.br/","observed":"cadastro oficial de IES e cursos com filtro UF/municipio; consulta web/JS","status":"DISCOVERY_ONLY"},
+  {"id":"F09","url":"https://www.tesourotransparente.gov.br/ckan/dataset/lista-de-orgaos-do-siafi","observed":"lista oficial de orgaos com codigo, nome e CNPJ; universidades federais identificaveis","status":"PROVEN_OPERATIONAL"},
+  {"id":"F10","url":"https://portaldatransparencia.gov.br/origem-dos-dados","observed":"downloads e API oficiais com periodicidades distintas","status":"PROVEN_WITH_LIMITATIONS"}
+]
+

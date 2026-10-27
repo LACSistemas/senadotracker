@@ -1,0 +1,58 @@
+{
+  "phase": "P10.9",
+  "database": "projetoeleitor_db",
+  "status": "PASS_WITH_CAVEATS",
+  "generatedAt": "2026-10-27T12:30:00-03:00",
+  "gates": {
+    "G0_SAFETY_BACKUP_RESTORE": "PASS",
+    "G1_PERFORMANCE": "PASS_WITH_CAVEATS",
+    "G2_SIAFI_IBGE_LINKAGE": "PASS_WITH_CAVEATS",
+    "G3_SERVING_CONTRACTS": "PASS_WITH_CAVEATS",
+    "G4_COMPARABILITY": "PASS",
+    "G5_FRESHNESS_IDEMPOTENCE": "PASS_WITH_CAVEATS",
+    "G6_PRIVACY": "PASS_WITH_CAVEATS",
+    "G7_TESTS": "PASS_WITH_CAVEATS",
+    "G8_STORAGE": "PASS",
+    "G9_PRODUCTION_VALIDATION": "PASS_WITH_CAVEATS",
+    "G10_P1010_READINESS": "PASS_WITH_CAVEATS"
+  },
+  "linkage": {
+    "sourceMunicipalityCodes": 5567,
+    "linked": 5537,
+    "unresolved": 30,
+    "ambiguous": 0,
+    "linkedFacts": 471356,
+    "sourceRows": 563222,
+    "sourceAmountCents": "6581406260075"
+  },
+  "performance": {
+    "repetitions": 30,
+    "strictPassScenarios": [
+      "school_profile",
+      "municipality_vitoria",
+      "state_es",
+      "state_sp"
+    ],
+    "caveatScenarios": [
+      "municipality_sao_paulo",
+      "brazil",
+      "benchmarks_vitoria"
+    ]
+  },
+  "storage": {
+    "baselineBytes": 32244108435,
+    "postBytes": 32270511251,
+    "deltaBytes": 26402816,
+    "limitBytes": 5368709120
+  },
+  "tests": {
+    "targetedPass": 8,
+    "targetedFail": 0,
+    "targetedSkipped": 3,
+    "typecheck": "BLOCKED_PREEXISTING_SYNTAX"
+  },
+  "p1010Started": false,
+  "frontendChanged": false,
+  "rawPolicy": "D:\\Civica",
+  "internalWorkRemaining": "YES"
+}

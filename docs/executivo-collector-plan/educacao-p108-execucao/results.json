@@ -1,0 +1,9 @@
+{
+  "phase":"P10.8","status":"PASS_WITH_CAVEATS","database":"projetoeleitor_db","raw_policy":"D:\\Civica","indicator_count":51,
+  "family_counts":{"ESCOLAS_OFERTA":4,"MATRICULAS_TURMAS":6,"INFRAESTRUTURA":9,"DOCENTES":8,"APRENDIZAGEM":4,"FLUXO_ESCOLAR":7,"FINANCIAMENTO":5,"PROGRAMAS_TRANSFERENCIAS":4,"CONTRATACOES":2,"OBRAS":2},
+  "coverage":{"municipalities":5571,"core_education_complete_2025":5568,"ideb_municipalities_2025":5568,"saeb_municipalities_2025":5569,"siconfi_municipalities_2025":5507,"siope_municipalities_2025":5559,"finance_both_sources_2025":5497,"programs_municipalities_2025":0,"contracts_municipalities_any":3846},
+  "materialized":{"contract_rollup_rows":2442,"program_rollup_rows":141834,"finance_rollup_rows_2025":431760,"max_migration":19},
+  "storage":{"before_bytes":31833500819,"after_bytes":32244108435,"delta_bytes":410607616,"limit_bytes":5368709120},
+  "performance_p95_ms":{"school":21.8,"municipality_vitoria":49.3,"municipality_sao_paulo":1003,"state_es":81.9,"state_sp":289.5,"brazil":2776.5,"benchmarks_vitoria":557.3},
+  "reconciliation":"PASS","targeted_tests":{"pass":5,"fail":0,"skipped":3},"readiness":{"p109":"READY_WITH_CAVEATS","p1010":"READY_WITH_CAVEATS"},"raw_on_database":false,"frontend_changed":false
+}

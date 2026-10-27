@@ -5,7 +5,7 @@ import { BenchRuler } from './bench-ruler';
 import { DeltaChip, Sparkline } from './security-ui';
 import { cn } from '@/lib/utils';
 
-function KpiCard({ k, lead, who }: { k: Kpi; lead: boolean; who: string }) {
+export function KpiCard({ k, lead, who }: { k: Kpi; lead: boolean; who: string }) {
   return (
     <article className={cn('flex h-full flex-col rounded-2xl border p-5 card-elevated sm:p-6', lead ? 'bg-[#e8f3ee]' : 'bg-card')} aria-labelledby={`kpi-${k.id}`}>
       <div className="flex items-start justify-between gap-3">

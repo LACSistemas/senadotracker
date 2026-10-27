@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-10-27T12:24:56.558Z",
+  "scenarios": [
+    {
+      "name": "school_profile",
+      "payloadBytesUtf8": 495123,
+      "payloadPresent": true
+    },
+    {
+      "name": "municipality_sao_paulo",
+      "payloadBytesUtf8": 499975,
+      "payloadPresent": true
+    },
+    {
+      "name": "state_sp",
+      "payloadBytesUtf8": 3835336,
+      "payloadPresent": true
+    },
+    {
+      "name": "brazil",
+      "payloadBytesUtf8": 26182477,
+      "payloadPresent": true
+    },
+    {
+      "name": "benchmarks_vitoria",
+      "payloadBytesUtf8": 1705,
+      "payloadPresent": true
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+family,label,source,unit,status,notes
+overview,Matrículas observadas,Censo Escolar/INEP,matrículas,published,edição anual; não são alunos únicos necessariamente
+overview,Escolas observadas,Censo Escolar/INEP,escolas,published,recorte territorial
+learning,Ideb,INEP/Inep Ideb,pontos,conditional,etapa e rede preservadas; lacunas permanecem
+infrastructure,Recursos de infraestrutura,Censo Escolar/INEP,percentual,conditional,denominador sim+não da pergunta
+trajectory,Aprovação/Reprovação/Abandono,INEP,percentual,conditional,taxas não são somadas
+teachers,Docentes distintos,Sinopse Estatística/INEP,pessoas,conditional,sem nomes individuais
+finance,Financiamento educacional,Siconfi/SIOPE,BRL,partial,estágios e fontes separados
+programs,Programas e transferências,fontes educacionais,BRL,partial,vínculo territorial depende da fonte
+contracts,Contratações relacionadas,contratos públicos,contratos,partial,contrato não prova entrega

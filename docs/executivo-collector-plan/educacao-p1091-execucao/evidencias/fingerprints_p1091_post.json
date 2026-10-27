@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "database": "projetoeleitor_db",
+    "db_user": "projetoeleitor_user",
+    "database_bytes": "32308554899",
+    "captured_at": "2026-10-27T14:07:40.284Z"
+  },
+  "migrations": [
+    {
+      "version": 1,
+      "name": "civica_exec_ddl_v1_revisao2"
+    },
+    {
+      "version": 2,
+      "name": "civica_exec_ddl_v2_seguranca_cobertura_vde"
+    },
+    {
+      "version": 3,
+      "name": "civica_exec_ddl_v3_transito"
+    },
+    {
+      "version": 4,
+      "name": "civica_exec_ddl_v4_prisional"
+    },
+    {
+      "version": 5,
+      "name": "civica_exec_ddl_v5_financas_seguranca"
+    },
+    {
+      "version": 6,
+      "name": "civica_exec_ddl_v6_contratos_transferencias"
+    },
+    {
+      "version": 7,
+      "name": "civica_exec_ddl_v7_refcode_sequence"
+    },
+    {
+      "version": 8,
+      "name": "civica_exec_ddl_v8_criminalidade_estadual"
+    },
+    {
+      "version": 9,
+      "name": "civica_exec_ddl_v9_educacao_escolas"
+    },
+    {
+      "version": 10,
+      "name": "civica_exec_ddl_v10_educacao_oferta"
+    },
+    {
+      "version": 11,
+      "name": "civica_exec_ddl_v11_educacao_infraestrutura"
+    },
+    {
+      "version": 12,
+      "name": "civica_exec_ddl_v12_educacao_indicadores_inep"
+    },
+    {
+      "version": 13,
+      "name": "civica_exec_ddl_v13_educacao_aprendizagem"
+    },
+    {
+      "version": 14,
+      "name": "civica_exec_ddl_v14_financas_educacao_siope"
+    },
+    {
+      "version": 15,
+      "name": "civica_exec_ddl_v15_programas_transferencias_educacionais"
+    },
+    {
+      "version": 16,
+      "name": "civica_exec_ddl_v16_educacao_contratacoes_obras"
+    },
+    {
+      "version": 17,
+      "name": "civica_exec_ddl_v17_educacao_inteligencia"
+    },
+    {
+      "version": 18,
+      "name": "civica_exec_ddl_v18_program_rollup_performance"
+    },
+    {
+      "version": 19,
+      "name": "civica_exec_ddl_v19_finance_rollup_performance"
+    },
+    {
+      "version": 20,
+      "name": "civica_exec_ddl_v20_program_municipality_identity"
+    },
+    {
+      "version": 21,
+      "name": "civica_exec_ddl_v21_compact_education_serving"
+    }
+  ],
+  "tables": {
+    "exec_edu_analytics_meta": {
+      "rows": "4",
+      "checksum": "20771786138793003845"
+    },
+    "exec_edu_contract": {
+      "rows": "428192",
+      "checksum": "2128362082110634578249"
+    },
+    "exec_edu_contract_audit": {
+      "rows": "1260",
+      "checksum": "160916590455539237898"
+    },
+    "exec_edu_contract_class": {
+      "rows": "440203",
+      "checksum": "904937214240336451027"
+    },
+    "exec_edu_contract_rollup": {
+      "rows": "2442",
+      "checksum": "98402143839975603801"
+    },
+    "exec_edu_contract_term": {
+      "rows": "21",
+      "checksum": "36398906077854488696"
+    },
+    "exec_edu_cov": {
+      "rows": "513",
+      "checksum": "-271419729312032494680"
+    },
+    "exec_edu_ctr_cov": {
+      "rows": "425",
+      "checksum": "3542836571141078336"
+    },
+    "exec_edu_doc_terr": {
+      "rows": "106333",
+      "checksum": "1863972052537204479196"
+    },
+    "exec_edu_finance_rollup": {
+      "rows": "431760",
+      "checksum": "5260772745546833839868"
+    },
+    "exec_edu_flow_cov": {
+      "rows": "2118",
+      "checksum": "-58798725718420510172"
+    },
+    "exec_edu_flow_school": {
+      "rows": "2678764",
+      "checksum": "6221093920998386519558"
+    },
+    "exec_edu_flow_terr": {
+      "rows": "1258400",
+      "checksum": "4749232367744431348536"
+    },
+    "exec_edu_ideb_cov": {
+      "rows": "605",
+      "checksum": "60620637670091608996"
+    },
+    "exec_edu_ideb_school": {
+      "rows": "1045501",
+      "checksum": "4942648475555985981672"
+    },
+    "exec_edu_ideb_terr": {
+      "rows": "359746",
+      "checksum": "-9416297315341008439921"
+    },
+    "exec_edu_ind_cov": {
+      "rows": "5526",
+      "checksum": "-52233917445323380588"
+    },
+    "exec_edu_ind_school": {
+      "rows": "3512097",
+      "checksum": "-2604677266494087785783"
+    },
+    "exec_edu_ind_terr": {
+      "rows": "1287807",
+      "checksum": "1023991927061390341304"
+    },
+    "exec_edu_infra_agg": {
+      "rows": "3963",
+      "checksum": "241210492206734390509"
+    },
+    "exec_edu_infra_cov": {
+      "rows": "513",
+      "checksum": "-123800567909370666281"
+    },
+    "exec_edu_infra_year": {
+      "rows": "3597617",
+      "checksum": "9697089591717043657656"
+    },
+    "exec_edu_inse_cov": {
+      "rows": "164",
+      "checksum": "120474321357378162226"
+    },
+    "exec_edu_inse_school": {
+      "rows": "208444",
+      "checksum": "-2036289316299588902461"
+    },
+    "exec_edu_inse_terr": {
+      "rows": "229392",
+      "checksum": "1653277567699128804697"
+    },
+    "exec_edu_offer_agg": {
+      "rows": "3962",
+      "checksum": "-425226711470231558994"
+    },
+    "exec_edu_offer_cov": {
+      "rows": "513",
+      "checksum": "181642235444458441277"
+    },
+    "exec_edu_offer_year": {
+      "rows": "3547666",
+      "checksum": "6066045864825108042564"
+    },
+    "exec_edu_overview_rollup": {
+      "rows": "5599",
+      "checksum": "-184811900049425531548"
+    },
+    "exec_edu_procurement": {
+      "rows": "2030",
+      "checksum": "-732203637480498111344"
+    },
+    "exec_edu_program_cov": {
+      "rows": "49",
+      "checksum": "-9521763242897363973"
+    },
+    "exec_edu_program_fact": {
+      "rows": "563288",
+      "checksum": "-1165978427112190126129"
+    },
+    "exec_edu_program_municipality_map": {
+      "rows": "5567",
+      "checksum": "-45800049347821475486"
+    },
+    "exec_edu_program_rollup": {
+      "rows": "141010",
+      "checksum": "2212973810919393528214"
+    },
+    "exec_edu_saeb_cov": {
+      "rows": "140",
+      "checksum": "37323864071053497013"
+    },
+    "exec_edu_saeb_terr": {
+      "rows": "1820574",
+      "checksum": "-5915427226503263466439"
+    },
+    "exec_edu_school": {
+      "rows": "299547",
+      "checksum": "4143497771305100797654"
+    },
+    "exec_edu_school_year": {
+      "rows": "4272656",
+      "checksum": "10300715807025501316324"
+    },
+    "exec_edu_series_rollup": {
+      "rows": "106331",
+      "checksum": "-586661163955406886552"
+    },
+    "exec_edu_siope_cov": {
+      "rows": "972",
+      "checksum": "55943924780394309784"
+    },
+    "exec_edu_siope_fact": {
+      "rows": "3395269",
+      "checksum": "7519554996625481011344"
+    },
+    "exec_edu_trn_cov": {
+      "rows": "420",
+      "checksum": "-125186945207293024681"
+    },
+    "exec_edu_trn_terr": {
+      "rows": "360304",
+      "checksum": "2956150946241598714149"
+    },
+    "exec_edu_work": {
+      "rows": "6637",
+      "checksum": "-252949684313763346668"
+    },
+    "exec_edu_work_commit": {
+      "rows": "0",
+      "checksum": "0"
+    }
+  }
+}

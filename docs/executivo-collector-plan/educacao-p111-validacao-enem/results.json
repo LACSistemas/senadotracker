@@ -1,0 +1,220 @@
+{
+  "phase": "P11.1",
+  "generated_at": "2026-10-27T18:45:00-03:00",
+  "database": {
+    "database": "projetoeleitor_db",
+    "user": "projetoeleitor_user",
+    "read_only": true,
+    "exec_entity_count": 5631
+  },
+  "raw_root": "D:/Civica",
+  "source_access": {
+    "official_page": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/enem",
+    "editions": [
+      "2023",
+      "2024",
+      "2025"
+    ],
+    "status": 200,
+    "sha256_verified": true
+  },
+  "national_parity": {
+    "2023": {
+      "results_rows": 3933955,
+      "all_four_present": 2678264,
+      "valid_mt": 2692427,
+      "valid_essay_status_1": 2704814,
+      "elapsed_seconds": 73.26,
+      "distinct_school_municipalities": 5528
+    },
+    "2024": {
+      "results_rows": 4332944,
+      "all_four_present": 2990093,
+      "valid_mt": 3004981,
+      "valid_essay_status_1": 3002710,
+      "elapsed_seconds": 81.84,
+      "distinct_school_municipalities": 5562
+    },
+    "2025": {
+      "results_rows": 4810772,
+      "all_four_present": 3244348,
+      "valid_mt": 3260336,
+      "valid_essay_status_1": 3245696,
+      "elapsed_seconds": 85.13,
+      "distinct_school_municipalities": 5562
+    }
+  },
+  "small_municipality": {
+    "code": "3200102",
+    "name": "Afonso Claudio",
+    "uf": "ES",
+    "by_edition": {
+      "2023": {
+        "rows": 98,
+        "any_presence": 71,
+        "all_four_present": 66,
+        "dep": {
+          "2": 95,
+          "3": 3
+        },
+        "valid_notes": {
+          "CN": 66,
+          "CH": 71,
+          "LC": 71,
+          "MT": 66
+        },
+        "mean_notes": {
+          "CN": 478.2651515151515,
+          "CH": 497.9802816901408,
+          "LC": 497.4366197183099,
+          "MT": 519.3424242424243
+        },
+        "median_notes": {
+          "CN": 481.3,
+          "CH": 507.2,
+          "LC": 499.5,
+          "MT": 510.65
+        },
+        "essay_valid": 71,
+        "essay_mean": 587.6056338028169,
+        "essay_median": 580.0,
+        "elapsed": 32.06505608558655
+      },
+      "2024": {
+        "rows": 167,
+        "any_presence": 128,
+        "all_four_present": 122,
+        "dep": {
+          "2": 167
+        },
+        "valid_notes": {
+          "CN": 122,
+          "CH": 128,
+          "LC": 128,
+          "MT": 122
+        },
+        "mean_notes": {
+          "CN": 473.6377049180328,
+          "CH": 499.66875,
+          "LC": 513.75234375,
+          "MT": 512.1327868852459
+        },
+        "median_notes": {
+          "CN": 464.65,
+          "CH": 514.5,
+          "LC": 520.7,
+          "MT": 483.8
+        },
+        "essay_valid": 128,
+        "essay_mean": 605.625,
+        "essay_median": 650.0,
+        "elapsed": 29.633671760559082
+      },
+      "2025": {
+        "rows": 191,
+        "any_presence": 148,
+        "all_four_present": 136,
+        "dep": {
+          "2": 191
+        },
+        "valid_notes": {
+          "CN": 136,
+          "CH": 148,
+          "LC": 148,
+          "MT": 136
+        },
+        "mean_notes": {
+          "CN": 478.69632352941176,
+          "CH": 492.1425675675676,
+          "LC": 513.4831081081081,
+          "MT": 497.89558823529416
+        },
+        "median_notes": {
+          "CN": 484.1,
+          "CH": 495.5,
+          "LC": 525.9,
+          "MT": 484.3
+        },
+        "essay_valid": 148,
+        "essay_mean": 559.8648648648649,
+        "essay_median": 600.0,
+        "elapsed": 26.990842580795288
+      }
+    }
+  },
+  "limitations": [
+    "municipality is school location, not residence",
+    "2024/2025 participant and result bases have no common key",
+    "CO_ESCOLA absent in 2023 and masked for small cells in 2024/2025",
+    "public publication requires suppression and legal review"
+  ],
+  "gates": {
+    "G0_SAFETY": "PASS",
+    "G1_SOURCE_ACCESS": "PASS",
+    "G2_SCHEMA_PROVEN": "PASS_WITH_LIMITATIONS",
+    "G3_TERRITORIAL_PROOFS": "PASS_WITH_LIMITATIONS",
+    "G4_NATIONAL_RECONCILIATION": "PASS",
+    "G5_PRIVACY": "PASS_FOR_AGGREGATE_ONLY",
+    "G6_STORAGE_PERFORMANCE": "PASS",
+    "G7_PRODUCT_READINESS": "PASS_WITH_LIMITATIONS"
+  },
+  "readiness": {
+    "READY_FOR_P11_2_IES": "YES",
+    "READY_FOR_ENEM_COLLECTOR": "YES_WITH_LIMITATIONS",
+    "READY_FOR_ENEM_PUBLICATION": "NO"
+  },
+  "no_mutation": {
+    "database": "NO",
+    "collectors": "NO",
+    "migrations": "NO",
+    "frontend": "NO",
+    "participant_ids_persisted": "NO"
+  },
+  "artifact_sha256": {
+    "ARQUIVOS_FONTES_SHA256.csv": "8cab16125774780955be16640cd830b908cef9059ff3842b02ec2d6719d9ea2b",
+    "DICIONARIO_REAL_2023_2025.csv": "0b6c375954d85a79772f005c7bea140438d090dc5d32f3606e166bc6ba11a8e9",
+    "COBERTURA_ENEM_TERRITORIAL.csv": "ffedcbbf5c7791dd56dd50fad91261fe1a7333cb647ad1b7aba838303b3533ac",
+    "PROVAS_MUNICIPAIS_ENEM.csv": "159c9450c946bc19904198f79f93971befd9d051b01d5b2b8e5f1ab3bc6931b0",
+    "RECONCILIACAO_SINOPSES.md": "7ff13e955caf20fdfebb7004aab96af5df3a6f5aa34f8f9bc59cf03c15467287",
+    "COMPARABILIDADE_TEMPORAL.md": "be1fadb1c5ee50a35f99b5156f4ef7cf3e33335f2930ef7836619d7ce0ee3c81",
+    "PRIVACIDADE_PUBLICACAO.md": "b7b604e0ef41899b6bf7001c4b9db83bac91ade4b904cab1e5508ac2eaab77cd",
+    "ARQUITETURA_AGREGADOS_ENEM.md": "97da01def0d989d750ceb238aa783dd8a8fa6ee385680d18c83d8b8e58293d5f",
+    "RELATORIO_VALIDACAO_ENEM_P111.md": "57592c1696966864302c7dcccc3fc714cc41a2ca904de8d3257d16c4462ef4eb"
+  },
+  "P11_1": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATIONS",
+  "source_sinopses": {
+    "2023": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2023/sinopse_enem_2023.zip",
+      "http_status": 200,
+      "bytes": 1971201,
+      "sha256": "E6B7BFA46694966C23BB2AC5E5B8EB504065D8B99C9B5303DBE5F9E03DAE81B2"
+    },
+    "2024": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2024/sinopse_enem_2024.zip",
+      "http_status": 200,
+      "bytes": 2057227,
+      "sha256": "4F3EBD2687C0F51F69EDB2C3D84AE4198117D577C787E2B2C7C44298478A02BC"
+    },
+    "2025": {
+      "url": "https://download.inep.gov.br/informacoes_estatisticas/sinopses_estatisticas/sinopses_enem/2025/sinopse_enem_2025.zip",
+      "http_status": 200,
+      "bytes": 2077469,
+      "sha256": "149E001DD1C3265F29D9BA9EB10F69E55F486B7233D4794C32A53DE0569C05FF"
+    }
+  },
+  "storage_performance": {
+    "raw_zip_bytes_total": 2111260236,
+    "temporary_result_2025_uncompressed_bytes": 2115499721,
+    "D_free_bytes_after_collection": 409285984256,
+    "streaming_elapsed_seconds": {
+      "2023": 73.26,
+      "2024": 81.84,
+      "2025": 85.13
+    },
+    "peak_rss_bytes_observed": {
+      "2023": 43503616,
+      "2024": 44613632,
+      "2025": 44613632
+    }
+  }
+}

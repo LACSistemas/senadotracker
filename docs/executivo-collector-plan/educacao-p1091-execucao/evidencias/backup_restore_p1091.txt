@@ -1,0 +1,9 @@
+backup=artifacts/projetoeleitor_p109_full_20261027.dump
+sha256=3ef534704f57d0f71c3d1c2e37a336b7b3cf884fdfbd8c75a3f8be97b19a3176
+scope=full data
+pg_restore_list=PASS
+isolated_restore=PASS
+isolated_port=55439
+official_migration_before=20
+official_migration_after=21
+no_destructive_operation=true

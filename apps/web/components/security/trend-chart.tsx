@@ -39,10 +39,10 @@ export function TrendChart({ chart, height, compact = false, hideControls = fals
 
   const small = width < 520; const H = height ?? (compact ? 190 : small ? 250 : 300); const L = small ? 38 : 48, R = small ? 10 : 16, T = 14, B = 30; const W = Math.max(width, 280);
   const nums = times.map(tnum); const tMin = Math.min(...nums), tMax = Math.max(...nums); const only = times.length <= 1;
-  const stepX = grain === 'A' ? 1 : 1 / 12; const pad = only ? 0.5 : stepX * 0.35;
+  const stepX = grain === 'A' ? (chart.stepYears ?? 1) : 1 / 12; const pad = only ? 0.5 : stepX * 0.35;
   const x = (t: string) => only ? L + (W - L - R) / 2 : L + ((tnum(t) - tMin + pad) / (tMax - tMin + 2 * pad)) * (W - L - R);
   const vals = [...series.flatMap(s => s.points.map(p => p.v)), ...(bench ? [...benchBy.values()].flatMap(b => [b.p25, b.p75]) : [])].filter((v): v is number => v != null);
-  const vMax = vals.length ? Math.max(...vals) : 1; const vMin = vals.length ? Math.min(...vals) : 0; const lo = vMin < 0 ? vMin : 0; const step = niceStep((vMax * 1.08 - lo) / 4); const hi = Math.ceil((vMax * 1.05) / step) * step || 1;
+  const vMax = vals.length ? Math.max(...vals) : 1; const vMin = vals.length ? Math.min(...vals) : 0; const zoom = !!chart.zoom && vals.length > 1 && vMin > 0; const lo0 = vMin < 0 ? vMin : zoom ? vMin - (vMax - vMin || 1) * 0.35 : 0; const step = niceStep((vMax * 1.08 - lo0) / 4); const lo = zoom ? Math.floor(lo0 / step) * step : lo0; const hi = chart.yMax ?? (Math.ceil((vMax * 1.05) / step) * step || 1);
   const y = (v: number) => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
   const ticks = Array.from({ length: Math.round((hi - lo) / step) + 1 }, (_, i) => lo + i * step);
   const labelEvery = Math.max(1, Math.ceil(times.length / (small ? 5 : 9))); const xLabels = grain === 'A' ? times.filter((_, i) => i % labelEvery === 0 || i === times.length - 1) : times.filter(t => t.endsWith('-01') && Number(t.slice(0, 4)) % (span > 12 ? 2 : 1) === 0 || t === times.at(-1));
