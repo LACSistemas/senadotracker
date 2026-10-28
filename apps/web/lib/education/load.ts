@@ -2,18 +2,23 @@ import {
   getEduContractsTerritory, getEduSuppliers, getEduWorks, getEducationMunicipalityInfra, getEducationMunicipalityOffer, getEducationNationalInfra, getEducationNationalOffer,
   getEducationOverview, getEducationSection, getEducationSeries, getEducationTeachers, getEducationTerritoryIndicators, getFlowSeries, getFlowTerritory, getIdebTerritory,
   getInseTerritory, getSaebTerritory, getTransitionTerritory,
+  getGraduateAreaBreakdown, getGraduateEvaluationBands, getGraduateTerritorySummary, latestCapesYear, searchGraduatePrograms,
+  getIgcBandDistribution, getQualityHighlights, getTerritorialQualityOverview, latestQualityYear,
+  getHigherEducationTerritoryOverview, getTopHigherEducationCourses, latestHigherEdYear,
+  latestEnemEdition, getEnemTerritoryOverview, getEnemSubjectOverview, getEnemNetworkBreakdown, ENEM_SUBJECT_LABEL, ENEM_NETWORK_LABEL,
   type FlowResult, type IdebResult, type InseResult, type SaebResult,
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
-import { memo, scopeOf } from '@/lib/security/load';
+import { instrument, memo, scopeOf } from '@/lib/security/load';
 import type { Kpi } from '@/lib/security/types';
 import { brlShort, compact, fmt } from '@/lib/security/format';
 import {
   FLOW_MEASURES, FLOW_STAGES, IDEB_STAGES, INFRA_ITEMS, REDES, SAEB_GRADES, SUBJECTS, PROGRAMS, STAGE_LABEL, SITUACAO_OBRA_ORDER,
 } from './catalog';
 import { bars, chart, compareSeries, deltaText, explorer, lastOf, nameOf, pick, prevOf, stat, table, type YV } from './build';
-import { narrative } from './narrative';
-import type { DistBar, EduScope, EducationPageData, Explorer, ExplorerView } from './types';
+import { higherEdRuler, capesRuler, enemRuler, saebRuler, idebRuler, abandonoRuler } from './bench';
+import { narrative, higherEdNarrative, enemNarrative } from './narrative';
+import type { DistBar, EduScope, EducationPageData, EnemSubjectTab, Explorer, ExplorerView, SuperlativeHighlight } from './types';
 
 type Key = { ibge7?: string; ufCode?: number };
 type Loose = Record<string, any>; // payloads heterogêneos das leituras de oferta/infra/indicadores: lidos campo a campo, com checagem
@@ -28,7 +33,7 @@ async function read<T>(name: string, errors: string[], fn: () => Promise<T>): Pr
   try { return await fn(); } catch (error) { errors.push(name); console.error(`education read failed: ${name}`, error); return null; }
 }
 
-async function keyFor(scope: EduScope): Promise<Key> {
+export async function keyFor(scope: EduScope): Promise<Key> {
   if (scope.kind === 'uf') return { ufCode: scope.ufCode };
   const row = (await webPostgresPool().query('SELECT ibge7::text FROM civica_exec.exec_entity WHERE entity_id=$1 AND kind=4', [scope.entityId])).rows[0];
   return { ibge7: String(row?.ibge7 ?? scope.entityId).padStart(7, '0') };
@@ -56,20 +61,38 @@ function versus(v: number, ref: number | null, refName: string, d: number, unit:
 }
 
 export async function loadEducationPage(scope: EduScope, selectedYear = 2025): Promise<EducationPageData> {
-  const pool = webPostgresPool(); const errors: string[] = []; const key = await keyFor(scope); const isMuni = scope.kind === 'municipio';
+  const t0 = performance.now(); const { q: pool, stats } = instrument(webPostgresPool()); const dbStart = performance.now();
+  const errors: string[] = []; const key = await keyFor(scope); const isMuni = scope.kind === 'municipio';
   const ufKey: Key = { ufCode: scope.ufCode }; const brKey: Key = {};
   const R = <T,>(n: string, fn: () => Promise<T>) => read(n, errors, fn);
   const FLOW_CODES = FLOW_MEASURES.flatMap(m => FLOW_STAGES.map(s => `${m.value}_${s.value}`));
-  const overview = await R('overview', () => getEducationOverview(pool, key, selectedYear) as Promise<Loose | null>);
-  const year = Number(overview?.year ?? selectedYear);
-  const [saeb, saebUf, saebBr, ideb, idebUf, idebBr, flow, flowUf, flowBr, flowCut, trn, inse, inseUf, inseBr] = await Promise.all([
+  const teScope = isMuni ? { ibge7: key.ibge7! } : { uf: scope.uf }; // território para Enem/Ensino Superior/Qualidade (CAPES usa nome do município, ver bug do entity_id)
+  const contractKey: Key = isMuni ? { ibge7: key.ibge7! } : { ufCode: scope.ufCode };
+
+  // ======================================================================= Fase 1: tudo que NÃO depende do ano do Censo Escolar, incluindo o "último ano/edição publicado" de cada domínio novo
+  const [
+    overview, saeb, saebUf, saebBr, ideb, idebUf, idebBr, flow, flowUf, flowBr, flowCut, trn, inse, inseUf, inseBr,
+    contracts, suppliers, works,
+    enemEdition0, heYear0, qYear0, igcYear0, capesYear0,
+  ] = await Promise.all([
+    R('overview', () => getEducationOverview(pool, key, selectedYear) as Promise<Loose | null>),
     R('saeb', () => getSaebTerritory(pool, key)), isMuni ? R('saebUf', () => getSaebTerritory(pool, ufKey)) : Promise.resolve(null), R('saebBr', () => getSaebTerritory(pool, brKey)),
     R('ideb', () => getIdebTerritory(pool, key)), isMuni ? R('idebUf', () => getIdebTerritory(pool, ufKey)) : Promise.resolve(null), R('idebBr', () => getIdebTerritory(pool, brKey)),
     R('flow', () => getFlowSeries(pool, { ...key, codes: FLOW_CODES })), isMuni ? R('flowUf', () => getFlowSeries(pool, { ...ufKey, codes: FLOW_CODES })) : Promise.resolve(null), R('flowBr', () => getFlowSeries(pool, { ...brKey, codes: FLOW_CODES })),
     R('flowCut', () => getFlowTerritory(pool, { ...key })), R('trn', () => getTransitionTerritory(pool, key)),
     R('inse', () => getInseTerritory(pool, key)), isMuni ? R('inseUf', () => getInseTerritory(pool, ufKey)) : Promise.resolve(null), R('inseBr', () => getInseTerritory(pool, brKey)),
+    R('contracts', () => getEduContractsTerritory(pool, contractKey)), R('suppliers', () => getEduSuppliers(pool, { ...contractKey, limit: 5 })), R('works', () => getEduWorks(pool, { ufCode: scope.ufCode, limit: 60 })),
+    R('enemEdition', () => latestEnemEdition(pool)), R('heYear', () => latestHigherEdYear(pool)), R('qYear', () => latestQualityYear(pool, 'ENADE')), R('igcYear', () => latestQualityYear(pool, 'IGC')), R('capesYear', () => latestCapesYear(pool)),
   ]);
-  const [offer, infra, infraUf, infraBr, indicators, teachers, enrollment] = await Promise.all([
+  const year = Number(overview?.year ?? selectedYear);
+  const enemEdition = enemEdition0 ?? 2025; const heYear = heYear0 ?? 2024; const qYear = qYear0 ?? heYear; const igcYear = igcYear0 ?? qYear; const capesYear = capesYear0 ?? heYear;
+
+  // ======================================================================= Fase 2: o que depende do ano do Censo Escolar + as visões de alto nível de Enem/Ensino Superior/Qualidade/CAPES (dependem do ano/edição resolvido na fase 1, mas não umas das outras)
+  const [
+    offer, infra, infraUf, infraBr, indicators, teachers, enrollment, finance,
+    enemTerr, enemSubjects,
+    heOwn, heTop, qTerr, qHi5, qHi4, igcBandsRaw, gradTerr, gradMuniSearch, gradAreasRaw, gradEvalRaw, gradProgsRaw,
+  ] = await Promise.all([
     R('offer', () => (isMuni ? getEducationMunicipalityOffer(pool, key.ibge7!, { year, series: false }) : getEducationNationalOffer(pool, { year, ufCode: scope.ufCode })) as Promise<Loose | null>),
     R('infra', () => (isMuni ? getEducationMunicipalityInfra(pool, key.ibge7!, { year, series: true }) : getEducationNationalInfra(pool, { year, ufCode: scope.ufCode, series: true })) as Promise<Loose | null>),
     isMuni ? R('infraUf', () => getEducationNationalInfra(pool, { year, ufCode: scope.ufCode, series: true }) as Promise<Loose | null>) : Promise.resolve(null),
@@ -77,12 +100,23 @@ export async function loadEducationPage(scope: EduScope, selectedYear = 2025): P
     R('indicators', () => getEducationTerritoryIndicators(pool, { ...key, year, series: true }) as Promise<Loose | null>),
     R('teachers', () => getEducationTeachers(pool, { ...key, year }) as Promise<Loose | null>),
     R('enrollment', () => getEducationSeries(pool, { ...key, indicator: 'edu.enrollment.total', limit: 100 })),
+    R('finance', () => getEducationSection(pool, { ...key, section: 'finance', year }) as Promise<Loose | null>),
+    R('enemTerr', () => getEnemTerritoryOverview(pool, teScope, enemEdition) as Promise<Loose | null>),
+    R('enemSubj', () => getEnemSubjectOverview(pool, teScope, enemEdition)),
+    R('heOwn', () => getHigherEducationTerritoryOverview(pool, teScope, heYear) as Promise<Loose | null>),
+    R('heTop', () => getTopHigherEducationCourses(pool, teScope, heYear, 5)),
+    R('qTerr', () => getTerritorialQualityOverview(pool, { ...teScope, indicator: 'ENADE', year: qYear })),
+    R('qHi5', () => getQualityHighlights(pool, { ...teScope, indicator: 'ENADE', year: qYear, band: 5 }, 4)),
+    R('qHi4', () => getQualityHighlights(pool, { ...teScope, indicator: 'ENADE', year: qYear, band: 4 }, 4)),
+    R('igc', () => getIgcBandDistribution(pool, scope.uf, igcYear)),
+    R('gradTerr', () => getGraduateTerritorySummary(pool, capesYear, scope.uf, isMuni ? scope.name : undefined) as Promise<Loose | null>),
+    isMuni ? R('gradMuni', () => searchGraduatePrograms(pool, { year: capesYear, uf: scope.uf, municipalityName: scope.name, pageSize: 1 })) : Promise.resolve(null),
+    R('gradAreas', () => getGraduateAreaBreakdown(pool, { year: capesYear, uf: scope.uf, ...(isMuni ? { municipalityName: scope.name } : {}) }, 8)),
+    R('gradEval', () => getGraduateEvaluationBands(pool, { year: capesYear, uf: scope.uf, ...(isMuni ? { municipalityName: scope.name } : {}) })),
+    R('gradProgs', () => searchGraduatePrograms(pool, { year: capesYear, uf: scope.uf, pageSize: 8, ...(isMuni ? { municipalityName: scope.name } : {}) })),
   ]);
-  const contractKey: Key = isMuni ? { ibge7: key.ibge7! } : { ufCode: scope.ufCode };
-  const [contracts, suppliers, works, finance] = await Promise.all([
-    R('contracts', () => getEduContractsTerritory(pool, contractKey)), R('suppliers', () => getEduSuppliers(pool, { ...contractKey, limit: 5 })),
-    R('works', () => getEduWorks(pool, { ufCode: scope.ufCode, limit: 60 })), R('finance', () => getEducationSection(pool, { ...key, section: 'finance', year }) as Promise<Loose | null>),
-  ]);
+  const subjectsAvailable = enemSubjects ?? [];
+  const gradProgramCount = isMuni ? Number(gradMuniSearch?.total ?? 0) : Number((gradTerr?.program?.rows as Loose[] | undefined)?.[0]?.programs ?? 0);
 
   // ======================================================================= Aprendizagem
   const redesIn = (r: SaebResult | null) => new Set((r?.rows ?? []).filter(x => x.loc === 0 && x.cap === 0).map(x => String(x.dep)));
@@ -188,23 +222,80 @@ export async function loadEducationPage(scope: EduScope, selectedYear = 2025): P
   const finRows = (Array.isArray(finance) ? finance : (finance?.rows ?? finance?.items ?? [])) as Loose[]; const financeTable = finRows.length && finRows[0]?.amountCents != null ? table('Despesa em educação (Siconfi)', ['Fonte', 'Valor'], finRows.slice(0, 6).map(f => [STAGE_LABEL[String(f.stage)] ?? String(f.stage), [String(f.source ?? ''), brlShort(Number(f.amountCents) / 100)]]), 'Empenhado, liquidado e pago são etapas do mesmo gasto: nunca se somam.') : null;
   const worksNote = schoolWorks.length ? null : works ? 'Há obras cadastradas no Obrasgov para esta UF, mas nenhuma com indício escolar suficiente para listar aqui.' : 'As obras de educação desta UF ainda não foram coletadas do Obrasgov; só algumas UFs têm cobertura.';
 
+  // ======================================================================= Enem (P11.6): montagem a partir do que a fase 2 já trouxe
+  const enemNetworksBySubjectPromise = Promise.all(subjectsAvailable.map(s => R(`enemNet:${s.subject}`, () => getEnemNetworkBreakdown(pool, teScope, enemEdition, s.subject))));
+  const featured = subjectsAvailable.find(s => s.subject === 'MT') ?? subjectsAvailable[0] ?? null;
+
+  // ======================================================================= Dependências (rede) resolvidas para os 3 KPIs-taxa do herói, usadas tanto na régua quanto no cartão
+  const mathDep = [0, 5, 3, 2].find(d => hasData(saebSeries(saeb, 2, 5, d))) ?? 0; const mathOwn = saebSeries(saeb, 2, 5, mathDep); const mathBr = saebSeries(saebBr, 2, 5, mathDep); const mathUf = saebSeries(saebUf, 2, 5, 0); const mathL = lastOf(mathOwn);
+  const idebDep = [5, 0, 3, 2].find(d => hasData(idebSeries(ideb, 1, d, 'ideb'))) ?? 0; const idOwn = idebSeries(ideb, 1, idebDep, 'ideb'); const idL = lastOf(idOwn);
+  const abOwn = flowSeries(flow, 'ab_fun'); const abL = lastOf(abOwn);
+
+  // ======================================================================= Fase 3: réguas de comparação (dependem dos resultados da fase 2) — tudo num único Promise.all
+  const [enemNetworksBySubject, enemBench, heBench, gradBench, mathRuler, idebRulerResult, abandonoRulerResult] = await Promise.all([
+    enemNetworksBySubjectPromise,
+    enemRuler(scope, enemEdition, featured?.subject ?? 'MT', featured?.mean ?? null),
+    higherEdRuler(scope, heYear, 'enrollments', heOwn?.enrollments ?? null, { digits: 0, unit: 'matrículas' }),
+    capesRuler(scope, capesYear, gradProgramCount || null),
+    saebRuler(scope, mathL?.year ?? 0, 2, 5, mathDep, mathL?.value ?? null),
+    idebRuler(scope, idL?.year ?? 0, 1, idebDep, idL?.value ?? null),
+    abandonoRuler(scope, abL?.year ?? 0, abL?.value ?? null),
+  ]);
+
+  const enemBySubject = bars(subjectsAvailable.map(s => ({ label: ENEM_SUBJECT_LABEL[s.subject as keyof typeof ENEM_SUBJECT_LABEL] ?? s.subject, value: s.mean, display: `${fmt(s.mean, 1)} pontos` })));
+  const enemTabs: EnemSubjectTab[] = subjectsAvailable.map((s, i) => {
+    const netRows = enemNetworksBySubject[i] ?? [];
+    const byNetwork = bars(netRows.map(nw => ({ label: ENEM_NETWORK_LABEL[nw.network as keyof typeof ENEM_NETWORK_LABEL] ?? String(nw.network), value: nw.mean, display: `${fmt(nw.mean, 1)} pontos` })));
+    return { id: s.subject, label: ENEM_SUBJECT_LABEL[s.subject as keyof typeof ENEM_SUBJECT_LABEL] ?? s.subject,
+      headline: `Nota média de ${fmt(s.mean, 1)} pontos em ${enemEdition} (${fmt(s.validN)} participantes com nota válida).`, byNetwork };
+  });
+  const enemStats = enemTerr ? [stat('Inscritos', fmt(Number(enemTerr.registrants))), stat('Presentes nas quatro provas', fmt(Number(enemTerr.allFourPresent))), stat('Redações válidas', fmt(Number(enemTerr.essayValid)))] : [];
+  const ENEM = enemNarrative({ scope, edition: enemEdition, featuredLabel: featured ? (ENEM_SUBJECT_LABEL[featured.subject as keyof typeof ENEM_SUBJECT_LABEL] ?? featured.subject) : 'Matemática', featuredMean: featured?.mean ?? null, registrants: enemTerr ? Number(enemTerr.registrants) : null });
+
+  // ======================================================================= Ensino superior, qualidade e pós-graduação (P11.2/P11.3/P11.5)
+  const heStats = heOwn ? [stat('Instituições com oferta', fmt(Number(heOwn.ies))), stat('Cursos', fmt(Number(heOwn.courses))), stat('Matrículas', fmt(Number(heOwn.enrollments ?? 0))), stat('Concluintes', fmt(Number(heOwn.graduates ?? 0)))] : [];
+  const heSeatStats = heOwn ? [heOwn.vacancies != null && stat('Vagas oferecidas', fmt(Number(heOwn.vacancies))), heOwn.applicants != null && stat('Inscritos', fmt(Number(heOwn.applicants))), heOwn.entrants != null && stat('Ingressantes', fmt(Number(heOwn.entrants)))].filter((x): x is ReturnType<typeof stat> => !!x) : [];
+  const heByNetwork = heOwn ? bars([{ label: 'Públicas', value: heOwn.publicIes, display: heOwn.publicIes != null ? fmt(Number(heOwn.publicIes)) : '' }, { label: 'Privadas', value: heOwn.privateIes, display: heOwn.privateIes != null ? fmt(Number(heOwn.privateIes)) : '' }]) : [];
+  const heByModality = heOwn ? bars([{ label: 'Presencial', value: Number(heOwn.inPersonOffers), display: fmt(Number(heOwn.inPersonOffers)) }, { label: 'A distância (EAD)', value: Number(heOwn.distanceOffers), display: fmt(Number(heOwn.distanceOffers)) }]) : [];
+  const heCoursesTable = heTop?.length ? table(`Maiores cursos por matrícula (${heYear})`, ['Matrículas'], heTop.map(c => [`${c.courseName}${c.modality !== 1 ? ' (EAD)' : ''}`, [fmt(c.enrollments)]]), 'Maiores cursos por número de matrículas no território; não é avaliação de qualidade.') : null;
+
+  const qHighlightsRaw = qHi5 && qHi5.length > 0 ? qHi5 : (qHi4 ?? []);
+  const courseHighlights: SuperlativeHighlight[] = qHighlightsRaw.map(h => ({
+    label: `${h.courseName} · ${h.institutionName ?? 'IES não identificada'}`, value: `Faixa ${h.band}`, unit: 'de 5',
+    basis: `Conceito Enade ${h.year} · área de ${h.areaName.toLowerCase()}`,
+    detail: h.band === 5 ? 'A nota máxima da escala do Enade neste ciclo.' : 'Entre as faixas mais altas da escala do Enade neste ciclo.',
+    caveat: 'Mede só este curso, nesta edição; não é um índice único de qualidade da instituição.',
+  }));
+  const igcBarsBuilt = bars((igcBandsRaw ?? []).map(b => ({ label: `Faixa ${b.band}`, value: b.n, display: fmt(b.n) })));
+  const qTerrRow = qTerr?.[0] ?? null;
+  const qStats = qTerrRow ? [stat('Cursos avaliados (Enade)', fmt(Number(qTerrRow.evaluatedCourses))), stat('Instituições com curso avaliado', fmt(Number(qTerrRow.evaluatedIes)))] : [];
+
+  const byArea = bars((gradAreasRaw ?? []).map(a => ({ label: a.area, value: a.programs, display: fmt(a.programs) })));
+  const evaluationBands = bars((gradEvalRaw ?? []).map(e => ({ label: `Conceito ${e.concept}`, value: e.programs, display: fmt(e.programs) })));
+  const gradProgramsTable = gradProgsRaw?.items?.length ? table('Programas de pós-graduação', ['Instituição', 'Conceito'], (gradProgsRaw.items as Loose[]).map(p => [String(p.current_name || p.capes_program_code), [String(p.institution_name ?? ''), p.concept != null ? String(p.concept) : null]])) : null;
+  const studentsByStatus = (bucket: string): number => Number((gradTerr?.students as Loose[] | undefined)?.find(s => s.status_bucket === bucket)?.students ?? 0);
+  const gradStats = [stat('Programas de pós-graduação', fmt(gradProgramCount)), gradTerr?.students?.length ? stat('Alunos matriculados', fmt(studentsByStatus('MATRICULADO'))) : null, gradTerr?.students?.length ? stat('Titulados (acumulado)', fmt(studentsByStatus('TITULADO'))) : null].filter((x): x is ReturnType<typeof stat> => !!x);
+  const HE = higherEdNarrative({ scope, heOwn, heYear, courseHighlightCount: courseHighlights.length, gradProgramCount, capesYear });
+
   // ======================================================================= Narrativas, KPIs e página
   const N = narrative({ scope, year, errors, enr, enrLast, enr5, totals, saebExplorer, idebExplorer, flowExplorer, saeb, ideb, flow, infraBars, docs, cTot, contracts, catTop: categories[0] ?? null, inseLast, tr });
   const kpis: Kpi[] = [];
-  const mathOwn = saebSeries(saeb, 2, 5, [0, 5, 3, 2].find(d => hasData(saebSeries(saeb, 2, 5, d))) ?? 0); const mathBr = saebSeries(saebBr, 2, 5, [0, 5, 3, 2].find(d => hasData(saebSeries(saeb, 2, 5, d))) ?? 0); const mathUf = saebSeries(saebUf, 2, 5, 0);
-  const mathL = lastOf(mathOwn); if (mathL) { const p = prevOf(mathOwn, mathL); kpis.push({ id: 'matematica', label: 'Matemática · 5º ano', plain: 'Média dos alunos do 5º ano na prova nacional (Saeb)', value: fmt(mathL.value!, 0), unit: 'pontos na escala do Saeb', basis: `Saeb ${mathL.year}`, chapter: 'aprendizagem', delta: p ? deltaText(mathL.value!, p.value!, p.year, 'pontos', 0) : null, compare: null, ruler: null, spark: mathOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'edições do Saeb', secondary: cmpLine(mathOwn, mathUf, mathBr, scope, 0, ''), caveat: 'Escala própria desta série e disciplina.', source: 'INEP/Saeb', state: 'ok' }); }
-  const idOwn = idebSeries(ideb, 1, [5, 0, 3, 2].find(d => hasData(idebSeries(ideb, 1, d, 'ideb'))) ?? 0, 'ideb'); const idD = [5, 0, 3, 2].find(d => hasData(idebSeries(ideb, 1, d, 'ideb'))) ?? 0; const idL = lastOf(idOwn);
-  if (idL) { const p = prevOf(idOwn, idL); kpis.push({ id: 'ideb', label: 'Ideb · anos iniciais', plain: 'Nota de 0 a 10 que junta a prova nacional e a aprovação', value: fmt(idL.value!, 1), unit: 'de 10', basis: `Ideb ${idL.year}`, chapter: 'aprendizagem', delta: p ? deltaText(idL.value!, p.value!, p.year, 'pontos', 1) : null, compare: null, ruler: null, spark: idOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'edições do Ideb', secondary: cmpLine(idOwn, idebSeries(idebUf, 1, idD, 'ideb'), idebSeries(idebBr, 1, idD, 'ideb'), scope, 1, ''), caveat: null, source: 'INEP/Ideb', state: 'ok' }); }
-  const abOwn = flowSeries(flow, 'ab_fun'); const abL = lastOf(abOwn);
-  if (abL) { const p = prevOf(abOwn, abL); kpis.push({ id: 'abandono', label: 'Abandono · fundamental', plain: 'Alunos que saíram da escola antes do fim do ano', value: `${fmt(abL.value!, 1)}%`, unit: 'dos alunos do ensino fundamental', basis: `ano letivo ${abL.year}`, chapter: 'trajetoria', delta: p ? deltaText(abL.value!, p.value!, p.year, 'p.p.', 1) : null, compare: null, ruler: null, spark: abOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'série histórica', secondary: cmpLine(abOwn, flowSeries(flowUf, 'ab_fun'), flowSeries(flowBr, 'ab_fun'), scope, 1, '%'), caveat: null, source: 'INEP/Indicadores Educacionais', state: 'ok' }); }
-  if (enrLast) kpis.push({ id: 'matriculas', label: 'Matrículas', plain: 'Alunos matriculados na educação básica', value: fmt(enrLast.value!), unit: `alunos${totals.escolas ? ` em ${fmt(Number(totals.escolas))} escolas` : ''}`, basis: `Censo ${enrLast.year}`, chapter: 'rede', delta: enr5 ? { text: `${enrLast.value! >= enr5.value! ? '+' : '−'}${fmt(Math.abs(enrLast.value! - enr5.value!))} alunos desde ${enr5.year}`, direction: Math.abs(enrLast.value! / enr5.value! - 1) < 0.02 ? 'flat' : enrLast.value! > enr5.value! ? 'up' : 'down' } : null, compare: null, ruler: null, spark: enr.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'por ano', secondary: null, caveat: null, source: 'INEP/Censo Escolar', state: 'ok' });
+  if (mathL) { const p = prevOf(mathOwn, mathL); kpis.push({ id: 'matematica', label: 'Matemática · 5º ano', plain: 'Média dos alunos do 5º ano na prova nacional (Saeb)', value: fmt(mathL.value!, 0), unit: 'pontos na escala do Saeb', basis: `Saeb ${mathL.year}`, chapter: 'aprendizagem', delta: p ? deltaText(mathL.value!, p.value!, p.year, 'pontos', 0) : null, compare: null, ruler: mathRuler, spark: mathOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'edições do Saeb', secondary: cmpLine(mathOwn, mathUf, mathBr, scope, 0, ''), caveat: 'Escala própria desta série e disciplina.', source: 'INEP/Saeb', state: 'ok' }); }
+  if (idL) { const p = prevOf(idOwn, idL); kpis.push({ id: 'ideb', label: 'Ideb · anos iniciais', plain: 'Nota de 0 a 10 que junta a prova nacional e a aprovação', value: fmt(idL.value!, 1), unit: 'de 10', basis: `Ideb ${idL.year}`, chapter: 'aprendizagem', delta: p ? deltaText(idL.value!, p.value!, p.year, 'pontos', 1) : null, compare: null, ruler: idebRulerResult, spark: idOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'edições do Ideb', secondary: cmpLine(idOwn, idebSeries(idebUf, 1, idebDep, 'ideb'), idebSeries(idebBr, 1, idebDep, 'ideb'), scope, 1, ''), caveat: null, source: 'INEP/Ideb', state: 'ok' }); }
+  if (abL) { const p = prevOf(abOwn, abL); kpis.push({ id: 'abandono', label: 'Abandono · fundamental', plain: 'Alunos que saíram da escola antes do fim do ano', value: `${fmt(abL.value!, 1)}%`, unit: 'dos alunos do ensino fundamental', basis: `ano letivo ${abL.year}`, chapter: 'trajetoria', delta: p ? deltaText(abL.value!, p.value!, p.year, 'p.p.', 1) : null, compare: null, ruler: abandonoRulerResult, spark: abOwn.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'série histórica', secondary: cmpLine(abOwn, flowSeries(flowUf, 'ab_fun'), flowSeries(flowBr, 'ab_fun'), scope, 1, '%'), caveat: null, source: 'INEP/Indicadores Educacionais', state: 'ok' }); }
+  if (enrLast) kpis.push({ id: 'matriculas', label: 'Matrículas', plain: 'Alunos matriculados na educação básica', value: fmt(enrLast.value!), unit: `alunos${totals.escolas ? ` em ${fmt(Number(totals.escolas))} escolas` : ''}`, basis: `Censo ${enrLast.year}`, chapter: 'rede', delta: enr5 ? { text: `${enrLast.value! >= enr5.value! ? '+' : '−'}${fmt(Math.abs(enrLast.value! - enr5.value!))} alunos desde ${enr5.year}`, direction: Math.abs(enrLast.value! / enr5.value! - 1) < 0.02 ? 'flat' : enrLast.value! > enr5.value! ? 'up' : 'down' } : null, compare: null, ruler: null, spark: enr.filter(r => r.value != null).map(r => r.value!), sparkLabel: 'por ano', secondary: null, caveat: 'Contagem bruta: não é comparada entre territórios de porte diferente.', source: 'INEP/Censo Escolar', state: 'ok' });
 
   const learning = { id: 'aprendizagem', number: 2, title: 'O que os alunos aprendem', narrative: N.learning, available: !!(saebExplorer || idebExplorer), emptyReason: 'Ainda não há resultado do Saeb nem do Ideb publicado para este território.', limits: ['Valores oficiais do INEP, sem recálculo: o Ideb de uma rede ou cidade não é a média das escolas.', 'Escalas do Saeb diferem por série e disciplina; não compare etapas nem disciplinas.', 'Resultado ausente = a fonte não divulgou (poucos alunos ou participação insuficiente), não é zero.', 'A meta do Ideb vai só até 2021. O Saeb não é publicado por escola.', ...(saeb?.restrictions ?? []).slice(4, 6)], sources: 'Fontes: INEP, Saeb 2017–2025 e Ideb 2005–2025.', explorer: saebExplorer, ideb: idebExplorer, secondary: alfTable };
   const sources: Array<{ label: string; period: string }> = [
     saeb && { label: SRC.saeb, period: `edições ${saeb.editions.join(', ')}` }, ideb && { label: SRC.ideb, period: `edições ${ideb.editions.at(0)}–${ideb.editions.at(-1)}` }, flow?.length && { label: SRC.flow, period: `${flow[0]!.year}–${flow.at(-1)!.year}` },
     offer && { label: SRC.censo + ' (matrículas e infraestrutura)', period: `${year}` }, contracts && { label: SRC.pncp + ' e fornecedores', period: '2021–2026' }, works && { label: SRC.obras, period: 'cobertura parcial por UF' },
+    subjectsAvailable.length > 0 && { label: 'INEP, Microdados do Enem (agregados por município da escola)', period: `${enemEdition} (2023–2025 disponível)` },
+    heOwn && { label: 'INEP, Censo da Educação Superior', period: `${heYear} (2022–2024 disponível)` },
+    (qStats.length > 0 || courseHighlights.length > 0) && { label: 'INEP, Indicadores de Qualidade da Educação Superior (IGC, CPC, Enade, IDD)', period: `ciclos 2018, 2021, 2022 e ${qYear}` },
+    gradProgramCount > 0 && { label: 'CAPES/Sucupira', period: `${capesYear} (2021–2024 disponível)` },
   ].filter((x): x is { label: string; period: string } => !!x);
 
+  const dbWall = performance.now() - dbStart; const buildMs = performance.now() - t0;
   return {
     scope, year, hero: { lede: N.lede, kpis },
     network: { id: 'rede', number: 1, title: 'Quantos estudam', narrative: N.network, available: !!enrLast || !!totals.matriculas, emptyReason: 'Não há matrículas publicadas para este território.', limits: ['Matrícula não é aluno único: o mesmo aluno pode ter mais de uma.', 'A rede privada entra nas contas de matrículas e escolas; veja a divisão por rede.', ...((offer?.restrictions ?? []) as string[]).slice(0, 3)], sources: 'Fonte: INEP, Censo Escolar da Educação Básica.',
@@ -215,7 +306,20 @@ export async function loadEducationPage(scope: EduScope, selectedYear = 2025): P
     structure: { id: 'estrutura', number: 5, title: 'Como são as escolas', narrative: N.structure, available: infraBars.length > 0, emptyReason: 'Não há infraestrutura publicada para este território.', limits: ['Informação autodeclarada pela escola no Censo Escolar; o percentual considera só as escolas que responderam.', 'Internet declara acesso, não velocidade nem qualidade.', 'Algumas perguntas mudaram em 2019: o gráfico avisa quando a comparação pede cautela.'], sources: 'Fonte: INEP, Censo Escolar (tabela de infraestrutura).', explorer: infraExplorer, items: infraBars, universe: infra?.universe ? `${fmt(Number(infra.universe.comResposta))} de ${fmt(Number(infra.universe.escolas))} escolas responderam` : null, stats: [] },
     teachers: { id: 'professores', number: 6, title: 'Quem ensina', narrative: N.teachers, available: !!docs || afdBars.length > 0 || !!teacherTable, emptyReason: 'Não há dados de docentes publicados para este território.', limits: ['Docentes distintos: cada professor conta uma vez. Por escola, o número de docentes não é somado (contaria duas vezes quem trabalha em várias).', 'Os indicadores de formação e de condições de ensino são do INEP e descrevem, não ranqueiam.'], sources: 'Fonte: INEP, Sinopse Estatística e Indicadores Educacionais.', stats: [docs && stat('Professores', fmt(Number(docs.value)), 'docentes'), med('atu_fun') != null && stat('Alunos por turma (fund.)', fmt(med('atu_fun')!, 1)), med('afd_fun1') != null && stat('Com formação adequada (fund.)', `${fmt(med('afd_fun1')!, 0)}%`)].filter((x): x is ReturnType<typeof stat> => !!x), docentes: docChart, formation: afdBars, table: teacherTable },
     money: { id: 'recursos', number: 7, title: 'Dinheiro, contratos e obras', narrative: N.money, available: !!(contracts || programTable || worksTable || financeTable), emptyReason: 'Ainda não há contratos, repasses ou obras de educação publicados para este território.', limits: ['Valor de contrato é o valor CONTRATADO no PNCP: não é o valor pago nem o que foi entregue.', 'O contrato não informa a escola: não é possível ligar contratos a escolas específicas.', 'Obras vêm do Obrasgov por UF e só algumas UFs foram coletadas; empenho não é pagamento.', 'Repasses do FNDE: só 2025. Fonte e situação do pagamento nunca são somadas.', 'Contratos com indício fraco de serem de educação ficam fora dos totais.'], sources: 'Fontes: PNCP, Obrasgov, FNDE (Portal da Transparência) e Siconfi.', contractsChart, contractStats, categories, suppliers: supplierTable, works: worksTable, worksNote, programs: programTable, finance: financeTable },
+    enem: { id: 'enem', number: 8, title: 'Enem', narrative: ENEM, available: subjectsAvailable.length > 0, emptyReason: 'Não há nota do Enem publicada com participantes suficientes para este território.',
+      limits: ['Nota de quem concluiu o ensino médio NESTA escola; o Inep não publica o município de residência.', 'Rede ou território com menos de 10 participantes não é divulgado (mesmo corte que o Inep usa para mascarar a escola).', 'Médias e medianas não são comparáveis entre disciplinas: cada uma tem sua própria escala.'],
+      sources: 'Fonte: INEP, Microdados do Enem (agregados; nenhum participante ou escola identificados).', stats: enemStats, bench: enemBench, bySubject: enemBySubject, tabs: enemTabs },
+    higherEd: { id: 'ensino-superior', number: 9, title: 'Ensino superior', narrative: HE.higherEd, available: !!heOwn, emptyReason: 'Não há Censo da Educação Superior publicado para este território.',
+      limits: ['Nº de instituições conta quem oferece curso no território (inclusive polos de EAD), não só quem tem sede aqui.', 'Matrícula, ingressante e concluinte são contagens do Censo, não pessoas únicas.', 'Oferta de EAD sem município observável entra só no total do Brasil.'],
+      sources: 'Fonte: INEP, Censo da Educação Superior.', stats: heStats, seatStats: heSeatStats, byNetwork: heByNetwork, byModality: heByModality, coursesTable: heCoursesTable, bench: heBench },
+    quality: { id: 'qualidade-superior', number: 10, title: 'Qualidade do ensino superior', narrative: HE.quality, available: qStats.length > 0 || courseHighlights.length > 0 || igcBarsBuilt.length > 0, emptyReason: 'Não há indicador de qualidade do ensino superior publicado para este território.',
+      limits: ['IGC é por instituição; CPC, Conceito Enade e IDD são por curso — nunca combinados num índice único.', 'Faixa vai de 1 a 5; faixa ausente é "a fonte não avaliou", nunca zero.', 'A distribuição do IGC é só em nível estadual: é um índice por instituição, e o universo por município costuma ser pequeno demais para uma distribuição.'],
+      sources: 'Fonte: INEP, Indicadores de Qualidade da Educação Superior (IGC, CPC, Conceito Enade e IDD).', igcBands: igcBarsBuilt, courseHighlights, stats: qStats },
+    graduate: { id: 'pos-graduacao', number: 11, title: 'Pós-graduação', narrative: HE.graduate, available: gradProgramCount > 0, emptyReason: 'Não há programa de pós-graduação CAPES publicado para este território.',
+      limits: ['Conceito final é do ciclo quadrienal mais recente (2021–2024); não é nota anual.', 'Alunos e docentes são contagens agregadas, sem identificação individual.', 'Bolsas e financiamento da CAPES ainda não foram coletados.'],
+      sources: 'Fonte: CAPES/Sucupira.', stats: gradStats, byArea, programsTable: gradProgramsTable, evaluationBands, bench: gradBench },
     sources,
+    meta: { sqlStatements: stats.n, dbMs: Math.round(dbWall), buildMs: Math.round(buildMs) },
   };
 }
 

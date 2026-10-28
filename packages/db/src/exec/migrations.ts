@@ -20,6 +20,11 @@ import { EXEC_DDL_V18 } from './ddl-v18.ts';
 import { EXEC_DDL_V19 } from './ddl-v19.ts';
 import { EXEC_DDL_V20 } from './ddl-v20.ts';
 import { EXEC_DDL_V21 } from './ddl-v21.ts';
+import { EXEC_DDL_V22 } from './ddl-v22.ts';
+import { EXEC_DDL_V23 } from './ddl-v23.ts';
+import { EXEC_DDL_V24 } from './ddl-v24.ts';
+import { EXEC_DDL_V25 } from './ddl-v25.ts';
+import { EXEC_DDL_V26 } from './ddl-v26.ts';
 
 export interface ExecMigration { version: number; name: string; sql: string }
 export const EXEC_MIGRATIONS: ExecMigration[] = [
@@ -44,6 +49,11 @@ export const EXEC_MIGRATIONS: ExecMigration[] = [
   { version: 19, name: 'civica_exec_ddl_v19_finance_rollup_performance', sql: EXEC_DDL_V19 },
   { version: 20, name: 'civica_exec_ddl_v20_program_municipality_identity', sql: EXEC_DDL_V20 },
   { version: 21, name: 'civica_exec_ddl_v21_compact_education_serving', sql: EXEC_DDL_V21 },
+  { version: 22, name: 'civica_exec_ddl_v22_educacao_superior', sql: EXEC_DDL_V22 },
+  { version: 23, name: 'civica_exec_ddl_v23_educacao_qualidade_superior', sql: EXEC_DDL_V23 },
+  { version: 24, name: 'civica_exec_ddl_v24_programas_acesso_superior', sql: EXEC_DDL_V24 },
+  { version: 25, name: 'civica_exec_ddl_v25_capes_sucupira', sql: EXEC_DDL_V25 },
+  { version: 26, name: 'civica_exec_ddl_v26_enem', sql: EXEC_DDL_V26 },
 ];
 
 /** Aplica as migrations do schema civica_exec de forma idempotente (lock consultivo + uma transação por versão). Nunca toca outros schemas. */

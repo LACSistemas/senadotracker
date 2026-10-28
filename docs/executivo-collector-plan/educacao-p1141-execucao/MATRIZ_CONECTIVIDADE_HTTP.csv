@@ -1,0 +1,14 @@
+layer,target,client,execution_scope,result,observed,interpretation
+DNS,dadosabertos.mec.gov.br,Resolve-DnsName,sandbox,PASS,104.17.46.238;104.17.47.238;2606:4700::6811:2fee;2606:4700::6811:2eee,CNAME Cloudflare
+TCP_443,dadosabertos.mec.gov.br,Test-NetConnection,sandbox,FAIL,connection_failed,socket unavailable before HTTP
+HTTPS,FIES 2022 CSV,PowerShell Invoke-WebRequest,sandbox,FAIL,WebException: impossivel conectar,no HTTP reached
+HTTPS,FIES 2022 CSV,curl.exe,sandbox,FAIL,curl (7) failed to connect,no HTTP reached
+HTTPS,FIES 2022 CSV,Python urllib,sandbox,FAIL,WinError 10013,local socket restriction
+HTTPS,FIES 2022 CSV,Python requests,sandbox,FAIL,WinError 10013,local socket restriction
+HTTPS,FIES 2022 CSV,PowerShell Invoke-WebRequest,outside_sandbox,HTTP_403,text/html; charset=UTF-8; 5721 bytes,Cloudflare challenge
+HTTPS,FIES 2022 CSV,curl.exe,outside_sandbox,HTTP_403,text/html; charset=UTF-8; 5721 bytes,Server cloudflare; Cf-Mitigated challenge
+HTTPS,FIES 2022 CSV,Python urllib,outside_sandbox,HTTP_403,HTTPError 403,response reached
+HTTPS,FIES 2022 CSV,Python requests,outside_sandbox,HTTP_403,403 text/html; 5721 bytes,response reached
+HTTPS,ProUni 2025 CSV,curl.exe,outside_sandbox,HTTP_403,text/html; charset=UTF-8; 5594 bytes,Server cloudflare; Cf-Mitigated challenge
+HTTPS,ProUni catalog,Python requests GET,outside_sandbox,HTTP_403,text/html; challenge,catalog page also challenged
+HTTPS,FIES catalog,Python requests GET,outside_sandbox,HTTP_403,text/html; challenge,catalog page also challenged

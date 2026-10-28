@@ -1,0 +1,599 @@
+{
+  "generatedAt": "2026-10-27T22:47:56.934196+00:00",
+  "database": "projetoeleitor_db",
+  "user": "projetoeleitor_user",
+  "dbBytes": 33768983699,
+  "drives": {
+    "C_free": 35602989056,
+    "D_free": 407550652416
+  },
+  "walSegment": "000000010000002100000039",
+  "migrations": [
+    {
+      "version": 1,
+      "name": "civica_exec_ddl_v1_revisao2",
+      "appliedAt": "2026-10-19 21:51:39.323974-03:00"
+    },
+    {
+      "version": 2,
+      "name": "civica_exec_ddl_v2_seguranca_cobertura_vde",
+      "appliedAt": "2026-10-21 17:06:59.460469-03:00"
+    },
+    {
+      "version": 3,
+      "name": "civica_exec_ddl_v3_transito",
+      "appliedAt": "2026-10-21 19:23:17.893131-03:00"
+    },
+    {
+      "version": 4,
+      "name": "civica_exec_ddl_v4_prisional",
+      "appliedAt": "2026-10-21 23:00:36.667170-03:00"
+    },
+    {
+      "version": 5,
+      "name": "civica_exec_ddl_v5_financas_seguranca",
+      "appliedAt": "2026-10-22 10:07:15.716506-03:00"
+    },
+    {
+      "version": 6,
+      "name": "civica_exec_ddl_v6_contratos_transferencias",
+      "appliedAt": "2026-10-22 10:07:16.002601-03:00"
+    },
+    {
+      "version": 7,
+      "name": "civica_exec_ddl_v7_refcode_sequence",
+      "appliedAt": "2026-10-22 14:58:07.947833-03:00"
+    },
+    {
+      "version": 8,
+      "name": "civica_exec_ddl_v8_criminalidade_estadual",
+      "appliedAt": "2026-10-23 08:22:31.242755-03:00"
+    },
+    {
+      "version": 9,
+      "name": "civica_exec_ddl_v9_educacao_escolas",
+      "appliedAt": "2026-10-24 11:33:22.922438-03:00"
+    },
+    {
+      "version": 10,
+      "name": "civica_exec_ddl_v10_educacao_oferta",
+      "appliedAt": "2026-10-25 01:43:00.609231-03:00"
+    },
+    {
+      "version": 11,
+      "name": "civica_exec_ddl_v11_educacao_infraestrutura",
+      "appliedAt": "2026-10-25 15:14:18.422019-03:00"
+    },
+    {
+      "version": 12,
+      "name": "civica_exec_ddl_v12_educacao_indicadores_inep",
+      "appliedAt": "2026-10-25 15:14:18.554258-03:00"
+    },
+    {
+      "version": 13,
+      "name": "civica_exec_ddl_v13_educacao_aprendizagem",
+      "appliedAt": "2026-10-25 22:39:42.752075-03:00"
+    },
+    {
+      "version": 14,
+      "name": "civica_exec_ddl_v14_financas_educacao_siope",
+      "appliedAt": "2026-10-26 09:37:47.280351-03:00"
+    },
+    {
+      "version": 15,
+      "name": "civica_exec_ddl_v15_programas_transferencias_educacionais",
+      "appliedAt": "2026-10-26 11:43:25.578765-03:00"
+    },
+    {
+      "version": 16,
+      "name": "civica_exec_ddl_v16_educacao_contratacoes_obras",
+      "appliedAt": "2026-10-26 18:03:14.371134-03:00"
+    },
+    {
+      "version": 17,
+      "name": "civica_exec_ddl_v17_educacao_inteligencia",
+      "appliedAt": "2026-10-27 07:42:43.832012-03:00"
+    },
+    {
+      "version": 18,
+      "name": "civica_exec_ddl_v18_program_rollup_performance",
+      "appliedAt": "2026-10-27 07:47:07.717348-03:00"
+    },
+    {
+      "version": 19,
+      "name": "civica_exec_ddl_v19_finance_rollup_performance",
+      "appliedAt": "2026-10-27 07:49:54.193524-03:00"
+    },
+    {
+      "version": 20,
+      "name": "civica_exec_ddl_v20_program_municipality_identity",
+      "appliedAt": "2026-10-27 09:21:15.369190-03:00"
+    },
+    {
+      "version": 21,
+      "name": "civica_exec_ddl_v21_compact_education_serving",
+      "appliedAt": "2026-10-27 11:02:17.194503-03:00"
+    },
+    {
+      "version": 22,
+      "name": "civica_exec_ddl_v22_educacao_superior",
+      "appliedAt": "2026-10-27 19:10:21.354910-03:00"
+    },
+    {
+      "version": 23,
+      "name": "civica_exec_ddl_v23_educacao_qualidade_superior",
+      "appliedAt": "2026-10-27 19:43:34.821637-03:00"
+    }
+  ],
+  "p1121_dimensions": [
+    {
+      "year": 2022,
+      "rows": 573019,
+      "ies": 2595,
+      "courses": 45296,
+      "enrollments": "9444116",
+      "vacancies": "22830485",
+      "territorialRows": 563417,
+      "nationalRows": 9602,
+      "territorialEnrollments": "9441298",
+      "nationalEnrollments": "2818",
+      "unresolvedGeo": 0
+    },
+    {
+      "year": 2023,
+      "rows": 671610,
+      "ies": 2580,
+      "courses": 46317,
+      "enrollments": "9977217",
+      "vacancies": "24621965",
+      "territorialRows": 660575,
+      "nationalRows": 11035,
+      "territorialEnrollments": "9974451",
+      "nationalEnrollments": "2766",
+      "unresolvedGeo": 0
+    },
+    {
+      "year": 2024,
+      "rows": 720349,
+      "ies": 2561,
+      "courses": 46150,
+      "enrollments": "10227266",
+      "vacancies": "23665419",
+      "territorialRows": 708580,
+      "nationalRows": 11769,
+      "territorialEnrollments": "10224727",
+      "nationalEnrollments": "2539",
+      "unresolvedGeo": 0
+    }
+  ],
+  "p1121_overlap": [
+    {
+      "year": 2022,
+      "baseGroups": 572623,
+      "overlappingGroups": 396,
+      "excessRows": "396"
+    },
+    {
+      "year": 2023,
+      "baseGroups": 671149,
+      "overlappingGroups": 461,
+      "excessRows": "461"
+    },
+    {
+      "year": 2024,
+      "baseGroups": 719897,
+      "overlappingGroups": 452,
+      "excessRows": "452"
+    }
+  ],
+  "territorialTests": [
+    {
+      "name": "Vitória",
+      "matches": [
+        {
+          "ibge7": 3205309,
+          "canonicalName": "Vitória",
+          "uf": "ES",
+          "offers": 1826,
+          "ies": 80,
+          "courses": 1826
+        }
+      ]
+    },
+    {
+      "name": "Serra",
+      "matches": [
+        {
+          "ibge7": 3205002,
+          "canonicalName": "Serra",
+          "uf": "ES",
+          "offers": 1357,
+          "ies": 45,
+          "courses": 1357
+        }
+      ]
+    },
+    {
+      "name": "Vila Velha",
+      "matches": [
+        {
+          "ibge7": 3205200,
+          "canonicalName": "Vila Velha",
+          "uf": "ES",
+          "offers": 1425,
+          "ies": 49,
+          "courses": 1425
+        }
+      ]
+    },
+    {
+      "name": "Campos dos Goytacazes",
+      "matches": [
+        {
+          "ibge7": 3301009,
+          "canonicalName": "Campos dos Goytacazes",
+          "uf": "RJ",
+          "offers": 1176,
+          "ies": 54,
+          "courses": 1176
+        }
+      ]
+    },
+    {
+      "name": "Rio de Janeiro",
+      "matches": [
+        {
+          "ibge7": 3304557,
+          "canonicalName": "Rio de Janeiro",
+          "uf": "RJ",
+          "offers": 4670,
+          "ies": 170,
+          "courses": 4670
+        }
+      ]
+    },
+    {
+      "name": "João Pessoa",
+      "matches": [
+        {
+          "ibge7": 2507507,
+          "canonicalName": "João Pessoa",
+          "uf": "PB",
+          "offers": 2318,
+          "ies": 90,
+          "courses": 2318
+        }
+      ]
+    },
+    {
+      "name": "Campina Grande",
+      "matches": [
+        {
+          "ibge7": 2504009,
+          "canonicalName": "Campina Grande",
+          "uf": "PB",
+          "offers": 1307,
+          "ies": 55,
+          "courses": 1307
+        }
+      ]
+    },
+    {
+      "name": "São Paulo",
+      "matches": [
+        {
+          "ibge7": 3550308,
+          "canonicalName": "São Paulo",
+          "uf": "SP",
+          "offers": 7032,
+          "ies": 287,
+          "courses": 7032
+        }
+      ]
+    },
+    {
+      "name": "Belo Horizonte",
+      "matches": [
+        {
+          "ibge7": 3106200,
+          "canonicalName": "Belo Horizonte",
+          "uf": "MG",
+          "offers": 4149,
+          "ies": 161,
+          "courses": 4149
+        }
+      ]
+    },
+    {
+      "name": "Recife",
+      "matches": [
+        {
+          "ibge7": 2611606,
+          "canonicalName": "Recife",
+          "uf": "PE",
+          "offers": 2721,
+          "ies": 107,
+          "courses": 2721
+        }
+      ]
+    }
+  ],
+  "qualityCoverage": [
+    {
+      "indicator": "CPC",
+      "year": 2018,
+      "sourceRows": 8821,
+      "validRows": 8821,
+      "linkedIes": 7885,
+      "linkedCourses": 7885,
+      "unresolved": 346,
+      "ambiguous": 0,
+      "municipalities": 802,
+      "ufs": 27
+    },
+    {
+      "indicator": "CPC",
+      "year": 2021,
+      "sourceRows": 8000,
+      "validRows": 7997,
+      "linkedIes": 7901,
+      "linkedCourses": 7901,
+      "unresolved": 35,
+      "ambiguous": 0,
+      "municipalities": 813,
+      "ufs": 27
+    },
+    {
+      "indicator": "CPC",
+      "year": 2022,
+      "sourceRows": 9892,
+      "validRows": 9891,
+      "linkedIes": 9840,
+      "linkedCourses": 9840,
+      "unresolved": 23,
+      "ambiguous": 0,
+      "municipalities": 779,
+      "ufs": 27
+    },
+    {
+      "indicator": "CPC",
+      "year": 2023,
+      "sourceRows": 9812,
+      "validRows": 9812,
+      "linkedIes": 9803,
+      "linkedCourses": 9803,
+      "unresolved": 1,
+      "ambiguous": 0,
+      "municipalities": 718,
+      "ufs": 27
+    },
+    {
+      "indicator": "ENADE",
+      "year": 2018,
+      "sourceRows": 8821,
+      "validRows": 8821,
+      "linkedIes": 7886,
+      "linkedCourses": 7886,
+      "unresolved": 345,
+      "ambiguous": 0,
+      "municipalities": 761,
+      "ufs": 27
+    },
+    {
+      "indicator": "ENADE",
+      "year": 2021,
+      "sourceRows": 7999,
+      "validRows": 7997,
+      "linkedIes": 7901,
+      "linkedCourses": 7901,
+      "unresolved": 35,
+      "ambiguous": 0,
+      "municipalities": 813,
+      "ufs": 27
+    },
+    {
+      "indicator": "ENADE",
+      "year": 2022,
+      "sourceRows": 9896,
+      "validRows": 9896,
+      "linkedIes": 9845,
+      "linkedCourses": 9845,
+      "unresolved": 23,
+      "ambiguous": 0,
+      "municipalities": 781,
+      "ufs": 27
+    },
+    {
+      "indicator": "ENADE",
+      "year": 2023,
+      "sourceRows": 9814,
+      "validRows": 9812,
+      "linkedIes": 9803,
+      "linkedCourses": 9803,
+      "unresolved": 1,
+      "ambiguous": 0,
+      "municipalities": 718,
+      "ufs": 27
+    },
+    {
+      "indicator": "IDD",
+      "year": 2018,
+      "sourceRows": 8821,
+      "validRows": 8821,
+      "linkedIes": 7886,
+      "linkedCourses": 7886,
+      "unresolved": 345,
+      "ambiguous": 0,
+      "municipalities": 761,
+      "ufs": 27
+    },
+    {
+      "indicator": "IDD",
+      "year": 2021,
+      "sourceRows": 7999,
+      "validRows": 7997,
+      "linkedIes": 7901,
+      "linkedCourses": 7901,
+      "unresolved": 35,
+      "ambiguous": 0,
+      "municipalities": 813,
+      "ufs": 27
+    },
+    {
+      "indicator": "IDD",
+      "year": 2022,
+      "sourceRows": 9896,
+      "validRows": 9896,
+      "linkedIes": 9845,
+      "linkedCourses": 9845,
+      "unresolved": 23,
+      "ambiguous": 0,
+      "municipalities": 781,
+      "ufs": 27
+    },
+    {
+      "indicator": "IDD",
+      "year": 2023,
+      "sourceRows": 9814,
+      "validRows": 9812,
+      "linkedIes": 9803,
+      "linkedCourses": 9803,
+      "unresolved": 1,
+      "ambiguous": 0,
+      "municipalities": 718,
+      "ufs": 27
+    },
+    {
+      "indicator": "IGC",
+      "year": 2018,
+      "sourceRows": 2071,
+      "validRows": 2071,
+      "linkedIes": 1821,
+      "linkedCourses": 1821,
+      "unresolved": 250,
+      "ambiguous": 0,
+      "municipalities": 0,
+      "ufs": 0
+    },
+    {
+      "indicator": "IGC",
+      "year": 2021,
+      "sourceRows": 2013,
+      "validRows": 2012,
+      "linkedIes": 1897,
+      "linkedCourses": 1897,
+      "unresolved": 115,
+      "ambiguous": 0,
+      "municipalities": 0,
+      "ufs": 0
+    },
+    {
+      "indicator": "IGC",
+      "year": 2022,
+      "sourceRows": 2023,
+      "validRows": 2023,
+      "linkedIes": 1981,
+      "linkedCourses": 1981,
+      "unresolved": 42,
+      "ambiguous": 0,
+      "municipalities": 0,
+      "ufs": 0
+    },
+    {
+      "indicator": "IGC",
+      "year": 2023,
+      "sourceRows": 2101,
+      "validRows": 2101,
+      "linkedIes": 2077,
+      "linkedCourses": 2077,
+      "unresolved": 24,
+      "ambiguous": 0,
+      "municipalities": 0,
+      "ufs": 0
+    }
+  ],
+  "qualitySeries": [
+    {
+      "indicator": "CPC",
+      "firstYear": 2018,
+      "lastYear": 2023,
+      "editions": 4
+    },
+    {
+      "indicator": "ENADE",
+      "firstYear": 2018,
+      "lastYear": 2023,
+      "editions": 4
+    },
+    {
+      "indicator": "IDD",
+      "firstYear": 2018,
+      "lastYear": 2023,
+      "editions": 4
+    },
+    {
+      "indicator": "IGC",
+      "firstYear": 2018,
+      "lastYear": 2023,
+      "editions": 4
+    }
+  ],
+  "benchmark": {
+    "overview": {
+      "reps": 100,
+      "p50": 0.134,
+      "p90": 0.173,
+      "p95": 0.192,
+      "p99": 0.267,
+      "max": 0.268
+    },
+    "series": {
+      "reps": 100,
+      "p50": 0.133,
+      "p90": 0.149,
+      "p95": 0.161,
+      "p99": 0.192,
+      "max": 0.197
+    },
+    "ies_search": {
+      "reps": 100,
+      "p50": 10.966,
+      "p90": 14.651,
+      "p95": 16.098,
+      "p99": 17.001,
+      "max": 17.123
+    },
+    "course_search": {
+      "reps": 100,
+      "p50": 1.334,
+      "p90": 1.802,
+      "p95": 2.141,
+      "p99": 2.412,
+      "max": 2.478
+    },
+    "quality_ies": {
+      "reps": 100,
+      "p50": 0.163,
+      "p90": 0.213,
+      "p95": 0.223,
+      "p99": 0.284,
+      "max": 3.469
+    },
+    "quality_course": {
+      "reps": 100,
+      "p50": 0.224,
+      "p90": 0.364,
+      "p95": 0.434,
+      "p99": 0.541,
+      "max": 4.346
+    },
+    "quality_territory": {
+      "reps": 100,
+      "p50": 0.195,
+      "p90": 0.306,
+      "p95": 0.358,
+      "p99": 0.509,
+      "max": 2.512
+    }
+  }
+}

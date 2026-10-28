@@ -1,4 +1,4 @@
-import type { ChartView, Kpi, Narrative, ScopeInfo } from '../security/types.ts';
+import type { ChartView, Kpi, Narrative, Ruler, ScopeInfo } from '../security/types.ts';
 
 /**
  * Modelo de visualização da página de Educação: tudo DERIVADO dos read models e já pronto para renderizar.
@@ -51,11 +51,31 @@ export interface MoneyChapter extends ChapterBase {
   programs: Table | null; finance: Table | null;
 }
 
+/** Destaque descritivo de qualidade: sempre UM indicador + UM ciclo + UMA área por vez. Nunca combina IGC/CPC/Enade/IDD, nunca diz "melhor do Brasil". */
+export interface SuperlativeHighlight { label: string; value: string; unit: string; basis: string; detail: string; caveat: string | null }
+
+export interface EnemSubjectTab { id: string; label: string; headline: string; byNetwork: BarRow[] }
+export interface EnemChapter extends ChapterBase {
+  stats: StatItem[]; bench: Ruler | null; bySubject: BarRow[]; tabs: EnemSubjectTab[];
+}
+
+export interface HigherEdChapter extends ChapterBase {
+  stats: StatItem[]; seatStats: StatItem[]; byNetwork: BarRow[]; byModality: BarRow[]; coursesTable: Table | null; bench: Ruler | null;
+}
+export interface QualityChapter extends ChapterBase {
+  igcBands: BarRow[]; courseHighlights: SuperlativeHighlight[]; stats: StatItem[];
+}
+export interface GraduateChapter extends ChapterBase {
+  stats: StatItem[]; byArea: BarRow[]; programsTable: Table | null; evaluationBands: BarRow[]; bench: Ruler | null;
+}
+
 export interface EducationPageData {
   scope: EduScope;
   year: number;
   hero: { lede: string; kpis: Kpi[] };
   network: NetworkChapter; learning: LearningChapter; trajectory: TrajectoryChapter; context: ContextChapter;
-  structure: StructureChapter; teachers: TeachersChapter; money: MoneyChapter;
+  structure: StructureChapter; teachers: TeachersChapter; money: MoneyChapter; enem: EnemChapter;
+  higherEd: HigherEdChapter; quality: QualityChapter; graduate: GraduateChapter;
   sources: Array<{ label: string; period: string }>;
+  meta: { sqlStatements: number; dbMs: number; buildMs: number };
 }

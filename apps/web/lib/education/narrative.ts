@@ -38,3 +38,24 @@ export function narrative(i: NarrativeInput): { lede: string; network: Narrative
     money: { question: 'Quanto foi contratado e repassado para a educação, e há obras?', answer: cT ? `Os contratos de educação publicados no PNCP ${where} somam ${brlShort(Number(cT.contractedValue))} em ${fmt(Number(cT.contracts))} contratos${i.catTop ? `; a maior fatia é ${lowerFirst(i.catTop.label)}` : ''}.` : 'Ainda não há contratos de educação publicados para este território.', context: 'É valor contratado, não valor pago nem entregue. Os repasses federais, as obras e a despesa aparecem abaixo, cada um com a sua fonte e sem somar fontes diferentes.', invite: 'Veja para quem foi contratado e o que está em obra.' },
   };
 }
+
+/** Capítulo do Enem (P11.6): nota é de quem concluiu NESTA escola, nunca de quem mora aqui; nunca atribui causa. */
+export function enemNarrative(i: { scope: EduScope; edition: number; featuredLabel: string; featuredMean: number | null; registrants: number | null }): Narrative {
+  const where = i.scope.kind === 'uf' ? `no estado de ${nameOf(i.scope)}` : `em ${nameOf(i.scope)}`;
+  const answer = i.featuredMean != null ? `A nota média em ${i.featuredLabel.toLowerCase()} dos participantes do Enem ${i.edition} cuja escola de conclusão está ${where} foi ${fmt(i.featuredMean, 1)} pontos.` : `Não há nota do Enem ${i.edition} publicada ${where} com participantes suficientes para divulgar.`;
+  return { question: 'Como foi o desempenho dos estudantes no Enem?', answer, context: 'A nota é de quem concluiu o ensino médio NESTA escola, não de quem mora aqui; o Inep não publica o município de residência. Células com menos de 10 participantes não são divulgadas.', invite: 'Troque a área para ver a nota e a comparação por rede.' };
+}
+
+/** Capítulos de ensino superior (P11.2/P11.3/P11.5): mesma regra de não atribuir causa e não classificar território. */
+export function higherEdNarrative(i: { scope: EduScope; heOwn: Loose | null; heYear: number; courseHighlightCount: number; gradProgramCount: number; capesYear: number }): { higherEd: Narrative; quality: Narrative; graduate: Narrative } {
+  const where = i.scope.kind === 'uf' ? `no estado de ${nameOf(i.scope)}` : `em ${nameOf(i.scope)}`;
+  const he = i.heOwn;
+  const heAnswer = he ? `${fmt(Number(he.ies))} instituições oferecem ${fmt(Number(he.courses))} cursos de ensino superior ${where} (Censo ${i.heYear}), somando ${fmt(Number(he.enrollments ?? 0))} matrículas.` : `Não há Censo da Educação Superior publicado ${where}.`;
+  const qAnswer = i.courseHighlightCount > 0 ? `${i.courseHighlightCount} curso${i.courseHighlightCount > 1 ? 's' : ''} ${where} ${i.courseHighlightCount > 1 ? 'estão' : 'está'} entre as faixas mais altas do Conceito Enade no ciclo mais recente.` : `Não há curso nas faixas mais altas do Conceito Enade ${where} no ciclo mais recente.`;
+  const gAnswer = i.gradProgramCount > 0 ? `${fmt(i.gradProgramCount)} programa${i.gradProgramCount > 1 ? 's' : ''} de pós-graduação (mestrado/doutorado) da CAPES ${where} (${i.capesYear}).` : `Não há programa de pós-graduação da CAPES publicado ${where}.`;
+  return {
+    higherEd: { question: 'Quantas universidades e faculdades existem, e o que elas oferecem?', answer: heAnswer, context: 'Conta quem oferece curso no território, inclusive polos de EAD de instituições sediadas em outro município; matrícula é do Censo da Educação Superior, não é pessoa única.', invite: 'Veja os maiores cursos por matrícula e a divisão entre rede pública e privada.' },
+    quality: { question: 'Essas instituições são bem avaliadas?', answer: qAnswer, context: 'IGC (por instituição) e CPC/Conceito Enade/IDD (por curso) medem coisas diferentes; nenhum deles vira um índice único nem um "melhor do Brasil".', invite: 'Veja a distribuição de faixas do IGC no estado e os destaques por curso.' },
+    graduate: { question: 'Há mestrado e doutorado por aqui?', answer: gAnswer, context: 'Dado da CAPES/Sucupira, ciclo de avaliação quadrienal 2021–2024; alunos e docentes são contagens agregadas, sem identificação individual.', invite: 'Veja os programas por área de avaliação e a distribuição de conceitos.' },
+  };
+}

@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-10-27T23:30:40.654492+00:00",
+  "database": "projetoeleitor_db",
+  "user": "projetoeleitor_user",
+  "status": "BLOCKED_EXTERNAL",
+  "gates": {
+    "network_root_cause": "PASS_WITH_DOCUMENTED_LAYERS",
+    "prouni_source_access": "BLOCKED_EXTERNAL",
+    "fies_source_access": "BLOCKED_EXTERNAL",
+    "prouni_real_ingestion": "NOT_RUN_NO_VALID_FILE",
+    "fies_real_ingestion": "NOT_RUN_NO_VALID_FILE",
+    "territorial_reconciliation": "NOT_APPLICABLE_NO_FACTS",
+    "privacy": "PASS",
+    "real_data_performance": "NOT_RUN_NO_VALID_FILE",
+    "storage_safety": "PASS"
+  },
+  "PROUNI_STATUS": "BLOCKED_EXTERNAL",
+  "FIES_STATUS": "BLOCKED_EXTERNAL",
+  "READY_FOR_ACCESS_PROGRAMS_FRONTEND": "NO",
+  "READY_FOR_PUBLICATION": "NO",
+  "database_bytes": 33769335955,
+  "prouni_rows": 0,
+  "fies_rows": 0,
+  "source_run_status": [
+    [
+      "blocked",
+      20
+    ]
+  ],
+  "disk_free_bytes": {
+    "C": 35530383360,
+    "D": 407550599168
+  },
+  "local_raw_rejected": "D:\\Civica\\raw\\mec\\prouni\\PDA_PROUNI_2016_CSV.csv"
+}

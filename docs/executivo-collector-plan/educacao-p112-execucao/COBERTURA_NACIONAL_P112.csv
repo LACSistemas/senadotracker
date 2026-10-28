@@ -1,0 +1,4 @@
+year,ies_rows,ies_distinct,course_rows,course_distinct,offer_rows,municipalities_resolved_rows,municipalities_unresolved_rows,duplicate_base_rows,parser_version,status
+2022,2595,2595,573019,45296,573019,563416,0,396,p112-2026-10-27-v3,published
+2023,2580,2580,671610,46317,671610,660571,0,461,p112-2026-10-27-v3,published
+2024,2561,2561,720349,46150,720349,708571,0,452,p112-2026-10-27-v3,published

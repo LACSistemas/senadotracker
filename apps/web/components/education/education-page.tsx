@@ -1,11 +1,16 @@
 import type { ReactNode } from 'react';
 import type { EducationPageData } from '@/lib/education/types';
 import { ChapterNav } from '@/components/security/chapter-nav';
+import { BenchRuler } from '@/components/security/bench-ruler';
 import { KpiCard } from '@/components/security/security-hero';
 import { ChapterShell, EmptyNote } from '@/components/security/security-ui';
 import { TrendChart } from '@/components/security/trend-chart';
+import { AccessProgramsNote } from './access-programs-note';
 import { ChartExplorer } from './chart-explorer';
+import { CourseExplorer, IesExplorer, ProgramExplorer, QualityExplorer } from './explorer-columns';
+import { EnemSubjectToggle } from './enem-subject-toggle';
 import { Block, BarList, DataTable, EducationLegend, StatGrid } from './education-ui';
+import { QualityHighlights } from './quality-highlights';
 import { cn } from '@/lib/utils';
 
 function Pending({ id, number, title, reason }: { id: string; number: number; title: string; reason: string }) {
@@ -14,9 +19,12 @@ function Pending({ id, number, title, reason }: { id: string; number: number; ti
 
 /** Página de Educação: panorama → quantos estudam → o que aprendem → quem fica pelo caminho → contexto → escolas → professores → dinheiro; mesmo desenho para estado e município. */
 export function EducationPage({ data }: { data: EducationPageData }) {
-  const { scope, hero, network, learning, trajectory, context, structure, teachers, money } = data; const where = scope.name; const n = hero.kpis.length;
+  const { scope, hero, network, learning, trajectory, context, structure, teachers, money, enem, higherEd, quality, graduate } = data; const where = scope.name; const n = hero.kpis.length;
   const nav = [{ id: 'panorama', label: 'Panorama', available: n > 0 }, { id: 'rede', label: 'Quantos estudam', available: network.available }, { id: 'aprendizagem', label: 'O que aprendem', available: learning.available }, { id: 'trajetoria', label: 'Quem fica pelo caminho', available: trajectory.available },
-    { id: 'contexto', label: 'Contexto', available: context.available }, { id: 'estrutura', label: 'As escolas', available: structure.available }, { id: 'professores', label: 'Professores', available: teachers.available }, { id: 'recursos', label: 'Dinheiro e obras', available: money.available }, { id: 'fontes', label: 'Fontes', available: true }];
+    { id: 'contexto', label: 'Contexto', available: context.available }, { id: 'estrutura', label: 'As escolas', available: structure.available }, { id: 'professores', label: 'Professores', available: teachers.available }, { id: 'recursos', label: 'Dinheiro e obras', available: money.available },
+    { id: 'enem', label: 'Enem', available: enem.available },
+    { id: 'ensino-superior', label: 'Ensino superior', available: higherEd.available }, { id: 'qualidade-superior', label: 'Qualidade do ensino superior', available: quality.available }, { id: 'pos-graduacao', label: 'Pós-graduação', available: graduate.available },
+    { id: 'fontes', label: 'Fontes', available: true }];
   const chapter = (ok: boolean, c: { id: string; number: number; title: string; emptyReason?: string }, node: ReactNode) => ok ? node : <Pending id={c.id} number={c.number} title={c.title} reason={c.emptyReason ?? 'Sem dados publicados.'} />;
   return (
     <div className="space-y-10">
@@ -64,6 +72,37 @@ export function EducationPage({ data }: { data: EducationPageData }) {
         <div className="grid gap-6 lg:grid-cols-2">{money.suppliers && <DataTable t={money.suppliers} />}{money.programs && <DataTable t={money.programs} />}</div>
         {money.finance && <DataTable t={money.finance} />}
         {money.works ? <DataTable t={money.works} /> : money.worksNote ? <EmptyNote title="Obras">{money.worksNote}</EmptyNote> : null}</ChapterShell>)}
+
+      {chapter(enem.available, enem, <ChapterShell id="enem" number={8} title={enem.title} narrative={enem.narrative} limits={enem.limits} sources={enem.sources}>
+        <StatGrid items={enem.stats} />
+        {enem.bench && <Block><BenchRuler r={enem.bench} who={where} /></Block>}
+        {enem.bySubject.length > 0 && <Block><BarList title="Nota média por área" rows={enem.bySubject} caption="Médias e medianas não são comparáveis entre disciplinas: cada uma tem sua própria escala." /></Block>}
+        {enem.tabs.length > 0 && <Block><EnemSubjectToggle tabs={enem.tabs} /></Block>}</ChapterShell>)}
+
+      {chapter(higherEd.available, higherEd, <ChapterShell id="ensino-superior" number={9} title={higherEd.title} narrative={higherEd.narrative} limits={higherEd.limits} sources={higherEd.sources}>
+        <StatGrid items={higherEd.stats} />
+        {higherEd.bench && <Block><BenchRuler r={higherEd.bench} who={where} /></Block>}
+        <StatGrid items={higherEd.seatStats} />
+        <div className="grid gap-6 lg:grid-cols-2"><BarList title="Instituições por categoria administrativa" rows={higherEd.byNetwork} /><BarList title="Ofertas por modalidade" rows={higherEd.byModality} /></div>
+        {higherEd.coursesTable && <Block><DataTable t={higherEd.coursesTable} /></Block>}
+        <div className="grid gap-4 lg:grid-cols-2">
+          <IesExplorer entityId={scope.entityId} />
+          <CourseExplorer entityId={scope.entityId} />
+        </div>
+        <AccessProgramsNote /></ChapterShell>)}
+
+      {chapter(quality.available, quality, <ChapterShell id="qualidade-superior" number={10} title={quality.title} narrative={quality.narrative} tone="strip" limits={quality.limits} sources={quality.sources}>
+        <StatGrid items={quality.stats} />
+        {quality.courseHighlights.length > 0 && <Block><h3 className="mb-3 font-display text-xl text-[#14304f]">Destaques por curso</h3><QualityHighlights items={quality.courseHighlights} /></Block>}
+        {quality.igcBands.length > 0 && <Block><BarList title={`Faixas do IGC em ${scope.stateName} (distribuição estadual)`} rows={quality.igcBands} caption="IGC é um índice por instituição; o universo por município costuma ser pequeno demais para uma distribuição, por isso a faixa é mostrada no nível do estado." /></Block>}
+        <QualityExplorer entityId={scope.entityId} /></ChapterShell>)}
+
+      {chapter(graduate.available, graduate, <ChapterShell id="pos-graduacao" number={11} title={graduate.title} narrative={graduate.narrative} limits={graduate.limits} sources={graduate.sources}>
+        <StatGrid items={graduate.stats} />
+        {graduate.bench && <Block><BenchRuler r={graduate.bench} who={where} /></Block>}
+        <div className="grid gap-6 lg:grid-cols-2">{graduate.byArea.length > 0 && <BarList title="Programas por área de avaliação" rows={graduate.byArea} />}{graduate.evaluationBands.length > 0 && <BarList title="Conceito final do ciclo 2021–2024" rows={graduate.evaluationBands} />}</div>
+        {graduate.programsTable && <Block><DataTable t={graduate.programsTable} /></Block>}
+        <ProgramExplorer entityId={scope.entityId} /></ChapterShell>)}
 
       <section id="fontes" aria-labelledby="fontes-h" className="scroll-mt-28 rounded-2xl border bg-card p-5 text-sm"><h2 id="fontes-h" className="font-display text-xl">Fontes desta página</h2>
         <ul className="mt-2 space-y-1 text-muted-foreground">{data.sources.map(s => <li key={s.label}><strong className="text-foreground">{s.label}</strong>: {s.period}</li>)}</ul>

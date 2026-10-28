@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-10-27T23:22:06.947781+00:00",
+  "database": "projetoeleitor_db",
+  "user": "projetoeleitor_user",
+  "status": "BLOCKED_EXTERNAL",
+  "source_runs": 20,
+  "blocked_runs": 20,
+  "published_runs": 0,
+  "facts": [
+    [
+      "PROUNI",
+      0,
+      "0"
+    ],
+    [
+      "FIES",
+      0,
+      "0"
+    ]
+  ],
+  "migrations": [
+    [
+      24,
+      "civica_exec_ddl_v24_programas_acesso_superior"
+    ]
+  ],
+  "disk_free_bytes": {
+    "C": 35532304384,
+    "D": 407550599168
+  },
+  "gates": {
+    "database_guard": "PASS",
+    "source_authority": "PASS",
+    "provenance": "PASS",
+    "no_pii_persistence": "PASS",
+    "prouni_coverage": "BLOCKED_EXTERNAL",
+    "fies_coverage": "BLOCKED_EXTERNAL",
+    "read_contracts": "PASS_EMPTY_WITH_COVERAGE_STATE",
+    "ready_for_frontend": "NO",
+    "ready_for_p11_5_capes": "NO"
+  }
+}

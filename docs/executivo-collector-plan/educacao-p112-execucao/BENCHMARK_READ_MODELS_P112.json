@@ -1,0 +1,13 @@
+{
+  "database": "projetoeleitor_db",
+  "measuredAt": "2026-10-27",
+  "queries": {
+    "territoryOverviewMunicipality": {"actualMs": 0.059, "plan": "Index Scan", "buffers": 6},
+    "iesSearch": {"actualMs": 3.829, "plan": "Limit", "buffers": 105},
+    "courseSearchMunicipality": {"actualMs": 1.709, "plan": "Limit", "buffers": 59},
+    "territorySeries": {"actualMs": 0.09, "plan": "Index Scan", "buffers": 5},
+    "endToEndReadSmoke": {"actualMs": 238, "rows": {"series": 3, "ies": 5, "courses": 5}}
+  },
+  "method": "EXPLAIN ANALYZE BUFFERS plus real read-contract smoke against official DB",
+  "status": "PASS_WITH_CAVEATS"
+}

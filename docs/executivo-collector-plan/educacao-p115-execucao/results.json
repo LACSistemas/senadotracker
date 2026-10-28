@@ -1,0 +1,748 @@
+{
+  "generatedAt": "2026-10-27T23:56:26.192Z",
+  "database": {
+    "database": "projetoeleitor_db",
+    "user": "projetoeleitor_user",
+    "bytes": "33814768787"
+  },
+  "counts": {
+    "ppg": "4838",
+    "ppg_year": "18597",
+    "courses": "7743",
+    "course_year": "28977",
+    "evaluations": "4555",
+    "student_groups": "55593",
+    "students": "1704733",
+    "faculty_groups": "18577",
+    "faculty": "442677"
+  },
+  "years": [
+    {
+      "reference_year": 2021,
+      "programs": "1",
+      "courses": "1",
+      "discentes": "1",
+      "docentes": "1"
+    },
+    {
+      "reference_year": 2022,
+      "programs": "1",
+      "courses": "1",
+      "discentes": "1",
+      "docentes": "1"
+    },
+    {
+      "reference_year": 2023,
+      "programs": "1",
+      "courses": "1",
+      "discentes": "1",
+      "docentes": "1"
+    },
+    {
+      "reference_year": 2024,
+      "programs": "1",
+      "courses": "1",
+      "discentes": "1",
+      "docentes": "1"
+    }
+  ],
+  "runs": [
+    {
+      "source_run_id": "7",
+      "family": "COURSE",
+      "reference_year": 2021,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/3a1264d8-b17c-4e6f-9282-601d04049e7b",
+      "source_file": "D:/Civica/raw/capes/cursos/2021.csv",
+      "source_sha256": "8a3269bfcbfdf70d8b9a9345667172dd0da9d16e4f463b38374530bd4d3b0adc",
+      "source_bytes": "2426400",
+      "status": "published",
+      "rows_source": "7161",
+      "rows_valid": "7161",
+      "rows_linked": "6887",
+      "rows_unresolved": "274",
+      "finished_at": "2026-10-27T23:54:59.826Z"
+    },
+    {
+      "source_run_id": "11",
+      "family": "COURSE",
+      "reference_year": 2022,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/3a1264d8-b17c-4e6f-9282-601d04049e7b",
+      "source_file": "D:/Civica/raw/capes/cursos/2022.csv",
+      "source_sha256": "cd78d0f49734192056c1bd111125b690242165a31d66e359b3285e47baae3dca",
+      "source_bytes": "2382487",
+      "status": "published",
+      "rows_source": "7029",
+      "rows_valid": "7029",
+      "rows_linked": "6754",
+      "rows_unresolved": "275",
+      "finished_at": "2026-10-27T23:55:18.402Z"
+    },
+    {
+      "source_run_id": "15",
+      "family": "COURSE",
+      "reference_year": 2023,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/3a1264d8-b17c-4e6f-9282-601d04049e7b",
+      "source_file": "D:/Civica/raw/capes/cursos/2023.csv",
+      "source_sha256": "6d1edc901e0b46afa3c89145f348bea06a48f0a1d3eff4a22a586a2d3ec8c01b",
+      "source_bytes": "2476286",
+      "status": "published",
+      "rows_source": "7299",
+      "rows_valid": "7299",
+      "rows_linked": "7043",
+      "rows_unresolved": "256",
+      "finished_at": "2026-10-27T23:55:32.089Z"
+    },
+    {
+      "source_run_id": "2",
+      "family": "COURSE",
+      "reference_year": 2024,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/3a1264d8-b17c-4e6f-9282-601d04049e7b",
+      "source_file": "D:/Civica/raw/capes/cursos/2024.csv",
+      "source_sha256": "11759369969ba7c8976132e1a66151b4a905b828249e6f9615222be521476518",
+      "source_bytes": "2556079",
+      "status": "published",
+      "rows_source": "7488",
+      "rows_valid": "7488",
+      "rows_linked": "7241",
+      "rows_unresolved": "247",
+      "finished_at": "2026-10-27T23:46:16.839Z"
+    },
+    {
+      "source_run_id": "8",
+      "family": "DISCENTE",
+      "reference_year": 2021,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/c6bd4dca-a0fb-499a-9f7f-df0740563333",
+      "source_file": "D:/Civica/raw/capes/discentes/2021.csv",
+      "source_sha256": "4e8f60c7f6eeb6dccdb5cc9e0c26682b501b8b224091bd53a0ade74bc007c9b0",
+      "source_bytes": "179939047",
+      "status": "published",
+      "rows_source": "419905",
+      "rows_valid": "419905",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:16.262Z"
+    },
+    {
+      "source_run_id": "12",
+      "family": "DISCENTE",
+      "reference_year": 2022,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/c6bd4dca-a0fb-499a-9f7f-df0740563333",
+      "source_file": "D:/Civica/raw/capes/discentes/2022.csv",
+      "source_sha256": "77e08c97668f8c3fec2d28cf06ad7c43c68febc831d437bb83b28ff27b4967ec",
+      "source_bytes": "182132894",
+      "status": "published",
+      "rows_source": "424354",
+      "rows_valid": "424354",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:29.946Z"
+    },
+    {
+      "source_run_id": "16",
+      "family": "DISCENTE",
+      "reference_year": 2023,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/c6bd4dca-a0fb-499a-9f7f-df0740563333",
+      "source_file": "D:/Civica/raw/capes/discentes/2023.csv",
+      "source_sha256": "43a8aafcfb06083a8b943f182b222f079955525936a9489102a917feacac4ddb",
+      "source_bytes": "184919306",
+      "status": "published",
+      "rows_source": "428598",
+      "rows_valid": "428598",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:48.148Z"
+    },
+    {
+      "source_run_id": "3",
+      "family": "DISCENTE",
+      "reference_year": 2024,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/c6bd4dca-a0fb-499a-9f7f-df0740563333",
+      "source_file": "D:/Civica/raw/capes/discentes/2024.csv",
+      "source_sha256": "b37737e9e9552f51ab8aaeb4fe53f281a95c1078e4ad295cbeb5c2561c65b566",
+      "source_bytes": "188022486",
+      "status": "published",
+      "rows_source": "432888",
+      "rows_valid": "432888",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:46:28.795Z"
+    },
+    {
+      "source_run_id": "9",
+      "family": "DOCENTE",
+      "reference_year": 2021,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/0be9cfba-56e8-4da1-b3cc-0a05412eba3d",
+      "source_file": "D:/Civica/raw/capes/docentes/2021.csv",
+      "source_sha256": "f7d11254fc590dac0ccad2ee738cfd7f943f5b1f781076d67e8de520c4103066",
+      "source_bytes": "50326082",
+      "status": "published",
+      "rows_source": "109904",
+      "rows_valid": "109904",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:17.219Z"
+    },
+    {
+      "source_run_id": "13",
+      "family": "DOCENTE",
+      "reference_year": 2022,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/0be9cfba-56e8-4da1-b3cc-0a05412eba3d",
+      "source_file": "D:/Civica/raw/capes/docentes/2022.csv",
+      "source_sha256": "d733373d742ca4a4e5ab6e5827c81ce164fbfe179e92eaed9ba93bdbff10c9a0",
+      "source_bytes": "50190910",
+      "status": "published",
+      "rows_source": "109533",
+      "rows_valid": "109533",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:30.865Z"
+    },
+    {
+      "source_run_id": "17",
+      "family": "DOCENTE",
+      "reference_year": 2023,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/0be9cfba-56e8-4da1-b3cc-0a05412eba3d",
+      "source_file": "D:/Civica/raw/capes/docentes/2023.csv",
+      "source_sha256": "59e637602c7fd0cc09f95de99505abb1579ff0a7777e722789a47aa8c6661d4d",
+      "source_bytes": "51033859",
+      "status": "published",
+      "rows_source": "111541",
+      "rows_valid": "111541",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:55:49.082Z"
+    },
+    {
+      "source_run_id": "4",
+      "family": "DOCENTE",
+      "reference_year": 2024,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/0be9cfba-56e8-4da1-b3cc-0a05412eba3d",
+      "source_file": "D:/Civica/raw/capes/docentes/2024.csv",
+      "source_sha256": "3775f767e12f39051c6a8ced70e3a1e97ef130c2ef8612b33e2938bae0db44bb",
+      "source_bytes": "51812043",
+      "status": "published",
+      "rows_source": "111699",
+      "rows_valid": "111699",
+      "rows_linked": "0",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:46:29.793Z"
+    },
+    {
+      "source_run_id": "5",
+      "family": "EVALUATION",
+      "reference_year": 2024,
+      "source_url": "https://www.gov.br/capes/pt-br/acesso-a-informacao/acoes-e-programas/avaliacao/avaliacao-quadrienal/resultado-da-avaliacao-quadrienal-2021-2024",
+      "source_file": "D:/Civica/raw/capes/avaliacao/quadrienal_2021_2024.xlsx",
+      "source_sha256": "4e945f07b7252078c8b91b18278862018b10bd28f94b77fa14d8b5fcbf328060",
+      "source_bytes": "300062",
+      "status": "published",
+      "rows_source": "4555",
+      "rows_valid": "4555",
+      "rows_linked": "4555",
+      "rows_unresolved": "0",
+      "finished_at": "2026-10-27T23:46:30.638Z"
+    },
+    {
+      "source_run_id": "6",
+      "family": "PROGRAM",
+      "reference_year": 2021,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/414275c0-2056-4a12-b1a6-b525b74850d5",
+      "source_file": "D:/Civica/raw/capes/programas/2021.csv",
+      "source_sha256": "cdc151263f4dbacb3278fbd1f339b9b285ce3cf26c91d454b09dc41fa6a72f7f",
+      "source_bytes": "1812619",
+      "status": "published",
+      "rows_source": "4709",
+      "rows_valid": "4709",
+      "rows_linked": "4513",
+      "rows_unresolved": "196",
+      "finished_at": "2026-10-27T23:54:59.020Z"
+    },
+    {
+      "source_run_id": "10",
+      "family": "PROGRAM",
+      "reference_year": 2022,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/414275c0-2056-4a12-b1a6-b525b74850d5",
+      "source_file": "D:/Civica/raw/capes/programas/2022.csv",
+      "source_sha256": "53b3bac35ac016b1fadf0b26a7a6e987919c775b65c9f2347a8e6b573a0a7ebf",
+      "source_bytes": "1769897",
+      "status": "published",
+      "rows_source": "4594",
+      "rows_valid": "4594",
+      "rows_linked": "4398",
+      "rows_unresolved": "196",
+      "finished_at": "2026-10-27T23:55:17.704Z"
+    },
+    {
+      "source_run_id": "14",
+      "family": "PROGRAM",
+      "reference_year": 2023,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/414275c0-2056-4a12-b1a6-b525b74850d5",
+      "source_file": "D:/Civica/raw/capes/programas/2023.csv",
+      "source_sha256": "75ce66ac4290f4faf99d2257e3f016feb40808af02cf5c404e4d2f057f3fce82",
+      "source_bytes": "1796018",
+      "status": "published",
+      "rows_source": "4659",
+      "rows_valid": "4659",
+      "rows_linked": "4482",
+      "rows_unresolved": "177",
+      "finished_at": "2026-10-27T23:55:31.361Z"
+    },
+    {
+      "source_run_id": "1",
+      "family": "PROGRAM",
+      "reference_year": 2024,
+      "source_url": "https://dadosabertos.capes.gov.br/dataset/414275c0-2056-4a12-b1a6-b525b74850d5",
+      "source_file": "D:/Civica/raw/capes/programas/2024.csv",
+      "source_sha256": "9402aec8b2bfbf1d0b4d690511ba86f477f649e6f56f477ff747119a7dc67476",
+      "source_bytes": "1801673",
+      "status": "published",
+      "rows_source": "4635",
+      "rows_valid": "4635",
+      "rows_linked": "4467",
+      "rows_unresolved": "168",
+      "finished_at": "2026-10-27T23:46:15.994Z"
+    }
+  ],
+  "coverage": [
+    {
+      "family": "COURSE",
+      "reference_year": 2021,
+      "source_rows": "7161",
+      "valid_rows": "7161",
+      "linked_rows": "6887",
+      "unresolved_rows": "274",
+      "ppg_count": "0",
+      "course_count": "7161",
+      "uf_count": "27",
+      "note": "programa e curso separados"
+    },
+    {
+      "family": "COURSE",
+      "reference_year": 2022,
+      "source_rows": "7029",
+      "valid_rows": "7029",
+      "linked_rows": "6754",
+      "unresolved_rows": "275",
+      "ppg_count": "0",
+      "course_count": "7029",
+      "uf_count": "27",
+      "note": "programa e curso separados"
+    },
+    {
+      "family": "COURSE",
+      "reference_year": 2023,
+      "source_rows": "7299",
+      "valid_rows": "7299",
+      "linked_rows": "7043",
+      "unresolved_rows": "256",
+      "ppg_count": "0",
+      "course_count": "7299",
+      "uf_count": "27",
+      "note": "programa e curso separados"
+    },
+    {
+      "family": "COURSE",
+      "reference_year": 2024,
+      "source_rows": "7488",
+      "valid_rows": "7488",
+      "linked_rows": "7241",
+      "unresolved_rows": "247",
+      "ppg_count": "0",
+      "course_count": "7488",
+      "uf_count": "27",
+      "note": "programa e curso separados"
+    },
+    {
+      "family": "DISCENTE",
+      "reference_year": 2021,
+      "source_rows": "419905",
+      "valid_rows": "419905",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4696",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "IDs agregados; PII não persistida"
+    },
+    {
+      "family": "DISCENTE",
+      "reference_year": 2022,
+      "source_rows": "424354",
+      "valid_rows": "424354",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4587",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "IDs agregados; PII não persistida"
+    },
+    {
+      "family": "DISCENTE",
+      "reference_year": 2023,
+      "source_rows": "428598",
+      "valid_rows": "428598",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4632",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "IDs agregados; PII não persistida"
+    },
+    {
+      "family": "DISCENTE",
+      "reference_year": 2024,
+      "source_rows": "432888",
+      "valid_rows": "432888",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4631",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "IDs agregados; PII não persistida"
+    },
+    {
+      "family": "DOCENTE",
+      "reference_year": 2021,
+      "source_rows": "109904",
+      "valid_rows": "109904",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4698",
+      "course_count": "0",
+      "uf_count": "0",
+      "note": "docentes agregados; PII não persistida"
+    },
+    {
+      "family": "DOCENTE",
+      "reference_year": 2022,
+      "source_rows": "109533",
+      "valid_rows": "109533",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4593",
+      "course_count": "0",
+      "uf_count": "0",
+      "note": "docentes agregados; PII não persistida"
+    },
+    {
+      "family": "DOCENTE",
+      "reference_year": 2023,
+      "source_rows": "111541",
+      "valid_rows": "111541",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4651",
+      "course_count": "0",
+      "uf_count": "0",
+      "note": "docentes agregados; PII não persistida"
+    },
+    {
+      "family": "DOCENTE",
+      "reference_year": 2024,
+      "source_rows": "111699",
+      "valid_rows": "111699",
+      "linked_rows": "0",
+      "unresolved_rows": "0",
+      "ppg_count": "4635",
+      "course_count": "0",
+      "uf_count": "0",
+      "note": "docentes agregados; PII não persistida"
+    },
+    {
+      "family": "EVALUATION",
+      "reference_year": 2024,
+      "source_rows": "4555",
+      "valid_rows": "4555",
+      "linked_rows": "4555",
+      "unresolved_rows": "0",
+      "ppg_count": "0",
+      "course_count": "0",
+      "uf_count": "0",
+      "note": "planilha final pública; detalhamento Sucupira não publicado"
+    },
+    {
+      "family": "PROGRAM",
+      "reference_year": 2021,
+      "source_rows": "4709",
+      "valid_rows": "4709",
+      "linked_rows": "4513",
+      "unresolved_rows": "196",
+      "ppg_count": "4709",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "município source-native; sem fuzzy"
+    },
+    {
+      "family": "PROGRAM",
+      "reference_year": 2022,
+      "source_rows": "4594",
+      "valid_rows": "4594",
+      "linked_rows": "4398",
+      "unresolved_rows": "196",
+      "ppg_count": "4594",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "município source-native; sem fuzzy"
+    },
+    {
+      "family": "PROGRAM",
+      "reference_year": 2023,
+      "source_rows": "4659",
+      "valid_rows": "4659",
+      "linked_rows": "4482",
+      "unresolved_rows": "177",
+      "ppg_count": "4659",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "município source-native; sem fuzzy"
+    },
+    {
+      "family": "PROGRAM",
+      "reference_year": 2024,
+      "source_rows": "4635",
+      "valid_rows": "4635",
+      "linked_rows": "4467",
+      "unresolved_rows": "168",
+      "ppg_count": "4635",
+      "course_count": "0",
+      "uf_count": "27",
+      "note": "município source-native; sem fuzzy"
+    }
+  ],
+  "rawFiles": [
+    {
+      "file": "D:/Civica/raw/capes/programas/2021.csv",
+      "bytes": 1812619,
+      "sha256": "cdc151263f4dbacb3278fbd1f339b9b285ce3cf26c91d454b09dc41fa6a72f7f",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/programas/2022.csv",
+      "bytes": 1769897,
+      "sha256": "53b3bac35ac016b1fadf0b26a7a6e987919c775b65c9f2347a8e6b573a0a7ebf",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/programas/2023.csv",
+      "bytes": 1796018,
+      "sha256": "75ce66ac4290f4faf99d2257e3f016feb40808af02cf5c404e4d2f057f3fce82",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/programas/2024.csv",
+      "bytes": 1801673,
+      "sha256": "9402aec8b2bfbf1d0b4d690511ba86f477f649e6f56f477ff747119a7dc67476",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/cursos/2021.csv",
+      "bytes": 2426400,
+      "sha256": "8a3269bfcbfdf70d8b9a9345667172dd0da9d16e4f463b38374530bd4d3b0adc",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/cursos/2022.csv",
+      "bytes": 2382487,
+      "sha256": "cd78d0f49734192056c1bd111125b690242165a31d66e359b3285e47baae3dca",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/cursos/2023.csv",
+      "bytes": 2476286,
+      "sha256": "6d1edc901e0b46afa3c89145f348bea06a48f0a1d3eff4a22a586a2d3ec8c01b",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/cursos/2024.csv",
+      "bytes": 2556079,
+      "sha256": "11759369969ba7c8976132e1a66151b4a905b828249e6f9615222be521476518",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/discentes/2021.csv",
+      "bytes": 179939047,
+      "sha256": "4e8f60c7f6eeb6dccdb5cc9e0c26682b501b8b224091bd53a0ade74bc007c9b0",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/discentes/2022.csv",
+      "bytes": 182132894,
+      "sha256": "77e08c97668f8c3fec2d28cf06ad7c43c68febc831d437bb83b28ff27b4967ec",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/discentes/2023.csv",
+      "bytes": 184919306,
+      "sha256": "43a8aafcfb06083a8b943f182b222f079955525936a9489102a917feacac4ddb",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/discentes/2024.csv",
+      "bytes": 188022486,
+      "sha256": "b37737e9e9552f51ab8aaeb4fe53f281a95c1078e4ad295cbeb5c2561c65b566",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/docentes/2021.csv",
+      "bytes": 50326082,
+      "sha256": "f7d11254fc590dac0ccad2ee738cfd7f943f5b1f781076d67e8de520c4103066",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/docentes/2022.csv",
+      "bytes": 50190910,
+      "sha256": "d733373d742ca4a4e5ab6e5827c81ce164fbfe179e92eaed9ba93bdbff10c9a0",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/docentes/2023.csv",
+      "bytes": 51033859,
+      "sha256": "59e637602c7fd0cc09f95de99505abb1579ff0a7777e722789a47aa8c6661d4d",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/docentes/2024.csv",
+      "bytes": 51812043,
+      "sha256": "3775f767e12f39051c6a8ced70e3a1e97ef130c2ef8612b33e2938bae0db44bb",
+      "status": "OK"
+    },
+    {
+      "file": "D:/Civica/raw/capes/avaliacao/quadrienal_2021_2024.xlsx",
+      "bytes": 300062,
+      "sha256": "4e945f07b7252078c8b91b18278862018b10bd28f94b77fa14d8b5fcbf328060",
+      "status": "OK"
+    }
+  ],
+  "performance": {
+    "territoryQueryMs": 2,
+    "explain": [
+      {
+        "QUERY PLAN": [
+          {
+            "Plan": {
+              "Node Type": "Limit",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Startup Cost": 657.41,
+              "Total Cost": 657.48,
+              "Plan Rows": 25,
+              "Plan Width": 52,
+              "Actual Startup Time": 0.739,
+              "Actual Total Time": 0.741,
+              "Actual Rows": 25,
+              "Actual Loops": 1,
+              "Plans": [
+                {
+                  "Node Type": "Sort",
+                  "Parent Relationship": "Outer",
+                  "Parallel Aware": false,
+                  "Async Capable": false,
+                  "Startup Cost": 657.41,
+                  "Total Cost": 660.46,
+                  "Plan Rows": 1218,
+                  "Plan Width": 52,
+                  "Actual Startup Time": 0.738,
+                  "Actual Total Time": 0.739,
+                  "Actual Rows": 25,
+                  "Actual Loops": 1,
+                  "Sort Key": [
+                    "institution_name"
+                  ],
+                  "Sort Method": "top-N heapsort",
+                  "Sort Space Used": 27,
+                  "Sort Space Type": "Memory",
+                  "Plans": [
+                    {
+                      "Node Type": "Bitmap Heap Scan",
+                      "Parent Relationship": "Outer",
+                      "Parallel Aware": false,
+                      "Async Capable": false,
+                      "Relation Name": "exec_capes_ppg_year",
+                      "Alias": "exec_capes_ppg_year",
+                      "Startup Cost": 24.77,
+                      "Total Cost": 623.04,
+                      "Plan Rows": 1218,
+                      "Plan Width": 52,
+                      "Actual Startup Time": 0.064,
+                      "Actual Total Time": 0.309,
+                      "Actual Rows": 903,
+                      "Actual Loops": 1,
+                      "Recheck Cond": "((reference_year = 2024) AND (uf = 'SP'::bpchar))",
+                      "Rows Removed by Index Recheck": 0,
+                      "Exact Heap Blocks": 36,
+                      "Lossy Heap Blocks": 0,
+                      "Plans": [
+                        {
+                          "Node Type": "Bitmap Index Scan",
+                          "Parent Relationship": "Outer",
+                          "Parallel Aware": false,
+                          "Async Capable": false,
+                          "Index Name": "exec_capes_ppg_year_lookup",
+                          "Startup Cost": 0,
+                          "Total Cost": 24.47,
+                          "Plan Rows": 1218,
+                          "Plan Width": 0,
+                          "Actual Startup Time": 0.047,
+                          "Actual Total Time": 0.047,
+                          "Actual Rows": 903,
+                          "Actual Loops": 1,
+                          "Index Cond": "((reference_year = 2024) AND (uf = 'SP'::bpchar))"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "Planning Time": 0.391,
+            "Triggers": [],
+            "Execution Time": 0.763
+          }
+        ]
+      }
+    ],
+    "repeatBenchmark": {
+      "min": 0.30459999999999354,
+      "p50": 0.39589999999998327,
+      "p95": 0.6535999999999831,
+      "p99": 52.68209999999999,
+      "max": 52.68209999999999,
+      "targetMs": {
+        "overview": 75,
+        "search": 100,
+        "detail": 150
+      }
+    }
+  },
+  "gates": {
+    "G0_DATABASE_GUARD": "PASS",
+    "G1_SOURCE_AUTHORITY": "PASS",
+    "G2_PPG_IDENTITY": "PASS",
+    "G3_COURSE_IDENTITY": "PASS",
+    "G4_CAPES_INEP_CROSSWALK": "PASS_WITH_UNRESOLVED",
+    "G5_PROGRAMS_COURSES_REAL_DATA": "PASS",
+    "G6_EVALUATION_CYCLE": "PASS",
+    "G7_STUDENTS_AGGREGATED": "PASS",
+    "G8_FACULTY_AGGREGATED": "PASS",
+    "G9_SCHOLARSHIPS": "NOT_EVALUATED",
+    "G10_RESEARCH_FINANCE": "NOT_EVALUATED",
+    "G11_SCHEMA_PROVENANCE": "PASS",
+    "G12_TERRITORY": "PASS_WITH_SOURCE_LABEL_LIMITATION",
+    "G13_RECONCILIATION": "PASS",
+    "G14_READ_CONTRACTS": "PASS",
+    "G15_RESILIENCE_IDEMPOTENCE": "PASS",
+    "G16_PRIVACY": "PASS",
+    "G17_TESTS_STORAGE": "PASS"
+  },
+  "readiness": {
+    "P11_5_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+    "PROGRAMS_NATIONAL_COVERAGE": "PASS",
+    "COURSES_NATIONAL_COVERAGE": "PASS",
+    "CAPES_EVALUATION_COVERAGE": "PASS",
+    "SCHOLARSHIPS_COVERAGE": "NOT_EVALUATED",
+    "RESEARCH_FINANCE_COVERAGE": "NOT_EVALUATED",
+    "READY_FOR_GRADUATE_FRONTEND": "YES",
+    "READY_FOR_PUBLIC_PUBLICATION": "YES_WITH_LIMITATIONS",
+    "READY_FOR_P11_6_FINANCE": "NO"
+  }
+}

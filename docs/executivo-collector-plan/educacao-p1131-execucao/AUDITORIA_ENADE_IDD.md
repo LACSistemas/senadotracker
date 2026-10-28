@@ -1,0 +1,24 @@
+# Auditoria de independencia Enade/IDD
+
+Cada indicador tem arquivo e SHA distintos. Os indicadores permanecem em fatos separados, inclusive quando compartilham o mesmo curso.
+
+|indicador|ano|sha256|arquivo|
+|---|---|---|---|
+|CPC|2018|2fa30a67adb8d9d2313247e177478463fc1f4a0bfa780847125aa5d000ee751e|portal_CPC_edicao2018.xlsx|
+|CPC|2021|430a174e959968a8716c1af8076936b8088821e22cc9880fd9b532b2a90654b2|CPC_2021.xlsx|
+|CPC|2022|1243a2b8d132165a0fdd758d5d02e84815251dc667ccbcf796bb3c4d6657d8eb|cpc_2022.xlsx|
+|CPC|2023|5bf616a7dd56445796f606c080c0462488418274db2828604b8bc39eedd71c3f|CPC_2023.xlsx|
+|ENADE|2018|6be38a33be29ba1383bbf743488c286de3374e59375b14a935b4ff2a2eca196d|resultados_conceito_enade_2018.xlsx|
+|ENADE|2021|582b31861bdeee590c5ca73671d76700fdfc837320286c540f7502604a075540|conceito_enade_2021.xlsx|
+|ENADE|2022|2e764fd410232fb95ac0e56860a1383f3b29f864a1f829fdd077c110d6e840e3|conceito_enade_2022.xlsx|
+|ENADE|2023|cdb138c0154350da883f0e4535d5b2b999b14d87d16c12406e9814cec0915033|conceito_enade_2023.xlsx|
+|IDD|2018|dc367aff0ffe54c37e0e9ee95bdc6231b2a5e758cc930d61d61eeac389477491|resultados_IDD_2018.xlsx|
+|IDD|2021|72113a2972247df37f9f15bc210b45bb882cad5ace99670f53507fe1398a2339|IDD_2021.xlsx|
+|IDD|2022|a0fe496c79c6a57d955882b810e1c1103bf4272c80dd0e1537a78f0e94bf431f|idd_2022.xlsx|
+|IDD|2023|1253c8c9cdf84476783d366b48373a29d457a566167a481d14a05ddf643156fe|IDD_2023.xlsx|
+|IGC|2018|de2efa47df97283c2238b8cb20b1e586804fb5e527c5afddba2c71fdbd0ea25f|portal_IGC_edicao2018.xlsx|
+|IGC|2021|651e0a0d0ed2b387118249ecc78454932c618d9ec2381c39ed5e04cdaa14040e|IGC_2021.xlsx|
+|IGC|2022|6273731e9991bc71f048fa4557594ea7894a0820efdfa700f306f28d25befdda|igc_2022.xlsx|
+|IGC|2023|92cd8f702e0e92f6d616e7b4bbf879e1c24b749392b05bc7ad149e00d80b4003|IGC_2023.xlsx|
+
+Distribuicoes de nulos e medias diferem entre Enade e IDD; nenhum indicador foi substituido pelo outro.

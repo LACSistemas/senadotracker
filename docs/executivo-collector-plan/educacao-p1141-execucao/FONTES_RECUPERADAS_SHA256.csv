@@ -1,0 +1,4 @@
+program,edition,official_url,local_path,http_status,mime,bytes,sha256,integrity_status,coverage_note
+PROUNI,2016,http://informacao.mec.gov.br/bilibs/PDA/PROUNI/PDA_PROUNI_2016_CSV.csv,D:\Civica\raw\mec\prouni\PDA_PROUNI_2016_CSV.csv,unknown,text/html,49916,0557ad569f6411bbb7efb28b835ba147d783deaab28af3257e0cbccce3ebc8a5,REJECTED_HTML_CHALLENGE,"local file is HTML challenge, not CSV"
+PROUNI,2025,https://dadosabertos.mec.gov.br/images/conteudo/prouni/2025/prouni_pda_2025.csv,,403,text/html; charset=UTF-8,5594,,NOT_RECOVERED,Cloudflare challenge
+FIES,2022,https://dadosabertos.mec.gov.br/images/conteudo/fies/2022/relatorio_dados_abertos_oferta_12022_15072022.csv,,403,text/html; charset=UTF-8,5721,,NOT_RECOVERED,Cloudflare challenge

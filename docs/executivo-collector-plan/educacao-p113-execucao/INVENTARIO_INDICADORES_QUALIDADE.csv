@@ -1,0 +1,5 @@
+indicator,unit,years,source_family,continuous,band,aggregate_only,status
+IGC,IES,2018;2021;2022;2023,Planilha INEP,yes,yes,yes,PUBLISHED
+CPC,course,2018;2021;2022;2023,Planilha INEP,yes,yes,yes,PUBLISHED
+ENADE,course,2018;2021;2022;2023,Planilha INEP,yes,yes,yes,PUBLISHED
+IDD,course,2018;2021;2022;2023,Planilha INEP,yes,yes,yes,PUBLISHED

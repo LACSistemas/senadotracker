@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-27T23:30:40.653010+00:00",
+  "database": "projetoeleitor_db",
+  "real_data_rows": {
+    "prouni": 0,
+    "fies": 0
+  },
+  "source_attempts": {
+    "prouni_blocked_runs": 10,
+    "fies_blocked_runs": 10
+  },
+  "p95_ms": null,
+  "p99_ms": null,
+  "network_observed": {
+    "sandbox_socket": "WinError 10013",
+    "outside_sandbox_http": "403 Cloudflare challenge"
+  },
+  "storage": {
+    "database_bytes": 33769335955,
+    "C_free_bytes": 35530383360,
+    "D_free_bytes": 407550599168
+  },
+  "status": "NOT_RUN_NO_VALID_FILE"
+}

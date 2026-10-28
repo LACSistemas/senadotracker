@@ -15,6 +15,7 @@ import { collectInfraYear, extractInfraYear, locateInfraFiles } from '../../apps
 import { recordManifest, registerLocalRaw } from '../../apps/collector/src/exec/storage.ts';
 import { applyExecMigrations } from '../../packages/db/src/exec/index.ts';
 import { openPool } from './db.ts';
+import { execFileSync } from 'node:child_process';
 
 /**
  * Cadastro de escolas (P10.1, Censo Escolar). EXEC_DATABASE_URL aponta para banco de teste quando definido.
@@ -139,6 +140,9 @@ try {
   else if (cmd === 'publish') {
     const ufs = !b || b === 'all' ? undefined : b.split(',').map(Number);
     for (const y of parseYears(a)) { const r = await collectEduYear(pool, cfg, y, { ...(ufs ? { ufs } : {}), log }); log(JSON.stringify({ year: y, rowsIn: r.rowsIn, rejected: r.rejected, slices: r.slices.length, statuses: Object.fromEntries(r.slices.reduce((m, x) => m.set(x.status, (m.get(x.status) ?? 0) + 1), new Map<string, number>())) })); }
+  } else if (cmd === 'higher-collect') {
+    // The high-volume Censo Superior path uses psycopg2 COPY; all inputs remain on D:\Civica.
+    execFileSync(process.env.PYTHON ?? 'python', ['scripts/exec/educacao-superior-p112.py', a ?? '2022,2023,2024'], { stdio: 'inherit', env: process.env });
   } else throw new Error('comando desconhecido');
   console.log(`${((Date.now() - t0) / 1000).toFixed(0)}s`);
 } finally { await pool.end(); }

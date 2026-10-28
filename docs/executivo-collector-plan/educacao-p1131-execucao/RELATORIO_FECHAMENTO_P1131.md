@@ -1,0 +1,47 @@
+# P11.3.1 — Fechamento de integridade dos indicadores
+
+## Resultado
+
+`P11_3_1_STATUS = PASS_WITH_CAVEATS`. A integridade interna, a conservacao de linhas e a separacao Enade/IDD estao comprovadas. O fechamento externo do Censo permanece `BLOCKED_EXTERNAL`; os casos nao resolvidos de IGC foram classificados e preservados, sem inferencia de encerramento.
+
+## TP_DIMENSAO e EAD
+
+|TP_DIMENSAO|linhas|matriculas|ingressantes|concluintes|vagas|inscritos|
+|---|---|---|---|---|---|---|
+|1|34824|5037875|1663040|729246|5075146|8658561|
+|2|673756|5186852|3346116|604269|6925|3590|
+|3|11319|0|0|0|18583348|7060934|
+|4|450|2539|1457|473|0|0|
+
+
+## Qualidade
+
+|indicador|ano|source|valid|IES oficiais|cursos oficiais|unresolved|ambiguous|
+|---|---|---|---|---|---|---|---|
+|CPC|2018|8821|8821|7885|7885|346|0|
+|CPC|2021|8000|7997|7901|7901|35|0|
+|CPC|2022|9892|9891|9840|9840|23|0|
+|CPC|2023|9812|9812|9803|9803|1|0|
+|ENADE|2018|8821|8821|7886|7886|345|0|
+|ENADE|2021|7999|7997|7901|7901|35|0|
+|ENADE|2022|9896|9896|9845|9845|23|0|
+|ENADE|2023|9814|9812|9803|9803|1|0|
+|IDD|2018|8821|8821|7886|7886|345|0|
+|IDD|2021|7999|7997|7901|7901|35|0|
+|IDD|2022|9896|9896|9845|9845|23|0|
+|IDD|2023|9814|9812|9803|9803|1|0|
+|IGC|2018|2071|2071|1821|1821|250|0|
+|IGC|2021|2013|2012|1897|1897|115|0|
+|IGC|2022|2023|2023|1981|1981|42|0|
+|IGC|2023|2101|2101|2077|2077|24|0|
+
+
+## Gates
+
+- `DATABASE_GUARD = PASS`
+- `SOURCE_ROW_CONSERVATION = PASS_WITH_DOCUMENTED_DELTAS`
+- `NO_FUZZY_IDENTITY = PASS`
+- `IGC_HISTORICAL_CLASSIFICATION = PASS_WITH_CAVEATS`
+- `ENADE_IDD_INDEPENDENCE = PASS`
+- `EXTERNAL_CENSO_RECONCILIATION = BLOCKED_EXTERNAL`
+- `READY_FOR_PUBLIC_HIGHER_ED = NO`

@@ -1,0 +1,22 @@
+{
+  "phase": "P11.2",
+  "database": "projetoeleitor_db",
+  "schema": "civica_exec",
+  "runId": 4,
+  "parserVersion": "p112-2026-10-27-v3",
+  "years": [2022, 2023, 2024],
+  "iesDistinctStable": 2792,
+  "coursesDistinctStable": 50577,
+  "offers": 1964978,
+  "latestYear": 2024,
+  "firstOperationalYear": 2022,
+  "latestYearPublicIes": 317,
+  "latestYearPrivateIes": 2244,
+  "latestYearMunicipalities": 3551,
+  "totals": {"vacancies": 71117869, "applicants": 47225462, "entrants": 14761762, "enrollments": 29648599, "graduates": 3996412},
+  "gates": {"G0_SAFETY": "PASS_WITH_CAVEATS", "G1_SOURCE_INVENTORY": "PASS", "G2_IES_IDENTITY": "PASS", "G3_COURSE_OFFER_IDENTITY": "PASS", "G4_NATIONAL_COLLECTION": "PASS", "G5_INDICATOR_COVERAGE": "PASS_WITH_CAVEATS", "G6_TERRITORIAL_LINKAGE": "PASS_WITH_CAVEATS", "G7_SINOPSE_RECONCILIATION": "PARTIAL", "G8_TERRITORIAL_PROOFS": "PASS", "G9_READ_PERFORMANCE": "PASS", "G10_PUBLICATION_RESILIENCE": "PASS_WITH_CAVEATS", "G11_PRIVACY": "PASS", "G12_TESTS": "PASS_WITH_CAVEATS", "G13_STORAGE": "PASS_WITH_CAVEATS"},
+  "readiness": {"READY_FOR_P11_3_QUALITY": "YES_WITH_CAVEATS", "READY_FOR_HIGHER_ED_FRONTEND": "YES", "READY_FOR_PUBLIC_PUBLICATION": "NO", "HISTORICAL_COVERAGE_COMPLETE": "NO"},
+  "frontendChanged": false,
+  "p113Started": false,
+  "commitOrPush": false
+}
