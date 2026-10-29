@@ -1,0 +1,13 @@
+{
+  "observedAt": "2026-10-28",
+  "database": "projetoeleitor_db",
+  "schema": "civica_exec",
+  "currentUser": "projetoeleitor_user",
+  "databaseSizeApprox": "32 GB",
+  "tableCount": 118,
+  "entityCounts": {"brazil": 1, "uf": 27, "municipality": 5571, "ufAggregate": 27},
+  "populationRows": 123073,
+  "populationYears": "2001-2026",
+  "selectedRows": {"exec_ind_value": 15516915, "exec_fin_fact": 6811397, "exec_fin_exec": 127736, "exec_fin_contract": 165150, "exec_fin_transfer": 26161, "exec_sau_cnes_estab": 639010, "exec_sau_prof_mun_cbo": 1004712, "exec_capes_ppg": 4838, "exec_prouni_fact": 0, "exec_fies_fact": 0},
+  "writeObserved": false
+}

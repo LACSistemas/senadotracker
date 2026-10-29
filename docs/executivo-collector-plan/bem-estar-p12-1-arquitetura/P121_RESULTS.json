@@ -1,0 +1,51 @@
+{
+  "phase": "P12.1",
+  "status": "PASS_WITH_CAVEATS",
+  "observedAt": "2026-10-28",
+  "database": {"name": "projetoeleitor_db", "schema": "civica_exec", "readOnly": true, "writes": 0},
+  "architecture": {
+    "decision": "C_STAGING_SPECIALIZED_PUBLISHED_NORMALIZED",
+    "architectureReady": true,
+    "territorialContractReady": true,
+    "statisticalContractReady": true,
+    "mvpAtomicIndicators": 20,
+    "existingComponentsReused": ["exec_entity", "exec_entity_external_id", "exec_territory_population", "exec_ind_def", "exec_ind_value", "exec_ind_latest", "exec_ingestion_run", "exec_raw_manifest", "exec_publication", "exec_change_log", "exec_story", "D:\\Civica raw/staging"],
+    "newStructuresProposed": ["wellbeing_source_observation_stage", "wellbeing_coverage_snapshot"],
+    "newStructuresExecuted": 0
+  },
+  "audit": {
+    "p12CatalogIndicators": 40,
+    "p12MunicipalCatalogRows": 32,
+    "p12SourceCatalogEntries": 18,
+    "p12TerritorialFamilies": 15,
+    "entityCount": 5631,
+    "kind2Regions": 5,
+    "altoRioNovo": {"code": "3200359", "present": true, "wrongCodeReported": "3200506"},
+    "boaEsperancaDoNorte": {"code": "5101837", "present": true},
+    "brasilia": {"code": "5300108", "present": true},
+    "entityVersions": 1
+  },
+  "sourceReadiness": {
+    "readyForCollector": ["Siconfi/reused", "PNCP/reused", "IBGE population/reused"],
+    "needsValidation": ["IBGE Censo/SIDRA", "RAIS", "Novo Caged", "CadÚnico", "Bolsa Família", "BPC", "Censo SUAS", "SINISA/SNIS", "MUNIC/ESTADIC", "Anatel", "Cetic", "Atlas/IpeaData"],
+    "readyForPublication": []
+  },
+  "storage": {
+    "rawByHorizon": {"oneYear": "2-6 GB compressed; 5-14 GB expanded", "threeYears": "8-22 GB compressed; 18-55 GB expanded", "fiveYears": "15-35 GB compressed; 40-100 GB expanded"},
+    "postgresGrowth": {"oneYear": "0.15-0.35 GB", "threeYears": "0.35-0.80 GB", "fiveYears": "0.60-1.20 GB"},
+    "confidence": "medium-low; architecture estimate, not collection measurement"
+  },
+  "gates": {
+    "G0": "PASS", "G1": "PASS", "G2": "PASS_WITH_CAVEATS", "G3": "PASS", "G4": "PASS", "G5": "PASS_WITH_CAVEATS", "G6": "PASS", "G7": "PASS", "G8": "PASS", "G9": "PASS_WITH_CAVEATS", "G10": "PASS", "G11": "PASS", "G12": "PASS"
+  },
+  "operationalSafety": {"migrations": 0, "tableWrites": 0, "backfills": 0, "collectorsRun": 0, "frontendChanged": false, "productionTouched": false, "rawWritten": false, "commits": 0, "pushes": 0},
+  "P12_1_STATUS": "PASS_WITH_CAVEATS",
+  "ARCHITECTURE_READY": "YES",
+  "TERRITORIAL_CONTRACT_READY": "YES",
+  "STATISTICAL_CONTRACT_READY": "YES",
+  "MVP_ATOMIC_INDICATORS": 20,
+  "P12_2_READY": "YES",
+  "P12_2_READINESS_NOTE": "Autorização condicional: iniciar apenas pelo escopo aprovado após validar o recurso IBGE; a fase não foi iniciada.",
+  "PRODUCTION_TOUCHED": false,
+  "P12_2_STARTED": false
+}

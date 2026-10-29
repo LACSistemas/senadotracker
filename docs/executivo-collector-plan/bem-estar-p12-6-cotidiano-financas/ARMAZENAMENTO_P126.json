@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineOriginalBytes": 33861332115,
+  "beforeP126Bytes": 33950739603,
+  "afterP126Bytes": 33960234131,
+  "p126GrowthBytes": 9494528,
+  "wellbeingCumulativeGrowthBytes": 98902016,
+  "envelopeBytes": 250000000,
+  "envelopeRemainingBytes": 240505472,
+  "globalHardLimitBytes": 8000000000,
+  "globalRemainingBytes": 7901097984,
+  "rawAndStagingVolume": "D:\\Civica",
+  "rawInPostgres": false,
+  "replayGrowthBytes": 0,
+  "budgetGate": "PASS"
+}

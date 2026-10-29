@@ -1,0 +1,8 @@
+indicator_id,code,label,source,edition,grain,unit,status,owner,notes
+9601,WB-MUNIC-DIGITAL-SERVICE,Prefeitura oferece atendimento digital,IBGE MUNIC,2024,municipality,proporção,PUBLISHED,Bem-Estar,Existência declarada; não mede uso
+9602,WB-MUNIC-WEBSITE-ACTIVE,Prefeitura mantém página ativa,IBGE MUNIC,2024,municipality,proporção,PUBLISHED,Bem-Estar,Situação administrativa declarada
+9603,WB-MUNIC-MOBILE-WEBSITE,Website adaptado para celular,IBGE MUNIC,2024,municipality,proporção,PUBLISHED,Bem-Estar,Não mede acesso efetivo
+9604,WB-MUNIC-WIFI-PUBLIC,Município disponibiliza Wi-Fi público,IBGE MUNIC,2024,municipality,proporção,PUBLISHED,Bem-Estar,Não mede cobertura populacional
+9605,WB-MUNIC-WIFI-WHOLE-MUNICIPALITY,Wi-Fi público para todo o município,IBGE MUNIC,2024,municipality,proporção,PUBLISHED,Bem-Estar,"'-' não aplicável; não vira zero"
+9701,WB-ANATEL-MOBILE-4G-COVERAGE,Cobertura móvel 4G estimada,Anatel,indisponível,municipality,percentual,PARTIAL,Infraestrutura,Sem recurso estruturado documentado validado
+9702,WB-ANATEL-MOBILE-5G-COVERAGE,Cobertura móvel 5G estimada,Anatel,indisponível,municipality,percentual,PARTIAL,Infraestrutura,Sem recurso estruturado documentado validado

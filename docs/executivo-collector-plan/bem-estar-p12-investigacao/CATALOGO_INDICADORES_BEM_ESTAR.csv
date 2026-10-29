@@ -1,0 +1,41 @@
+Domínio,Fonte,Indicador,Unidade,Denominador,Brasil,UF,Município,Submunicipal,Frequência,Comparabilidade,Estado,Valor editorial
+Renda,IBGE Censo/SIDRA,Rendimento domiciliar per capita médio,R$/mês,domicílios,sim,sim,sim,área ponderação,censitário,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Renda,IBGE Censo/SIDRA,Rendimento domiciliar per capita mediano,R$/mês,domicílios,sim,sim,sim,área ponderação,censitário,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Renda,IBGE Censo/SIDRA,Classes de rendimento,pessoas/domicílios,universo Censo,sim,sim,sim,área ponderação,censitário,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Renda,IBGE PNAD,Rendimento médio do trabalho,R$/mês,pessoas ocupadas,sim,sim,não universal,não,trimestral/anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Desigualdade,IBGE/Atlas,Gini,índice,pessoas/domicílios,sim,sim,condicionado,não,série,condicionada,NEEDS_VALIDATION,alto
+Trabalho,RAIS,Estoque de vínculos formais,vínculos,n/a,sim,sim,sim,não,anual,alta com quebra,PROVEN_WITH_LIMITATIONS,alto
+Trabalho,Novo Caged,Admissões,vínculos,n/a,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Trabalho,Novo Caged,Desligamentos,vínculos,n/a,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Trabalho,Novo Caged,Saldo de emprego formal,vínculos,estoque,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Trabalho,RAIS,Remuneração média/mediana,R$/mês,vínculos válidos,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Trabalho,RAIS,Composição por CNAE,vínculos,vínculos formais,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Trabalho,RAIS,Composição por CBO,vínculos,vínculos formais,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Vulnerabilidade,MDS,Famílias CadÚnico cadastradas,famílias,cadastro,sim,sim,sim,não,mensal,baixa universal,PROVEN_WITH_LIMITATIONS,alto
+Vulnerabilidade,MDS,Cadastros atualizados,famílias/%,famílias cadastradas,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Vulnerabilidade,MDS,Faixa de renda CadÚnico,famílias,famílias cadastradas,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Vulnerabilidade,MDS,IVCAD,índice/famílias,famílias CadÚnico,sim,sim,sim,não,periódica,condicionada,NEEDS_VALIDATION,médio
+Proteção,Portal Transparência,Famílias Bolsa Família,famílias,folha,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Proteção,Portal Transparência,Valor pago Bolsa Família,R$,pagamentos,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Proteção,Portal Transparência,Benefícios BPC,benefícios,folha,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Proteção,Portal Transparência,Valor pago BPC,R$,pagamentos,sim,sim,sim,não,mensal,condicionada,PROVEN_WITH_LIMITATIONS,alto
+SUAS,Censo SUAS,CRAS existentes,unidades,questionários,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+SUAS,Censo SUAS,CREAS existentes,unidades,questionários,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+SUAS,Censo SUAS,Centro POP/acolhimento,unidades,questionários,sim,sim,sim,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,médio
+SUAS,Censo SUAS,Atendimentos agregados,atendimentos,unidade/período,sim,sim,sim,não,anual/mensal,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Moradia,IBGE Censo/SIDRA,Domicílios próprios/alugados,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Moradia,IBGE Censo/SIDRA,Densidade moradores/dormitório,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Moradia,IBGE Censo/SIDRA,Banheiro/sanitário,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Moradia,IBGE Censo/SIDRA,Abastecimento de água,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Moradia,IBGE Censo/SIDRA,Esgotamento sanitário,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Moradia,IBGE Censo/SIDRA,Acesso à internet domiciliar,domicílios,ocupados,sim,sim,sim,área ponderação,censitário,alta no ano,PROVEN_WITH_LIMITATIONS,alto
+Saneamento,SINISA/SNIS,Água atendida,população/domicílios,definido pelo indicador,sim,sim,parcial,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Saneamento,SINISA/SNIS,Esgoto coletado/tratado,população/domicílios,definido pelo indicador,sim,sim,parcial,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,alto
+Saneamento,SINISA/SNIS,Resíduos sólidos,municípios/população,participantes,sim,sim,parcial,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Cultura,MUNIC/ESTADIC,Equipamentos e políticas culturais,equipamentos,respondentes,sim,sim,sim,não,periódica,condicionada,DISCOVERY_ONLY,médio
+Esporte,MUNIC/ESTADIC,Equipamentos/política esportiva,equipamentos,respondentes,sim,sim,sim,não,periódica,condicionada,DISCOVERY_ONLY,médio
+Digital,Anatel,Cobertura móvel técnica,área/pontos,área técnica,sim,sim,parcial,não,edição,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Digital,Cetic,Domicílios com internet,domicílios/%,amostra ponderada,sim,UF,não universal,não,anual,condicionada,PROVEN_WITH_LIMITATIONS,médio
+Finanças,Siconfi,Despesa empenhada assistência,R$,ente/competência,sim,sim,sim,não,anual/mensal,condicionada,PROVEN_OPERATIONAL,alto
+Finanças,Siconfi,Despesa paga assistência,R$,ente/competência,sim,sim,sim,não,anual/mensal,condicionada,PROVEN_OPERATIONAL,alto
+Finanças,PNCP,Contratos/fornecedores sociais,contratos/R$,contrato publicado,sim,sim,parcial,não,contínua,condicionada,PROVEN_OPERATIONAL,médio

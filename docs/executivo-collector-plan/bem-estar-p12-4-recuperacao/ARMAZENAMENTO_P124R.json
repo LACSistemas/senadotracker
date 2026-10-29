@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineBytes": 33861332115,
+  "beforeP124RBytes": 33870138515,
+  "afterP124RBytes": 33890299027,
+  "p124rAttributedGrowthBytes": 20160512,
+  "wellbeingCumulativeGrowthBytes": 28966912,
+  "p124rEnvelopeBytes": 250000000,
+  "wellbeingHardLimitBytes": 8000000000,
+  "remainingCumulativeBudgetBytes": 7971033088,
+  "rawBytes": 40377423,
+  "rawLocation": "D:\\Civica\\raw\\bem-estar\\censo-suas\\2024\\github",
+  "stagingLocation": "D:\\Civica\\staging\\bem-estar\\censo-suas\\2024",
+  "dbBudgetGate": "PASS",
+  "notes": ["growth is a conservative database-size delta and includes publication metadata/index effects", "no RH file was stored", "previous unexplained 8192-byte delta was not attributed to P12.4-R"]
+}

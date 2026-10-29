@@ -1,0 +1,24 @@
+{
+  "phase": "P12.8",
+  "database": "projetoeleitor_db",
+  "baselineBeforeP12": 33861332115,
+  "afterP12_7": 33960234131,
+  "afterP12_8": 33960234131,
+  "measuredAt": "2026-10-28",
+  "measurementMethod": "select pg_database_size(current_database())",
+  "p128DbGrowthBytes": 0,
+  "cumulativeGrowthBytes": 98902016,
+  "hardLimitBytes": 8000000000,
+  "remainingBudgetBytes": 7901097984,
+  "newMigrations": false,
+  "newTables": false,
+  "newColumns": false,
+  "postgresWrites": false,
+  "rawStorage": "D:\\Civica",
+  "rawStorageTouched": false,
+  "notes": [
+    "P12.8 é a camada de frontend: lê exclusivamente os read models já publicados pela P12.7 (getWellbeingOverview/Series/Comparators) mais duas funções de leitura aditivas (getWellbeingMunicDistribution, getWellbeingSocialDistribution), ambas SELECTs agregando civica_exec.exec_ind_value — nenhuma tabela, coluna, índice ou migration nova.",
+    "O tamanho do banco medido antes e depois desta fase é byte-a-byte idêntico (33.960.234.131), confirmando crescimento zero.",
+    "Nenhum dataset foi republicado, nenhum microdado foi baixado para D:\\Civica nesta fase."
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "raw_root": "D:\\Civica\\raw\\bem-estar\\censo-suas\\2024\\reports",
+  "staging_root": "D:\\Civica\\staging\\bem-estar",
+  "database": "projetoeleitor_db",
+  "db_size_before_observed_bytes": 33870138515,
+  "db_size_after_observed_bytes": 33870138515,
+  "p124_db_growth_bytes": 0,
+  "p124_envelope_bytes": 500000000,
+  "p124_envelope_used_bytes": 0,
+  "raw_files_downloaded": 14,
+  "raw_bytes_downloaded": 2903637,
+  "raw_storage_location_compliant": true,
+  "postgres_write_performed": false,
+  "notes": [
+    "11 municipal reports plus one national/index HTML were downloaded",
+    "no raw HTML was copied into the repository",
+    "no national bulk load was attempted before pilot gate"
+  ]
+}

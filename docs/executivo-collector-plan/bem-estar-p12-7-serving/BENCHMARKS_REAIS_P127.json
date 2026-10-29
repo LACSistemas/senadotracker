@@ -1,0 +1,33 @@
+{
+  "phase": "P12.7",
+  "database": "projetoeleitor_db",
+  "repetitions": 12,
+  "method": "warm sequential calls; p50/p95/p99 over 12 repetitions; JSON and gzip payload sizes",
+  "benchmarks": [
+    {"name":"municipality_vitoria.overview","p50Ms":244.446,"p95Ms":318.204,"p99Ms":318.204,"maxMs":337.614,"payloadBytes":80884,"gzipBytes":4204},
+    {"name":"municipality_vitoria.conditionsChapter","p50Ms":231.912,"p95Ms":261.097,"p99Ms":261.097,"maxMs":280.187,"payloadBytes":62825,"gzipBytes":4025},
+    {"name":"municipality_sao_paulo.overview","p50Ms":233.241,"p95Ms":251.006,"p99Ms":251.006,"maxMs":284.113,"payloadBytes":81214,"gzipBytes":4278},
+    {"name":"municipality_sao_paulo.conditionsChapter","p50Ms":229.29,"p95Ms":303.167,"p99Ms":303.167,"maxMs":318.538,"payloadBytes":63103,"gzipBytes":4092},
+    {"name":"municipality_alto_rio_novo.overview","p50Ms":159.611,"p95Ms":184.861,"p99Ms":184.861,"maxMs":253.562,"payloadBytes":75510,"gzipBytes":4122},
+    {"name":"municipality_alto_rio_novo.conditionsChapter","p50Ms":150.337,"p95Ms":164.187,"p99Ms":164.187,"maxMs":166.923,"payloadBytes":59184,"gzipBytes":3945},
+    {"name":"municipality_boa_esperanca_norte.overview","p50Ms":48.033,"p95Ms":69.645,"p99Ms":69.645,"maxMs":92.377,"payloadBytes":68368,"gzipBytes":3013},
+    {"name":"municipality_boa_esperanca_norte.conditionsChapter","p50Ms":52.618,"p95Ms":55.684,"p99Ms":55.684,"maxMs":72.521,"payloadBytes":52857,"gzipBytes":2856},
+    {"name":"municipality_brasilia.overview","p50Ms":225.143,"p95Ms":244.032,"p99Ms":244.032,"maxMs":249.302,"payloadBytes":77110,"gzipBytes":3513},
+    {"name":"municipality_brasilia.conditionsChapter","p50Ms":226.122,"p95Ms":260.519,"p99Ms":260.519,"maxMs":299.393,"payloadBytes":59017,"gzipBytes":3328},
+    {"name":"uf_es.overview","p50Ms":117.228,"p95Ms":140.53,"p99Ms":140.53,"maxMs":148.828,"payloadBytes":72948,"gzipBytes":3889},
+    {"name":"uf_es.conditionsChapter","p50Ms":114.45,"p95Ms":142.915,"p99Ms":142.915,"maxMs":158.638,"payloadBytes":57513,"gzipBytes":3715},
+    {"name":"uf_sp.overview","p50Ms":117.778,"p95Ms":161.431,"p99Ms":161.431,"maxMs":161.8,"payloadBytes":72636,"gzipBytes":3902},
+    {"name":"uf_sp.conditionsChapter","p50Ms":113.473,"p95Ms":155.37,"p99Ms":155.37,"maxMs":178.701,"payloadBytes":57294,"gzipBytes":3728},
+    {"name":"brazil.overview","p50Ms":140.27,"p95Ms":167.752,"p99Ms":167.752,"maxMs":180.561,"payloadBytes":74460,"gzipBytes":4159},
+    {"name":"brazil.conditionsChapter","p50Ms":135.304,"p95Ms":150.869,"p99Ms":150.869,"maxMs":227.553,"payloadBytes":58581,"gzipBytes":3988},
+    {"name":"vitoria.series_caged_balance","p50Ms":6.021,"p95Ms":8.763,"p99Ms":8.763,"maxMs":11.598,"payloadBytes":6811,"gzipBytes":851},
+    {"name":"vitoria.comparators_munic","p50Ms":33.579,"p95Ms":42.676,"p99Ms":42.676,"maxMs":42.767,"payloadBytes":1128,"gzipBytes":488},
+    {"name":"vitoria.comparators_gini_rejected","p50Ms":5.599,"p95Ms":7.445,"p99Ms":7.445,"maxMs":7.473,"payloadBytes":959,"gzipBytes":478},
+    {"name":"coverage_all","p50Ms":863.481,"p95Ms":995.855,"p99Ms":995.855,"maxMs":1066.563,"payloadBytes":9201,"gzipBytes":1360},
+    {"name":"methodology_munic","p50Ms":5.755,"p95Ms":8.109,"p99Ms":8.109,"maxMs":9.797,"payloadBytes":684,"gzipBytes":464},
+    {"name":"finance_context_vitoria","p50Ms":1.206,"p95Ms":1.435,"p99Ms":1.435,"maxMs":1.644,"payloadBytes":684,"gzipBytes":390}
+  ],
+  "explainAnalyzeMs": {"overviewLatestRepresentative":48.558,"coverageAllRepresentative":571.82,"municipComparatorRepresentative":9.181},
+  "servicePercentiles": {"overviewP95MaxMs":318.204,"chapterP95MaxMs":303.167},
+  "notes": ["Os p95 de overview/capítulo são do read service TypeScript, incluindo round-trips; EXPLAIN representa a consulta SQL isolada.","Overview municipal/UF/Brasil ficou abaixo de 300 ms p95 na maioria dos casos; Vitória teve p95 318.204 ms e São Paulo conditions 303.167 ms.","coverage_all é uma consulta nacional de auditoria, não uma chamada de tela; p95 995.855 ms.","Não há fan-out N+1."]
+}

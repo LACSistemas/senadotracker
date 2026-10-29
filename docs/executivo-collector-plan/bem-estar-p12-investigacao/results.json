@@ -1,0 +1,11 @@
+{
+  "phase": "P12",
+  "mode": "INVESTIGATION_ONLY",
+  "observedAt": "2026-10-28",
+  "database": {"name": "projetoeleitor_db", "schema": "civica_exec", "readOnly": true, "writes": 0},
+  "artifacts": {"required": 25, "created": 25, "directory": "docs/executivo-collector-plan/bem-estar-p12-investigacao"},
+  "counts": {"officialSourcesProven": 15, "candidateIndicators": 40, "municipalIndicatorsProven": 32, "ufIndicatorsProven": 40, "historicalIndicators": 21, "mvpIndicators": 10, "reusedSourceFamilies": 9, "newCollectorsEstimated": 6},
+  "readiness": {"P12_INVESTIGATION_STATUS": "PASS_WITH_DOCUMENTED_LIMITATIONS", "READY_FOR_P12_1_ARCHITECTURE": "YES", "MUNICIPAL_INDICATORS_PROVEN": 32, "UF_INDICATORS_PROVEN": 40, "ESTIMATED_STORAGE_GB": "0.4-1.2 facts/indexes + 8-35 raw", "PUBLICATION_LEGAL_BLOCKERS": ["CadUnico_identificado", "microdados_pessoais", "licencas_Atlas_IVCAD"], "EXTERNAL_SOURCE_BLOCKERS": ["RAIS_Caged_FTP_or_volume", "MDS_download_contract", "SINISA_coverage"], "P12_1_STARTED": "NO"},
+  "gates": {"G0_REPOSITORY_SAFETY":"PROVEN_OPERATIONAL","G1_EDITORIAL_BOUNDARY":"PROVEN_OPERATIONAL","G2_INCOME":"PROVEN_WITH_LIMITATIONS","G3_LABOR":"PROVEN_WITH_LIMITATIONS","G4_CADUNICO":"PROVEN_WITH_LIMITATIONS","G5_SOCIAL_PROGRAMS":"PROVEN_WITH_LIMITATIONS","G6_SUAS":"PROVEN_WITH_LIMITATIONS","G7_HOUSING":"PROVEN_WITH_LIMITATIONS","G8_BASIC_SERVICES":"PROVEN_WITH_LIMITATIONS","G9_CULTURE_SPORT":"DISCOVERY_ONLY","G10_DIGITAL_INCLUSION":"PROVEN_WITH_LIMITATIONS","G11_VULNERABILITY":"PROVEN_WITH_LIMITATIONS","G12_PUBLIC_FINANCE":"PROVEN_OPERATIONAL","G13_COMPOSITE_INDICES":"NEEDS_VALIDATION","G14_NATIONAL_COVERAGE":"PROVEN_WITH_LIMITATIONS","G15_TERRITORIAL_PROOFS":"PROVEN_WITH_LIMITATIONS","G16_BENCHMARKS":"PROVEN_OPERATIONAL","G17_PRODUCT_STORYTELLING":"PROVEN_OPERATIONAL","G18_STORAGE_ARCHITECTURE":"PROVEN_WITH_LIMITATIONS","G19_MVP_SELECTION":"PROVEN_OPERATIONAL","G20_EXECUTION_ROADMAP":"PROVEN_OPERATIONAL"},
+  "safety": {"migrations": 0, "collectorsRun": 0, "frontendChanged": false, "productionTouched": false, "rawWritten": false, "commits": 0, "pushes": 0}
+}

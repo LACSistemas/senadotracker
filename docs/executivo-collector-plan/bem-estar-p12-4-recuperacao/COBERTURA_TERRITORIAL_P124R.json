@@ -1,0 +1,24 @@
+{
+  "datasetId": 121,
+  "competence": 202412,
+  "period": {"start": "2024-01-01", "end": "2025-01-01"},
+  "sourceMunicipalities": {"crasIbge6": 5333, "idcrasMunicipalRows": 5571, "idcreasMunicipalRows": 5571, "idconselhoRows": 5570},
+  "databaseEntities": {"municipalities": 5571, "ufs": 27},
+  "indicators": {
+    "WB-SUAS-CRAS": {"brazil": 1, "uf": 27, "municipality": 5333},
+    "WB-SUAS-CRAS-CAP-2500": {"brazil": 1, "uf": 27, "municipality": 5333},
+    "WB-SUAS-CRAS-CAP-3500": {"brazil": 1, "uf": 27, "municipality": 5333},
+    "WB-SUAS-CRAS-CAP-5000": {"brazil": 1, "uf": 27, "municipality": 5333},
+    "WB-SUAS-IDCRAS-MEAN": {"brazil": 0, "uf": 27, "municipality": 5570},
+    "WB-SUAS-IDCRAS-RESPONDENTS": {"brazil": 0, "uf": 27, "municipality": 5333},
+    "WB-SUAS-CREAS": {"brazil": 0, "uf": 27, "municipality": 2609},
+    "WB-SUAS-IDCREAS-MEAN": {"brazil": 0, "uf": 27, "municipality": 2609},
+    "WB-SUAS-IDCREAS-RESPONDENTS": {"brazil": 0, "uf": 27, "municipality": 2609},
+    "WB-SUAS-IDCONSELHO-MEAN": {"brazil": 0, "uf": 27, "municipality": 4976}
+  },
+  "pilotTerritories": {
+    "validated": ["Vitória/ES", "Vila Velha/ES", "Serra/ES", "Cariacica/ES", "Campos dos Goytacazes/RJ", "João Pessoa/PB", "Recife/PE", "São Paulo/SP", "Água Boa/MT", "Brasília/DF"],
+    "partial": ["Alto Rio Novo/ES", "Boa Esperança do Norte/MT"],
+    "notes": {"Alto Rio Novo/ES": "IDCRAS municipal presente, sem linha CRAS correspondente no CSV final", "Boa Esperança do Norte/MT": "entidade territorial atual presente, sem observação Censo SUAS 2024"}
+  }
+}

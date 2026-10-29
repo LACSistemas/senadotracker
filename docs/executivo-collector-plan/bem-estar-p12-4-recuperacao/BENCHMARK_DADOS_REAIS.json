@@ -1,0 +1,11 @@
+{
+  "database": "projetoeleitor_db",
+  "queries": [
+    {"name": "municipal_page_500", "planningMs": 8.568, "executionMs": 42.657, "rows": 500},
+    {"name": "municipality_detail", "planningMs": 0.591, "executionMs": 0.535, "rows": 10},
+    {"name": "national_summary", "planningMs": 0.789, "executionMs": 81.112, "rows": 10}
+  ],
+  "method": "EXPLAIN (ANALYZE, BUFFERS, FORMAT JSON) against civica_exec after publication",
+  "performanceGate": "PASS",
+  "nPlusOne": "not used in the tested SQL"
+}

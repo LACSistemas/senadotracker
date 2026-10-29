@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineBytes": 33861332115,
+  "beforeP123Bytes": 33870130323,
+  "afterP123Bytes": 33870130323,
+  "p123DbGrowthBytes": 0,
+  "p122CumulativeGrowthBytes": 8798208,
+  "wellbeingCumulativeGrowthBytes": 8798208,
+  "wellbeingRemainingBudgetBytes": 7991201792,
+  "p123EnvelopeBytes": 500000000,
+  "dbBudgetGate": "PASS",
+  "rawStorage": "D:\\Civica\\raw\\mec",
+  "piiPersisted": 0,
+  "databaseWrites": 0,
+  "notes": ["No P12.3 facts or publications were written.", "tabmun.csv is the only new raw artifact and is outside PostgreSQL."]
+}

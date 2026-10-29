@@ -80,3 +80,4 @@ export * from './educacao-capes-read.ts';
 export * from './educacao-bench.ts';
 export * from './educacao-enem-build.ts';
 export * from './educacao-enem-read.ts';
+export * from './wellbeing-read.ts';

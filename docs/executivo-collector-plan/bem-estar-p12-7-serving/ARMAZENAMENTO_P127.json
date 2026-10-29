@@ -1,0 +1,17 @@
+{
+  "phase": "P12.7",
+  "database": "projetoeleitor_db",
+  "baselineBeforeP12": 33861332115,
+  "afterP12_6": 33960234131,
+  "afterP12_7": 33960234131,
+  "p127DbGrowthBytes": 0,
+  "cumulativeGrowthBytes": 98902016,
+  "hardLimitBytes": 8000000000,
+  "remainingBudgetBytes": 7901097984,
+  "p127EnvelopeBytes": 250000000,
+  "p127EnvelopeRemainingBytes": 250000000,
+  "rawStorage": "D:\\Civica",
+  "postgresWrites": false,
+  "newMigrations": false,
+  "notes": ["P12.7 é camada de leitura; não materializa tabelas nem duplica fatos financeiros.","Valores incluem índices e metadados já existentes no banco."]
+}

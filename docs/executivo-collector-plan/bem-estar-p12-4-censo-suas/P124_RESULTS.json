@@ -1,0 +1,130 @@
+{
+  "phase": "P12.4",
+  "status": "PARTIAL_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "database": {
+    "name": "projetoeleitor_db",
+    "schema": "civica_exec",
+    "current_size_bytes": 33870138515,
+    "baseline_bytes": 33861332115,
+    "cumulative_growth_bytes_observed": 8806400,
+    "p124_growth_bytes": 0,
+    "cumulative_budget_bytes": 8000000000,
+    "remaining_budget_bytes": 7991193600,
+    "p124_envelope_bytes": 500000000,
+    "p124_envelope_remaining_bytes": 500000000,
+    "write_mode": "NO_WRITE_PENDING_PILOT_GATE"
+  },
+  "edition": {
+    "latest_validated": 2024,
+    "2025_consolidated_accessible": false,
+    "2026_complete": false,
+    "condition": "official_2024_results_and_indicator_reports; 2025_not_verified_as_consolidated"
+  },
+  "sources": {
+    "official_observatory": {
+      "url": "https://paineis.mds.gov.br/public/extensions/observatorio-do-censo-suas-2024/index.html",
+      "http_status": 200,
+      "ui_export": "present_in_public_interface",
+      "programmatic_resource": "not_verified",
+      "html_bytes": 484620,
+      "html_sha256": "A394CA37D42C66E00E677BE908D677B1ED82B8721191D31279CF56CBD5E2B6F3",
+      "public_script_bytes": 41950,
+      "public_script_sha256": "FA021E02C8676076124522100DF96F07D2935D9A6CD7F03BBBEAFAF759018BEC",
+      "internal_qlik_api_used": false
+    },
+    "official_static_reports": {
+      "url": "https://sagicad-mds.github.io/indicadores-de-desenvolvimento/index.html",
+      "http_status": 200,
+      "index_bytes": 1724732,
+      "index_sha256": "1D186BC94F0EF8DF10487A331804D3AA62986FEBABCDC081966EEBF5A7E29220",
+      "municipal_report_links": 5570,
+      "pilot_reports_downloaded": 11,
+      "layout_verified": true,
+      "semantics_verified": "indicator_report_only; not unit-level equipment inventory"
+    },
+    "legacy_catalog": {
+      "url": "https://aplicacoes.mds.gov.br/sagi/snas/vigilancia/index2",
+      "observed_status": "redirect_to_mds_avisos",
+      "resource_download_verified": false,
+      "maintenance_notice_observed": true
+    }
+  },
+  "pilot": {
+    "target_territories": 12,
+    "territories_found": 11,
+    "territories_missing": ["Boa Esperança do Norte/MT"],
+    "ufs_represented": 7,
+    "ufs_targeted": 7,
+    "cras_capacity_rows_parsed": 33,
+    "cras_counts_from_reports": {
+      "Alto Rio Novo/ES": 0,
+      "Cariacica/ES": 8,
+      "Serra/ES": 11,
+      "Vila Velha/ES": 6,
+      "Vitória/ES": 12,
+      "Campos dos Goytacazes/RJ": 15,
+      "João Pessoa/PB": 13,
+      "Recife/PE": 16,
+      "São Paulo/SP": 54,
+      "Água Boa/MT": 1,
+      "Brasília/DF": 32
+    },
+    "national_report_cras_capacity_total": 8546,
+    "equipment_rows_with_stable_source_id": 0,
+    "regional_creas_relationships_validated": 0
+  },
+  "publication": {
+    "suas_indicators_published": 0,
+    "new_indicator_definitions": 0,
+    "new_indicator_values": 0,
+    "reason": "static reports expose aggregate indicator tables and images, but no stable equipment key, respondent universe, or sede/territory relation suitable for canonical publication"
+  },
+  "outputs": {
+    "CENSO_SUAS_LATEST_VALIDATED_EDITION": 2024,
+    "SOURCE_RESOURCE_VERIFIED": "YES",
+    "CRAS_STATUS": "PILOT_VALIDATED_PARTIAL_NO_PUBLICATION",
+    "CREAS_STATUS": "PARTIAL_INDICATOR_REPORT_ONLY",
+    "OTHER_EQUIPMENT_STATUS": "NOT_VERIFIED_FOR_MACHINE_READABLE_RESOURCE",
+    "MUNICIPAL_COVERAGE": "11/5570 pilot reports; not national publication",
+    "UF_COVERAGE": "7/7 targeted UFs represented in pilot",
+    "MISSING_TERRITORIES": ["Boa Esperança do Norte/MT"],
+    "REGIONAL_UNIT_HANDLING": "not_published_until_sede_and_served_municipalities_are separately identified",
+    "SOURCE_EDITION_HASHES": {
+      "national_static_index": "1D186BC94F0EF8DF10487A331804D3AA62986FEBABCDC081966EEBF5A7E29220",
+      "pilot_reports": "listed_in_SOURCE_MANIFEST_in_RELATORIO_EXECUCAO_P124"
+    },
+    "IDEMPOTENT_REPLAY": "NOT_RUN_NO_WRITE",
+    "DB_GROWTH_P124_BYTES": 0,
+    "WELLBEING_CUMULATIVE_GROWTH_BYTES": 8806400,
+    "WELLBEING_REMAINING_BUDGET_BYTES": 7991193600,
+    "DB_BUDGET_GATE": "PASS_NO_WRITE",
+    "P122_REGRESSION": "PASS_READ_ONLY_COUNTS_STABLE",
+    "P123_UNCHANGED": "YES",
+    "P12_5_READY": "NO"
+  },
+  "gates": {
+    "SOURCE_DOCUMENTED": "PASS",
+    "RESOURCE_ACCESS_VERIFIED": "PASS_PARTIAL",
+    "LAYOUT_VERIFIED": "PASS_FOR_STATIC_REPORTS",
+    "SEMANTICS_VERIFIED": "PARTIAL",
+    "TERRITORIAL_COVERAGE_VERIFIED": "PARTIAL",
+    "EQUIPMENT_IDENTITY": "FAIL_FOR_PUBLICATION",
+    "CRAS_VS_CREAS": "PASS_SEPARATE_REPORT_SECTIONS",
+    "REGIONALIZATION": "NOT_READY",
+    "RESPONDENT_VS_EXISTING": "NOT_READY",
+    "CAPACITY_VS_ATTENDANCE": "PASS_NOT_MIXED",
+    "PRIVACY": "PASS_NO_PERSON_LEVEL_DATA",
+    "PUBLICATION": "HOLD_PILOT_GATE",
+    "RECONCILIATION": "PASS_FOR_PARSED_TABLES_ONLY",
+    "IDEMPOTENCY": "NOT_RUN_NO_WRITE",
+    "REPLAY_NO_CHANGE": "NOT_RUN_NO_WRITE",
+    "RETIFICATION": "DOCUMENTED_ONLY",
+    "LAST_KNOWN_GOOD": "NOT_APPLICABLE_NO_PUBLISH",
+    "STORAGE": "PASS_NO_WRITE",
+    "P122_REGRESSION": "PASS",
+    "P123_INDEPENDENCE": "PASS"
+  },
+  "ready_for_collector": false,
+  "ready_for_publication": false,
+  "next_step": "obtain an official machine-readable 2024 export (or documented public export artifact), validate unit keys and respondent universe, then rerun pilot before any national load"
+}

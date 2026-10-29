@@ -1,0 +1,29 @@
+{
+  "database": "projetoeleitor_db",
+  "schema": "civica_exec",
+  "entity_contract": {"municipal_kind": 4, "uf_kind": 3, "brazil_kind": 1, "municipal_entities": 5571, "uf_entities": 27, "brazil_entities": 1},
+  "rais": {
+    "municipal_source_codes": 5571,
+    "municipal_canonical_entities": 5571,
+    "years": [2023, 2024, 2025],
+    "brazil_rows_per_year": 1,
+    "uf_rows_per_year": 27,
+    "source_non_identified_code": "999999",
+    "source_non_identified_rows_excluded_from_municipal_sum": {"2023": 709, "2024": 899, "2025": 102},
+    "remuneration_entities": 27,
+    "remuneration_grain": "Brazil/UF only"
+  },
+  "caged": {
+    "municipal_source_codes": 5571,
+    "municipal_canonical_entities": 5571,
+    "macro_entities": 28,
+    "competences": [202601, 202602, 202603, 202604, 202605, 202606, 202607, 202608],
+    "rows_per_indicator": 44792,
+    "rows_per_competence_indicator": 5599
+  },
+  "required_pilot_municipalities": {
+    "status": "RESOLVED_WHERE_SOURCE_CODE_EXISTS",
+    "note": "No municipality was imputed when the source did not contain a row; establishment location is not residence."
+  },
+  "geography_quality": {"fuzzy_matching": false, "official_ibge_crosswalk": true, "district_duplication_observed": false}
+}

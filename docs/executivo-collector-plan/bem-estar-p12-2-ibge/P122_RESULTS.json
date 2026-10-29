@@ -1,0 +1,53 @@
+{
+  "phase": "P12.2",
+  "status": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "database": "projetoeleitor_db",
+  "datasetId": 120,
+  "competence": 202212,
+  "period": { "start": "2022-01-01", "end": "2023-01-01" },
+  "source": "IBGE SIDRA Censo 2022",
+  "sourceHash": "884b43846d16e8b12965526e8920f62b108b708d690cacb83f3319fd85e57bbf",
+  "sourceFiles": [
+    { "name": "sidra-10295-n1-2022.json", "bytes": 1739, "sha256": "816373381c4de8adb794e9117da2f46bafd8ac635dd7684ede5305d7e7ae3183" },
+    { "name": "sidra-10295-n3-2022.json", "bytes": 34310, "sha256": "c7c3b0c6558c1b9a0858b27fc891562a7f2ec4e8f28386ec7b78d025c23e9807" },
+    { "name": "sidra-10295-n6-2022.json", "bytes": 6964561, "sha256": "692034d28e5bd5d8b184f58d64137a5fcf464be2a1e93d20819c1b4f654425fb" },
+    { "name": "sidra-10301-n1-2022.json", "bytes": 836, "sha256": "240a63f0291ba5d6ddf540aa03564d01b4eecb10038b561938d7398d666d5de2" },
+    { "name": "sidra-10301-n3-2022.json", "bytes": 14222, "sha256": "c7adb79a1a39abf34ec1eee333935787b02556e8b9e92a6ece1b65b4484e3b14" },
+    { "name": "sidra-6803-n1-2022.json", "bytes": 1630, "sha256": "fcae7b71022c5e2493f9cc1bf795bbba670ee5ef0a35d331f2591997d9b06bae" },
+    { "name": "sidra-6803-n3-2022.json", "bytes": 29920, "sha256": "f41564d65f26b8c474598fce94b83dc8bc3af1a3d4b76f1858dcac39597444e5" },
+    { "name": "sidra-6803-n6-2022.json", "bytes": 6004100, "sha256": "0bf0dbdb7fe012e5fe1d5d806ff3ab12e345c828fb189a96b3484acb66ef2de1" },
+    { "name": "sidra-6805-n1-2022.json", "bytes": 1113, "sha256": "e3149f96c3ee67d195d49457ecd5fb34f107f54e5d6b18f03d7b15252dcf34f5" },
+    { "name": "sidra-6805-n3-2022.json", "bytes": 19531, "sha256": "b16daeb3c0c8f6f184dda91efa76d983e2a0db15784984c694c581ea1570ade4" },
+    { "name": "sidra-6805-n6-2022.json", "bytes": 3903457, "sha256": "8eeb8d25ef264a1522b9e8f59f14c079d5e0b66efdfdaa873bd4d98c76a11e40" },
+    { "name": "sidra-6892-n1-2022.json", "bytes": 1042, "sha256": "acf770173e1f0f0301a0d53e50af7792488750cf0f8d2d971388f4a6b30617ee" },
+    { "name": "sidra-6892-n3-2022.json", "bytes": 18403, "sha256": "5a2b47af0744fac33d027f02f75a1691bdf5bf7850c4881f1781d14f5e4fd04e" },
+    { "name": "sidra-6892-n6-2022.json", "bytes": 3679083, "sha256": "50ed3731888626c393043801321f073ae72a86e2c8ab9e95cf8a4fd6e53b3e48" }
+  ],
+  "coverage": { "brazil": 1, "ufs": 27, "municipalities": 5570, "resolvedMunicipalities": 5570, "currentMunicipalEntities": 5571, "giniMunicipal": 0 },
+  "published": { "values": 28018, "slices": 28, "indicatorIds": [9001,9002,9003,9004,9005,9006], "status": 2 },
+  "nulls": { "WB-HOUSING-WATER": 8, "WB-HOUSING-SEWER": 25, "WB-HOUSING-GARBAGE": 0 },
+  "nationalParity": {
+    "water": { "denominator": 72456368, "numerator": 60775085, "valuePct": 83.87818307426063 },
+    "sewer": { "denominator": 72456368, "numerator": 46875340, "valuePct": 64.69457591360361 },
+    "garbage": { "denominator": 72456368, "numerator": 66449487, "valuePct": 91.70965759696925 },
+    "incomeMean": 1638.06,
+    "incomeMedian": 1000.0,
+    "gini": 0.542
+  },
+  "storage": { "DB_BASELINE_BYTES": 33861332115, "DB_BEFORE_P122_BYTES": 33861332115, "DB_AFTER_P122_BYTES": 33870130323, "DB_TOTAL_GROWTH_BYTES": 8798208, "WELLBEING_ATTRIBUTED_GROWTH_BYTES": 8798208, "WELLBEING_CUMULATIVE_GROWTH_BYTES": 8798208, "WELLBEING_PROJECTED_NEXT_BATCH_BYTES": 0, "P122_INITIAL_STORAGE_ENVELOPE_BYTES": 500000000, "WELLBEING_SOFT_LIMIT_BYTES": 6000000000, "WELLBEING_HARD_LIMIT_BYTES": 8000000000, "WELLBEING_REMAINING_BUDGET_BYTES": 7991201792, "WAL_TEMP_SPACE_CHECK": "PASS_WITH_CAVEATS", "DB_BUDGET_GATE": "PASS" },
+  "idempotency": { "replaySlices": 28, "noChangeSlices": 28, "duplicateValueInsertions": 0, "newRevisionOnUnchangedReplay": 0 },
+  "finalOutput": { "P12_2_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION", "IBGE_RESOURCES_VERIFIED": "YES", "MVP_INDICATORS_PUBLISHED": 6, "MUNICIPAL_COVERAGE": "5570/5570 source municipalities", "UF_COVERAGE": "27/27", "CENSUS_REFERENCE_YEAR": 2022, "IDEMPOTENT_REPLAY": "PASS", "PRODUCTION_TOUCHED": "YES — authorized write to projetoeleitor_db; no frontend or unrelated collectors touched", "NEXT_PHASE_READY": "NO — P12.3 not started" },
+  "gates": {
+    "DATABASE_GUARD": "PASS",
+    "SOURCE_AUTHORITY": "PASS",
+    "CANONICAL_CATALOG": "PASS",
+    "REAL_DATA_INGESTION": "PASS",
+    "TERRITORIAL_RECONCILIATION": "PASS",
+    "GINI_SCOPE": "PASS_WITH_DOCUMENTED_LIMITATION",
+    "PRIVACY": "PASS",
+    "STORAGE_SAFETY": "PASS",
+    "IDEMPOTENCY": "PASS",
+    "NO_DOUBLE_COUNTING": "PASS",
+    "READY_FOR_P12_3": "NO"
+  }
+}

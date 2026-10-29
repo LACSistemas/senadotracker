@@ -1,0 +1,20 @@
+{
+  "edition": 2024,
+  "index_municipal_reports": 5570,
+  "pilot_target_count": 12,
+  "pilot_found_count": 11,
+  "pilot_missing": ["Boa Esperança do Norte/MT"],
+  "target_ufs": ["ES", "RJ", "PB", "PE", "SP", "MT", "DF"],
+  "pilot_ufs_found": ["ES", "RJ", "PB", "PE", "SP", "MT", "DF"],
+  "municipality_coverage": {
+    "numerator": 11,
+    "denominator": 5570,
+    "ratio": 0.00197486535,
+    "scope": "pilot_only_not_published"
+  },
+  "ibge7_resolved": 0,
+  "source_native_municipality_id": false,
+  "fuzzy_matching": false,
+  "regional_creas_sede_and_served_relation": "not_available_in_static_reports",
+  "national_coverage_claim": false
+}

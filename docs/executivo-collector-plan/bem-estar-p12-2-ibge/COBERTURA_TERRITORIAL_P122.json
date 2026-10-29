@@ -1,0 +1,26 @@
+{
+  "phase": "P12.2",
+  "database": "projetoeleitor_db",
+  "referenceYear": 2022,
+  "sourceMunicipalities": 5570,
+  "resolvedMunicipalities": 5570,
+  "currentMunicipalEntities": 5571,
+  "municipalCoveragePct": 99.982,
+  "coverageNote": "A entidade Boa Esperança do Norte (MT) foi criada após o recorte Censo 2022 e não possui linha na fonte.",
+  "brazil": 1,
+  "uf": 27,
+  "publicationSlices": 28,
+  "indicators": {
+    "WB-INC-RDPC-MEAN": { "brazil": 1, "uf": 27, "municipality": 5570 },
+    "WB-INC-RDPC-MEDIAN": { "brazil": 1, "uf": 27, "municipality": 5570 },
+    "WB-INC-GINI": { "brazil": 1, "uf": 27, "municipality": 0, "limitation": "SIDRA 10301 não tem nível N6" },
+    "WB-HOUSING-WATER": { "brazil": 1, "uf": 27, "municipality": 5570, "nullMunicipalValues": 8 },
+    "WB-HOUSING-SEWER": { "brazil": 1, "uf": 27, "municipality": 5570, "nullMunicipalValues": 25 },
+    "WB-HOUSING-GARBAGE": { "brazil": 1, "uf": 27, "municipality": 5570, "nullMunicipalValues": 0 }
+  },
+  "rawRows": {
+    "income": { "mean": { "n1": 1, "n3": 27, "n6": 5570 }, "median": { "n1": 1, "n3": 27, "n6": 5570 } },
+    "gini": { "n1": 1, "n3": 27, "n6": 0 },
+    "housing": { "eachTable": { "n1": 1, "n3": 27, "n6": 5570 } }
+  }
+}

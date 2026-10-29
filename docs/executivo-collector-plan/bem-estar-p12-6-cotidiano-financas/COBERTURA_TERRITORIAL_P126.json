@@ -1,0 +1,16 @@
+{
+  "edition": 2024,
+  "source": "IBGE MUNIC",
+  "datasetId": 124,
+  "competence": 202412,
+  "sourceRows": 5570,
+  "mappedRows": 5570,
+  "unresolvedRows": 0,
+  "municipalEntitiesInDatabase": 5571,
+  "municipalCoverage": "5570/5570",
+  "ufCoverage": 27,
+  "byUf": {"RO":52,"AC":22,"AM":62,"RR":15,"PA":144,"AP":16,"TO":139,"MA":217,"PI":224,"CE":184,"RN":167,"PB":223,"PE":185,"AL":102,"SE":75,"BA":417,"MG":853,"ES":78,"RJ":92,"SP":645,"PR":399,"SC":295,"RS":497,"MS":79,"MT":141,"GO":246,"DF":1},
+  "identityRule": "Cod Munic (IBGE 7 digits) exact match to exec_entity.kind=4",
+  "fuzzyMatching": false,
+  "notes": ["A base contém 5570 respondentes; a entidade municipal adicional não foi imputada.", "Brasília/DF permanece como município respondente, sem conversão para UF." ]
+}

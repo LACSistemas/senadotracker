@@ -1,0 +1,21 @@
+{
+  "database": "projetoeleitor_db",
+  "baseline_original_bytes": 33861332115,
+  "after_p124r_bytes": 33890299027,
+  "before_p125_write_bytes": 33890299027,
+  "after_p125_write_bytes": 33950739603,
+  "p125_db_growth_bytes": 60440576,
+  "cumulative_wellbeing_growth_bytes": 89407488,
+  "hard_limit_bytes": 8000000000,
+  "remaining_budget_bytes": 7910592512,
+  "p125_envelope_bytes": 500000000,
+  "p125_envelope_gate": "PASS",
+  "disk_space_observed": {"D_size_bytes": 500106784768, "D_free_bytes": 406483984384, "C_size_bytes": 254667304960, "C_free_bytes": 32918384640},
+  "raw_storage": {"volume": "D:", "path": "D:\\Civica\\raw\\bem-estar\\trabalho", "postgres_raw_files": false},
+  "staging_storage": {"volume": "D:", "path": "D:\\Civica\\staging\\bem-estar\\trabalho", "postgres_staging_files": false},
+  "source_files": [
+    {"family":"RAIS","edition":"RAIS 2025","bytes":2732765,"sha256":"b53279b80448e4b5545eee3192130215727d066c62dcce7e77337921ea14efff"},
+    {"family":"CAGED","edition":"Novo Caged Agosto 2026","bytes":44543000,"sha256":"d36c8ebe54e3e10ea877f5ea4dd6798a0a276c4fcff262c73102f4b9c8459e7d"}
+  ],
+  "notes": ["Size deltas include indexes and publication metadata.","No RAIS/Caged microdata or identified personal data was stored in PostgreSQL."]
+}

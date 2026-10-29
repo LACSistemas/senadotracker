@@ -1,0 +1,39 @@
+{
+  "phase": "P12.8",
+  "measuredAt": "2026-10-28",
+  "methodologyNote": "loadWellbeingPage não pôde ser invocado isoladamente fora do Next.js nesta sessão sem alterar apps/web/lib/security/load.ts (um arquivo compartilhado, já publicado, fora do escopo desta fase) — essa dependência usa alias de caminho @/lib que só o bundler do Next resolve. Por isso os números abaixo vêm de duas fontes honestas e verificáveis, não de uma invocação direta: (1) tempo de resposta HTTP real contra o servidor de desenvolvimento (inclui compilação sob demanda do Next em modo dev, não é número de produção); (2) contagem estática de instruções SQL por carga, obtida lendo o código de apps/web/lib/wellbeing/load.ts linha a linha, mais o p95 já medido na P12.7 para a consulta que esta fase reutiliza sem alteração (getWellbeingOverview).",
+  "httpRoundTripDevModeMs": {
+    "note": "curl -w %{time_total}, servidor `next dev` real, não é build de produção. Primeira chamada por rota é fria (compila a rota sob demanda); chamadas seguintes reaproveitam o cache de 60s do read model.",
+    "cold": {
+      "/municipios/3205309/bem-estar": 1330,
+      "/estados/ES/bem-estar": 820,
+      "/municipios/3550308/bem-estar": 998,
+      "/estados/SP/bem-estar": 725,
+      "/municipios/5102504/bem-estar_NOTE": "rota trocada por engano na primeira medição (era Cáceres, não o território correto) — ver VALIDACAO_ESTADOS_MUNICIPIOS.md; não reaproveitado como número final",
+      "/municipios/5101837/bem-estar_recheck": "ver warm abaixo, território correto (Boa Esperança do Norte)"
+    },
+    "warm": {
+      "/municipios/3205309/bem-estar": 758,
+      "/estados/ES/bem-estar": 824,
+      "/municipios/3550308/bem-estar": 818,
+      "/estados/SP/bem-estar": 785
+    }
+  },
+  "sqlStatementsPerPageLoad": {
+    "note": "Contagem estática a partir de apps/web/lib/wellbeing/load.ts: 1 chamada sempre fixa (getWellbeingOverview) + um número pequeno e limitado de chamadas pontuais, nunca por indicador e nunca as 27 observações individualmente.",
+    "municipio": { "min": 6, "max": 8, "breakdown": "1 overview + até 2 comparadores (renda sempre; Gini nunca em município) + 5 séries (RAIS estoque, Caged estoque/admissões/desligamentos/saldo)" },
+    "uf": { "min": 7, "max": 14, "breakdown": "1 overview + até 2 comparadores (renda; Gini) + 5 séries + até 7 distribuições agregadas só de UF (5 indicadores MUNIC + CRAS + CREAS)" },
+    "comparedToIndicatorCount": "27 indicadores publicados; no máximo 14 instruções SQL por carga de página, nunca 27 consultas individuais"
+  },
+  "coverageAllInvokedFromPageRender": false,
+  "coverageAllCheckMethod": "getWellbeingCoverage (a consulta nacional cara, p95≈996ms medido na P127) não é sequer importada em apps/web/lib/wellbeing/load.ts — confirmado por leitura direta do arquivo, não por teste de carga.",
+  "reusedFromP127Benchmarks": {
+    "source": "docs/executivo-collector-plan/bem-estar-p12-7-serving/BENCHMARKS_REAIS_P127.json",
+    "OVERVIEW_READ_SERVICE_P95_MS": 318.204,
+    "note": "getWellbeingOverview é reutilizado sem alteração nesta fase; o p95 medido na P127 continua válido como piso do tempo de banco por carga de página."
+  },
+  "e2eTestDurations": {
+    "note": "Duração de cada teste Playwright (navegação real + asserts), via navegador Chromium real contra o servidor de desenvolvimento — inclui overhead do navegador, não é tempo de servidor isolado.",
+    "totalTests": 15, "totalPassed": 15, "totalWallClockS": 39.6
+  }
+}

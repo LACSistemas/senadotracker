@@ -1,0 +1,14 @@
+{
+  "phase": "P12.3",
+  "status": "PARTIAL_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "publishedIndicators": 0,
+  "publishedCompetences": [],
+  "municipalCoverage": {"published": 0, "availableCrosswalkRows": 5589, "distinctIbgeCodes": 5571},
+  "ufCoverage": {"published": 0, "crosswalkUfs": 27},
+  "families": {
+    "CADUNICO": {"status": "BLOCKED", "coverage": 0},
+    "BOLSA_FAMILIA": {"status": "BLOCKED", "coverage": 0},
+    "BPC": {"status": "BLOCKED", "coverage": 0}
+  },
+  "crosswalk": {"status": "PASS", "source": "Tesouro Transparente tabmun.csv", "validatedRows": 5589, "invalidRows": 0, "duplicateSiafi": 0, "duplicateIbge": 19}
+}

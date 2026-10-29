@@ -1,0 +1,40 @@
+{
+  "phase": "P12.7",
+  "database": "projetoeleitor_db",
+  "territories": {"brazil": 1, "ufs": 27, "municipalSourceUniverse": 5570, "municipalEntitiesInExec": 5571},
+  "indicatorCoverage": {
+    "9001": {"observed": 5598, "valid": 5598, "null": 0, "expected": 5598, "note": "5.570 municípios + 27 UFs + Brasil"},
+    "9002": {"observed": 5598, "valid": 5598, "null": 0, "expected": 5598},
+    "9003": {"observed": 28, "valid": 28, "null": 0, "expected": 28, "note": "Gini somente UF/Brasil; municipal NOT_APPLICABLE"},
+    "9004": {"observed": 5598, "valid": 5590, "null": 8, "expected": 5598},
+    "9005": {"observed": 5598, "valid": 5573, "null": 25, "expected": 5598},
+    "9006": {"observed": 5598, "valid": 5598, "null": 0, "expected": 5598},
+    "9101": {"observed": 5334, "valid": 5334, "null": 0, "expected": 5334},
+    "9102": {"observed": 5334, "valid": 5334, "null": 0, "expected": 5334},
+    "9103": {"observed": 5334, "valid": 5334, "null": 0, "expected": 5334},
+    "9104": {"observed": 5334, "valid": 5334, "null": 0, "expected": 5334},
+    "9105": {"observed": 5570, "valid": 5570, "null": 0, "expected": 5570},
+    "9106": {"observed": 5333, "valid": 5333, "null": 0, "expected": 5334},
+    "9201": {"observed": 2609, "valid": 2609, "null": 0, "expected": 2609},
+    "9202": {"observed": 2609, "valid": 2609, "null": 0, "expected": 2609},
+    "9203": {"observed": 2609, "valid": 2609, "null": 0, "expected": 2609},
+    "9301": {"observed": 4976, "valid": 4976, "null": 0, "expected": 4976},
+    "9401": {"observed": 16797, "valid": 16797, "null": 0, "expected": 5599, "periods": 3},
+    "9402": {"observed": 27, "valid": 27, "null": 0, "expected": 27, "note": "remuneração publicada nas 27 UFs; ausência de linha Brasil nesta edição"},
+    "9500": {"observed": 44792, "valid": 44362, "null": 430, "expected": 5599, "periods": 8},
+    "9501": {"observed": 44792, "valid": 44792, "null": 0, "expected": 5599, "periods": 8},
+    "9502": {"observed": 44792, "valid": 44792, "null": 0, "expected": 5599, "periods": 8},
+    "9503": {"observed": 44792, "valid": 44792, "null": 0, "expected": 5599, "periods": 8},
+    "9601": {"observed": 5570, "valid": 5554, "null": 16, "expected": 5570},
+    "9602": {"observed": 5570, "valid": 5555, "null": 15, "expected": 5570},
+    "9603": {"observed": 5570, "valid": 5555, "null": 15, "expected": 5570},
+    "9604": {"observed": 5570, "valid": 5555, "null": 15, "expected": 5570},
+    "9605": {"observed": 5570, "valid": 2678, "null": 2892, "expected": 5570, "note": "denominador somente Sim/Não; '-' não aplicável"}
+  },
+  "unpublishedOrBlocked": [
+    {"domain": "social", "source": "CadÚnico/Bolsa Família/BPC", "status": "BLOCKED_NOT_PUBLISHED", "uiValue": null},
+    {"domain": "digital", "source": "Anatel", "status": "UNPUBLISHED_NO_STRUCTURED_EXPORT", "uiValue": null},
+    {"domain": "conditions", "source": "Gini municipal", "status": "NOT_APPLICABLE_AT_SOURCE_GRANULARITY", "uiValue": null}
+  ],
+  "lastKnownGood": {"datasets": {"120": {"activeSlices": 28}, "121": {"activeSlices": 28}, "122": {"activeSlices": 84}, "123": {"activeSlices": 224}, "124": {"activeSlices": 27}}, "activePublicationStatusIssues": 0}
+}

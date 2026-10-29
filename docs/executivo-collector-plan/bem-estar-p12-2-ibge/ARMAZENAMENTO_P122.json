@@ -1,0 +1,49 @@
+{
+  "phase": "P12.2",
+  "database": "projetoeleitor_db",
+  "dbSizeBeforeBytes": 33861332115,
+  "dbSizeAfterBytes": 33870130323,
+  "dbDeltaBytes": 8798208,
+  "DB_BASELINE_BYTES": 33861332115,
+  "DB_BASELINE_MEASURED_AT": "2026-10-28T09:24:10.342677-03:00",
+  "DB_BEFORE_P122_BYTES": 33861332115,
+  "DB_AFTER_P122_BYTES": 33870130323,
+  "DB_TOTAL_GROWTH_BYTES": 8798208,
+  "WELLBEING_ATTRIBUTED_GROWTH_BYTES": 8798208,
+  "WELLBEING_CUMULATIVE_GROWTH_BYTES": 8798208,
+  "WELLBEING_PROJECTED_NEXT_BATCH_BYTES": 0,
+  "initialEnvelopeBytes": 500000000,
+  "P122_INITIAL_STORAGE_ENVELOPE_BYTES": 500000000,
+  "WELLBEING_SOFT_LIMIT_BYTES": 6000000000,
+  "WELLBEING_HARD_LIMIT_BYTES": 8000000000,
+  "WELLBEING_REMAINING_BUDGET_BYTES": 7991201792,
+  "attributionMethod": "P122_ATTRIBUTED_GROWTH_BYTES é o delta direto do banco entre o baseline e o término da publicação; tratado como limite superior conservador, pois relações compartilhadas não permitem atribuição física perfeita.",
+  "envelopeStatus": "PASS",
+  "cumulativeWellbeingHardLimitBytes": 8000000000,
+  "rawStorage": {
+    "root": "D:\\Civica\\raw\\bem-estar\\ibge\\censo-2022",
+    "policy": "raw fora do banco e fora do C:"
+  },
+  "stagingStorage": {
+    "root": "D:\\Civica\\staging\\bem-estar\\ibge\\censo-2022",
+    "policy": "staging fora do banco e fora do C:"
+  },
+  "relationSizesAfterBytes": {
+    "civica_exec.exec_ind_value": 2729451520,
+    "civica_exec.exec_ind_latest": 198508544,
+    "civica_exec.exec_ind_def": 753664
+  },
+  "publishedValues": 28018,
+  "newIndicatorDefinitions": 6,
+  "publicationSlices": 28,
+  "storageGuard": "PASS — crescimento observado muito abaixo do envelope de 500 MB; nenhuma carga bruta foi gravada no PostgreSQL."
+  ,"WAL_TEMP_SPACE_CHECK": {
+    "status": "PASS_WITH_CAVEATS",
+    "D_free_bytes": 406530924544,
+    "C_free_bytes": 34030268416,
+    "temp_tablespaces": "",
+    "pg_data_directory": "NOT_EXPOSED_BY_ROLE",
+    "note": "Espaço D: foi medido por fsutil; C: por dir. O PostgreSQL não expôs data_directory ao usuário, portanto a localização exata do WAL não foi presumida."
+  },
+  "DB_BUDGET_GATE": "PASS"
+}

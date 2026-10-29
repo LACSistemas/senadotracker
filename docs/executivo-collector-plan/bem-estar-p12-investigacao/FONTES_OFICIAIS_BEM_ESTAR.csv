@@ -1,0 +1,19 @@
+Fonte,URL,Dataset/ferramenta,Geografia comprovada,Formato/acesso,Estado P12,Observação
+IBGE Censo 2022,https://www.ibge.gov.br/estatisticas/sociais/populacao/22827-censo-demografico-2022.html,Censo 2022,BR;UF;município;área ponderação,SIDRA/arquivos públicos,PROVEN_WITH_LIMITATIONS,Referência 2022
+IBGE SIDRA,https://sidra.ibge.gov.br/,Tabelas Censo/rendimento/domicílio,BR;UF;município,API/CSV/JSON,PROVEN_OPERATIONAL,Chave IBGE
+IBGE PNAD,https://www.ibge.gov.br/estatisticas/sociais/trabalho/17270-pnad-continua.html,PNAD Contínua,BR;UF;regiões representativas,API/tabelas,PROVEN_WITH_LIMITATIONS,Não atribuir a municípios não representativos
+MTE PDET,https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho,Perfil do Município/CAGED,município;microrregião;UF,consulta/arquivos,PROVEN_WITH_LIMITATIONS,Movimento de vínculos localizados
+MTE RAIS/Caged,https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/estatisticas-trabalho/microdados-rais-e-caged,Microdados TXT,município;UF;BR,TXT/PDET/FTP,PROVEN_WITH_LIMITATIONS,Volume alto; sem PII
+MDS CadÚnico,https://www.gov.br/mds/pt-br/orgaos/SAGICAD/dados-e-ferramentas-informacionais/dados-e-ferramentas-do-cadastro-unico/,Observatório/CECAD/VIS DATA/IVCAD,município;UF;BR,painéis/exportação,PROVEN_WITH_LIMITATIONS,Dados identificados restritos
+MDS Censo SUAS,https://www.gov.br/mds/pt-br/orgaos/SAGICAD/estudos-e-pesquisas/censo-suas,Censo SUAS/Observatório,município;UF;BR,XLSX/painel,PROVEN_WITH_LIMITATIONS,Questionário anual
+Portal Transparência,https://portaldatransparencia.gov.br/download-de-dados/,Bolsa Família/BPC,município SIAFI;UF;BR,CSV mensal,PROVEN_WITH_LIMITATIONS,Separar família/pessoa/benefício
+Ministério das Cidades,https://www.gov.br/cidades/pt-br/acesso-a-informacao/acoes-e-programas/saneamento/sinisa/resultados-sinisa,SINISA/SNIS,município;UF;BR,planilhas/glossários,PROVEN_WITH_LIMITATIONS,Quebra SNIS/SINISA
+IBGE MUNIC/ESTADIC,https://www.ibge.gov.br/estatisticas/sociais/protecao-social/10586-pesquisa-de-informacoes-basicas-municipais.html,MUNIC/ESTADIC,município;UF,XLSX/CSV,DISCOVERY_ONLY,Periodicidade varia
+Anatel,https://sistemas.anatel.gov.br/se/public/cmap.php,Mapas de cobertura SMP,geometria/agregação,SHP/painel,PROVEN_WITH_LIMITATIONS,Cobertura teórica
+Cetic.br,https://cetic.br/pt/pesquisa/domicilios/microdados/,TIC Domicílios,BR;regiões;autorrepresentativos,microdados/docs,PROVEN_WITH_LIMITATIONS,Amostral
+Tesouro Siconfi,https://siconfi.tesouro.gov.br/,DCA/RREO/execução,município;UF;BR,API/JSON,PROVEN_OPERATIONAL,Reutilizado
+PNCP,https://pncp.gov.br/,Contratos/fornecedores,órgão/ente,API/JSON,PROVEN_OPERATIONAL,Reutilizado
+Atlas Brasil,http://www.atlasbrasil.org.br/,IDHM/Gini histórico,município;UF;BR,painel/arquivos,NEEDS_VALIDATION,Licença/edição confirmar
+IpeaData,http://www.ipeadata.gov.br/,Séries sociais,BR;UF;alguns municípios,API/painel,NEEDS_VALIDATION,Acesso/atualização confirmar
+CAPES,https://dadosabertos.capes.gov.br/,PPG/cursos/docentes/discentes,município;UF;BR,CSV,EXISTING_OPERATIONAL,Domínio educação
+IBGE população já existente,https://sidra.ibge.gov.br/,Tabela 6579,município;UF;BR,JSON em D:\Civica,EXISTING_OPERATIONAL,123073 fatos
