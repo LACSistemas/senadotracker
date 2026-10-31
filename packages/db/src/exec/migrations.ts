@@ -25,6 +25,19 @@ import { EXEC_DDL_V23 } from './ddl-v23.ts';
 import { EXEC_DDL_V24 } from './ddl-v24.ts';
 import { EXEC_DDL_V25 } from './ddl-v25.ts';
 import { EXEC_DDL_V26 } from './ddl-v26.ts';
+import { EXEC_DDL_V27 } from './ddl-v27.ts';
+import { EXEC_DDL_V28 } from './ddl-v28.ts';
+import { EXEC_DDL_V29 } from './ddl-v29.ts';
+import { EXEC_DDL_V30 } from './ddl-v30.ts';
+import { EXEC_DDL_V31 } from './ddl-v31.ts';
+import { EXEC_DDL_V32 } from './ddl-v32.ts';
+import { EXEC_DDL_V33 } from './ddl-v33.ts';
+import { EXEC_DDL_V34 } from './ddl-v34.ts';
+import { EXEC_DDL_V35 } from './ddl-v35.ts';
+import { EXEC_DDL_V36 } from './ddl-v36.ts';
+import { EXEC_DDL_V37 } from './ddl-v37.ts';
+import { EXEC_DDL_V38 } from './ddl-v38.ts';
+import { EXEC_DDL_V39 } from './ddl-v39.ts';
 
 export interface ExecMigration { version: number; name: string; sql: string }
 export const EXEC_MIGRATIONS: ExecMigration[] = [
@@ -54,6 +67,19 @@ export const EXEC_MIGRATIONS: ExecMigration[] = [
   { version: 24, name: 'civica_exec_ddl_v24_programas_acesso_superior', sql: EXEC_DDL_V24 },
   { version: 25, name: 'civica_exec_ddl_v25_capes_sucupira', sql: EXEC_DDL_V25 },
   { version: 26, name: 'civica_exec_ddl_v26_enem', sql: EXEC_DDL_V26 },
+  { version: 27, name: 'civica_exec_ddl_v27_obrasgov_works', sql: EXEC_DDL_V27 },
+  { version: 28, name: 'civica_exec_ddl_v28_obrasgov_compact_serving', sql: EXEC_DDL_V28 },
+  { version: 29, name: 'civica_exec_ddl_v29_dams_atlas', sql: EXEC_DDL_V29 },
+  { version: 30, name: 'civica_exec_ddl_v30_energia_expandida', sql: EXEC_DDL_V30 },
+  { version: 31, name: 'civica_exec_ddl_v31_energia_tarifas_compactas', sql: EXEC_DDL_V31 },
+  { version: 32, name: 'civica_exec_ddl_v32_energia_tarifas_storage_gate', sql: EXEC_DDL_V32 },
+  { version: 33, name: 'civica_exec_ddl_v33_energia_tarifas_hash_compact', sql: EXEC_DDL_V33 },
+  { version: 34, name: 'civica_exec_ddl_v34_logistica_nacional_compact', sql: EXEC_DDL_V34 },
+  { version: 35, name: 'civica_exec_ddl_v35_obras_integracao_evidencias', sql: EXEC_DDL_V35 },
+  { version: 36, name: 'civica_exec_ddl_v36_infra_serving_nacional', sql: EXEC_DDL_V36 },
+  { version: 37, name: 'civica_exec_ddl_v37_infra_indicator_ownership', sql: EXEC_DDL_V37 },
+  { version: 38, name: 'civica_exec_ddl_v38_infra_serving_rollups', sql: EXEC_DDL_V38 },
+  { version: 39, name: 'civica_exec_ddl_v39_distinct_territory_rollups', sql: EXEC_DDL_V39 },
 ];
 
 /** Aplica as migrations do schema civica_exec de forma idempotente (lock consultivo + uma transação por versão). Nunca toca outros schemas. */

@@ -1,0 +1,28 @@
+{
+  "mmgd": {
+    "municipalities": 5567,
+    "ufs": 27,
+    "source_rows": 4735811
+  },
+  "tariffs": {
+    "source_rows": 657709,
+    "canonical_rows": 334047,
+    "municipal_crosswalk": "NOT_AVAILABLE"
+  },
+  "fuel_stations": {
+    "expected": 45808,
+    "collected": 45808,
+    "complete": true
+  },
+  "glp": {
+    "expected": 57151,
+    "collected": 19997,
+    "complete": false
+  },
+  "prices": {
+    "status": "BLOCKED_BY_SOURCE_GATE"
+  },
+  "gas_pipeline": {
+    "status": "NOT_EVALUATED"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "baseline_before_first_write": 34417773715,
+  "after": 34544905363,
+  "growth_bytes": 127131648,
+  "envelope_bytes": 150000000,
+  "within_envelope": true,
+  "raw_root": "D:\\Civica\\raw\\infraestrutura\\energia_expandida",
+  "staging_root": "D:\\Civica\\staging\\infraestrutura\\energia_expandida",
+  "tables": {
+    "mmgd_municipality": 991232,
+    "mmgd_source": 65536,
+    "tariff": 98590720,
+    "anp_establishment": 12615680
+  }
+}

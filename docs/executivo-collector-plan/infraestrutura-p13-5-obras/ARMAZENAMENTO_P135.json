@@ -1,0 +1,13 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineBytes": 34178059411,
+  "afterBytes": 34178501779,
+  "p135GrowthBytes": 442368,
+  "p13CumulativeGrowthBytes": 218267648,
+  "envelopeBytes": 200000000,
+  "remainingBytes": 199557632,
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\obras",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\obras",
+  "rawOnDOnly": true,
+  "budgetGate": "PASS"
+}

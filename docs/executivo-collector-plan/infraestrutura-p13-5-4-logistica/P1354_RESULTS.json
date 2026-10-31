@@ -1,0 +1,142 @@
+{
+  "phase": "P13.5.4",
+  "status": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "database": "projetoeleitor_db",
+  "generatedAt": "2026-10-31T18:29:10.620952+00:00",
+  "databaseBeforeBytes": 34545028243,
+  "databaseAfterBytes": 34576149651,
+  "dbGrowthBytes": 31123408,
+  "p13BaselineBytes": 33960234131,
+  "p13CumulativeGrowthBytes": 615915520,
+  "p1354EnvelopeLimitBytes": 150000000,
+  "p1354EnvelopeRemainingBytes": 118876592,
+  "sources": {
+    "ANTAQ": "BLOCKED_EXTERNAL_SOURCE",
+    "ANAC": "PASS",
+    "ANAC_AIR_STATS": "PASS_AGGREGATED_2025_2026",
+    "ANTT": "BLOCKED_EXTERNAL_SOURCE",
+    "DNIT": "PASS"
+  },
+  "counts": {
+    "ANAC_public_aerodromes": 496,
+    "ANAC_air_operation_month_rows": 5083,
+    "DNIT_SNV_segments": 7600,
+    "DNIT_pavement_segments": 101552,
+    "canonical_facilities": 496,
+    "canonical_network_segments": 109152,
+    "canonical_air_operation_month_rows": 5083,
+    "published_indicators": 592
+  },
+  "idempotentReplay": {
+    "ANAC_AERODROMES": "NO_CHANGE",
+    "ANAC_AIR": "NO_CHANGE",
+    "DNIT_SNV": "NO_CHANGE",
+    "DNIT_PAVEMENT": "NO_CHANGE"
+  },
+  "rawOnDOnly": true,
+  "frontendChanged": false,
+  "pncpCollectorsUninterrupted": true,
+  "p1355Ready": true,
+  "p1355Started": false,
+  "gates": {
+    "G0": "PASS",
+    "G1": "PASS",
+    "G2": "PASS",
+    "G3": "PASS",
+    "G4": "PASS",
+    "G5": "PASS",
+    "G6": "PASS",
+    "G7": "DOCUMENTED_SOURCE_LIMITATION",
+    "G8": "PASS",
+    "G9": "DOCUMENTED_SOURCE_LIMITATION",
+    "G10": "PASS",
+    "G11": "PASS",
+    "G12": "PARTIAL_SOURCE_PROCESSING",
+    "G13": "PASS",
+    "G14": "PASS",
+    "G15": "PASS",
+    "G16": "PASS",
+    "G17": "PASS",
+    "G18": "PASS",
+    "G19": "PASS",
+    "G20": "PASS",
+    "G21": "PASS",
+    "G22": "PASS",
+    "G23": "PASS",
+    "G24": "PASS",
+    "G25": "PASS",
+    "G26": "PASS"
+  },
+  "raw": [
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\anac_AerodromosPublicos.csv",
+      "bytes": 102022,
+      "sha256": "a0f9f062e18048739ee53348f51b723a1f1de55ae2d71b805b04250aa53598b6"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\anac_AerodromosPublicos.json",
+      "bytes": 348388,
+      "sha256": "5c5fdd963295001cdc926e85b71ba8ee43a6569094a90add24e1835b0fd12ed2"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\anac_aerodromos_directory.html",
+      "bytes": 676,
+      "sha256": "46163865329878c75cbc97198a0c73c7fa55181211bc3a22218972e394b88f3f"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\anac_Dados_Estatisticos_2021_a_2030.json",
+      "bytes": 218890395,
+      "sha256": "94600991518356568ff897216030f605b6d12d1954d16b654845c08614b07c68"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\anac_stats_directory.html",
+      "bytes": 982,
+      "sha256": "ac055b54e9fd2869d08dfc930cccfe76e8fc88cefe80c67f6d26b368ad9b4a5c"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\antaq_page_1.html",
+      "bytes": 174254,
+      "sha256": "7421c6370fb138555b2023fd596b13d8d6959251384cf46cb3de643c5e14cef5"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\antaq_page_2.html",
+      "bytes": 175106,
+      "sha256": "8373c39ef198988d93a512bcb43c1f6298d59a49b49529d529dee142e1e25b69"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\antt_siad_producao_origem_destino_2026.csv",
+      "bytes": 246,
+      "sha256": "de94c8c46a16d5e2711f6b896f7d437d0ea41698723e27ce2404c4fbda23cfd4"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_dataset.html",
+      "bytes": 38336,
+      "sha256": "e254825d3ac5566e453a664aab5724d0b9835d4cec25d4075b4446a261139350"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_nao_pavimentada_2026_09.csv",
+      "bytes": 905007,
+      "sha256": "960bac640df05e0d70ee7520c4aa8ad782967eb4f70bbb3aee464ef1e15eed40"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_pavimentada_2026_09.csv",
+      "bytes": 17284769,
+      "sha256": "4722a035228df23558c7afd9ec98c8023e6c5ee7fbd3bfd2253f392f02a2e1da"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_pavimento_page.html",
+      "bytes": 160791,
+      "sha256": "a9c079562054a1257f8f20b70b65f8660f1d7aa07359e321c7c3358bb53b6a68"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_snv_202407a.xls",
+      "bytes": 2509312,
+      "sha256": "a6bd89e2983bbadfb94fcef3272860cff8eccc10afc0f683f711e1e3b3c409bb"
+    },
+    {
+      "file": "D:\\Civica\\raw\\infraestrutura\\logistica\\dnit_snv_page.html",
+      "bytes": 43276,
+      "sha256": "b7bfb7ffc178dc5740186a6d2b1d9e0188ea7e77e146b1fae71ecf0115075755"
+    }
+  ]
+}

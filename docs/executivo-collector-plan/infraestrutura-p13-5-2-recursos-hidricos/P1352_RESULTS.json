@@ -1,0 +1,170 @@
+{
+  "P13_5_2_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "DATABASE": "projetoeleitor_db",
+  "ANA_SNISB_STATUS": "PASS",
+  "ANM_SIGBM_STATUS": "PASS",
+  "ATLAS_AGUAS_STATUS": "PASS",
+  "SOURCE_ROWS": {
+    "SNISB": 28836,
+    "ANM": 909,
+    "ATLAS": 5572
+  },
+  "STAGING_ROWS": {
+    "SNISB": 28835,
+    "ANM": 909,
+    "ATLAS": 5572
+  },
+  "CANONICAL_ROWS": {
+    "SNISB": 28835,
+    "ANM": 909,
+    "ATLAS": 5572
+  },
+  "TOTAL_NEW_INDICATORS_P1352": 13,
+  "NEW_INDICATOR_OBSERVATIONS": 14875,
+  "CROSS_SOURCE_MATCHES_PUBLISHED": 0,
+  "MUNICIPALITY_UNRESOLVED": 23,
+  "RAW_ON_D_ONLY": "YES",
+  "FRONTEND_CHANGED": "NO",
+  "P13_1_REGRESSION": "PASS",
+  "P13_5_1_REGRESSION": "PASS",
+  "P13_5_R2_REGRESSION": "PASS",
+  "RUN2": {
+    "SNISB": "NO_CHANGE",
+    "ANM": "NO_CHANGE",
+    "ATLAS": "NO_CHANGE"
+  },
+  "DATABASE_GROWTH_BYTES": 31539200,
+  "STORAGE_ENVELOPE_REMAINING_BYTES": 68460800,
+  "P13_5_3_READY": "YES",
+  "P13_5_3_STARTED": "NO",
+  "P24_STARTED": "NO",
+  "INTERNAL_WORK_REMAINING": "NO",
+  "READY_FOR_PUBLICATION": "YES_WITH_DOCUMENTED_CAVEATS",
+  "stats": {
+    "source": {
+      "snisbRows": 28836,
+      "snisbPages": 58,
+      "anmRows": 909,
+      "atlasRows": 5572
+    },
+    "staging": {
+      "snisbRows": 28835,
+      "snisbUnique": 28835,
+      "anmRows": 909,
+      "anmUnique": 909,
+      "atlasSourceRows": 5572,
+      "atlasUniqueMunicipalities": 5572,
+      "atlasDuplicates": 0
+    },
+    "physical": [
+      {
+        "source_system": "snisb",
+        "rows": 28835,
+        "resolved": 28812
+      },
+      {
+        "source_system": "anm",
+        "rows": 909,
+        "resolved": 909
+      }
+    ],
+    "atlasPhysical": {
+      "rows": 5572,
+      "municipalities": 5572
+    },
+    "indicators": {
+      "definitions": 13
+    },
+    "indValues": {
+      "observations": 14875,
+      "indicators": 13
+    },
+    "publications": [
+      {
+        "dataset_id": 150,
+        "uf": 0,
+        "competence": 202610,
+        "run_id": 38370,
+        "state": 1,
+        "row_count": 0
+      },
+      {
+        "dataset_id": 151,
+        "uf": 0,
+        "competence": 202610,
+        "run_id": 38374,
+        "state": 1,
+        "row_count": 0
+      },
+      {
+        "dataset_id": 152,
+        "uf": 0,
+        "competence": 202610,
+        "run_id": 38375,
+        "state": 1,
+        "row_count": 0
+      }
+    ],
+    "recentRuns": [
+      {
+        "dataset_id": 152,
+        "run_id": 38375,
+        "status": 9,
+        "rows_in": 0,
+        "rows_out": 0,
+        "quality": {
+          "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "specIds": [],
+          "sourceRows": 5572,
+          "uniqueMunicipalities": 5572
+        }
+      },
+      {
+        "dataset_id": 151,
+        "run_id": 38374,
+        "status": 9,
+        "rows_in": 0,
+        "rows_out": 0,
+        "quality": {
+          "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "specIds": [],
+          "sourceRows": 909,
+          "resolvedMunicipalities": 183
+        }
+      },
+      {
+        "dataset_id": 150,
+        "run_id": 38370,
+        "status": 9,
+        "rows_in": null,
+        "rows_out": 0,
+        "quality": {
+          "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "specIds": []
+        }
+      },
+      {
+        "dataset_id": 150,
+        "run_id": 38368,
+        "status": 11,
+        "rows_in": null,
+        "rows_out": null,
+        "quality": null
+      }
+    ],
+    "crossSourceCandidateMatches": 628,
+    "databaseBytesBeforeP1352": 34386078867,
+    "databaseBytesAfterP1352": 34417618067,
+    "databaseGrowthBytes": 31539200,
+    "envelopeBytes": 100000000,
+    "envelopeRemainingBytes": 68460800,
+    "p1351Audit": {
+      "publications": 112,
+      "indicatorDefinitions": 39,
+      "favelas": {
+        "observations": 684,
+        "null_values": 0
+      }
+    }
+  }
+}

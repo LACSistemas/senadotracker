@@ -1,0 +1,7 @@
+{
+  "status": "NOT_RUN_ON_NATIONAL_DB",
+  "pilotBenchmarksPreserved": true,
+  "reason": "national publication blocked by storage budget before writes",
+  "projection": {"projectBytesForMissingRows": 209290076,"remainingEnvelopeBytes":199557632,"overBytes":9732444},
+  "localReconciliation": {"pages":3282,"resources":7,"method":"set-based page scan on D: staging"}
+}

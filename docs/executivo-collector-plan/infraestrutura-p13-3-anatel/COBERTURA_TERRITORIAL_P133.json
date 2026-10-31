@@ -1,0 +1,9 @@
+{
+  "status": "DOCUMENTED_ONLY",
+  "municipalFactsPublished": 0,
+  "ufFactsPublished": 0,
+  "brazilFactsPublished": 0,
+  "ibcDocumentedMunicipalUniverse": 5570,
+  "mosaicoPilot": {"operator": "CLARO", "technology": "4G", "thresholdDbm": -110, "features": 1, "hasPopulationDenominator": false},
+  "unresolvedTerritoryPolicy": "preserve source code/geometry; no fuzzy municipality resolution"
+}

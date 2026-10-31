@@ -1,0 +1,12 @@
+{
+  "projects": 155037,
+  "projectsWithValidMunicipalLocation": 154449,
+  "uniqueMunicipalities": 5569,
+  "multiTerritorialProjects": 2286,
+  "projectsWithoutValidMunicipalGeometry": 588,
+  "invalidGeometryRows": 1014,
+  "ufsWithProjects": 27,
+  "ufCodes": [11,12,13,14,15,16,17,21,22,23,24,25,26,27,28,29,31,32,33,35,41,42,43,50,51,52,53],
+  "published": false,
+  "reason": "BLOCKED_BUDGET"
+}

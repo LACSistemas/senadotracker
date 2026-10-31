@@ -1,0 +1,7 @@
+indicator_id,code,label,unit,grain,coverage,status
+14001,ENERGY-MMGD-ENTERPRISES,Empreendimentos MMGD,count,M,município/UF/BR,PUBLISHED
+14002,ENERGY-MMGD-INSTALLED-KW,Potência MMGD,kW,M,município/UF/BR,PUBLISHED
+14003,ENERGY-MMGD-SOLAR-ENTERPRISES,Empreendimentos solares,count,M,município/UF/BR,PUBLISHED
+14004,ENERGY-MMGD-SOLAR-KW,Potência solar,kW,M,município/UF/BR,PUBLISHED
+14011,ANP-FUEL-STATIONS,Postos combustíveis,count,M,parcialmente municipalizado,PUBLISHED
+14012,ANP-GLP-RESELLERS,Revendedores GLP,count,M,parcial (4/12 páginas),PUBLISHED

@@ -1,0 +1,166 @@
+{
+  "results": [
+    {
+      "family": "water",
+      "result": {
+        "status": "NO_CHANGE",
+        "runId": 38069
+      },
+      "indicatorRows": 20688,
+      "unresolved": 0,
+      "nulls": 137,
+      "sourceRows": 5172
+    },
+    {
+      "family": "sewage",
+      "result": {
+        "status": "NO_CHANGE",
+        "runId": 38070
+      },
+      "indicatorRows": 11108,
+      "unresolved": 0,
+      "nulls": 1568,
+      "sourceRows": 2777
+    },
+    {
+      "family": "waste",
+      "result": {
+        "status": "NO_CHANGE",
+        "runId": 38071
+      },
+      "indicatorRows": 22280,
+      "unresolved": 0,
+      "nulls": 2864,
+      "sourceRows": 5570
+    },
+    {
+      "family": "drainage",
+      "result": {
+        "status": "NO_CHANGE",
+        "runId": 38072
+      },
+      "indicatorRows": 22280,
+      "unresolved": 0,
+      "nulls": 4280,
+      "sourceRows": 5570
+    },
+    {
+      "family": "management",
+      "result": {
+        "status": "NO_CHANGE",
+        "runId": 38073
+      },
+      "indicatorRows": 22280,
+      "unresolved": 0,
+      "nulls": 3452,
+      "sourceRows": 5570
+    }
+  ],
+  "audit": [
+    {
+      "dataset_id": 130,
+      "run_id": 38069,
+      "status": 9,
+      "rows_in": 20688,
+      "rows_out": 20688,
+      "quality": {
+        "family": "water",
+        "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "specIds": [],
+        "nullValues": 137,
+        "sourceRows": 5172,
+        "aggregateRows": 28,
+        "duplicateKeys": 0,
+        "indicatorRows": 20688,
+        "municipalRows": 5144,
+        "unresolvedEntities": 0
+      },
+      "state": 1,
+      "row_count": 20688
+    },
+    {
+      "dataset_id": 131,
+      "run_id": 38070,
+      "status": 9,
+      "rows_in": 11108,
+      "rows_out": 11108,
+      "quality": {
+        "family": "sewage",
+        "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "specIds": [],
+        "nullValues": 1568,
+        "sourceRows": 2777,
+        "aggregateRows": 28,
+        "duplicateKeys": 0,
+        "indicatorRows": 11108,
+        "municipalRows": 2749,
+        "unresolvedEntities": 0
+      },
+      "state": 1,
+      "row_count": 11108
+    },
+    {
+      "dataset_id": 132,
+      "run_id": 38071,
+      "status": 9,
+      "rows_in": 22280,
+      "rows_out": 22280,
+      "quality": {
+        "family": "waste",
+        "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "specIds": [],
+        "nullValues": 2864,
+        "sourceRows": 5570,
+        "aggregateRows": 0,
+        "duplicateKeys": 0,
+        "indicatorRows": 22280,
+        "municipalRows": 5570,
+        "unresolvedEntities": 0
+      },
+      "state": 1,
+      "row_count": 22280
+    },
+    {
+      "dataset_id": 133,
+      "run_id": 38072,
+      "status": 9,
+      "rows_in": 22280,
+      "rows_out": 22280,
+      "quality": {
+        "family": "drainage",
+        "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "specIds": [],
+        "nullValues": 4280,
+        "sourceRows": 5570,
+        "aggregateRows": 0,
+        "duplicateKeys": 0,
+        "indicatorRows": 22280,
+        "municipalRows": 5570,
+        "unresolvedEntities": 0
+      },
+      "state": 1,
+      "row_count": 22280
+    },
+    {
+      "dataset_id": 134,
+      "run_id": 38073,
+      "status": 9,
+      "rows_in": 22280,
+      "rows_out": 22280,
+      "quality": {
+        "family": "management",
+        "preHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "specIds": [],
+        "nullValues": 3452,
+        "sourceRows": 5570,
+        "aggregateRows": 0,
+        "duplicateKeys": 0,
+        "indicatorRows": 22280,
+        "municipalRows": 5570,
+        "unresolvedEntities": 0
+      },
+      "state": 1,
+      "row_count": 22280
+    }
+  ]
+}

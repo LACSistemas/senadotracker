@@ -1,0 +1,16 @@
+﻿SOURCE_FAMILY,DATASET_OR_DOMAIN,INDICATOR_COUNT,OBSERVATION_COUNT,REFERENCE_PERIOD,SUPPORTED_TERRITORIES,MUNICIPALITIES_WITH_DATA,PUBLICATION_STATUS,METHODOLOGY_LIMITATION
+SINISA,domain5,16,76356,2024,MUNICIPIO;UF;BRASIL,5570 observed entity universe; actual indicator coverage varies,PASS,16 definitions are source-owned in the audited catalog; original phase count of 20 is not reused as a fact
+ENTORNO_IBGE,domain5,30,167940,2022,MUNICIPIO;UF;BRASIL,5570 source municipalities; entity table has 5571 kind-4 rows,PASS_WITH_CAVEAT,Censo 2022 snapshot; no synthetic post-census geography
+INTERNET_DOMICILIAR,domain5,2,11196,2022,MUNICIPIO;UF;BRASIL,5570 source municipalities,PASS,"household aggregate, not individual usage"
+FAVELAS,domain5,5,3420,2022,MUNICIPIO;UF;BRASIL,684 municipalities with records,PASS_WITH_CAVEAT,absence is not zero
+FJP,domain5,2,56,2024,UF;BRASIL,28 entities (27 UF + Brasil),PASS,no municipal comparison
+MUNIC_URBANA,domain5,4,22280,2024,MUNICIPIO,5570 observed,PASS,source-native urban indicators
+MUNIC_TRANSPORTE,domain5,12,66840,2024,MUNICIPIO,5570 observed,PASS,MUNIC 2024
+PEMOB,domain5,7,672,2026-12-31 coded,MUNICIPIO,96 respondents,PASS_WITH_CAVEAT,competence code audited; not presented as universal December result
+SNISB,domain5,4,14320,2026-10 coded,MUNICIPIO,3580 entities,PASS_WITH_CAVEAT,catalogue records; not deduplicated with ANM
+ANM,domain5,3,549,2026-10 coded,MUNICIPIO,183 municipalities,PASS_WITH_CAVEAT,separate source population
+ATLAS_AGUAS,domain5,6,6,2026-10 coded,BRASIL / special units,special units retained,PASS_WITH_CAVEAT,Lagoa Mirim/Patos are not municipalities
+ANEEL_INDGER,domain6,7,458290,2025-01 to 2026-08,MUNICIPIO,5086 entities in max indicator,PASS,"owned by domain 6, no duplicate redefinition"
+MMGD,domain13,4,22304,2026-10 coded,MUNICIPIO;UF;BRASIL,5548 municipalities in max indicator,PASS_WITH_CAVEAT,no holders or personal identifiers exposed
+ANP,domain13,2,9823,2026-10 coded,MUNICIPIO;UF;BRASIL,GLP partial; prices blocked,PASS_WITH_CAVEAT,partial registry is explicit
+LOGISTICA,domain13,4,592,2026-10 coded,MUNICIPIO;UF;BRASIL,facilities/segments vary by indicator,PASS_WITH_CAVEAT,ANTT/ANTAQ unavailable; ANAC/DNIT available

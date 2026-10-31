@@ -1,0 +1,22 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineP13Bytes": 33960234131,
+  "beforeP136Bytes": 34576321683,
+  "afterP136Bytes": 34584005779,
+  "p136GrowthBytes": 7684096,
+  "p13CumulativeGrowthBytes": 623771648,
+  "p136EnvelopeBytes": 75000000,
+  "p136EnvelopeRemainingBytes": 67315904,
+  "objects": [
+    "exec_infra_editorial_catalog",
+    "exec_infra_coverage_snapshot",
+    "exec_work_project_territory_overview_v",
+    "exec_work_territory_rollup",
+    "exec_work_verified_links_v"
+  ],
+  "notes": [
+    "No raw Obrasgov tables were copied.",
+    "Rollups are compact serving metadata; source facts remain canonical.",
+    "PGDATA path inspection was unavailable to the DB role; size was measured with pg_database_size."
+  ]
+}

@@ -1,0 +1,18 @@
+roadmap_phase,indicator_code,indicator,source,grain,universe,unit,candidate_status,caveat
+P13.5.1,URB_PAVIMENTACAO,domicílios/setores em entorno pavimentado,IBGE Censo 2022,sector/municipality,selected urban sectors,percent,READY_FOR_PILOT,not all sectors are in urban survey
+P13.5.1,URB_CALCADA_RAMPAS,calçada/rampa para cadeirante,IBGE Censo 2022,sector/municipality,selected urban sectors,percent,READY_FOR_PILOT,denominator is selected sectors
+P13.5.1,DOM_INTERNET,domicílios com acesso à internet,IBGE Censo 2022,municipality,occupied households,percent,READY_FOR_PILOT,do not duplicate existing P12 indicator
+P13.5.1,FCU_POPULACAO,população residente em Favelas e Comunidades Urbanas,IBGE Censo 2022,community/municipality,FCU residents,persons,SOURCE_DISCOVERED,geography is community not all municipality
+P13.5.1,DEFICIT_HAB,deficit habitacional,FJP 2024,national/UF,occupied households,households,SOURCE_DISCOVERED,municipal 2024 universal base unavailable
+P13.5.2,BARRAGENS_SIGBM,count and category of mining dams,ANM SIGBM,facility/UF,registered dams,count,READY_FOR_PILOT,risk and potential damage are distinct
+P13.5.2,BARRAGENS_SNISB,count by purpose/fiscalizer,SNISB,facility/UF,registered dams,count,SOURCE_DISCOVERED,deduplicate with ANM
+P13.5.2,ATLAS_AGUAS,water supply system capacity,ANA Atlas Águas,system/municipality,systems in atlas,volume,SOURCE_DISCOVERED,download/layout pending
+P13.5.3,MMGD_POTENCIA,power and count of distributed generation,ANEEL,facility/municipality,connected enterprises,kW/count,READY_FOR_PILOT,aggregate holders before persistence
+P13.5.3,TARIFA_TE_TUSD,approved TE/TUSD by group,ANEEL,distributor/group,tariff rows,BRL/kWh,READY_FOR_PILOT,not household average bill
+P13.5.3,REVENDA_POSTOS,active fuel retailers,ANP,facility/municipality,operating retailers,count,READY_FOR_PILOT,current snapshot vs history
+P13.5.3,PRECO_COMBUSTIVEL,weekly sampled prices,ANP,station/municipality,sampled stations,BRL,READY_FOR_PILOT,sample not universal
+P13.5.4,PORTOS_DESEMPENHO,port/terminal activity,ANTAQ,facility/port,reporting facilities,tons/movements,SOURCE_DISCOVERED,SDP access pending
+P13.5.4,VOOS_AEROPORTOS,flights/passengers/cargo,ANAC,flight/airport,reported stages,count/tons,READY_FOR_PILOT,flight legs are not unique people
+P13.5.4,FERROVIA_REDE,network capacity/terminals,ANTT,network/terminal,concession networks,km/capacity,READY_FOR_PILOT,not asset registry
+P13.5.4,CARGA_OD,rail cargo origin/destination,ANTT,origin/destination,reported flows,tons,READY_FOR_PILOT,not municipal total attribution
+P13.5.4,SNV_RODOVIAS,road length/surface/administration,DNIT,road segment,federal SNV,km,READY_FOR_PILOT,federal system priority

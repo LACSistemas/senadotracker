@@ -81,3 +81,4 @@ export * from './educacao-bench.ts';
 export * from './educacao-enem-build.ts';
 export * from './educacao-enem-read.ts';
 export * from './wellbeing-read.ts';
+export * from './infrastructure-read.ts';

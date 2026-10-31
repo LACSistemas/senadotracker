@@ -1,0 +1,457 @@
+{
+  "phase": "P13.5.1",
+  "database": {
+    "database": "projetoeleitor_db",
+    "bytes": "34386078867"
+  },
+  "datasets": [
+    {
+      "dataset_id": 146,
+      "slices": 28,
+      "rows": "167940"
+    },
+    {
+      "dataset_id": 147,
+      "slices": 28,
+      "rows": "11196"
+    },
+    {
+      "dataset_id": 148,
+      "slices": 28,
+      "rows": "3420"
+    },
+    {
+      "dataset_id": 149,
+      "slices": 28,
+      "rows": "56"
+    }
+  ],
+  "indicatorDefinitions": 39,
+  "indicatorCounts": [
+    {
+      "indicator_id": 9701,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9702,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9703,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9704,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9705,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9706,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9707,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9708,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9709,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9710,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9731,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9732,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9733,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9734,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9735,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9736,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9737,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9738,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9739,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9740,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9761,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9762,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9763,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9764,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9765,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9766,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9767,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9768,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9769,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9770,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9801,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9802,
+      "rows": 5598,
+      "entities": 5598,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9901,
+      "rows": 684,
+      "entities": 684,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9902,
+      "rows": 684,
+      "entities": 684,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9903,
+      "rows": 684,
+      "entities": 684,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9904,
+      "rows": 684,
+      "entities": 684,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9905,
+      "rows": 684,
+      "entities": 684,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9951,
+      "rows": 28,
+      "entities": 28,
+      "nulls": 0
+    },
+    {
+      "indicator_id": 9952,
+      "rows": 28,
+      "entities": 28,
+      "nulls": 0
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "censo2022_entorno\\Agregados_por_municipios_entorno_domic%c3%adlios_BR.zip",
+      "bytes": 412287,
+      "sha256": "f421b8199f99597e4edfd1efeb1f86ba2c00edc14694d9730f34a2c739ad3d06"
+    },
+    {
+      "path": "censo2022_entorno\\Agregados_por_municipios_entorno_faces_BR.zip",
+      "bytes": 388380,
+      "sha256": "066bf8be22256d26906a35b2ef6724fe178ffa6c4593c39cf906c5bf02736096"
+    },
+    {
+      "path": "censo2022_entorno\\Agregados_por_municipios_entorno_moradores_BR.zip",
+      "bytes": 445257,
+      "sha256": "438dcaffe0ce5e59eea46d2837a59f69564725974f2380a8d4188bebaca48863"
+    },
+    {
+      "path": "censo2022_entorno\\dicionarios_de_dados_entorno.zip",
+      "bytes": 27093,
+      "sha256": "eda4e2c9968e753fa2c158380ae537c284ccbddde5b74a6d5fec0b3c2250d1b4"
+    },
+    {
+      "path": "favelas\\sidra-9883-metadata.json",
+      "bytes": 469,
+      "sha256": "f7db964796ac16b259d36572d087de9ac40f70296b2d813d8cf8f81cd54f0e90"
+    },
+    {
+      "path": "favelas\\sidra-9883-n1-2022.json",
+      "bytes": 607,
+      "sha256": "4754f56721bd3755d7ac0c0defdef3ee4a9580712dcb862bc53b05b1c776a185"
+    },
+    {
+      "path": "favelas\\sidra-9883-n3-2022.json",
+      "bytes": 7980,
+      "sha256": "b749815dee41af22de818e792d59a2aee12198111b6aadc9232415c337a48863"
+    },
+    {
+      "path": "favelas\\sidra-9883-n6-2022.json",
+      "bytes": 183580,
+      "sha256": "e2af34a05cd78d5a281b8c00bb64d896f441cf5bdabe5042cca4962fec0593a2"
+    },
+    {
+      "path": "favelas\\sidra-9884-metadata.json",
+      "bytes": 2802,
+      "sha256": "8b110b625df0102afaacf45945a7a3cd476b0eb385177218be74e6212ffb7695"
+    },
+    {
+      "path": "favelas\\sidra-9887-metadata.json",
+      "bytes": 2046,
+      "sha256": "fae69273604048ed61614bb8f1acfa25c1e9cce8ddc09db6ee2e97b0949d258a"
+    },
+    {
+      "path": "favelas\\sidra-9887-n1-2022.json",
+      "bytes": 1083,
+      "sha256": "6f27eb08522ac24321ffa64ef5380c261472cc42268923d25101cf41fc5c3b21"
+    },
+    {
+      "path": "favelas\\sidra-9887-n3-2022.json",
+      "bytes": 19847,
+      "sha256": "5d8fddfde5ce08fb33363e7afcc3180fb15858e7b2bc97635bb69fef04654629"
+    },
+    {
+      "path": "favelas\\sidra-9887-n6-2022.json",
+      "bytes": 468437,
+      "sha256": "6f649c16eea56ae1812e83f39cb0ba3ff634b7f67e64be0e642db4415ed3349e"
+    },
+    {
+      "path": "favelas\\sidra-9887-total-n1-2022.json",
+      "bytes": 716,
+      "sha256": "49e8716d0b62a43faf007e9a1e087417e9f2bc4019165d8d081bafee8b3f2980"
+    },
+    {
+      "path": "favelas\\sidra-9887-total-n3-2022.json",
+      "bytes": 9431,
+      "sha256": "d55d2da0fb205cc943465fcb461341225cd6ceb8bb452db1cf096f9acc6353a2"
+    },
+    {
+      "path": "favelas\\sidra-9887-total-n6-2022.json",
+      "bytes": 217272,
+      "sha256": "c8a8c736df1b97142f1239bb938ece27c6aabfbb0bbbc18fed70a416e7d6e6ee"
+    },
+    {
+      "path": "favelas\\sidra-9888-metadata.json",
+      "bytes": 824,
+      "sha256": "2046c2dd0e037f7d24fc4e5fc51ce8769fa88e9ac0dbc32b94af4a2c7177ea84"
+    },
+    {
+      "path": "favelas\\sidra-9888-n1-2022.json",
+      "bytes": 1214,
+      "sha256": "1dc0744bf4bece1c591f811eae61a55b82e0307deceaadc859d52ad462982b32"
+    },
+    {
+      "path": "favelas\\sidra-9888-n3-2022.json",
+      "bytes": 25454,
+      "sha256": "7fe2bddb0eb73d332c27f093dabbff6edeee939838d07d19dfebe22a6c317329"
+    },
+    {
+      "path": "favelas\\sidra-9888-n6-2022.json",
+      "bytes": 605896,
+      "sha256": "d406d0e712a66bbfe1bac8c88143abaf928d25522413c99d94f9e4910f3cfc0a"
+    },
+    {
+      "path": "fjp\\fjp_deficit_2024.xlsx",
+      "bytes": 85646,
+      "sha256": "e7b9b58df200b66d174820cc1d9363c3bcbc0d4c6a0b4c7c8b90d3919438aa55"
+    },
+    {
+      "path": "fjp\\fjp_deficit_2024_compact.json",
+      "bytes": 4102,
+      "sha256": "7ec538695bcfc533d16f71a815b7bc4fcad740d83cc5faf3bdfb15bfc74c2fa1"
+    },
+    {
+      "path": "sidra_internet\\sidra-9936-n1-2022.json",
+      "bytes": 1462,
+      "sha256": "c4b2c61789ca624ae2d1cf5655fcb1ce8089e480bae812214c1136e903549a7a"
+    },
+    {
+      "path": "sidra_internet\\sidra-9936-n3-2022.json",
+      "bytes": 23034,
+      "sha256": "60f0ce98a98a017414ed4d7089fc3d2bf8cbe67d8634e5db524455e5c9b2dd52"
+    },
+    {
+      "path": "sidra_internet\\sidra-9936-n6-2022.json",
+      "bytes": 4581706,
+      "sha256": "bb7d19dba9379023c4bc59749f7df69e16ab440b1c195f38586d50d3cd5807aa"
+    },
+    {
+      "path": "sidra_internet\\sidra-9942-n1-2022.json",
+      "bytes": 1426,
+      "sha256": "18412143c49b7f8614adc773baa426b1b5d9932cd2ece46ee203286a918550ff"
+    },
+    {
+      "path": "sidra_internet\\sidra-9942-n3-2022.json",
+      "bytes": 23591,
+      "sha256": "595362e365015a9b36726e48b692a73d137aa6d311f45945ddf4138c2beadca0"
+    },
+    {
+      "path": "sidra_internet\\sidra-9942-n6-2022.json",
+      "bytes": 4709337,
+      "sha256": "11410728ec9393d3a5ef8f3716098152d82bfd624b798c4d1d8849341c4bda0c"
+    }
+  ],
+  "baseline": {
+    "historicalP13Bytes": 33960234131,
+    "prePhaseBytes": 34288389267
+  },
+  "storage": {
+    "postPhaseBytes": 34386078867,
+    "p1351GrowthBytes": 97689600,
+    "envelopeBytes": 150000000,
+    "remainingBytes": 52310400,
+    "cumulativeP13GrowthBytes": 425844736
+  },
+  "statuses": {
+    "P13_5_1_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+    "DATABASE": "projetoeleitor_db",
+    "P135R2_REGRESSION": "PASS",
+    "EXISTING_CENSUS_INDICATORS_REUSED": "YES",
+    "ENTORNO_RESOURCE_STATUS": "PUBLISHED",
+    "ENTORNO_MUNICIPAL_COVERAGE": "5570/5570 source municipalities; 5598 entities including Brasil/UF",
+    "ENTORNO_VALIDATED_QUESTIONS": 10,
+    "ENTORNO_INDICATORS_PUBLISHED": 30,
+    "ENTORNO_FACE_INDICATORS": 10,
+    "ENTORNO_HOUSEHOLD_INDICATORS": 10,
+    "ENTORNO_RESIDENT_INDICATORS": 10,
+    "ENTORNO_DENOMINATOR_AUDIT": "PASS; face/domicilio/morador separated; Brasil/UF from summed compatible numerators/denominators",
+    "INTERNET_SIDRA_9936_STATUS": "PUBLISHED",
+    "INTERNET_SIDRA_9942_STATUS": "PUBLISHED",
+    "INTERNET_INDICATORS_PUBLISHED": 2,
+    "FAVELAS_SOURCE_STATUS": "PUBLISHED_REVISED_2025",
+    "FAVELAS_MUNICIPAL_COVERAGE": "684 municipalities with positive FCU records; missing municipalities are not zero",
+    "FAVELAS_INDICATORS_PUBLISHED": 5,
+    "FJP_RESOURCE_STATUS": "PUBLISHED_OFFICIAL_UF_BRASIL_2024",
+    "FJP_MUNICIPAL_ELIGIBLE": "NO",
+    "FJP_UF_INDICATORS_PUBLISHED": 2,
+    "MUNIC_ESTADIC_NEW_INDICATORS": 0,
+    "TOTAL_NEW_INDICATORS_P1351": 39,
+    "TOTAL_INFRASTRUCTURE_INDICATORS_AFTER_P1351": "85 nominal mandate baseline; 78 observed in domain=5 catalog before/after audit",
+    "SOURCE_RECONCILIATION": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+    "IDEMPOTENT_REPLAY": "PASS_NO_CHANGE",
+    "LAST_KNOWN_GOOD": "YES",
+    "P1351_DB_GROWTH_BYTES": 97689600,
+    "P13_CUMULATIVE_DB_GROWTH_BYTES": 425844736,
+    "P1351_ENVELOPE_REMAINING_BYTES": 52310400,
+    "DB_BUDGET_GATE": "PASS",
+    "OTHER_DOMAINS_REGRESSION": "PASS",
+    "RAW_ON_D_ONLY": "YES",
+    "FRONTEND_CHANGED": "NO",
+    "PNCP_COLLECTORS_UNINTERRUPTED": "YES",
+    "P13_5_2_READY": "YES"
+  }
+}

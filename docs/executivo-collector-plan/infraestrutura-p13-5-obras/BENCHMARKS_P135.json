@@ -1,0 +1,9 @@
+{
+  "database": "projetoeleitor_db",
+  "queries": [
+    {"name":"project_by_uf","plan":"Seq Scan (200 rows; planner correctly chose sequential scan)","executionMs":0.082},
+    {"name":"location_by_ibge","plan":"Bitmap Index Scan exec_work_location_ibge_idx","executionMs":0.021},
+    {"name":"project_detail_by_source_id","plan":"Index Scan exec_work_project_pkey","executionMs":0.053}
+  ],
+  "note":"piloto pequeno; repetir benchmark após backfill nacional"
+}

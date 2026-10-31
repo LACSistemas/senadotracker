@@ -1,0 +1,16 @@
+import { openPool } from './db.ts';
+const p = openPool(2);
+const q = async (sql: string, params: any[] = []) => (await p.query(sql, params)).rows;
+const out: any = {};
+out.database = (await q('select current_database() database, pg_database_size(current_database())::bigint bytes'))[0];
+out.pubs = await q('select dataset_id,uf,competence,run_id,state,row_count,encode(source_hash,\'hex\') source_hash from civica_exec.exec_publication where dataset_id in (150,151,152) order by dataset_id');
+out.runs = await q('select run_id,dataset_id,status,rows_in,rows_out,quality,error from civica_exec.exec_ingestion_run where run_id in (38368,38370,38374,38375) order by run_id');
+out.facilities = await q('select source_system,count(*)::int rows,count(*) filter(where ibge7 is null)::int unresolved from civica_exec.exec_dam_facility group by source_system');
+out.snisbExceptions = await q(`select source_key,name,uf,municipality from civica_exec.exec_dam_facility where source_system='snisb' and ibge7 is null order by source_key`);
+out.atlasCodes = await q(`select count(*)::int rows,count(distinct ibge7)::int distinct_codes,count(*) filter(where ibge7 between 1000000 and 9999999)::int seven_digit from civica_exec.exec_dam_atlas_municipality`);
+out.atlasUnknown = await q(`select a.ibge7,a.municipality,a.uf from civica_exec.exec_dam_atlas_municipality a left join civica_exec.exec_entity e on e.kind=4 and e.ibge7=a.ibge7 where e.entity_id is null order by a.ibge7`);
+out.indicators = await q(`select indicator_id,code,domain,unit,grain,ranking_allowed,aggregation_allowed from civica_exec.exec_ind_def order by indicator_id`);
+out.indicatorCounts = await q(`select indicator_id,count(*)::int observations,count(*) filter(where value is null)::int nulls from civica_exec.exec_ind_value group by indicator_id order by indicator_id`);
+out.entityMunicipalities = (await q(`select count(*)::int rows,count(distinct ibge7)::int codes from civica_exec.exec_entity where kind=4 and ibge7 is not null`))[0];
+console.log(JSON.stringify(out,null,2));
+await p.end();

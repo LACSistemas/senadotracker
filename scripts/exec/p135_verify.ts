@@ -1,0 +1,14 @@
+import { openPool } from './db.ts';
+const p = openPool(2);
+const q = async (s: string, a: any[] = []) => { const r = await p.query(s, a); console.log(JSON.stringify(r.rows, null, 2)); return r.rows; };
+await q("select current_database() db,pg_database_size(current_database())::bigint bytes");
+await q("select 'projects' t,count(*)::int n,count(distinct uf)::int ufs,count(*) filter(where situation is not null)::int statuses from civica_exec.exec_work_project union all select 'locations',count(*)::int,count(distinct uf)::int,count(*) filter(where ibge7 is not null)::int from civica_exec.exec_work_location union all select 'physical',count(*)::int,null,count(*) filter(where percent is not null)::int from civica_exec.exec_work_physical union all select 'contracts',count(*)::int,null,count(*) filter(where transparency_url is not null)::int from civica_exec.exec_work_contract union all select 'history',count(*)::int,null,count(*) from civica_exec.exec_work_status_event union all select 'commitments',count(*)::int,null,count(*) filter(where value_cents is not null)::int from civica_exec.exec_work_commitment");
+await q("select dataset,pages,source_rows,published_rows,rejected,status from civica_exec.exec_work_cov order by dataset");
+await q("select count(*)::int projects_with_physical from civica_exec.exec_work_project p where exists(select 1 from civica_exec.exec_work_physical x where x.source_project_id=p.source_project_id)");
+await q("select count(*)::int projects_with_contract from civica_exec.exec_work_project p where exists(select 1 from civica_exec.exec_work_contract x where x.source_project_id=p.source_project_id)");
+await q("select count(*)::int projects_with_commitment from civica_exec.exec_work_project p where exists(select 1 from civica_exec.exec_work_commitment x where x.source_project_id=p.source_project_id)");
+await q("select count(*)::int multi_territorial from (select source_project_id from civica_exec.exec_work_location group by 1 having count(distinct ibge7)>1) s");
+await q("explain (analyze true, format json) select count(*) from civica_exec.exec_work_project where uf=43");
+await q("explain (analyze true, format json) select count(*) from civica_exec.exec_work_location where ibge7=4304606");
+await q("explain (analyze true, format json) select * from civica_exec.exec_work_project where source_project_id='151020.43-16'");
+await p.end();

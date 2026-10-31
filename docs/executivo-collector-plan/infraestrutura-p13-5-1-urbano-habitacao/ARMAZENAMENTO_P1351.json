@@ -1,0 +1,11 @@
+{
+  "database": "projetoeleitor_db",
+  "prePhaseBytes": 34288389267,
+  "postPhaseBytes": 34386078867,
+  "p1351GrowthBytes": 97689600,
+  "envelopeBytes": 150000000,
+  "remainingBytes": 52310400,
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\urbano_habitacao",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\urbano_habitacao",
+  "rawOnDOnly": true
+}

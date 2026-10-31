@@ -1,0 +1,23 @@
+{
+  "database": "projetoeleitor_db",
+  "measuredAfterPublish": {
+    "exec_work_c_project": {"rows":155037,"bytes":39649280,"heapBytes":27746304,"indexBytes":11862016},
+    "exec_work_c_location": {"rows":240004,"bytes":25460736,"heapBytes":12525568,"indexBytes":12902400},
+    "exec_work_c_physical": {"rows":74050,"bytes":11272192,"heapBytes":6152192,"indexBytes":5087232},
+    "exec_work_c_contract": {"rows":7629,"bytes":2170880,"heapBytes":1687552,"indexBytes":442368},
+    "exec_work_c_commitment": {"rows":89502,"bytes":26877952,"heapBytes":14802944,"indexBytes":12034048},
+    "exec_work_c_history": {"rows":8368,"bytes":3432448,"heapBytes":3022848,"indexBytes":376832},
+    "supportTablesBytes":802816
+  },
+  "products": {
+    "A_catalog": 39649280,
+    "B_location": 25960448,
+    "C_physical": 11272192,
+    "D_contracts": 2170880,
+    "E_commitments": 26877952,
+    "F_history": 3432448,
+    "G_studies": 0
+  },
+  "totalServingBytes":109666304,
+  "dbGrowthIncludingMigration":109854720
+}

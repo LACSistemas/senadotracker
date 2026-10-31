@@ -1,0 +1,22 @@
+{
+  "ANAC": {
+    "publicAerodromes": 496,
+    "airOperationMonthRows": 5083,
+    "airCompetences": [
+      "2025",
+      "2026"
+    ],
+    "ufs": 27
+  },
+  "DNIT": {
+    "snvSegments": 7600,
+    "pavementSegments": 101552,
+    "conditionCompetence": "2026-09"
+  },
+  "ANTAQ": {
+    "status": "BLOCKED_EXTERNAL_SOURCE"
+  },
+  "ANTT": {
+    "status": "BLOCKED_EXTERNAL_SOURCE"
+  }
+}

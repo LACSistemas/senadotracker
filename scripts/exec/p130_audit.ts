@@ -1,0 +1,15 @@
+import { openPool } from './db.ts';
+const p=openPool(3);
+const q=async(sql:string,params:unknown[]=[]) => (await p.query(sql,params)).rows;
+const out:any={};
+out.database=await q('select current_database() as database, pg_database_size(current_database())::bigint as bytes');
+out.tables=await q(`select table_name from information_schema.tables where table_schema='civica_exec' order by table_name`);
+out.columns=await q(`select table_name,column_name,data_type from information_schema.columns where table_schema='civica_exec' and table_name in ('exec_entity','exec_entity_external_id','exec_ind_def','exec_ind_value','exec_ind_latest','exec_ingestion_run','exec_raw_manifest','exec_publication','exec_change_log') order by table_name,ordinal_position`);
+out.domainCounts=await q(`select domain,count(*)::int as n from civica_exec.exec_ind_def group by domain order by domain`);
+out.indicators=await q(`select indicator_id,code,label,domain,unit,grain,method_version,ranking_allowed,aggregation_allowed from civica_exec.exec_ind_def order by indicator_id`);
+out.entities=await q(`select kind,count(*)::int as n,count(*) filter(where is_current)::int as current_n from civica_exec.exec_entity group by kind order by kind`);
+out.externalIds=await q(`select count(*)::int as rows,count(distinct entity_id)::int as entities from civica_exec.exec_entity_external_id`);
+out.publications=await q(`select count(*)::int as rows,count(*) filter(where state=1)::int as active from civica_exec.exec_publication`);
+out.runs=await q(`select status,count(*)::int as n from civica_exec.exec_ingestion_run group by status order by status`);
+out.rawManifest=await q(`select count(*)::int as rows from civica_exec.exec_raw_manifest`);
+console.log(JSON.stringify(out,null,2)); await p.end();

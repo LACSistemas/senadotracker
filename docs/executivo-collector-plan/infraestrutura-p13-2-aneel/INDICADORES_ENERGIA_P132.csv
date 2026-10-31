@@ -1,0 +1,8 @@
+indicator_id,code,source_field,label,unit,grain,ranking_allowed,aggregation_allowed
+10501,energy_indger_uc_active,QtdUCAtiva,Unidades consumidoras ativas,unidades,M,false,false
+10502,energy_indger_uc_active_billed,QtdUCAtivaFat,Unidades ativas com fatura regular,unidades,M,false,false
+10503,energy_indger_invoices,QtdFatura,Faturas de cobrança regular,faturas,M,false,false
+10504,energy_indger_invoices_without_reading,QtdFaturaSemLeitura,Faturas regulares sem leitura,faturas,M,false,false
+10505,energy_indger_suspensions_nonpayment,QtdUCSuspInadimplemento,Suspensões por inadimplemento,eventos,M,false,false
+10506,energy_indger_damage_requests,QtdSolicRessarcimentoDano,Solicitações de ressarcimento por dano elétrico,solicitações,M,false,false
+10507,energy_indger_damage_paid_brl,VlrPagoRessarcDano,Valor pago por ressarcimento de dano elétrico,BRL,M,false,false

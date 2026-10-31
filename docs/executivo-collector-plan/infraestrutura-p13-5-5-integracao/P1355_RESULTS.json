@@ -1,0 +1,134 @@
+{
+  "P13_5_5_STATUS": "PASS_WITH_CAVEATS",
+  "DATABASE": "projetoeleitor_db",
+  "P1354_AUDIT": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "P1354_CURRENT_DB_BYTES": 34576149651,
+  "P1355_DB_GROWTH_BYTES": 172032,
+  "P13_CUMULATIVE_GROWTH_BYTES": 616087552,
+  "DB_ENVELOPE_BYTES": 75000000,
+  "DB_BUDGET_GATE": "PASS",
+  "RAW_ON_D_ONLY": "YES",
+  "FRONTEND_CHANGED": "NO",
+  "PNCP_COLLECTORS_UNINTERRUPTED": "YES",
+  "WORK_PROJECTS": 155037,
+  "WORK_CONTRACTS": 7629,
+  "WORK_COMMITMENTS": 89502,
+  "WORK_PHYSICAL_ROWS": 74050,
+  "WORK_HISTORY_ROWS": 8368,
+  "PNCP_CONTRACTS_EVALUATED": 165150,
+  "OBRASGOV_WITH_EXTERNAL_PNCP_IDS": 0,
+  "PNCP_VERIFIED_PROJECT_LINKS": 0,
+  "PNCP_AMBIGUOUS_CANDIDATES": 506,
+  "PAYMENT_SOURCE_NATIVE_PROJECTS": 4582,
+  "PROJECTS_WITH_COMMITMENTS": 46838,
+  "PROJECTS_WITH_PHYSICAL_PROGRESS": 74050,
+  "VERIFIED_PHYSICAL_ASSET_LINKS": 0,
+  "COMPLETION_EVIDENCE_STATUS": "NOT_EVALUATED",
+  "OPERATIONAL_EVIDENCE_STATUS": "NOT_EVALUATED",
+  "SICONFI_CONTEXT_STATUS": "PARTIAL_NOT_TERRITORIAL",
+  "SICONFI_MUNICIPAL_JOIN": "NOT_AVAILABLE",
+  "EXECUTION_STATUS_DERIVATION": "NOT_PUBLISHED_WITHOUT_SOURCE_DICTIONARY",
+  "EVIDENCE_EDGE_STATUS": "PASS_ZERO_EXTERNAL_VERIFIED",
+  "READ_MODEL_STATUS": "PASS_SET_BASED",
+  "LAST_KNOWN_GOOD_READY": "YES",
+  "REGRESSION_STATUS": "PASS",
+  "REPLAY_STATUS": "NO_CHANGE",
+  "P13_6_READY": "YES",
+  "P13_6_STARTED": "NO",
+  "BLOCKERS": [
+    "PNCP_EXPLICIT_CROSS_ID",
+    "SICONFI_MUNICIPAL_CONTEXT",
+    "PHYSICAL_ASSET_IDENTIFIERS"
+  ],
+  "GATES": {
+    "G0_DATABASE_GUARD": "PASS",
+    "G1_P1354_AUDIT": "PASS",
+    "G2_NO_DUPLICATION": "PASS",
+    "G3_CANONICAL_RELATIONS": "PASS",
+    "G4_RAW_PROVENANCE": "PASS",
+    "G5_IDENTIFIER_MATRIX": "PASS",
+    "G6_INTERNAL_RELATIONS": "PASS_NATIVE_READ_MODEL",
+    "G7_PNCP_EVALUATION": "PASS_WITH_CAVEATS",
+    "G8_PNCP_EXTERNAL_ID": "NOT_EVALUATED",
+    "G9_PNCP_LINK_PUBLICATION": "PASS_WITH_CAVEATS",
+    "G10_FINANCIAL_IDENTIFIERS": "PASS",
+    "G11_PAYMENT_SEMANTICS": "PASS_WITH_CAVEATS",
+    "G12_SICONFI_CONTEXT": "PARTIAL",
+    "G13_PHYSICAL_ASSET_LINKAGE": "NOT_EVALUATED",
+    "G14_PHASE_SEMANTICS": "PASS",
+    "G15_TERRITORIALITY": "PASS_WITH_CAVEATS",
+    "G16_NO_DOUBLE_COUNTING": "PASS",
+    "G17_REVISION_MODEL": "PASS",
+    "G18_COMPLETION_OPERATION": "PASS_WITH_CAVEATS",
+    "G19_READ_MODELS": "PASS",
+    "G20_EVIDENCE_EDGE_MODEL": "PASS_WITH_CAVEATS",
+    "G21_RECONCILIATION": "PASS",
+    "G22_PUBLICATION": "PASS",
+    "G23_REPLAY_IDEMPOTENCY": "PASS",
+    "G24_PERFORMANCE": "PASS",
+    "G25_STORAGE_ENVELOPE": "PASS",
+    "G26_REGRESSIONS": "PASS",
+    "G27_PNCP_UNINTERRUPTED": "PASS",
+    "G28_P136_READY": "YES"
+  },
+  "BENCHMARKS": {
+    "database": "projetoeleitor_db",
+    "sampleProjectId": 1,
+    "queries": {
+      "project_overview_by_id": {
+        "executionTimeMs": 0.273,
+        "planningTimeMs": 6.276,
+        "plan": "Nested Loop",
+        "rows": 1
+      },
+      "project_contracts": {
+        "executionTimeMs": 0.028,
+        "planningTimeMs": 0.062,
+        "plan": "Sort",
+        "rows": 0
+      },
+      "project_commitments": {
+        "executionTimeMs": 0.04,
+        "planningTimeMs": 0.122,
+        "plan": "Sort",
+        "rows": 0
+      },
+      "project_physical": {
+        "executionTimeMs": 0.018,
+        "planningTimeMs": 0.087,
+        "plan": "Sort",
+        "rows": 0
+      },
+      "project_history": {
+        "executionTimeMs": 0.012,
+        "planningTimeMs": 0.049,
+        "plan": "Sort",
+        "rows": 0
+      },
+      "municipal_summary": {
+        "executionTimeMs": 378.82,
+        "planningTimeMs": 0.357,
+        "plan": "Sort",
+        "rows": 5561
+      },
+      "state_summary": {
+        "executionTimeMs": 179.508,
+        "planningTimeMs": 0.261,
+        "plan": "Sort",
+        "rows": 28
+      },
+      "verified_links": {
+        "executionTimeMs": 0.031,
+        "planningTimeMs": 1.845,
+        "plan": "Aggregate",
+        "rows": 0
+      },
+      "siconfi_context": {
+        "executionTimeMs": 1.559,
+        "planningTimeMs": 1.57,
+        "plan": "Aggregate",
+        "rows": 2
+      }
+    }
+  }
+}

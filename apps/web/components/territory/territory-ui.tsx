@@ -129,13 +129,12 @@ export const THEMES = [
   { slug: 'educacao', label: 'Educação', ready: true },
   { slug: 'seguranca', label: 'Segurança', ready: true },
   { slug: 'bem-estar', label: 'Bem-estar', ready: true },
-  { slug: 'infraestrutura', label: 'Infraestrutura', ready: false },
+  { slug: 'infraestrutura', label: 'Infraestrutura', ready: true },
 ] as const;
 
 const THEME_PLAN: Record<string, { title: string; sources: string[]; text: string }> = {
   educacao: { title: 'Educação', sources: ['Censo Escolar (INEP)', 'IDEB (INEP)', 'FNDE'], text: 'Matrículas, rede escolar e resultados de aprendizagem estão mapeados, mas ainda não foram coletados nem conferidos.' },
   seguranca: { title: 'Segurança', sources: ['SINESP', 'Secretarias estaduais de segurança', 'SIM (óbitos por causas externas)'], text: 'Cada estado publica registros policiais com definições próprias; a comparação entre territórios exige uma camada de harmonização que ainda não existe.' },
-  infraestrutura: { title: 'Infraestrutura', sources: ['SNIS (saneamento)', 'ANATEL (conectividade)', 'ANEEL (energia)'], text: 'Saneamento, conectividade e mobilidade dependem de fontes ainda não ingeridas.' },
 };
 export function ThemePlaceholder({ slug, scope }: { slug: string; scope: string }) {
   const t = THEME_PLAN[slug]; if (!t) return null;

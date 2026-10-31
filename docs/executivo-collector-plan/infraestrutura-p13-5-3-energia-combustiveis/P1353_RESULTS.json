@@ -1,0 +1,31 @@
+{
+  "P13_5_3_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "DATABASE": "projetoeleitor_db",
+  "ANEEL_MMGD_STATUS": "PASS",
+  "ANEEL_TARIFF_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "ANP_POSTOS_STATUS": "PASS",
+  "ANP_GLP_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "ANP_PRECOS_STATUS": "BLOCKED_BY_SOURCE_GATE",
+  "GAS_CANALIZADO_STATUS": "NOT_EVALUATED",
+  "P1352_READONLY_GATE": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "RAW_ON_D_ONLY": "YES",
+  "FRONTEND_CHANGED": "NO",
+  "PUBLISHING_READY": "YES_WITH_CAVEATS",
+  "P13_5_4_READY": "YES",
+  "P13_5_4_STARTED": "NO",
+  "storage": {
+    "baseline": 34417773715,
+    "after": 34544905363,
+    "growth": 127131648,
+    "envelope": 150000000,
+    "pass": true
+  },
+  "run2": {
+    "mmgd": "NO_CHANGE",
+    "tariffs": "NO_CHANGE",
+    "postos": "NO_CHANGE",
+    "glp": "NO_CHANGE",
+    "growth": 0
+  },
+  "internal_work_remaining": "NO"
+}

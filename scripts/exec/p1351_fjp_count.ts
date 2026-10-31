@@ -1,0 +1,1 @@
+import {openPool} from './db.ts'; const p=openPool(1); console.log((await p.query("select indicator_id,count(*)::int rows,count(distinct entity_id)::int entities from civica_exec.exec_ind_value where indicator_id in(9951,9952) group by indicator_id order by indicator_id")).rows); await p.end();

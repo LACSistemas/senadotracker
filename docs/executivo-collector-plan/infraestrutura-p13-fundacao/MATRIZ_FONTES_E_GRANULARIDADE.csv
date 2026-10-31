@@ -1,0 +1,8 @@
+eixo,fonte,orgao,granularidade,ano_base,frequencia,formato,status,propriedade,risco
+saneamento,SINISA Ministério das Cidades,Ministério das Cidades,município/prestador/UF/Brasil,2024,edição anual,XLSX/ZIP,SOURCE_RESOURCE_VERIFIED,infraestrutura,prestador regional pode sobrepor municípios
+energia,DEC/FEC,ANEEL,conjunto elétrico/UF,variável,mensal,CSV/CKAN,SOURCE_DOCUMENTED,infraestrutura,sem atribuição municipal automática
+energia,IndQual Município,ANEEL,conjunto elétrico↔município,variável,edição do recurso,CSV,SOURCE_DOCUMENTED,infraestrutura,crosswalk exige ponderação
+conectividade,IBC,Anatel,município/UF/Brasil,2025,edição anual,download oficial/painel,SOURCE_DOCUMENTED,infraestrutura,mudança metodológica em 2024
+mobilidade,Frota RENAVAM,Senatran,município/tipo/mês,2026,mensal,CSV/ZIP,SOURCE_DOCUMENTED,transporte,estoque não é fluxo de trânsito
+mobilidade,Pemob,Ministério das Cidades,município/metrópole/operador,2026,edição da pesquisa,CSV/planilha,SOURCE_DOCUMENTED,infraestrutura,cobertura >250 mil habitantes
+obras,Siconfi/PNCP/Executivo,diversos,contrato/empenho/obra,variável,periódica,estruturado,SOURCE_DOCUMENTED,executivo/financeiro,não duplicar fatos publicados

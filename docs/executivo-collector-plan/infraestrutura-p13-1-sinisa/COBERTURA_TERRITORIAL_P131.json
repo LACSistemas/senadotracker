@@ -1,0 +1,15 @@
+{
+  "referenceYear": 2024,
+  "edition": "SINISA 2025",
+  "period": "2024-01-01/2025-01-01",
+  "families": {
+    "water": {"municipalSourceRows": 5144, "ufRows": 27, "brazilRows": 1, "indicatorRows": 20688, "validValues": {"IAG0001": 5146, "IAG0002": 5123, "IAG2006": 5144, "IAG2013": 5138}},
+    "sewage": {"municipalSourceRows": 2749, "ufRows": 27, "brazilRows": 1, "indicatorRows": 11108, "validValues": {"IES0001": 2756, "IES0002": 2752, "IES0007": 1612, "IES0008": 2420}},
+    "waste": {"municipalSourceRows": 5570, "ufRows": 0, "brazilRows": 0, "indicatorRows": 22280, "validValues": {"IRS0001": 4854, "IRS0002": 4854, "IRS0005": 4854, "IRS3002": 4854}},
+    "drainage": {"municipalSourceRows": 5570, "ufRows": 0, "brazilRows": 0, "indicatorRows": 22280, "validValues": {"IAP0001": 4842, "IAP0002": 3468, "IGR0001": 4845, "IGR0002": 4845}},
+    "municipalManagement": {"municipalSourceRows": 5570, "ufRows": 0, "brazilRows": 0, "indicatorRows": 22280, "validValues": {"OGM3004": 4707, "OGM3013": 4707, "OGM3201": 4707, "OGM3301": 4707}}
+  },
+  "coverageSemantics": ["SOURCE_ROW_OBSERVED", "VALID_VALUE", "VALID_ZERO", "SOURCE_NULL_OR_NOT_CALCULATED", "NO_OFFICIAL_AGGREGATE_PUBLISHED"],
+  "publishedValues": true,
+  "note": "Água e esgoto têm agregados oficiais UF/Brasil. Resíduos, drenagem e gestão municipal foram publicados no grão municipal porque os recursos oficiais coletados não forneceram, nesta edição, planilha agregada equivalente; ausência de agregado não foi convertida em zero."
+}

@@ -1,0 +1,1 @@
+﻿import {openPool} from './db.ts';const p=openPool(1);console.log((await p.query('select indicator_id,domain,code,label,unit from civica_exec.exec_ind_def where domain in (6,13) order by domain,indicator_id')).rows);await p.end();

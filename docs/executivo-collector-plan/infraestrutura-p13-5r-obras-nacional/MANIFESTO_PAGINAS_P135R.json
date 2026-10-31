@@ -1,0 +1,17 @@
+{
+  "provider": "Obrasgov",
+  "snapshotStart": "2026-10-30T00:00:00",
+  "snapshotEnd": "2026-10-30T00:00:00",
+  "pageSize": 200,
+  "resources": {
+    "projetos": {"endpoint":"/projeto-investimento","sourceTotal":155037,"pagesExpected":776,"pagesDownloaded":776,"rowsDownloaded":155037,"uniqueSourceIds":155037,"duplicateIds":0},
+    "geometrias": {"endpoint":"/geometria","sourceTotal":241018,"pagesExpected":1206,"pagesDownloaded":1206,"rowsDownloaded":241018,"uniqueSourceIds":241018,"duplicateIds":0},
+    "execucao_fisica": {"endpoint":"/execucao-fisica","sourceTotal":74342,"pagesExpected":372,"pagesDownloaded":372,"rowsDownloaded":74342,"uniqueCompositeIds":74050,"duplicateIds":292},
+    "contratos": {"endpoint":"/contrato","sourceTotal":7629,"pagesExpected":39,"pagesDownloaded":39,"rowsDownloaded":7629,"uniqueSourceIds":7629,"duplicateIds":0},
+    "empenhos": {"endpoint":"/empenho","sourceTotal":89777,"pagesExpected":449,"pagesDownloaded":449,"rowsDownloaded":89777,"uniqueCompositeIds":89502,"duplicateIds":275},
+    "historico_situacao": {"endpoint":"/historico-situacao-cancelada-paralisada","sourceTotal":8368,"pagesExpected":42,"pagesDownloaded":42,"rowsDownloaded":8368,"uniqueSourceIds":8368,"duplicateIds":0},
+    "estudos": {"endpoint":"/estudo-viabilidade","sourceTotal":79494,"pagesExpected":398,"pagesDownloaded":398,"rowsDownloaded":79494,"uniqueCompositeIds":79494,"duplicateIds":0}
+  },
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\obras",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\obras\\obrasgov\\national-2026-10-30"
+}

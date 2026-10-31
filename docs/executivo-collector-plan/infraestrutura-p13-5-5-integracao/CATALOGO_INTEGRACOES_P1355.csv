@@ -1,0 +1,6 @@
+integration,source,target,status,verified_count,notes
+obrasgov_internal,exec_work_c_project,contract/commitment/physical,PASS_NATIVE_READ_MODEL,155037,project_id
+obrasgov_pncp,exec_work_c_contract,exec_fin_contract,PASS_WITH_CAVEATS,0,0 explicit IDs; 506 candidates rejected
+obrasgov_finance,exec_work_c_commitment,financial stages,PASS_WITH_CAVEATS,4582,source-native paid
+obrasgov_assets,exec_work_c_project,P13 physical datasets,NOT_EVALUATED,0,no official cross-ID
+siconfi_context,exec_fin_exec,territorial context,PARTIAL,0,not municipality-level

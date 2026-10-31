@@ -1,0 +1,13 @@
+{
+  "database": "projetoeleitor_db",
+  "beforeBytes": 34159742099,
+  "afterBytes": 34159742099,
+  "growthBytes": 0,
+  "p133EnvelopeBytes": 250000000,
+  "p133EnvelopeRemainingBytes": 250000000,
+  "cumulativeP13GrowthBytes": 199507968,
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\conectividade",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\conectividade",
+  "largeFilesInDatabase": false,
+  "databaseWrites": false
+}

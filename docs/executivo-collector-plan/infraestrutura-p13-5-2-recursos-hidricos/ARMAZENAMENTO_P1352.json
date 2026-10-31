@@ -1,0 +1,12 @@
+{
+  "database": "projetoeleitor_db",
+  "databaseBytesBeforeP1352": 34386078867,
+  "databaseBytesAfterP1352": 34417618067,
+  "growthBytes": 31539200,
+  "envelopeBytes": 100000000,
+  "envelopeRemainingBytes": 68460800,
+  "rawOnDOnly": true,
+  "rawPath": "D:/Civica/raw/infraestrutura/recursos_hidricos",
+  "stagingPath": "D:/Civica/staging/infraestrutura/recursos_hidricos",
+  "frontendChanged": false
+}

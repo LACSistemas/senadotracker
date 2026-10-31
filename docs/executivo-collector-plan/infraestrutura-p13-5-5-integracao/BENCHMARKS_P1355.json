@@ -1,0 +1,60 @@
+{
+  "database": "projetoeleitor_db",
+  "sampleProjectId": 1,
+  "queries": {
+    "project_overview_by_id": {
+      "executionTimeMs": 0.273,
+      "planningTimeMs": 6.276,
+      "plan": "Nested Loop",
+      "rows": 1
+    },
+    "project_contracts": {
+      "executionTimeMs": 0.028,
+      "planningTimeMs": 0.062,
+      "plan": "Sort",
+      "rows": 0
+    },
+    "project_commitments": {
+      "executionTimeMs": 0.04,
+      "planningTimeMs": 0.122,
+      "plan": "Sort",
+      "rows": 0
+    },
+    "project_physical": {
+      "executionTimeMs": 0.018,
+      "planningTimeMs": 0.087,
+      "plan": "Sort",
+      "rows": 0
+    },
+    "project_history": {
+      "executionTimeMs": 0.012,
+      "planningTimeMs": 0.049,
+      "plan": "Sort",
+      "rows": 0
+    },
+    "municipal_summary": {
+      "executionTimeMs": 378.82,
+      "planningTimeMs": 0.357,
+      "plan": "Sort",
+      "rows": 5561
+    },
+    "state_summary": {
+      "executionTimeMs": 179.508,
+      "planningTimeMs": 0.261,
+      "plan": "Sort",
+      "rows": 28
+    },
+    "verified_links": {
+      "executionTimeMs": 0.031,
+      "planningTimeMs": 1.845,
+      "plan": "Aggregate",
+      "rows": 0
+    },
+    "siconfi_context": {
+      "executionTimeMs": 1.559,
+      "planningTimeMs": 1.57,
+      "plan": "Aggregate",
+      "rows": 2
+    }
+  }
+}

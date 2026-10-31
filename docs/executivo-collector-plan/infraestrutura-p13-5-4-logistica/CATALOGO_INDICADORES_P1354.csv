@@ -1,0 +1,5 @@
+indicator_id,code,label,unit,provider,grain
+14101,LOG-ANAC-PUBLIC-AERODROMES,Aeródromos públicos cadastrados,count,ANAC,M/S
+14102,LOG-DNIT-SNV-LENGTH,Extensão da malha rodoviária federal no SNV,km,DNIT,S
+14103,LOG-DNIT-PAVEMENT-ICM,Índice de condição do pavimento,index,DNIT,S
+14104,LOG-DNIT-PAVEMENT-SEGMENTS,Segmentos rodoviários avaliados,count,DNIT,S

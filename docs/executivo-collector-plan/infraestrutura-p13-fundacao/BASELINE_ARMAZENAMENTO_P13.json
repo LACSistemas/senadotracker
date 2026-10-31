@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-10-29T00:00:00-03:00",
+  "database": "projetoeleitor_db",
+  "schema": "civica_exec",
+  "databaseBytes": 33960234131,
+  "databaseBytesSource": "SELECT pg_database_size(current_database())",
+  "civicaExecTablesAudited": 118,
+  "currentEntities": {"municipalities": 5571, "ufs": 27, "brazil": 1},
+  "existingIndicatorDomains": {"health": 40, "education": 29, "security": 462, "wellbeing": 27, "infrastructure": 0},
+  "rawManifestRows": 21227,
+  "activePublications": 36389,
+  "volumeC": {"freeBytesObserved": 32508235776, "allowedForRaw": false},
+  "volumeD": {"present": false, "freeBytesObserved": null, "rawRoot": "D:/Civica/raw/infraestrutura", "stagingRoot": "D:/Civica/staging/infraestrutura"},
+  "persistentEnvelopeBytes": 250000000,
+  "p13GrowthBytes": 0,
+  "dbBudgetGate": "NOT_STARTED_STORAGE_BLOCKED",
+  "safety": {"frontendChanged": false, "otherDomainsDeleted": false, "pncpInterrupted": false, "productionDataMutated": false}
+}

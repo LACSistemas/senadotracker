@@ -1,0 +1,10 @@
+{
+  "databaseBeforeBytes": 34545028243,
+  "databaseAfterBytes": 34576149651,
+  "growthBytes": 31123408,
+  "envelopeLimitBytes": 150000000,
+  "envelopeRemainingBytes": 118876592,
+  "rawDirectory": "D:\\Civica\\raw\\infraestrutura\\logistica",
+  "stagingDirectory": "D:\\Civica\\staging\\infraestrutura\\logistica",
+  "rawOnDOnly": true
+}

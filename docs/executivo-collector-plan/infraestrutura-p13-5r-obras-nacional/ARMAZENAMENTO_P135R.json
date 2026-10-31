@@ -1,0 +1,17 @@
+{
+  "database": "projetoeleitor_db",
+  "currentBytes": 34178501779,
+  "p135AfterBytes": 34178501779,
+  "p135rDbGrowthBytes": 0,
+  "p13CumulativeGrowthBytes": 218267648,
+  "p135rEnvelopeBytes": 200000000,
+  "p135rConsumedBefore": 442368,
+  "p135rEnvelopeRemainingBytes": 199557632,
+  "projectTableCurrentBytes": 270336,
+  "projectTableCurrentRows": 200,
+  "estimatedMissingProjectBytes": 209290076,
+  "budgetGate": "BLOCKED_BUDGET",
+  "rawOnDOnly": true,
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\obras",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\obras"
+}

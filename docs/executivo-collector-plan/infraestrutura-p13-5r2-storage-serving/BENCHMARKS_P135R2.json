@@ -1,0 +1,10 @@
+{
+  "database":"projetoeleitor_db",
+  "benchmarks":[
+    {"query":"municipality 3550308 distinct projects","plan":"Bitmap Index Scan exec_work_c_location_ibge_idx","executionMs":3.544,"sharedHitBlocks":1234},
+    {"query":"UF 35 paginated projects","plan":"Index Scan exec_work_c_project_pkey with filter; 50 rows","executionMs":0.109,"sharedHitBlocks":11},
+    {"query":"project detail + locations","plan":"PK source_project_id + Index Only Scan location PK","executionMs":0.058,"sharedHitBlocks":8}
+  ],
+  "explainAnalyzeBuffers":true,
+  "note":"benchmarks are real PostgreSQL serving queries after national load; p50/p95 requires repeated production-like sampling"
+}

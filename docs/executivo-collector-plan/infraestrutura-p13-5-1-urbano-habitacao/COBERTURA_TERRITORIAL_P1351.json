@@ -1,0 +1,23 @@
+{
+  "entorno": {
+    "municipalSourceRows": 5570,
+    "municipalEntities": 5570,
+    "uf": 27,
+    "brazil": 1
+  },
+  "internet": {
+    "municipal": 5570,
+    "uf": 27,
+    "brazil": 1
+  },
+  "favelas": {
+    "municipalWithRecords": 684,
+    "uf": 27,
+    "brazil": 1
+  },
+  "fjp": {
+    "uf": 27,
+    "brazil": 1,
+    "municipal": false
+  }
+}

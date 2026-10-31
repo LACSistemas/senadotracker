@@ -1,0 +1,17 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineBytes": 33960234131,
+  "afterBytes": 33995369619,
+  "persistentGrowthBytes": 35135488,
+  "envelopeBytes": 250000000,
+  "envelopeRemainingBytes": 214864512,
+  "rawRoot": "D:/Civica/raw/infraestrutura/sinisa/2024",
+  "stagingRoot": "D:/Civica/staging/infraestrutura/sinisa/2024",
+  "volumeDPresent": true,
+  "storageGate": "PASS",
+  "rawDownloadedBytes": 61702402,
+  "postgresWrites": 35135488,
+  "indicatorRowsPublished": 98636,
+  "frontendWrites": 0,
+  "budgetNote": "O crescimento inclui definições, exec_ind_value/latest, runs, publicações e manifests; RAW/staging permanecem exclusivamente no D:."
+}

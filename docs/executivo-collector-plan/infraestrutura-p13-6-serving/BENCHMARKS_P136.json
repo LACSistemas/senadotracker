@@ -1,0 +1,138 @@
+{
+  "generatedAt": "2026-10-31T19:53:09.924Z",
+  "smallMunicipality": "3101409",
+  "cases": {
+    "overview_municipio_vitoria": {
+      "runs": 10,
+      "p50Ms": 6.67,
+      "p95Ms": 169.34,
+      "maxMs": 169.34,
+      "queryCount": {
+        "min": 12,
+        "max": 12
+      },
+      "payloadBytes": 13261
+    },
+    "overview_municipio_sao_paulo": {
+      "runs": 10,
+      "p50Ms": 4.55,
+      "p95Ms": 7.05,
+      "maxMs": 7.05,
+      "queryCount": {
+        "min": 12,
+        "max": 12
+      },
+      "payloadBytes": 13290
+    },
+    "overview_municipio_small": {
+      "runs": 10,
+      "p50Ms": 5.15,
+      "p95Ms": 7.01,
+      "maxMs": 7.01,
+      "queryCount": {
+        "min": 12,
+        "max": 12
+      },
+      "payloadBytes": 13133
+    },
+    "overview_uf_es": {
+      "runs": 10,
+      "p50Ms": 3.08,
+      "p95Ms": 4.92,
+      "maxMs": 4.92,
+      "queryCount": {
+        "min": 11,
+        "max": 11
+      },
+      "payloadBytes": 12782
+    },
+    "overview_brasil": {
+      "runs": 10,
+      "p50Ms": 2.64,
+      "p95Ms": 3.53,
+      "maxMs": 3.53,
+      "queryCount": {
+        "min": 6,
+        "max": 6
+      },
+      "payloadBytes": 12813
+    },
+    "work_detail_contract_rich": {
+      "runs": 10,
+      "p50Ms": 3.87,
+      "p95Ms": 13.29,
+      "maxMs": 13.29,
+      "queryCount": {
+        "min": 7,
+        "max": 7
+      },
+      "payloadBytes": 230336
+    },
+    "work_detail_commitment_rich": {
+      "runs": 10,
+      "p50Ms": 5.46,
+      "p95Ms": 6.53,
+      "maxMs": 6.53,
+      "queryCount": {
+        "min": 7,
+        "max": 7
+      },
+      "payloadBytes": 288710
+    },
+    "work_detail_multiterritory": {
+      "runs": 10,
+      "p50Ms": 4.42,
+      "p95Ms": 5.25,
+      "maxMs": 5.25,
+      "queryCount": {
+        "min": 7,
+        "max": 7
+      },
+      "payloadBytes": 280808
+    },
+    "work_financial_evidence": {
+      "runs": 10,
+      "p50Ms": 2.24,
+      "p95Ms": 3.19,
+      "maxMs": 3.19,
+      "queryCount": {
+        "min": 3,
+        "max": 3
+      },
+      "payloadBytes": 29773
+    },
+    "works_list_brasil": {
+      "runs": 10,
+      "p50Ms": 107.64,
+      "p95Ms": 148.27,
+      "maxMs": 148.27,
+      "queryCount": {
+        "min": 2,
+        "max": 2
+      },
+      "payloadBytes": 12106
+    },
+    "coverage_brasil": {
+      "runs": 10,
+      "p50Ms": 0.97,
+      "p95Ms": 1.23,
+      "maxMs": 1.23,
+      "queryCount": {
+        "min": 1,
+        "max": 1
+      },
+      "payloadBytes": 50016
+    },
+    "indicator_detail_vitoria": {
+      "runs": 10,
+      "p50Ms": 16.72,
+      "p95Ms": 23.17,
+      "maxMs": 23.17,
+      "queryCount": {
+        "min": 9,
+        "max": 9
+      },
+      "payloadBytes": 1387
+    }
+  }
+}

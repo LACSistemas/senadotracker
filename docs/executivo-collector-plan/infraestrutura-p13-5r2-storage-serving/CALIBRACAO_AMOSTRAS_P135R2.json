@@ -1,0 +1,12 @@
+{
+  "method": "deterministic samples from the existing national staging, calibrated against real v28 pg_total_relation_size",
+  "samples": [
+    {"projects":1000,"estimatedTotalBytes":708960,"rangeBytes":[602616,815304]},
+    {"projects":10000,"estimatedTotalBytes":7089600,"rangeBytes":[6026160,8153040]},
+    {"projects":30000,"estimatedTotalBytes":21268800,"rangeBytes":[18078480,24459120]}
+  ],
+  "nationalObserved": {"projects":155037,"totalServingBytes":109666304,"dbGrowthBytes":109854720},
+  "calibratedProjectTotalBytesPerRow":255.75,
+  "calibratedLocationTotalBytesPerLink":106.08,
+  "uncertainty": "interval ±15%; national result uses measured full-load relation sizes, not sample extrapolation alone"
+}

@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-31T12:13:54.902Z",
+  "sources": {
+    "snisbRows": 28836,
+    "snisbPages": 58,
+    "anmRows": 909,
+    "atlasRows": 5572
+  },
+  "staging": {
+    "snisbRows": 28835,
+    "snisbUnique": 28835,
+    "anmRows": 909,
+    "anmUnique": 909,
+    "atlasSourceRows": 5572,
+    "atlasUniqueMunicipalities": 5572,
+    "atlasDuplicates": 0
+  },
+  "physical": [
+    {
+      "source_system": "snisb",
+      "rows": 28835,
+      "resolved": 28812
+    },
+    {
+      "source_system": "anm",
+      "rows": 909,
+      "resolved": 909
+    }
+  ],
+  "atlas": {
+    "rows": 5572,
+    "municipalities": 5572
+  },
+  "municipalityResolution": [
+    {
+      "source": "snisb",
+      "resolved": 28812,
+      "unresolved": 23
+    },
+    {
+      "source": "anm",
+      "resolved": 909,
+      "unresolved": 0
+    }
+  ],
+  "crossSourceCandidateMatches": 628
+}

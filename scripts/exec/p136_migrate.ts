@@ -1,0 +1,2 @@
+﻿import {openPool} from './db.ts'; import {applyExecMigrations} from '../../packages/db/src/exec/migrations.ts';
+const p=openPool(1); const b=(await p.query('select current_database() database,pg_database_size(current_database())::bigint size')).rows[0]; if(b.database!=='projetoeleitor_db') throw new Error('DATABASE_GUARD'); console.log('BEFORE',b); await applyExecMigrations(p); const a=(await p.query('select pg_database_size(current_database())::bigint size')).rows[0]; console.log('AFTER',a,'GROWTH',Number(a.size)-Number(b.size)); await p.end();

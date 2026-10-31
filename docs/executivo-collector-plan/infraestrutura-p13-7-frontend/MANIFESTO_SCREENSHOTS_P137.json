@@ -1,0 +1,18 @@
+{
+  "method": "Capturas reais via Playwright (tests/e2e/infraestrutura-p137.spec.ts), navegador Chromium headless, contra o build de produção isolado (porta 3103, projetoeleitor_db real). Não são mockups. Cada uma foi aberta e inspecionada (ver seção 'inspecao' por arquivo).",
+  "directory": "artifacts/p137-frontend/",
+  "screenshots": [
+    { "file": "municipio-desktop-vitoria.png", "viewport": "1360x900", "territory": "Vitória/ES", "shows": "Panorama completo: hero com 8 KPIs, comparação UF/Brasil, gráfico de obras por situação, todos os 7 capítulos temáticos", "inspecao": "hierarquia visual correta; grids de indicadores repetem o mesmo padrão de card em várias seções — ponto de atenção editorial para um próximo passe de design, não um defeito funcional" },
+    { "file": "ruas-entorno-unidades.png", "viewport": "1360x900", "territory": "Vitória/ES", "shows": "Capítulo Ruas e Entorno com o alternador de unidade estatística (domicílios/moradores/faces de quadra)", "inspecao": "ok" },
+    { "file": "energia-mmgd-aneel-anp.png", "viewport": "1360x900", "territory": "Vitória/ES", "shows": "Capítulo Energia com os três grupos (MMGD, ANEEL, ANP) separados", "inspecao": "ok" },
+    { "file": "obras-overview.png", "viewport": "1360x900", "territory": "Vitória/ES", "shows": "Capítulo Obras públicas na página principal: totais, distribuição por situação, 5 estágios financeiros", "inspecao": "ok" },
+    { "file": "estado-desktop-es.png", "viewport": "1360x900", "territory": "Espírito Santo (UF)", "shows": "Overview estadual sem bloco de comparação (regra: só município compara)", "inspecao": "confirmado ausência do bloco de comparação, como esperado" },
+    { "file": "estado-mobile-es.png", "viewport": "390x800", "territory": "Espírito Santo (UF)", "shows": "Overview estadual em mobile, sem overflow horizontal", "inspecao": "ok, sem rolagem lateral" },
+    { "file": "obras-lista-mobile-vitoria.png", "viewport": "390x800", "territory": "Vitória/ES", "shows": "Lista de obras filtrada por situação 'Concluída' em mobile", "inspecao": "tabela com overflow-x-auto contido; sem overflow da página" },
+    { "file": "obras-lista-desktop-es-multi.png", "viewport": "1360x900", "territory": "Espírito Santo (UF)", "shows": "Lista de obras filtrada por abrangência multimunicipal — coluna de valor mostra 'não ratado', nunca um número inventado", "inspecao": "ok" },
+    { "file": "obra-detalhe-rica.png", "viewport": "1360x900", "territory": "obra #89442 (DNIT/RS)", "shows": "Detalhe de obra com 142 contratos e 527 empenhos: 5 estágios financeiros separados, progresso físico, empenhos paginados (50/página)", "inspecao": "valores conferidos manualmente (R$ 700,0 mi previsto / R$ 9,1 bi contratado / R$ 3,1 bi empenhado / R$ 53,7 mi liquidado / R$ 1,8 bi pago); tabela de 142 contratos renderiza inteira sem paginação — funciona mas é longa; marcado como possível refinamento futuro" },
+    { "file": "obra-detalhe-multimunicipal.png", "viewport": "1360x900", "territory": "obra #1963 (DNIT/MG, 790 municípios)", "shows": "Detalhe de obra multimunicipal: lista dos municípios vinculados, nota explícita de que o valor não foi rateado", "inspecao": "ok" },
+    { "file": "estado-de-ausencia-boa-esperanca.png", "viewport": "1360x900", "territory": "Boa Esperança do Norte/MT (município novo pós-Censo 2022, G0.3)", "shows": "Página inteira com múltiplos capítulos em estado 'Pending' (ausência honesta), sem nenhum zero sintético", "inspecao": "confirmado texto de ausência correto em cada capítulo sem dado" }
+  ],
+  "not_captured": "Capturas de teclado/foco e movimento reduzido não geram screenshot (são verificações de estado computado via getComputedStyle, não visuais) — cobertas em TESTES_E2E_P137.md e AUDITORIA_ACESSIBILIDADE_P137.md."
+}

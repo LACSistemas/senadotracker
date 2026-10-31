@@ -1,0 +1,2 @@
+import { openPool } from './db.ts';
+const p=openPool(1);const c=await p.connect();try{await c.query('BEGIN');const r=await c.query("update civica_exec.exec_publication set row_count=200 where dataset_id=143 and uf=0 and competence=202610 and run_id=38141 and row_count=0 returning dataset_id,row_count");if(r.rowCount!==1)throw new Error(`PILOT_METADATA_GUARD:${r.rowCount}`);await c.query('COMMIT');console.log(r.rows)}catch(e){await c.query('ROLLBACK');throw e}finally{c.release();await p.end()}

@@ -1,0 +1,13 @@
+{
+  "dbBeforeBytes": 34545028243,
+  "dbAfterBytes": 34576149651,
+  "growthBytes": 31123408,
+  "replayGrowthBytes": 0,
+  "rows": {
+    "aerodromes": 496,
+    "airOperationMonth": 5083,
+    "snv": 7600,
+    "pavement": 101552
+  },
+  "querySmoke": "PASS"
+}

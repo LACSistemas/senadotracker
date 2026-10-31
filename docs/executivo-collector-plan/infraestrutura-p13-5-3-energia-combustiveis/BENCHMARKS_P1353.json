@@ -1,0 +1,16 @@
+{
+  "database": "projetoeleitor_db",
+  "mmgd_lookup_ms": {
+    "explain_execution_ms": 0.19,
+    "sample_n": 30,
+    "min": 0.2551,
+    "p50": 0.331,
+    "p95": 0.7102,
+    "p99": 52.5974,
+    "max": 52.5974
+  },
+  "explain": "Index Scan using exec_energy_mmgd_municipality_pkey; Execution Time 0.190 ms",
+  "run2_growth_bytes": 0,
+  "tariff_rows": 334047,
+  "anp_rows": 65805
+}

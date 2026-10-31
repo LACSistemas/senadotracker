@@ -1,0 +1,17 @@
+{
+  "method": "Medição direta de loadInfrastructurePage/loadWorksListPage/loadWorkDetail via tsx, sem HTTP, contra projetoeleitor_db real. dbMs/buildMs/sqlStatements vêm do campo meta já instrumentado em cada página (mesmo padrão usado por Segurança e Bem-estar). Não é TTFB/LCP de navegador real — essa medição depende de Playwright com servidor ativo (ver TESTES_E2E_P137.md para os 30 testes reais, incluindo verificação de overflow em 7 larguras).",
+  "cases": [
+    { "case": "overview_vitoria_municipio", "dbMs": 157, "buildMs": 157, "sqlStatements": 35, "heroKpis": 8, "worksTotal": 292, "note": "inclui 3 comparadores UF/Brasil (só município busca comparação)" },
+    { "case": "overview_sao_paulo_municipio", "dbMs": 86, "buildMs": 86, "sqlStatements": 35, "heroKpis": 8, "worksTotal": 3491 },
+    { "case": "overview_municipio_pequeno_atilio_vivacqua", "dbMs": 42, "buildMs": 42, "sqlStatements": 35, "heroKpis": 7, "worksTotal": 22 },
+    { "case": "overview_boa_esperanca_do_norte_pos_censo", "dbMs": 32, "buildMs": 32, "sqlStatements": 26, "heroKpis": 2, "worksTotal": null, "note": "sem comparadores elegíveis; menos consultas porque não há indicadores Censo 2022" },
+    { "case": "overview_es_uf", "dbMs": 146, "buildMs": 146, "sqlStatements": 9, "heroKpis": 8, "worksTotal": 2236, "note": "UF nunca busca comparador (backend só computa comparação para município)" },
+    { "case": "overview_sp_uf", "dbMs": 1401, "buildMs": 1401, "sqlStatements": 9, "heroKpis": 8, "worksTotal": 20844, "note": "OUTLIER REAL — mesma contagem de consultas que ES (9), mas ~10x mais lento. Hipótese não confirmada: agregação sobre ~645 municípios e contagem de 20.844 obras por situação. Registrado como ponto de atenção para otimização futura (índice ou agregado materializado), não escondido nem arredondado." },
+    { "case": "works_list_vitoria_pagina_1", "wallMs": 14, "total": 292 },
+    { "case": "works_list_es_uf_com_filtro_hasContracts", "wallMs": 76, "total": 101 },
+    { "case": "work_detail_rico_em_contratos_e_empenhos", "wallMs": 116, "contracts": 142, "commitmentsTotal": 527 },
+    { "case": "work_detail_multimunicipal", "wallMs": 24, "municipalities": 790 }
+  ],
+  "known_hotspot": "overview de UF grande (São Paulo, ~645 municípios) é ~10x mais lento que UF pequena (Espírito Santo, ~78 municípios) com o mesmo número de consultas — sugere que o tempo está na agregação SQL por linha, não no número de round-trips. Não investigado a fundo nesta fase (fora do escopo de frontend); documentado para decisão de otimização em fase de backend futura.",
+  "reference_p136_benchmarks": "Benchmarks de serviço (nível de query isolada, sem o frontend) ficaram em P136_RESULTS.json/BENCHMARKS_P136.json — não comparáveis diretamente com os números acima, que medem a página completa (todas as chamadas paralelas de um load) e já tinham avisado que P13.7 deveria medir os próprios números, o que foi feito aqui."
+}

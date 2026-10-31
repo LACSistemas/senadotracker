@@ -1,0 +1,14 @@
+﻿import {openPool} from './db.ts';
+const p=openPool(1);
+const q=async(sql:string,params:any[]=[])=>{try{return (await p.query(sql,params)).rows}catch(e){return {error:String(e)}}};
+const out:any={database:await q('select current_database() database,pg_database_size(current_database())::bigint size'),tables:await q("select table_name from information_schema.tables where table_schema='civica_exec' and (table_name like 'exec_ind_%' or table_name like 'exec_work_%' or table_name like 'exec_fin_%') order by table_name"),indDefCols:await q("select column_name,data_type from information_schema.columns where table_schema='civica_exec' and table_name='exec_ind_def' order by ordinal_position"),indValueCols:await q("select column_name,data_type from information_schema.columns where table_schema='civica_exec' and table_name='exec_ind_value' order by ordinal_position")};
+out.g0_1=await q('select count(*)::int physical_fact_rows,count(distinct project_id)::int projects_any_fact,count(distinct project_id) filter(where percent is not null and percent>0)::int projects_nonnull_positive,count(distinct project_id) filter(where percent is not null)::int projects_valid_percent,count(distinct project_id) filter(where percent=100)::int projects_percent_100,count(*) filter(where percent is not null)::int valid_percent_rows from civica_exec.exec_work_c_physical');
+out.g0_2=await q('select count(distinct l.ibge7)::int municipalities,count(*)::int location_rows,count(distinct p.project_id)::int located_projects from civica_exec.exec_work_c_location l join civica_exec.exec_work_c_project p using(project_id) where l.ibge7 is not null');
+out.g0_2_codes=await q('select l.ibge7::int ibge7,count(distinct l.project_id)::int projects from civica_exec.exec_work_c_location l where l.ibge7 is not null group by l.ibge7 order by l.ibge7');
+out.siconfi=await q('select funcao,count(*)::int rows,count(distinct entity_id)::int entities,min(exercicio)::int min_year,max(exercicio)::int max_year,sum(coalesce(emp,0))::numeric emp,sum(coalesce(liq,0))::numeric liq,sum(coalesce(pago,0))::numeric pago from civica_exec.exec_fin_exec where funcao in (15,16,17,25,26) group by funcao order by funcao');
+out.siconfiEntities=await q('select distinct entity_id from civica_exec.exec_fin_exec where funcao in (15,16,17,25,26) order by entity_id');
+out.indDomains=await q('select domain,count(*)::int definitions,count(*) filter(where published)::int published from civica_exec.exec_ind_def group by domain order by domain');
+out.indDomain5=await q('select count(*)::int definitions,count(*) filter(where published)::int published from civica_exec.exec_ind_def where domain=5');
+out.indDefs=await q('select indicator_id,domain,code,label,unit,grain,published from civica_exec.exec_ind_def order by domain,indicator_id limit 500');
+console.log(JSON.stringify(out,null,2)); await p.end();
+

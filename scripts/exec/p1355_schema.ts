@@ -1,0 +1,6 @@
+import {openPool} from './db.ts'; const p=openPool(1);
+const names=['exec_work_c_project','exec_work_c_location','exec_work_c_municipality','exec_work_c_physical','exec_work_c_history','exec_work_c_contract','exec_work_c_commitment','exec_work_c_revision','exec_work_c_cov','exec_work_c_org'];
+for(const n of names){console.log('TABLE',n);console.log((await p.query('select column_name,data_type from information_schema.columns where table_schema=\'civica_exec\' and table_name=$1 order by ordinal_position',[n])).rows)}
+for(const n of ['exec_fin_contract','exec_fin_exec','exec_fin_dot','exec_fin_fact','exec_fin_org','exec_fin_supplier','exec_fin_cov','exec_work_c_text']){console.log('COUNT',n,(await p.query(`select count(1)::int n from civica_exec.${n}`)).rows);console.log((await p.query('select column_name,data_type from information_schema.columns where table_schema=\'civica_exec\' and table_name=$1 order by ordinal_position',[n])).rows)}
+console.log('EXTERNAL', (await p.query("select table_name,column_name from information_schema.columns where table_schema='civica_exec' and (column_name ilike '%pncp%' or column_name ilike '%external%' or column_name ilike '%process%' or column_name ilike '%instrument%') order by table_name,column_name")).rows);
+await p.end();

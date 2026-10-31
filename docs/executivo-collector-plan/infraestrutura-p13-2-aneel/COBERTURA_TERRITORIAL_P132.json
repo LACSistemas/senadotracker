@@ -1,0 +1,18 @@
+{
+  "indger": {
+    "source_distinct_municipal_codes": 5573,
+    "published_distinct_municipalities": 5086,
+    "published_ufs": 27,
+    "competences": ["2025-01" ,"2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12","2026-08"],
+    "published_indicator_rows": 458290,
+    "multiple_distributor_municipalities_excluded": "495–540 per competence",
+    "unresolved_ibge": ["1403205"],
+    "latest_source_2026_09": {"rows": 7, "published": false, "reason": "partial competence"}
+  },
+  "dec_fec": {
+    "source_distinct_municipal_codes": 0,
+    "crosswalk_municipal_codes": 5574,
+    "municipal_published": false,
+    "reason": "native electric-set grain; no official weights"
+  }
+}

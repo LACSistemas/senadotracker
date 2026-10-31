@@ -1,0 +1,12 @@
+{
+  "database": "projetoeleitor_db",
+  "beforeBytes": 34576149651,
+  "afterFirstBytes": 34576321683,
+  "afterReplayBytes": 34576321683,
+  "growthBytes": 172032,
+  "cumulativeGrowthBytes": 616087552,
+  "envelopeBytes": 75000000,
+  "remainingEnvelopeBytes": 74827968,
+  "rawOnDOnly": true,
+  "dbBudgetGate": "PASS"
+}

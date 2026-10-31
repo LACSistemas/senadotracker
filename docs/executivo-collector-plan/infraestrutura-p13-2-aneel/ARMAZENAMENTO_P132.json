@@ -1,0 +1,14 @@
+{
+  "database": "projetoeleitor_db",
+  "beforeBytes": 33995369619,
+  "afterBytes": 34159742099,
+  "growthBytes": 164372480,
+  "envelopeRemainingBeforeBytes": 214864512,
+  "withinEnvelope": true,
+  "rawRoot": "D:\\Civica\\raw\\infraestrutura\\energia",
+  "stagingRoot": "D:\\Civica\\staging\\infraestrutura\\energia",
+  "largeFilesInDatabase": false,
+  "indgerCanonicalRows": 458290,
+  "decFecCanonicalRows": 0,
+  "note": "Os CSVs/ZIPs grandes permanecem no D:; o banco recebe apenas definições, fatos canônicos, runs e manifests."
+}

@@ -1,0 +1,12 @@
+family,indicator,status,territory,periodicity,reason
+SCM,fixed_accesses,NOT_PUBLISHED,municipality,monthly,official CSV endpoint returned block HTML
+SCM,mobile_broadband_accesses,NOT_PUBLISHED,municipality,monthly,structured resource not verified
+SMP,mobile_accesses,NOT_PUBLISHED,municipality,monthly,structured resource not verified
+IQS,iqs_municipal,NOT_PUBLISHED,municipality,semiannual_or_annual,spreadsheet endpoint not verified
+IQS,iqs_uf,NOT_PUBLISHED,uf,semiannual_or_annual,spreadsheet endpoint not verified
+IQS,quality_seal,NOT_PUBLISHED,municipality_or_uf,semiannual_or_annual,structured resource not verified
+IBC,ibc_score_2025,NOT_PUBLISHED,municipality,annual,panel/report verified but export not verified
+IBC,ibc_median_uf,NOT_PUBLISHED,uf,annual,no canonical municipal payload
+COVERAGE,coverage_4g_population,NOT_PUBLISHED,municipality,edition,no population denominator in pilot SHP
+COVERAGE,coverage_5g_population,NOT_PUBLISHED,municipality,edition,no structured source verified
+COVERAGE,mosaico_signal_geometry,NOT_PUBLISHED,national_geometry,edition,pilot only; not a municipal fact
