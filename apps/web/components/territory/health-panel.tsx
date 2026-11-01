@@ -1,8 +1,8 @@
 import type { ComponentType } from 'react';
-import { AlertCircle, Baby, BedDouble, CalendarDays, CheckCircle2, ClipboardPlus, Hospital, Minus, PersonStanding, Scissors, Syringe, TrendingDown, TrendingUp } from 'lucide-react';
+import { Activity, AlertCircle, Baby, BedDouble, CalendarDays, CheckCircle2, ClipboardPlus, Hospital, Minus, PersonStanding, Scissors, Syringe, TrendingDown, TrendingUp } from 'lucide-react';
 import type { DistStat, Facilities, HealthBenchmarks, PanelValue, VaccineValue } from '@senadotracker/db';
-import { PANEL_CARDS, type CardTone, type PanelCardMeta } from '@/lib/health-targets';
-import { benchFor, healthLede, prettyType, quintileWord, trendOf, vaccineRows, vaccineSummary, FLAG, type BenchState, type VaccineRow } from '@/lib/health-bench';
+import { type CardTone, type PanelCardMeta } from '@/lib/health-targets';
+import { healthLedeFor, healthPanelCards, prettyType, quintileWord, trendOf, vaccineRows, vaccineSummary, FLAG, type BenchState, type VaccineRow } from '@/lib/health-bench';
 import { competenceLabel } from '@/lib/exec-territory';
 import { cn } from '@/lib/utils';
 
@@ -143,22 +143,21 @@ function VaccineTable({ rows, scope }: { rows: VaccineRow[]; scope: string }) {
 export interface HealthPanelProps {
   scope: string; kind: 'uf' | 'municipio'; ufCode: number; ufName: string;
   values: Record<string, PanelValue>; vaccines: VaccineValue[]; facilities: Facilities | null; bench: HealthBenchmarks; cnesLabel: string; compact?: boolean;
+  /** A página de Saúde completa já mostra esta mesma frase no hero (via `healthLedeFor`, mesma fonte) — passe `true` ali para não repeti-la aqui. O teaser compacto da visão geral não tem hero próprio de Saúde, então continua mostrando. */
+  hideLede?: boolean;
 }
 /** Painel de Saúde: 7 cards-resumo com benchmark e 3 análises (tipos de estabelecimento, leitos, vacinas). Todos os dados chegam prontos (sem consulta por card). */
 export function HealthPanel(p: HealthPanelProps) {
-  const cards = PANEL_CARDS.map(meta => {
-    const v = p.values[meta.code];
-    const bench = p.kind === 'municipio'
-      ? benchFor(v, p.bench.byUf[String(p.ufCode)]?.[meta.code], `municípios de ${p.ufName}`, p.bench.brazilMunicipalities[meta.code], 'Brasil')
-      : benchFor(v, p.bench.ufs[meta.code], 'UFs', undefined, '');
-    return { meta, v, bench };
-  });
+  const cards = healthPanelCards(p);
   const vrows = vaccineRows(p.vaccines);
-  const lede = healthLede({ scope: p.scope, groupLabel: p.kind === 'municipio' ? `municípios de ${p.ufName}` : 'UFs', cards: cards.map(c => ({ title: c.meta.title.replace(/ por 1\.000 habitantes/, ' por mil habitantes'), bench: c.bench, value: c.v?.value ?? null })), vaccines: vrows });
+  const lede = p.hideLede ? null : healthLedeFor(p);
   const hasFacilities = p.facilities && p.facilities.total > 0;
   return (
-    <section aria-labelledby="painel-saude" className="space-y-3">
-      <div><h2 id="painel-saude" className="section-hairline pt-3 font-display text-2xl">Painel de Saúde</h2>{lede && <p className="mt-2 max-w-4xl text-sm leading-relaxed text-muted-foreground">{lede.charAt(0).toUpperCase() + lede.slice(1)}</p>}</div>
+    <section id="painel-saude" aria-labelledby="painel-saude-h" className="scroll-mt-28 space-y-3">
+      <header className="section-hairline flex items-start gap-3 pt-3">
+        <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: '#e6eefc' }} aria-hidden><Activity size={18} color="#2563eb" /></span>
+        <div><h2 id="painel-saude-h" className="font-display text-2xl text-[#14304f]">Painel de Saúde</h2>{lede && <p className="mt-0.5 max-w-4xl text-sm leading-relaxed text-muted-foreground">{lede.charAt(0).toUpperCase() + lede.slice(1)}</p>}</div>
+      </header>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-[repeat(6,minmax(0,1fr))_minmax(0,1.3fr)]">
         {cards.map(c => <KpiBenchCard key={c.meta.code} meta={c.meta} v={c.v} bench={c.bench} />)}
         <VaccineMeterCard rows={vrows} hasPanel={p.vaccines.length > 0} />

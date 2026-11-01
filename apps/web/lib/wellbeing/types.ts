@@ -16,10 +16,10 @@ export interface Table { title: string; columns: string[]; rows: TableRow[]; cap
  * unidade, universo, cobertura, revisão, link oficial), sem nenhuma consulta extra além do que o capítulo já buscou. */
 export interface ChapterBase { id: string; number: number; title: string; narrative: Narrative; available: boolean; emptyReason?: string; limits: string[]; sources: string; disclosures: WellbeingObservation[] }
 
-/** Um dos três pontos de comparação (território/UF/Brasil): nunca uma faixa de percentil, porque o read model de
- * Bem-estar não calcula distribuição entre municípios-pares — só os três valores diretos. */
-export interface ComparePoint { label: string; value: number | null; display: string; eligible: boolean; reason: string | null }
-export interface TerritoryCompare { unit: string; year: string | null; own: ComparePoint; state: ComparePoint | null; brazil: ComparePoint; restrictions: string[] }
+/** `ComparePoint`/`TerritoryCompare` agora vivem em `lib/comparison/types.ts` (P4) — eram uma cópia
+ * byte-idêntica da versão de Infraestrutura. Reexportados aqui para não quebrar nenhum import existente. */
+import type { ComparePoint, TerritoryCompare } from '@/lib/comparison/types.ts';
+export type { ComparePoint, TerritoryCompare };
 
 export interface ConditionsChapter extends ChapterBase {
   incomeBars: BarRow[]; incomeCompare: TerritoryCompare | null;

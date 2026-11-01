@@ -19,5 +19,5 @@ export default async function EstadoBemEstarPage({ params }: Props) {
   const scope = await scopeOf('uf', raw.toUpperCase());
   if (!scope) notFound();
   const data = await loadWellbeingPageCached(scope);
-  return <TerritoryFrame crumbs={[{ href: '/estados', label: 'Estados' }, { href: `/estados/${scope.uf}`, label: scope.name }, { label: 'Bem-estar' }]} kicker={`${scope.name} · Bem-estar`} title={`Bem-estar em ${scope.name}`} lede="O que se sabe, com fonte e cobertura à vista, sobre renda, trabalho formal, assistência social, serviços digitais declarados e gasto público em assistência social — e o que ainda não se sabe." population={scope.population?.value ?? null} populationYear={scope.population?.year ?? null} base={`/estados/${scope.uf}`} active="bem-estar"><WellbeingPage data={data} /></TerritoryFrame>;
+  return <TerritoryFrame crumbs={[{ href: '/estados', label: 'Estados' }, { href: `/estados/${scope.uf}`, label: scope.name }, { label: 'Bem-estar' }]} kicker={`${scope.name} · Bem-estar`} title={`Bem-estar em ${scope.name}`} lede={data.portrait.lede} population={scope.population?.value ?? null} populationYear={scope.population?.year ?? null} base={`/estados/${scope.uf}`} active="bem-estar"><WellbeingPage data={data} hideLede /></TerritoryFrame>;
 }

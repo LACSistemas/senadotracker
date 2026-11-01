@@ -4,6 +4,8 @@ import type { InfrastructureIndicator } from '@senadotracker/db';
 import type { InfrastructurePageData } from '@/lib/infrastructure/types';
 import { ChapterNav } from '@/components/security/chapter-nav';
 import { ChapterShell, EmptyNote } from '@/components/security/security-ui';
+import { IndicatorLive } from '@/components/indicators/indicator-live';
+import { heroKpiToKpi } from '@/lib/comparison/kpi-adapters';
 import { Block, BarList, GroupBlock, InfrastructureLegend, StatGrid } from './infrastructure-ui';
 import { EntornoUnitSwitcher } from './urban-environment';
 import { IndicatorDetails } from './indicator-disclosure';
@@ -20,10 +22,25 @@ function Pending({ id, number, title, reason }: { id: string; number: number; ti
 }
 
 /** Página de Infraestrutura: hero seletivo → água e saneamento → ruas e entorno → habitação → energia →
- * mobilidade e logística → segurança hídrica → obras públicas; mesmo desenho para estado e município. */
-export function InfrastructurePage({ data }: { data: InfrastructurePageData }) {
+ * mobilidade e logística → segurança hídrica → obras públicas; mesmo desenho para estado e município.
+ * Navegação por capítulo em sidebar persistente no desktop (Parte IV.8.3 do mandato, P1/P5) — mesmo
+ * `ChapterNav` que os outros temas já usam. Os 7 capítulos numerados abrem com um `IndicatorLive`
+ * (Descobrir→Explorar→Verificar) construído a partir do `HeroKpi` real que o panorama já calcula para
+ * aquele capítulo (`HERO_KPI_PRIORITY`, 1 indicador por capítulo por desenho) via `heroKpiToKpi` (P4) —
+ * zero dado novo, só uma composição que dá a cada capítulo uma assinatura visual própria em vez do bloco
+ * "título→grupos→disclosures" repetido 7 vezes. */
+export function InfrastructurePage({ data, hideLede = false }: { data: InfrastructurePageData; hideLede?: boolean }) {
   const { scope, hero, waterSanitation, urbanEnvironment, housing, energy, mobility, waterSecurity, works } = data; const where = scope.name;
   const worksListHref = scope.kind === 'uf' ? `/estados/${scope.uf}/infraestrutura/obras` : `/municipios/${scope.entityId}/infraestrutura/obras`;
+  const kpiForChapter = (codes: string[], anchor: string) => { const h = hero.kpis.find(k => codes.includes(k.code)); return h ? heroKpiToKpi(h, { chapterAnchor: anchor, territoryName: where }) : null; };
+  const aguaKpi = kpiForChapter(['IAG0001', 'IES0001'], 'agua-saneamento');
+  const ruasKpi = kpiForChapter(['INF-ENTORNO-HOUSEHOLD-PAVEMENT', 'INF-ENTORNO-HOUSEHOLD-LIGHTING'], 'ruas-entorno');
+  const habitacaoKpi = kpiForChapter(['INF-INTERNET-DOMICILIOS'], 'habitacao');
+  const energiaKpi = kpiForChapter(['ENERGY-MMGD-INSTALLED-KW'], 'energia');
+  const mobilidadeKpi = kpiForChapter(['IND-MOB-PEMOB-SERVICOS-MUNICIPAIS'], 'mobilidade');
+  const segurancaHidricaKpi = kpiForChapter(['INF-DAMS-SNISB-TOTAL'], 'seguranca-hidrica');
+  const obrasKpi = kpiForChapter(['OBRASGOV-PROJECTS'], 'obras');
+  const verifyFor = (k: ReturnType<typeof heroKpiToKpi>) => ({ source: k.source, definition: k.plain, ...(k.secondary ? { notes: [k.secondary] } : {}) });
   const nav = [
     { id: 'panorama', label: 'Panorama', available: hero.kpis.length > 0 }, { id: 'agua-saneamento', label: 'Água e saneamento', available: waterSanitation.available },
     { id: 'ruas-entorno', label: 'Ruas e entorno', available: urbanEnvironment.available }, { id: 'habitacao', label: 'Habitação', available: housing.available },
@@ -34,9 +51,11 @@ export function InfrastructurePage({ data }: { data: InfrastructurePageData }) {
   const chapter = (ok: boolean, c: { id: string; number: number; title: string; emptyReason?: string }, node: ReactNode) => ok ? node : <Pending id={c.id} number={c.number} title={c.title} reason={c.emptyReason ?? 'Sem dados publicados.'} />;
 
   return (
-    <div className="space-y-10">
+    <div className="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start lg:gap-10">
+      <ChapterNav items={nav} layout="sidebar" accent="cyan" />
+      <div className="min-w-0 space-y-10">
       <section id="panorama" aria-labelledby="panorama-h" className="scroll-mt-28 space-y-5">
-        <header><p className="eyebrow">Infraestrutura</p><h2 id="panorama-h" className="display-title mt-1 text-2xl sm:text-4xl">O que existe e está registrado {scope.kind === 'uf' ? `no estado de ${where}` : `em ${where}`}?</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{hero.lede}</p></header>
+        <header><p className="eyebrow">Infraestrutura</p><h2 id="panorama-h" className="display-title mt-1 text-2xl sm:text-4xl">O que existe e está registrado {scope.kind === 'uf' ? `no estado de ${where}` : `em ${where}`}?</h2>{!hideLede && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{hero.lede}</p>}</header>
         {hero.kpis.length > 0 ? (
           <StatGrid items={hero.kpis.map(k => ({ label: k.label, value: k.value, ...(k.unit ? { unit: k.unit } : {}), note: k.note ?? null }))} />
         ) : <EmptyNote title="Sem indicadores para o panorama">Ainda não há indicadores de infraestrutura publicados para este território.</EmptyNote>}
@@ -44,45 +63,51 @@ export function InfrastructurePage({ data }: { data: InfrastructurePageData }) {
         {hero.kpis.some(k => k.compare) && (
           <Block>
             <h3 className="mb-3 font-display text-xl text-[#14304f]">Comparação com o estado e o Brasil</h3>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{hero.kpis.filter(k => k.compare).map(k => <div key={k.code}><p className="mb-1 text-xs font-semibold text-muted-foreground">{k.label}</p><TerritoryCompareRow c={k.compare!} /></div>)}</div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{hero.kpis.filter(k => k.compare).map(k => <div key={k.code} className="min-w-0"><p className="mb-1 text-xs font-semibold text-muted-foreground">{k.label}</p><TerritoryCompareRow c={k.compare!} /></div>)}</div>
           </Block>
         )}
         <p className="text-xs text-muted-foreground">{hero.coverageNote}</p>
       </section>
-      <ChapterNav items={nav} />
       <InfrastructureLegend />
 
-      {chapter(waterSanitation.available, waterSanitation, <ChapterShell id="agua-saneamento" number={1} title={waterSanitation.title} narrative={waterSanitation.narrative} limits={waterSanitation.limits} sources={waterSanitation.sources}>
+      {chapter(waterSanitation.available, waterSanitation, <ChapterShell accent="cyan" id="agua-saneamento" number={1} title={waterSanitation.title} narrative={waterSanitation.narrative} limits={waterSanitation.limits} sources={waterSanitation.sources}>
+        {aguaKpi && <IndicatorLive kpi={aguaKpi} who={where} lead verify={verifyFor(aguaKpi)} />}
         {waterSanitation.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={waterSanitation.disclosures} />
       </ChapterShell>)}
 
-      {chapter(urbanEnvironment.available, urbanEnvironment, <ChapterShell id="ruas-entorno" number={2} title={urbanEnvironment.title} narrative={urbanEnvironment.narrative} tone="strip" limits={urbanEnvironment.limits} sources={urbanEnvironment.sources}>
+      {chapter(urbanEnvironment.available, urbanEnvironment, <ChapterShell accent="cyan" id="ruas-entorno" number={2} title={urbanEnvironment.title} narrative={urbanEnvironment.narrative} tone="strip" limits={urbanEnvironment.limits} sources={urbanEnvironment.sources}>
+        {ruasKpi && <IndicatorLive kpi={ruasKpi} who={where} lead verify={verifyFor(ruasKpi)} />}
         <EntornoUnitSwitcher byUnit={urbanEnvironment.byUnit} />
         <Disclosures items={urbanEnvironment.disclosures} />
       </ChapterShell>)}
 
-      {chapter(housing.available, housing, <ChapterShell id="habitacao" number={3} title={housing.title} narrative={housing.narrative} limits={housing.limits} sources={housing.sources}>
+      {chapter(housing.available, housing, <ChapterShell accent="cyan" id="habitacao" number={3} title={housing.title} narrative={housing.narrative} limits={housing.limits} sources={housing.sources}>
+        {habitacaoKpi && <IndicatorLive kpi={habitacaoKpi} who={where} lead verify={verifyFor(habitacaoKpi)} />}
         {housing.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={housing.disclosures} />
       </ChapterShell>)}
 
-      {chapter(energy.available, energy, <ChapterShell id="energia" number={4} title={energy.title} narrative={energy.narrative} tone="strip" limits={energy.limits} sources={energy.sources}>
+      {chapter(energy.available, energy, <ChapterShell accent="cyan" id="energia" number={4} title={energy.title} narrative={energy.narrative} tone="strip" limits={energy.limits} sources={energy.sources}>
+        {energiaKpi && <IndicatorLive kpi={energiaKpi} who={where} lead verify={verifyFor(energiaKpi)} />}
         {energy.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={energy.disclosures} />
       </ChapterShell>)}
 
-      {chapter(mobility.available, mobility, <ChapterShell id="mobilidade" number={5} title={mobility.title} narrative={mobility.narrative} limits={mobility.limits} sources={mobility.sources}>
+      {chapter(mobility.available, mobility, <ChapterShell accent="cyan" id="mobilidade" number={5} title={mobility.title} narrative={mobility.narrative} limits={mobility.limits} sources={mobility.sources}>
+        {mobilidadeKpi && <IndicatorLive kpi={mobilidadeKpi} who={where} lead verify={verifyFor(mobilidadeKpi)} />}
         {mobility.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={mobility.disclosures} />
       </ChapterShell>)}
 
-      {chapter(waterSecurity.available, waterSecurity, <ChapterShell id="seguranca-hidrica" number={6} title={waterSecurity.title} narrative={waterSecurity.narrative} tone="strip" limits={waterSecurity.limits} sources={waterSecurity.sources}>
+      {chapter(waterSecurity.available, waterSecurity, <ChapterShell accent="cyan" id="seguranca-hidrica" number={6} title={waterSecurity.title} narrative={waterSecurity.narrative} tone="strip" limits={waterSecurity.limits} sources={waterSecurity.sources}>
+        {segurancaHidricaKpi && <IndicatorLive kpi={segurancaHidricaKpi} who={where} lead verify={verifyFor(segurancaHidricaKpi)} />}
         {waterSecurity.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={waterSecurity.disclosures} />
       </ChapterShell>)}
 
-      {chapter(works.available, works, <ChapterShell id="obras" number={7} title={works.title} narrative={works.narrative} limits={works.limits} sources={works.sources}>
+      {chapter(works.available, works, <ChapterShell accent="cyan" id="obras" number={7} title={works.title} narrative={works.narrative} limits={works.limits} sources={works.sources}>
+        {obrasKpi && <IndicatorLive kpi={obrasKpi} who={where} lead verify={verifyFor(obrasKpi)} />}
         <Link href={worksListHref} className="inline-flex items-center gap-1.5 rounded-full border border-[#115b45] px-4 py-1.5 text-sm font-semibold text-[#115b45] hover:bg-[#e8f3ee]">Explorar lista completa de obras →</Link>
         <StatGrid items={[
           { label: 'Projetos registrados', value: String(works.totals.projects) },
@@ -92,16 +117,20 @@ export function InfrastructurePage({ data }: { data: InfrastructurePageData }) {
         ]} />
         {works.bySituation.length > 0 && <BarList title="Projetos por situação oficial" rows={works.bySituation} />}
         {works.financial.some(f => f.value != null) && (
-          <Block>
+          <div className="rounded-2xl border-l-4 p-5 sm:p-6" style={{ borderLeftColor: 'var(--map-cyan-4)', backgroundColor: '#d6ebf0' }}>
+            <p className="eyebrow">Linha do dinheiro</p>
             <h3 className="mb-3 font-display text-xl text-[#14304f]">Valores — projetos de um único município</h3>
-            <dl className="grid grid-cols-2 gap-3 sm:grid-cols-5">
+            {works.financial.filter(f => f.value != null).length >= 2 && (
+              <BarList title="Comparação entre estágios" rows={works.financial.filter((f): f is typeof f & { value: number } => f.value != null).map(f => ({ label: f.label, value: f.value, display: f.display ?? String(f.value) }))} caption="Barras na mesma escala só para comparar a magnitude de cada estágio — não representam uma sequência que se soma." />
+            )}
+            <dl className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-5">
               {works.financial.map(f => (
                 <div key={f.key} className="rounded-xl border bg-white p-4"><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{f.label}</dt>
                   <dd className="hero-figure tnum mt-1 text-xl text-[#14304f] sm:text-2xl">{f.display ?? 'Não há informação publicada para esta etapa.'}</dd></div>
               ))}
             </dl>
             <p className="mt-2 text-xs text-muted-foreground">Estágios diferentes da mesma obra — nunca somados entre si.</p>
-          </Block>
+          </div>
         )}
       </ChapterShell>)}
 
@@ -116,6 +145,7 @@ export function InfrastructurePage({ data }: { data: InfrastructurePageData }) {
           <p className="mt-2 text-muted-foreground">Contagens nacionais de cada fonte (não só deste território) — mostram o alcance geral da família, não quantos indicadores estão publicados aqui.</p>
         </details>
       </section>
+      </div>
     </div>
   );
 }

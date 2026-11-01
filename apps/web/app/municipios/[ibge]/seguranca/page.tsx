@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { SecurityPage } from '@/components/security/security-page';
 import { TerritoryFrame } from '@/components/territory/state-frame';
+import { securityLedeFor } from '@/lib/security/hero';
 import { loadSecurityPage, scopeOf } from '@/lib/security/load';
 
 export const dynamic = 'force-dynamic';
@@ -11,6 +12,6 @@ export default async function MunicipioSegurancaPage({ params }: Props) {
   const { ibge } = await params; const scope = await scopeOf('municipio', ibge); if (!scope) notFound();
   const data = await loadSecurityPage(scope);
   return <TerritoryFrame crumbs={[{ href: '/estados', label: 'Estados' }, { href: `/estados/${scope.uf}`, label: scope.stateName }, { href: `/municipios/${scope.entityId}`, label: scope.name }, { label: 'Segurança' }]} kicker={`${scope.name} · Segurança Pública`} title={`Segurança Pública em ${scope.name}`}
-    lede="Registros oficiais da cidade e do estado, comparações válidas e o que as fontes não permitem concluir."
+    lede={securityLedeFor(data.hero)}
     population={scope.population?.value ?? null} populationYear={scope.population?.year ?? null} base={`/municipios/${scope.entityId}`} active="seguranca"><SecurityPage data={data} /></TerritoryFrame>;
 }

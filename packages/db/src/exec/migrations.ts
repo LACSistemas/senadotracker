@@ -38,6 +38,10 @@ import { EXEC_DDL_V36 } from './ddl-v36.ts';
 import { EXEC_DDL_V37 } from './ddl-v37.ts';
 import { EXEC_DDL_V38 } from './ddl-v38.ts';
 import { EXEC_DDL_V39 } from './ddl-v39.ts';
+import { EXEC_DDL_V40 } from './ddl-v40.ts';
+import { EXEC_DDL_V41 } from './ddl-v41.ts';
+import { EXEC_DDL_V42 } from './ddl-v42.ts';
+import { EXEC_DDL_V43 } from './ddl-v43.ts';
 
 export interface ExecMigration { version: number; name: string; sql: string }
 export const EXEC_MIGRATIONS: ExecMigration[] = [
@@ -80,6 +84,10 @@ export const EXEC_MIGRATIONS: ExecMigration[] = [
   { version: 37, name: 'civica_exec_ddl_v37_infra_indicator_ownership', sql: EXEC_DDL_V37 },
   { version: 38, name: 'civica_exec_ddl_v38_infra_serving_rollups', sql: EXEC_DDL_V38 },
   { version: 39, name: 'civica_exec_ddl_v39_distinct_territory_rollups', sql: EXEC_DDL_V39 },
+  { version: 40, name: 'civica_exec_ddl_v40_gdp_territory', sql: EXEC_DDL_V40 },
+  { version: 41, name: 'civica_exec_ddl_v41_executive_mandate', sql: EXEC_DDL_V41 },
+  { version: 42, name: 'civica_exec_ddl_v42_idhm_territory', sql: EXEC_DDL_V42 },
+  { version: 43, name: 'civica_exec_ddl_v43_executive_mandate_municipal', sql: EXEC_DDL_V43 },
 ];
 
 /** Aplica as migrations do schema civica_exec de forma idempotente (lock consultivo + uma transação por versão). Nunca toca outros schemas. */

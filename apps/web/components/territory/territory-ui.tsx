@@ -2,7 +2,8 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 import type { IndicatorView } from '@senadotracker/db';
 import { sequentialRamp, emptyFill, darkFrom } from '@/lib/scale';
-import { competenceLabel, type UfGeometry } from '@/lib/exec-territory';
+import { competenceLabel } from '@/lib/competence-label';
+import type { UfGeometry } from '@/lib/exec-territory';
 import { cn } from '@/lib/utils';
 
 const FLAG = { smallN: 1, preliminary: 2, partialCoverage: 4, suppressed: 8, denominatorDivergent: 16, above100: 32, noDenominator: 64 };
@@ -85,31 +86,43 @@ export function SeriesChart({ title, code, points, unit }: { title: string; code
 }
 
 export interface MapMetric { key: string; label: string; unit: string; digits: number }
-/** Mapa municipal da UF: cada município é um link; ausência de valor ou de polígono é dita, não preenchida. */
-export function MunicipalMap({ geometry, names, values, hrefFor, selectedId, metric, missing }: {
-  geometry: UfGeometry; names: Map<number, string>; values: Map<number, number>; hrefFor: (id: number) => string; selectedId?: number | undefined; metric: MapMetric; missing: string[];
+/** Mapa municipal da UF: cada município é um link; ausência de valor ou de polígono é dita, não preenchida.
+ * `ramp` escolhe a família de matiz (sempre sequencial = magnitude, nunca eval-color = desvio) — cada métrica
+ * alternável pode ter a sua, para o mapa não repetir sempre o mesmo verde. `highlightFill` marca `selectedId`
+ * com uma cor própria de "localização", fora da rampa de magnitude (uso: mini-mapa localizador do município).
+ * `flags` (opcional, P3): bitmask de ressalva por município (mesmo `FLAG` de `flagLabels`) — quando presente,
+ * some ao rótulo/tooltip ("Preliminar", "Cobertura parcial"...) em vez de colorir normalmente sem aviso. */
+export function MunicipalMap({ geometry, names, values, hrefFor, selectedId, metric, missing, ramp = sequentialRamp, highlightFill, flags }: {
+  geometry: UfGeometry; names: Map<number, string>; values: Map<number, number>; hrefFor: (id: number) => string; selectedId?: number | undefined; metric: MapMetric; missing: string[]; ramp?: readonly string[]; highlightFill?: string; flags?: Map<number, number>;
 }) {
   const sorted = [...values.values()].sort((a, b) => a - b);
   const edges = [0.2, 0.4, 0.6, 0.8].map(q => sorted[Math.min(sorted.length - 1, Math.floor(q * sorted.length))] ?? 0);
   const band = (v: number) => edges.filter(e => v >= e).length;
   const fmt = nf(metric.digits);
-  const legend = sequentialRamp.map((c, i) => ({ c, label: i === 0 ? `até ${fmt.format(edges[0] ?? 0)}` : i === 4 ? `${fmt.format(edges[3] ?? 0)} ou mais` : `${fmt.format(edges[i - 1] ?? 0)} a ${fmt.format(edges[i] ?? 0)}` }));
+  const legend = ramp.map((c, i) => ({ c, label: i === 0 ? `até ${fmt.format(edges[0] ?? 0)}` : i === 4 ? `${fmt.format(edges[3] ?? 0)} ou mais` : `${fmt.format(edges[i - 1] ?? 0)} a ${fmt.format(edges[i] ?? 0)}` }));
+  const describe = (id: number, name: string, v: number | undefined) => {
+    const base = `${name}: ${v === undefined ? 'sem dado' : `${fmt.format(v)} ${metric.unit}`}`;
+    const fl = flags ? flagLabels(flags.get(id) ?? 0) : [];
+    return fl.length ? `${base} (${fl.join('; ')})` : base;
+  };
   return (
     <figure>
-      <svg viewBox={geometry.viewBox} role="group" aria-label={`Mapa dos municípios, colorido por ${metric.label}`} className="mx-auto h-auto max-h-[34rem] w-full">
+      <svg viewBox={geometry.viewBox} role="group" aria-label={`Mapa dos municípios, colorido por ${metric.label}`} className="map-regions mx-auto h-auto max-h-[34rem] w-full">
         {geometry.items.map(item => {
           const v = values.get(item.id); const name = names.get(item.id) ?? String(item.id);
-          const fill = v === undefined ? emptyFill : sequentialRamp[band(v)]!;
           const sel = item.id === selectedId;
-          return <Link key={item.id} href={hrefFor(item.id)} aria-label={`${name}: ${v === undefined ? 'sem dado' : `${fmt.format(v)} ${metric.unit}`}`}>
-            <path d={item.d} fill={fill} stroke={sel ? 'var(--foreground)' : 'var(--card)'} strokeWidth={sel ? 2.4 : 0.6} vectorEffect="non-scaling-stroke" className="transition-opacity hover:opacity-80"><title>{`${name}: ${v === undefined ? 'sem dado' : `${fmt.format(v)} ${metric.unit}`}`}</title></path>
+          const fill = highlightFill && sel ? highlightFill : v === undefined ? emptyFill : ramp[band(v)]!;
+          const desc = describe(item.id, name, v);
+          return <Link key={item.id} href={hrefFor(item.id)} aria-label={desc}>
+            <path d={item.d} fill={fill} stroke={sel ? 'var(--foreground)' : 'var(--card)'} strokeWidth={sel ? 2.4 : 0.6} vectorEffect="non-scaling-stroke" className="map-region"><title>{desc}</title></path>
           </Link>;
         })}
       </svg>
-      <figcaption className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+      {!highlightFill && <figcaption className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
         {legend.map((l, i) => <span key={l.c} className="inline-flex items-center gap-1.5"><span className="inline-block h-3 w-5 rounded-sm border" style={{ background: l.c }} aria-hidden data-dark={i >= darkFrom} />{l.label}</span>)}
         <span className="inline-flex items-center gap-1.5"><span className="inline-block h-3 w-5 rounded-sm border" style={{ background: emptyFill }} aria-hidden />sem dado</span>
-      </figcaption>
+      </figcaption>}
+      {!highlightFill && <p className="mt-1 text-[0.7rem] text-muted-foreground">Faixas por quintil (20% dos municípios com dado em cada faixa) — não por intervalo fixo de valor.</p>}
       {missing.length > 0 && <p className="mt-2 text-xs text-muted-foreground">Sem polígono na malha oficial utilizada: {missing.join(', ')}. O município continua acessível pela busca.</p>}
     </figure>
   );

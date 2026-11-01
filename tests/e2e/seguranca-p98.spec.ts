@@ -11,7 +11,7 @@ test.describe('Vitória (ES) — desktop', () => {
 
   test('panorama com quatro indicadores, régua de comparação e navegação por capítulos', async ({ page }) => {
     await page.goto(VIT); await expect(page.getByRole('heading', { name: /Como está a Segurança Pública em Vitória/ })).toBeVisible();
-    await expect(page.locator('[id^="kpi-"]')).toHaveCount(4); await expect(page.getByText('Comparação válida').first()).toBeHidden().catch(() => undefined);
+    await expect(page.locator('[id^="kpi-"]:not([id$="-chapter"])')).toHaveCount(4); await expect(page.getByText('Comparação válida').first()).toBeHidden().catch(() => undefined);
     await expect(page.getByRole('img', { name: /Vitória: .*Mediana do grupo/ }).first()).toBeVisible();
     await page.getByRole('link', { name: /^8\s*Explorar os dados$/ }).click(); await expect(page.locator('#explorar')).toBeInViewport();
     await expect(page.getByRole('navigation', { name: 'Capítulos desta página' })).toBeVisible();
@@ -66,7 +66,7 @@ test.describe('outros territórios', () => {
     await page.goto('/estados/ES/seguranca'); await expect(page.getByText(/unidades da federação/).first()).toBeVisible(); await expect(page.locator('#estrutura')).toBeVisible(); await expect(page.locator('#apreensoes')).toBeVisible();
   });
   test('visão geral do município tem a vitrine de Segurança e leva à leitura completa', async ({ page }) => {
-    await page.goto('/municipios/3205309'); const link = page.getByRole('link', { name: /Ler a história completa/ }); await expect(link).toBeVisible(); await link.click(); await expect(page).toHaveURL(/\/municipios\/3205309\/seguranca/);
+    await page.goto('/municipios/3205309'); const link = page.getByRole('link', { name: 'Ler a história completa de Segurança Pública' }); await expect(link).toBeVisible(); await link.click(); await expect(page).toHaveURL(/\/municipios\/3205309\/seguranca/);
   });
   test('APIs: benchmark válido responde; parâmetros inválidos são recusados', async ({ request }) => {
     const ok = await request.get('/api/seguranca/benchmark?entity=3205309&opt=vde:homicidio-doloso'); expect(ok.status()).toBe(200); expect((await ok.json()).status).toBeTruthy();

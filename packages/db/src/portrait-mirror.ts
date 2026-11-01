@@ -19,6 +19,9 @@ export const PORTRAIT_ALLOWED_HOSTS: ReadonlySet<string> = new Set([
   'www.alesc.sc.gov.br', 'www.almg.gov.br', 'www.cl.df.gov.br', 'www3.al.es.gov.br',
   // Congresso Nacional: o Senado redireciona http→https e depois para legis.senado.leg.br; cada salto é revalidado.
   'www.camara.leg.br', 'www.senado.leg.br', 'legis.senado.leg.br',
+  // TSE: a URL de origem é a do ZIP por UF/ano (não há URL individual por candidato); o `fetchImpl` de
+  // apps/collector/src/tse-photos.ts extrai só a foto pedida via HTTP Range, nunca o ZIP inteiro.
+  'cdn.tse.jus.br',
 ]);
 /**
  * Endereço canônico do retrato. A ALESP serve as fotos em www3.al.sp.gov.br/legis/ (é o que o próprio portal usa); o cadastro antigo

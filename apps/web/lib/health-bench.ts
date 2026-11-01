@@ -1,5 +1,5 @@
-import type { DistStat, PanelValue, VaccineValue } from '@senadotracker/db';
-import { VACCINE_PRIORITY } from './health-targets.ts';
+import type { DistStat, HealthBenchmarks, PanelValue, VaccineValue } from '@senadotracker/db';
+import { PANEL_CARDS, VACCINE_PRIORITY } from './health-targets.ts';
 
 export const FLAG = { smallN: 1, preliminary: 2, partialCoverage: 4, suppressed: 8, denominatorDivergent: 16, above100: 32, noDenominator: 64 } as const;
 /** Mínimo de territórios comparáveis para exibir faixa (abaixo disso só a mediana de referência). */
@@ -45,6 +45,17 @@ export function vaccineRows(found: VaccineValue[]): VaccineRow[] {
 }
 export const vaccineSummary = (rows: VaccineRow[]) => ({ met: rows.filter(r => r.status === 'met').length, below: rows.filter(r => r.status === 'below').length, withData: rows.filter(r => r.status !== 'none').length, total: rows.length, year: rows.find(r => r.year !== null)?.year ?? null });
 
+/** Os 6 cards-resumo do painel, com a posição de cada um frente ao grupo de referência — mesma fonte usada pelo painel e pela manchete editorial do hero, para nunca divergir. */
+export function healthPanelCards(p: { values: Record<string, PanelValue>; kind: 'uf' | 'municipio'; ufCode: number; ufName: string; bench: HealthBenchmarks }) {
+  return PANEL_CARDS.map(meta => {
+    const v = p.values[meta.code];
+    const bench = p.kind === 'municipio'
+      ? benchFor(v, p.bench.byUf[String(p.ufCode)]?.[meta.code], `municípios de ${p.ufName}`, p.bench.brazilMunicipalities[meta.code], 'Brasil')
+      : benchFor(v, p.bench.ufs[meta.code], 'UFs', undefined, '');
+    return { meta, v, bench };
+  });
+}
+
 /** Frase de abertura: fatos comparativos, sem juízo clínico. Escolhe o indicador mais afastado da mediana do grupo e cita vacinas abaixo da meta. */
 export function healthLede(o: { scope: string; groupLabel: string; cards: Array<{ title: string; bench: BenchState; value: number | null }>; vaccines: VaccineRow[] }): string | null {
   const ok = o.cards.filter(c => c.bench.kind === 'ok' && c.value !== null).map(c => {
@@ -56,6 +67,18 @@ export function healthLede(o: { scope: string; groupLabel: string; cards: Array<
   const s = vaccineSummary(o.vaccines);
   if (s.withData > 0) parts.push(s.below === 0 ? `as ${s.met} vacinas prioritárias com registro estão na meta` : `${s.below} de ${s.withData} vacinas prioritárias estão abaixo da meta`);
   return parts.length ? `${parts.join('; ')}.` : null;
+}
+
+/** `healthLede` pronta a partir dos dados brutos da página (valores+bench+vacinas) — usada tanto pelo
+ * painel quanto pela abertura editorial do hero, para as duas nunca divergirem uma da outra. */
+export function healthLedeFor(p: { scope: string; kind: 'uf' | 'municipio'; ufCode: number; ufName: string; values: Record<string, PanelValue>; vaccines: VaccineValue[]; bench: HealthBenchmarks }): string | null {
+  const cards = healthPanelCards(p);
+  const vrows = vaccineRows(p.vaccines);
+  return healthLede({
+    scope: p.scope, groupLabel: p.kind === 'municipio' ? `municípios de ${p.ufName}` : 'UFs',
+    cards: cards.map(c => ({ title: c.meta.title.replace(/ por 1\.000 habitantes/, ' por mil habitantes'), bench: c.bench, value: c.v?.value ?? null })),
+    vaccines: vrows,
+  });
 }
 
 const TYPE_NAMES: Record<number, string> = { 1: 'Posto de saúde', 2: 'Centro de saúde / Unidade básica', 4: 'Policlínica', 5: 'Hospital geral', 7: 'Hospital especializado', 15: 'Unidade mista', 22: 'Consultório isolado', 36: 'Clínica / Centro de especialidade', 39: 'SADT isolado', 43: 'Farmácia', 73: 'Pronto atendimento', 62: 'Hospital-dia isolado', 70: 'Centro de atenção psicossocial', 69: 'Centro de hemoterapia', 50: 'Unidade de vigilância em saúde', 71: 'Centro de apoio à saúde da família', 74: 'Polo academia da saúde' };

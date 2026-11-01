@@ -77,18 +77,18 @@ function DataTable({ tab }: { tab: EvoTab }) {
       <tbody>{tab.points.map(p => <tr key={p.year} className="border-t"><td className="py-1">{p.year}{p.partial ? ' (parcial)' : p.prelim ? ' (prelim.)' : ''}</td><td>{p.v === null ? '—' : fmt(tab.digits).format(p.v)}</td><td>{g.get(p.year) ? fmt(tab.digits).format(g.get(p.year)!.p50) : '—'}</td><td>{r.get(p.year) ? fmt(tab.digits).format(r.get(p.year)!.p50) : '—'}</td></tr>)}</tbody></table></div></details>;
 }
 
-/** Evolução: 4 indicadores em abas, sempre com a mediana do grupo (estado/UFs) e do Brasil. Os dados das 4 abas chegam prontos do servidor. */
-export function EvolutionPanel({ tabs, scope }: { tabs: EvoTab[]; scope: string }) {
+/** Evolução: 4 indicadores em abas, sempre com a mediana do grupo (estado/UFs) e do Brasil. Os dados das 4 abas chegam prontos do servidor. `id` é a âncora estável para o ChapterNav — o id interno de `useId()` muda a cada render e não serve como âncora de URL. */
+export function EvolutionPanel({ tabs, scope, id }: { tabs: EvoTab[]; scope: string; id?: string }) {
   const [active, setActive] = useState(tabs[0]?.code ?? '');
   const [hover, setHover] = useState<number | null>(null);
-  const id = useId();
+  const rid = useId();
   const tab = tabs.find(t => t.code === active) ?? tabs[0];
   if (!tab) return null;
   return (
-    <section aria-labelledby={`${id}-t`} className="rounded-xl border bg-white p-4 sm:p-5">
+    <section id={id} aria-labelledby={`${rid}-t`} className="scroll-mt-28 rounded-xl border bg-white p-4 sm:p-5">
       <header className="flex flex-wrap items-start justify-between gap-3">
         <div className="flex items-start gap-3"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: '#e2f5e8' }} aria-hidden><TrendingUp size={18} color={GREEN} /></span>
-          <div><h2 id={`${id}-t`} className="font-display text-2xl text-[#14304f]">Como {scope} evoluiu</h2><p className="mt-0.5 text-xs text-muted-foreground">Cada linha é comparada com a mediana do grupo e a do Brasil.</p></div></div>
+          <div><h2 id={`${rid}-t`} className="font-display text-2xl text-[#14304f]">Como {scope} evoluiu</h2><p className="mt-0.5 text-xs text-muted-foreground">Cada linha é comparada com a mediana do grupo e a do Brasil.</p></div></div>
         <div role="tablist" aria-label="Indicador" className="flex flex-wrap gap-1.5">
           {tabs.map(t => <button key={t.code} role="tab" type="button" aria-selected={t.code === tab.code} onClick={() => { setActive(t.code); setHover(null); }}
             className={cn('rounded-full border px-3 py-1 text-xs font-semibold', t.code === tab.code ? 'border-[#115b45] bg-[#115b45] text-white' : 'bg-white hover:border-[#115b45]/50')}>{t.title}</button>)}

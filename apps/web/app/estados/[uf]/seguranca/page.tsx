@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { SecurityPage } from '@/components/security/security-page';
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { isUf } from '@/lib/exec-territory';
+import { securityLedeFor } from '@/lib/security/hero';
 import { loadSecurityPage, scopeOf } from '@/lib/security/load';
 
 export const dynamic = 'force-dynamic';
@@ -13,6 +14,6 @@ export default async function EstadoSegurancaPage({ params }: Props) {
   const scope = await scopeOf('uf', raw.toUpperCase()); if (!scope) notFound();
   const data = await loadSecurityPage(scope);
   return <TerritoryFrame crumbs={[{ href: '/estados', label: 'Estados' }, { href: `/estados/${scope.uf}`, label: scope.name }, { label: 'Segurança' }]} kicker={`${scope.name} · Segurança Pública`} title={`Segurança Pública em ${scope.name}`}
-    lede="Registros oficiais, comparações válidas e o que as fontes não permitem concluir."
+    lede={securityLedeFor(data.hero)}
     population={scope.population?.value ?? null} populationYear={scope.population?.year ?? null} base={`/estados/${scope.uf}`} active="seguranca"><SecurityPage data={data} /></TerritoryFrame>;
 }

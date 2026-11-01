@@ -1,7 +1,16 @@
 import type { ReactNode } from 'react';
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Info } from 'lucide-react';
 import type { Narrative } from '@/lib/security/types';
+import type { MapRampName } from '@/lib/scale';
 import { cn } from '@/lib/utils';
+
+/** Cor de assinatura por tema (P6.2) — mesmas famílias de rampa validadas pela skill `dataviz` e já
+ * usadas no Atlas Vivo (P3): dá a cada tema um numeral de capítulo e uma régua de topo com identidade
+ * própria, sem inventar cor nova. Sem `accent`, o numeral some e nada muda visualmente. */
+const ACCENT_VAR: Record<MapRampName, string> = {
+  teal: 'var(--primary)', blue: 'var(--map-blue-4)', amber: 'var(--map-amber-4)',
+  rose: 'var(--map-rose-4)', violet: 'var(--map-violet-4)', cyan: 'var(--map-cyan-4)',
+};
 
 /** Sparkline em SVG puro (servidor): tendência recente sem eixos; serve de contexto, os valores exatos estão no gráfico do capítulo. */
 export function Sparkline({ values, label, width = 112, height = 34 }: { values: number[]; label: string; width?: number; height?: number }) {
@@ -20,13 +29,17 @@ export function DeltaChip({ delta }: { delta: { text: string; direction: 'up' | 
 export function Eyebrow({ children }: { children: ReactNode }) { return <p className="eyebrow">{children}</p>; }
 
 /** Moldura de um capítulo: pergunta → resposta → evidência → convite, mais "fontes e limites" sempre à mão. */
-export function ChapterShell({ id, number, title, narrative, tone = 'plain', limits, sources, children }: { id: string; number: number; title: string; narrative: Narrative; tone?: 'plain' | 'strip'; limits: string[]; sources?: string; children: ReactNode }) {
+export function ChapterShell({ id, number, title, narrative, tone = 'plain', accent, limits, sources, children }: { id: string; number: number; title: string; narrative: Narrative; tone?: 'plain' | 'strip'; accent?: MapRampName; limits: string[]; sources?: string; children: ReactNode }) {
+  const accentVar = accent ? ACCENT_VAR[accent] : undefined;
   return (
-    <section id={id} aria-labelledby={`${id}-h`} className={cn('scroll-mt-28 rounded-3xl border p-5 sm:p-8', tone === 'strip' ? 'bg-[var(--surface-strip,#faf9f5)]' : 'bg-card')}>
-      <header className="section-hairline pt-4">
-        <Eyebrow>Capítulo {number}</Eyebrow>
-        <h2 id={`${id}-h`} className="display-title mt-1 text-3xl sm:text-4xl">{title}</h2>
-        <p className="mt-2 font-display text-lg italic text-muted-foreground sm:text-xl">{narrative.question}</p>
+    <section id={id} aria-labelledby={`${id}-h`} className={cn('scroll-mt-28 rounded-3xl border p-5 sm:p-8', tone === 'strip' ? 'bg-[var(--surface-strip,#faf9f5)]' : 'bg-card')} style={accentVar ? { borderTopColor: accentVar, borderTopWidth: 3 } : undefined}>
+      <header className="section-hairline flex items-start gap-4 pt-4">
+        {accentVar && <span aria-hidden className="hidden shrink-0 select-none font-display text-5xl leading-none opacity-25 sm:block sm:text-6xl" style={{ color: accentVar }}>{String(number).padStart(2, '0')}</span>}
+        <div className="min-w-0">
+          <Eyebrow>Capítulo {number}</Eyebrow>
+          <h2 id={`${id}-h`} className="display-title mt-1 text-3xl sm:text-4xl">{title}</h2>
+          <p className="mt-2 font-display text-lg italic text-muted-foreground sm:text-xl">{narrative.question}</p>
+        </div>
       </header>
       <div className="mt-5 max-w-3xl">
         {narrative.answer && <p className="font-display text-xl leading-snug text-[#14304f] sm:text-2xl">{narrative.answer}</p>}

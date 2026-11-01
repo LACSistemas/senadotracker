@@ -19,9 +19,9 @@ export function ResidentsPanel({ story, scope, kind, ufName }: { story: Resident
   const inPct = w.inMun; const lastFull = [...story.years].reverse().find(y => !y.partial && y.inMun !== null);
   const legend = ['até 60', '60–85', '85–110', '110–135', '135 ou mais'];
   return (
-    <section aria-labelledby="moradores" className="rounded-xl border bg-white p-4 sm:p-5">
+    <section id="moradores" aria-labelledby="moradores-h" className="scroll-mt-28 rounded-xl border bg-white p-4 sm:p-5">
       <header className="flex items-start gap-3"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: '#fce8f2' }} aria-hidden><Home size={18} color="#db2777" /></span>
-        <div><h2 id="moradores" className="font-display text-2xl text-[#14304f]">Como os moradores de {scope} usam o hospital</h2><p className="mt-0.5 text-xs text-muted-foreground">Internações SUS de residentes, por mês de processamento, até {competenceLabel(`${Math.floor(story.lastCompetence / 100)}-${String(story.lastCompetence % 100).padStart(2, '0')}-01`)}.</p></div></header>
+        <div><h2 id="moradores-h" className="font-display text-2xl text-[#14304f]">Como os moradores de {scope} usam o hospital</h2><p className="mt-0.5 text-xs text-muted-foreground">Internações SUS de residentes, por mês de processamento, até {competenceLabel(`${Math.floor(story.lastCompetence / 100)}-${String(story.lastCompetence % 100).padStart(2, '0')}-01`)}.</p></div></header>
       {story.story && <p className="mt-4 max-w-4xl text-sm leading-relaxed text-[#14304f]">{story.story}</p>}
       <div className="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-4">
         <Tile label="Internações nos últimos 12 meses" value={int.format(w.aih)} sub={w.rate !== null ? `${nf(1).format(w.rate)} por 1.000 hab.${gRate !== null ? ` · ${groupWord}: ${nf(1).format(gRate)}` : ''}` : 'taxa indisponível (sem população)'} />
@@ -39,8 +39,8 @@ export function ResidentsPanel({ story, scope, kind, ufName }: { story: Resident
         <h3 className="text-sm font-bold text-[#14304f]">Calendário de internações</h3>
         {story.heatOk ? <>
           <p className="text-[0.7rem] text-muted-foreground">Cada quadrado é um mês; 100 = mês típico de 2013–2019 ({int.format(Math.round(story.baselineMonthly ?? 0))} internações). Mais escuro, mais movimento.</p>
-          <div className="mt-2 overflow-x-auto"><table className="w-full min-w-[520px] border-separate text-[0.65rem]" style={{ borderSpacing: 2 }} aria-label="Calendário de internações por mês e ano">
-            <thead><tr><th className="w-10" /><>{Array.from({ length: 12 }, (_, i) => <th key={i} className="font-normal text-muted-foreground">{monthName(i + 1)}</th>)}</><th className="w-24 pl-2 text-left font-normal text-muted-foreground">{kind === 'municipio' ? 'Por 1.000 hab.' : 'Por 1.000 hab.'}</th></tr></thead>
+          <div className="mt-2 overflow-x-auto" tabIndex={0} role="region" aria-label="Calendário de internações, com rolagem horizontal"><table className="w-full min-w-[520px] border-separate text-[0.65rem]" style={{ borderSpacing: 2 }} aria-label="Calendário de internações por mês e ano">
+            <thead><tr><th className="w-10"><span className="sr-only">Ano</span></th><>{Array.from({ length: 12 }, (_, i) => <th key={i} className="font-normal text-muted-foreground">{monthName(i + 1)}</th>)}</><th className="w-24 pl-2 text-left font-normal text-muted-foreground">{kind === 'municipio' ? 'Por 1.000 hab.' : 'Por 1.000 hab.'}</th></tr></thead>
             <tbody>{story.heat.map((row, ri) => { const y = story.years[ri]!; const g = medianAt(story.group, y.year);
               return <tr key={y.year}><th scope="row" className="pr-1 text-right font-normal text-muted-foreground">{y.year}</th>
                 {row.map(c => { const b = heatBand(c.index); return <td key={c.month} title={c.aih === null ? 'sem dado' : `${monthName(c.month)}/${c.year}: ${int.format(c.aih)} internações (índice ${Math.round(c.index ?? 0)})`} className="h-5 rounded-sm" style={{ background: b < 0 ? emptyFill : sequentialRamp[b] }} />; })}

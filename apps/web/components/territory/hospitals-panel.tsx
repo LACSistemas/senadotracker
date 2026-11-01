@@ -13,9 +13,9 @@ const titleCase = (s: string) => s.toLowerCase().replace(/(^|[\s(/-])([a-zà-ú]
 export function HospitalsPanel({ story, scope, from, to, kind }: { story: HospitalStory; scope: string; from: number; to: number; kind: 'uf' | 'municipio' }) {
   const maxShare = Math.max(...story.rows.map(r => r.share), 0.01);
   return (
-    <section aria-labelledby="quem-atende" className="rounded-xl border bg-white p-4 sm:p-5">
+    <section id="quem-atende" aria-labelledby="quem-atende-h" className="scroll-mt-28 rounded-xl border bg-white p-4 sm:p-5">
       <header className="flex items-start gap-3"><span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: '#e6eefc' }} aria-hidden><Hospital size={18} color="#2563eb" /></span>
-        <div><h2 id="quem-atende" className="font-display text-2xl text-[#14304f]">Quem atende em {scope}</h2><p className="mt-0.5 text-xs text-muted-foreground">Internações aprovadas pelo SUS por estabelecimento, {ymLabel(from)} a {ymLabel(to)} ({int.format(story.total)} no total).</p></div></header>
+        <div><h2 id="quem-atende-h" className="font-display text-2xl text-[#14304f]">Quem atende em {scope}</h2><p className="mt-0.5 text-xs text-muted-foreground">Internações aprovadas pelo SUS por estabelecimento, {ymLabel(from)} a {ymLabel(to)} ({int.format(story.total)} no total).</p></div></header>
       <p className="mt-4 max-w-4xl text-sm leading-relaxed text-[#14304f]">{story.story}</p>
       {story.ratio !== null && <p className="mt-3 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold" style={{ borderColor: story.poloWord === 'polo' ? '#2563eb' : story.poloWord === 'parte-fora' ? '#db2777' : '#cbd5e1', color: '#14304f', background: story.poloWord === 'polo' ? '#e6eefc' : story.poloWord === 'parte-fora' ? '#fce8f2' : '#f7f9fc' }}>
         {story.poloWord === 'polo' ? 'Polo regional' : story.poloWord === 'parte-fora' ? 'Parte dos moradores se trata fora' : 'Atendimento equilibrado'} · {nf(1).format(story.ratio)} atendida por internação de morador</p>}

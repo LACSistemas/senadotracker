@@ -13,8 +13,10 @@ export interface BarRow { label: string; value: number; display: string; note?: 
 export interface TableRow { label: string; cells: Array<string | null> }
 export interface Table { title: string; columns: string[]; rows: TableRow[]; caption?: string }
 
-export interface ComparePoint { label: string; value: number | null; display: string; eligible: boolean; reason: string | null }
-export interface TerritoryCompare { unit: string; year: string | null; own: ComparePoint; state: ComparePoint | null; brazil: ComparePoint; restrictions: string[] }
+/** `ComparePoint`/`TerritoryCompare` agora vivem em `lib/comparison/types.ts` (P4) — eram uma cópia
+ * byte-idêntica da versão de Bem-estar. Reexportados aqui para não quebrar nenhum import existente. */
+import type { ComparePoint, TerritoryCompare } from '@/lib/comparison/types';
+export type { ComparePoint, TerritoryCompare };
 
 /** `disclosures`: os indicadores crus que sustentam o capítulo — cada um vira um bloco de fonte/período/universo/
  * cobertura, sem nenhuma consulta extra além do que o capítulo já buscou. */

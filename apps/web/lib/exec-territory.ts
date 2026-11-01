@@ -39,10 +39,6 @@ export const loadGeometry = cache(async (uf: string): Promise<UfGeometry | null>
   catch { return null; }
 });
 
-/** Competência yyyymm → "mês/ano" legível. */
-export const competenceLabel = (periodStart: string): string => {
-  const [y, m] = periodStart.split('-');
-  const names = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
-  return `${names[Number(m) - 1]}/${y}`;
-};
+export { competenceLabel } from './competence-label';
+import { competenceLabel } from './competence-label';
 export const ymLabel = (c: number): string => competenceLabel(`${Math.floor(c / 100)}-${String(c % 100).padStart(2, '0')}-01`);

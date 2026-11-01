@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 export function StatGrid({ items }: { items: StatItem[] }) {
   if (!items.length) return null;
   return <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{items.map(s => (
-    <div key={s.label} className="rounded-xl border bg-white p-4"><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{s.label}</dt>
-      <dd className="hero-figure tnum mt-1 break-all text-3xl text-[#14304f]">{s.value}</dd>{s.unit && <p className="text-xs text-muted-foreground">{s.unit}</p>}{s.note && <p className="mt-1 text-xs text-muted-foreground">{s.note}</p>}</div>))}</dl>;
+    <div key={s.label} className="min-w-0 rounded-xl border bg-white p-4"><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{s.label}</dt>
+      <dd className="hero-figure tnum mt-1 break-all text-3xl text-[#14304f]">{s.value}</dd>{s.unit && <dd className="text-xs text-muted-foreground">{s.unit}</dd>}{s.note && <dd className="mt-1 text-xs text-muted-foreground">{s.note}</dd>}</div>))}</dl>;
 }
 
 /** Um grupo nomeado de indicadores (ex.: "Abastecimento de água" dentro do capítulo de Água e saneamento). */

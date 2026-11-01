@@ -6,7 +6,9 @@
     "allowImportingTsExtensions": true,
     "jsx": "react-jsx",
     "lib": ["ES2023", "DOM"],
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": { "@/*": ["apps/web/*"] }
   },
   "include": ["tests/**/*.ts", "apps/collector/src/**/*.ts"]
 }

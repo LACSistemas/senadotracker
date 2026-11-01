@@ -91,3 +91,13 @@ export async function buildHero(q: Q, i: HeroInput): Promise<{ hero: Hero; bench
   return { hero: { kpis: chosen, lede, facts, rejected }, benchByKpi };
 }
 export { latestValue };
+
+/** Manchete editorial do hero territorial (P5.3): quando o indicador líder do panorama tem uma
+ * comparação validada (`bench.sentence`, já nomeia o território e a mediana do grupo), usa essa frase
+ * real em vez do texto genérico de `hero.lede` — mesmo padrão que P5.1/P5.2 já aplicaram a Saúde/Educação.
+ * Nunca inventa: cai para `hero.lede` quando não há comparação válida. */
+export function securityLedeFor(hero: Hero): string {
+  const lead = hero.kpis[0];
+  if (lead?.compare?.valid) return lead.compare.text;
+  return hero.lede;
+}

@@ -25,6 +25,15 @@
   --eval-good:#157f58; --eval-typical:#60706a; --eval-watch:#a65d08; --eval-alert:#a33a3a; --eval-unknown:#c8cec7;
   /* Rampa sequencial do mapa (magnitude) com tons fixos, e cinza quente fora do matiz para "sem dado". */
   --map-1:hsl(159 54% 88%); --map-2:hsl(159 54% 74%); --map-3:hsl(159 54% 60%); --map-4:hsl(159 54% 46%); --map-5:hsl(159 54% 33%); --map-empty:#e9e7e0;
+  /* Famílias de matiz adicionais da mesma rampa sequencial (magnitude, nunca desvio): cada métrica alternável do
+     mapa territorial recebe a sua, para o mapa não repetir sempre o mesmo verde entre métricas diferentes. */
+  --map-blue-1:hsl(210 54% 88%); --map-blue-2:hsl(210 54% 74%); --map-blue-3:hsl(210 54% 60%); --map-blue-4:hsl(210 54% 46%); --map-blue-5:hsl(210 54% 33%);
+  --map-amber-1:hsl(32 60% 86%); --map-amber-2:hsl(32 60% 72%); --map-amber-3:hsl(32 62% 56%); --map-amber-4:hsl(28 62% 42%); --map-amber-5:hsl(24 62% 30%);
+  /* P3 (Atlas Vivo): 3 famílias novas para expor indicadores reais de Segurança/Bem-estar/Infraestrutura
+     no mapa sem repetir o matiz de Saúde (blue=leitos) — rose não é vermelho-alarme (saturação contida). */
+  --map-rose-1:hsl(354 42% 88%); --map-rose-2:hsl(354 42% 74%); --map-rose-3:hsl(354 44% 58%); --map-rose-4:hsl(352 46% 44%); --map-rose-5:hsl(350 48% 30%);
+  --map-violet-1:hsl(262 34% 88%); --map-violet-2:hsl(262 34% 74%); --map-violet-3:hsl(262 36% 58%); --map-violet-4:hsl(262 38% 44%); --map-violet-5:hsl(262 40% 30%);
+  --map-cyan-1:hsl(192 46% 86%); --map-cyan-2:hsl(192 46% 72%); --map-cyan-3:hsl(192 48% 54%); --map-cyan-4:hsl(194 50% 40%); --map-cyan-5:hsl(196 52% 28%);
   --radius-card:1rem; --shadow-card:0 1px 0 rgba(20,35,30,.03),0 12px 32px rgba(20,35,30,.045); --section-space:clamp(3.5rem,7vw,7rem);
   /* Tipografia determinística para builds offline: a pilha local evita download de fontes durante o build. */
   --font-sans:Inter,Arial,Helvetica,sans-serif; --font-display:Georgia,'Times New Roman',serif; --font-serif:var(--font-display);
@@ -34,7 +43,21 @@
   --group-1:#158458; --group-2:#74478e; --group-3:#a77612; --group-4:#9c2a67; --group-5:#3263c3; --group-6:#944126; --group-7:#208ea8; --group-other:#8b877c;
   /* Rampa ordinal (recente → antigo): um matiz, luminosidade monótona, extremo claro ≥ 2:1 sobre a superfície. */
   --stale-1:#004d28; --stale-2:#00643d; --stale-3:#247b54; --stale-4:#44926c; --stale-5:#60aa84;
-  --surface-strip:#faf9f5; --ink-soft:#3f5049; }
+  --surface-strip:#faf9f5; --ink-soft:#3f5049;
+  /* P1 (Atlas Editorial): acentos de marca que a paleta institucional ainda não nomeava — aditivos,
+     não substituem --primary/--secondary/--background, que já cobrem verde institucional/verde
+     suave/marfim. Verde profundo e verde editorial são SUPERFÍCIES escuras (hero, faixas, gradientes
+     — contraste ≥10:1 com texto claro), não cores de texto sobre fundo claro. */
+  --brand-green-deep:#103d34; --brand-green-editorial:#17382d;
+  /* Âmbar editorial: 2 tons porque o tom pedido no mandato (#C49E55) falha AA como texto sobre
+     --background/--card (2.2–2.4:1) — serve para preenchimentos, bordas e grafismos grandes.
+     --brand-amber-ink é o mesmo matiz escurecido para texto/ícone (4.9–5.2:1, validado). Distinto de
+     --warning: aquele é semântica de alerta reservada (skill dataviz), este é acento editorial. */
+  --brand-amber:#c49e55; --brand-amber-ink:#866327;
+  /* Azul analítico: já passa AA como texto sobre --background/--card (4.9–5.3:1) e como fundo com
+     texto branco (5.6:1) sem ajuste — usar direto nos dois papéis. */
+  --brand-blue:#3d69a5;
+}
 * { border-color:var(--border); }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--background); color:var(--foreground); font-family:var(--font-sans); text-rendering:optimizeLegibility; }
@@ -42,6 +65,16 @@ a { text-underline-offset:4px; }
 button,input,select { font:inherit; }
 ::selection { background:#bfdbc9; color:#0c3026; }
 .page-shell { width:min(1200px,calc(100% - 48px)); margin-inline:auto; }
+/* P1 (Atlas Editorial): grid 12 colunas — aditivo, nenhuma página existente usa ainda (adoção a
+   partir de P2/P3/P5). .col-reading é a medida de leitura editorial (prosa/KPIs); .col-explore é
+   largura plena (mapas, tabelas, exploradores). Ambas colapsam para 1 coluna em telas estreitas. */
+.grid-12 { display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(1rem,2vw,2rem); }
+/* min-width:0 evita a armadilha clássica do grid: sem isso, um item com conteúdo não quebrável (SVG de
+   largura fixa, número grande) força a trilha a crescer além da viewport em vez de encolher. */
+.col-reading { grid-column:3 / span 8; max-width:68ch; min-width:0; }
+.col-explore { grid-column:1 / -1; min-width:0; }
+@media (max-width:1024px) { .grid-12 { grid-template-columns:repeat(6,1fr); } .col-reading,.col-explore { grid-column:1 / -1; max-width:none; } }
+@media (max-width:640px) { .grid-12 { grid-template-columns:repeat(4,1fr); gap:1rem; } }
 .display-title { font-family:var(--font-display); font-weight:400; letter-spacing:-.035em; line-height:.98; font-optical-sizing:auto; text-wrap:balance; }
 .eyebrow { color:var(--primary); font-size:.72rem; font-weight:800; letter-spacing:.17em; text-transform:uppercase; }
 .focus-ring:focus-visible { outline:2px solid var(--ring); outline-offset:4px; border-radius:.35rem; }
@@ -64,11 +97,24 @@ button,input,select { font:inherit; }
 .hero-wash { background:radial-gradient(58rem 26rem at 82% -10%,rgba(23,137,91,.11),transparent 62%),radial-gradient(38rem 22rem at -4% 4%,rgba(211,154,60,.11),transparent 58%),var(--background); }
 .band-gradient { background:linear-gradient(135deg,#0a3528 0%,#115b45 58%,#177a5a 100%); }
 .section-hairline { border-top:3px solid var(--hairline,var(--primary)); }
-.card-lift { transition:transform .22s cubic-bezier(.2,.7,.2,1),box-shadow .22s cubic-bezier(.2,.7,.2,1),border-color .22s; }
+.card-lift { transition:transform .15s cubic-bezier(.2,.7,.2,1),box-shadow .15s cubic-bezier(.2,.7,.2,1),border-color .15s; }
 .card-lift:hover { transform:translateY(-2px); box-shadow:0 1px 0 rgba(20,35,30,.04),0 20px 44px rgba(20,35,30,.10); border-color:color-mix(in srgb,var(--primary) 32%,var(--border)); }
 .strip-seg { transition:filter .16s ease,opacity .16s ease; }
 .strip-seg:hover,.strip-seg:focus-visible { filter:brightness(1.1) saturate(1.05); }
 .strip-dim .strip-seg:not([data-active="true"]) { opacity:.42; }
+/* Mapa coroplético territorial: a região sob o cursor ganha brilho e as demais esmaecem levemente — sem JS, só :has(). */
+.map-regions .map-region { transition:opacity .15s ease,filter .15s ease; }
+.map-regions:has(.map-region:hover) .map-region:not(:hover) { opacity:.55; }
+.map-regions .map-region:hover,.map-regions .map-region:focus-visible { filter:brightness(1.08) saturate(1.08); }
+@media (prefers-reduced-motion:reduce) { .map-regions .map-region { transition:none; } }
+/* P3 (Atlas Vivo): palco de zoom/pan — transform em .atlas-canvas, nunca no SVG de geometria (mantém
+   vector-effect="non-scaling-stroke" correto). Sem transição durante o arraste (senão o ponteiro "atrasa"
+   do transform). */
+.atlas-stage { touch-action:none; cursor:grab; overscroll-behavior:contain; }
+.atlas-stage[data-dragging="true"] { cursor:grabbing; }
+.atlas-canvas { transition:transform .25s cubic-bezier(.2,.7,.2,1); transform-origin:0 0; }
+.atlas-canvas[data-instant="true"] { transition:none; }
+@media (prefers-reduced-motion:reduce) { .atlas-canvas { transition:none; } }
 /* Revelação: o estado inicial só existe com JavaScript armado; sem ele, a animação de segurança revela sozinha em 2,2 s. */
 @keyframes prop-rise-force { to { opacity:1; transform:none; } }
 @keyframes prop-wipe-force { to { clip-path:inset(0 0 0 0 round var(--wipe-r,8px)); } }

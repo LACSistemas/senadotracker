@@ -7,7 +7,8 @@ import { fmt, periodLabel } from '../../lib/security/format.ts';
 import { cn } from '../../lib/utils.ts';
 
 const COLORS: Record<NonNullable<ChartSeries['color']>, string> = { primary: '#115b45', ink: '#14304f', amber: '#a77612', blue: '#3263c3', plum: '#74478e', grey: '#7b8aa0' };
-const STATE_LABEL: Record<PointState, string> = { ok: '', prelim: 'preliminar: pode ser revisto', partial: 'ano incompleto', zero: 'zero informado pela fonte', suppressed: 'valor suprimido para proteger as vítimas', absent: 'sem dado' };
+/** Única fonte do rótulo humano de cada `PointState` — reaproveitado por `StateBadge` (fora do gráfico). */
+export const STATE_LABEL: Record<PointState, string> = { ok: '', prelim: 'preliminar: pode ser revisto', partial: 'ano incompleto', zero: 'zero informado pela fonte', suppressed: 'valor suprimido para proteger as vítimas', absent: 'sem dado' };
 const RANGES = [{ key: 'all', label: 'Tudo', years: 0 }, { key: '10', label: '10 anos', years: 10 }, { key: '5', label: '5 anos', years: 5 }, { key: '3', label: '3 anos', years: 3 }] as const;
 type RangeKey = (typeof RANGES)[number]['key'];
 

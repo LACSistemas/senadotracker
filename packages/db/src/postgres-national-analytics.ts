@@ -179,3 +179,47 @@ export async function getStateLegislatureOverview(pool: AnalyticsQueryable): Pro
     snapshotAt: new Date().toISOString(),
   };
 }
+
+export type TerritoryLegislativeParty = { code: string; name: string | null; count: number };
+/** `unresolvedCount`: cadeiras cuja `raw_party` não foi normalizada para um `canonical_party_code` na fonte (gap
+ * real do pipeline de Legislativo, não um bug deste read model) — nunca distribuído silenciosamente entre partidos
+ * nem somado ao maior partido; a UI deve mostrar como segmento "não identificado" explícito. */
+export type TerritoryLegislativeHouse = { houseId: string; houseName: string; level: string; count: number; parties: TerritoryLegislativeParty[]; unresolvedCount: number };
+export type TerritoryLegislativeComposition = {
+  uf: string;
+  totals: { senators: number; federalDeputies: number; stateDeputies: number; districtDeputies: number };
+  houses: TerritoryLegislativeHouse[];
+  snapshotAt: string;
+};
+
+/** Composição legislativa de uma UF (Senado + Câmara + Assembleia/Câmara Distrital), por casa e por partido —
+ * usada no card de "quem representa" das páginas de território. Sem collector novo: só agrupa
+ * `current_legislators_analytics` por `constituency_uf`. */
+export async function getTerritoryLegislativeComposition(pool: AnalyticsQueryable, uf: string): Promise<TerritoryLegislativeComposition> {
+  const code = uf.toUpperCase();
+  const where = 'is_current=true AND constituency_uf=$1';
+  const [byLevel, byHouseParty] = await Promise.all([
+    pool.query<{ level: string; count: string }>(`SELECT legislative_level AS level, count(*)::bigint AS count FROM civica_national.current_legislators_analytics WHERE ${where} GROUP BY legislative_level`, [code]),
+    pool.query<{ houseId: string; houseName: string; level: string; code: string | null; name: string | null; count: string }>(
+      `SELECT house_id AS "houseId", max(house_name) AS "houseName", max(legislative_level) AS level, canonical_party_code AS code, max(canonical_party_name) AS name, count(*)::bigint AS count
+       FROM civica_national.current_legislators_analytics WHERE ${where} GROUP BY house_id, canonical_party_code ORDER BY house_id, count DESC`, [code]),
+  ]);
+  const totals = { senators: 0, federalDeputies: 0, stateDeputies: 0, districtDeputies: 0 };
+  for (const row of byLevel.rows) {
+    const n = Number(row.count);
+    if (row.level === 'FEDERAL_SENATOR') totals.senators = n;
+    else if (row.level === 'FEDERAL_DEPUTY') totals.federalDeputies = n;
+    else if (row.level === 'STATE_DEPUTY') totals.stateDeputies = n;
+    else if (row.level === 'DISTRICT_DEPUTY') totals.districtDeputies = n;
+  }
+  const houses = new Map<string, TerritoryLegislativeHouse>();
+  for (const row of byHouseParty.rows) {
+    const h = houses.get(row.houseId) ?? { houseId: row.houseId, houseName: row.houseName, level: row.level, count: 0, parties: [], unresolvedCount: 0 };
+    const n = Number(row.count);
+    h.count += n;
+    if (row.code) h.parties.push({ code: row.code, name: row.name, count: n });
+    else h.unresolvedCount += n;
+    houses.set(row.houseId, h);
+  }
+  return { uf: code, totals, houses: [...houses.values()].sort((a, b) => b.count - a.count), snapshotAt: new Date().toISOString() };
+}

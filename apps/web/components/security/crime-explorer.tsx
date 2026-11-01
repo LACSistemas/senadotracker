@@ -71,7 +71,7 @@ export function CrimeExplorer({ chapter, entityId, scopeName, isMunicipality }: 
         <div className="hidden max-h-[34rem] space-y-4 overflow-y-auto pr-1 lg:block">
           {groups.map(([g, list]) => <div key={g}><p className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">{g}</p>
             <ul className="mt-1.5 space-y-1">{list.map(o => <li key={o.id}><button type="button" aria-pressed={o.id === sel} onClick={() => void choose(o.id)} className={cn('flex w-full items-baseline justify-between gap-2 rounded-lg border px-3 py-2 text-left text-sm transition-colors', o.id === sel ? 'border-[#115b45] bg-[#115b45] text-white' : 'bg-white hover:border-[#115b45]/50')}>
-              <span className="font-medium leading-snug">{o.plain}</span>{o.peek?.v != null && <span className={cn('tnum shrink-0 text-xs', o.id === sel ? 'text-white/80' : 'text-muted-foreground')}>{fmt(o.peek.v)} <span className="opacity-70">({o.peek.t})</span></span>}</button></li>)}</ul></div>)}
+              <span className="font-medium leading-snug">{o.plain}</span>{o.peek?.v != null && <span className={cn('tnum shrink-0 text-xs', o.id === sel ? 'text-white/80' : 'text-muted-foreground')}>{fmt(o.peek.v)} <span>({o.peek.t})</span></span>}</button></li>)}</ul></div>)}
         </div>
       </nav>
       <div className="min-w-0 space-y-4" aria-live="polite" aria-busy={loading}>

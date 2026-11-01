@@ -11,7 +11,7 @@ function Checkbox({ name, label, checked }: { name: string; label: string; check
  * recarregada, compartilhada ou voltada sem perder o que foi filtrado. Só filtros com suporte real no backend. */
 export function WorksFilterForm({ basePath, filters }: { basePath: string; filters: WorksListPageData['filters'] }) {
   return (
-    <form method="GET" action={basePath} className="grid gap-4 rounded-2xl border bg-white/70 p-4 sm:grid-cols-2 lg:grid-cols-4 sm:p-5">
+    <form method="GET" action={basePath} className="grid grid-cols-1 gap-4 rounded-2xl border bg-white/70 p-4 sm:grid-cols-2 lg:grid-cols-4 sm:p-5 [&>*]:min-w-0">
       <label className="text-sm"><span className="mb-1 block font-semibold text-[#14304f]">Situação</span>
         <select name="status" defaultValue={filters.status ?? ''} className="w-full rounded-lg border bg-white px-2 py-1.5 text-sm">
           <option value="">Todas</option>{WORK_SITUATION_OPTIONS.map(o => <option key={o.code} value={o.code}>{o.label}</option>)}
@@ -67,7 +67,7 @@ export function WorksList({ data, basePath, detailBase, from }: { data: WorksLis
       {data.items.length === 0 ? (
         <p className="rounded-xl border border-dashed bg-card p-5 text-sm text-muted-foreground">Nenhuma obra corresponde a estes filtros.</p>
       ) : (
-        <div className="overflow-x-auto rounded-2xl border bg-white">
+        <div className="overflow-x-auto rounded-2xl border bg-white" tabIndex={0} role="region" aria-label="Lista de obras, com rolagem horizontal">
           <table className="w-full min-w-[52rem] text-sm">
             <thead><tr className="border-b text-left text-xs uppercase tracking-wide text-muted-foreground">
               <th scope="col" className="px-3 py-2 font-semibold">Obra</th><th scope="col" className="px-3 py-2 font-semibold">Situação</th>
