@@ -245,6 +245,25 @@ export function AtlasVivo({ geometry, names, values, flags, metric, ramp, missin
           <p className="mt-2 text-sm text-muted-foreground">Clique num município no mapa, ou use a busca acima, para ver o valor aqui antes de abrir o perfil completo.</p>
         </div>}
       </aside>
+
+      {/* P8.7 (mandato §6.1): no mobile, a aside de pré-visualização fica ~700px abaixo do mapa — o
+          toque não dava nenhum retorno visível dentro da tela, só rolando bem para baixo. Esta barra fixa
+          dá retorno imediato (nome, indicador, valor, abrir, fechar) sem exigir rolagem; existe só <1024px
+          — no desktop a aside já fica ao lado do mapa, sempre visível, sem mudança nenhuma. */}
+      {selectedId && selName && (
+        <div role="status" className="fixed inset-x-3 bottom-3 z-40 rounded-2xl border bg-card p-3 shadow-xl lg:hidden">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0 flex-1">
+              <p className="truncate font-display text-base leading-tight">{selName}</p>
+              <p className="truncate text-xs text-muted-foreground">{metric.label}: <strong className="tnum text-foreground">{selValue !== undefined ? fmt.format(selValue) : '—'} {metric.unit}</strong></p>
+            </div>
+            <div className="flex shrink-0 items-center gap-2">
+              <Link href={`/municipios/${selectedId}`} className="whitespace-nowrap rounded-full bg-primary px-3 py-2 text-xs font-bold text-primary-foreground">Ver perfil →</Link>
+              <button type="button" onClick={() => select(null)} aria-label="Fechar pré-visualização" className="focus-ring rounded-full border px-2.5 py-2 text-sm text-muted-foreground hover:border-primary/50">×</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
