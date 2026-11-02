@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { UfGeometry } from '@/lib/exec-territory';
 import type { MapMetricDef } from '@/lib/territory-map-metrics';
@@ -18,7 +19,7 @@ const MIN_SCALE = 1, MAX_SCALE = 7, PAD = 2.4, DRAG_THRESHOLD = 6;
  * Cada município continua sendo um `<Link>` real (clique simples navega sem JS; com JS, o clique
  * primário intercepta para abrir a pré-visualização — ctrl/cmd/shift/meio-clique e arraste continuam
  * se comportando como o usuário espera de qualquer link da web). */
-export function AtlasVivo({ geometry, names, values, flags, metric, ramp, missing, initialSelected, stateName, year, initialScale, initialTx, initialTy }: {
+export function AtlasVivo({ geometry, names, values, flags, metric, ramp, missing, initialSelected, stateName, year, initialScale, initialTx, initialTy, searchSlot }: {
   geometry: UfGeometry; names: Map<number, string>; values: Map<number, number>; flags: Map<number, number>;
   metric: MapMetricDef; ramp: readonly string[]; missing: string[]; initialSelected: number | null;
   /** P4 — comparador de pares na pré-visualização: nome da UF (rótulo da coorte) e ano representativo do
@@ -27,6 +28,11 @@ export function AtlasVivo({ geometry, names, values, flags, metric, ramp, missin
   /** P6.2 — zoom/pan compartilháveis por URL (`?zoom=&x=&y=`), lidos pela página a partir da querystring.
    * Quando ausentes, o comportamento é idêntico ao de antes (abre em escala 1, ou focado em `initialSelected`). */
   initialScale?: number; initialTx?: number; initialTy?: number;
+  /** P8.5: busca integrada à aside do mapa (antes vivia num card cheio acima dele, empurrando a
+   * cartografia para fora da primeira tela — achado do próprio mandato, "maior protagonismo da
+   * cartografia" + "busca mais integrada ao mapa"). Continua um `<form method="get">` puro, renderizado
+   * pela página (server) — só a POSIÇÃO muda, nenhuma função de busca é duplicada ou movida para o cliente. */
+  searchSlot?: ReactNode;
 }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const pathRefs = useRef(new Map<number, SVGPathElement>());
@@ -231,8 +237,9 @@ export function AtlasVivo({ geometry, names, values, flags, metric, ramp, missin
           </div> : <p className="mt-2 text-sm text-muted-foreground">— sem dado para este indicador.</p>}
           <Link href={`/municipios/${selectedId}`} className="mt-4 inline-block rounded-full bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">Ver perfil completo →</Link>
         </div> : <div>
-          <h3 className="font-display text-lg">Pré-visualização</h3>
-          <p className="mt-2 text-sm text-muted-foreground">Clique num município no mapa, ou use a busca, para ver o valor aqui antes de abrir o perfil completo.</p>
+          {searchSlot}
+          <h3 className="mt-5 font-display text-lg">Pré-visualização</h3>
+          <p className="mt-2 text-sm text-muted-foreground">Clique num município no mapa, ou use a busca acima, para ver o valor aqui antes de abrir o perfil completo.</p>
         </div>}
       </aside>
     </div>

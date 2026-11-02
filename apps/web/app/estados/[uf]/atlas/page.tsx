@@ -54,17 +54,26 @@ export default async function AtlasPage({ params, searchParams }: Props) {
         </div>
       </div>
 
-      <div className="rounded-2xl border bg-card p-4">
-        <h2 className="font-display text-lg">Procurar município</h2>
-        <div className="mt-2"><MunicipalFinder action={`/estados/${uf}/atlas`} defaultValue={sp.q} /></div>
-        {results && <ul className="mt-3 divide-y rounded-xl border">{results.rows.length === 0 ? <li className="p-3 text-sm text-muted-foreground">Nenhum município encontrado.</li>
-          : results.rows.map(r => <li key={r.entityId}><Link href={qs(`&municipio=${r.entityId}`)} className="flex justify-between gap-3 p-3 text-sm hover:bg-secondary"><span className="font-semibold">{r.name}</span><span className="text-muted-foreground">{formatInt(r.population)} hab.</span></Link></li>)}</ul>}
-      </div>
+      {(() => {
+        const search = <div>
+          <h2 className="font-display text-lg">Procurar município</h2>
+          <div className="mt-2"><MunicipalFinder action={`/estados/${uf}/atlas`} defaultValue={sp.q} /></div>
+          {results && <ul className="mt-3 divide-y rounded-xl border">{results.rows.length === 0 ? <li className="p-3 text-sm text-muted-foreground">Nenhum município encontrado.</li>
+            : results.rows.map(r => <li key={r.entityId}><Link href={qs(`&municipio=${r.entityId}`)} className="flex justify-between gap-3 p-3 text-sm hover:bg-secondary"><span className="font-semibold">{r.name}</span><span className="text-muted-foreground">{formatInt(r.population)} hab.</span></Link></li>)}</ul>}
+        </div>;
 
-      {values.size === 0 && metric.code ? <p className="rounded-lg border border-dashed p-6 text-sm text-muted-foreground">Ainda não há {metric.label} publicado para os municípios de {state.name}. O mapa só é colorido com dado oficial coletado.</p>
-        : !geometry ? <p className="text-sm text-muted-foreground">Malha municipal indisponível para esta UF.</p>
-        : view === 'tabela' ? <MapTable names={names} values={values} flags={flags} metric={metric} />
-        : <AtlasVivo geometry={geometry} names={names} values={values} flags={flags} metric={metric} ramp={mapRamps[metric.ramp]} missing={missing} initialSelected={selected} stateName={state.name} year={year ?? (state.population?.year ? String(state.population.year) : '—')} {...viewProps} />}
+        if (values.size === 0 && metric.code) return <p className="rounded-lg border border-dashed p-6 text-sm text-muted-foreground">Ainda não há {metric.label} publicado para os municípios de {state.name}. O mapa só é colorido com dado oficial coletado.</p>;
+        if (!geometry) return <p className="text-sm text-muted-foreground">Malha municipal indisponível para esta UF.</p>;
+        if (view === 'tabela') return <>
+          {/* P8.5: na tabela não há aside para a busca integrar — fica como card próprio, igual a antes. */}
+          <div className="rounded-2xl border bg-card p-4">{search}</div>
+          <MapTable names={names} values={values} flags={flags} metric={metric} />
+        </>;
+        // P8.5 (mandato §7): busca movida para dentro da aside do Atlas Vivo — a cartografia, não um
+        // card cheio de busca, agora é o primeiro elemento visual real da seção (achado de P8.0: até
+        // no Atlas Vivo o mapa só aparecia depois de rolar).
+        return <AtlasVivo geometry={geometry} names={names} values={values} flags={flags} metric={metric} ramp={mapRamps[metric.ramp]} missing={missing} initialSelected={selected} stateName={state.name} year={year ?? (state.population?.year ? String(state.population.year) : '—')} searchSlot={search} {...viewProps} />;
+      })()}
 
       {metric.code === 'IND-SAU-08' && <p className="text-xs text-muted-foreground">Municípios com menos de 100 nascidos no ano não são coloridos: a taxa é instável.</p>}
       <p className="text-xs text-muted-foreground">{metric.domain} · fonte, metodologia e ressalvas completas em <Link href={`/estados/${uf}`} className="font-semibold text-primary hover:underline">{state.name} → áreas temáticas</Link>.</p>
