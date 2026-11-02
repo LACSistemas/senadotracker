@@ -62,36 +62,36 @@ export function EducationPage({ data }: { data: EducationPageData }) {
         {trajectory.transition.length > 0 && <Block><h3 className="mb-3 font-display text-xl text-[#14304f]">Para onde vão os alunos de um ano para o outro ({trajectory.transitionYear}→{(trajectory.transitionYear ?? 0) + 1})</h3><StatGrid items={trajectory.transition} /><p className="mt-3 text-xs text-muted-foreground">Taxa de transição do INEP: de cada 100 alunos matriculados, quantos passaram de ano, repetiram ou deixaram a escola no ano seguinte. Existe só até 2021.</p></Block>}</ChapterShell>)}
 
       {chapter(context.available, context, <ChapterShell accent="teal" id="contexto" number={4} title={context.title} narrative={context.narrative} tone="strip" limits={context.limits} sources={context.sources}>
-        <StatGrid items={context.stats} />
         {context.inse && <Block><TrendChart chart={context.inse} hideControls /></Block>}
-        {context.classes.length > 0 && <Block><BarList title="Alunos por nível socioeconômico" rows={context.classes} caption="Percentual de alunos em cada um dos oito níveis do INSE (1 = mais baixo, 8 = mais alto)." /></Block>}</ChapterShell>)}
+        {context.classes.length > 0 && <Block><BarList title="Alunos por nível socioeconômico" rows={context.classes} caption="Percentual de alunos em cada um dos oito níveis do INSE (1 = mais baixo, 8 = mais alto)." /></Block>}
+        <StatGrid items={context.stats} /></ChapterShell>)}
 
       {chapter(structure.available, structure, <ChapterShell accent="teal" id="estrutura" number={5} title={structure.title} narrative={structure.narrative} limits={structure.limits} sources={structure.sources}>
         <BarList title="Percentual de escolas que têm…" rows={structure.items} max={100} {...(structure.universe ? { caption: structure.universe } : {})} />
         {structure.explorer && <Block><h3 className="mb-3 font-display text-xl text-[#14304f]">Evolução, comparada com a referência</h3><ChartExplorer explorer={structure.explorer} /></Block>}</ChapterShell>)}
 
       {chapter(teachers.available, teachers, <ChapterShell accent="teal" id="professores" number={6} title={teachers.title} narrative={teachers.narrative} tone="strip" limits={teachers.limits} sources={teachers.sources}>
-        <StatGrid items={teachers.stats} />
         {teachers.docentes && <Block><TrendChart chart={teachers.docentes} hideControls /></Block>}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 [&>*]:min-w-0">{teachers.formation.length > 0 && <BarList title="Formação dos professores do fundamental" rows={teachers.formation} max={100} caption="Grupo 1 = formação superior adequada à disciplina que leciona; os demais grupos têm formação diferente ou incompleta." />}{teachers.table && <DataTable t={teachers.table} />}</div></ChapterShell>)}
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 [&>*]:min-w-0">{teachers.formation.length > 0 && <BarList title="Formação dos professores do fundamental" rows={teachers.formation} max={100} caption="Grupo 1 = formação superior adequada à disciplina que leciona; os demais grupos têm formação diferente ou incompleta." />}{teachers.table && <DataTable t={teachers.table} />}</div>
+        <StatGrid items={teachers.stats} /></ChapterShell>)}
 
       {chapter(money.available, money, <ChapterShell accent="teal" id="recursos" number={7} title={money.title} narrative={money.narrative} limits={money.limits} sources={money.sources}>
-        <StatGrid items={money.contractStats} />
         {money.contractsChart && <Block><TrendChart chart={money.contractsChart} hideControls /></Block>}
+        <StatGrid items={money.contractStats} />
         {money.categories.length > 0 && <BarList title="No que os contratos se concentram (valor contratado)" rows={money.categories} />}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 [&>*]:min-w-0">{money.suppliers && <DataTable t={money.suppliers} />}{money.programs && <DataTable t={money.programs} />}</div>
         {money.finance && <DataTable t={money.finance} />}
         {money.works ? <DataTable t={money.works} /> : money.worksNote ? <EmptyNote title="Obras">{money.worksNote}</EmptyNote> : null}</ChapterShell>)}
 
       {chapter(enem.available, enem, <ChapterShell accent="teal" id="enem" number={8} title={enem.title} narrative={enem.narrative} limits={enem.limits} sources={enem.sources}>
-        <StatGrid items={enem.stats} />
         {enem.bench && <Block><BenchRuler r={enem.bench} who={where} /></Block>}
+        <StatGrid items={enem.stats} />
         {enem.bySubject.length > 0 && <Block><BarList title="Nota média por área" rows={enem.bySubject} caption="Médias e medianas não são comparáveis entre disciplinas: cada uma tem sua própria escala." /></Block>}
         {enem.tabs.length > 0 && <Block><EnemSubjectToggle tabs={enem.tabs} /></Block>}</ChapterShell>)}
 
       {chapter(higherEd.available, higherEd, <ChapterShell accent="teal" id="ensino-superior" number={9} title={higherEd.title} narrative={higherEd.narrative} limits={higherEd.limits} sources={higherEd.sources}>
-        <StatGrid items={higherEd.stats} />
         {higherEd.bench && <Block><BenchRuler r={higherEd.bench} who={where} /></Block>}
+        <StatGrid items={higherEd.stats} />
         <StatGrid items={higherEd.seatStats} />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 [&>*]:min-w-0"><BarList title="Instituições por categoria administrativa" rows={higherEd.byNetwork} /><BarList title="Ofertas por modalidade" rows={higherEd.byModality} /></div>
         {higherEd.coursesTable && <Block><DataTable t={higherEd.coursesTable} /></Block>}
@@ -108,8 +108,8 @@ export function EducationPage({ data }: { data: EducationPageData }) {
         <QualityExplorer entityId={scope.entityId} /></ChapterShell>)}
 
       {chapter(graduate.available, graduate, <ChapterShell accent="teal" id="pos-graduacao" number={11} title={graduate.title} narrative={graduate.narrative} limits={graduate.limits} sources={graduate.sources}>
-        <StatGrid items={graduate.stats} />
         {graduate.bench && <Block><BenchRuler r={graduate.bench} who={where} /></Block>}
+        <StatGrid items={graduate.stats} />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 [&>*]:min-w-0">{graduate.byArea.length > 0 && <BarList title="Programas por área de avaliação" rows={graduate.byArea} />}{graduate.evaluationBands.length > 0 && <BarList title="Conceito final do ciclo 2021–2024" rows={graduate.evaluationBands} />}</div>
         {graduate.programsTable && <Block><DataTable t={graduate.programsTable} /></Block>}
         <ProgramExplorer entityId={scope.entityId} /></ChapterShell>)}

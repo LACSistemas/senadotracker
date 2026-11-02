@@ -65,6 +65,13 @@ a { text-underline-offset:4px; }
 button,input,select { font:inherit; }
 ::selection { background:#bfdbc9; color:#0c3026; }
 .page-shell { width:min(1200px,calc(100% - 48px)); margin-inline:auto; }
+/* P8 (reconstrução estrutural): território (TerritoryFrame) ganha uma largura própria, maior — nunca
+   .page-shell, que serve 62 outros arquivos fora do escopo deste mandato. 1360px é o teto da faixa que o
+   próprio mandato pede (§2.1, 1280-1360px) para um canvas geral; conteúdo cartográfico/exploratório usa
+   .col-explore (full-bleed dentro deste shell), leitura editorial usa .col-reading (68ch) — nunca a mesma
+   largura para os dois, ver grid-12 abaixo. */
+.shell-territory { width:min(1360px,calc(100% - 56px)); margin-inline:auto; }
+@media (max-width:640px) { .shell-territory { width:calc(100% - 28px); } }
 /* P1 (Atlas Editorial): grid 12 colunas — aditivo, nenhuma página existente usa ainda (adoção a
    partir de P2/P3/P5). .col-reading é a medida de leitura editorial (prosa/KPIs); .col-explore é
    largura plena (mapas, tabelas, exploradores). Ambas colapsam para 1 coluna em telas estreitas. */

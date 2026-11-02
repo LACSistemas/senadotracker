@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { TerritoryFrame } from '@/components/territory/state-frame';
+import { TerritoryHero } from '@/components/territory/territory-hero';
 import { MunicipalFinder, MunicipalMap, THEMES, formatInt } from '@/components/territory/territory-ui';
 import { mapRamps } from '@/lib/scale';
 import { MAP_METRICS, mapMetricFor, buildMapValueMaps } from '@/lib/territory-map-metrics';
@@ -36,12 +37,15 @@ export default async function EstadoPage({ params, searchParams }: Props) {
   const lastCnes = coverage.find(c => c.datasetId === 3);
   const bedsInd = indicators.find(i => i.code === 'IND-SAU-05');
 
+  const lede = hasHealth
+    ? <>{formatInt(munis.length)} municípios e {formatInt(state.population?.value ?? null)} moradores. A rede de saúde cadastrada reúne {formatInt(f.total)} estabelecimentos — {formatInt(f.hospitals)} hospitais e {formatInt(f.ubs)} unidades básicas — com {formatInt(f.beds.existing)} leitos{bedsInd?.value != null ? `, ou ${bedsInd.value.toLocaleString('pt-BR', { maximumFractionDigits: 2 })} por mil habitantes` : ''}.</>
+    : <>{formatInt(munis.length)} municípios e {formatInt(state.population?.value ?? null)} moradores. Os dados de saúde deste estado ainda não foram coletados: a página mostra o território e a população, e diz o que falta.</>;
+
   return <TerritoryFrame crumbs={[{ href: '/estados', label: 'Estados' }, { label: state.name }]} kicker={`${state.regionName ?? 'Brasil'} · ${state.uf}`} title={state.name}
-    lede={hasHealth
-      ? <>{formatInt(munis.length)} municípios e {formatInt(state.population?.value ?? null)} moradores. A rede de saúde cadastrada reúne {formatInt(f.total)} estabelecimentos — {formatInt(f.hospitals)} hospitais e {formatInt(f.ubs)} unidades básicas — com {formatInt(f.beds.existing)} leitos{bedsInd?.value != null ? `, ou ${bedsInd.value.toLocaleString('pt-BR', { maximumFractionDigits: 2 })} por mil habitantes` : ''}.</>
-      : <>{formatInt(munis.length)} municípios e {formatInt(state.population?.value ?? null)} moradores. Os dados de saúde deste estado ainda não foram coletados: a página mostra o território e a população, e diz o que falta.</>}
-    population={state.population?.value ?? null} populationYear={state.population?.year ?? null} base={`/estados/${uf}`} active="" cover coverContext={`${state.regionName ?? 'Brasil'} · Estado`}
-    actions={<Link href={`/estados/${uf}/representacao`} className="rounded-full bg-white px-5 py-3 text-sm font-bold text-primary">Quem representa {state.name}</Link>}>
+    lede={lede} population={state.population?.value ?? null} populationYear={state.population?.year ?? null} base={`/estados/${uf}`} active=""
+    heroNode={<TerritoryHero context={`${state.regionName ?? 'Brasil'} · Estado`} title={state.name} stateName={state.name} mapMode="estado" geometry={geometry}
+      description={lede} population={state.population?.value ?? null} populationYear={state.population?.year ?? null}
+      actions={<Link href={`/estados/${uf}/representacao`} className="rounded-full bg-white px-5 py-3 text-sm font-bold text-primary">Quem representa {state.name}</Link>} />}>
 
     <section aria-labelledby="mapa" className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_17rem]">
       <div className="min-w-0 rounded-3xl border bg-card p-4 sm:p-6">

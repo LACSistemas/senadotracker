@@ -68,22 +68,23 @@ export function WellbeingPage({ data, hideLede = false }: { data: WellbeingPageD
       </ChapterShell>)}
 
       {chapter(work.available, work, <ChapterShell accent="violet" id="trabalho" number={2} title={work.title} narrative={work.narrative} tone="strip" limits={work.limits} sources={work.sources}>
-        <StatGrid items={work.stats} />
         {work.cagedChart && <Block><h3 className="mb-3 flex items-center gap-2 font-display text-xl text-[#14304f]">Admissões, desligamentos e saldo mensal<span className="rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground" style={{ borderColor: 'var(--map-violet-3)' }}>Fluxo · mês a mês</span></h3><TrendChart chart={work.cagedChart} hideControls /></Block>}
         {work.raisChart && <Block><h3 className="mb-3 flex items-center gap-2 font-display text-xl text-[#14304f]">Estoque anual (RAIS)<span className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white" style={{ backgroundColor: 'var(--map-violet-4)' }}>Estoque · foto do ano</span></h3><TrendChart chart={work.raisChart} hideControls /></Block>}
+        <StatGrid items={work.stats} />
         {work.remuneration && <StatGrid items={[work.remuneration]} />}
         <Disclosures items={work.disclosures} />
       </ChapterShell>)}
 
       {chapter(social.available, social, <ChapterShell accent="violet" id="rede-social" number={3} title={social.title} narrative={social.narrative} limits={social.limits} sources={social.sources}>
+        {social.crasCapacity.length > 0 && <BarList title="CRAS por faixa de capacidade de referenciamento" rows={social.crasCapacity} caption="Capacidade declarada de famílias referenciadas; não é quantas foram atendidas." />}
         <StatGrid items={[...social.cras, ...(social.creas ? [social.creas] : [])]} />
         {social.creasNote && <p className="text-xs text-muted-foreground">{social.creasNote}</p>}
-        {social.crasCapacity.length > 0 && <BarList title="CRAS por faixa de capacidade de referenciamento" rows={social.crasCapacity} caption="Capacidade declarada de famílias referenciadas; não é quantas foram atendidas." />}
         {social.indices.length > 0 && <StatGrid items={social.indices} />}
         <Disclosures items={social.disclosures} />
       </ChapterShell>)}
 
       {chapter(digital.available, digital, <ChapterShell accent="violet" id="digital" number={4} title={digital.title} narrative={digital.narrative} tone="strip" limits={digital.limits} sources={digital.sources}>
+        {digital.distribution.length > 0 && <BarList title="Respostas declaradas pelas prefeituras do estado" rows={digital.distribution} max={100} caption="Barra = percentual de prefeituras respondentes que declararam Sim; o rótulo mostra os números absolutos." />}
         {digital.items.length > 0 && (
           <ul className="grid gap-3 sm:grid-cols-2">{digital.items.map(i => (
             <li key={i.code} className="flex items-center justify-between gap-3 rounded-xl border bg-white p-4 text-sm">
@@ -94,13 +95,12 @@ export function WellbeingPage({ data, hideLede = false }: { data: WellbeingPageD
             </li>
           ))}</ul>
         )}
-        {digital.distribution.length > 0 && <BarList title="Respostas declaradas pelas prefeituras do estado" rows={digital.distribution} max={100} caption="Barra = percentual de prefeituras respondentes que declararam Sim; o rótulo mostra os números absolutos." />}
         <Disclosures items={digital.disclosures} />
       </ChapterShell>)}
 
       {chapter(action.available, action, <ChapterShell accent="violet" id="acao-publica" number={5} title={action.title} narrative={action.narrative} limits={action.limits} sources={action.sources}>
-        <StatGrid items={action.stats} />
         {action.table && <Block><DataTable t={action.table} /></Block>}
+        <StatGrid items={action.stats} />
       </ChapterShell>)}
 
       {chapter(evolution.available, evolution, <ChapterShell accent="violet" id="evolucao" number={6} title={evolution.title} narrative={evolution.narrative} tone="strip" limits={evolution.limits} sources={evolution.sources}>

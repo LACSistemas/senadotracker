@@ -10,9 +10,24 @@ export function StatGrid({ items }: { items: StatItem[] }) {
       <dd className="hero-figure tnum mt-1 break-all text-3xl text-[#14304f]">{s.value}</dd>{s.unit && <dd className="text-xs text-muted-foreground">{s.unit}</dd>}{s.note && <dd className="mt-1 text-xs text-muted-foreground">{s.note}</dd>}</div>))}</dl>;
 }
 
+/** P8.4: lista compacta (rótulo: valor, separada por hairline), não uma grade de cartões — cada capítulo já
+ * abre com `IndicatorLive` (o indicador protagonista); os grupos que vêm depois são referência de apoio, e
+ * "a apresentação é excessivamente orientada a cartões de métricas" é a crítica nomeada do mandato para
+ * este tema (§5.5). `StatGrid` continua existindo para onde ainda funciona como painel de entrada (o
+ * panorama do topo, os totais de obras). */
+export function StatRows({ items }: { items: StatItem[] }) {
+  if (!items.length) return null;
+  return <dl className="divide-y">{items.map(s => (
+    <div key={s.label} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 py-2.5 first:pt-0">
+      <dt className="min-w-0 flex-1 text-sm text-muted-foreground">{s.label}{s.note && <span className="block text-xs text-muted-foreground/80">{s.note}</span>}</dt>
+      <dd className="hero-figure tnum shrink-0 text-lg text-[#14304f]">{s.value}{s.unit && <span className="ml-1 text-xs font-normal text-muted-foreground">{s.unit}</span>}</dd>
+    </div>
+  ))}</dl>;
+}
+
 /** Um grupo nomeado de indicadores (ex.: "Abastecimento de água" dentro do capítulo de Água e saneamento). */
 export function GroupBlock({ group }: { group: IndicatorGroup }) {
-  return <div><h3 className="mb-3 font-display text-xl text-[#14304f]">{group.label}</h3><StatGrid items={group.stats} />{group.note && <p className="mt-2 text-xs text-muted-foreground">{group.note}</p>}</div>;
+  return <div><h3 className="mb-2 font-display text-xl text-[#14304f]">{group.label}</h3><StatRows items={group.stats} />{group.note && <p className="mt-2 text-xs text-muted-foreground">{group.note}</p>}</div>;
 }
 
 /** Barras horizontais com o valor escrito ao lado: nada depende só da cor ou da área preenchida. */

@@ -35,10 +35,16 @@ function PlannedBars({ rows, where }: { rows: StructureChapter['plannedVsExistin
   );
 }
 
+/** P8.4: `PlannedBars` (o único gráfico real do capítulo) lidera quando existe — as grades de declaração
+ * (municipal/estado/nacional) viram referência de apoio depois dele, não a abertura. Quando não há
+ * `plannedVsExisting` (comum em páginas municipais), o capítulo continua honesto: começa pela declaração
+ * mesmo, sem forçar um gráfico onde não há dado para sustentar um (mandato §8.5). */
 export function StructureChapterBody({ ch, scope }: { ch: StructureChapter; scope: ScopeInfo }) {
   const isMuni = scope.kind === 'municipio'; const estado = ch.state.filter(c => c.scope === 'estado'); const nacional = ch.state.filter(c => c.scope === 'nacional');
+  const hasChart = ch.plannedVsExisting.length > 0;
   return (
     <>
+      {hasChart && <PlannedBars rows={ch.plannedVsExisting} where={scope.stateName} />}
       {isMuni && <MunicipalCards cards={ch.municipal} name={scope.name} />}
       {estado.length > 0 && (
         <div>
@@ -50,7 +56,6 @@ export function StructureChapterBody({ ch, scope }: { ch: StructureChapter; scop
           {isMuni && <p className="mt-2 text-xs text-muted-foreground">Total da UF inteira: não é o efetivo lotado em {scope.name} e não foi dividido por população ou território.</p>}
         </div>
       )}
-      <PlannedBars rows={ch.plannedVsExisting} where={scope.stateName} />
       {nacional.length > 0 && <div><p className="eyebrow flex items-center gap-1.5"><ShieldCheck size={14} aria-hidden />Forças federais — Brasil inteiro</p><ul className="mt-3 grid gap-3 sm:grid-cols-2">{nacional.map(c => <li key={c.key} className="rounded-2xl border bg-white p-4"><p className="text-sm font-semibold text-[#14304f]">{c.label}</p><p className="hero-figure tnum mt-1 text-3xl text-[#14304f]">{c.value == null ? '—' : fmt(c.value)}</p><p className="text-xs text-muted-foreground">{c.unit} · {c.basis}</p><p className="mt-1 text-[0.7rem] text-muted-foreground">{c.note}</p></li>)}</ul></div>}
       {ch.editions.length > 0 && <details className="rounded-xl border bg-white p-4 text-sm"><summary className="cursor-pointer py-1.5 font-semibold text-[#14304f]">Pesquisas do IBGE sobre a estrutura local ({ch.editions.length} edições)</summary>
         <div className="mt-3 grid gap-4 md:grid-cols-2">{ch.editions.map(e => <div key={e.label}><p className="font-semibold">{e.label}</p><dl className="mt-1 divide-y text-xs">{e.items.map(i => <div key={i.label} className="flex justify-between gap-3 py-1"><dt className="text-muted-foreground">{i.label}</dt><dd className="text-right font-medium">{i.value}</dd></div>)}</dl></div>)}</div>

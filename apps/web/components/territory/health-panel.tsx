@@ -33,21 +33,25 @@ function BenchRuler({ value, group, refDist, digits, label }: { value: number; g
   </svg>;
 }
 
-function KpiBenchCard({ meta, v, bench }: { meta: PanelCardMeta; v: PanelValue | undefined; bench: BenchState }) {
+/** `size="lg"` (P8.4): a mesma leitura e o mesmo `BenchRuler`, mas como indicador protagonista do painel —
+ * número maior, régua mais larga, nota completa visível (não só no `title`) — em vez de mais uma caixa
+ * pequena entre outras 7 iguais (achado do mandato: "densidade de minicards... falta de protagonismo"). */
+function KpiBenchCard({ meta, v, bench, size = 'sm' }: { meta: PanelCardMeta; v: PanelValue | undefined; bench: BenchState; size?: 'sm' | 'lg' }) {
   const Icon = ICONS[meta.icon]; const tone = TONES[meta.tone]; const t = trendOf(v);
   const has = v && v.value !== null;
   const flags = v ? [v.status === 'preliminary' || v.flags & FLAG.preliminary ? 'Preliminar' : null, v.flags & FLAG.smallN ? 'Pequeno número' : null, v.flags & FLAG.noDenominator ? 'Sem denominador' : null].filter(Boolean) as string[] : [];
   const unit = meta.unit === '%' ? '%' : '';
+  const lg = size === 'lg';
   return (
-    <article className="card-lift flex min-w-0 flex-col rounded-xl border bg-white p-3" title={meta.note}>
-      <header className="flex items-start gap-2"><IconBox tone={meta.tone}><Icon size={18} color={tone.fg} aria-hidden /></IconBox><h3 className="text-[0.74rem] font-semibold leading-tight text-[#14304f]">{meta.title}</h3></header>
-      <p className={cn('mt-2 font-display text-[1.9rem] leading-none', NAVY)}>{has ? <>{nf(meta.digits).format(v.value!)}{unit}<span className="ml-1 text-xs font-normal text-muted-foreground">{meta.suffix ?? ''}</span></> : <span className="text-xl text-muted-foreground">Sem registro</span>}</p>
-      <p className="mt-1 flex flex-wrap items-center gap-x-2 text-[0.7rem] text-muted-foreground">
+    <article className={cn('card-lift flex min-w-0 flex-col rounded-xl border bg-white', lg ? 'p-5 sm:p-6' : 'p-3')} title={lg ? undefined : meta.note}>
+      <header className="flex items-start gap-2"><IconBox tone={meta.tone}><Icon size={lg ? 22 : 18} color={tone.fg} aria-hidden /></IconBox><h3 className={cn('font-semibold leading-tight text-[#14304f]', lg ? 'text-base' : 'text-[0.74rem]')}>{meta.title}</h3></header>
+      <p className={cn('font-display leading-none', NAVY, lg ? 'mt-3 text-5xl' : 'mt-2 text-[1.9rem]')}>{has ? <>{nf(meta.digits).format(v.value!)}{unit}<span className={cn('ml-1 font-normal text-muted-foreground', lg ? 'text-sm' : 'text-xs')}>{meta.suffix ?? ''}</span></> : <span className="text-xl text-muted-foreground">Sem registro</span>}</p>
+      <p className={cn('mt-1 flex flex-wrap items-center gap-x-2 text-muted-foreground', lg ? 'text-sm' : 'text-[0.7rem]')}>
         {v ? refLabel(v) : 'Sem período publicado'}
         {t && <span className="inline-flex items-center gap-0.5" title={`Mesmo período do ano anterior: ${nf(meta.digits).format(v!.prev!.value!)}`}>{t.dir === 'up' ? <TrendingUp size={12} aria-hidden /> : t.dir === 'down' ? <TrendingDown size={12} aria-hidden /> : <Minus size={12} aria-hidden />}{t.dir === 'flat' ? 'estável' : `${t.delta > 0 ? '+' : '−'}${nf(meta.digits).format(Math.abs(t.delta))}`} vs. ano anterior</span>}
       </p>
       {flags.length > 0 && <p className="mt-1 flex flex-wrap gap-1">{flags.map(f => <span key={f} className="rounded-full border border-warning/40 px-1.5 text-[0.62rem] font-semibold text-warning">{f}</span>)}</p>}
-      <footer className="mt-auto pt-2 text-[0.68rem] leading-snug text-muted-foreground">
+      <footer className={cn('mt-auto leading-snug text-muted-foreground', lg ? 'pt-4 text-sm' : 'pt-2 text-[0.68rem]')}>
         {bench.kind === 'ok' && has ? <>
           <BenchRuler value={v!.value!} group={bench.group} refDist={bench.ref} digits={meta.digits} label={`${quintileWord(bench.quintile)} entre ${bench.group.n} ${bench.groupLabel}`} />
           <span className="font-semibold text-[#14304f]">{quintileWord(bench.quintile)[0]!.toUpperCase() + quintileWord(bench.quintile).slice(1)}</span> entre {int.format(bench.group.n)} {bench.groupLabel}
@@ -57,6 +61,7 @@ function KpiBenchCard({ meta, v, bench }: { meta: PanelCardMeta; v: PanelValue |
           {bench.ref && <><br />{bench.refLabel}: mediana {nf(meta.digits).format(bench.ref.p50)}</>}
         </>}
       </footer>
+      {lg && <p className="mt-3 border-t pt-3 text-xs text-muted-foreground">{meta.note}</p>}
     </article>
   );
 }
@@ -146,26 +151,36 @@ export interface HealthPanelProps {
   /** A página de Saúde completa já mostra esta mesma frase no hero (via `healthLedeFor`, mesma fonte) — passe `true` ali para não repeti-la aqui. O teaser compacto da visão geral não tem hero próprio de Saúde, então continua mostrando. */
   hideLede?: boolean;
 }
-/** Painel de Saúde: 7 cards-resumo com benchmark e 3 análises (tipos de estabelecimento, leitos, vacinas). Todos os dados chegam prontos (sem consulta por card). */
+/** Painel de Saúde (P8.4): abre com 1 indicador protagonista (capacidade instalada — o 1º de `PANEL_CARDS`,
+ * nunca escolhido por magnitude), depois as 3 análises reais (tipos de estabelecimento, leitos, vacinas) —
+ * não mais atrás de 7 minicards de mesmo peso. Os demais indicadores viram uma faixa de apoio, mais densa
+ * e DEPOIS do gráfico, não antes (achado do mandato: "excesso de texto antes das visualizações... falta de
+ * protagonismo dos gráficos"). Mesmos dados, mesmo `BenchRuler`, só hierarquia diferente. */
 export function HealthPanel(p: HealthPanelProps) {
   const cards = healthPanelCards(p);
   const vrows = vaccineRows(p.vaccines);
   const lede = p.hideLede ? null : healthLedeFor(p);
   const hasFacilities = p.facilities && p.facilities.total > 0;
+  const [lead, ...rest] = cards;
+  const supporting = p.compact ? rest.slice(0, 3) : rest;
   return (
-    <section id="painel-saude" aria-labelledby="painel-saude-h" className="scroll-mt-28 space-y-3">
+    <section id="painel-saude" aria-labelledby="painel-saude-h" className="scroll-mt-28 space-y-6">
       <header className="section-hairline flex items-start gap-3 pt-3">
         <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg" style={{ background: '#e6eefc' }} aria-hidden><Activity size={18} color="#2563eb" /></span>
         <div><h2 id="painel-saude-h" className="font-display text-2xl text-[#14304f]">Painel de Saúde</h2>{lede && <p className="mt-0.5 max-w-4xl text-sm leading-relaxed text-muted-foreground">{lede.charAt(0).toUpperCase() + lede.slice(1)}</p>}</div>
       </header>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 xl:grid-cols-[repeat(6,minmax(0,1fr))_minmax(0,1.3fr)]">
-        {cards.map(c => <KpiBenchCard key={c.meta.code} meta={c.meta} v={c.v} bench={c.bench} />)}
-        <VaccineMeterCard rows={vrows} hasPanel={p.vaccines.length > 0} />
-      </div>
+      {lead && <KpiBenchCard meta={lead.meta} v={lead.v} bench={lead.bench} size="lg" />}
       {!p.compact && <div className="grid gap-3 lg:grid-cols-[35fr_32fr_33fr]">
         {hasFacilities ? <EstablishmentDonut facilities={p.facilities!} scope={p.scope} cnesLabel={p.cnesLabel} /> : <CardShell icon={<Hospital size={18} color={TONES.blue.fg} aria-hidden />} tone="blue" title="Tipos de estabelecimento" desc="Sem cadastro CNES publicado para este território."><p className="mt-4 text-sm text-muted-foreground">Nenhum estabelecimento registrado.</p></CardShell>}
         {hasFacilities ? <BedTypes facilities={p.facilities!} scope={p.scope} cnesLabel={p.cnesLabel} /> : <CardShell icon={<BedDouble size={18} color={TONES.blue.fg} aria-hidden />} tone="blue" title="Leitos por tipo" desc="Sem cadastro CNES publicado para este território."><p className="mt-4 text-sm text-muted-foreground">Nenhum leito registrado.</p></CardShell>}
         <VaccineTable rows={vrows} scope={p.scope} />
+      </div>}
+      {(supporting.length > 0 || !p.compact) && <div>
+        <h3 className="text-sm font-bold text-[#14304f]">Outros indicadores do painel</h3>
+        <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-6">
+          {supporting.map(c => <KpiBenchCard key={c.meta.code} meta={c.meta} v={c.v} bench={c.bench} />)}
+          {p.compact && <VaccineMeterCard rows={vrows} hasPanel={p.vaccines.length > 0} />}
+        </div>
       </div>}
       <p className="text-[0.7rem] text-muted-foreground">Régua: faixa de 10% a 90% do grupo, traço cheio = mediana do grupo, tracejado = mediana do Brasil, ponto verde = este território. A posição descreve a distribuição; não é um ranking de qualidade. Metas vacinais: Ministério da Saúde/PNI (BCG 90%, demais 95%).</p>
     </section>

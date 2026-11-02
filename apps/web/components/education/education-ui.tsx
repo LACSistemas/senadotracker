@@ -2,12 +2,15 @@ import type { ReactNode } from 'react';
 import type { BarRow, DistBar, StatItem, Table } from '@/lib/education/types';
 import { cn } from '@/lib/utils';
 
-/** Blocos de leitura da página de Educação (servidor). Cores só por tokens/valores já usados na Segurança. */
+/** Blocos de leitura da página de Educação (servidor). Cores só por tokens/valores já usados na Segurança.
+ * P8.4: reposicionado para depois da visualização protagonista em cada capítulo (achado do mandato:
+ * "excesso de texto antes das visualizações") — por isso o tratamento é mais leve que antes (apoio, não
+ * abertura): caixa menor, número menor. */
 export function StatGrid({ items }: { items: StatItem[] }) {
   if (!items.length) return null;
-  return <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">{items.map(s => (
-    <div key={s.label} className="min-w-0 rounded-xl border bg-white p-4"><dt className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{s.label}</dt>
-      <dd className="hero-figure tnum mt-1 break-all text-3xl text-[#14304f]">{s.value}{s.unit && <span className="ml-1 text-sm font-normal text-muted-foreground">{s.unit}</span>}</dd>{s.note && <dd className="mt-1 text-xs text-muted-foreground">{s.note}</dd>}</div>))}</dl>;
+  return <dl className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">{items.map(s => (
+    <div key={s.label} className="min-w-0 rounded-lg border bg-white p-3"><dt className="text-[0.68rem] font-semibold uppercase tracking-wide text-muted-foreground">{s.label}</dt>
+      <dd className="hero-figure tnum mt-1 break-all text-2xl text-[#14304f]">{s.value}{s.unit && <span className="ml-1 text-xs font-normal text-muted-foreground">{s.unit}</span>}</dd>{s.note && <dd className="mt-1 text-xs text-muted-foreground">{s.note}</dd>}</div>))}</dl>;
 }
 
 /** Barras horizontais com o valor escrito ao lado: nada depende só da cor. */

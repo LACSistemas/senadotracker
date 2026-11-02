@@ -11,15 +11,20 @@ export function Crumbs({ items }: { items: Array<{ href?: string; label: string 
 
 /** `cover`: hero de capa (gradiente cheio, mesma linguagem visual da home/legislativo) — só para a primeira
  * impressão do território (visão geral). As abas temáticas continuam com o cabeçalho padrão, mais discreto,
- * sem nenhuma mudança — evita qualquer regressão visual nas páginas já existentes de Saúde/Educação/etc. */
-export function TerritoryFrame({ crumbs, kicker, title, lede, population, populationYear, base, active, actions, cover, coverContext, children }: {
+ * sem nenhuma mudança — evita qualquer regressão visual nas páginas já existentes de Saúde/Educação/etc.
+ * `heroNode` (P8, Atlas Editorial — reconstrução estrutural): quando informado, substitui INTEIRAMENTE os
+ * dois ramos acima (nem InstitutionHero, nem o header simples) — usado pelas 2 visões gerais para o novo
+ * `TerritoryHero` com mapa integrado. kicker/title/lede/population/cover continuam obrigatórios (mantém o
+ * contrato existente para as outras ~12 rotas que usam TerritoryFrame sem heroNode), mas não são lidos
+ * neste ramo — o chamador monta o próprio hero com os mesmos dados. */
+export function TerritoryFrame({ crumbs, kicker, title, lede, population, populationYear, base, active, actions, cover, coverContext, heroNode, children }: {
   crumbs: Array<{ href?: string; label: string }>; kicker: string; title: string; lede: ReactNode; population: number | null; populationYear: number | null;
-  base: string; active: string; actions?: ReactNode; cover?: boolean; coverContext?: string; children: ReactNode;
+  base: string; active: string; actions?: ReactNode; cover?: boolean; coverContext?: string; heroNode?: ReactNode; children: ReactNode;
 }) {
   const populationChip = population !== null ? <span className="rounded-full border bg-card px-3 py-1 text-sm"><strong>{formatInt(population)}</strong> habitantes <span className="text-muted-foreground">({populationYear}, estimativa IBGE)</span></span> : null;
-  return <main className="page-shell py-6 sm:py-10">
+  return <main className="shell-territory py-6 sm:py-10">
     <Crumbs items={crumbs} />
-    {cover ? (
+    {heroNode ?? (cover ? (
       <InstitutionHero context={coverContext ?? kicker} title={title} description={lede}
         location={population !== null ? <><strong>{formatInt(population)}</strong> habitantes ({populationYear}, estimativa IBGE)</> : undefined}
         actions={actions} />
@@ -30,7 +35,7 @@ export function TerritoryFrame({ crumbs, kicker, title, lede, population, popula
         <p className="mt-4 max-w-3xl text-base leading-7 text-muted-foreground sm:text-lg">{lede}</p>
         <div className="mt-5 flex flex-wrap items-center gap-3">{populationChip}{actions}</div>
       </header>
-    )}
+    ))}
     <div className="mt-6"><ThemeTabs base={base} active={active} themes={[...THEMES]} /></div>
     <div className="mt-6 space-y-10">{children}</div>
   </main>;
