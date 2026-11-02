@@ -70,17 +70,18 @@ export default async function EstadoPage({ params, searchParams }: Props) {
     {hasHealth && <div><HealthPanel scope={state.name} kind="uf" ufCode={state.ufCode!} ufName={state.name} values={panelValues} vaccines={vaccines} facilities={f.total > 0 ? f : null} bench={bench} cnesLabel={lastCnes ? ymLabel(lastCnes.lastCompetence) : 'sem competência'} compact />
       <p className="mt-3 text-sm"><Link href={`/estados/${uf}/saude`} className="font-semibold text-primary hover:underline">Abrir toda a Saúde de {state.name} →</Link></p></div>}
 
-    <Suspense fallback={null}><EducationSummary kind="uf" code={uf} /></Suspense>
-
-    <Suspense fallback={null}><SecuritySummary kind="uf" code={uf} /></Suspense>
-
-    <Suspense fallback={null}><WellbeingSummary kind="uf" code={uf} /></Suspense>
-
-    <Suspense fallback={null}><InfrastructureSummary kind="uf" code={uf} /></Suspense>
-
-    <Suspense fallback={null}><ExecutiveSummary uf={uf} stateName={state.name} gdpTerritory={{ level: 'UF', ufCode: state.ufCode! }} /></Suspense>
-
-    <Suspense fallback={null}><IdhmSummary territory={{ level: 'UF', ufCode: state.ufCode! }} territoryName={state.name} /></Suspense>
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="min-w-0"><Suspense fallback={null}><EducationSummary kind="uf" code={uf} /></Suspense></div>
+      <div className="min-w-0"><Suspense fallback={null}><SecuritySummary kind="uf" code={uf} /></Suspense></div>
+    </div>
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="min-w-0"><Suspense fallback={null}><WellbeingSummary kind="uf" code={uf} /></Suspense></div>
+      <div className="min-w-0"><Suspense fallback={null}><InfrastructureSummary kind="uf" code={uf} /></Suspense></div>
+    </div>
+    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+      <div className="min-w-0"><Suspense fallback={null}><ExecutiveSummary uf={uf} stateName={state.name} gdpTerritory={{ level: 'UF', ufCode: state.ufCode! }} /></Suspense></div>
+      <div className="min-w-0"><Suspense fallback={null}><IdhmSummary territory={{ level: 'UF', ufCode: state.ufCode! }} territoryName={state.name} /></Suspense></div>
+    </div>
 
     <Suspense fallback={null}><TerritoryLegislativeSummary uf={uf} stateName={state.name} /></Suspense>
 
