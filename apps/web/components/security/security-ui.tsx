@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ComponentType, ReactNode } from 'react';
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Info } from 'lucide-react';
 import type { Narrative } from '@/lib/security/types';
 import type { MapRampName } from '@/lib/scale';
@@ -28,15 +28,19 @@ export function DeltaChip({ delta }: { delta: { text: string; direction: 'up' | 
 
 export function Eyebrow({ children }: { children: ReactNode }) { return <p className="eyebrow">{children}</p>; }
 
-/** Moldura de um capítulo: pergunta → resposta → evidência → convite, mais "fontes e limites" sempre à mão. */
-export function ChapterShell({ id, number, title, narrative, tone = 'plain', accent, limits, sources, children }: { id: string; number: number; title: string; narrative: Narrative; tone?: 'plain' | 'strip'; accent?: MapRampName; limits: string[]; sources?: string; children: ReactNode }) {
+/** Moldura de um capítulo: pergunta → resposta → evidência → convite, mais "fontes e limites" sempre à mão.
+ * `icon` (P8.7, mandato §7.4 — Bem-estar: "a experiência ainda apresenta menos personalidade visual"):
+ * selo pequeno ao lado da legenda "Capítulo N", opcional e aditivo — sem ele, nada muda para os outros
+ * capítulos/temas que já usam `ChapterShell`. Ao contrário do numeral grande (`sm:block`, some no mobile),
+ * o selo aparece em qualquer largura — é identidade, não decoração que algumas pessoas nunca veem. */
+export function ChapterShell({ id, number, title, narrative, tone = 'plain', accent, icon: Icon, limits, sources, children }: { id: string; number: number; title: string; narrative: Narrative; tone?: 'plain' | 'strip'; accent?: MapRampName; icon?: ComponentType<{ size?: number; 'aria-hidden'?: boolean }>; limits: string[]; sources?: string; children: ReactNode }) {
   const accentVar = accent ? ACCENT_VAR[accent] : undefined;
   return (
     <section id={id} aria-labelledby={`${id}-h`} className={cn('scroll-mt-28 rounded-3xl border p-5 sm:p-8', tone === 'strip' ? 'bg-[var(--surface-strip,#faf9f5)]' : 'bg-card')} style={accentVar ? { borderTopColor: accentVar, borderTopWidth: 3 } : undefined}>
       <header className="section-hairline flex items-start gap-4 pt-4">
         {accentVar && <span aria-hidden className="hidden shrink-0 select-none font-display text-5xl leading-none opacity-25 sm:block sm:text-6xl" style={{ color: accentVar }}>{String(number).padStart(2, '0')}</span>}
         <div className="min-w-0">
-          <Eyebrow>Capítulo {number}</Eyebrow>
+          <p className="eyebrow flex items-center gap-1.5">{Icon && <Icon size={14} aria-hidden />}Capítulo {number}</p>
           <h2 id={`${id}-h`} className="display-title mt-1 text-3xl sm:text-4xl">{title}</h2>
           <p className="mt-2 font-display text-lg italic text-muted-foreground sm:text-xl">{narrative.question}</p>
         </div>
