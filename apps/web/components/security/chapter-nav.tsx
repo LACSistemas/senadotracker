@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { MapRampName } from '@/lib/scale';
 
@@ -36,11 +37,48 @@ function pillList(items: NavItem[], active: string, accentVar: string) {
   );
 }
 
+/** P8.7 (mandato §5): seletor compacto "Capítulo atual ▾" para `layout="sidebar"` abaixo de 1024px —
+ * substitui a faixa horizontal de pílulas, que exigia rolagem lateral para alcançar capítulos distantes
+ * (Educação tem 13 itens). `<details>`/`<summary>` nativo, mesmo padrão já usado pelo menu mobile do
+ * header (`app-header.tsx`) — acessível por teclado e leitor de tela sem JS adicional para abrir/fechar;
+ * só o fechar-ao-clicar-num-item, fechar-ao-clicar-fora e fechar com Escape precisam de JS (nenhum dos 3
+ * é nativo em `<details>`). Não prende o scroll da página (sem `overflow:hidden` no body) e não cria um
+ * segundo menu permanente: substitui a faixa de pílulas no lugar dela, nunca convive com ela. */
+function MobileChapterSelect({ items, active, accentVar }: { items: NavItem[]; active: string; accentVar: string }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+  const [open, setOpen] = useState(false);
+  const activeItem = items.find(i => i.id === active) ?? items[0];
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setOpen(false); ref.current?.removeAttribute('open'); } };
+    const onClickOutside = (e: MouseEvent) => { if (ref.current && !ref.current.contains(e.target as Node)) { setOpen(false); ref.current.removeAttribute('open'); } };
+    document.addEventListener('keydown', onKey); document.addEventListener('click', onClickOutside);
+    return () => { document.removeEventListener('keydown', onKey); document.removeEventListener('click', onClickOutside); };
+  }, [open]);
+  return (
+    <details ref={ref} className="relative" onToggle={e => setOpen((e.target as HTMLDetailsElement).open)}>
+      <summary className="focus-ring flex cursor-pointer list-none items-center justify-between gap-2 rounded-xl border bg-card px-4 py-2.5 text-sm font-semibold">
+        <span className="min-w-0 truncate"><span className="text-muted-foreground">Capítulo atual: </span>{activeItem?.label}</span>
+        <ChevronDown size={16} aria-hidden className={cn('shrink-0 transition-transform', open && 'rotate-180')} />
+      </summary>
+      <ol onClick={() => { setOpen(false); ref.current?.removeAttribute('open'); }} className="absolute inset-x-0 z-30 mt-1.5 max-h-[60vh] space-y-0.5 overflow-y-auto rounded-xl border bg-card p-1.5 shadow-xl">
+        {items.map((i, n) => (
+          <li key={i.id}>
+            <a href={`#${i.id}`} aria-current={active === i.id ? 'true' : undefined} style={active === i.id ? { color: accentVar } : undefined}
+              className={cn('flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold', active === i.id ? 'bg-secondary' : 'text-muted-foreground hover:bg-secondary/60 hover:text-foreground')}>
+              <span className="tnum">{n + 1}</span>{i.label}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </details>
+  );
+}
+
 /** Navegação contextual por capítulo. `layout="inline"` (padrão, inalterado): pílulas fixas no topo
     ao rolar, em todas as larguras — é o que as 4 páginas de tema já usam hoje. `layout="sidebar"`
     (P1, Parte IV.8.3 do mandato): no desktop (≥1024px) troca para uma coluna lateral persistente;
-    abaixo disso continua a mesma faixa horizontal — nenhuma página existente precisa mudar para
-    ganhar isso, é opt-in por página quando a Fase P5 decidir adotar. */
+    abaixo disso, P8.7 troca a faixa de pílulas pelo seletor `MobileChapterSelect`. */
 export function ChapterNav({ items, layout = 'inline', accent }: { items: NavItem[]; layout?: 'inline' | 'sidebar'; accent?: MapRampName }) {
   const active = useActiveChapter(items);
   const accentVar = ACCENT_VAR[accent ?? 'teal'];
@@ -49,7 +87,7 @@ export function ChapterNav({ items, layout = 'inline', accent }: { items: NavIte
   }
   return (
     <>
-      <nav aria-label="Capítulos desta página" className="sticky top-0 z-20 -mx-1 bg-background/90 px-1 py-2 backdrop-blur lg:hidden">{pillList(items, active, accentVar)}</nav>
+      <nav aria-label="Capítulos desta página" className="sticky top-0 z-20 bg-background/90 py-2 backdrop-blur lg:hidden"><MobileChapterSelect items={items} active={active} accentVar={accentVar} /></nav>
       <nav aria-label="Capítulos desta página" className="sticky top-24 hidden max-h-[calc(100vh-7rem)] overflow-y-auto lg:block">
         <ol className="space-y-1 border-l pl-3">
           {items.map((i, n) => (
