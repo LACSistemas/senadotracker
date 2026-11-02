@@ -22,7 +22,7 @@ export function TerritoryFrame({ crumbs, kicker, title, lede, population, popula
   base: string; active: string; actions?: ReactNode; cover?: boolean; coverContext?: string; heroNode?: ReactNode; children: ReactNode;
 }) {
   const populationChip = population !== null ? <span className="rounded-full border bg-card px-3 py-1 text-sm"><strong>{formatInt(population)}</strong> habitantes <span className="text-muted-foreground">({populationYear}, estimativa IBGE)</span></span> : null;
-  return <main className="shell-territory py-6 sm:py-10">
+  return <main id="conteudo" tabIndex={-1} className="shell-territory scroll-mt-28 py-6 sm:py-10">
     <Crumbs items={crumbs} />
     {heroNode ?? (cover ? (
       <InstitutionHero context={coverContext ?? kicker} title={title} description={lede}

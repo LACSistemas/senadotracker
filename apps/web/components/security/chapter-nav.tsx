@@ -54,7 +54,11 @@ export function ChapterNav({ items, layout = 'inline', accent }: { items: NavIte
         <ol className="space-y-1 border-l pl-3">
           {items.map((i, n) => (
             <li key={i.id}>
-              <a href={`#${i.id}`} aria-current={active === i.id ? 'true' : undefined} style={active === i.id ? { borderColor: accentVar, color: accentVar } : undefined} className={cn('focus-ring -ml-3 flex items-center gap-2 border-l-2 py-1.5 pl-3 text-sm font-semibold transition-colors', active === i.id ? '' : 'border-transparent text-muted-foreground hover:text-foreground', !i.available && active !== i.id && 'opacity-70')}>
+              {/* P8.7: `opacity-70` somado a `text-muted-foreground` reduzia o contraste do item de capítulo
+                  indisponível para 2.88:1 (achado real do axe-core, abaixo do mínimo de 4.5:1) — a versão
+                  em pílula (mobile) já usava só `text-muted-foreground`, sem opacidade extra, e nunca teve
+                  esse problema; removida a opacidade para igualar o mesmo tratamento, já validado. */}
+              <a href={`#${i.id}`} aria-current={active === i.id ? 'true' : undefined} style={active === i.id ? { borderColor: accentVar, color: accentVar } : undefined} className={cn('focus-ring -ml-3 flex items-center gap-2 border-l-2 py-1.5 pl-3 text-sm font-semibold transition-colors', active === i.id ? '' : 'border-transparent text-muted-foreground hover:text-foreground')}>
                 <span className="tnum">{n + 1}</span>{i.label}
               </a>
             </li>

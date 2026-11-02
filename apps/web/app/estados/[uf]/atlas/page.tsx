@@ -71,8 +71,10 @@ export default async function AtlasPage({ params, searchParams }: Props) {
         </>;
         // P8.5 (mandato §7): busca movida para dentro da aside do Atlas Vivo — a cartografia, não um
         // card cheio de busca, agora é o primeiro elemento visual real da seção (achado de P8.0: até
-        // no Atlas Vivo o mapa só aparecia depois de rolar).
-        return <AtlasVivo geometry={geometry} names={names} values={values} flags={flags} metric={metric} ramp={mapRamps[metric.ramp]} missing={missing} initialSelected={selected} stateName={state.name} year={year ?? (state.population?.year ? String(state.population.year) : '—')} searchSlot={search} {...viewProps} />;
+        // no Atlas Vivo o mapa só aparecia depois de rolar). P8.7: passada como `children` (não um prop
+        // nomeado) — ver o comentário em `atlas-vivo.tsx` sobre o aviso de "key" que a versão anterior
+        // disparava na serialização Server→Client.
+        return <AtlasVivo geometry={geometry} names={names} values={values} flags={flags} metric={metric} ramp={mapRamps[metric.ramp]} missing={missing} initialSelected={selected} stateName={state.name} year={year ?? (state.population?.year ? String(state.population.year) : '—')} {...viewProps}>{search}</AtlasVivo>;
       })()}
 
       {metric.code === 'IND-SAU-08' && <p className="text-xs text-muted-foreground">Municípios com menos de 100 nascidos no ano não são coloridos: a taxa é instável.</p>}

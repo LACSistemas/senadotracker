@@ -19,7 +19,7 @@ export function StatRows({ items }: { items: StatItem[] }) {
   if (!items.length) return null;
   return <dl className="divide-y">{items.map(s => (
     <div key={s.label} className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5 py-2.5 first:pt-0">
-      <dt className="min-w-0 flex-1 text-sm text-muted-foreground">{s.label}{s.note && <span className="block text-xs text-muted-foreground/80">{s.note}</span>}</dt>
+      <dt className="min-w-0 flex-1 text-sm text-muted-foreground">{s.label}{s.note && <span className="block text-xs text-muted-foreground">{s.note}</span>}</dt>
       <dd className="hero-figure tnum shrink-0 text-lg text-[#14304f]">{s.value}{s.unit && <span className="ml-1 text-xs font-normal text-muted-foreground">{s.unit}</span>}</dd>
     </div>
   ))}</dl>;
