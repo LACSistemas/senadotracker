@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
+import { Droplet, Navigation, Home, Zap, Bus, Waves, HardHat } from 'lucide-react';
 import type { InfrastructureIndicator } from '@senadotracker/db';
 import type { InfrastructurePageData } from '@/lib/infrastructure/types';
 import { ChapterNav } from '@/components/security/chapter-nav';
@@ -70,43 +71,43 @@ export function InfrastructurePage({ data, hideLede = false }: { data: Infrastru
       </section>
       <InfrastructureLegend />
 
-      {chapter(waterSanitation.available, waterSanitation, <ChapterShell accent="cyan" id="agua-saneamento" number={1} title={waterSanitation.title} narrative={waterSanitation.narrative} limits={waterSanitation.limits} sources={waterSanitation.sources}>
+      {chapter(waterSanitation.available, waterSanitation, <ChapterShell accent="cyan" icon={Droplet} id="agua-saneamento" number={1} title={waterSanitation.title} narrative={waterSanitation.narrative} limits={waterSanitation.limits} sources={waterSanitation.sources}>
         {aguaKpi && <IndicatorLive kpi={aguaKpi} who={where} lead verify={verifyFor(aguaKpi)} />}
         {waterSanitation.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={waterSanitation.disclosures} />
       </ChapterShell>)}
 
-      {chapter(urbanEnvironment.available, urbanEnvironment, <ChapterShell accent="cyan" id="ruas-entorno" number={2} title={urbanEnvironment.title} narrative={urbanEnvironment.narrative} tone="strip" limits={urbanEnvironment.limits} sources={urbanEnvironment.sources}>
+      {chapter(urbanEnvironment.available, urbanEnvironment, <ChapterShell accent="cyan" icon={Navigation} id="ruas-entorno" number={2} title={urbanEnvironment.title} narrative={urbanEnvironment.narrative} tone="strip" limits={urbanEnvironment.limits} sources={urbanEnvironment.sources}>
         {ruasKpi && <IndicatorLive kpi={ruasKpi} who={where} lead verify={verifyFor(ruasKpi)} />}
         <EntornoUnitSwitcher byUnit={urbanEnvironment.byUnit} />
         <Disclosures items={urbanEnvironment.disclosures} />
       </ChapterShell>)}
 
-      {chapter(housing.available, housing, <ChapterShell accent="cyan" id="habitacao" number={3} title={housing.title} narrative={housing.narrative} limits={housing.limits} sources={housing.sources}>
+      {chapter(housing.available, housing, <ChapterShell accent="cyan" icon={Home} id="habitacao" number={3} title={housing.title} narrative={housing.narrative} limits={housing.limits} sources={housing.sources}>
         {habitacaoKpi && <IndicatorLive kpi={habitacaoKpi} who={where} lead verify={verifyFor(habitacaoKpi)} />}
         {housing.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={housing.disclosures} />
       </ChapterShell>)}
 
-      {chapter(energy.available, energy, <ChapterShell accent="cyan" id="energia" number={4} title={energy.title} narrative={energy.narrative} tone="strip" limits={energy.limits} sources={energy.sources}>
+      {chapter(energy.available, energy, <ChapterShell accent="cyan" icon={Zap} id="energia" number={4} title={energy.title} narrative={energy.narrative} tone="strip" limits={energy.limits} sources={energy.sources}>
         {energiaKpi && <IndicatorLive kpi={energiaKpi} who={where} lead verify={verifyFor(energiaKpi)} />}
         {energy.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={energy.disclosures} />
       </ChapterShell>)}
 
-      {chapter(mobility.available, mobility, <ChapterShell accent="cyan" id="mobilidade" number={5} title={mobility.title} narrative={mobility.narrative} limits={mobility.limits} sources={mobility.sources}>
+      {chapter(mobility.available, mobility, <ChapterShell accent="cyan" icon={Bus} id="mobilidade" number={5} title={mobility.title} narrative={mobility.narrative} limits={mobility.limits} sources={mobility.sources}>
         {mobilidadeKpi && <IndicatorLive kpi={mobilidadeKpi} who={where} lead verify={verifyFor(mobilidadeKpi)} />}
         {mobility.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={mobility.disclosures} />
       </ChapterShell>)}
 
-      {chapter(waterSecurity.available, waterSecurity, <ChapterShell accent="cyan" id="seguranca-hidrica" number={6} title={waterSecurity.title} narrative={waterSecurity.narrative} tone="strip" limits={waterSecurity.limits} sources={waterSecurity.sources}>
+      {chapter(waterSecurity.available, waterSecurity, <ChapterShell accent="cyan" icon={Waves} id="seguranca-hidrica" number={6} title={waterSecurity.title} narrative={waterSecurity.narrative} tone="strip" limits={waterSecurity.limits} sources={waterSecurity.sources}>
         {segurancaHidricaKpi && <IndicatorLive kpi={segurancaHidricaKpi} who={where} lead verify={verifyFor(segurancaHidricaKpi)} />}
         {waterSecurity.groups.map(g => <GroupBlock key={g.label} group={g} />)}
         <Disclosures items={waterSecurity.disclosures} />
       </ChapterShell>)}
 
-      {chapter(works.available, works, <ChapterShell accent="cyan" id="obras" number={7} title={works.title} narrative={works.narrative} limits={works.limits} sources={works.sources}>
+      {chapter(works.available, works, <ChapterShell accent="cyan" icon={HardHat} id="obras" number={7} title={works.title} narrative={works.narrative} limits={works.limits} sources={works.sources}>
         {obrasKpi && <IndicatorLive kpi={obrasKpi} who={where} lead verify={verifyFor(obrasKpi)} />}
         <Link href={worksListHref} className="inline-flex items-center gap-1.5 rounded-full border border-[#115b45] px-4 py-1.5 text-sm font-semibold text-[#115b45] hover:bg-[#e8f3ee]">Explorar lista completa de obras →</Link>
         <StatGrid items={[
