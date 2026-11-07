@@ -151,3 +151,14 @@ button,input,select { font:inherit; }
 @keyframes tab-in { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
 .profile-section-content[data-animate="true"] > * { animation:tab-in .26s cubic-bezier(.2,.7,.2,1) both; }
 @media (prefers-reduced-motion:reduce) { .profile-section-content[data-animate="true"] > * { animation:none; } }
+
+/* Rodapé: faixa de logos das fontes de dado. Com muitas fontes a faixa não cabe numa linha só — a lista é
+   renderizada 2x em sequência e a animação translada exatamente -50% em loop, criando um looping contínuo
+   sem salto perceptível. Pausa no hover/foco (dá tempo de ler/clicar um logo específico). */
+@keyframes source-logos-scroll { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+.source-logos-track { animation:source-logos-scroll 40s linear infinite; -webkit-mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent); mask-image:linear-gradient(to right,transparent,black 5%,black 95%,transparent); }
+.source-logos-track:hover,.source-logos-track:focus-within { animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce) {
+  .source-logos-track { animation:none; flex-wrap:wrap; width:auto; -webkit-mask-image:none; mask-image:none; }
+  .source-logos-track li[aria-hidden="true"] { display:none; }
+}
