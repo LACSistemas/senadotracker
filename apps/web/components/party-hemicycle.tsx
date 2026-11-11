@@ -17,7 +17,7 @@ const pct = (part: number, whole: number) => whole ? `${(100 * part / whole).toL
  */
 export interface HemicycleLabels { /** plural: "deputados estaduais" */ noun: string; /** singular com artigo: "um deputado estadual" */ one: string; /** molde de URL com `{party}` (serializável: este componente é de cliente); omitido, a legenda não vira link */ partyHrefTemplate?: string }
 const HOUSE_LABELS = { senado: { noun: 'senadores', one: 'um senador' }, camara: { noun: 'deputados', one: 'um deputado' } } as const;
-export function PartyHemicycle({ composition, house, labels }: { composition: PartyComposition; house?: 'camara' | 'senado'; labels?: HemicycleLabels }) {
+export function PartyHemicycle({ composition, house, labels }: { composition: PartyComposition; house?: 'camara' | 'senado' | undefined; labels?: HemicycleLabels }) {
   const [active, setActive] = useState<string | null>(null);
   const { parties, total } = composition;
   const layout = useMemo(() => layoutHemicycle(parties.map(p => p.seats)), [parties]);

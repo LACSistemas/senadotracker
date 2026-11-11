@@ -1,0 +1,34 @@
+indicator_id,name,source,grain,semantic_type,status,caveat
+JN01,casos novos,Justiça em Números,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,denominator and edition
+JN02,casos pendentes,Justiça em Números,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,"stock, not flow"
+JN03,processos baixados,Justiça em Números,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,definition by edition
+JN04,processos julgados,Justiça em Números,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,not quality
+JN05,taxa de congestionamento,Justiça em Números,tribunal/grau/ano,official,PASS,formula documented
+JN06,índice de atendimento à demanda,Justiça em Números,tribunal/grau/ano,official,PASS,new vs disposed
+JN07,tempo médio de tramitação,Justiça em Números,tribunal/grau/ano,official,PASS_WITH_CAVEATS,censoring and method
+JN08,tempo médio de baixa,Justiça em Números,tribunal/grau/ano,official,PASS_WITH_CAVEATS,cohort definition
+JN09,despesa total,Justiça em Números,tribunal/ramo/ano,official,PASS,nominal BRL
+JN10,despesa com pessoal,Justiça em Números,tribunal/ramo/ano,official,PASS,accounting scope
+JN11,magistrados em exercício,Justiça em Números/MPM,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,aggregate
+JN12,servidores em exercício,Justiça em Números/MPM,tribunal/ramo/ano,official,PASS_WITH_CAVEATS,aggregate
+JN13,acervo eletrônico,Justiça em Números,tribunal/grau/ano,official,PARTIAL,field availability
+JN14,índice de conciliação,Justiça em Números,tribunal/ramo/ano,official,PARTIAL,only applicable rows
+JN15,casos novos por magistrado,Justiça em Números,tribunal/grau/ano,derived-official,PASS_WITH_CAVEATS,denominator validated
+JN16,baixados por servidor,Justiça em Números,tribunal/grau/ano,derived-official,PASS_WITH_CAVEATS,denominator validated
+JN17,unidades judiciárias,JN/MPM,tribunal/grau/ano,official,PARTIAL,cadastro changes
+DJ01,documentos processuais observados,DataJud,tribunal/grau/snapshot,derived,LEGAL_REVIEW_REQUIRED,documents are not cases
+DJ02,movimentos por documento,DataJud,tribunal/grau/snapshot,derived,LEGAL_REVIEW_REQUIRED,not official KPI
+DJ03,taxa sem movimentos,DataJud,tribunal/snapshot,quality,LEGAL_REVIEW_REQUIRED,quality only
+DJ04,defasagem de atualização,DataJud,tribunal/snapshot,quality,LEGAL_REVIEW_REQUIRED,observed timestamp
+DJ05,taxa de data sentinela,DataJud,tribunal/snapshot,quality,LEGAL_REVIEW_REQUIRED,data quality
+STJ01,distribuições diárias,STJ CKAN,ministro/dia,official,PILOT_POSSIBLE,open CKAN
+STJ02,acervo em tramitação,STJ CKAN,ministro/snapshot,official,PILOT_POSSIBLE,dataset-specific
+STJ03,acórdãos publicados,STJ CKAN,órgão/relator/dia,official,PILOT_POSSIBLE,espelho subset
+STJ04,unanimidade em acórdãos,STJ CKAN,órgão/período,derived,PILOT_POSSIBLE,text/field scope
+STJ05,pautas futuras,STJ CKAN,órgão/data,official,PILOT_POSSIBLE,daily
+STJ06,folha nominal publicada,STJ CKAN,cargo/mês,official,PILOT_POSSIBLE,privacy review
+FIN01,contratos publicados,PNCP/portais,órgão/ano,official,PARTIAL,coverage unequal
+FIN02,remuneração agregada,CNJ/portais,tribunal/mês,official,PARTIAL,Qlik coverage
+FIN03,pagamentos por favorecido,tribunal portal,órgão/mês,official,PARTIAL,TJES proved only
+TSE01,autores de decisões,TSE Processual,UF/instância/pleito,official,PARTIAL,name without ID
+TERR01,unidades com município físico,DataJud/TJ APIs,unidade/município,derived,PARTIAL,not jurisdiction

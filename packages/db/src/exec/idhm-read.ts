@@ -30,3 +30,26 @@ export async function getHdiSeries(q: Q, t: HdiTerritory): Promise<HdiSeries | n
   }));
   return { level: t.level, code, points };
 }
+
+export interface HdiRankingRow { entityId: number; idhm: number }
+/** IDHM 2010 (o ano mais recente do indicador decenal) de TODOS os municípios de uma UF, numa única
+ * consulta — nunca uma consulta por município. Usada só para identificar o maior/menor IDHM do estado; o
+ * nome de cada município vem da lista de municípios que a página já carrega, não desta função. */
+export async function getHdiForState(q: Q, ufCode: number): Promise<HdiRankingRow[]> {
+  const rows = (await q.query(
+    `SELECT h.territory_code::int AS entity_id, h.idhm
+     FROM civica_exec.exec_idhm_territory h
+     JOIN civica_exec.exec_entity e ON e.entity_id = h.territory_code::int AND e.kind = 4 AND e.uf_code = $1
+     WHERE h.territory_level = 'MUNICIPIO' AND h.year = 2010`,
+    [ufCode],
+  )).rows;
+  return rows.map(r => ({ entityId: Number(r.entity_id), idhm: Number(r.idhm) }));
+}
+/** IDHM 2010 das 27 UFs, numa única consulta — base do mapa nacional por indicador de `/executivo`
+ * (P-Exec E2). `territory_code` já É o `ufCode` no grão UF (ver `codeOf`), sem precisar de join. */
+export async function getHdiForAllStates(q: Q): Promise<HdiRankingRow[]> {
+  const rows = (await q.query(
+    `SELECT territory_code::int AS entity_id, idhm FROM civica_exec.exec_idhm_territory WHERE territory_level = 'UF' AND year = 2010`,
+  )).rows;
+  return rows.map(r => ({ entityId: Number(r.entity_id), idhm: Number(r.idhm) }));
+}

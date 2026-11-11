@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração do diretório de tribunais</title><desc id="desc">Silhueta geométrica de uma fachada de tribunal, com frontão e colunata.</desc>
+  <rect width="1600" height="900" fill="#174535"/><circle cx="1300" cy="180" r="100" fill="#dce9e2" opacity=".18"/>
+  <path d="M0 690h1600v210H0z" fill="#0b3026"/>
+  <path d="M250 320L800 150l550 170z" fill="#faf9f5" opacity=".88"/>
+  <path d="M270 330h1060v30H270z" fill="#f3f1eb" opacity=".72"/>
+  <g fill="#f3f1eb" opacity=".72">
+    <path d="M330 372h56v300h-56z"/><path d="M460 372h56v300h-56z"/><path d="M590 372h56v300h-56z"/>
+    <path d="M720 372h56v300h-56z"/><path d="M850 372h56v300h-56z"/><path d="M980 372h56v300h-56z"/>
+    <path d="M1110 372h56v300h-56z"/><path d="M1240 372h56v300h-56z"/>
+  </g>
+  <path d="M260 672h1080v28H260zM200 700h1200v26H200zM140 726h1320v24H140z" fill="#dce9e2" opacity=".55"/>
+  <g fill="none" stroke="#faf9f5" stroke-width="3" opacity=".18">
+    <path d="M0 140h1600M0 300h1600M0 470h1600"/>
+    <path d="M200 0v900M500 0v900M1100 0v900M1400 0v900"/>
+  </g>
+</svg>

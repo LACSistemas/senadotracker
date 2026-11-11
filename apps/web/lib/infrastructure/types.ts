@@ -5,7 +5,12 @@ import type { Narrative, ScopeInfo } from '../security/types.ts';
  * Modelo de visualização de Infraestrutura: tudo DERIVADO dos serviços reais de `infrastructure-read.ts` e já pronto
  * para renderizar. O cliente nunca recebe os 108 indicadores crus de uma vez, só o que cada capítulo mostra.
  */
-export type InfraScope = ScopeInfo;
+/** `FederalScope`: alargamento LOCAL deste domínio (não mexe no `ScopeInfo` compartilhado por Educação/
+ * Segurança/Bem-estar) — Infraestrutura é o único dos 5 temas onde os pontos de acoplamento a `scope.kind`
+ * eram pequenos o bastante (2 trechos em `infrastructure-page.tsx`, 1 em `toTerritory`) para widening seguro.
+ * Usado só pela página federal (`/executivo/federal/infraestrutura`, P14.14). */
+export interface FederalScope { kind: 'brasil'; entityId: number; ufCode: number; uf: string; name: string; stateName: string; population: { value: number; year: number } | null }
+export type InfraScope = ScopeInfo | FederalScope;
 export type { InfrastructureLevel };
 
 export interface StatItem { label: string; value: string; unit?: string; note?: string | null }

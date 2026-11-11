@@ -1,0 +1,313 @@
+{
+  "P14_7R_STATUS": "PASS_WITH_DOCUMENTED_SOURCE_LIMITATION",
+  "DATABASE": "projetoeleitor_db",
+  "SCHEMA": "civica_jud",
+  "P146_SOURCE_AUDIT": "PASS",
+  "CATALOG_ENTRIES": 33,
+  "INDICATORS_WITH_VALID_SOURCE_VARIABLE": 33,
+  "INDICATOR_DEFINITIONS_WITHOUT_SOURCE_VARIABLE": 0,
+  "INDICATORS_WITH_FACTS": 33,
+  "INDICATORS_WITH_NONNULL_FACTS": 33,
+  "INDICATORS_DOCUMENTATION_ONLY": 0,
+  "INDICATORS_LEGAL_BLOCKED": 0,
+  "INVALID_INDICATOR_IDS_PUBLISHED": 0,
+  "FACTS_BEFORE": 48576,
+  "FACTS_AFTER": 48576,
+  "NULL_FACTS_BEFORE": 18460,
+  "NULL_FACTS_AFTER": 18460,
+  "FACTS_NONNULL_AFTER": 30116,
+  "NULL_ONLY_INDICATOR_FACTS": 0,
+  "SEMANTIC_MISCLASSIFICATIONS_FOUND": 7,
+  "SEMANTIC_MISCLASSIFICATIONS_FIXED": 7,
+  "TAX_EXECUTION_INDICATORS_VERIFIED": 9,
+  "GENERAL_EXECUTION_INDICATORS_VERIFIED": 5,
+  "CRIMINAL_EXECUTION_INDICATORS_VERIFIED": 1,
+  "DOMESTIC_VIOLENCE_INDICATORS_VERIFIED": 10,
+  "FEMINICIDE_INDICATORS_VERIFIED": 4,
+  "CRIMINAL_THEME_CLAIM_RECONCILED": "YES",
+  "CONCILIATION_THEME_CLAIM_RECONCILED": "YES",
+  "DOCUMENTATION_ONLY_FACTS_EXPOSED": 0,
+  "MUNICIPAL_INDICATORS_IMPUTED": 0,
+  "P142_ORIGINAL_FACTS_UNTOUCHED": "YES",
+  "P144_ORIGINAL_FACTS_UNTOUCHED": "YES",
+  "P145_ORIGINAL_FACTS_UNTOUCHED": "YES",
+  "P147_SERVING_COMPATIBILITY": "PASS",
+  "THEMATIC_SERVING_INTEGRATED": "PASS",
+  "RAW_NOMINAL_ACL_STATUS": "RAW_ACL_REMEDIATION_REQUIRED",
+  "REPLAY": "UNCHANGED_REPLAY",
+  "LAST_KNOWN_GOOD": "PASS",
+  "DB_BASELINE_BYTES": 34712218771,
+  "DB_CURRENT_BYTES": 34712243347,
+  "DB_GROWTH_BYTES": 24576,
+  "DB_BUDGET_BYTES": 15000000,
+  "DB_BUDGET_GATE": "PASS",
+  "P95_THEME_OVERVIEW_MS": 8.138799999999947,
+  "TYPECHECK": "PASS",
+  "TYPECHECK_ROOT_BASELINE": "FAIL_UNRELATED_EXISTING_EDUCACAO_TESTS",
+  "TESTS": "PASS",
+  "REGRESSIONS": "PASS",
+  "DATAJUD_CALLS": 0,
+  "PNCP_COLLECTORS_UNINTERRUPTED": "YES",
+  "FRONTEND_CHANGED": "NO",
+  "DOCUMENTS_DELIVERED": 8,
+  "P14_8_READY": "YES",
+  "P14_8_BLOCKERS": [
+    "ACL nominal do RAW STJ permanece com grupo Users gravável; endurecimento operacional fora desta fase"
+  ],
+  "P14_8_STARTED": "NO",
+  "audit": {
+    "perTheme": {
+      "TAX_EXECUTION": {
+        "indicators": 9,
+        "facts": 13248,
+        "nonnull": 10955,
+        "nulls": 2293
+      },
+      "GENERAL_EXECUTION": {
+        "indicators": 5,
+        "facts": 7360,
+        "nonnull": 6738,
+        "nulls": 622
+      },
+      "CRIMINAL_EXECUTION": {
+        "indicators": 1,
+        "facts": 1472,
+        "nonnull": 1408,
+        "nulls": 64
+      },
+      "CRIMINAL": {
+        "indicators": 3,
+        "facts": 4416,
+        "nonnull": 3177,
+        "nulls": 1239
+      },
+      "DOMESTIC_VIOLENCE": {
+        "indicators": 10,
+        "facts": 14720,
+        "nonnull": 3394,
+        "nulls": 11326
+      },
+      "CONCILIATION": {
+        "indicators": 5,
+        "facts": 7360,
+        "nonnull": 4444,
+        "nulls": 2916
+      }
+    },
+    "orphanObservations": 0,
+    "duplicateObservationKeys": 0,
+    "revisions": [
+      {
+        "revision_id": "p146-jn-themes-20261105",
+        "scope": "JN_THEMATIC",
+        "row_count": 48576,
+        "state": "ACTIVE",
+        "is_active": true,
+        "last_known_good": true,
+        "previous_revision_id": null,
+        "created_at": "2026-11-05T13:46:33.178Z",
+        "activated_at": "2026-11-05T13:46:33.178Z",
+        "provenance": {
+          "phase": "P14.6",
+          "parser": "P146-JN-THEMES-v1",
+          "source": "CNJ Justiça em Números 2026",
+          "noDataJud": true,
+          "sourceRows": 1595,
+          "normalizedRows": 1589,
+          "mergedSourceKeys": [
+            "STM|2020",
+            "STM|2021",
+            "STM|2022",
+            "STM|2023",
+            "STM|2024",
+            "STM|2025"
+          ]
+        }
+      },
+      {
+        "revision_id": "p147r-theme-metadata-20261105",
+        "scope": "JN_THEMATIC_METADATA",
+        "row_count": 0,
+        "state": "ACTIVE",
+        "is_active": false,
+        "last_known_good": true,
+        "previous_revision_id": null,
+        "created_at": "2026-11-05T14:43:36.949Z",
+        "activated_at": "2026-11-05T14:43:36.949Z",
+        "provenance": {
+          "phase": "P14.7-R",
+          "source": "CNJ Justiça em Números 2026",
+          "metadataOnly": true,
+          "factRevisionId": "p146-jn-themes-20261105",
+          "correctionCount": 33,
+          "noNewCollection": true
+        }
+      },
+      {
+        "revision_id": "p147r-theme-metadata-20261105-v2",
+        "scope": "JN_THEMATIC_METADATA",
+        "row_count": 0,
+        "state": "ACTIVE",
+        "is_active": true,
+        "last_known_good": true,
+        "previous_revision_id": "p147r-theme-metadata-20261105",
+        "created_at": "2026-11-05T14:43:56.367Z",
+        "activated_at": "2026-11-05T14:43:56.367Z",
+        "provenance": {
+          "phase": "P14.7-R",
+          "source": "CNJ Justiça em Números 2026",
+          "metadataOnly": true,
+          "factRevisionId": "p146-jn-themes-20261105",
+          "correctionCount": 19,
+          "noNewCollection": true
+        }
+      }
+    ],
+    "benchmarks": {
+      "TAX_EXECUTION": {
+        "runs": 12,
+        "p50_ms": 5.42470000000003,
+        "p95_ms": 8.138799999999947,
+        "p99_ms": 8.138799999999947,
+        "min_ms": 4.396499999999833,
+        "max_ms": 12.133199999999988
+      },
+      "GENERAL_EXECUTION": {
+        "runs": 12,
+        "p50_ms": 4.026599999999917,
+        "p95_ms": 5.620499999999993,
+        "p99_ms": 5.620499999999993,
+        "min_ms": 3.1485999999999876,
+        "max_ms": 5.729899999999816
+      },
+      "CRIMINAL_EXECUTION": {
+        "runs": 12,
+        "p50_ms": 2.374699999999848,
+        "p95_ms": 3.0713000000000648,
+        "p99_ms": 3.0713000000000648,
+        "min_ms": 1.8407000000001972,
+        "max_ms": 3.085700000000088
+      },
+      "CRIMINAL": {
+        "runs": 12,
+        "p50_ms": 3.184400000000096,
+        "p95_ms": 3.8631000000000313,
+        "p99_ms": 3.8631000000000313,
+        "min_ms": 2.2409999999999854,
+        "max_ms": 3.9386999999996988
+      },
+      "DOMESTIC_VIOLENCE": {
+        "runs": 12,
+        "p50_ms": 6.07970000000023,
+        "p95_ms": 6.661999999999807,
+        "p99_ms": 6.661999999999807,
+        "min_ms": 5.32990000000018,
+        "max_ms": 7.416999999999916
+      },
+      "CONCILIATION": {
+        "runs": 12,
+        "p50_ms": 4.046200000000226,
+        "p95_ms": 5.632500000000164,
+        "p99_ms": 5.632500000000164,
+        "min_ms": 3.3520000000003165,
+        "max_ms": 5.865099999999984
+      },
+      "indicators": {
+        "runs": 12,
+        "p50_ms": 1.2615000000000691,
+        "p95_ms": 1.7991000000001804,
+        "p99_ms": 1.7991000000001804,
+        "min_ms": 1.0386999999996078,
+        "max_ms": 1.9057999999999993
+      },
+      "generalSeries": {
+        "runs": 12,
+        "p50_ms": 5.429399999999987,
+        "p95_ms": 7.961800000000039,
+        "p99_ms": 7.961800000000039,
+        "min_ms": 4.66840000000002,
+        "max_ms": 8.162000000000262
+      },
+      "comparators": {
+        "runs": 12,
+        "p50_ms": 2.198700000000372,
+        "p95_ms": 2.9076999999997497,
+        "p99_ms": 2.9076999999997497,
+        "min_ms": 1.8557000000000698,
+        "max_ms": 3.4402000000000044
+      }
+    },
+    "catalogThemes": [
+      {
+        "themeId": "TAX_EXECUTION",
+        "title": "Execução fiscal",
+        "description": "Casos novos, estoque, baixas e taxas oficiais da execução fiscal no universo JN.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "Não mede recuperação financeira efetiva de créditos."
+        ],
+        "indicatorCount": 9
+      },
+      {
+        "themeId": "GENERAL_EXECUTION",
+        "title": "Execução geral",
+        "description": "Casos e indicadores oficiais da fase de execução, sem restringir a execução fiscal.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "Não deve ser apresentado como execução fiscal ou execução penal."
+        ],
+        "indicatorCount": 5
+      },
+      {
+        "themeId": "CRIMINAL_EXECUTION",
+        "title": "Execução penal",
+        "description": "Indicadores oficiais identificados como execução penal no dicionário JN.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "A variável é de execução penal; não é um total genérico de execução."
+        ],
+        "indicatorCount": 1
+      },
+      {
+        "themeId": "DOMESTIC_VIOLENCE",
+        "title": "Violência doméstica",
+        "description": "Casos e decisões de violência doméstica conforme variáveis oficiais JN.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "Não representa número de vítimas nem prova de crime."
+        ],
+        "indicatorCount": 10
+      },
+      {
+        "themeId": "CRIMINAL",
+        "title": "Justiça criminal",
+        "description": "Casos novos, pendentes, baixados e decisões criminais do universo JN.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "Não é medida de criminalidade social."
+        ],
+        "indicatorCount": 3
+      },
+      {
+        "themeId": "CONCILIATION",
+        "title": "Conciliação",
+        "description": "Índices oficiais de conciliação por grau e fase quando publicados pelo JN.",
+        "status": "AVAILABLE",
+        "officialSource": "CNJ Justiça em Números 2026",
+        "notes": [
+          "Índices não devem ser somados como contagens."
+        ],
+        "indicatorCount": 5
+      }
+    ],
+    "sourceDictionaryEvidence": {
+      "tbaixex1": "TBaixEx1º - Total de Processos Baixados de Execução Penal no 1º Grau",
+      "sentjudcrimfem": "Sentença Judicial Criminal de Feminicídio"
+    }
+  }
+}

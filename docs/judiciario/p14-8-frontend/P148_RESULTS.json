@@ -1,0 +1,124 @@
+{
+  "phase": "P14.8",
+  "name": "Frontend do Poder Judiciário",
+  "status": "PASS_WITH_CAVEATS",
+  "database": "projetoeleitor_db",
+  "schema": "civica_jud",
+  "databaseWrites": 0,
+  "collectorsExecuted": 0,
+  "backendAdditions": [
+    {
+      "file": "packages/db/src/postgres-judiciary-serving.ts",
+      "function": "getJudiciaryNationalSeries",
+      "reason": "Nenhuma função de P14.7 devolvia série nacional multi-ano para indicadores SUM (só ano único ou por tribunal) — necessária para o capítulo 'A fila da Justiça' e para 'Evolução histórica' das páginas de tema. Mesmas tabelas, agrupado por ano; filtra pelas revisões ativas de JN_STATISTICS e JN_THEMATIC (achado real: o schema permite múltiplas revisões por indicador/tribunal/ano, uma por scope — sem esse filtro o indicador somaria linhas de revisões diferentes)."
+    }
+  ],
+  "p147ServingIntegrated": true,
+  "p147rThemesIntegrated": true,
+  "semanticThemeUsedNotIdPrefix": true,
+  "routes": {
+    "implemented": [
+      "/judiciario",
+      "/judiciario/tribunais",
+      "/judiciario/tribunais/[id]",
+      "/judiciario/comparar",
+      "/judiciario/temas",
+      "/judiciario/temas/[tema]",
+      "/judiciario/stj/precedentes",
+      "/judiciario/stj/precedentes/[id]"
+    ],
+    "count": 8
+  },
+  "gates": {
+    "G0_P147_P147R_auditadas": "PASS",
+    "G1_servicos_reais_integrados": "PASS",
+    "G2_design_system_preservado": "PASS",
+    "G3_navegacao_funcionando": "PASS",
+    "G4_panorama_nacional": "PASS",
+    "G5_diretorio_tribunais": "PASS",
+    "G6_perfis_institucionais": "PASS",
+    "G7_comparador_valido": "PASS",
+    "G8_hub_tematico": "PASS",
+    "G9_execucao_fiscal": "PASS",
+    "G10_execucao_geral_penal_separadas": "PASS",
+    "G11_justica_criminal": "PASS",
+    "G12_violencia_domestica": "PASS",
+    "G13_conciliacao": "PASS",
+    "G14_stj_precedentes": "PASS",
+    "G15_detalhe_precedente": "PASS",
+    "G16_financas_estagios_separados": "PASS",
+    "G17_ausencias_e_metodologia": "PASS",
+    "G18_cobertura_temporal": "PASS",
+    "G19_responsividade": "PASS",
+    "G20_acessibilidade": "PASS_WITH_CAVEATS",
+    "G21_performance": "PASS",
+    "G22_seo": "PASS",
+    "G23_seguranca": "PASS",
+    "G24_ssr": "PASS",
+    "G25_typecheck": "PASS",
+    "G26_build": "PASS",
+    "G27_e2e": "PASS",
+    "G28_capturas_reais": "PASS",
+    "G29_nao_regressao": "PASS",
+    "G30_pncp_ininterrupto": "PASS",
+    "G31_zero_datajud": "PASS",
+    "G32_readiness_publicacao": "PASS_WITH_CAVEATS"
+  },
+  "nationalOverview2025": {
+    "generalIndicators": 12,
+    "thematicIndicators": 33,
+    "totalIndicators": 45,
+    "branches": 8,
+    "newCases": 27687646,
+    "disposed": 45180208,
+    "pending": 75532531,
+    "activeMagistrates": 20476,
+    "congestionRateNationallyAggregated": false
+  },
+  "institutions": { "total": 93, "withJnStatistics": 91, "pilotUnitsTjbaTjrj": "cobertura parcial, identificada na UI" },
+  "stj": { "precedents": 2369, "processLinks": 5402, "distinctProcesses": 4034, "acordaoMirrors": 231, "decisions": 2644, "coverage": "PARTIAL_COVERAGE, sempre identificado como recorte" },
+  "themes": {
+    "withRealData": 6,
+    "documentaryOrBlocked": 8,
+    "realThemeIds": ["TAX_EXECUTION", "GENERAL_EXECUTION", "CRIMINAL_EXECUTION", "DOMESTIC_VIOLENCE", "CRIMINAL", "CONCILIATION"],
+    "indicatorCounts": { "TAX_EXECUTION": 9, "GENERAL_EXECUTION": 5, "CRIMINAL_EXECUTION": 1, "DOMESTIC_VIOLENCE": 10, "CRIMINAL": 3, "CONCILIATION": 5 },
+    "totalRealIndicators": 33
+  },
+  "dataIntegrityChecks": {
+    "nullAsZeroErrors": 0,
+    "invalidStatisticalAggregations": 0,
+    "misclassifiedThemeValues": 0,
+    "syntheticMunicipalStatistics": 0,
+    "individualPayrollExposure": 0
+  },
+  "realBugsFoundAndFixedDuringImplementation": [
+    "getJudiciaryNationalSeries não filtrava por revisão ativa (risco de soma dupla se existir mais de uma revisão publicada no futuro) — corrigido antes de qualquer captura final.",
+    "Hub de temas e Panorama contavam LABOR (status PARTIAL_COVERAGE mas 0 indicadores reais) como tema 'disponível', mostrando um cartão com '0 indicadores' — corrigido para exigir indicatorCount > 0.",
+    "LineChart (componente compartilhado) sobrepunha os rótulos de valor com 17 pontos anuais, ilegível na captura real — trocado por MultiLineChart (mesmo padrão já limpo usado no panorama) nas páginas de perfil de tribunal e de tema, sem alterar o componente compartilhado.",
+    "Página de tema usava série bruta por tribunal/ano como 'evolução histórica nacional' (uma linha por tribunal, não uma soma por ano) — corrigido para usar a nova getJudiciaryNationalSeries quando nenhum tribunal está selecionado."
+  ],
+  "verification": {
+    "typecheck": "PASS (apps/web e packages/db, dist dir isolado)",
+    "build": "PASS (next build isolado, NEXT_DIST_DIR, 8 rotas /judiciario/* presentes no manifesto)",
+    "e2e": "23/23 PASS (tests/e2e/p148-judiciario.spec.ts)",
+    "screenshotsGenerated": 8,
+    "screenshotsOverflow": 0,
+    "screenshotsPageErrors": 0,
+    "regressionRoutesChecked": ["/legislativo", "/estados/ES", "/comparar"]
+  },
+  "desktopVisualTests": 4,
+  "mobileVisualTests": 4,
+  "accessibility": "Componentes reaproveitados (DataTable, charts, KpiCard, EmptyState) já têm o padrão de acessibilidade do produto (tabela alternativa, legendas, navegação por teclado no ChapterNav); auditoria automática dedicada (axe-core) não foi executada nesta fase — ver ACESSIBILIDADE_E_RESPONSIVIDADE.md para o que foi e não foi verificado.",
+  "performance": "Server Components com fetch tipado e cache de 5min (memo), sem waterfalls evitáveis — ver GRAFICOS_COMPARADORES_E_METODOLOGIA.md e TESTES_E2E_BUILD_PERFORMANCE.md para detalhes.",
+  "documentsDelivered": 8,
+  "totalShareableArtifacts": 16,
+  "rawAclReleaseGate": "Pendência pré-existente e fora do escopo deste frontend: ACL da folha STJ permissiva para o grupo Windows 'Users', registrada como gate operacional — o frontend nunca acessa esse RAW.",
+  "dataJudCalls": 0,
+  "dataJudNationalIngestionAuthorized": "NO",
+  "pncpCollectorsUninterrupted": "YES (nenhum arquivo de PNCP tocado nesta fase)",
+  "publicationReady": "YES",
+  "publicationBlockers": [
+    "G20/G32 PASS_WITH_CAVEATS: auditoria de acessibilidade automática (axe-core) não foi executada — recomendado antes de publicação externa ampla, mesmo com os componentes reaproveitados já tendo padrão estabelecido.",
+    "ACL da folha STJ (achado de P14.5, não desta fase) continua pendente de revisão operacional — não bloqueia o frontend, mas bloqueia publicação externa irrestrita do ambiente como um todo."
+  ]
+}

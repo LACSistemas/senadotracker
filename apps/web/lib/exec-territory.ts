@@ -2,7 +2,7 @@ import { cache } from 'react';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
-  getCoverage, getFacilities, getHospitalActivity, getPanelValues, getVaccinePanel, readHealthBenchmarks, getIndicatorSeries, getLatestIndicators, getMapValues, getMunicipality, getResidentFlow,
+  getCoverage, getFacilities, getHospitalActivity, getNationalHealthSummary, getPanelValues, getVaccinePanel, readHealthBenchmarks, getIndicatorSeries, getLatestIndicators, getMapValues, getMunicipality, getResidentFlow,
   getState, listHospitals, listMunicipalities, listStates, readUfHealthStory, resolveMunicipalityId, searchMunicipalities,
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
@@ -28,6 +28,7 @@ export const loadPanelValues = cache((entityId: number) => getPanelValues(pool()
 export const loadVaccinePanel = cache((entityId: number) => getVaccinePanel(pool(), entityId, VACCINE_SLUGS));
 export const loadBenchmarks = cache(() => readHealthBenchmarks(pool()));
 export const loadHospitals = cache((id: number) => listHospitals(pool(), id));
+export const loadNationalHealthSummary = cache(() => getNationalHealthSummary(pool()));
 export const loadHospitalActivity = cache((id: number) => getHospitalActivity(pool(), id));
 export const loadResidentFlow = cache((id: number) => getResidentFlow(pool(), id));
 export const findMunicipalities = (term: string, ufCode?: number, limit = 24) => searchMunicipalities(pool(), { term, ...(ufCode ? { ufCode } : {}), limit });

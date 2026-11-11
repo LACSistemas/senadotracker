@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-11-04",
+  "database": "projetoeleitor_db",
+  "baselineP141Bytes": 34630683795,
+  "measuredCurrentBytes": 34642029715,
+  "dbGrowthBytes": 11345920,
+  "maxGrowthBytes": 100000000,
+  "envelopeRemainingBytes": 88654080,
+  "dbBudgetGate": "PASS",
+  "rawRoot": "D:\\Civica\\judiciario\\justica_em_numeros",
+  "rawFreeBytes": 403060936704,
+  "rawFileCount": 4,
+  "rawBytes": 16276455,
+  "rawFiles": [
+    {
+      "path": "D:\\Civica\\judiciario\\justica_em_numeros\\17-set-2026.zip",
+      "bytes": 4248663,
+      "sha256": "37c1fa36e772a94e3cad96da91d8d984de2ad9942cc8010d153397da2e4f802f"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\justica_em_numeros\\extracted-17-set-2026\\BD_Consolidado_JF_Secao_23_Jun_2026.csv",
+      "bytes": 331600,
+      "sha256": "f53779dad4a07f4a7451bdc17d6b0be3b51b05f09cc59aa8510dc9810d71ee7b"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\justica_em_numeros\\extracted-17-set-2026\\JN_23-Jun-2026.csv",
+      "bytes": 11605523,
+      "sha256": "52a351021e5e7be21fca03fa45017f9cee41b363926a5680fa36a8689a6c5fb6"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\justica_em_numeros\\extracted-17-set-2026\\Variáveis - JN.csv",
+      "bytes": 90669,
+      "sha256": "59ca8e23fd7e4e3f42804ee903558f438e8a623c308f25ae82cd0c4a9517ecd0"
+    }
+  ],
+  "rawOnDOnly": true,
+  "stagingOnDOnly": true,
+  "temporaryCrossover": "none"
+}

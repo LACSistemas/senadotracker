@@ -54,3 +54,21 @@ export async function getGdpPerCapita(q: Q, t: GdpTerritory): Promise<{ year: nu
   const point = [...series.points].reverse().find(p => p.gdpPerCapitaReais != null);
   return point ? { year: point.year, value: point.gdpPerCapitaReais!, gdpThousandReais: point.gdpThousandReais } : null;
 }
+
+export interface GdpRankingRow { entityId: number; year: number; value: number }
+/** PIB per capita do ano mais recente (com população do mesmo ano) de TODOS os municípios de uma UF, numa
+ * única consulta — nunca uma consulta por município (N+1). Usada só para identificar o maior/menor PIB per
+ * capita do estado; o nome de cada município vem da lista de municípios que a página já carrega, não desta
+ * função (ela nunca junta `exec_entity.name` para não duplicar o que o chamador já tem). */
+export async function getGdpPerCapitaForState(q: Q, ufCode: number): Promise<GdpRankingRow[]> {
+  const rows = (await q.query(
+    `SELECT DISTINCT ON (g.territory_code) g.territory_code::int AS entity_id, g.year, g.gdp_thousand_reais, p.value AS population
+     FROM civica_exec.exec_gdp_territory g
+     JOIN civica_exec.exec_entity e ON e.entity_id = g.territory_code::int AND e.kind = 4 AND e.uf_code = $1
+     LEFT JOIN civica_exec.exec_territory_population p ON p.entity_id = e.entity_id AND p.year = g.year AND p.source = 1
+     WHERE g.territory_level = 'MUNICIPIO' AND p.value IS NOT NULL
+     ORDER BY g.territory_code, g.year DESC`,
+    [ufCode],
+  )).rows;
+  return rows.map(r => ({ entityId: Number(r.entity_id), year: Number(r.year), value: (Number(r.gdp_thousand_reais) * 1000) / Number(r.population) }));
+}

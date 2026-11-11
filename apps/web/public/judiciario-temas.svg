@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração de temas do Judiciário</title><desc id="desc">Silhueta geométrica de uma balança de justiça.</desc>
+  <rect width="1600" height="900" fill="#174535"/><circle cx="330" cy="190" r="95" fill="#dce9e2" opacity=".18"/>
+  <path d="M0 690h1600v210H0z" fill="#0b3026"/>
+  <path d="M740 760h120v40H740z" fill="#0b3026"/>
+  <path d="M700 790h200v26H700z" fill="#f3f1eb" opacity=".72"/>
+  <path d="M784 240h32v530h-32z" fill="#faf9f5" opacity=".88"/>
+  <path d="M520 300h560v26H520z" fill="#faf9f5" opacity=".88"/>
+  <circle cx="800" cy="260" r="20" fill="#faf9f5" opacity=".88"/>
+  <g stroke="#faf9f5" stroke-width="5" opacity=".88" fill="none">
+    <path d="M560 316l-110 230"/><path d="M1040 316l110 230"/>
+  </g>
+  <g fill="#f3f1eb" opacity=".72">
+    <path d="M330 546a120 70 0 00240 0z"/>
+    <path d="M1030 546a120 70 0 00240 0z"/>
+  </g>
+  <g fill="none" stroke="#faf9f5" stroke-width="3" opacity=".18">
+    <path d="M0 130h1600M0 320h1600M0 520h1600"/>
+    <path d="M260 0v900M560 0v900M1040 0v900M1340 0v900"/>
+  </g>
+</svg>

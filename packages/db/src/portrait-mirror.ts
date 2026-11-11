@@ -22,6 +22,8 @@ export const PORTRAIT_ALLOWED_HOSTS: ReadonlySet<string> = new Set([
   // TSE: a URL de origem é a do ZIP por UF/ano (não há URL individual por candidato); o `fetchImpl` de
   // apps/collector/src/tse-photos.ts extrai só a foto pedida via HTTP Range, nunca o ZIP inteiro.
   'cdn.tse.jus.br',
+  // STF: foto oficial de cada Ministro, servida pelo próprio portal (ver judiciary-stf-ministro-fotos.ts).
+  'portal.stf.jus.br',
 ]);
 /**
  * Endereço canônico do retrato. A ALESP serve as fotos em www3.al.sp.gov.br/legis/ (é o que o próprio portal usa); o cadastro antigo

@@ -12,8 +12,8 @@ import { EducationSummary } from '@/components/education/education-summary';
 import { WellbeingSummary } from '@/components/wellbeing/wellbeing-summary';
 import { InfrastructureSummary } from '@/components/infrastructure/infrastructure-summary';
 import { TerritoryLegislativeSummary } from '@/components/territory/legislative-summary';
-import { ExecutiveSummary } from '@/components/territory/executive-summary';
-import { IdhmSummary } from '@/components/territory/idhm-summary';
+import { GovernorCard } from '@/components/territory/governor-card';
+import { TerritoryKpiStrip } from '@/components/territory/territory-kpi-strip';
 import { findMunicipalities, isUf, loadBenchmarks, loadPanelValues, loadVaccinePanel, loadCoverage, loadGeometry, loadIndicators, loadMapValues, loadMunicipalities, loadState, loadUfStory, ymLabel } from '@/lib/exec-territory';
 
 export const dynamic = 'force-dynamic';
@@ -45,7 +45,11 @@ export default async function EstadoPage({ params, searchParams }: Props) {
     lede={lede} population={state.population?.value ?? null} populationYear={state.population?.year ?? null} base={`/estados/${uf}`} active=""
     heroNode={<TerritoryHero context={`${state.regionName ?? 'Brasil'} · Estado`} title={state.name} stateName={state.name} mapMode="estado" geometry={geometry}
       description={lede} population={state.population?.value ?? null} populationYear={state.population?.year ?? null}
+      executiveSlot={<GovernorCard uf={uf} stateName={state.name} />}
       actions={<Link href={`/estados/${uf}/representacao`} className="rounded-full bg-white px-5 py-3 text-sm font-bold text-primary">Quem representa {state.name}</Link>} />}>
+
+    <TerritoryKpiStrip ufCode={state.ufCode!} territoryName={state.name} population={state.population?.value ?? null} populationYear={state.population?.year ?? null}
+      gdpTerritory={{ level: 'UF', ufCode: state.ufCode! }} hdiTerritory={{ level: 'UF', ufCode: state.ufCode! }} names={names} />
 
     <section aria-labelledby="mapa" className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_17rem]">
       <div className="min-w-0 rounded-3xl border bg-card p-4 sm:p-6">
@@ -71,6 +75,8 @@ export default async function EstadoPage({ params, searchParams }: Props) {
       </div>
     </section>
 
+    <TerritoryLegislativeSummary uf={uf} stateName={state.name} />
+
     {hasHealth && <div><HealthPanel scope={state.name} kind="uf" ufCode={state.ufCode!} ufName={state.name} values={panelValues} vaccines={vaccines} facilities={f.total > 0 ? f : null} bench={bench} cnesLabel={lastCnes ? ymLabel(lastCnes.lastCompetence) : 'sem competência'} compact />
       <p className="mt-3 text-sm"><Link href={`/estados/${uf}/saude`} className="font-semibold text-primary hover:underline">Abrir toda a Saúde de {state.name} →</Link></p></div>}
 
@@ -82,12 +88,6 @@ export default async function EstadoPage({ params, searchParams }: Props) {
       <div className="min-w-0"><Suspense fallback={null}><WellbeingSummary kind="uf" code={uf} /></Suspense></div>
       <div className="min-w-0"><Suspense fallback={null}><InfrastructureSummary kind="uf" code={uf} /></Suspense></div>
     </div>
-    <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-      <div className="min-w-0"><Suspense fallback={null}><ExecutiveSummary uf={uf} stateName={state.name} gdpTerritory={{ level: 'UF', ufCode: state.ufCode! }} /></Suspense></div>
-      <div className="min-w-0"><Suspense fallback={null}><IdhmSummary territory={{ level: 'UF', ufCode: state.ufCode! }} territoryName={state.name} /></Suspense></div>
-    </div>
-
-    <Suspense fallback={null}><TerritoryLegislativeSummary uf={uf} stateName={state.name} /></Suspense>
 
     <section aria-labelledby="areas">
       <h2 id="areas" className="section-hairline pt-3 font-display text-2xl">Áreas temáticas</h2>

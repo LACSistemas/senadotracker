@@ -1,0 +1,11 @@
+import { openPool } from './db.ts';
+import { getHigherEducationTerritoryOverview, getHigherEducationSeries, searchHigherEducationIes, searchHigherEducationCourses, getHigherEducationComparison } from '../../packages/db/src/exec/index.ts';
+const p = openPool(2);
+const t0 = performance.now();
+const overview = await getHigherEducationTerritoryOverview(p, {}, 2024);
+const series = await getHigherEducationSeries(p, {}, 2022, 2024);
+const ies = await searchHigherEducationIes(p, { text: 'Universidade', year: 2024, pageSize: 5 });
+const courses = await searchHigherEducationCourses(p, { ibge7: '3205309', year: 2024, pageSize: 5 });
+const comparison = await getHigherEducationComparison(p, '3205309', 2024);
+console.log(JSON.stringify({ ms: Math.round(performance.now() - t0), overview, seriesRows: series.length, iesRows: ies.length, courseRows: courses.length, comparison }, null, 2));
+await p.end();

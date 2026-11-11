@@ -2,6 +2,9 @@
 export { proposalGroupSummary, proposalThemeGroupSummary, proposalEventSummary, proposalRelationSummary, proposalRecentActivity, insightRegistry } from './proposition-analytics.ts';
 export { getNationalLegislators, getNationalLegislatorById, getNationalHouseCapabilities, getNationalDomainCoverage, getNationalCoverageSummary, type NationalQueryable, type NationalLegislator, type NationalLegislatorFilters } from './postgres-national.ts';
 export { getNationalMetricCatalog, getNationalMetricCoverage, getNationalOverview, getStateLegislatureOverview, getNationalRanking, getHouseRanking, getNationalPartyAggregates, getNationalUfAggregates, getNationalBudgetAggregates, getTerritoryLegislativeComposition, type AnalyticsQueryable, type AnalyticsFilters, type MetricCatalogRow, type MetricCoverageRow, type RankingRow, type StateLegislatureOverview, type TerritoryLegislativeComposition, type TerritoryLegislativeHouse, type TerritoryLegislativeParty } from './postgres-national-analytics.ts';
+export { getJudiciaryNationalOverview, getJudiciaryNationalSeries, getJudiciaryBranches, getJudiciaryTribunalDirectory, getJudiciaryTribunalProfile, getJudiciaryTribunalSeries, getJudiciaryComparison, getJudiciaryIndicatorDistribution, getJudiciaryStjJurisprudenceOverview, getJudiciaryStjPrecedentExplorer, getJudiciaryStjPrecedentProfile, getJudiciaryStfJurisprudenceOverview, getJudiciaryStfTemaExplorer, getJudiciaryStfTemaProfile, getJudiciaryStfPayrollSummary, getJudiciaryStfPayrollExplorer, getJudiciaryStfPayrollProfile, getJudiciaryStfGeneralJurisprudenceOverview, getJudiciaryStfGeneralJurisprudenceRanking, getJudiciaryStfGeneralJurisprudenceExplorer, getJudiciaryStfGeneralJurisprudenceProfile, getJudiciaryFinancialProfile, getJudiciaryFinancialHistory, getJudiciaryPersonnelProfile, getJudiciaryTerritorialInstitutions, getJudiciarySourceMethodology, type AvailabilityState, type ServingResult, type TribunalDirectoryFilters } from './postgres-judiciary-serving.ts';
+export { ensureJudiciaryPersonnelSchema, JUDICIARY_PERSONNEL_SCHEMA_SQL } from './postgres-judiciary-personnel.ts';
+export { ensureJudiciaryFinancialSchema, JUDICIARY_FINANCIAL_SCHEMA_SQL } from './postgres-judiciary-financial.ts';
 export { proposalFunctionalOverview, principalStageFlow, principalStaleness, activityDnaByAuthor, activityRhythm, activityCalendar, recentLegislativeEvents, proposalObservedState, buildEditorialFacts, editorialFacts, loadUniverse, loadEvents, loadAuthorLinks, latestEventDay, collectEvidence, PROPOSITION_GROUP_ORDER, PRINCIPAL_GROUP, RECENT_EVENT_TYPES, type PropositionHouse, type StageKey, type FunctionalOverview, type HouseFunctionalView, type FunctionalGroupCount, type StageFlow, type StageFlowStage, type PrincipalStaleness, type StalenessBucket, type StalenessPoint, type ActivityDna, type DnaRow, type ActivityRhythm, type HouseRhythm, type RhythmMonth, type ActivityCalendar, type CalendarDay, type RecentEvents, type RecentEventItem, type RecentEventType, type ObservedState, type EditorialFact, type EditorialFactsInput, type UniverseItem, type EventRecord, type AuthorLink, type Evidence } from './proposition-operations.ts';
 import { mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
@@ -259,6 +262,12 @@ export { ensureTemporalSchema, migrateIdentifierYearZeroToNull, TEMPORAL_SCHEMA_
 export { ensureStateBudgetSchema, getStateBudgetAmendmentsByLegislator, getStateBudgetAmendmentDetail, getStateBudgetAmendmentHouseSummary, STATE_BUDGET_SCHEMA, STATE_BUDGET_DATABASE, STATE_BUDGET_SCHEMA_SQL } from './postgres-state-budget.ts';
 export * from './postgres-budget.ts';
 export * from './postgres-budget-read.ts';
+export * from './postgres-judiciary.ts';
+export * from './postgres-judiciary-statistics.ts';
+export * from './postgres-judiciary-stj.ts';
+export * from './postgres-judiciary-stf.ts';
+export * from './postgres-judiciary-stf-jurisprudencia.ts';
+export * from './postgres-judiciary-themes.ts';
 
 export { ensureStateStorySchema, refreshStateHouseStory, readStateHouseStory, readStateHouseGlances, readStateNumbersInput, type StateNumbersInput, reconcileStateHouseStories, STATE_STORY_VERSION, type StoryReconcileResult, type StateHouseGlance, financeLabelSemantics, STATE_STORY_SCHEMA, type StateHouseStory, type StorySeats, type StoryProposals, type StoryFinance, type FinanceLabelSemantics } from './postgres-state-story.ts';
 export { createFinanceResolver, officialBridgeFromRosterPayload, normalizeActorName, normalizeActorNameNoTitle, type FinanceLinkMethod } from './state-finance-identity.ts';

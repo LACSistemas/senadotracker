@@ -1,0 +1,732 @@
+{
+  "P14_5_STATUS": "PASS_WITH_CAVEATS",
+  "DATABASE": "projetoeleitor_db",
+  "schema": "civica_jud",
+  "P14_5_STARTED": "YES",
+  "P14_7_READY": "NO",
+  "P14_7_STARTED": "NO",
+  "FRONTEND_CHANGED": "NO",
+  "DATAJUD_CALLS": 0,
+  "PNCP_COLLECTORS_UNINTERRUPTED": "YES",
+  "STJ_PAYROLL_MONTHS": 21,
+  "STJ_PAYROLL_AGGREGATE_ROWS": 547,
+  "STJ_PAYROLL_SOURCE_ROWS": "105890",
+  "STJ_BUDGET_FACTS": 10,
+  "STJ_INDIVIDUAL_PAYROLL_ROWS": 0,
+  "TJES_EXECUTION_ROWS": 0,
+  "TJES_PAYMENT_ROWS": 0,
+  "PNCP_JUDICIARY_LINKS": 0,
+  "revision": {
+    "revision_id": "p145-finance-20261104",
+    "semantic_hash": "d6a703afa6438f947dcec92fe2c1203c5f6159fbb9dcc3ac05508532f2110e7c",
+    "row_count": 557,
+    "created_at": "2026-11-05T02:07:55.822Z",
+    "activated_at": "2026-11-05T02:07:55.822Z",
+    "snapshot_ids": [
+      "STJ:FIN:568ba23f61bde3591f308b1077c562827c693883",
+      "STJ:FIN:d6c9a603ad62cd9863b7d000e95d0124cbb6d010",
+      "STJ:FIN:221d885adfe34ccc281c1b7d7353a3256f7d7941",
+      "STJ:FIN:ea0f571b8ef4779991d88b6fa998fdb8d3969451",
+      "STJ:FIN:bea0831bebeb45413876539c6409fc5c085152d3",
+      "STJ:FIN:f9ed3eeacf08139f1125a4efaa51038aaf9a7f39",
+      "STJ:FIN:e4e597a5f70215acda485ac3b0d8724ee6c7b7a7"
+    ]
+  },
+  "storage": {
+    "baselineBytes": 34660641939,
+    "currentBytes": 34661223571,
+    "growthBytes": 581632,
+    "envelopeBytes": 100000000,
+    "withinEnvelope": true,
+    "rawRoot": "D:\\Civica\\judiciario\\financeiro"
+  },
+  "p144_audit": {
+    "status": "PASS_WITH_CAVEATS",
+    "precedents": 2369,
+    "processLinks": 5402,
+    "mirrors": 231,
+    "decisions": 2644,
+    "relations": 5419,
+    "relationKinds": [
+      {
+        "relation_kind": "MIRROR_PRECEDENT_REFERENCE",
+        "n": 17
+      },
+      {
+        "relation_kind": "PRECEDENT_PROCESS",
+        "n": 5402
+      }
+    ],
+    "sourceSnapshotCounts": {
+      "total": 16,
+      "stj": 16
+    },
+    "nominalRelators": 72
+  },
+  "jn_reuse": {
+    "status": "REUSED_NO_DUPLICATE_FACTS",
+    "p142Status": "PASS_WITH_CAVEATS",
+    "indicators": 12,
+    "observations": 17664,
+    "dpjApplicability": "DOCUMENTED_WITH_CAVEAT"
+  },
+  "cnj": {
+    "res102": "DOCUMENTED_OFFICIAL",
+    "remunerationPanel": "DOCUMENTED_NO_PUBLIC_BULK_EXPORT"
+  },
+  "stj": {
+    "payroll": {
+      "rows": 547,
+      "months": 21,
+      "source_rows": "105890",
+      "first_period": "2025-01",
+      "last_period": "2026-09"
+    },
+    "monthly": [
+      {
+        "reference_year": 2025,
+        "reference_month": 1,
+        "records": 4864,
+        "credits": "14321165446",
+        "debits": "-2643017143",
+        "net": "11678148303",
+        "per_diem": "12615079"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 2,
+        "records": 4874,
+        "credits": "10918484120",
+        "debits": "-2809537298",
+        "net": "8108946822",
+        "per_diem": "46328220"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 3,
+        "records": 4871,
+        "credits": "10872244323",
+        "debits": "-2789616039",
+        "net": "8082628284",
+        "per_diem": "48671191"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 4,
+        "records": 4887,
+        "credits": "11084714240",
+        "debits": "-2754547616",
+        "net": "8330166624",
+        "per_diem": "66364314"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 5,
+        "records": 4891,
+        "credits": "11017336971",
+        "debits": "-2756444954",
+        "net": "8260892017",
+        "per_diem": "57884116"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 6,
+        "records": 4933,
+        "credits": "11339202146",
+        "debits": "-2838107365",
+        "net": "8501094781",
+        "per_diem": "60922142"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 7,
+        "records": 4928,
+        "credits": "11266251310",
+        "debits": "-2771213340",
+        "net": "8495037970",
+        "per_diem": "49225842"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 8,
+        "records": 5003,
+        "credits": "11195168611",
+        "debits": "-2760619938",
+        "net": "8434548673",
+        "per_diem": "87601378"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 9,
+        "records": 5113,
+        "credits": "12013130566",
+        "debits": "-2802580065",
+        "net": "9210550501",
+        "per_diem": "49415268"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 10,
+        "records": 5112,
+        "credits": "11611350594",
+        "debits": "-2812314549",
+        "net": "8799036045",
+        "per_diem": "64256855"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 11,
+        "records": 5127,
+        "credits": "16933156738",
+        "debits": "-5498501415",
+        "net": "11434655323",
+        "per_diem": "61563072"
+      },
+      {
+        "reference_year": 2025,
+        "reference_month": 12,
+        "records": 5177,
+        "credits": "14548770049",
+        "debits": "-3116164890",
+        "net": "11432605159",
+        "per_diem": "88807285"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 1,
+        "records": 5140,
+        "credits": "16473284527",
+        "debits": "-2901006782",
+        "net": "13572277745",
+        "per_diem": "22035876"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 2,
+        "records": 5145,
+        "credits": "12525388455",
+        "debits": "-3007418820",
+        "net": "9517969635",
+        "per_diem": "54635317"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 3,
+        "records": 5142,
+        "credits": "12205704459",
+        "debits": "-2935600463",
+        "net": "9270103996",
+        "per_diem": "59418277"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 4,
+        "records": 5105,
+        "credits": "12214988701",
+        "debits": "-2880607113",
+        "net": "9334381588",
+        "per_diem": "58171393"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 5,
+        "records": 5093,
+        "credits": "12001502226",
+        "debits": "-2912244332",
+        "net": "9089257894",
+        "per_diem": "53896515"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 6,
+        "records": 5142,
+        "credits": "12215532443",
+        "debits": "-2946432145",
+        "net": "9269100298",
+        "per_diem": "73030445"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 7,
+        "records": 5120,
+        "credits": "12817919869",
+        "debits": "-3144572381",
+        "net": "9673347488",
+        "per_diem": "65053311"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 8,
+        "records": 5109,
+        "credits": "12743594902",
+        "debits": "-3181865923",
+        "net": "9561728979",
+        "per_diem": "57499993"
+      },
+      {
+        "reference_year": 2026,
+        "reference_month": 9,
+        "records": 5114,
+        "credits": "12821249354",
+        "debits": "-3161886386",
+        "net": "9659362968",
+        "per_diem": "63997015"
+      }
+    ],
+    "budgetFacts": {
+      "rows": 10,
+      "paid_rows": 2,
+      "total_cents": "900248468994"
+    },
+    "individualRowsPersisted": 0,
+    "sourceSnapshots": [
+      {
+        "provider": "STJ",
+        "resource_name": "Anexo-I-Janeiro-2025.pdf",
+        "source_url": "https://transparencia.stj.jus.br/wp-content/uploads/Anexo-I-Janeiro-2025.pdf",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": "211286",
+        "sha256": "bea0831bebeb45413876539c6409fc5c085152d309efbbf4c0b013f90c5ad537",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\orcamento\\Anexo-I-Janeiro-2025.pdf",
+        "source_rows": 1,
+        "parsed_rows": 1,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "AnexoII-Janeiro-2026.pdf",
+        "source_url": "https://transparencia.stj.jus.br/wp-content/uploads/AnexoII-Janeiro-2026.pdf",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": "472253",
+        "sha256": "f9ed3eeacf08139f1125a4efaa51038aaf9a7f39d7b5ae96fefaeef09609e165",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\orcamento\\AnexoII-Janeiro-2026.pdf",
+        "source_rows": 1,
+        "parsed_rows": 1,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "catalog-folha-pessoal.json",
+        "source_url": "https://dadosabertos.web.stj.jus.br/dataset/folha-de-pagamento-de-pessoal",
+        "http_status": 200,
+        "content_type": "application/json",
+        "bytes": "4743",
+        "sha256": "568ba23f61bde3591f308b1077c562827c693883a6590b1e32fb29056e33d26b",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\catalog-folha-pessoal.json",
+        "source_rows": 1,
+        "parsed_rows": 1,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "dicionario-de-dados.csv",
+        "source_url": "https://dadosabertos.web.stj.jus.br/dataset/78f2e160-63a5-41e0-87c2-232d8eec228f/resource/cde1f09f-6730-4b8f-b228-e5126945cddd/download/dicionario-de-dados.csv",
+        "http_status": 200,
+        "content_type": "text/csv",
+        "bytes": "3609",
+        "sha256": "221d885adfe34ccc281c1b7d7353a3256f7d794168cbd2e37e304902da5358d3",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\dicionario-de-dados.csv",
+        "source_rows": 27,
+        "parsed_rows": 27,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "folhadepagamento.csv",
+        "source_url": "https://dadosabertos.web.stj.jus.br/dataset/78f2e160-63a5-41e0-87c2-232d8eec228f/resource/e54853fe-ba1a-4ece-bf07-9516ee6ed288/download/folhadepagamento.csv",
+        "http_status": 200,
+        "content_type": "text/csv",
+        "bytes": "111535560",
+        "sha256": "d6c9a603ad62cd9863b7d000e95d0124cbb6d010064efe31e211d606b452bcce",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\folhadepagamento.csv",
+        "source_rows": 386639,
+        "parsed_rows": 105890,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "Ordem_Cronologica_PagamentosJan2026.pdf",
+        "source_url": "https://transparencia.stj.jus.br/wp-content/uploads/Ordem_Cronologica_PagamentosJan2026.pdf",
+        "http_status": 200,
+        "content_type": "application/pdf",
+        "bytes": "789421",
+        "sha256": "e4e597a5f70215acda485ac3b0d8724ee6c7b7a758539686d38cccbdf7aff37e",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\orcamento\\Ordem_Cronologica_PagamentosJan2026.pdf",
+        "source_rows": 1,
+        "parsed_rows": 1,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      },
+      {
+        "provider": "STJ",
+        "resource_name": "payroll_aggregate_2025_2026.csv",
+        "source_url": "aggregate",
+        "http_status": 200,
+        "content_type": "text/csv",
+        "bytes": "79105",
+        "sha256": "ea0f571b8ef4779991d88b6fa998fdb8d3969451bb8c572864d0badc13f0b894",
+        "raw_path": "D:\\Civica\\judiciario\\financeiro\\stj\\staging\\payroll_aggregate_2025_2026.csv",
+        "source_rows": 547,
+        "parsed_rows": 547,
+        "rejected_rows": 0,
+        "duplicate_rows": 0,
+        "status": "ACQUIRED"
+      }
+    ]
+  },
+  "tjes": {
+    "status": "P3_EVIDENCE_ONLY",
+    "rows": 0,
+    "payments": 0
+  },
+  "pncp": {
+    "status": "REUSED_EXISTING_LAYER",
+    "newRows": 0
+  },
+  "coverage": [
+    {
+      "coverage_id": "STJ:COV:c153d2b698091312b560bb2b4ff3ae1b",
+      "publication_revision_id": "p145-finance-20261104",
+      "source_provider": "CNJ",
+      "scope": "REMUNERATION_PANEL",
+      "status": "DOCUMENTED_NO_BULK_EXPORT",
+      "first_period": "2017",
+      "last_period": "2026",
+      "row_count": 0,
+      "limitation": "Public Qlik panel documented; no bulk export was assumed.",
+      "provenance": {}
+    },
+    {
+      "coverage_id": "STJ:COV:b5e9aa6aaeb6011c21068575cdcbbed1",
+      "publication_revision_id": "p145-finance-20261104",
+      "source_provider": "PNCP",
+      "scope": "JUDICIARY_CONTRACTS",
+      "status": "REUSED_EXISTING_LAYER",
+      "first_period": null,
+      "last_period": null,
+      "row_count": 0,
+      "limitation": "No new PNCP collector or duplicated contract facts in P14.5.",
+      "provenance": {}
+    },
+    {
+      "coverage_id": "STJ:COV:759ddea2598876c077fe029a8b46861f",
+      "publication_revision_id": "p145-finance-20261104",
+      "source_provider": "STJ",
+      "scope": "BUDGET_PDF",
+      "status": "PARTIAL_PILOT",
+      "first_period": "2025-01",
+      "last_period": "2026-01",
+      "row_count": 10,
+      "limitation": "Only Jan 2025 Annex I and Jan 2026 Annex II/payment chronology were acquired for pilot.",
+      "provenance": {}
+    },
+    {
+      "coverage_id": "STJ:COV:3f684b1c35f1703e50a8186830aab7ce",
+      "publication_revision_id": "p145-finance-20261104",
+      "source_provider": "STJ",
+      "scope": "PAYROLL",
+      "status": "ACQUIRED_AND_AGGREGATED",
+      "first_period": "2025-01",
+      "last_period": "2026-09",
+      "row_count": 547,
+      "limitation": null,
+      "provenance": {}
+    },
+    {
+      "coverage_id": "STJ:COV:7d9923d53f22ea872d64f69544409e0f",
+      "publication_revision_id": "p145-finance-20261104",
+      "source_provider": "TJES",
+      "scope": "EXECUTION",
+      "status": "P3_EVIDENCE_ONLY",
+      "first_period": "2004",
+      "last_period": "2026",
+      "row_count": 0,
+      "limitation": "P3 byte-range evidence proves source shape; current CKAN access unavailable in this run, so no financial rows published.",
+      "provenance": {}
+    }
+  ],
+  "methodology": [
+    {
+      "indicator_id": "JUD_FIN_STJ_BUDGET_EXECUTION",
+      "public_name": "Execução orçamentária do Anexo II",
+      "description": "Valores do programa 0033 no documento oficial mensal.",
+      "unit": "BRL cents",
+      "budget_stage": "COMMITTED/LIQUIDATED/PAID",
+      "source_scope": "STJ",
+      "formula": "SOURCE_NATIVE_TOTAL",
+      "coverage": "STJ Jan 2026",
+      "comparability": "SOURCE_NATIVE",
+      "provenance": {}
+    },
+    {
+      "indicator_id": "JUD_FIN_STJ_EXPENSE_REPORTED",
+      "public_name": "Despesas reportadas no Anexo I",
+      "description": "Totais mensais publicados conforme Resolução CNJ 102/2009.",
+      "unit": "BRL cents",
+      "budget_stage": "EXPENSE_REPORTED",
+      "source_scope": "STJ",
+      "formula": "SOURCE_NATIVE_TOTAL",
+      "coverage": "STJ Jan 2025",
+      "comparability": "SOURCE_NATIVE",
+      "provenance": {}
+    },
+    {
+      "indicator_id": "JUD_FIN_STJ_PAYROLL_CREDITS",
+      "public_name": "Créditos agregados da folha STJ",
+      "description": "Somas de Total de Créditos por mês e categoria; sem identificação individual.",
+      "unit": "BRL cents",
+      "budget_stage": "PAYROLL",
+      "source_scope": "STJ",
+      "formula": "SUM(source total credits)",
+      "coverage": "STJ 2025-2026",
+      "comparability": "SOURCE_NATIVE_MONTHLY",
+      "provenance": {}
+    }
+  ],
+  "benchmark": {
+    "runs": 30,
+    "p50Ms": 1.92,
+    "p95Ms": 7.11,
+    "p99Ms": 153.17,
+    "plans": [
+      {
+        "Plan": {
+          "Node Type": "Sort",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 54.11,
+          "Total Cost": 54.71,
+          "Plan Rows": 241,
+          "Plan Width": 459,
+          "Actual Startup Time": 0.155,
+          "Actual Total Time": 0.165,
+          "Actual Rows": 241,
+          "Actual Loops": 1,
+          "Sort Key": [
+            "reference_month"
+          ],
+          "Sort Method": "quicksort",
+          "Sort Space Used": 139,
+          "Sort Space Type": "Memory",
+          "Shared Hit Blocks": 35,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "jud_fin_payroll_aggregate",
+              "Alias": "jud_fin_payroll_aggregate",
+              "Startup Cost": 0,
+              "Total Cost": 44.57,
+              "Plan Rows": 241,
+              "Plan Width": 459,
+              "Actual Startup Time": 0.069,
+              "Actual Total Time": 0.112,
+              "Actual Rows": 241,
+              "Actual Loops": 1,
+              "Filter": "((publication_revision_id = 'p145-finance-20261104'::text) AND (tribunal_id = 'JUD:TRIBUNAL:STJ'::text) AND (reference_year = 2026))",
+              "Rows Removed by Filter": 306,
+              "Shared Hit Blocks": 35,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 46,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.15,
+        "Triggers": [],
+        "Execution Time": 0.18
+      },
+      {
+        "Plan": {
+          "Node Type": "Index Scan",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Scan Direction": "Forward",
+          "Index Name": "jud_fin_fact_lookup_idx",
+          "Relation Name": "jud_fin_fact",
+          "Alias": "jud_fin_fact",
+          "Startup Cost": 0.14,
+          "Total Cost": 8.17,
+          "Plan Rows": 1,
+          "Plan Width": 404,
+          "Actual Startup Time": 0.007,
+          "Actual Total Time": 0.008,
+          "Actual Rows": 2,
+          "Actual Loops": 1,
+          "Index Cond": "((publication_revision_id = 'p145-finance-20261104'::text) AND (tribunal_id = 'JUD:TRIBUNAL:STJ'::text) AND (budget_stage = 'PAID'::text))",
+          "Rows Removed by Index Recheck": 0,
+          "Shared Hit Blocks": 2,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning": {
+          "Shared Hit Blocks": 0,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.043,
+        "Triggers": [],
+        "Execution Time": 0.016
+      },
+      {
+        "Plan": {
+          "Node Type": "Aggregate",
+          "Strategy": "Hashed",
+          "Partial Mode": "Simple",
+          "Parallel Aware": false,
+          "Async Capable": false,
+          "Startup Cost": 45.94,
+          "Total Cost": 46.24,
+          "Plan Rows": 24,
+          "Plan Width": 40,
+          "Actual Startup Time": 0.238,
+          "Actual Total Time": 0.243,
+          "Actual Rows": 21,
+          "Actual Loops": 1,
+          "Group Key": [
+            "reference_year",
+            "reference_month"
+          ],
+          "Planned Partitions": 0,
+          "HashAgg Batches": 1,
+          "Peak Memory Usage": 24,
+          "Disk Usage": 0,
+          "Shared Hit Blocks": 35,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Plans": [
+            {
+              "Node Type": "Seq Scan",
+              "Parent Relationship": "Outer",
+              "Parallel Aware": false,
+              "Async Capable": false,
+              "Relation Name": "jud_fin_payroll_aggregate",
+              "Alias": "jud_fin_payroll_aggregate",
+              "Startup Cost": 0,
+              "Total Cost": 41.84,
+              "Plan Rows": 547,
+              "Plan Width": 16,
+              "Actual Startup Time": 0.007,
+              "Actual Total Time": 0.082,
+              "Actual Rows": 547,
+              "Actual Loops": 1,
+              "Filter": "(publication_revision_id = 'p145-finance-20261104'::text)",
+              "Rows Removed by Filter": 0,
+              "Shared Hit Blocks": 35,
+              "Shared Read Blocks": 0,
+              "Shared Dirtied Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Dirtied Blocks": 0,
+              "Local Written Blocks": 0,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0
+            }
+          ]
+        },
+        "Planning": {
+          "Shared Hit Blocks": 12,
+          "Shared Read Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Dirtied Blocks": 0,
+          "Local Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.078,
+        "Triggers": [],
+        "Execution Time": 0.271
+      }
+    ]
+  },
+  "tests": {
+    "databaseGuard": "PASS",
+    "rawSafety": "PASS",
+    "privacy": "PASS",
+    "decimalCents": "PASS",
+    "stageSeparation": "PASS",
+    "noDoubleCounting": "PASS",
+    "replay": "PASS",
+    "datajudCalls": 0,
+    "pncpCollectorInterrupted": false,
+    "frontendChanged": false
+  },
+  "readModels": [
+    "getJudiciaryFinancialOverview",
+    "getJudiciaryAnnualExpenses",
+    "getJudiciaryFinancialHistory",
+    "getJudiciaryBudgetExecution",
+    "getJudiciaryPersonnelCostOverview",
+    "getJudiciaryPayrollAggregate",
+    "getJudiciaryFinancialCoverage",
+    "getJudiciaryFinancialMethodology"
+  ],
+  "INTERNAL_WORK_REMAINING": "NO"
+}

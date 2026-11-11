@@ -32,7 +32,7 @@ function Pending({ id, number, title, reason }: { id: string; number: number; ti
  * "título→grupos→disclosures" repetido 7 vezes. */
 export function InfrastructurePage({ data, hideLede = false }: { data: InfrastructurePageData; hideLede?: boolean }) {
   const { scope, hero, waterSanitation, urbanEnvironment, housing, energy, mobility, waterSecurity, works } = data; const where = scope.name;
-  const worksListHref = scope.kind === 'uf' ? `/estados/${scope.uf}/infraestrutura/obras` : `/municipios/${scope.entityId}/infraestrutura/obras`;
+  const worksListHref = scope.kind === 'uf' ? `/estados/${scope.uf}/infraestrutura/obras` : scope.kind === 'municipio' ? `/municipios/${scope.entityId}/infraestrutura/obras` : null;
   const kpiForChapter = (codes: string[], anchor: string) => { const h = hero.kpis.find(k => codes.includes(k.code)); return h ? heroKpiToKpi(h, { chapterAnchor: anchor, territoryName: where }) : null; };
   const aguaKpi = kpiForChapter(['IAG0001', 'IES0001'], 'agua-saneamento');
   const ruasKpi = kpiForChapter(['INF-ENTORNO-HOUSEHOLD-PAVEMENT', 'INF-ENTORNO-HOUSEHOLD-LIGHTING'], 'ruas-entorno');
@@ -56,7 +56,7 @@ export function InfrastructurePage({ data, hideLede = false }: { data: Infrastru
       <ChapterNav items={nav} layout="sidebar" accent="cyan" />
       <div className="min-w-0 space-y-10">
       <section id="panorama" aria-labelledby="panorama-h" className="scroll-mt-28 space-y-5">
-        <header><p className="eyebrow">Infraestrutura</p><h2 id="panorama-h" className="display-title mt-1 text-2xl sm:text-4xl">O que existe e está registrado {scope.kind === 'uf' ? `no estado de ${where}` : `em ${where}`}?</h2>{!hideLede && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{hero.lede}</p>}</header>
+        <header><p className="eyebrow">Infraestrutura</p><h2 id="panorama-h" className="display-title mt-1 text-2xl sm:text-4xl">O que existe e está registrado {scope.kind === 'uf' ? `no estado de ${where}` : scope.kind === 'brasil' ? 'no Brasil' : `em ${where}`}?</h2>{!hideLede && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7">{hero.lede}</p>}</header>
         {hero.kpis.length > 0 ? (
           <StatGrid items={hero.kpis.map(k => ({ label: k.label, value: k.value, ...(k.unit ? { unit: k.unit } : {}), note: k.note ?? null }))} />
         ) : <EmptyNote title="Sem indicadores para o panorama">Ainda não há indicadores de infraestrutura publicados para este território.</EmptyNote>}
@@ -109,7 +109,7 @@ export function InfrastructurePage({ data, hideLede = false }: { data: Infrastru
 
       {chapter(works.available, works, <ChapterShell accent="cyan" icon={HardHat} id="obras" number={7} title={works.title} narrative={works.narrative} limits={works.limits} sources={works.sources}>
         {obrasKpi && <IndicatorLive kpi={obrasKpi} who={where} lead verify={verifyFor(obrasKpi)} />}
-        <Link href={worksListHref} className="inline-flex items-center gap-1.5 rounded-full border border-[#115b45] px-4 py-1.5 text-sm font-semibold text-[#115b45] hover:bg-[#e8f3ee]">Explorar lista completa de obras →</Link>
+        {worksListHref && <Link href={worksListHref} className="inline-flex items-center gap-1.5 rounded-full border border-[#115b45] px-4 py-1.5 text-sm font-semibold text-[#115b45] hover:bg-[#e8f3ee]">Explorar lista completa de obras →</Link>}
         <StatGrid items={[
           { label: 'Projetos registrados', value: String(works.totals.projects) },
           { label: 'Com um único município', value: String(works.totals.singleMunicipality) },

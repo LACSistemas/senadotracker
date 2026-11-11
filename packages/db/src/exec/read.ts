@@ -102,6 +102,35 @@ export async function getFacilities(q: Q, o: { municipalityId?: number; ufCode?:
   return { total: tot.total, sus: tot.sus, hospitals: tot.hosp, ubs: tot.ubs, byType: types.rows.map(t => ({ code: Number(t.tp_unid), label: String(t.label), n: Number(t.n) })),
     beds: { existing: bt.reduce((n, b) => n + Number(b.existing), 0), sus: bt.reduce((n, b) => n + Number(b.sus), 0), byType: beds.rows.map(b => ({ code: Number(b.tp_leito), label: String(b.label), existing: Number(b.existing), sus: Number(b.sus) })) }, withoutBeds: Number(wb), competence: num(comp) };
 }
+/** Mesma leitura de `getFacilities`, sem recorte de UF/município — soma nacional real (CNES é registro
+ * censitário, somar é válido). Usada só pelo painel nacional de `/executivo` (P-Exec E1/E3). */
+export async function getNationalHealthSummary(q: Q): Promise<{ hospitals: number; totalFacilities: number; bedsExisting: number; bedsSus: number; competence: number | null }> {
+  const tot = (await q.query(`SELECT count(*)::int total, count(*) FILTER (WHERE tp_unid IN (5, 7))::int hosp FROM civica_exec.exec_sau_cnes_estab_v WHERE valid_to IS NULL`)).rows[0];
+  const beds = await q.query(`SELECT tp_leito, sum(qt_exist)::bigint existing, sum(qt_sus)::bigint sus FROM civica_exec.exec_sau_cnes_leito_v WHERE valid_to IS NULL GROUP BY tp_leito`);
+  const bt = beds.rows.filter(b => Number(b.tp_leito) !== 7);
+  const comp = (await q.query(`SELECT max(competence)::int m FROM civica_exec.exec_publication WHERE dataset_id = 3`)).rows[0].m;
+  return { hospitals: Number(tot.hosp), totalFacilities: Number(tot.total), bedsExisting: bt.reduce((n, b) => n + Number(b.existing), 0), bedsSus: bt.reduce((n, b) => n + Number(b.sus), 0), competence: num(comp) };
+}
+/** Mesmo recorte de `getFacilities`, mas por TIPO (estabelecimento e leito), sem recorte de UF/município —
+ * soma nacional real (CNES é registro censitário, somar é válido; mesmas 2 consultas de `getFacilities`,
+ * só sem o filtro de entidade). Usada pela página federal de Saúde (P14.14, `/executivo/federal/saude`). */
+export async function getNationalFacilityTypes(q: Q): Promise<{ byType: Array<{ code: number; label: string; n: number }>; bedsByType: Array<{ code: number; label: string; existing: number; sus: number }> }> {
+  const types = await q.query(`SELECT v.tp_unid, coalesce(rc.label, v.tp_unid::text) label, count(*)::int n FROM civica_exec.exec_sau_cnes_estab_v v LEFT JOIN civica_exec.exec_ref_code rc ON rc.domain = 3 AND rc.code = v.tp_unid::text
+    WHERE v.valid_to IS NULL GROUP BY v.tp_unid, rc.label ORDER BY n DESC`);
+  const beds = await q.query(`SELECT l.tp_leito, coalesce(rc.label, l.tp_leito::text) label, sum(l.qt_exist)::int existing, sum(l.qt_sus)::int sus FROM civica_exec.exec_sau_cnes_leito_v l LEFT JOIN civica_exec.exec_ref_code rc ON rc.domain = 4 AND rc.code = l.tp_leito::text
+    WHERE l.valid_to IS NULL GROUP BY l.tp_leito, rc.label ORDER BY l.tp_leito`);
+  return { byType: types.rows.map(t => ({ code: Number(t.tp_unid), label: String(t.label), n: Number(t.n) })), bedsByType: beds.rows.filter(b => Number(b.tp_leito) !== 7).map(b => ({ code: Number(b.tp_leito), label: String(b.label), existing: Number(b.existing), sus: Number(b.sus) })) };
+}
+/** Leitos existentes por UF (soma por residência do estabelecimento — registro censitário, soma válida).
+ * Usado só pela distribuição territorial de Saúde do painel nacional de `/executivo` (E7-A): não existe
+ * "taxa nacional de leitos" com significado único, mas existe uma distribuição real entre os 27 estados,
+ * honesta de mostrar sem implicar ranking de qualidade (mais leitos ≠ melhor atendimento). */
+export async function getHealthBedsByUf(q: Q): Promise<Array<{ ufCode: number; bedsExisting: number }>> {
+  const r = await q.query(`SELECT e.uf_code, sum(l.qt_exist) FILTER (WHERE l.tp_leito <> 7)::bigint existing
+    FROM civica_exec.exec_sau_cnes_leito_v l JOIN civica_exec.exec_entity e ON e.entity_id = l.entity_id
+    WHERE l.valid_to IS NULL GROUP BY e.uf_code`);
+  return r.rows.map(x => ({ ufCode: Number(x.uf_code), bedsExisting: Number(x.existing ?? 0) }));
+}
 export interface HospitalRow { cnes: number; name: string | null; typeLabel: string; sus: boolean; bedsExisting: number; bedsSus: number }
 export async function listHospitals(q: Q, municipalityId: number): Promise<HospitalRow[]> {
   const r = await q.query(`SELECT v.cnes, c.name, coalesce(rc.label, v.tp_unid::text) label, v.vinc_sus,

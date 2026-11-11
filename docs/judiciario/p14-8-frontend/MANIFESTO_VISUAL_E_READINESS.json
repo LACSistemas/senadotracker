@@ -1,0 +1,46 @@
+{
+  "phase": "P14.8",
+  "screenshotsDirectory": "artifacts/p148-judiciario/",
+  "screenshots": [
+    { "file": "01-panorama-desktop.png", "route": "/judiciario", "viewport": "1440px", "sha256": "666a5160e39dfaefdce5751eb3dd9abb3282344626dad91e81cca4061c7386f4", "overflow": 0, "pageErrors": 0 },
+    { "file": "02-panorama-mobile.png", "route": "/judiciario", "viewport": "390px", "sha256": "65dd20879b0b050ebe51074ff1e00f62ade6802d04e9c9a5aa068b94ea97b3c0", "overflow": 0, "pageErrors": 0 },
+    { "file": "03-perfil-tribunal-desktop.png", "route": "/judiciario/tribunais/JUD:TRIBUNAL:TJES", "viewport": "1440px", "sha256": "4fb2a30050e641ede54791d2e22f80e78d44db1135a38160799c8f62ed1c1981", "overflow": 0, "pageErrors": 0 },
+    { "file": "04-perfil-tribunal-mobile.png", "route": "/judiciario/tribunais/JUD:TRIBUNAL:TJES", "viewport": "390px", "sha256": "5e518e18c27d8274d15eea757c34d4257b274fb15896fd3bd56b7b249dcbac66", "overflow": 0, "pageErrors": 0 },
+    { "file": "05-tema-desktop.png", "route": "/judiciario/temas/tax_execution", "viewport": "1440px", "sha256": "84edbfdbcd2328b78d5d71d7798e848af392556f48fc0548fc01156d4d63eab2", "overflow": 0, "pageErrors": 0 },
+    { "file": "06-tema-mobile.png", "route": "/judiciario/temas/tax_execution", "viewport": "390px", "sha256": "159c755471d141ae9703a07256251c6fcab35f9bc520ca470bde59e62efaf3a9", "overflow": 0, "pageErrors": 0 },
+    { "file": "07-stj-precedentes-desktop.png", "route": "/judiciario/stj/precedentes", "viewport": "1440px", "sha256": "ba12e2fea984ae1518fcdab6641194dacb31b0d346a51ec83097bd8087f8d8db", "overflow": 0, "pageErrors": 0 },
+    { "file": "08-stj-precedentes-mobile.png", "route": "/judiciario/stj/precedentes", "viewport": "390px", "sha256": "c31e339b80a0a2c3bd84e6472ed6d470260fab6a25492ecd55ddb99ff1551475", "overflow": 0, "pageErrors": 0 }
+  ],
+  "screenshotsNote": "Capturas tiradas DEPOIS da correção do gráfico de linha sobreposto (LineChart→MultiLineChart) e da correção de acessibilidade (empty-table-header) — refletem o estado final verificado, não um estado intermediário.",
+  "axeAuditFile": "artifacts/p148-judiciario/axe-results.json",
+  "axeSummary": { "routesAudited": 8, "viewportsPerRoute": 2, "totalCombinations": 16, "violationsFinal": 0, "violationFoundAndFixed": "empty-table-header em /judiciario/tribunais (1440px), corrigido antes da captura final" },
+  "readiness": {
+    "typecheck": "PASS",
+    "build": "PASS",
+    "e2e": "PASS (23/23)",
+    "accessibility": "PASS (0 violações axe-core nas 16 combinações finais) — PASS_WITH_CAVEATS no geral por falta de teste manual de leitor de tela",
+    "responsiveness": "PASS (0px overflow em todas as rotas testadas, 390/1440px)",
+    "databaseWrites": 0,
+    "dataJudCalls": 0,
+    "publicationReady": "YES",
+    "publicationBlockers": [
+      "Teste manual de leitor de tela/teclado não executado (recomendado antes de publicação externa ampla).",
+      "ACL da folha STJ (achado pré-existente, fora deste frontend) continua pendente de revisão operacional."
+    ]
+  },
+  "deliverables": {
+    "documents": 8,
+    "documentFiles": [
+      "P148_RESULTS.json",
+      "RELATORIO_EXECUCAO_P148.md",
+      "ROTAS_COMPONENTES_E_DESIGN.md",
+      "CONTRATOS_DADOS_E_COBERTURA.md",
+      "GRAFICOS_COMPARADORES_E_METODOLOGIA.md",
+      "ACESSIBILIDADE_E_RESPONSIVIDADE.md",
+      "TESTES_E2E_BUILD_PERFORMANCE.md",
+      "MANIFESTO_VISUAL_E_READINESS.json"
+    ],
+    "screenshots": 8,
+    "totalShareableArtifacts": 16
+  }
+}

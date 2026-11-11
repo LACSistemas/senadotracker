@@ -1,0 +1,343 @@
+{
+  "P14_7_STATUS": "PASS_WITH_CAVEATS",
+  "DATABASE": "projetoeleitor_db",
+  "SCHEMA": "civica_jud",
+  "P141_AUDIT": "PASS_WITH_CAVEATS",
+  "P142_AUDIT": "PASS_WITH_CAVEATS",
+  "P144_AUDIT": "PASS_WITH_CAVEATS",
+  "P145_AUDIT": "PASS_WITH_CAVEATS",
+  "JN_2025_PARITY_CHECKS": 12,
+  "JN_2025_PARITY_FAILURES": 0,
+  "INSTITUTIONS_CANONICAL": 93,
+  "INSTITUTIONS_WITH_JN": 91,
+  "JN_INDICATORS_PUBLISHED": 12,
+  "JN_OBSERVATIONS": 17664,
+  "JN_NON_NULL_VALUES": 16550,
+  "STJ_PRECEDENTS": 2369,
+  "STJ_PRECEDENT_PROCESS_LINKS": 5402,
+  "STJ_MIRRORS": 231,
+  "STJ_DECISIONS": 2644,
+  "STJ_COVERAGE_PARTIAL_FLAG": "PASS",
+  "PAYROLL_SOURCE_TOTAL_ROWS": 386639,
+  "PAYROLL_SELECTED_ROWS": 105890,
+  "PAYROLL_EXCLUDED_ROWS_RECONCILED": "YES",
+  "PAYROLL_AGGREGATE_ROWS": 547,
+  "PAYROLL_MONTHS": 21,
+  "PAYROLL_INDIVIDUAL_API_FIELDS": 0,
+  "FINANCIAL_MIXED_TOTALS_EXPOSED": 0,
+  "STJ_BUDGET_FACTS": 10,
+  "TJES_DETAILED_FINANCIAL_FACTS": 0,
+  "PNCP_VERIFIED_JUDICIARY_LINKS": 0,
+  "NATIONAL_OVERVIEW": "PASS_WITH_CAVEATS",
+  "TRIBUNAL_DIRECTORY": "PASS",
+  "TRIBUNAL_PROFILE": "PASS_WITH_CAVEATS",
+  "HISTORICAL_SERIES": "PASS",
+  "COMPARATORS": "PASS_WITH_CAVEATS",
+  "STJ_JURISPRUDENCE_SERVING": "PASS_WITH_CAVEATS",
+  "FINANCIAL_SERVING": "PASS_WITH_CAVEATS",
+  "COVERAGE_SERVING": "PASS",
+  "TERRITORIAL_SERVING": "PASS_WITH_CAVEATS",
+  "MUNICIPAL_STATISTICS_IMPUTED": 0,
+  "SOURCE_PROVENANCE": "PASS",
+  "NULL_SEMANTICS": "PASS",
+  "REVISION_CACHE_GATE": "PASS",
+  "LAST_KNOWN_GOOD": "PASS",
+  "P95_NATIONAL_OVERVIEW_MS": 31.68679999999995,
+  "P95_TRIBUNAL_PROFILE_MS": 76.73610000000008,
+  "P95_STJ_PRECEDENT_DETAIL_MS": 3.96559999999954,
+  "DB_GROWTH_BYTES": 0,
+  "DB_ENVELOPE_REMAINING_BYTES": 40000000,
+  "DB_BUDGET_GATE": "PASS",
+  "TYPECHECK": "PASS",
+  "TESTS": "PASS",
+  "REGRESSIONS": "PASS",
+  "FRONTEND_CHANGED": "NO",
+  "DATAJUD_CALLS": 0,
+  "DATAJUD_NATIONAL_INGESTION_AUTHORIZED": "NO",
+  "PNCP_COLLECTORS_UNINTERRUPTED": "YES",
+  "DOCUMENTS_DELIVERED": 12,
+  "P14_8_READY": "YES",
+  "P14_8_BLOCKERS": [],
+  "P14_8_STARTED": "NO",
+  "audit": {
+    "jn": {
+      "indicators": 12,
+      "observations": 17664,
+      "nonnull": 16550,
+      "institutions": 91,
+      "first_year": 2009,
+      "last_year": 2025,
+      "observations_2025": 1092,
+      "nonnull_2025": 1084
+    },
+    "parity": {
+      "checks": 12,
+      "no_rows": 0,
+      "failures": 0
+    },
+    "payroll": {
+      "aggregate_rows": 547,
+      "selected_rows": "105890",
+      "months": 21
+    },
+    "payrollAudit": {
+      "sourceRows": 386639,
+      "selectedRows": 105890,
+      "excludedRows": 280749,
+      "excludedReason": "before 2025-01",
+      "invalidRows": 0,
+      "missingCompetencyRows": 0,
+      "netFormulaMismatches": 0,
+      "diariaRows": 1360,
+      "creditNegativeRows": 120,
+      "debitPositiveRows": 83,
+      "year2025Months": 12,
+      "year2026Months": 9
+    },
+    "budgetFacts": 10,
+    "stjRelations": [
+      {
+        "relation_kind": "PRECEDENT_PROCESS",
+        "match_status": "OFFICIAL_ID",
+        "n": 5402,
+        "evidenced": 5402
+      },
+      {
+        "relation_kind": "MIRROR_PRECEDENT_REFERENCE",
+        "match_status": "OFFICIAL_REFERENCE",
+        "n": 17,
+        "evidenced": 17
+      }
+    ],
+    "tribunals": 93,
+    "units": 3764,
+    "rawNominalOnD": true,
+    "rawAclNote": "ACL verified; Users group has write/read permission and should be tightened operationally outside this phase",
+    "activeRevisions": [
+      {
+        "scope": "JN_STATISTICS",
+        "revision_id": "p142-jn-2026-20261104",
+        "row_count": 17664,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-04T23:00:00.000Z",
+        "activated_at": "2026-11-04T23:00:00.000Z"
+      },
+      {
+        "scope": "JUD_FINANCE",
+        "revision_id": "p145-finance-20261104",
+        "row_count": 557,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-05T02:07:55.822Z",
+        "activated_at": "2026-11-05T02:07:55.822Z"
+      },
+      {
+        "scope": "STJ_JURISPRUDENCE",
+        "revision_id": "p144-stj-20261104",
+        "row_count": 10646,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-05T01:14:39.042Z",
+        "activated_at": "2026-11-05T01:14:39.042Z"
+      },
+      {
+        "scope": "TRIBUNALS",
+        "revision_id": "p141-tribunals-20261104",
+        "row_count": 93,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-04T23:00:00.000Z",
+        "activated_at": "2026-11-04T23:00:00.000Z"
+      },
+      {
+        "scope": "UNITS_TJBA",
+        "revision_id": "p141-units-tjba-20261104",
+        "row_count": 1784,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-04T23:00:00.000Z",
+        "activated_at": "2026-11-04T23:00:00.000Z"
+      },
+      {
+        "scope": "UNITS_TJRJ",
+        "revision_id": "p141-units-tjrj-20261104",
+        "row_count": 2027,
+        "is_active": true,
+        "last_known_good": true,
+        "created_at": "2026-11-04T23:00:00.000Z",
+        "activated_at": "2026-11-04T23:00:00.000Z"
+      }
+    ],
+    "benchmarks": {
+      "nationalOverview2025": {
+        "runs": 20,
+        "p50": 27.91890000000012,
+        "p95": 31.68679999999995,
+        "p99": 31.68679999999995,
+        "min": 23.884099999999762,
+        "max": 33.9997000000003
+      },
+      "nationalOverview2009": {
+        "runs": 20,
+        "p50": 22.232400000000325,
+        "p95": 24.19489999999996,
+        "p99": 24.19489999999996,
+        "min": 19.529700000000048,
+        "max": 27.578999999999724
+      },
+      "branches": {
+        "runs": 20,
+        "p50": 28.70560000000023,
+        "p95": 31.103200000000015,
+        "p99": 31.103200000000015,
+        "min": 24.876200000000154,
+        "max": 31.10640000000012
+      },
+      "directory": {
+        "runs": 20,
+        "p50": 28.98610000000008,
+        "p95": 33.30609999999979,
+        "p99": 33.30609999999979,
+        "min": 25.54300000000012,
+        "max": 35.73149999999987
+      },
+      "tribunalProfileStj": {
+        "runs": 20,
+        "p50": 5.088500000000749,
+        "p95": 76.73610000000008,
+        "p99": 76.73610000000008,
+        "min": 3.6048000000000684,
+        "max": 102.57769999999982
+      },
+      "tribunalProfileTjes": {
+        "runs": 20,
+        "p50": 2.118600000000697,
+        "p95": 3.2503999999998996,
+        "p99": 3.2503999999998996,
+        "min": 1.6598999999996522,
+        "max": 3.3055999999996857
+      },
+      "tribunalProfileTjsp": {
+        "runs": 20,
+        "p50": 1.816899999999805,
+        "p95": 2.262300000000323,
+        "p99": 2.262300000000323,
+        "min": 1.5531000000000859,
+        "max": 3.5024999999996
+      },
+      "tribunalProfileTjmg": {
+        "runs": 20,
+        "p50": 1.8996999999999389,
+        "p95": 3.141200000000026,
+        "p99": 3.141200000000026,
+        "min": 1.46349999999984,
+        "max": 3.594000000000051
+      },
+      "tribunalProfileTjmmg": {
+        "runs": 20,
+        "p50": 2.0713999999998123,
+        "p95": 2.8728999999993903,
+        "p99": 2.8728999999993903,
+        "min": 1.6229000000002998,
+        "max": 2.956300000000738
+      },
+      "tribunalProfileTrt17": {
+        "runs": 20,
+        "p50": 1.8946999999998297,
+        "p95": 2.2491999999992913,
+        "p99": 2.2491999999992913,
+        "min": 1.5045000000000073,
+        "max": 2.4043000000001484
+      },
+      "tribunalProfileTrf6": {
+        "runs": 20,
+        "p50": 1.8296000000000276,
+        "p95": 2.8153999999994994,
+        "p99": 2.8153999999994994,
+        "min": 1.4940999999998894,
+        "max": 2.9012999999995372
+      },
+      "series": {
+        "runs": 20,
+        "p50": 0.8179000000000087,
+        "p95": 1.166400000000067,
+        "p99": 1.166400000000067,
+        "min": 0.5378000000000611,
+        "max": 1.7842000000000553
+      },
+      "comparison": {
+        "runs": 20,
+        "p50": 1.525100000000748,
+        "p95": 2.13550000000032,
+        "p99": 2.13550000000032,
+        "min": 1.107600000000275,
+        "max": 2.3060000000004948
+      },
+      "stjOverview": {
+        "runs": 20,
+        "p50": 32.189400000000205,
+        "p95": 39.83360000000084,
+        "p99": 39.83360000000084,
+        "min": 28.035399999999754,
+        "max": 52.63079999999991
+      },
+      "stjExplorer": {
+        "runs": 20,
+        "p50": 5.804599999999482,
+        "p95": 7.647899999999936,
+        "p99": 7.647899999999936,
+        "min": 5.094299999999748,
+        "max": 14.696799999999712
+      },
+      "financialStj": {
+        "runs": 20,
+        "p50": 4.330200000000332,
+        "p95": 5.3125,
+        "p99": 5.3125,
+        "min": 3.393000000000029,
+        "max": 6.598399999999856
+      },
+      "financialMissing": {
+        "runs": 20,
+        "p50": 1.1903000000002066,
+        "p95": 1.7930000000005748,
+        "p99": 1.7930000000005748,
+        "min": 0.8047999999998865,
+        "max": 1.8614999999999782
+      },
+      "territorialUf": {
+        "runs": 20,
+        "p50": 4.392100000000028,
+        "p95": 5.65939999999955,
+        "p99": 5.65939999999955,
+        "min": 3.6754000000000815,
+        "max": 7.448800000000119
+      },
+      "territorialMunicipality": {
+        "runs": 20,
+        "p50": 0.3382000000001426,
+        "p95": 0.6793000000006941,
+        "p99": 0.6793000000006941,
+        "min": 0.27179999999953,
+        "max": 0.6867000000002008
+      },
+      "methodology": {
+        "runs": 20,
+        "p50": 1.1588999999994485,
+        "p95": 4.48490000000038,
+        "p99": 4.48490000000038,
+        "min": 0.9535999999998239,
+        "max": 4.892899999999827
+      },
+      "stjDetail": {
+        "runs": 20,
+        "p50": 3.147899999999936,
+        "p95": 3.96559999999954,
+        "p99": 3.96559999999954,
+        "min": 2.5374000000001615,
+        "max": 10.758200000000215
+      }
+    }
+  }
+}

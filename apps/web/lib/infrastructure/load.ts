@@ -14,17 +14,23 @@ import type {
 } from './types.ts';
 
 function toTerritory(scope: InfraScope): InfrastructureTerritory {
-  return scope.kind === 'uf' ? { level: 'UF', ufCode: scope.ufCode } : { level: 'MUNICIPIO', ibge7: String(scope.entityId) };
+  return scope.kind === 'uf' ? { level: 'UF', ufCode: scope.ufCode } : scope.kind === 'municipio' ? { level: 'MUNICIPIO', ibge7: String(scope.entityId) } : { level: 'BRASIL' };
 }
 const byFamily = (all: InfrastructureIndicator[], families: readonly string[]): InfrastructureIndicator[] => all.filter(i => (families as readonly string[]).includes(i.sourceFamily));
 const byCode = (all: InfrastructureIndicator[], code: string): InfrastructureIndicator | null => all.find(i => i.code === code) ?? null;
 const notNull = <T,>(xs: Array<T | null | undefined>): T[] => xs.filter((x): x is T => x != null);
 
 /** Carrega a página de Infraestrutura: 1 chamada a `getInfrastructureIndicators` sem filtro de família (que já cobre
- * os 108 indicadores auditados do território) mais 2 chamadas pontuais de obras — nunca uma consulta por indicador. */
+ * os 108 indicadores auditados do território) mais 2 chamadas pontuais de obras — nunca uma consulta por indicador.
+ * Fatorado em `buildInfrastructurePageData(t, scope)` + este wrapper fino (P14.14): a página federal
+ * (`/executivo/federal/infraestrutura`) chama o builder direto com `t={level:'BRASIL'}`, sem duplicar as ~180
+ * linhas de montagem dos 7 capítulos — comportamento desta função não muda. */
 export async function loadInfrastructurePage(scope: InfraScope): Promise<InfrastructurePageData> {
+  return buildInfrastructurePageData(toTerritory(scope), scope);
+}
+
+export async function buildInfrastructurePageData(t: InfrastructureTerritory, scope: InfraScope): Promise<InfrastructurePageData> {
   const t0 = performance.now(); const { q: pool, stats } = instrument(webPostgresPool()); const dbStart = performance.now();
-  const t = toTerritory(scope);
 
   const [all, works, worksBySituation, families] = await Promise.all([
     getInfrastructureIndicators(pool, t, { limit: 200 }),

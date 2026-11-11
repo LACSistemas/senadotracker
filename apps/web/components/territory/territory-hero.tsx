@@ -20,9 +20,12 @@ export interface TerritoryHeroDiscovery { themeLabel: string; value: string; uni
  * mandato permite (§4.1: "integrada ao hero"); quando ausente, a página mantém a manchete no corpo (ver
  * `DiscoveryPanel`), nunca inventa uma.
  */
-export function TerritoryHero({ context, title, description, population, populationYear, actions, geometry, mapMode, selectedId, stateName, discovery }: {
+export function TerritoryHero({ context, title, description, population, populationYear, actions, geometry, mapMode, selectedId, stateName, discovery, executiveSlot }: {
   context: string; title: string; description: ReactNode; population: number | null; populationYear: number | null; actions?: ReactNode;
   geometry: UfGeometry | null; mapMode: 'estado' | 'municipio'; selectedId?: number; stateName: string; discovery?: TerritoryHeroDiscovery | null;
+  /** Card do Governador/Prefeito, renderizado pela página dentro do seu próprio `<Suspense>` — ver
+   * `components/territory/governor-card.tsx`. Opcional e aditivo: sem ele, o hero não muda. */
+  executiveSlot?: ReactNode;
 }) {
   const mapLabel = mapMode === 'municipio' ? `${title} em destaque no mapa de ${stateName}` : `Mapa de ${title}, com ${geometry?.items.length ?? 0} municípios`;
   return (
@@ -34,6 +37,7 @@ export function TerritoryHero({ context, title, description, population, populat
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">{description}</p>
           {actions && <div className="mt-7 flex flex-wrap gap-3">{actions}</div>}
           {population !== null && <p className="mt-7 flex items-center gap-2 text-sm text-white/75"><MapPin size={15} aria-hidden />{formatInt(population)} habitantes <span className="text-white/60">({populationYear}, estimativa IBGE)</span></p>}
+          {executiveSlot}
           {discovery && (
             <div className="mt-7 max-w-md rounded-2xl border border-white/20 bg-white/10 p-5">
               <p className="text-[0.68rem] font-bold uppercase tracking-wide text-white/65">{discovery.themeLabel} · descoberta</p>

@@ -157,6 +157,45 @@ export interface OrganYear { exercicio: number; organs: OrganLine[]; bySubfuncti
  * É a perspectiva FUNCIONAL desse ente (despesa da função 06 executada pela unidade), não o total da corporação. Estágio "pago" = pagamentos dos empenhos do exercício (nas fontes
  * estaduais, até a data da extração); "restosPagos" = pagamentos de empenhos de exercícios anteriores (só onde a fonte separa). Nenhum rateio entre entes.
  */
+export interface BudgetSnapshot2 { year: number; value: number }
+/** P14 — "Orçamento do ano" de um território: despesa TOTAL anual empenhada (DCA Anexo I-E, conta "Despesas
+ * Exceto Intraorçamentárias", todas as funções somadas), ano mais recente publicado. Não é a dotação/LOA
+ * aprovada (o Cívica não coleta essa peça orçamentária) — é o que o ente efetivamente empenhou no exercício,
+ * o mesmo dado já usado como denominador de `shareOfTotalEmpenhada` acima. DCA tem cobertura universal (todo
+ * ente declara, ao contrário do RREO Anexo 02, que só é completo em municípios com 50 mil+ habitantes), por
+ * isso é a fonte escolhida para esta métrica. Consulta única e indexada, sem `profileOf` (que traria
+ * cobertura/revisões/população que esta métrica não usa).
+ */
+export async function getTotalBudget(q: Q, territory: { level: 'UF'; ufCode: number } | { level: 'MUNICIPIO'; ibge7: string | number }): Promise<BudgetSnapshot2 | null> {
+  const where = territory.level === 'UF' ? 'e.kind = 3 AND e.uf_code = $1' : 'e.kind = 4 AND e.ibge7 = $1';
+  const arg = territory.level === 'UF' ? territory.ufCode : Number(territory.ibge7);
+  const r = await q.query(
+    `SELECT f.exercicio, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+       JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta} AND c.code = 'TOT'
+       JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIE} AND k.code = 'EMP'
+       JOIN civica_exec.exec_entity e ON e.entity_id = f.entity_id AND ${where}
+     ORDER BY f.exercicio DESC LIMIT 1`,
+    [arg],
+  );
+  const row = r.rows[0]; if (!row) return null;
+  return { year: Number(row.exercicio), value: Number(row.cents) / 100 };
+}
+export interface BudgetRankingRow { entityId: number; year: number; value: number }
+/** Despesa total empenhada (ano mais recente de cada um) de TODOS os municípios de uma UF, numa única
+ * consulta — nunca uma consulta por município (N+1). Usada só para achar o maior orçamento do estado. */
+export async function getTotalBudgetForState(q: Q, ufCode: number): Promise<BudgetRankingRow[]> {
+  const r = await q.query(
+    `SELECT DISTINCT ON (f.entity_id) f.entity_id, f.exercicio, f.valor::text AS cents
+       FROM civica_exec.exec_fin_fact f
+       JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta} AND c.code = 'TOT'
+       JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIE} AND k.code = 'EMP'
+       JOIN civica_exec.exec_entity e ON e.entity_id = f.entity_id AND e.kind = 4 AND e.uf_code = $1
+     ORDER BY f.entity_id, f.exercicio DESC`,
+    [ufCode],
+  );
+  return r.rows.map(x => ({ entityId: Number(x.entity_id), year: Number(x.exercicio), value: Number(x.cents) / 100 }));
+}
+
 export async function getSecurityFinanceOrgans(q: Q, entityId: number, o: { from?: number; to?: number } = {}): Promise<{ entityId: number; years: OrganYear[]; restrictions: string[]; source: string } | null> {
   const lo = o.from ?? 1900, hi = o.to ?? 2999;
   const [org, sub, nat] = await Promise.all([

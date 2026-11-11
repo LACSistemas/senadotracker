@@ -40,5 +40,9 @@
     "@types/pg": "8.15.5",
     "tsx": "4.23.13",
     "typescript": "5.9.3"
+  },
+  "dependencies": {
+    "exceljs": "4.4.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   }
 }

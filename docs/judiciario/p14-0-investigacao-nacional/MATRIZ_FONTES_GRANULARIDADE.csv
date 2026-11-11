@@ -1,0 +1,10 @@
+source,resource,grain,time_coverage,format,evidence_state,evidence
+Justiça em Números,JN base 2026,tribunal×ano; ramo; grau,2009–2025; JF 2012–2025,CSV/ZIP + dicionário,ENDPOINT_VERIFIED,P2
+DataJud API,api_publica_{alias}/_search,documento×grau; órgão; movimento,estoque + baixados desde 2020,JSON Elasticsearch,LEGAL_REVIEW_REQUIRED,P1/P2
+TPU/SGT,classes/assuntos/movimentos/documentos,código hierárquico por ramo/grau,versionado,HTML/Excel/WebService,ENDPOINT_VERIFIED,CNJ
+CNJ MPM,painel Dados de Pessoal,tribunal/UF/ramo; agregado,mensal,Qlik/painel,PARTIAL,CNJ
+CNJ remuneração,painel Qlik,órgão/pessoa/mês quando enviado,"mensal, desigual",Qlik/planilha,PARTIAL,CNJ
+STJ CKAN,atas/acervo/espelhos/folha,processo/ministro/mês,diário; folha 2020–2026,JSON/CSV,PILOT_POSSIBLE,P1/P2
+TSE Processual,processual pleitos,decisão/UF/instância/nome,2020/22/24/26,CSV ZIP,ENDPOINT_VERIFIED,P1
+PNCP,contratos,órgão/fornecedor/contrato,desde 2023,JSON API,PARTIAL,P2/P3
+Portais tribunais,TJBA/TJRJ/TJES etc.,unidade/comarca/financeiro,varia,JSON/CSV/PDF,PARTIAL,P1–P3

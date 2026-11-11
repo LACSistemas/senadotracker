@@ -28,9 +28,9 @@ test.describe('Estado (ES) — governo, PIB, IDHM e representação', () => {
     await expect(page.getByRole('heading', { name: 'Espírito Santo', exact: false }).first()).toBeVisible();
     await expect(page.locator('section:has(#exec-resumo)')).toContainText('RENATO CASAGRANDE');
     await expect(page.locator('section:has(#exec-resumo)')).toContainText('PSB');
-    await expect(page.locator('section:has(#exec-resumo)')).toContainText('PIB per capita');
-    await expect(page.locator('section:has(#exec-resumo) img')).toHaveAttribute('src', /\/api\/portrait\?url=/);
-    await expect(page.locator('section:has(#idhm-resumo)')).toContainText('IDHM de Espírito Santo');
+    await expect(page.locator('#exec-resumo img')).toHaveAttribute('src', /\/api\/portrait\?url=/);
+    await expect(page.locator('#pib-resumo')).toContainText('PIB per capita');
+    await expect(page.locator('#idhm-resumo')).toContainText('IDHM');
     await expect(page.locator('section:has(#leg-resumo)')).toContainText('parlamentares em exercício');
 
     const main = await page.locator('main').innerText();
@@ -58,9 +58,9 @@ test.describe('Município (Vitória) — governo do estado + PIB per capita pró
 
     await expect(page.locator('section:has(#exec-resumo)')).toContainText('LORENZO PAZOLINI');
     await expect(page.locator('section:has(#exec-resumo)')).toContainText('Governador de Espírito Santo: RENATO CASAGRANDE');
-    const execText = await page.locator('section:has(#exec-resumo)').innerText();
-    expect(execText).toMatch(/R\$\s?85/); // PIB per capita de Vitória (≈85 mil), não o da UF (≈45 mil)
-    await expect(page.locator('section:has(#idhm-resumo)')).toContainText('IDHM de Vitória');
+    const pibText = await page.locator('#pib-resumo').innerText();
+    expect(pibText).toMatch(/R\$\s?85/); // PIB per capita de Vitória (≈85 mil), não o da UF (≈45 mil)
+    await expect(page.locator('#idhm-resumo')).toContainText('IDHM');
 
     const main = await page.locator('main').innerText();
     for (const bad of ['NaN', 'undefined', 'Infinity', '[object Object]']) expect(main).not.toContain(bad);
@@ -72,9 +72,9 @@ test.describe('Município (Vitória) — governo do estado + PIB per capita pró
 test.describe('município × UF — PIB per capita real e distinto', () => {
   test('São Paulo município tem PIB per capita diferente do de São Paulo UF', async ({ page }) => {
     await page.goto(SP_MUN);
-    const muniText = await page.locator('section:has(#exec-resumo)').innerText();
+    const muniText = await page.locator('#pib-resumo').innerText();
     await page.goto('/estados/SP');
-    const ufText = await page.locator('section:has(#exec-resumo)').innerText();
+    const ufText = await page.locator('#pib-resumo').innerText();
     expect(muniText).not.toEqual(ufText);
   });
 });

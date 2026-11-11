@@ -18,18 +18,18 @@ test('busca preserva filtros, abre perfil e expõe a fonte oficial', async ({ pa
   await expect(page.getByRole('heading', { name: 'Quanto custa este mandato?' })).toBeVisible();
   await expect(page.getByText(/encargos patronais não publicados permanecem fora/)).toBeVisible();
 });
-test('home apresenta somente a entrada legislativa e abre o panorama', async ({ page }) => {
+test('home apresenta os três poderes e abre o panorama legislativo', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Entenda quem representa você. Pelos dados.' })).toBeVisible();
-  await expect(page.getByText('Poder Judiciário')).toHaveCount(0);
-  await expect(page.getByText('Judiciário — em breve')).toBeVisible();
-  await expect(page.getByText(/custo mensal mediano por deputado/)).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Extremos observados no período' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Entenda o poder. Descubra o país.', level: 1 })).toBeVisible();
+  await expect(page.getByText(/Judiciário — em breve|Ainda não há dados judiciais/)).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Três poderes, três perspectivas sobre o Brasil' })).toBeVisible();
+  // Número real auditado (H0), não o do mock: soma real das 27 UFs, não "203,1 milhões".
+  await expect(page.getByText('214.211.951')).toBeVisible();
   await Promise.all([
     page.waitForURL('/legislativo'),
-    page.getByRole('link', { name: /Explorar Legislativo/ }).click(),
+    page.getByRole('link', { name: 'Explorar o Legislativo' }).click(),
   ]);
-  await expect(page.getByRole('heading', { name: /Entenda quem te representa/ })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Legislativo em Números' })).toBeVisible();
 });
 test('teclado alcança o conteúdo e viewport mobile não tem rolagem horizontal', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });

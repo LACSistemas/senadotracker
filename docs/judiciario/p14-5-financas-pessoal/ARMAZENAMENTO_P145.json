@@ -1,0 +1,11 @@
+{
+  "database": "projetoeleitor_db",
+  "baselineBytes": 34660641939,
+  "currentBytes": 34661223571,
+  "growthBytes": 581632,
+  "envelopeBytes": 100000000,
+  "rawRoot": "D:\\Civica\\judiciario\\financeiro",
+  "individualPayrollPersisted": false,
+  "rawInDatabase": false,
+  "storageGate": "PASS"
+}

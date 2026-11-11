@@ -1,0 +1,70 @@
+{
+ "fase": "P14.13",
+ "data": "2026-11-07",
+ "commit": false,
+ "push": false,
+ "gates": {
+  "G0_SAFETY": "PASS",
+  "G1_SCHEMA_ADDITIVE": "PASS",
+  "G2_PRESIDENTE_FOTO_TSE": "PASS",
+  "G3_IDH_GLOBAL_PARALELO_AO_IDHM": "PASS",
+  "G4_PISA_PARALELO_AO_IDEB_SAEB": "PASS",
+  "G5_CURRENT_MANDATE_FILTER_CORRECTNESS": "PASS",
+  "G6_TESTES": "PASS",
+  "G7_TYPECHECK_BUILD": "PASS",
+  "G8_ACESSIBILIDADE": "PASS",
+  "G9_STORAGE_BUDGET": "PASS",
+  "G10_OVERFLOW_HORIZONTAL": "PASS"
+ },
+ "numeros": {
+  "presidente": {
+   "mandato_atual": { "election_year": 2022, "ballot_name": "LULA", "party": "PT", "mandate_start": "2023-01-01", "mandate_end": "2027-01-01" },
+   "mandato_eleito_futuro": { "election_year": 2026, "ballot_name": "LULA", "party": "PT", "mandate_start": "2027-01-01", "mandate_end": "2031-01-01", "nota": "ainda nao iniciado na data da coleta" },
+   "fotos_espelhadas": 4
+  },
+  "hdi_global": {
+   "pontos": 102,
+   "entidades": ["BRASIL", "AMERICA_DO_SUL", "MUNDO"],
+   "anos": "1990-2023",
+   "fonte": "UNDP Human Development Report (2025), via Our World in Data"
+  },
+  "pisa": {
+   "pontos": 63,
+   "entidades": ["BRASIL", "MEDIA_OCDE", "MEDIA_PARTICIPANTES_PISA"],
+   "disciplinas": ["MATEMATICA", "LEITURA", "CIENCIAS"],
+   "edicoes_brasil": { "matematica": 7, "leitura": 8, "ciencias": 6 },
+   "fonte": "OECD PISA Database (2023), via Our World in Data"
+  },
+  "armazenamento": {
+   "banco_bytes_antes": 35835645075,
+   "banco_bytes_depois": 35835767955,
+   "banco_crescimento_bytes": 122880,
+   "exec_hdi_global_bytes": 65536,
+   "exec_pisa_score_bytes": 32768,
+   "exec_executive_mandate_linhas_novas": 4,
+   "civica_media_portraits_linhas_novas": 4,
+   "fotos_bytes_origem_zip_br": 3289753,
+   "orcamento_usuario_bytes": 1073741824,
+   "nota": "fotos ficam em disco (data/portraits/, git-ignored), nunca no Postgres; so a linha de metadado (~200 bytes) vai pro banco"
+  },
+  "testes": {
+   "suite_combinada": { "total": 44, "pass": 44, "fail": 0 },
+   "arquivos": ["executivo-portal.spec.ts", "p14-territorio-executivo.spec.ts", "p148-judiciario.spec.ts"]
+  },
+  "acessibilidade": {
+   "violacoes_novas": 0,
+   "violacoes_preexistentes": ["label-content-name-mismatch", "nested-interactive"],
+   "paginas_verificadas": ["/executivo", "/"]
+  }
+ },
+ "achados_reais_corrigidos": [
+  "getCurrentExecutive/getCurrentMayor filtravam só por mandate_end >= current_date, sem checar mandate_start — com Lula reeleito em 2026 (mandato só começa em 2027-01-01), isso faria o mandato de 2026 (ainda não iniciado) aparecer como 'atual' em vez do de 2022 (o que realmente governa agora); corrigido adicionando mandate_start <= current_date em ambas as funções",
+  "MultiLineChart (componente compartilhado) desenha todos os rótulos do eixo X sem controle de densidade — com 34 anos de IDH Global, os rótulos ficavam sobrepostos e ilegíveis; substituído por SVG próprio com espaçamento de rótulos (mesmo padrão já usado na E7 para Ideb/tráfico de drogas)",
+  "Coletor inicial apontou PORTRAIT_DIR para D:\\Civica\\portraits, mas o servidor web usa o diretório padrão (data/portraits/, git-ignored) sem essa env var configurada — a foto do presidente aparecia como 'indisponível'; corrigido usando o diretório padrão (mesmo lugar de todos os outros retratos do produto)",
+  "Nav do header só tinha espaço pra 7 links no breakpoint lg (1024px, 11px de overflow pré-existente já documentado); adicionar 'Legislativo' (8º link) estourou pra 108px de overflow em TODAS as páginas do site — corrigido subindo o breakpoint de troca pra xl (1280px), eliminando o overflow novo E o pré-existente"
+ ],
+ "limitacoes": [
+  "is_reelection do presidente ficou null (não false) — não há arquivo de complemento do TSE (ST_REELEICAO) em cache pra 2022/2026 nesta coleta; ausência honesta, não suposição",
+  "Resto da página 'espelhando os estados' fica pra uma fase seguinte — este plano cobriu só presidente+foto, IDH Global e PISA, conforme combinado"
+ ]
+}

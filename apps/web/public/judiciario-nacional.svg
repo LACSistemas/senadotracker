@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração do Judiciário</title><desc id="desc">Silhueta geométrica de uma colunata de tribunal com a estátua "A Justiça" em primeiro plano.</desc>
+  <rect width="1600" height="900" fill="#174535"/><circle cx="1270" cy="170" r="105" fill="#dce9e2" opacity=".18"/>
+  <path d="M0 690h1600v210H0z" fill="#0b3026"/>
+  <path d="M170 330h1260v34H170z" fill="#faf9f5" opacity=".88"/>
+  <g fill="#f3f1eb" opacity=".72">
+    <path d="M205 364h70l-10 326h-50z"/><path d="M345 364h70l-6 326h-58z"/><path d="M485 364h70l-4 326h-62z"/>
+    <path d="M1025 364h70l4 326h-62z"/><path d="M1165 364h70l6 326h-58z"/><path d="M1305 364h70l10 326h-50z"/>
+  </g>
+  <path d="M120 690h1360v30H120zM60 720h1480v24H60z" fill="#dce9e2" opacity=".55"/>
+  <g fill="none" stroke="#0b3026" stroke-width="10" stroke-linecap="round">
+    <path d="M800 420v170"/><path d="M706 460h188"/>
+    <path d="M736 460l-34 68M870 460l34 68"/>
+  </g>
+  <g fill="#0b3026">
+    <circle cx="800" cy="404" r="16"/>
+    <path d="M668 528a34 20 0 00136 0z"/><path d="M836 528a34 20 0 00136 0z"/>
+  </g>
+  <g fill="none" stroke="#faf9f5" stroke-width="3" opacity=".18">
+    <path d="M0 130h1600M0 300h1600M0 470h1600"/>
+    <path d="M220 0v900M520 0v900M1080 0v900M1380 0v900"/>
+  </g>
+</svg>

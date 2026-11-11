@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-11-04",
+  "database": "projetoeleitor_db",
+  "baselineBytes": 34642029715,
+  "currentBytes": 34660641939,
+  "growthBytes": 18612224,
+  "envelopeBytes": 100000000,
+  "envelopeRemainingBytes": 81387776,
+  "budgetGate": "PASS",
+  "rawRoot": "D:\\Civica\\judiciario\\stj",
+  "rawFileCount": 18,
+  "rawBytes": 8795323,
+  "rawFiles": [
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\atas-de-distribuicao.json",
+      "bytes": 708617,
+      "sha256": "99ba8c9002a4f00073294f8bbeda12ab813515bab19e4032797d51055de5c3bc"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\espelhos-de-acordaos-primeira-secao.json",
+      "bytes": 42385,
+      "sha256": "313f07e976945003a17cfc3b87abe2ba35f4c32dd9d0450190f91559407ebf8b"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\espelhos-de-acordaos-segunda-secao.json",
+      "bytes": 42358,
+      "sha256": "1206467b653f6b8675df31a4aff7910b774e8f99a16a7a2d8e5234ab6927c028"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\espelhos-de-acordaos-segunda-turma.json",
+      "bytes": 42399,
+      "sha256": "f5003289baf115cb563b7b71a1365306fa68730ed51268e849dadbbf8bfe4ff2"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\espelhos-de-acordaos-sexta-turma.json",
+      "bytes": 42419,
+      "sha256": "9a38b50ff9699d79cd64184b445539ae961036c0eb91150985c84855ed81aa2b"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\espelhos-de-acordaos-terceira-turma.json",
+      "bytes": 42436,
+      "sha256": "eeebe55d92ff93faa5bf044adb68a3d687190c5ce1a4873d407584660627097d"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\integras-de-decisoes-terminativas-e-acordaos-do-diario-da-justica.json",
+      "bytes": 1821349,
+      "sha256": "fc1ae47e767d2f395a39ddb1ebdddb506ff83b3dba05df0bc2692fcf114219ff"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\catalog\\precedentes-qualificados.json",
+      "bytes": 5641,
+      "sha256": "2591c95dea2770cac69dca0ec662cb97b1004529d128cffd063937483f3ac33d"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\decisoes\\dicionariointegrasdecisoes.csv",
+      "bytes": 1536,
+      "sha256": "7c924ea570ff873d7dca48b447c8357f4da3c16bf213af97f8426cbdb502b30a"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\decisoes\\metadados20261013.json",
+      "bytes": 1465294,
+      "sha256": "628d74c4d8f7a5d7898df0ad1682d7e31afbda9fe433288a099cb4e8ba384fa7"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\espelhos\\primeira-secao\\20260930.json",
+      "bytes": 362599,
+      "sha256": "428ccfef98b302e6fa4466a10d90600851d0d97ed13b7d9b71d109dfba84c30b"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\espelhos\\primeira-secao\\dicionario-espelhodoacordao.csv",
+      "bytes": 2865,
+      "sha256": "1948090f00efc7ad7361afb80e2563483b721403538d8b17a6b4d4d9f83f2e17"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\espelhos\\segunda-secao\\20260930.json",
+      "bytes": 458595,
+      "sha256": "124089f0efef1642510bc86b80ca18e9196a7b71899e9e1a26de4911c51ceab4"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\espelhos\\segunda-secao\\dicionario-espelhodoacordao.csv",
+      "bytes": 2865,
+      "sha256": "1948090f00efc7ad7361afb80e2563483b721403538d8b17a6b4d4d9f83f2e17"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\precedentes\\dicionario-processos.csv",
+      "bytes": 4149,
+      "sha256": "971f2511441aa149845513d468109046ed5d9aaad2b6ada052d5f4f388f461d8"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\precedentes\\dicionario-temas.csv",
+      "bytes": 4171,
+      "sha256": "d62c1b749f6cbc3dacb6ce3a66016736b2e0788b724ac5ab974f82f368efa5c5"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\precedentes\\Processos.csv",
+      "bytes": 1139569,
+      "sha256": "9996eb651a66d21b2dfa1d3ffef269f241078fa5e843d5f1e18ce81de72676a0"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\stj\\precedentes\\Temas.csv",
+      "bytes": 2606076,
+      "sha256": "1aa64cf3c9d2dc6bb2a11b7d9b316e1b81b9b1b8893f1d2a0665988de7025bb3"
+    }
+  ],
+  "rawOnDOnly": true,
+  "fullTextInPostgres": false
+}

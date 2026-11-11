@@ -4,7 +4,7 @@ test.describe('busca global e crachá', () => {
   test('"/" abre a busca, digitar "Beto" e Enter chega ao perfil (teclado)', async ({ page }) => {
     await page.goto('/investigar');
     await page.keyboard.press('/');
-    const box = page.getByRole('combobox', { name: /Buscar parlamentar/ });
+    const box = page.getByRole('combobox', { name: /Buscar cidade, estado, parlamentar/ });
     await expect(box).toBeFocused();
     await box.fill('Beto');
     await expect(page.getByRole('option').first()).toBeVisible();
@@ -16,7 +16,7 @@ test.describe('busca global e crachá', () => {
 
   test('Esc fecha a busca e termo sem resultado explica', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('button', { name: /Digite um nome/ }).click();
+    await page.getByRole('button', { name: /Busque uma cidade/ }).click();
     await page.getByRole('combobox').fill('zzzzqq');
     await expect(page.getByText(/Nada encontrado/)).toBeVisible();
     await page.keyboard.press('Escape');

@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-11-04",
+  "database": "projetoeleitor_db",
+  "baselineBytes": 34621951123,
+  "measuredCurrentBytes": 34630683795,
+  "dbGrowthBytes": 8732672,
+  "maxGrowthBytes": 75000000,
+  "envelopeRemainingBytes": 66267328,
+  "dbBudgetGate": "PASS",
+  "rawRoot": "D:\\Civica\\judiciario",
+  "rawFileCount": 46,
+  "rawBytes": 1069756,
+  "rawFreeBytes": 403077226496,
+  "rawFiles": [
+    {
+      "path": "D:\\Civica\\judiciario\\tjba-comarcas.json",
+      "bytes": 10602,
+      "sha256": "a5162b7102c0c221c9d1f02c0fbf3fe8d677cb647dd508d2808bb76af1fa2a05"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjba-metas.json",
+      "bytes": 683345,
+      "sha256": "3700bddef16de577ca50e03adab655b647882cce62e86359e9566d9d87b912a7"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjba-unidades.json",
+      "bytes": 175330,
+      "sha256": "f6197c818111adfa19f475594e4db1a890e28bb6e5bb48d6339b586c3dad42c6"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-comarcas.json",
+      "bytes": 1708,
+      "sha256": "00de639b54f62507dc7deb2751b8c8f57557c7d1d0c4096109480b7a7d2e519c"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-1.json",
+      "bytes": 3915,
+      "sha256": "81003bc10d0bef48e038d6cbafa25eba4526ed9e6b6a63c07fa4e3424f933800"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-10.json",
+      "bytes": 4402,
+      "sha256": "d39feaa18d294870c22e0a800c5d71b0f6b458dc432f5226015ed567dfb68147"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-11.json",
+      "bytes": 4781,
+      "sha256": "76e67c35555764b46eb7ef5f8a21215f9045404b81d8af793efc1cd35475f138"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-12.json",
+      "bytes": 4460,
+      "sha256": "423157966683975cee7453a01cfe4f1e4fd4f064b2d8aade670aac1f96e9d045"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-13.json",
+      "bytes": 4433,
+      "sha256": "23846d6e8e52d66c9e1d08a595bf6bed518bab6fe4020452265fe5f994e6fbe6"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-14.json",
+      "bytes": 4290,
+      "sha256": "fa4f947c9a0b895d60ce807c0d597805be41815dc458eaf8f82e80d175940e2f"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-15.json",
+      "bytes": 4502,
+      "sha256": "b189b3ac99dc6524b05c1bc7229ac5eeda46f53c5b779613435b16d23542bd23"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-16.json",
+      "bytes": 4506,
+      "sha256": "a18784e0d970ac940be86c888b47837b87f7ccbda7ce3670963cf572c6617c19"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-17.json",
+      "bytes": 4893,
+      "sha256": "9bf2aedc4643866688e87ad548db525c909b3013ad6e8f9dd59a7cbfc8c2bd0e"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-18.json",
+      "bytes": 4633,
+      "sha256": "ea10b26f252e0e684717c76299fd517e6956c20a97acbb6f324e61b5fd771540"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-19.json",
+      "bytes": 4505,
+      "sha256": "8b1b3dc517aa7219b72fef07c7ea3c334d89237354c6b222628824b451373eaf"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-2.json",
+      "bytes": 4266,
+      "sha256": "a54bbf0622b479fe84120bc7f0b7f93d3509759f8243343e8d72b4ef60a414e2"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-20.json",
+      "bytes": 4546,
+      "sha256": "f267f69fb6b32a67455fd0f0af1537f4a63a668170020fc5d0e15998ab493417"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-21.json",
+      "bytes": 4560,
+      "sha256": "b34d220666c5ab69255eacd5cd0386c9a64b86c252b4f0e911846ff45d50d6b3"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-22.json",
+      "bytes": 4742,
+      "sha256": "1b38f229c38f9431450cca042fbc506a624b9466f8d06c669f1fae2032a6eeb5"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-23.json",
+      "bytes": 5156,
+      "sha256": "da2d904609ec26c59632792f02a9935a6e1ccdf782b639b05c0bd74ae6022d47"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-24.json",
+      "bytes": 6077,
+      "sha256": "4abf34c1bf020caed8abd471b3d1a5f2482ee263b27ee9fa338e6c5f12b1c15d"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-25.json",
+      "bytes": 5137,
+      "sha256": "f1f6cf7dae4142f5d190211952182b21c8434c3f7c1254024aa47e071f44bf67"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-26.json",
+      "bytes": 4931,
+      "sha256": "ebfc649543c69ce9aa15120516ae444dd3085fb857a7f491f687dfde00e7c906"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-27.json",
+      "bytes": 5172,
+      "sha256": "e8bc839a18c1ac71bc2295c03bf510d641989989a292a7ba90fedbc01c781e2c"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-28.json",
+      "bytes": 4802,
+      "sha256": "679a8757163e341fae982fa77416afbe030fc0d9db7895968b7ff92a634c8a6c"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-29.json",
+      "bytes": 5368,
+      "sha256": "74f92019f9d881f749f99951136c56d43fb3a57b26c668fbeef679b7f8dec2c5"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-3.json",
+      "bytes": 4659,
+      "sha256": "f86bad53418c91c2137638fcdc1dcdb4d6a169a3ebc4e121da612e34971b11ca"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-30.json",
+      "bytes": 5071,
+      "sha256": "331f0ebacf3248759cba03bda17849afc03d89d73bc4a4e96548e4470db9d882"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-31.json",
+      "bytes": 5138,
+      "sha256": "9765e467940e6d8b6281fe22b7aa93d53c2cb2c0e6f3b7a6b8d94dfd0cef7adc"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-32.json",
+      "bytes": 5127,
+      "sha256": "5a0f10689936b877a129a7c7df7c638ffa55d24b581d249df873c335dd083ffd"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-33.json",
+      "bytes": 5099,
+      "sha256": "a7230c8fe7c7155d5dd0bebede35c81adedca0674d5edf1fc5e9fb1a191df634"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-34.json",
+      "bytes": 4851,
+      "sha256": "43ef6fb6f8eb1a2402cc46605d1343299258411c3a957d3379d8557eec837cc0"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-35.json",
+      "bytes": 4948,
+      "sha256": "908bc09c8220e154f83cf12be90d203ee182b372d25b26e31d19ffef9a02b7bf"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-36.json",
+      "bytes": 5304,
+      "sha256": "edcd7fffd6957aaf961580aa97cffa9fd9925cdcb35bedf12067fdf9e73b96a6"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-37.json",
+      "bytes": 4762,
+      "sha256": "963cf34850635cc0fef063bca3ee1e925a5ddfce8e0387be9acc3f63ff7bb3e5"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-38.json",
+      "bytes": 5058,
+      "sha256": "8ada10414d075e0a5424e79eb5bf19ba8293cda7f974fe1405b0c049c6a5f325"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-39.json",
+      "bytes": 5328,
+      "sha256": "66f806e1aaf49ef10fa08de284f7e1c7769ce73201049a837b5f8276da165e43"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-4.json",
+      "bytes": 4258,
+      "sha256": "5e91f00320b042025faa16fdd6ee8327236c2ae2656d0713bdfdbc48f91a6b3d"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-40.json",
+      "bytes": 5455,
+      "sha256": "53d711aa83cbbdd68ad47e01bf9cc065a05370fbbe6faa882073a9dfd6103e57"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-41.json",
+      "bytes": 3023,
+      "sha256": "f6723f66384533df003cf3cad91830f0fcf5b9eba9023bc2dab823c0a5cef91a"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-5.json",
+      "bytes": 4270,
+      "sha256": "911f4d239681a827e7b66a4c26b3daaca1d27f8d6f5225bde464439768606b4c"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-6.json",
+      "bytes": 4359,
+      "sha256": "f8f90837ef5c7be3cd6124a400d0569f3fde48216476e0f28fc6922177e407b1"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-7.json",
+      "bytes": 4390,
+      "sha256": "b660c2165dc0c133a6d2fcde7dcbf408c3d5a7249d7797ffb3135de67412e200"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-8.json",
+      "bytes": 4616,
+      "sha256": "1bd374edeaa7773beff0ad40b239a33b22abc337936a478f14db47565781b0d0"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos\\page-9.json",
+      "bytes": 5063,
+      "sha256": "d346f7b55ba186f213dfb0991817a9374d36f0fec61ef38ad1a1e07c93d610bf"
+    },
+    {
+      "path": "D:\\Civica\\judiciario\\tjrj-orgaos-1.json",
+      "bytes": 3915,
+      "sha256": "81003bc10d0bef48e038d6cbafa25eba4526ed9e6b6a63c07fa4e3424f933800"
+    }
+  ],
+  "note": "C: não usado para RAW; D: contém as capturas oficiais.",
+  "rawFreeSource": "Get-PSDrive D (authorized host measurement)"}

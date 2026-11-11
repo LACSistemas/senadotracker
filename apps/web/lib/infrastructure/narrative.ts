@@ -7,7 +7,7 @@ import type { InfraScope } from './types.ts';
  * nunca classificam o território como bom ou ruim, nunca misturam universos ou anos de fontes diferentes como se
  * fossem do mesmo instante. Mesma regra de `lib/wellbeing/narrative.ts` e `lib/security/narrative.ts`.
  */
-const whereOf = (scope: InfraScope): string => scope.kind === 'uf' ? `no estado de ${scope.name}` : `em ${scope.name}`;
+const whereOf = (scope: InfraScope): string => scope.kind === 'uf' ? `no estado de ${scope.name}` : scope.kind === 'brasil' ? 'no Brasil' : `em ${scope.name}`;
 
 export function heroLede(scope: InfraScope, kpiCount: number, worksTotal: number | null): string {
   const where = whereOf(scope);

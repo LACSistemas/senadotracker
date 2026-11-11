@@ -1,0 +1,94 @@
+tribunal_id,sigla,official_name,branch_code,institutional_level,cnj_code,source_system,source_alias,seat_uf,status,match_status,source_url
+JUD:TRIBUNAL:CNJ,CNJ,Conselho Nacional de Justiça,CNJ,CONTROL,,CNJ_INSTITUTIONAL,,,ACTIVE,DOCUMENT_VERIFIED,https://www.cnj.jus.br/
+JUD:TRIBUNAL:STF,STF,Supremo Tribunal Federal,STF,SUPERIOR,,CNJ_INSTITUTIONAL,,,ACTIVE,DOCUMENT_VERIFIED,https://portal.stf.jus.br/
+JUD:TRIBUNAL:STJ,STJ,Superior Tribunal de Justiça,SUPERIOR,SUPERIOR,,CNJ_ENDPOINT_CATALOG,STJ,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:STM,STM,Superior Tribunal Militar,SUPERIOR,SUPERIOR,,CNJ_ENDPOINT_CATALOG,STM,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJAC,TJAC,Tribunal de Justiça AC,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJAC,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJAL,TJAL,Tribunal de Justiça AL,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJAL,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJAM,TJAM,Tribunal de Justiça AM,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJAM,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJAP,TJAP,Tribunal de Justiça AP,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJAP,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJBA,TJBA,Tribunal de Justiça BA,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJBA,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJCE,TJCE,Tribunal de Justiça CE,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJCE,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJDFT,TJDFT,Tribunal de Justiça DFT,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJDFT,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJES,TJES,Tribunal de Justiça ES,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJES,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJGO,TJGO,Tribunal de Justiça GO,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJGO,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMA,TJMA,Tribunal de Justiça MA,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMA,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMG,TJMG,Tribunal de Justiça MG,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMG,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMMG,TJMMG,Tribunal de Justiça MMG,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMMG,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMRS,TJMRS,Tribunal de Justiça MRS,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMRS,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMS,TJMS,Tribunal de Justiça MS,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMS,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMSP,TJMSP,Tribunal de Justiça MSP,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMSP,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJMT,TJMT,Tribunal de Justiça MT,MILITAR,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJMT,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJPA,TJPA,Tribunal de Justiça PA,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJPA,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJPB,TJPB,Tribunal de Justiça PB,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJPB,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJPE,TJPE,Tribunal de Justiça PE,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJPE,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJPI,TJPI,Tribunal de Justiça PI,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJPI,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJPR,TJPR,Tribunal de Justiça PR,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJPR,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJRJ,TJRJ,Tribunal de Justiça RJ,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJRJ,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJRN,TJRN,Tribunal de Justiça RN,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJRN,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJRO,TJRO,Tribunal de Justiça RO,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJRO,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJRR,TJRR,Tribunal de Justiça RR,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJRR,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJRS,TJRS,Tribunal de Justiça RS,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJRS,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJSC,TJSC,Tribunal de Justiça SC,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJSC,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJSE,TJSE,Tribunal de Justiça SE,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJSE,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJSP,TJSP,Tribunal de Justiça SP,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJSP,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TJTO,TJTO,Tribunal de Justiça TO,ESTADUAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TJTO,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-AC,TRE-AC,Tribunal Regional Eleitoral de AC,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-AC,AC,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-AL,TRE-AL,Tribunal Regional Eleitoral de AL,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-AL,AL,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-AM,TRE-AM,Tribunal Regional Eleitoral de AM,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-AM,AM,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-AP,TRE-AP,Tribunal Regional Eleitoral de AP,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-AP,AP,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-BA,TRE-BA,Tribunal Regional Eleitoral de BA,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-BA,BA,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-CE,TRE-CE,Tribunal Regional Eleitoral de CE,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-CE,CE,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-DFT,TRE-DFT,Tribunal Regional Eleitoral de DFT,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-DFT,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-ES,TRE-ES,Tribunal Regional Eleitoral de ES,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-ES,ES,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-GO,TRE-GO,Tribunal Regional Eleitoral de GO,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-GO,GO,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-MA,TRE-MA,Tribunal Regional Eleitoral de MA,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-MA,MA,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-MG,TRE-MG,Tribunal Regional Eleitoral de MG,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-MG,MG,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-MS,TRE-MS,Tribunal Regional Eleitoral de MS,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-MS,MS,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-MT,TRE-MT,Tribunal Regional Eleitoral de MT,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-MT,MT,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-PA,TRE-PA,Tribunal Regional Eleitoral de PA,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-PA,PA,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-PB,TRE-PB,Tribunal Regional Eleitoral de PB,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-PB,PB,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-PE,TRE-PE,Tribunal Regional Eleitoral de PE,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-PE,PE,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-PI,TRE-PI,Tribunal Regional Eleitoral de PI,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-PI,PI,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-PR,TRE-PR,Tribunal Regional Eleitoral de PR,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-PR,PR,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-RJ,TRE-RJ,Tribunal Regional Eleitoral de RJ,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-RJ,RJ,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-RN,TRE-RN,Tribunal Regional Eleitoral de RN,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-RN,RN,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-RO,TRE-RO,Tribunal Regional Eleitoral de RO,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-RO,RO,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-RR,TRE-RR,Tribunal Regional Eleitoral de RR,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-RR,RR,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-RS,TRE-RS,Tribunal Regional Eleitoral de RS,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-RS,RS,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-SC,TRE-SC,Tribunal Regional Eleitoral de SC,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-SC,SC,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-SE,TRE-SE,Tribunal Regional Eleitoral de SE,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-SE,SE,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-SP,TRE-SP,Tribunal Regional Eleitoral de SP,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-SP,SP,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRE-TO,TRE-TO,Tribunal Regional Eleitoral de TO,ELEITORAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRE-TO,TO,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF1,TRF1,Tribunal Regional Federal da 1ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF1,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF2,TRF2,Tribunal Regional Federal da 2ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF2,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF3,TRF3,Tribunal Regional Federal da 3ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF3,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF4,TRF4,Tribunal Regional Federal da 4ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF4,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF5,TRF5,Tribunal Regional Federal da 5ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF5,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRF6,TRF6,Tribunal Regional Federal da 6ª Região,FEDERAL,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRF6,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT1,TRT1,Tribunal Regional do Trabalho da 1ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT1,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT10,TRT10,Tribunal Regional do Trabalho da 10ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT10,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT11,TRT11,Tribunal Regional do Trabalho da 11ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT11,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT12,TRT12,Tribunal Regional do Trabalho da 12ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT12,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT13,TRT13,Tribunal Regional do Trabalho da 13ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT13,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT14,TRT14,Tribunal Regional do Trabalho da 14ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT14,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT15,TRT15,Tribunal Regional do Trabalho da 15ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT15,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT16,TRT16,Tribunal Regional do Trabalho da 16ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT16,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT17,TRT17,Tribunal Regional do Trabalho da 17ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT17,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT18,TRT18,Tribunal Regional do Trabalho da 18ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT18,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT19,TRT19,Tribunal Regional do Trabalho da 19ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT19,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT2,TRT2,Tribunal Regional do Trabalho da 2ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT2,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT20,TRT20,Tribunal Regional do Trabalho da 20ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT20,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT21,TRT21,Tribunal Regional do Trabalho da 21ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT21,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT22,TRT22,Tribunal Regional do Trabalho da 22ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT22,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT23,TRT23,Tribunal Regional do Trabalho da 23ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT23,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT24,TRT24,Tribunal Regional do Trabalho da 24ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT24,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT3,TRT3,Tribunal Regional do Trabalho da 3ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT3,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT4,TRT4,Tribunal Regional do Trabalho da 4ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT4,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT5,TRT5,Tribunal Regional do Trabalho da 5ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT5,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT6,TRT6,Tribunal Regional do Trabalho da 6ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT6,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT7,TRT7,Tribunal Regional do Trabalho da 7ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT7,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT8,TRT8,Tribunal Regional do Trabalho da 8ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT8,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TRT9,TRT9,Tribunal Regional do Trabalho da 9ª Região,TRABALHO,REGIONAL,,CNJ_ENDPOINT_CATALOG,TRT9,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TSE,TSE,Tribunal Superior Eleitoral,ELEITORAL,SUPERIOR,,CNJ_ENDPOINT_CATALOG,TSE,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
+JUD:TRIBUNAL:TST,TST,Tribunal Superior do Trabalho,TRABALHO,SUPERIOR,,CNJ_ENDPOINT_CATALOG,TST,,ACTIVE,DOCUMENT_VERIFIED,https://datajud-wiki.cnj.jus.br/api-publica/acesso/
