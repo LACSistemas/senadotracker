@@ -7,11 +7,45 @@ import { THEMES, formatInt } from '@/components/territory/territory-ui';
 import { loadStates, loadNationalHealthSummary, isUf } from '@/lib/exec-territory';
 import { loadHdiComparison, loadHdiAllStates } from '@/lib/territory-idhm';
 import { loadWellbeingOverview } from '@/lib/wellbeing';
-import { getInfrastructureIndicators, getInfrastructureWorksOverview, getInfrastructureWorksBySituation, getOrganizedCrimeNational, getIdebTerritory, getHealthBedsByUf } from '@senadotracker/db';
+import {
+  getInfrastructureWorksOverview, getInfrastructureWorksBySituation, getOrganizedCrimeNational, getIdebTerritory,
+  getHealthBedsHistory, getHospitalizationsHistory, getFlowTerritory, getWellbeingSeries,
+  getInfrastructureWorksRegisteredByYear, getInfrastructureWorksCommittedByYear,
+} from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
+import { loadBrasilIndicatorsCached } from '@/lib/infrastructure/load';
 import { toChartCoverage, JudiciaryAvailabilityNote } from '@/components/judiciary/availability';
 import { FederativeExplorer, type FederativeArea } from '@/components/executivo/federative-explorer';
-import { cn } from '@/lib/utils';
+import { LineChart, AreaTrend } from '@/components/charts';
+import { memo } from '@/lib/security/load';
+
+/** Todo o Promise.all da página não depende de searchParams (uf/indicador só pintam o mapa com dado já
+ * carregado) — cacheado como uma unidade só (60s, mesmo TTL já usado em `loadInfrastructurePageCached`)
+ * pra não repetir as consultas nacionais (obras, segurança, bem-estar, Ideb, leitos) a cada carga da página. */
+async function loadExecutivoHubData() {
+  return Promise.all([
+    loadStates(),
+    loadNationalHealthSummary(),
+    loadHdiComparison({ level: 'BRASIL' }),
+    loadHdiAllStates(),
+    loadWellbeingOverview({ entityId: 76 }),
+    loadBrasilIndicatorsCached(),
+    getOrganizedCrimeNational(webPostgresPool()),
+    getIdebTerritory(webPostgresPool(), { stage: 1 }),
+    getInfrastructureWorksOverview(webPostgresPool(), { level: 'BRASIL' }),
+    getInfrastructureWorksBySituation(webPostgresPool(), { level: 'BRASIL' }),
+    // "As cinco áreas" (E-exec, pedido do usuário): 2 séries históricas reais por setor — as 7 abaixo são
+    // as que faltavam; Educação (Ideb) e Segurança (tráfico) reaproveitam dado já carregado acima.
+    getHealthBedsHistory(webPostgresPool()),
+    getHospitalizationsHistory(webPostgresPool()),
+    getFlowTerritory(webPostgresPool(), {}),
+    getWellbeingSeries(webPostgresPool(), { entityId: 76 }, 'WB-LABOR-CAGED-BAL'),
+    getWellbeingSeries(webPostgresPool(), { entityId: 76 }, 'WB-LABOR-RAIS-STOCK'),
+    getInfrastructureWorksRegisteredByYear(webPostgresPool()),
+    getInfrastructureWorksCommittedByYear(webPostgresPool()),
+  ] as const);
+}
+const loadExecutivoHubDataCached = () => memo('executivo:hub', loadExecutivoHubData, 5 * 60_000);
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Executivo · Cívica', description: 'O Brasil que as políticas públicas revelam — saúde, educação, segurança, bem-estar e infraestrutura, estado por estado, com fontes oficiais.' };
@@ -80,19 +114,9 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const selectedUf = ufParam && isUf(ufParam) ? ufParam.toUpperCase() : undefined;
   const indicator = scalar(sp.indicador) === 'idhm' ? 'idhm' as const : 'populacao' as const;
 
-  const [states, health, hdiBrasil, hdiStates, wellbeing, infraIndicators, orgCrime, idebBrasil, worksOverview, worksBySituation, bedsByUf] = await Promise.all([
-    loadStates(),
-    loadNationalHealthSummary(),
-    loadHdiComparison({ level: 'BRASIL' }),
-    loadHdiAllStates(),
-    loadWellbeingOverview({ entityId: 76 }),
-    getInfrastructureIndicators(webPostgresPool(), { level: 'BRASIL' }, {}),
-    getOrganizedCrimeNational(webPostgresPool()),
-    getIdebTerritory(webPostgresPool(), { stage: 1 }),
-    getInfrastructureWorksOverview(webPostgresPool(), { level: 'BRASIL' }),
-    getInfrastructureWorksBySituation(webPostgresPool(), { level: 'BRASIL' }),
-    getHealthBedsByUf(webPostgresPool()),
-  ]);
+  const [states, health, hdiBrasil, hdiStates, wellbeing, infraIndicators, orgCrime, idebBrasil, worksOverview, worksBySituation,
+    bedsHistory, hospitalizationsHistory, flowTerritory, cagedBalSeries, raisStockSeries, worksRegisteredByYear, worksCommittedByYear,
+  ] = await loadExecutivoHubDataCached();
 
   const totalPop = states.reduce((s, st) => s + (st.population ?? 0), 0);
   const municipalityCount = 5571;
@@ -103,8 +127,6 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const idhmBrasil2010 = hdiBrasil.territory?.points.find(p => p.year === 2010)?.idhm ?? null;
   const rendaBrasil = ((wellbeing?.observations ?? []) as any[]).find(o => o.indicatorCode === 'WB-INC-RDPC-MEAN');
   const esgotoBrasil = infraIndicators.find(i => i.code === 'IES0001');
-  const aguaBrasil = infraIndicators.find(i => i.code === 'IAG0001');
-  const residuosBrasil = infraIndicators.find(i => i.code === 'IRS0001');
   const trafficSeries = orgCrime.series.find(s => s.family === 'OC.DRUG.TRAFFICKING_RECORDS');
   const trafficLatest = trafficSeries?.years.filter(y => y.complete).at(-1) ?? null;
   const idebRows = ((idebBrasil?.rows ?? []) as any[]).filter(r => r.dep === 0).sort((a, b) => a.year - b.year);
@@ -112,69 +134,55 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const idebYear = idebBrasil ? Math.max(...idebBrasil.editions) : null;
 
   // EDUCAÇÃO — evolução do Ideb (anos iniciais, todas as redes) por edição; nunca a mesma série do hero.
-  // SVG próprio (viewBox + largura 100%, sem min-width) em vez do LineChart compartilhado: nos cartões de
-  // mesmo tamanho (E7, ajuste de feedback do usuário) a coluna fica mais estreita que o min-w-[620px] do
-  // componente compartilhado, que cortava o último ponto (2025) dentro do próprio overflow-x-auto do
-  // gráfico — achado real, confirmado em captura, não só suposição.
   const idebChartData = idebRows.map(r => ({ label: String(r.year), value: r.values?.ideb ?? null }));
-  const LC_W = 560, LC_H = 170, LC_PAD_B = 22, LC_PAD_T = 14, LC_PAD_X = 10;
-  const idebX = (i: number) => idebChartData.length <= 1 ? LC_W / 2 : LC_PAD_X + (LC_W - 2 * LC_PAD_X) * i / (idebChartData.length - 1);
-  const idebY = (v: number) => LC_H - LC_PAD_B - (LC_H - LC_PAD_B - LC_PAD_T) * (v - 0) / 10;
-  const idebPath = idebChartData.map((d, i) => d.value != null ? `${idebX(i)},${idebY(d.value)}` : null).filter((x): x is string => x !== null).join(' ');
 
   // SEGURANÇA — evolução anual dos registros de tráfico (VDE, abrangência Estadual, 27 UFs); anos
   // incompletos (nem todas as 27 UFs × 12 meses) viram lacuna, nunca um valor parcial disfarçado de total.
-  // Mesmo motivo do Ideb acima: SVG próprio, sem min-width, para caber de verdade num cartão de largura igual.
   const trafficYears = trafficSeries?.years ?? [];
   const trafficTrend = trafficYears.map(y => ({ label: String(y.year), value: y.complete ? y.value : null }));
-  const ST_W = 560, ST_H = 170, ST_PAD_B = 22, ST_PAD_T = 14, ST_PAD_X = 10;
-  const trafficMax = Math.max(...trafficTrend.map(d => d.value ?? 0), 1) * 1.12;
-  const stX = (i: number) => trafficTrend.length <= 1 ? ST_W / 2 : ST_PAD_X + (ST_W - 2 * ST_PAD_X) * i / (trafficTrend.length - 1);
-  const stY = (v: number) => ST_H - ST_PAD_B - (ST_H - ST_PAD_B - ST_PAD_T) * v / trafficMax;
-  const trafficSegments: Array<Array<{ i: number; value: number }>> = [];
-  { let seg: Array<{ i: number; value: number }> = []; trafficTrend.forEach((d, i) => { if (d.value == null) { if (seg.length) trafficSegments.push(seg); seg = []; } else seg.push({ i, value: d.value }); }); if (seg.length) trafficSegments.push(seg); }
 
-  // BEM-ESTAR — 3 dimensões reais de capítulos distintos (condições de vida/rede socioassistencial/
-  // trabalho), mostradas separadas de propósito: somá-las criaria um índice sintético que o mandato veda
-  // (§9.3) e misturaria fontes/unidades/universos que não são equivalentes entre si.
-  const fmt2 = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 2 });
-  const SUAS_SUMMABLE = new Set([9101, 9102, 9103, 9104, 9201]);
-  const socialObs = (wellbeing?.chapters.social ?? []).find(o => SUAS_SUMMABLE.has(o.indicatorId) && o.value != null);
-  const workObs = (wellbeing?.chapters.work ?? []).find(o => o.value != null);
-  const wellbeingPanels = [
-    rendaBrasil ? { key: 'renda', chapter: 'Condições de vida', label: rendaBrasil.label, formatted: money.format(rendaBrasil.value), source: 'IBGE', period: rendaBrasil.periodStart?.slice(0, 4) } : null,
-    socialObs ? { key: 'social', chapter: 'Rede socioassistencial', label: socialObs.label, formatted: `${fmt2.format(socialObs.value!)}${socialObs.unit ? ` ${socialObs.unit}` : ''}`, source: socialObs.source ?? 'Censo SUAS', period: socialObs.periodStart?.slice(0, 4) } : null,
-    workObs ? { key: 'work', chapter: 'Trabalho', label: workObs.label, formatted: `${fmt2.format(workObs.value!)}${workObs.unit ? ` ${workObs.unit}` : ''}`, source: workObs.source ?? 'RAIS/Novo Caged', period: workObs.periodStart?.slice(0, 4) } : null,
-  ].filter((x): x is { key: string; chapter: string; label: string; formatted: string; source: string; period: string | null | undefined } => x !== null);
+  // "AS CINCO ÁREAS" — 2 séries históricas reais por setor (pedido do usuário), cada setor com sua cor de
+  // assinatura (mesmas rampas já validadas do produto, reaproveitadas — nunca uma paleta nova): Saúde=verde
+  // (`--primary`), Educação=azul, Segurança=vermelho/rose, Desenvolvimento Social=roxo/violet,
+  // Infraestrutura=amarelo/amber. Todos os 10 gráficos usam o mesmo `LineChart`/`AreaTrend` compartilhados —
+  // os cartões agora são de largura cheia (não a grade de 2 colunas da E7 antiga), então o `min-w-[620px]`
+  // desses componentes não corta mais o último ponto como cortava nos cartões estreitos.
+  const MONTH_ABBR = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+  const yearCoverage = (source: string, data: Array<{ label: string }>) => toChartCoverage('AVAILABLE', source, { from: data[0] ? `${data[0].label}-01-01` : null, to: data.length ? `${data.at(-1)!.label}-12-31` : null, grain: 'year' });
 
-  // INFRAESTRUTURA — 3 serviços com a MESMA unidade (% da população total atendida, SINISA): comparáveis
-  // entre si sem conflitar naturezas diferentes (mandato §10.3).
-  const infraServices = [
-    { label: 'Água', item: aguaBrasil },
-    { label: 'Esgoto', item: esgotoBrasil },
-    { label: 'Resíduos sólidos', item: residuosBrasil },
-  ].map(s => ({ label: s.label, value: s.item?.value != null ? Number(s.item.value) : null, year: s.item?.referenceYear ?? null }));
+  const SAUDE_COLOR = 'var(--primary)';
+  const bedsChartData = bedsHistory.map(r => ({ label: String(r.year), value: r.bedsExisting || null }));
+  const bedsCoverage = yearCoverage('CNES/DataSUS · vigente em dezembro de cada ano', bedsChartData);
+  const aihChartData = hospitalizationsHistory.map(r => ({ label: String(r.year), value: r.aih || null }));
+  const aihCoverage = yearCoverage('SIH/DataSUS · internações custeadas pelo SUS', aihChartData);
+
+  const EDUCACAO_COLOR = 'var(--map-blue-4)';
+  const abandonoChartData = (flowTerritory?.series ?? []).map(r => ({ label: String(r.year), value: r.values.ab_fun ?? null }));
+  const abandonoCoverage = yearCoverage('INEP · Indicadores Educacionais, ensino fundamental total', abandonoChartData);
+
+  const SEGURANCA_COLOR = 'var(--map-rose-4)';
+  const warrantsSeries = orgCrime.series.find(s => s.family === 'OC.ENFORCEMENT.ARREST_WARRANTS_SERVED' && s.source === 'VDE' && s.abrangencia === 'Estadual');
+  const warrantsChartData = (warrantsSeries?.years ?? []).map(y => ({ label: String(y.year), value: y.complete ? y.value : null }));
+  const warrantsCoverage = yearCoverage('Sinesp VDE · 27 UFs', warrantsChartData);
+
+  const DEV_SOCIAL_COLOR = 'var(--map-violet-4)';
+  const cagedBalChartData = (cagedBalSeries ?? []).map(o => ({ label: o.periodStart ? `${MONTH_ABBR[Number(o.periodStart.slice(5, 7)) - 1]}/${o.periodStart.slice(2, 4)}` : '—', value: o.value }));
+  const cagedCoverage = toChartCoverage('AVAILABLE', 'Novo Caged (MTE) · saldo = admissões − desligamentos', { from: (cagedBalSeries ?? [])[0]?.periodStart ?? null, to: (cagedBalSeries ?? []).at(-1)?.periodStart ?? null, grain: 'month' });
+  const raisChartData = (raisStockSeries ?? []).map(o => ({ label: o.periodStart?.slice(0, 4) ?? '—', value: o.value }));
+  const raisCoverage = yearCoverage('RAIS (MTE) · estoque em 31/12', raisChartData);
+
+  const INFRA_COLOR = 'var(--map-amber-4)';
+  const worksRegisteredChartData = worksRegisteredByYear.map(r => ({ label: String(r.year), value: r.count }));
+  const worksRegisteredCoverage = yearCoverage('Obrasgov · ano de cadastro', worksRegisteredChartData);
+  const worksCommittedChartData = worksCommittedByYear.map(r => ({ label: String(r.year), value: r.committedCents / 100 }));
+  const worksCommittedCoverage = yearCoverage('Obrasgov · valor empenhado', worksCommittedChartData);
 
   // Mapa único do hero: analítico desde a abertura — colorido pelo indicador selecionado, com legenda real
   // (mandato §14/§15). A versão anterior tinha 2 mapas (um neutro no hero, outro analítico numa seção
   // separada abaixo) — repetição cartográfica sem diferenciação (mandato §16). Agora é um só: a descoberta
   // territorial É o hero, não uma seção depois dele.
-  const ufPop = new Map(states.map(s => [s.uf, s.population ?? 0]));
   const ufHdi = new Map(hdiStates.map(h => [h.entityId, h.idhm]));
   const stateByUfCode = new Map(states.map(s => [s.ufCode, s.uf]));
-
-  // SAÚDE — distribuição real de leitos/mil hab. entre os 27 estados (E7-A): nenhuma "taxa nacional de
-  // leitos" única teria sentido maior que mostrar a variação real; nunca apresentada como ranking de
-  // qualidade (mandato §6.3 — mais leitos cadastrados não significa necessariamente melhor atendimento).
-  const bedsDistribution = bedsByUf
-    .map(b => { const uf = stateByUfCode.get(b.ufCode); const pop = uf ? ufPop.get(uf) : undefined; return uf && pop ? { uf, value: (b.bedsExisting / pop) * 1000 } : null; })
-    .filter((x): x is { uf: string; value: number } => x !== null)
-    .sort((a, b) => a.value - b.value);
-  const bedsMin = bedsDistribution[0]?.value;
-  const bedsMax = bedsDistribution.at(-1)?.value;
-  const bedsMedian = bedsDistribution[Math.floor(bedsDistribution.length / 2)]?.value;
-  const bedsSelected = selectedUf ? bedsDistribution.find(p => p.uf === selectedUf) : undefined;
-  const bedsPct = (v: number) => bedsMin != null && bedsMax != null ? 5 + 90 * (v - bedsMin) / ((bedsMax - bedsMin) || 1) : 50;
 
   const indicatorValueByUf = new Map<string, number>();
   if (indicator === 'populacao') {
@@ -289,131 +297,70 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
         <div className="page-shell">
           <p className="eyebrow">Políticas públicas na prática</p>
           <h2 className="mt-2 text-3xl font-black tracking-tight">As cinco áreas da gestão pública</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Cinco maneiras diferentes de compreender a realidade brasileira — cada uma com sua própria pergunta e sua própria forma de mostrar o dado, nunca cinco números intercambiáveis com ícones diferentes.</p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div id="saude" className="min-w-0 scroll-mt-24">
-              <div className="flex items-center gap-2 text-primary"><HeartPulse size={18} aria-hidden /><p className="eyebrow !text-primary">Saúde</p></div>
-              <h3 className="mt-1 text-xl font-black">Como o Brasil cuida da saúde da população?</h3>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Cinco maneiras diferentes de compreender a realidade brasileira — cada área com sua cor, sua pergunta e sua própria história ao longo do tempo, nunca cinco números intercambiáveis com ícones diferentes.</p>
+          <div className="mt-8 space-y-6">
+            <div id="saude" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SAUDE_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: SAUDE_COLOR }}><HeartPulse size={20} aria-hidden /><p className="eyebrow" style={{ color: SAUDE_COLOR }}>Saúde</p></div>
+              <h3 className="mt-1 text-2xl font-black">{THEME_META.saude!.question}</h3>
               <div className="mt-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
                 <div><strong className="display-title text-3xl tabular-nums">{(health.bedsExisting / totalPop * 1000).toFixed(2)}</strong><span className="ml-1.5 text-sm text-muted-foreground">leitos por mil hab.</span></div>
                 <div><strong className="display-title text-3xl tabular-nums">{int.format(health.hospitals)}</strong><span className="ml-1.5 text-sm text-muted-foreground">hospitais no cadastro</span></div>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">CNES/DataSUS, competência {health.competence}</p>
-              <div className="mt-4 rounded-2xl border bg-background p-5">
-                <p className="text-sm font-bold">Leitos por mil habitantes, por estado</p>
-                <p className="mt-1 text-xs text-muted-foreground">Cada ponto é um estado — uma distribuição, não um ranking: mais leitos cadastrados não significa necessariamente melhor atendimento.</p>
-                {bedsMin != null && bedsMax != null && bedsMedian != null && (
-                  <>
-                    <div className="relative mt-7 h-6">
-                      <div className="absolute inset-x-0 top-1/2 h-px bg-border" />
-                      <div className="absolute top-1/2 h-4 w-0.5 -translate-y-1/2 bg-foreground/50" style={{ left: `${bedsPct(bedsMedian)}%` }} />
-                      {bedsDistribution.map(p => (
-                        <span key={p.uf} title={`${p.uf}: ${p.value.toFixed(2)} leitos/mil hab.`}
-                          className={cn('absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full', selectedUf === p.uf ? 'size-3.5 bg-primary ring-2 ring-primary/30' : 'size-2 bg-primary/35')}
-                          style={{ left: `${bedsPct(p.value)}%` }} />
-                      ))}
-                    </div>
-                    <div className="mt-2 flex justify-between text-[0.68rem] text-muted-foreground"><span>mín. {bedsMin.toFixed(2)}</span><span>mediana {bedsMedian.toFixed(2)}</span><span>máx. {bedsMax.toFixed(2)}</span></div>
-                  </>
-                )}
-                {bedsSelected && <p className="mt-3 border-t pt-3 text-sm"><strong>{bedsSelected.uf}</strong>: {bedsSelected.value.toFixed(2)} leitos/mil hab. — dentro da distribuição nacional acima, sem implicar melhor ou pior atendimento.</p>}
+              <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                <LineChart title="Leitos existentes no país, por ano" data={bedsChartData} coverage={bedsCoverage} color={SAUDE_COLOR} />
+                <LineChart title="Internações custeadas pelo SUS, por ano" data={aihChartData} coverage={aihCoverage} color={SAUDE_COLOR} />
               </div>
-              <Link href={selectedUf ? `/estados/${selectedUf}#saude` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">Explorar Saúde →</Link>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Leitos: soma nacional vigente em dezembro de cada ano (cadastro CNES; leitos de hospital-dia excluídos). Internações: SIH/AIH, só procedimentos custeados pelo SUS — não inclui atendimento particular nem de planos de saúde; o ano corrente aparece parcial.</p>
+              <Link href={selectedUf ? `/estados/${selectedUf}#saude` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SAUDE_COLOR }}>Explorar Saúde →</Link>
             </div>
 
-            <div id="educacao" className="min-w-0 scroll-mt-24">
-              <div className="flex items-center gap-2 text-primary"><GraduationCap size={18} aria-hidden /><p className="eyebrow !text-primary">Educação</p></div>
-              <h3 className="mt-1 text-xl font-black">O que os dados revelam sobre a aprendizagem no Brasil?</h3>
+            <div id="educacao" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: EDUCACAO_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: EDUCACAO_COLOR }}><GraduationCap size={20} aria-hidden /><p className="eyebrow" style={{ color: EDUCACAO_COLOR }}>Educação</p></div>
+              <h3 className="mt-1 text-2xl font-black">{THEME_META.educacao!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{idebRow ? String(idebRow.values.ideb) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">Ideb, anos iniciais{idebYear ? ` (${idebYear})` : ''}</span></div>
-              <div className="mt-4 rounded-2xl border bg-background p-5">
-                <p className="text-sm font-bold">Ideb, anos iniciais — evolução por edição (todas as redes)</p>
-                <p className="mt-1 text-xs text-muted-foreground">Escala fixa 0–10 (escala oficial do Ideb).</p>
-                <svg viewBox={`0 0 ${LC_W} ${LC_H}`} className="mt-3 w-full" role="img" aria-label="Evolução do Ideb, anos iniciais, 2005 a 2025, escala 0 a 10">
-                  <g stroke="var(--border)" strokeWidth="1"><line x1={LC_PAD_X} x2={LC_W - LC_PAD_X} y1={idebY(0)} y2={idebY(0)} /><line x1={LC_PAD_X} x2={LC_W - LC_PAD_X} y1={idebY(10)} y2={idebY(10)} /></g>
-                  <g fill="var(--muted-foreground)" fontSize="10"><text x={LC_PAD_X} y={idebY(0) - 3}>0</text><text x={LC_PAD_X} y={idebY(10) - 3}>10</text></g>
-                  <polyline fill="none" stroke="#115b45" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points={idebPath} />
-                  {idebChartData.map((d, i) => d.value != null && (
-                    <g key={d.label}>
-                      <circle cx={idebX(i)} cy={idebY(d.value)} r="4" fill="var(--card)" stroke="#115b45" strokeWidth="3"><title>{`${d.label}: ${d.value}`}</title></circle>
-                      {(i === 0 || i === idebChartData.length - 1 || i % 2 === 0) && <text x={idebX(i)} y={LC_H - 6} textAnchor={i === 0 ? 'start' : i === idebChartData.length - 1 ? 'end' : 'middle'} fontSize="9.5" fill="var(--muted-foreground)">{d.label}</text>}
-                    </g>
-                  ))}
-                </svg>
-                <details className="mt-2 text-xs"><summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver dados do gráfico</summary>
-                  <table className="mt-2 w-full text-left"><thead><tr><th className="p-1">Edição</th><th className="p-1 text-right">Ideb</th></tr></thead>
-                    <tbody>{idebChartData.map(d => <tr key={d.label} className="border-t"><th className="p-1 font-normal">{d.label}</th><td className="p-1 text-right tabular-nums">{d.value ?? '—'}</td></tr>)}</tbody>
-                  </table>
-                </details>
+              <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                <LineChart title="Ideb, anos iniciais, por edição (todas as redes)" data={idebChartData} coverage={toChartCoverage('AVAILABLE', 'INEP · Ideb, todas as redes', { from: '2005-01-01', to: `${idebYear ?? 2025}-12-31`, grain: 'year' })} color={EDUCACAO_COLOR} min={0} max={10} />
+                <LineChart title="Taxa de abandono, ensino fundamental, por ano" data={abandonoChartData} coverage={abandonoCoverage} color={EDUCACAO_COLOR} suffix="%" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">O Ideb de uma rede não é a média dos Idebs das escolas; a meta oficial só existe até a edição de 2021 — 2023 e 2025 são comparáveis às anteriores, mas sem meta própria.</p>
-              <Link href={selectedUf ? `/estados/${selectedUf}#educacao` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">Explorar Educação →</Link>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">O Ideb de uma rede não é a média dos Idebs das escolas; a meta oficial só existe até a edição de 2021 — 2023 e 2025 são comparáveis às anteriores, mas sem meta própria. Abandono é uma taxa de rendimento (diferente de distorção idade-série), do ensino fundamental total (anos iniciais + finais).</p>
+              <Link href={selectedUf ? `/estados/${selectedUf}#educacao` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: EDUCACAO_COLOR }}>Explorar Educação →</Link>
             </div>
 
-            <div id="seguranca" className="min-w-0 scroll-mt-24">
-              <div className="flex items-center gap-2 text-primary"><ShieldAlert size={18} aria-hidden /><p className="eyebrow !text-primary">Segurança</p></div>
-              <h3 className="mt-1 text-xl font-black">Como os registros de tráfico de drogas evoluíram no Brasil?</h3>
-              <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{trafficLatest ? int.format(trafficLatest.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">registros{trafficLatest ? ` (${trafficLatest.year})` : ''}</span></div>
-              <div className="mt-4 rounded-2xl border bg-background p-5">
-                <div className="flex flex-wrap items-center justify-between gap-2"><p className="text-sm font-bold">Registros de tráfico de drogas — evolução anual</p><span className="rounded-full bg-secondary px-2.5 py-0.5 text-[0.65rem] font-bold text-secondary-foreground">Atividade policial registrada, não extensão real do tráfico</span></div>
-                <svg viewBox={`0 0 ${ST_W} ${ST_H}`} className="mt-3 w-full" role="img" aria-label="Evolução anual de registros de tráfico de drogas, Sinesp VDE">
-                  <defs><linearGradient id="exec-traffic-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#115b45" stopOpacity=".3" /><stop offset="100%" stopColor="#115b45" stopOpacity="0" /></linearGradient></defs>
-                  <g stroke="var(--border)" strokeWidth="1"><line x1={ST_PAD_X} x2={ST_W - ST_PAD_X} y1={stY(0)} y2={stY(0)} /><line x1={ST_PAD_X} x2={ST_W - ST_PAD_X} y1={stY(trafficMax)} y2={stY(trafficMax)} /></g>
-                  <g fill="var(--muted-foreground)" fontSize="9.5"><text x={ST_PAD_X} y={stY(0) - 3}>0</text><text x={ST_PAD_X} y={stY(trafficMax) - 3}>{int.format(Math.round(trafficMax))}</text></g>
-                  {trafficSegments.map((seg, si) => { const line = seg.map(p => `${stX(p.i)},${stY(p.value)}`).join(' L '); const area = `M ${stX(seg[0]!.i)},${stY(0)} L ${line} L ${stX(seg.at(-1)!.i)},${stY(0)} Z`; return (
-                    <g key={si}>
-                      <path d={area} fill="url(#exec-traffic-fill)" />
-                      <polyline fill="none" stroke="#115b45" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" points={seg.map(p => `${stX(p.i)},${stY(p.value)}`).join(' ')} />
-                      {seg.map(p => <circle key={p.i} cx={stX(p.i)} cy={stY(p.value)} r="3.5" fill="var(--card)" stroke="#115b45" strokeWidth="2.5"><title>{`${trafficTrend[p.i]!.label}: ${int.format(p.value)}`}</title></circle>)}
-                    </g>
-                  ); })}
-                  <g fill="var(--muted-foreground)" fontSize="9.5">{trafficTrend.map((d, i) => (i === 0 || i === trafficTrend.length - 1 || (i % 2 === 0 && i < trafficTrend.length - 2)) && <text key={d.label} x={stX(i)} y={ST_H - 6} textAnchor={i === 0 ? 'start' : i === trafficTrend.length - 1 ? 'end' : 'middle'}>{d.label}{d.value == null ? ' · s/d' : ''}</text>)}</g>
-                </svg>
-                <details className="mt-2 text-xs"><summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver dados do gráfico</summary>
-                  <table className="mt-2 w-full text-left"><thead><tr><th className="p-1">Ano</th><th className="p-1 text-right">Registros</th></tr></thead>
-                    <tbody>{trafficTrend.map(d => <tr key={d.label} className="border-t"><th className="p-1 font-normal">{d.label}</th><td className="p-1 text-right tabular-nums">{d.value != null ? int.format(d.value) : 'sem dado'}</td></tr>)}</tbody>
-                  </table>
-                </details>
+            <div id="seguranca" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SEGURANCA_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: SEGURANCA_COLOR }}><ShieldAlert size={20} aria-hidden /><p className="eyebrow" style={{ color: SEGURANCA_COLOR }}>Segurança</p></div>
+              <h3 className="mt-1 text-2xl font-black">{THEME_META.seguranca!.question}</h3>
+              <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{trafficLatest ? int.format(trafficLatest.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">registros de tráfico{trafficLatest ? ` (${trafficLatest.year})` : ''}</span></div>
+              <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                <AreaTrend title="Registros de tráfico de drogas, por ano" data={trafficTrend} coverage={toChartCoverage('AVAILABLE', 'Sinesp VDE · 27 UFs', { from: trafficYears[0] ? `${trafficYears[0].year}-01-01` : null, to: trafficYears.length ? `${trafficYears.at(-1)!.year}-12-31` : null, grain: 'year' })} color={SEGURANCA_COLOR} badge="Atividade policial registrada, não extensão real do tráfico" />
+                <AreaTrend title="Mandados de prisão cumpridos, por ano" data={warrantsChartData} coverage={warrantsCoverage} color={SEGURANCA_COLOR} badge="Ato processual cumprido, não prova de organização criminosa" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">Fonte estadual (Sinesp VDE, 27 UFs) — Polícia Federal/PRF têm série própria, não somada aqui. Mais registros pode refletir mais notificação, não necessariamente mais ocorrência.</p>
-              <Link href={selectedUf ? `/estados/${selectedUf}#seguranca` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">Explorar Segurança →</Link>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Fonte estadual (Sinesp VDE, 27 UFs) — Polícia Federal/PRF têm séries próprias, não somadas aqui. Mais registros pode refletir mais notificação ou mais policiamento, não necessariamente mais crime.</p>
+              <Link href={selectedUf ? `/estados/${selectedUf}#seguranca` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SEGURANCA_COLOR }}>Explorar Segurança →</Link>
             </div>
 
-            <div id="bem-estar" className="min-w-0 scroll-mt-24">
-              <div className="flex items-center gap-2 text-primary"><HeartHandshake size={18} aria-hidden /><p className="eyebrow !text-primary">Bem-estar</p></div>
-              <h3 className="mt-1 text-xl font-black">Como vivem as pessoas nos diferentes territórios brasileiros?</h3>
-              <div className="mt-4 overflow-hidden rounded-2xl border bg-background">
-                <p className="border-b px-4 pt-3 pb-2 text-xs text-muted-foreground">Três dimensões diferentes, mostradas separadas de propósito — somá-las num índice único misturaria fontes, unidades e universos que não são equivalentes entre si.</p>
-                <div className="flex flex-col divide-y sm:flex-row sm:divide-x sm:divide-y-0">
-                  {wellbeingPanels.map(p => (
-                    <div key={p.key} className="flex-1 p-4">
-                      <p className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">{p.chapter}</p>
-                      <p className="mt-2 text-xl font-black tabular-nums">{p.formatted}</p>
-                      <p className="mt-1 text-xs text-muted-foreground">{p.label}</p>
-                      <p className="mt-1.5 text-[0.65rem] text-muted-foreground">{p.source}{p.period ? ` · ${p.period}` : ''}</p>
-                    </div>
-                  ))}
-                </div>
+            <div id="bem-estar" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: DEV_SOCIAL_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: DEV_SOCIAL_COLOR }}><HeartHandshake size={20} aria-hidden /><p className="eyebrow" style={{ color: DEV_SOCIAL_COLOR }}>Desenvolvimento Social</p></div>
+              <h3 className="mt-1 text-2xl font-black">{THEME_META['bem-estar']!.question}</h3>
+              {rendaBrasil && <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{money.format(rendaBrasil.value)}</strong><span className="ml-1.5 text-sm text-muted-foreground">renda domiciliar per capita{rendaBrasil.periodStart ? ` (${String(rendaBrasil.periodStart).slice(0, 4)})` : ''}</span></div>}
+              <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                <LineChart title="Saldo do mercado de trabalho formal, por mês" data={cagedBalChartData} coverage={cagedCoverage} color={DEV_SOCIAL_COLOR} />
+                <LineChart title="Vínculos formais ativos (RAIS), por ano" data={raisChartData} coverage={raisCoverage} color={DEV_SOCIAL_COLOR} />
               </div>
-              <Link href={selectedUf ? `/estados/${selectedUf}#bem-estar` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">Explorar Bem-estar →</Link>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Saldo do Novo Caged (admissões menos desligamentos) e estoque anual da RAIS são medidas diferentes, nunca somadas entre si. CadÚnico, Bolsa Família e BPC ainda não têm fonte agregada publicável nesta base.</p>
+              <Link href={selectedUf ? `/estados/${selectedUf}#bem-estar` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: DEV_SOCIAL_COLOR }}>Explorar Desenvolvimento Social →</Link>
             </div>
 
-            <div id="infraestrutura" className="min-w-0 scroll-mt-24">
-              <div className="flex items-center gap-2 text-primary"><Route size={18} aria-hidden /><p className="eyebrow !text-primary">Infraestrutura</p></div>
-              <h3 className="mt-1 text-xl font-black">Como os serviços essenciais chegam aos territórios?</h3>
+            <div id="infraestrutura" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: INFRA_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: INFRA_COLOR }}><Route size={20} aria-hidden /><p className="eyebrow" style={{ color: INFRA_COLOR }}>Infraestrutura</p></div>
+              <h3 className="mt-1 text-2xl font-black">{THEME_META.infraestrutura!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{esgotoBrasil ? `${Number(esgotoBrasil.value).toFixed(1)}%` : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">domicílios com rede coletora de esgoto{esgotoBrasil ? ` (SNIS, ${esgotoBrasil.referenceYear})` : ''}</span></div>
-              <div className="mt-4 rounded-2xl border bg-background p-5">
-                <p className="text-sm font-bold">Cobertura de serviços essenciais</p>
-                <div className="mt-3 space-y-3">
-                  {infraServices.map(s => (
-                    <div key={s.label}>
-                      <div className="flex items-baseline justify-between text-sm font-bold"><span>{s.label}</span><span className="tabular-nums text-muted-foreground">{s.value != null ? `${s.value.toFixed(1)}%` : 'sem dado'}</span></div>
-                      <div className="mt-1 h-2.5 rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${Math.max(2, Math.min(100, s.value ?? 0))}%` }} /></div>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-3 text-[0.68rem] text-muted-foreground">% da população total atendida — mesma unidade nos 3 serviços (SINISA), por isso comparáveis entre si. Cobertura declarada pelos prestadores — não equivale a qualidade do serviço nem a disponibilidade contínua.</p>
+              <div className="mt-5 grid gap-4 lg:grid-cols-2">
+                <LineChart title="Obras públicas cadastradas, por ano" data={worksRegisteredChartData} coverage={worksRegisteredCoverage} color={INFRA_COLOR} />
+                <LineChart title="Valor empenhado em obras públicas, por ano (R$)" data={worksCommittedChartData} coverage={worksCommittedCoverage} color={INFRA_COLOR} />
               </div>
-              <Link href={selectedUf ? `/estados/${selectedUf}#infraestrutura` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold text-primary">Explorar Infraestrutura →</Link>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Água, esgoto e resíduos (SNIS/SINISA) têm só 1 período publicado no nível Brasil — por isso a história aqui é das obras públicas (Obrasgov). Obra cadastrada não é obra concluída; valor empenhado é o 1º de 5 estágios (planejado, contratado, empenhado, liquidado, pago) — nunca despesa já realizada.</p>
+              <Link href={selectedUf ? `/estados/${selectedUf}#infraestrutura` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: INFRA_COLOR }}>Explorar Infraestrutura →</Link>
             </div>
           </div>
         </div>

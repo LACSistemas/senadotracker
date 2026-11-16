@@ -5,7 +5,7 @@ import {
   getJudiciaryStfPayrollSummary, getJudiciaryStfPayrollExplorer, getJudiciaryStfPayrollProfile,
   getJudiciaryStfGeneralJurisprudenceOverview, getJudiciaryStfGeneralJurisprudenceRanking,
   getJudiciaryStfGeneralJurisprudenceExplorer, getJudiciaryStfGeneralJurisprudenceProfile,
-  getJudiciaryFinancialProfile, getJudiciaryFinancialHistory, getJudiciaryPersonnelProfile, getJudiciaryTerritorialInstitutions,
+  getJudiciaryFinancialProfile, getJudiciaryFinancialHistory, getJudiciaryExpenseByIncisoOverview, getJudiciaryExpenseByIncisoHistoryOverview, getJudiciaryPersonnelProfile, getJudiciaryTerritorialInstitutions,
   getJudiciarySourceMethodology, type TribunalDirectoryFilters, type JurisprudenciaFilters,
 } from '@senadotracker/db';
 import { webPostgresPool } from './postgres-pool.ts';
@@ -21,6 +21,12 @@ export async function loadJudiciaryOverview(year = 2025) {
 }
 export async function loadJudiciaryNationalSeries(indicatorIds: string[]) {
   return memo(`jud-series:${[...indicatorIds].sort().join(',')}`, () => getJudiciaryNationalSeries(webPostgresPool(), indicatorIds), TTL);
+}
+export async function loadJudiciaryExpenseByInciso(year?: number) {
+  return memo(`jud-expense-inciso:${year ?? 'all'}`, () => getJudiciaryExpenseByIncisoOverview(webPostgresPool(), year), TTL);
+}
+export async function loadJudiciaryExpenseByIncisoHistory(tribunalId: string) {
+  return memo(`jud-expense-inciso-history:${tribunalId}`, () => getJudiciaryExpenseByIncisoHistoryOverview(webPostgresPool(), tribunalId), TTL);
 }
 export async function loadJudiciaryTribunalDirectory(filters: TribunalDirectoryFilters = {}) {
   return memo(`jud-directory:${JSON.stringify(filters)}`, () => getJudiciaryTribunalDirectory(webPostgresPool(), filters), TTL);

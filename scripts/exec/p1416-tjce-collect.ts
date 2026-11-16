@@ -11,10 +11,10 @@ import {
 const ROOT = 'D:\\Civica\\judiciario';
 const FIN_DIR = path.join(ROOT, 'financeiro', 'tjce');
 const PES_DIR = path.join(ROOT, 'pessoal', 'tjce');
-const FIN_REVISION_ID = 'p1416-tjce-finance-20261108b'; // "b": o hash do 1º run incluía prevRevision (bug corrigido), recalculado difere por construção, não por dado
-const PES_REVISION_ID = 'p1416-tjce-personnel-20261108b'; // "b": corrige dupla-contagem de aposentados do 1º run
+const FIN_REVISION_ID = 'p1416-tjce-finance-20261115'; // P14.39 — republicação de teste: confirma que o histórico retroativo (backfill 2015-2025) sobrevive a uma rodada regular, depois da correção da exclusão de copy-forward (linha ~111)
+const PES_REVISION_ID = 'p1416-tjce-personnel-20261115';
 const PARSER = 'p14.16-tjce-v1';
-const DATA_INICIO = '2025-11-01'; const DATA_FIM = '2025-12-31'; // janela de teste: confirmado ao vivo que é o período mais recente publicado
+const DATA_INICIO = '2026-08-01'; const DATA_FIM = '2026-09-30'; // P14.39 — janela atualizada: confirmado ao vivo que set/2026 é o período mais recente publicado agora
 
 const sha = (v: Buffer | string) => crypto.createHash('sha256').update(v).digest('hex');
 const pool = openPool(4);
@@ -105,17 +105,22 @@ try {
       await c.query(`INSERT INTO ${JUDICIARY_SCHEMA}.jud_publication_revision(revision_id,scope,snapshot_ids,semantic_hash,row_count,state,is_active,last_known_good,previous_revision_id,created_at,activated_at,provenance) VALUES($1,'JUD_FINANCE',$2::jsonb,$3,$4,'STAGED',false,true,$5,now(),NULL,$6::jsonb)`,
         [FIN_REVISION_ID, JSON.stringify([anexoISnap, fornecedoresSnap]), semanticFin, financeRows.length + supplierRows.length, prevFin?.revision_id ?? null, JSON.stringify({ provider: 'TJCE', parser: PARSER, sourceCutoff: '2026-11-08', dataWindow: `${DATA_INICIO}..${DATA_FIM}` })]);
       if (prevFin) {
-        // Mesmo motivo do copy-forward de pessoal: exclui o próprio TJCE (os fatos novos abaixo já o
-        // substituem) pra uma eventual rodada de correção nunca duplicar/misturar dado antigo com novo
-        // do mesmo tribunal; outros tribunais (hoje só STJ) continuam preservados normalmente.
-        await c.query(`INSERT INTO ${JUDICIARY_SCHEMA}.jud_fin_fact SELECT fact_id,$1,tribunal_id,source_institution,reference_year,reference_month,account,budget_stage,expense_category,beneficiary_type,document_id,amount_cents,record_count,source_snapshot_id,raw_row_hash,provenance FROM ${JUDICIARY_SCHEMA}.jud_fin_fact WHERE publication_revision_id=$2 AND tribunal_id<>$3`, [FIN_REVISION_ID, prevFin.revision_id, tjceId]);
+        // P14.39 — exclui só o período exato que está sendo republicado (não o tribunal inteiro): o
+        // TJCE agora pode ter histórico retroativo (jan/2015-jan/2025, ver p1416-tjce-finance-backfill.ts)
+        // acumulado na revisão ativa, e uma rodada regular deste coletor só deve substituir o período
+        // corrente, nunca apagar os anos retroativos do mesmo tribunal.
+        await c.query(`INSERT INTO ${JUDICIARY_SCHEMA}.jud_fin_fact SELECT fact_id,$1,tribunal_id,source_institution,reference_year,reference_month,account,budget_stage,expense_category,beneficiary_type,document_id,amount_cents,record_count,source_snapshot_id,raw_row_hash,provenance FROM ${JUDICIARY_SCHEMA}.jud_fin_fact WHERE publication_revision_id=$2 AND NOT (tribunal_id=$3 AND reference_year=$4 AND reference_month=$5)`, [FIN_REVISION_ID, prevFin.revision_id, tjceId, anexoIPeriod.year, anexoIPeriod.month]);
         await c.query(`INSERT INTO ${JUDICIARY_SCHEMA}.jud_fin_payroll_aggregate SELECT aggregate_id,$1,tribunal_id,reference_year,reference_month,tipo_servidor,categoria_vinculo,situacao,record_count,remuneracao_paradigma_cents,vantagens_pessoais_cents,subsidio_funcao_cents,indenizacoes_cents,vantagens_eventuais_cents,gratificacoes_cents,previdencia_publica_cents,imposto_renda_cents,descontos_diversos_cents,retencao_teto_cents,diarias_cents,total_creditos_cents,total_debitos_cents,rendimento_liquido_cents,remuneracao_orgao_origem_cents,source_snapshot_id,raw_row_hash,provenance FROM ${JUDICIARY_SCHEMA}.jud_fin_payroll_aggregate WHERE publication_revision_id=$2 AND tribunal_id<>$3`, [FIN_REVISION_ID, prevFin.revision_id, tjceId]);
         // jud_fin_coverage tem PK simples (coverage_id, estável por provider+scope, não por revisão) —
         // reaponta pra nova revisão em vez de copiar linha (copiar violaria a PK, achado real).
         await c.query(`UPDATE ${JUDICIARY_SCHEMA}.jud_fin_coverage SET publication_revision_id=$1 WHERE publication_revision_id=$2`, [FIN_REVISION_ID, prevFin.revision_id]);
       }
       for (const r of financeRows) {
-        const id = `TJCE:FINFACT:${sha(JSON.stringify(r)).slice(0, 40)}`;
+        // P14.39 — fact_id precisa incluir o período: sem isso, uma alínea de valor R$0 (comum, se
+        // repete entre vários meses/anos) gera o MESMO id em períodos diferentes — inofensivo enquanto
+        // só existia 1 período por tribunal, mas colide de verdade agora que o TJCE tem histórico
+        // retroativo (P14.39) convivendo com o período corrente na mesma revisão.
+        const id = `TJCE:FINFACT:${anexoIPeriod.year}${String(anexoIPeriod.month).padStart(2, '0')}:${sha(JSON.stringify(r)).slice(0, 40)}`;
         await c.query(`INSERT INTO ${JUDICIARY_SCHEMA}.jud_fin_fact(fact_id,publication_revision_id,tribunal_id,source_institution,reference_year,reference_month,account,budget_stage,expense_category,source_snapshot_id,amount_cents,raw_row_hash,provenance) VALUES($1,$2,$3,'TJCE',$4,$5,$6,'EXPENSE_REPORTED',$7,$8,$9,$10,$11::jsonb)`,
           [id, FIN_REVISION_ID, tjceId, anexoIPeriod.year, anexoIPeriod.month, r.account, r.category, anexoISnap, Math.round(r.amountReais * 100), sha(JSON.stringify(r)), JSON.stringify({ source: 'Anexo I TJCE (ods)', semantic: 'alínea-letra, nível não-dobrado' })]);
       }

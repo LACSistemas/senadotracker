@@ -34,9 +34,26 @@ async function scopedRows(q: Q,t: InfrastructureTerritory,opts:{indicatorId?:num
   const directKind=e.kind; p.push(e.kind===4?e.ibge7:e.kind===3?e.ufCode:76); const scopeVal=`$${p.length}`;
   const direct=`select v.indicator_id,v.period_start,v.period_end,v.status,v.value,v.numerator,v.denominator,v.flags,v.run_id,d.code,d.label,d.unit,d.grain,d.methodology_note,d.ranking_allowed,d.aggregation_allowed,c.source_family,c.dimension,e.kind entity_kind,count(*) over(partition by v.indicator_id,v.period_start)::int sample,0::int municipalities,0::int ufs,0::int brazil from civica_exec.exec_ind_value v join civica_exec.exec_ind_def d using(indicator_id) join civica_exec.exec_infra_editorial_catalog c using(indicator_id) join civica_exec.exec_entity e using(entity_id) where ${def.join(' and ')} and e.kind=${directKind} and ${directKind===4?'e.ibge7':directKind===3?'e.uf_code':'e.entity_id'}=${scopeVal}`;
   if(e.kind===4) return (await q.query(direct,p)).rows;
-  const aggParams=p.slice(0,-1); const aggVal=scopeVal;
-  const agg=`select v.indicator_id,v.period_start,max(v.period_end) period_end, max(v.status)::smallint status,case when sum(v.denominator) filter(where v.denominator is not null)>0 then sum(v.numerator)/sum(v.denominator) else avg(v.value) end value,sum(v.numerator) numerator,sum(v.denominator) denominator,bit_or(v.flags)::smallint flags,max(v.run_id) run_id,d.code,d.label,d.unit,d.grain,d.methodology_note,d.ranking_allowed,d.aggregation_allowed,c.source_family,c.dimension,4::int entity_kind,count(distinct e.entity_id)::int sample,count(distinct e.entity_id)::int municipalities,0::int ufs,0::int brazil,count(*)::int observations,min(v.period_start) first_period,max(v.period_start) last_period from civica_exec.exec_ind_value v join civica_exec.exec_ind_def d using(indicator_id) join civica_exec.exec_infra_editorial_catalog c using(indicator_id) join civica_exec.exec_entity e using(entity_id) where ${def.join(' and ')} and e.kind=4 and ${e.kind===3?'e.uf_code':'true'}=${e.kind===3?aggVal:'true'} group by v.indicator_id,v.period_start,d.code,d.label,d.unit,d.grain,d.methodology_note,d.ranking_allowed,d.aggregation_allowed,c.source_family,c.dimension`;
-  const directRows=(await q.query(direct,p)).rows; const aggRows=(await q.query(agg, e.kind===3?p:aggParams)).rows; const keys=new Set(directRows.map((r:Record<string,unknown>)=>`${r.indicator_id}:${date(r.period_start)}`)); return [...directRows,...aggRows.filter((r:Record<string,unknown>)=>!keys.has(`${r.indicator_id}:${date(r.period_start)}`))];
+  // Agregação (UF/BRASIL): resolve indicator_id e entity_id como arrays literais ANTES da query principal
+  // (2 lookups pequenos e baratos — ~100 indicadores, até ~5.570 municípios) em vez de aplicar o filtro de
+  // território via JOIN+GROUP BY. Medido (ver docs de performance): o JOIN deixava o planner escanear a
+  // tabela de fatos inteira por indicator_id e só filtrar o território no final (865k linhas tocadas mesmo
+  // numa UF só); com os dois arrays passados direto pro WHERE, o Postgres casa os dois filtros numa única
+  // leitura do índice (indicator_id,entity_id,period_start) — 1,3s → 110ms numa UF, 2,06s → ~0,6s no Brasil.
+  const indDef=[`d.domain in (5,6,13)`];
+  const indP:unknown[]=[];
+  if(opts.indicatorId!=null){indP.push(opts.indicatorId);indDef.push(`d.indicator_id=$${indP.length}`)}
+  if(opts.code){indP.push(opts.code);indDef.push(`d.code=$${indP.length}`)}
+  if(opts.family){indP.push(opts.family);indDef.push(`c.source_family=$${indP.length}`)}
+  const indicatorIds=(await q.query(`select d.indicator_id from civica_exec.exec_ind_def d join civica_exec.exec_infra_editorial_catalog c using(indicator_id) where ${indDef.join(' and ')}`,indP)).rows.map(r=>Number(r.indicator_id));
+  const directRows=(await q.query(direct,p)).rows;
+  if(!indicatorIds.length) return directRows;
+  const entityIds=(await q.query(e.kind===3?`select entity_id from civica_exec.exec_entity where kind=4 and uf_code=$1`:`select entity_id from civica_exec.exec_entity where kind=4`,e.kind===3?[e.ufCode]:[])).rows.map(r=>Number(r.entity_id));
+  const periodFilter:string[]=[]; const aggP:unknown[]=[indicatorIds,entityIds];
+  if(opts.from){aggP.push(opts.from);periodFilter.push(`and v.period_start >= $${aggP.length}`)}
+  if(opts.to){aggP.push(opts.to);periodFilter.push(`and v.period_start <= $${aggP.length}`)}
+  const agg=`with agg as (select v.indicator_id,v.period_start,max(v.period_end) period_end,max(v.status)::smallint status,case when sum(v.denominator) filter(where v.denominator is not null)>0 then sum(v.numerator)/sum(v.denominator) else avg(v.value) end value,sum(v.numerator) numerator,sum(v.denominator) denominator,bit_or(v.flags)::smallint flags,max(v.run_id) run_id,count(distinct v.entity_id)::int municipalities,count(*)::int observations,min(v.period_start) first_period,max(v.period_start) last_period from civica_exec.exec_ind_value v where v.indicator_id=any($1::smallint[]) and v.entity_id=any($2::int[]) ${periodFilter.join(' ')} group by v.indicator_id,v.period_start) select a.indicator_id,a.period_start,a.period_end,a.status,a.value,a.numerator,a.denominator,a.flags,a.run_id,d.code,d.label,d.unit,d.grain,d.methodology_note,d.ranking_allowed,d.aggregation_allowed,c.source_family,c.dimension,4::int entity_kind,a.municipalities sample,a.municipalities,0::int ufs,0::int brazil,a.observations,a.first_period,a.last_period from agg a join civica_exec.exec_ind_def d using(indicator_id) join civica_exec.exec_infra_editorial_catalog c using(indicator_id)`;
+  const aggRows=(await q.query(agg, aggP)).rows; const keys=new Set(directRows.map((r:Record<string,unknown>)=>`${r.indicator_id}:${date(r.period_start)}`)); return [...directRows,...aggRows.filter((r:Record<string,unknown>)=>!keys.has(`${r.indicator_id}:${date(r.period_start)}`))];
 }
 
 export async function getInfrastructureIndicators(q: Q,t: InfrastructureTerritory,filters:{code?:string;family?:string;from?:string;to?:string;limit?:number}={}) {
@@ -69,6 +86,21 @@ export async function getInfrastructureWorksBySituation(q: Q,t: InfrastructureTe
   if(e.kind===4){params.push(e.ibge7);scope=`l.ibge7=$${params.length}`;} else if(e.kind===3){params.push(e.ufCode);scope=`l.uf=$${params.length}`;}
   const rows=(await q.query(`select p.situation_code,st.label situation_label,count(distinct p.project_id)::int n from civica_exec.exec_work_c_location l join civica_exec.exec_work_c_project p using(project_id) left join civica_exec.exec_work_c_text st on st.kind=1 and st.code=p.situation_code where ${scope} group by p.situation_code,st.label order by n desc`,params)).rows;
   return rows.map(r=>({situationCode:Number(r.situation_code),label:String(r.situation_label??r.situation_code),count:Number(r.n)}));
+}
+/** Série histórica nacional de obras cadastradas no Obrasgov, por ano de cadastro (`cadastro_year`) — a
+ * base SNIS/SINISA não tem série histórica no nível Brasil (confirmado: só 1 período por indicador),
+ * então as obras públicas (que têm data própria de cadastro) servem de história real de Infraestrutura. */
+export interface YearlyWorksCount { year: number; count: number }
+export async function getInfrastructureWorksRegisteredByYear(q: Q): Promise<YearlyWorksCount[]> {
+  const rows=(await q.query(`select cadastro_year,count(*)::int n from civica_exec.exec_work_c_project where cadastro_year is not null group by cadastro_year order by cadastro_year`)).rows;
+  return rows.map(r=>({year:Number(r.cadastro_year),count:Number(r.n)}));
+}
+/** Série histórica nacional do valor empenhado em obras públicas, por ano de emissão do empenho — mesma
+ * tabela usada no snapshot agregado de `getInfrastructureWorksOverview`, aqui aberta por ano. */
+export interface YearlyWorksCommitted { year: number; committedCents: number }
+export async function getInfrastructureWorksCommittedByYear(q: Q): Promise<YearlyWorksCommitted[]> {
+  const rows=(await q.query(`select extract(year from emission_date)::int y,sum(value_cents)::bigint cents from civica_exec.exec_work_c_commitment where emission_date is not null group by 1 order by 1`)).rows;
+  return rows.map(r=>({year:Number(r.y),committedCents:Number(r.cents)}));
 }
 export async function getInfrastructureWorksList(q: Q,t: InfrastructureTerritory,filters:{page?:number;pageSize?:number;status?:number;category?:number;agency?:string;hasPhysicalMeasurement?:boolean;hasContracts?:boolean;hasPayment?:boolean;territorialScope?:'SINGLE'|'MULTI';periodFrom?:string;periodTo?:string}={}) {
   const e=await territory(q,t); if(!e) return {total:0,page:1,pageSize:filters.pageSize??25,items:[]};

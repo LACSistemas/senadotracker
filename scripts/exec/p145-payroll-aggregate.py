@@ -6,8 +6,12 @@ ROOT = r"D:\Civica\judiciario\financeiro\stj"
 src = os.path.join(ROOT, "folhadepagamento.csv")
 stage = os.path.join(ROOT, "staging")
 os.makedirs(stage, exist_ok=True)
+# P14.39 — nome do arquivo mantido (consumido por caminho fixo em p145-collect.ts), mesmo o conteúdo
+# agora cobrindo 2020-2026: a fonte (CKAN, folhadepagamento.csv) já publica desde jan/2020 no mesmo
+# arquivo que este script já baixava — só o filtro de ano descartava 2020-2024 antes.
 out = os.path.join(stage, "payroll_aggregate_2025_2026.csv")
 stats_out = os.path.join(stage, "payroll_aggregate_stats.json")
+MIN_YEAR = 2020
 
 def cents(v):
     if v is None: return 0
@@ -46,7 +50,7 @@ with open(src, 'r', encoding='utf-8-sig', newline='') as f:
     for row in reader:
         source_rows += 1
         year = (row.get('AnoReferencia') or '').strip()
-        if year not in {'2025','2026'}: continue
+        if not year.isdigit() or int(year) < MIN_YEAR: continue
         month = (row.get('MesReferencia') or '').strip()
         if not month.isdigit(): rejected_rows += 1; continue
         month = int(month)

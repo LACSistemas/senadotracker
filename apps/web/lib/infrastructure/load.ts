@@ -217,4 +217,9 @@ export async function buildInfrastructurePageData(t: InfrastructureTerritory, sc
 }
 
 const cachedLoad = (scope: InfraScope) => memo(`infrastructure:${scope.entityId}`, () => loadInfrastructurePage(scope), 60_000);
-export { scopeOf, scopeFromEntity, cachedLoad as loadInfrastructurePageCached };
+/** Indicadores de infraestrutura nível Brasil, sem filtro — usado pelo hub `/executivo`, que só precisa do
+ * snapshot nacional para o mapa/KPIs. Cacheado 60s (mesmo TTL de `cachedLoad`) para não repetir a agregação
+ * sobre os ~5.570 municípios a cada carga da página. */
+const loadBrasilIndicatorsCached = (): Promise<InfrastructureIndicator[]> =>
+  memo('infrastructure:indicators:brasil', () => getInfrastructureIndicators(webPostgresPool(), { level: 'BRASIL' }, {}), 60_000);
+export { scopeOf, scopeFromEntity, cachedLoad as loadInfrastructurePageCached, loadBrasilIndicatorsCached };

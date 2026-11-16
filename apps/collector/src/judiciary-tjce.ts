@@ -148,8 +148,18 @@ export function parseAnexoI(filePath: string): FinanceRow[] {
     const col0 = String(r?.[0] ?? '').trim();
     if (/^Inciso/i.test(col0)) { category = col0; continue; }
     if (!/^[a-z]$/.test(col0)) continue; // só alínea-letra única (a, b, c, d, e), nunca "a.1"
-    const label = String(r?.[1] ?? '').trim(); const total = Number(r?.[6]);
-    if (!label || !Number.isFinite(total)) continue;
+    const label = String(r?.[1] ?? '').trim();
+    // P14.39 — achado real no backfill histórico: o layout de colunas muda por ano (2016 só tem
+    // Alínea|Discriminação|Valor, 3 colunas; o layout atual tem 4 colunas extras de fonte de recurso
+    // antes do Total — "Alínea|Discriminação|Tesouro|Fermoju|Funseg|Fecdoj|Total"). Ler sempre a
+    // ÚLTIMA célula numérica da linha (nunca um índice fixo) funciona nos dois formatos, porque o
+    // Total é sempre a última coluna populada em qualquer um dos dois layouts.
+    let total: number | null = null;
+    for (let i = (r?.length ?? 0) - 1; i >= 2; i--) {
+      const cell = r![i]; if (cell === undefined || cell === null || cell === '') continue;
+      const n = Number(cell); if (Number.isFinite(n)) { total = n; break; }
+    }
+    if (!label || total == null) continue;
     out.push({ account: `${col0} — ${label}`, category: category || 'Sem seção identificada', amountReais: total });
   }
   return out;

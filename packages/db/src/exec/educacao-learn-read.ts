@@ -49,6 +49,12 @@ export async function getIdebTerritory(q: Q, o: LearnTerritoryKey & { stage?: nu
   if (!rows.length) return null;
   return { scope: scopeOf(e, o), editions: [...new Set(rows.map(r => Number(r.year)))], rows: rows.map(idebReadRow), labels: IDEB_LABELS, restrictions: LEARN_RESTRICTIONS, source: LEARN_SOURCES.ideb };
 }
+/** Ideb das 27 UFs numa única consulta — nunca em loop por estado (achado real: a home fazia 27 round-trips,
+ * um `getIdebTerritory` por UF, pra pintar o mapa de variação; ver docs de performance). */
+export async function getIdebAllUfs(q: Q, o: { stage: number; dep: number }): Promise<Array<{ ufCode: number; year: number; ideb: number | null }>> {
+  const rows = (await q.query(`SELECT e.uf_code, t.year, t.ideb FROM civica_exec.exec_edu_ideb_terr t JOIN civica_exec.exec_entity e ON e.entity_id = t.entity_id WHERE e.kind = 3 AND t.stage = $1 AND t.dep = $2 ORDER BY e.uf_code, t.year`, [o.stage, o.dep])).rows;
+  return rows.map(r => ({ ufCode: Number(r.uf_code), year: Number(r.year), ideb: dbl(r.ideb) }));
+}
 /** Escola: o Ideb publicado por edição × etapa. Escola sem Ideb na edição simplesmente não tem linha (não é zero). */
 export async function getIdebSchool(q: Q, inep: number): Promise<IdebResult | null> {
   const name = await schoolName(q, inep); if (name == null) return null;

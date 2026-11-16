@@ -2,12 +2,12 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRight, Banknote, Building2, Gavel, Scale } from 'lucide-react';
 import { KpiCard, KpiGrid } from '@/components/metrics';
-import { MultiLineChart } from '@/components/charts';
+import { MultiLineChart, LineChart } from '@/components/charts';
 import { ChapterNav, type NavItem } from '@/components/security/chapter-nav';
 import { JudiciaryAvailabilityNote, toChartCoverage } from '@/components/judiciary/availability';
 import { MethodologyPanel, type IndicatorMethodology } from '@/components/judiciary/methodology-panel';
 import { MinisterCard } from '@/components/judiciary/minister-card';
-import { loadJudiciaryTribunalProfile, loadJudiciaryTribunalSeries, loadJudiciaryStjOverview, loadJudiciaryStjPrecedents, loadJudiciaryStfOverview, loadJudiciaryStfTemas, loadJudiciaryStfPayrollSummary, loadJudiciaryStfPayrollRoster, loadJudiciaryStfGeneralJurisprudenceOverview, loadJudiciaryPersonnelProfile } from '@/lib/judiciary';
+import { loadJudiciaryTribunalProfile, loadJudiciaryTribunalSeries, loadJudiciaryStjOverview, loadJudiciaryStjPrecedents, loadJudiciaryStfOverview, loadJudiciaryStfTemas, loadJudiciaryStfPayrollSummary, loadJudiciaryStfPayrollRoster, loadJudiciaryStfGeneralJurisprudenceOverview, loadJudiciaryPersonnelProfile, loadJudiciaryExpenseByIncisoHistory } from '@/lib/judiciary';
 import { StatGrid, BarList } from '@/components/infrastructure/infrastructure-ui';
 import { loadJudiciaryThemeByTribunal } from '@/lib/judiciary-themes';
 import type { JudiciaryThemeId } from '@senadotracker/db';
@@ -34,7 +34,7 @@ export default async function TribunalProfilePage({ params }: Props) {
   const isStj = tribunal.sigla === 'STJ';
   const isStf = tribunal.sigla === 'STF';
 
-  const [stjOverview, stjSample, stfOverview, stfSample, stfPayroll, stfRoster, stfJuris, themeResults, personnelProfile] = await Promise.all([
+  const [stjOverview, stjSample, stfOverview, stfSample, stfPayroll, stfRoster, stfJuris, themeResults, personnelProfile, expenseHistory] = await Promise.all([
     isStj ? loadJudiciaryStjOverview() : Promise.resolve(null),
     isStj ? loadJudiciaryStjPrecedents({ pageSize: 3 }) : Promise.resolve(null),
     isStf ? loadJudiciaryStfOverview() : Promise.resolve(null),
@@ -44,7 +44,22 @@ export default async function TribunalProfilePage({ params }: Props) {
     isStf ? loadJudiciaryStfGeneralJurisprudenceOverview() : Promise.resolve(null),
     Promise.all(REAL_THEMES.map(async themeId => ({ themeId, result: await loadJudiciaryThemeByTribunal(themeId, tribunalId, 2025) }))),
     loadJudiciaryPersonnelProfile(tribunalId),
+    loadJudiciaryExpenseByIncisoHistory(tribunalId),
   ]);
+  // P14.39 — só existe (hoje) pro TJCE, piloto de coleta histórica; pros outros 16 tribunais
+  // `expenseHistory.availability` é 'NOT_REPORTED' (1 período só) e esta série fica vazia, sem
+  // mudar nada na tela deles.
+  const expenseIncisoYears = expenseHistory.availability === 'AVAILABLE' ? (expenseHistory.data.years as Array<{ reference_year: number; reference_month: number; inciso_code: string; label: string; amount_cents: string }>) : [];
+  // Um ano pode ter mais de 1 mês carregado (ex. janeiro retroativo + o mês corrente do coletor
+  // regular) — nunca somar os dois como se fosse o mesmo período; prefere janeiro (o mês do backfill,
+  // comparável ano a ano) e só usa outro mês se janeiro não existir pra aquele ano.
+  const incisoIByYear = new Map<number, { reference_month: number; amount_cents: string }>();
+  for (const r of expenseIncisoYears.filter(r => r.inciso_code === 'I')) {
+    const prev = incisoIByYear.get(r.reference_year);
+    if (!prev || r.reference_month === 1) incisoIByYear.set(r.reference_year, r);
+  }
+  const incisoIRows = [...incisoIByYear.entries()].map(([reference_year, r]) => ({ reference_year, ...r })).sort((a, b) => a.reference_year - b.reference_year);
+  const incisoIGrowthChart = incisoIRows.length > 1 ? incisoIRows.map(r => ({ label: String(r.reference_year), value: Number(r.amount_cents) / 100 })) : null;
   const personnel = personnelProfile.availability === 'AVAILABLE' ? (personnelProfile.data as { overview: { latestPeriod: { year: number; month: number } | null; byAnnexStatus: Array<{ source_annex: string; status: string; headcount: number }> }; byCareer: Record<string, Array<{ career_track: string | null; position_title: string | null; class_level: string | null; status: string; headcount: number }>>; suppliers: { period: { from: { year: number; month: number }; to: { year: number; month: number } } | null; topSuppliers: Array<{ supplier_name: string; supplier_cnpj: string | null; payments: number; amount_cents: string }>; total: { payments: number; amount_cents: string } | null } }) : null;
   const themeChapters = themeResults.filter(t => (t.result.data as any).metrics?.some((m: any) => m.value != null));
 
@@ -205,6 +220,16 @@ export default async function TribunalProfilePage({ params }: Props) {
                         <tbody>{detailRows.map(f => <tr key={`${f.expense_category}-${f.account}`} className="border-b last:border-0"><td className="py-1.5 pr-3 text-muted-foreground">{f.expense_category ?? '—'}</td><td className="py-1.5 pr-3">{f.account}</td><td className="py-1.5 pr-3 text-right tabular-nums">{money.format(Number(f.amount_cents) / 100)}</td></tr>)}</tbody>
                       </table></div>
                     </details>
+                  </div>
+                )}
+                {incisoIGrowthChart && (
+                  <div className="mt-6 rounded-2xl border bg-card p-5">
+                    <LineChart
+                      title="Crescimento da despesa com Pessoal (Inciso I), por ano"
+                      data={incisoIGrowthChart}
+                      coverage={toChartCoverage('PARTIAL_COVERAGE', 'Anexo I bruto, histórico retroativo (piloto) · só janeiro de cada ano, não é série mensal completa', { from: `${incisoIRows[0]!.reference_year}-01-01`, to: `${incisoIRows.at(-1)!.reference_year}-01-31`, grain: 'year' })}
+                    />
+                    <p className="mt-3 text-xs text-muted-foreground">Histórico retroativo (piloto): só a competência de janeiro de cada ano foi coletada, por isso não é uma série mensal — serve pra ver a tendência ano a ano, não a variação dentro do ano.{incisoIRows.at(-1)!.reference_month !== 1 ? ` O último ano (${incisoIRows.at(-1)!.reference_year}) ainda não tem janeiro coletado — mostra a competência ${String(incisoIRows.at(-1)!.reference_month).padStart(2, '0')}/${incisoIRows.at(-1)!.reference_year}, o período mais recente disponível.` : ''}</p>
                   </div>
                 )}
                 {isStj && financial?.payroll?.length > 0 && (() => {

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Building2, Clock, Gavel, Scale, Users, Wallet } from 'lucide-react';
 import { MultiLineChart, ConcentrationCurve, RankedBars, type MultiLineDatum, type RankedBarItem } from '@/components/charts';
 import { JudiciaryAvailabilityNote, toChartCoverage } from '@/components/judiciary/availability';
-import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryIndicatorDistribution } from '@/lib/judiciary';
+import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryIndicatorDistribution, loadJudiciaryExpenseByInciso } from '@/lib/judiciary';
 import { loadJudiciaryThemesCatalog, loadJudiciaryThemeOverview } from '@/lib/judiciary-themes';
 
 export const dynamic = 'force-dynamic';
@@ -52,7 +52,7 @@ function layoutBeeswarm<T extends { value: number }>(points: T[], { chartWidth, 
 }
 
 export default async function JudiciaryPanoramaPage() {
-  const [overview, series, themes, congestion, featuredTheme, expenseSeries, expensePerMagistrate] = await Promise.all([
+  const [overview, series, themes, congestion, featuredTheme, expenseSeries, expensePerMagistrate, expenseByInciso] = await Promise.all([
     loadJudiciaryOverview(2025),
     loadJudiciaryNationalSeries([...GENERAL_SUM]),
     loadJudiciaryThemesCatalog(),
@@ -60,6 +60,7 @@ export default async function JudiciaryPanoramaPage() {
     loadJudiciaryThemeOverview('DOMESTIC_VIOLENCE' as any, {}),
     loadJudiciaryNationalSeries([...EXPENSE_SUM]),
     loadJudiciaryIndicatorDistribution('JN_EXPENSE_PER_MAGISTRATE', 2025),
+    loadJudiciaryExpenseByInciso(),
   ]);
 
   if (overview.availability !== 'AVAILABLE') {
@@ -162,6 +163,16 @@ export default async function JudiciaryPanoramaPage() {
     { label: 'Benefícios (inativos/pensionistas)', value: valE('JN_EXPENSE_BENEFITS', expenseLastYear ?? 0) ?? 0 },
     { label: 'Outras despesas correntes', value: valE('JN_EXPENSE_OTHER_CURRENT', expenseLastYear ?? 0) ?? 0 },
   ];
+
+  // P14.38 — cruzamento complementar: soma bottom-up do Anexo I bruto que cada tribunal publica (fonte e
+  // cobertura diferentes da composição acima, que vem já agregada pelo CNJ) — nunca misturado com ela.
+  // Inciso VI (Receitas) é natureza diferente (receita, não despesa) e fica fora da composição de despesa.
+  const incisoRows = (expenseByInciso.availability === 'AVAILABLE' ? (expenseByInciso.data.incisos as any[]) : []);
+  const incisoTotalTribunais = expenseByInciso.availability === 'AVAILABLE' ? expenseByInciso.data.totalTribunals : 0;
+  const incisoDespesaRows = incisoRows.filter(r => r.nature === 'DESPESA');
+  const incisoReceitaRow = incisoRows.find(r => r.nature === 'RECEITA');
+  const incisoComposition = incisoDespesaRows.map(r => ({ label: `${r.inciso_code} — ${r.label}`, value: Number(r.amount_cents) / 100 }));
+  const incisoTotalDespesa = incisoDespesaRows.reduce((s, r) => s + Number(r.amount_cents), 0) / 100;
 
   // Corrida de crescimento: as 3 categorias de folha, indexadas a 100 em 2015 (1º ano com variável própria
   // para Magistrados/Servidores) — nunca em valor nominal junto de "Despesa total" no mesmo eixo (escalas
@@ -337,6 +348,41 @@ export default async function JudiciaryPanoramaPage() {
                   />
                 </div>
               </details>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <section id="despesas-anexo-i" className="border-t py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">O que cada tribunal diz gastar, Inciso a Inciso</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Um cruzamento complementar à seção acima: em vez da soma já pronta do CNJ, aqui somamos a declaração orçamentária que {incisoTotalTribunais} tribunais publicam no formato padrão do Anexo I (Resolução CNJ 102/2009) — cobertura desigual por Inciso, detalhada abaixo.</p>
+            </div>
+          </div>
+
+          {incisoComposition.length > 0 ? (
+            <>
+              <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
+                <ConcentrationCurve
+                  title="Despesa declarada por Inciso orçamentário, soma de todos os períodos publicados"
+                  buckets={incisoComposition}
+                  coverage={toChartCoverage('PARTIAL_COVERAGE', `Anexo I bruto por tribunal (CNJ Resolução 102/2009) · ${incisoTotalTribunais} tribunais no total, cobertura desigual por Inciso — ver nota`, { grain: 'year' })}
+                  note={`Total: ${moneyFull.format(incisoTotalDespesa)}. STJ não publica no formato Anexo I (orçamento programático distinto) e fica fora desta composição. Inciso IV (Inversões Financeiras) está ausente para 3 tribunais e vale R$ 0 em todos os que o reportam. TJSP só reporta os Incisos I–IV no seu resumo consolidado. Cada tribunal foi coletado numa leva única — o período varia por tribunal, não é uma série de ano-calendário fixo.`}
+                />
+                <div className="rounded-2xl border bg-background p-5">
+                  <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Inciso VI — Receitas (não é despesa)</p>
+                  <strong className="display-title mt-1.5 block text-2xl leading-none">{incisoReceitaRow ? moneyCompact.format(Number(incisoReceitaRow.amount_cents) / 100) : '—'}</strong>
+                  <p className="mt-1.5 text-xs text-muted-foreground">{incisoReceitaRow?.tribunals_reporting ?? 0}/{incisoTotalTribunais} tribunais · custas, emolumentos e outras receitas próprias declaradas no Anexo I — mostrado separado da despesa, nunca somado a ela.</p>
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-muted-foreground">O Inciso V do TJDFT tem um recorte diferente dos demais tribunais (detalhamento por Inciso de destino, não um agregado direto comparável) — está incluído no total porque é dinheiro real, mas vale essa ressalva.</p>
+            </>
+          ) : (
+            <div className="mt-6">
+              <JudiciaryAvailabilityNote availability={expenseByInciso.availability} source="Anexo I por tribunal (CNJ Resolução 102/2009)" limitations={expenseByInciso.provenance.limitations} />
             </div>
           )}
         </div>

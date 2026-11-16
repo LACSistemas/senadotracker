@@ -12,6 +12,7 @@ import { ComparisonBar } from '@/components/comparison-bar';
 import { EmptyState } from '@/components/empty-state';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { memo } from '@/lib/security/load';
 
 export const dynamic = 'force-dynamic';
 type Params = Record<string, string | string[] | undefined>;
@@ -52,11 +53,15 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
   const sort=sortValue&&validSorts.has(sortValue as LegislativeOverviewSort)?sortValue as LegislativeOverviewSort:undefined;
   const rawPage = Number(scalar(params.pagina) ?? 1);
   const page = Number.isSafeInteger(rawPage) && rawPage > 0 ? rawPage : 1;
-  const data = await Promise.resolve(legislativeOverview({ page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}), ...(sort?{sort}:{}) }));
+  const overviewQuery = { page, pageSize: 5, ...(source ? { source } : {}), ...(uf ? { uf } : {}), ...(party ? { party } : {}), ...(search ? { search } : {}), ...(sort?{sort}:{}) };
+  // Cacheado por combinação de filtros (2 min, mesmo padrão de `/executivo`): a esmagadora maioria das
+  // visitas usa a mesma combinação (sem filtro, página 1) — sem isso, `legislativeOverview` reconstrói
+  // o roster + métricas das 2 casas do zero a cada carga (medido: ~3,4s sozinho).
+  const data = await memo(`legislativo:overview:${JSON.stringify(overviewQuery)}`, () => Promise.resolve(legislativeOverview(overviewQuery)), 2 * 60_000);
   if (data.status === 'unavailable') return <main id="conteudo" tabIndex={-1} className="page-shell py-12"><EmptyState page title="Entrada legislativa indisponível" description={data.message} /></main>;
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;
-  const stateNumbers = await getStateLegislativeNumbers();
+  const stateNumbers = await memo('legislativo:state-numbers', getStateLegislativeNumbers, 2 * 60_000);
   const selected = { casa: source, uf, partido: party, busca: search, ordenacao: sort };
   const mixedCoverage: DataCoverage = { availability: 'available', source: 'multiple', period: { from: null, to: null, grain: 'snapshot' }, batchId: null, note: 'Cadastro ativo; cada métrica conserva período e cobertura próprios.', sampleSize: result.items.length };
   type Item = (typeof result.items)[number];

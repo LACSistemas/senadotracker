@@ -247,7 +247,17 @@ export async function extractPdfText(pdfPath: string): Promise<string> {
 const REO_LABELS = ['PESSOAL E ENCARGOS SOCIAIS', 'OUTRAS DESPESAS CORRENTES', 'CUSTEIO DILIGÊNCIAS DOS OFIC.DE JUSTIÇA', 'CONTRIBUIÇÕES P/FORMAÇÃO DO PASEP/PIS', 'TAXA ADMINISTRAÇÃO SÃO PAULO PREV', 'INVESTIMENTOS', 'INVERSÕES FINANCEIRAS'];
 
 export function parseExecucaoOrcamentaria(text: string, referenceMonthIndex: number): FinanceRow[] {
-  const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+  // P14.39 — achado real no backfill histórico: PDFs multi-página (confirmado em 2019/2021/2022) têm um
+  // marcador de quebra de página ("-- N of M --") e repetem o cabeçalho do relatório no meio da seção de
+  // resumo — sem filtrar, isso quebra o recorte Pessoal..Inversões Financeiras (vira "linha inesperada").
+  const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean).filter(l =>
+    !/^--\s*\d+\s*of\s*\d+\s*--$/i.test(l) &&
+    l !== 'Tribunal de Justiça do Estado de São Paulo' &&
+    l !== 'Secretaria de Orçamento e Finanças' &&
+    l !== 'Relatório da Execução Orçamentária' &&
+    !/^Exercício de \d{4}$/.test(l) &&
+    l !== 'Consolidado' &&
+    !/^JANEIRO\s+FEVEREIRO/.test(l));
   const numRe = /-?[\d.]+,\d{2}|(?<!\S)-(?!\S)/g;
   const extractTrailingValues = (line: string, count: number): number[] | null => {
     const matches = [...line.matchAll(numRe)];

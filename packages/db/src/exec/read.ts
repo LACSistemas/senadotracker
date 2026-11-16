@@ -131,6 +131,32 @@ export async function getHealthBedsByUf(q: Q): Promise<Array<{ ufCode: number; b
     WHERE l.valid_to IS NULL GROUP BY e.uf_code`);
   return r.rows.map(x => ({ ufCode: Number(x.uf_code), bedsExisting: Number(x.existing ?? 0) }));
 }
+/** Série histórica nacional de leitos existentes: `exec_sau_cnes_leito_v` é SCD2 (`valid_from`/`valid_to`
+ * em competência YYYYMM) — soma simples por `valid_from` contaria só os registros alterados naquele mês,
+ * não o total vigente. Em vez disso, soma o que está vigente em dezembro de cada ano (`valid_from <= X AND
+ * (valid_to IS NULL OR valid_to > X)`, X = ano*100+12); para o ano corrente, antes de dezembro acontecer,
+ * essa mesma comparação já devolve o estado mais recente real, porque nenhuma mudança existe depois de
+ * "agora" — não precisa de caso especial. Mesma exclusão de leito tipo 7 (hospital-dia) de
+ * `getNationalHealthSummary`. */
+export interface YearlyBeds { year: number; bedsExisting: number }
+export async function getHealthBedsHistory(q: Q, fromYear = 2013): Promise<YearlyBeds[]> {
+  const toYear = new Date().getFullYear();
+  const r = await q.query(`SELECT p.y::int AS year, coalesce(sum(l.qt_exist) FILTER (WHERE l.tp_leito <> 7), 0)::bigint AS beds
+    FROM generate_series($1::int, $2::int) AS p(y)
+    LEFT JOIN civica_exec.exec_sau_cnes_leito_v l ON l.valid_from <= (p.y * 100 + 12) AND (l.valid_to IS NULL OR l.valid_to > (p.y * 100 + 12))
+    GROUP BY p.y ORDER BY p.y`, [fromYear, toYear]);
+  return r.rows.map(x => ({ year: Number(x.year), bedsExisting: Number(x.beds) }));
+}
+/** Internações SUS (SIH/AIH) somadas nacionalmente por ano de competência de processamento — registro
+ * censitário por subgrupo de procedimento (categorias mutuamente exclusivas: somar não duplica). O ano
+ * corrente aparece parcial (só as competências já processadas), nunca extrapolado. */
+export interface YearlyHospitalizations { year: number; aih: number }
+export async function getHospitalizationsHistory(q: Q, fromYear = 2013): Promise<YearlyHospitalizations[]> {
+  const r = await q.query(`SELECT (competence / 100)::int AS year, sum(n_aih)::bigint AS aih
+    FROM civica_exec.exec_sau_hosp_mes_subgrupo WHERE competence >= $1 * 100 + 1
+    GROUP BY competence / 100 ORDER BY year`, [fromYear]);
+  return r.rows.map(x => ({ year: Number(x.year), aih: Number(x.aih) }));
+}
 export interface HospitalRow { cnes: number; name: string | null; typeLabel: string; sus: boolean; bedsExisting: number; bedsSus: number }
 export async function listHospitals(q: Q, municipalityId: number): Promise<HospitalRow[]> {
   const r = await q.query(`SELECT v.cnes, c.name, coalesce(rc.label, v.tp_unid::text) label, v.vinc_sus,

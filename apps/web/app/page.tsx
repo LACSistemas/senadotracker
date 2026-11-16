@@ -8,17 +8,20 @@ import { loadStates, loadNationalHealthSummary } from '@/lib/exec-territory';
 import { loadHdiAllStates } from '@/lib/territory-idhm';
 import { houseListing } from '@/lib/data';
 import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryTribunalDirectory } from '@/lib/judiciary';
-import { getIdebTerritory, getInfrastructureEditorialKpis } from '@senadotracker/db';
+import { getIdebTerritory, getIdebAllUfs, getInfrastructureEditorialKpis } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
 import { layoutHemicycle, type PartyComposition } from '@/lib/hemicycle';
 import { partyColor, NEUTRAL_PARTY_COLOR } from '@/lib/party-colors';
+import { memo } from '@/lib/security/load';
 
 export const dynamic = 'force-dynamic';
 
 const int = new Intl.NumberFormat('pt-BR');
 
-export default async function HomePage() {
-  const [states, hdiStates, camaraListing, judOverview, judSeries, tribunalDir, health, idebBrasil, infraKpis] = await Promise.all([
+/** Nenhuma chamada desta página depende de parâmetro de rota — cacheada como uma unidade só (60s, mesmo
+ * padrão de `/executivo`) pra não refazer as consultas nacionais a cada carga da home. */
+async function loadHomeData() {
+  const [states, hdiStates, camaraListing, judOverview, judSeries, tribunalDir, health, idebBrasil, infraKpis, idebAllUfs] = await Promise.all([
     loadStates(),
     loadHdiAllStates(),
     houseListing('camara', { page: 1, pageSize: 1 }),
@@ -28,7 +31,14 @@ export default async function HomePage() {
     loadNationalHealthSummary(),
     getIdebTerritory(webPostgresPool(), { stage: 1 }),
     getInfrastructureEditorialKpis(webPostgresPool(), { level: 'BRASIL' }),
-  ]);
+    getIdebAllUfs(webPostgresPool(), { stage: 1, dep: 0 }),
+  ] as const);
+  return { states, hdiStates, camaraListing, judOverview, judSeries, tribunalDir, health, idebBrasil, infraKpis, idebAllUfs };
+}
+const loadHomeDataCached = () => memo('home:hub', loadHomeData, 5 * 60_000);
+
+export default async function HomePage() {
+  const { states, hdiStates, camaraListing, judOverview, judSeries, tribunalDir, health, idebBrasil, infraKpis, idebAllUfs } = await loadHomeDataCached();
 
   const totalPop = states.reduce((s, st) => s + (st.population ?? 0), 0);
   const composition = camaraListing.status === 'available' ? (camaraListing.data as { composition?: PartyComposition }).composition : undefined;
@@ -81,13 +91,21 @@ export default async function HomePage() {
   const idebEditions = idebBrasil ? [...idebBrasil.editions].sort((a, b) => a - b) : [];
   const idebYearTo = idebEditions.at(-1) ?? idebYear;
   const idebYearFrom = idebEditions.at(-2) ?? null;
+  // Antes: 1 `getIdebTerritory` por estado (27 round-trips + resolveEntity interno de cada) — agora 1 única
+  // consulta pras 27 UFs (achado real de performance, ver docs).
   const idebDeltaByUf = new Map<string, { from: number; to: number } | null>();
-  await Promise.all(states.map(async s => {
-    const r = await getIdebTerritory(webPostgresPool(), { ufCode: s.ufCode, stage: 1 });
-    const rowTo = (r?.rows as any[] | undefined)?.find(x => x.dep === 0 && x.year === idebYearTo);
-    const rowFrom = idebYearFrom != null ? (r?.rows as any[] | undefined)?.find(x => x.dep === 0 && x.year === idebYearFrom) : undefined;
-    idebDeltaByUf.set(s.uf, rowTo && rowFrom ? { from: rowFrom.values.ideb, to: rowTo.values.ideb } : null);
-  }));
+  const idebByUfYear = new Map<number, Map<number, number>>();
+  for (const r of idebAllUfs) {
+    if (r.ideb == null) continue;
+    if (!idebByUfYear.has(r.ufCode)) idebByUfYear.set(r.ufCode, new Map());
+    idebByUfYear.get(r.ufCode)!.set(r.year, r.ideb);
+  }
+  for (const s of states) {
+    const byYear = idebByUfYear.get(s.ufCode);
+    const to = byYear?.get(idebYearTo ?? -1);
+    const from = idebYearFrom != null ? byYear?.get(idebYearFrom) : undefined;
+    idebDeltaByUf.set(s.uf, to != null && from != null ? { from, to } : null);
+  }
   const DIVERGING_DOWN = ['var(--map-rose-4)', 'var(--map-rose-2)'] as const;
   const DIVERGING_FLAT = '#e9e7e0';
   const DIVERGING_UP = ['var(--map-blue-2)', 'var(--map-blue-4)'] as const;

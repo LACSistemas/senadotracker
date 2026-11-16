@@ -3,7 +3,7 @@ import { JUDICIARY_SCHEMA } from './postgres-judiciary.ts';
 import { getJudiciaryStjOverview, getJudiciaryStjPrecedentDetail, getJudiciaryStjPrecedents } from './postgres-judiciary-stj.ts';
 import { getJudiciaryStfOverview, getJudiciaryStfTemaDetail, getJudiciaryStfTemas, getJudiciaryStfPayrollOverview, getJudiciaryStfPayrollRoster, getJudiciaryStfPayrollDetail } from './postgres-judiciary-stf.ts';
 import { getJudiciaryStfJurisprudenciaOverview, getJudiciaryStfCasosPorRelator, getJudiciaryStfJurisprudenciaExplorer, getJudiciaryStfJurisprudenciaDoc, type JurisprudenciaFilters } from './postgres-judiciary-stf-jurisprudencia.ts';
-import { getJudiciaryFinancialCoverage, getJudiciaryFinancialOverview, getJudiciaryFinancialMethodology } from './postgres-judiciary-financial.ts';
+import { getJudiciaryFinancialCoverage, getJudiciaryFinancialOverview, getJudiciaryFinancialMethodology, getJudiciaryExpenseByIncisoNational, getJudiciaryExpenseByIncisoHistory } from './postgres-judiciary-financial.ts';
 import { getJudiciaryPersonnelOverview, getJudiciaryPersonnelByCareer, getJudiciarySupplierPayments } from './postgres-judiciary-personnel.ts';
 import { getJudiciaryIndicatorPeerAverage } from './postgres-judiciary-statistics.ts';
 import { STF_MINISTRO_FOTOS } from './judiciary-stf-ministro-fotos.ts';
@@ -62,6 +62,37 @@ export async function getJudiciaryNationalSeries(pool: Pool, indicatorIds: strin
     WHERE i.indicator_id=ANY($1::text[]) AND i.aggregation_allowed='SUM'
     GROUP BY i.indicator_id,i.public_name,i.unit,i.aggregation_allowed,o.reference_year ORDER BY i.indicator_id,o.reference_year`, [indicatorIds, revisionIds])).rows;
   return { availability: rows.length ? 'AVAILABLE' : 'NOT_REPORTED', data: { indicatorIds, items: rows }, provenance: { revisionId: statsRev?.revision_id ?? themeRev?.revision_id, source: 'CNJ Justiça em Números', asOf: statsRev?.activated_at ?? themeRev?.activated_at, limitations: ['Só indicadores SUM; taxas e índices não entram nesta série.'] } };
+}
+
+export async function getJudiciaryExpenseByIncisoOverview(pool: Pool, year?: number): Promise<ServingResult<{ year: number | null; totalTribunals: number; incisos: unknown[] }>> {
+  const incisos = await getJudiciaryExpenseByIncisoNational(pool, year);
+  if (!incisos.length) return { availability: 'SOURCE_UNAVAILABLE', data: { year: year ?? null, totalTribunals: 0, incisos: [] }, provenance: { source: 'civica_jud · Anexo I por tribunal (CNJ Resolução 102/2009)' } };
+  const totalTribunals = Number((await pool.query(`SELECT count(DISTINCT tribunal_id)::int n FROM ${JUDICIARY_SCHEMA}.jud_fin_fact WHERE budget_stage='EXPENSE_REPORTED'`)).rows[0]?.n ?? 0);
+  return {
+    availability: 'AVAILABLE', data: { year: year ?? null, totalTribunals, incisos },
+    provenance: {
+      source: 'civica_jud · Anexo I por tribunal (CNJ Resolução 102/2009), agregado bottom-up a partir da declaração bruta de cada tribunal',
+      limitations: [
+        'STJ não publica no formato Anexo I (orçamento programático distinto) — fica fora desta composição.',
+        'TJSP só reporta os Incisos I–IV no resumo consolidado (REO); não há Inciso V/VI para esse tribunal.',
+        'Inciso IV (Inversões Financeiras) está ausente para 3 tribunais e vale R$ 0 em todos os que o reportam.',
+        'O Inciso V do TJDFT tem um recorte diferente dos demais (detalhamento por Inciso de destino), mas entra no total por ser dinheiro real.',
+        'Cada tribunal foi coletado numa leva única — o período coberto varia por tribunal, não é uma série anual comparável ano a ano.',
+      ],
+    },
+  };
+}
+
+export async function getJudiciaryExpenseByIncisoHistoryOverview(pool: Pool, tribunalId: string): Promise<ServingResult<{ tribunalId: string; years: unknown[] }>> {
+  const years = await getJudiciaryExpenseByIncisoHistory(pool, tribunalId);
+  if (!years.length) return { availability: 'NOT_REPORTED', data: { tribunalId, years: [] }, provenance: { source: 'civica_jud · Anexo I por tribunal (CNJ Resolução 102/2009)' } };
+  return {
+    availability: 'AVAILABLE', data: { tribunalId, years },
+    provenance: {
+      source: 'civica_jud · Anexo I, histórico retroativo (piloto P14.39)',
+      limitations: ['Só o mês de janeiro de cada ano foi coletado retroativamente — não é uma série mensal completa.', 'Só a despesa (Anexo I); headcount/quantitativo de cargos não entra nesta série.'],
+    },
+  };
 }
 
 export async function getJudiciaryTribunalDirectory(pool: Pool, filters:TribunalDirectoryFilters={}) {
