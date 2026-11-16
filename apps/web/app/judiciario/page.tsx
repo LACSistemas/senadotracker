@@ -1,9 +1,13 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, Clock, Gavel, Scale, Users, Wallet } from 'lucide-react';
-import { MultiLineChart, ConcentrationCurve, RankedBars, type MultiLineDatum, type RankedBarItem } from '@/components/charts';
+import Image from 'next/image';
+import { ArrowRight, Building2, Clock, Gauge, Gavel, Scale, Users, Wallet } from 'lucide-react';
+import { MultiLineChart, ConcentrationCurve, type MultiLineDatum } from '@/components/charts';
 import { JudiciaryAvailabilityNote, toChartCoverage } from '@/components/judiciary/availability';
-import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryIndicatorDistribution, loadJudiciaryExpenseByInciso } from '@/lib/judiciary';
+import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryIndicatorDistribution, loadJudiciaryExpenseByInciso, loadJudiciaryInstanceGroupStatistics } from '@/lib/judiciary';
 import { loadJudiciaryThemesCatalog, loadJudiciaryThemeOverview } from '@/lib/judiciary-themes';
+import { mapMarkup } from '@/components/brazil-map-markup';
+import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
+import { mapRamps, emptyFill, darkFrom } from '@/lib/scale';
 
 export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Judiciário · Cívica', description: 'A Justiça brasileira, além dos processos: demanda, acervo, tempo, estrutura, temas e tribunais, com fontes oficiais do CNJ.' };
@@ -12,6 +16,7 @@ const int = new Intl.NumberFormat('pt-BR');
 const pct = new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1, signDisplay: 'always' });
 const moneyCompact = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', notation: 'compact', maximumFractionDigits: 1 });
 const moneyFull = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+const pct1 = new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 });
 const GENERAL_SUM = ['JN_CASES_NEW_G1', 'JN_CASES_NEW_G2', 'JN_DISPOSED', 'JN_CASES_PENDING'] as const;
 // Variáveis-fonte distintas (DMag/DServ/DBen/ODC vs. Dpj) — CNJ documenta explicitamente que não devem ser
 // somadas sem necessidade declarada (ver jud_jn_indicator.method_breaks); por isso a composição abaixo é
@@ -52,7 +57,7 @@ function layoutBeeswarm<T extends { value: number }>(points: T[], { chartWidth, 
 }
 
 export default async function JudiciaryPanoramaPage() {
-  const [overview, series, themes, congestion, featuredTheme, expenseSeries, expensePerMagistrate, expenseByInciso] = await Promise.all([
+  const [overview, series, themes, congestion, featuredTheme, expenseSeries, expensePerMagistrate, expenseByInciso, instanceGroups] = await Promise.all([
     loadJudiciaryOverview(2025),
     loadJudiciaryNationalSeries([...GENERAL_SUM]),
     loadJudiciaryThemesCatalog(),
@@ -61,6 +66,7 @@ export default async function JudiciaryPanoramaPage() {
     loadJudiciaryNationalSeries([...EXPENSE_SUM]),
     loadJudiciaryIndicatorDistribution('JN_EXPENSE_PER_MAGISTRATE', 2025),
     loadJudiciaryExpenseByInciso(),
+    loadJudiciaryInstanceGroupStatistics(2025),
   ]);
 
   if (overview.availability !== 'AVAILABLE') {
@@ -121,6 +127,33 @@ export default async function JudiciaryPanoramaPage() {
     .sort((a, b) => b.institutions - a.institutions);
   function BRANCH_LABEL_OR(code: string) { return BRANCH_ORDER[code] ?? code; }
   const branchMaxInst = Math.max(...branchRows.map(b => b.institutions), 1);
+
+  // P14.41 — 3 cards logo após o hero (Cortes Superiores / Justiça Comum / Justiça Especial). custoMedioPorMagistrado
+  // e taxaCongestionamento são derivados AQUI a partir dos totais somados do grupo (despesa/magistrados,
+  // pendentes/baixados) — nunca a média das razões já prontas de cada tribunal (isso sim seria inválido,
+  // como a nota da seção de congestionamento abaixo já explica para o caso por-tribunal).
+  // Fotos: Wikimedia Commons, licença livre, crédito visível no card (exigido pelas 2 CC BY-SA):
+  // STF — commons.wikimedia.org/wiki/File:Supreme_Federal_Court_of_Brazil.jpg, Rob Sinclair, CC BY-SA 2.0.
+  // TJSP — commons.wikimedia.org/wiki/File:Palácio_da_Justiça_de_São_Paulo_04.jpg, Catherine Gaspar, CC BY-SA 4.0.
+  // TSE — commons.wikimedia.org/wiki/File:TRE_nova_sede_brasilia.jpg, Borowskki, domínio público (PD-self), crédito opcional.
+  const INSTANCE_GROUP_META = [
+    { code: 'CORTES_SUPERIORES' as const, label: 'Cortes Superiores', subtitle: 'STF, STJ, TST, TSE e STM. O topo da estrutura do Judiciário brasileiro.', photo: '/judiciario/stf-building.jpg', photoAlt: 'Fachada do Supremo Tribunal Federal, em Brasília', credit: 'Rob Sinclair · CC BY-SA 2.0' },
+    { code: 'JUSTICA_COMUM' as const, label: 'Justiça Comum', subtitle: 'Justiça Federal e Justiça Estadual. A base da Justiça brasileira.', photo: '/judiciario/tjsp-building.jpg', photoAlt: 'Fachada do Tribunal de Justiça de São Paulo, na Praça da Sé', credit: 'Catherine Gaspar · CC BY-SA 4.0' },
+    { code: 'JUSTICA_ESPECIAL' as const, label: 'Justiça Especial', subtitle: 'Justiça do Trabalho, Justiça Eleitoral e Justiça Militar.', photo: '/judiciario/tse-building.jpg', photoAlt: 'Fachada do Tribunal Superior Eleitoral, em Brasília', credit: 'Borowskki · domínio público' },
+  ];
+  const instanceGroupRows = instanceGroups.availability === 'AVAILABLE' ? instanceGroups.data.groups : [];
+  const instanceGroupCards = INSTANCE_GROUP_META.map(meta => {
+    const row = instanceGroupRows.find(r => r.group === meta.code);
+    const ind = row?.indicators ?? {};
+    const magistrados = ind['JN_ACTIVE_MAGISTRATES']?.additiveTotal ?? null;
+    const despesaTotal = ind['JN_EXPENSE_TOTAL']?.additiveTotal ?? null;
+    const custoMedioPorMagistrado = magistrados && despesaTotal != null && magistrados > 0 ? despesaTotal / magistrados : null;
+    const tempoMedioDias = ind['JN_TIME_DISPOSED_MEAN']?.descriptiveMean ?? null;
+    const pendentes = ind['JN_CASES_PENDING']?.additiveTotal ?? null;
+    const baixados = ind['JN_DISPOSED']?.additiveTotal ?? null;
+    const taxaCongestionamento = pendentes != null && baixados != null && pendentes + baixados > 0 ? pendentes / (pendentes + baixados) : null;
+    return { ...meta, tribunalCount: row?.tribunalCount ?? 0, tribunalsWithData: ind['JN_ACTIVE_MAGISTRATES']?.tribunalsWithData ?? 0, magistrados, despesaTotal, custoMedioPorMagistrado, tempoMedioDias, taxaCongestionamento };
+  });
 
   // Congestionamento: a distribuição completa (CNJ) cobre 91 instituições de todos os ramos — mas
   // "bandeira do estado" só faz sentido pra quem tem uma UF só, então este gráfico fica restrito à
@@ -213,16 +246,36 @@ export default async function JudiciaryPanoramaPage() {
   // do recorte — é a mesma lição de antes (um recorte sem marcação faria o 20º colocado parecer o 9º), só que
   // agora resolvida com rótulo de posição real em vez de mostrar sempre a lista inteira. O ranking completo
   // continua disponível (ver `magistrateExpenseRankedAll`) atrás de um "ver mais".
-  const magistrateExpenseRankedAll: RankedBarItem[] = magistrateExpensePoints.map((p, i) => ({
+  const magistrateExpenseRankedAll = magistrateExpensePoints.map((p, i) => ({
     key: p.sigla,
     label: `${p.sigla} — ${p.name}`,
     value: p.value,
     rank: i + 1,
-    chip: <img src={`/flags/${p.uf}.svg`} alt="" className="h-3.5 w-5 shrink-0 rounded-[2px] border border-border/50 object-cover" />,
   }));
-  const magistrateExpenseTop = magistrateExpenseRankedAll.slice(0, 8);
-  const magistrateExpenseBottom = magistrateExpenseRankedAll.slice(-8);
-  const magistrateExpenseCoverage = toChartCoverage('AVAILABLE', 'CNJ Justiça em Números · os 27 tribunais de Justiça estaduais — restrito à Justiça Estadual (magistrados de carreira em tempo integral); TREs e tribunais superiores não entram por universo e desenho de remuneração diferentes', { from: `${expenseLastYear}-01-01`, to: `${expenseLastYear}-12-31`, grain: 'year' });
+  // P14.40 — sobe pro hero como mapa coroplético (mesmo padrão de /executivo: paintStateMap + banda por
+  // quintil), em vez da lista RankedBars — o valor exato por tribunal continua acessível via tooltip
+  // nativo do SVG (<title>) e na tabela completa abaixo do hero, nunca perdido.
+  const magistrateExpenseByUf = new Map(magistrateExpensePoints.map(p => [p.uf, p]));
+  const magValues = [...magistrateExpensePoints.map(p => p.value)].sort((a, b) => a - b);
+  const magEdges = [0.2, 0.4, 0.6, 0.8].map(q => magValues[Math.floor(q * magValues.length)] ?? 0);
+  const magistrateExpensePaints = new Map<string, StatePaint>(markupUfs(mapMarkup).map(uf => {
+    const point = magistrateExpenseByUf.get(uf);
+    const band = point == null ? -1 : magEdges.filter(e => point.value >= e).length;
+    return [uf, {
+      fill: band < 0 ? emptyFill : mapRamps.rose[band]!,
+      ...(band >= darkFrom ? { ink: '#fff' } : {}),
+      href: `/judiciario/tribunais?uf=${uf}`,
+      title: point ? `${point.name}: ${moneyFull.format(point.value)} por magistrado/ano` : 'Sem dado (fora da Justiça Estadual ou não publicado)',
+      ariaLabel: point ? moneyFull.format(point.value) : 'sem dado',
+    }];
+  }));
+  const magistrateExpenseMap = paintStateMap(mapMarkup, magistrateExpensePaints, {
+    variant: 'jud-magistrate-expense-map', emptyFill,
+    description: `Despesa anual por magistrado, tribunais estaduais, por UF — ${expenseLastYear}`,
+    href: uf => `/judiciario/tribunais?uf=${uf}`,
+  });
+  const magistrateExpenseHighest = magistrateExpensePoints[0] ?? null;
+  const magistrateExpenseLowest = magistrateExpensePoints.at(-1) ?? null;
 
   // Tema em destaque: Violência doméstica — critério explícito (não "o de mais indicadores"): é o tema
   // com série SUM elegível mais completa (338-340 observações nos indicadores principais) E de relevância
@@ -256,25 +309,93 @@ export default async function JudiciaryPanoramaPage() {
 
             <div className="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/10 sm:p-6">
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/60">Casos novos × processos baixados</p>
-                <p className="text-xs text-white/45">CNJ · {heroYears[0]}–{heroYears.at(-1)}</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-white/60">Despesa anual por magistrado, por UF</p>
+                <p className="text-xs text-white/45">CNJ · {expenseLastYear}</p>
               </div>
-              <svg viewBox={`0 0 ${HERO_W} ${HERO_H}`} className="mt-3 h-auto w-full" role="img" aria-label={`Casos novos e processos baixados, ${heroYears[0]} a ${heroYears.at(-1)}`}>
-                <polyline points={heroNewPts.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#9fd8c3" strokeWidth={2.5} />
-                <polyline points={heroDispPts.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#d39a3c" strokeWidth={2.5} />
-                {heroNewPts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="#9fd8c3" />)}
-                {heroDispPts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="#d39a3c" />)}
-                {heroYears.map((y, i) => (i === 0 || i === heroYears.length - 1) && <text key={y} x={heroX(i)} y={HERO_H - 4} textAnchor={i === 0 ? 'start' : 'end'} className="fill-white/50 text-[9px]">{y}</text>)}
-              </svg>
-              <div className="mt-2 flex gap-3 text-xs text-white/70"><span className="flex items-center gap-1"><i className="size-2.5 rounded-sm bg-[#9fd8c3]" /> Casos novos</span><span className="flex items-center gap-1"><i className="size-2.5 rounded-sm bg-[#d39a3c]" /> Processos baixados</span></div>
-              <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/10 pt-5 sm:grid-cols-4">
-                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-white/55">Casos novos</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{newCases !== null ? int.format(newCases) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-white/45">{yoy(newCases, newCasesPrev) ?? overview.data.year}</span></div>
-                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-white/55">Baixados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{disposed?.value != null ? int.format(Number(disposed.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-white/45">{yoy(disposed?.value != null ? Number(disposed.value) : null, disposedPrev) ?? overview.data.year}</span></div>
-                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-white/55">Pendentes</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{pending?.value != null ? int.format(Number(pending.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-white/45">acervo ao fim do ano</span></div>
-                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-white/55">Magistrados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{magistrates?.value != null ? int.format(Number(magistrates.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-white/45">{magistrates?.institutions ?? 0} instituições</span></div>
+              <div className="mx-auto mt-2 w-full max-w-[340px]" dangerouslySetInnerHTML={{ __html: magistrateExpenseMap }} />
+              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[0.65rem] text-white/55">
+                {mapRamps.rose.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2.5 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
               </div>
+              <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/10 pt-4">
+                {magistrateExpenseHighest && <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Maior · {magistrateExpenseHighest.sigla}</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{moneyFull.format(magistrateExpenseHighest.value)}</strong></div>}
+                {magistrateExpenseLowest && <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Menor · {magistrateExpenseLowest.sigla}</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{moneyFull.format(magistrateExpenseLowest.value)}</strong></div>}
+              </div>
+              <p className="mt-3 text-[0.65rem] leading-4 text-white/50">Só Justiça Estadual (magistrados de carreira em tempo integral) — TREs e tribunais superiores não entram, universo e remuneração diferentes.</p>
             </div>
           </div>
+          <details className="border-t border-white/10 bg-black/15 px-6 py-3.5 text-sm text-white/80 sm:px-10">
+            <summary className="cursor-pointer font-bold text-white">Ver os 27 tribunais em tabela</summary>
+            <div className="mt-3 overflow-x-auto rounded-xl bg-white/5">
+              <table className="w-full min-w-[480px] text-left text-sm"><thead><tr><th className="px-4 py-2">UF</th><th className="px-4 py-2">Tribunal</th><th className="px-4 py-2 text-right">Despesa/magistrado</th></tr></thead>
+                <tbody>{magistrateExpenseRankedAll.map((item, i) => <tr key={item.key} className="border-t border-white/10"><td className="px-4 py-2 font-bold">{magistrateExpensePoints[i]!.uf}</td><td className="px-4 py-2">{item.label}</td><td className="px-4 py-2 text-right tabular-nums">{moneyFull.format(item.value)}</td></tr>)}</tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">Como a Justiça está organizada</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">93 instituições, agrupadas pelas 3 grandes instâncias do Judiciário brasileiro, cada uma com seu próprio peso em magistrados, orçamento e represamento de processos.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            {instanceGroupCards.map(g => (
+              <div key={g.code} className="flex flex-col overflow-hidden rounded-2xl border bg-background">
+                <div className="relative h-36 w-full bg-muted">
+                  <Image src={g.photo} alt={g.photoAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+                  <span className="absolute bottom-1 right-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[0.55rem] leading-none text-white/85">Foto: {g.credit}</span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="display-title text-xl leading-tight">{g.label}</h3>
+                    <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-bold text-muted-foreground">{g.tribunalCount} tribunais</span>
+                  </div>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{g.subtitle}</p>
+
+                  <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 border-t pt-4">
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Users size={13} aria-hidden /> Magistrados</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{g.magistrados != null ? int.format(g.magistrados) : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">desde {overview.data.year}</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Wallet size={13} aria-hidden /> Custo total anual</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{g.despesaTotal != null ? moneyCompact.format(g.despesaTotal) : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">desde {overview.data.year}</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Scale size={13} aria-hidden /> Custo/magistrado</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{g.custoMedioPorMagistrado != null ? moneyCompact.format(g.custoMedioPorMagistrado) : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">despesa ÷ magistrados do grupo</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Clock size={13} aria-hidden /> Tempo médio</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{g.tempoMedioDias != null ? `${int.format(Math.round(g.tempoMedioDias))} dias` : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">média simples entre tribunais</span>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border bg-card px-3.5 py-3">
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground"><Gauge size={14} aria-hidden /> Taxa de congestionamento</span>
+                    <strong className="display-title text-lg leading-none">{g.taxaCongestionamento != null ? pct1.format(g.taxaCongestionamento) : '—'}</strong>
+                  </div>
+
+                  {g.code === 'CORTES_SUPERIORES' ? (
+                    <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Não inclui o STF: fora do escopo do Justiça em Números do CNJ, que publica a estatística dele separadamente. Soma só STJ, STM, TST e TSE.</p>
+                  ) : (
+                    <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Taxa agregada do grupo (soma de pendentes ÷ soma de pendentes+baixados) — não é a média das taxas de cada tribunal.</p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">CNJ Justiça em Números · {overview.data.year}.</p>
         </div>
       </section>
 
@@ -284,7 +405,7 @@ export default async function JudiciaryPanoramaPage() {
             <Wallet className="mt-1 shrink-0 text-primary" aria-hidden />
             <div>
               <h2 className="text-3xl font-black tracking-tight">Como a Justiça gasta o dinheiro</h2>
-              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Soma nacional declarada por {expenseInstitutions} instituições ao CNJ, por categoria de despesa — folha de magistrados e servidores, benefícios a inativos e pensionistas, e o que cada tribunal arrecada de volta em custas e emolumentos.</p>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Soma nacional declarada por {expenseInstitutions} instituições ao CNJ, por categoria de despesa : folha de magistrados e servidores, benefícios a inativos e pensionistas, e o que cada tribunal arrecada de volta em custas e emolumentos.</p>
             </div>
           </div>
 
@@ -322,32 +443,25 @@ export default async function JudiciaryPanoramaPage() {
           </div>
 
           {magistrateExpenseRankedAll.length > 0 && (
-            <div className="mt-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <RankedBars
-                  title={`Maiores despesas anuais por magistrado, tribunais estaduais · ${expenseLastYear}`}
-                  items={magistrateExpenseTop}
-                  formatValue={(v) => moneyFull.format(v)}
-                  coverage={magistrateExpenseCoverage}
-                />
-                <RankedBars
-                  title={`Menores despesas anuais por magistrado, tribunais estaduais · ${expenseLastYear}`}
-                  items={magistrateExpenseBottom}
-                  formatValue={(v) => moneyFull.format(v)}
-                  coverage={magistrateExpenseCoverage}
-                />
+            <div className="mt-6 rounded-2xl border bg-background p-5 sm:p-6">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Casos novos × processos baixados</p>
+                <p className="text-xs text-muted-foreground">CNJ · {heroYears[0]}–{heroYears.at(-1)}</p>
               </div>
-              <details className="mt-4 text-sm">
-                <summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver o ranking completo (27 tribunais)</summary>
-                <div className="mt-4">
-                  <RankedBars
-                    title={`Despesa anual por magistrado, tribunais estaduais · ${expenseLastYear}`}
-                    items={magistrateExpenseRankedAll}
-                    formatValue={(v) => moneyFull.format(v)}
-                    coverage={magistrateExpenseCoverage}
-                  />
-                </div>
-              </details>
+              <svg viewBox={`0 0 ${HERO_W} ${HERO_H}`} className="mt-3 h-auto w-full" role="img" aria-label={`Casos novos e processos baixados, ${heroYears[0]} a ${heroYears.at(-1)}`}>
+                <polyline points={heroNewPts.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#9fd8c3" strokeWidth={2.5} />
+                <polyline points={heroDispPts.map(p => `${p.x},${p.y}`).join(' ')} fill="none" stroke="#d39a3c" strokeWidth={2.5} />
+                {heroNewPts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="#9fd8c3" />)}
+                {heroDispPts.map((p, i) => <circle key={i} cx={p.x} cy={p.y} r={2.5} fill="#d39a3c" />)}
+                {heroYears.map((y, i) => (i === 0 || i === heroYears.length - 1) && <text key={y} x={heroX(i)} y={HERO_H - 4} textAnchor={i === 0 ? 'start' : 'end'} className="fill-muted-foreground text-[9px]">{y}</text>)}
+              </svg>
+              <div className="mt-2 flex gap-3 text-xs text-muted-foreground"><span className="flex items-center gap-1"><i className="size-2.5 rounded-sm bg-[#9fd8c3]" /> Casos novos</span><span className="flex items-center gap-1"><i className="size-2.5 rounded-sm bg-[#d39a3c]" /> Processos baixados</span></div>
+              <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-4 border-t pt-5 sm:grid-cols-4">
+                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Casos novos</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{newCases !== null ? int.format(newCases) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">{yoy(newCases, newCasesPrev) ?? overview.data.year}</span></div>
+                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Baixados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{disposed?.value != null ? int.format(Number(disposed.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">{yoy(disposed?.value != null ? Number(disposed.value) : null, disposedPrev) ?? overview.data.year}</span></div>
+                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Pendentes</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{pending?.value != null ? int.format(Number(pending.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">acervo ao fim do ano</span></div>
+                <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Magistrados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{magistrates?.value != null ? int.format(Number(magistrates.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">{magistrates?.institutions ?? 0} instituições</span></div>
+              </div>
             </div>
           )}
         </div>
@@ -392,13 +506,13 @@ export default async function JudiciaryPanoramaPage() {
         <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
           <div className="min-w-0">
             <h2 className="text-3xl font-black tracking-tight">A Justiça em movimento</h2>
-            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">O que acontece com os processos que chegam, ano a ano: quantos entram, quantos saem e quantos ficam. Casos novos e baixados não se compensam automaticamente — pendentes é o acervo publicado pelo CNJ, não uma conta derivada destes dois números.</p>
+            <p className="mt-2 max-w-2xl text-sm text-muted-foreground">O que acontece com os processos que chegam, ano a ano: quantos entram, quantos saem e quantos ficam. Casos novos e baixados não se compensam automaticamente : pendentes é o acervo publicado pelo CNJ, não uma conta derivada destes dois números.</p>
             <div className="mt-6"><MultiLineChart title={`Casos novos, baixados e pendentes · ${years[0]}–${years.at(-1)}`} data={seriesChart} coverage={seriesCoverage} /></div>
           </div>
           <aside className="rounded-2xl border bg-card p-5">
             <Building2 className="text-primary" aria-hidden />
             <h3 className="mt-3 text-lg font-black">Como a Justiça se organiza?</h3>
-            <p className="mt-2 text-sm text-muted-foreground">Tribunais reais por ramo — quem julga o quê, e quantas instituições cada um tem.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Tribunais reais por ramo : Quem julga o quê, e quantas instituições cada um tem.</p>
             <div className="mt-4 space-y-2.5 border-t pt-4">
               {branchRows.map(b => (
                 <Link key={b.code} href={`/judiciario/tribunais?ramo=${b.code}`} className="focus-ring block rounded-lg hover:bg-muted">
@@ -415,7 +529,7 @@ export default async function JudiciaryPanoramaPage() {
       <section id="congestionamento" className="border-t bg-card py-10">
         <div className="page-shell">
           <h2 className="text-3xl font-black tracking-tight">Congestionamento e tempo</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">A taxa de congestionamento mede, para cada tribunal, a proporção de processos que ficou represada no ano — não existe uma única taxa nacional válida, porque tribunais com acervos e universos muito diferentes não podem ser somados numa média simples. O que existe, de verdade, é variação: alguns tribunais represam uma fração pequena do que recebem; outros, a maior parte.</p>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">A taxa de congestionamento mede, para cada tribunal, a proporção de processos que ficou represada no ano. Não existe uma única taxa nacional válida, porque tribunais com acervos e universos muito diferentes não podem ser somados numa média simples. O que existe, de verdade, é variação: alguns tribunais represam uma fração pequena do que recebem; outros, a maior parte.</p>
           {congestionPoints.length > 0 && congestionMin && congestionMax && congestionMedian && (
             <div className="mt-6 rounded-2xl border bg-background p-6">
               <p className="text-xs font-bold uppercase text-muted-foreground">Taxa de congestionamento · {congestionPoints.length} tribunais estaduais · {overview.data.year}</p>

@@ -64,6 +64,54 @@ export async function getJudiciaryNationalSeries(pool: Pool, indicatorIds: strin
   return { availability: rows.length ? 'AVAILABLE' : 'NOT_REPORTED', data: { indicatorIds, items: rows }, provenance: { revisionId: statsRev?.revision_id ?? themeRev?.revision_id, source: 'CNJ Justiça em Números', asOf: statsRev?.activated_at ?? themeRev?.activated_at, limitations: ['Só indicadores SUM; taxas e índices não entram nesta série.'] } };
 }
 
+export type InstanceGroupCode = 'CORTES_SUPERIORES' | 'JUSTICA_COMUM' | 'JUSTICA_ESPECIAL';
+const INSTANCE_GROUP_CASE = `CASE
+      WHEN b.code='STF' OR b.code='SUPERIOR' THEN 'CORTES_SUPERIORES'
+      WHEN b.code='TRABALHO' AND t.sigla='TST' THEN 'CORTES_SUPERIORES'
+      WHEN b.code='ELEITORAL' AND t.sigla='TSE' THEN 'CORTES_SUPERIORES'
+      WHEN b.code IN ('FEDERAL','ESTADUAL') THEN 'JUSTICA_COMUM'
+      WHEN b.code IN ('TRABALHO','ELEITORAL','MILITAR') THEN 'JUSTICA_ESPECIAL'
+    END`;
+
+/** P14.41 — 3 blocos pro card logo após o hero: Cortes Superiores (STF+STJ+STM+TST+TSE), Justiça Comum
+ * (Federal+Estadual) e Justiça Especial (Trabalho+Eleitoral+Militar, exceto os tribunais superiores que já
+ * foram pros Cortes Superiores). Não é agrupamento por `branch.code` puro — TST mora em `TRABALHO` e TSE em
+ * `ELEITORAL` junto com as instâncias regionais, por isso o CASE separa por `sigla` nesses dois casos.
+ * Achado real: o STF não tem nenhuma observação em `jud_jn_observation` (não é coberto pelo Justiça em
+ * Números do CNJ, que publica a estatística dele por fora) — o grupo Cortes Superiores soma só STJ/STM/
+ * TST/TSE; o chamador deve avisar isso na UI, não assumir que o total inclui o STF. */
+export async function getJudiciaryInstanceGroupStatistics(pool: Pool, year = 2025): Promise<ServingResult<{ year: number; groups: Array<{ group: InstanceGroupCode; tribunalCount: number; indicators: Record<string, { additiveTotal: number | null; descriptiveMean: number | null; tribunalsWithData: number }> }> }>> {
+  const indicatorIds = ['JN_ACTIVE_MAGISTRATES', 'JN_EXPENSE_TOTAL', 'JN_CASES_PENDING', 'JN_DISPOSED', 'JN_TIME_DISPOSED_MEAN'];
+  const [statsRev, themeRev] = await Promise.all([activeRevision(pool, 'JN_STATISTICS'), activeRevision(pool, 'JN_THEMATIC')]);
+  const revisionIds = [statsRev?.revision_id, themeRev?.revision_id].filter((x): x is string => !!x);
+  const counts = (await pool.query(`SELECT ${INSTANCE_GROUP_CASE} AS card_group, count(*)::int AS n FROM ${JUDICIARY_SCHEMA}.jud_tribunal t JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id GROUP BY 1 HAVING ${INSTANCE_GROUP_CASE} IS NOT NULL`)).rows as Array<{ card_group: InstanceGroupCode; n: number }>;
+  if (!revisionIds.length) return { availability: 'SOURCE_UNAVAILABLE', data: { year, groups: [] }, provenance: { source: 'CNJ Justiça em Números' } };
+  const rows = (await pool.query(`
+    WITH classified AS (SELECT t.tribunal_id, t.sigla, ${INSTANCE_GROUP_CASE} AS card_group FROM ${JUDICIARY_SCHEMA}.jud_tribunal t JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id)
+    SELECT c.card_group, o.indicator_id,
+      sum(o.value_numeric) FILTER (WHERE i.aggregation_allowed='SUM') AS additive_total,
+      avg(o.value_numeric) FILTER (WHERE i.aggregation_allowed='MEAN_ONLY') AS descriptive_mean,
+      count(DISTINCT o.canonical_tribunal_id)::int AS tribunals_with_data
+    FROM classified c
+    JOIN ${JUDICIARY_SCHEMA}.jud_jn_observation o ON o.canonical_tribunal_id=c.tribunal_id AND o.reference_year=$1 AND o.publication_revision_id=ANY($2::text[])
+    JOIN ${JUDICIARY_SCHEMA}.jud_jn_indicator i ON i.indicator_id=o.indicator_id
+    WHERE c.card_group IS NOT NULL AND o.indicator_id=ANY($3::text[])
+    GROUP BY c.card_group, o.indicator_id`, [year, revisionIds, indicatorIds])).rows;
+  const groups: InstanceGroupCode[] = ['CORTES_SUPERIORES', 'JUSTICA_COMUM', 'JUSTICA_ESPECIAL'];
+  const data = {
+    year,
+    groups: groups.map(group => ({
+      group, tribunalCount: counts.find(c => c.card_group === group)?.n ?? 0,
+      indicators: Object.fromEntries(rows.filter(r => r.card_group === group).map(r => [r.indicator_id, {
+        additiveTotal: r.additive_total != null ? Number(r.additive_total) : null,
+        descriptiveMean: r.descriptive_mean != null ? Number(r.descriptive_mean) : null,
+        tribunalsWithData: Number(r.tribunals_with_data),
+      }])),
+    })),
+  };
+  return { availability: rows.length ? 'AVAILABLE' : 'NOT_REPORTED', data, provenance: { revisionId: statsRev?.revision_id, source: 'CNJ Justiça em Números', asOf: statsRev?.activated_at, limitations: ['Cortes Superiores não inclui o STF (fora do escopo do Justiça em Números do CNJ).'] } };
+}
+
 export async function getJudiciaryExpenseByIncisoOverview(pool: Pool, year?: number): Promise<ServingResult<{ year: number | null; totalTribunals: number; incisos: unknown[] }>> {
   const incisos = await getJudiciaryExpenseByIncisoNational(pool, year);
   if (!incisos.length) return { availability: 'SOURCE_UNAVAILABLE', data: { year: year ?? null, totalTribunals: 0, incisos: [] }, provenance: { source: 'civica_jud · Anexo I por tribunal (CNJ Resolução 102/2009)' } };
