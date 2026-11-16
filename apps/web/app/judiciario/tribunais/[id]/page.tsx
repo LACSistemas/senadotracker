@@ -1,16 +1,21 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowRight, Banknote, Building2, Gavel, Scale } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Banknote, Building2, Gauge, Gavel, Hourglass, Landmark, Scale, Users } from 'lucide-react';
 import { KpiCard, KpiGrid } from '@/components/metrics';
 import { MultiLineChart, LineChart } from '@/components/charts';
 import { ChapterNav, type NavItem } from '@/components/security/chapter-nav';
 import { JudiciaryAvailabilityNote, toChartCoverage } from '@/components/judiciary/availability';
 import { MethodologyPanel, type IndicatorMethodology } from '@/components/judiciary/methodology-panel';
 import { MinisterCard } from '@/components/judiciary/minister-card';
+import { InstitutionalImage } from '@/components/app-image';
 import { loadJudiciaryTribunalProfile, loadJudiciaryTribunalSeries, loadJudiciaryStjOverview, loadJudiciaryStjPrecedents, loadJudiciaryStfOverview, loadJudiciaryStfTemas, loadJudiciaryStfPayrollSummary, loadJudiciaryStfPayrollRoster, loadJudiciaryStfGeneralJurisprudenceOverview, loadJudiciaryPersonnelProfile, loadJudiciaryExpenseByIncisoHistory } from '@/lib/judiciary';
 import { StatGrid, BarList } from '@/components/infrastructure/infrastructure-ui';
 import { loadJudiciaryThemeByTribunal } from '@/lib/judiciary-themes';
 import type { JudiciaryThemeId } from '@senadotracker/db';
+
+// P14.44 — redesenho visual (só visual: nenhum dado novo). As 3 únicas fotos reais de prédio que o
+// Cívica já publicou (P14.41, cards de /judiciario) — os outros 90 tribunais continuam com o ícone.
+const TRIBUNAL_PHOTO: Partial<Record<string, string>> = { STF: '/judiciario/stf-building.jpg', TJSP: '/judiciario/tjsp-building.jpg', TSE: '/judiciario/tse-building.jpg' };
 
 export const dynamic = 'force-dynamic';
 type Props = { params: Promise<{ id: string }> };
@@ -116,26 +121,31 @@ export default async function TribunalProfilePage({ params }: Props) {
       </div>
 
       <div className="page-shell py-4">
-        <div className="overflow-hidden rounded-[1.5rem] bg-primary text-primary-foreground">
-          <div className="flex flex-col gap-5 p-6 sm:p-8 lg:flex-row lg:items-center lg:justify-between">
-            <div className="flex min-w-0 items-start gap-4">
-              <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-white/15"><Building2 size={26} aria-hidden /></span>
-              <div className="min-w-0">
-                <p className="text-xs font-bold uppercase tracking-wide text-white/70">{tribunal.branch_name}{tribunal.seat_uf ? ` · ${tribunal.seat_uf}` : ''}</p>
-                <h1 className="display-title mt-1 text-2xl break-words sm:text-3xl">{tribunal.official_name} ({tribunal.sigla})</h1>
-                <p className="mt-2 max-w-xl text-sm text-white/80">{levelLabel} — {isStf || isStj ? 'responsável por sua competência constitucional nacional.' : 'responsável por processar e julgar as causas de sua competência.'}</p>
-              </div>
+        <div className="overflow-hidden rounded-[1.5rem] border bg-card">
+          <div className="flex flex-col gap-5 p-6 sm:flex-row sm:p-7">
+            <div className="relative h-28 w-full shrink-0 overflow-hidden rounded-2xl bg-primary sm:h-auto sm:w-44">
+              {TRIBUNAL_PHOTO[tribunal.sigla] ? <InstitutionalImage src={TRIBUNAL_PHOTO[tribunal.sigla]!} /> : <span className="grid size-full place-items-center text-primary-foreground"><Building2 size={32} aria-hidden /></span>}
             </div>
-            <div className="flex shrink-0 flex-wrap gap-2 lg:flex-col lg:items-end">
-              {tribunal.seat_uf && <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold">{tribunal.seat_uf}</span>}
-              <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold">Ano-base: 2025</span>
-              {tribunal.source_url ? <a href={tribunal.source_url} className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold underline">Fonte: CNJ — Justiça em Números</a> : <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold">Fonte: CNJ — Justiça em Números</span>}
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-xs font-bold uppercase tracking-wide text-primary">{tribunal.branch_name}{tribunal.seat_uf ? ` · ${tribunal.seat_uf}` : ''}</p>
+                  <h1 className="display-title mt-1 text-2xl break-words sm:text-3xl">{tribunal.official_name} ({tribunal.sigla})</h1>
+                </div>
+                {tribunal.source_url && <a href={tribunal.source_url} target="_blank" rel="noreferrer" className="focus-ring inline-flex shrink-0 items-center gap-1.5 rounded-full border border-primary px-4 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground">Acessar site oficial <ArrowUpRight size={14} aria-hidden /></a>}
+              </div>
+              <p className="mt-2 max-w-xl text-sm text-muted-foreground">{levelLabel} — {isStf || isStj ? 'responsável por sua competência constitucional nacional.' : 'responsável por processar e julgar as causas de sua competência.'}</p>
+              <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1.5 text-xs font-bold text-muted-foreground">
+                {tribunal.seat_uf && <span>{tribunal.seat_uf}</span>}
+                <span>Ano-base: 2025</span>
+                <span>Fonte: CNJ — Justiça em Números</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="page-shell py-3"><ChapterNav items={activeChapters} layout="inline" /></div>
+      <div className="page-shell py-3"><ChapterNav items={activeChapters} layout="tabs" /></div>
 
       <div className="page-shell space-y-14 pb-16">
           <section id="visao-geral" className="scroll-mt-24">
@@ -143,9 +153,9 @@ export default async function TribunalProfilePage({ params }: Props) {
             <div className="mt-4"><KpiGrid>
               <KpiCard icon={Scale} label="Casos novos" value={newCases !== null ? int.format(newCases) : '—'} coverage={coverageFor(newCases !== null)} comparison="1º + 2º grau · 2025" />
               <KpiCard icon={Gavel} label="Processos baixados" value={disposed?.value_numeric != null ? int.format(Number(disposed.value_numeric)) : '—'} coverage={coverageFor(disposed?.value_numeric != null)} comparison="2025" />
-              <KpiCard label="Processos pendentes" value={pending?.value_numeric != null ? int.format(Number(pending.value_numeric)) : '—'} coverage={coverageFor(pending?.value_numeric != null)} comparison="acervo ao fim do ano" />
-              <KpiCard label="Taxa de congestionamento" value={congestionPct != null ? `${congestionPct.toFixed(1)}%` : '—'} coverage={coverageFor(congestionPct != null)} comparison={congestionPct != null ? 'proporção represada no ano, deste tribunal' : null} />
-              {pendingPer100k?.value_numeric != null && <KpiCard label="Pendentes por 100 mil habitantes" value={int.format(Math.round(Number(pendingPer100k.value_numeric)))} coverage={coverageFor(true)} comparison={peerHint('JN_CASES_PENDING_PER_100K', Number(pendingPer100k.value_numeric), v => int.format(Math.round(v))) ?? 'Razão calculada pela Cívica (CNJ não publica esta razão); só para tribunais de justiça estaduais'} />}
+              <KpiCard icon={Hourglass} label="Processos pendentes" value={pending?.value_numeric != null ? int.format(Number(pending.value_numeric)) : '—'} coverage={coverageFor(pending?.value_numeric != null)} comparison="acervo ao fim do ano" />
+              <KpiCard icon={Gauge} label="Taxa de congestionamento" value={congestionPct != null ? `${congestionPct.toFixed(1)}%` : '—'} coverage={coverageFor(congestionPct != null)} comparison={congestionPct != null ? 'proporção represada no ano, deste tribunal' : null} />
+              {pendingPer100k?.value_numeric != null && <KpiCard icon={Users} label="Pendentes por 100 mil habitantes" value={int.format(Math.round(Number(pendingPer100k.value_numeric)))} coverage={coverageFor(true)} comparison={peerHint('JN_CASES_PENDING_PER_100K', Number(pendingPer100k.value_numeric), v => int.format(Math.round(v))) ?? 'Razão calculada pela Cívica (CNJ não publica esta razão); só para tribunais de justiça estaduais'} />}
             </KpiGrid></div>
           </section>
 
@@ -153,6 +163,7 @@ export default async function TribunalProfilePage({ params }: Props) {
             <div id="atividade" className="min-w-0 scroll-mt-24">
               <h2 className="text-2xl font-black">Movimentação processual</h2>
               <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Casos novos, baixados e pendentes no exercício — estes três números não se compensam automaticamente entre si.</p>
+              <div className="mt-4"><CaseFlow novos={newCases} baixados={disposed?.value_numeric != null ? Number(disposed.value_numeric) : null} pendentes={pending?.value_numeric != null ? Number(pending.value_numeric) : null} /></div>
               <div className="mt-4"><TribunalIndicatorSeries tribunalId={tribunalId} indicatorId="JN_CASES_NEW_G1" title="Casos novos — 1º grau" /></div>
             </div>
             <div id="tempo" className="scroll-mt-24 space-y-4">
@@ -175,21 +186,24 @@ export default async function TribunalProfilePage({ params }: Props) {
           <section className="flex flex-wrap gap-3">
             <h2 className="sr-only">Em destaque</h2>
             <Link href="#estrutura" className="focus-ring min-w-[220px] flex-1 rounded-2xl border bg-card p-5 hover:border-primary sm:max-w-xs"><Building2 className="text-primary" aria-hidden /><strong className="mt-3 block">Estrutura e pessoas</strong><p className="mt-1 text-xs text-muted-foreground">{magistrates?.value_numeric != null ? `${int.format(Number(magistrates.value_numeric))} magistrados ativos` : 'Magistrados e unidades'}</p></Link>
-            {(expenseTotal || financial?.facts?.length) && <Link href="#financas" className="focus-ring min-w-[220px] flex-1 rounded-2xl border bg-card p-5 hover:border-primary sm:max-w-xs"><Banknote className="text-primary" aria-hidden /><strong className="mt-3 block">Finanças</strong><p className="mt-1 text-xs text-muted-foreground">{expenseTotal?.value_numeric != null ? `${money.format(Number(expenseTotal.value_numeric))} em despesas (2025)` : 'Despesas publicadas'}</p></Link>}
+            {Boolean(expenseTotal || financial?.facts?.length) && <Link href="#financas" className="focus-ring min-w-[220px] flex-1 rounded-2xl border bg-card p-5 hover:border-primary sm:max-w-xs"><Banknote className="text-primary" aria-hidden /><strong className="mt-3 block">Finanças</strong><p className="mt-1 text-xs text-muted-foreground">{expenseTotal?.value_numeric != null ? `${money.format(Number(expenseTotal.value_numeric))} em despesas (2025)` : 'Despesas publicadas'}</p></Link>}
             {themeChapters.length > 0 && <Link href="#temas" className="focus-ring min-w-[220px] flex-1 rounded-2xl border bg-card p-5 hover:border-primary sm:max-w-xs"><Gavel className="text-primary" aria-hidden /><strong className="mt-3 block">Assuntos</strong><p className="mt-1 text-xs text-muted-foreground">Principais classes e matérias deste tribunal</p></Link>}
           </section>
 
           <section id="estrutura" className="scroll-mt-24">
             <h2 className="text-2xl font-black">Estrutura</h2>
             <div className="mt-4"><KpiGrid>
-              <KpiCard label="Magistrados atuantes" value={magistrates?.value_numeric != null ? int.format(Number(magistrates.value_numeric)) : '—'} coverage={coverageFor(magistrates?.value_numeric != null)} comparison={magistratesPer100k?.value_numeric != null ? peerHint('JN_MAGISTRATES_PER_100K', Number(magistratesPer100k.value_numeric), v => `${ratio1.format(v)}/100 mil hab.`) ?? `${ratio1.format(Number(magistratesPer100k.value_numeric))} por 100 mil habitantes` : null} />
-              <KpiCard label="Pessoal efetivo" value={staff?.value_numeric != null ? int.format(Number(staff.value_numeric)) : '—'} coverage={coverageFor(staff?.value_numeric != null)} comparison={staffPer100k?.value_numeric != null ? peerHint('JN_STAFF_PER_100K', Number(staffPer100k.value_numeric), v => `${ratio1.format(v)}/100 mil hab.`) ?? `${ratio1.format(Number(staffPer100k.value_numeric))} por 100 mil habitantes` : null} />
-              <KpiCard label="Unidades conhecidas" value={units.length ? int.format(units.length) : '—'} coverage={coverageFor(units.length > 0)} comparison={units.length ? `${units.filter(u => u.active).length} ativas` : 'sem unidades catalogadas'} />
+              <KpiCard icon={Scale} label="Magistrados atuantes" value={magistrates?.value_numeric != null ? int.format(Number(magistrates.value_numeric)) : '—'} coverage={coverageFor(magistrates?.value_numeric != null)} comparison={magistratesPer100k?.value_numeric != null ? peerHint('JN_MAGISTRATES_PER_100K', Number(magistratesPer100k.value_numeric), v => `${ratio1.format(v)}/100 mil hab.`) ?? `${ratio1.format(Number(magistratesPer100k.value_numeric))} por 100 mil habitantes` : null} />
+              <KpiCard icon={Users} label="Pessoal efetivo" value={staff?.value_numeric != null ? int.format(Number(staff.value_numeric)) : '—'} coverage={coverageFor(staff?.value_numeric != null)} comparison={staffPer100k?.value_numeric != null ? peerHint('JN_STAFF_PER_100K', Number(staffPer100k.value_numeric), v => `${ratio1.format(v)}/100 mil hab.`) ?? `${ratio1.format(Number(staffPer100k.value_numeric))} por 100 mil habitantes` : null} />
+              <KpiCard icon={Landmark} label="Unidades conhecidas" value={units.length ? int.format(units.length) : '—'} coverage={coverageFor(units.length > 0)} comparison={units.length ? `${units.filter(u => u.active).length} ativas` : 'sem unidades catalogadas'} />
             </KpiGrid></div>
             {pilotUnits.length > 0 && <p className="mt-3 text-xs leading-5 text-muted-foreground">{pilotUnits.length} unidades vêm de um piloto de correspondência territorial (TJBA/TJRJ) — cobertura parcial, não o cadastro oficial completo de varas.</p>}
           </section>
 
-          {(expenseTotal || financial?.facts?.length || financial?.payroll?.length) && (() => {
+          {/* Achado real (P14.44): `financial?.facts?.length` cai pra `0` (não `false`) quando o array
+           * existe mas está vazio — sem `Boolean(...)`, `0 && <JSX/>` renderiza o "0" como texto na
+           * tela (visível no STF, que não tem `financial.facts`). Mesmo risco na linha 189. */}
+          {Boolean(expenseTotal || financial?.facts?.length || financial?.payroll?.length) && (() => {
             const facts = (financial?.facts ?? []) as Array<{ reference_year: number; reference_month: number | null; account: string; budget_stage: string; expense_category: string | null; amount_cents: string }>;
             const latestPeriod = facts.length ? facts.reduce((a, b) => (b.reference_year > a.reference_year || (b.reference_year === a.reference_year && (b.reference_month ?? 0) > (a.reference_month ?? 0))) ? b : a) : null;
             const latestFacts = latestPeriod ? facts.filter(f => f.reference_year === latestPeriod.reference_year && f.reference_month === latestPeriod.reference_month) : [];
@@ -201,14 +215,47 @@ export default async function TribunalProfilePage({ params }: Props) {
             return (
               <section id="financas" className="scroll-mt-24">
                 <h2 className="text-2xl font-black">Finanças</h2>
+                {expenseTotal?.value_numeric != null && (() => {
+                  const total = Number(expenseTotal.value_numeric);
+                  const parts = [
+                    { label: 'Pessoal (servidores)', value: expenseServers?.value_numeric != null ? Number(expenseServers.value_numeric) : null },
+                    { label: 'Benefícios', value: expenseBenefits?.value_numeric != null ? Number(expenseBenefits.value_numeric) : null },
+                    { label: 'Magistrados', value: expenseMagistrates?.value_numeric != null ? Number(expenseMagistrates.value_numeric) : null },
+                    { label: 'Outras despesas correntes', value: expenseOtherCurrent?.value_numeric != null ? Number(expenseOtherCurrent.value_numeric) : null },
+                  ].filter((p): p is { label: string; value: number } => p.value != null);
+                  // Só mostra a fórmula quando TODOS os 4 componentes existem — soma parcial exibida
+                  // como "igual ao total" seria enganosa (mesma regra de ausência honesta do resto da página).
+                  if (parts.length !== 4) return null;
+                  return (
+                    <div className="mt-4 rounded-2xl border bg-card p-5">
+                      <p className="text-sm font-bold">Despesa total = Pessoal + Benefícios + Magistrados + Outras</p>
+                      <div className="mt-4 flex flex-wrap items-stretch gap-2">
+                        <div className="min-w-[9rem] rounded-xl bg-primary px-4 py-3 text-primary-foreground">
+                          <p className="text-[0.65rem] font-bold uppercase tracking-wide text-white/70">Despesa total</p>
+                          <strong className="mt-1 block text-xl font-black tabular-nums">{money.format(total)}</strong>
+                        </div>
+                        {parts.map(p => (
+                          <div key={p.label} className="flex items-center gap-2">
+                            <span className="text-lg font-black text-muted-foreground" aria-hidden>+</span>
+                            <div className="min-w-[9rem] rounded-xl border bg-background px-4 py-3">
+                              <p className="text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground">{p.label}</p>
+                              <strong className="mt-1 block text-lg font-black tabular-nums">{money.format(p.value)}</strong>
+                              <span className="text-[0.65rem] text-muted-foreground">{(p.value / total * 100).toFixed(0)}% do total</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
                 {expenseTotal && <div className="mt-4"><KpiGrid>
-                  <KpiCard label="Despesa total" value={expenseTotal.value_numeric != null ? money.format(Number(expenseTotal.value_numeric)) : '—'} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_TOTAL', Number(expenseTotal.value_numeric), v => money.format(v)) ?? 'CNJ Justiça em Números · 2025'} />
-                  {expensePerCapita?.value_numeric != null && <KpiCard label="Despesa total por habitante" value={money.format(Number(expensePerCapita.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_PER_CAPITA', Number(expensePerCapita.value_numeric), v => money.format(v)) ?? 'Razão oficial do CNJ (G7)'} />}
-                  {revenueTotal?.value_numeric != null && <KpiCard label="Receita total" value={money.format(Number(revenueTotal.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_REVENUE_TOTAL', Number(revenueTotal.value_numeric), v => money.format(v))} />}
-                  {expenseMagistrates?.value_numeric != null && <KpiCard label="Despesa com magistrados" value={money.format(Number(expenseMagistrates.value_numeric))} coverage={generalCoverage} comparison={stat('JN_EXPENSE_PER_MAGISTRATE')?.value_numeric != null ? `${money.format(Number(stat('JN_EXPENSE_PER_MAGISTRATE')!.value_numeric))} por magistrado (G10a, CNJ)` : magistrates?.value_numeric != null ? `${money.format(Number(expenseMagistrates.value_numeric) / Number(magistrates.value_numeric))} por magistrado` : null} />}
-                  {expenseServers?.value_numeric != null && <KpiCard label="Despesa com servidores" value={money.format(Number(expenseServers.value_numeric))} coverage={generalCoverage} comparison={null} />}
-                  {expenseBenefits?.value_numeric != null && <KpiCard label="Despesas com benefícios" value={money.format(Number(expenseBenefits.value_numeric))} coverage={generalCoverage} comparison={null} />}
-                  {expenseOtherCurrent?.value_numeric != null && <KpiCard label="Outras despesas correntes" value={money.format(Number(expenseOtherCurrent.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_OTHER_CURRENT', Number(expenseOtherCurrent.value_numeric), v => money.format(v))} />}
+                  <KpiCard icon={Banknote} label="Despesa total" value={expenseTotal.value_numeric != null ? money.format(Number(expenseTotal.value_numeric)) : '—'} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_TOTAL', Number(expenseTotal.value_numeric), v => money.format(v)) ?? 'CNJ Justiça em Números · 2025'} />
+                  {expensePerCapita?.value_numeric != null && <KpiCard icon={Banknote} label="Despesa total por habitante" value={money.format(Number(expensePerCapita.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_PER_CAPITA', Number(expensePerCapita.value_numeric), v => money.format(v)) ?? 'Razão oficial do CNJ (G7)'} />}
+                  {revenueTotal?.value_numeric != null && <KpiCard icon={Banknote} label="Receita total" value={money.format(Number(revenueTotal.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_REVENUE_TOTAL', Number(revenueTotal.value_numeric), v => money.format(v))} />}
+                  {expenseMagistrates?.value_numeric != null && <KpiCard icon={Scale} label="Despesa com magistrados" value={money.format(Number(expenseMagistrates.value_numeric))} coverage={generalCoverage} comparison={stat('JN_EXPENSE_PER_MAGISTRATE')?.value_numeric != null ? `${money.format(Number(stat('JN_EXPENSE_PER_MAGISTRATE')!.value_numeric))} por magistrado (G10a, CNJ)` : magistrates?.value_numeric != null ? `${money.format(Number(expenseMagistrates.value_numeric) / Number(magistrates.value_numeric))} por magistrado` : null} />}
+                  {expenseServers?.value_numeric != null && <KpiCard icon={Users} label="Despesa com servidores" value={money.format(Number(expenseServers.value_numeric))} coverage={generalCoverage} comparison={null} />}
+                  {expenseBenefits?.value_numeric != null && <KpiCard icon={Banknote} label="Despesas com benefícios" value={money.format(Number(expenseBenefits.value_numeric))} coverage={generalCoverage} comparison={null} />}
+                  {expenseOtherCurrent?.value_numeric != null && <KpiCard icon={Banknote} label="Outras despesas correntes" value={money.format(Number(expenseOtherCurrent.value_numeric))} coverage={generalCoverage} comparison={peerHint('JN_EXPENSE_OTHER_CURRENT', Number(expenseOtherCurrent.value_numeric), v => money.format(v))} />}
                 </KpiGrid></div>}
                 {categoryBars.length > 0 && (
                   <div className="mt-6 rounded-2xl border bg-card p-5">
@@ -280,8 +327,8 @@ export default async function TribunalProfilePage({ params }: Props) {
                 <h2 className="text-2xl font-black">Pessoal</h2>
                 <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Quadro de pessoal publicado pelo próprio tribunal (Anexos da Resolução CNJ 102/2009){period ? `, referência ${period}` : ''} — contagem de cargos e vínculos, nunca remuneração individual.</p>
                 <div className="mt-4"><KpiGrid>
-                  <KpiCard label="Pessoas em cargos ocupados" value={int.format(totalAtivos)} coverage={generalCoverage} comparison={period} />
-                  {totalTerceirizados > 0 && <KpiCard label="Terceirizados em exercício" value={int.format(totalTerceirizados)} coverage={generalCoverage} comparison={period} />}
+                  <KpiCard icon={Users} label="Pessoas em cargos ocupados" value={int.format(totalAtivos)} coverage={generalCoverage} comparison={period} />
+                  {totalTerceirizados > 0 && <KpiCard icon={Users} label="Terceirizados em exercício" value={int.format(totalTerceirizados)} coverage={generalCoverage} comparison={period} />}
                 </KpiGrid></div>
                 {[...byAnnex.entries()].map(([annex, rows]) => (
                   <div key={annex} className="mt-6 rounded-2xl border bg-card p-5">
@@ -310,12 +357,17 @@ export default async function TribunalProfilePage({ params }: Props) {
             <section id="temas" className="scroll-mt-24">
               <h2 className="text-2xl font-black">Temas</h2>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                {themeChapters.map(({ themeId, result }) => (
-                  <Link key={themeId} href={`/judiciario/temas/${themeId.toLowerCase()}?tribunal=${encodeURIComponent(tribunalId)}`} className="focus-ring rounded-2xl border bg-card p-4 hover:border-primary">
-                    <strong className="block">{(result.data as any).meta?.title ?? themeId}</strong>
-                    <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-primary">Ver indicadores deste tribunal <ArrowRight size={12} /></span>
-                  </Link>
-                ))}
+                {themeChapters.map(({ themeId, result }) => {
+                  const metrics = (result.data as any).metrics as Array<{ public_name: string; value: number | null; unit: string }> | undefined;
+                  const headline = metrics?.find(m => m.value != null);
+                  return (
+                    <Link key={themeId} href={`/judiciario/temas/${themeId.toLowerCase()}?tribunal=${encodeURIComponent(tribunalId)}`} className="focus-ring rounded-2xl border bg-card p-4 hover:border-primary">
+                      <strong className="block">{(result.data as any).meta?.title ?? themeId}</strong>
+                      {headline && <p className="mt-1 text-sm text-muted-foreground">{headline.public_name}: <strong className="text-foreground">{int.format(Math.round(headline.value!))}</strong>{headline.unit ? ` ${headline.unit}` : ''}</p>}
+                      <span className="mt-2 inline-flex items-center gap-1 text-xs font-bold text-primary">Ver indicadores deste tribunal <ArrowRight size={12} /></span>
+                    </Link>
+                  );
+                })}
               </div>
             </section>
           )}
@@ -372,8 +424,8 @@ export default async function TribunalProfilePage({ params }: Props) {
                 {ativos.length > 0 && (
                   <>
                     <div className="mt-4"><KpiGrid>
-                      <KpiCard label="Ministros em atividade" value={String(ativos.length)} coverage={payrollCoverage} comparison={referencia} />
-                      <KpiCard label="Soma bruta mensal (em atividade)" value={money.format(somaBrutaAtivos)} coverage={payrollCoverage} comparison="antes de descontos individuais" />
+                      <KpiCard icon={Scale} label="Ministros em atividade" value={String(ativos.length)} coverage={payrollCoverage} comparison={referencia} />
+                      <KpiCard icon={Banknote} label="Soma bruta mensal (em atividade)" value={money.format(somaBrutaAtivos)} coverage={payrollCoverage} comparison="antes de descontos individuais" />
                     </KpiGrid></div>
                     <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
                       {ativos.map(m => (
@@ -408,6 +460,28 @@ export default async function TribunalProfilePage({ params }: Props) {
           </section>
       </div>
     </main>
+  );
+}
+
+// P14.44 — substituto honesto do "funil de 6 etapas" do mock de referência: o CNJ Justiça em Números
+// não publica as etapas intermediárias (despacho inicial, conclusão ao relator, julgamento) pra
+// nenhum tribunal — só casos novos, baixados e pendentes, que já existem na página. Puramente
+// visual (3 caixas + setas), nenhum dado novo.
+function CaseFlow({ novos, baixados, pendentes }: { novos: number | null; baixados: number | null; pendentes: number | null }) {
+  const steps = [{ label: 'Casos novos', value: novos }, { label: 'Baixados', value: baixados }, { label: 'Pendentes (acervo)', value: pendentes }];
+  if (steps.every(s => s.value == null)) return null;
+  return (
+    <div className="flex flex-wrap items-stretch gap-2">
+      {steps.map((s, i) => (
+        <div key={s.label} className="flex items-center gap-2">
+          <div className="min-w-[9rem] rounded-xl border bg-card px-4 py-3">
+            <p className="text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground">{s.label}</p>
+            <strong className="mt-1 block text-xl font-black tabular-nums">{s.value != null ? int.format(s.value) : '—'}</strong>
+          </div>
+          {i < steps.length - 1 && <ArrowRight className="shrink-0 text-muted-foreground" size={18} aria-hidden />}
+        </div>
+      ))}
+    </div>
   );
 }
 

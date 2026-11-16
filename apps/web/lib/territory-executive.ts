@@ -1,4 +1,4 @@
-import { getCurrentExecutive, getCurrentFederalExecutive, getCurrentMayor, getGdpPerCapita, getGdpPerCapitaForState, getTotalBudget, getTotalBudgetForState, type BudgetRankingRow, type CurrentExecutive, type CurrentFederalExecutive, type CurrentMayor, type GdpRankingRow } from '@senadotracker/db';
+import { getCurrentExecutive, getCurrentFederalExecutive, getCurrentMayor, getExecutiveLevelOverview, getGdpPerCapita, getGdpPerCapitaForState, getTotalBudget, getTotalBudgetForState, type BudgetRankingRow, type CurrentExecutive, type CurrentFederalExecutive, type CurrentMayor, type ExecutiveLevelOverview, type GdpRankingRow } from '@senadotracker/db';
 import { webPostgresPool } from './postgres-pool.ts';
 import { memo } from './security/load.ts';
 
@@ -45,4 +45,10 @@ export async function loadTotalBudget(territory: { level: 'UF'; ufCode: number }
  * só para achar o maior orçamento do estado em `TerritoryKpiStrip`. */
 export async function loadTotalBudgetForState(ufCode: number): Promise<BudgetRankingRow[]> {
   return memo(`territory-budget-ranking:${ufCode}`, () => getTotalBudgetForState(webPostgresPool(), ufCode), 5 * 60_000);
+}
+
+/** "A federação em números" (P14.42, cards logo após o hero de /executivo): visão agregada dos 3
+ * níveis do Executivo (União/Estados/Municípios), cacheada 5min. */
+export async function loadExecutiveLevelOverview(): Promise<ExecutiveLevelOverview[]> {
+  return memo('territory-executive-levels', () => getExecutiveLevelOverview(webPostgresPool()), 5 * 60_000);
 }

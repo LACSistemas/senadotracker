@@ -102,6 +102,13 @@ export async function getInfrastructureWorksCommittedByYear(q: Q): Promise<Yearl
   const rows=(await q.query(`select extract(year from emission_date)::int y,sum(value_cents)::bigint cents from civica_exec.exec_work_c_commitment where emission_date is not null group by 1 order by 1`)).rows;
   return rows.map(r=>({year:Number(r.y),committedCents:Number(r.cents)}));
 }
+/** Série histórica nacional de obras concluídas, por ano de conclusão efetiva (P14.43). Só
+ * `situation_code=2` ("Concluída") com `d_end_eff` no passado — a fonte tem um punhado de datas de
+ * conclusão futuras (2027, 2033), claramente erro de cadastro, não conclusão real: excluídas. */
+export async function getInfrastructureWorksCompletedByYear(q: Q): Promise<YearlyWorksCount[]> {
+  const rows=(await q.query(`select extract(year from d_end_eff)::int y,count(*)::int n from civica_exec.exec_work_c_project where situation_code=2 and d_end_eff is not null and d_end_eff<=current_date group by 1 order by 1`)).rows;
+  return rows.map(r=>({year:Number(r.y),count:Number(r.n)}));
+}
 export async function getInfrastructureWorksList(q: Q,t: InfrastructureTerritory,filters:{page?:number;pageSize?:number;status?:number;category?:number;agency?:string;hasPhysicalMeasurement?:boolean;hasContracts?:boolean;hasPayment?:boolean;territorialScope?:'SINGLE'|'MULTI';periodFrom?:string;periodTo?:string}={}) {
   const e=await territory(q,t); if(!e) return {total:0,page:1,pageSize:filters.pageSize??25,items:[]};
   const params:any[]=[]; let scope='true';

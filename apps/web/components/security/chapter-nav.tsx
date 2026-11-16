@@ -37,6 +37,16 @@ function pillList(items: NavItem[], active: string, accentVar: string) {
   );
 }
 
+/** P14.44: barra de abas (sublinhado no item ativo) — mesma `useActiveChapter`/`accent` da pílula,
+ * só outro visual. Sem numeração (a pílula numera; a aba, por convenção visual, não). */
+function tabList(items: NavItem[], active: string, accentVar: string) {
+  return (
+    <ol className="flex gap-1 overflow-x-auto border-b [scrollbar-width:thin]">
+      {items.map(i => <li key={i.id} className="shrink-0"><a href={`#${i.id}`} aria-current={active === i.id ? 'true' : undefined} style={active === i.id ? { borderColor: accentVar, color: accentVar } : undefined} className={cn('focus-ring -mb-px inline-flex items-center border-b-2 border-transparent px-3.5 py-3 text-sm font-bold transition-colors', active === i.id ? '' : 'text-muted-foreground hover:text-foreground')}>{i.label}</a></li>)}
+    </ol>
+  );
+}
+
 /** P8.7 (mandato §5): seletor compacto "Capítulo atual ▾" para `layout="sidebar"` abaixo de 1024px —
  * substitui a faixa horizontal de pílulas, que exigia rolagem lateral para alcançar capítulos distantes
  * (Educação tem 13 itens). `<details>`/`<summary>` nativo, mesmo padrão já usado pelo menu mobile do
@@ -76,14 +86,18 @@ function MobileChapterSelect({ items, active, accentVar }: { items: NavItem[]; a
 }
 
 /** Navegação contextual por capítulo. `layout="inline"` (padrão, inalterado): pílulas fixas no topo
-    ao rolar, em todas as larguras — é o que as 4 páginas de tema já usam hoje. `layout="sidebar"`
-    (P1, Parte IV.8.3 do mandato): no desktop (≥1024px) troca para uma coluna lateral persistente;
-    abaixo disso, P8.7 troca a faixa de pílulas pelo seletor `MobileChapterSelect`. */
-export function ChapterNav({ items, layout = 'inline', accent }: { items: NavItem[]; layout?: 'inline' | 'sidebar'; accent?: MapRampName }) {
+    ao rolar, em todas as larguras — é o que as 4 páginas de tema já usam hoje. `layout="tabs"`
+    (P14.44): barra de abas sublinhadas, mesmo sticky-no-topo — usada no perfil de tribunal.
+    `layout="sidebar"` (P1, Parte IV.8.3 do mandato): no desktop (≥1024px) troca para uma coluna
+    lateral persistente; abaixo disso, P8.7 troca a faixa de pílulas pelo seletor `MobileChapterSelect`. */
+export function ChapterNav({ items, layout = 'inline', accent }: { items: NavItem[]; layout?: 'inline' | 'tabs' | 'sidebar'; accent?: MapRampName }) {
   const active = useActiveChapter(items);
   const accentVar = ACCENT_VAR[accent ?? 'teal'];
   if (layout === 'inline') {
     return <nav aria-label="Capítulos desta página" className="sticky top-0 z-20 -mx-1 bg-background/90 px-1 py-2 backdrop-blur">{pillList(items, active, accentVar)}</nav>;
+  }
+  if (layout === 'tabs') {
+    return <nav aria-label="Capítulos desta página" className="sticky top-0 z-20 bg-background/95 backdrop-blur">{tabList(items, active, accentVar)}</nav>;
   }
   return (
     <>

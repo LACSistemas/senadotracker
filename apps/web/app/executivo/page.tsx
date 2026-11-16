@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { GraduationCap, HeartHandshake, HeartPulse, Route, ShieldAlert, Users } from 'lucide-react';
+import Image from 'next/image';
+import { Banknote, Building2, GraduationCap, Globe, HeartHandshake, HeartPulse, Landmark, Route, ShieldAlert, Users, Wallet } from 'lucide-react';
 import { mapMarkup } from '@/components/brazil-map-markup';
 import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
 import { sequentialRamp, emptyFill } from '@/lib/scale';
@@ -7,16 +8,17 @@ import { THEMES, formatInt } from '@/components/territory/territory-ui';
 import { loadStates, loadNationalHealthSummary, isUf } from '@/lib/exec-territory';
 import { loadHdiComparison, loadHdiAllStates } from '@/lib/territory-idhm';
 import { loadWellbeingOverview } from '@/lib/wellbeing';
+import { loadExecutiveLevelOverview } from '@/lib/territory-executive';
 import {
   getInfrastructureWorksOverview, getInfrastructureWorksBySituation, getOrganizedCrimeNational, getIdebTerritory,
-  getHealthBedsHistory, getHospitalizationsHistory, getFlowTerritory, getWellbeingSeries,
-  getInfrastructureWorksRegisteredByYear, getInfrastructureWorksCommittedByYear,
+  getHealthBedsHistory, getHospitalizationsHistory, getFlowTerritory, getWellbeingSeries, getIndicatorSeries,
+  getInfrastructureWorksRegisteredByYear, getInfrastructureWorksCommittedByYear, getInfrastructureWorksCompletedByYear,
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
 import { loadBrasilIndicatorsCached } from '@/lib/infrastructure/load';
 import { toChartCoverage, JudiciaryAvailabilityNote } from '@/components/judiciary/availability';
 import { FederativeExplorer, type FederativeArea } from '@/components/executivo/federative-explorer';
-import { LineChart, AreaTrend } from '@/components/charts';
+import { CompactTrend } from '@/components/charts';
 import { memo } from '@/lib/security/load';
 
 /** Todo o Promise.all da página não depende de searchParams (uf/indicador só pintam o mapa com dado já
@@ -34,15 +36,20 @@ async function loadExecutivoHubData() {
     getIdebTerritory(webPostgresPool(), { stage: 1 }),
     getInfrastructureWorksOverview(webPostgresPool(), { level: 'BRASIL' }),
     getInfrastructureWorksBySituation(webPostgresPool(), { level: 'BRASIL' }),
-    // "As cinco áreas" (E-exec, pedido do usuário): 2 séries históricas reais por setor — as 7 abaixo são
-    // as que faltavam; Educação (Ideb) e Segurança (tráfico) reaproveitam dado já carregado acima.
+    // "As cinco áreas" (E-exec, pedido do usuário): 3 séries históricas reais por setor — Educação
+    // (Ideb) e Segurança (tráfico) reaproveitam dado já carregado acima; a taxa de distorção
+    // idade-série (Educação) também vem de `flowTerritory`, já carregado, sem consulta extra.
     getHealthBedsHistory(webPostgresPool()),
     getHospitalizationsHistory(webPostgresPool()),
     getFlowTerritory(webPostgresPool(), {}),
     getWellbeingSeries(webPostgresPool(), { entityId: 76 }, 'WB-LABOR-CAGED-BAL'),
     getWellbeingSeries(webPostgresPool(), { entityId: 76 }, 'WB-LABOR-RAIS-STOCK'),
+    getWellbeingSeries(webPostgresPool(), { entityId: 76 }, 'WB-LABOR-CAGED-ADM'),
     getInfrastructureWorksRegisteredByYear(webPostgresPool()),
     getInfrastructureWorksCommittedByYear(webPostgresPool()),
+    getInfrastructureWorksCompletedByYear(webPostgresPool()),
+    getIndicatorSeries(webPostgresPool(), 76, 'IND-SAU-10'),
+    loadExecutiveLevelOverview(),
   ] as const);
 }
 const loadExecutivoHubDataCached = () => memo('executivo:hub', loadExecutivoHubData, 5 * 60_000);
@@ -52,6 +59,7 @@ export const metadata = { title: 'Executivo · Cívica', description: 'O Brasil 
 
 const int = new Intl.NumberFormat('pt-BR');
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+const moneyCompact = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', notation: 'compact', maximumFractionDigits: 1 });
 const THEME_META: Record<string, { label: string; question: string; icon: typeof HeartPulse; anchor: string }> = {
   saude: { label: 'Saúde', question: 'Como o Brasil cuida de sua população?', icon: HeartPulse, anchor: 'saude' },
   educacao: { label: 'Educação', question: 'O que os alunos brasileiros estão aprendendo?', icon: GraduationCap, anchor: 'educacao' },
@@ -115,11 +123,33 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const indicator = scalar(sp.indicador) === 'idhm' ? 'idhm' as const : 'populacao' as const;
 
   const [states, health, hdiBrasil, hdiStates, wellbeing, infraIndicators, orgCrime, idebBrasil, worksOverview, worksBySituation,
-    bedsHistory, hospitalizationsHistory, flowTerritory, cagedBalSeries, raisStockSeries, worksRegisteredByYear, worksCommittedByYear,
+    bedsHistory, hospitalizationsHistory, flowTerritory, cagedBalSeries, raisStockSeries, cagedAdmSeries,
+    worksRegisteredByYear, worksCommittedByYear, worksCompletedByYear, icsapSeries,
+    levelOverview,
   ] = await loadExecutivoHubDataCached();
 
   const totalPop = states.reduce((s, st) => s + (st.population ?? 0), 0);
   const municipalityCount = 5571;
+
+  // "A federação em números" (P14.42): mesma população (totalPop, soma das 27 UFs já calculada
+  // acima) sob os 3 níveis do Executivo — o que muda é a divisão entre chefes do executivo e
+  // orçamento. Os 3 orçamentos NUNCA se somam entre si (há transferências intergovernamentais,
+  // mesma restrição de FIN_RESTRICTIONS em packages/db) — cada card mostra só o total do seu nível.
+  const LEVEL_META = [
+    { level: 'UNIAO' as const, label: 'União', chiefLabel: 'Presidente', subtitle: 'O governo federal — um único presidente para todo o país.', photo: '/executivo/planalto.jpg', photoAlt: 'Fachada do Palácio do Planalto, sede do Poder Executivo federal, em Brasília', credit: 'Pedro França/Agência Senado · CC BY 2.0' },
+    { level: 'ESTADOS' as const, label: 'Estados', chiefLabel: 'Governadores', subtitle: '27 estados e o Distrito Federal, cada um com seu próprio governo.', photo: '/executivo/bandeirantes.jpg', photoAlt: 'Fachada do Palácio dos Bandeirantes, sede do governo do Estado de São Paulo', credit: 'Governo do Estado de SP · CC BY 2.0' },
+    { level: 'MUNICIPIOS' as const, label: 'Municípios', chiefLabel: 'Prefeitos', subtitle: '5.571 municípios — a esfera de governo mais próxima do dia a dia.', photo: '/executivo/paco-municipal-sp.jpg', photoAlt: 'Fachada do Paço Municipal de São Paulo, sede da Prefeitura de São Paulo', credit: 'Dornicke · CC BY-SA 4.0' },
+  ];
+  const levelByCode = new Map(levelOverview.map(l => [l.level, l]));
+  const levelCards = LEVEL_META.map(meta => {
+    const row = levelByCode.get(meta.level);
+    const chiefCount = row?.chiefCount ?? 0;
+    const budgetTotal = row ? Number(row.totalBudgetCents) / 100 : null;
+    const habitantesPorChefe = chiefCount > 0 ? totalPop / chiefCount : null;
+    const orcamentoPerCapita = budgetTotal != null && totalPop > 0 ? budgetTotal / totalPop : null;
+    return { ...meta, entityCount: row?.entityCount ?? 0, chiefCount, budgetTotal, entitiesWithBudget: row?.entitiesWithBudget ?? 0,
+      minBudgetYear: row?.minBudgetYear ?? null, maxBudgetYear: row?.maxBudgetYear ?? null, habitantesPorChefe, orcamentoPerCapita };
+  });
   // Achado real: `loadHdiComparison({level:'BRASIL'})` devolve o próprio Brasil em `.territory` (não em
   // `.brasil`, que fica null quando o território pedido já é o Brasil — ver territory-idhm.ts) — a
   // referência nacional nunca aparecia (bug pré-existente, não desta sessão; corrigido ao descobrir a
@@ -141,41 +171,59 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const trafficYears = trafficSeries?.years ?? [];
   const trafficTrend = trafficYears.map(y => ({ label: String(y.year), value: y.complete ? y.value : null }));
 
-  // "AS CINCO ÁREAS" — 2 séries históricas reais por setor (pedido do usuário), cada setor com sua cor de
-  // assinatura (mesmas rampas já validadas do produto, reaproveitadas — nunca uma paleta nova): Saúde=verde
-  // (`--primary`), Educação=azul, Segurança=vermelho/rose, Desenvolvimento Social=roxo/violet,
-  // Infraestrutura=amarelo/amber. Todos os 10 gráficos usam o mesmo `LineChart`/`AreaTrend` compartilhados —
-  // os cartões agora são de largura cheia (não a grade de 2 colunas da E7 antiga), então o `min-w-[620px]`
-  // desses componentes não corta mais o último ponto como cortava nos cartões estreitos.
+  // "AS CINCO ÁREAS" — 3 séries históricas reais por setor (P14.43, antes eram 2), cada setor com sua
+  // cor de assinatura (mesmas rampas já validadas do produto, reaproveitadas — nunca uma paleta nova):
+  // Saúde=verde (`--primary`), Educação=azul, Segurança=vermelho/rose, Desenvolvimento Social=
+  // roxo/violet, Infraestrutura=amarelo/amber. Todos os 15 gráficos usam `CompactTrend` (variante
+  // pequena de LineChart/AreaTrend, canvas menor, sem rótulo flutuante por ponto) — é essa variante,
+  // não o componente de tamanho cheio, que permite 3 por linha em vez de 2 sem forçar rolagem
+  // horizontal permanente (o `min-w-[620px]` do LineChart/AreaTrend cheios nunca cabe 3 vezes dentro
+  // do `page-shell`, que tem teto de 1200px).
   const MONTH_ABBR = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
   const yearCoverage = (source: string, data: Array<{ label: string }>) => toChartCoverage('AVAILABLE', source, { from: data[0] ? `${data[0].label}-01-01` : null, to: data.length ? `${data.at(-1)!.label}-12-31` : null, grain: 'year' });
+  const monthCoverage = (source: string, data: Array<{ periodStart: string | null }>) => toChartCoverage('AVAILABLE', source, { from: data[0]?.periodStart ?? null, to: data.at(-1)?.periodStart ?? null, grain: 'month' });
 
   const SAUDE_COLOR = 'var(--primary)';
   const bedsChartData = bedsHistory.map(r => ({ label: String(r.year), value: r.bedsExisting || null }));
   const bedsCoverage = yearCoverage('CNES/DataSUS · vigente em dezembro de cada ano', bedsChartData);
   const aihChartData = hospitalizationsHistory.map(r => ({ label: String(r.year), value: r.aih || null }));
   const aihCoverage = yearCoverage('SIH/DataSUS · internações custeadas pelo SUS', aihChartData);
+  // ICSAP: proporção mensal publicada (2013–atual); aqui agregada em média anual simples (não
+  // ponderada pelo nº de AIH de cada mês) pra ficar no mesmo grão anual dos outros 2 gráficos de Saúde.
+  const icsapByYear = new Map<number, number[]>();
+  for (const r of icsapSeries) { if (r.value == null) continue; const y = Number(r.periodStart.slice(0, 4)); if (!icsapByYear.has(y)) icsapByYear.set(y, []); icsapByYear.get(y)!.push(r.value); }
+  const icsapChartData = [...icsapByYear.keys()].sort((a, b) => a - b).map(y => { const vals = icsapByYear.get(y)!; return { label: String(y), value: vals.reduce((s, v) => s + v, 0) / vals.length }; });
+  const icsapCoverage = yearCoverage('SIH/DataSUS · ICSAP, média simples dos meses do ano', icsapChartData);
 
   const EDUCACAO_COLOR = 'var(--map-blue-4)';
   const abandonoChartData = (flowTerritory?.series ?? []).map(r => ({ label: String(r.year), value: r.values.ab_fun ?? null }));
   const abandonoCoverage = yearCoverage('INEP · Indicadores Educacionais, ensino fundamental total', abandonoChartData);
+  const distorcaoChartData = (flowTerritory?.series ?? []).map(r => ({ label: String(r.year), value: r.values.td_fun ?? null }));
+  const distorcaoCoverage = yearCoverage('INEP · Indicadores Educacionais, ensino fundamental total', distorcaoChartData);
 
   const SEGURANCA_COLOR = 'var(--map-rose-4)';
   const warrantsSeries = orgCrime.series.find(s => s.family === 'OC.ENFORCEMENT.ARREST_WARRANTS_SERVED' && s.source === 'VDE' && s.abrangencia === 'Estadual');
   const warrantsChartData = (warrantsSeries?.years ?? []).map(y => ({ label: String(y.year), value: y.complete ? y.value : null }));
   const warrantsCoverage = yearCoverage('Sinesp VDE · 27 UFs', warrantsChartData);
+  const firearmsSeries = orgCrime.series.find(s => s.family === 'OC.WEAPON.FIREARMS_SEIZED' && s.source === 'VDE' && s.abrangencia === 'Estadual');
+  const firearmsChartData = (firearmsSeries?.years ?? []).map(y => ({ label: String(y.year), value: y.complete ? y.value : null }));
+  const firearmsCoverage = yearCoverage('Sinesp VDE · 27 UFs', firearmsChartData);
 
   const DEV_SOCIAL_COLOR = 'var(--map-violet-4)';
   const cagedBalChartData = (cagedBalSeries ?? []).map(o => ({ label: o.periodStart ? `${MONTH_ABBR[Number(o.periodStart.slice(5, 7)) - 1]}/${o.periodStart.slice(2, 4)}` : '—', value: o.value }));
   const cagedCoverage = toChartCoverage('AVAILABLE', 'Novo Caged (MTE) · saldo = admissões − desligamentos', { from: (cagedBalSeries ?? [])[0]?.periodStart ?? null, to: (cagedBalSeries ?? []).at(-1)?.periodStart ?? null, grain: 'month' });
   const raisChartData = (raisStockSeries ?? []).map(o => ({ label: o.periodStart?.slice(0, 4) ?? '—', value: o.value }));
   const raisCoverage = yearCoverage('RAIS (MTE) · estoque em 31/12', raisChartData);
+  const cagedAdmChartData = (cagedAdmSeries ?? []).map(o => ({ label: o.periodStart ? `${MONTH_ABBR[Number(o.periodStart.slice(5, 7)) - 1]}/${o.periodStart.slice(2, 4)}` : '—', value: o.value }));
+  const cagedAdmCoverage = monthCoverage('Novo Caged (MTE) · admissões', cagedAdmSeries ?? []);
 
   const INFRA_COLOR = 'var(--map-amber-4)';
   const worksRegisteredChartData = worksRegisteredByYear.map(r => ({ label: String(r.year), value: r.count }));
   const worksRegisteredCoverage = yearCoverage('Obrasgov · ano de cadastro', worksRegisteredChartData);
   const worksCommittedChartData = worksCommittedByYear.map(r => ({ label: String(r.year), value: r.committedCents / 100 }));
   const worksCommittedCoverage = yearCoverage('Obrasgov · valor empenhado', worksCommittedChartData);
+  const worksCompletedChartData = worksCompletedByYear.map(r => ({ label: String(r.year), value: r.count }));
+  const worksCompletedCoverage = yearCoverage('Obrasgov · ano de conclusão efetiva', worksCompletedChartData);
 
   // Mapa único do hero: analítico desde a abertura — colorido pelo indicador selecionado, com legenda real
   // (mandato §14/§15). A versão anterior tinha 2 mapas (um neutro no hero, outro analítico numa seção
@@ -286,6 +334,67 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
         </div>
       </section>
 
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">A federação em números</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">União, estados e municípios governam a mesma população. O que muda é a divisão entre chefes do executivo e orçamento de cada nível.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            {levelCards.map(c => (
+              <div key={c.level} className="flex flex-col overflow-hidden rounded-2xl border bg-background">
+                <div className="relative h-36 w-full bg-muted">
+                  <Image src={c.photo} alt={c.photoAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+                  <span className="absolute bottom-1 right-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[0.55rem] leading-none text-white/85">Foto: {c.credit}</span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="display-title text-xl leading-tight">{c.label}</h3>
+                    <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-bold text-muted-foreground">{int.format(c.entityCount)} {c.entityCount === 1 ? 'ente' : 'entes'}</span>
+                  </div>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{c.subtitle}</p>
+
+                  <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 border-t pt-4">
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Users size={13} aria-hidden /> {c.chiefLabel} em exercício</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{int.format(c.chiefCount)}</strong>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Globe size={13} aria-hidden /> População sob este nível</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{formatInt(totalPop)}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">mesma nos 3 níveis</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Wallet size={13} aria-hidden /> Orçamento total anual</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{c.budgetTotal != null ? moneyCompact.format(c.budgetTotal) : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">empenhado, {c.minBudgetYear === c.maxBudgetYear ? c.minBudgetYear : `${c.minBudgetYear}–${c.maxBudgetYear}`}</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Landmark size={13} aria-hidden /> Habitantes por chefe</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{c.habitantesPorChefe != null ? formatInt(Math.round(c.habitantesPorChefe)) : '—'}</strong>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border bg-card px-3.5 py-3">
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground"><Banknote size={14} aria-hidden /> Orçamento per capita</span>
+                    <strong className="display-title text-lg leading-none">{c.orcamentoPerCapita != null ? money.format(c.orcamentoPerCapita) : '—'}</strong>
+                  </div>
+
+                  {c.level === 'UNIAO' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Inclui Previdência, transferências a estados/municípios e serviço da dívida — não é "tamanho do governo". Os 3 orçamentos desta seção não se somam entre si: parte da despesa da União é transferência que reaparece na despesa de estados e municípios.</p>}
+                  {c.level === 'ESTADOS' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Os {c.entitiesWithBudget} estados publicaram o exercício de {c.maxBudgetYear} — mesmo ano em todos.</p>}
+                  {c.level === 'MUNICIPIOS' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">{int.format(c.entitiesWithBudget)} dos {int.format(c.entityCount)} municípios têm orçamento publicado — nem todos no mesmo exercício (a maioria em {c.maxBudgetYear}). {int.format(c.chiefCount)} têm prefeito vigente resolvido (ciclo 2024); os demais (DF, Fernando de Noronha, eleições anuladas sem suplementar) não entram na contagem.</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">Siconfi, DCA Anexo I-E (orçamento) · TSE (chefes do executivo) · IBGE (população).</p>
+        </div>
+      </section>
+
       <section className="page-shell py-12">
         <p className="eyebrow">Políticas públicas na prática</p>
         <h2 className="mt-2 text-3xl font-black tracking-tight">Quem cuida de quê no Brasil?</h2>
@@ -307,11 +416,12 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
                 <div><strong className="display-title text-3xl tabular-nums">{int.format(health.hospitals)}</strong><span className="ml-1.5 text-sm text-muted-foreground">hospitais no cadastro</span></div>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">CNES/DataSUS, competência {health.competence}</p>
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                <LineChart title="Leitos existentes no país, por ano" data={bedsChartData} coverage={bedsCoverage} color={SAUDE_COLOR} />
-                <LineChart title="Internações custeadas pelo SUS, por ano" data={aihChartData} coverage={aihCoverage} color={SAUDE_COLOR} />
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend title="Leitos existentes no país, por ano" data={bedsChartData} coverage={bedsCoverage} color={SAUDE_COLOR} />
+                <CompactTrend title="Internações custeadas pelo SUS, por ano" data={aihChartData} coverage={aihCoverage} color={SAUDE_COLOR} />
+                <CompactTrend title="Internações evitáveis (ICSAP), por ano" data={icsapChartData} coverage={icsapCoverage} color={SAUDE_COLOR} suffix="%" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">Leitos: soma nacional vigente em dezembro de cada ano (cadastro CNES; leitos de hospital-dia excluídos). Internações: SIH/AIH, só procedimentos custeados pelo SUS — não inclui atendimento particular nem de planos de saúde; o ano corrente aparece parcial.</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Leitos: soma nacional vigente em dezembro de cada ano (cadastro CNES; leitos de hospital-dia excluídos). Internações: SIH/AIH, só procedimentos custeados pelo SUS — não inclui atendimento particular nem de planos de saúde; o ano corrente aparece parcial. ICSAP: proporção de internações por condições sensíveis à atenção primária — mede cobertura de atenção básica, não "internações evitáveis" em sentido literal; não é taxa padronizada por idade.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#saude` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SAUDE_COLOR }}>Explorar Saúde →</Link>
             </div>
 
@@ -319,11 +429,12 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-2" style={{ color: EDUCACAO_COLOR }}><GraduationCap size={20} aria-hidden /><p className="eyebrow" style={{ color: EDUCACAO_COLOR }}>Educação</p></div>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.educacao!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{idebRow ? String(idebRow.values.ideb) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">Ideb, anos iniciais{idebYear ? ` (${idebYear})` : ''}</span></div>
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                <LineChart title="Ideb, anos iniciais, por edição (todas as redes)" data={idebChartData} coverage={toChartCoverage('AVAILABLE', 'INEP · Ideb, todas as redes', { from: '2005-01-01', to: `${idebYear ?? 2025}-12-31`, grain: 'year' })} color={EDUCACAO_COLOR} min={0} max={10} />
-                <LineChart title="Taxa de abandono, ensino fundamental, por ano" data={abandonoChartData} coverage={abandonoCoverage} color={EDUCACAO_COLOR} suffix="%" />
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend title="Ideb, anos iniciais, por edição (todas as redes)" data={idebChartData} coverage={toChartCoverage('AVAILABLE', 'INEP · Ideb, todas as redes', { from: '2005-01-01', to: `${idebYear ?? 2025}-12-31`, grain: 'year' })} color={EDUCACAO_COLOR} min={0} max={10} />
+                <CompactTrend title="Taxa de abandono, ensino fundamental, por ano" data={abandonoChartData} coverage={abandonoCoverage} color={EDUCACAO_COLOR} suffix="%" />
+                <CompactTrend title="Taxa de distorção idade-série, por ano" data={distorcaoChartData} coverage={distorcaoCoverage} color={EDUCACAO_COLOR} suffix="%" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">O Ideb de uma rede não é a média dos Idebs das escolas; a meta oficial só existe até a edição de 2021 — 2023 e 2025 são comparáveis às anteriores, mas sem meta própria. Abandono é uma taxa de rendimento (diferente de distorção idade-série), do ensino fundamental total (anos iniciais + finais).</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">O Ideb de uma rede não é a média dos Idebs das escolas; a meta oficial só existe até a edição de 2021 — 2023 e 2025 são comparáveis às anteriores, mas sem meta própria. Abandono é uma taxa de rendimento (diferente de distorção idade-série), do ensino fundamental total (anos iniciais + finais). Distorção idade-série: % de alunos com 2+ anos de atraso para a série — sem dado em 2013-2014 (planilha da fonte não traz a coluna nesses anos).</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#educacao` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: EDUCACAO_COLOR }}>Explorar Educação →</Link>
             </div>
 
@@ -331,11 +442,12 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-2" style={{ color: SEGURANCA_COLOR }}><ShieldAlert size={20} aria-hidden /><p className="eyebrow" style={{ color: SEGURANCA_COLOR }}>Segurança</p></div>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.seguranca!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{trafficLatest ? int.format(trafficLatest.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">registros de tráfico{trafficLatest ? ` (${trafficLatest.year})` : ''}</span></div>
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                <AreaTrend title="Registros de tráfico de drogas, por ano" data={trafficTrend} coverage={toChartCoverage('AVAILABLE', 'Sinesp VDE · 27 UFs', { from: trafficYears[0] ? `${trafficYears[0].year}-01-01` : null, to: trafficYears.length ? `${trafficYears.at(-1)!.year}-12-31` : null, grain: 'year' })} color={SEGURANCA_COLOR} badge="Atividade policial registrada, não extensão real do tráfico" />
-                <AreaTrend title="Mandados de prisão cumpridos, por ano" data={warrantsChartData} coverage={warrantsCoverage} color={SEGURANCA_COLOR} badge="Ato processual cumprido, não prova de organização criminosa" />
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend area title="Registros de tráfico de drogas, por ano" data={trafficTrend} coverage={toChartCoverage('AVAILABLE', 'Sinesp VDE · 27 UFs', { from: trafficYears[0] ? `${trafficYears[0].year}-01-01` : null, to: trafficYears.length ? `${trafficYears.at(-1)!.year}-12-31` : null, grain: 'year' })} color={SEGURANCA_COLOR} badge="Atividade policial, não extensão real do tráfico" />
+                <CompactTrend area title="Mandados de prisão cumpridos, por ano" data={warrantsChartData} coverage={warrantsCoverage} color={SEGURANCA_COLOR} badge="Ato processual, não prova de organização criminosa" />
+                <CompactTrend area title="Armas de fogo apreendidas, por ano" data={firearmsChartData} coverage={firearmsCoverage} color={SEGURANCA_COLOR} badge="Apreensão registrada, não recolhimento voluntário" />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">Fonte estadual (Sinesp VDE, 27 UFs) — Polícia Federal/PRF têm séries próprias, não somadas aqui. Mais registros pode refletir mais notificação ou mais policiamento, não necessariamente mais crime.</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Fonte estadual (Sinesp VDE, 27 UFs) — Polícia Federal/PRF têm séries próprias, não somadas aqui. Mais registros pode refletir mais notificação ou mais policiamento, não necessariamente mais crime. Armas apreendidas: soma de todos os tipos informados; não inclui recolhimento administrativo, entrega voluntária, posse ou porte.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#seguranca` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SEGURANCA_COLOR }}>Explorar Segurança →</Link>
             </div>
 
@@ -343,11 +455,12 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-2" style={{ color: DEV_SOCIAL_COLOR }}><HeartHandshake size={20} aria-hidden /><p className="eyebrow" style={{ color: DEV_SOCIAL_COLOR }}>Desenvolvimento Social</p></div>
               <h3 className="mt-1 text-2xl font-black">{THEME_META['bem-estar']!.question}</h3>
               {rendaBrasil && <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{money.format(rendaBrasil.value)}</strong><span className="ml-1.5 text-sm text-muted-foreground">renda domiciliar per capita{rendaBrasil.periodStart ? ` (${String(rendaBrasil.periodStart).slice(0, 4)})` : ''}</span></div>}
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                <LineChart title="Saldo do mercado de trabalho formal, por mês" data={cagedBalChartData} coverage={cagedCoverage} color={DEV_SOCIAL_COLOR} />
-                <LineChart title="Vínculos formais ativos (RAIS), por ano" data={raisChartData} coverage={raisCoverage} color={DEV_SOCIAL_COLOR} />
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend title="Saldo do mercado de trabalho formal, por mês" data={cagedBalChartData} coverage={cagedCoverage} color={DEV_SOCIAL_COLOR} />
+                <CompactTrend title="Vínculos formais ativos (RAIS), por ano" data={raisChartData} coverage={raisCoverage} color={DEV_SOCIAL_COLOR} />
+                <CompactTrend title="Admissões no mercado formal, por mês" data={cagedAdmChartData} coverage={cagedAdmCoverage} color={DEV_SOCIAL_COLOR} />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">Saldo do Novo Caged (admissões menos desligamentos) e estoque anual da RAIS são medidas diferentes, nunca somadas entre si. CadÚnico, Bolsa Família e BPC ainda não têm fonte agregada publicável nesta base.</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Saldo do Novo Caged (admissões menos desligamentos), admissões (bruto) e estoque anual da RAIS são 3 medidas diferentes, nunca somadas entre si. CadÚnico, Bolsa Família e BPC ainda não têm fonte agregada publicável nesta base.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#bem-estar` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: DEV_SOCIAL_COLOR }}>Explorar Desenvolvimento Social →</Link>
             </div>
 
@@ -355,11 +468,12 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-2" style={{ color: INFRA_COLOR }}><Route size={20} aria-hidden /><p className="eyebrow" style={{ color: INFRA_COLOR }}>Infraestrutura</p></div>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.infraestrutura!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{esgotoBrasil ? `${Number(esgotoBrasil.value).toFixed(1)}%` : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">domicílios com rede coletora de esgoto{esgotoBrasil ? ` (SNIS, ${esgotoBrasil.referenceYear})` : ''}</span></div>
-              <div className="mt-5 grid gap-4 lg:grid-cols-2">
-                <LineChart title="Obras públicas cadastradas, por ano" data={worksRegisteredChartData} coverage={worksRegisteredCoverage} color={INFRA_COLOR} />
-                <LineChart title="Valor empenhado em obras públicas, por ano (R$)" data={worksCommittedChartData} coverage={worksCommittedCoverage} color={INFRA_COLOR} />
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend title="Obras públicas cadastradas, por ano" data={worksRegisteredChartData} coverage={worksRegisteredCoverage} color={INFRA_COLOR} />
+                <CompactTrend title="Valor empenhado em obras públicas, por ano (R$)" data={worksCommittedChartData} coverage={worksCommittedCoverage} color={INFRA_COLOR} />
+                <CompactTrend title="Obras públicas concluídas, por ano" data={worksCompletedChartData} coverage={worksCompletedCoverage} color={INFRA_COLOR} />
               </div>
-              <p className="mt-3 text-xs leading-5 text-muted-foreground">Água, esgoto e resíduos (SNIS/SINISA) têm só 1 período publicado no nível Brasil — por isso a história aqui é das obras públicas (Obrasgov). Obra cadastrada não é obra concluída; valor empenhado é o 1º de 5 estágios (planejado, contratado, empenhado, liquidado, pago) — nunca despesa já realizada.</p>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Água, esgoto e resíduos (SNIS/SINISA) têm só 1 período publicado no nível Brasil — por isso a história aqui é das obras públicas (Obrasgov). Obra cadastrada não é obra concluída; valor empenhado é o 1º de 5 estágios (planejado, contratado, empenhado, liquidado, pago) — nunca despesa já realizada. Concluídas: ano da data efetiva de término; datas de conclusão no futuro (erro de cadastro na fonte) foram excluídas.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#infraestrutura` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: INFRA_COLOR }}>Explorar Infraestrutura →</Link>
             </div>
           </div>

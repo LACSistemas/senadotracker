@@ -196,6 +196,51 @@ export async function getTotalBudgetForState(q: Q, ufCode: number): Promise<Budg
   return r.rows.map(x => ({ entityId: Number(x.entity_id), year: Number(x.exercicio), value: Number(x.cents) / 100 }));
 }
 
+export interface ExecutiveLevelOverview {
+  level: 'UNIAO' | 'ESTADOS' | 'MUNICIPIOS';
+  entityCount: number; chiefCount: number;
+  totalBudgetCents: string; entitiesWithBudget: number; minBudgetYear: number; maxBudgetYear: number;
+}
+/** P14.42 — "A federação em números" (cards logo após o hero de /executivo): visão agregada dos 3
+ * níveis do Executivo (União/Estados/Municípios). Orçamento = mesma fonte de `getTotalBudget`
+ * (DCA Anexo I-E, "TOT"/"EMP", exercício mais recente de cada ente) — aqui a União também tem
+ * linha própria (kind=1), o que `getTotalBudget` nunca expôs por nunca ter sido pedido para esse
+ * nível. Os 3 totais NUNCA se somam entre si: há transferências intergovernamentais (União →
+ * Estados/Municípios) que tornariam a soma uma dupla contagem — mesma restrição de
+ * `FIN_RESTRICTIONS` acima (ponto 4, "despesa estadual e municipal não se somam"). */
+export async function getExecutiveLevelOverview(q: Q): Promise<ExecutiveLevelOverview[]> {
+  const [entities, presidente, governadores, prefeitos, budget] = await Promise.all([
+    q.query(`SELECT kind, count(*)::int AS n FROM civica_exec.exec_entity WHERE kind IN (1, 3, 4) GROUP BY kind`),
+    q.query(`SELECT count(*)::int AS n FROM civica_exec.exec_executive_mandate WHERE role = 'PRESIDENTE' AND mandate_start <= current_date AND mandate_end >= current_date`),
+    q.query(`SELECT count(*)::int AS n FROM civica_exec.exec_executive_mandate WHERE role = 'GOVERNADOR' AND mandate_start <= current_date AND mandate_end >= current_date`),
+    q.query(`SELECT count(*)::int AS n FROM civica_exec.exec_executive_mandate_municipal WHERE role = 'PREFEITO' AND mandate_start <= current_date AND mandate_end >= current_date`),
+    q.query(
+      `WITH latest AS (
+         SELECT DISTINCT ON (f.entity_id) e.kind, f.exercicio, f.valor::numeric AS cents
+         FROM civica_exec.exec_fin_fact f
+         JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta} AND c.code = 'TOT'
+         JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIE} AND k.code = 'EMP'
+         JOIN civica_exec.exec_entity e ON e.entity_id = f.entity_id AND e.kind IN (1, 3, 4)
+         ORDER BY f.entity_id, f.exercicio DESC
+       )
+       SELECT kind, count(*)::int AS n, sum(cents)::text AS total_cents, min(exercicio)::int AS min_year, max(exercicio)::int AS max_year
+       FROM latest GROUP BY kind`,
+    ),
+  ]);
+  const entityByKind = new Map(entities.rows.map((r: any) => [Number(r.kind), Number(r.n)]));
+  const chiefByKind = new Map<number, number>([[1, Number(presidente.rows[0]?.n ?? 0)], [3, Number(governadores.rows[0]?.n ?? 0)], [4, Number(prefeitos.rows[0]?.n ?? 0)]]);
+  const budgetByKind = new Map(budget.rows.map((r: any) => [Number(r.kind), r]));
+  const LEVELS: Array<{ kind: number; level: ExecutiveLevelOverview['level'] }> = [{ kind: 1, level: 'UNIAO' }, { kind: 3, level: 'ESTADOS' }, { kind: 4, level: 'MUNICIPIOS' }];
+  return LEVELS.map(({ kind, level }) => {
+    const b = budgetByKind.get(kind) as { n: string | number; total_cents: string; min_year: number; max_year: number } | undefined;
+    return {
+      level, entityCount: entityByKind.get(kind) ?? 0, chiefCount: chiefByKind.get(kind) ?? 0,
+      totalBudgetCents: b?.total_cents ?? '0', entitiesWithBudget: b ? Number(b.n) : 0,
+      minBudgetYear: b ? Number(b.min_year) : 0, maxBudgetYear: b ? Number(b.max_year) : 0,
+    };
+  });
+}
+
 export async function getSecurityFinanceOrgans(q: Q, entityId: number, o: { from?: number; to?: number } = {}): Promise<{ entityId: number; years: OrganYear[]; restrictions: string[]; source: string } | null> {
   const lo = o.from ?? 1900, hi = o.to ?? 2999;
   const [org, sub, nat] = await Promise.all([

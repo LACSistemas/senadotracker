@@ -93,6 +93,42 @@ export function AreaTrend({title,data,coverage,badge,color}:{title:string;data:C
   </Frame>;
 }
 
+/** Variante compacta de LineChart/AreaTrend (P14.43) — mesmo contrato visual (Frame, tooltip por
+ * ponto, tabela "Ver dados"), canvas menor (340×150, min-w-220px em vez de 620px) para caber 3 por
+ * linha em vez de 2. Sem rótulo flutuante acima de cada ponto (fica só no tooltip/tabela) e rótulos
+ * do eixo x reduzidos a ~5 — é isso que dá espaço pro canvas menor sem texto ilegível. Usada só na
+ * seção "As cinco áreas" de /executivo; LineChart/AreaTrend (tamanho cheio) continuam intocados
+ * para não afetar nenhuma outra página que os usa. */
+export function CompactTrend({title,data,coverage,color,suffix='',area=false,min:fixedMin,max:fixedMax,badge}:{title:string;data:ChartDatum[];coverage:DataCoverage;color?:string;suffix?:string;area?:boolean;min?:number;max?:number;badge?:string}){
+  const stroke=color??'var(--chart-1)',gradId=`compact-fill-${stroke.replace(/[^a-zA-Z0-9]/g,'')}`;
+  const valid=data.map((item,index)=>({...item,index})).filter(item=>item.value!==null);
+  const rawMax=Math.max(...valid.map(item=>item.value!),0),rawMin=area?0:Math.min(...valid.map(item=>item.value!),0);
+  const padding=(rawMax-rawMin)*.12||Math.max(Math.abs(rawMax)*.12,1);
+  const max=fixedMax??rawMax+padding,min=fixedMin??(area?0:Math.min(0,rawMin-padding));
+  const x=(index:number)=>data.length===1?170:34+272*index/(data.length-1),y=(value:number)=>118-100*(Math.max(min,Math.min(max,value))-min)/(max-min||1);
+  const segments:typeof valid[]=[];let segment:typeof valid=[];
+  data.forEach((item,index)=>{if(item.value===null){if(segment.length)segments.push(segment);segment=[]}else segment.push({...item,index})});if(segment.length)segments.push(segment);
+  const ticks=[max,min],maxLabels=5,n=data.length;
+  const shownIndices=new Set(n<=maxLabels?data.map((_,i)=>i):Array.from({length:maxLabels},(_,i)=>Math.round(i*(n-1)/(maxLabels-1))));
+  const showLabel=(index:number)=>shownIndices.has(index);
+  return <Frame title={title} data={data} coverage={coverage}>
+    {badge&&<span className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-secondary px-3 py-1 text-xs font-bold text-secondary-foreground">{badge}</span>}
+    <div tabIndex={0} role="region" aria-label={`${title}, com rolagem horizontal`} className="overflow-x-auto focus-ring"><svg role="img" aria-label={`Gráfico de ${area?'área':'linha'}: ${title}`} viewBox="0 0 340 150" className="h-auto min-w-[220px] w-full">
+      {area&&<defs><linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor={stroke} stopOpacity=".32"/><stop offset="100%" stopColor={stroke} stopOpacity="0"/></linearGradient></defs>}
+      <g stroke="var(--border)" strokeWidth="1">{ticks.map((tick,index)=><line key={index} x1="34" x2="306" y1={y(tick)} y2={y(tick)}/>)}</g>
+      <g fill="var(--muted-foreground)" fontSize="9">{ticks.map((tick,index)=><text key={index} x="30" y={y(tick)+3} textAnchor="end">{short(tick)}{suffix}</text>)}</g>
+      {segments.map((items,index)=>{
+        if(!area)return <polyline key={index} fill="none" stroke={stroke} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" points={items.map(item=>`${x(item.index)},${y(item.value!)}`).join(' ')}/>;
+        const line=items.map(item=>`${x(item.index)},${y(item.value!)}`).join(' L '),areaPath=`M ${x(items[0]!.index)},${y(min)} L ${line} L ${x(items[items.length-1]!.index)},${y(min)} Z`;
+        return <g key={index}><path d={areaPath} fill={`url(#${gradId})`}/><polyline fill="none" stroke={stroke} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" points={items.map(item=>`${x(item.index)},${y(item.value!)}`).join(' ')}/></g>;
+      })}
+      {valid.map(item=><circle key={`${item.label}:${item.index}`} cx={x(item.index)} cy={y(item.value!)} r="3.2" fill="var(--card)" stroke={stroke} strokeWidth="2.2"><title>{`${item.label}: ${formatted(item.value)}${suffix}`}</title></circle>)}
+      <g fill="var(--muted-foreground)" fontSize="9">{data.map((item,index)=>showLabel(index)&&<text key={`${item.label}:${index}`} x={x(index)} y="136" textAnchor="middle">{item.label}<title>{`${item.label}: ${formatted(item.value)}${suffix}`}</title></text>)}</g>
+    </svg></div>
+    <p className="mt-2 text-xs text-muted-foreground">Toque ou passe o mouse sobre um ponto para ver o valor exato.</p>
+  </Frame>;
+}
+
 export interface ReachCell {ufs:number;parties:number;suppliers:number}
 export function ReachMatrix({title,data,coverage}:{title:string;data:ReachCell[];coverage:DataCoverage}){
   const flat=data.map(item=>({label:`${item.ufs} UF · ${item.parties} partido(s)`,value:item.suppliers})),ufsAxis=[...new Set(data.map(item=>item.ufs))].sort((a,b)=>a-b),partiesAxis=[...new Set(data.map(item=>item.parties))].sort((a,b)=>a-b),max=Math.max(...data.map(item=>item.suppliers),1);
