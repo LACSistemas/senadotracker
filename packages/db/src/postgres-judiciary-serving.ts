@@ -149,16 +149,20 @@ export async function getJudiciaryTribunalDirectory(pool: Pool, filters:Tribunal
   if(filters.branchCode){args.push(filters.branchCode);where.push(`b.code=$${args.length}`)}
   if(filters.uf){args.push(filters.uf.toUpperCase());where.push(`(t.seat_uf=$${args.length} OR EXISTS (SELECT 1 FROM ${JUDICIARY_SCHEMA}.jud_unit ux WHERE ux.tribunal_id=t.tribunal_id AND ux.physical_uf=$${args.length}))`)}
   const clause=where.length?`WHERE ${where.join(' AND ')}`:''; const count=Number((await pool.query(`SELECT count(*)::int n FROM ${JUDICIARY_SCHEMA}.jud_tribunal t JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id ${clause}`,args)).rows[0].n);
-  args.push(year); const yearIdx=args.length;
+  // Achado real (explorador V1): as 2 subconsultas abaixo nunca filtraram por revisão ativa — mesmo gap
+  // de getJudiciaryComparison/getJudiciaryIndicatorDistribution, corrigido junto por serem a mesma tabela.
+  const rev = await activeObservationRevisions(pool);
+  args.push(year); const yearIdx=args.length; args.push(rev?.revisionIds ?? []); const revIdx=args.length;
   const orderBy = filters.sort==='casos_novos' ? 'casos_novos DESC NULLS LAST,t.official_name' : filters.sort==='congestionamento' ? 'taxa_congestionamento DESC NULLS LAST,t.official_name' : 't.official_name,t.sigla';
   const listArgs=[...args,pageSize,offset]; const items=(await pool.query(`SELECT t.tribunal_id,t.sigla,t.official_name,t.institutional_level,t.seat_uf,b.code branch_code,b.name branch_name,
     EXISTS(SELECT 1 FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id) AS has_jn,
     EXISTS(SELECT 1 FROM ${JUDICIARY_SCHEMA}.jud_fin_fact f WHERE f.tribunal_id=t.tribunal_id) AS has_finance,
     EXISTS(SELECT 1 FROM ${JUDICIARY_SCHEMA}.jud_unit u WHERE u.tribunal_id=t.tribunal_id) AS has_units,
-    (SELECT sum(o.value_numeric) FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id AND o.indicator_id IN ('JN_CASES_NEW_G1','JN_CASES_NEW_G2') AND o.reference_year=$${yearIdx} AND o.value_numeric IS NOT NULL) AS casos_novos,
-    (SELECT o.value_numeric FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id AND o.indicator_id='JN_CONGESTION_RATE' AND o.reference_year=$${yearIdx} LIMIT 1) AS taxa_congestionamento,
+    (SELECT sum(o.value_numeric) FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id AND o.indicator_id IN ('JN_CASES_NEW_G1','JN_CASES_NEW_G2') AND o.reference_year=$${yearIdx} AND o.value_numeric IS NOT NULL AND o.publication_revision_id=ANY($${revIdx}::text[])) AS casos_novos,
+    (SELECT o.value_numeric FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id AND o.indicator_id='JN_CONGESTION_RATE' AND o.reference_year=$${yearIdx} AND o.publication_revision_id=ANY($${revIdx}::text[]) LIMIT 1) AS taxa_congestionamento,
+    (SELECT o.value_numeric FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o WHERE o.canonical_tribunal_id=t.tribunal_id AND o.indicator_id='JN_ACTIVE_MAGISTRATES' AND o.reference_year=$${yearIdx} AND o.publication_revision_id=ANY($${revIdx}::text[]) LIMIT 1) AS magistrados,
     t.source_url FROM ${JUDICIARY_SCHEMA}.jud_tribunal t JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id ${clause} ORDER BY ${orderBy} LIMIT $${listArgs.length-1} OFFSET $${listArgs.length}`,listArgs)).rows;
-  return {availability:'AVAILABLE' as const,page,pageSize,total:count,year,items,provenance:{source:'civica_jud institutional catalog · CNJ Justiça em Números'}};
+  return {availability:'AVAILABLE' as const,page,pageSize,total:count,year,items,provenance:{revisionId:rev?.revisionId,asOf:rev?.asOf,source:'civica_jud institutional catalog · CNJ Justiça em Números'}};
 }
 
 export async function getJudiciaryTribunalSeries(pool:Pool, tribunalId:string, indicatorId:string) {
@@ -166,24 +170,55 @@ export async function getJudiciaryTribunalSeries(pool:Pool, tribunalId:string, i
   return {availability:rows.length?'AVAILABLE':'NOT_REPORTED',data:{tribunalId,indicatorId,items:rows},provenance:{source:'CNJ Justiça em Números',limitations:rows.length?[]:['Não há observações publicadas para o tribunal/indicador']}};
 }
 
+/** Resolve a(s) revisão(ões) ativa(s) relevantes para `jud_jn_observation` (mesmo par de scopes já
+ * usado por `getJudiciaryNationalSeries`/`getJudiciaryInstanceGroupStatistics`). Devolve `null` só
+ * quando NENHUMA das duas existe — nesse caso o chamador deve tratar como fonte indisponível. */
+async function activeObservationRevisions(pool: Pool): Promise<{ revisionIds: string[]; asOf: string | null; revisionId: string | null } | null> {
+  const [statsRev, themeRev] = await Promise.all([activeRevision(pool, 'JN_STATISTICS'), activeRevision(pool, 'JN_THEMATIC')]);
+  const revisionIds = [statsRev?.revision_id, themeRev?.revision_id].filter((x): x is string => !!x);
+  if (!revisionIds.length) return null;
+  return { revisionIds, asOf: statsRev?.activated_at ?? themeRev?.activated_at ?? null, revisionId: statsRev?.revision_id ?? themeRev?.revision_id ?? null };
+}
+
 export async function getJudiciaryComparison(pool:Pool, indicatorId:string, tribunalIds:string[], year:number) {
   if(!tribunalIds.length||tribunalIds.length>50) throw new Error('Lista de tribunais inválida');
   const meta=(await pool.query(`SELECT indicator_id,public_name,official_name,unit,aggregation_allowed,comparison_eligible FROM ${JUDICIARY_SCHEMA}.jud_jn_indicator WHERE indicator_id=$1`,[indicatorId])).rows[0];
   if(!meta) return {availability:'NOT_REPORTED' as const,data:{indicatorId,year,items:[]},provenance:{source:'CNJ Justiça em Números'}};
   if(!meta.comparison_eligible) return {availability:'METHOD_INCOMPATIBLE' as const,data:{indicatorId,year,items:[]},provenance:{source:'CNJ Justiça em Números',limitations:['Indicador marcado como não comparável']}};
-  const items=(await pool.query(`SELECT o.canonical_tribunal_id,t.sigla,t.official_name,o.reference_year,o.value_numeric,o.numerator,o.denominator,o.unit,o.coverage_status,o.comparability FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o JOIN ${JUDICIARY_SCHEMA}.jud_tribunal t ON t.tribunal_id=o.canonical_tribunal_id WHERE o.indicator_id=$1 AND o.reference_year=$2 AND o.canonical_tribunal_id=ANY($3::text[]) ORDER BY t.official_name`,[indicatorId,year,tribunalIds])).rows;
-  return {availability:items.length?'AVAILABLE':'NOT_REPORTED',data:{indicator:meta,year,items},provenance:{source:'CNJ Justiça em Números',limitations:['Sem ranking ou nota sintética']}};
+  // Achado real (explorador V1): esta função nunca filtrou por revisão ativa de `jud_jn_observation`,
+  // diferente de `getJudiciaryNationalSeries`/`getJudiciaryInstanceGroupStatistics` — risco real já
+  // documentado nos vizinhos (o schema permite mais de uma revisão por indicador/tribunal/ano).
+  const rev = await activeObservationRevisions(pool);
+  if (!rev) return {availability:'SOURCE_UNAVAILABLE' as const,data:{indicator:meta,year,items:[]},provenance:{source:'CNJ Justiça em Números'}};
+  // LEFT JOIN a partir da lista pedida (não de jud_jn_observation): um tribunal válido mas sem dado
+  // publicado pra este indicador/ano ainda aparece, com value_numeric null — "ausência não é zero",
+  // nunca some da lista silenciosamente (achado real do explorador V1: a versão antiga, por fazer o
+  // JOIN a partir da própria observação, descartava inteiramente qualquer tribunal sem linha).
+  const items=(await pool.query(`SELECT req.tribunal_id AS canonical_tribunal_id,t.sigla,t.official_name,$2::int AS reference_year,o.value_numeric,o.numerator,o.denominator,coalesce(o.unit,$5) AS unit,o.coverage_status,o.comparability
+    FROM unnest($3::text[]) AS req(tribunal_id)
+    JOIN ${JUDICIARY_SCHEMA}.jud_tribunal t ON t.tribunal_id=req.tribunal_id
+    LEFT JOIN ${JUDICIARY_SCHEMA}.jud_jn_observation o ON o.canonical_tribunal_id=req.tribunal_id AND o.indicator_id=$1 AND o.reference_year=$2 AND o.publication_revision_id=ANY($4::text[])
+    ORDER BY t.official_name`,[indicatorId,year,tribunalIds,rev.revisionIds,meta.unit])).rows;
+  return {availability:items.some((i:any)=>i.value_numeric!=null)?'AVAILABLE':'NOT_REPORTED',data:{indicator:meta,year,items},provenance:{revisionId:rev.revisionId,asOf:rev.asOf,source:'CNJ Justiça em Números',limitations:['Sem ranking ou nota sintética']}};
 }
 
 /** Distribuição real de um indicador de taxa/média entre tribunais (ex.: congestionamento, tempo médio) —
     para indicadores marcados `comparison_eligible` mas sem agregação nacional por SUM (NONE_RATE_OFFICIAL,
     MEAN_ONLY): não existe "a taxa nacional", mas existe a variação real entre instituições, honesta de
-    mostrar como distribuição (min/mediana/max + pontos), nunca como média simples. Só leitura. */
-export async function getJudiciaryIndicatorDistribution(pool:Pool, indicatorId:string, year=2025) {
+    mostrar como distribuição (min/mediana/max + pontos), nunca como média simples. Só leitura.
+    `branchCode` é opcional (ex. Explorador de Tribunais filtrando por ramo antes de montar o gráfico) —
+    sem ele, devolve todos os ramos (igual ao comportamento original, usado hoje por `/judiciario`). */
+export async function getJudiciaryIndicatorDistribution(pool:Pool, indicatorId:string, year=2025, opts:{branchCode?:string}={}) {
   const meta=(await pool.query(`SELECT indicator_id,public_name,official_name,unit,comparison_eligible FROM ${JUDICIARY_SCHEMA}.jud_jn_indicator WHERE indicator_id=$1`,[indicatorId])).rows[0];
   if(!meta||!meta.comparison_eligible) return {availability:'METHOD_INCOMPATIBLE' as const,data:{indicator:meta??null,year,points:[]},provenance:{source:'CNJ Justiça em Números'}};
-  const rows=(await pool.query(`SELECT o.canonical_tribunal_id tribunal_id,t.sigla,t.official_name,b.code branch_code,b.name branch_name,o.value_numeric value FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o JOIN ${JUDICIARY_SCHEMA}.jud_tribunal t ON t.tribunal_id=o.canonical_tribunal_id JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id WHERE o.indicator_id=$1 AND o.reference_year=$2 AND o.value_numeric IS NOT NULL AND t.institutional_level<>'CONTROL' ORDER BY o.value_numeric`,[indicatorId,year])).rows;
-  return {availability:rows.length?'AVAILABLE' as const:'NOT_REPORTED' as const,data:{indicator:meta,year,points:rows},provenance:{source:'CNJ Justiça em Números',limitations:['Distribuição entre tribunais, não uma taxa nacional única — universos e acervos diferem entre instituições']}};
+  // Achado real (explorador V1): mesmo gap de `getJudiciaryComparison` acima — sem filtro de revisão
+  // ativa, uma reemissão da publicação com nova revisão misturaria linhas de 2 revisões no mesmo ponto.
+  const rev = await activeObservationRevisions(pool);
+  if (!rev) return {availability:'SOURCE_UNAVAILABLE' as const,data:{indicator:meta,year,points:[]},provenance:{source:'CNJ Justiça em Números'}};
+  const args:unknown[]=[indicatorId,year,rev.revisionIds]; let branchClause='';
+  if(opts.branchCode){args.push(opts.branchCode);branchClause=`AND b.code=$${args.length}`;}
+  const rows=(await pool.query(`SELECT o.canonical_tribunal_id tribunal_id,t.sigla,t.official_name,b.code branch_code,b.name branch_name,o.value_numeric value FROM ${JUDICIARY_SCHEMA}.jud_jn_observation o JOIN ${JUDICIARY_SCHEMA}.jud_tribunal t ON t.tribunal_id=o.canonical_tribunal_id JOIN ${JUDICIARY_SCHEMA}.jud_branch b ON b.branch_id=t.branch_id WHERE o.indicator_id=$1 AND o.reference_year=$2 AND o.publication_revision_id=ANY($3::text[]) AND o.value_numeric IS NOT NULL AND t.institutional_level<>'CONTROL' ${branchClause} ORDER BY o.value_numeric`,args)).rows;
+  return {availability:rows.length?'AVAILABLE' as const:'NOT_REPORTED' as const,data:{indicator:meta,year,points:rows},provenance:{revisionId:rev.revisionId,asOf:rev.asOf,source:'CNJ Justiça em Números',limitations:['Distribuição entre tribunais, não uma taxa nacional única — universos e acervos diferem entre instituições']}};
 }
 
 export async function getJudiciaryTribunalProfile(pool:Pool, tribunalId:string, year=2025) {

@@ -176,7 +176,7 @@ export default async function TribunalProfilePage({ params }: Props) {
                 </dl>
                 <p className="mt-4 text-xs leading-5 text-muted-foreground">Índice e tempo médio são apurados pelo próprio CNJ — não são uma divisão simples entre os KPIs acima.</p>
               </div>
-              <Link href={`/judiciario/comparar?tribunal=${encodeURIComponent(tribunalId)}`} className="focus-ring block rounded-2xl bg-primary p-5 text-primary-foreground transition hover:bg-primary/90">
+              <Link href={`/judiciario/tribunais?modo=mesa&mesa=${encodeURIComponent(tribunalId)}`} className="focus-ring block rounded-2xl bg-primary p-5 text-primary-foreground transition hover:bg-primary/90">
                 <strong className="block">Comparar com outros tribunais</strong>
                 <span className="mt-1 block text-sm text-white/80">Selecione tribunais do mesmo ramo para análise comparativa.</span>
               </Link>

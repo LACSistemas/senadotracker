@@ -18,7 +18,11 @@ export function TribunalMultiSelect({ name, label, options, initialValues, max =
   return (
     <fieldset className="lg:col-span-3">
       <legend className="text-sm font-bold">{label}</legend>
-      {selected.map(v => <input key={v} type="hidden" name={name} value={v} />)}
+      {/* Achado real (explorador V1): N inputs hidden com o MESMO name chegam ao servidor como array
+       * (`searchParams.tribunais` vira string[]), e `scalar()` descarta arrays — o formulário nunca
+       * enviava nada além do que já estivesse na URL antes do submit. 1 input só, com os valores já
+       * unidos por vírgula, casa com o `list(scalar(...))` que o servidor espera. */}
+      <input type="hidden" name={name} value={selected.join(',')} />
       <div className="mt-2 rounded-2xl border bg-background p-4">
         <div className="flex min-h-11 flex-wrap items-center gap-2">
           {selected.length ? selected.map(v => (

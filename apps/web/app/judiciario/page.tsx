@@ -187,23 +187,14 @@ export default async function JudiciaryPanoramaPage() {
     { id: 'JN_REVENUE_TOTAL', label: 'Receita total', href: '/judiciario/comparar?indicador=JN_REVENUE_TOTAL' },
   ].map(k => ({ ...k, value: valE(k.id, expenseLastYear ?? 0), deltaLabel: yoyExpense(k.id) }));
 
-  // Composição da despesa corrente por natureza (DMag+DServ+DBen+ODC), ano mais recente — rotulada como
-  // soma dos 4 componentes, nunca como "Despesa total" (ver nota acima: são variáveis-fonte distintas, com
-  // uma diferença real de ~4% entre a soma dos 4 e o Dpj oficial, documentada no próprio catálogo do CNJ).
-  const expenseComposition = [
-    { label: 'Magistrados', value: valE('JN_EXPENSE_MAGISTRATES', expenseLastYear ?? 0) ?? 0 },
-    { label: 'Servidores', value: valE('JN_EXPENSE_SERVERS', expenseLastYear ?? 0) ?? 0 },
-    { label: 'Benefícios (inativos/pensionistas)', value: valE('JN_EXPENSE_BENEFITS', expenseLastYear ?? 0) ?? 0 },
-    { label: 'Outras despesas correntes', value: valE('JN_EXPENSE_OTHER_CURRENT', expenseLastYear ?? 0) ?? 0 },
-  ];
-
   // P14.38 — cruzamento complementar: soma bottom-up do Anexo I bruto que cada tribunal publica (fonte e
-  // cobertura diferentes da composição acima, que vem já agregada pelo CNJ) — nunca misturado com ela.
-  // Inciso VI (Receitas) é natureza diferente (receita, não despesa) e fica fora da composição de despesa.
+  // cobertura diferentes da soma já agregada pelo CNJ usada nos KPIs acima) — nunca misturado com ela.
+  // Substituiu a antiga composição por natureza (DMag/DServ/DBen/ODC): a informação dela já está coberta
+  // pelos KPIs de despesa logo acima, então a composição por Inciso orçamentário (mais granular, soma de
+  // todos os períodos publicados por tribunal) passou a ocupar o lugar do gráfico aqui.
   const incisoRows = (expenseByInciso.availability === 'AVAILABLE' ? (expenseByInciso.data.incisos as any[]) : []);
   const incisoTotalTribunais = expenseByInciso.availability === 'AVAILABLE' ? expenseByInciso.data.totalTribunals : 0;
   const incisoDespesaRows = incisoRows.filter(r => r.nature === 'DESPESA');
-  const incisoReceitaRow = incisoRows.find(r => r.nature === 'RECEITA');
   const incisoComposition = incisoDespesaRows.map(r => ({ label: `${r.inciso_code} — ${r.label}`, value: Number(r.amount_cents) / 100 }));
   const incisoTotalDespesa = incisoDespesaRows.reduce((s, r) => s + Number(r.amount_cents), 0) / 100;
 
@@ -421,12 +412,18 @@ export default async function JudiciaryPanoramaPage() {
           <p className="mt-3 text-xs text-muted-foreground">A despesa com magistrados é a que mais cresceu entre as 3 categorias de folha desde 2015 (ver gráfico abaixo) — <Link href="/judiciario/comparar?indicador=JN_EXPENSE_MAGISTRATES" className="font-bold text-primary underline">compare por tribunal</Link>.</p>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
-            <ConcentrationCurve
-              title={`Despesa corrente por natureza, soma nacional (R$) · ${expenseLastYear}`}
-              buckets={expenseComposition}
-              coverage={toChartCoverage('AVAILABLE', 'CNJ Justiça em Números · soma das 4 variáveis de despesa corrente por natureza (DMag/DServ/DBen/ODC)', { from: `${expenseLastYear}-01-01`, to: `${expenseLastYear}-12-31`, grain: 'year' })}
-              note="Magistrados, servidores, benefícios e outras despesas correntes são 4 variáveis-fonte distintas do CNJ — a soma delas não é idêntica à 'Despesa total' oficial (a diferença real é de alguns pontos percentuais; o CNJ documenta que essas categorias não devem ser somadas e comparadas com Dpj sem ressalva)."
-            />
+            {incisoComposition.length > 0 ? (
+              <ConcentrationCurve
+                title="Despesa declarada por Inciso orçamentário, soma de todos os períodos publicados"
+                buckets={incisoComposition}
+                coverage={toChartCoverage('PARTIAL_COVERAGE', `Anexo I bruto por tribunal (CNJ Resolução 102/2009) · ${incisoTotalTribunais} tribunais no total, cobertura desigual por Inciso — ver nota`, { grain: 'year' })}
+                note={`Total: ${moneyFull.format(incisoTotalDespesa)}. STJ não publica no formato Anexo I (orçamento programático distinto) e fica fora desta composição. Inciso IV (Inversões Financeiras) está ausente para 3 tribunais e vale R$ 0 em todos os que o reportam. TJSP só reporta os Incisos I–IV no seu resumo consolidado. O Inciso V do TJDFT tem um recorte diferente dos demais tribunais (detalhamento por Inciso de destino, não um agregado direto comparável) — está incluído no total por ser dinheiro real, mas vale essa ressalva. Cada tribunal foi coletado numa leva única — o período varia por tribunal, não é uma série de ano-calendário fixo.`}
+              />
+            ) : (
+              <div className="rounded-2xl border bg-background p-5">
+                <JudiciaryAvailabilityNote availability={expenseByInciso.availability} source="Anexo I por tribunal (CNJ Resolução 102/2009)" limitations={expenseByInciso.provenance.limitations} />
+              </div>
+            )}
             <MultiLineChart
               title={`Despesa total × receita total, soma nacional · ${expenseYears[0]}–${expenseLastYear}`}
               data={revenueChart}
@@ -462,41 +459,6 @@ export default async function JudiciaryPanoramaPage() {
                 <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Pendentes</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{pending?.value != null ? int.format(Number(pending.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">acervo ao fim do ano</span></div>
                 <div className="min-w-0"><span className="text-[0.68rem] font-bold uppercase tracking-wide text-muted-foreground">Magistrados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.4rem)] leading-none">{magistrates?.value != null ? int.format(Number(magistrates.value)) : '—'}</strong><span className="mt-1 block text-[0.65rem] text-muted-foreground">{magistrates?.institutions ?? 0} instituições</span></div>
               </div>
-            </div>
-          )}
-        </div>
-      </section>
-
-      <section id="despesas-anexo-i" className="border-t py-10">
-        <div className="page-shell">
-          <div className="flex items-start gap-3">
-            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
-            <div>
-              <h2 className="text-3xl font-black tracking-tight">O que cada tribunal diz gastar, Inciso a Inciso</h2>
-              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Um cruzamento complementar à seção acima: em vez da soma já pronta do CNJ, aqui somamos a declaração orçamentária que {incisoTotalTribunais} tribunais publicam no formato padrão do Anexo I (Resolução CNJ 102/2009) — cobertura desigual por Inciso, detalhada abaixo.</p>
-            </div>
-          </div>
-
-          {incisoComposition.length > 0 ? (
-            <>
-              <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_1fr]">
-                <ConcentrationCurve
-                  title="Despesa declarada por Inciso orçamentário, soma de todos os períodos publicados"
-                  buckets={incisoComposition}
-                  coverage={toChartCoverage('PARTIAL_COVERAGE', `Anexo I bruto por tribunal (CNJ Resolução 102/2009) · ${incisoTotalTribunais} tribunais no total, cobertura desigual por Inciso — ver nota`, { grain: 'year' })}
-                  note={`Total: ${moneyFull.format(incisoTotalDespesa)}. STJ não publica no formato Anexo I (orçamento programático distinto) e fica fora desta composição. Inciso IV (Inversões Financeiras) está ausente para 3 tribunais e vale R$ 0 em todos os que o reportam. TJSP só reporta os Incisos I–IV no seu resumo consolidado. Cada tribunal foi coletado numa leva única — o período varia por tribunal, não é uma série de ano-calendário fixo.`}
-                />
-                <div className="rounded-2xl border bg-background p-5">
-                  <p className="text-xs font-bold uppercase tracking-wide text-muted-foreground">Inciso VI — Receitas (não é despesa)</p>
-                  <strong className="display-title mt-1.5 block text-2xl leading-none">{incisoReceitaRow ? moneyCompact.format(Number(incisoReceitaRow.amount_cents) / 100) : '—'}</strong>
-                  <p className="mt-1.5 text-xs text-muted-foreground">{incisoReceitaRow?.tribunals_reporting ?? 0}/{incisoTotalTribunais} tribunais · custas, emolumentos e outras receitas próprias declaradas no Anexo I — mostrado separado da despesa, nunca somado a ela.</p>
-                </div>
-              </div>
-              <p className="mt-3 text-xs text-muted-foreground">O Inciso V do TJDFT tem um recorte diferente dos demais tribunais (detalhamento por Inciso de destino, não um agregado direto comparável) — está incluído no total porque é dinheiro real, mas vale essa ressalva.</p>
-            </>
-          ) : (
-            <div className="mt-6">
-              <JudiciaryAvailabilityNote availability={expenseByInciso.availability} source="Anexo I por tribunal (CNJ Resolução 102/2009)" limitations={expenseByInciso.provenance.limitations} />
             </div>
           )}
         </div>

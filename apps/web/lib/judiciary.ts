@@ -37,8 +37,8 @@ export async function loadJudiciaryTribunalDirectory(filters: TribunalDirectoryF
 export async function loadJudiciaryTribunalProfile(tribunalId: string, year = 2025) {
   return memo(`jud-tribunal:${tribunalId}:${year}`, () => getJudiciaryTribunalProfile(webPostgresPool(), tribunalId, year), TTL);
 }
-export async function loadJudiciaryIndicatorDistribution(indicatorId: string, year = 2025) {
-  return memo(`jud-dist:${indicatorId}:${year}`, () => getJudiciaryIndicatorDistribution(webPostgresPool(), indicatorId, year), TTL);
+export async function loadJudiciaryIndicatorDistribution(indicatorId: string, year = 2025, opts: { branchCode?: string } = {}) {
+  return memo(`jud-dist:${indicatorId}:${year}:${opts.branchCode ?? 'all'}`, () => getJudiciaryIndicatorDistribution(webPostgresPool(), indicatorId, year, opts), TTL);
 }
 export async function loadJudiciaryTribunalSeries(tribunalId: string, indicatorId: string) {
   return memo(`jud-tribunal-series:${tribunalId}:${indicatorId}`, () => getJudiciaryTribunalSeries(webPostgresPool(), tribunalId, indicatorId), TTL);
