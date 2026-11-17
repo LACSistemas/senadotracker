@@ -9,10 +9,13 @@ import { loadStates, loadNationalHealthSummary, isUf } from '@/lib/exec-territor
 import { loadHdiComparison, loadHdiAllStates } from '@/lib/territory-idhm';
 import { loadWellbeingOverview } from '@/lib/wellbeing';
 import { loadExecutiveLevelOverview } from '@/lib/territory-executive';
+import { loadHdiGlobalComparison } from '@/lib/hdi-global';
+import { loadPublicDebtSeries } from '@/lib/public-debt';
 import {
   getInfrastructureWorksOverview, getInfrastructureWorksBySituation, getOrganizedCrimeNational, getIdebTerritory,
   getHealthBedsHistory, getHospitalizationsHistory, getFlowTerritory, getWellbeingSeries, getIndicatorSeries,
   getInfrastructureWorksRegisteredByYear, getInfrastructureWorksCommittedByYear, getInfrastructureWorksCompletedByYear,
+  getGdpSeries,
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
 import { loadBrasilIndicatorsCached } from '@/lib/infrastructure/load';
@@ -50,6 +53,11 @@ async function loadExecutivoHubData() {
     getInfrastructureWorksCompletedByYear(webPostgresPool()),
     getIndicatorSeries(webPostgresPool(), 76, 'IND-SAU-10'),
     loadExecutiveLevelOverview(),
+    // "O Brasil em 5 números" (pedido do usuário): PIB total/per capita (IBGE/SIDRA) e IDH Global
+    // (PNUD/ONU, PARALELO ao IDHM decenal já usado no mapa — metodologia diferente, nunca combinados).
+    getGdpSeries(webPostgresPool(), { level: 'BRASIL' }),
+    loadHdiGlobalComparison(),
+    loadPublicDebtSeries(),
   ] as const);
 }
 const loadExecutivoHubDataCached = () => memo('executivo:hub', loadExecutivoHubData, 5 * 60_000);
@@ -125,7 +133,7 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const [states, health, hdiBrasil, hdiStates, wellbeing, infraIndicators, orgCrime, idebBrasil, worksOverview, worksBySituation,
     bedsHistory, hospitalizationsHistory, flowTerritory, cagedBalSeries, raisStockSeries, cagedAdmSeries,
     worksRegisteredByYear, worksCommittedByYear, worksCompletedByYear, icsapSeries,
-    levelOverview,
+    levelOverview, gdpBrasilSeries, hdiGlobal, publicDebt,
   ] = await loadExecutivoHubDataCached();
 
   const totalPop = states.reduce((s, st) => s + (st.population ?? 0), 0);
@@ -269,6 +277,24 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const concludedCount = situationRows.find(s => s.label === 'Concluída')?.count ?? 0;
   const concludedShare = situationTotal ? (concludedCount / situationTotal) * 100 : null;
 
+  // "O Brasil em 5 números" (pedido do usuário: "coisa geral mesmo, tipo PIB total, IDH médio") —
+  // retrato amplo do país (população/economia/desenvolvimento humano/divisão territorial), não um
+  // recorte por área de política pública (isso já é "As cinco áreas", logo abaixo). IDH aqui é o
+  // Global (PNUD/ONU, anual, o número internacionalmente reconhecido) — PARALELO ao IDHM (PNUD/IPEA/
+  // FJP, decenal 1991-2010) usado no mapa do hero; nunca a mesma série, nunca somados.
+  const leitosPorMilHab = totalPop > 0 ? (health.bedsExisting / totalPop) * 1000 : null;
+  const gdpBrasilLatest = gdpBrasilSeries?.latest ?? null;
+  const hdiGlobalLatest = hdiGlobal.brasil.at(-1) ?? null;
+  const debtLatest = publicDebt.latest;
+  const debtSub = debtLatest ? `BCB · ${MONTH_ABBR[Number(debtLatest.periodStart.slice(5, 7)) - 1]}/${debtLatest.periodStart.slice(0, 4)}` : 'BCB · —';
+  const hubKpis = [
+    { id: 'populacao', label: 'População', icon: Users, value: formatInt(totalPop), sub: `IBGE · ${popYear}` },
+    { id: 'pib', label: 'PIB total', icon: Wallet, value: gdpBrasilLatest ? moneyCompact.format(gdpBrasilLatest.gdpThousandReais * 1000) : '—', sub: `IBGE/SIDRA · ${gdpBrasilLatest?.year ?? '—'}` },
+    { id: 'divida-publica', label: 'Dívida pública', icon: Banknote, value: debtLatest ? `${debtLatest.value.toFixed(1).replace('.', ',')}% do PIB` : '—', sub: debtSub },
+    { id: 'idh', label: 'IDH', icon: HeartHandshake, value: hdiGlobalLatest ? hdiGlobalLatest.hdi.toFixed(3).replace('.', ',') : '—', sub: `PNUD/ONU · ${hdiGlobalLatest?.year ?? '—'}` },
+    { id: 'municipios', label: 'Municípios', icon: Building2, value: int.format(municipalityCount), sub: '27 UFs + DF · IBGE' },
+  ];
+
   return (
     <main id="conteudo" tabIndex={-1}>
       <section id="explorar" className="page-shell py-6 sm:py-8">
@@ -395,6 +421,28 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
         </div>
       </section>
 
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Globe className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">O Brasil em 5 números</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Um retrato rápido do país — população, economia e desenvolvimento humano, direto das fontes oficiais.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {hubKpis.map(k => (
+              <div key={k.id} className="rounded-2xl border bg-background p-4">
+                <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground"><k.icon size={13} aria-hidden /> {k.label}</span>
+                <strong className="display-title mt-1.5 block text-2xl leading-none">{k.value}</strong>
+                <span className="mt-1.5 block text-xs text-muted-foreground">{k.sub}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="page-shell py-12">
         <p className="eyebrow">Políticas públicas na prática</p>
         <h2 className="mt-2 text-3xl font-black tracking-tight">Quem cuida de quê no Brasil?</h2>
@@ -412,7 +460,7 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <div className="flex items-center gap-2" style={{ color: SAUDE_COLOR }}><HeartPulse size={20} aria-hidden /><p className="eyebrow" style={{ color: SAUDE_COLOR }}>Saúde</p></div>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.saude!.question}</h3>
               <div className="mt-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
-                <div><strong className="display-title text-3xl tabular-nums">{(health.bedsExisting / totalPop * 1000).toFixed(2)}</strong><span className="ml-1.5 text-sm text-muted-foreground">leitos por mil hab.</span></div>
+                <div><strong className="display-title text-3xl tabular-nums">{leitosPorMilHab != null ? leitosPorMilHab.toFixed(2) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">leitos por mil hab.</span></div>
                 <div><strong className="display-title text-3xl tabular-nums">{int.format(health.hospitals)}</strong><span className="ml-1.5 text-sm text-muted-foreground">hospitais no cadastro</span></div>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">CNES/DataSUS, competência {health.competence}</p>
@@ -520,7 +568,7 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
         <div className="page-shell">
           <h2 className="text-xl font-black">Fontes, cobertura e transparência</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Cada número desta página tem fonte, período e cobertura declarados — nenhum total nacional é calculado sem metodologia verificável.</p>
-          <div className="mt-4"><JudiciaryAvailabilityNote availability="AVAILABLE" source="IBGE · INEP · DataSUS/CNES · SNIS · Sinesp VDE · PNUD/IPEA/FJP" limitations={['População: soma das 27 UFs, ano mais recente publicado por UF, não necessariamente o mesmo ano em todas', 'IDHM: decenal (1991/2000/2010); não há edição 2021 nesta base', 'Renda domiciliar per capita: média, não mediana — valores de mediana nacional exigiriam microdados que esta leitura não recalcula', 'Segurança: Sinesp VDE é estadual, com partições e cobertura que variam por UF e ano']} /></div>
+          <div className="mt-4"><JudiciaryAvailabilityNote availability="AVAILABLE" source="IBGE · IBGE/SIDRA · INEP · DataSUS/CNES · SNIS · Sinesp VDE · PNUD/IPEA/FJP · PNUD/ONU · Banco Central (SGS)" limitations={['População: soma das 27 UFs, ano mais recente publicado por UF, não necessariamente o mesmo ano em todas', 'IDHM (mapa): decenal (1991/2000/2010); não há edição 2021 nesta base — já o IDH em "O Brasil em 5 números" é o IDH Global (PNUD/ONU), anual, metodologia diferente, nunca somado ou comparado diretamente ao IDHM', 'PIB total: preços correntes (IBGE/SIDRA), ano mais recente publicado', 'Dívida pública: Dívida Bruta do Governo Geral (DBGG, % do PIB, Banco Central/SGS série 13762) — soma União, estados e municípios; é diferente da Dívida Líquida do Setor Público (outra série do BC), nunca a mesma métrica', 'Renda domiciliar per capita: média, não mediana — valores de mediana nacional exigiriam microdados que esta leitura não recalcula', 'Segurança: Sinesp VDE é estadual, com partições e cobertura que variam por UF e ano']} /></div>
           <Link href="/metodologia" className="mt-4 inline-block text-sm font-bold text-primary underline">Ver metodologia e fontes completas</Link>
         </div>
       </section>
