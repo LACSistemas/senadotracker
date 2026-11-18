@@ -17,9 +17,12 @@ export function Crumbs({ items }: { items: Array<{ href?: string; label: string 
  * `TerritoryHero` com mapa integrado. kicker/title/lede/population/cover continuam obrigatórios (mantém o
  * contrato existente para as outras ~12 rotas que usam TerritoryFrame sem heroNode), mas não são lidos
  * neste ramo — o chamador monta o próprio hero com os mesmos dados. */
-export function TerritoryFrame({ crumbs, kicker, title, lede, population, populationYear, base, active, actions, cover, coverContext, heroNode, children }: {
+export function TerritoryFrame({ crumbs, kicker, title, lede, population, populationYear, base, active, actions, cover, coverContext, heroNode, themes, children }: {
   crumbs: Array<{ href?: string; label: string }>; kicker: string; title: string; lede: ReactNode; population: number | null; populationYear: number | null;
-  base: string; active: string; actions?: ReactNode; cover?: boolean; coverContext?: string; heroNode?: ReactNode; children: ReactNode;
+  base: string; active: string; actions?: ReactNode; cover?: boolean; coverContext?: string; heroNode?: ReactNode;
+  /** Sobrescreve as abas padrão (`THEMES`) — usado por `/executivo/federal/*` (P14.49) para incluir Finanças,
+   * sem adicionar essa aba em `/estados/{uf}`/`/municipios/{ibge}`, que não têm dado de finanças. */
+  themes?: ReadonlyArray<{ slug: string; label: string; ready: boolean }>; children: ReactNode;
 }) {
   const populationChip = population !== null ? <span className="rounded-full border bg-card px-3 py-1 text-sm"><strong>{formatInt(population)}</strong> habitantes <span className="text-muted-foreground">({populationYear}, estimativa IBGE)</span></span> : null;
   return <main id="conteudo" tabIndex={-1} className="shell-territory scroll-mt-28 py-6 sm:py-10">
@@ -36,7 +39,7 @@ export function TerritoryFrame({ crumbs, kicker, title, lede, population, popula
         <div className="mt-5 flex flex-wrap items-center gap-3">{populationChip}{actions}</div>
       </header>
     ))}
-    <div className="mt-6"><ThemeTabs base={base} active={active} themes={[...THEMES]} /></div>
+    <div className="mt-6"><ThemeTabs base={base} active={active} themes={themes ? [...themes] : [...THEMES]} /></div>
     <div className="mt-6 space-y-10">{children}</div>
   </main>;
 }

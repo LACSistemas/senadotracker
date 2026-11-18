@@ -2,7 +2,7 @@ import type { Pool } from 'pg';
 import { DOMAIN } from './indicator-defs.ts';
 
 /** Versões do contrato financeiro (entram no hash de cada fatia: mudar um parser/contrato republica). */
-export const FIN_VERSION = { dca: 'dca-ie-v1', dcaRp: 'dca-ig-v1', rreo: 'rreo02-v1', publish: 'fin-v1', fed: 'fed-v1', fedDot: 'fed-dot-v1', rs: 'tcers-v1', pe: 'tcepe-v1' } as const;
+export const FIN_VERSION = { dca: 'dca-ie-v1', dcaRp: 'dca-ig-v1', rreo: 'rreo02-v1', publish: 'fin-v1', fed: 'fed-v1', fedDot: 'fed-dot-v1', rs: 'tcers-v1', pe: 'tcepe-v1', dcaIcBr: 'dca-ic-br-v2', dcaIdBr: 'dca-id-br-v1' } as const;
 
 /** Fontes de cobertura (exec_fin_cov.source). */
 export const FIN_SOURCE = { dcaIE: 1, rreo02: 2, dcaIG: 3, fedExec: 4, fedDot: 5 } as const;
@@ -12,8 +12,71 @@ export const COV_NAME: Record<number, string> = { 1: 'PUBLISHED', 2: 'PUBLISHED_
 /** Bits de exec_fin_cov.caveats. */
 export const COV_CAVEAT = { sumFunctionsNeTotal: 1, sumSubfunctionsNeFunction: 2, divergentDuplicates: 4, unknownLabelInFn06: 8 } as const;
 
-/** Domínios de exec_ref_code usados pela camada financeira (0, 3 e 4 já pertencem ao CNES/DEMAS). */
-export const FIN_DOMAIN = { conta: 30, colDcaIE: 31, colRreo02: 32, colDcaIG: 33 } as const;
+/** Domínios de exec_ref_code usados pela camada financeira (0, 3 e 4 já pertencem ao CNES/DEMAS).
+ * colDcaIC/colDcaID: P14.46 (Finanças Públicas, só União) — Receita (Anexo I-C) e Despesa por
+ * categoria econômica/GND (Anexo I-D), demonstrativos NOVOS do Siconfi (mesma API do I-E/I-G,
+ * `no_anexo` diferente), ainda não coletados neste projeto antes do P14.46. */
+export const FIN_DOMAIN = { conta: 30, colDcaIE: 31, colRreo02: 32, colDcaIG: 33, colDcaIC: 34, colDcaID: 35 } as const;
+
+/** Receita (DCA Anexo I-C): contas da União identificadas pelo `cod_conta` ESTÁVEL do Siconfi (não
+ * pelo rótulo em texto — confirmado ao vivo que `cod_conta` não muda entre exercícios, diferente do
+ * I-E, cujo `cod_conta` por função não é uma chave semântica própria). Só o essencial pro hub e pro
+ * aprofundamento federal; o restante das ~800 linhas da União fica fora (não é um "catálogo total
+ * de receitas", é um recorte deliberado) — aqui vai até o nível 2 da árvore orçamentária (origem da
+ * receita corrente/capital), nunca o nível 3+ (ex. IRPF vs IRPJ), que seria ruído num dashboard.
+ *
+ * Achado real confirmado ao vivo (probe direto no RAW já coletado, não suposição): em 2014 e 2015 a
+ * União declarou a DCA com um `cod_conta` de formato ANTIGO (um segmento ".00" a mais, ex.
+ * `RO1.0.0.0.00.00.00` em vez de `RO1.0.0.0.00.0.0`) — por isso ESSES DOIS ANOS, e só eles, já
+ * ficavam com 0 fatos de receita mesmo antes desta lista crescer (ver `exec_fin_cov`/facts=0 em
+ * 2014-2015 já publicado no P14.46). 2016-2025 usam o formato novo e estável (verificado em
+ * 2016/2017/2018/2019/2020/2021/2022/2023/2024/2025, todas as 13 contas abaixo presentes); 2026
+ * ainda não tem DCA declarada (ano corrente). Não vale a pena sustentar os dois formatos para só 2
+ * anos históricos — mesmo espírito de recorte deliberado do comentário acima. */
+export const DCA_IC_CONTAS: Array<[string, string, string]> = [   // [cod_conta Siconfi, nosso código em domain=conta, rótulo]
+  ['ReceitasExcetoIntraOrcamentarias', 'REC-TOT', 'Receitas (exceto intra-orçamentárias)'],
+  ['RO1.0.0.0.00.0.0', 'REC-CORRENTE', 'Receitas Correntes'],
+  ['RO1.1.0.0.00.0.0', 'REC-COR-TRIBUTARIA', 'Impostos, Taxas e Contribuições de Melhoria'],
+  ['RO1.2.0.0.00.0.0', 'REC-COR-CONTRIB', 'Contribuições'],
+  ['RO1.3.0.0.00.0.0', 'REC-COR-PATRIMONIAL', 'Receita Patrimonial'],
+  ['RO1.4.0.0.00.0.0', 'REC-COR-AGROPECUARIA', 'Receita Agropecuária'],
+  ['RO1.5.0.0.00.0.0', 'REC-COR-INDUSTRIAL', 'Receita Industrial'],
+  ['RO1.6.0.0.00.0.0', 'REC-COR-SERVICOS', 'Receita de Serviços'],
+  ['RO1.7.0.0.00.0.0', 'REC-COR-TRANSF', 'Transferências Correntes'],
+  ['RO1.9.0.0.00.0.0', 'REC-COR-OUTRAS', 'Outras Receitas Correntes'],
+  ['RO2.0.0.0.00.0.0', 'REC-CAPITAL', 'Receitas de Capital'],
+  ['RO2.1.0.0.00.0.0', 'REC-CAP-CREDITO', 'Operações de Crédito'],
+  ['RO2.2.0.0.00.0.0', 'REC-CAP-ALIENACAO', 'Alienação de Bens'],
+  ['RO2.3.0.0.00.0.0', 'REC-CAP-AMORTIZACAO', 'Amortização de Empréstimos'],
+  ['RO2.4.0.0.00.0.0', 'REC-CAP-TRANSF', 'Transferências de Capital'],
+  ['RO2.9.0.0.00.0.0', 'REC-CAP-OUTRAS', 'Outras Receitas de Capital'],
+];
+/** Colunas do Anexo I-C: valores em bruto e deduções (FUNDEB, restituições, incentivos fiscais —
+ * o rótulo exato varia por ente; "Outras Deduções da Receita" na União, "Deduções - FUNDEB" em
+ * estados/municípios — por isso o casamento é por substring "DEDU", não por rótulo exato). */
+export const DCA_IC_COLUMNS: FinColumn[] = [
+  { code: 'BRUTA', label: 'Receitas Brutas Realizadas', semantic: 'valor bruto arrecadado no exercício, antes de deduções', bit: 1 },
+  { code: 'DEDUCAO', label: 'Deduções da Receita', semantic: 'deduções do exercício (FUNDEB, restituições, incentivos fiscais) — subtrai da bruta para a líquida', bit: 2 },
+];
+export function dcaIcColumn(coluna: string): string | null {
+  const n = normLabel(coluna);
+  if (/DEDU/.test(n)) return 'DEDUCAO'; if (/^RECEITAS BRUTAS REALIZADAS/.test(n)) return 'BRUTA'; return null;
+}
+
+/** Despesa por categoria econômica/GND (DCA Anexo I-D): mesmo vocabulário de colunas do I-E
+ * (Despesas Empenhadas/Liquidadas/Pagas/Inscrição de RP...), `dcaIeColumn` já casa esses rótulos —
+ * reaproveitado abaixo, não duplicado. GND 1–6 conforme Portaria STN/Lei 4320 (confirmado ao vivo
+ * nos `cod_conta` da União: DO3.1=Pessoal, DO3.2=Juros, DO3.3=Outras Correntes, DO4.4=Investimentos,
+ * DO4.5=Inversões Financeiras, DO4.6=Amortização da Dívida). */
+export const DCA_ID_CONTAS: Array<[string, string, string]> = [
+  ['TotalDespesas', 'GND-TOT', 'Total Geral da Despesa (todas as categorias econômicas)'],
+  ['DO3.1.00.00.00.00', 'GND1', 'Pessoal e Encargos Sociais'],
+  ['DO3.2.00.00.00.00', 'GND2', 'Juros e Encargos da Dívida'],
+  ['DO3.3.00.00.00.00', 'GND3', 'Outras Despesas Correntes'],
+  ['DO4.4.00.00.00.00', 'GND4', 'Investimentos'],
+  ['DO4.5.00.00.00.00', 'GND5', 'Inversões Financeiras'],
+  ['DO4.6.00.00.00.00', 'GND6', 'Amortização da Dívida'],
+];
 
 /** Funções orçamentárias (Portaria MOG 42/1999; a função 06 é a Segurança Pública). */
 export const FUNCTIONS: Array<[string, string]> = [['01', 'Legislativa'], ['02', 'Judiciária'], ['03', 'Essencial à Justiça'], ['04', 'Administração'], ['05', 'Defesa Nacional'], ['06', 'Segurança Pública'], ['07', 'Relações Exteriores'], ['08', 'Assistência Social'],

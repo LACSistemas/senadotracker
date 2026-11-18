@@ -37,6 +37,28 @@ export async function getEvolutionSeries(q: Q, entityId: number): Promise<Record
   return out;
 }
 
+export interface BedsPer10kAllUfsPoint { ufCode: number; year: number; bedsPer10k: number | null }
+/** Leitos existentes (CNES, indicador IND-SAU-05) por 10 mil habitantes, das 27 UFs, todos os anos,
+ * numa única consulta — nunca uma consulta por estado. Valor vigente em dezembro de cada ano (mesmo
+ * recorte de `getEvolutionSeries`), dividido pela população oficial do MESMO ano (nunca de outro
+ * ano). 2022 e 2023 não têm população oficial de UF nesta base: saem sem valor, nunca reconstruído. */
+export async function getBedsPer10kAllUfs(q: Q): Promise<BedsPer10kAllUfsPoint[]> {
+  const rows = (await q.query(
+    `SELECT e.uf_code, extract(year FROM v.period_start)::int AS year, v.value AS beds, p.value AS population
+     FROM civica_exec.exec_ind_value v
+     JOIN civica_exec.exec_ind_def d USING (indicator_id)
+     JOIN civica_exec.exec_entity e ON e.entity_id = v.entity_id AND e.kind = 3
+     LEFT JOIN civica_exec.exec_territory_population p ON p.entity_id = e.entity_id AND p.year = extract(year FROM v.period_start)::int AND p.source = 1
+     WHERE d.code = 'IND-SAU-05' AND extract(month FROM v.period_start) = 12
+     ORDER BY e.uf_code, year`,
+  )).rows;
+  return rows.map(r => {
+    const population = r.population == null ? null : Number(r.population);
+    const beds = r.beds == null ? null : Number(r.beds);
+    return { ufCode: Number(r.uf_code), year: Number(r.year), bedsPer10k: population && beds != null ? (beds / population) * 10000 : null };
+  });
+}
+
 /** Estatística entre territórios do mesmo grupo: [n, p25, p50, p75] por ano e código. SIH-TAXA = internações/1.000 hab.; SIH-NO-MUN = % tratadas no próprio município. */
 export type YearStat = [n: number, p25: number, p50: number, p75: number];
 export type SeriesBench = Record<string, Record<string, YearStat>>;

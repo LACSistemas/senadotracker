@@ -11,17 +11,19 @@ import { loadWellbeingOverview } from '@/lib/wellbeing';
 import { loadExecutiveLevelOverview } from '@/lib/territory-executive';
 import { loadHdiGlobalComparison } from '@/lib/hdi-global';
 import { loadPublicDebtSeries } from '@/lib/public-debt';
+import { loadFederalFinancas, loadFederalFinancasHistory } from '@/lib/financas-publicas';
 import {
   getInfrastructureWorksOverview, getInfrastructureWorksBySituation, getOrganizedCrimeNational, getIdebTerritory,
   getHealthBedsHistory, getHospitalizationsHistory, getFlowTerritory, getWellbeingSeries, getIndicatorSeries,
   getInfrastructureWorksRegisteredByYear, getInfrastructureWorksCommittedByYear, getInfrastructureWorksCompletedByYear,
-  getGdpSeries,
+  getGdpSeries, getIdebAllUfs, getGdpPerCapitaAllUfs, getBedsPer10kAllUfs, getAggressionRateAllUfs,
 } from '@senadotracker/db';
 import { webPostgresPool } from '@/lib/postgres-pool';
 import { loadBrasilIndicatorsCached } from '@/lib/infrastructure/load';
 import { toChartCoverage, JudiciaryAvailabilityNote } from '@/components/judiciary/availability';
 import { FederativeExplorer, type FederativeArea } from '@/components/executivo/federative-explorer';
-import { CompactTrend } from '@/components/charts';
+import { StateRace, type RaceDataset } from '@/components/executivo/state-race';
+import { CompactTrend, RankedBars } from '@/components/charts';
 import { memo } from '@/lib/security/load';
 
 /** Todo o Promise.all da página não depende de searchParams (uf/indicador só pintam o mapa com dado já
@@ -58,6 +60,23 @@ async function loadExecutivoHubData() {
     getGdpSeries(webPostgresPool(), { level: 'BRASIL' }),
     loadHdiGlobalComparison(),
     loadPublicDebtSeries(),
+    // "De onde vem e para onde vai o dinheiro" (P14.46, só União): despesa por função (DCA I-E, já
+    // carregada desde o P9.5) + receita (DCA I-C), novas nesta onda.
+    loadFederalFinancas(),
+    // 6ª área "Finanças" (P14.49): reaproveita a MESMA série 2014–2026 que `/executivo/federal` já
+    // carrega (`loadFederalFinancasHistory`, cache de 1h) — só pros 3 sparklings do card, não repete coleta.
+    loadFederalFinancasHistory(),
+    // "Corrida dos Estados" (P14.50): 4 índices nacionais com série anual por UF numa única consulta
+    // cada (nunca 27 round-trips) — Ideb (3 etapas), PIB per capita, leitos por 10 mil hab. e taxa de
+    // mortes por agressão (SIM). Escolha dos índices confirmada com o usuário após sondagem real do
+    // banco (ver AskUserQuestion da sessão): PIB per capita e leitos/10k, que o pedido original dava
+    // como fora de escopo, na verdade têm série completa por UF — só faltava o leitor "todas as UFs".
+    getIdebAllUfs(webPostgresPool(), { stage: 1, dep: 0 }),
+    getIdebAllUfs(webPostgresPool(), { stage: 2, dep: 0 }),
+    getIdebAllUfs(webPostgresPool(), { stage: 3, dep: 0 }),
+    getGdpPerCapitaAllUfs(webPostgresPool()),
+    getBedsPer10kAllUfs(webPostgresPool()),
+    getAggressionRateAllUfs(webPostgresPool()),
   ] as const);
 }
 const loadExecutivoHubDataCached = () => memo('executivo:hub', loadExecutivoHubData, 5 * 60_000);
@@ -133,7 +152,8 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const [states, health, hdiBrasil, hdiStates, wellbeing, infraIndicators, orgCrime, idebBrasil, worksOverview, worksBySituation,
     bedsHistory, hospitalizationsHistory, flowTerritory, cagedBalSeries, raisStockSeries, cagedAdmSeries,
     worksRegisteredByYear, worksCommittedByYear, worksCompletedByYear, icsapSeries,
-    levelOverview, gdpBrasilSeries, hdiGlobal, publicDebt,
+    levelOverview, gdpBrasilSeries, hdiGlobal, publicDebt, federalFinancas, federalFinancasHistory,
+    idebRaceStage1, idebRaceStage2, idebRaceStage3, gdpPerCapitaAllUfs, bedsPer10kAllUfs, aggressionRateAllUfs,
   ] = await loadExecutivoHubDataCached();
 
   const totalPop = states.reduce((s, st) => s + (st.population ?? 0), 0);
@@ -233,12 +253,67 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
   const worksCompletedChartData = worksCompletedByYear.map(r => ({ label: String(r.year), value: r.count }));
   const worksCompletedCoverage = yearCoverage('Obrasgov · ano de conclusão efetiva', worksCompletedChartData);
 
+  // 6ª área "Finanças" (P14.49): série 2014–2026 já carregada por `loadFederalFinancasHistory` —
+  // mesma fonte que alimenta o aprofundamento de /executivo/federal, só reaproveitada em sparkline.
+  const FINANCAS_COLOR = 'var(--map-cyan-4)';
+  const finHistYears = federalFinancasHistory.years;
+  const finHistLatest = finHistYears.at(-1);
+  const despesaPrimariaChartData = finHistYears.map(y => ({ label: String(y.year), value: y.despesaPrimaria?.value ?? null }));
+  const despesaPrimariaHistCoverage = yearCoverage('Siconfi · DCA I-D (Total − Juros − Amortização)', despesaPrimariaChartData);
+  const receitaPrimariaChartData = finHistYears.map(y => ({ label: String(y.year), value: y.receitaPrimaria?.value ?? null }));
+  const receitaPrimariaCoverage = yearCoverage('Siconfi · DCA I-C (Total − Operações de Crédito)', receitaPrimariaChartData);
+  const resultadoPrimarioChartData = finHistYears.map(y => ({ label: String(y.year), value: y.resultadoPrimario?.value ?? null }));
+  const resultadoPrimarioCoverage = yearCoverage('Resultado primário aproximado (base DCA/Siconfi)', resultadoPrimarioChartData);
+
   // Mapa único do hero: analítico desde a abertura — colorido pelo indicador selecionado, com legenda real
   // (mandato §14/§15). A versão anterior tinha 2 mapas (um neutro no hero, outro analítico numa seção
   // separada abaixo) — repetição cartográfica sem diferenciação (mandato §16). Agora é um só: a descoberta
   // territorial É o hero, não uma seção depois dele.
   const ufHdi = new Map(hdiStates.map(h => [h.entityId, h.idhm]));
   const stateByUfCode = new Map(states.map(s => [s.ufCode, s.uf]));
+
+  // "Corrida dos Estados" (P14.50): cada leitor `AllUfs` devolve pontos soltos (ufCode × ano × valor);
+  // aqui eles viram `RaceEdition[]` — uma edição por ano onde PELO MENOS 1 UF tem valor real (anos em
+  // que NENHUMA UF tem dado — ex. 2007/2010/2022/2023 do PIB per capita, sem população oficial de UF
+  // nesta base — nunca aparecem como um quadro vazio, nem são inventados).
+  const raceUfs = states.map(s => ({ uf: s.uf, name: s.name })).filter(u => u.uf);
+  const ufMetaByCode = new Map(states.map(s => [s.ufCode, { uf: s.uf, name: s.name }]));
+  function toRaceEditions<T extends { ufCode: number; year: number }>(points: T[], valueOf: (p: T) => number | null): RaceDataset['editions'] {
+    const byYear = new Map<number, RaceDataset['editions'][number]>();
+    for (const p of points) {
+      const meta = ufMetaByCode.get(p.ufCode); if (!meta) continue;
+      const value = valueOf(p); if (value == null) continue;
+      if (!byYear.has(p.year)) byYear.set(p.year, { year: p.year, bars: [] });
+      byYear.get(p.year)!.bars.push({ uf: meta.uf, name: meta.name, value });
+    }
+    return [...byYear.values()].sort((a, b) => a.year - b.year);
+  }
+  const RACE_DATASETS: RaceDataset[] = [
+    { key: 'ideb-1', group: 'Ideb', area: 'Educação', stageLabel: 'Anos iniciais', unit: 'nota (0–10)', decimals: 1, color: EDUCACAO_COLOR,
+      source: 'Fonte: INEP · Ideb, todas as redes; período 2005–2025; grão por edição (bienal).',
+      restrictions: ['O Ideb de uma rede não é a média dos Idebs das escolas.', 'A meta oficial só existe até a edição de 2021 — as edições seguintes são comparáveis, mas sem meta própria.'],
+      editions: toRaceEditions(idebRaceStage1, p => p.ideb) },
+    { key: 'ideb-2', group: 'Ideb', area: 'Educação', stageLabel: 'Anos finais', unit: 'nota (0–10)', decimals: 1, color: EDUCACAO_COLOR,
+      source: 'Fonte: INEP · Ideb, todas as redes; período 2005–2025; grão por edição (bienal).',
+      restrictions: ['O Ideb de uma rede não é a média dos Idebs das escolas.', 'A meta oficial só existe até a edição de 2021 — as edições seguintes são comparáveis, mas sem meta própria.'],
+      editions: toRaceEditions(idebRaceStage2, p => p.ideb) },
+    { key: 'ideb-3', group: 'Ideb', area: 'Educação', stageLabel: 'Ensino médio', unit: 'nota (0–10)', decimals: 1, color: EDUCACAO_COLOR,
+      source: 'Fonte: INEP · Ideb, todas as redes; período 2005–2025; grão por edição (bienal).',
+      restrictions: ['O Ideb de uma rede não é a média dos Idebs das escolas.', 'A meta oficial só existe até a edição de 2021 — as edições seguintes são comparáveis, mas sem meta própria.'],
+      editions: toRaceEditions(idebRaceStage3, p => p.ideb) },
+    { key: 'pib-percapita', group: 'PIB per capita', area: 'Economia', stageLabel: null, unit: 'R$ por habitante/ano (preços correntes)', decimals: 0, color: INFRA_COLOR,
+      source: 'Fonte: IBGE/SIDRA · PIB per capita a preços correntes (nominal); grão anual.',
+      restrictions: ['Valor nominal, não ajustado pela inflação: comparar edições distantes exige cautela.', '2007, 2010, 2022 e 2023 não têm estimativa oficial de população por UF nesta base — essas edições não aparecem na corrida (não são zero nem foram reconstruídas).'],
+      editions: toRaceEditions(gdpPerCapitaAllUfs, p => p.perCapitaReais) },
+    { key: 'leitos-10k', group: 'Leitos hospitalares', area: 'Saúde', stageLabel: null, unit: 'leitos por 10 mil hab.', decimals: 1, color: SAUDE_COLOR,
+      source: 'Fonte: CNES/DataSUS · leitos existentes, vigentes em dezembro de cada ano; grão anual.',
+      restrictions: ['Leitos de hospital-dia são excluídos; não distingue leitos SUS de particulares.', '2022 e 2023 não têm estimativa oficial de população por UF nesta base — essas edições não aparecem na corrida.'],
+      editions: toRaceEditions(bedsPer10kAllUfs, p => p.bedsPer10k) },
+    { key: 'seg-agressao', group: 'Mortes por agressão', area: 'Segurança', stageLabel: null, unit: 'mortes por 100 mil hab.', decimals: 1, color: SEGURANCA_COLOR,
+      source: 'Fonte: SIM/DATASUS · taxa de mortes por agressão (CID-10 X85–Y09, residência); grão anual.',
+      restrictions: ['É mortalidade por causa básica (óbito), não é o crime de homicídio doloso registrado pela polícia (VDE) — as séries não são equivalentes.', '2022 e 2023 não têm estimativa oficial de população por UF nesta base — essas edições não aparecem na corrida.'],
+      editions: toRaceEditions(aggressionRateAllUfs, p => p.ratePer100k) },
+  ];
 
   const indicatorValueByUf = new Map<string, number>();
   if (indicator === 'populacao') {
@@ -293,6 +368,25 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
     { id: 'divida-publica', label: 'Dívida pública', icon: Banknote, value: debtLatest ? `${debtLatest.value.toFixed(1).replace('.', ',')}% do PIB` : '—', sub: debtSub },
     { id: 'idh', label: 'IDH', icon: HeartHandshake, value: hdiGlobalLatest ? hdiGlobalLatest.hdi.toFixed(3).replace('.', ',') : '—', sub: `PNUD/ONU · ${hdiGlobalLatest?.year ?? '—'}` },
     { id: 'municipios', label: 'Municípios', icon: Building2, value: int.format(municipalityCount), sub: '27 UFs + DF · IBGE' },
+  ];
+
+  // "Como estão as contas públicas do Brasil?" (P14.46, só União). `despesa` (por função, DCA I-E) já
+  // tinha dado desde o P9.5; `receita`/`despesaPorCategoria` (DCA I-C/I-D) são novas — cada uma fica
+  // `null` até o Siconfi publicar o exercício, nunca um valor inventado. Função (Previdência, Saúde...)
+  // e categoria econômica/GND (Pessoal, Juros...) são eixos DIFERENTES e nunca aparecem na mesma barra
+  // empilhada: "Pessoal" atravessa todas as funções, somar as duas contaria dinheiro em dobro.
+  const finDespesa = federalFinancas.despesa;
+  const finReceita = federalFinancas.receita;
+  const finCategoria = federalFinancas.despesaPorCategoria;
+  const funcaoBars = (finDespesa?.porFuncao ?? []).map(f => ({ key: f.code, label: f.label === f.code ? 'Outras funções' : f.label, value: f.value, meta: `${f.percent.toFixed(1).replace('.', ',')}% do total` }));
+  // "De onde vem": composição da Receita por origem (nível 2, DCA I-C) — a Despesa por categoria
+  // econômica/GND (Pessoal, Juros...) saiu daqui e virou a 6ª área "Finanças" mais abaixo, pra não
+  // misturar 3 recortes diferentes (função/origem/categoria) numa visão geral que devia ser enxuta.
+  const receitaOrigemBars = (finReceita?.composicao ?? []).map(r => ({ key: r.code, label: r.label, value: r.value, meta: `${r.percent.toFixed(1).replace('.', ',')}% do total` }));
+  const finKpis = [
+    { id: 'despesa-total', label: 'Despesa total (União)', icon: Banknote, value: finDespesa ? moneyCompact.format(finDespesa.total) : '—', sub: finDespesa ? `Siconfi/DCA I-E · ${finDespesa.year}` : 'Siconfi/DCA I-E · —' },
+    { id: 'receita-total', label: 'Receita (União)', icon: Wallet, value: finReceita ? moneyCompact.format(finReceita.total) : '—', sub: finReceita ? `Siconfi/DCA I-C · ${finReceita.year}` : 'Siconfi/DCA I-C · sem dado publicado' },
+    { id: 'despesa-primaria', label: 'Despesa primária (União)', icon: Landmark, value: finCategoria?.despesaPrimaria != null ? moneyCompact.format(finCategoria.despesaPrimaria) : '—', sub: finCategoria ? `Total − Juros − Amortização · ${finCategoria.year}` : 'Siconfi/DCA I-D · sem dado publicado' },
   ];
 
   return (
@@ -443,6 +537,34 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
         </div>
       </section>
 
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Landmark className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">De onde vem e para onde vai o dinheiro</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">O orçamento do Governo Federal — receita por origem e despesa por função. Aprofunde (séries históricas, Resultado Primário, Juros x Dívida) na área <Link href="#financas" className="font-bold underline">Finanças</Link>, logo abaixo.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            {finKpis.map(k => (
+              <div key={k.id} className="rounded-2xl border bg-background p-4">
+                <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground"><k.icon size={13} aria-hidden /> {k.label}</span>
+                <strong className="display-title mt-1.5 block text-2xl leading-none">{k.value}</strong>
+                <span className="mt-1.5 block text-xs text-muted-foreground">{k.sub}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <RankedBars title={`De onde vem: receita por origem${finReceita ? ` (${finReceita.year})` : ''}`} items={receitaOrigemBars} formatValue={moneyCompact.format} coverage={finReceita ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-C, receitas brutas realizadas', { from: `${finReceita.year}-01-01`, to: `${finReceita.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-C')} />
+            <RankedBars title={`Pra onde vai: despesa por função orçamentária${finDespesa ? ` (${finDespesa.year})` : ''}`} items={funcaoBars} formatValue={moneyCompact.format} coverage={finDespesa ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-E, empenhada', { from: `${finDespesa.year}-01-01`, to: `${finDespesa.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-E')} />
+          </div>
+          <p className="mt-4 text-xs leading-5 text-muted-foreground">Receita por ORIGEM (acima, à esquerda) e despesa por FUNÇÃO (à direita) são recortes independentes da mesma União — nunca somados entre si, nem com a despesa por categoria econômica (Pessoal, Juros...), que vive na área Finanças abaixo. "Despesa primária" é o total menos Juros e Amortização da Dívida — a parcela comparável ano a ano, já que a União toma empréstimo novo (vira receita) e amortiza dívida velha (vira despesa) no mesmo exercício, o que infla os dois totais brutos. Estágio empenhado (não é o mesmo que pago). Fonte: Siconfi/Tesouro Nacional, declaração anual (DCA).</p>
+        </div>
+      </section>
+
       <section className="page-shell py-12">
         <p className="eyebrow">Políticas públicas na prática</p>
         <h2 className="mt-2 text-3xl font-black tracking-tight">Quem cuida de quê no Brasil?</h2>
@@ -453,8 +575,8 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
       <section className="border-t bg-card py-12">
         <div className="page-shell">
           <p className="eyebrow">Políticas públicas na prática</p>
-          <h2 className="mt-2 text-3xl font-black tracking-tight">As cinco áreas da gestão pública</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Cinco maneiras diferentes de compreender a realidade brasileira — cada área com sua cor, sua pergunta e sua própria história ao longo do tempo, nunca cinco números intercambiáveis com ícones diferentes.</p>
+          <h2 className="mt-2 text-3xl font-black tracking-tight">As áreas da gestão pública</h2>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Seis maneiras diferentes de compreender a realidade brasileira — cada área com sua cor, sua pergunta e sua própria história ao longo do tempo, nunca números intercambiáveis com ícones diferentes.</p>
           <div className="mt-8 space-y-6">
             <div id="saude" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SAUDE_COLOR, borderTopWidth: 4 }}>
               <div className="flex items-center gap-2" style={{ color: SAUDE_COLOR }}><HeartPulse size={20} aria-hidden /><p className="eyebrow" style={{ color: SAUDE_COLOR }}>Saúde</p></div>
@@ -524,8 +646,28 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Água, esgoto e resíduos (SNIS/SINISA) têm só 1 período publicado no nível Brasil — por isso a história aqui é das obras públicas (Obrasgov). Obra cadastrada não é obra concluída; valor empenhado é o 1º de 5 estágios (planejado, contratado, empenhado, liquidado, pago) — nunca despesa já realizada. Concluídas: ano da data efetiva de término; datas de conclusão no futuro (erro de cadastro na fonte) foram excluídas.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#infraestrutura` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: INFRA_COLOR }}>Explorar Infraestrutura →</Link>
             </div>
+
+            <div id="financas" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: FINANCAS_COLOR, borderTopWidth: 4 }}>
+              <div className="flex items-center gap-2" style={{ color: FINANCAS_COLOR }}><Landmark size={20} aria-hidden /><p className="eyebrow" style={{ color: FINANCAS_COLOR }}>Finanças</p></div>
+              <h3 className="mt-1 text-2xl font-black">Como estão as contas públicas do Brasil, ano a ano?</h3>
+              <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{finHistLatest?.resultadoPrimario ? moneyCompact.format(finHistLatest.resultadoPrimario.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">resultado primário aproximado{finHistLatest ? ` (${finHistLatest.year})` : ''}</span></div>
+              <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                <CompactTrend title="Despesa primária da União, por ano" data={despesaPrimariaChartData} coverage={despesaPrimariaHistCoverage} color={FINANCAS_COLOR} />
+                <CompactTrend title="Receita primária da União, por ano" data={receitaPrimariaChartData} coverage={receitaPrimariaCoverage} color={FINANCAS_COLOR} />
+                <CompactTrend title="Resultado primário aproximado, por ano" data={resultadoPrimarioChartData} coverage={resultadoPrimarioCoverage} color={FINANCAS_COLOR} badge="Base DCA/Siconfi, não é o RTN oficial" />
+              </div>
+              <p className="mt-3 text-xs leading-5 text-muted-foreground">Resultado primário APROXIMADO (Receita Primária − Despesa Primária), a partir da DCA do Siconfi em regime de competência/empenhado — NÃO é o Resultado Primário do Governo Central publicado mensalmente pelo Tesouro Nacional (RTN), que usa regime de caixa e ajustes próprios; os dois números não precisam coincidir. Receita Primária exclui Operações de Crédito (empréstimo novo); Despesa Primária exclui Juros e Amortização da Dívida. Só dado da União — sem comparação por estado.</p>
+              <Link href="/executivo/federal/financas" className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: FINANCAS_COLOR }}>Explorar Finanças →</Link>
+            </div>
           </div>
         </div>
+      </section>
+
+      <section className="page-shell py-12">
+        <p className="eyebrow">Políticas públicas na prática</p>
+        <h2 className="mt-2 text-3xl font-black tracking-tight">A corrida dos estados</h2>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">As 27 UFs disputando posição, edição a edição, em 4 índices nacionais diferentes — escolha um índice (e, no Ideb, a etapa) e veja seu estado subir ou cair no ranking ao longo do tempo.</p>
+        <div className="mt-6"><StateRace datasets={RACE_DATASETS} ufs={raceUfs} /></div>
       </section>
 
       <section id="recursos" className="scroll-mt-24 page-shell py-12">

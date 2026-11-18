@@ -24,6 +24,9 @@ export const DATASET = {
   fin_rs_exec: 40,
   /** P9.5 onda D: função 06 do Estado de Pernambuco (TCE-PE DespesasEstaduais), UF × exercício. */
   fin_pe_exec: 41,
+  /** P14.46: Finanças Públicas (Fase 1, só União) — DCA Anexo I-C (Receita) e Anexo I-D (Despesa por
+   * categoria econômica/GND), escopo nacional × exercício, mesmo padrão de fin_dca_br/fin_rreo_br. */
+  fin_dca_ic_br: 60, fin_dca_id_br: 61,
   /** P9.6: criminalidade estadual municipalizada — dataset = CRIME_DATASET_BASE + slot da fonte (ver crime-defs.ts), fatia UF × ano. */
   crime_base: 42,
   /** P10.1: cadastro de escolas do Censo Escolar (INEP), fatia UF × edição (competência = ano × 100 + 5, a referência de maio). */
@@ -116,6 +119,11 @@ export const SPECS = {
   fin_cov_dca_br: { kind: 'snapshot', name: 'exec_fin_cov', tableId: 41, pk: ['source', 'entity_id', 'exercicio', 'periodo'], values: ['status', 'items', 'fn06', 'stages', 'caveats'], scopeSql: FIN_SCOPE_BR + 'source = 1' } satisfies SnapshotSpec,
   fin_cov_rreo_br: { kind: 'snapshot', name: 'exec_fin_cov', tableId: 42, pk: ['source', 'entity_id', 'exercicio', 'periodo'], values: ['status', 'items', 'fn06', 'stages', 'caveats'], scopeSql: FIN_SCOPE_BR + 'source = 2' } satisfies SnapshotSpec,
   fin_cov_dcarp_br: { kind: 'snapshot', name: 'exec_fin_cov', tableId: 43, pk: ['source', 'entity_id', 'exercicio', 'periodo'], values: ['status', 'items', 'fn06', 'stages', 'caveats'], scopeSql: FIN_SCOPE_BR + 'source = 3' } satisfies SnapshotSpec,
+  /** P14.46: fatia PRÓPRIA (tableId distinto) na MESMA exec_fin_fact — escopo só União, só as contas
+   * do domínio colDcaIC/colDcaID (ver FIN_DOMAIN em financas-defs.ts). Sem tabela de cobertura: o
+   * universo é 1 entidade só, ausência de fato já é visível direto na própria exec_fin_fact. */
+  fin_fact_dca_ic_br: { kind: 'snapshot', name: 'exec_fin_fact', tableId: 125, pk: ['entity_id', 'exercicio', 'periodo', 'conta_id', 'coluna_id'], values: ['valor'], scopeSql: FIN_SCOPE_BR + FIN_COL(34) } satisfies SnapshotSpec,
+  fin_fact_dca_id_br: { kind: 'snapshot', name: 'exec_fin_fact', tableId: 126, pk: ['entity_id', 'exercicio', 'periodo', 'conta_id', 'coluna_id'], values: ['valor'], scopeSql: FIN_SCOPE_BR + FIN_COL(35) } satisfies SnapshotSpec,
   fin_edu_fact_dca: { kind: 'snapshot', name: 'exec_fin_fact', tableId: 106, pk: ['entity_id', 'exercicio', 'periodo', 'conta_id', 'coluna_id'], values: ['valor'], scopeSql: FIN_SCOPE_UF + FIN_FN_COL(31, '12') } satisfies SnapshotSpec,
   fin_edu_fact_dca_br: { kind: 'snapshot', name: 'exec_fin_fact', tableId: 107, pk: ['entity_id', 'exercicio', 'periodo', 'conta_id', 'coluna_id'], values: ['valor'], scopeSql: FIN_SCOPE_BR + FIN_FN_COL(31, '12') } satisfies SnapshotSpec,
   fin_edu_cov_dca: { kind: 'snapshot', name: 'exec_fin_cov', tableId: 108, pk: ['source', 'entity_id', 'exercicio', 'periodo'], values: ['status', 'items', 'fn06', 'fn12', 'stages', 'caveats'], scopeSql: FIN_SCOPE_UF + 'source = 1' } satisfies SnapshotSpec,

@@ -1,6 +1,6 @@
 import { FLAG } from './indicator-defs.ts';
 import type { IndicatorRow, Row } from './publication.ts';
-import { COV, COV_CAVEAT, DCA_IE_COLUMNS, DCA_IG_COLUMNS, dcaIgColumn, FIN_SOURCE, FUNCTIONS, FUNCTION_BY_NAME, RREO_COLUMNS, SEC, SEC_SUB_BY_NAME, dcaIeColumn, normLabel, rreoColumn } from './financas-defs.ts';
+import { COV, COV_CAVEAT, DCA_IC_CONTAS, DCA_ID_CONTAS, DCA_IE_COLUMNS, DCA_IG_COLUMNS, dcaIcColumn, dcaIgColumn, FIN_SOURCE, FUNCTIONS, FUNCTION_BY_NAME, RREO_COLUMNS, SEC, SEC_SUB_BY_NAME, dcaIeColumn, normLabel, rreoColumn } from './financas-defs.ts';
 
 /** Item de resposta do Siconfi (campos usados). Os rótulos de texto NÃO são persistidos: só os códigos de função/subfunção e a coluna normalizada. */
 export interface SiconfiItem { exercicio: number; cod_ibge: number; anexo: string; coluna: string; cod_conta: string; conta: string; valor: number | null; populacao?: number | null }
@@ -137,6 +137,40 @@ export function buildFinSlice(a: FinSliceArgs): FinSlice {
   }
   counts.facts = facts.length; counts.indicators = indicators.length;
   return { facts, cov, indicators, codes: collectCodes(parsedAll), failures, quality: { source: a.source, year: a.year, periodo: a.periodo, ...counts, invariantFailures: failures.length } };
+}
+
+/**
+ * P14.46 — Receita (DCA I-C) e Despesa por categoria econômica/GND (DCA I-D), só União. Mais simples
+ * que `parseDcaAnexo`/`buildFinSlice` de propósito: I-C e I-D não têm a árvore função/subfunção (são
+ * uma lista achatada conta×coluna) e o recorte é um PUNHADO de `cod_conta` conhecidos (ver
+ * `DCA_IC_CONTAS`/`DCA_ID_CONTAS` em financas-defs.ts), não o catálogo inteiro de ~800 contas da
+ * União — por isso casa por `cod_conta` (estável) em vez de reconstruir código a partir do rótulo.
+ */
+function parseSimpleFin(items: SiconfiItem[], anexo: string, whitelist: Map<string, string>, colFn: (c: string) => string | null): Map<string, number> {
+  const facts = new Map<string, number>();
+  for (const it of items) {
+    if (it.anexo !== anexo) continue;
+    const ourCode = whitelist.get(it.cod_conta); if (!ourCode) continue;
+    const col = colFn(it.coluna); if (!col) continue;
+    if (it.valor == null || !Number.isFinite(it.valor)) continue;
+    facts.set(`${ourCode}|${col}`, cents(it.valor));   // 1 cod_conta × 1 coluna é único na fonte: não há de-dup a fazer aqui
+  }
+  return facts;
+}
+const IC_WHITELIST = new Map(DCA_IC_CONTAS.map(([codConta, ourCode]) => [codConta, ourCode]));
+const ID_WHITELIST = new Map(DCA_ID_CONTAS.map(([codConta, ourCode]) => [codConta, ourCode]));
+export const parseDcaIC = (items: SiconfiItem[]): Map<string, number> => parseSimpleFin(items, 'DCA-Anexo I-C', IC_WHITELIST, dcaIcColumn);
+export const parseDcaID = (items: SiconfiItem[]): Map<string, number> => parseSimpleFin(items, 'DCA-Anexo I-D', ID_WHITELIST, dcaIeColumn);   // I-D usa o MESMO vocabulário de colunas do I-E (Despesas Empenhadas/Liquidadas/Pagas/RP...)
+
+export interface FederalSimpleSlice { facts: Row[]; factCount: number }
+/** Monta as linhas de `exec_fin_fact` (só a entidade União) a partir do mapa `${ourCode}|${coluna}` → centavos. */
+export function buildFederalSimpleSlice(parsed: Map<string, number>, entityId: number, year: number, ids: { conta: (code: string) => number; col: (code: string) => number }): FederalSimpleSlice {
+  const facts: Row[] = [];
+  for (const [k, v] of parsed) {
+    const [conta, col] = k.split('|') as [string, string];
+    facts.push({ entity_id: entityId, exercicio: year, periodo: 0, conta_id: ids.conta(conta), coluna_id: ids.col(col), valor: v });
+  }
+  return { facts, factCount: facts.length };
 }
 
 /** Versão aditiva da DCA para a função 12. Mantém os fatos no contrato compartilhado,

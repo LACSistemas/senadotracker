@@ -1,5 +1,6 @@
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { WellbeingFederalPage } from '@/components/wellbeing/wellbeing-federal-page';
+import { FEDERAL_THEMES } from '@/components/territory/territory-ui';
 import { loadWellbeingFederalPageCached } from '@/lib/wellbeing/federal';
 import { loadStates } from '@/lib/exec-territory';
 
@@ -12,7 +13,7 @@ export default async function ExecutivoFederalBemEstarPage() {
   const popYear = Math.max(...states.map(s => s.year ?? 0));
   return <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { href: '/executivo/federal', label: 'Governo Federal' }, { label: 'Bem-estar' }]} kicker="Brasil · Bem-estar" title="Bem-estar no Brasil"
     lede={data.conditions.narrative.answer || 'Renda, trabalho, rede socioassistencial, cotidiano digital e ação pública — respostas diretas, com a fonte e a cobertura à vista.'}
-    population={totalPop} populationYear={popYear} base="/executivo/federal" active="bem-estar">
+    population={totalPop} populationYear={popYear} base="/executivo/federal" active="bem-estar" themes={FEDERAL_THEMES}>
     <WellbeingFederalPage data={data} />
   </TerritoryFrame>;
 }

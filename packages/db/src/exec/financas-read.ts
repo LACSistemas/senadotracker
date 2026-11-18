@@ -1,5 +1,5 @@
 import type { Pool } from 'pg';
-import { COV_NAME, FIN_DOMAIN, SEC_SUBFUNCTIONS } from './financas-defs.ts';
+import { COV_NAME, DCA_IC_CONTAS, DCA_ID_CONTAS, FIN_DOMAIN, FUNCTIONS, SEC_SUBFUNCTIONS } from './financas-defs.ts';
 
 /**
  * Contratos de leitura das Finanças da Segurança Pública (P9.5) para as futuras páginas de estados e municípios. Somente SELECT; por entidade (índice
@@ -239,6 +239,206 @@ export async function getExecutiveLevelOverview(q: Q): Promise<ExecutiveLevelOve
       minBudgetYear: b ? Number(b.min_year) : 0, maxBudgetYear: b ? Number(b.max_year) : 0,
     };
   });
+}
+
+const FUNCTION_LABEL = new Map(FUNCTIONS);
+export interface FederalFunctionShare { code: string; label: string; cents: string; value: number; percent: number }
+export interface FederalGndLine { code: string; label: string; cents: string; value: number; percent: number }
+const GND_LABEL: Record<string, string> = Object.fromEntries(DCA_ID_CONTAS.map(([, code, label]) => [code, label]));
+const RECEITA_LABEL = new Map(DCA_IC_CONTAS.map(([, code, label]) => [code, label]));
+export interface FederalFinancas {
+  despesa: { year: number; totalCents: string; total: number; porFuncao: FederalFunctionShare[] } | null;
+  receita: { year: number; totalCents: string; total: number; correnteCents: string | null; capitalCents: string | null; composicao: FederalGndLine[] } | null;
+  despesaPorCategoria: { year: number; totalCents: string; total: number; itens: FederalGndLine[]; despesaPrimariaCents: string | null; despesaPrimaria: number | null } | null;
+  restrictions: string[]; sources: string[];
+}
+/**
+ * P14.46 — "Como estão as contas públicas do Brasil?" (só União). Três leituras independentes, cada
+ * uma `null` quando a fonte ainda não tem dado (nunca zero por omissão):
+ *  - `despesa`: DCA Anexo I-E, já coletada para todo ente desde o P9.5 — despesa total empenhada do
+ *    exercício mais recente e sua distribuição pelas 28 funções orçamentárias (NUNCA combinada com
+ *    `despesaPorCategoria`: função e categoria econômica/GND são eixos de classificação DIFERENTES e
+ *    cada despesa aparece nos dois ao mesmo tempo — "Pessoal" atravessa Previdência, Saúde etc.;
+ *    somar as duas fatias como uma pizza só contaria dinheiro em dobro).
+ *  - `receita`: DCA Anexo I-C (P14.46), nova.
+ *  - `despesaPorCategoria`: DCA Anexo I-D (P14.46), nova — inclui GND2 (Juros) e GND6 (Amortização
+ *    da Dívida), que sozinhos costumam ser a maior parte do "Total Geral da Despesa" bruto da União
+ *    (refinanciamento da dívida: a União toma empréstimo novo — vira receita de capital no I-C — e
+ *    amortiza dívida velha no mesmo exercício — vira despesa no I-D — o que infla os dois totais
+ *    brutos muito além do que a imprensa chama de "despesa primária"). `despesaPrimaria` é essa
+ *    medida mais comparável, DERIVADA aqui (Total − Juros − Amortização), rotulada como tal.
+ */
+export async function getFederalFinancas(q: Q, o: { functionTopN?: number } = {}): Promise<FederalFinancas> {
+  const topN = o.functionTopN ?? 6;
+  const ex = await entityOf(q, `kind = 1 AND $1::integer IS NOT NULL`, 1);
+  if (!ex) return { despesa: null, receita: null, despesaPorCategoria: null, restrictions: FIN_RESTRICTIONS, sources: [] };
+  const [funcRows, recRows, gndRows] = await Promise.all([
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIE} AND k.code = 'EMP'
+      WHERE f.entity_id = $1 AND (c.code = 'TOT' OR c.code ~ '^[0-9]{2}$')
+      ORDER BY f.exercicio DESC`, [ex.entityId]),
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIC} AND k.code = 'BRUTA'
+      WHERE f.entity_id = $1 AND c.code LIKE 'REC-%'
+      ORDER BY f.exercicio DESC`, [ex.entityId]),
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaID} AND k.code = 'EMP'
+      WHERE f.entity_id = $1 AND c.code LIKE 'GND%'
+      ORDER BY f.exercicio DESC`, [ex.entityId]),
+  ]);
+  const despesa = (() => {
+    if (!funcRows.rowCount) return null;
+    const year = Number(funcRows.rows[0]!.exercicio);
+    const rows = funcRows.rows.filter((r: any) => Number(r.exercicio) === year);
+    const tot = rows.find((r: any) => r.conta === 'TOT'); if (!tot) return null;
+    const totalCents = String(tot.cents); const total = Number(totalCents) / 100;
+    const funcoes = rows.filter((r: any) => r.conta !== 'TOT').map((r: any) => ({ code: String(r.conta), cents: String(r.cents) })).sort((a, b) => Number(b.cents) - Number(a.cents));
+    const top = funcoes.slice(0, topN);
+    const restoCents = funcoes.slice(topN).reduce((s, f) => s + BigInt(f.cents), 0n);
+    const toShare = (code: string, cents: string): FederalFunctionShare => ({ code, label: FUNCTION_LABEL.get(code) ?? code, cents, value: Number(cents) / 100, percent: Number((BigInt(cents) * 10000n) / BigInt(totalCents)) / 100 });
+    const porFuncao = top.map(f => toShare(f.code, f.cents));
+    if (restoCents > 0n) porFuncao.push(toShare('OUTRAS', restoCents.toString()));
+    return { year, totalCents, total, porFuncao };
+  })();
+  const receita = (() => {
+    if (!recRows.rowCount) return null;
+    const year = Number(recRows.rows[0]!.exercicio);
+    const rows = recRows.rows.filter((r: any) => Number(r.exercicio) === year);
+    const tot = rows.find((r: any) => r.conta === 'REC-TOT'); if (!tot) return null;
+    const corrente = rows.find((r: any) => r.conta === 'REC-CORRENTE'); const capital = rows.find((r: any) => r.conta === 'REC-CAPITAL');
+    const composicao = rows.filter((r: any) => r.conta !== 'REC-TOT' && r.conta !== 'REC-CORRENTE' && r.conta !== 'REC-CAPITAL')
+      .map((r: any) => ({ code: String(r.conta), label: RECEITA_LABEL.get(String(r.conta)) ?? String(r.conta), cents: String(r.cents), value: Number(r.cents) / 100, percent: Number((BigInt(r.cents) * 10000n) / BigInt(tot.cents)) / 100 }))
+      .sort((a: FederalGndLine, b: FederalGndLine) => b.value - a.value);
+    return { year, totalCents: String(tot.cents), total: Number(tot.cents) / 100, correnteCents: corrente ? String(corrente.cents) : null, capitalCents: capital ? String(capital.cents) : null, composicao };
+  })();
+  const despesaPorCategoria = (() => {
+    if (!gndRows.rowCount) return null;
+    const year = Number(gndRows.rows[0]!.exercicio);
+    const rows = gndRows.rows.filter((r: any) => Number(r.exercicio) === year);
+    const tot = rows.find((r: any) => r.conta === 'GND-TOT'); if (!tot) return null;
+    const totalCents = String(tot.cents); const total = Number(totalCents) / 100;
+    const itens = rows.filter((r: any) => r.conta !== 'GND-TOT').map((r: any) => ({ code: String(r.conta), label: GND_LABEL[String(r.conta)] ?? String(r.conta), cents: String(r.cents), value: Number(r.cents) / 100, percent: Number((BigInt(r.cents) * 10000n) / BigInt(totalCents)) / 100 })).sort((a, b) => b.value - a.value);
+    const juros = rows.find((r: any) => r.conta === 'GND2'); const amort = rows.find((r: any) => r.conta === 'GND6');
+    const despesaPrimariaCents = juros && amort ? (BigInt(totalCents) - BigInt(juros.cents) - BigInt(amort.cents)).toString() : null;
+    return { year, totalCents, total, itens, despesaPrimariaCents, despesaPrimaria: despesaPrimariaCents ? Number(despesaPrimariaCents) / 100 : null };
+  })();
+  return { despesa, receita, despesaPorCategoria, restrictions: FIN_RESTRICTIONS, sources: FIN_SOURCES };
+}
+
+const FIN_SOURCES = ['Siconfi — DCA Anexo I-E (despesa por função e subfunção)', 'Siconfi — DCA Anexo I-C (receita orçamentária)', 'Siconfi — DCA Anexo I-D (despesa por categoria econômica)'];
+/** Resultado primário é SEMPRE aproximado (nunca o oficial) — rotulado assim em todo lugar que a UI o usa, nunca só em rodapé. */
+export const RESULTADO_PRIMARIO_NOTE = 'Resultado primário APROXIMADO (Receita Primária − Despesa Primária), calculado a partir da DCA do Siconfi em regime de competência/empenhado (declaração ANUAL do ente). NÃO é o Resultado Primário do Governo Central publicado mensalmente pelo Tesouro Nacional (RTN), que usa regime de CAIXA e ajustes metodológicos próprios — os dois números não precisam coincidir. Receita Primária = Receita total − Operações de Crédito (empréstimo novo, mesma distorção documentada acima); Despesa Primária = Despesa total − Juros e Encargos da Dívida − Amortização da Dívida.';
+export interface FederalFinancasYear {
+  year: number;
+  despesaTotal: { cents: string; value: number } | null;
+  despesaPrimaria: { cents: string; value: number } | null;
+  receitaTotal: { cents: string; value: number } | null;
+  receitaCorrente: { cents: string; value: number } | null;
+  receitaCapital: { cents: string; value: number } | null;
+  receitaPrimaria: { cents: string; value: number } | null;
+  resultadoPrimario: { cents: string; value: number } | null;
+  gnd: FederalGndLine[];
+  receitaComposicao: FederalGndLine[];
+  porFuncaoTop: FederalFunctionShare[];
+  despesaTotalPerCapita: number | null;
+  despesaPrimariaPerCapita: number | null;
+  receitaTotalPerCapita: number | null;
+}
+export interface FederalFunctionSeries { code: string; label: string; points: Array<{ year: number; percent: number | null }> }
+export interface FederalFinancasHistory { years: FederalFinancasYear[]; funcaoSeries: FederalFunctionSeries[]; resultadoPrimarioMethodologyNote: string; restrictions: string[]; sources: string[] }
+/**
+ * P14.48 — aprofundamento federal: a MESMA leitura de `getFederalFinancas`, mas a série 2014–2026
+ * inteira (não só o ano mais recente) e com a composição de receita nível-2 (impostos, contribuições,
+ * operações de crédito etc. — ver `DCA_IC_CONTAS`). Usada só por `/executivo/federal`; o hub nacional
+ * continua em `getFederalFinancas` (ano mais recente), sem mudança de forma — função nova, não reshape.
+ * `receitaPrimaria` só existe a partir do ano em que a Receita Corrente/Capital nível-2 foi publicada
+ * (REC-CAP-CREDITO); anos sem essa linha (2014/2015: formato antigo do Siconfi; ano corrente: ainda
+ * não declarado) ficam `null`, nunca um zero inferido.
+ */
+export async function getFederalFinancasHistory(q: Q, o: { functionTopN?: number } = {}): Promise<FederalFinancasHistory> {
+  const topN = o.functionTopN ?? 8;
+  const ex = await entityOf(q, `kind = 1 AND $1::integer IS NOT NULL`, 1);
+  if (!ex) return { years: [], funcaoSeries: [], resultadoPrimarioMethodologyNote: RESULTADO_PRIMARIO_NOTE, restrictions: FIN_RESTRICTIONS, sources: [] };
+  const [funcRows, recRows, gndRows, popRows] = await Promise.all([
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIE} AND k.code = 'EMP'
+      WHERE f.entity_id = $1 AND (c.code = 'TOT' OR c.code ~ '^[0-9]{2}$')
+      ORDER BY f.exercicio`, [ex.entityId]),
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaIC} AND k.code = 'BRUTA'
+      WHERE f.entity_id = $1 AND c.code LIKE 'REC-%'
+      ORDER BY f.exercicio`, [ex.entityId]),
+    q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
+        JOIN civica_exec.exec_ref_code c ON c.ref_id = f.conta_id AND c.domain = ${FIN_DOMAIN.conta}
+        JOIN civica_exec.exec_ref_code k ON k.ref_id = f.coluna_id AND k.domain = ${FIN_DOMAIN.colDcaID} AND k.code = 'EMP'
+      WHERE f.entity_id = $1 AND c.code LIKE 'GND%'
+      ORDER BY f.exercicio`, [ex.entityId]),
+    // Achado real: `exec_territory_population` NÃO tem linha para entity_id da União (76) — só por UF/
+    // município. A mesma lacuna existe em `profileOf` (usada por `getSecurityFinanceNational`), fora do
+    // escopo deste código. Aqui, "população do Brasil" é a SOMA das 27 UFs no ano, mesmo cálculo que a
+    // própria página já faz com `loadStates()` para o `totalPop` do hero — não um valor fabricado.
+    q.query(`SELECT p.year, sum(p.value)::text AS value FROM civica_exec.exec_territory_population p
+        JOIN civica_exec.exec_entity e ON e.entity_id = p.entity_id AND e.kind = 3
+      WHERE p.source = 1 GROUP BY p.year ORDER BY p.year`),
+  ]);
+  type YearBucket = { func: Map<string, string>; rec: Map<string, string>; gnd: Map<string, string> };
+  const byYear = new Map<number, YearBucket>();
+  const ensure = (y: number): YearBucket => { let x = byYear.get(y); if (!x) { x = { func: new Map(), rec: new Map(), gnd: new Map() }; byYear.set(y, x); } return x; };
+  for (const r of funcRows.rows) ensure(Number(r.exercicio)).func.set(String(r.conta), String(r.cents));
+  for (const r of recRows.rows) ensure(Number(r.exercicio)).rec.set(String(r.conta), String(r.cents));
+  for (const r of gndRows.rows) ensure(Number(r.exercicio)).gnd.set(String(r.conta), String(r.cents));
+  const popByYear = new Map(popRows.rows.map((r: any) => [Number(r.year), Number(r.value)]));
+  const money = (cents: string): { cents: string; value: number } => ({ cents, value: Number(cents) / 100 });
+  const perCapita = (m: { cents: string; value: number } | null, pop: number | undefined): number | null => m && pop ? m.value / pop : null;
+  const years: FederalFinancasYear[] = [...byYear.keys()].sort((a, b) => a - b).map(year => {
+    const { func, rec, gnd } = byYear.get(year)!;
+    const totFunc = func.get('TOT');
+    let porFuncaoTop: FederalFunctionShare[] = []; let despesaTotal: { cents: string; value: number } | null = null;
+    if (totFunc) {
+      despesaTotal = money(totFunc);
+      const entries = [...func.entries()].filter(([c]) => c !== 'TOT').map(([code, cents]) => ({ code, cents })).sort((a, b) => Number(b.cents) - Number(a.cents));
+      const toShare = (code: string, cents: string): FederalFunctionShare => ({ code, label: FUNCTION_LABEL.get(code) ?? code, cents, value: Number(cents) / 100, percent: Number((BigInt(cents) * 10000n) / BigInt(totFunc)) / 100 });
+      porFuncaoTop = entries.slice(0, topN).map(e => toShare(e.code, e.cents));
+      const restoCents = entries.slice(topN).reduce((s, e) => s + BigInt(e.cents), 0n);
+      if (restoCents > 0n) porFuncaoTop.push(toShare('OUTRAS', restoCents.toString()));
+    }
+    const totGnd = gnd.get('GND-TOT'); let gndItens: FederalGndLine[] = []; let despesaPrimaria: { cents: string; value: number } | null = null;
+    if (totGnd) {
+      gndItens = [...gnd.entries()].filter(([c]) => c !== 'GND-TOT').map(([code, cents]) => ({ code, label: GND_LABEL[code] ?? code, cents, value: Number(cents) / 100, percent: Number((BigInt(cents) * 10000n) / BigInt(totGnd)) / 100 })).sort((a, b) => b.value - a.value);
+      const juros = gnd.get('GND2'); const amort = gnd.get('GND6');
+      if (juros && amort) despesaPrimaria = money((BigInt(totGnd) - BigInt(juros) - BigInt(amort)).toString());
+    }
+    const totRec = rec.get('REC-TOT'); let receitaTotal: { cents: string; value: number } | null = null; let receitaComposicao: FederalGndLine[] = [];
+    let receitaCorrente: { cents: string; value: number } | null = null; let receitaCapital: { cents: string; value: number } | null = null; let receitaPrimaria: { cents: string; value: number } | null = null;
+    if (totRec) {
+      receitaTotal = money(totRec);
+      const correnteCents = rec.get('REC-CORRENTE'); const capitalCents = rec.get('REC-CAPITAL');
+      if (correnteCents) receitaCorrente = money(correnteCents); if (capitalCents) receitaCapital = money(capitalCents);
+      const compEntries = [...rec.entries()].filter(([c]) => c !== 'REC-TOT' && c !== 'REC-CORRENTE' && c !== 'REC-CAPITAL');
+      receitaComposicao = compEntries.map(([code, cents]) => ({ code, label: RECEITA_LABEL.get(code) ?? code, cents, value: Number(cents) / 100, percent: Number((BigInt(cents) * 10000n) / BigInt(totRec)) / 100 })).sort((a, b) => b.value - a.value);
+      const credito = rec.get('REC-CAP-CREDITO'); if (credito) receitaPrimaria = money((BigInt(totRec) - BigInt(credito)).toString());
+    }
+    const resultadoPrimario = receitaPrimaria && despesaPrimaria ? money((BigInt(receitaPrimaria.cents) - BigInt(despesaPrimaria.cents)).toString()) : null;
+    const pop = popByYear.get(year);
+    return {
+      year, despesaTotal, despesaPrimaria, receitaTotal, receitaCorrente, receitaCapital, receitaPrimaria, resultadoPrimario, gnd: gndItens, receitaComposicao, porFuncaoTop,
+      despesaTotalPerCapita: perCapita(despesaTotal, pop), despesaPrimariaPerCapita: perCapita(despesaPrimaria, pop), receitaTotalPerCapita: perCapita(receitaTotal, pop),
+    };
+  });
+  // Participação das funções no tempo: usa as funções do TOP-N do ano MAIS RECENTE (não um top-N
+  // recalculado por ano) para manter linhas contínuas e comparáveis; se uma função cai fora do top-N
+  // num ano mais antigo, o ponto fica ausente (lacuna honesta), nunca interpolado nem zero.
+  const latestYear = years.at(-1);
+  const funcaoSeries = (latestYear?.porFuncaoTop ?? []).filter(f => f.code !== 'OUTRAS').map(f => ({
+    code: f.code, label: f.label,
+    points: years.map(y => ({ year: y.year, percent: y.porFuncaoTop.find(x => x.code === f.code)?.percent ?? null })),
+  }));
+  return { years, funcaoSeries, resultadoPrimarioMethodologyNote: RESULTADO_PRIMARIO_NOTE, restrictions: FIN_RESTRICTIONS, sources: FIN_SOURCES };
 }
 
 export async function getSecurityFinanceOrgans(q: Q, entityId: number, o: { from?: number; to?: number } = {}): Promise<{ entityId: number; years: OrganYear[]; restrictions: string[]; source: string } | null> {

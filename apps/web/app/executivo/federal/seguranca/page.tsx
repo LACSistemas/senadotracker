@@ -1,5 +1,6 @@
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { SecurityFederalPage } from '@/components/security/security-federal-page';
+import { FEDERAL_THEMES } from '@/components/territory/territory-ui';
 import { loadSecurityFederalPageCached } from '@/lib/security/federal';
 import { loadStates } from '@/lib/exec-territory';
 
@@ -12,7 +13,7 @@ export default async function ExecutivoFederalSegurancaPage() {
   const popYear = Math.max(...states.map(s => s.year ?? 0));
   return <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { href: '/executivo/federal', label: 'Governo Federal' }, { label: 'Segurança' }]} kicker="Brasil · Segurança Pública" title="Segurança Pública no Brasil"
     lede="Criminalidade organizada, efetivos, sistema prisional e finanças federais de segurança — o que é genuinamente nacional nesta base, nunca uma soma aproximada de fontes estaduais incompatíveis entre si."
-    population={totalPop} populationYear={popYear} base="/executivo/federal" active="seguranca">
+    population={totalPop} populationYear={popYear} base="/executivo/federal" active="seguranca" themes={FEDERAL_THEMES}>
     <SecurityFederalPage data={data} />
   </TerritoryFrame>;
 }

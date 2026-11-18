@@ -1,6 +1,6 @@
 import type { Pool, PoolClient } from 'pg';
 import {
-  DATASET, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_EDU_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildEducationFinSlice, buildFinSlice, collectCodes, ensureRefCodes, parseDcaIE, parseDcaIEEducation, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
+  DATASET, DCA_IC_CONTAS, DCA_IC_COLUMNS, DCA_ID_CONTAS, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_EDU_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildEducationFinSlice, buildFederalSimpleSlice, buildFinSlice, collectCodes, ensureRefCodes, parseDcaIC, parseDcaID, parseDcaIE, parseDcaIEEducation, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
   type FinEnteInput, type FinSlice, type SiconfiItem,
 } from '@senadotracker/db';
 import { UF_CODE } from './cnes.ts';
@@ -119,6 +119,45 @@ export async function collectFinancas(pool: Pool, cfg: StorageConfig, o: FinRunO
       const covBy: Record<string, number> = {}; for (const c of slice.cov) covBy[String(c.status)] = (covBy[String(c.status)] ?? 0) + 1;
       results.push({ kind: o.kind, year, uf: u.code, status: r.status, facts: slice.facts.length, indicators: slice.indicators.length, cov: covBy, failures: slice.failures.length });
       o.log?.(JSON.stringify({ financas: o.kind, year, uf: u.name, status: r.status, facts: slice.facts.length, indicators: slice.indicators.length, cov: covBy, unmatched: l.unmatched.length, invariantFailures: slice.failures.length }));
+    }
+  }
+  return { results, missing };
+}
+
+/**
+ * P14.46 — Finanças Públicas (Fase 1, só União): Receita (DCA I-C) e Despesa por categoria
+ * econômica/GND (DCA I-D). Publica os pacotes RAW já coletados por `financas-fetch.ts` (kind
+ * `dca-ic`/`dca-id`, uf `BR`). Deliberadamente NÃO reaproveita `buildSliceFor`/`publishFinSlice`
+ * (função/subfunção-específicos — I-C e I-D não têm essa árvore) nem grava `exec_fin_cov` (universo
+ * de 1 entidade só; ausência de fato já é visível direto na própria exec_fin_fact).
+ */
+export interface FederalExtrasResult { kind: 'dcaIc' | 'dcaId'; year: number; status: string; facts: number }
+export async function collectFederalExtras(pool: Pool, cfg: StorageConfig, o: { years: number[]; log?: Log }): Promise<{ results: FederalExtrasResult[]; missing: Array<{ kind: 'dcaIc' | 'dcaId'; year: number }> }> {
+  await assertVolume(cfg); await assertPgHeadroom(cfg);
+  const emap = await loadSiconfiEntityMap(pool); const entityId = emap.get(1); if (entityId === undefined) throw new Error('entidade União (cod_ibge=1) não encontrada em exec_entity');
+  const results: FederalExtrasResult[] = []; const missing: Array<{ kind: 'dcaIc' | 'dcaId'; year: number }> = [];
+  const KINDS: Array<{ kind: 'dcaIc' | 'dcaId'; anexo: Anexo; contas: typeof DCA_IC_CONTAS; parse: typeof parseDcaIC; colDomain: number; dataset: number; spec: typeof SPECS.fin_fact_dca_ic_br; version: string }> = [
+    { kind: 'dcaIc', anexo: 'DCA-Anexo I-C', contas: DCA_IC_CONTAS, parse: parseDcaIC, colDomain: FIN_DOMAIN.colDcaIC, dataset: DATASET.fin_dca_ic_br, spec: SPECS.fin_fact_dca_ic_br, version: FIN_VERSION.dcaIcBr },
+    { kind: 'dcaId', anexo: 'DCA-Anexo I-D', contas: DCA_ID_CONTAS, parse: parseDcaID, colDomain: FIN_DOMAIN.colDcaID, dataset: DATASET.fin_dca_id_br, spec: SPECS.fin_fact_dca_id_br, version: FIN_VERSION.dcaIdBr },
+  ];
+  const manifest = await readManifest(cfg);
+  for (const o_ of KINDS) {
+    const contaMap = await ensureRefCodes(pool, FIN_DOMAIN.conta, o_.contas.map(([, code, label]) => ({ code, label, attrs: { source: 'Siconfi', demonstrativo: o_.anexo } })));
+    const cols = o_.kind === 'dcaIc' ? DCA_IC_COLUMNS : DCA_IE_COLUMNS;
+    const colMap = await ensureRefCodes(pool, o_.colDomain, cols.map(c => ({ code: c.code, label: c.label, attrs: { unit: 'centavos', semantic: c.semantic, demonstrativo: o_.anexo } })));
+    const need = (m: Map<string, number>, c: string) => { const v = m.get(c); if (v === undefined) throw new Error(`código ${c} fora do dicionário`); return v; };
+    for (const year of o.years) {
+      const rel = bundleRel(o_.anexo, year, 0, 0); const man = manifest.get(rel);
+      if (!man) { missing.push({ kind: o_.kind, year }); continue; }
+      const items: SiconfiItem[] = [];
+      for await (const l of readBundle(cfg, rel)) { if (l.e === 1 && l.s === 200) items.push(...(JSON.parse(l.b) as { items: SiconfiItem[] }).items); }
+      const parsed = o_.parse(items);
+      const { facts } = buildFederalSimpleSlice(parsed, entityId, year, { conta: c => need(contaMap, c), col: c => need(colMap, c) });
+      const dataset = o_.dataset; const first = await isFirstPublication(pool, dataset, 0, year * 100 + 12);
+      const fingerprint = sha256(`${man.sha256}:${o_.version}`);
+      const r = await publishSlice(pool, { datasetId: dataset, uf: 0, competence: year * 100 + 12, stage: 2, sourceHash: fingerprint, parserVersion: o_.version, bootstrap: first, tables: [{ spec: o_.spec, rows: facts }], inputs: { anexo: o_.anexo, year, file: rel, sha256: man.sha256 } });
+      results.push({ kind: o_.kind, year, status: r.status, facts: facts.length });
+      o.log?.(JSON.stringify({ financas: o_.kind, year, status: r.status, facts: facts.length }));
     }
   }
   return { results, missing };

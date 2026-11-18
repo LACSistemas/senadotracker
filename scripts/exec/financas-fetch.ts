@@ -6,12 +6,13 @@ import { UF_CODE } from '../../apps/collector/src/exec/cnes.ts';
 import { openPool } from './db.ts';
 
 /**
- * Coleta RAW do Siconfi (P9.5). Uso: node --import tsx scripts/exec/financas-fetch.ts <dca-ie|dca-ig|rreo02> <ano1,ano2|a-b> [UF,UF|all] [concorrência]
+ * Coleta RAW do Siconfi (P9.5; dca-ic/dca-id adicionados no P14.46 — Finanças Públicas, só União). Uso:
+ * node --import tsx scripts/exec/financas-fetch.ts <dca-ie|dca-ig|rreo02|dca-ic|dca-id> <ano1,ano2|a-b> [UF,UF|all] [concorrência]
  * Grava pacotes em D:\Civica\raw\siconfi (retomável). Não publica nada.
  * RREO Anexo 02 só existe para quem publica o RREO completo (estados, DF, União e municípios ≥ 50 mil hab.; os demais publicam o simplificado, sem função): o universo é a população ≥ 45 mil.
  */
 const [kind, yearsArg, ufArg, concArg] = process.argv.slice(2);
-const anexo: Anexo = kind === 'dca-ie' ? 'DCA-Anexo I-E' : kind === 'dca-ig' ? 'DCA-Anexo I-G' : kind === 'rreo02' ? 'RREO-Anexo 02' : (() => { throw new Error('kind inválido'); })();
+const anexo: Anexo = kind === 'dca-ie' ? 'DCA-Anexo I-E' : kind === 'dca-ig' ? 'DCA-Anexo I-G' : kind === 'rreo02' ? 'RREO-Anexo 02' : kind === 'dca-ic' ? 'DCA-Anexo I-C' : kind === 'dca-id' ? 'DCA-Anexo I-D' : (() => { throw new Error('kind inválido'); })();
 const years = (yearsArg ?? '').includes('-') ? (() => { const [a, b] = yearsArg!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => b! - i); })() : (yearsArg ?? '').split(',').map(Number);
 const ufs = !ufArg || ufArg === 'all' ? [...Object.keys(UF_CODE), 'BR'] : ufArg.split(',').map(s => s.toUpperCase());
 /** Universo municipal por anexo: DCA I-E = todos; RREO 02 = ≥ 45 mil (só quem publica o RREO completo); DCA I-G (restos a pagar por função) = ≥ 100 mil, recorte de custo/benefício (estados e União sempre). */

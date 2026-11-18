@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { TerritoryHero } from '@/components/territory/territory-hero';
 import { PresidentCard } from '@/components/territory/president-card';
-import { formatInt } from '@/components/territory/territory-ui';
+import { formatInt, FEDERAL_THEMES } from '@/components/territory/territory-ui';
 import { loadStates } from '@/lib/exec-territory';
 import { loadHdiComparison } from '@/lib/territory-idhm';
 import { loadGdpPerCapita } from '@/lib/territory-executive';
@@ -16,6 +16,7 @@ export const dynamic = 'force-dynamic';
 export const metadata = { title: 'Governo Federal · Executivo · Cívica', description: 'O presidente, indicadores de referência do Brasil e dois comparadores internacionais — IDH Global e PISA — ao lado dos indicadores nacionais já publicados no Cívica.' };
 
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+const moneyCompact = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', notation: 'compact', maximumFractionDigits: 1 });
 const idhmFmt = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 3, maximumFractionDigits: 3 });
 
 /**
@@ -34,6 +35,12 @@ const idhmFmt = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 3, maxim
  * contido do próprio `InfraScope`); os outros 4 temas têm loader e página federais dedicados, reaproveitando
  * só as peças puras (`ChapterShell`, `TrendChart`, `chart()`/`bars()`/`stat()`), nunca as páginas inteiras
  * de UF (que são fundo-a-fundo acopladas a `scope.kind: 'uf'|'municipio'`).
+ *
+ * P14.49 (achado real do feedback do usuário: o aprofundamento de Finanças tinha virado parte da aba
+ * "Visão geral" — a única das 6 áreas sem sua própria sub-rota, inconsistente com o padrão acima) — Finanças
+ * ganhou a 6ª sub-rota (`/executivo/federal/financas`, componente `FinancasFederalPage`), com `FEDERAL_THEMES`
+ * (`THEMES` + Finanças) passado por TODAS as 6 páginas deste diretório para a aba aparecer em qualquer uma
+ * delas — nunca em `/estados/{uf}`/`/municipios/{ibge}`, que continuam só com `THEMES` (sem dado de finanças).
  */
 export default async function ExecutivoFederalPage() {
   const [states, hdiBrasil, gdp, hdiGlobal, pisa] = await Promise.all([
@@ -92,7 +99,7 @@ export default async function ExecutivoFederalPage() {
   return (
     <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { label: 'Governo Federal' }]} kicker="República Federativa do Brasil" title="Governo Federal"
       lede="O Poder Executivo federal, indicadores de referência do Brasil e dois comparadores que nenhum estado tem: como o IDH e a proficiência escolar do país se posicionam no mundo."
-      population={totalPop} populationYear={popYear} base="/executivo/federal" active=""
+      population={totalPop} populationYear={popYear} base="/executivo/federal" active="" themes={FEDERAL_THEMES}
       heroNode={
         <TerritoryHero context="República Federativa do Brasil" title="Governo Federal" stateName="Brasil" mapMode="estado" geometry={null}
           description="O Poder Executivo federal, indicadores de referência do Brasil e dois comparadores que nenhum estado tem: como o IDH e a proficiência escolar do país se posicionam no mundo."
@@ -113,7 +120,7 @@ export default async function ExecutivoFederalPage() {
         </section>
       </div>
 
-      <section className="mt-12 border-t bg-card py-12">
+      <section className="border-t bg-card py-12">
         <div className="page-shell">
           <p className="eyebrow">Como o Brasil se compara ao mundo</p>
           <h2 className="mt-2 text-3xl font-black tracking-tight">Dois comparadores internacionais</h2>

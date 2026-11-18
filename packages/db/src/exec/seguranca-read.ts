@@ -25,6 +25,20 @@ export interface SegState { entityId: number; ufCode: number; metrics: SegMetric
 export interface SegMunicipality { entityId: number; name: string; ufCode: number; kind: 4 | 5; metrics: SegMetric[]; ufContext: { indeterminateShare: SegMetric | null }; coverage: SegCoverage; sources: SegSource[]; restrictions: string[] }
 export interface SegSource { dataset: 'sim_residencia' | 'sim_ocorrencia' | 'sinesp_vde'; competence: number | null; stage: 'preliminar' | 'definitivo' | null; activatedAt: string | null }
 
+export interface AggressionRateAllUfsPoint { ufCode: number; year: number; ratePer100k: number | null }
+/** Taxa de mortes por agressão (SIM, indicador 3006, residência, CID-10 X85–Y09) das 27 UFs, todos
+ * os anos, numa única consulta — nunca uma consulta por estado. 2022 e 2023 não têm estimativa
+ * populacional oficial de UF nesta base: a taxa simplesmente não existe nesses 2 anos (confirmado por
+ * consulta direta), nunca reconstruída. */
+export async function getAggressionRateAllUfs(q: Q): Promise<AggressionRateAllUfsPoint[]> {
+  const rows = (await q.query(
+    `SELECT e.uf_code, extract(year FROM v.period_start)::int AS year, v.value
+     FROM civica_exec.exec_ind_value v JOIN civica_exec.exec_entity e ON e.entity_id = v.entity_id AND e.kind = 3
+     WHERE v.indicator_id = 3006 ORDER BY e.uf_code, year`,
+  )).rows;
+  return rows.map(r => ({ ufCode: Number(r.uf_code), year: Number(r.year), ratePer100k: r.value == null ? null : Number(r.value) }));
+}
+
 const DS = { sim_residencia: 15, sim_ocorrencia: 16, sinesp_vde: 17 } as const;
 const iso = (v: unknown): string => v instanceof Date ? v.toISOString().slice(0, 10) : String(v).slice(0, 10);
 const flagNames = (f: number): string[] => (Object.entries(FLAG) as Array<[string, number]>).filter(([, b]) => (f & b) !== 0).map(([k]) => k);

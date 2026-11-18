@@ -55,6 +55,25 @@ export async function getGdpPerCapita(q: Q, t: GdpTerritory): Promise<{ year: nu
   return point ? { year: point.year, value: point.gdpPerCapitaReais!, gdpThousandReais: point.gdpThousandReais } : null;
 }
 
+export interface GdpPerCapitaAllUfsPoint { ufCode: number; year: number; perCapitaReais: number | null }
+/** PIB per capita das 27 UFs, todos os anos, numa única consulta — nunca uma consulta por estado
+ * (mesmo cuidado de `getIdebAllUfs`). Mesmo cálculo de `getGdpSeries`: per capita = PIB ÷ população
+ * do MESMO ano; sem população daquele ano, sem per capita (nunca aproxima com outro ano). 2007, 2010,
+ * 2022 e 2023 não têm nenhuma população oficial de UF nesta base (lacuna real do IBGE/SIDRA 6579,
+ * confirmada por consulta direta — não é falha do join): saem sem valor nenhum nesses 4 anos. */
+export async function getGdpPerCapitaAllUfs(q: Q): Promise<GdpPerCapitaAllUfsPoint[]> {
+  const rows = (await q.query(
+    `SELECT g.territory_code::int AS uf_code, g.year, g.gdp_thousand_reais, p.value AS population
+     FROM civica_exec.exec_gdp_territory g
+     LEFT JOIN civica_exec.exec_territory_population p ON p.entity_id = g.territory_code::int AND p.year = g.year AND p.source = 1
+     WHERE g.territory_level = 'UF' ORDER BY uf_code, g.year`,
+  )).rows;
+  return rows.map(r => {
+    const population = r.population == null ? null : Number(r.population);
+    return { ufCode: Number(r.uf_code), year: Number(r.year), perCapitaReais: population ? (Number(r.gdp_thousand_reais) * 1000) / population : null };
+  });
+}
+
 export interface GdpRankingRow { entityId: number; year: number; value: number }
 /** PIB per capita do ano mais recente (com população do mesmo ano) de TODOS os municípios de uma UF, numa
  * única consulta — nunca uma consulta por município (N+1). Usada só para identificar o maior/menor PIB per

@@ -28,7 +28,7 @@ export async function fetchEntes(pool: Pool, cfg: StorageConfig): Promise<{ ente
   return { entes, entry };
 }
 
-export type Anexo = 'DCA-Anexo I-E' | 'DCA-Anexo I-G' | 'RREO-Anexo 02';
+export type Anexo = 'DCA-Anexo I-E' | 'DCA-Anexo I-G' | 'RREO-Anexo 02' | 'DCA-Anexo I-C' | 'DCA-Anexo I-D';
 export const bundleKind = (a: Anexo) => a.startsWith('DCA') ? 'dca' : 'rreo';
 export function requestUrl(a: Anexo, ente: number, year: number, periodo: number): string {
   if (a.startsWith('DCA')) return `${API}/dca?an_exercicio=${year}&id_ente=${ente}&no_anexo=${encodeURIComponent(a)}`;
