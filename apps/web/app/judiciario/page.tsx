@@ -5,6 +5,7 @@ import { MultiLineChart, ConcentrationCurve, type MultiLineDatum } from '@/compo
 import { JudiciaryAvailabilityNote, toChartCoverage } from '@/components/judiciary/availability';
 import { loadJudiciaryOverview, loadJudiciaryNationalSeries, loadJudiciaryIndicatorDistribution, loadJudiciaryExpenseByInciso, loadJudiciaryInstanceGroupStatistics } from '@/lib/judiciary';
 import { loadJudiciaryThemesCatalog, loadJudiciaryThemeOverview } from '@/lib/judiciary-themes';
+import { FilaSimulator, type FilaTribunal } from '@/components/judiciary/fila-simulator';
 import { mapMarkup } from '@/components/brazil-map-markup';
 import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
 import { mapRamps, emptyFill, darkFrom } from '@/lib/scale';
@@ -57,11 +58,12 @@ function layoutBeeswarm<T extends { value: number }>(points: T[], { chartWidth, 
 }
 
 export default async function JudiciaryPanoramaPage() {
-  const [overview, series, themes, congestion, featuredTheme, expenseSeries, expensePerMagistrate, expenseByInciso, instanceGroups] = await Promise.all([
+  const [overview, series, themes, congestion, timeDisposed, featuredTheme, expenseSeries, expensePerMagistrate, expenseByInciso, instanceGroups] = await Promise.all([
     loadJudiciaryOverview(2025),
     loadJudiciaryNationalSeries([...GENERAL_SUM]),
     loadJudiciaryThemesCatalog(),
     loadJudiciaryIndicatorDistribution('JN_CONGESTION_RATE', 2025),
+    loadJudiciaryIndicatorDistribution('JN_TIME_DISPOSED_MEAN', 2025),
     loadJudiciaryThemeOverview('DOMESTIC_VIOLENCE' as any, {}),
     loadJudiciaryNationalSeries([...EXPENSE_SUM]),
     loadJudiciaryIndicatorDistribution('JN_EXPENSE_PER_MAGISTRATE', 2025),
@@ -166,6 +168,32 @@ export default async function JudiciaryPanoramaPage() {
   const congestionMax = congestionPoints.at(-1) ?? null;
   const congestionMedian = congestionPoints[Math.floor(congestionPoints.length / 2)] ?? null;
   const congestionSwarm = layoutBeeswarm(congestionPoints, { chartWidth: 900, markerSize: 34 });
+
+  // "Um processo que entra hoje": cruza congestionamento × tempo médio por tribunal, por tribunal_id —
+  // nenhum dos dois cobre o STF (fora do escopo do Justiça em Números), por isso o ramo STF é excluído
+  // aqui (nunca mostraria tribunal nenhum no 2º select). UF derivada da sigla real: ESTADUAL é "TJ"+UF
+  // ("TJDFT"→DF); ELEITORAL é "TRE-"+UF ("TRE-DFT"→DF) — a sigla eleitoral tem hífen, então o regex
+  // ingênuo `sigla.replace(/^TJ|^TRE/,'')` deixaria o hífen sobrando; TSE (sem UF) fica sem bandeira.
+  function deriveUf(sigla: string, branchCode: string): string | null {
+    if (branchCode === 'ESTADUAL') { const code = sigla.replace(/^TJ/, ''); return code === 'DFT' ? 'DF' : code; }
+    if (branchCode === 'ELEITORAL' && sigla.startsWith('TRE-')) { const code = sigla.slice(4); return code === 'DFT' ? 'DF' : code; }
+    return null;
+  }
+  const filaByTribunal = new Map<string, FilaTribunal>();
+  function ingestFila(points: any[], key: 'timeDays' | 'congestion') {
+    for (const p of points) {
+      const existing = filaByTribunal.get(p.tribunal_id) ?? {
+        tribunal_id: p.tribunal_id as string, sigla: p.sigla as string, official_name: p.official_name as string,
+        branch_code: p.branch_code as string, branch_name: p.branch_name as string,
+        uf: deriveUf(p.sigla, p.branch_code), timeDays: null, congestion: null,
+      };
+      existing[key] = Number(p.value);
+      filaByTribunal.set(p.tribunal_id, existing);
+    }
+  }
+  ingestFila(((timeDisposed.data as any)?.points as any[] | undefined) ?? [], 'timeDays');
+  ingestFila(((congestion.data as any)?.points as any[] | undefined) ?? [], 'congestion');
+  const filaTribunals = [...filaByTribunal.values()].filter(t => t.branch_code !== 'STF');
 
   // Despesas: soma nacional por categoria de despesa (CNJ Justiça em Números), com série multi-ano própria
   // (cada indicador SUM tem seu próprio alcance de anos: Despesa total/Benefícios/Outras despesas/Receita
@@ -492,6 +520,13 @@ export default async function JudiciaryPanoramaPage() {
         <div className="page-shell">
           <h2 className="text-3xl font-black tracking-tight">Congestionamento e tempo</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">A taxa de congestionamento mede, para cada tribunal, a proporção de processos que ficou represada no ano. Não existe uma única taxa nacional válida, porque tribunais com acervos e universos muito diferentes não podem ser somados numa média simples. O que existe, de verdade, é variação: alguns tribunais represam uma fração pequena do que recebem; outros, a maior parte.</p>
+
+          {filaTribunals.length > 0 && (
+            <div className="mt-6">
+              <FilaSimulator tribunals={filaTribunals} year={overview.data.year} />
+            </div>
+          )}
+
           {congestionPoints.length > 0 && congestionMin && congestionMax && congestionMedian && (
             <div className="mt-6 rounded-2xl border bg-background p-6">
               <p className="text-xs font-bold uppercase text-muted-foreground">Taxa de congestionamento · {congestionPoints.length} tribunais estaduais · {overview.data.year}</p>
