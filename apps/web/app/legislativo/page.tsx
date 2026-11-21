@@ -1,4 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUp, ArrowUpDown, BarChart3, Building2, FileText, Landmark, MapPin, ReceiptText, Scale, Store, TrendingUp, Users, Vote } from 'lucide-react';
 import { ufs, type DataCoverage, type Source } from '@senadotracker/domain';
@@ -17,6 +18,7 @@ import { memo } from '@/lib/security/load';
 export const dynamic = 'force-dynamic';
 type Params = Record<string, string | string[] | undefined>;
 const scalar = (value: string | string[] | undefined) => typeof value === 'string' ? value : undefined;
+const int = new Intl.NumberFormat('pt-BR');
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 1 });
 const percent = new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 });
 const ratio = (value: number | null) => value === null ? '—' : percent.format(value);
@@ -96,10 +98,10 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 
       <section className="border-y bg-card"><div className="page-shell py-10">
         <SectionTitle title="Legislativo em Números" subtitle={`Um panorama do Senado Federal, da Câmara dos Deputados e das Assembleias Legislativas, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
-        <div className="mt-5 space-y-3">
-          <HousePanorama source="senado" year={years.senado} data={panoramas.senado} monthlyCost={monthlyCosts.senado} processingTime={processingTimes.senado} />
-          <HousePanorama source="camara" year={years.camara} data={panoramas.camara} monthlyCost={monthlyCosts.camara} processingTime={processingTimes.camara} />
-          {stateNumbers && <StatePanorama numbers={stateNumbers} />}
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          <HouseCard source="senado" year={years.senado} data={panoramas.senado} monthlyCost={monthlyCosts.senado} processingTime={processingTimes.senado} />
+          <HouseCard source="camara" year={years.camara} data={panoramas.camara} monthlyCost={monthlyCosts.camara} processingTime={processingTimes.camara} />
+          {stateNumbers && <StateAssemblyCard numbers={stateNumbers} />}
         </div>
       </div></section>
 
@@ -143,30 +145,85 @@ function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) 
 
 function QuickPath({ title, text, href, icon: Icon, tone, compact = false }: { title: string; text: string; href: string; icon: LucideIcon; tone: string; compact?: boolean }) { return <Link prefetch={false} href={href} className={cn('focus-ring group flex rounded-2xl border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary hover:shadow-sm', compact ? 'min-h-32 flex-col' : 'min-h-28 items-start gap-3')}><span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', tone)}><Icon size={19} /></span><span className="min-w-0 flex-1"><strong className="block leading-tight">{title}</strong><small className="mt-1.5 block leading-5 text-muted-foreground">{text}</small></span><ArrowRight size={16} className={cn('shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary', compact && 'mt-auto self-end')} /></Link>; }
 
-function HousePanorama({ source, year, data, monthlyCost, processingTime }: { source: Source; year: number; data: HousePanoramaData; monthlyCost: { meanCents: number | null; totalCents:number|null; sampleSize: number }; processingTime:{meanDays:number|null;medianDays:number|null;sampleSize:number;note:string} }) {
+/** Card no mesmo padrão visual de "Como a Justiça está organizada" (/judiciario) e "A federação em
+ * números" (/executivo): foto da fachada, selo com o tamanho do grupo, grade 2x2 de métricas e 1
+ * estatística em destaque na faixa inferior. Conteúdo idêntico ao da antiga `HousePanorama`/`StatePanorama`
+ * (tabela larga com rolagem horizontal) — só a forma muda. */
+function LegislativeCard({ photo, photoAlt, credit, label, badge, subtitle, stats, headline, caveats, href, hrefLabel }: {
+  photo: string; photoAlt: string; credit: string; label: string; badge: string; subtitle: string;
+  stats: Array<{ icon: LucideIcon; label: string; value: string; detail: string }>;
+  headline: { icon: LucideIcon; label: string; value: string };
+  caveats: string[]; href: string; hrefLabel: string;
+}) {
+  return <div className="flex flex-col overflow-hidden rounded-2xl border bg-background">
+    <div className="relative h-36 w-full bg-muted">
+      <Image src={photo} alt={photoAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+      <span className="absolute bottom-1 right-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[0.55rem] leading-none text-white/85">Foto: {credit}</span>
+    </div>
+    <div className="flex flex-1 flex-col p-5">
+      <div className="flex items-start justify-between gap-2">
+        <h3 className="display-title text-xl leading-tight">{label}</h3>
+        <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-bold text-muted-foreground">{badge}</span>
+      </div>
+      <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{subtitle}</p>
+
+      <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 border-t pt-4">
+        {stats.map(s => <div key={s.label} className="min-w-0">
+          <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><s.icon size={13} aria-hidden /> {s.label}</span>
+          <strong className="display-title mt-1 block text-xl leading-none">{s.value}</strong>
+          <span className="mt-1 block text-[0.65rem] text-muted-foreground">{s.detail}</span>
+        </div>)}
+      </div>
+
+      <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border bg-card px-3.5 py-3">
+        <span className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground"><headline.icon size={14} aria-hidden /> {headline.label}</span>
+        <strong className="display-title text-lg leading-none">{headline.value}</strong>
+      </div>
+
+      {caveats.map(c => <p key={c} className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">{c}</p>)}
+      <Link href={href} className="focus-ring mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary underline">{hrefLabel} <ArrowRight size={12} /></Link>
+    </div>
+  </div>;
+}
+
+const LEGISLATIVE_HOUSE_META = {
+  senado: { label: 'Senado Federal', subtitle: 'A Casa da Federação.', photo: '/legislativo/senado.jpg', photoAlt: 'Fachada do Palácio do Congresso Nacional, sede do Senado Federal', credit: 'Pedro França/Agência Senado · CC BY 2.0' },
+  camara: { label: 'Câmara dos Deputados', subtitle: 'A voz do povo brasileiro.', photo: '/legislativo/camara.jpg', photoAlt: 'Fachada do Palácio do Congresso Nacional, sede da Câmara dos Deputados', credit: 'Luciano Raguzzoni · CC BY-SA 4.0' },
+} as const;
+
+function HouseCard({ source, year, data, monthlyCost, processingTime }: { source: Source; year: number; data: HousePanoramaData; monthlyCost: { meanCents: number | null; totalCents: number | null; sampleSize: number }; processingTime: { meanDays: number | null; medianDays: number | null; sampleSize: number; note: string } }) {
   const senate = source === 'senado';
-  const cells = [
-    { icon: Users, value: data.roster.parliamentarians.toLocaleString('pt-BR'), label: senate ? 'senadores' : 'deputados federais', detail: senate ? 'representação dos estados e do DF' : 'representando todo o país' },
-    { icon: ReceiptText, value: monthlyCost.totalCents === null ? '—' : money.format(monthlyCost.totalCents / 100), label: 'custo por mês', detail: 'salário do cargo + cota + gabinete no período comum' },
-    { icon: ReceiptText, value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents / 100), label: 'custo médio mensal', detail: `subsídio + cota + gabinete · n=${monthlyCost.sampleSize}` },
-    { icon: FileText, value: processingTime.meanDays === null ? 'N/D' : `${Math.round(processingTime.meanDays).toLocaleString('pt-BR')} dias`, label: 'tempo médio de tramitação', detail: processingTime.meanDays===null?processingTime.note:`até decisão final · n=${processingTime.sampleSize}` },
-    { icon: BarChart3, value: ratio(data.participation.meanRatio), label: 'participação em votações nominais', detail: `média entre parlamentares observáveis · ${year} · n=${data.participation.coverage.sampleSize??0}` },
+  const meta = LEGISLATIVE_HOUSE_META[source];
+  const stats = [
+    { icon: Users, label: senate ? 'senadores' : 'deputados federais', value: int.format(data.roster.parliamentarians), detail: senate ? 'representação dos estados e do DF' : 'representando todo o país' },
+    { icon: ReceiptText, label: 'custo por mês', value: monthlyCost.totalCents === null ? '—' : money.format(monthlyCost.totalCents / 100), detail: 'salário do cargo + cota + gabinete no período comum' },
+    { icon: ReceiptText, label: 'custo médio mensal', value: monthlyCost.meanCents === null ? '—' : money.format(monthlyCost.meanCents / 100), detail: `subsídio + cota + gabinete · n=${monthlyCost.sampleSize}` },
+    { icon: FileText, label: 'tempo médio de tramitação', value: processingTime.meanDays === null ? 'N/D' : `${int.format(Math.round(processingTime.meanDays))} dias`, detail: processingTime.meanDays === null ? processingTime.note : `até decisão final · n=${processingTime.sampleSize}` },
   ];
-  return <article className="overflow-x-auto rounded-2xl border bg-background p-2 shadow-sm"><div className="grid min-w-[1020px] grid-cols-[230px_repeat(5,minmax(135px,1fr))] gap-2"><div className={cn('flex min-h-28 flex-col justify-between rounded-xl p-4 text-white', senate ? 'bg-[#1554a2]' : 'bg-[#08783e]')}><div className="flex items-center gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/15"><Landmark size={20} /></span><div><h3 className="font-black leading-tight">{senate ? 'Senado Federal' : 'Câmara dos Deputados'}</h3><p className="mt-0.5 text-xs text-white/70">{senate ? 'A Casa da Federação' : 'A voz do povo brasileiro'}</p></div></div><Link className="inline-flex items-center gap-1 text-xs font-bold underline" href={senate ? '/legislativo/senadores' : '/legislativo/deputados'}>Ver {senate ? 'senadores' : 'deputados'} <ArrowRight size={12} /></Link></div>{cells.map(({ icon: Icon, value, label, detail }) => <div key={label} className={cn('flex min-h-28 flex-col justify-center rounded-xl border px-4 py-3', senate ? 'border-blue-100 bg-blue-50/65' : 'border-emerald-100 bg-emerald-50/65')}><div className="flex items-center gap-2"><Icon size={16} className={senate ? 'text-blue-700' : 'text-emerald-700'} /><span className="text-xs font-bold text-muted-foreground">{label}</span></div><strong className="mt-2 block text-xl leading-none tracking-tight">{value}</strong><small className="mt-2 block leading-4 text-muted-foreground">{detail}</small></div>)}</div></article>;
+  return <LegislativeCard photo={meta.photo} photoAlt={meta.photoAlt} credit={meta.credit} label={meta.label} subtitle={meta.subtitle} badge="1 Casa" stats={stats}
+    headline={{ icon: BarChart3, label: 'participação em votações nominais', value: ratio(data.participation.meanRatio) }}
+    caveats={[`Média entre parlamentares observáveis em votações nominais · ${year} · n=${data.participation.coverage.sampleSize ?? 0}.`]}
+    href={senate ? '/legislativo/senadores' : '/legislativo/deputados'} hrefLabel={`Ver ${senate ? 'senadores' : 'deputados'}`} />;
 }
 
 const monthLabel = (month: string) => { const [year, mm] = month.split('-'); return `${['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'][Number(mm) - 1] ?? mm}/${year}`; };
 
-function StatePanorama({ numbers }: { numbers: StateLegislativeNumbers }) {
+function StateAssemblyCard({ numbers }: { numbers: StateLegislativeNumbers }) {
   const { cost, proposals } = numbers;
-  const cells = [
-    { icon: Users, value: numbers.deputies.toLocaleString('pt-BR'), label: 'deputados estaduais', detail: `${numbers.houses} Casas · inclui ${numbers.districtDeputies} distritais (CLDF)` },
-    { icon: ReceiptText, value: cost ? money.format(cost.totalCents / 100) : '—', label: 'custo por mês', detail: cost ? `salário do cargo + cota · ${cost.houses.length} de ${numbers.houses} Casas · ${monthLabel(cost.month)}` : 'sem mês comum utilizável' },
-    { icon: ReceiptText, value: cost ? money.format(cost.meanCents / 100) : '—', label: 'custo médio mensal', detail: cost ? `salário + cota · n=${cost.deputies.toLocaleString('pt-BR')}` : '—' },
-    { icon: FileText, value: proposals ? proposals.perHouse.toLocaleString('pt-BR') : 'N/D', label: 'proposições por Assembleia', detail: proposals ? `média de ${proposals.total.toLocaleString('pt-BR')} proposições em ${proposals.houses} Assembleias · ${proposals.year}` : 'sem proposições publicadas' },
-    { icon: Building2, value: numbers.parties.toLocaleString('pt-BR'), label: 'partidos nas Assembleias', detail: `partidos distintos nas ${numbers.houses} Casas` },
+  const stats = [
+    { icon: Users, label: 'deputados estaduais', value: int.format(numbers.deputies), detail: `${numbers.houses} Casas · inclui ${numbers.districtDeputies} distritais (CLDF)` },
+    { icon: ReceiptText, label: 'custo por mês', value: cost ? money.format(cost.totalCents / 100) : '—', detail: cost ? `salário do cargo + cota · ${cost.houses.length} de ${numbers.houses} Casas · ${monthLabel(cost.month)}` : 'sem mês comum utilizável' },
+    { icon: ReceiptText, label: 'custo médio mensal', value: cost ? money.format(cost.meanCents / 100) : '—', detail: cost ? `salário + cota · n=${int.format(cost.deputies)}` : '—' },
+    { icon: Building2, label: 'partidos nas Assembleias', value: int.format(numbers.parties), detail: `partidos distintos nas ${numbers.houses} Casas` },
   ];
-  return <div><article className="overflow-x-auto rounded-2xl border bg-background p-2 shadow-sm"><div className="grid min-w-[1020px] grid-cols-[230px_repeat(5,minmax(135px,1fr))] gap-2"><div className="flex min-h-28 flex-col justify-between rounded-xl bg-[#0f6b63] p-4 text-white"><div className="flex items-center gap-3"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/15"><Landmark size={20} /></span><div><h3 className="font-black leading-tight">Assembleias Legislativas</h3><p className="mt-0.5 text-xs text-white/70">27 Casas, 27 realidades</p></div></div><Link className="inline-flex items-center gap-1 text-xs font-bold underline" href="/legislativo/estaduais">Ver deputados estaduais <ArrowRight size={12} /></Link></div>{cells.map(({ icon: Icon, value, label, detail }) => <div key={label} className="flex min-h-28 flex-col justify-center rounded-xl border border-teal-100 bg-teal-50/65 px-4 py-3"><div className="flex items-center gap-2"><Icon size={16} className="text-teal-700" /><span className="text-xs font-bold text-muted-foreground">{label}</span></div><strong className="mt-2 block text-xl leading-none tracking-tight">{value}</strong><small className="mt-2 block leading-4 text-muted-foreground">{detail}</small></div>)}</div></article>{cost && <p className="mt-2 px-2 text-xs leading-5 text-muted-foreground">Custo desconsiderando gabinete: soma o subsídio bruto vigente e as cotas e verbas indenizatórias que cada Casa publica, em {monthLabel(cost.month)}, nas {cost.houses.length} de {numbers.houses} Assembleias com dados comparáveis; a média divide pelos {cost.deputies.toLocaleString('pt-BR')} deputados dessas Casas. Cada Assembleia tem regras próprias.</p>}</div>;
+  const caveats = [
+    proposals ? `Proposições: média de ${int.format(proposals.total)} em ${proposals.houses} Assembleias · ${proposals.year}.` : 'Sem proposições publicadas.',
+    ...(cost ? [`Custo desconsiderando gabinete: subsídio bruto + cotas e verbas indenizatórias publicadas, em ${monthLabel(cost.month)}, nas ${cost.houses.length} de ${numbers.houses} Assembleias com dados comparáveis. Cada Assembleia tem regras próprias.`] : []),
+  ];
+  return <LegislativeCard photo="/legislativo/alesp.jpg" photoAlt="Fachada do Palácio 9 de Julho, sede da Assembleia Legislativa de São Paulo" credit="LiaC · CC BY-SA 3.0"
+    label="Assembleias Legislativas" subtitle="27 Casas, 27 realidades." badge={`${numbers.houses} Casas`} stats={stats}
+    headline={{ icon: FileText, label: 'proposições por Assembleia', value: proposals ? int.format(proposals.perHouse) : 'N/D' }}
+    caveats={caveats} href="/legislativo/estaduais" hrefLabel="Ver deputados estaduais" />;
 }
 
 function SourceCard({ name, text, href, logo, wide = false, icon: Icon }: { name: string; text: string; href: string; logo?: string; wide?: boolean; icon?: LucideIcon }) { return <a href={href} className="focus-ring rounded-2xl border bg-background p-4 transition hover:border-primary"><div className="flex h-10 items-center">{logo ? <img src={logo} alt="" className={cn('object-contain object-left', wide ? 'h-7 w-36' : 'size-10')} /> : Icon ? <Icon className="text-primary" size={30} /> : null}</div><strong className="mt-3 block">{name}</strong><p className="mt-1 text-xs leading-5 text-muted-foreground">{text}</p><span className="mt-3 inline-flex items-center gap-1 text-xs font-bold text-primary">Acessar fonte <ArrowRight size={12} /></span></a>; }
