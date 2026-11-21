@@ -162,6 +162,28 @@ const ID_WHITELIST = new Map(DCA_ID_CONTAS.map(([codConta, ourCode]) => [codCont
 export const parseDcaIC = (items: SiconfiItem[]): Map<string, number> => parseSimpleFin(items, 'DCA-Anexo I-C', IC_WHITELIST, dcaIcColumn);
 export const parseDcaID = (items: SiconfiItem[]): Map<string, number> => parseSimpleFin(items, 'DCA-Anexo I-D', ID_WHITELIST, dcaIeColumn);   // I-D usa o MESMO vocabulário de colunas do I-E (Despesas Empenhadas/Liquidadas/Pagas/RP...)
 
+export interface SimpleFinSliceArgs { source: number; year: number; entities: FinEnteInput[]; parse: (items: SiconfiItem[]) => Map<string, number>; ids: { conta: (code: string) => number; col: (code: string) => number } }
+export interface SimpleFinSlice { facts: Row[]; cov: Row[] }
+/**
+ * P14.53 (Fase 2) — mesmos parsers do I-C/I-D, agora para QUALQUER lista de entidades (estado + seus
+ * municípios, no mesmo pacote por UF), não só a União. Sem a árvore função/subfunção (I-C/I-D são uma
+ * lista achatada), por isso a cobertura aqui não carrega `fn06`/`stages` reais (sempre 0 — não fazem
+ * sentido pra esses demonstrativos) nem verificação de invariantes contábeis (não há partição
+ * mutuamente exclusiva a conferir, diferente do I-E/I-G).
+ */
+export function buildSimpleFinSlice(a: SimpleFinSliceArgs): SimpleFinSlice {
+  const facts: Row[] = []; const cov: Row[] = [];
+  for (const e of a.entities) {
+    if (e.status !== 200) { cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: 0, status: COV.SOURCE_UNAVAILABLE, items: 0, fn06: 0, stages: 0, caveats: 0 }); continue; }
+    if (!e.items.length) { cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: 0, status: COV.NOT_REPORTED, items: 0, fn06: 0, stages: 0, caveats: 0 }); continue; }
+    const parsed = a.parse(e.items);
+    if (!parsed.size) { cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: 0, status: COV.NOT_REPORTED, items: e.items.length, fn06: 0, stages: 0, caveats: 0 }); continue; }
+    cov.push({ source: a.source, entity_id: e.entityId, exercicio: a.year, periodo: 0, status: COV.PUBLISHED, items: e.items.length, fn06: 0, stages: 0, caveats: 0 });
+    for (const [k, v] of parsed) { const [conta, col] = k.split('|') as [string, string]; facts.push({ entity_id: e.entityId, exercicio: a.year, periodo: 0, conta_id: a.ids.conta(conta), coluna_id: a.ids.col(col), valor: v }); }
+  }
+  return { facts, cov };
+}
+
 export interface FederalSimpleSlice { facts: Row[]; factCount: number }
 /** Monta as linhas de `exec_fin_fact` (só a entidade União) a partir do mapa `${ourCode}|${coluna}` → centavos. */
 export function buildFederalSimpleSlice(parsed: Map<string, number>, entityId: number, year: number, ids: { conta: (code: string) => number; col: (code: string) => number }): FederalSimpleSlice {

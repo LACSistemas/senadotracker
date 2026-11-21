@@ -1,6 +1,6 @@
 import type { Pool, PoolClient } from 'pg';
 import {
-  DATASET, DCA_IC_CONTAS, DCA_IC_COLUMNS, DCA_ID_CONTAS, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_EDU_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildEducationFinSlice, buildFederalSimpleSlice, buildFinSlice, collectCodes, ensureRefCodes, parseDcaIC, parseDcaID, parseDcaIE, parseDcaIEEducation, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
+  DATASET, DCA_IC_CONTAS, DCA_IC_COLUMNS, DCA_ID_CONTAS, DCA_IE_COLUMNS, DCA_IG_COLUMNS, FIN_DCARP_IDS, FIN_DCA_IDS, FIN_EDU_DCA_IDS, FIN_DOMAIN, FIN_RREO_IDS, FIN_SOURCE, FIN_VERSION, RREO_COLUMNS, SPECS, buildEducationFinSlice, buildFederalSimpleSlice, buildFinSlice, buildSimpleFinSlice, collectCodes, ensureRefCodes, parseDcaIC, parseDcaID, parseDcaIE, parseDcaIEEducation, parseDcaIG, parseRreo02, publishSlice, replaceIndicatorsBulk, sha256,
   type FinEnteInput, type FinSlice, type SiconfiItem,
 } from '@senadotracker/db';
 import { UF_CODE } from './cnes.ts';
@@ -158,6 +158,50 @@ export async function collectFederalExtras(pool: Pool, cfg: StorageConfig, o: { 
       const r = await publishSlice(pool, { datasetId: dataset, uf: 0, competence: year * 100 + 12, stage: 2, sourceHash: fingerprint, parserVersion: o_.version, bootstrap: first, tables: [{ spec: o_.spec, rows: facts }], inputs: { anexo: o_.anexo, year, file: rel, sha256: man.sha256 } });
       results.push({ kind: o_.kind, year, status: r.status, facts: facts.length });
       o.log?.(JSON.stringify({ financas: o_.kind, year, status: r.status, facts: facts.length }));
+    }
+  }
+  return { results, missing };
+}
+
+/**
+ * P14.53 — Fase 2 do P14.46: os MESMOS parsers de I-C (Receita) e I-D (GND), agora para os 27
+ * estados + seus municípios (cada pacote de UF já traz os dois juntos — não existe coleta "só
+ * estadual" separada da municipal nesta API). Fatia própria (dataset/tableId distintos de
+ * fin_dca_ic_br/fin_dca_id_br): nunca toca a fatia só-União do P14.46. Diferente daquela, aqui HÁ
+ * um universo real a cobrir (~5.596 entes), por isso grava exec_fin_cov junto dos fatos.
+ */
+export interface FederalExtrasUfResult { kind: 'dcaIc' | 'dcaId'; year: number; uf: number; status: string; facts: number; cov: Record<string, number> }
+export async function collectFederalExtrasUf(pool: Pool, cfg: StorageConfig, o: { years: number[]; ufs?: string[]; log?: Log }): Promise<{ results: FederalExtrasUfResult[]; missing: Array<{ kind: 'dcaIc' | 'dcaId'; year: number; uf: number }> }> {
+  await assertVolume(cfg); await assertPgHeadroom(cfg);
+  const emap = await loadSiconfiEntityMap(pool); const results: FederalExtrasUfResult[] = []; const missing: Array<{ kind: 'dcaIc' | 'dcaId'; year: number; uf: number }> = [];
+  const ufs = (o.ufs?.length ? o.ufs.map(u => u.toUpperCase()) : ALL_UFS).map(u => ({ name: u, code: UF_CODE[u]! }));
+  const KINDS: Array<{ kind: 'dcaIc' | 'dcaId'; anexo: Anexo; contas: typeof DCA_IC_CONTAS; parse: (items: SiconfiItem[]) => Map<string, number>; cols: typeof DCA_IC_COLUMNS; colDomain: number; dataset: number; spec: typeof SPECS.fin_fact_dca_ic_uf; covSpec: typeof SPECS.fin_cov_dca_ic; source: number; version: string }> = [
+    { kind: 'dcaIc', anexo: 'DCA-Anexo I-C', contas: DCA_IC_CONTAS, parse: parseDcaIC, cols: DCA_IC_COLUMNS, colDomain: FIN_DOMAIN.colDcaIC, dataset: DATASET.fin_dca_ic_uf, spec: SPECS.fin_fact_dca_ic_uf, covSpec: SPECS.fin_cov_dca_ic, source: FIN_SOURCE.dcaIc, version: FIN_VERSION.dcaIcUf },
+    { kind: 'dcaId', anexo: 'DCA-Anexo I-D', contas: DCA_ID_CONTAS, parse: parseDcaID, cols: DCA_IE_COLUMNS, colDomain: FIN_DOMAIN.colDcaID, dataset: DATASET.fin_dca_id_uf, spec: SPECS.fin_fact_dca_id_uf, covSpec: SPECS.fin_cov_dca_id, source: FIN_SOURCE.dcaId, version: FIN_VERSION.dcaIdUf },
+  ];
+  const manifest = await readManifest(cfg);
+  for (const o_ of KINDS) {
+    const contaMap = await ensureRefCodes(pool, FIN_DOMAIN.conta, o_.contas.map(([, code, label]) => ({ code, label, attrs: { source: 'Siconfi', demonstrativo: o_.anexo } })));
+    const colMap = await ensureRefCodes(pool, o_.colDomain, o_.cols.map(c => ({ code: c.code, label: c.label, attrs: { unit: 'centavos', semantic: c.semantic, demonstrativo: o_.anexo } })));
+    const need = (m: Map<string, number>, c: string) => { const v = m.get(c); if (v === undefined) throw new Error(`código ${c} fora do dicionário`); return v; };
+    for (const year of o.years) {
+      for (const u of ufs) {
+        const rel = bundleRel(o_.anexo, year, u.code, 0); const man = manifest.get(rel);
+        if (!man) { missing.push({ kind: o_.kind, year, uf: u.code }); continue; }
+        const entes: FinEnteInput[] = []; const unmatched: number[] = [];
+        for await (const l of readBundle(cfg, rel)) {
+          const entityId = emap.get(l.e); if (entityId === undefined) { unmatched.push(l.e); continue; }
+          const items: SiconfiItem[] = l.s === 200 ? (JSON.parse(l.b) as { items: SiconfiItem[] }).items : [];
+          entes.push({ entityId, status: l.s === 200 || l.s === 404 ? 200 : l.s, items });
+        }
+        const { facts, cov } = buildSimpleFinSlice({ source: o_.source, year, entities: entes, parse: o_.parse, ids: { conta: c => need(contaMap, c), col: c => need(colMap, c) } });
+        const first = await isFirstPublication(pool, o_.dataset, u.code, year * 100 + 12);
+        const fingerprint = sha256(`${man.sha256}:${o_.version}`);
+        const r = await publishSlice(pool, { datasetId: o_.dataset, uf: u.code, competence: year * 100 + 12, stage: 2, sourceHash: fingerprint, parserVersion: o_.version, bootstrap: first, tables: [{ spec: o_.spec, rows: facts }, { spec: o_.covSpec, rows: cov }], inputs: { anexo: o_.anexo, year, uf: u.code, file: rel, sha256: man.sha256, entes: entes.length } });
+        const covBy: Record<string, number> = {}; for (const c of cov) covBy[String(c.status)] = (covBy[String(c.status)] ?? 0) + 1;
+        results.push({ kind: o_.kind, year, uf: u.code, status: r.status, facts: facts.length, cov: covBy });
+        o.log?.(JSON.stringify({ financas: o_.kind, year, uf: u.name, status: r.status, facts: facts.length, cov: covBy, unmatched: unmatched.length }));
+      }
     }
   }
   return { results, missing };

@@ -6,18 +6,29 @@ import type { FederalFinancas, FederalFinancasHistory, PublicDebtSeries } from '
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 const moneyCompact = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', notation: 'compact', maximumFractionDigits: 1 });
 
+export type FinancasTerritoryKind = 'uniao' | 'uf' | 'municipio';
 /**
  * P14.49 — extraído de `/executivo/federal/page.tsx` (que ficava com todo o aprofundamento de finanças
  * dentro da aba "Visão geral", a única das 6 áreas sem sua própria sub-rota — achado real do feedback
- * do usuário). Agora é o conteúdo de `/executivo/federal/financas`, a 6ª aba de `FEDERAL_THEMES`, no
- * mesmo padrão das outras 5 (`HealthFederalPage`, `EducationFederalPage`...): um componente puro que só
- * recebe dado já carregado pela página-rota.
+ * do usuário). P14.5x — generalizado: DCA I-C/I-D passaram a cobrir estados e municípios também, então
+ * este componente (antes `FinancasFederalPage`, só União) agora recebe `territory` e serve as 3 rotas
+ * (`/executivo/federal/financas`, `/estados/{uf}/financas`, `/municipios/{ibge}/financas`) no mesmo
+ * padrão das outras áreas temáticas: um componente puro que só recebe dado já carregado pela página-rota.
+ * `publicDebt` é a série de Dívida Bruta do Governo Geral (BCB/SGS) — SÓ existe no nível nacional; por
+ * isso é opcional aqui, e a seção "Juros x Dívida" perde o lado da dívida (fica só "Juros pagos") quando
+ * ausente, em vez de omitir Juros inteiramente (o dado de Juros/GND2 existe para todo ente).
  */
-export function FinancasFederalPage({ financas, financasHistory, publicDebt, totalPop, popYear }: {
-  financas: FederalFinancas; financasHistory: FederalFinancasHistory; publicDebt: PublicDebtSeries; totalPop: number; popYear: number;
+export function FinancasTerritoryPage({ financas, financasHistory, publicDebt, totalPop, popYear, territory }: {
+  financas: FederalFinancas; financasHistory: FederalFinancasHistory; publicDebt?: PublicDebtSeries | null; totalPop: number; popYear: number;
+  territory: { kind: FinancasTerritoryKind; name: string };
 }) {
-  // "Como o Governo Federal gasta e arrecada" (P14.46) — DCA I-E/I-C/I-D, só União, lista COMPLETA de
-  // funções (não top-6) e todas as 6 categorias econômicas. Nunca combina função com categoria
+  const T = territory.kind === 'uniao'
+    ? { actorTitle: 'o Governo Federal', subject: 'a União', byActor: 'pela União', ofActor: 'federais', genitiveActor: 'da União', label: 'União', placeGenitive: 'do Brasil' }
+    : territory.kind === 'uf'
+    ? { actorTitle: `o Governo de ${territory.name}`, subject: territory.name, byActor: `por ${territory.name}`, ofActor: `de ${territory.name}`, genitiveActor: `do Estado de ${territory.name}`, label: territory.name, placeGenitive: `de ${territory.name}` }
+    : { actorTitle: `a Prefeitura de ${territory.name}`, subject: territory.name, byActor: `por ${territory.name}`, ofActor: `de ${territory.name}`, genitiveActor: `do Município de ${territory.name}`, label: territory.name, placeGenitive: `de ${territory.name}` };
+  // "Como {ator} gasta e arrecada" — DCA I-E/I-C/I-D, lista COMPLETA de funções (não top-6) e todas as 6
+  // categorias econômicas. Nunca combina função com categoria
   // econômica — ver nota em getFederalFinancas (packages/db/src/exec/financas-read.ts).
   const finDespesa = financas.despesa; const finReceita = financas.receita; const finCategoria = financas.despesaPorCategoria;
   const todasFuncoesBars = (finDespesa?.porFuncao ?? []).map(f => ({ key: f.code, label: f.label === f.code ? 'Outras funções' : f.label, value: f.value, meta: `${f.percent.toFixed(1).replace('.', ',')}% do total` }));
@@ -69,7 +80,7 @@ export function FinancasFederalPage({ financas, financasHistory, publicDebt, tot
 
   const jurosTrend = histYears.map(y => ({ label: yl(y.year), value: y.gnd.find(g => g.code === 'GND2')?.value ?? null }));
   const debtByYear = new Map<number, number>();
-  for (const p of publicDebt.points) debtByYear.set(Number(p.periodStart.slice(0, 4)), p.value);   // ordenado por data: o último ponto de cada ano sobrescreve os anteriores
+  if (publicDebt) for (const p of publicDebt.points) debtByYear.set(Number(p.periodStart.slice(0, 4)), p.value);   // ordenado por data: o último ponto de cada ano sobrescreve os anteriores
   const dividaTrend = histYears.map(y => ({ label: yl(y.year), value: debtByYear.get(y.year) ?? null }));
 
   const latestPerCapita = [...histYears].reverse().find(y => y.despesaTotalPerCapita != null) ?? null;
@@ -91,7 +102,7 @@ export function FinancasFederalPage({ financas, financasHistory, publicDebt, tot
   return <>
     <section className="page-shell">
       <p className="eyebrow">De onde vem e para onde vai o dinheiro</p>
-      <h2 className="mt-2 text-3xl font-black tracking-tight">Como o Governo Federal gasta e arrecada</h2>
+      <h2 className="mt-2 text-3xl font-black tracking-tight">Como {T.actorTitle} gasta e arrecada</h2>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Despesa empenhada do exercício{finDespesa ? ` de ${finDespesa.year}` : ''}, por função orçamentária (o que o dinheiro financia) e por categoria econômica (que tipo de gasto é). Siconfi/DCA, declaração anual.</p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
@@ -110,15 +121,15 @@ export function FinancasFederalPage({ financas, financasHistory, publicDebt, tot
         <RankedBars title={`Despesa por função orçamentária${finDespesa ? ` — todas as ${finDespesa.porFuncao.length}` : ''}`} items={todasFuncoesBars} formatValue={moneyCompact.format} coverage={finDespesa ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-E, empenhada', { from: `${finDespesa.year}-01-01`, to: `${finDespesa.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-E')} />
         <RankedBars title={`Despesa por categoria econômica${finCategoria ? ` (${finCategoria.year})` : ''}`} items={categoriaBars} formatValue={moneyCompact.format} coverage={finCategoria ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-D, empenhada', { from: `${finCategoria.year}-01-01`, to: `${finCategoria.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-D')} />
       </div>
-      <p className="mt-4 text-xs leading-5 text-muted-foreground">Função e categoria econômica são classificações DIFERENTES da mesma despesa — nunca somam uma na outra ("Pessoal e Encargos Sociais" atravessa Previdência, Saúde e todas as demais funções). "Despesa primária" é derivada aqui (Total − Juros e Encargos da Dívida − Amortização da Dívida): a União toma empréstimo novo (receita de capital) e amortiza dívida velha (despesa) no mesmo exercício, o que infla os totais brutos muito além do que costuma ser chamado de "tamanho do governo". Estágio empenhado, não pago; valores nominais, sem deflacionar.</p>
+      <p className="mt-4 text-xs leading-5 text-muted-foreground">Função e categoria econômica são classificações DIFERENTES da mesma despesa — nunca somam uma na outra ("Pessoal e Encargos Sociais" atravessa Previdência, Saúde e todas as demais funções). "Despesa primária" é derivada aqui (Total − Juros e Encargos da Dívida − Amortização da Dívida): {T.subject} toma empréstimo novo (receita de capital) e amortiza dívida velha (despesa) no mesmo exercício, o que infla os totais brutos muito além do que costuma ser chamado de "tamanho do governo". Estágio empenhado, não pago; valores nominais, sem deflacionar.</p>
     </section>
 
     {histYears.length > 0 && (
       <section className="border-t pt-12">
         <div className="page-shell">
           <p className="eyebrow">A série completa, não só a fotografia de um ano</p>
-          <h2 className="mt-2 text-3xl font-black tracking-tight">As contas públicas federais ao longo do tempo ({firstHistYear}–{lastHistYear})</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Mesma fonte (Siconfi/DCA, declaração anual da União), agora em série — empenhado, valores nominais, sem deflacionar.</p>
+          <h2 className="mt-2 text-3xl font-black tracking-tight">As contas públicas {T.ofActor} ao longo do tempo ({firstHistYear}–{lastHistYear})</h2>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Mesma fonte (Siconfi/DCA, declaração anual {T.genitiveActor}), agora em série — empenhado, valores nominais, sem deflacionar.</p>
 
           <div className="mt-6"><MultiLineChart title="Despesa × Receita, total e primária" data={despesaReceitaSeries} coverage={histCoverage('Siconfi · DCA Anexo I-E/I-C/I-D, empenhada')} /></div>
 
@@ -140,17 +151,23 @@ export function FinancasFederalPage({ financas, financasHistory, publicDebt, tot
               <StackedBarChart title="Receita corrente × receita de capital, ano a ano" data={receitaCorrenteCapitalByYear} coverage={histCoverage('Siconfi · DCA Anexo I-C, bruta')} />
               <RankedBars title={`Receita por origem${latestReceitaYear ? ` (${latestReceitaYear.year})` : ''}`} items={receitaComposicaoBars} formatValue={moneyCompact.format} coverage={latestReceitaYear ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-C, bruta', { from: `${latestReceitaYear.year}-01-01`, to: `${latestReceitaYear.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-C')} />
             </div>
-            <p className="mt-3 text-xs leading-5 text-muted-foreground">"Operações de Crédito" é empréstimo novo tomado pela União no próprio exercício — é a mesma distorção documentada acima (vira receita de capital aqui e amortização de dívida do lado da despesa); por isso é excluída do cálculo de Receita Primária, não excluída deste gráfico de origem.</p>
+            <p className="mt-3 text-xs leading-5 text-muted-foreground">"Operações de Crédito" é empréstimo novo tomado {T.byActor} no próprio exercício — é a mesma distorção documentada acima (vira receita de capital aqui e amortização de dívida do lado da despesa); por isso é excluída do cálculo de Receita Primária, não excluída deste gráfico de origem.</p>
           </div>
 
           <div className="mt-10">
-            <h3 className="text-lg font-black">Juros pagos x dívida pública</h3>
-            <p className="mt-1 max-w-2xl text-sm text-muted-foreground">Duas métricas de natureza diferente — nunca no mesmo eixo: Juros e Encargos da Dívida é um FLUXO anual (quanto a União pagou de juros naquele ano); Dívida Bruta do Governo Geral é um ESTOQUE (quanto o governo deve, em % do PIB, inclui União + estados + municípios).</p>
-            {jurosVsPessoalNarrative && <p className="mt-2 text-sm font-medium text-foreground">{jurosVsPessoalNarrative}</p>}
-            <div className="mt-4 grid gap-4 lg:grid-cols-2">
-              <CompactTrend title="Juros e Encargos da Dívida (União, por ano)" data={jurosTrend} color="#be123c" coverage={histCoverage('Siconfi · DCA Anexo I-D, empenhada')} />
-              <CompactTrend title="Dívida Bruta do Governo Geral (% do PIB, fim de ano)" data={dividaTrend} color="#7c3aed" suffix="%" coverage={toChartCoverage('AVAILABLE', 'Banco Central · SGS série 13762', { from: `${publicDebt.points[0]?.periodStart.slice(0, 4) ?? ''}-01-01`, to: `${publicDebt.latest?.periodStart.slice(0, 4) ?? ''}-12-31`, grain: 'year' })} />
-            </div>
+            <h3 className="text-lg font-black">{publicDebt ? 'Juros pagos x dívida pública' : 'Juros pagos'}</h3>
+            {publicDebt ? <>
+              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">Duas métricas de natureza diferente — nunca no mesmo eixo: Juros e Encargos da Dívida é um FLUXO anual (quanto {T.subject} pagou de juros naquele ano); Dívida Bruta do Governo Geral é um ESTOQUE (quanto o governo deve, em % do PIB, inclui União + estados + municípios).</p>
+              {jurosVsPessoalNarrative && <p className="mt-2 text-sm font-medium text-foreground">{jurosVsPessoalNarrative}</p>}
+              <div className="mt-4 grid gap-4 lg:grid-cols-2">
+                <CompactTrend title={`Juros e Encargos da Dívida (${T.label}, por ano)`} data={jurosTrend} color="#be123c" coverage={histCoverage('Siconfi · DCA Anexo I-D, empenhada')} />
+                <CompactTrend title="Dívida Bruta do Governo Geral (% do PIB, fim de ano)" data={dividaTrend} color="#7c3aed" suffix="%" coverage={toChartCoverage('AVAILABLE', 'Banco Central · SGS série 13762', { from: `${publicDebt.points[0]?.periodStart.slice(0, 4) ?? ''}-01-01`, to: `${publicDebt.latest?.periodStart.slice(0, 4) ?? ''}-12-31`, grain: 'year' })} />
+              </div>
+            </> : <>
+              <p className="mt-1 max-w-2xl text-sm text-muted-foreground">Quanto {T.subject} pagou de Juros e Encargos da Dívida por ano (FLUXO). Não existe, nesta fonte, uma série de dívida pública (ESTOQUE) por estado ou município — a comparação com o estoque da dívida só é possível no nível da União, em Governo Federal.</p>
+              {jurosVsPessoalNarrative && <p className="mt-2 text-sm font-medium text-foreground">{jurosVsPessoalNarrative}</p>}
+              <div className="mt-4"><CompactTrend title={`Juros e Encargos da Dívida (${T.label}, por ano)`} data={jurosTrend} color="#be123c" coverage={histCoverage('Siconfi · DCA Anexo I-D, empenhada')} /></div>
+            </>}
           </div>
 
           {latestPerCapita && (
@@ -161,11 +178,11 @@ export function FinancasFederalPage({ financas, financasHistory, publicDebt, tot
                 <div className="min-w-0 rounded-2xl border bg-background p-5"><p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Despesa primária por habitante</p><p className="hero-figure tnum mt-2 truncate text-2xl text-[#14304f]">{latestPerCapita.despesaPrimariaPerCapita != null ? money.format(latestPerCapita.despesaPrimariaPerCapita) : '—'}</p></div>
                 <div className="min-w-0 rounded-2xl border bg-background p-5"><p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Receita total por habitante</p><p className="hero-figure tnum mt-2 truncate text-2xl text-[#14304f]">{latestPerCapita.receitaTotalPerCapita != null ? money.format(latestPerCapita.receitaTotalPerCapita) : '—'}</p></div>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">Divide o valor nacional da União pela população total do Brasil ({formatInt(totalPop)}, {popYear}) — não é um cálculo "por contribuinte" nem considera isenções.</p>
+              <p className="mt-3 text-xs text-muted-foreground">Divide o valor {T.genitiveActor} pela população {T.placeGenitive} ({formatInt(totalPop)}, {popYear}) — não é um cálculo "por contribuinte" nem considera isenções.</p>
             </div>
           )}
 
-          {maxDespesaPrimariaYear && <p className="mt-10 text-sm text-muted-foreground">No período coberto ({firstHistYear}–{lastHistYear}), o ano de maior despesa primária da União foi <strong className="text-foreground">{maxDespesaPrimariaYear.year}</strong>, com {moneyCompact.format(maxDespesaPrimariaYear.despesaPrimaria!.value)}.</p>}
+          {maxDespesaPrimariaYear && <p className="mt-10 text-sm text-muted-foreground">No período coberto ({firstHistYear}–{lastHistYear}), o ano de maior despesa primária {T.genitiveActor} foi <strong className="text-foreground">{maxDespesaPrimariaYear.year}</strong>, com {moneyCompact.format(maxDespesaPrimariaYear.despesaPrimaria!.value)}.</p>}
         </div>
       </section>
     )}

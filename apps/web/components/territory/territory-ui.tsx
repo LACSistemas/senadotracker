@@ -143,10 +143,8 @@ export const THEMES = [
   { slug: 'seguranca', label: 'Segurança', ready: true },
   { slug: 'bem-estar', label: 'Bem-estar', ready: true },
   { slug: 'infraestrutura', label: 'Infraestrutura', ready: true },
+  { slug: 'financas', label: 'Finanças', ready: true },
 ] as const;
-/** `THEMES` + Finanças (P14.49) — só para as 6 páginas de `/executivo/federal/*`: finanças só existe no
- * nível União, sem equivalente em `/estados/{uf}`/`/municipios/{ibge}` (que continuam só com `THEMES`). */
-export const FEDERAL_THEMES = [...THEMES, { slug: 'financas', label: 'Finanças', ready: true }] as const;
 
 const THEME_PLAN: Record<string, { title: string; sources: string[]; text: string }> = {
   educacao: { title: 'Educação', sources: ['Censo Escolar (INEP)', 'IDEB (INEP)', 'FNDE'], text: 'Matrículas, rede escolar e resultados de aprendizagem estão mapeados, mas ainda não foram coletados nem conferidos.' },

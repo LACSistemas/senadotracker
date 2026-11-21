@@ -2,10 +2,12 @@ import type { Pool } from 'pg';
 import { DOMAIN } from './indicator-defs.ts';
 
 /** Versões do contrato financeiro (entram no hash de cada fatia: mudar um parser/contrato republica). */
-export const FIN_VERSION = { dca: 'dca-ie-v1', dcaRp: 'dca-ig-v1', rreo: 'rreo02-v1', publish: 'fin-v1', fed: 'fed-v1', fedDot: 'fed-dot-v1', rs: 'tcers-v1', pe: 'tcepe-v1', dcaIcBr: 'dca-ic-br-v2', dcaIdBr: 'dca-id-br-v1' } as const;
+export const FIN_VERSION = { dca: 'dca-ie-v1', dcaRp: 'dca-ig-v1', rreo: 'rreo02-v1', publish: 'fin-v1', fed: 'fed-v1', fedDot: 'fed-dot-v1', rs: 'tcers-v1', pe: 'tcepe-v1', dcaIcBr: 'dca-ic-br-v2', dcaIdBr: 'dca-id-br-v1',
+  /** P14.53 (Fase 2): mesmos parsers do I-C/I-D, agora para os 27 estados + municípios (fatia UF × exercício, cada pacote já traz o estado e seus municípios juntos). */
+  dcaIcUf: 'dca-ic-uf-v1', dcaIdUf: 'dca-id-uf-v1' } as const;
 
 /** Fontes de cobertura (exec_fin_cov.source). */
-export const FIN_SOURCE = { dcaIE: 1, rreo02: 2, dcaIG: 3, fedExec: 4, fedDot: 5 } as const;
+export const FIN_SOURCE = { dcaIE: 1, rreo02: 2, dcaIG: 3, fedExec: 4, fedDot: 5, dcaIc: 6, dcaId: 7 } as const;
 /** Estados de cobertura (exec_fin_cov.status). */
 export const COV = { PUBLISHED: 1, PUBLISHED_WITH_CAVEATS: 2, NOT_REPORTED: 3, NO_SOURCE_DATA: 4, SOURCE_UNAVAILABLE: 5, METHODOLOGY_PENDING: 6, RECONCILIATION_FAILED: 7, DECLARED_WITHOUT_FUNCTION: 8 } as const;
 export const COV_NAME: Record<number, string> = { 1: 'PUBLISHED', 2: 'PUBLISHED_WITH_CAVEATS', 3: 'NOT_REPORTED', 4: 'NO_SOURCE_DATA', 5: 'SOURCE_UNAVAILABLE', 6: 'METHODOLOGY_PENDING', 7: 'RECONCILIATION_FAILED', 8: 'DECLARED_WITHOUT_FUNCTION' };

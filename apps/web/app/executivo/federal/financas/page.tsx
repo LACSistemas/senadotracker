@@ -1,6 +1,5 @@
 import { TerritoryFrame } from '@/components/territory/state-frame';
-import { FinancasFederalPage } from '@/components/territory/financas-federal-page';
-import { FEDERAL_THEMES } from '@/components/territory/territory-ui';
+import { FinancasTerritoryPage } from '@/components/territory/financas-territory-page';
 import { loadFederalFinancasDetailed, loadFederalFinancasHistory } from '@/lib/financas-publicas';
 import { loadPublicDebtSeries } from '@/lib/public-debt';
 import { loadStates } from '@/lib/exec-territory';
@@ -20,7 +19,7 @@ export default async function ExecutivoFederalFinancasPage() {
   return <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { href: '/executivo/federal', label: 'Governo Federal' }, { label: 'Finanças' }]}
     kicker="Brasil · Finanças" title="Finanças do Governo Federal"
     lede="De onde vem e para onde vai o dinheiro da União — receita, despesa por função e por categoria econômica, Resultado Primário aproximado e a série histórica completa, com fonte e cobertura declaradas."
-    population={totalPop} populationYear={popYear} base="/executivo/federal" active="financas" themes={FEDERAL_THEMES}>
-    <FinancasFederalPage financas={financas} financasHistory={financasHistory} publicDebt={publicDebt} totalPop={totalPop} popYear={popYear} />
+    population={totalPop} populationYear={popYear} base="/executivo/federal" active="financas">
+    <FinancasTerritoryPage financas={financas} financasHistory={financasHistory} publicDebt={publicDebt} totalPop={totalPop} popYear={popYear} territory={{ kind: 'uniao', name: 'União' }} />
   </TerritoryFrame>;
 }

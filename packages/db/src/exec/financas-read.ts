@@ -241,6 +241,15 @@ export async function getExecutiveLevelOverview(q: Q): Promise<ExecutiveLevelOve
   });
 }
 
+/** Nível do território para `getFederalFinancas`/`getFederalFinancasHistory` (P14.5x: deixaram de ser só
+ * União). `ibge7` aceita string ou number pela mesma razão de `getTotalBudget` (vem de route params). */
+export type FinTerritory = { level: 'UNIAO' } | { level: 'UF'; ufCode: number } | { level: 'MUNICIPIO'; ibge7: string | number };
+async function entityForTerritory(q: Q, t: FinTerritory) {
+  if (t.level === 'UNIAO') return entityOf(q, `kind = 1 AND $1::integer IS NOT NULL`, 1);
+  if (t.level === 'UF') return entityOf(q, `kind = 3 AND uf_code = $1`, t.ufCode);
+  return entityOf(q, `kind = 4 AND ibge7 = $1`, Number(t.ibge7));
+}
+
 const FUNCTION_LABEL = new Map(FUNCTIONS);
 export interface FederalFunctionShare { code: string; label: string; cents: string; value: number; percent: number }
 export interface FederalGndLine { code: string; label: string; cents: string; value: number; percent: number }
@@ -268,9 +277,9 @@ export interface FederalFinancas {
  *    brutos muito além do que a imprensa chama de "despesa primária"). `despesaPrimaria` é essa
  *    medida mais comparável, DERIVADA aqui (Total − Juros − Amortização), rotulada como tal.
  */
-export async function getFederalFinancas(q: Q, o: { functionTopN?: number } = {}): Promise<FederalFinancas> {
+export async function getFederalFinancas(q: Q, o: { functionTopN?: number; territory?: FinTerritory } = {}): Promise<FederalFinancas> {
   const topN = o.functionTopN ?? 6;
-  const ex = await entityOf(q, `kind = 1 AND $1::integer IS NOT NULL`, 1);
+  const ex = await entityForTerritory(q, o.territory ?? { level: 'UNIAO' });
   if (!ex) return { despesa: null, receita: null, despesaPorCategoria: null, restrictions: FIN_RESTRICTIONS, sources: [] };
   const [funcRows, recRows, gndRows] = await Promise.all([
     q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
@@ -358,9 +367,10 @@ export interface FederalFinancasHistory { years: FederalFinancasYear[]; funcaoSe
  * (REC-CAP-CREDITO); anos sem essa linha (2014/2015: formato antigo do Siconfi; ano corrente: ainda
  * não declarado) ficam `null`, nunca um zero inferido.
  */
-export async function getFederalFinancasHistory(q: Q, o: { functionTopN?: number } = {}): Promise<FederalFinancasHistory> {
+export async function getFederalFinancasHistory(q: Q, o: { functionTopN?: number; territory?: FinTerritory } = {}): Promise<FederalFinancasHistory> {
   const topN = o.functionTopN ?? 8;
-  const ex = await entityOf(q, `kind = 1 AND $1::integer IS NOT NULL`, 1);
+  const territory = o.territory ?? { level: 'UNIAO' };
+  const ex = await entityForTerritory(q, territory);
   if (!ex) return { years: [], funcaoSeries: [], resultadoPrimarioMethodologyNote: RESULTADO_PRIMARIO_NOTE, restrictions: FIN_RESTRICTIONS, sources: [] };
   const [funcRows, recRows, gndRows, popRows] = await Promise.all([
     q.query(`SELECT f.exercicio, c.code AS conta, f.valor::text AS cents FROM civica_exec.exec_fin_fact f
@@ -380,11 +390,14 @@ export async function getFederalFinancasHistory(q: Q, o: { functionTopN?: number
       ORDER BY f.exercicio`, [ex.entityId]),
     // Achado real: `exec_territory_population` NÃO tem linha para entity_id da União (76) — só por UF/
     // município. A mesma lacuna existe em `profileOf` (usada por `getSecurityFinanceNational`), fora do
-    // escopo deste código. Aqui, "população do Brasil" é a SOMA das 27 UFs no ano, mesmo cálculo que a
-    // própria página já faz com `loadStates()` para o `totalPop` do hero — não um valor fabricado.
-    q.query(`SELECT p.year, sum(p.value)::text AS value FROM civica_exec.exec_territory_population p
-        JOIN civica_exec.exec_entity e ON e.entity_id = p.entity_id AND e.kind = 3
-      WHERE p.source = 1 GROUP BY p.year ORDER BY p.year`),
+    // escopo deste código. Para a União, "população do Brasil" é a SOMA das 27 UFs no ano, mesmo cálculo
+    // que a própria página já faz com `loadStates()` para o `totalPop` do hero — não um valor fabricado.
+    // UF e município TÊM linha própria na tabela — usa direto, sem soma (P14.5x).
+    territory.level === 'UNIAO'
+      ? q.query(`SELECT p.year, sum(p.value)::text AS value FROM civica_exec.exec_territory_population p
+          JOIN civica_exec.exec_entity e ON e.entity_id = p.entity_id AND e.kind = 3
+        WHERE p.source = 1 GROUP BY p.year ORDER BY p.year`)
+      : q.query(`SELECT year, value::text AS value FROM civica_exec.exec_territory_population WHERE entity_id = $1 AND source = 1 ORDER BY year`, [ex.entityId]),
   ]);
   type YearBucket = { func: Map<string, string>; rec: Map<string, string>; gnd: Map<string, string> };
   const byYear = new Map<number, YearBucket>();

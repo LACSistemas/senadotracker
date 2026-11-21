@@ -15,8 +15,8 @@ const [kind, yearsArg, ufArg, concArg] = process.argv.slice(2);
 const anexo: Anexo = kind === 'dca-ie' ? 'DCA-Anexo I-E' : kind === 'dca-ig' ? 'DCA-Anexo I-G' : kind === 'rreo02' ? 'RREO-Anexo 02' : kind === 'dca-ic' ? 'DCA-Anexo I-C' : kind === 'dca-id' ? 'DCA-Anexo I-D' : (() => { throw new Error('kind inválido'); })();
 const years = (yearsArg ?? '').includes('-') ? (() => { const [a, b] = yearsArg!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => b! - i); })() : (yearsArg ?? '').split(',').map(Number);
 const ufs = !ufArg || ufArg === 'all' ? [...Object.keys(UF_CODE), 'BR'] : ufArg.split(',').map(s => s.toUpperCase());
-/** Universo municipal por anexo: DCA I-E = todos; RREO 02 = ≥ 45 mil (só quem publica o RREO completo); DCA I-G (restos a pagar por função) = ≥ 100 mil, recorte de custo/benefício (estados e União sempre). */
-const minPop = anexo === 'DCA-Anexo I-E' ? 0 : anexo === 'RREO-Anexo 02' ? 45000 : 100000;
+/** Universo municipal por anexo: DCA I-E/I-C/I-D = todos (demonstrativos principais, mesmo padrão); RREO 02 = ≥ 45 mil (só quem publica o RREO completo); DCA I-G (restos a pagar por função) = ≥ 100 mil, recorte de custo/benefício (estados e União sempre). */
+const minPop = anexo === 'DCA-Anexo I-E' || anexo === 'DCA-Anexo I-C' || anexo === 'DCA-Anexo I-D' ? 0 : anexo === 'RREO-Anexo 02' ? 45000 : 100000;
 const cfg = storageConfig(); await mkdir(cfg.logsDir, { recursive: true });
 const log = (m: string) => { console.log(m); void appendFile(join(cfg.logsDir, `financas-fetch-${kind}.jsonl`), m + '\n'); };
 const pool = openPool(2);

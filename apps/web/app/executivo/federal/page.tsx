@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { TerritoryHero } from '@/components/territory/territory-hero';
 import { PresidentCard } from '@/components/territory/president-card';
-import { formatInt, FEDERAL_THEMES } from '@/components/territory/territory-ui';
+import { formatInt } from '@/components/territory/territory-ui';
 import { loadStates } from '@/lib/exec-territory';
 import { loadHdiComparison } from '@/lib/territory-idhm';
 import { loadGdpPerCapita } from '@/lib/territory-executive';
@@ -38,9 +38,9 @@ const idhmFmt = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 3, maxim
  *
  * P14.49 (achado real do feedback do usuário: o aprofundamento de Finanças tinha virado parte da aba
  * "Visão geral" — a única das 6 áreas sem sua própria sub-rota, inconsistente com o padrão acima) — Finanças
- * ganhou a 6ª sub-rota (`/executivo/federal/financas`, componente `FinancasFederalPage`), com `FEDERAL_THEMES`
- * (`THEMES` + Finanças) passado por TODAS as 6 páginas deste diretório para a aba aparecer em qualquer uma
- * delas — nunca em `/estados/{uf}`/`/municipios/{ibge}`, que continuam só com `THEMES` (sem dado de finanças).
+ * ganhou a 6ª sub-rota (`/executivo/federal/financas`, componente `FinancasTerritoryPage`). P14.5x: Finanças
+ * (I-C/I-D) passou a cobrir estados e municípios também, então a aba agora é só `THEMES` (padrão de
+ * `TerritoryFrame`), igual às de `/estados/{uf}` e `/municipios/{ibge}`.
  */
 export default async function ExecutivoFederalPage() {
   const [states, hdiBrasil, gdp, hdiGlobal, pisa] = await Promise.all([
@@ -99,7 +99,7 @@ export default async function ExecutivoFederalPage() {
   return (
     <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { label: 'Governo Federal' }]} kicker="República Federativa do Brasil" title="Governo Federal"
       lede="O Poder Executivo federal, indicadores de referência do Brasil e dois comparadores que nenhum estado tem: como o IDH e a proficiência escolar do país se posicionam no mundo."
-      population={totalPop} populationYear={popYear} base="/executivo/federal" active="" themes={FEDERAL_THEMES}
+      population={totalPop} populationYear={popYear} base="/executivo/federal" active=""
       heroNode={
         <TerritoryHero context="República Federativa do Brasil" title="Governo Federal" stateName="Brasil" mapMode="estado" geometry={null}
           description="O Poder Executivo federal, indicadores de referência do Brasil e dois comparadores que nenhum estado tem: como o IDH e a proficiência escolar do país se posicionam no mundo."

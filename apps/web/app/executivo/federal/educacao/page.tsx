@@ -1,6 +1,5 @@
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { EducationFederalPage } from '@/components/education/education-federal-page';
-import { FEDERAL_THEMES } from '@/components/territory/territory-ui';
 import { loadEducationFederalPageCached } from '@/lib/education/federal';
 import { loadStates } from '@/lib/exec-territory';
 
@@ -13,7 +12,7 @@ export default async function ExecutivoFederalEducacaoPage() {
   const popYear = Math.max(...states.map(s => s.year ?? 0));
   return <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { href: '/executivo/federal', label: 'Governo Federal' }, { label: 'Educação' }]} kicker="Brasil · Educação" title="Educação no Brasil"
     lede={data.network.narrative.answer || 'Quantos estudam, o que aprendem em matemática e português, quantos abandonam ou repetem, como são as escolas e quem leciona: respostas diretas, com a fonte e a cobertura à vista.'}
-    population={totalPop} populationYear={popYear} base="/executivo/federal" active="educacao" themes={FEDERAL_THEMES}>
+    population={totalPop} populationYear={popYear} base="/executivo/federal" active="educacao">
     <EducationFederalPage data={data} />
   </TerritoryFrame>;
 }

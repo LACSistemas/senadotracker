@@ -4,7 +4,7 @@ import { Banknote, Building2, GraduationCap, Globe, HeartHandshake, HeartPulse, 
 import { mapMarkup } from '@/components/brazil-map-markup';
 import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
 import { sequentialRamp, emptyFill } from '@/lib/scale';
-import { THEMES, formatInt } from '@/components/territory/territory-ui';
+import { formatInt } from '@/components/territory/territory-ui';
 import { loadStates, loadNationalHealthSummary, isUf } from '@/lib/exec-territory';
 import { loadHdiComparison, loadHdiAllStates } from '@/lib/territory-idhm';
 import { loadWellbeingOverview } from '@/lib/wellbeing';
@@ -408,7 +408,7 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
                 </select>
                 <button type="submit" className="h-9 rounded-full border border-white/35 px-4 text-sm font-bold text-white hover:bg-white/10">Aplicar</button>
               </form>
-              <div className="mt-5 flex flex-wrap gap-2">{THEMES.map(t => { const m = THEME_META[t.slug]!; return <Link key={t.slug} href={`#${m.anchor}`} className="rounded-full border border-white/25 px-3 py-1 text-xs font-bold text-white/85 hover:bg-white/10">{m.label}</Link>; })}</div>
+              <div className="mt-5 flex flex-wrap gap-2">{Object.values(THEME_META).map(m => <Link key={m.anchor} href={`#${m.anchor}`} className="rounded-full border border-white/25 px-3 py-1 text-xs font-bold text-white/85 hover:bg-white/10">{m.label}</Link>)}</div>
               <Link href="/executivo/federal" className="focus-ring mt-5 inline-flex items-center gap-1 text-sm font-bold text-white underline underline-offset-2">Ver o perfil do Governo Federal (presidente, IDH Global, PISA) →</Link>
             </div>
 

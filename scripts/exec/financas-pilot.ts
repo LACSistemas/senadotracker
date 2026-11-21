@@ -4,6 +4,7 @@ import { storageConfig } from '../../apps/collector/src/exec/storage.ts';
 import { collectFinancas } from '../../apps/collector/src/exec/financas.ts';
 import { collectEducationFinancas } from '../../apps/collector/src/exec/financas.ts';
 import { collectFederalExtras } from '../../apps/collector/src/exec/financas.ts';
+import { collectFederalExtrasUf } from '../../apps/collector/src/exec/financas.ts';
 import { collectSiope } from '../../apps/collector/src/exec/siope.ts';
 import { applyExecMigrations, seedFinancasDefs } from '../../packages/db/src/exec/index.ts';
 import { openPool } from './db.ts';
@@ -13,6 +14,7 @@ import { openPool } from './db.ts';
  *   migrate | seed                    migration v5 (cobertura + tabelas federais) e definições (indicadores 7001–7046)
  *   publish <dca|rreo|dcarp> <anos|a-b> [UF,…|all|BR]   publica pacotes RAW já coletados (scripts/exec/financas-fetch.ts); 'BR' = União; 'all' = 27 UFs + União
  *   publish-extras <anos|a-b>         P14.46: DCA I-C (Receita) + I-D (GND) da União, só RAW já coletado via financas-fetch.ts dca-ic/dca-id
+ *   publish-extras-uf <anos|a-b> [UF,…|all]   P14.53 (Fase 2): os mesmos I-C/I-D para estados + municípios (RAW via financas-fetch.ts dca-ic/dca-id all)
  * Idempotente: mesmo pacote RAW + mesma população → NO_CHANGE.
  */
 const [cmd, kind, yearsArg, ufArg] = process.argv.slice(2);
@@ -30,6 +32,16 @@ try {
     const r = await collectFederalExtras(pool, cfg, { years, log });
     const by: Record<string, number> = {}; for (const x of r.results) by[x.status] = (by[x.status] ?? 0) + 1;
     log(JSON.stringify({ slices: r.results.length, byStatus: by, missing: r.missing }));
+  }
+  else if (cmd === 'publish-extras-uf') {
+    const dbCheck = (await pool.query('select current_database() db')).rows[0];
+    if (dbCheck.db !== 'projetoeleitor_db') throw new Error(`DATABASE_GUARD: current_database() = ${dbCheck.db}`);
+    // mesmo deslocamento de posição do 'publish-extras': anos na posição 2 (`kind`); aqui a posição 3 (`yearsArg`) é a lista de UFs, não os anos.
+    const years = (kind ?? '').includes('-') ? (() => { const [a, b] = kind!.split('-').map(Number); return Array.from({ length: b! - a! + 1 }, (_, i) => a! + i); })() : (kind ?? '').split(',').map(Number);
+    const all = !yearsArg || yearsArg === 'all'; const ufs = all ? undefined : yearsArg!.split(',');
+    const r = await collectFederalExtrasUf(pool, cfg, { years, ...(ufs ? { ufs } : {}), log });
+    const by: Record<string, number> = {}; for (const x of r.results) by[x.status] = (by[x.status] ?? 0) + 1;
+    log(JSON.stringify({ slices: r.results.length, byStatus: by, missing: r.missing.length }));
   }
   else if (cmd === 'seed') log(JSON.stringify({ defs: await seedFinancasDefs(pool) }));
   else if (cmd === 'publish-education') {

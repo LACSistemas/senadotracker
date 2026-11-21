@@ -1,6 +1,5 @@
 import { TerritoryFrame } from '@/components/territory/state-frame';
 import { InfrastructurePage } from '@/components/infrastructure/infrastructure-page';
-import { FEDERAL_THEMES } from '@/components/territory/territory-ui';
 import { loadInfrastructureFederalPageCached } from '@/lib/infrastructure/federal';
 
 export const dynamic = 'force-dynamic';
@@ -9,7 +8,7 @@ export const metadata = { title: 'Infraestrutura no Brasil · Executivo · Cívi
 export default async function ExecutivoFederalInfraestruturaPage() {
   const data = await loadInfrastructureFederalPageCached();
   return <TerritoryFrame crumbs={[{ href: '/executivo', label: 'Executivo' }, { href: '/executivo/federal', label: 'Governo Federal' }, { label: 'Infraestrutura' }]} kicker="Brasil · Infraestrutura" title="Infraestrutura no Brasil"
-    lede={data.hero.lede} population={data.scope.population?.value ?? null} populationYear={data.scope.population?.year ?? null} base="/executivo/federal" active="infraestrutura" themes={FEDERAL_THEMES}>
+    lede={data.hero.lede} population={data.scope.population?.value ?? null} populationYear={data.scope.population?.year ?? null} base="/executivo/federal" active="infraestrutura">
     <InfrastructurePage data={data} />
   </TerritoryFrame>;
 }
