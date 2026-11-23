@@ -1,5 +1,7 @@
 import pg from 'pg';
-import { annualFinancialSummary, searchText, classifyAuthorship, actorKindFromCamaraTipoAutor, actorKindFromSenadoSiglaTipo, rapporteurDateBasis, type FinancialComponentObservation } from '@senadotracker/domain';
+import { annualFinancialSummary, searchText, classifyAuthorship, actorKindFromCamaraTipoAutor, actorKindFromSenadoSiglaTipo, rapporteurDateBasis, type FinancialComponentObservation, type Source } from '@senadotracker/domain';
+import { directionalVote } from '@senadotracker/db';
+import { CURATED_VOTES } from './vote-match/curated-votes.ts';
 import { postgresFinanceRepository } from '../../../packages/db/src/postgres-finance.ts';
 import { postgresPropositionRepository } from '../../../packages/db/src/postgres-propositions.ts';
 import { withRelationGraph } from '../../../packages/db/src/postgres-proposition-graph.ts';
@@ -496,6 +498,78 @@ export async function expenseDetail(source:string,id:string,year:number){
   const totals=new Map<string,number>();for(const row of allRows)totals.set(String(row.external_id),(totals.get(String(row.external_id))??0)+Number(row.value));const universe=[...totals].map(([personId,valueCents])=>({id:personId,valueCents,profile:profiles.get(personId)})).filter(item=>item.profile).sort((a,b)=>b.valueCents-a.valueCents||a.id.localeCompare(b.id));const own=universe.find(item=>item.id===id),rank=own?universe.indexOf(own)+1:null,stats=(values:number[])=>({meanCents:mean(values),distribution:distribution(values),sampleSize:values.length}),houseValues=universe.map(item=>item.valueCents),partyValues=universe.filter(item=>{const p:any=item.profile;const at=Array.isArray(p.parties)?(p.parties.find((x:any)=>String(x.start??'').slice(0,10)<=cutoff&&(!x.end||String(x.end).slice(0,10)>=cutoff))?.party??p.party):p.party;return at===party}).map(item=>item.valueCents),stateValues=universe.filter(item=>(item.profile as any)?.uf===profile.uf).map(item=>item.valueCents),house=stats(houseValues),benchmarks={party:{label:party??'',...stats(partyValues)},state:{label:profile.uf??null,...stats(stateValues)},house:{label:source==='senado'?'Senado':'CÃ¢mara',...house},rank,universe:universe.length,percentile:rank!==null&&universe.length>1?100*(universe.length-rank)/(universe.length-1):rank===1?100:null,medianDifference:house.distribution.median&&own?(own.valueCents-house.distribution.median)/house.distribution.median:null};
   const coveredValues=months.flatMap(month=>month.valueCents===null?[]:[month.valueCents]),average=mean(coveredValues),peak=months.filter(month=>month.valueCents!==null).sort((a,b)=>b.valueCents!-a.valueCents!)[0]??null,highlights:string[]=[];if(categories[0]?.share!==null&&categories[0]!.share>=.25)highlights.push(`${(categories[0]!.share!*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}% dos gastos identificados estÃ£o em ${categories[0]!.label}.`);if(supplierRows[0]&&supplierRows[0].share!==null&&supplierRows[0].share>=.15)highlights.push(`${supplierRows[0].label} representa ${(supplierRows[0].share!*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}% do total identificado.`);if(peak&&average&&peak.valueCents!>=average*1.5)highlights.push(`O mÃªs ${peak.month} teve gasto ${(peak.valueCents!/average).toLocaleString('pt-BR',{maximumFractionDigits:1})}Ã— acima da mÃ©dia mensal do parlamentar.`);if(rank!==null)highlights.push(`PosiÃ§Ã£o ${rank} de ${universe.length} na Casa, no mesmo perÃ­odo observado.`);
   return ok({source,year,profile:profileData,party:party??null,totalCents,categories,suppliers:supplierRows,topSupplier:supplierRows[0]??null,months,benchmarks,highlights,coverage:{availability:mapped.length?'available':'partial',source,period:{from:lastMonth?`${year}-01-01`:null,to:lastMonth?`${year}-${String(lastMonth).padStart(2,'0')}-28`:null,grain:'month'},batchId:String(batch.id),note:'Cota lÃ­quida identificada no lote ativo; estornos sÃ£o preservados e nÃ£o representa o custo total do mandato.',sampleSize:mapped.length},origin:{batchId:String(batch.id),publishedAt:String(batch.published_at)}});
+}
+
+export interface VoteMatchQuestion {
+  deliberationId: string; source: 'senado' | 'camara'; proposalLabel: string; pauta: string;
+  description: string; date: string; result: string | null; officialUrl: string | null; recordedVotes: number;
+}
+export interface VoteMatchPerson { externalId: string; name: string; party: string; uf: string; portraitUrl: string | null; votes: Array<'sim' | 'nao' | 'abstencao' | 'obstrucao' | null> }
+export interface VoteMatchDataset { source: 'senado' | 'camara'; questions: VoteMatchQuestion[]; people: VoteMatchPerson[] }
+/**
+ * "Qual parlamentar vota como você?" (widget em /legislativo). Busca, para a curadoria editorial de
+ * `CURATED_VOTES` (não o universo completo de votações), os votos individuais REAIS de cada parlamentar
+ * da Casa nessas deliberações — normalizados por `directionalVote` (@senadotracker/db), a mesma regra
+ * semântica usada em `/comparar`. Ausência/licença/"votou"/"secreto" não têm direção e viram `null`
+ * (nunca contam a favor nem contra no motor de concordância, que roda no client).
+ *
+ * `deliberations`/`votes` guardam várias linhas históricas por (source, external_id) — uma por lote
+ * reprocessado — então a resolução do lote certo por deliberação usa sempre o que está marcado ATIVO
+ * para o ANO daquela deliberação em `active_legislative` (mesmo padrão de `parties()` acima), nunca
+ * "o lote mais recente de qualquer ano": uma curadoria pode legitimamente misturar deliberações de anos
+ * diferentes (aqui, 2025 e 2026 no Senado), e cada uma usa o lote ativo do seu próprio ano.
+ */
+export async function voteMatchDataset(source: Source): Promise<Available<VoteMatchDataset>> {
+  const curated = CURATED_VOTES[source as 'senado' | 'camara'] ?? [];
+  const ids = curated.map(c => c.deliberationId);
+  if (!ids.length) return ok({ source: source as 'senado' | 'camara', questions: [], people: [] });
+
+  const delibRows = (await pool.query(
+    `SELECT d.external_id, d.batch_id, d.date, d.payload FROM civica_votes_presence_poc.deliberations d
+       JOIN civica_votes_presence_poc.active_legislative a ON a.source=d.source AND a.batch_id=d.batch_id AND a.year=d.year
+     WHERE d.source=$1 AND d.external_id=ANY($2::text[])`,
+    [source, ids],
+  )).rows;
+  const delibByExternalId = new Map<string, any>(delibRows.map((r: any) => [String(r.external_id), r]));
+  const batchIds = [...new Set(delibRows.map((r: any) => String(r.batch_id)))];
+
+  const voteRows = batchIds.length ? (await pool.query(
+    `SELECT v.batch_id, v.deliberation_id, v.external_id AS person_id, v.payload->>'vote' AS vote
+       FROM civica_votes_presence_poc.votes v
+      WHERE v.source=$1 AND v.batch_id=ANY($2::text[]) AND v.deliberation_id=ANY($3::text[])`,
+    [source, batchIds, ids],
+  )).rows : [];
+
+  const recordedCount = new Map<string, number>();
+  const votesByPerson = new Map<string, Map<string, string | null>>();
+  for (const v of voteRows) {
+    const delibId = String(v.deliberation_id);
+    const resolved = delibByExternalId.get(delibId);
+    if (!resolved || String(resolved.batch_id) !== String(v.batch_id)) continue; // só o lote ativo resolvido acima, nunca um lote histórico que calhou de casar o IN
+    const dv = directionalVote(source, v.vote);
+    if (dv) recordedCount.set(delibId, (recordedCount.get(delibId) ?? 0) + 1);
+    const personId = String(v.person_id);
+    let m = votesByPerson.get(personId); if (!m) { m = new Map(); votesByPerson.set(personId, m); }
+    m.set(delibId, dv);
+  }
+
+  const profileRows = (await pool.query(
+    `SELECT external_id, name, uf, party, payload->>'photoUrl' AS photo_url FROM civica_people_poc.profiles WHERE source=$1`,
+    [source],
+  )).rows;
+
+  const questions: VoteMatchQuestion[] = curated.map(c => {
+    const d = delibByExternalId.get(c.deliberationId); const payload = d?.payload ?? {};
+    return { deliberationId: c.deliberationId, source: source as 'senado' | 'camara', proposalLabel: c.proposalLabel, pauta: c.pauta,
+      description: String(payload.description ?? ''), date: d ? String(d.date) : '', result: payload.result ?? null, officialUrl: payload.officialUrl ?? null,
+      recordedVotes: recordedCount.get(c.deliberationId) ?? 0 };
+  });
+  const people: VoteMatchPerson[] = profileRows.map((p: any) => {
+    const m = votesByPerson.get(String(p.external_id));
+    return { externalId: String(p.external_id), name: String(p.name), party: String(p.party ?? 'S/Partido'), uf: String(p.uf ?? ''), portraitUrl: p.photo_url ?? null,
+      votes: ids.map(id => (m?.get(id) ?? null) as VoteMatchPerson['votes'][number]) };
+  });
+  return ok({ source: source as 'senado' | 'camara', questions, people });
 }
 
 export { parliamentarianPix } from './data-postgres-pix.ts';

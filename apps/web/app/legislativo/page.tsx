@@ -4,8 +4,9 @@ import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUp, ArrowUpDown, BarChart3, Building2, FileText, Landmark, MapPin, ReceiptText, Scale, Store, TrendingUp, Users, Vote } from 'lucide-react';
 import { ufs, type DataCoverage, type Source } from '@senadotracker/domain';
 import type { HousePanorama as HousePanoramaData } from '@senadotracker/db';
-import { legislativeOverview, type LegislativeOverviewSort } from '@/lib/data';
+import { legislativeOverview, voteMatchDataset, type LegislativeOverviewSort } from '@/lib/data';
 import { getStateLegislativeNumbers, type StateLegislativeNumbers } from '@/lib/state-legislative-numbers';
+import { VoteMatch, type VoteMatchDataset } from '@/components/legislative/vote-match';
 import { OfficialPortrait } from '@/components/app-image';
 import { SearchBar, FilterBar } from '@/components/data-controls';
 import { DataTable, type DataColumn } from '@/components/data-table';
@@ -64,6 +65,11 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;
   const stateNumbers = await memo('legislativo:state-numbers', getStateLegislativeNumbers, 2 * 60_000);
+  const [voteMatchSenado, voteMatchCamara] = await Promise.all([voteMatchDataset('senado'), voteMatchDataset('camara')]);
+  const voteMatchDatasets: Record<'senado' | 'camara', VoteMatchDataset | null> = {
+    senado: voteMatchSenado.status === 'available' ? voteMatchSenado.data : null,
+    camara: voteMatchCamara.status === 'available' ? voteMatchCamara.data : null,
+  };
   const selected = { casa: source, uf, partido: party, busca: search, ordenacao: sort };
   const mixedCoverage: DataCoverage = { availability: 'available', source: 'multiple', period: { from: null, to: null, grain: 'snapshot' }, batchId: null, note: 'Cadastro ativo; cada métrica conserva período e cobertura próprios.', sampleSize: result.items.length };
   type Item = (typeof result.items)[number];
@@ -96,6 +102,19 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
         </div>
       </section>
 
+      <section className="page-shell py-6">
+        <Link href="#como-voto" className="focus-ring group flex flex-col gap-4 rounded-2xl border-2 border-primary/30 bg-primary/5 p-6 transition hover:border-primary sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-3">
+            <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-primary text-primary-foreground"><Vote size={20} aria-hidden /></span>
+            <div>
+              <strong className="display-title block text-xl">Descubra quem vota como você</strong>
+              <p className="mt-1 max-w-xl text-sm text-muted-foreground">Responda a votações nominais reais do Senado ou da Câmara e veja o parlamentar — e o partido — mais parecido e mais oposto a você.</p>
+            </div>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition group-hover:gap-2.5">Jogar agora <ArrowRight size={15} /></span>
+        </Link>
+      </section>
+
       <section className="border-y bg-card"><div className="page-shell py-10">
         <SectionTitle title="Legislativo em Números" subtitle={`Um panorama do Senado Federal, da Câmara dos Deputados e das Assembleias Legislativas, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
@@ -123,6 +142,11 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{discovery.slice(0,4).map(([title, text, href, Icon, tone]) => <QuickPath key={title} title={title} text={text} href={href} icon={Icon} tone={tone} compact />)}</div>
         <div className="mt-10 flex items-end justify-between gap-4 border-t pt-8"><div><h3 className="text-xl font-black">Ferramentas para explorar</h3><p className="mt-1 text-sm text-muted-foreground">Buscas, cruzamentos e comparações com páginas próprias.</p></div></div>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{discovery.slice(4).map(([title, text, href, Icon, tone]) => <QuickPath key={title} title={title} text={text} href={href} icon={Icon} tone={tone} compact />)}</div>
+      </section>
+
+      <section id="como-voto" className="scroll-mt-20 page-shell py-10">
+        <SectionTitle title="Qual parlamentar vota como você?" subtitle="Responda a votações nominais reais do Senado ou da Câmara e descubra com quais parlamentares você mais — e menos — concorda, a partir do voto de verdade de cada um." />
+        <div className="mt-6"><VoteMatch datasets={voteMatchDatasets} /></div>
       </section>
 
       <section id="explore-dados" className="scroll-mt-6 border-y bg-card"><div className="page-shell py-12">

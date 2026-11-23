@@ -87,6 +87,7 @@ export const supplierMarket = (...args: any[]): Promise<Contract<'supplierMarket
 export const supplierNetwork = (...args: any[]): Promise<Contract<'supplierNetwork'>> => call('supplierNetwork', ...args);
 export const supplierRadar = (...args: any[]): Promise<Contract<'supplierRadar'>> => call('supplierRadar', ...args);
 export const voteAxis = (...args: any[]): Promise<CompatResult<any>> => call('voteAxis', ...args) as Promise<CompatResult<any>>;
+export const voteMatchDataset = (source: 'senado' | 'camara'): Promise<CompatResult<import('./data-postgres.ts').VoteMatchDataset>> => call('voteMatchDataset', source) as Promise<CompatResult<import('./data-postgres.ts').VoteMatchDataset>>;
 
 
 
