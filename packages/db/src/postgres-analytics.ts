@@ -24,6 +24,7 @@ export const ANALYTICS_SCHEMA_SQL = [
   `CREATE INDEX IF NOT EXISTS events_name_idx ON ${ANALYTICS_SCHEMA}.events(event_name, occurred_at DESC)`,
   `CREATE INDEX IF NOT EXISTS events_uf_idx ON ${ANALYTICS_SCHEMA}.events(uf_visitor, occurred_at DESC)`,
   `CREATE INDEX IF NOT EXISTS events_path_idx ON ${ANALYTICS_SCHEMA}.events(path, occurred_at DESC)`,
+  `CREATE INDEX IF NOT EXISTS events_session_idx ON ${ANALYTICS_SCHEMA}.events(session_id, occurred_at)`,
 ];
 
 export async function ensureAnalyticsSchema(pool: Pool): Promise<void> {
@@ -69,11 +70,151 @@ export async function getAnalyticsKpis(pool: Pool, filters: AnalyticsFilters = {
   const win = windowClause(days, 2); params.push(win.param); where.push(win.sql);
   if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
   const row = (await pool.query(
-    `SELECT count(*)::int AS pageviews, count(DISTINCT session_id)::int AS sessions
-       FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')}`,
+    `WITH session_counts AS (
+       SELECT session_id, count(*)::int AS n FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')} GROUP BY session_id
+     )
+     SELECT count(*)::int AS sessions, coalesce(sum(n),0)::int AS pageviews, count(*) FILTER (WHERE n=1)::int AS bounced
+       FROM session_counts`,
     params,
   )).rows[0];
-  return { pageviews: row?.pageviews ?? 0, sessions: row?.sessions ?? 0, days };
+  const sessions = row?.sessions ?? 0, pageviews = row?.pageviews ?? 0, bounced = row?.bounced ?? 0;
+  return {
+    pageviews, sessions, days,
+    bounceRate: sessions > 0 ? bounced / sessions : null,
+    pagesPerSession: sessions > 0 ? pageviews / sessions : null,
+  };
+}
+
+/** Série diária de pageviews/sessões. Dias sem evento são preenchidos como zero (sem isso o gráfico
+ * "pularia" datas em silêncio em vez de mostrar o vazio real) — por isso o corte usa data de calendário
+ * (occurred_at::date), não um intervalo rolante, pra bater exatamente com os dias gerados. */
+export async function getDailyTrend(pool: Pool, filters: AnalyticsFilters = {}) {
+  const days = filters.days ?? 30;
+  const params: unknown[] = [String(days), 'pageview'];
+  const where = [`event_name=$2`, `occurred_at::date >= (current_date - ($1::text||' days')::interval + interval '1 day')::date`];
+  if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
+  const { rows } = await pool.query(
+    `WITH days AS (
+       SELECT generate_series((current_date - ($1::text||' days')::interval + interval '1 day')::date, current_date, interval '1 day')::date AS day
+     ), agg AS (
+       SELECT occurred_at::date AS day, count(*)::int AS pageviews, count(DISTINCT session_id)::int AS sessions
+         FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')} GROUP BY 1
+     )
+     SELECT to_char(days.day,'DD/MM') AS label, coalesce(agg.pageviews,0)::int AS pageviews, coalesce(agg.sessions,0)::int AS sessions
+       FROM days LEFT JOIN agg ON agg.day = days.day ORDER BY days.day`,
+    params,
+  );
+  return rows as Array<{ label: string; pageviews: number; sessions: number }>;
+}
+
+/** "Agora" = sessões com qualquer evento nos últimos 5 min; stream recente = últimos 30 min (até 25
+ * eventos), pra enxergar o que está acontecendo sem depender só do próximo refresh do painel. */
+export async function getRealtimeSnapshot(pool: Pool, filters: Pick<AnalyticsFilters, 'uf'> = {}) {
+  const activeParams: unknown[] = [];
+  const activeWhere = [`occurred_at >= now() - interval '5 minutes'`];
+  if (filters.uf) { activeParams.push(filters.uf); activeWhere.push(`uf_visitor=$${activeParams.length}`); }
+  const activeRow = (await pool.query(
+    `SELECT count(DISTINCT session_id)::int AS active FROM ${ANALYTICS_SCHEMA}.events WHERE ${activeWhere.join(' AND ')}`,
+    activeParams,
+  )).rows[0];
+
+  const recentParams: unknown[] = [];
+  const recentWhere = [`occurred_at >= now() - interval '30 minutes'`];
+  if (filters.uf) { recentParams.push(filters.uf); recentWhere.push(`uf_visitor=$${recentParams.length}`); }
+  recentParams.push(25);
+  const { rows: recent } = await pool.query(
+    `SELECT occurred_at, event_name, path, uf_visitor AS uf, city_visitor AS city, device_type AS device
+       FROM ${ANALYTICS_SCHEMA}.events WHERE ${recentWhere.join(' AND ')}
+     ORDER BY occurred_at DESC LIMIT $${recentParams.length}`,
+    recentParams,
+  );
+  return {
+    active: activeRow?.active ?? 0,
+    recent: recent as Array<{ occurred_at: Date; event_name: string; path: string | null; uf: string | null; city: string | null; device: string | null }>,
+  };
+}
+
+/** Primeira e última página vista em cada sessão (janela por `row_number`, não por MIN/MAX de texto). */
+export async function getEntryExitPages(pool: Pool, filters: AnalyticsFilters = {}, limit = 10) {
+  const days = filters.days ?? 30;
+  const params: unknown[] = ['pageview'];
+  const where = [`event_name=$1`, `path IS NOT NULL`];
+  const win = windowClause(days, 2); params.push(win.param); where.push(win.sql);
+  if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
+  const limitIdx = params.length + 1;
+  const sqlFor = (direction: 'ASC' | 'DESC') =>
+    `SELECT path, count(*)::int AS sessions FROM (
+       SELECT session_id, path, row_number() OVER (PARTITION BY session_id ORDER BY occurred_at ${direction}) AS rn
+         FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')}
+     ) t WHERE rn=1 GROUP BY path ORDER BY sessions DESC LIMIT $${limitIdx}`;
+  const [entry, exit] = await Promise.all([
+    pool.query(sqlFor('ASC'), [...params, limit]),
+    pool.query(sqlFor('DESC'), [...params, limit]),
+  ]);
+  return {
+    entry: entry.rows as Array<{ path: string; sessions: number }>,
+    exit: exit.rows as Array<{ path: string; sessions: number }>,
+  };
+}
+
+/** Tempo médio na página = intervalo até o próximo pageview da MESMA sessão — a última página de cada
+ * sessão não entra na média (não existe beacon de saída, mesma limitação de qualquer analytics sem
+ * isso). Intervalos > 30 min são descartados: é aba esquecida aberta, não tempo de leitura real. */
+export async function getAvgTimeOnPage(pool: Pool, filters: AnalyticsFilters = {}, limit = 15) {
+  const days = filters.days ?? 30;
+  const params: unknown[] = ['pageview'];
+  const where = [`event_name=$1`, `path IS NOT NULL`];
+  const win = windowClause(days, 2); params.push(win.param); where.push(win.sql);
+  if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
+  params.push(limit);
+  const { rows } = await pool.query(
+    `WITH deltas AS (
+       SELECT path, LEAD(occurred_at) OVER (PARTITION BY session_id ORDER BY occurred_at) - occurred_at AS dur
+         FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')}
+     )
+     SELECT path, avg(EXTRACT(EPOCH FROM dur))::int AS avg_seconds, count(*)::int AS n
+       FROM deltas WHERE dur IS NOT NULL AND dur <= interval '30 minutes'
+     GROUP BY path ORDER BY n DESC LIMIT $${params.length}`,
+    params,
+  );
+  return rows.map(r => ({ path: r.path as string, avgSeconds: r.avg_seconds as number, samples: r.n as number }));
+}
+
+/** Transições mais comuns de uma página pra outra dentro da mesma sessão. Pula quando a "próxima" é a
+ * mesma página (refresh/pageview duplicado não é navegação real). */
+export async function getNavigationFlow(pool: Pool, filters: AnalyticsFilters = {}, limit = 15) {
+  const days = filters.days ?? 30;
+  const params: unknown[] = ['pageview'];
+  const where = [`event_name=$1`, `path IS NOT NULL`];
+  const win = windowClause(days, 2); params.push(win.param); where.push(win.sql);
+  if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
+  params.push(limit);
+  const { rows } = await pool.query(
+    `WITH seq AS (
+       SELECT path, LEAD(path) OVER (PARTITION BY session_id ORDER BY occurred_at) AS next_path
+         FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')}
+     )
+     SELECT path AS from_path, next_path AS to_path, count(*)::int AS n
+       FROM seq WHERE next_path IS NOT NULL AND next_path <> path
+     GROUP BY path, next_path ORDER BY n DESC LIMIT $${params.length}`,
+    params,
+  );
+  return rows.map(r => ({ fromPath: r.from_path as string, toPath: r.to_path as string, n: r.n as number }));
+}
+
+export async function getDeviceBreakdown(pool: Pool, filters: AnalyticsFilters = {}) {
+  const days = filters.days ?? 30;
+  const params: unknown[] = ['pageview'];
+  const where = [`event_name=$1`];
+  const win = windowClause(days, 2); params.push(win.param); where.push(win.sql);
+  if (filters.uf) { params.push(filters.uf); where.push(`uf_visitor=$${params.length}`); }
+  const { rows } = await pool.query(
+    `SELECT coalesce(device_type,'desconhecido') AS device, count(DISTINCT session_id)::int AS sessions
+       FROM ${ANALYTICS_SCHEMA}.events WHERE ${where.join(' AND ')}
+     GROUP BY 1 ORDER BY sessions DESC`,
+    params,
+  );
+  return rows as Array<{ device: string; sessions: number }>;
 }
 
 export async function getTopPaths(pool: Pool, filters: AnalyticsFilters = {}, limit = 15) {
@@ -142,7 +283,9 @@ export async function getTopReferrers(pool: Pool, filters: AnalyticsFilters = {}
      GROUP BY 1 ORDER BY sessions DESC LIMIT $${params.length}`,
     params,
   );
-  return rows as Array<{ referrerDomain: string; sessions: number }>;
+  // Postgres devolve a coluna como `referrer_domain` (alias sem aspas nunca vira camelCase) —
+  // mapeamento explícito aqui porque um `as Array<{referrerDomain}>` só mentiria sobre o formato.
+  return rows.map(r => ({ referrerDomain: r.referrer_domain as string, sessions: r.sessions as number }));
 }
 
 /** Funil do widget "Qual parlamentar vota como você?" (eventos próprios, disparados pelo componente
