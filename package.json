@@ -32,7 +32,8 @@
     "collect:propositions": "npm run collector -- collect-proposition-enrichment",
     "check": "npm run typecheck && npm test && npm run build",
     "state:story": "node --import tsx scripts/state-story-refresh.ts",
-    "portraits:mirror": "node --import tsx scripts/portraits-mirror.ts"
+    "portraits:mirror": "node --import tsx scripts/portraits-mirror.ts",
+    "geoip:update": "node --import tsx scripts/geoip-update.ts"
   },
   "devDependencies": {
     "@playwright/test": "1.63.0",

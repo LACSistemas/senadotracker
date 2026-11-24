@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ArrowLeft, ExternalLink, Share2, Shuffle } from 'lucide-react';
 import { OfficialPortrait } from '@/components/app-image';
+import { trackEvent } from '@/lib/analytics/track-client';
 import { cn } from '@/lib/utils';
 
 export type DirectionalVote = 'sim' | 'nao' | 'abstencao' | 'obstrucao';
@@ -80,16 +81,26 @@ export function VoteMatch({ datasets }: { datasets: Record<HouseKey, VoteMatchDa
 
   useEffect(() => { if (house && phase !== 'house') saveSession({ house, order, answers }); }, [house, order, answers, phase]);
 
-  const startHouse = (h: HouseKey) => {
+  const startHouse = (h: HouseKey, isReplay = false) => {
     const ds = datasets[h]; if (!ds || !ds.questions.length) return;
     const pool = shuffle(ds.questions.map(q => q.deliberationId));
     setHouse(h); setOrder(pool.slice(0, Math.min(DECK_SIZE, pool.length))); setAnswers({}); setStep(0); setPhase('answering'); setExpanded(null);
+    trackEvent('vote_match_started', { house: h, replay: isReplay });
   };
-  const replay = () => { if (house) startHouse(house); };
+  const replay = () => { if (house) startHouse(house, true); };
   const changeHouse = () => { clearSession(); setHouse(null); setOrder([]); setAnswers({}); setStep(0); setPhase('house'); };
   const answer = (id: string, v: Answer) => {
-    setAnswers(prev => ({ ...prev, [id]: v }));
-    setStep(prevStep => { const next = prevStep + 1; if (next >= order.length) setPhase('results'); return next; });
+    const nextAnswers = { ...answers, [id]: v };
+    setAnswers(nextAnswers);
+    setStep(prevStep => {
+      const next = prevStep + 1;
+      if (next >= order.length) {
+        setPhase('results');
+        const skipped = order.filter(qid => nextAnswers[qid] === null).length;
+        trackEvent('vote_match_completed', { house, deckSize: order.length, skipped });
+      }
+      return next;
+    });
   };
   const goBack = () => setStep(s => Math.max(0, s - 1));
 

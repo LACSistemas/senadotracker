@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 import { AppHeader } from '@/components/app-header';
 import { AppFooter } from '@/components/app-footer';
+import { AnalyticsBeacon } from '@/components/analytics/beacon';
 import './globals.css';
 
 // As pilhas tipográficas locais são definidas em globals.css para manter o build
@@ -16,5 +17,6 @@ export default function RootLayout({ children }: Readonly<{ children:ReactNode }
     <AppHeader />
     {children}
     <AppFooter />
+    <AnalyticsBeacon />
   </body></html>;
 }
