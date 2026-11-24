@@ -20,11 +20,11 @@ export default async function EstadosPage() {
   const regions = [...new Set(states.map(s => s.region))];
   return (
     <main className="page-shell py-8 sm:py-12">
-      <header className="hero-wash rounded-[1.5rem] border p-6 sm:p-12">
+      <header className="hero-wash rounded-[1.5rem] border p-5 sm:p-7">
         <p className="eyebrow">Estados e municípios</p>
-        <h1 className="display-title text-balance mt-3 max-w-3xl text-4xl sm:text-6xl">O Brasil começa no seu município</h1>
-        <p className="mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">Escolha um estado ou procure uma cidade para ver como está a rede de saúde, quem representa o território no Legislativo e quais áreas já têm dados publicados.</p>
-        <div className="mt-6 max-w-xl"><MunicipalFinder action="/municipios" /></div>
+        <h1 className="display-title text-balance mt-2 max-w-3xl text-2xl sm:text-4xl">O Brasil começa no seu município</h1>
+        <p className="mt-2 max-w-2xl text-sm text-muted-foreground sm:text-base">Escolha um estado ou procure uma cidade para ver como está a rede de saúde, quem representa o território no Legislativo e quais áreas já têm dados publicados.</p>
+        <div className="mt-3 max-w-xl"><MunicipalFinder action="/municipios" /></div>
       </header>
       <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
         <figure className="min-w-0 rounded-3xl border bg-card p-4 sm:p-6">

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Banknote, Building2, GraduationCap, Globe, HeartHandshake, HeartPulse, Landmark, Route, ShieldAlert, Users, Wallet } from 'lucide-react';
+import { Banknote, Building2, ChevronDown, CircleHelp, GraduationCap, Globe, HeartHandshake, HeartPulse, Landmark, Route, ShieldAlert, Users, Wallet } from 'lucide-react';
 import { mapMarkup } from '@/components/brazil-map-markup';
 import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
 import { sequentialRamp, emptyFill } from '@/lib/scale';
@@ -391,55 +391,54 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
 
   return (
     <main id="conteudo" tabIndex={-1}>
-      <section id="explorar" className="page-shell py-6 sm:py-8">
+      <section id="explorar" className="page-shell py-4 sm:py-6">
         <div className="relative isolate overflow-hidden rounded-[1.75rem] text-white">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0a2f26] via-[#0e4939] to-[#123f33]" />
-          <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[0.95fr_1.05fr] lg:gap-10 lg:p-14">
+          <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[0.95fr_1.05fr] lg:gap-8 lg:p-8">
             <div className="flex flex-col justify-center">
               <p className="eyebrow text-white/70">Executivo · Atlas do Brasil</p>
-              <h1 className="display-title text-balance mt-4 text-[2.4rem] leading-[1.05] sm:text-6xl lg:text-[3rem]">O Brasil que as políticas públicas revelam.</h1>
-              <p className="mt-5 max-w-lg text-base leading-7 text-white/80">Da escola do seu bairro aos serviços de saúde, da segurança às obras públicas. Selecione um indicador, explore o mapa e compare territórios.</p>
-              <form action="/executivo/buscar" method="get" className="mt-7 flex w-full max-w-lg gap-2"><label className="sr-only" htmlFor="exec-q">Buscar município ou estado</label><input id="exec-q" name="q" placeholder="Buscar município ou estado" autoComplete="off" className="h-12 min-w-0 flex-1 rounded-full border-0 bg-white px-5 text-sm text-foreground" /><button type="submit" className="h-12 shrink-0 rounded-full bg-white px-6 text-sm font-bold text-primary">Buscar</button></form>
-              <form action="/executivo" className="mt-4 flex flex-wrap items-center gap-2">
+              <h1 className="display-title text-balance mt-2 text-xl leading-[1.1] sm:text-3xl lg:text-[1.95rem]">O Brasil que as políticas públicas revelam.</h1>
+              <p className="mt-2 max-w-lg text-xs leading-5 text-white/80 sm:text-sm sm:leading-6">Da escola do seu bairro aos serviços de saúde, da segurança às obras públicas. Selecione um indicador, explore o mapa e compare territórios.</p>
+              <form action="/executivo/buscar" method="get" className="mt-3 flex w-full max-w-md gap-2"><label className="sr-only" htmlFor="exec-q">Buscar município ou estado</label><input id="exec-q" name="q" placeholder="Buscar município ou estado" autoComplete="off" className="h-9 min-w-0 flex-1 rounded-full border-0 bg-white px-4 text-sm text-foreground" /><button type="submit" className="h-9 shrink-0 rounded-full bg-white px-5 text-sm font-bold text-primary">Buscar</button></form>
+              <form action="/executivo" className="mt-2 flex flex-wrap items-center gap-2">
                 {selectedUf && <input type="hidden" name="uf" value={selectedUf} />}
-                <label htmlFor="indicador" className="text-xs font-bold text-white/70">Indicador do mapa</label>
-                <select id="indicador" name="indicador" defaultValue={indicator} className="h-9 rounded-full border border-white/25 bg-white/10 px-3 text-sm text-white [color-scheme:dark]">
+                <label htmlFor="indicador" className="text-[0.7rem] font-bold text-white/70">Indicador do mapa</label>
+                <select id="indicador" name="indicador" defaultValue={indicator} className="h-7 rounded-full border border-white/25 bg-white/10 px-2.5 text-xs text-white [color-scheme:dark]">
                   {INDICATORS.map(([v, l]) => <option key={v} value={v} className="text-foreground">{l}</option>)}
                 </select>
-                <button type="submit" className="h-9 rounded-full border border-white/35 px-4 text-sm font-bold text-white hover:bg-white/10">Aplicar</button>
+                <button type="submit" className="h-7 rounded-full border border-white/35 px-3 text-xs font-bold text-white hover:bg-white/10">Aplicar</button>
               </form>
-              <div className="mt-5 flex flex-wrap gap-2">{Object.values(THEME_META).map(m => <Link key={m.anchor} href={`#${m.anchor}`} className="rounded-full border border-white/25 px-3 py-1 text-xs font-bold text-white/85 hover:bg-white/10">{m.label}</Link>)}</div>
-              <Link href="/executivo/federal" className="focus-ring mt-5 inline-flex items-center gap-1 text-sm font-bold text-white underline underline-offset-2">Ver o perfil do Governo Federal (presidente, IDH Global, PISA) →</Link>
+              <div className="mt-2 flex flex-wrap gap-1.5">{Object.values(THEME_META).map(m => <Link key={m.anchor} href={`#${m.anchor}`} className="rounded-full border border-white/25 px-2.5 py-0.5 text-[0.68rem] font-bold text-white/85 hover:bg-white/10">{m.label}</Link>)}</div>
+              <Link href="/executivo/federal" className="focus-ring mt-2 inline-flex items-center gap-1 text-xs font-bold text-white underline underline-offset-2">Ver o perfil do Governo Federal (presidente, IDH Global, PISA) →</Link>
             </div>
 
-            <div className="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/10 sm:p-6">
+            <div className="flex h-full flex-col rounded-2xl bg-white/[0.05] p-4 ring-1 ring-inset ring-white/10 sm:p-5">
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/60">{indicator === 'populacao' ? 'População residente' : 'IDHM 2010'}</p>
-                <p className="text-xs text-white/45">{indicator === 'populacao' ? `IBGE · ${popYear}` : 'PNUD/IPEA/FJP · 2010'}</p>
+                <p className="text-[0.68rem] font-bold uppercase tracking-wider text-white/60">{indicator === 'populacao' ? 'População residente' : 'IDHM 2010'}</p>
+                <p className="text-[0.68rem] text-white/45">{indicator === 'populacao' ? `IBGE · ${popYear}` : 'PNUD/IPEA/FJP · 2010'}</p>
               </div>
-              <div className="mx-auto mt-2 w-full max-w-[340px]" dangerouslySetInnerHTML={{ __html: analyticalMap }} />
-              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[0.65rem] text-white/55">
-                {sequentialRamp.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2.5 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
-              </div>
-              <div className="mt-4 rounded-xl border border-white/10 bg-black/10 p-4">
-                {selectedState ? (
-                  <>
-                    <p className="text-xs font-bold uppercase text-white/55">{selectedState.name}</p>
-                    <p className="mt-1 text-2xl font-black">{indicator === 'populacao' ? formatInt(selectedValue ?? null) : selectedValue != null ? selectedValue.toFixed(3) : '—'}</p>
-                    <p className="mt-0.5 text-xs text-white/55">{indicator === 'populacao' ? `habitantes · ${selectedState.year}` : 'IDHM · 2010'}{indicator === 'idhm' && idhmBrasil2010 != null ? ` · Brasil ${idhmBrasil2010.toFixed(3)}` : ''}</p>
-                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-                      <Link href={`/estados/${selectedState.uf}`} className="font-bold text-white underline">Ver perfil</Link>
-                      <Link href={`/estados/${selectedState.uf}#atlas`} className="font-bold text-white underline">Abrir Atlas Vivo</Link>
-                    </div>
-                  </>
-                ) : (
-                  <p className="text-xs leading-5 text-white/65">Selecione um estado no mapa para ver o valor exato{indicator === 'idhm' && idhmBrasil2010 != null ? <> — Brasil: <strong className="text-white">{idhmBrasil2010.toFixed(3)}</strong> (2010, último ano desta base)</> : '.'}</p>
-                )}
-              </div>
-              <div className="mt-4 grid grid-cols-3 gap-x-3 gap-y-3 border-t border-white/10 pt-4">
-                <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Habitantes</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{int.format(totalPop)}</strong></div>
-                <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Municípios</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{int.format(municipalityCount)}</strong></div>
-                <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">UFs</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">27</strong></div>
+              <div className="mt-2 flex flex-1 flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="w-full max-w-[210px] shrink-0 sm:max-w-[230px]">
+                  <div dangerouslySetInnerHTML={{ __html: analyticalMap }} />
+                  <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-[0.6rem] text-white/55">
+                    {sequentialRamp.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
+                  </div>
+                </div>
+                <div className="w-full min-w-0 rounded-xl border border-white/10 bg-black/10 p-4 sm:max-w-xs">
+                  {selectedState ? (
+                    <>
+                      <p className="text-[0.68rem] font-bold uppercase text-white/55">{selectedState.name}</p>
+                      <p className="mt-1 text-2xl font-black">{indicator === 'populacao' ? formatInt(selectedValue ?? null) : selectedValue != null ? selectedValue.toFixed(3) : '—'}</p>
+                      <p className="mt-0.5 text-[0.68rem] text-white/55">{indicator === 'populacao' ? `habitantes · ${selectedState.year}` : 'IDHM · 2010'}{indicator === 'idhm' && idhmBrasil2010 != null ? ` · Brasil ${idhmBrasil2010.toFixed(3)}` : ''}</p>
+                      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5 text-[0.68rem]">
+                        <Link href={`/estados/${selectedState.uf}`} className="font-bold text-white underline">Ver perfil</Link>
+                        <Link href={`/estados/${selectedState.uf}#atlas`} className="font-bold text-white underline">Abrir Atlas Vivo</Link>
+                      </div>
+                    </>
+                  ) : (
+                    <p className="text-[0.7rem] leading-4 text-white/65">Selecione um estado no mapa para ver o valor exato{indicator === 'idhm' && idhmBrasil2010 != null ? <> — Brasil: <strong className="text-white">{idhmBrasil2010.toFixed(3)}</strong> (2010)</> : '.'}</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -451,67 +450,6 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </table>
             </div>
           </details>
-        </div>
-      </section>
-
-      <section className="border-t bg-card py-10">
-        <div className="page-shell">
-          <div className="flex items-start gap-3">
-            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
-            <div>
-              <h2 className="text-3xl font-black tracking-tight">A federação em números</h2>
-              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">União, estados e municípios governam a mesma população. O que muda é a divisão entre chefes do executivo e orçamento de cada nível.</p>
-            </div>
-          </div>
-
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            {levelCards.map(c => (
-              <div key={c.level} className="flex flex-col overflow-hidden rounded-2xl border bg-background">
-                <div className="relative h-36 w-full bg-muted">
-                  <Image src={c.photo} alt={c.photoAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
-                  <span className="absolute bottom-1 right-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[0.55rem] leading-none text-white/85">Foto: {c.credit}</span>
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-start justify-between gap-2">
-                    <h3 className="display-title text-xl leading-tight">{c.label}</h3>
-                    <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-bold text-muted-foreground">{int.format(c.entityCount)} {c.entityCount === 1 ? 'ente' : 'entes'}</span>
-                  </div>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{c.subtitle}</p>
-
-                  <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 border-t pt-4">
-                    <div className="min-w-0">
-                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Users size={13} aria-hidden /> {c.chiefLabel} em exercício</span>
-                      <strong className="display-title mt-1 block text-xl leading-none">{int.format(c.chiefCount)}</strong>
-                    </div>
-                    <div className="min-w-0">
-                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Globe size={13} aria-hidden /> População sob este nível</span>
-                      <strong className="display-title mt-1 block text-xl leading-none">{formatInt(totalPop)}</strong>
-                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">mesma nos 3 níveis</span>
-                    </div>
-                    <div className="min-w-0">
-                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Wallet size={13} aria-hidden /> Orçamento total anual</span>
-                      <strong className="display-title mt-1 block text-xl leading-none">{c.budgetTotal != null ? moneyCompact.format(c.budgetTotal) : '—'}</strong>
-                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">empenhado, {c.minBudgetYear === c.maxBudgetYear ? c.minBudgetYear : `${c.minBudgetYear}–${c.maxBudgetYear}`}</span>
-                    </div>
-                    <div className="min-w-0">
-                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Landmark size={13} aria-hidden /> Habitantes por chefe</span>
-                      <strong className="display-title mt-1 block text-xl leading-none">{c.habitantesPorChefe != null ? formatInt(Math.round(c.habitantesPorChefe)) : '—'}</strong>
-                    </div>
-                  </div>
-
-                  <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border bg-card px-3.5 py-3">
-                    <span className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground"><Banknote size={14} aria-hidden /> Orçamento per capita</span>
-                    <strong className="display-title text-lg leading-none">{c.orcamentoPerCapita != null ? money.format(c.orcamentoPerCapita) : '—'}</strong>
-                  </div>
-
-                  {c.level === 'UNIAO' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Inclui Previdência, transferências a estados/municípios e serviço da dívida — não é "tamanho do governo". Os 3 orçamentos desta seção não se somam entre si: parte da despesa da União é transferência que reaparece na despesa de estados e municípios.</p>}
-                  {c.level === 'ESTADOS' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">Os {c.entitiesWithBudget} estados publicaram o exercício de {c.maxBudgetYear} — mesmo ano em todos.</p>}
-                  {c.level === 'MUNICIPIOS' && <p className="mt-3 text-[0.65rem] leading-4 text-muted-foreground">{int.format(c.entitiesWithBudget)} dos {int.format(c.entityCount)} municípios têm orçamento publicado — nem todos no mesmo exercício (a maioria em {c.maxBudgetYear}). {int.format(c.chiefCount)} têm prefeito vigente resolvido (ciclo 2024); os demais (DF, Fernando de Noronha, eleições anuladas sem suplementar) não entram na contagem.</p>}
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-4 text-xs text-muted-foreground">Siconfi, DCA Anexo I-E (orçamento) · TSE (chefes do executivo) · IBGE (população).</p>
         </div>
       </section>
 
@@ -540,6 +478,73 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
       <section className="border-t bg-card py-10">
         <div className="page-shell">
           <div className="flex items-start gap-3">
+            <Building2 className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">A federação em números</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">União, estados e municípios governam a mesma população. O que muda é a divisão entre chefes do executivo e orçamento de cada nível.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-3">
+            {levelCards.map(c => (
+              <div key={c.level} className="flex flex-col rounded-2xl border bg-background">
+                <div className="relative h-36 w-full overflow-hidden rounded-t-2xl bg-muted">
+                  <Image src={c.photo} alt={c.photoAlt} fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+                  <span className="absolute bottom-1 right-1.5 rounded bg-black/55 px-1.5 py-0.5 text-[0.55rem] leading-none text-white/85">Foto: {c.credit}</span>
+                </div>
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="flex items-start justify-between gap-2">
+                    <h3 className="display-title text-xl leading-tight">{c.label}</h3>
+                    <div className="flex shrink-0 items-center gap-1.5">
+                      <span className="rounded-full bg-muted px-2.5 py-1 text-xs font-bold text-muted-foreground">{int.format(c.entityCount)} {c.entityCount === 1 ? 'ente' : 'entes'}</span>
+                      <details className="group relative">
+                        <summary className="focus-ring grid size-6 cursor-pointer list-none place-items-center rounded-full text-muted-foreground hover:text-primary"><CircleHelp size={16} aria-hidden /><span className="sr-only">Ressalvas sobre estes números</span></summary>
+                        <div className="absolute right-0 top-full z-10 mt-2 w-64 max-w-[80vw] rounded-xl border bg-card p-3 text-xs font-normal leading-5 text-muted-foreground shadow-xl">
+                          {c.level === 'UNIAO' && <>Inclui Previdência, transferências a estados/municípios e serviço da dívida — não é "tamanho do governo". Os 3 orçamentos desta seção não se somam entre si: parte da despesa da União é transferência que reaparece na despesa de estados e municípios.</>}
+                          {c.level === 'ESTADOS' && <>Os {c.entitiesWithBudget} estados publicaram o exercício de {c.maxBudgetYear} — mesmo ano em todos.</>}
+                          {c.level === 'MUNICIPIOS' && <>{int.format(c.entitiesWithBudget)} dos {int.format(c.entityCount)} municípios têm orçamento publicado — nem todos no mesmo exercício (a maioria em {c.maxBudgetYear}). {int.format(c.chiefCount)} têm prefeito vigente resolvido (ciclo 2024); os demais (DF, Fernando de Noronha, eleições anuladas sem suplementar) não entram na contagem.</>}
+                        </div>
+                      </details>
+                    </div>
+                  </div>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">{c.subtitle}</p>
+
+                  <div className="mt-4 grid grid-cols-2 gap-x-3 gap-y-4 border-t pt-4">
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Users size={13} aria-hidden /> {c.chiefLabel} em exercício</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{int.format(c.chiefCount)}</strong>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Globe size={13} aria-hidden /> População sob este nível</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{formatInt(totalPop)}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">mesma nos 3 níveis</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Wallet size={13} aria-hidden /> Orçamento total anual</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{c.budgetTotal != null ? moneyCompact.format(c.budgetTotal) : '—'}</strong>
+                      <span className="mt-1 block text-[0.65rem] text-muted-foreground">empenhado, {c.minBudgetYear === c.maxBudgetYear ? c.minBudgetYear : `${c.minBudgetYear}–${c.maxBudgetYear}`}</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="flex items-center gap-1 text-[0.65rem] font-bold uppercase tracking-wide text-muted-foreground"><Landmark size={13} aria-hidden /> Habitantes por chefe</span>
+                      <strong className="display-title mt-1 block text-xl leading-none">{c.habitantesPorChefe != null ? formatInt(Math.round(c.habitantesPorChefe)) : '—'}</strong>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between gap-3 rounded-xl border bg-card px-3.5 py-3">
+                    <span className="flex items-center gap-1.5 text-xs font-bold text-muted-foreground"><Banknote size={14} aria-hidden /> Orçamento per capita</span>
+                    <strong className="display-title text-lg leading-none">{c.orcamentoPerCapita != null ? money.format(c.orcamentoPerCapita) : '—'}</strong>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-muted-foreground">Siconfi, DCA Anexo I-E (orçamento) · TSE (chefes do executivo) · IBGE (população).</p>
+        </div>
+      </section>
+
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
             <Landmark className="mt-1 shrink-0 text-primary" aria-hidden />
             <div>
               <h2 className="text-3xl font-black tracking-tight">De onde vem e para onde vai o dinheiro</h2>
@@ -558,8 +563,8 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
           </div>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <RankedBars title={`De onde vem: receita por origem${finReceita ? ` (${finReceita.year})` : ''}`} items={receitaOrigemBars} formatValue={moneyCompact.format} coverage={finReceita ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-C, receitas brutas realizadas', { from: `${finReceita.year}-01-01`, to: `${finReceita.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-C')} />
-            <RankedBars title={`Pra onde vai: despesa por função orçamentária${finDespesa ? ` (${finDespesa.year})` : ''}`} items={funcaoBars} formatValue={moneyCompact.format} coverage={finDespesa ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-E, empenhada', { from: `${finDespesa.year}-01-01`, to: `${finDespesa.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-E')} />
+            <RankedBars title="De onde vem?" items={receitaOrigemBars} formatValue={moneyCompact.format} limit={7} coverage={finReceita ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-C, receitas brutas realizadas', { from: `${finReceita.year}-01-01`, to: `${finReceita.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-C')} />
+            <RankedBars title="Pra onde vai?" items={funcaoBars} formatValue={moneyCompact.format} limit={7} coverage={finDespesa ? toChartCoverage('AVAILABLE', 'Siconfi · DCA Anexo I-E, empenhada', { from: `${finDespesa.year}-01-01`, to: `${finDespesa.year}-12-31`, grain: 'year' }) : toChartCoverage('NOT_PUBLISHED', 'Siconfi · DCA Anexo I-E')} />
           </div>
           <p className="mt-4 text-xs leading-5 text-muted-foreground">Receita por ORIGEM (acima, à esquerda) e despesa por FUNÇÃO (à direita) são recortes independentes da mesma União — nunca somados entre si, nem com a despesa por categoria econômica (Pessoal, Juros...), que vive na área Finanças abaixo. "Despesa primária" é o total menos Juros e Amortização da Dívida — a parcela comparável ano a ano, já que a União toma empréstimo novo (vira receita) e amortiza dívida velha (vira despesa) no mesmo exercício, o que infla os dois totais brutos. Estágio empenhado (não é o mesmo que pago). Fonte: Siconfi/Tesouro Nacional, declaração anual (DCA).</p>
         </div>
@@ -578,8 +583,11 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
           <h2 className="mt-2 text-3xl font-black tracking-tight">As áreas da gestão pública</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Seis maneiras diferentes de compreender a realidade brasileira — cada área com sua cor, sua pergunta e sua própria história ao longo do tempo, nunca números intercambiáveis com ícones diferentes.</p>
           <div className="mt-8 space-y-6">
-            <div id="saude" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SAUDE_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: SAUDE_COLOR }}><HeartPulse size={20} aria-hidden /><p className="eyebrow" style={{ color: SAUDE_COLOR }}>Saúde</p></div>
+            <details id="saude" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SAUDE_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: SAUDE_COLOR }}><HeartPulse size={20} aria-hidden /><p className="eyebrow" style={{ color: SAUDE_COLOR }}>Saúde</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.saude!.question}</h3>
               <div className="mt-3 flex flex-wrap items-baseline gap-x-6 gap-y-1">
                 <div><strong className="display-title text-3xl tabular-nums">{leitosPorMilHab != null ? leitosPorMilHab.toFixed(2) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">leitos por mil hab.</span></div>
@@ -593,10 +601,13 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Leitos: soma nacional vigente em dezembro de cada ano (cadastro CNES; leitos de hospital-dia excluídos). Internações: SIH/AIH, só procedimentos custeados pelo SUS — não inclui atendimento particular nem de planos de saúde; o ano corrente aparece parcial. ICSAP: proporção de internações por condições sensíveis à atenção primária — mede cobertura de atenção básica, não "internações evitáveis" em sentido literal; não é taxa padronizada por idade.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#saude` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SAUDE_COLOR }}>Explorar Saúde →</Link>
-            </div>
+            </details>
 
-            <div id="educacao" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: EDUCACAO_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: EDUCACAO_COLOR }}><GraduationCap size={20} aria-hidden /><p className="eyebrow" style={{ color: EDUCACAO_COLOR }}>Educação</p></div>
+            <details id="educacao" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: EDUCACAO_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: EDUCACAO_COLOR }}><GraduationCap size={20} aria-hidden /><p className="eyebrow" style={{ color: EDUCACAO_COLOR }}>Educação</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.educacao!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{idebRow ? String(idebRow.values.ideb) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">Ideb, anos iniciais{idebYear ? ` (${idebYear})` : ''}</span></div>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -606,10 +617,13 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">O Ideb de uma rede não é a média dos Idebs das escolas; a meta oficial só existe até a edição de 2021 — 2023 e 2025 são comparáveis às anteriores, mas sem meta própria. Abandono é uma taxa de rendimento (diferente de distorção idade-série), do ensino fundamental total (anos iniciais + finais). Distorção idade-série: % de alunos com 2+ anos de atraso para a série — sem dado em 2013-2014 (planilha da fonte não traz a coluna nesses anos).</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#educacao` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: EDUCACAO_COLOR }}>Explorar Educação →</Link>
-            </div>
+            </details>
 
-            <div id="seguranca" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SEGURANCA_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: SEGURANCA_COLOR }}><ShieldAlert size={20} aria-hidden /><p className="eyebrow" style={{ color: SEGURANCA_COLOR }}>Segurança</p></div>
+            <details id="seguranca" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: SEGURANCA_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: SEGURANCA_COLOR }}><ShieldAlert size={20} aria-hidden /><p className="eyebrow" style={{ color: SEGURANCA_COLOR }}>Segurança</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.seguranca!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{trafficLatest ? int.format(trafficLatest.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">registros de tráfico{trafficLatest ? ` (${trafficLatest.year})` : ''}</span></div>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -619,10 +633,13 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Fonte estadual (Sinesp VDE, 27 UFs) — Polícia Federal/PRF têm séries próprias, não somadas aqui. Mais registros pode refletir mais notificação ou mais policiamento, não necessariamente mais crime. Armas apreendidas: soma de todos os tipos informados; não inclui recolhimento administrativo, entrega voluntária, posse ou porte.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#seguranca` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: SEGURANCA_COLOR }}>Explorar Segurança →</Link>
-            </div>
+            </details>
 
-            <div id="bem-estar" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: DEV_SOCIAL_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: DEV_SOCIAL_COLOR }}><HeartHandshake size={20} aria-hidden /><p className="eyebrow" style={{ color: DEV_SOCIAL_COLOR }}>Desenvolvimento Social</p></div>
+            <details id="bem-estar" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: DEV_SOCIAL_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: DEV_SOCIAL_COLOR }}><HeartHandshake size={20} aria-hidden /><p className="eyebrow" style={{ color: DEV_SOCIAL_COLOR }}>Desenvolvimento Social</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">{THEME_META['bem-estar']!.question}</h3>
               {rendaBrasil && <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{money.format(rendaBrasil.value)}</strong><span className="ml-1.5 text-sm text-muted-foreground">renda domiciliar per capita{rendaBrasil.periodStart ? ` (${String(rendaBrasil.periodStart).slice(0, 4)})` : ''}</span></div>}
               <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -632,10 +649,13 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Saldo do Novo Caged (admissões menos desligamentos), admissões (bruto) e estoque anual da RAIS são 3 medidas diferentes, nunca somadas entre si. CadÚnico, Bolsa Família e BPC ainda não têm fonte agregada publicável nesta base.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#bem-estar` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: DEV_SOCIAL_COLOR }}>Explorar Desenvolvimento Social →</Link>
-            </div>
+            </details>
 
-            <div id="infraestrutura" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: INFRA_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: INFRA_COLOR }}><Route size={20} aria-hidden /><p className="eyebrow" style={{ color: INFRA_COLOR }}>Infraestrutura</p></div>
+            <details id="infraestrutura" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: INFRA_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: INFRA_COLOR }}><Route size={20} aria-hidden /><p className="eyebrow" style={{ color: INFRA_COLOR }}>Infraestrutura</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">{THEME_META.infraestrutura!.question}</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{esgotoBrasil ? `${Number(esgotoBrasil.value).toFixed(1)}%` : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">domicílios com rede coletora de esgoto{esgotoBrasil ? ` (SNIS, ${esgotoBrasil.referenceYear})` : ''}</span></div>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -645,10 +665,13 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Água, esgoto e resíduos (SNIS/SINISA) têm só 1 período publicado no nível Brasil — por isso a história aqui é das obras públicas (Obrasgov). Obra cadastrada não é obra concluída; valor empenhado é o 1º de 5 estágios (planejado, contratado, empenhado, liquidado, pago) — nunca despesa já realizada. Concluídas: ano da data efetiva de término; datas de conclusão no futuro (erro de cadastro na fonte) foram excluídas.</p>
               <Link href={selectedUf ? `/estados/${selectedUf}#infraestrutura` : '/estados'} className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: INFRA_COLOR }}>Explorar Infraestrutura →</Link>
-            </div>
+            </details>
 
-            <div id="financas" className="scroll-mt-24 rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: FINANCAS_COLOR, borderTopWidth: 4 }}>
-              <div className="flex items-center gap-2" style={{ color: FINANCAS_COLOR }}><Landmark size={20} aria-hidden /><p className="eyebrow" style={{ color: FINANCAS_COLOR }}>Finanças</p></div>
+            <details id="financas" open className="scroll-mt-24 group rounded-3xl border bg-background p-6 sm:p-8" style={{ borderTopColor: FINANCAS_COLOR, borderTopWidth: 4 }}>
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-3">
+                <div className="flex items-center gap-2" style={{ color: FINANCAS_COLOR }}><Landmark size={20} aria-hidden /><p className="eyebrow" style={{ color: FINANCAS_COLOR }}>Finanças</p></div>
+                <ChevronDown size={18} className="shrink-0 text-muted-foreground transition group-open:rotate-180" aria-hidden />
+              </summary>
               <h3 className="mt-1 text-2xl font-black">Como estão as contas públicas do Brasil, ano a ano?</h3>
               <div className="mt-3"><strong className="display-title text-3xl tabular-nums">{finHistLatest?.resultadoPrimario ? moneyCompact.format(finHistLatest.resultadoPrimario.value) : '—'}</strong><span className="ml-1.5 text-sm text-muted-foreground">resultado primário aproximado{finHistLatest ? ` (${finHistLatest.year})` : ''}</span></div>
               <div className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -658,7 +681,7 @@ export default async function ExecutivoPage({ searchParams }: { searchParams: Pr
               </div>
               <p className="mt-3 text-xs leading-5 text-muted-foreground">Resultado primário APROXIMADO (Receita Primária − Despesa Primária), a partir da DCA do Siconfi em regime de competência/empenhado — NÃO é o Resultado Primário do Governo Central publicado mensalmente pelo Tesouro Nacional (RTN), que usa regime de caixa e ajustes próprios; os dois números não precisam coincidir. Receita Primária exclui Operações de Crédito (empréstimo novo); Despesa Primária exclui Juros e Amortização da Dívida. Só dado da União — sem comparação por estado.</p>
               <Link href="/executivo/federal/financas" className="focus-ring mt-4 inline-flex items-center gap-1 text-sm font-bold" style={{ color: FINANCAS_COLOR }}>Explorar Finanças →</Link>
-            </div>
+            </details>
           </div>
         </div>
       </section>

@@ -1,10 +1,10 @@
 import type { LucideIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowDown, ArrowRight, ArrowUp, ArrowUpDown, BarChart3, Building2, FileText, Landmark, MapPin, ReceiptText, Scale, Store, TrendingUp, Users, Vote } from 'lucide-react';
+import { ArrowDown, ArrowRight, ArrowUp, ArrowUpDown, BarChart3, Building2, FileText, Landmark, ReceiptText, Scale, Users, Vote } from 'lucide-react';
 import { ufs, type DataCoverage, type Source } from '@senadotracker/domain';
 import type { HousePanorama as HousePanoramaData } from '@senadotracker/db';
-import { legislativeOverview, voteMatchDataset, type LegislativeOverviewSort } from '@/lib/data';
+import { legislativeOverview, voteMatchDataset, houseMetricSummary, type LegislativeOverviewSort } from '@/lib/data';
 import { getStateLegislativeNumbers, type StateLegislativeNumbers } from '@/lib/state-legislative-numbers';
 import { VoteMatch, type VoteMatchDataset } from '@/components/legislative/vote-match';
 import { OfficialPortrait } from '@/components/app-image';
@@ -15,14 +15,21 @@ import { EmptyState } from '@/components/empty-state';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 import { memo } from '@/lib/security/load';
+import { stateChoropleth } from '../../../../packages/db/src/benchmarks.ts';
+import { mapMarkup } from '@/components/brazil-map-markup';
+import { paintStateMap, markupUfs, type StatePaint } from '@/components/state-map-paint';
+import { mapRamps, emptyFill, darkFrom } from '@/lib/scale';
 
 export const dynamic = 'force-dynamic';
 type Params = Record<string, string | string[] | undefined>;
 const scalar = (value: string | string[] | undefined) => typeof value === 'string' ? value : undefined;
 const int = new Intl.NumberFormat('pt-BR');
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 1 });
+const moneyFull = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+const moneyCompact = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', notation: 'compact', maximumFractionDigits: 1 });
 const percent = new Intl.NumberFormat('pt-BR', { style: 'percent', maximumFractionDigits: 1 });
 const ratio = (value: number | null) => value === null ? '—' : percent.format(value);
+const UF_NAMES: Record<string, string> = { AC: 'Acre', AL: 'Alagoas', AP: 'Amapá', AM: 'Amazonas', BA: 'Bahia', CE: 'Ceará', DF: 'Distrito Federal', ES: 'Espírito Santo', GO: 'Goiás', MA: 'Maranhão', MT: 'Mato Grosso', MS: 'Mato Grosso do Sul', MG: 'Minas Gerais', PA: 'Pará', PB: 'Paraíba', PR: 'Paraná', PE: 'Pernambuco', PI: 'Piauí', RJ: 'Rio de Janeiro', RN: 'Rio Grande do Norte', RS: 'Rio Grande do Sul', RO: 'Rondônia', RR: 'Roraima', SC: 'Santa Catarina', SP: 'São Paulo', SE: 'Sergipe', TO: 'Tocantins' };
 
 function pageUrl(params: Record<string, string | undefined>, page: number, anchor?: string) {
   const query = new URLSearchParams();
@@ -30,18 +37,6 @@ function pageUrl(params: Record<string, string | undefined>, page: number, ancho
   if (page > 1) query.set('pagina', String(page));
   return `/legislativo?${query}${anchor ? `#${anchor}` : ''}`;
 }
-
-const discovery: Array<[string, string, string, LucideIcon, string]> = [
-  ['Quanto custa um mandato?', 'Cotas e recursos públicos por parlamentar e período.', '/legislativo/rankings?dimensao=expenses', ReceiptText, 'text-emerald-700 bg-emerald-50'],
-  ['Ele participa?', 'Presença em Plenário e participação em votações nominais.', '/legislativo/rankings?dimensao=absence', Vote, 'text-blue-700 bg-blue-50'],
-  ['O que ele fez?', 'Propostas, relatorias e atuação legislativa.', '/legislativo/proposicoes', FileText, 'text-violet-700 bg-violet-50'],
-  ['Quem trabalha no gabinete?', 'Vínculos e custos publicados de cada gabinete.', '/legislativo/senadores', Users, 'text-orange-700 bg-orange-50'],
-  ['Proposições', 'Busque projetos, PECs e outras matérias legislativas.', '/legislativo/proposicoes', FileText, 'text-sky-700 bg-sky-50'],
-  ['Rankings', 'Compare gastos, faltas, propostas e relatorias.', '/legislativo/rankings', BarChart3, 'text-indigo-700 bg-indigo-50'],
-  ['Fornecedores', 'Veja quem recebe recursos públicos do Congresso, em contratos e em gabinetes.', '/legislativo/fornecedores', Store, 'text-rose-700 bg-rose-50'],
-  ['Patrimônio', 'Compare declarações eleitorais de 2018 e 2022.', '/legislativo/patrimonio', TrendingUp, 'text-amber-700 bg-amber-50'],
-  ['Comparações', 'Compare parlamentares, partidos ou estados em dimensões equivalentes.', '/comparar', Scale, 'text-cyan-700 bg-cyan-50'],
-];
 
 export default async function LegislativePage({ searchParams }: { searchParams: Promise<Params> }) {
   const params = await searchParams;
@@ -65,12 +60,54 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 
   const { panoramas, processingTimes, years, result, facets, monthlyCosts } = data.data;
   const stateNumbers = await memo('legislativo:state-numbers', getStateLegislativeNumbers, 2 * 60_000);
-  const [voteMatchSenado, voteMatchCamara] = await Promise.all([voteMatchDataset('senado'), voteMatchDataset('camara')]);
+  // Hero: mapa coroplético de custo total mediano por UF — Casa segue o filtro `casa` já existente na
+  // página; sem filtro, usa a Câmara (8 a 70 deputados por UF, mais variação que os 3 senadores fixos).
+  const mapHouse: Source = source ?? 'camara';
+  const [voteMatchSenado, voteMatchCamara, metricSummary] = await Promise.all([voteMatchDataset('senado'), voteMatchDataset('camara'), houseMetricSummary(mapHouse)]);
   const voteMatchDatasets: Record<'senado' | 'camara', VoteMatchDataset | null> = {
     senado: voteMatchSenado.status === 'available' ? voteMatchSenado.data : null,
     camara: voteMatchCamara.status === 'available' ? voteMatchCamara.data : null,
   };
   const selected = { casa: source, uf, partido: party, busca: search, ordenacao: sort };
+
+  // Mesma leitura certificada já usada em /quem-me-representa (houseMetricSummary + stateChoropleth) —
+  // nenhuma consulta nova, só reaproveitada aqui pro mapa do hero.
+  const choropleth = metricSummary.status === 'available' ? stateChoropleth(metricSummary.data, 'totalCostCents') : null;
+  const choroYear = metricSummary.status === 'available' ? metricSummary.data.year : null;
+  const choroByUf = new Map((choropleth?.items ?? []).map(item => [item.uf, item] as const));
+  const heroMapPaints = new Map<string, StatePaint>(markupUfs(mapMarkup).map(mapUf => {
+    const item = choroByUf.get(mapUf);
+    const band = item?.bucket ?? -1;
+    const label = item?.value != null ? moneyFull.format(item.value / 100) : 'sem dado suficiente';
+    return [mapUf, {
+      fill: band < 0 ? emptyFill : mapRamps.rose[band]!,
+      ...(band >= darkFrom ? { ink: '#fff' } : {}),
+      href: pageUrl({ ...selected, uf: mapUf }, 1, 'explore-dados'),
+      title: `${UF_NAMES[mapUf] ?? mapUf}: ${label}`,
+      ariaLabel: label,
+    }];
+  }));
+  const heroMap = paintStateMap(mapMarkup, heroMapPaints, {
+    variant: 'legislativo-cost-map', emptyFill,
+    description: `Custo total identificado (mediana por UF), ${mapHouse === 'senado' ? 'senadores' : 'deputados federais'}${choroYear ? `, ${choroYear}` : ''}; selecione um estado para ver o valor e filtrar a tabela.`,
+    href: mapUf => pageUrl({ ...selected, uf: mapUf }, 1, 'explore-dados'),
+  });
+  const selectedChoroItem = uf ? choroByUf.get(uf) : undefined;
+
+  // "O Congresso em 5 números" (pedido do usuário, mesmo padrão de "O Brasil em 5 números" em /executivo):
+  // nenhuma consulta nova — tudo já vem do próprio legislativeOverview carregado acima.
+  const totalParlamentares = panoramas.senado.roster.parliamentarians + panoramas.camara.roster.parliamentarians;
+  const monthlyCostTotal = (monthlyCosts.senado.totalCents ?? 0) + (monthlyCosts.camara.totalCents ?? 0);
+  const monthlyCostAvailable = monthlyCosts.senado.totalCents != null || monthlyCosts.camara.totalCents != null;
+  const topParty = [...facets.parties].sort((a, b) => b.count - a.count)[0] ?? null;
+  const totalProposals = (panoramas.senado.activity.proposals ?? 0) + (panoramas.camara.activity.proposals ?? 0);
+  const congressKpis = [
+    { id: 'parlamentares', label: 'Parlamentares', icon: Users, value: int.format(totalParlamentares), sub: `${int.format(panoramas.senado.roster.parliamentarians)} senadores · ${int.format(panoramas.camara.roster.parliamentarians)} deputados federais` },
+    { id: 'custo-mensal', label: 'Custo mensal total', icon: ReceiptText, value: monthlyCostAvailable ? moneyCompact.format(monthlyCostTotal / 100) : '—', sub: 'Cota + gabinete + subsídio, Senado + Câmara' },
+    { id: 'maior-bancada', label: 'Maior bancada', icon: Building2, value: topParty ? topParty.value : '—', sub: topParty ? `${int.format(topParty.count)} parlamentares` : 'sem cadastro' },
+    { id: 'proposicoes', label: 'Proposições apresentadas', icon: FileText, value: int.format(totalProposals), sub: `Senado ${years.senado} + Câmara ${years.camara}` },
+    { id: 'partidos', label: 'Partidos representados', icon: BarChart3, value: int.format(facets.parties.length), sub: 'Senado + Câmara, cadastro ativo' },
+  ];
   const mixedCoverage: DataCoverage = { availability: 'available', source: 'multiple', period: { from: null, to: null, grain: 'snapshot' }, batchId: null, note: 'Cadastro ativo; cada métrica conserva período e cobertura próprios.', sampleSize: result.items.length };
   type Item = (typeof result.items)[number];
   const sortableHeader=(label:string,key:'uf'|'party'|'cost'|'presence',align:'left'|'right'='left')=>{const active=sort?.startsWith(`${key}_`),next:LegislativeOverviewSort=active&&sort?.endsWith('_asc')?`${key}_desc`:`${key}_asc`,Icon=!active?ArrowUpDown:sort?.endsWith('_asc')?ArrowUp:ArrowDown;return <Link prefetch={false} href={pageUrl({...selected,ordenacao:next},1,'explore-dados')} className={cn('focus-ring inline-flex items-center gap-1.5 rounded-md font-bold hover:text-primary',align==='right'&&'justify-end')} aria-label={`${label}: ${active&&sort?.endsWith('_asc')?'ordem crescente; mudar para decrescente':active?'ordem decrescente; mudar para crescente':'ordenar em ordem crescente'}`} aria-current={active?'true':undefined}>{label}<Icon size={14}/></Link>};
@@ -86,18 +123,74 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 
   return (
     <main id="conteudo" tabIndex={-1}>
-      <section className="page-shell py-8">
-        <div className="relative isolate min-h-[310px] overflow-hidden rounded-[1.75rem] bg-primary text-white">
-          <div className="absolute inset-0 -z-20 bg-[url('/congresso.svg')] bg-cover bg-center" />
-          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#082f27]/95 via-[#0b4035]/83 to-[#123e36]/30" />
-          <div className="grid min-h-[310px] gap-8 p-7 md:grid-cols-[1.15fr_.85fr] md:items-center md:p-10">
-            <div>
-              <h1 className="display-title max-w-xl text-4xl leading-[.98] sm:text-6xl">Entenda quem te representa.<br />Pelos dados.</h1>
-              <p className="mt-4 max-w-2xl text-sm leading-6 text-white/80">Acompanhe gastos, presença, votações, atuação legislativa, gabinete e histórico eleitoral de senadores e deputados federais, com base em fontes oficiais e dados atualizados.</p>
-              <div className="mt-5 max-w-xl rounded-xl bg-white p-2 text-foreground"><SearchBar action="/legislativo#explore-dados" defaultValue={search ?? ''} placeholder="Buscar senador, deputado, partido ou estado..." /></div>
-              <div className="mt-3 flex flex-wrap gap-x-2 text-xs text-white/75"><span>Exemplos:</span><Link href="/legislativo?busca=Flávio+Bolsonaro" className="underline">Flávio Bolsonaro</Link><span>•</span><Link href="/legislativo?busca=Gleisi+Hoffmann" className="underline">Gleisi Hoffmann</Link><span>•</span><Link href="/legislativo?partido=PL" className="underline">PL</Link><span>•</span><Link href="/legislativo?uf=SP" className="underline">São Paulo</Link></div>
+      <section className="page-shell py-4 sm:py-6">
+        <div className="relative isolate overflow-hidden rounded-[1.75rem] text-white">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0a2f26] via-[#0e4939] to-[#123f33]" />
+          <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_1fr] lg:gap-8 lg:p-8">
+            <div className="flex flex-col justify-center">
+              <p className="eyebrow text-white/70">Legislativo · Congresso Nacional</p>
+              <h1 className="display-title text-balance mt-2 text-xl leading-[1.1] sm:text-3xl lg:text-[1.95rem]">Entenda quem te representa, pelos dados.</h1>
+              <p className="mt-2 max-w-lg text-xs leading-5 text-white/80 sm:text-sm sm:leading-6">Acompanhe gastos, presença, votações, atuação legislativa, gabinete e histórico eleitoral de senadores e deputados federais, com base em fontes oficiais e dados atualizados.</p>
+              <div className="mt-3 max-w-md rounded-xl bg-white p-1.5 text-foreground"><SearchBar action="/legislativo#explore-dados" defaultValue={search ?? ''} placeholder="Buscar senador, deputado, partido ou estado..." /></div>
+              <div className="mt-2 flex flex-wrap gap-x-2 text-[0.7rem] text-white/75"><span>Exemplos:</span><Link href="/legislativo?busca=Flávio+Bolsonaro" className="underline">Flávio Bolsonaro</Link><span>•</span><Link href="/legislativo?busca=Gleisi+Hoffmann" className="underline">Gleisi Hoffmann</Link><span>•</span><Link href="/legislativo?partido=PL" className="underline">PL</Link><span>•</span><Link href="/legislativo?uf=SP" className="underline">São Paulo</Link></div>
+              <nav aria-label="Atalhos do Legislativo" className="mt-2 flex flex-wrap gap-1.5">
+                {([['#legislativo-em-numeros', 'Panorama por Casa'], ['#como-voto', 'Vote Match'], ['/legislativo/rankings', 'Rankings'], ['/legislativo/proposicoes', 'Proposições']] as const).map(([href, label]) => (
+                  <Link key={href} href={href} className="rounded-full border border-white/25 px-2.5 py-0.5 text-[0.68rem] font-bold text-white/85 hover:bg-white/10">{label}</Link>
+                ))}
+              </nav>
             </div>
-            <div className="hidden h-full flex-col items-end justify-between text-right md:flex"><p className="max-w-xs rotate-[-2deg] font-serif text-3xl italic leading-tight text-white/90">Mais transparência para um Brasil mais forte.</p><div className="rounded-xl border border-white/20 bg-black/25 px-4 py-3 text-left text-xs"><strong className="block text-sm">Congresso Nacional</strong>Brasília · DF</div></div>
+
+            <div className="flex h-full flex-col rounded-2xl bg-white/[0.05] p-4 ring-1 ring-inset ring-white/10 sm:p-5">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                <p className="text-[0.68rem] font-bold uppercase tracking-wider text-white/60">Custo total identificado (mediana), por UF</p>
+                <p className="text-[0.68rem] text-white/45">{mapHouse === 'senado' ? 'Senado' : 'Câmara'} · {choroYear ?? '—'}</p>
+              </div>
+              <div className="mt-2 flex flex-1 flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="w-full max-w-[210px] shrink-0 sm:max-w-[230px]">
+                  <div dangerouslySetInnerHTML={{ __html: heroMap }} />
+                  <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-[0.6rem] text-white/55">
+                    {mapRamps.rose.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
+                  </div>
+                </div>
+                <div className="w-full min-w-0 rounded-xl border border-white/10 bg-black/10 p-4 sm:max-w-xs">
+                  {uf && selectedChoroItem?.value != null ? (
+                    <>
+                      <p className="text-[0.68rem] font-bold uppercase text-white/55">{UF_NAMES[uf] ?? uf}</p>
+                      <p className="mt-1 text-2xl font-black">{moneyCompact.format(selectedChoroItem.value / 100)}</p>
+                      <p className="mt-0.5 text-[0.68rem] text-white/55">custo total mediano · {mapHouse === 'senado' ? 'Senado' : 'Câmara'}{choroYear ? ` · ${choroYear}` : ''}</p>
+                      <div className="mt-2 flex flex-wrap gap-x-3 gap-y-0.5 text-[0.68rem]"><Link href={pageUrl({ ...selected, uf }, 1, 'explore-dados')} className="font-bold text-white underline">Ver parlamentares</Link></div>
+                    </>
+                  ) : uf ? (
+                    <p className="text-[0.7rem] leading-4 text-white/65">Sem dado suficiente de custo para {UF_NAMES[uf] ?? uf} nesta Casa.</p>
+                  ) : (
+                    <p className="text-[0.7rem] leading-4 text-white/65">Selecione um estado no mapa para ver o custo total mediano exato.</p>
+                  )}
+                </div>
+              </div>
+              <p className="mt-2 text-[0.6rem] leading-4 text-white/50">Mediana de custo total identificado (cota + gabinete + subsídio) por UF, só entre {mapHouse === 'senado' ? 'senadores' : 'deputados federais'} com as três parcelas publicadas no mesmo mês — Casas nunca são somadas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t bg-card py-10">
+        <div className="page-shell">
+          <div className="flex items-start gap-3">
+            <Users className="mt-1 shrink-0 text-primary" aria-hidden />
+            <div>
+              <h2 className="text-3xl font-black tracking-tight">O Congresso em 5 números</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">Um retrato rápido do Senado e da Câmara juntos — representação, custo e produção legislativa, direto dos cadastros oficiais.</p>
+            </div>
+          </div>
+
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {congressKpis.map(k => (
+              <div key={k.id} className="rounded-2xl border bg-background p-4">
+                <span className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground"><k.icon size={13} aria-hidden /> {k.label}</span>
+                <strong className="display-title mt-1.5 block text-2xl leading-none">{k.value}</strong>
+                <span className="mt-1.5 block text-xs text-muted-foreground">{k.sub}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -115,7 +208,7 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
         </Link>
       </section>
 
-      <section className="border-y bg-card"><div className="page-shell py-10">
+      <section id="legislativo-em-numeros" className="scroll-mt-20 border-y bg-card"><div className="page-shell py-10">
         <SectionTitle title="Legislativo em Números" subtitle={`Um panorama do Senado Federal, da Câmara dos Deputados e das Assembleias Legislativas, com os períodos publicados mais recentes (${years.senado}/${years.camara}).`} />
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           <HouseCard source="senado" year={years.senado} data={panoramas.senado} monthlyCost={monthlyCosts.senado} processingTime={processingTimes.senado} />
@@ -124,25 +217,6 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
         </div>
       </div></section>
 
-
-      <section className="page-shell py-10">
-        <SectionTitle title="Comece por aqui" subtitle="Escolha um caminho para explorar os dados." />
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-          <QuickPath title="Senadores" text={`Conheça os ${panoramas.senado.roster.parliamentarians} senadores, seus gastos, votações e mais.`} href="/legislativo/senadores" icon={Landmark} tone="bg-blue-50 text-blue-700" compact />
-          <QuickPath title="Deputados Federais" text={`Explore os ${panoramas.camara.roster.parliamentarians} deputados federais e sua atuação na Câmara.`} href="/legislativo/deputados" icon={Users} tone="bg-emerald-50 text-emerald-700" compact />
-          <QuickPath title="Deputados Estaduais" text="Explore deputados estaduais e distritais, suas Assembleias, atuação, gastos e dados disponíveis em cada estado." href="/legislativo/estaduais" icon={Landmark} tone="bg-teal-50 text-teal-700" compact />
-          <QuickPath title="Partidos" text="Veja a atuação dos partidos no Congresso Nacional." href="/legislativo/partidos" icon={Building2} tone="bg-violet-50 text-violet-700" compact />
-          <QuickPath title="Estados" text="Compare a representatividade e os dados por estado." href="/quem-me-representa" icon={MapPin} tone="bg-amber-50 text-amber-700" compact />
-          <QuickPath title="Proposições" text="Acompanhe projetos, PECs e outras matérias legislativas." href="/legislativo/proposicoes" icon={FileText} tone="bg-sky-50 text-sky-700" compact />
-        </div>
-      </section>
-
-      <section className="page-shell py-12">
-        <SectionTitle title="O que você pode descobrir?" subtitle="Explore diferentes aspectos da atuação dos parlamentares." />
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">{discovery.slice(0,4).map(([title, text, href, Icon, tone]) => <QuickPath key={title} title={title} text={text} href={href} icon={Icon} tone={tone} compact />)}</div>
-        <div className="mt-10 flex items-end justify-between gap-4 border-t pt-8"><div><h3 className="text-xl font-black">Ferramentas para explorar</h3><p className="mt-1 text-sm text-muted-foreground">Buscas, cruzamentos e comparações com páginas próprias.</p></div></div>
-        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">{discovery.slice(4).map(([title, text, href, Icon, tone]) => <QuickPath key={title} title={title} text={text} href={href} icon={Icon} tone={tone} compact />)}</div>
-      </section>
 
       <section id="como-voto" className="scroll-mt-20 page-shell py-10">
         <SectionTitle title="Qual parlamentar vota como você?" subtitle="Responda a votações nominais reais do Senado ou da Câmara e descubra com quais parlamentares você mais — e menos — concorda, a partir do voto de verdade de cada um." />
@@ -166,8 +240,6 @@ export default async function LegislativePage({ searchParams }: { searchParams: 
 const itemYear = (years: Record<Source, number>) => years.senado === years.camara ? years.senado : 'ano publicado';
 
 function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) { return <div><h2 className="text-3xl font-black tracking-tight">{title}</h2><p className="mt-2 text-sm text-muted-foreground">{subtitle}</p></div>; }
-
-function QuickPath({ title, text, href, icon: Icon, tone, compact = false }: { title: string; text: string; href: string; icon: LucideIcon; tone: string; compact?: boolean }) { return <Link prefetch={false} href={href} className={cn('focus-ring group flex rounded-2xl border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary hover:shadow-sm', compact ? 'min-h-32 flex-col' : 'min-h-28 items-start gap-3')}><span className={cn('grid size-10 shrink-0 place-items-center rounded-xl', tone)}><Icon size={19} /></span><span className="min-w-0 flex-1"><strong className="block leading-tight">{title}</strong><small className="mt-1.5 block leading-5 text-muted-foreground">{text}</small></span><ArrowRight size={16} className={cn('shrink-0 text-muted-foreground transition group-hover:translate-x-1 group-hover:text-primary', compact && 'mt-auto self-end')} /></Link>; }
 
 /** Card no mesmo padrão visual de "Como a Justiça está organizada" (/judiciario) e "A federação em
  * números" (/executivo): foto da fachada, selo com o tamanho do grupo, grade 2x2 de métricas e 1

@@ -141,9 +141,16 @@ export function ReachMatrix({title,data,coverage}:{title:string;data:ReachCell[]
 }
 
 export interface RankedBarItem {key:string;label:string;value:number;href?:string;meta?:string;chip?:ReactNode;rank?:number}
-export function RankedBars({title,items,coverage,formatValue}:{title:string;items:RankedBarItem[];coverage:DataCoverage;formatValue?:(value:number)=>string}){
+/** `limit` corta a lista visível de cara (o resto some num `<details>` nativo, sem JS) — a mesma técnica
+    já usada acima por `Frame` para "Ver dados do gráfico". Sem `limit`, mostra tudo, como sempre foi. */
+export function RankedBars({title,items,coverage,formatValue,limit}:{title:string;items:RankedBarItem[];coverage:DataCoverage;formatValue?:(value:number)=>string;limit?:number}){
   const max=Math.max(...items.map(item=>item.value),1),flat=items.map(item=>({label:item.label,value:item.value})),format=formatValue??formatted;
+  const visible=limit!=null?items.slice(0,limit):items,rest=limit!=null?items.slice(limit):[];
   // `rank` é opcional e só sobrescreve a posição exibida quando `items` é um recorte (ex. "8 maiores" de
   // uma lista maior) — sem ele, a posição continua sendo o índice no array, como sempre foi.
-  return <Frame title={title} data={flat} coverage={coverage}><div className="space-y-3">{items.map((item,index)=><div key={item.key} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-center gap-3"><span className="text-xs font-bold text-muted-foreground">{item.rank??index+1}</span><div className="min-w-0"><div className="flex min-w-0 items-center gap-2"><span className="min-w-0 truncate font-semibold" title={item.label}>{item.href?<Link className="text-primary underline-offset-2 hover:underline" href={item.href}>{item.label}</Link>:item.label}</span>{item.chip}</div>{item.meta&&<small className="block truncate text-muted-foreground">{item.meta}</small>}<div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*item.value/max}%`}}/></div></div><strong className="whitespace-nowrap text-right text-sm tabular-nums">{format(item.value)}</strong></div>)}</div></Frame>;
+  const row=(item:RankedBarItem,index:number)=><div key={item.key} className="grid grid-cols-[1.5rem_minmax(0,1fr)_auto] items-center gap-3"><span className="text-xs font-bold text-muted-foreground">{item.rank??index+1}</span><div className="min-w-0"><div className="flex min-w-0 items-center gap-2"><span className="min-w-0 truncate font-semibold" title={item.label}>{item.href?<Link className="text-primary underline-offset-2 hover:underline" href={item.href}>{item.label}</Link>:item.label}</span>{item.chip}</div>{item.meta&&<small className="block truncate text-muted-foreground">{item.meta}</small>}<div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-chart-1" style={{width:`${100*item.value/max}%`}}/></div></div><strong className="whitespace-nowrap text-right text-sm tabular-nums">{format(item.value)}</strong></div>;
+  return <Frame title={title} data={flat} coverage={coverage}>
+    <div className="space-y-3">{visible.map((item,index)=>row(item,index))}</div>
+    {rest.length>0&&<details className="mt-3 text-sm"><summary className="focus-ring w-fit cursor-pointer font-bold text-primary">Ver todos ({items.length})</summary><div className="mt-3 space-y-3">{rest.map((item,index)=>row(item,index+visible.length))}</div></details>}
+  </Frame>;
 }

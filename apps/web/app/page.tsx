@@ -175,46 +175,50 @@ export default async function HomePage() {
 
   return (
     <main id="conteudo" tabIndex={-1}>
-      <section className="page-shell py-6 sm:py-8">
+      <section className="page-shell py-4 sm:py-6">
         <div className="relative isolate overflow-hidden rounded-[1.75rem] text-white">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0a2f26] via-[#0e4939] to-[#123f33]" />
-          <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10 lg:p-14">
+          <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8 lg:p-8">
             <div className="flex flex-col justify-center">
               <p className="eyebrow text-white/70">Inteligência pública do Brasil</p>
-              <h1 className="display-title text-balance mt-4 text-[2.6rem] leading-[1.05] sm:text-7xl lg:text-[3.3rem] lg:leading-[1.08]">Entenda o poder.<br />Descubra o país.</h1>
-              <p className="mt-5 max-w-md text-base leading-7 text-white/80 sm:text-lg">Explore os três poderes, as políticas públicas e a Justiça brasileira com dados oficiais, contexto e fontes verificáveis.</p>
-              <div className="mt-7 w-full max-w-lg"><GlobalSearch variant="hero" /></div>
-              <div className="mt-4 flex flex-wrap items-center gap-2">
-                <Link href="/municipios" className="rounded-full border border-white/35 px-3 py-1 text-xs font-bold text-white hover:bg-white/10">Municípios</Link>
-                <Link href="/estados" className="rounded-full border border-white/35 px-3 py-1 text-xs font-bold text-white hover:bg-white/10">Estados</Link>
-                <Link href="/legislativo" className="rounded-full border border-white/35 px-3 py-1 text-xs font-bold text-white hover:bg-white/10">Parlamentares</Link>
-                <Link href="/judiciario/tribunais" className="rounded-full border border-white/35 px-3 py-1 text-xs font-bold text-white hover:bg-white/10">Tribunais</Link>
+              <h1 className="display-title text-balance mt-2 text-2xl leading-[1.08] sm:text-4xl lg:text-[2.2rem]">Entenda o poder. Descubra o país.</h1>
+              <p className="mt-2 max-w-md text-xs leading-5 text-white/80 sm:text-sm sm:leading-6">Explore os três poderes, as políticas públicas e a Justiça brasileira com dados oficiais, contexto e fontes verificáveis.</p>
+              <div className="mt-3 w-full max-w-lg"><GlobalSearch variant="hero" /></div>
+              <div className="mt-2 flex flex-wrap items-center gap-1.5">
+                <Link href="/municipios" className="rounded-full border border-white/35 px-2.5 py-0.5 text-[0.68rem] font-bold text-white hover:bg-white/10">Municípios</Link>
+                <Link href="/estados" className="rounded-full border border-white/35 px-2.5 py-0.5 text-[0.68rem] font-bold text-white hover:bg-white/10">Estados</Link>
+                <Link href="/legislativo" className="rounded-full border border-white/35 px-2.5 py-0.5 text-[0.68rem] font-bold text-white hover:bg-white/10">Parlamentares</Link>
+                <Link href="/judiciario/tribunais" className="rounded-full border border-white/35 px-2.5 py-0.5 text-[0.68rem] font-bold text-white hover:bg-white/10">Tribunais</Link>
               </div>
             </div>
 
-            <div className="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/10 sm:p-6">
+            <div className="flex h-full flex-col rounded-2xl bg-white/[0.05] p-4 ring-1 ring-inset ring-white/10 sm:p-5">
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/60">Brasil em dados</p>
-                <p className="text-xs text-white/45">IDHM 2010 · PNUD/IPEA/FJP</p>
+                <p className="text-[0.68rem] font-bold uppercase tracking-wider text-white/60">Brasil em dados</p>
+                <p className="text-[0.68rem] text-white/45">IDHM 2010 · PNUD/IPEA/FJP</p>
               </div>
-              <div className="mx-auto mt-2 w-full max-w-[360px]" dangerouslySetInnerHTML={{ __html: heroMap }} />
-              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[0.68rem] text-white/55">
-                {sequentialRamp.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2.5 rounded-sm" style={{ background: c }} /> {['< 0,6', '0,6–0,65', '0,65–0,7', '0,7–0,75', 'maior'][i] ?? ''}</span>)}
-              </div>
-              <div className="mt-5 grid grid-cols-2 gap-x-3 gap-y-4 border-t border-white/10 pt-5 xl:grid-cols-4">
-                <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-wide text-white/55"><Users size={12} /> Habitantes</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.5rem)] leading-none [overflow-wrap:anywhere]">{int.format(totalPop)}</strong><span className="mt-1 block text-[0.65rem] text-white/45">soma das 27 UFs</span></div>
-                <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-wide text-white/55"><Building2 size={12} /> Municípios</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.5rem)] leading-none">5.571</strong><span className="mt-1 block text-[0.65rem] text-white/45">inclui Fernando de Noronha</span></div>
-                <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-wide text-white/55"><Landmark size={12} /> Deputados</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.5rem)] leading-none">513</strong><span className="mt-1 block text-[0.65rem] text-white/45">em exercício</span></div>
-                <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-wide text-white/55"><Gavel size={12} /> Tribunais</span><strong className="display-title mt-1 block text-[clamp(1.05rem,1.6vw,1.5rem)] leading-none">{int.format(totalTribunais)}</strong><span className="mt-1 block text-[0.65rem] text-white/45">catálogo CNJ</span></div>
+              <div className="mt-2 flex flex-1 flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="w-full max-w-[210px] shrink-0 sm:max-w-[230px]">
+                  <div dangerouslySetInnerHTML={{ __html: heroMap }} />
+                  <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-1.5 gap-y-0.5 text-[0.58rem] text-white/55">
+                    {sequentialRamp.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2 rounded-sm" style={{ background: c }} /> {['< 0,6', '0,6–0,65', '0,65–0,7', '0,7–0,75', 'maior'][i] ?? ''}</span>)}
+                  </div>
+                </div>
+                <div className="w-full min-w-0 grid grid-cols-2 gap-x-3 gap-y-3 sm:max-w-xs sm:border-l sm:border-white/10 sm:pl-4">
+                  <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-wide text-white/55"><Users size={11} /> Habitantes</span><strong className="display-title mt-0.5 block text-[clamp(0.9rem,1.3vw,1.15rem)] leading-none [overflow-wrap:anywhere]">{int.format(totalPop)}</strong></div>
+                  <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-wide text-white/55"><Building2 size={11} /> Municípios</span><strong className="display-title mt-0.5 block text-[clamp(0.9rem,1.3vw,1.15rem)] leading-none">5.571</strong></div>
+                  <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-wide text-white/55"><Landmark size={11} /> Deputados</span><strong className="display-title mt-0.5 block text-[clamp(0.9rem,1.3vw,1.15rem)] leading-none">513</strong></div>
+                  <div className="min-w-0"><span className="flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-wide text-white/55"><Gavel size={11} /> Tribunais</span><strong className="display-title mt-0.5 block text-[clamp(0.9rem,1.3vw,1.15rem)] leading-none">{int.format(totalTribunais)}</strong></div>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-white/10 bg-black/15">
             <div className="flex flex-col divide-y divide-white/10 sm:flex-row sm:divide-x sm:divide-y-0">
-              <Link href="/legislativo" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-4 transition hover:bg-white/5 sm:px-8 sm:py-5"><Landmark size={18} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Legislativo</strong><span className="block truncate text-xs text-white/60">Representação, decisões e fiscalização</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
-              <Link href="/executivo" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-4 transition hover:bg-white/5 sm:px-8 sm:py-5"><Users size={18} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Executivo</strong><span className="block truncate text-xs text-white/60">Serviços, políticas públicas e territórios</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
-              <Link href="/judiciario" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-4 transition hover:bg-white/5 sm:px-8 sm:py-5"><Scale size={18} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Judiciário</strong><span className="block truncate text-xs text-white/60">Processos, tribunais e temas de relevância</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
+              <Link href="/legislativo" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-2.5 transition hover:bg-white/5 sm:px-8 sm:py-3"><Landmark size={16} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Legislativo</strong><span className="block truncate text-xs text-white/60">Representação, decisões e fiscalização</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
+              <Link href="/executivo" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-2.5 transition hover:bg-white/5 sm:px-8 sm:py-3"><Users size={16} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Executivo</strong><span className="block truncate text-xs text-white/60">Serviços, políticas públicas e territórios</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
+              <Link href="/judiciario" className="focus-ring group flex flex-1 items-center gap-3 px-6 py-2.5 transition hover:bg-white/5 sm:px-8 sm:py-3"><Scale size={16} className="shrink-0 text-white/70" /><span className="min-w-0"><strong className="block text-sm">Judiciário</strong><span className="block truncate text-xs text-white/60">Processos, tribunais e temas de relevância</span></span><ArrowRight size={15} className="ml-auto shrink-0 text-white/50 transition group-hover:translate-x-1" /></Link>
             </div>
           </div>
         </div>

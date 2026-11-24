@@ -307,39 +307,43 @@ export default async function JudiciaryPanoramaPage() {
 
   return (
     <main id="conteudo" tabIndex={-1}>
-      <section className="page-shell py-6 sm:py-8">
+      <section className="page-shell py-4 sm:py-6">
         <div className="relative isolate overflow-hidden rounded-[1.75rem] text-white">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#0a2f26] via-[#0e4939] to-[#123f33]" />
-          <div className="grid gap-8 p-6 sm:p-10 lg:grid-cols-[1fr_1fr] lg:gap-10 lg:p-14">
+          <div className="grid gap-6 p-5 sm:p-6 lg:grid-cols-[1fr_1fr] lg:gap-8 lg:p-8">
             <div className="flex flex-col justify-center">
               <p className="eyebrow text-white/70">Justiça brasileira · Panorama nacional</p>
-              <h1 className="display-title text-balance mt-4 text-[2.4rem] leading-[1.05] sm:text-6xl lg:text-[3rem]">A Justiça brasileira, além dos processos.</h1>
-              <p className="mt-5 max-w-lg text-base leading-7 text-white/80">Entenda o que chega aos tribunais, quanto tempo leva, o que é resolvido e como cada instituição funciona — {int.format(metrics.filter(m => m.availability === 'AVAILABLE' || m.value !== null).length)} indicadores, 93 instituições, {years[0]}–{years.at(-1)}.</p>
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link href="#fila" className="rounded-full bg-white px-5 py-3 text-sm font-bold text-primary">Explorar os dados</Link>
-                <Link href="/judiciario/tribunais" className="rounded-full border border-white/35 px-5 py-3 text-sm font-bold text-white hover:bg-white/10">Encontrar tribunal</Link>
+              <h1 className="display-title text-balance mt-2 text-xl leading-[1.1] sm:text-3xl lg:text-[1.95rem]">A Justiça brasileira, além dos processos.</h1>
+              <p className="mt-2 max-w-lg text-xs leading-5 text-white/80 sm:text-sm sm:leading-6">Entenda o que chega aos tribunais, quanto tempo leva, o que é resolvido e como cada instituição funciona — {int.format(metrics.filter(m => m.availability === 'AVAILABLE' || m.value !== null).length)} indicadores, 93 instituições, {years[0]}–{years.at(-1)}.</p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                <Link href="#fila" className="rounded-full bg-white px-4 py-1.5 text-xs font-bold text-primary">Explorar os dados</Link>
+                <Link href="/judiciario/tribunais" className="rounded-full border border-white/35 px-4 py-1.5 text-xs font-bold text-white hover:bg-white/10">Encontrar tribunal</Link>
               </div>
-              <nav aria-label="Atalhos do Judiciário" className="mt-6 flex flex-wrap gap-2">
+              <nav aria-label="Atalhos do Judiciário" className="mt-2 flex flex-wrap gap-1.5">
                 {[['#despesas', 'Como gastam o dinheiro'], ['#congestionamento', 'Tempo e congestionamento'], ['/judiciario/temas', 'Temas'], ['/judiciario/comparar', 'Recursos']].map(([href, label]) => (
-                  <Link key={href} href={href!} className="rounded-full border border-white/25 px-3 py-1 text-xs font-bold text-white/85 hover:bg-white/10">{label}</Link>
+                  <Link key={href} href={href!} className="rounded-full border border-white/25 px-2.5 py-0.5 text-[0.68rem] font-bold text-white/85 hover:bg-white/10">{label}</Link>
                 ))}
               </nav>
             </div>
 
-            <div className="flex flex-col rounded-2xl bg-white/[0.05] p-5 ring-1 ring-inset ring-white/10 sm:p-6">
+            <div className="flex h-full flex-col rounded-2xl bg-white/[0.05] p-4 ring-1 ring-inset ring-white/10 sm:p-5">
               <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                <p className="text-xs font-bold uppercase tracking-wider text-white/60">Despesa anual por magistrado, por UF</p>
-                <p className="text-xs text-white/45">CNJ · {expenseLastYear}</p>
+                <p className="text-[0.68rem] font-bold uppercase tracking-wider text-white/60">Despesa anual por magistrado, por UF</p>
+                <p className="text-[0.68rem] text-white/45">CNJ · {expenseLastYear}</p>
               </div>
-              <div className="mx-auto mt-2 w-full max-w-[340px]" dangerouslySetInnerHTML={{ __html: magistrateExpenseMap }} />
-              <div className="mt-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[0.65rem] text-white/55">
-                {mapRamps.rose.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2.5 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
+              <div className="mt-2 flex flex-1 flex-col items-center justify-center gap-4 sm:flex-row">
+                <div className="w-full max-w-[210px] shrink-0 sm:max-w-[230px]">
+                  <div dangerouslySetInnerHTML={{ __html: magistrateExpenseMap }} />
+                  <div className="mt-1.5 flex flex-wrap items-center justify-center gap-x-2 gap-y-0.5 text-[0.6rem] text-white/55">
+                    {mapRamps.rose.map((c, i) => <span key={i} className="inline-flex items-center gap-1"><span className="inline-block size-2 rounded-sm" style={{ background: c }} /> {['menor', '', '', '', 'maior'][i] || `faixa ${i + 1}`}</span>)}
+                  </div>
+                </div>
+                <div className="w-full min-w-0 grid grid-cols-2 gap-x-4 gap-y-3 sm:max-w-xs">
+                  {magistrateExpenseHighest && <div className="min-w-0"><span className="text-[0.58rem] font-bold uppercase tracking-wide text-white/55">Maior · {magistrateExpenseHighest.sigla}</span><strong className="display-title mt-0.5 block text-[clamp(0.85rem,1.2vw,1.05rem)] leading-none">{moneyFull.format(magistrateExpenseHighest.value)}</strong></div>}
+                  {magistrateExpenseLowest && <div className="min-w-0"><span className="text-[0.58rem] font-bold uppercase tracking-wide text-white/55">Menor · {magistrateExpenseLowest.sigla}</span><strong className="display-title mt-0.5 block text-[clamp(0.85rem,1.2vw,1.05rem)] leading-none">{moneyFull.format(magistrateExpenseLowest.value)}</strong></div>}
+                </div>
               </div>
-              <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-4 border-t border-white/10 pt-4">
-                {magistrateExpenseHighest && <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Maior · {magistrateExpenseHighest.sigla}</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{moneyFull.format(magistrateExpenseHighest.value)}</strong></div>}
-                {magistrateExpenseLowest && <div className="min-w-0"><span className="text-[0.62rem] font-bold uppercase tracking-wide text-white/55">Menor · {magistrateExpenseLowest.sigla}</span><strong className="display-title mt-1 block text-[clamp(0.95rem,1.4vw,1.2rem)] leading-none">{moneyFull.format(magistrateExpenseLowest.value)}</strong></div>}
-              </div>
-              <p className="mt-3 text-[0.65rem] leading-4 text-white/50">Só Justiça Estadual (magistrados de carreira em tempo integral) — TREs e tribunais superiores não entram, universo e remuneração diferentes.</p>
+              <p className="mt-2 text-[0.6rem] leading-4 text-white/50">Só Justiça Estadual (magistrados de carreira em tempo integral) — TREs e tribunais superiores não entram, universo e remuneração diferentes.</p>
             </div>
           </div>
           <details className="border-t border-white/10 bg-black/15 px-6 py-3.5 text-sm text-white/80 sm:px-10">

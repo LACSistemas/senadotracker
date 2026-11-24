@@ -16,11 +16,11 @@ export default async function MunicipiosPage({ searchParams }: Props) {
   const res = term ? await findMunicipalities(term, ufState?.ufCode ?? undefined, 40) : null;
   return <main className="page-shell py-6 sm:py-10">
     <Crumbs items={[{ href: '/estados', label: 'Estados' }, { label: 'Municípios' }]} />
-    <header className="hero-wash rounded-[1.5rem] border p-6 sm:p-10">
+    <header className="hero-wash rounded-[1.5rem] border p-5 sm:p-6">
       <p className="eyebrow">Municípios</p>
-      <h1 className="display-title text-balance mt-2 text-4xl sm:text-5xl">Encontre o seu município</h1>
-      <div className="mt-5 max-w-xl"><MunicipalFinder action="/municipios" defaultValue={term} ufHidden={uf} /></div>
-      {ufState && <p className="mt-3 text-sm text-muted-foreground">Busca restrita a {ufState.name}. <Link href="/municipios" className="font-semibold text-primary underline">Buscar no Brasil todo</Link></p>}
+      <h1 className="display-title text-balance mt-2 text-2xl sm:text-3xl">Encontre o seu município</h1>
+      <div className="mt-3 max-w-xl"><MunicipalFinder action="/municipios" defaultValue={term} ufHidden={uf} /></div>
+      {ufState && <p className="mt-2 text-sm text-muted-foreground">Busca restrita a {ufState.name}. <Link href="/municipios" className="font-semibold text-primary underline">Buscar no Brasil todo</Link></p>}
     </header>
     {res && <section className="mt-8" aria-live="polite"><h2 className="font-display text-2xl">{res.total} resultado(s) para “{term}”</h2>
       <ul className="mt-3 divide-y rounded-xl border bg-card">{res.rows.map(r => <li key={r.entityId}><Link href={`/municipios/${r.entityId}`} className="flex justify-between gap-3 p-3 hover:bg-secondary"><span className="font-semibold">{r.name} <span className="font-normal text-muted-foreground">· {r.uf}</span></span><span className="text-sm text-muted-foreground">{formatInt(r.population)} hab.</span></Link></li>)}</ul>
